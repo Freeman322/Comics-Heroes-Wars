@@ -446,7 +446,7 @@
       "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
       "AttackDamageMin"       "32.0"
       "AttackDamageMax"       "43.0"
-      "AttackRate"            "1.6"
+      "AttackRate"            "1.65"
       "AttackAnimationPoint"  "0.5"
       "AttackAcquisitionRange" "500"
       "AttackRange"           "600"
@@ -478,7 +478,7 @@
       "AttributeBaseStrength"   "21"                   // Base strength
       "AttributeStrengthGain"   "1.4"                   // Strength bonus per level.
       "AttributeBaseIntelligence" "21"                   // Base intelligence
-      "AttributeIntelligenceGain" "2.6"                   // Intelligence bonus per level.
+      "AttributeIntelligenceGain" "2.3"                   // Intelligence bonus per level.
       "AttributeBaseAgility"    "15"                   // Base agility
       "AttributeAgilityGain"    "1.5"                   // Agility bonus per level.
   }
@@ -3035,8 +3035,8 @@
 	    "DisableWearables"			"1"
 	    "ArmorPhysical"		"3"
 	    "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	    "AttackDamageMin"		"45"
-	    "AttackDamageMax"		"52"
+	    "AttackDamageMin"		"42"
+	    "AttackDamageMax"		"49"
 	    "AttackRate"		"1.600000"
 	    "AttackAnimationPoint"		"0.500000"
 	    "AttackAcquisitionRange"		"600"
@@ -3928,22 +3928,22 @@
 		"Ability16"				"special_bonus_agility_25"
 		"Ability17"				"special_bonus_unique_diablo"
 
-		"ArmorPhysical"					"-1"
+		"ArmorPhysical"					"2"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"				"27"
-		"AttackDamageMax"				"33"
+		"AttackDamageMin"				"33"
+		"AttackDamageMax"				"39"
 		"AttackRate"					"1.700000"
 		"AttackAnimationPoint"			"0.430000"
 		"AttackAcquisitionRange"		"800"
-		"AttackRange"					"128"
+		"AttackRange"					"130"
 		"ProjectileSpeed"				"0"
 		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"			"16"
+		"AttributeBaseStrength"			"21"
 		"AttributeStrengthGain"			"1.700000"
 		"AttributeBaseIntelligence"		"20"
 		"AttributeIntelligenceGain"		"2.600000"
 		"AttributeBaseAgility"			"21"
-		"AttributeAgilityGain"			"3.600000"
+		"AttributeAgilityGain"			"3.100000"
 		"MovementSpeed"					"300"
 		"MovementTurnRate"				"0.500000"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
