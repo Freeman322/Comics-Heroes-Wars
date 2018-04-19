@@ -10221,98 +10221,98 @@
 		}
 	}
 	 "npc_dota_molag_bal" ////models/items/terrorblade/knight_of_foulfell_demon/knight_of_foulfell_demon.vmdl
-  	{
-  		// General
-		//
-		"BaseClass"				  "npc_dota_creature"
-		"Model"					  "models/event/molagbal/molagbal.vmdl"
-		"SoundSet"			      "Hero_SkeletonKing"
-		"ModelScale"		      "5.0"
-		"Level"					  "160"
-		"IsAncient"			      "1"
-		"MinimapIcon"             "minimap_candybucket"
-		"MinimapIconSize"         "1000"
-		"ConsideredHero"          "1"
-		"IsAncient"               "1"
-		"CanBeDominated"          "0"
-		"FollowRange"             "100"
-		"DisableClumpingBehavior" "1"
-		"DisableResistance"       "100.0"
-		"IsNeutralUnitType"       "1"
+    	{
+    		// General
+  		//
+  		"BaseClass"				  "npc_dota_creature"
+  		"Model"					  "models/event/molagbal/molagbal.vmdl"
+  		"SoundSet"			      "Hero_SkeletonKing"
+  		"ModelScale"		      "5.0"
+  		"Level"					  "160"
+  		"IsAncient"			      "1"
+  		"MinimapIcon"             "minimap_candybucket"
+  		"MinimapIconSize"         "1000"
+  		"ConsideredHero"          "1"
+  		"IsAncient"               "1"
+  		"CanBeDominated"          "0"
+  		"FollowRange"             "100"
+  		"DisableClumpingBehavior" "1"
+  		"DisableResistance"       "100.0"
+  		"IsNeutralUnitType"       "1"
 
 
-		// Abilities
-		//----------------------------------------------------------------
-		"AbilityLayot"				"6"
-		"Ability1"					"molag_bal_chronosphere"	// Ability 1.
-		"Ability2"					"molag_bal_wall_of_replica"			// Ability 2.
-		"Ability3"					"molag_bal_vacuum"			// Ability 3.
-		"Ability4"					"molag_bal_aftershock"	    // Ability 4.
-		"Ability5"					"lich_spell_block"		// Ability 5.
-		"Ability6"					"kracken_crit"						// Ability 6 - Extra.
-		"Ability7"					"faceless_void_time_lock"						// Ability 7 - Extra.
-		"Ability8"					"skeleton_king_mortal_strike"						// Ability 8 - Extra.
+  		// Abilities
+  		//----------------------------------------------------------------
+  		"AbilityLayot"				"6"
+  		"Ability1"					"molag_bal_chronosphere"	// Ability 1.
+  		"Ability2"					"molag_bal_wall_of_replica"			// Ability 2.
+  		"Ability3"					"molag_bal_vacuum"			// Ability 3.
+  		"Ability4"					"molag_bal_aftershock"	    // Ability 4.
+  		"Ability5"					"lich_spell_block"		// Ability 5.
+  		"Ability6"					"kracken_crit"						// Ability 6 - Extra.
+  		"Ability7"					"faceless_void_time_lock"						// Ability 7 - Extra.
+  		"Ability8"					"skeleton_king_mortal_strike"						// Ability 8 - Extra.
 
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				    "150.0"			// Physical protection.
-		"MagicalResistance"				"90"									// Magical protection (percentage).
+  		// Armor
+  		//----------------------------------------------------------------
+  		"ArmorPhysical"				    "150.0"			// Physical protection.
+  		"MagicalResistance"				"90"									// Magical protection (percentage).
 
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		      "DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			        "97000"		// Damage range min.
-		"AttackDamageMax"			        "125000"		// Damage range max.
-		"AttackDamageType"			      "DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				          "0.5"			// Speed of attack.
-		"AttackAnimationPoint"		  		  "0.5"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	 	  	  "150"		// Range within a target can be acquired.
-		"AttackRange"				          "150"		// Range within a target can be attacked.
-		"ProjectileModel"			      	  "particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
-		"ProjectileSpeed"			      	  "1000"		// Speed of projectile.
+  		// Attack
+  		//----------------------------------------------------------------
+  		"AttackCapabilities"		      "DOTA_UNIT_CAP_MELEE_ATTACK"
+  		"AttackDamageMin"			        "97000"		// Damage range min.
+  		"AttackDamageMax"			        "125000"		// Damage range max.
+  		"AttackDamageType"			      "DAMAGE_TYPE_ArmorPhysical"
+  		"AttackRate"				          "0.5"			// Speed of attack.
+  		"AttackAnimationPoint"		  		  "0.5"		// Normalized time in animation cycle to attack.
+  		"AttackAcquisitionRange"	 	  	  "150"		// Range within a target can be acquired.
+  		"AttackRange"				          "150"		// Range within a target can be attacked.
+  		"ProjectileModel"			      	  "particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+  		"ProjectileSpeed"			      	  "1000"		// Speed of projectile.
 
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"                    "0"
-		"BountyGoldMin"               "0"
-		"BountyGoldMax"               "0"
+  		// Bounty
+  		//----------------------------------------------------------------
+  		"BountyXP"                    "0"
+  		"BountyGoldMin"               "0"
+  		"BountyGoldMax"               "0"
 
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			       "DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
-		"RingRadius"				        "110"
-		"HealthBarOffset"			"400"
+  		// Bounds
+  		//----------------------------------------------------------------
+  		"BoundsHullName"			       "DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
+  		"RingRadius"				        "110"
+  		"HealthBarOffset"			"400"
 
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"270"		// Speed
-		"MovementTurnRate"			"1.0"		// Turning rate.
+  		// Movement
+  		//----------------------------------------------------------------
+  		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+  		"MovementSpeed"				"270"		// Speed
+  		"MovementTurnRate"			"1.0"		// Turning rate.
 
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				  "4000000"		// Base health.
-		"StatusHealthRegen"			"10"		// Health regeneration rate.
-		"StatusMana"				    "10000"		// Base mana.
-		"StatusManaRegen"			  "1000"		// Mana regeneration rate.
+  		// Status
+  		//----------------------------------------------------------------
+  		"StatusHealth"				  "4000000"		// Base health.
+  		"StatusHealthRegen"			"10"		// Health regeneration rate.
+  		"StatusMana"				    "10000"		// Base mana.
+  		"StatusManaRegen"			  "1000"		// Mana regeneration rate.
 
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					      "DOTA_TEAM_NEUTRALS"			// Team name.
-		"CombatClassAttack"			  "DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"			  "DOTA_COMBAT_CLASS_DEFEND_HERO"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+  		// Team
+  		//----------------------------------------------------------------
+  		"TeamName"					      "DOTA_TEAM_NEUTRALS"			// Team name.
+  		"CombatClassAttack"			  "DOTA_COMBAT_CLASS_ATTACK_HERO"
+  		"CombatClassDefend"			  "DOTA_COMBAT_CLASS_DEFEND_HERO"
+  		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"        "1800"        // Дневной обзор (по часам доты).
-		"VisionNighttimeRange"      "1800"        // Ночной обзор.
+  		// Vision
+  		//----------------------------------------------------------------
+  		"VisionDaytimeRange"        "1800"        // Дневной обзор (по часам доты).
+  		"VisionNighttimeRange"      "1800"        // Ночной обзор.
 
-		// Inventory
-		//----------------------------------------------------------------
-		"HasInventory"				"1"
-		"particle_folder"		  "particles/units/heroes/hero_skeletonking"
-		"GameSoundsFile"		  "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
-		"VoiceFile"		        "soundevents/voscripts/game_sounds_vo_skeleton_king.vsndevts"
+  		// Inventory
+  		//----------------------------------------------------------------
+  		"HasInventory"				"1"
+  		"particle_folder"		  "particles/units/heroes/hero_skeletonking"
+  		"GameSoundsFile"		  "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+  		"VoiceFile"		        "soundevents/voscripts/game_sounds_vo_skeleton_king.vsndevts"
   	}
 }

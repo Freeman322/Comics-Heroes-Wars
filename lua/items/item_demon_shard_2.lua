@@ -80,7 +80,7 @@ function modifier_item_demon_shard_2:OnAttackLanded (params)
     if params.attacker == self:GetParent() then
         if params.target ~= nil and params.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
             local cleaveDamage = ( self:GetAbility():GetSpecialValueFor("percent_cleave") * params.damage ) / 100.0
-            DoCleaveAttack( self:GetParent(), params.target, self:GetAbility(), cleaveDamage, 150, 300, 570, "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf" )
+            DoCleaveAttack( self:GetParent(), params.target, self:GetAbility(), cleaveDamage, 150, 300, 570, "particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave.vpcf" )
         end
     	if IsHasCrit and not params.target:IsBuilding() then
         local hTarget = params.target

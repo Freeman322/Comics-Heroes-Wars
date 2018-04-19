@@ -40,11 +40,11 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_murlock_primal_eject_heal:OnRefresh( kv )
-	self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )/100
+	self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )
 	self.movespeed = self:GetAbility():GetSpecialValueFor( "bonus_movement_speed" )
 	if IsServer() then
 		if self:GetCaster():HasTalent("special_bonus_unique_murloc") then
-	        self.regen = self.regen * 2
+	        self.regen = self.regen + 2
 		end
 	end
 end
@@ -54,13 +54,14 @@ function modifier_murlock_primal_eject_heal:OnIntervalThink()
     local pos = caster:GetAbsOrigin()
     local radius = self:GetAbility():GetSpecialValueFor("radius")
     local units = FindUnitsInRadius(caster:GetTeam(), pos, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+    self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )/100
 
     if #units > 0 then 
         self.regen = 0
     else
-        self.regen = self:GetCaster():GetMaxHealth() * self.regen
+        self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )
         if self:GetCaster():HasTalent("special_bonus_unique_murloc") then
-            self.regen = self.regen * 2
+            self.regen = self.regen + 2
         end
     end
 end
@@ -70,7 +71,7 @@ end
 function modifier_murlock_primal_eject_heal:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE 
 	}
 
 	return funcs
@@ -82,7 +83,7 @@ end
 
 --------------------------------------------------------------------------------
 
-function modifier_murlock_primal_eject_heal:GetModifierConstantHealthRegen( params )
+function modifier_murlock_primal_eject_heal:GetModifierHealthRegenPercentage( params )
 	return self.regen
 end
 
