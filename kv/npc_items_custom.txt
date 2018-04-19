@@ -1831,7 +1831,7 @@
 		"BaseClass"						"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
+		"ItemCost"						"2000"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -1893,12 +1893,12 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"100"
+				"bonus_damage"					"80"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_regen"				"1"
+				"bonus_mana_regen"				"2"
 			}
 			"05"
 			{
@@ -1908,12 +1908,12 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_multiplier"				"275"
+				"crit_multiplier"				"265"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"silence_damage_percent"		"30"
+				"silence_damage_percent"		"25"
 			}
 			"08"
 			{
@@ -1928,7 +1928,7 @@
 			"10"
 			{
 				"var_type"				     	"FIELD_FLOAT"
-				"rupture_duration"				"6"
+				"rupture_duration"				"5"
 			}
 		}
 	}
@@ -5493,7 +5493,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana_regen"  "3.5"
+				"bonus_mana_regen"  "3"
 			}
 			"07"
 			{
@@ -5513,7 +5513,7 @@
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_casttime"			"50"
+				"bonus_casttime"			"30"
 			}
 			"11"
 			{
@@ -5523,7 +5523,7 @@
 			"12"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"magical_corruption"						"-35"
+				"magical_corruption"						"-30"
 			}
 			"13"
 			{
@@ -5587,7 +5587,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"200"
+				"bonus_damage"			"180"
 			}
 			"02"
 			{
@@ -5597,12 +5597,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-21"
+				"corruption_armor"		"-20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"15.0"
+				"corruption_duration"	"12.0"
 			}
 		}
 	}
