@@ -435,7 +435,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"650"
+				"crit_bonus"				"450"
 			}
 			"02"
 			{
