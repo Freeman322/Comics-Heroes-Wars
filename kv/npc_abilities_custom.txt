@@ -11205,7 +11205,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"90 180 270 360"
+				"damage"					"90 150 210 270"
 			}
 			"02"
 			{
@@ -11305,7 +11305,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0 7.0 7.0 7.0"
+		"AbilityCooldown"				"10.0 9.0 8.0 7.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -11328,7 +11328,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_unit"		"20 40 60 80"
+				"damage_per_unit"		"15 30 50 70"
 			}
 		}
 	}
@@ -11652,7 +11652,7 @@
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastRange"				"400"
 			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-			"AbilityCooldown"				"10"
+			"AbilityCooldown"				"14"
 			"AbilityManaCost"				"120 130 140 150"
 			"AbilityDamage"					"150 175 200 225"
 
@@ -11701,8 +11701,8 @@
     	// Stats
     	//-------------------------------------------------------------------------------------------------------------
     	"AbilityCastRange"				"300"
-    	"AbilityCastPoint"				"0.0"
-    	"AbilityCooldown"				"195"
+    	"AbilityCastPoint"				"0.1"
+    	"AbilityCooldown"				"205"
     	"AbilityManaCost"				"250"
 
     	"AbilitySpecial"
@@ -11720,7 +11720,7 @@
     		"03"
     		{
     			"var_type"				"FIELD_INTEGER"
-    			"bonus_gold"			"150 170 190 210"
+    			"bonus_gold"			"120 140 160 180"
     		}
     		"04"
     		{
@@ -13986,9 +13986,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 12 8 4"
+		"AbilityCooldown"				"16 14 12 10"
 		"AbilityCastRange"				"1200"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.1"
 		"AbilityManaCost"				"100 150 200 250"
 		"precache"
 		{
@@ -14069,7 +14069,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_move_speed_percent"		"10 20 30 40"
+				"bonus_move_speed_percent"		"10 15 20 25"
 			}
 	}
 		"Modifiers"
@@ -14099,7 +14099,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	"AbilityTextureName"			"custom/oneounchman_strike"
-	"AbilityCooldown"				"25"
+	"AbilityCooldown"				"20"
 	"AbilityManaCost"				"100 150 200 250"
 	"AbilitySpecial"
 		{
@@ -14168,7 +14168,7 @@
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastRange"				"175"
-			"AbilityCastPoint"				"0.53 0.53 0.53"
+			"AbilityCastPoint"				"0.5 0.5 0.5"
 
 			// Time
 			//-------------------------------------------------------------------------------------------------------------
@@ -17359,8 +17359,8 @@
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"950"
-	"AbilityCastPoint"				"0.05"
-	"AbilityCooldown"				"30"
+	"AbilityCastPoint"				"0.1"
+	"AbilityCooldown"				"35"
 	"AbilityManaCost"				"125"
 	"precache"
 	{
@@ -17380,7 +17380,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"					"2.9"
+			"delay"					"3.0"
 		}
 		"02"
 		{
@@ -17390,7 +17390,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"mana_burned"			"25 45 65 75"
+			"mana_burned"			"20 30 40 50"
 		}
 	}
 }
@@ -31523,12 +31523,12 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10 8 6 4"
+		"AbilityCooldown"				"14 12 10 8"
 		"AbilityDuration"				"10.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"20"
+		"AbilityManaCost"				"30"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
