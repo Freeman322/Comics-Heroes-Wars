@@ -842,19 +842,8 @@
     			"archer_health"			"2000"
     		}
     	}
-    	"OnSpellStart"
-    	{
-    		"RunScript"
-    		{
-    			"ScriptFile"			"items/item_necronomicon.lua"
-    			"Function"				"Necronomicon"
-
-    			"sound_cast"			"DOTA_Item.Necronomicon.Activate"
-    			"necro_level"			"4"
-    		}
-    	}
     }
-"item_recipe_ghost_staff"
+	"item_recipe_ghost_staff"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -876,7 +865,7 @@
 			"01"						"item_bloodstone;item_aether_lens;item_pers"
 		}
 	}
-"item_ghost_staff"
+	"item_ghost_staff"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1831,7 +1820,7 @@
 		"BaseClass"						"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -1893,12 +1882,12 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"80"
+				"bonus_damage"					"100"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_regen"				"2"
+				"bonus_mana_regen"				"1"
 			}
 			"05"
 			{
@@ -1908,12 +1897,12 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_multiplier"				"265"
+				"crit_multiplier"				"275"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"silence_damage_percent"		"25"
+				"silence_damage_percent"		"30"
 			}
 			"08"
 			{
@@ -1928,7 +1917,7 @@
 			"10"
 			{
 				"var_type"				     	"FIELD_FLOAT"
-				"rupture_duration"				"5"
+				"rupture_duration"				"6"
 			}
 		}
 	}
@@ -5493,7 +5482,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana_regen"  "3"
+				"bonus_mana_regen"  "3.5"
 			}
 			"07"
 			{
@@ -5513,7 +5502,7 @@
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_casttime"			"30"
+				"bonus_casttime"			"50"
 			}
 			"11"
 			{
@@ -5523,7 +5512,7 @@
 			"12"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"magical_corruption"						"-30"
+				"magical_corruption"						"-35"
 			}
 			"13"
 			{
@@ -5587,7 +5576,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"180"
+				"bonus_damage"			"200"
 			}
 			"02"
 			{
@@ -5597,12 +5586,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-20"
+				"corruption_armor"		"-21"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"12.0"
+				"corruption_duration"	"15.0"
 			}
 		}
 	}

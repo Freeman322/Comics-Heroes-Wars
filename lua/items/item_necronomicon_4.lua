@@ -1,4 +1,9 @@
 if item_necronomicon_4 == nil then item_necronomicon_4 = class({}) end 
+LinkLuaModifier ("modifier_item_necronomicon_4", "items/item_necronomicon_4.lua", LUA_MODIFIER_MOTION_NONE)
+
+function item_necronomicon_4:GetIntrinsicModifierName()
+	return "modifier_item_necronomicon_4"
+end
 
 function item_necronomicon_4:OnSpellStart()
 	if IsServer() then 
@@ -39,13 +44,46 @@ function item_necronomicon_4:OnSpellStart()
 	    local ranged_ability_3 = ranged_summon:FindAbilityByName("black_dragon_fireball")
 
 	    -- Upgrade abilities according to the Necronomicon level
-	    melee_ability_1:SetLevel(necro_level)
-	    melee_ability_2:SetLevel(necro_level)
+	    melee_ability_1:SetLevel(1)
+	    melee_ability_2:SetLevel(1)
 	    melee_ability_3:SetLevel(1)
-	    ranged_ability_1:SetLevel(necro_level)
-	    ranged_ability_2:SetLevel(necro_level)
+	    ranged_ability_1:SetLevel(1)
+	    ranged_ability_2:SetLevel(1)
    	    ranged_ability_3:SetLevel(1)
 	end
 end
+
+
+if modifier_item_necronomicon_4 == nil then
+    modifier_item_necronomicon_4 = class ( {})
+end
+
+function modifier_item_necronomicon_4:IsHidden()
+    return true 
+end
+
+function modifier_item_necronomicon_4:IsPurgable()
+    return false
+end
+
+function modifier_item_necronomicon_4:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS
+    }
+
+    return funcs
+end
+
+function modifier_item_necronomicon_4:GetModifierBonusStats_Strength (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_strength")
+end
+
+function modifier_item_necronomicon_4:GetModifierBonusStats_Intellect (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_intellect")
+end
+
 function item_necronomicon_4:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

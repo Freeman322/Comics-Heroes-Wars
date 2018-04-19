@@ -1,4 +1,5 @@
 medivh_deafening_blast = class({})
+LinkLuaModifier( "modifier_medivh_dummy", "abilities/medivh_deafening_blast.lua", LUA_MODIFIER_MOTION_NONE )
 
 function medivh_deafening_blast:GetBehavior()
 	if IsServer() then
@@ -192,7 +193,7 @@ function medivh_deafening_blast:OnSpellStart()
 end
 
 function medivh_deafening_blast:OnProjectileHit( hTarget, vLocation )
-	if hTarget ~= nil then
+	if hTarget ~= nil and hTarget:HasModifier("modifier_medivh_dummy") == false then 
         EmitSoundOn( "DOTA_Item.SkullBasher" , self:GetCaster() )
         local iDamage = self:GetSpecialValueFor( "damage" ) + self:GetCaster():GetIntellect()
         if self:GetCaster():HasTalent("special_bonus_unique_medivh") then
@@ -217,6 +218,7 @@ function medivh_deafening_blast:OnProjectileHit( hTarget, vLocation )
             knockback_height = 0
         }
         hTarget:AddNewModifier( self:GetCaster(), self, "modifier_knockback", knockbackProperties )
+        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_medivh_dummy", {duration = 0.5} )
 	end
 
 	return false
@@ -224,3 +226,12 @@ end
 
 function medivh_deafening_blast:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 
+if modifier_medivh_dummy == nil then modifier_medivh_dummy = class({}) end 
+
+function modifier_medivh_dummy:IsHidden()
+    return true
+end
+
+function modifier_medivh_dummy:IsPurgable()
+    return false
+end

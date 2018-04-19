@@ -4,7 +4,7 @@ if dormammu_tempest_double == nil then dormammu_tempest_double = class({}) end
 
 function dormammu_tempest_double:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then
-        return 18
+        return 30
     end
 
     return self.BaseClass.GetCooldown( self, nLevel )
