@@ -1820,7 +1820,7 @@
 		"BaseClass"						"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
+		"ItemCost"						"2000"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -1851,9 +1851,9 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900"
+		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"40.0"
+		"AbilityCooldown"				"42.0"
 		"AbilitySharedCooldown"			"orchid;ds;bloodthorn"
 
 		// Item Info
@@ -1882,12 +1882,12 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"100"
+				"bonus_damage"					"80"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_regen"				"1"
+				"bonus_mana_regen"				"2"
 			}
 			"05"
 			{
@@ -1897,12 +1897,12 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_multiplier"				"275"
+				"crit_multiplier"				"260"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"silence_damage_percent"		"30"
+				"silence_damage_percent"		"20"
 			}
 			"08"
 			{
@@ -1912,12 +1912,12 @@
 			"09"
 			{
 				"var_type"				     	"FIELD_FLOAT"
-				"target_crit_multiplier"		"225"
+				"target_crit_multiplier"		"220"
 			}
 			"10"
 			{
 				"var_type"				     	"FIELD_FLOAT"
-				"rupture_duration"				"6"
+				"rupture_duration"				"3.5"
 			}
 		}
 	}
@@ -6601,7 +6601,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2775"
+		"ItemCost"						"3775"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -6668,7 +6668,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_duration"			"1.5"
+				"bash_duration"			"1"
 			}
 			"06"
 			{
@@ -6689,7 +6689,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"1100"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -6719,7 +6719,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"FightRecapLevel"				"1"
 		
-		"AbilityCooldown"				"25.0"
+		"AbilityCooldown"				"40.0"
 		"AbilityCastRange"				"600"
 		"AbilityManaCost"				"275"
 		
@@ -6744,7 +6744,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"130"
+				"bonus_damage"			"100"
 			}
 			"02"
 			{
@@ -6759,7 +6759,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_burn"				"64"
+				"mana_burn"				"40"
 			}
 			"05"
 			{
@@ -6769,7 +6769,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_pct"				"100"
+				"slow_pct"				"80"
 			}
 		}
 	}
