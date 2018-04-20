@@ -86,11 +86,11 @@ function modifier_godspeed_ember_field:DeclareFunctions()
 end
 
 function modifier_godspeed_ember_field:GetModifierMoveSpeed_Max()
-	return 99999
+	return 550
 end
 
 function modifier_godspeed_ember_field:GetModifierMoveSpeed_Limit()
-	return 99999
+	return 550
 end
 
 function modifier_godspeed_ember_field:GetModifierMoveSpeedBonus_Constant()

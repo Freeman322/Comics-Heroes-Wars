@@ -156,9 +156,8 @@ function jons_whirlpool_modifier:OnIntervalThink()
         damage_table.attacker = self:GetCaster()
         damage_table.victim = self:GetParent()
         damage_table.ability = self:GetAbility()
-        damage_table.damage_type = DAMAGE_TYPE_PURE
+        damage_table.damage_type = DAMAGE_TYPE_MAGICAL
         damage_table.damage = damage/100
-        damage_table.damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS
         ApplyDamage(damage_table)
     end
 end
