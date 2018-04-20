@@ -1,6 +1,5 @@
 batman_midas_lua = class({})
-
---------------------------------------------------------------------------------
+LinkLuaModifier( "modifier_batman_midas_lua", "abilities/batman_midas_lua.lua", LUA_MODIFIER_MOTION_NONE )
 
 function batman_midas_lua:CastFilterResultTarget( hTarget )
     if IsServer() then
@@ -22,6 +21,14 @@ function batman_midas_lua:GetCastRange( vLocation, hTarget )
     end
 
     return self.BaseClass.GetCastRange( self, vLocation, hTarget )
+end
+
+function batman_midas_lua:GetCooldown( nLevel )
+    if self:GetCaster():HasModifier("modifier_batman_midas_lua") then
+        return 25
+    end
+
+    return self.BaseClass.GetCooldown( self, nLevel )
 end
 
 function batman_midas_lua:GetAOERadius()
@@ -98,11 +105,27 @@ function batman_midas_lua:OnSpellStart()
             end
         end
     end
+
+    if self:GetCaster():HasTalent("special_bonus_unique_batman") and self:GetCaster():HasModifier("modifier_batman_midas_lua") == false then 
+        self:EndCooldown()
+        self:StartCooldown(25)
+
+        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_batman_midas_lua", nil)
+    end
 end
-
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
 function batman_midas_lua:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 
+modifier_batman_midas_lua = class({})
+
+function modifier_batman_midas_lua:IsHidden()
+    return true
+end
+
+function modifier_batman_midas_lua:IsPurgable()
+    return false
+end
+
+function modifier_batman_midas_lua:RemoveOnDeath()
+    return false
+end

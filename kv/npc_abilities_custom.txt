@@ -2218,7 +2218,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"value"					"45"
+			"value"					"25"
 		}
 	}
 }
@@ -13684,251 +13684,75 @@
 	        }
 			}
 	}
-	"onepunchmen_slowing"
-{
+	"onepunchman_ult"
+	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
+		"BaseClass"				        "ability_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"custom/onepunchman_atos"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"
+    	"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
-		"MaxLevel"                      "4"
-
-		// Stats
+		"AbilityTextureName"			"custom/onepunchman_ult"
+		"ScriptFile"                    "abilities/onepunchman_ult.lua"
+		"MaxLevel"                      "3"
+		"HasScepterUpgrade"				"1"
+		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
-		"AbilityCastRange"				"1200"
-		"AbilityCastPoint"				"0.1"
-		"AbilityManaCost"				"100 150 200 250"
+		"AbilityCastRange"				"175"
+		"AbilityCastPoint"				"0.5 0.5 0.5"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120 110 100"
+
+		"AbilityManaCost"				"250 550 870"
 		"precache"
 		{
-			"particle"  "particles/thanos/thanos_supernova_explode_a.vpcf"
-			"particle"  "particles/hero_saitama/saitama_onepunch_strike.vpcf"
-			"particle"  "models/heroes/hero_sitama/saitama_arcana/saitama_foulfell_head.vmdl"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
+			"particle"  "particles/one_punch.vpcf"
+			"model" 		"models/heroes/hero_sitama/saitama_god_helmet.vmdl"
+			"model" 		"models/heroes/hero_sitama/saitama_god_cloack.vmdl"
+			"particle"  "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf"
+			"particle"  "particles/econ/items/axe/axe_cinder/axe_cinder_ambient_glow.vpcf"
+			"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_arcana.vmdl"
+			"particle"  "particles/units/heroes/hero_chaos_knight/chaos_knight_human_eye_glow_a.vpcf"
+			"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_foulfell.vmdl"
+			"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_foulfell_offhand.vmdl"
+			"particle"  "particles/hero_saitama/saitama_weap.vpcf"
+			"model"			"models/items/antimage/leggings_of_the_awakened/leggings_of_the_awakened.vmdl"
 		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-				"01"
-				{
-					"var_type"						"FIELD_INTEGER"
-					"cripple_movespeed_slow_pct"	"-30 -40 -50 -60"
-				}
-				"02"
-				{
-					"var_type"						"FIELD_FLOAT"
-					"duration"						"4"
-				}
-		}
-
-		"OnSpellStart"
-		{
-				"FireSound"
-				{
-					"EffectName"		"DOTA_Item.RodOfAtos.Activate"
-					"Target"			"TARGET"
-				}
-
-				"ApplyModifier"
-				{
-					"Target"			"TARGET"
-					"ModifierName"		"modifier_item_rod_of_atos_datadriven_cripple"
-				}
-		}
-
-			"Modifiers"
-			{
-					"modifier_item_rod_of_atos_datadriven_cripple"
-					{
-						"Duration"			"%duration"
-						"Passive"			"0"
-						"IsHidden"			"0"
-						"IsBuff"			"0"
-						"IsDebuff"			"1"
-						"IsPurgable"		"1"
-
-						"EffectName"			"particles/items2_fx/rod_of_atos.vpcf"
-						"EffectAttachType"		"follow_origin"
-
-						"Properties"
-						{
-							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%cripple_movespeed_slow_pct"
-						}
-				}
-		}
-}
-"onepunchman_evasion"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"custom/onepunchman_stats"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_evasion"					"5 10 15 20"
+				"var_type"				"FIELD_FLOAT"
+				"damage"		    	""
 			}
 			"02"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_move_speed_percent"		"10 15 20 25"
-			}
-	}
-		"Modifiers"
-		{
-				"modifier_opm_evasions"
-				{
-					"Passive"			"1"
-					"IsHidden"			"1"
-					"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-					"Properties"
-					{
-						"MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
-						"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_move_speed_percent"
-					}
-				}
-		}
-}
-
-"onepunchman_kick"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-	"AbilityTextureName"			"custom/oneounchman_strike"
-	"AbilityCooldown"				"20"
-	"AbilityManaCost"				"100 150 200 250"
-	"AbilitySpecial"
-		{
-			"01"
-			{
-			  "var_type"				"FIELD_INTEGER"
-			  "radius"				"600 800 1000 1200"
-			}
-			"02"
-			{
-			  "var_type"				"FIELD_FLOAT"
-			  "damage"				"50 100 150 200"
+				"var_type"				"FIELD_FLOAT"
+				"duration"		        "1.5 2.5 3.5"
 			}
 			"03"
 			{
-			  "var_type"				"FIELD_FLOAT"
-			  "height"				"550"
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_scepter"	"350 450 670"
 			}
-}
-
-	"OnSpellStart"
-		{
-			"FireEffect"
-					{
-						"EffectName"	"particles\radiant_fx2\frostivus_wking_altar_smokering.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
-					"FireSound"
-					{
-						"EffectName"	"Hero_KeeperOfTheLight.BlindingLight"
-						"Target"		"CASTER"
-					}
-					"Knockback"
-					{
-						"Target"    "TARGET"
-						"Center"	"CASTER"
-						"Duration"	"0.75"
-						"Distance"	"%radius + 25"
-						"Height"	"%height"
-					}
-				"Damage"
-					{
-						"Type"          "DAMAGE_TYPE_PURE"
-						"Damage"        "%damage"
-						"Target"        "TARGET"
-					}
-			}
-	}
-"onepunchman_ult"
-	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				        "ability_lua"
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-			"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"
-	    "AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
-			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-			"FightRecapLevel"				"1"
-			"AbilityTextureName"			"custom/onepunchman_ult"
-			"ScriptFile"                    "abilities/onepunchman_ult.lua"
-			"MaxLevel"                      "3"
-			"HasScepterUpgrade"				"1"
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"175"
-			"AbilityCastPoint"				"0.5 0.5 0.5"
-
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"120 110 100"
-
-			"AbilityManaCost"				"250 550 870"
-			"precache"
+			"04"
 			{
-				"particle"  "particles/one_punch.vpcf"
-				"model" 		"models/heroes/hero_sitama/saitama_god_helmet.vmdl"
-				"model" 		"models/heroes/hero_sitama/saitama_god_cloack.vmdl"
-				"particle"  "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf"
-				"particle"  "particles/econ/items/axe/axe_cinder/axe_cinder_ambient_glow.vpcf"
-				"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_arcana.vmdl"
-				"particle"  "particles/units/heroes/hero_chaos_knight/chaos_knight_human_eye_glow_a.vpcf"
-				"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_foulfell.vmdl"
-				"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_foulfell_offhand.vmdl"
-				"particle"  "particles/hero_saitama/saitama_weap.vpcf"
-				"model"			"models/items/antimage/leggings_of_the_awakened/leggings_of_the_awakened.vmdl"
+				"var_type"				"FIELD_INTEGER"
+				"damage_scepter"	    "20 30 40"
 			}
-			"AbilitySpecial"
+			"05"
 			{
-					"01"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"damage"		    	""
-					}
-					"02"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"duration"		        "1.5 2.5 3.5"
-					}
-					"03"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"cast_range_scepter"	"350 450 670"
-					}
-					"04"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"damage_scepter"	    "20 30 40"
-					}
-					"05"
-					{
-					   	"var_type"				"FIELD_INTEGER"
-					   	"cooldown_scepter"	    "100"
-					}
+			   	"var_type"				"FIELD_INTEGER"
+			   	"cooldown_scepter"	    "100"
 			}
+		}
 	}
 	"golden_god_aoe"
 	{
@@ -33172,7 +32996,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"50"
+				"duration"				"24"
 			}
 		}
 	}
@@ -36085,5 +35909,159 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	"onepunchman_evasion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/onepunchman_stats"
+		"ScriptFile"					"abilities/onepunchman_evasion.lua"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion"					"5 10 15 20"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_move_speed_percent"		"10 15 20 25"
+			}
+		}
+	}
+	//=================================================================================================================
+	// onepunchmen_death_from_above NEW ABILITY
+	//=================================================================================================================
+	"onepunchmen_death_from_above"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/onepunchmen_death_from_above"
+		"ScriptFile"					"abilities/onepunchmen_death_from_above.lua"		
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 100 110 120"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"75 150 225 300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_duration"			"0.4"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_height"			"250"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.8 1.4 2.0 2.6"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	//=================================================================================================================
+	// Pangolier: Swashbuckle
+	//=================================================================================================================
+	"onepunchman_light_strikes_array"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/onepunchman_light_strikes_array"
+		"ScriptFile"					"abilities/onepunchman_light_strikes_array.lua"		
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"240"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 80 90 100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"38 64 96 128"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_interval"		"0.1 0.1 0.1 0.1"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"125"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"125"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_"				"1.8 2.2 2.6 3.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 }
