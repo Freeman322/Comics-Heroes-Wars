@@ -1820,7 +1820,7 @@
 		"BaseClass"						"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"
+		"ItemCost"						"1800"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -1853,7 +1853,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"42.0"
+		"AbilityCooldown"				"38.0"
 		"AbilitySharedCooldown"			"orchid;ds;bloodthorn"
 
 		// Item Info
@@ -1877,7 +1877,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"30"
+				"bonus_attack_speed"			"35"
 			}
 			"03"
 			{
@@ -1887,7 +1887,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_regen"				"2"
+				"bonus_mana_regen"				"6"
 			}
 			"05"
 			{
@@ -1902,7 +1902,7 @@
 			"07"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"silence_damage_percent"		"20"
+				"silence_damage_percent"		"25"
 			}
 			"08"
 			{
@@ -2957,7 +2957,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"450"
+		"ItemCost"						"250"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -3003,7 +3003,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"30"
+				"bonus_all_stats"		"35"
 			}
 			"02"
 			{
@@ -6689,7 +6689,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1100"	
+		"ItemCost"						"950"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -6749,7 +6749,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"10"
+				"bonus_armor"			"12"
 			}
 			"03"
 			{
@@ -6759,7 +6759,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_burn"				"40"
+				"mana_burn"				"60"
 			}
 			"05"
 			{
