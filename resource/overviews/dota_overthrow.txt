@@ -1,0 +1,8 @@
+dota_overthrow
+{
+	material materials/overviews/dota_overthrow.vmat
+	pos_x -5632
+	pos_y 5632
+	scale 11.000
+}
+

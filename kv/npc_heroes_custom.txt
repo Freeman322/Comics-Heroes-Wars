@@ -3214,7 +3214,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"4"
 		"Ability1"					"onepunchmen_death_from_above"				                                 // Ability 1
-		"Ability2"					"onepunchman_evasion"				                            	// Ability 2
+		"Ability2"					"onepunchman_stats"				                            	// Ability 2
 		"Ability3"					"onepunchman_light_strikes_array"				                            	// Ability 3
 		"Ability4"					"generic_hidden"				                            	// Ability 4
 		"Ability6"					"onepunchman_ult"			    	                            // Ability 4
@@ -3227,7 +3227,7 @@
 		"Ability14"					"special_bonus_cooldown_reduction_25"
 		"Ability15"					"special_bonus_attack_damage_90"
 	    "Ability16"					"special_bonus_agility_25"
-	    "Ability17"					"special_bonus_all_stats_20"
+	    "Ability17"					"special_bonus_unique_saitama_2"
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"22"									// Damage range min.

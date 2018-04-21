@@ -1,10 +1,9 @@
 onepunchman_ult = class({})
+LinkLuaModifier( "modifier_onepunchman_ult", "abilities/onepunchman_ult.lua", LUA_MODIFIER_MOTION_NONE )
 
---------------------------------------------------------------------------------
 function onepunchman_ult:GetCooldown( nLevel )
     return self.BaseClass.GetCooldown( self, nLevel )
 end
---------------------------------------------------------------------------------
 
 function onepunchman_ult:GetAbilityTextureName()
 	if self:GetCaster():HasModifier("modifier_saitama_arcana") then
@@ -14,87 +13,80 @@ function onepunchman_ult:GetAbilityTextureName()
 end
 
 function onepunchman_ult:OnSpellStart()
-    local hTarget = self:GetCursorTarget()
-    local target = hTarget
-    if hTarget ~= nil then
-        if ( not hTarget:TriggerSpellAbsorb( self ) ) then
-              local caster = self:GetCaster()
-              local ability = self
-
-              if target:HasItemInInventory("item_aegis") then
-                  for i=0, 5, 1 do
-                      local current_item = target:GetItemInSlot(i)
-                      if current_item ~= nil then
-                          if current_item:GetName() == "item_aegis" then
-                              current_item:RemoveSelf()
-                          end
-                      end
-                  end
-              end
-              ----target:Purge(true, true, false, false, true)
-              if target:HasAbility("skeleton_king_reincarnation_datadriven") then
-                  local abil = target:FindAbilityByName("skeleton_king_reincarnation_datadriven")
-                  abil:StartCooldown(60)
-              end
-              
-              target:Kill(ability, caster)
-              if target:IsAlive() then
-                  target:ForceKill(false)
-              end
-          end
-          if self:GetCaster():HasModifier("modifier_saitama_arcana") then
-            local nFXIndex = ParticleManager:CreateParticle( "particles/thanos/thanos_supernova_explode_a.vpcf", PATTACH_CUSTOMORIGIN, nil );
-            ParticleManager:SetParticleControl( nFXIndex, 0, target:GetAbsOrigin());
-            ParticleManager:SetParticleControl( nFXIndex, 1, target:GetAbsOrigin());
-            ParticleManager:SetParticleControl( nFXIndex, 3, target:GetAbsOrigin());
-            ParticleManager:SetParticleControl( nFXIndex, 5, Vector(500, 500, 0));
-            ParticleManager:ReleaseParticleIndex( nFXIndex );
-
-            local nFXIndex = ParticleManager:CreateParticle( "particles/hero_saitama/saitama_onepunch_strike.vpcf", PATTACH_WORLDORIGIN, nil )
-        		ParticleManager:SetParticleControl( nFXIndex, 0, target:GetOrigin() )
-        		ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 200, 1, 1 ) )
-        		ParticleManager:ReleaseParticleIndex( nFXIndex )
-            local knockbackProperties =
-            {
-                center_x = target:GetAbsOrigin().x,
-                center_y = target:GetAbsOrigin().y,
-                center_z = target:GetAbsOrigin().z,
-                duration = 1,
-                knockback_duration = 1,
-                knockback_distance = 680,
-                knockback_height = 4
-            }
-
-            target:AddNewModifier( self:GetCaster(), self, "modifier_knockback", knockbackProperties )
-        	else
-            local explosion5 = ParticleManager:CreateParticle("particles/one_punch.vpcf", PATTACH_WORLDORIGIN, target)
-            ParticleManager:SetParticleControl(explosion5, 0, target:GetAbsOrigin() + Vector(0, 0, 1))
-            ParticleManager:SetParticleControl(explosion5, 1, Vector(1, 1, 1))
-            ParticleManager:SetParticleControl(explosion5, 2, Vector(255, 255, 255))
-            ParticleManager:SetParticleControl(explosion5, 3, target:GetAbsOrigin())
-            ParticleManager:SetParticleControl(explosion5, 5, Vector(200, 200, 0))
-
-            local explosion13 = ParticleManager:CreateParticle("particles/hero_zoom/time_crystal_activate.vpcf", PATTACH_WORLDORIGIN, target)
-            ParticleManager:SetParticleControl(explosion13 , 0, target:GetAbsOrigin())
-          end
-          EmitSoundOn( "Hero_EarthShaker.EchoSlam", hTarget )
-          EmitSoundOn( "Hero_EarthShaker.EchoSlamEcho", self:GetCaster() )
-          EmitSoundOn( "Hero_EarthShaker.EchoSlamSmall", hTarget )
-          EmitSoundOn( "PudgeWarsClassic.echo_slam", hTarget )
-          if self:GetCaster():HasScepter() then
-              local damage = self:GetSpecialValueFor("damage_scepter")*0.01
-              local Scepters = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), nil, 680, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-              for i = 1, #Scepters do
-                  local target = Scepters[i]
-                  EmitSoundOn( "Hero_Magnataur.ReversePolarity.Stun", target )
-                  ApplyDamage({victim = target, attacker = self:GetCaster(), damage = hTarget:GetMaxHealth()*damage, damage_type = DAMAGE_TYPE_PURE})
-              end
-          end
-      end
+    if IsServer() then 
+      self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_onepunchman_ult", nil  )
+    end
 end
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+if modifier_onepunchman_ult == nil then modifier_onepunchman_ult = class({}) end
 
-function onepunchman_ult:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function modifier_onepunchman_ult:IsPurgable()
+  return false
+end
+
+function modifier_onepunchman_ult:GetEffectName()
+  return "particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
+end
+
+function modifier_onepunchman_ult:GetEffectAttachType()
+  return PATTACH_ABSORIGIN_FOLLOW
+end
+
+function modifier_onepunchman_ult:OnCreated( kv )
+  if IsServer() then
+    local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/alchemist/alchemist_stove_back/alchemist_stove_back_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+    ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_attack2" , self:GetParent():GetOrigin(), true )
+    ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_attack2" , self:GetParent():GetOrigin(), true )
+    self:AddParticle( nFXIndex, false, false, -1, false, true )
+
+     local nFXIndex2 = ParticleManager:CreateParticle( "particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+     self:AddParticle( nFXIndex2, false, false, -1, false, true )
+  end
+end
+
+function modifier_onepunchman_ult:DeclareFunctions()
+  local funcs = {
+      MODIFIER_EVENT_ON_ATTACK_LANDED
+  }
+
+  return funcs
+end
+
+function modifier_onepunchman_ult:OnAttackLanded (params)
+    if IsServer () then
+        if params.attacker == self:GetParent () then
+            if (params.target:IsHero() or params.target:IsCreep()) and params.target:IsAncient() == false then 
+              local hTarget = params.target
+
+              EmitSoundOn( "Hero_EarthShaker.EchoSlam", hTarget )
+              EmitSoundOn( "Hero_EarthShaker.EchoSlamEcho", hTarget )
+              EmitSoundOn( "Hero_EarthShaker.EchoSlamSmall", hTarget )
+              EmitSoundOn( "PudgeWarsClassic.echo_slam", hTarget )
+
+              local nFXIndex = ParticleManager:CreateParticle( "particles/hero_iron_fist/ironfist_iron_strike_ground.vpcf", PATTACH_CUSTOMORIGIN, nil );
+              ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetAbsOrigin())
+              ParticleManager:SetParticleControl( nFXIndex, 1, Vector(1, 0, 0) )
+              ParticleManager:SetParticleControl( nFXIndex, 2, Vector(0, 255, 0) )
+              ParticleManager:SetParticleControl( nFXIndex, 3, Vector(0, 0.4, 0) )
+              ParticleManager:SetParticleControl( nFXIndex, 11, hTarget:GetAbsOrigin())
+              ParticleManager:SetParticleControl( nFXIndex, 12, hTarget:GetAbsOrigin())
+              ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+              local damage = {
+                  victim = hTarget,
+                  attacker = self:GetParent(),
+                  damage = hTarget:GetMaxHealth() * 100,
+                  damage_type = DAMAGE_TYPE_PURE,
+                  ability = self:GetAbility(),
+                  damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL
+              }
+
+              ApplyDamage( damage )
+
+              self:Destroy()
+            end
+        end
+    end
+    return 0
+end
 

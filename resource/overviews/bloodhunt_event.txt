@@ -1,0 +1,8 @@
+bloodhunt_event
+{
+	material materials/overviews/bloodhunt_event.vmat
+	pos_x -5120
+	pos_y 5376
+	scale 10.000
+}
+

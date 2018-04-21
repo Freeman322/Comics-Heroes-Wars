@@ -1,0 +1,8 @@
+dota_test
+{
+	material materials/overviews/dota_test.vmat
+	pos_x -10062
+	pos_y 9620
+	scale 19.255
+}
+
