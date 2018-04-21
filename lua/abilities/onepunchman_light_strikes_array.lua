@@ -31,10 +31,10 @@ function modifier_onepunchman_light_strikes_array_thinker:OnCreated(event)
 	    EmitSoundOn("Hero_Riki.TricksOfTheTrade.Cast", hCaster)
 
 	  	local direction = (self:GetCaster():GetAbsOrigin() - self:GetCaster():GetCursorPosition()):Normalized()
-	  	local particle = ParticleManager:CreateParticle("particles/hero_saitama/onepunchman_light_strikes_array.vpcf", PATTACH_CUSTOMORIGIN, target)
+	  	local particle = ParticleManager:CreateParticle("particles/econ/items/monkey_king/arcana/fire/monkey_king_spring_arcana_fire.vpcf", PATTACH_CUSTOMORIGIN, target)
 	  	ParticleManager:SetParticleControl(particle, 0, hCaster:GetCursorPosition())
-		ParticleManager:SetParticleControlOrientation(particle, 0, direction, Vector(0,1,0), Vector(1,0,0))
-	  	ParticleManager:SetParticleControl(particle, 1, Vector(self:GetAbility():GetSpecialValueFor("start_radius"), self:GetAbility():GetSpecialValueFor("start_radius"), 1))
+	  	ParticleManager:SetParticleControl(particle, 1, Vector(self:GetAbility():GetSpecialValueFor("range"), self:GetAbility():GetSpecialValueFor("range"), 1))
+	  	ParticleManager:SetParticleControl(particle, 2, Vector(self:GetAbility():GetSpecialValueFor("range"), self:GetAbility():GetSpecialValueFor("range"), 1))
 	  	ParticleManager:SetParticleControl(particle, 3, hCaster:GetCursorPosition())
 	  	self:AddParticle(particle, false, false, -1, false, false)
 
@@ -53,7 +53,7 @@ function modifier_onepunchman_light_strikes_array_thinker:OnIntervalThink()
     	local unit_table = FindUnitsInRadius(self:GetParent():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 	    if #unit_table > 0 then      
 		    for _, unit in pairs(unit_table) do
-		    	if self:GetCaster():HasTalent("special_bonus_unique_saitama_2") and self.strikes == 6 then 
+		    	if self:GetCaster():HasTalent("special_bonus_unique_saitama_2") and self.strikes == 2 then 
 		    		self:GetCaster():PerformAttack(unit, true, true, true, true, false, false, true)
 		    	end
 
@@ -77,7 +77,7 @@ function modifier_onepunchman_light_strikes_array_thinker:OnIntervalThink()
 	    end
 
 	    self.strikes = self.strikes + 1
-	    if self.strikes == 7 then 
+	    if self.strikes == 3 then 
 	    	self.strikes = 0 
 	    end
    end

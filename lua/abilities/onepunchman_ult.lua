@@ -78,7 +78,7 @@ function modifier_onepunchman_ult:OnAttackLanded (params)
                   damage = hTarget:GetMaxHealth() * 100,
                   damage_type = DAMAGE_TYPE_PURE,
                   ability = self:GetAbility(),
-                  damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL
+                  damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
               }
 
               ApplyDamage( damage )

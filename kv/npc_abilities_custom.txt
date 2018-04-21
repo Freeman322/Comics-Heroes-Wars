@@ -35909,7 +35909,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_interval"		"0.1 0.1 0.1 0.1"
+				"attack_interval"		"0.5 0.5 0.5 0.5"
 			}
 			"04"
 			{
@@ -35977,6 +35977,8 @@
 			"particle"  	"particles/hero_iron_fist/ironfist_iron_strike_ground.vpcf"
 			"particle"  	"particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
 			"particle"  	"particles/econ/items/alchemist/alchemist_stove_back/alchemist_stove_back_ambient.vpcf"
+			"model"			"models/items/antimage/mage_eraser_armor/mage_eraser_armor.vmdl"
+			"particle"  "particles/econ/items/monkey_king/arcana/fire/monkey_king_spring_arcana_fire.vpcf"
 		}
 		"AbilitySpecial"
 		{
