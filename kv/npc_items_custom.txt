@@ -1501,7 +1501,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"30"
+				"bonus_intellect"		"35"
 			}
 			"02"
 			{
@@ -1511,7 +1511,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"40"
+				"bonus_damage"			"70"
 			}
 			"04"
 			{
@@ -1531,7 +1531,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"8"
+				"bonus_health_regen"	"15"
 			}
 			"08"
 			{
@@ -4056,7 +4056,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3000"
+		"ItemCost"						"6000"
 		"ItemShopTags"					""
 	
 		// Recipe
