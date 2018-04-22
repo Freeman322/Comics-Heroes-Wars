@@ -61,7 +61,7 @@ end
 
 function modifier_franlklin_phase_shift:DeclareFunctions()
 	local funcs = {
-    MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+    	MODIFIER_PROPERTY_MOVESPEED_LIMIT,
 	}
 
 	return funcs

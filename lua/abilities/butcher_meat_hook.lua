@@ -1,35 +1,15 @@
-if butcher_meat_hook == nil then butcher_meat_hook = class({}) end
-LinkLuaModifier("modifier_butcher_meat_hook", "abilities/butcher_meat_hook.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
---------------------------------------------------------------------------------
+butcher_meat_hook = class({})
+LinkLuaModifier( "modifier_butcher_meat_hook", "abilities/butcher_meat_hook.lua", LUA_MODIFIER_MOTION_HORIZONTAL )
 
 function butcher_meat_hook:OnAbilityPhaseStart()
 	self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
 	return true
 end
 
-function butcher_meat_hook:IsStealable()
-	return false
-end
-
 function butcher_meat_hook:OnAbilityPhaseInterrupted()
 	self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
 end
 
-function butcher_meat_hook:GetCastRange (vLocation, hTarget)
-    if self:GetCaster ():HasScepter () then
-        return 2100
-    end
-
-    return self.BaseClass.GetCastRange (self, vLocation, hTarget)
-end
-
-function butcher_meat_hook:GetCooldown (nLevel)
-    if self:GetCaster ():HasScepter () then
-        return 8
-    end
-
-    return self.BaseClass.GetCooldown (self, nLevel)
-end
 --------------------------------------------------------------------------------
 
 function butcher_meat_hook:OnSpellStart()
@@ -38,17 +18,15 @@ function butcher_meat_hook:OnSpellStart()
 		self.hVictim:InterruptMotionControllers( true )
 	end
 
-	self.hook_damage = self:GetAbilityDamage()
-	self.hook_speed = 1600
-	self.hook_width = 100
-	self.hook_distance = self:GetSpecialValueFor( "hook_distance" )
-  if self:GetCaster():HasScepter() then
-      self.hook_distance = self:GetSpecialValueFor( "cast_range_scepter" )
-  end
+	self.hook_damage = self:GetSpecialValueFor( "damage" )  
+	self.hook_speed = self:GetSpecialValueFor( "hook_speed" )
+	self.hook_width = self:GetSpecialValueFor( "hook_width" )
+	self.hook_distance = self:GetCastRange(self:GetCursorPosition(), nil)
+	print(self.hook_distance)
 
-	self.vision_radius = self:GetSpecialValueFor( "vision_radius" )
-	self.vision_duration = self:GetSpecialValueFor( "vision_duration" )
-
+	self.vision_radius = self:GetSpecialValueFor( "vision_radius" )  
+	self.vision_duration = self:GetSpecialValueFor( "vision_duration" )  
+	
 	if self:GetCaster() and self:GetCaster():IsHero() then
 		local hHook = self:GetCaster():GetTogglableWearable( DOTA_LOADOUT_TYPE_WEAPON )
 		if hHook ~= nil then
@@ -69,7 +47,7 @@ function butcher_meat_hook:OnSpellStart()
 	local vHookTarget = self.vTargetPosition + self.vHookOffset
 	local vKillswitch = Vector( ( ( self.hook_distance / self.hook_speed ) * 2 ), 0, 0 )
 
-	self.nChainParticleFXIndex = ParticleManager:CreateParticle( "particles/econ/items/pudge/pudge_ti6_immortal/pudge_ti6_witness_meathook.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
+	self.nChainParticleFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_meathook.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
 	ParticleManager:SetParticleAlwaysSimulate( self.nChainParticleFXIndex )
 	ParticleManager:SetParticleControlEnt( self.nChainParticleFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_weapon_chain_rt", self:GetCaster():GetOrigin() + self.vHookOffset, true )
 	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 1, vHookTarget )
@@ -92,7 +70,6 @@ function butcher_meat_hook:OnSpellStart()
 		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_BOTH,
 		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
 		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS + DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
-		iVisionRadius = 100,
 	}
 
 	ProjectileManager:CreateLinearProjectile( info )
@@ -100,38 +77,44 @@ function butcher_meat_hook:OnSpellStart()
 	self.bRetracting = false
 	self.hVictim = nil
 	self.bDiedInHook = false
+
+	if self:GetCaster():HasTalent("special_bonus_unique_pudge_2") then 
+		self:EndCooldown()
+		self:StartCooldown(4)
+	end
+	if self:GetCaster():HasTalent("special_bonus_unique_pudge_1") then 
+		self.hook_damage = self.hook_damage + self:GetCaster():FindTalentValue("special_bonus_unique_pudge_1")
+	end
 end
 
 --------------------------------------------------------------------------------
 
 function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
+	if hTarget == self:GetCaster() then
+		return false
+	end
 	if self.bRetracting == false then
 		if hTarget ~= nil and ( not ( hTarget:IsCreep() or hTarget:IsConsideredHero() ) ) then
-			Msg( "Target was invalid")
 			return false
 		end
 
 		local bTargetPulled = false
 		if hTarget ~= nil then
-			if hTarget == self:GetCaster() then
+			if hTarget:IsInvulnerable() or hTarget:IsOutOfGame() or hTarget:IsCommandRestricted() then 
 				return false
 			end
-			if hTarget:IsCommandRestricted() then
-				return false
-			end
+
 			EmitSoundOn( "Hero_Pudge.AttackHookImpact", hTarget )
 
 			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_butcher_meat_hook", nil )
-			if self:GetCaster():HasScepter() then
-                self.hook_damage = self:GetAbilityDamage() + ((self:GetCaster():GetStrength() + self:GetCaster():GetIntellect() + self:GetCaster():GetAgility())*(self:GetSpecialValueFor("damage_atributes_scepter")/100))
-            end
+			
 			if hTarget:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
 				local damage = {
 						victim = hTarget,
 						attacker = self:GetCaster(),
 						damage = self.hook_damage,
-						damage_type = DAMAGE_TYPE_PHYSICAL,
-						ability = self
+						damage_type = DAMAGE_TYPE_PURE,		
+						ability = this
 					}
 
 				ApplyDamage( damage )
@@ -143,13 +126,13 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 				if not hTarget:IsMagicImmune() then
 					hTarget:Interrupt()
 				end
-
+		
 				local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf", PATTACH_CUSTOMORIGIN, hTarget )
 				ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true )
 				ParticleManager:ReleaseParticleIndex( nFXIndex )
 			end
 
-
+			
 
 			AddFOWViewer( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), self.vision_radius, self.vision_duration, false )
 			self.hVictim = hTarget
@@ -170,7 +153,36 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 		local flDistance = vVelocity:Length2D() - flPad
 		vVelocity = vVelocity:Normalized() * self.hook_speed
 
-		local info = {
+		if hTarget then 
+			local info = 
+			{
+				Target = self:GetCaster(),
+				Source = hTarget,
+				Ability = self,	
+				iMoveSpeed = vVelocity,
+				vSourceLoc= hTarget:GetAbsOrigin(),                -- Optional (HOW)
+				bDrawsOnMinimap = false,                          -- Optional
+				bDodgeable = false,                                -- Optional
+				bIsAttack = false,                                -- Optional
+				bVisibleToEnemies = false,                         -- Optional
+				bReplaceExisting = false,                         -- Optional
+				bProvidesVision = true,                           -- Optional
+				iVisionRadius = 400,                              -- Optional
+				iVisionTeamNumber = self:GetCaster():GetTeamNumber()        -- Optional
+			}
+			ProjectileManager:CreateTrackingProjectile(info)
+		else
+			local info = {
+				Ability = self,
+				vSpawnOrigin = vHookPos,
+				vVelocity = vVelocity,
+				fDistance = flDistance,
+				Source = self:GetCaster(),
+			}
+
+			ProjectileManager:CreateLinearProjectile( info )
+		end
+		--[[local info = {
 			Ability = self,
 			vSpawnOrigin = vHookPos,
 			vVelocity = vVelocity,
@@ -178,7 +190,8 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 			Source = self:GetCaster(),
 		}
 
-		ProjectileManager:CreateLinearProjectile( info )
+		ProjectileManager:CreateLinearProjectile( info )]]
+
 		self.vProjectileLocation = vHookPos
 
 		if hTarget ~= nil and ( not hTarget:IsInvisible() ) and bTargetPulled then
@@ -210,7 +223,7 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 			self.hVictim:InterruptMotionControllers( true )
 			self.hVictim:RemoveModifierByName( "modifier_butcher_meat_hook" )
 
-			local vVictimPosCheck = self.hVictim:GetOrigin() - vFinalHookPos
+			local vVictimPosCheck = self.hVictim:GetOrigin() - vFinalHookPos 
 			local flPad = self:GetCaster():GetPaddedCollisionRadius() + self.hVictim:GetPaddedCollisionRadius()
 			if vVictimPosCheck:Length2D() > flPad then
 				FindClearSpaceForUnit( self.hVictim, self.vStartPosition, false )
@@ -229,10 +242,6 @@ end
 
 function butcher_meat_hook:OnProjectileThink( vLocation )
 	self.vProjectileLocation = vLocation
-  if IsServer() then
-    AddFOWViewer(2, vLocation, 50, 1, true)
-    AddFOWViewer(3, vLocation, 50, 1, true)
-  end
 end
 
 --------------------------------------------------------------------------------
@@ -265,9 +274,10 @@ end
 
 function modifier_butcher_meat_hook:OnCreated( kv )
 	if IsServer() then
-		if self:ApplyHorizontalMotionController() == false then
-			self:Destroy()
-		end
+        self.traveled_distance = 0
+
+		self:StartIntervalThink(0.03)
+		self.speed = self:GetAbility():GetSpecialValueFor("hook_speed")
 	end
 end
 
@@ -290,46 +300,30 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_butcher_meat_hook:CheckState()
-	if IsServer() then
-		if self:GetCaster() ~= nil and self:GetParent() ~= nil then
-			if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() and ( not self:GetParent():IsMagicImmune() ) then
-				local state = {
-				[MODIFIER_STATE_STUNNED] = true,
-				}
-
-				return state
-			end
-		end
-	end
-
-	local state = {}
+	local state = {
+		[MODIFIER_STATE_STUNNED] = true,
+		[MODIFIER_STATE_COMMAND_RESTRICTED] = true
+	}
 
 	return state
 end
 
-function modifier_butcher_meat_hook:UpdateHorizontalMotion( me, dt )
+
+function modifier_butcher_meat_hook:OnIntervalThink()
 	if IsServer() then
-		if self:GetAbility().hVictim ~= nil then
-			self:GetAbility().hVictim:SetOrigin( self:GetAbility().vProjectileLocation )
-			local vToCaster = self:GetAbility().vStartPosition - self:GetCaster():GetOrigin()
-			local flDist = vToCaster:Length2D()
-			if self:GetAbility().bChainAttached == false and flDist > 128.0 then
-				self:GetAbility().bChainAttached = true
-				ParticleManager:SetParticleControlEnt( self:GetAbility().nChainParticleFXIndex, 0, self:GetCaster(), PATTACH_CUSTOMORIGIN, "attach_hitloc", self:GetCaster():GetOrigin(), true )
-				ParticleManager:SetParticleControl( self:GetAbility().nChainParticleFXIndex, 0, self:GetAbility().vStartPosition + self:GetAbility().vHookOffset )
-			end
-		end
+        local target_point = self:GetCaster():GetAbsOrigin()
+        local caster_location = self:GetParent():GetAbsOrigin()
+        local distance = (target_point - caster_location):Length2D()
+        local direction = (target_point - caster_location):Normalized()
+        local duration = distance/self.speed
+
+        self.curr = self.speed * 1/30 
+        self.time_walk_direction = direction
+        if distance > 128 then
+      		self:GetParent():SetAbsOrigin(self:GetParent():GetAbsOrigin() + direction * self.curr)
+      		self.traveled_distance = self.traveled_distance + self.curr
+    	else
+    		self:Destroy()
+    	end
 	end
 end
-
-function modifier_butcher_meat_hook:OnHorizontalMotionInterrupted()
-	if IsServer() then
-		if self:GetAbility().hVictim ~= nil then
-			ParticleManager:SetParticleControlEnt( self:GetAbility().nChainParticleFXIndex, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_weapon_chain_rt", self:GetCaster():GetAbsOrigin() + self:GetAbility().vHookOffset, true )
-			self:Destroy()
-		end
-	end
-end
-
-function butcher_meat_hook:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-

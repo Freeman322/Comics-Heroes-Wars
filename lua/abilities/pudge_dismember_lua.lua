@@ -102,15 +102,18 @@ end
 function modifier_pudge_dismember_lua:OnIntervalThink()
 	if IsServer() then
 		local flDamage = self.damage
+		local dmgType = DAMAGE_TYPE_MAGICAL
 		if self:GetCaster():HasScepter() then
 			self:GetCaster():Heal( flDamage, self:GetAbility() )
 		end
-
+		if self:GetCaster():HasTalent("special_bonus_unique_pudge_3") then 
+			dmgType = DAMAGE_TYPE_PURE
+		end
 		local damage = {
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
 			damage = flDamage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = dmgType,
 			ability = self:GetAbility()
 		}
 

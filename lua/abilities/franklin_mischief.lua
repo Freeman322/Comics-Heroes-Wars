@@ -41,7 +41,8 @@ function franklin_mischief:OnSpellStart()
 
 	EmitSoundOn( "Hero_ShadowShaman.Hex.Target", hCaster )
 	EmitSoundOn( "Hero_ShadowShaman.SheepHex.Target", hTarget )
-  hTarget:AddNewModifier(hCaster, self, "modifier_franklin_mischief", {duration = self:GetSpecialValueFor("duration")})
+  	
+  	hTarget:AddNewModifier(hCaster, self, "modifier_franklin_mischief", {duration = self:GetSpecialValueFor("duration")})
 end
 
 if modifier_franklin_mischief == nil then modifier_franklin_mischief = class({}) end
