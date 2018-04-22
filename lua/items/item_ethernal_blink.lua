@@ -25,7 +25,7 @@ function item_ethernal_blink:OnOwnerDied(keys)
     local killedUnit = self:GetCaster()
     local itemName = self:GetName()
     if killedUnit:IsHero() or killedUnit:HasInventory() then
-        if killedUnit ~= nil and killedUnit:GetUnitName() ~= "npc_dota_hero_pudge" then
+        if killedUnit ~= nil then---and killedUnit:GetUnitName() ~= "npc_dota_hero_pudge" then
             local newItem = CreateItem(itemName, nil, nil)
             CreateItemOnPositionSync(killedUnit:GetOrigin(), newItem)
             self:RemoveSelf()

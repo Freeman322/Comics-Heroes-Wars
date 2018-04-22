@@ -1,5 +1,5 @@
 butcher_meat_hook = class({})
-LinkLuaModifier( "modifier_butcher_meat_hook", "abilities/butcher_meat_hook.lua", LUA_MODIFIER_MOTION_HORIZONTAL )
+LinkLuaModifier( "modifier_butcher_meat_hook", "abilities/butcher_meat_hook.lua", LUA_MODIFIER_MOTION_NONE )
 
 function butcher_meat_hook:OnAbilityPhaseStart()
 	self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
@@ -14,15 +14,10 @@ end
 
 function butcher_meat_hook:OnSpellStart()
 	self.bChainAttached = false
-	if self.hVictim ~= nil then
-		self.hVictim:InterruptMotionControllers( true )
-	end
-
 	self.hook_damage = self:GetSpecialValueFor( "damage" )  
 	self.hook_speed = self:GetSpecialValueFor( "hook_speed" )
 	self.hook_width = self:GetSpecialValueFor( "hook_width" )
-	self.hook_distance = self:GetCastRange(self:GetCursorPosition(), nil)
-	print(self.hook_distance)
+	self.hook_distance = self:GetSpecialValueFor( "hook_distance" )
 
 	self.vision_radius = self:GetSpecialValueFor( "vision_radius" )  
 	self.vision_duration = self:GetSpecialValueFor( "vision_duration" )  
@@ -105,9 +100,8 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 			end
 
 			EmitSoundOn( "Hero_Pudge.AttackHookImpact", hTarget )
-
 			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_butcher_meat_hook", nil )
-			
+
 			if hTarget:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
 				local damage = {
 						victim = hTarget,
@@ -121,6 +115,7 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 
 				if not hTarget:IsAlive() then
 					self.bDiedInHook = true
+					ParticleManager:DestroyParticle(self.nChainParticleFXIndex, true)
 				end
 
 				if not hTarget:IsMagicImmune() then
@@ -220,7 +215,6 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 
 		if self.hVictim ~= nil then
 			local vFinalHookPos = vLocation
-			self.hVictim:InterruptMotionControllers( true )
 			self.hVictim:RemoveModifierByName( "modifier_butcher_meat_hook" )
 
 			local vVictimPosCheck = self.hVictim:GetOrigin() - vFinalHookPos 
@@ -278,6 +272,10 @@ function modifier_butcher_meat_hook:OnCreated( kv )
 
 		self:StartIntervalThink(0.03)
 		self.speed = self:GetAbility():GetSpecialValueFor("hook_speed")
+
+		if not self:GetParent():IsAlive() then
+			self:Destroy()
+		end
 	end
 end
 
@@ -323,6 +321,9 @@ function modifier_butcher_meat_hook:OnIntervalThink()
       		self:GetParent():SetAbsOrigin(self:GetParent():GetAbsOrigin() + direction * self.curr)
       		self.traveled_distance = self.traveled_distance + self.curr
     	else
+      		if self:GetAbility().nChainParticleFXIndex ~= nil then
+      			 ParticleManager:DestroyParticle(self:GetAbility().nChainParticleFXIndex, true)
+      		end
     		self:Destroy()
     	end
 	end
