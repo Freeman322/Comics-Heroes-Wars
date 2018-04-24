@@ -1,174 +1,118 @@
 if dimm_field == nil then dimm_field = class({}) end
 
 LinkLuaModifier( "modifier_dimm_field", "abilities/dimm_field.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_dimm_field_thinker", "abilities/dimm_field.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_dimm_field_debuff", "abilities/dimm_field.lua", LUA_MODIFIER_MOTION_NONE )
 
-LinkLuaModifier( "modifier_dimm_field_caster", "abilities/dimm_field.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_dimm_field_target", "abilities/dimm_field.lua", LUA_MODIFIER_MOTION_NONE )
-
---------------------------------------------------------------------------------
-
-function dimm_field:CastFilterResultTarget( hTarget )
-	if IsServer() then
-		local nResult = UnitFilter( hTarget, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), self:GetCaster():GetTeamNumber() )
-		return nResult
-	end
-
-	return UF_SUCCESS
+function dimm_field:GetIntrinsicModifierName()
+  return "modifier_dimm_field"
 end
 
-function dimm_field:GetCastRange( vLocation, hTarget )
-	return self.BaseClass.GetCastRange( self, vLocation, hTarget )
+function dimm_field:OnProjectileHit( hTarget, vLocation )
+  if IsServer() then 
+    hTarget:AddNewModifier(self:GetCaster(), self, "modifier_dimm_field_debuff", {duration = self:GetSpecialValueFor("duration")})
+    EmitSoundOn("Hero_Lich.ChainFrostImpact.Hero", hTarget)
+  end
+  return true
 end
 
-function dimm_field:OnSpellStart()
-	self.hTarget = self:GetCursorTarget()
-	if self.hTarget ~= nil then
-		 CreateModifierThinker (self:GetCaster(), self, "modifier_dimm_field_thinker", {duration = self:GetSpecialValueFor("duration")}, self.hTarget:GetAbsOrigin(), self:GetCaster():GetTeamNumber(), false)
-	end
-  self.hTarget:AddNewModifier(self:GetCaster(), self, "modifier_dimm_field_target", {duration = self:GetSpecialValueFor("duration")})
-  self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_dimm_field_caster", {duration = self:GetSpecialValueFor("duration")})
+
+modifier_dimm_field = class({})
+
+function modifier_dimm_field:IsHidden()
+  return true
 end
 
-function dimm_field:GetFieldTarget()
-	return self.hTarget
+function modifier_dimm_field:IsPurgable()
+  return false
 end
 
-function dimm_field:GetFieldCaster()
-	return self:GetCaster()
+function modifier_dimm_field:DeclareFunctions()
+  local funcs = {
+    MODIFIER_EVENT_ON_ATTACK
+  }
+
+  return funcs
 end
 
-modifier_dimm_field_thinker = class({})
-
-function modifier_dimm_field_thinker:OnCreated(args)
-    self.radius = self:GetAbility():GetSpecialValueFor("radius")
-    self.dur = self:GetAbility():GetSpecialValueFor("duration")
-    print("RADIUS: " .. tostring(self.radius))
-    print("DUR: " .. tostring(self.dur))
+function modifier_dimm_field:OnAttack (params)
     if IsServer () then
-        local _particle = ParticleManager:CreateParticle("particles/hero_dimm/dimm_field.vpcf", PATTACH_WORLDORIGIN, self:GetParent())
-      	ParticleManager:SetParticleControl(_particle, 0, self:GetParent():GetAbsOrigin())
-      	ParticleManager:SetParticleControl(_particle, 1, Vector(self.radius, self.radius, 0))
-      	ParticleManager:SetParticleControl(_particle, 2, Vector(self.dur, 0, 0))
-        self:StartIntervalThink(0.01)
-    end
-end
+        if params.attacker == self:GetParent () then
+            if self:GetParent():GetMana() >= self:GetAbility():GetManaCost(self:GetAbility():GetLevel()) and self:GetAbility():GetAutoCastState() then
+              local info = {
+                  EffectName = "particles/units/heroes/hero_jakiro/jakiro_base_attack.vpcf",
+                  Ability = self:GetAbility(),
+                  iMoveSpeed = 1000,
+                  Source = self:GetCaster(),
+                  Target = params.target,
+                  iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
+                }
 
-function modifier_dimm_field_thinker:OnIntervalThink ()
-    if IsServer () then
-        local units = FindUnitsInRadius (self:GetParent ():GetTeamNumber (), self:GetParent ():GetOrigin (), self:GetParent (), self.radius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false)
-        if #units > 0 then
-            for _, unit in pairs (units) do
-                if unit ~= nil and ( unit:HasModifier("modifier_dimm_field_caster") or unit:HasModifier("modifier_dimm_field_target") ) then
-                    local distance = (self:GetParent():GetAbsOrigin() - unit:GetAbsOrigin()):Length2D()
-                    print(distance)
-                    if distance >= (self.radius - 50) then
-                      unit:SetAbsOrigin(self:GetParent():GetAbsOrigin())
-                      FindClearSpaceForUnit(unit, self:GetParent():GetAbsOrigin(), true)
-                    end
-                end
+              ProjectileManager:CreateTrackingProjectile( info )
+              EmitSoundOn( "Ability.DarkRitual", self:GetCaster() )
+
+              self:GetAbility():PayManaCost()
             end
         end
     end
+
+    return 0
 end
 
-modifier_dimm_field_caster = class({})
 
-function modifier_dimm_field_caster:IsHidden()
+modifier_dimm_field_debuff = class({})
+
+function modifier_dimm_field_debuff:IsHidden()
   return true
 end
 
-function modifier_dimm_field_caster:IsPurgable()
+function modifier_dimm_field_debuff:IsPurgable()
   return false
 end
 
-function modifier_dimm_field_caster:GetStatusEffectName()
-	return "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+function modifier_dimm_field_debuff:GetStatusEffectName()
+	return "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_frosty_l2_dire.vpcf"
 end
 
-function modifier_dimm_field_caster:StatusEffectPriority()
+function modifier_dimm_field_debuff:StatusEffectPriority()
 	return 1000
 end
 
-function modifier_dimm_field_caster:GetHeroEffectName()
-	return "particles/frostivus_herofx/juggernaut_fs_omnislash_slashers.vpcf"
+function modifier_dimm_field_debuff:GetEffectName()
+	return "particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf"
 end
 
-function modifier_dimm_field_caster:HeroEffectPriority()
-	return 100
+function modifier_dimm_field_debuff:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
 end
 
-function modifier_dimm_field_caster:DeclareFunctions()
-	local funcs = {
-      MODIFIER_EVENT_ON_TAKEDAMAGE
-	}
-
-	return funcs
-end
-
-
-function modifier_dimm_field_caster:OnTakeDamage(params)
+function modifier_dimm_field_debuff:OnCreated( kv )
   if IsServer() then
-  	if params.unit == self:GetParent() then
-	    local target = params.attacker
-      if target ~= self:GetAbility():GetFieldTarget() then
-          self:GetParent():Heal(params.damage, self:GetParent())
-          self:GetParent():Purge(false, true, false, true, false)
-      else
-      	return
-      end
-  	end
+    self:StartIntervalThink(1)
   end
 end
 
-modifier_dimm_field_target = class({})
-
-function modifier_dimm_field_target:IsHidden()
-  return true
-end
-
-function modifier_dimm_field_target:IsPurgable()
-  return false
-end
-
-function modifier_dimm_field_target:GetStatusEffectName()
-	return "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
-end
-
-function modifier_dimm_field_target:StatusEffectPriority()
-	return 1000
-end
-
-function modifier_dimm_field_target:GetHeroEffectName()
-	return "particles/frostivus_herofx/juggernaut_fs_omnislash_slashers.vpcf"
-end
-
-function modifier_dimm_field_target:HeroEffectPriority()
-	return 100
-end
-
-function modifier_dimm_field_target:DeclareFunctions()
-	local funcs = {
-      MODIFIER_EVENT_ON_TAKEDAMAGE
-	}
-
-	return funcs
-end
-
-
-function modifier_dimm_field_target:OnTakeDamage(params)
+function modifier_dimm_field_debuff:OnIntervalThink()
   if IsServer() then
-  	if params.unit == self:GetParent() then
-	    local target = params.attacker
-      if target ~= self:GetAbility():GetFieldCaster() then
-          self:GetParent():Heal(params.damage, self:GetParent())
-          self:GetParent():Purge(false, true, false, true, false)
-      else
-      	return
-      end
-  	end
+    local damage = self:GetAbility():GetSpecialValueFor("damage")
+    if self:GetCaster():HasTalent("special_bonus_unique_dimm_2") then 
+      damage = damage + self:GetCaster():FindTalentValue("special_bonus_unique_dimm_2")
+    end
+    ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
   end
 end
 
-function dimm_field:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function modifier_dimm_field_debuff:DeclareFunctions()
+  local funcs = {
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+  }
 
+  return funcs
+end
+
+function modifier_dimm_field_debuff:GetModifierMoveSpeedBonus_Percentage( params )
+  return self:GetAbility():GetSpecialValueFor("slowing") * (-1)
+end
+
+function modifier_dimm_field_debuff:GetAttributes ()
+    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
+end

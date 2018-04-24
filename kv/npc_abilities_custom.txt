@@ -16336,63 +16336,6 @@
 	}
 }
 //=================================================================================================================
-// Dimm: Primal Fear
-//=================================================================================================================
-"dimm_primal_fear"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ID"							"7508"															// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityTextureName"		    "custom/dimm_primal_fear"
-    "ScriptFile"					"abilities/dimm_primal_fear.lua"
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-
-	// Time
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"300 300 300 300"
-	"AbilityCooldown"				"25"
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"100 125 150 175"
-	"AbilityDamage"					"150 230 320 410"
-	"precache"
-	{
-	  "model"		 "models/heroes/hero_gaunter_odimm/gaunter_odimm_weapons.vmdl"
-		"particle"  "particles/dimm/dimm_ancient_contract.vpcf"
-	}
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_gold"			"180 210 240 260"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"buff_second"			"15 20 25 30"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_buff"			"3 4 5 6"
-		}
-	}
-}
-//=================================================================================================================
 // Dimm: Ravage
 //=================================================================================================================
 "dimm_ravage"
@@ -16439,8 +16382,10 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"4 7 9 11"
+			"var_type"							"FIELD_INTEGER"
+			"bonus_damage"						"4 7 9 11"
+			"CalculateSpellDamageTooltip"		"1"
+			"LinkedSpecialBonus"				"special_bonus_unique_dimm_1"
 		}
 	}
 }
@@ -20750,8 +20695,8 @@
 
 	"precache"
 	{
-		"particle"  "particles/hero_franklin/franklin_global_retrocausality_screen.vpcf"
-		"particle"  "particles/econ/items/antimage/antimage_weapon_conscript/antimage_weapon_conscript_blade_v2.vpcf"
+		"particle"  	"particles/hero_franklin/franklin_global_retrocausality_screen.vpcf"
+		"particle"  	"particles/econ/items/antimage/antimage_weapon_conscript/antimage_weapon_conscript_blade_v2.vpcf"
 		"model"			"models/heroes/hero_franklin/franklin_head.vmdl"
 		"model"			"models/items/antimage/gift_of_the_awakened_style_2/gift_of_the_awakened_style_2.vmdl"
 		"model"			"mmodels/items/antimage/god_eater_belt/god_eater_belt.vmdl"
@@ -20765,6 +20710,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"tooltip_duration"		"5.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_damage_outgoing"	"50 70 90"
 		}
 	}
 }
@@ -20792,11 +20742,11 @@
 
 	// Time
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"12"
+	"AbilityCooldown"				"9"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"100 100 100 100"
+	"AbilityManaCost"				"50"
 
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -20804,8 +20754,8 @@
 	"precache"
 	{
 		"model"  		"models/items/hex/sheep_hex/sheep_hex.vmdl"
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
-		"particle"  "particles/units/heroes/hero_vengeful/vengeful_nether_swap_target.vpcf"
+		"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+		"particle"  	"particles/units/heroes/hero_vengeful/vengeful_nether_swap_target.vpcf"
 		"model"			"models/items/antimage/distinguished_conscript_shoulder/distinguished_conscript_shoulder.vmdl"
 		"model"			"models/items/antimage/distinguished_conscript_arms/distinguished_conscript_arms.vmdl"
 		"model"			"models/items/antimage/mage_eraser_arms/mage_eraser_arms.vmdl"
@@ -20887,7 +20837,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"600"
+	"AbilityCastRange"				"GLOBAL"
 	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
 
 	// Time
@@ -20900,7 +20850,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"140"
+	"AbilityManaCost"				"75"
 	"precache"
 	{
 		"particle"  "particles/units/heroes/hero_zeus/zeus_ambient_eyes.vpcf"
@@ -31359,56 +31309,6 @@
 	}
 	//=================================================================================================================
 	//=================================================================================================================
-	// Dimm: Kinetic Field
-	//=================================================================================================================
-	"dimm_field"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             	"ability_lua"
-		"AbilityTextureName"		  "custom/dimm_ravage"
-	  "ScriptFile"							"abilities/dimm_field.lua"
-		"MaxLevel" 								"4"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"					"1"
-		"AbilitySound"						"Hero_Disruptor.KineticField"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"55 50 45 40"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 70 70 70"
-
-		// Cast Range
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 900 900 900"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"						"400"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.0 4.0 5.0 6.0"
-			}
-		}
-	}
-	//=================================================================================================================
 	//=================================================================================================================
 	"ragnaros_slam"
 	{
@@ -36084,5 +35984,540 @@
 				"LinkedSpecialBonus"			"special_bonus_unique_pudge_4"
 			}
 		}
+	}
+	//=================================================================================================================
+	// Ability: Antimage Mana Void
+	//=================================================================================================================
+	"dimm_ancient_contract"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/dimm_ancient_contract"
+		"ScriptFile"					"abilities/dimm_ancient_contract.lua"		
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"		
+		"FightRecapLevel"				"2"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"70.0 70.0 70.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 200 275"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// damage only
+		"precache"
+		{
+			"particle"  "particles/status_fx/status_effect_dark_willow_shadow_realm.vpcf"
+			"particle"  "particles/units/heroes/hero_dark_willow/dark_willow_shadow_realm.vpcf"
+			"particle"  "particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
+			"model"		"models/heroes/hero_dimm/weapon.vmdl"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"15 20 25"
+			}
+		}
+	}
+	"special_bonus_unique_dimm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"25"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Dimm: Primal Fear
+	//=================================================================================================================
+	"dimm_primal_fear"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ID"							"7508"															// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"		    "custom/dimm_primal_fear"
+	    "ScriptFile"					"abilities/dimm_primal_fear.lua"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300 300 300 300"
+		"AbilityCooldown"				"25"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 125 150 175"
+		"AbilityDamage"					"150 230 320 410"
+		"precache"
+		{
+		  	"model"		 "models/heroes/hero_gaunter_odimm/gaunter_odimm_weapons.vmdl"
+			"particle"  "particles/dimm/dimm_ancient_contract.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"180 210 240 260"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_second"			"15 20 25 30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_buff"			"3 4 5 6"
+			}
+		}
+	}
+	"dimm_field"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/dimm_ravage"
+		"ScriptFile"					"abilities/dimm_field.lua"		
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"10 15 20 25"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_jakiro/jakiro_base_attack.vpcf"
+			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_frosty_l2_dire.vpcf"
+			"particle"  "particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"duration"							"1.5 2.0 2.5 3.0"
+			}
+
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"slowing"							"25 35 40 45"
+			}	
+
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"damage"							"24 46 72 96"
+				"CalculateSpellDamageTooltip"		"1"
+				"LinkedSpecialBonus"				"special_bonus_unique_dimm_2"
+			}
+		}
+	}
+
+	"special_bonus_unique_dimm_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"64"
+			}
+		}
+	}
+
+	"special_bonus_unique_dimm_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"8"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Legion Commander: Duel
+	//=================================================================================================================
+	"marvel_challange_call"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/marvel_challange_call"
+		"ScriptFile"					"abilities/marvel_challange_call.lua"		
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_LegionCommander.Duel"
+
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60 45 30"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 75 75"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"3.0"	// Value much higher than cost.
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/monkey_king/arcana/fire/monkey_king_spring_cast_arcana_fire.vpcf"
+			"particle"  "particles/status_fx/status_effect_spirit_bear.vpcf"
+			"particle"  "particles/marvel/duel_buff.vpcf"
+			"particle"  "particles/status_fx/status_effect_terrorblade_reflection.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"4.0 4.75 5.5"
+				"LinkedSpecialBonus"			"special_bonus_unique_marvel"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"reward_damage"					"10 14 18"
+				"CalculateSpellDamageTooltip"	"1"
+				"LinkedSpecialBonus"			"special_bonus_unique_marvel_1"
+			}
+		}
+	}
+	"special_bonus_unique_marvel"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"8"
+			}
+		}
+	}
+	"special_bonus_unique_marvel_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"24"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Legion Commander: Press the Attack
+	//=================================================================================================================
+	"marvel_primal_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/marvel_primal_shield"
+		"ScriptFile"					"abilities/marvel_primal_shield.lua"		
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_LegionCommander.PressTheAttack"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"3.0"	// Value much higher than cost.
+		"precache"
+		{
+			"particle"  "particles/marvel/primal_shield_buff.vpcf"
+			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2_dire.vpcf"
+			"particle"  "particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift_buff.vpcf"
+			"particle"  "particles/units/heroes/hero_vengeful/vengeful_nether_swap_target.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_marvel_2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_absorb"			"65 90 115 140"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen"				"50 80 120 140"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	"special_bonus_unique_marvel_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"4.0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Legion Commander: Overwhelming Odds
+	//=================================================================================================================
+	"marvel_rain_of_chaos"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/marvel_rain_of_chaos"
+		"ScriptFile"					"abilities/marvel_rain_of_chaos.lua"	
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_LegionCommander.Overwhelming.Location"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 110 120 130"
+		"precache"
+		{
+			"particle"  "particles/econ/items/legion/legion_overwhelming_odds_ti7/legion_commander_odds_ti7.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"40 60 80 100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_unit"		"24 46 48 72"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hero"		"30 60 90 120"
+				"LinkedSpecialBonus"	"special_bonus_unique_marvel_3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0 1.2 1.4 1.6"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"330"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	"special_bonus_unique_marvel_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"140"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Alpha Wolf: Command Aura
+	//=================================================================================================================
+	"marvel_charge_of_darkness"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"alpha_wolf_command_aura"
+		"AbilityTextureName"			"custom/marvel_charge_of_darkness"
+
+		"MaxLevel"						"4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_pct"	"20 35 50 65"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"900"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 }

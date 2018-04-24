@@ -1244,7 +1244,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"all_stats"				"40"
+				"all_stats"				"50"
 			}
 			"03"
 			{
@@ -1277,7 +1277,7 @@
 		"ItemShopTags"					"damage"
 		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
 		"ItemCost"						"14095"
-	        "AbilitySpecial"
+        "AbilitySpecial"
 		{
 			"01"
 			{
@@ -1292,7 +1292,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"all"				        "60"
+				"all"				        "70"
 			}
 			"04"
 			{
@@ -6135,7 +6135,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"100"
+				"bonus_all_stats"		"150"
 			}
 			"02"
 			{
@@ -6444,6 +6444,7 @@
 		"AbilityCooldown"				"40.0"
 		"AbilityCastRange"				"600"
 		"AbilityManaCost"				"275"
+		"AbilitySharedCooldown"			"nullifier"
 		
 	
 		// Item Info
@@ -6699,6 +6700,112 @@
 			{
 				"var_type"				     	"FIELD_FLOAT"
 				"rupture_duration"				"3.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Greater Crit
+	//=================================================================================================================
+	"item_recipe_anti_life_equation"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"            "recipe"
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_anti_life_equation"
+		"ItemRequirements"
+		{
+			"01"						"item_greater_crit;item_rod_of_atos;item_ultimate_nullifier"
+		}
+	}
+	
+	//=================================================================================================================
+	// Greater Crit
+	//=================================================================================================================
+	"item_anti_life_equation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"custom/anti_life_equation"
+		"ScriptFile"					"items/item_anti_life_equation.lua"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"18320"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"daedalus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"45.0"
+		"AbilitySharedCooldown"			"nullifier"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_regen"			"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_burn"				"60"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mute_duration"			"5.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"				"90"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"30"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"295"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"60"
 			}
 		}
 	}

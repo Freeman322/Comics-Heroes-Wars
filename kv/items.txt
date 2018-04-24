@@ -11873,6 +11873,7 @@
 		"AbilityCooldown"				"13.0"
 		"AbilityCastRange"				"600"
 		"AbilityManaCost"				"75"
+		"AbilitySharedCooldown"			"nullifier"
 		
 
 		// Item Info

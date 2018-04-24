@@ -48,7 +48,7 @@ end
 
 function modifier_item_orb_of_osuvox_active:GetAuraSearchType()
 	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-end
+end 
 
 function modifier_item_orb_of_osuvox_active:GetAuraSearchFlags()
 	return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
@@ -102,11 +102,15 @@ function modifier_item_orb_of_osuvox_active_aura:OnCreated(htable)
     	if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then 
     		self.enemy = true
     	end
-	end
-end
+        --[[if self.enemy then 
+            local center_Pos = self:GetCaster():GetAbsOrigin()
+            local radius = self:GetAbility():GetSpecialValueFor("active_radius")
+            local corner_pos = center_Pos + self:GetCaster():GetForwardVector() * (radius)
 
-function modifier_item_orb_of_osuvox_active_aura:IsPurgable()
-    return false
+            self:GetParent():SetAbsOrigin(corner_pos)
+            FindClearSpaceForUnit(self:GetParent(), corner_pos, false)
+        end]]
+	end
 end
 
 function modifier_item_orb_of_osuvox_active_aura:CheckState()
@@ -114,18 +118,20 @@ function modifier_item_orb_of_osuvox_active_aura:CheckState()
 		[MODIFIER_STATE_INVULNERABLE] = true,
 		[MODIFIER_STATE_MAGIC_IMMUNE] = true,
 		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
-		[MODIFIER_STATE_OUT_OF_GAME] = true,
-		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
-		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
-		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
 	}
 	if self.enemy then 
-		return
+		return {
+            [MODIFIER_STATE_INVULNERABLE] = true,
+            [MODIFIER_STATE_MAGIC_IMMUNE] = true,
+            [MODIFIER_STATE_ATTACK_IMMUNE] = true,
+            [MODIFIER_STATE_FROZEN] = true,
+            [MODIFIER_STATE_STUNNED] = true,
+        }
 	end	
 	return state
 end
 
-function modifier_item_orb_of_osuvox_active_aura:DeclareFunctions ()
+--[[function modifier_item_orb_of_osuvox_active_aura:DeclareFunctions ()
     local funcs = {
         MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
         MODIFIER_PROPERTY_MOVESPEED_LIMIT,
@@ -154,7 +160,7 @@ function modifier_item_orb_of_osuvox_active_aura:GetModifierMoveSpeed_Max (param
 		return 1 
 	end
 	return 
-end
+end]]
 
 if modifier_item_orb_of_osuvox == nil then
 	modifier_item_orb_of_osuvox = class({})

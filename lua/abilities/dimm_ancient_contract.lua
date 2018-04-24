@@ -1,4 +1,3 @@
-LinkLuaModifier( "modifier_dimm_ancient_contract_ally", "abilities/dimm_ancient_contract.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_dimm_ancient_contract_enemy", "abilities/dimm_ancient_contract.lua", LUA_MODIFIER_MOTION_NONE )
 
 dimm_ancient_contract = class({})
@@ -17,10 +16,6 @@ function dimm_ancient_contract:CastFilterResultTarget( hTarget )
 end
 
 function dimm_ancient_contract:GetCooldown( nLevel )
-    if self:GetCaster():HasModifier("modifier_special_bonus_unique_gaunter_odimm") then
-        return 15
-    end
-
     return self.BaseClass.GetCooldown( self, nLevel )
 end
 
@@ -36,13 +31,12 @@ end
 
 function dimm_ancient_contract:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
-	if hTarget ~= nil then
+	if hTarget ~= nil and not hTarget:TriggerSpellAbsorb (self) then
 		local duration = self:GetSpecialValueFor( "duration" )
-		if hTarget:GetTeamNumber() == self:GetCaster():GetTeamNumber() then
-			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_dimm_ancient_contract_ally", { duration = duration } )
-		else
-			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_dimm_ancient_contract_enemy", { duration = duration } )
+		if self:GetCaster():HasTalent("special_bonus_unique_dimm") then 
+			duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_dimm")
 		end
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_dimm_ancient_contract_enemy", { duration = duration } )
 		EmitSoundOn( "Hero_DoomBringer.DevourCast", hTarget )
 	end
 end
@@ -61,30 +55,41 @@ function modifier_dimm_ancient_contract_enemy:IsPurgable()
 	return false
 end
 
+function modifier_dimm_ancient_contract_enemy:GetEffectName()
+	return "particles/units/heroes/hero_dark_willow/dark_willow_shadow_realm.vpcf"
+end
+
+function modifier_dimm_ancient_contract_enemy:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
+end
+
+function modifier_dimm_ancient_contract_enemy:GetStatusEffectName()
+	return "particles/status_fx/status_effect_dark_willow_shadow_realm.vpcf"
+end
+
+function modifier_dimm_ancient_contract_enemy:StatusEffectPriority()
+	return 1000
+end
+
 function modifier_dimm_ancient_contract_enemy:OnCreated()
 	if IsServer() then
-		local nFXIndex = ParticleManager:CreateParticle( "particles/dimm/dimm_ancient_contract.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin())
-		ParticleManager:SetParticleControl( nFXIndex, 1, self:GetParent():GetOrigin())
-		ParticleManager:SetParticleControl( nFXIndex, 3, self:GetParent():GetOrigin())
-		ParticleManager:SetParticleControl( nFXIndex, 8, Vector(1, 0, 0))
-		self:AddParticle( nFXIndex, false, false, -1, false, true )
+
 	end
 end
 
 function modifier_dimm_ancient_contract_enemy:DeclareFunctions()
 	local funcs = {
-		MODIFIER_EVENT_ON_ATTACK_LANDED
+		MODIFIER_EVENT_ON_TAKEDAMAGE
 	}
 
 	return funcs
 end
 
-function modifier_dimm_ancient_contract_enemy:OnAttackLanded (params)
+function modifier_dimm_ancient_contract_enemy:OnTakeDamage (params)
     if IsServer () then
 		if self:GetParent() == params.attacker then
-			local target = params.target
-			if target:GetHealth() <= params.damage then
+			local target = params.unit
+			if target:IsAlive() == false then
 				self:GetParent():Kill(self:GetAbility(), self:GetCaster())
 				local particle_lifesteal = "particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
 				local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
@@ -92,67 +97,9 @@ function modifier_dimm_ancient_contract_enemy:OnAttackLanded (params)
 				ParticleManager:SetParticleControl(lifesteal_fx, 1, self:GetParent():GetAbsOrigin())
 				EmitSoundOn("Hero_Oracle.PurifyingFlames.Damage", self:GetParent())
 				EmitSoundOn("DOTA_Item.Bloodthorn.Activate", self:GetParent())
-
-				if self:GetCaster():HasModifier("modifier_dimm_demons_power") then
-					local mod = self:GetCaster():FindModifierByName("modifier_dimm_demons_power")
-           			mod:SetStackCount(mod:GetStackCount() + self:GetAbility():GetSpecialValueFor("modifier_buff"))
-				end
-				if target:IsAlive() then
-					target:Kill(self:GetAbility(), self:GetParent())
-				end
 			end
 		end
     end
 
     return 0
 end
-
-if modifier_dimm_ancient_contract_ally == nil then modifier_dimm_ancient_contract_ally = class({}) end
-
-function modifier_dimm_ancient_contract_ally:IsHidden()
-	return false
-	-- body
-end
-
-function modifier_dimm_ancient_contract_ally:IsPurgable()
-	return false
-	-- body
-end
-
-function modifier_dimm_ancient_contract_ally:OnCreated(table)
-	if IsServer() then
-		self.hp = self:GetCaster():GetMaxHealth()
-	end
-end
-
-function modifier_dimm_ancient_contract_ally:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS
-	}
-
-	return funcs
-end
-
-function modifier_dimm_ancient_contract_ally:GetModifierExtraHealthBonus( params )
-	return self.hp/2
-end
-
-function modifier_dimm_ancient_contract_ally:OnDestroy()
-    if IsServer () then
-		self:GetParent():Kill(self:GetAbility(), self:GetCaster())
-		local particle_lifesteal = "particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
-		local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-		ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetParent():GetAbsOrigin())
-		ParticleManager:SetParticleControl(lifesteal_fx, 1, self:GetParent():GetAbsOrigin())
-		EmitSoundOn("Hero_Oracle.PurifyingFlames.Damage", self:GetParent())
-		EmitSoundOn("DOTA_Item.Bloodthorn.Activate", self:GetParent())
-
-		if self:GetCaster():HasModifier("modifier_dimm_demons_power") then
-			local mod = self:GetCaster():FindModifierByName("modifier_dimm_demons_power")
-			mod:SetStackCount(mod:GetStackCount() + self:GetAbility():GetSpecialValueFor("modifier_buff"))
-		end
-    end
-end
-
-function dimm_ancient_contract:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-

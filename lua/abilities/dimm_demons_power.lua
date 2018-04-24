@@ -32,13 +32,17 @@ end
 function modifier_dimm_demons_power:OnHeroKilled(params)
 	if params.target:GetTeam() ~= self:GetParent():GetTeam() then
 		if params.attacker == self:GetParent() then
-			self:SetStackCount(self:GetStackCount() + 1)
+			self.damage = self:GetAbility():GetSpecialValueFor("bonus_damage")
+			if self:GetCaster():HasTalent("special_bonus_unique_dimm_1") then 
+		      self.damage = self.damage + self:GetCaster():FindTalentValue("special_bonus_unique_dimm_1")
+		    end
+			self:SetStackCount(self:GetStackCount() + self.damage)
 		end
 	end
 end
 
 function modifier_dimm_demons_power:GetModifierPreAttack_BonusDamage( params )
-	return self:GetAbility():GetSpecialValueFor("bonus_damage")*self:GetStackCount()
+	return self:GetStackCount()
 end
 
 function modifier_dimm_demons_power:GetAttributes ()

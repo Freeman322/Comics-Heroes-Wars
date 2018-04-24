@@ -1,5 +1,6 @@
 butcher_meat_hook = class({})
 LinkLuaModifier( "modifier_butcher_meat_hook", "abilities/butcher_meat_hook.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_butcher_meat_hook_followthrough", "abilities/butcher_meat_hook.lua", LUA_MODIFIER_MOTION_NONE )
 
 function butcher_meat_hook:OnAbilityPhaseStart()
 	self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
@@ -21,6 +22,7 @@ function butcher_meat_hook:OnSpellStart()
 
 	self.vision_radius = self:GetSpecialValueFor( "vision_radius" )  
 	self.vision_duration = self:GetSpecialValueFor( "vision_duration" )  
+	self.hook_followthrough_constant = 0.65
 	
 	if self:GetCaster() and self:GetCaster():IsHero() then
 		local hHook = self:GetCaster():GetTogglableWearable( DOTA_LOADOUT_TYPE_WEAPON )
@@ -37,6 +39,9 @@ function butcher_meat_hook:OnSpellStart()
 
 	local vDirection = ( vDirection:Normalized() ) * self.hook_distance
 	self.vTargetPosition = self.vStartPosition + vDirection
+
+	local flFollowthroughDuration = ( self.hook_distance / self.hook_speed * self.hook_followthrough_constant )
+	self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_butcher_meat_hook_followthrough", { duration = flFollowthroughDuration } )
 
 	self.vHookOffset = Vector( 0, 0, 96 )
 	local vHookTarget = self.vTargetPosition + self.vHookOffset
@@ -324,7 +329,28 @@ function modifier_butcher_meat_hook:OnIntervalThink()
       		if self:GetAbility().nChainParticleFXIndex ~= nil then
       			 ParticleManager:DestroyParticle(self:GetAbility().nChainParticleFXIndex, true)
       		end
+      		FindClearSpaceForUnit( self:GetParent(), self:GetParent():GetAbsOrigin(), true )
     		self:Destroy()
     	end
 	end
+end
+
+
+modifier_butcher_meat_hook_followthrough = class({})
+
+--------------------------------------------------------------------------------
+
+function modifier_butcher_meat_hook_followthrough:IsHidden()
+	return true
+end
+
+
+--------------------------------------------------------------------------------
+
+function modifier_butcher_meat_hook_followthrough:CheckState()
+	local state = {
+	[MODIFIER_STATE_STUNNED] = true,
+	}
+
+	return state
 end
