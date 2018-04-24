@@ -20681,7 +20681,7 @@
 
 	// Time
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"120 90 60"
+	"AbilityCooldown"				"100"
 	"AbilityDuration"				"5.0"
 
 
@@ -20738,7 +20738,7 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastPoint"				"0.47 0.47 0.47 0.47"
-	"AbilityCastRange"				"0"
+	"AbilityCastRange"				"900"
 
 	// Time
 	//-------------------------------------------------------------------------------------------------------------
@@ -20837,7 +20837,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"GLOBAL"
+	"AbilityCastRange"				"600"
 	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
 
 	// Time
@@ -36157,13 +36157,13 @@
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"slowing"							"25 35 40 45"
+				"slowing"							"10 15 20 25"
 			}	
 
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"damage"							"24 46 72 96"
+				"damage"							"10 20 30 40"
 				"CalculateSpellDamageTooltip"		"1"
 				"LinkedSpecialBonus"				"special_bonus_unique_dimm_2"
 			}
@@ -36185,7 +36185,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"64"
+				"value"						"40"
 			}
 		}
 	}
@@ -36448,12 +36448,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_unit"		"24 46 48 72"
+				"damage_per_unit"		"40 60 80 100"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_hero"		"30 60 90 120"
+				"damage_per_hero"		"80 140 190 250"
 				"LinkedSpecialBonus"	"special_bonus_unique_marvel_3"
 			}
 			"04"

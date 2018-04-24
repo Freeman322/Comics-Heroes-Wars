@@ -66,7 +66,7 @@ end
 
 function modifier_franklin_global_retrocausality:OnCreated(params)
 	if IsServer() then
-	    local warp = ParticleManager:CreateParticle("particles/hero_franklin/franklin_global_retrocausality_screen.vpcf", PATTACH_EYES_FOLLOW, self:GetParent())
+	    local warp = ParticleManager:CreateParticleForPlayer("particles/hero_franklin/franklin_global_retrocausality_screen.vpcf", PATTACH_EYES_FOLLOW, self:GetParent(), self:GetParent():GetPlayerOwner())
 	    self:AddParticle( warp, false, false, -1, false, true )
   	end
 end

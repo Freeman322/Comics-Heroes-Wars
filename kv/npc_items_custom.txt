@@ -6780,7 +6780,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_burn"				"60"
+				"mana_burn"				"64"
 			}
 			"05"
 			{

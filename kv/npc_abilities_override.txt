@@ -343,6 +343,9 @@
   //"item_guardian_greaves"     "REMOVE"
   //"item_recipe_glimmer_cape"      "REMOVE"
   //"item_glimmer_cape"     "REMOVE"
+
+  "item_midas_tube"     "REMOVE"
+  "item_recipe_midas_tube"  "REMOVE"
 	"special_bonus_strength_25"
 	{
 		"AbilitySpecial"
@@ -503,6 +506,20 @@
       {
         "var_type"        "FIELD_FLOAT"
         "duration"        "30"
+      }
+    }
+  }
+  //=================================================================================================================
+  // Ability: Special Bonus
+  //=================================================================================================================
+  "special_bonus_cast_range_400"
+  {
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "value"       "40000"
       }
     }
   }

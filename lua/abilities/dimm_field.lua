@@ -9,8 +9,10 @@ end
 
 function dimm_field:OnProjectileHit( hTarget, vLocation )
   if IsServer() then 
-    hTarget:AddNewModifier(self:GetCaster(), self, "modifier_dimm_field_debuff", {duration = self:GetSpecialValueFor("duration")})
-    EmitSoundOn("Hero_Lich.ChainFrostImpact.Hero", hTarget)
+    if not hTarget:IsBuilding() then 
+      hTarget:AddNewModifier(self:GetCaster(), self, "modifier_dimm_field_debuff", {duration = self:GetSpecialValueFor("duration")})
+      EmitSoundOn("Hero_Lich.ChainFrostImpact.Hero", hTarget)
+    end
   end
   return true
 end
