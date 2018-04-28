@@ -68,7 +68,7 @@ function modifier_marvel_challange_call:IsHidden()
 end
 
 function modifier_marvel_challange_call:IsPurgable()
-	return true
+	return false
 end
 
 function modifier_marvel_challange_call:RemoveOnDeath()

@@ -8,50 +8,30 @@ end
 if modifier_hulk_blood == nil then modifier_hulk_blood = class({}) end
 
 function modifier_hulk_blood:IsHidden()
-   return false
+   return true
 end
 
 function modifier_hulk_blood:IsPurgable()
    return false
 end
 
-function modifier_hulk_blood:OnCreated( kv )
-  	if IsServer() then
-  		  self:StartIntervalThink( 0.5 )
-  	end
-end
-
-function modifier_hulk_blood:OnIntervalThink()
-    if IsServer() then
-        self.model_scale = self:GetCaster():GetModelScale() + (self:GetCaster():GetHealthPercent() / 40)
-        self:SetStackCount( (100 - self:GetCaster():GetHealthPercent()) / 10 )
-    end
-end
-
 function modifier_hulk_blood:DeclareFunctions()
 	local funcs =
 	{
-		MODIFIER_PROPERTY_MODEL_SCALE,
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-    	MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
+		MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE  -- GetModifierMPRegenAmplify_Percentage
 	}
 
 	return funcs
 end
 
-function modifier_hulk_blood:GetModifierPhysicalArmorBonus( params )
-	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("armor")
+function modifier_hulk_blood:GetModifierAttackSpeedBonus_Constant( params )
+	return (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("attack_speed")
 end
-function modifier_hulk_blood:GetModifierPreAttack_BonusDamage( params )
-	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("damage")
+function modifier_hulk_blood:GetModifierHPRegenAmplify_Percentage( params )
+	return (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("heal_amplify")
 end
-function modifier_hulk_blood:GetModifierModelScale( params )
-	return self.model_scale
+function modifier_hulk_blood:GetModifierMPRegenAmplify_Percentage( params )
+	return (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("mana_amplify")
 end
-function modifier_hulk_blood:GetModifierHealAmplify_Percentage( params )
-	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("heal_amplyfy")
-end
-
-function hulk_blood:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
