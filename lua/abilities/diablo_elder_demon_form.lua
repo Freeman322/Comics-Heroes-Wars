@@ -2,9 +2,11 @@ if diablo_elder_demon_form == nil then diablo_elder_demon_form = class({}) end
 LinkLuaModifier("modifier_elder_demon_form", "abilities/diablo_elder_demon_form.lua", LUA_MODIFIER_MOTION_NONE)
 function diablo_elder_demon_form:OnSpellStart()
 	local duration = self:GetSpecialValueFor(  "duration" )
-	if self:GetCaster():HasTalent("special_bonus_unique_diablo") then
-        duration = self:GetCaster():FindTalentValue("special_bonus_unique_diablo") + duration
-    end
+
+	if self:GetCaster():HasTalent("special_bonus_unique_diablo_3") then
+        duration = self:GetCaster():FindTalentValue("special_bonus_unique_diablo_3") + duration
+	end
+	
 	self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_elder_demon_form", { duration = duration } )
 
 	local nFXIndex = ParticleManager:CreateParticle( "particles/addons_gameplay/pit_lava_blast.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )

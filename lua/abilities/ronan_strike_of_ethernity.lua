@@ -18,10 +18,6 @@ end
 
 
 function ronan_strike_of_ethernity:GetCooldown (nLevel)
-    if self:GetCaster ():HasScepter () then
-        return 5
-    end
-
     return self.BaseClass.GetCooldown (self, nLevel)
 end
 
@@ -53,7 +49,10 @@ function ronan_strike_of_ethernity:OnSpellStart( )
 		caster:EmitSound("Hero_EarthShaker.EchoSlam")
 		caster:EmitSound("Hero_EarthShaker.EchoSlamEcho")
 		caster:EmitSound("Hero_EarthShaker.EchoSlamSmall")
-	    local iDamage = damage_cof*stats
+
+		if self:GetCaster():HasTalent("special_bonus_unique_ronan_2") then damage_cof = damage_cof + self:GetCaster():FindTalentValue("special_bonus_unique_ronan_2") end
+		
+		local iDamage = damage_cof*stats
 	    ApplyDamage({victim = target, attacker = caster, damage = iDamage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS})
 
 	    if target:GetHealthPercent() <= 15 then
@@ -88,11 +87,10 @@ function ronan_strike_of_ethernity:OnSpellStart( )
 	        ParticleManager:SetParticleControl(explosion12, 3,  caster:GetAbsOrigin())
 	        ParticleManager:SetParticleControl(explosion12, 11,  caster:GetAbsOrigin())
 	        ParticleManager:SetParticleControl(explosion12, 12,  caster:GetAbsOrigin())
-	        target:Kill(self, caster)
+			
+			target:Kill(self, caster)
 	        
-	        if self:GetCaster():HasScepter() then
-	            self:EndCooldown()
-	        end
-	    end
+			if self:GetCaster():HasTalent("special_bonus_unique_ronan_3") then self:EndCooldown() self:StartCooldown(self:GetCaster():FindTalentValue("special_bonus_unique_ronan_3")) end
+		end
 	end
 end

@@ -1,5 +1,6 @@
 LinkLuaModifier ("modifier_item_frostmourne", "items/item_frostmourne.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier ("modifier_item_frostmourne_slowing", "items/item_frostmourne.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier ("modifier_item_frostmourne_cooldown_dummy", "items/item_frostmourne.lua", LUA_MODIFIER_MOTION_NONE)
 
 if item_frostmourne == nil then
     item_frostmourne = class ( {})
@@ -60,10 +61,16 @@ function modifier_item_frostmourne:IsHidden ()
     return true
 end
 
+function modifier_item_frostmourne:WillReincarnate()
+    return self.IsReincarnating
+end
+
 function modifier_item_frostmourne:OnCreated (kv)
     if IsServer () then
         local hAbility = self:GetAbility ()
         self:GetParent ():CalculateStatBonus ()
+
+        self.IsReincarnating = false
     end
 end
 
@@ -141,8 +148,9 @@ function modifier_item_frostmourne:ReincarnateTime (params)
         local parent = self:GetParent ()
         if self:GetAbility ():IsCooldownReady () and self:GetAbility():GetName() == "item_frostmourne" then
             self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
-
-            local respawnPosition = parent:GetAbsOrigin ()
+            self.IsReincarnating = true
+            
+            local respawnPosition = parent:GetAbsOrigin()
 
             local particleName = "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
             self.ReincarnateParticle = ParticleManager:CreateParticle (particleName, PATTACH_ABSORIGIN_FOLLOW, parent)
@@ -155,6 +163,8 @@ function modifier_item_frostmourne:ReincarnateTime (params)
             Timers:CreateTimer (3, function ()
                 ParticleManager:DestroyParticle (self.ReincarnateParticle, false)
                 parent:EmitSound ("Hero_SkeletonKing.Reincarnate.Stinger")
+
+                self.IsReincarnating = false
             end)
             return 3
         end
@@ -205,3 +215,16 @@ end
 
 function item_frostmourne:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 
+if not modifier_item_frostmourne_cooldown_dummy then modifier_item_frostmourne_cooldown_dummy = class({}) end
+
+function modifier_item_frostmourne_cooldown_dummy:IsHidden()
+    return true
+end
+
+function modifier_item_frostmourne_cooldown_dummy:IsPurgable()
+    return false
+end
+
+function modifier_item_frostmourne_cooldown_dummy:RemoveOnDeath()
+    return false
+end

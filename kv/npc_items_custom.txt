@@ -1465,87 +1465,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Shiva's
-	//=================================================================================================================
-	"item_echoe_shield"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9232"
-		"BaseClass"						"item_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"custom/echoe_shield"
-		"ScriptFile"					"items/item_echoe_shield.lua"
-		"AbilitySharedCooldown"			"reflect"
-		"AbilityCooldown"				"60"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-		"ItemCost"						"6050"
-		"ItemShopTags"					"int;armor;hard_to_tag"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"echoe shield"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"precache"
-		{
-			"particle"  "particles/effects/lotus_shell.vpcf"
-			"particle"  "particles/echo_shield/echo_shield.vpcf"
-			"particle"  "particles/echo_shield/echo_shield_reflect.vpcf"
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"35"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"70"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"200"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"250"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"15"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"10"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"echoe_shield_duration"	"7"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Ecpised Sword
 	//=================================================================================================================
 	"item_eclipsed_blade"
@@ -1554,17 +1473,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"9282"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"        				"item_lua"
-	   		"AbilityTextureName"            "custom/eclipsed_blade"
-	        "ScriptFile"                	"items/item_eclipsed_blade.lua"
+		"AbilityTextureName"            "custom/eclipsed_blade"
+		"ScriptFile"                	"items/item_eclipsed_blade.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"FightRecapLevel"				"1"
-	
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"22.0"
 		"AbilitySharedCooldown"			"shadow_blade"
-	
-	
+
+
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75"
@@ -1574,7 +1493,7 @@
 		"ItemAliases"					"sb;invis;shadow blade"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -2820,21 +2739,20 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9051"
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_ice_pearl.lua"
 		"AbilityTextureName"    		"custom/ice_pearl"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"FightRecapLevel"				"1"
 	
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"24"
 		"AbilityCastRange"				"128"
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
+		"AbilityManaCost"				"50"
 		"ItemCost"						"10750"
 		"ItemShopTags"					"int;armor;hard_to_tag"
 		"ItemQuality"					"epic"
@@ -2843,9 +2761,10 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"precache"
 		{
-			"particle"  "particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf"
-			"particle"  "particles/status_fx/status_effect_frost.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+			"particle"  				"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf"
+			"particle"  				"particles/status_fx/status_effect_frost.vpcf"
+			"particle"					"particles/ice_pearl/ice_pearl_active.vpcf"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -2854,32 +2773,42 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"50"
+				"bonus_intellect"		"40"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"35"
+				"bonus_damage"			"32"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_return"			"375"
+				"bonus_armor"			"30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed_reduction"	"-65"
+				"damage_return"			"375"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_speed_reduction"	"-100"
+				"attack_speed_reduction"	"-65"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_duration"		"4.5"
+				"move_speed_reduction"	"-100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_duration"		"3.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"active_duration"		"4.0"
 			}
 		}
 	}
@@ -4044,31 +3973,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Recipe: Shiva's Guard
-	//=================================================================================================================
-	"item_recipe_echoe_shield"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9231"
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"AbilityTextureName"            "recipe"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"6000"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------ц------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_echoe_shield"
-		"ItemRequirements"
-		{
-			"01"						"item_blade_mail;item_aether_lens"
-		}
-	}
-	//=================================================================================================================
 	// Recipe: Ecpised Sword
 	//=================================================================================================================
 	"item_recipe_eclipsed_blade"
@@ -4412,7 +4316,7 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3650"
+		"ItemCost"						"2100"
 		"ItemShopTags"					""
 	
 		// Recipe

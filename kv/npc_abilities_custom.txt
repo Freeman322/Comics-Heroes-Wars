@@ -1424,26 +1424,6 @@
 		}
 	}
 }
-"special_bonus_unique_ronan"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"12022"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-	"BaseClass"						"special_bonus_undefined"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"value"					"300"
-		}
-	}
-}
 "special_bonus_unique_odin"
 {
 	// General
@@ -1782,26 +1762,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"value"					"600"
-		}
-	}
-}
-"special_bonus_unique_diablo"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"12040"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-	"BaseClass"						"special_bonus_undefined"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"value"					"7"
 		}
 	}
 }
@@ -2771,8 +2731,7 @@
 			"particle"  "particles/thanos/thanos_supernova_explode_a.vpcf"
 			"particle"  "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
 			"particle"  "particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
-			"model"		"models/heroes/hero_thanos/timebreaker/timebreaker.vmdl"
-			"model" 	"models/items/sven/armature_of_the_belligerent_ram_arms/armature_of_the_belligerent_ram_arms.vmdl"
+			"model"		"models/items/sven/fiend_cleaver_axe/fiend_cleaver_axe.vmdl"
 	    }
 		"AbilitySpecial"
 		{
@@ -11799,243 +11758,6 @@
 				"range"						"900 1000 1100 1200"
 			}
 		}
-}
-
-	"ronan_soul_stole"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"custom/ronan_soul_stole"
-		"MaxLevel"                      "4"
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
-			"particle"			"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
-			"particle"			"particles/status_fx/status_effect_gods_strength.vpcf"
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"32 28 24 20"
-		"AbilityDuration"				"7 8 9 10"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 100 125 150"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"gods_strength_damage"		"60 90 120 150"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"movespeed"		            "30 50 70 90"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor"	                "10 20 30 40"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"	          "7 8 9 10"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"resist"			"20 30 40 50"
-			}
-		}
-
-		"OnSpellStart"
-		{
-				"FireSound"
-				{
-					"EffectName"	"Hero_Sven.GodsStrength"
-					"Target"		"CASTER"
-				}
-        "FireEffect"
-        {
-        	"EffectName"	"particles/units/heroes/hero_sven/sven_spell_warcry.vpcf"
-        	"EffectAttachType"	"follow_origin"
-        	"Target"		"CASTER"
-        }
-				"FireEffect"
-				{
-					"EffectName"	"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"Target"		"CASTER"
-				}
-
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_gods_strength_datadriven"
-					"Target"		"CASTER"
-				}
-		}
-
-		"Modifiers"
-		{
-				"modifier_gods_strength_datadriven"
-				{
-							"IsBuff"		"1"
-							"IsPurgable"	"0"
-							"Duration"		"%AbilityDuration"
-
-							"StatusEffectName"	"particles/status_fx/status_effect_gods_strength.vpcf"
-							"StatusEffectPriority"	"1"
-							"EffectName"	"particles/units/heroes/hero_sven/sven_warcry_buff.vpcf"
-				            "EffectAttachType"	"follow_origin"
-
-							"Properties"
-							{
-									"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%gods_strength_damage"
-									"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	    "%movespeed"
-									"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		    "%armor"
-									"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		    "%resist"
-							}
-					}
-			}
-	}
-	//=================================================================================================================
-	//=================================================================================================================
-	"ronan_bash"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"spirit_breaker_greater_bash"
-		"AbilityTextureName"				"custom/ronan_greater_bash"
-
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3.0 2.5 2.0 1.5"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportBonus"	"40"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-					"01"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"chance_pct"			"10 15 20 25"
-					}
-					"02"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"damage"					"30 40 50 60"
-					}
-					"03"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"duration"				"0.01 0.01 0.01 0.01"
-					}
-					"04"
-					{
-						"var_type"						"FIELD_FLOAT"
-						"knockback_duration"	"0.4 0.6 0.8 1.0"
-					}
-					"05"
-					{
-						"var_type"						"FIELD_INTEGER"
-						"knockback_distance"	"143 152 158 162"
-					}
-					"06"
-					{
-						"var_type"						"FIELD_INTEGER"
-						"knockback_height"		"50 50 50 50"
-					}
-					"07"
-					{
-						"var_type"						"FIELD_INTEGER"
-						"bonus_movespeed_pct"	"20 20 20 20"
-					}
-					"08"
-					{
-						"var_type"						"FIELD_FLOAT"
-						"movespeed_duration"	"3.0 3.0 3.0 3.0"
-					}
-			}
-	}
-	"ronan_strike_of_ethernity"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"
-		"FightRecapLevel"				"2"
-		"BaseClass"						"ability_lua"
-		"AbilityTextureName"			"custom/ronan_strike_of_ethernity"
-		"ScriptFile"					"abilities/ronan_strike_of_ethernity.lua"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"160"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
-
-		"AbilityCooldown"				"30 35 20"
-		"HasScepterUpgrade"				"1"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 160 200"
-	    "precache"
-	    {
-	      "model"		 "models/items/axe/nethersteelbarbute_head/nethersteelbarbute_head.vmdl"
-	      "model"		 "models/items/axe/searing_annihilator_armor/searing_annihilator_armor.vmdl"
-	      "model"		 "models/ronan/ronan_weapon_shadowmorne.vmdl"
-	      "model"		 "models/items/axe/axesaccess_belt_s2/axesaccess_belt_s2.vmdl"
-	      "model"		 "models/items/axe/blacksmith_weapon.vmdl"
-			  "particle"  "particles/ronan_strike.vpcf"
-			  "particle"  "particles/one_punch.vpcf"
-			  "particle"  "particles/punch_cracks.vpcf"
-			  "particle"  "particles/econ/items/axe/axe_armor_molten_claw/axe_molten_claw_ambient.vpcf"
-			  "model"  		"models/items/axe/molten_claw/molten_claw.vmdl"
-			  "soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
-	    }
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	    		"FIELD_FLOAT"
-				"damage"		        "1.6 2.2 2.8"
-			}
-			"02"
-			{
-				"var_type"	    		"FIELD_FLOAT"
-				"cooldown_scepter"		"5"
-			}
-		}
 	}
 	"zoom_charge_of_darkness"
 	{
@@ -18472,164 +18194,6 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_attack_speed"	"100 160 220"
-		}
-	}
-}
-//=================================================================================================================
-// Ability: Skeleton King
-//=================================================================================================================
-"diablo_fire_blast"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"7584"
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"abilities/diablo_fire_blast.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"FightRecapLevel"				"1"
-	"AbilityTextureName"			"custom/diablo_fire_blast"
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"600"
-	"AbilityCastPoint"				"0.25 0.25 0.25 0.25"
-
-	// Time
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16.0 14.0 12.0 10.0"
-
-	// Damage.
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"120 180 240 300"
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"115 130 145 160"
-
-	// Stats
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityModifierSupportValue"	"0.5"	// Applies two modifiers
-	"precache"
-	{
-		"particle"  "particles/econ/items/wraith_king/wraith_king_ti6_bracer/wraith_king_ti6_hellfireblast.vpcf"
-	}
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"blast_stun_duration"	"2.25 2.5 2.75 3.0"
-		}
-	}
-}
-//=================================================================================================================
-// Phoenix: Sun Ray
-//=================================================================================================================
-"diablo_fire_dissipation"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"7585"
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"abilities/diablo_fire_dissipation.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"FightRecapLevel"				"1"
-	"AbilityTextureName"			"custom/diablo_fire_dissipation"
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1300"
-	"AbilityCastPoint"				"0.01"
-
-	// Time
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"26 24 22 20"
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"75 90 105 120"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"base_dmg"			"50 100 150 200"
-		}
-		"02"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"hp_perc_dmg"		"3 4 5 6"
-		}
-		"03"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"radius"			"250"
-		}
-		"04"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"tooltip_duration"	"6"
-		}
-	}
-}
-//=================================================================================================================
-// Doom Bringer: Infernal Blade
-//=================================================================================================================
-"diablo_burning_attacks"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"7586"
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"abilities/diablo_burning_attacks.lua"
-	"AbilityTextureName"			"custom/diablo_burning_attacks"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-
-	// Time
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"4"
-	"AbilityManaCost"				"30 40 50 60"
-	"AbilityCastRange"				"135"
-	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"burn_damage"			"40 60 80 100"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"burn_damage_pct"		"1 2 3 4"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"burn_duration"			"4.0"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"ministun_duration"	"0.1"
 		}
 	}
 }
@@ -35259,8 +34823,11 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				        "ability_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
     	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"custom/onepunchman_ult"
@@ -35293,7 +34860,8 @@
 			"particle"  	"particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
 			"particle"  	"particles/econ/items/alchemist/alchemist_stove_back/alchemist_stove_back_ambient.vpcf"
 			"model"			"models/items/antimage/mage_eraser_armor/mage_eraser_armor.vmdl"
-			"particle"  "particles/econ/items/monkey_king/arcana/fire/monkey_king_spring_arcana_fire.vpcf"
+			"particle"  	"particles/econ/items/monkey_king/arcana/fire/monkey_king_spring_arcana_fire.vpcf"
+			"particle"		"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
 		}
 		"AbilitySpecial"
 		{
@@ -36269,12 +35837,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"attack_speed"					"15 25 35 45"
+				"attack_speed"					"7 11 14 17"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"heal_amplify"					"18 24 32 46"
+				"heal_amplify"					"10 14 16 20"
 			}
 			"03"
 			{
@@ -36491,7 +36059,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"attack_speed"					"10 25 45 65"
+				"attack_speed"					"4 7 9 11"
 			}
 			"01"
 			{
@@ -36500,7 +36068,7 @@
 			}
 		}
 	}
-	//=================================================================================================================
+
 	//=================================================================================================================
 	"ursa_warrior_will"
 	{
@@ -36550,7 +36118,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100 65 30"
+		"AbilityCooldown"				"30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -36576,20 +36144,20 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4 5 6"
-				"LinkedSpecialBonus"	"special_bonus_unique_ursa_warrior"
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"6.0 7.0 8.0"
+				"LinkedSpecialBonus"			"special_bonus_unique_ursa_warrior"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_return"			"30 45 60"
-				"LinkedSpecialBonus"	"special_bonus_unique_ursa_warrior_1"
+				"var_type"						"FIELD_INTEGER"
+				"damage_return"					"60"
+				"LinkedSpecialBonus"			"special_bonus_unique_ursa_warrior_1"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"bonus_damage"					"3 5 7"
+				"bonus_damage"					"5 7 9"
 				"CalculateSpellDamageTooltip"	"1"
 				"LinkedSpecialBonus"			"special_bonus_unique_ursa_warrior_4"
 			}
@@ -36991,5 +36559,509 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"ronan_soul_stole"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"           	 		"ability_lua"
+		"AbilityTextureName"			"custom/ronan_soul_stole"
+		"ScriptFile"					"abilities/ronan_soul_stole.lua"	
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"FightRecapLevel"				"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"particle"			"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
+			"particle"			"particles/status_fx/status_effect_gods_strength.vpcf"
+			"particle"			"particles/items4_fx/nullifier_mute_debuff.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"32 28 24 20"
+		"AbilityDuration"				"7 8 9 10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 100 125 150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"60 90 120 150"
+				"LinkedSpecialBonus"			"special_bonus_unique_ronan"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movespeed"		            	"30 50 70 90"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor"	             	    	"10 20 30 40"
+				"LinkedSpecialBonus"			"special_bonus_unique_ronan_1"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration"	        			 "7 8 9 10"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_stats_power_gem"			"20 30 40 50"
+			}
+		}
+	}
+	//=================================================================================================================
+	//=================================================================================================================
+	"ronan_bash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"spirit_breaker_greater_bash"
+		"AbilityTextureName"			"custom/ronan_greater_bash"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"3.0 2.5 2.0 1.5"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"	"40"
+
+			// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"			"10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"30 40 50 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.01 0.01 0.01 0.01"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.4 0.6 0.8 1.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"143 152 158 162"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_height"		"50 50 50 50"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed_pct"	"20 20 20 20"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"movespeed_duration"	"3.0 3.0 3.0 3.0"
+			}
+		}
+	}
+	"ronan_strike_of_ethernity"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"
+		"FightRecapLevel"				"2"
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/ronan_strike_of_ethernity"
+		"ScriptFile"					"abilities/ronan_strike_of_ethernity.lua"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"160"
+		"AbilityCastPoint"				"0.6"
+
+		"AbilityCooldown"				"70 46 18"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 160 200"
+	    "precache"
+	    {
+			"model"		 	"models/heroes/hero_ronan/econs/ronan_ethernal_hammer.vmdl"
+			"model"		 	"models/heroes/hero_ronan/econs/ronan_shadowmourne.vmdl"
+			"model"		 	"models/heroes/hero_ronan/econs/ronan_moltenclaw.vmdl"
+			"model"		 	"models/heroes/hero_ronan/econs/ronan_vanguard.vmdl"
+			"particle"  	"particles/ronan_strike.vpcf"
+			"particle"  	"particles/one_punch.vpcf"
+			"particle"  	"particles/punch_cracks.vpcf"
+			"particle"  	"particles/econ/items/axe/axe_armor_molten_claw/axe_molten_claw_ambient.vpcf"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+	    }
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	    		"FIELD_FLOAT"
+				"damage"		        "1.0 1.6 2.2"
+				"LinkedSpecialBonus"	"special_bonus_unique_ronan_2"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_ronan"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"75"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_ronan_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"60"
+			}
+		}
+	}
+	"special_bonus_unique_ronan_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1.0"
+			}
+		}
+	}
+	"special_bonus_unique_ronan_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Phoenix: Sun Ray
+	//=================================================================================================================
+	"diablo_fire_dissipation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7585"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/diablo_fire_dissipation.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"custom/diablo_fire_dissipation"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1300"
+		"AbilityCastPoint"				"0.01"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"26 24 22 20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 90 105 120"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_dmg"			"50 100 150 200"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"hp_perc_dmg"		"3 4 5 6"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"250"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"tooltip_duration"	"6"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Doom Bringer: Infernal Blade
+	//=================================================================================================================
+	"diablo_burning_attacks"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7586"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/diablo_burning_attacks.lua"
+		"AbilityTextureName"			"custom/diablo_burning_attacks"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6 5 4 3"
+		"AbilityManaCost"				"15 30 45 60"
+		"AbilityCastRange"				"135"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"burn_damage"					"20 45 65 75"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"burn_damage_pct"				"0.65 1.0 1.25 1.45"
+				"LinkedSpecialBonus"			"special_bonus_unique_diablo"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"burn_duration"					"2.0 3.0 4.0 5.0"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"ministun_duration"				"0.1"
+				"LinkedSpecialBonus"			"special_bonus_unique_diablo_1"
+			}
+		}
+	}
+	"special_bonus_unique_diablo"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"0.6"
+			}
+		}
+	}
+	"special_bonus_unique_diablo_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"0.9"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Skeleton King
+	//=================================================================================================================
+	"diablo_fire_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7584"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/diablo_fire_blast.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"custom/diablo_fire_blast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.25 0.25 0.25 0.25"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0 14.0 12.0 10.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"120 180 240 300"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"115 130 145 160"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Applies two modifiers
+		"precache"
+		{
+			"particle"  "particles/econ/items/wraith_king/wraith_king_ti6_bracer/wraith_king_ti6_hellfireblast.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_stun_duration"	"2.25 2.5 2.75 3.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_diablo_2"
+			}
+		}
+	}
+	"special_bonus_unique_diablo_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2.0"
+			}
+		}
+	}
+	"special_bonus_unique_diablo_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"10"
+			}
+		}
 	}
 }

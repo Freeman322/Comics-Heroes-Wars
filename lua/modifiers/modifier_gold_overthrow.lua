@@ -10,6 +10,18 @@ function modifier_gold_overthrow:IsPurgable()
     return false
 end
 
+function modifier_gold_overthrow:OnCreated(params)
+    if IsServer() then
+        self:StartIntervalThink(1) 
+    end
+end
+
+function modifier_gold_overthrow:OnIntervalThink()
+    if IsServer() then 
+        self:GetParent():AddExperience(10, DOTA_ModifyXP_Unspecified, false, true)
+    end
+end
+
 function modifier_gold_overthrow:DeclareFunctions() 
     local funcs = {
         MODIFIER_PROPERTY_EXP_RATE_BOOST

@@ -34,6 +34,15 @@ function modifier_ursa_warrior_berserkers_blood:OnCreated(params)
 	end
 end
 
+function modifier_ursa_warrior_berserkers_blood:OnRefresh(params)
+	if IsServer() then 
+		self.attackTime = self:GetAbility():GetSpecialValueFor("base_attack_time")
+		if self:GetCaster():HasTalent("special_bonus_unique_ursa_warrior_3") then 
+			self.attackTime = self.attackTime + self:GetCaster():FindTalentValue("special_bonus_unique_ursa_warrior_3")
+		end
+	end
+end
+
 function modifier_ursa_warrior_berserkers_blood:GetModifierAttackSpeedBonus_Constant( params )
 	return (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("attack_speed")
 end

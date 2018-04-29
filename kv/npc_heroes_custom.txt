@@ -548,26 +548,26 @@
 	"npc_dota_hero_cap"
 	{
 		"override_hero"     "npc_dota_hero_dragon_knight"
-		"ModelScale"		"1"
-		"Model"				"models/heroes/hero_captain/captain_america.vmdl"
+		"ModelScale"		"2.0"
+		"Model"				"models/heroes/hero_america/america.vmdl"
 		"Ability1"			"cap_dragon_tail"
 		"Ability2"			"cap_dragon_blood"
 		"Ability3"			"cap_warcry"
 		"Ability4"			"generic_hidden"
 		"Ability5"			"generic_hidden"
 		"Ability6"			"cap_sheild_blast"
-		"Ability10"				"special_bonus_exp_boost_30"
-		"Ability11"				"special_bonus_gold_income_50"
-		"Ability12"				"special_bonus_hp_regen_40"
-		"Ability13"				"special_bonus_armor_15"
-		"Ability14"				"special_bonus_cooldown_reduction_25"
-		"Ability15"				"special_bonus_attack_damage_90"
-		"Ability16"				"special_bonus_strength_25"
-		"Ability17"				"special_bonus_all_stats_20"
+		"Ability10"			"special_bonus_exp_boost_30"
+		"Ability11"			"special_bonus_gold_income_50"
+		"Ability12"			"special_bonus_hp_regen_40"
+		"Ability13"			"special_bonus_armor_15"
+		"Ability14"			"special_bonus_cooldown_reduction_25"
+		"Ability15"			"special_bonus_attack_damage_90"
+		"Ability16"			"special_bonus_strength_25"
+		"Ability17"			"special_bonus_all_stats_20"
 		"AbilityLayout"		"4"
 		"ArmorPhysical"		"2.000000"
 		"DisableWearables"	"1"
-		"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributePrimary"  "DOTA_ATTRIBUTE_STRENGTH"
 		"precache"
 		{
 			"model"	 "models/_america_shield.vmdl"
@@ -2493,14 +2493,14 @@
 		"Ability5"						"generic_hidden"
 		"Ability6"						"diablo_elder_demon_form"
 		"Ability7"						""
-		"Ability10"				"special_bonus_exp_boost_30"
-		"Ability11"				"special_bonus_gold_income_50"
-		"Ability12"				"special_bonus_movement_speed_50"
-		"Ability13"				"special_bonus_attack_speed_100"
-		"Ability14"				"special_bonus_cooldown_reduction_25"
-		"Ability15"				"special_bonus_attack_damage_90"
-		"Ability16"				"special_bonus_agility_25"
-		"Ability17"				"special_bonus_unique_diablo"
+		"Ability10"						"special_bonus_unique_diablo"
+		"Ability11"						"special_bonus_unique_diablo_1"
+		"Ability12"						"special_bonus_movement_speed_50"
+		"Ability13"						"special_bonus_attack_speed_100"
+		"Ability14"						"special_bonus_cooldown_reduction_25"
+		"Ability15"						"special_bonus_attack_damage_90"
+		"Ability16"						"special_bonus_unique_diablo_3"
+		"Ability17"						"special_bonus_unique_diablo_2"
 	
 		"ArmorPhysical"					"2"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -3201,11 +3201,12 @@
 		"HealthBarOffset"		"155"
 	}
 	"npc_dota_hero_one_punch_man"
-	    	{
+	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"override_hero"		    "npc_dota_hero_skywrath_mage"
-		"Model"					"models/heroes/antimage/antimage.vmdl"		// Model.
+		"Model"					"models/heroes/hero_sitama/saitama.vmdl"		// Model.
+		"ModelScale"			"27"
 		"DisableWearables"		"1"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -3670,9 +3671,10 @@
 	}
 	"npc_dota_hero_ronan"
 	    {
-	      "Model"						"models/heroes/axe/axe.vmdl"		// Model.
+	      "Model"						"models/heroes/hero_ronan/ronan.vmdl"		// Model.
 	      "override_hero"		        "npc_dota_hero_troll_warlord"
-	      "DisableWearables" 				"1"
+	      "DisableWearables" 			"1"
+		  "ModelScale"					"30"
 	
 	      "AbilityLayout"				"4"
 	      "Ability1"					"ronan_passive"
@@ -3682,14 +3684,14 @@
 	      "Ability5"					"generic_hidden"
 	      "Ability6"					"ronan_strike_of_ethernity"
 	      "Ability7"					""
-	      "Ability10"				  "special_bonus_exp_boost_30"
-	      "Ability11"				  "special_bonus_gold_income_50"
-	      "Ability12"				  "special_bonus_hp_regen_40"
-	      "Ability13"			  	"special_bonus_armor_15"
-	      "Ability14"			  	"special_bonus_cooldown_reduction_25"
-	      "Ability15"			  	"special_bonus_attack_damage_90"
-	      "Ability16"			  	"special_bonus_strength_25"
-	      "Ability17"				 "special_bonus_unique_ronan"
+	      "Ability10"				  	"special_bonus_unique_ronan"
+	      "Ability11"				  	"special_bonus_unique_ronan_1"
+	      "Ability12"				 	"special_bonus_hp_regen_40"
+	      "Ability13"			  		"special_bonus_armor_15"
+	      "Ability14"			  		"special_bonus_cooldown_reduction_25"
+	      "Ability15"			  		"special_bonus_attack_damage_90"
+	      "Ability16"			  		"special_bonus_unique_ronan_2"
+	      "Ability17"					"special_bonus_unique_ronan_3"
 	      "ArmorPhysical"				"2"								// Physical protection.
 	
 	      // Attack
