@@ -1301,15 +1301,25 @@
 			}
 			"05"
 			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_mana_regen"			"3.5"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_health_regen"		"9.5"
+			}
+			"07"
+			{
 				"var_type"					"FIELD_INTEGER"
 				"bonus_damage"				"60"
 			}
-			"06"
+			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"bonus_damage_post_attack"	"64"
 			}
-			"05"
+			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"percent_cleave"			"50"
@@ -3626,7 +3636,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"175"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -6710,6 +6720,123 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_all_stats"		"60"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Spear
+	//=================================================================================================================
+	"item_recipe_spear_of_destiny"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"            "recipe"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1225"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spear_of_destiny"
+		"ItemRequirements"
+		{
+			"01"						"item_monkey_king_bar;item_gem;item_radiance;item_ghost"
+		}
+	}
+	//=================================================================================================================
+	// Monkey King Bar
+	//=================================================================================================================
+	"item_spear_of_destiny"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/spear_of_destiny"
+		"ScriptFile"					"items/item_spear_of_destiny.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"25.0"
+		"AbilitySharedCooldown"			"ethereal"
+		
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"14175"
+		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mkb;monkey king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"precache"
+		{
+			"particle"					"particles/econ/events/ti6/radiance_owner_ti6.vpcf"
+			"particle"					"particles/items_fx/ghost.vpcf"
+			"particle"					"particles/status_fx/status_effect_ghost.vpcf"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"			"15"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"100"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"40"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance"				"90"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance_damage"		"150"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_aura_damage"			"75"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"700"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"extra_spell_damage_percent"	"0"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration"						"4"
 			}
 		}
 	}

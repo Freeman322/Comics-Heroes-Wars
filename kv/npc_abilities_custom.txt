@@ -36402,6 +36402,7 @@
 			"model"		 	"models/heroes/hero_ronan/econs/ronan_shadowmourne.vmdl"
 			"model"		 	"models/heroes/hero_ronan/econs/ronan_moltenclaw.vmdl"
 			"model"		 	"models/heroes/hero_ronan/econs/ronan_vanguard.vmdl"
+			"model"			"models/heroes/hero_ronan/econs/ronan_weapon.vmdl"
 			"particle"  	"particles/ronan_strike.vpcf"
 			"particle"  	"particles/one_punch.vpcf"
 			"particle"  	"particles/punch_cracks.vpcf"
@@ -36776,7 +36777,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"50"
+				"radius"					"350"
 			}
 			"02"
 			{
@@ -36803,7 +36804,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"activation_delay"			"0.0"
+				"activation_delay"			"0.05"
 			}
 		}
 	}

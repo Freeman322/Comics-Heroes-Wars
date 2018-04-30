@@ -343,9 +343,10 @@
   //"item_guardian_greaves"     "REMOVE"
   //"item_recipe_glimmer_cape"      "REMOVE"
   //"item_glimmer_cape"     "REMOVE"
-
-  "item_midas_tube"     "REMOVE"
-  "item_recipe_midas_tube"  "REMOVE"
+  "item_effulgent_sword"      "REMOVE"
+  "item_recipe_effulgent_sword"      "REMOVE"
+  "item_angels_dagger"      "REMOVE"
+  "item_recipe_angels_dagger"      "REMOVE"
 	"special_bonus_strength_25"
 	{
 		"AbilitySpecial"

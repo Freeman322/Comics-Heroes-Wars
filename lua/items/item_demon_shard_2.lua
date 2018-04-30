@@ -30,10 +30,20 @@ function modifier_item_demon_shard_2:DeclareFunctions()
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
         MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE,
+         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
 
     return funcs
+end
+
+function modifier_item_demon_shard_2:GetModifierConstantHealthRegen (params)
+    return self:GetAbility():GetSpecialValueFor ("bonus_damage_post_attack")
+end
+
+function modifier_item_demon_shard_2:GetModifierConstantManaRegen (params)
+    return self:GetAbility():GetSpecialValueFor ("bonus_damage_post_attack")
 end
 
 function modifier_item_demon_shard_2:GetModifierProcAttack_BonusDamage_Pure (params)

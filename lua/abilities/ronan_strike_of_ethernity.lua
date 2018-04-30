@@ -16,7 +16,6 @@ function ronan_strike_of_ethernity:GetAbilityTextureName()
 	return self.BaseClass.GetAbilityTextureName(self)
 end
 
-
 function ronan_strike_of_ethernity:GetCooldown (nLevel)
     return self.BaseClass.GetCooldown (self, nLevel)
 end
