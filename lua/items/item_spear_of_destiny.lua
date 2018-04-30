@@ -41,7 +41,7 @@ local funcs = {
 
     return funcs
 end
-function modifier_item_spear_of_destiny_aura:CheckState()
+function modifier_item_spear_of_destiny:CheckState()
 	local state = {
         [MODIFIER_STATE_CANNOT_MISS] = true,
         [MODIFIER_STATE_TRUESIGHT_IMMUNE] = true
@@ -100,7 +100,7 @@ function modifier_item_spear_of_destiny:GetAuraSearchTeam()
   return DOTA_UNIT_TARGET_TEAM_ENEMY
 end
 function modifier_item_spear_of_destiny:GetAuraSearchType()
-  return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+  return DOTA_UNIT_TARGET_ALL
 end
 function modifier_item_spear_of_destiny:GetAuraSearchFlags()
   return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
@@ -134,6 +134,9 @@ end
 
 function modifier_item_spear_of_destiny_aura:OnCreated(table)
     if IsServer() then
+        if self:GetParent():IsBuilding() then 
+            return
+        end
         self:StartIntervalThink(1)
     end
 end
@@ -152,7 +155,6 @@ function modifier_item_spear_of_destiny_aura:CheckState()
 
 	return state
 end
-
 
 if modifier_item_spear_of_destiny_active == nil then modifier_item_spear_of_destiny_active = class({}) end
 

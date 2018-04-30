@@ -35649,6 +35649,7 @@
 		{
 			"particle"					"particles/status_fx/status_effect_battle_hunger.vpcf"
 			"particle"					"particles/units/heroes/hero_doom_bringer/doom_infernal_blade_debuff.vpcf"
+			"model"						"models/hulk/hulk_dragonaxe.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
