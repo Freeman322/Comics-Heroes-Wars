@@ -11,11 +11,16 @@ function ironfist_echo_punch:OnSpellStart()
     EmitSoundOn( "Hero_EarthShaker.EchoSlamEcho", caster )
     EmitSoundOn( "Hero_EarthShaker.EchoSlamSmall", caster )
 
+    local damage = self:GetAbilityDamage()
+    if self:GetCaster():HasTalent("special_bonus_unique_iron_fist") then 
+        damage = damage + self:GetCaster():FindTalentValue("special_bonus_unique_iron_fist")
+    end
+
     local targets = FindUnitsInRadius(caster:GetTeamNumber(), location, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
     for i = 1, #targets do
         local target = targets[i]
         target:AddNewModifier(caster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
- 		ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetAbilityDamage(), damage_type = DAMAGE_TYPE_PURE, ability = self})
+ 		ApplyDamage({attacker = self:GetCaster(), victim = target, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self})
     end
     caster:Purge(false, true, false, true, true)
 end

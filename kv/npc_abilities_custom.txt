@@ -6772,72 +6772,25 @@
 	}
 	"chifu_trade"
 	{
-				// General
-				//-------------------------------------------------------------------------------------------------------------
-				"ID"					      			  "5145"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-				"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-				"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
-				"AbilityTextureName"				"custom/shifu_ult"
-				"BaseClass"                     "riki_tricks_of_the_trade"
-				"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
-
-				// Casting
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastPoint"				"0.4"
-				"AbilityChannelTime"			"3 4 5"
-
-				// Ability Data
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"100"
-				"AbilityManaCost"				"75 125 140"
-
-
-				// Special
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilitySpecial"
-				{
-					"01"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"range"						"500 600 700"
-					}
-					"02"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"attack_count"				"8 10 12"
-					}
-			}
-	}
-	"joker_land_mines"
-	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5599"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"custom/joker_mine"
-		"BaseClass"                     "techies_land_mines"
+		"ID"					      			  "5145"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"				"custom/shifu_ult"
+		"BaseClass"                     "riki_tricks_of_the_trade"
+		"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
 
-
-		"precache"
-		{
-			"model"		 "models/joker_head.vmdl"
-			"model"		"models/items/techies/bigshot/fx_bigshot_stasis.vmdl"
-			"model"		"models/items/silencer/pauldrons_of_the_silent_guardian/pauldrons_of_the_silent_guardian.vmdl"
-		}
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.4"
+		"AbilityChannelTime"			"3 4 5"
 
-		// Time
+		// Ability Data
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"2"
+		"AbilityCooldown"				"100"
+		"AbilityManaCost"				"75 125 140"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -6846,293 +6799,14 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"50"
+				"range"						"500 600 700"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"proximity_threshold"		"0"
-			}
-			"03"
-			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"200 280 360 440"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"burn_duration"				"5"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"building_damage_pct"		"25"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"activation_delay"			"0.0"
+				"attack_count"				"8 10 12"
 			}
 		}
-	}
-//=================================================================================================================
-// Ability: Joker Explosice Specialist
-//=================================================================================================================
-"joker_explosive_spec"
-{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"									"7520"
-		"BaseClass"				    "ability_lua"												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"  "custom/joker_explosive_spec"
-		"ScriptFile"					"abilities/joker_explosive_spec.lua"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"bonus_mana"			"200 300 400 500"
-				}
-				"02"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"bonus_health_regen"	"5 8 11 14"
-				}
-				"03"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"cast_range_bonus"		"50 100 150 200"
-				}
-				"04"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"spell_amp"				"5 10 15 20"
-				}
-		}
-}
-//=================================================================================================================
-// Joker: Nuclear Mine ( scepter ability )
-//=================================================================================================================
-	"joker_nuclear_mine"
-	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"ID"												"7521"
-			"BaseClass"				        	"ability_lua"
-			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-			"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"
-			"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
-			"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
-			"AbilityTextureName"        "custom/joker_nuclear_mine"
-			"ScriptFile"								"abilities/joker_nuclear_mine.lua"
-			"IsGrantedByScepter"				"1"
-			"HasScepterUpgrade"					"1"
-			"MaxLevel"									"1"
-			"HotKeyOverride"						"F"
-
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"500"
-			"AbilityCastPoint"				"1.5"
-
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"50"
-
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"150"
-
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-					"01"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"max_mines"					"1"
-					}
-					"02"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"damage"					"35"
-					}
-					"03"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"radius"					"725"
-					}
-					"04"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"duration"					"160.0"
-					}
-					"05"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"activation_time"			"2.0"
-					}
-			}
-	}
-	"joker_remote_mines"
-	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"ID"							"5602"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
-			"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-			"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-			"AbilityTextureName"			"techies_remote_mines"
-			"BaseClass"								"techies_remote_mines"
-			"MaxLevel"                      "4"
-
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"500"
-			"AbilityCastPoint"				"1.2"
-
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"2"
-
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"75 90 105 120"
-
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-					"01"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"max_mines"					"500"
-					}
-					"02"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"damage"					"200 300 400 500"
-					}
-					"03"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"radius"					"425"
-					}
-					"04"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"duration"					"1600.0"
-					}
-					"05"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"activation_time"			"2.0"
-					}
-					"06"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"cast_range_tooltip"			"500"
-					}
-					"07"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"damage_scepter"			"400 500 600 700"
-					}
-					"08"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"radius_scepter"			"425"
-					}
-					"09"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"cast_range_scepter"		"700"
-					}
-					"10"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"vision_radius"			"500"
-					}
-					"11"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"vision_duration"			"3.0"
-					}
-					"12"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"model_scale"				"0 10 20"     // Percentage over model scale
-					}
-			}
-	}
-	"joker_suicide"
-	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"					       	"ability_lua"
-		  "ScriptFile"					      "abilities/joker_suicide.lua"
-			"AbilityType"				      	"DOTA_ABILITY_TYPE_ULTIMATE"
-			"AbilityBehavior"			     	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
-			"SpellImmunityType"				  "SPELL_IMMUNITY_ENEMIES_YES"
-			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-			"FightRecapLevel"			     	"1"
-			"AbilityTextureName"			  "custom/joker_ult"
-			"MaxLevel"                  "3"
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"600"
-			"AbilityCastPoint"				"0.0"
-			"HasScepterUpgrade"				"1"
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"			   	"120 100 80"
-
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"200 300 400"
-
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-					"01"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"radius"				    "600"
-					}
-					"02"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"damage"					  "60 90 120"
-					}
-					"03"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"hp_cost"					  "100"
-					}
-					"04"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"mana_cost"					"35"
-					}
-					"05"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"cooldown_scepter"		"60 50 40"
-					}
-					"06"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"damage_scepter"			"120 160 200"
-					}
-			}
 	}
 	//=================================================================================================================
 	// palpatine wormhole
@@ -30020,7 +29694,7 @@
 		"ScriptFile"					"abilities/ironfist_echo_punch.lua"
 		"AbilityTextureName"			"custom/ironfist_echo_punch"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"2"
 
@@ -37061,6 +36735,398 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"value"						"10"
+			}
+		}
+	}
+	"joker_land_mines"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5599"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"custom/joker_mine"
+		"BaseClass"                     "techies_land_mines"
+
+
+		"precache"
+		{
+			"model"		 "models/joker_head.vmdl"
+			"model"		"models/items/techies/bigshot/fx_bigshot_stasis.vmdl"
+			"model"		"models/items/silencer/pauldrons_of_the_silent_guardian/pauldrons_of_the_silent_guardian.vmdl"
+		}
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"2"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 80 90 100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"50"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"proximity_threshold"		"0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"200 280 360 440"
+				"LinkedSpecialBonus"			"special_bonus_unique_joker"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"burn_duration"				"5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"building_damage_pct"		"25"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"activation_delay"			"0.0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Joker Explosice Specialist
+	//=================================================================================================================
+	"joker_explosive_spec"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7520"
+		"BaseClass"				    	"ability_lua"												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"  			"custom/joker_explosive_spec"
+		"ScriptFile"					"abilities/joker_explosive_spec.lua"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"200 300 400 500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"5 8 11 14"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"50 100 150 200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"5 10 15 20"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Joker: Nuclear Mine ( scepter ability )
+	//=================================================================================================================
+	"joker_nuclear_mine"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"												"7521"
+		"BaseClass"				        	"ability_lua"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_HP_REMOVAL"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"        		"custom/joker_nuclear_mine"
+		"ScriptFile"						"abilities/joker_nuclear_mine.lua"
+		"IsGrantedByScepter"				"1"
+		"HasScepterUpgrade"					"1"
+		"MaxLevel"							"1"
+		"HotKeyOverride"					"F"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"					"500"
+		"AbilityCastPoint"					"1.5"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"					"50"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"					"150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_mines"					"1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"725"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"160.0"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"activation_time"			"2.0"
+			}
+		}
+	}
+	"joker_remote_mines"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5602"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"techies_remote_mines"
+		"BaseClass"						"techies_remote_mines"
+		"MaxLevel"                      "4"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"1.2"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"2"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 90 105 120"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_mines"						"500"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"200 300 400 500"
+				"LinkedSpecialBonus"			"special_bonus_unique_joker"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"425"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"1600.0"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"activation_time"				"2.0"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cast_range_tooltip"			"500"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_scepter"				"400 500 600 700"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius_scepter"				"425"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cast_range_scepter"			"700"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"vision_radius"					"500"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"vision_duration"				"3.0"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"model_scale"					"0 10 20"     // Percentage over model scale
+			}
+		}
+	}
+	"joker_suicide"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					       	"ability_lua"
+		"ScriptFile"					    "abilities/joker_suicide.lua"
+		"AbilityType"				      	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"			     	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"SpellImmunityType"				  	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"			     	"1"
+		"AbilityTextureName"			  	"custom/joker_ult"
+		"MaxLevel"                  		"3"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"					"600"
+		"AbilityCastPoint"					"0.0"
+		"HasScepterUpgrade"					"1"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"			   		"120 100 80"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"					"200 300 400"
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+			"model"						"models/heroes/hero_joker/econs/pistol.vmdl"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"				    "600"
+				"LinkedSpecialBonus"		"special_bonus_unique_joker_1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage"					"60 90 120"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"hp_cost"					 "100"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"mana_cost"					"35"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cooldown_scepter"			"60 50 40"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_scepter"			"120 160 200"
+			}
+		}
+	}
+	"special_bonus_unique_joker"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"460"
+			}
+		}
+	}
+	"special_bonus_unique_joker_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"400"
+			}
+		}
+	}
+	"special_bonus_unique_iron_fist"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"200"
 			}
 		}
 	}

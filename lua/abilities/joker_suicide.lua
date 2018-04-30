@@ -24,6 +24,9 @@ function joker_suicide:OnSpellStart()
     if caster:HasScepter() then
       damage_pers = self:GetSpecialValueFor("damage_scepter")
     end
+    if caster:HasTalent("special_bonus_unique_joker_1") then
+      radius = radius + caster:FindTalentValue("special_bonus_unique_joker_1")
+    end
 
     EmitSoundOn( "Hero_EarthShaker.EchoSlam", caster )
     EmitSoundOn( "Hero_EarthShaker.EchoSlamEcho", caster )
