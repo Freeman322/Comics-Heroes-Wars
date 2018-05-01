@@ -221,68 +221,68 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"500"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"500"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"		"500"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health"				"500"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"	"45"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"			"45"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"15"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"15"
 			}
 			"05"
 			{
-				"var_type"					 "FIELD_INTEGER"
-				"bonus_health_regen" "8"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen" 		"8"
 			}
 			"06"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mana_regen"  "3.5"
+				"var_type"					"FIELD_FLOAT"
+				"bonus_mana_regen"  		"1.85"
 			}
 			"07"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_cast_range"		"250"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_cast_range"			"250"
 			}
 			"08"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_spell_damage"	"25"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_spell_damage"		"25"
 			}
 			"09"
 			{
-				"var_type"						"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"bonus_mana_cost"			"35"
 			}
 			"10"
 			{
-				"var_type"						"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"bonus_casttime"			"50"
 			}
 			"11"
 			{
-				"var_type"						"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"bonus_cooldown"			"30"
 			}
 			"12"
 			{
-				"var_type"											"FIELD_INTEGER"
-				"magical_corruption"						"-35"
+				"var_type"					"FIELD_INTEGER"
+				"magical_corruption"		"-35"
 			}
 			"13"
 			{
-				"var_type"											"FIELD_INTEGER"
-				"magical_corruption_duration"		"7"
+				"var_type"						"FIELD_INTEGER"
+				"magical_corruption_duration"	"7"
 			}
 		}
 	}
@@ -1045,7 +1045,7 @@
 		"ScriptFile"					"items/item_dawnbreaker.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	
-		"AbilityCooldown"				"90.0"
+		"AbilityCooldown"				"60"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"15150"
@@ -1164,168 +1164,6 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Demonic Claws
-	//=================================================================================================================
-	"item_demonic_claws"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_lua"
-		"ID"							"9261"																// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "custom/demonic_claws"
-		"ScriptFile"					"items/item_demonic_claws.lua"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4850"
-		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"aether lens"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"450"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_health_regen"		"15"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_bonus"			"250"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spell_amp"					"15"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Demon Shard
-	//=================================================================================================================
-	"item_demon_shard"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9003"
-		"BaseClass"             		"item_lua"
-		"AbilityTextureName"            "custom/demon_shard"
-		"ScriptFile"					"items/item_demon_shard.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"9592"
-		"ItemShopTags"					"damage;crit"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"daedalus"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"45"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"all_stats"				"50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_bonus"			"450"
-			}
-		}
-	}
-	//=================================================================================================================
-	//Blade of Darkness
-	//=================================================================================================================
-	"item_demon_shard_2"
-	{
-		"ID"							"9010"
-		"BaseClass"                     "item_lua"
-		"ScriptFile"					"items/item_demon_shard_2.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "custom/demon_shard_2"
-		"ItemQuality"					"epic"
-		"ItemShopTags"					"damage"
-		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"ItemCost"						"14095"
-        "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"450"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"15"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"all"				        "70"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"as"				        "60"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_mana_regen"			"3.5"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_health_regen"		"9.5"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"60"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_post_attack"	"64"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"percent_cleave"			"50"
-			}
-		}
-	}
 	"item_desolator_2"
 	{
 		// General
@@ -1386,17 +1224,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"200"
+				"bonus_damage"			"275"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"30"
+				"bonus_all_stats"		"35"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-21"
+				"corruption_armor"		"-24"
 			}
 			"04"
 			{
@@ -3869,7 +3707,7 @@
 		// Item Info
 	
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"250"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -3878,7 +3716,7 @@
 		"ItemResult"					"item_demon_shard"
 		"ItemRequirements"
 		{
-			"01"		"item_orchid;item_greater_crit"
+			"01"						"item_relic;item_greater_crit"
 		}
 	}
 	//=================================================================================================================
@@ -3889,14 +3727,14 @@
 		// General
 		"ID"						   "9011"
 		"BaseClass"                    "item_datadriven"
-	//-------------------------------------------------------------------------------------------------------------
-	
-	"AbilityTextureName"            "recipe"
-	
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"AbilityTextureName"            "recipe"
+		
 		// Item Info
-	
-	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2750"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -3945,7 +3783,7 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4000"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -3954,7 +3792,7 @@
 		"ItemResult"					"item_desolator_3"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator_2;item_desolator_2"
+			"01"						"item_desolator_2;item_desolator_2;item_relic"
 		}
 	}
 	//	//=================================================================================================================
@@ -6796,7 +6634,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"15"
+				"bonus_all_stats"			"35"
 			}
 			"02"
 			{
@@ -6837,6 +6675,171 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"duration"						"4"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Demonic Claws
+	//=================================================================================================================
+	"item_demonic_claws"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_lua"
+		"ID"							"9261"																// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "custom/demonic_claws"
+		"ScriptFile"					"items/item_demonic_claws.lua"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4850"
+		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"aether lens"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"450"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"		"15"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_bonus"			"250"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spell_amp"					"15"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Demon Shard
+	//=================================================================================================================
+	"item_demon_shard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"9003"
+		"BaseClass"             		"item_lua"
+		"AbilityTextureName"            "custom/demon_shard"
+		"ScriptFile"					"items/item_demon_shard.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"9592"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"daedalus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"70"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"all_stats"				"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"15"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_bonus"			"375"
+			}
+		}
+	}
+	//=================================================================================================================
+	//Blade of Darkness
+	//=================================================================================================================
+	"item_demon_shard_2"
+	{
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_demon_shard_2.lua"
+		"AbilityTextureName"            "custom/demon_shard_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"19592"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"daedalus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_bonus"				"475"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"15"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"all"				        "40"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"as"				        "80"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_mana_regen"			"3.5"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_health_regen"		"9.5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"100"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage_post_attack"	"64"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"percent_cleave"			"50"
 			}
 		}
 	}

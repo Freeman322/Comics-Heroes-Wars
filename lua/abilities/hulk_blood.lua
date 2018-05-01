@@ -20,7 +20,7 @@ function modifier_hulk_blood:DeclareFunctions()
 	{
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
-		MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE  -- GetModifierMPRegenAmplify_Percentage
+		MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE
 	}
 
 	return funcs
@@ -30,7 +30,8 @@ function modifier_hulk_blood:GetModifierAttackSpeedBonus_Constant( params )
 	return (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("attack_speed")
 end
 function modifier_hulk_blood:GetModifierHPRegenAmplify_Percentage( params )
-	return (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("heal_amplify")
+	local amplify = (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("heal_amplify")
+	return amplify / 10
 end
 function modifier_hulk_blood:GetModifierMPRegenAmplify_Percentage( params )
 	return (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("mana_amplify")

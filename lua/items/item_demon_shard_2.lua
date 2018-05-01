@@ -39,11 +39,11 @@ function modifier_item_demon_shard_2:DeclareFunctions()
 end
 
 function modifier_item_demon_shard_2:GetModifierConstantHealthRegen (params)
-    return self:GetAbility():GetSpecialValueFor ("bonus_damage_post_attack")
+    return self:GetAbility():GetSpecialValueFor ("bonus_health_regen")
 end
 
 function modifier_item_demon_shard_2:GetModifierConstantManaRegen (params)
-    return self:GetAbility():GetSpecialValueFor ("bonus_damage_post_attack")
+    return self:GetAbility():GetSpecialValueFor ("bonus_mana_regen")
 end
 
 function modifier_item_demon_shard_2:GetModifierProcAttack_BonusDamage_Pure (params)

@@ -83,7 +83,8 @@ function modifier_item_aether_medallion:GetModifierBonusStats_Agility( params )
     return hAbility:GetSpecialValueFor( "bonus_all_stats" )
 end
 function modifier_item_aether_medallion:GetModifierConstantManaRegen( params )
-    return self:GetParent():GetMaxHealth () * (self:GetAbility():GetSpecialValueFor ("bonus_mana_regen") / 100)
+    local mana = self:GetParent():GetMaxMana() * (self:GetAbility():GetSpecialValueFor ("bonus_mana_regen") / 100)
+    return mana
 end
 function modifier_item_aether_medallion:OnOrder( args )
   if args.order_type and args.order_type == DOTA_UNIT_ORDER_CAST_TARGET then
