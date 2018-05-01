@@ -10,7 +10,7 @@ function joker_suicide:GetCooldown( nLevel )
 end
 
 function joker_suicide:GetManaCost()
-  return self:GetCaster():GetMana() * (self:GetSpecialValueFor("damage") / 100)
+  return (self:GetCaster():GetMana() * (self:GetSpecialValueFor("damage") / 100)) / 2
 end
 --------------------------------------------------------------------------------
 

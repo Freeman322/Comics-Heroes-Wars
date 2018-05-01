@@ -27,7 +27,7 @@ function modifier_hulk_blood:DeclareFunctions()
 end
 
 function modifier_hulk_blood:GetModifierAttackSpeedBonus_Constant( params )
-	return (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("attack_speed")
+	return (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("attack_speed") / 10
 end
 function modifier_hulk_blood:GetModifierHPRegenAmplify_Percentage( params )
 	local amplify = (100 - self:GetParent():GetHealthPercent()) * self:GetAbility():GetSpecialValueFor("heal_amplify")
