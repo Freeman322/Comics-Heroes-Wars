@@ -59,7 +59,7 @@ function modifier_monkey_king_the_shattered_dreams:OnAttackLanded(params)
   if IsServer() then
   	if params.attacker == self:GetParent() then
       if self:GetAbility():IsCooldownReady() and self:GetParent():GetMana() >= self:GetAbility():GetManaCost(self:GetAbility():GetLevel()) then
-        if RollPercentage(self:GetAbility():GetSpecialValueFor("chance")) then
+        if RollPercentage(self:GetAbility():GetSpecialValueFor("chance")) and self:GetParent():IsRealHero() then 
           self:DoWidghAttack(self:GetParent(), params.target, params.damage)
           self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
           self:GetAbility():PayManaCost()

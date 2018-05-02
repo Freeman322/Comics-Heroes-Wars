@@ -18,19 +18,24 @@ function zoom_damage_speed:OnSpellStart()
 	EmitSoundOn( "Hero_Invoker.ColdSnap", hCaster )
 	EmitSoundOn( "Hero_Invoker.ColdSnap.Cast", hTarget )
 
-  local caster_as = hCaster:GetIdealSpeed()
+	local caster_as = hCaster:GetIdealSpeed()
 
-  local damage = caster_as * self:GetSpecialValueFor("damage")/100
+	local damage = caster_as * self:GetSpecialValueFor("damage")/100
 
-  hTarget:AddNewModifier(hCaster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun")})
-  local damageTable = {
-      victim = hTarget,
-      attacker = hCaster,
-      damage = damage,
-      damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self,
-  }
-  ApplyDamage(damageTable)
+	if damage > 2000 then
+		damage = 2000 
+	end
+
+	hTarget:AddNewModifier(hCaster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun")})
+	
+	local damageTable = {
+		victim = hTarget,
+		attacker = hCaster,
+		damage = damage,
+		damage_type = DAMAGE_TYPE_MAGICAL,
+		ability = self,
+	}
+	ApplyDamage(damageTable)
 
 
 	if hTarget:GetHealth() <= 0 then

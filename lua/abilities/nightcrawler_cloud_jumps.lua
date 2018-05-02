@@ -81,11 +81,11 @@ function modifier_nightcrawler_nightcrawler_cloud_jumps:OnIntervalThink()
                     ParticleManager:SetParticleControlEnt (nFXIndex, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin (), true);
                     ParticleManager:ReleaseParticleIndex (nFXIndex);
 
-                    thinker:PerformAttack(target, true, true, true, true, false, false, true)
-                    thinker:PerformAttack(target, true, true, true, true, false, false, true)
-                    thinker:PerformAttack(target, true, true, true, true, false, false, true)
-                    thinker:PerformAttack(target, true, true, true, true, false, false, true)
-                    thinker:PerformAttack(target, true, true, true, true, false, false, true)
+                    thinker:PerformAttack(target, false, false, true, false, false)
+                    thinker:PerformAttack(target, false, false, true, false, false)
+                    thinker:PerformAttack(target, false, false, true, false, false)
+                    thinker:PerformAttack(target, false, false, true, false, false)
+                    thinker:PerformAttack(target, false, false, true, false, false)
 
                     EmitSoundOn("Hero_MonkeyKing.Attack", target)
                     EmitSoundOn("Hero_MonkeyKing.IronCudgel", target)

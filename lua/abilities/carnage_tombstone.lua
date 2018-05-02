@@ -7,7 +7,7 @@ function carnage_tombstone:OnSpellStart()
     local caster = self:GetCaster()
     local point = self:GetCursorPosition()
     local team_id = caster:GetTeamNumber()
-    local thinker = CreateModifierThinker(caster, self, "modifier_carnage_tombstone_thinker", {duration = 4}, point, team_id, false)
+    local thinker = CreateModifierThinker(caster, self, "modifier_carnage_tombstone_thinker", {duration = self:GetSpecialValueFor("duration")}, point, team_id, false)
 end
 
 modifier_carnage_tombstone_thinker = class ({})

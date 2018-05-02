@@ -11111,12 +11111,12 @@
 			"01"
 	       	{
 	       		"var_type"				"FIELD_INTEGER"
-	       		"damage"		       "9 12 15 18"
+	       		"damage"		      	 "10 15 20 25"
 	       	}
 	       	"02"
 	       	{
 	       		"var_type"				"FIELD_FLOAT"
-	        	"stun"	          "1.1 1.4 1.7 2"
+	        	"stun"	         		 "1.1 1.4 1.7 2"
 	       	}
 		}
 	}
@@ -31074,27 +31074,27 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"				"custom/monkey_king_dragon_strike"
-		"ScriptFile"								"abilities/monkey_king_dragon_strike.lua"
+		"BaseClass"             				"ability_lua"
+		"AbilityTextureName"					"custom/monkey_king_dragon_strike"
+		"ScriptFile"							"abilities/monkey_king_dragon_strike.lua"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"						"1"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_PHYSICAL"
 		"AbilitySound"							"Hero_MonkeyKing.IronCudgel"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"						"0"
 		"precache"
 		{
-			"particle"  "particles/status_fx/status_effect_monkey_king_fur_army.vpcf"
-			"particle"  "particles/hero_daredevil/daredevil_slash_strike_ground.vpcf"
-			"particle"  "particles/units/heroes/hero_earthshaker/earthshaker_fissure.vpcf"
-			"particle"  "particles/econ/items/monkey_king/arcana/monkey_king_arcana_fire.vpcf"
-			"model"			"models/items/monkey_king/monkey_king_king_of_the_dark_reef_ti_2017_head/monkey_king_king_of_the_dark_reef_ti_2017_head.vmdl"
-			"model"			"models/items/monkey_king/monkey_king_king_of_the_dark_reef_ti_2017_weapon/monkey_king_king_of_the_dark_reef_ti_2017_weapon.vmdl"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
+			"particle"  						"particles/status_fx/status_effect_monkey_king_fur_army.vpcf"
+			"particle"  						"particles/hero_daredevil/daredevil_slash_strike_ground.vpcf"
+			"particle"  						"particles/units/heroes/hero_earthshaker/earthshaker_fissure.vpcf"
+			"particle"  						"particles/econ/items/monkey_king/arcana/monkey_king_arcana_fire.vpcf"
+			"model"								"models/items/monkey_king/monkey_king_king_of_the_dark_reef_ti_2017_head/monkey_king_king_of_the_dark_reef_ti_2017_head.vmdl"
+			"model"								"models/items/monkey_king/monkey_king_king_of_the_dark_reef_ti_2017_weapon/monkey_king_king_of_the_dark_reef_ti_2017_weapon.vmdl"
+			"soundfile" 						"soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -31103,32 +31103,27 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"required_hits"					"5"
+				"required_hits"						"5"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"counter_duration"			"7 8 9 10"
+				"counter_duration"					"7 8 9 10"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"charges"								"3 4 5 6"
+				"charges"							"3 4 5 6"
 			}
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_damage"					"50 80 110 140"
+				"bonus_damage"						"50 80 110 140"
 			}
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
 				"lifesteal"							"10 15 20 25"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stun_duration"					"0.1"
 			}
 		}
 	}
@@ -31139,32 +31134,32 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_lua"
+		"BaseClass"             			"ability_lua"
 		"AbilityTextureName"				"custom/monkey_king_the_shattered_dreams"
-		"ScriptFile"								"abilities/monkey_king_the_shattered_dreams.lua"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
-		"FightRecapLevel"						"2"
-		"AbilitySound"							"Hero_MonkeyKing.FurArmy"
+		"ScriptFile"						"abilities/monkey_king_the_shattered_dreams.lua"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PHYSICAL"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"					"2"
+		"AbilitySound"						"Hero_MonkeyKing.FurArmy"
 		"HasScepterUpgrade"					"1"
-		"AbilityCooldown"						"6 5 4"
-		"AbilityManaCost"						"30 45 60"
+		"AbilityCooldown"					"6"
+		"AbilityManaCost"					"30 45 60"
 
 		"precache"
 		{
-			"particle"  "particles/units/heroes/hero_monkey_king/monkey_king_fur_army_cast.vpcf"
-			"particle"  "particles/econ/items/monkey_king/arcana/fire/monkey_king_spring_cast_arcana_fire.vpcf"
-			"particle"  "particles/econ/items/monkey_king/arcana/monkey_king_arc_death.vpcf"
+			"particle"  	"particles/units/heroes/hero_monkey_king/monkey_king_fur_army_cast.vpcf"
+			"particle"  	"particles/econ/items/monkey_king/arcana/fire/monkey_king_spring_cast_arcana_fire.vpcf"
+			"particle"  	"particles/econ/items/monkey_king/arcana/monkey_king_arc_death.vpcf"
 			"model"			"models/heroes/monkey_king/monkey_king_armor.vmdl"
 			"model"			"models/heroes/monkey_king/monkey_king_base_weapon.vmdl"
 			"model"			"models/heroes/monkey_king/monkey_king_cape.vmdl"
 			"model"			"models/heroes/monkey_king/monkey_king_hair.vmdl"
-			"particle"  "particles/units/heroes/hero_arc_warden/arc_warden_tempest_cast.vpcf"
-			"particle"  "particles/status_fx/status_effect_terrorblade_reflection.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"particle"  	"particles/units/heroes/hero_arc_warden/arc_warden_tempest_cast.vpcf"
+			"particle"  	"particles/status_fx/status_effect_terrorblade_reflection.vpcf"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -31173,32 +31168,32 @@
 			"01"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"range"												"400 500 600"
+				"range"											"400 500 600"
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"width"												"350"
+				"width"											"350"
 			}
 			"03"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"damage"											"80 120 160"
+				"damage"										"80 120 160"
 			}
 			"04"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"chance"											"20 23 26"
+				"chance"										"20 23 26"
 			}
 			"05"
 			{
-				"var_type"										"FIELD_INTEGER"
-				"cooldown_scepter"						"2"
+				"var_type"										"FIELD_FLOAT"
+				"cooldown_scepter"								"3"
 			}
 			"06"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"manacost_scepter"						"0"
+				"manacost_scepter"								"0"
 			}
 		}
 	}
@@ -33628,7 +33623,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"24 22 20 18"
-		"AbilityDamage"					"30 50 70 90"
+		"AbilityDamage"					"50 70 90 120"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75 90 105 120"
@@ -35384,7 +35379,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"incoming_damage"				"30 55 80"
+				"incoming_damage"				"12 21 30"
 			}			
 		}
 	}
@@ -35407,7 +35402,7 @@
 		"AbilityCastRange"				"150"
 		"AbilityDamage"					"80 120 160 200"
 
-		"AbilityCooldown"				"7 6 5 4"
+		"AbilityCooldown"				"8 7 6 5"
 
 		"precache"
 		{

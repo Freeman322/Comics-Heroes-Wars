@@ -82,16 +82,16 @@ end
 
 function modifier_monkey_king_dragon_strike_charges:OnAttackLanded(params)
 	if params.attacker == self:GetParent() then
-    self:SetStackCount(self:GetStackCount() - 1)
-    if self:GetStackCount() <= 0 then
-      self:Destroy()
-    end
-    params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
-    self:GetParent():Heal(params.damage*(self:GetAbility():GetSpecialValueFor("lifesteal")/100), self:GetAbility())
-    local lifesteal_fx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent ())
-    ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetParent ():GetAbsOrigin())
-    ParticleManager:ReleaseParticleIndex(lifesteal_fx)
-    EmitSoundOn("Hero_MonkeyKing.IronCudgel", params.target)
+		self:SetStackCount(self:GetStackCount() - 1)
+		if self:GetStackCount() <= 0 then
+		self:Destroy()
+		end
+		----params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
+		self:GetParent():Heal(params.damage*(self:GetAbility():GetSpecialValueFor("lifesteal")/100), self:GetAbility())
+		local lifesteal_fx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent ())
+		ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetParent ():GetAbsOrigin())
+		ParticleManager:ReleaseParticleIndex(lifesteal_fx)
+		EmitSoundOn("Hero_MonkeyKing.IronCudgel", params.target)
 		EmitSoundOn("DOTA_Item.MKB.Minibash", params.target)
 	end
 end
