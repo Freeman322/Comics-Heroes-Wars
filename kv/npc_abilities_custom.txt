@@ -14175,7 +14175,7 @@
 
 	// Time
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"120 100 80"
+	"AbilityCooldown"				"120 105 90"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -14191,7 +14191,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"2.0 3.0 4.0"
+			"duration"						"2.0 2.8 3.6"
 		}
 		"02"
 		{
@@ -14206,7 +14206,7 @@
 		"04"
 		{
 			"var_type"						  "FIELD_FLOAT"
-			"bonus_movement_speed"	        "20 35 50"
+			"bonus_movement_speed"	        "15 25 35"
 		}
 	}
 }
@@ -19157,7 +19157,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"chance"				"12 14 16 18"
+			"chance"				"10 12 14 16"
 			"LinkedSpecialBonus"	"special_bonus_unique_nightcrawler"
 		}
 		"02"
@@ -19168,7 +19168,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"crit_damage"			"150 175 200 225"
+			"crit_damage"			"125 150 175 200"
 		}
 		"04"
 		{
@@ -35339,7 +35339,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.2"
-		"AbilityCooldown"				"100 80 60"
+		"AbilityCooldown"				"120 100 80"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		
 		// Cost
@@ -35369,7 +35369,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"5.0"
+				"duration"						"4.0 4.5 5.0"
 			}
 			"02"
 			{
@@ -35379,7 +35379,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"incoming_damage"				"12 21 30"
+				"incoming_damage"				"10 15 20"
 			}			
 		}
 	}
@@ -35506,7 +35506,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"attack_speed"					"0.8 1.2 1.6 2.0"
+				"attack_speed"					"7 9 11 13"
 			}
 			"02"
 			{
@@ -35568,12 +35568,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_cost_percent"		"5"
+				"health_cost_percent"		"0.05"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_damage"				"7 10 13 16"
+				"health_damage"				"0.08 0.10 0.12 0.14"
 			}
 			"03"
 			{
@@ -35587,13 +35587,13 @@
 			}
 			"05"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_damage"				"7 10 13 16"
+				"var_type"							"FIELD_FLOAT"
+				"tooltip_health_damage"				"0.08 0.10 0.12 0.14"
 			}
 			"06"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_cost_percent"		"0"
+				"tooltip_health_cost_percent"		"5"
 			}
 			"07"
 			{
