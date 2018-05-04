@@ -1,0 +1,143 @@
+.prestige_1{
+  color: lightblue;
+}
+
+.prestige_2{
+  color: white;
+}
+
+.prestige_3{
+  color: black;
+}
+
+.prestige_4{
+  color: black;
+}
+
+.prestige_5{
+  color: gradient( linear, 0% 100%, 0% 0%, from( #00008B ), to( #00BFFF ) );
+  font-size: 24px;
+}
+
+.rank_prestige_1{
+  box-shadow: #20B2AA 0px 0px 5px 2px;
+  border: 3px solid deepskyblue;
+}
+
+.rank_prestige_2{
+  box-shadow: goldenrod 0px 0px 5px 2px;
+  border: 3px solid #F0E68C;
+}
+
+.rank_prestige_3{
+  box-shadow: #7FFF00 0px 0px 5px 2px;
+  border: 3px solid black;
+}
+
+.rank_prestige_4{
+  box-shadow: darkred 0px 0px 5px 2px;
+  border: 3px solid black;
+}
+
+.rank_prestige_5{
+  box-shadow: #00008B 0px 0px 12px 1px;
+  border: 3px solid black;
+}
+
+.rank_prestige_6{
+  box-shadow: #ffcc00 0px 0px 12px 1px;
+  border: 3px solid #33ccff;
+}
+
+.rank_prestige_7{
+  box-shadow: #33ccff 0px 0px 12px 1px;
+  border: 3px solid pink;
+}
+
+.rank_prestige_8{
+  box-shadow: #ff6600 0px 0px 12px 1px;
+  border: 3px solid orange;
+}
+.rank_prestige_9{
+  box-shadow: #b3b3b3 0px 0px 12px 1px;
+  border: 3px solid white;
+}
+
+.rank_prestige_10{
+  box-shadow: #993300 0px 0px 12px 1px;
+  border: 3px solid #80ff80;
+}
+
+.rank_prestige_11{
+  box-shadow: #e60000 0px 0px 12px 1px;
+  border: 3px solid #cc00cc;
+  border-radius: 4px;
+}
+
+.rank_prestige_20{
+  box-shadow: #E5E4E2 0px 0px 12px 1px;
+  border: 3px solid #FFDF00;
+  border-radius: 6px;
+}
+
+
+
+.scene_prestige_5{
+  width: 100%;
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	horizontal-align: center;
+	vertical-align: bottom;
+  hue-rotation: 60deg;
+  margin-right: -15%;
+  margin-bottom: -30%;
+}
+
+.scene_prestige_4{
+  width: 100%;
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	horizontal-align: center;
+	vertical-align: bottom;
+  hue-rotation: 210deg;
+  margin-right: -15%;
+  margin-bottom: -30%;
+}
+
+.scene_prestige_3{
+  width: 100%;
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	horizontal-align: center;
+	vertical-align: bottom;
+  hue-rotation: 310deg;
+  margin-right: -15%;
+  margin-bottom: -30%;
+}
+
+.scene_prestige_2{
+  width: 100%;
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	horizontal-align: center;
+	vertical-align: bottom;
+  hue-rotation: 280deg;
+  margin-right: -15%;
+  margin-bottom: -30%;
+}
+
+.scene_prestige_1{
+  width: 100%;
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	horizontal-align: center;
+	vertical-align: bottom;
+  hue-rotation: 40deg;
+  margin-right: -15%;
+  margin-bottom: -30%;
+}

@@ -81,11 +81,12 @@ function modifier_nightcrawler_nightcrawler_cloud_jumps:OnIntervalThink()
                     ParticleManager:SetParticleControlEnt (nFXIndex, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin (), true);
                     ParticleManager:ReleaseParticleIndex (nFXIndex);
 
-                    thinker:PerformAttack(target, false, false, true, false, false)
-                    thinker:PerformAttack(target, false, false, true, false, false)
-                    thinker:PerformAttack(target, false, false, true, false, false)
-                    thinker:PerformAttack(target, false, false, true, false, false)
-                    thinker:PerformAttack(target, false, false, true, false, false)
+                    print(thinker:GetAverageTrueAttackDamage(target))
+                    local damage = thinker:GetAverageTrueAttackDamage(target) * 5
+                    ApplyDamage( {attacker = thinker, victim = target, ability = self:GetAbility(), 
+                        damage = damage, 
+                        damage_type = DAMAGE_TYPE_PURE})
+
 
                     EmitSoundOn("Hero_MonkeyKing.Attack", target)
                     EmitSoundOn("Hero_MonkeyKing.IronCudgel", target)

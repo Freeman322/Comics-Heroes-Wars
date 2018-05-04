@@ -1,0 +1,1969 @@
+@define bp_color1: #17404f;
+@define bp_color2: #11232e;
+.HeroSelection {
+    width: 100%;
+    height: 100%;
+    flow-children: none;
+}
+
+#PickScreen {
+    width: 100%;
+    height: 100%;
+    flow-children: none;
+
+    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326 ), to( #111111 ) );
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#TopPanel {
+    width: 100%;
+    height: 150px;
+    min-height: 150px;
+    max-height: 15%;
+}
+
+#DownPanel {
+    width: 100%;
+    height: 85%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    flow-children: none;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    /* background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-repeat: no-repeat;
+    box-shadow: #000000 -12px -12px 24px 24px;
+    z-index: -10;*/
+}
+
+#HeroGrid {
+    width: 75%;
+    height: 70%;
+    margin-top: -14.5%;
+    vertical-align: center;
+    horizontal-align: left;
+    flow-children: down;
+}
+
+#HeroContainer {
+    width: 24%;
+    height: 70%;
+    margin-top: -14.5%;
+    vertical-align: center;
+    horizontal-align: right;
+    flow-children: none;
+    border: 1px solid black;
+    margin-right: 6px;
+    background-color: gradient( linear, 0% 100%, 0% 0%, from( #171A25dd), to( #171A25dd));
+}
+
+#StrategyMinimap {
+    width: 263px;
+    height: 263px;
+    margin-left: 5.4%;
+    vertical-align: bottom;
+    horizontal-align: left;
+}
+
+.AspectRatio4x3 #StrategyMinimap {
+    width: 263px;
+    height: 263px;
+    margin-left: 7.1%;
+    vertical-align: bottom;
+    horizontal-align: left;
+}
+
+#HeroStrConrainer {
+    width: 100%;
+    height: 32%;
+    margin: 7px;
+    flow-children: right;
+}
+
+#HeroAgiConrainer {
+    width: 100%;
+    height: 32%;
+    margin: 7px;
+    flow-children: right;
+}
+
+#HeroIntConrainer {
+    width: 100%;
+    height: 32%;
+    margin: 7px;
+    flow-children: right;
+}
+
+.AttributeLabel {
+    height: 100%;
+    width: 100px;
+    flow-children: none;
+    border-right: 2px solid #C0C0C0;
+}
+
+.vertical_text {
+    color: white;
+    vertical-align: center;
+    font-size: 23px;
+    transform: rotateZ(90deg);
+}
+
+#HeroesStr {
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #C0C0C0;
+    flow-children: right-wrap;
+}
+
+#HeroesAgi {
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #C0C0C0;
+    flow-children: right-wrap;
+}
+
+#HeroesInt {
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #C0C0C0;
+    flow-children: right-wrap;
+}
+
+#RadiantPlayers {
+    min-width: 670px;
+    height: 100%;
+    margin: 5px;
+    flow-children: left;
+    vertical-align: center;
+    horizontal-align: left;
+}
+
+#DirePlayers {
+    min-width: 670px;
+    height: 100%;
+    margin: 5px;
+    flow-children: right;
+    vertical-align: center;
+    horizontal-align: right;
+}
+
+.AspectRatio4x3 #RadiantPlayers {
+    min-width: 520px;
+    height: 100%;
+}
+
+.AspectRatio4x3 #DirePlayers {
+    min-width: 500px;
+    height: 100%;
+}
+
+.AspectRatio4x3 #HeroContainer {
+    width: 28%;
+    height: 57%;
+    margin-top: -19%;
+    vertical-align: center;
+    horizontal-align: right;
+    flow-children: none;
+    border: 1px solid black;
+    margin-right: 6px;
+    background-color: gradient( linear, 0% 100%, 0% 0%, from( #171A25dd), to( #171A25dd));
+}
+
+.AspectRatio4x3 #ClockTopPanel {
+    min-width: 320px;
+    height: 100%;
+    margin: 5px;
+    flow-children: none;
+    vertical-align: center;
+    horizontal-align: middle;
+}
+
+#ClockTopPanel {
+    min-width: 400px;
+    height: 100%;
+    margin: 5px;
+    flow-children: none;
+    vertical-align: center;
+    horizontal-align: middle;
+}
+
+#ClockPanel {
+    width: 95px;
+    height: 75px;
+    flow-children: none;
+    vertical-align: center;
+    horizontal-align: middle;
+}
+
+#Time {
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    font-weight: bold;
+    color: white;
+    margin-top: 2px;
+    text-transform: uppercase;
+    vertical-align: center;
+    horizontal-align: middle;
+    font-size: 50px;
+}
+
+#Type{
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    font-weight: bold;
+    color: white;
+    margin-top: 50px;
+    margin-left: 5px;
+    text-transform: uppercase;
+    vertical-align: center;
+    horizontal-align: middle;
+    font-size: 20px;
+}
+
+.TopText {
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    font-weight: bold;
+    color: white;
+    margin-top: 2px;
+    text-transform: uppercase;
+    vertical-align: top;
+    horizontal-align: middle;
+    font-size: 12px;
+}
+
+#RadiantRating {
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    font-weight: bold;
+    color: white;
+    margin-top: 2px;
+    text-transform: uppercase;
+    vertical-align: center;
+    horizontal-align: middle;
+    font-size: 22px;
+}
+
+#DireRating {
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    font-weight: bold;
+    color: white;
+    margin-top: 2px;
+    text-transform: uppercase;
+    vertical-align: center;
+    horizontal-align: middle;
+    font-size: 22px;
+}
+
+#AvrRadiant {
+    width: 130px;
+    height: 70px;
+    vertical-align: center;
+    horizontal-align: left;
+    background-color: gradient( linear, 100% 90%, 0% 0%, from( bp_color1), to( bp_color2));
+    border: 1px solid black;
+}
+
+#AvrDire {
+    width: 130px;
+    height: 70px;
+    vertical-align: center;
+    horizontal-align: right;
+    background-color: gradient( linear, 100% 90%, 0% 0%, from( bp_color1), to( bp_color2));
+    hue-rotation: 150deg;
+    border: 1px solid black;
+}
+
+.PlayerPanel {
+    height: 90%;
+    width: 126px;
+    vertical-align: center;
+    flow-children: none;
+    margin: 3px;
+}
+
+.AspectRatio4x3 .PlayerPanel {
+    height: 80%;
+    width: 100px;
+}
+
+.HeroSelectionIcon {
+    width: 100%;
+    height: 70px;
+    border: 1px solid black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 10px;
+}
+
+.PlayerColorPanel {
+    width: 100%;
+    height: 9px;
+    border: 1px solid black;
+}
+
+.PlayerRankIcon {
+    width: 100%;
+    height: 52px;
+    vertical-align: bottom;
+    horizontal-align: right;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.AspectRatio4x3 .PlayerRankIcon {
+    width: 100%;
+    height: 42px;
+}
+
+.PlayerName {
+    color: white;
+    margin-top: 2px;
+    text-transform: uppercase;
+    vertical-align: center;
+    horizontal-align: middle;
+    font-size: 18px;
+}
+
+.PlayerMedalIcon {
+    width: 54px;
+    height: 54px;
+    vertical-align: center;
+    horizontal-align: right;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.HeroIcon {
+    width: 97px;
+    height: 55px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: black 0px 0px 9px 2px;
+    z-index: 2;
+    wash-color: #00000025;
+    border: 1px solid black;
+    /*box-shadow: fill #ffd200 0px 0px 29px 0px;*/
+    opacity-mask: url("s2r://panorama/images/masks/killcammask_left_psd.vtex") 0.4;
+    opacity: 1;
+    transition-property: opacity, transform;
+    transition-duration: .2s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+    margin: 4px;
+}
+
+.AspectRatio4x3 .HeroIcon {
+    width: 73px;
+    height: 40px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: black 0px 0px 5px 2px;
+    z-index: 2;
+    wash-color: #00000025;
+    border: 1px solid black;
+    /*box-shadow: fill #ffd200 0px 0px 29px 0px;*/
+    opacity-mask: url("s2r://panorama/images/masks/killcammask_left_psd.vtex") 0.4;
+    opacity: 1;
+    transition-property: opacity, transform;
+    transition-duration: .2s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+    margin: 4px;
+}
+
+.AspectRatio16x10 .HeroIcon {
+    width: 90px;
+    height: 48px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: black 0px 0px 5px 2px;
+    z-index: 2;
+    wash-color: #00000025;
+    border: 1px solid black;
+    /*box-shadow: fill #ffd200 0px 0px 29px 0px;*/
+    opacity-mask: url("s2r://panorama/images/masks/killcammask_left_psd.vtex") 0.4;
+    opacity: 1;
+    transition-property: opacity, transform;
+    transition-duration: .2s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+    margin: 4px;
+}
+
+.HeroIcon:hover {
+    transform: translatez( 10px);
+    box-shadow: fill green 0px 0px 2px 0px;
+    border: 0px solid #ffd200;
+}
+
+.HeroIcon:active {
+    background-color: white;
+    sound: "Item.PickUpGemShop";
+    wash-color: #999999;
+    saturation: 0;
+    transform: translatez( -10px);
+}
+
+#HeroMovie {
+    height: 302px;
+    width: 50%;
+    border: 1px solid black;
+    margin-top: 5%;
+    margin-left: 10px;
+    vertical-align: top;
+    horizontal-align: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow: #000000 -3px -3px 6px 6px;
+}
+
+#HeroName {
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    font-weight: bold;
+    color: white;
+    margin-top: 2px;
+    text-transform: uppercase;
+    vertical-align: top;
+    horizontal-align: left;
+    margin-left: 10px;
+    font-size: 22px;
+}
+
+#HeroLorePanel {
+    height: 302px;
+    width: 46%;
+    margin-top: 5%;
+    vertical-align: top;
+    horizontal-align: right;
+}
+
+#HeroLorePanel Label {
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    color: white;
+    margin: 2px;
+    vertical-align: top;
+    horizontal-align: left;
+    font-size: 16px;
+}
+
+#Abilityanel {
+    height: 100px;
+    margin-top: 30%;
+    vertical-align: middle;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+.AspectRatio4x3 #Abilityanel {
+    height: 100px;
+    margin-top: 48%;
+    vertical-align: middle;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+#PickButton {
+    height: 72px;
+    width: 55%;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #404D65dd), to( #2B3445dd));
+    border-top: 1px solid #6F819B;
+    border-left: 1px solid #6F819B22;
+    border-right: 1px solid #6F819B11;
+    border-bottom: 1px solid #3F414B33;
+    box-shadow: #0000008f -6px -6px 12px 12px;
+    transition-property: opacity, background-color;
+    transition-duration: 0.18s;
+    vertical-align: bottom;
+    horizontal-align: left;
+    margin: 3px;
+}
+
+#PickButton:hover {
+    brightness: 1.2;
+}
+
+#PickButton:active {
+    brightness: 1.5;
+    sound: "ui.pick_play";
+}
+
+#HeroSelectedTarget {
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    color: white;
+    vertical-align: bottom;
+    horizontal-align: left;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.PickText {
+    color: #ccc;
+    text-transform: uppercase;
+    vertical-align: top;
+    horizontal-align: left;
+    font-size: 30px;
+}
+
+#RandomButton {
+    height: 72px;
+    width: 17%;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #404D65dd), to( darkgreen));
+    border-top: 1px solid #6F819B;
+    border-left: 1px solid #6F819B22;
+    border-right: 1px solid #6F819B11;
+    border-bottom: 1px solid #3F414B33;
+    box-shadow: green -6px -6px 12px 12px;
+    transition-property: opacity, background-color;
+    transition-duration: 0.18s;
+    vertical-align: bottom;
+    horizontal-align: right;
+    margin: 3px;
+    margin-right: 23%;
+}
+
+#RandomButton:hover {
+    brightness: 1.2;
+}
+
+#RandomButton:active {
+    brightness: 1.5;
+    sound: "Item.PickUpGemShop";
+}
+
+#RandomButton Label {
+    color: #ccc;
+    text-transform: uppercase;
+    vertical-align: middle;
+    horizontal-align: center;
+}
+
+.RandomIcon {
+    width: 50px;
+    height: 45px;
+    background-image: url("s2r://panorama/images/control_icons/random_dice_psd.vtex");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.Ability {
+    width: 65px;
+    height: 65px;
+    vertical-align: middle;
+    horizontal-align: center;
+    margin: 3px;
+}
+
+.Selected {
+    transform: translateZ(10px);
+    box-shadow: fill #00FF7F 0px 0px 8px 0px;
+}
+
+.Picked {
+    background-color: white;
+    wash-color: #999999;
+    saturation: 0;
+    transform: translatez( -20px);
+}
+
+.Banned {
+    background-color: red;
+    wash-color: darkred;
+    saturation: 0;
+    transform: translatez( -20px);
+}
+
+.Disabled {
+    wash-color: #999999;
+    saturation: 0;
+}
+
+#StrategyTeamCompPanel {
+    width: 280px;
+    margin-left: 16px;
+    height: 205px;
+    margin-left: -23%;
+    vertical-align: bottom;
+    horizontal-align: center;
+}
+
+.AspectRatio4x3 #StrategyTeamCompPanel {
+    width: 280px;
+    margin-left: 16px;
+    height: 205px;
+    margin-left: -12%;
+    vertical-align: bottom;
+    horizontal-align: center;
+}
+
+.StrategyPanelHeader {
+    width: 100%;
+    background-color: black;
+    flow-children: right;
+}
+
+.StrategyPanelTitle {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+#PickChat {
+    width: 620px;
+    height: 345px;
+    vertical-align: bottom;
+    horizontal-align: center;
+    margin-left: 15px;
+}
+
+.ChatText {
+    horizontal-align: left;
+    margin: 2px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+#CustomChat {
+    vertical-align: bottom;
+    horizontal-align: right;
+    width: 24.1%;
+    height: 250px;
+    margin: 4px;
+}
+
+#ChatTextField {
+    width: 100%;
+    height: 220px;
+    overflow: clip scroll;
+    background-color: #101413;
+    horizontal-align: center;
+    vertical-align: top;
+    flow-children: down;
+}
+
+#ChatInputField {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+#BanButton {
+    height: 72px;
+    width: 18%;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #404D65dd), to( darkred));
+    border-top: 1px solid #6F819B;
+    border-left: 1px solid #6F819B22;
+    border-right: 1px solid #6F819B11;
+    border-bottom: 1px solid #3F414B33;
+    box-shadow: red -6px -6px 12px 12px;
+    transition-property: opacity, background-color;
+    transition-duration: 0.18s;
+    vertical-align: bottom;
+    horizontal-align: right;
+    margin: 3px;
+}
+
+#BanButton:hover {
+    brightness: 1.2;
+}
+
+#BanButton:active {
+    brightness: 1.5;
+    sound: "Item.PickUpGemShop";
+}
+
+#BanButton Label {
+    color: yellow;
+    text-transform: uppercase;
+    vertical-align: middle;
+    horizontal-align: center;
+}
+
+#BanCount{
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 80px;
+    margin-right: 15px;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    horizontal-align: right;
+    font-size: 20px;
+}
+
+
+#SearchTextEntry
+{
+    border: 0px solid transparent;
+    background-color: #00000000;
+
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+
+    width: 270px;
+    height: 30px;
+
+    vertical-align: top;
+    horizontal-align: center;
+    margin-top: 130px;
+}
+
+#SearchTextEntry:hover
+{
+    background-color: #000000ff;
+}
+
+#SearchTextEntry #PlaceholderText
+{
+    color: #556663;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+#SearchButton
+{
+    background-image: url("s2r://panorama/images/control_icons/icon_search_png.vtex");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 27px;
+    height: 27px;
+    vertical-align: top;
+    horizontal-align: center;
+    margin-top: 130px;
+    margin-left: -150px;
+
+    wash-color: #667774dd;
+}
+
+#SearchButton:hover
+{
+    wash-color: #758885;
+}
+
+#SearchButton:active
+{
+    wash-color: #9bb5b0;
+}
+
+
+#TopBarDescendingContent
+{
+    margin-top: 0px;
+    margin-right: 52px;
+    width: 100%;
+}
+
+#SearchResults
+{
+    horizontal-align: right;
+    margin-right: 27px;
+    width: 500px;
+    max-height: 300px;
+    flow-children: down;
+    padding: 10px;
+    background-color: black;
+    border: 1px solid #667774;
+    overflow: squish scroll;
+}
+
+#SearchResults.Hidden
+{
+    visibility: collapse;
+}
+
+#SearchResultsLoading
+{
+    horizontal-align: center;
+}
+
+#SearchResultsLoading.Hidden
+{
+    visibility: collapse;
+}
+
+.NotFinded {
+    background-color: red;
+    wash-color: darkred;
+    saturation: 0;
+    transform: translatez( -20px);
+}
+.Finded {
+    background-color: blue;
+    wash-color: darkblue;
+}
+
+#MainContents
+{
+	flow-children: right;
+    width: 980px;
+	height: 814px;
+    horizontal-align: center;
+    vertical-align: bottom;
+}
+
+.Closed
+{
+    visibility: collapse;
+}
+
+#SearchAndCategoriesContainer
+{
+	flow-children: down;
+	height: 100%;
+	padding-left: 8px;
+	padding-top: 8px;
+}
+
+#CurrencyContainer
+{
+	width: 300px;
+	margin-bottom: 12px;
+	flow-children: down;
+}
+
+#CurrencyAmountContainer
+{
+	width: 100%;
+	background-color: #0009;
+	padding: 8px 14px 10px 14px;
+	flow-children: right;
+}
+
+#CurrencyAmountContainer .EventPointsValueIcon
+{
+	width: 32px;
+	height: 32px;
+	margin-right: 8px;
+	transform: translateY( 7px );
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#CurrentCurrencyAmount
+{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#SearchOptionsContainer
+{
+	flow-children: down;
+	width: 300px;
+	margin-bottom: 12px;
+	margin-right: 8px;
+}
+
+.SearchOptionsTitleCategories
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #00000066 ), to( #00000066 ) );
+	padding: 8px 8px 4px 8px;
+	width: 100%;
+	flow-children: right;
+}
+
+#CategoriesOptionsContainer
+{
+	flow-children: down;
+	height: 100%;
+	width: 300px;
+	margin-right: 8px;
+}
+
+.SearchOptionsTitleCategories > Label
+{
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: bold;
+	font-size: 20px;
+	color: dotaPlusGold;
+	margin-left: 5px;
+}
+
+#RewardLogButton
+{
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+
+	wash-color: dotaPlusGold;
+
+    background-image: url("s2r://panorama/images/hud/reborn/icon_combat_log_psd.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	tooltip-position: top;
+	tooltip-body-position: 50% 50%;
+}
+
+#RewardLogButton:hover
+{
+	brightness: 2.0;
+}
+
+#RewardLogButton:active
+{
+	brightness: 1.5;
+}
+
+
+#SearchCategories
+{
+	padding-right: 8px;
+	flow-children: down;
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	overflow: squish scroll;
+}
+
+.SearchCategory
+{
+	width: 100%;
+	height: 175px;
+	margin-bottom: 8px;
+	margin-top: -8px;
+	flow-children: none;
+
+	transition-property: none;
+}
+
+.SearchCategory:hover
+{
+	brightness: 1.5;
+}
+
+.SearchCategory > .RadioBox
+{
+	visibility: collapse;
+}
+
+.SearchCategoryBackground
+{
+	width: 100%;
+	height: 100px;
+	vertical-align: bottom;
+	margin-bottom: 10px;
+
+	border-right: 1px solid #ffffff06;
+	border-bottom: 1px solid #ffffff06;
+	border-top: 1px solid #33333360;
+	border-left: 1px solid #33333360;
+
+	background-image: url("s2r://panorama/images/dota_plus/shop_button_bg_psd.vtex");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.SearchCategory:selected .SearchCategoryBackground,
+.SearchCategory:active .SearchCategoryBackground
+{
+	border-bottom: 1px solid #00000060;
+	border-right: 1px solid #00000060;
+	border-top: 1px solid #ffffff06;
+	border-left: 1px solid #ffffff06;
+}
+
+
+#ExclusiveSetsCategory .SearchCategoryBackground { wash-color: #ffcf4d33; brightness: 1.8; } 
+#LegacySetsCategory .SearchCategoryBackground { wash-color: #aee2ff33; }
+#HeroRelicsCategory .SearchCategoryBackground { wash-color: #d5ff9a33; }
+
+#ExclusiveSetsCategory:selected .SearchCategoryBackground, #ExclusiveSetsCategory:active .SearchCategoryBackground { wash-color: #ffcf4d; brightness: 1.8; } 
+#LegacySetsCategory:selected .SearchCategoryBackground, #LegacySetsCategory:active .SearchCategoryBackground { wash-color: #aee2ff; }
+#HeroRelicsCategory:selected .SearchCategoryBackground, #HeroRelicsCategory:active .SearchCategoryBackground { wash-color: #d5ff9a; }
+
+
+.SearchCategoryText
+{
+	width: 100%;
+	vertical-align: bottom;
+	margin-bottom: 10px;
+	flow-children: down;
+}
+
+.SearchCategoryName
+{
+	text-transform: uppercase;
+	font-size: 32px;
+	margin: 0px;
+	margin-left: 8px;
+	color: #ccc;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px black;
+	saturation: 0.3;
+}
+
+
+#ExclusiveSetsCategory .SearchCategoryName { color:  gradient( linear, 0% 0%, 0% 100%, from( white ), color-stop( 0.5, #ffef8a ), to( #ffbb0f ) ); }
+#LegacySetsCategory .SearchCategoryName { color: gradient( linear, 0% 0%, 0% 100%, from( white ), color-stop( 0.5, #70dfff ), to( #7bb7ff ) ); }
+#HeroRelicsCategory .SearchCategoryName  { color: gradient( linear, 0% 0%, 0% 100%, from( white ), color-stop( 0.5, #c2ff57 ), to( #79e900 ) ); }
+
+
+.SearchCategory:selected .SearchCategoryName,
+.SearchCategory:active .SearchCategoryName
+{
+	saturation: 1.0;
+}
+
+.SearchCategoryDetails
+{
+	font-size: 20px;
+	color: #ccc;
+	vertical-align: bottom;
+	margin-left: 8px;
+	margin-bottom: 4px;
+	text-shadow: 2px 2px 4px black;
+	text-transform: uppercase;
+	margin-top: -6px;
+}
+
+.SearchCategory:selected .SearchCategoryDetails,
+.SearchCategory:active .SearchCategoryDetails
+{
+	color: white;
+}
+
+.SearchCategoryArtOverlay
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+
+	saturation: 0.3;
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	
+}
+
+.SearchCategory:hover .SearchCategoryArtOverlay
+{
+	saturation: 0.5;
+}
+
+.SearchCategory:active .SearchCategoryArtOverlay,
+.SearchCategory:selected .SearchCategoryArtOverlay
+{
+	saturation: 1.0;
+}
+
+#ExclusiveSetsCategory .SearchCategoryArtOverlay
+{
+	width: 260px;
+	height: 200px;
+	margin-bottom: 8px;
+	ui-scale: 80%;
+
+	background-image: url("s2r://panorama/images/dota_plus/shop_exclusive_magnus_psd.vtex");
+} 
+#LegacySetsCategory .SearchCategoryArtOverlay
+{
+	width: 182px;
+	height: 177px;
+	margin-bottom: -1px;
+
+	background-image: url("s2r://panorama/images/dota_plus/shop_legacy_silencer_psd.vtex");
+}
+#HeroRelicsCategory .SearchCategoryArtOverlay
+{
+	width: 105px;
+	height: 166px;
+	margin-bottom: 8px;
+	ui-scale: 95%;
+
+	background-image: url("s2r://panorama/images/dota_plus/shop_relics_skullrelic_psd.vtex");
+}
+
+
+.SearchModeContainer
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+	background-color: #0006;
+	flow-children: down;
+	padding: 10px 0px 0px 10px;
+	margin-top: 8px;
+	margin-right: 8px;
+
+	visibility: collapse;
+}
+
+.ShowEconItemsSearch #SearchResultsContainer,
+.ShowHeroRelicsHeroList #HeroRelicsContainer,
+.ShowHeroRelicsSingleHero #SingleHeroRelicsContainer
+{
+	visibility: visible;
+}
+
+#SearchResultsHeader
+{
+	flow-children: right;
+	margin-bottom: 4px;
+}
+
+#SortByDropDown
+{
+	margin-right: 14px;
+	height: 38px;
+	margin-bottom: 6px;
+	background-position: right 38px 14%;
+}
+
+.SearchResultsCount
+{
+	margin-left: 2px;
+	margin-bottom: 1px;
+	font-size: 18px;
+	vertical-align: middle;
+	color: #888888;
+}
+
+.SortByLabel
+{
+	vertical-align: middle;
+	margin-right: 4px;
+	margin-bottom: 1px;
+	color: #888888;
+}
+
+#SearchResults
+{
+	flow-children: right-wrap;
+	overflow: squish scroll;
+	width: 646px; /* Can't use 100% because of annoying single-pass layout reasons */
+	height: fill-parent-flow( 1.0 );
+}
+
+DOTAStoreItem
+{
+	width: 204px;
+	height: 238px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+
+
+DOTAStorePlusPage DOTAStoreItem:not(.InvalidItemDef):hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( black ), to( #B7894610 ) );
+}
+
+#SearchInProgressSpinner
+{
+	margin-right: 8px;
+	visibility: collapse;
+}
+.SearchInProgress #SearchInProgressSpinner
+{
+	visibility: visible;
+}
+
+#ItemPreviewContainer
+{
+	width: 100%;
+	height: 100%;
+	overflow: clip;
+
+	visibility: collapse;
+}
+
+.ShowEconItemsSearch.ItemPreviewVisible #ItemPreviewContainer
+{
+	visibility: visible;
+}
+
+#ModelContainer
+{
+	width: 900px;
+	height: 960px;
+
+	vertical-align: middle;
+	horizontal-align: center;
+	margin-left: 1030px;
+	margin-bottom: 80px;
+
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+}
+
+.AspectRatio4x3 #ModelContainer
+{
+	width: 700px;
+	height: 800px;
+	margin-left: 870px;
+}
+
+#ItemPreview, #PreviewRays, #PreviewRays2
+{
+	width: 100%;
+	height: 100%;
+}
+
+#PreviewRays2
+{
+	opacity: 0.6;
+}
+
+.AspectRatio16x10 #ModelContainer
+{
+	margin-left: 940px;
+}
+
+#ItemPreviewInputForwarding
+{
+	width: 760px;
+	height: 780px;
+
+	vertical-align: middle;
+	horizontal-align: center;
+	margin-left: 1160px;
+}
+
+.AspectRatio16x10 #ItemPreviewInputForwarding
+{
+	margin-left: 1060px;
+}
+
+.AspectRatio4x3 #ItemPreviewInputForwarding
+{
+	margin-left: 994px;
+}
+
+#ItemPreviewRarity
+{
+	horizontal-align: right;
+	font-size: 20px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+#ItemPreviewDetails
+{
+	width: 640px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-left: 1160px;
+	margin-bottom: 122px;
+	flow-children: down;
+}
+
+.AspectRatio16x10 #ItemPreviewDetails
+{
+	width: 600px;
+	margin-left: 1010px;
+}
+
+.AspectRatio4x3 #ItemPreviewDetails
+{
+	width: 440px;
+	margin-left: 980px;
+}
+
+
+#ItemPreviewName
+{
+	horizontal-align: right;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: white;
+	font-size: 24px;
+	vertical-align: bottom;
+	text-shadow: 2px 2px 0px black;
+	margin-bottom: 4px;
+}
+
+
+#ItemPreviewDetailsButtons
+{
+	horizontal-align: right;
+	flow-children: right;
+}
+
+#ItemPreviewInspectButton
+{
+	width: 39px;
+	height: 39px;
+	margin-left: 8px;
+
+	background-color: #0009;
+
+	background-image: url("s2r://panorama/images/control_icons/icon_search_png.vtex");
+	background-size: 55%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+
+	transition-property: background-color;
+	transition-duration: .2s;
+}
+
+#ItemPreviewInspectButton:hover
+{
+	background-color: #3339;
+}
+
+#ItemPreviewInspectButton:active
+{
+	background-color: #2229;
+}
+
+#ItemPreviewPurchaseButton
+{
+	margin-bottom: 4px;
+	vertical-align: bottom;
+}
+
+#HeroRelicsContainer
+{
+	visibility: collapse;
+}
+
+.ShowHeroRelics #HeroRelicsContainer
+{
+	visibility: visible;
+}
+
+#HeroRelicsHeader
+{
+	flow-children: right;
+	width: 100%;
+	margin-bottom: 8px;
+	padding-right: 8px;
+}
+
+#HeroRelicsHeader .InfoIcon
+{
+	width: 20px;
+	height: 20px;
+	margin-left: 8px;
+	wash-color: #ccc;
+	margin-bottom: 4px;
+}
+
+.HeroRelicsTitle
+{
+	text-transform: uppercase;
+	color: #ccc;
+	letter-spacing: 1px;
+	font-size: 24px;
+	vertical-align: middle;
+}
+
+.HeroRelicsSortBy
+{
+	vertical-align: middle;
+	margin-right: 4px;
+	color: #888;
+}
+
+#HeroRelicsHeroList
+{
+	width: 100%;
+	flow-children: right-wrap;
+	overflow: squish scroll;
+}
+
+.SingleHeroRelicsButton
+{
+	margin-right: 8px;
+	margin-bottom: 8px;
+	flow-children: down;
+	padding: 8px 8px 0px 8px;
+	background-color: #0009;
+}
+
+.SingleHeroRelicsButton.SearchFiltered
+{
+	visibility: collapse;
+}
+
+.SingleHeroRelicsButton:hover
+{
+	brightness: 2.0;
+}
+
+.SingleHeroRelicsButton:active
+{
+	brightness: 1.5;
+}
+
+.SingleHeroRelicsButton Label
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 24px;
+	color: #ccc;
+	margin-top: 2px;
+	font-family: monospaceNumbersFont;
+}
+
+.SingleHeroRelicsButton #HeroImage
+{
+	width: 128px;
+	height: 72px;
+}
+
+#HeroRelicsSummary
+{
+	vertical-align: middle; 
+	margin-bottom: 20px; 
+}
+
+#HeroRelicsHeroDisplay
+{
+	horizontal-align: center;
+
+	margin-top: 150px;
+	margin-left: 800px;
+
+	flow-children: down;
+
+	visibility: collapse;
+	
+	height: 814px;
+}
+
+.AspectRatio4x3 #HeroRelicsHeroDisplay
+{
+	margin-left: 990px;
+}
+
+.ShowHeroRelicsSingleHero #HeroRelicsHeroDisplay
+{
+	visibility: visible;
+}
+
+#HeroRelicsHeroImage
+{
+	width: 128px;
+	height: 72px;
+}
+#HeroRelicsHeroImage:hover
+{
+	brightness: 2.0;
+}
+#HeroRelicsHeroImage:active
+{
+	brightness: 1.5;
+}
+
+
+#HeroRelicsHeroDisplay > Label
+{
+	width: 100%;
+	padding: 28px 8px;
+	margin: 8px;
+	color: #ccc;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 24px;
+	letter-spacing: 2px;
+	background-color: #0006;
+}
+
+#HeroRelicsDisplayText
+{
+	flow-children: down;
+	width: fill-parent-flow( 1.0 );
+	margin-left: 12px;
+	margin-top: 8px;
+}
+
+#HeroRelicsHeroName
+{
+	width: 242px;
+	height: 32px;
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #ccc;
+	letter-spacing: 2px;
+	text-overflow: shrink;
+}
+
+#HeroRelicsDisplayOwned
+{
+	font-size: 20px;
+	color: dotaPlusGold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#SingleHeroRelicsHeader
+{
+	width: 100%;
+	flow-children: right;
+}
+
+.HeroRelicsNavButton
+{
+	width: 48px;
+	height: 100%;
+	background-color: #0009;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 22px 37px;
+
+	wash-color: #999;
+}
+.HeroRelicsNavButton:hover
+{
+	wash-color: #fff;
+}
+.HeroRelicsNavButton:active
+{
+	wash-color: #ccc;
+}
+
+#PreviousHeroButton
+{
+	margin-right: 8px;
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_left_png.vtex");
+}
+
+#NextHeroButton
+{
+	margin-left: 8px;
+	margin-right: 8px;
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_right_png.vtex");
+}
+
+#SingleHeroRelicsShop
+{
+	height: fill-parent-flow( 1.0 );
+	width: 100%;
+	flow-children: down;
+	margin-top: 8px;
+}
+
+#IndividualRelicsShop
+{
+	width: 100%;
+	padding-right: 8px;
+	flow-children: down;
+	overflow: squish scroll;
+}
+
+.RelicShopList
+{
+	width: 100%;
+	flow-children: down;
+}
+
+.RelicShopItem
+{
+	background-color: #00000077;
+	width: 100%;
+	flow-children: right;
+	margin-bottom: 4px;
+	transition-property: background-color;
+	transition-duration: .3s;
+	height: 100px; 
+}
+
+.RelicShopItem.RandomRelic
+{
+	height: 200px;
+	margin-right: 8px;
+	background-image: url("s2r://panorama/images/hero_relics/random_relic_button_backer_psd.vtex");
+	background-size: 73% 100%; 
+	background-repeat: no-repeat; 
+	background-color: #000000aa; 
+}
+
+.RelicShopItem:hover
+{
+	background-color: #000000;
+}
+
+.RelicShopItem #RelicImage
+{
+	ui-scale: 42%;
+	margin-left: 14px;
+	margin-top: 1px;
+	margin-bottom: 2px;
+	background-image: url("s2r://panorama/images/hero_relics/hero_relic_empty_psd.vtex");
+	vertical-align: middle;
+}
+
+.RelicShopItem.RareRelic #RelicImage
+{
+	ui-scale: 35%;
+	margin-left: 18px;
+	margin-top: 1px;
+	margin-bottom: 2px;
+	background-image: url("s2r://panorama/images/hero_relics/hero_relic_rare_empty_socket_png.vtex");
+	vertical-align: middle;
+}
+
+.RelicShopItem.Owned #RelicImage
+{
+	background-image: none; 
+	ui-scale: 45%;
+	margin: 0px;
+	margin-left: 12px; 
+}
+
+.RelicShopItem #RandomRelicImage
+{
+	width: 45px;
+	height: 49px;
+	background-image: url("s2r://panorama/images/hero_relics/hero_relic_random_psd.vtex");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.RelicShopItem .RelicValue
+{
+	vertical-align: middle;
+	font-size: 34px;
+	font-weight: bold;
+	margin-left: 4px;
+	margin-top: 5px; 
+	color: gradient( linear, 0% 0%, 0% 100%, from( #fff7cf ), to( #dfd28f ) );
+	text-shadow: 0px 0px 4px 3 #00000033; 
+	visibility: collapse;
+}
+.RelicShopItem.Owned .RelicValue
+{
+	visibility: visible;
+}
+
+
+.RelicShopItem .RelicName
+{
+	vertical-align: middle;
+	text-transform: uppercase;
+	color: #847f79;
+	margin-left: 9px;
+	margin-top: 2px;
+	width: 400px;
+}
+
+
+.RelicShopItem.RareRelic .RelicName
+{
+	margin-left: 10px;
+}
+
+
+.RelicShopItem.Owned .RelicName
+{
+	width: 360px;
+	color: white;
+}
+
+.RandomRelic .RelicName
+{
+	color: white;
+	font-size: 24px;
+	letter-spacing: 2px;
+	font-weight: bold;
+	margin-left: 34px;
+	margin-top: 8px; 
+	text-shadow: 0px 0px 4px 3 #00000033;
+}
+
+#RandomQuestionMark
+{
+	font-size: 45px;
+	font-weight: bold; 
+	color: gradient( linear, 0% 0%, 0% 100%, from( #fff7cf ), to( #dfd28f ) );
+	text-shadow: 0px 0px 30px 3 #e89f1f;
+	vertical-align: middle; 
+	margin-left: 34px; 
+	margin-top: 11px;
+	animation-name: TextShadowGlowPulse;
+	animation-duration: 4s;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+} 
+
+@keyframes 'TextShadowGlowPulse'
+{
+	0%
+	{
+		text-shadow: 0px 0px 30px 3 #e66f17;
+	}
+
+	50%
+	{
+		text-shadow: 0px 0px 10px 3 #8f5123;
+	}
+
+	100%
+	{
+		text-shadow: 0px 0px 30px 3 #e66f17;
+	}
+}
+	
+.RelicShopItem #PurchaseRelicButton
+{
+	width: 130px;
+	padding-right: 5px;
+	margin-right: 8px;
+	vertical-align: middle;	
+}
+
+#PurchaseRelicButton Label
+{
+	color: white; 
+	font-weight: bold; 
+	width: 85%;
+	horizontal-align: right;
+}
+
+.RelicShopItem.Owned #PurchaseRelicButton
+{
+	visibility: collapse;
+}
+
+.RelicShopItem .RelicOwned
+{
+	color: dotaPlusGold;
+	vertical-align: middle;
+	text-transform: uppercase;
+	width: 130px;
+	margin-right: 15px;
+	margin-top: 2px;
+	text-align: center;
+
+	visibility: collapse;
+}
+
+.RelicShopItem.Owned .RelicOwned
+{
+	visibility: visible;
+}
+
+.RelicShopItem.Owned
+{
+	padding: 3px;
+	background-image: url("s2r://panorama/images/hero_relics/relic_shop_item_backer_store_psd.vtex");
+	background-size: 100%; 
+}
+
+#BackToAllHeroesButton
+{
+	horizontal-align: center;
+	margin-bottom: 12px;
+}
+
+.RelicsCurrencyIcon
+{
+	width: 22px;
+	height: 22px;
+	margin-right: 4px;
+	vertical-align: middle;
+	transform: translateY( -3px );
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#PurchaseRelicButton .RelicsCurrencyIcon
+{
+	horizontal-align: left;
+}
+.DashboardPage
+{
+	opacity: 0.0;
+	pre-transform-scale2d: 0.975;
+	wash-color: #63b5af;
+	
+	transition-property: opacity, pre-transform-scale2d, wash-color;
+	transition-duration: 0.32s;
+	transition-timing-function: ease-in;
+}
+
+/*
+DOTABPWinter2016QuestsPage.DashboardPage,
+DOTABPWinter2016Page.DashboardPage,
+DOTABPWinter2016RewardsPage.DashboardPage,
+DOTABPWinter2016WageringPage.DashboardPage,
+DOTABPWinter2016AchievementsPage.DashboardPage
+{
+	opacity: 0.0;
+	pre-transform-scale2d: 1;
+	transition-duration: 0.2s;
+	wash-color: white;
+}
+*/
+
+.DashboardPage.PageVisible
+{
+	opacity: 1.0;
+	pre-transform-scale2d: 1.0;
+	wash-color: white;
+}
+
+/*
+DOTACompManila2016PredictionsPage.DashboardPage
+{
+	transition-property: opacity, pre-transform-scale2d, position, blur;
+	blur: gaussian(20, 0.1, 4 );
+	x: 1400px;
+
+}
+
+DOTACompManila2016PredictionsPage.DashboardPage.PageVisible
+{
+	x: 0px;
+	blur: none;
+}
+*/
+
+.SafeDashboardPage, .SafeDashboardPageNoSecondary
+{
+    height: 100%;
+    horizontal-align: center;
+    vertical-align: middle;
+}
+
+/* Class to use if you want to be sure that all your content fits in 4x3 with secondary tabs or search */
+.SafeDashboardPage
+{
+    width: height-percentage( 174% );
+    margin: 150px 10px 130px 10px;
+}
+
+/* Class to use if you want to be sure that all your content fits in 4x3 with no secondary tabs or search*/
+.SafeDashboardPageNoSecondary
+{
+    width: height-percentage( 174% );
+    margin: 130px 10px 130px 10px;
+}
+
+#BattleCupVictoryIcon.BattleCupVictoryIconLarge
+{
+	margin-left: 6px;
+	margin-top: 6px;
+	margin-right: -2px;
+}
+
+#Heroes{
+    width: 60%;
+	height: 100%;
+	margin-right: 4px;
+    vertical-align: middle;
+    horizontal-align: right;
+
+    border: 2px solid green;
+
+
+}
+
+#OpenPremiumButton
+{
+	width: 80px;
+	height: 38px;
+
+	vertical-align:bottom;
+    horizontal-align:left;
+    
+    margin-left: 8px;
+    margin-bottom: 10px;
+
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( purple ), to( pink ) );
+	background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x_png.vtex");
+	background-size: 328px 50px;
+
+	border-top: 1px solid #ffffff05;
+	border-right: 1px solid #00000088;
+	border-left: 1px solid #ffffff05;
+	border-bottom: 1px solid #00000088;
+}
+
+#DisconnectButton
+{
+	width: 330px;
+	height: 33px;
+
+	min-width: 330px;
+	min-height: 48px;
+
+	vertical-align:bottom;
+	horizontal-align: left;
+    margin-left: 8px;
+    
+    margin-bottom: 10px;
+
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #722217 ), to( #DD4A29 ) );
+	background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x_png.vtex");
+	background-size: 328px 50px;
+
+	border-top: 1px solid #ffffff05;
+	border-right: 1px solid #00000088;
+	border-left: 1px solid #ffffff05;
+	border-bottom: 1px solid #00000088;
+
+}
+
+#DisconnectButtonImage
+{
+	width: 30px;
+    height: 30px;
+    vertical-align:middle;
+	horizontal-align: center;
+}
+
+#DisconnectButton Label
+{
+    wash-color: lightblue;
+    margin-top: 6px;
+    vertical-align:middle;
+	horizontal-align: center;
+}
+
+
+#OpenPremiumButton Label
+{
+    wash-color: black;
+    margin-top: 6px;
+    vertical-align:middle;
+    horizontal-align: center;
+    
+    text-align: center;
+	font-size: 24px;
+	color: #ccc;
+	margin-top: 2px;
+	font-family: monospaceNumbersFont;
+}
+
+.DisconnectLabel
+{
+	margin-top: 4px;
+	vertical-align: middle;
+	horizontal-align: center;
+}
+
+#DisconnectButton Label
+{
+	text-transform: uppercase;
+	color: white;
+	font-size: 26px;
+}
+
+#DisconnectButton:hover Label
+{
+	color: red;
+}
+
+#DisconnectButton:active
+{
+	sound: "ui_custom_lobby_quit";
+}

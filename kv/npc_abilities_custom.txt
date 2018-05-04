@@ -13049,87 +13049,7 @@
 			}
 		}
 	}
-	"cap_dragon_tail"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				        "ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"custom/cap_dragon_tail"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
-			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail.vpcf"
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"450 500 550 600"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 12 10 8"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"75 100 125 150"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-				"01"
-				{
-					"var_type"				"FIELD_FLOAT"
-					"stun_duration"			"2.0 2.4 2.8 3.2"
-				}
-				"02"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"dragon_cast_range"			"450 500 550 600"
-				}
-		}
-		"OnSpellStart"
-		{
-					"Stun"
-					{
-						"Target"	"TARGET"
-						"Duration"	"%stun_duration"
-					}
-
-					"FireEffect"
-					{
-						"EffectName"	"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail.vpcf"
-						"Target"		"TARGET"
-					}
-
-					"FireSound"
-					{
-						"EffectName"	"Hero_DragonKnight.DragonTail.Target"
-						"Target"		"TARGET"
-					}
-
-					"Damage"
-					{
-						"Target"	"TARGET"
-						"Type"		"DOTA_TYPE_MAGICAL"
-						"Damage"	"%AbilityDamage"
-					}
-			}
-	}
 
 	"pidr_passive"
 	{
@@ -13158,50 +13078,6 @@
 									"MODIFIER_STATE_MUTED"        		    "MODIFIER_STATE_VALUE_ENABLED"
 									"MODIFIER_STATE_OUT_OF_GAME"	        "MODIFIER_STATE_VALUE_ENABLED"
 									"MODIFIER_STATE_ATTACK_IMMUNE"	        "MODIFIER_STATE_VALUE_ENABLED"
-							}
-					}
-			}
-	}
-"cap_dragon_blood"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"	"custom/cap_dragon_blood"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-				"01"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"bonus_health_regen"		"4 6 8 10"
-				}
-				"02"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"bonus_armor"				"4 6 8 10"
-				}
-				"03"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"bonus_block"				"20 30 40 50"
-				}
-		}
-		"Modifiers"
-		{
-				"modifier_cap_dragon_blood_datadriven"
-				{
-							"Passive"	"1"
-							"IsHidden"	"1"
-
-							"Properties"
-							{
-								"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-								"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
-								"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"	"%bonus_block"
 							}
 					}
 			}
@@ -35506,7 +35382,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"attack_speed"					"7 9 11 13"
+				"attack_speed"					"1 1.4 1.6 2.0"
 			}
 			"02"
 			{
@@ -37124,6 +37000,94 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"value"						"200"
+			}
+		}
+	}
+	"cap_dragon_blood"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/cap_dragon_blood.lua"
+		"AbilityTextureName"			"custom/cap_dragon_blood"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"		"4 6 8 10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"4 6 8 10"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_block"				"20 30 40 50"
+			}
+		}
+	}
+	"cap_dragon_tail"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/cap_dragon_tail.lua"
+		"AbilityTextureName"			"custom/cap_dragon_tail"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail.vpcf"
+			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail_dragonform_proj.vpcf"
+			"particle"		"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_death_explosion.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450 500 550 600"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14 12 10 8"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"75 100 125 150"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 80 90 100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"2.0 2.4 2.8 3.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dragon_cast_range"			"450 500 550 600"
 			}
 		}
 	}
