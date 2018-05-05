@@ -2639,7 +2639,7 @@
 				 "01"
 				 {
 					 "var_type"				"FIELD_INTEGER"
-					 "damage_reflection_pct"	"12 17 22 27"
+					 "damage_reflection_pct"	"10 15 20 25"
 				 }
 				 "02"
 				 {
@@ -2701,7 +2701,7 @@
 		"AOERadius"						"1200 1400 1600"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.4 0.4 0.4"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -2738,7 +2738,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage"					"4 5 6"
+				"damage"					"5 6 7"
 			}
 			"02"
 			{
@@ -5039,7 +5039,7 @@
 
 			// Cost
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"60 80 100 120"
+			"AbilityManaCost"				"80 100 120 140"
 
 			// Stats
 			//-------------------------------------------------------------------------------------------------------------
@@ -5078,7 +5078,7 @@
 		"ScriptFile"							"abilities/samurai_ecliptic_strike.lua"
 		"AbilityTextureName"					"custom/samurai_ecliptic_strike"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCooldown"						"3.6 2.9 2.2 1.5"
+		"AbilityCooldown"						"3.5 3 2.5 2"
 		"precache"
 		{
 			"model"		"models/heroes/hero_samurai/samurai_hat.vmdl"
@@ -14072,7 +14072,7 @@
 		"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"radius"						"400"
+			"radius"						"380"
 		}
 		"03"
 		{
@@ -29653,7 +29653,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"heal" 					"2 3 4 5"
+				"heal" 					"1 2 3 4"
 			}
 			"02"
 			{
@@ -32213,7 +32213,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -33794,7 +33794,7 @@
 		"ScriptFile"					"abilities/strange_test_of_faith.lua"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
