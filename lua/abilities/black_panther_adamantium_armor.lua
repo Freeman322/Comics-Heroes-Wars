@@ -32,7 +32,7 @@ end
 
 function modifier_black_panther_adamantium_armor:GetModifierPhysical_ConstantBlock (params)
     local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_block") + (self:GetParent():GetAgility()/2)
+    return hAbility:GetSpecialValueFor ("bonus_block") + (self:GetParent():GetAgility()/3)
 end
 
 

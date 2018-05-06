@@ -4264,7 +4264,7 @@
 	          "model"		"models/items/sven/dotapit3_sven_back/dotapit3_sven_back.vmdl"
 	      }
 	      "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
-	      "ArmorPhysical"		"1.000000"
+	      "ArmorPhysical"		"3.000000"
 	  		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	  		"AttackDamageMin"		"23"
 	  		"AttackDamageMax"		"33"
@@ -4276,10 +4276,10 @@
 	  		"AttributeBaseStrength"		"24"
 	  		"AttributeStrengthGain"		"2.600000"
 	  		"AttributeBaseAgility"		"14"
-	  		"AttributeAgilityGain"		"1.800000"
+	  		"AttributeAgilityGain"		"2.100000"
 	  		"AttributeBaseIntelligence"		"23"
-	  		"AttributeIntelligenceGain"		"1.600000"
-	  		"MovementSpeed"		"295"
+	  		"AttributeIntelligenceGain"		"1.800000"
+	  		"MovementSpeed"		"300"
 	  		"MovementTurnRate"		"0.400000"
 	  		"HealthBarOffset"		"200"
 	  }
