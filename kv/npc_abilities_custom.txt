@@ -3878,12 +3878,12 @@
 					"01"
 					{
 							"var_type"			"FIELD_FLOAT"
-							"duration"			"3.5 4 4.5 5"
+							"duration"			"2.5 3 3.5 4"
 					}
 					"02"
 					{
 							"var_type"			"FIELD_FLOAT"
-							"strength_damage"	"1.5 2.0 2.5 3.0"
+							"strength_damage"	"1 1.5 2 2.5"
 					}
 					"03"
 					{
@@ -3989,7 +3989,7 @@
 		"AbilityType"					        "DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"                    "3"
 		"AbilityTextureName"	        "custom/great_crit"
-		"AbilityCooldown"			       	"100 75 50"
+		"AbilityCooldown"			       	"120 95 70"
 		"ScriptFile"					      	"abilities/flash_crit.lua"
 		"AbilityManaCost"			       	"150 200 250"
 		"HasScepterUpgrade"				"1"
@@ -4010,7 +4010,7 @@
 					"03"
 					{
 						"var_type"				"FIELD_FLOAT"
-						"cooldown_scepter" "30 25 20"
+						"cooldown_scepter" "60 45 30"
 					}
 		  }
 	}
@@ -18011,7 +18011,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"175 200 225 250"
+			"bonus_damage"			"125 150 175 200"
 		}
 		"03"
 		{
@@ -18055,7 +18055,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"magical_armor_reduction"	"-20 -25 -30 -35"
+			"magical_armor_reduction"	"-10 -15 -20 -25"
 		}
 	}
 }
@@ -18086,7 +18086,7 @@
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"160 240 320 400"
+	"AbilityDamage"					"140 220 300 380"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -20847,7 +20847,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_pct"		"12 17 22 27"
+				"dodge_chance_pct"		"10 15 20 25"
 			}
 		}
 	}

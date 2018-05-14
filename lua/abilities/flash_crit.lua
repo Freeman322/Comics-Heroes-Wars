@@ -4,7 +4,7 @@ end
 
 function flash_crit:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then
-        return 25
+        return self:GetSpecialValueFor("cooldown_scepter")
     end
 
     return self.BaseClass.GetCooldown( self, nLevel )
