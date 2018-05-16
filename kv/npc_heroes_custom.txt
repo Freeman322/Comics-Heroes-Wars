@@ -13,6 +13,7 @@
 		"Ability4"						"generic_hidden"
 		"Ability5"						"generic_hidden"
 		"Ability6"						"khorn_erosion"
+		"Ability7"						""
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_gold_income_50"
 		"Ability12"				"special_bonus_hp_regen_40"
@@ -237,73 +238,6 @@
 			"model"		"models/heroes/brewmaster/brewmaster_earthspirit.vmdl"
 		}
 	}
-	"npc_dota_hero_blackadam"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"override_hero"             "npc_dota_hero_viper"
-		"ModelScale"                "1.05"
-		"Model"						"models/adam/blackadam.vmdl"		// Model.
-		"Portrait"					"vgui/hud/heroportraits/portrait_gyrocopter"						// Small image for hero selection
-		"SoundSet"					"Hero_spirit_breaker"													// Name of sound set.
-	    "IdleSoundLoop"				"Hero_Spirit_Breaker.IdleLoop"
-	
-		"Ability1"					"blac_adam_arc_lightning"	                     	// Ability 1
-		"Ability2"					"black_adam_decrepify"		                    // Ability 2
-		"Ability3"					"black_adam_aftershock"		        	        // Ability 3
-		"Ability4"					"generic_hidden"		                	// Ability 4
-		"Ability5"		        	"generic_hidden"
-		"Ability6"			    "black_adam_storm_field"
-		"Ability10"				"special_bonus_exp_boost_30"
-		"Ability11"				"special_bonus_gold_income_50"
-		"Ability12"				"special_bonus_movement_speed_50"
-		"Ability13"				"special_bonus_attack_speed_100"
-		"Ability14"				"special_bonus_cooldown_reduction_25"
-		"Ability15"				"special_bonus_attack_damage_90"
-		"Ability16"				"special_bonus_agility_25"
-		"Ability17"				"special_bonus_unique_black_adam"
-		"DisableWearables"			"1"
-			// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"2"								// Physical protection.
-	
-	
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"17"									// Damage range min.
-		"AttackDamageMax"			"27"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.2"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
-		"AttackRange"				"465"									// Range within a target can be attacked.
-		"ProjectileSpeed"			"1000"									// Speed of projectile.
-		"ProjectileModel"	    	"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
-	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
-	
-		"AttributeBaseStrength"			"18"									// Base strength
-		"AttributeStrengthGain"			"2.8"									// Strength bonus per level.
-		"AttributeBaseAgility"			"24"									// Base agility
-		"AttributeAgilityGain"			"2.8"									// Agility bonus per level.
-		"AttributeBaseIntelligence"		"27"									// Base intelligence
-		"AttributeIntelligenceGain"		"2.8"									// Intelligence bonus per level.
-	
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"335"									// Speed.
-		"MovementTurnRate"			"0.6"									// Turning rate.
-		"HasAggressiveStance"			"1"
-		"HealthBarOffset"			"240"
-		"VoiceFile"					"scripts/voscripts/game_sounds_vo_spirit_breaker.txt"
-	        "precache"
-		{
-			"model"	 "models/adam/blackadam.vmdl"
-		}
-	}
 	"npc_dota_hero_black_bolt"
 	{
 		"AbilityLayout"  "4"
@@ -335,59 +269,6 @@
 			"model"		"models/items/antimage/pw_tustarkuri_arms/antimage_arms_lod0.vmdl"
 			"model"		"models/items/antimage/pw_tustarkuri_weapon_offhand/antimage_weapon_offhand_lod0.vmdl"
 		}
-	   }
-	"npc_dota_hero_black_flash"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-	    "override_hero"				"npc_dota_hero_centaur"
-	    "Model"						"models/heroes/silencer/silencer.vmdl"
-	    "DisableWearables"			"1"
-	    "Ability1"					"black_flash_tahion_field"						// Ability 1
-	    "Ability2"					"black_flash_speed_blast"							// Ability 2
-	    "Ability3"					"black_flash_speedforce_aura"					// Ability 3
-	    "Ability4"					"generic_hidden"					// Ability 4
-	    "Ability5"					"generic_hidden"					// Ability 4
-	    "Ability6"					"rider_dissynchronization"
-	    "Ability7"					""
-	    "Ability10"				"special_bonus_exp_boost_30"
-	    "Ability11"				"special_bonus_gold_income_50"
-	    "Ability12"				"special_bonus_hp_regen_40"
-	    "Ability13"				"special_bonus_armor_15"
-	    "Ability14"				"special_bonus_cooldown_reduction_25"
-	    "Ability15"				"special_bonus_attack_damage_90"
-	    "Ability16"				"special_bonus_strength_25"
-	    "Ability17"				"special_bonus_unique_darkrider"
-	
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1.0"								// Physical protection.
-	
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"32"									// Damage range min.
-		"AttackDamageMax"			"42"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.56"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"128"									// Range within a target can be attacked.
-	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"			"23"									// Base strength
-		"AttributeStrengthGain"			"2.7"									// Strength bonus per level.
-		"AttributeBaseAgility"			"17"									// Base agility
-		"AttributeAgilityGain"			"1.5"									// Agility bonus per level.
-		"AttributeBaseIntelligence"		"21"									// Base intelligence
-		"AttributeIntelligenceGain"		"2.0"									// Intelligence bonus per level.
-		"precache"
-		{
-			"model"		 "models/black_flash/black_flash_head_final.vmdl"
-			"model"		 "models/items/silencer/bts_final_utterance_shoulder/bts_final_utterance_shoulder.vmdl"
-			"model"		 "models/heroes/silencer/silencer.vmdl"
-		}
 	}
 	"npc_dota_hero_black_panther"
 	{
@@ -403,8 +284,9 @@
 	    "Ability2"					"black_panther_bleeding_blow"							// Ability 2
 	    "Ability3"					"black_panther_adamantium_armor"					// Ability 3
 	    "Ability4"					"generic_hidden"					// Ability 4
-	    "Ability5"					"black_panther_shadow_warrior_release"					// Ability 4
+	    "Ability5"					"generic_hidden"					// Ability 4
 	    "Ability6"					"black_panther_shadow_warrior"
+	    "Ability7"					"black_panther_shadow_warrior_release"
 	    "Ability10"				"special_bonus_exp_boost_30"
 	    "Ability11"				"special_bonus_gold_income_50"
 	    "Ability12"				"special_bonus_movement_speed_50"
@@ -2248,7 +2130,7 @@
 	    "Ability16"						"special_bonus_haste"
 	    "Ability17"						"special_bonus_all_stats_20"
 	    "ArmorPhysical"					"5"
-	    "AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
 	    "AttackDamageMin"				"31"
 	    "AttackDamageMax"				"33"
 	    "AttackRate"					"1.700000"
@@ -2615,9 +2497,13 @@
 	    "Ability1"		"loki_blink_strike"
 	    "Ability2"		"loki_wind_walk"
 	    "Ability3"		"loki_trap"
-	    "Ability4"		"rubick_empty1"
-	    "Ability5"		"rubick_empty2"
-	    "Ability6"		"loki_spell_steal"
+	    "Ability4"		"rubick_telekinesis_land"
+	    "Ability5"		"rubick_empty1"
+	    "Ability6"		"rubick_empty2"
+	    "Ability7"		"loki_spell_steal"
+	    "Ability8"		"rubick_hidden1"
+	    "Ability9"		"rubick_hidden2"
+	    "Ability10"		"rubick_hidden3"
 	    "Ability11"		"special_bonus_exp_boost_30"
 	    "Ability12"		"special_bonus_gold_income_50"
 	    "Ability13"		"special_bonus_cast_range_250"

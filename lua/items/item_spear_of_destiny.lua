@@ -68,15 +68,17 @@ function modifier_item_spear_of_destiny:OnAttackLanded (params)
     if params.attacker == self:GetParent() then
         if params.target ~= nil and params.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
             if RollPercentage(self:GetAbility():GetSpecialValueFor("bonus_chance")) then 
-                local DamageTable = {
-                    victim = params.target,
-                    attacker = self:GetCaster(),
-                    ability = self:GetAbility(),
-                    damage = self:GetAbility():GetSpecialValueFor("bonus_chance_damage"),
-                    damage_type = DAMAGE_TYPE_PURE
-                }
-                ApplyDamage(DamageTable)
-                EmitSoundOn( "DOTA_Item.MKB.Minibash", params.target )
+                if not params.target:IsBuilding() then 
+                    local DamageTable = {
+                        victim = params.target,
+                        attacker = self:GetCaster(),
+                        ability = self:GetAbility(),
+                        damage = self:GetAbility():GetSpecialValueFor("bonus_chance_damage"),
+                        damage_type = DAMAGE_TYPE_PURE
+                    }
+                    ApplyDamage(DamageTable)
+                    EmitSoundOn( "DOTA_Item.MKB.Minibash", params.target )
+                end
             end
         end
     end

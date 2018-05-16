@@ -35,7 +35,7 @@ function modifier_respawn_time:OnDeath(params)
 					return 
 				end 
 			end
-            local time = self:GetParent():GetLevel() * 3
+            local time = self:GetParent():GetLevel() * 2
             self:GetParent():SetTimeUntilRespawn(time)
             self:GetParent():SetBuybackCooldownTime(10)
         end

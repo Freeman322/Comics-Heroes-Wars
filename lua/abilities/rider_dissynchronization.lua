@@ -17,7 +17,15 @@ function rider_dissynchronization:OnSpellStart()
         local dur = mod:GetStackCount()
         duration = duration + (dur*self:GetSpecialValueFor("duration_per_stack"))
     end
-	self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_rider_dissynchronization", { duration = duration } )
+    if duration > self:GetCooldown(self:GetLevel()) then 
+        duration = self:GetCooldown(self:GetLevel()) - 5
+    end 
+    self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_rider_dissynchronization", { duration = duration } )
+    
+    if self:IsIgnoreCooldownReduction() then
+        self:EndCooldown()
+        self:StartCooldown(self:GetSpecialValueFor("cooldown")) 
+    end
 end
 
 if modifier_rider_dissynchronization == nil then modifier_rider_dissynchronization = class({}) end

@@ -80,7 +80,7 @@ function modifier_flash_stampede:DeclareFunctions()
 end
 
 function modifier_flash_stampede:GetModifierMoveSpeed_Absolute( params )
-	return 1400
+	return 1500
 end
 
 if modifier_flash_stampede_passive == nil then modifier_flash_stampede_passive = class({}) end
@@ -103,11 +103,11 @@ function modifier_flash_stampede_passive:DeclareFunctions()
 end
 
 function modifier_flash_stampede_passive:GetModifierMoveSpeed_Limit( params )
-	return 4000
+	return 11500
 end
 
 function modifier_flash_stampede_passive:GetModifierMoveSpeed_Max( params )
-	return 4000
+	return 11500
 end
 
 function flash_stampede:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

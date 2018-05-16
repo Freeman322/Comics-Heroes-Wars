@@ -54,7 +54,7 @@ end
 function modifier_khorn_erosion:OnCreated(event)
     if IsServer() then
         self.ElapsedDistance = self:GetParent():GetAbsOrigin()
-        self:StartIntervalThink(0.08)
+        self:StartIntervalThink(0.05)
     end
 end
 

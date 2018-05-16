@@ -3878,12 +3878,12 @@
 					"01"
 					{
 							"var_type"			"FIELD_FLOAT"
-							"duration"			"2.5 3 3.5 4"
+							"duration"			"3.5 4 4.5 5"
 					}
 					"02"
 					{
 							"var_type"			"FIELD_FLOAT"
-							"strength_damage"	"1 1.5 2 2.5"
+							"strength_damage"	"1.5 2.0 2.5 3.0"
 					}
 					"03"
 					{
@@ -3989,7 +3989,7 @@
 		"AbilityType"					        "DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"                    "3"
 		"AbilityTextureName"	        "custom/great_crit"
-		"AbilityCooldown"			       	"120 95 70"
+		"AbilityCooldown"			       	"100 75 50"
 		"ScriptFile"					      	"abilities/flash_crit.lua"
 		"AbilityManaCost"			       	"150 200 250"
 		"HasScepterUpgrade"				"1"
@@ -3997,21 +3997,26 @@
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilitySpecial"
 			{
-					"01"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"crit_multiplier"		"50 75 100"
-					}
-					"02"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"crit_multiplier_scepter" "80 105 130"
-					}
-					"03"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"cooldown_scepter" "60 45 30"
-					}
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"crit_multiplier"		"50 75 100"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"crit_multiplier_scepter" "80 105 130"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"cooldown" 				"100 75 50"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"cooldown_scepter" 		"30 25 20"
+				}
 		  }
 	}
 
@@ -13463,7 +13468,7 @@
 	// Time
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"100 80 60"
-	"AbilityDamage"        			"320 460 600"
+	"AbilityDamage"        			"120 230 310"
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"220 310 400"
@@ -13497,7 +13502,7 @@
 		"04"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage_scepter"	"9 12 15"
+			"damage_scepter"	"10 16 24"
 		}
 		"05"
 		{
@@ -15117,7 +15122,7 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"custom/rider_dissynchronization"
-
+	"IgnoreCooldownReduction"		"1"
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastPoint"				"0"
@@ -15160,6 +15165,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"duration_per_stack"	"0.1"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cooldown"				"90 70 50"
 		}
 	}
 }
@@ -18011,7 +18021,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"125 150 175 200"
+			"bonus_damage"			"175 200 225 250"
 		}
 		"03"
 		{
@@ -18055,7 +18065,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"magical_armor_reduction"	"-10 -15 -20 -25"
+			"magical_armor_reduction"	"-20 -25 -30 -35"
 		}
 	}
 }
@@ -18086,7 +18096,7 @@
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"140 220 300 380"
+	"AbilityDamage"					"160 240 320 400"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -20847,7 +20857,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_pct"		"10 15 20 25"
+				"dodge_chance_pct"		"12 17 22 27"
 			}
 		}
 	}
