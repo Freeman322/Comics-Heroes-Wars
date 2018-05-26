@@ -154,46 +154,6 @@
 			}
 		}
 	}
-	"item_aether"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_lua"
-		"ID"							"9220"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"            "custom/aether"
-	        "ItemQuality"					"epic"
-		"ScriptFile"					"items/item_aether.lua"
-	
-	        "AbilityCastPoint"              "0"
-	
-	        // Time
-	        //-------------------------------------------------------------------------------------------------------------
-	        "AbilityCooldown"               "50.0"
-		"ItemCost"						"7345"
-	        // Cost
-	        //-------------------------------------------------------------------------------------------------------------
-	        "AbilityManaCost"               "275"
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"40"
-	            }
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"3"
-	            }
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"6"
-	            }
-	        }
-	   }
 	//=================================================================================================================
 	// Aether Medallion
 	//=================================================================================================================
@@ -1067,7 +1027,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"195"
+				"bonus_damage"			"80"
 			}
 			"02"
 			{
@@ -1077,7 +1037,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"75"
+				"bonus_all_stats"		"65"
 			}	
 			"04"
 			{
@@ -1893,6 +1853,30 @@
 	    		}
 		}
 	}
+	"item_recipe_glimmers_armor"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"9242"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"            "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3000"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_glimmers_armor"
+
+		"ItemRequirements"
+		{
+			"01"						"item_glimmer_cape;item_invis_sword;item_relic"
+		}
+	}
+
 	"item_glimmers_armor"
 	{
 		// General
@@ -1921,21 +1905,23 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"sb;invis;shadow blade"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
 		"precache"
 		{
 			"particle"  "particles/vermilion_robe/glimmers_armor.vpcf"
 		}
+
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"									"FIELD_INTEGER"
-				"bonus_damage"								"20"
+				"bonus_damage"								"85"
 			}
 			"02"
 			{
 				"var_type"									"FIELD_INTEGER"
-				"bonus_attack_speed"						"20"
+				"bonus_attack_speed"						"60"
 			}
 			"03"
 			{
@@ -1959,8 +1945,8 @@
 			}
 			"07"
 			{
-	        		"var_type"									"FIELD_INTEGER"
-	        		"windwalk_duration"					         "5"
+	        	"var_type"									"FIELD_INTEGER"
+	        	"windwalk_duration"					         "5"
 			}
 		}
 	}
@@ -1988,63 +1974,39 @@
 	
 	    // Time
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "70.0"
+	    "AbilityCooldown"               "370.0"
 	
 	    // Cost
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityManaCost"               "275"
-	    "ItemCost"						"51070"
 	
 		"precache"
 		{
-			"particle"  "particles/effects/glove.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+			"particle"  "particles/items/infinity_gauntlet_snap_full.vpcf"
 		}
+		
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"600"
+				"bonus_all_stats"		"1000"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_speed"			"100"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"1000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_speed_pers"		"20"
+				"bonus_mana_regen"		"1000"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"	    "5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed_border"			"1000"
-			}
-			"06"
-			{
-				"var_type"				 "FIELD_INTEGER"
-				"heal_amp"				 "2"
-			}
-			"08"
-			{
-				"var_type"				 "FIELD_INTEGER"
-				"duration"				 "5"
-			}
-			"07"
-			{
-				"var_type"				  "FIELD_FLOAT"
-				"ulti"			          ""
-			}
-			"07"
-			{
-				"var_type"				  "FIELD_FLOAT"
-				"ulti2"			          ""
+				"bonus_damage"	   		"1000"
 			}
 		}
 	}
@@ -3339,29 +3301,6 @@
 		}
 	}
 	//=================================================================================================================
-	"item_recipe_aether"
-	{
-		// General
-		"BaseClass"                    "item_datadriven"
-	//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9221"
-		"AbilityTextureName"            "recipe"
-		// Item Info
-	
-	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"750"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_aether"
-		"ItemRequirements"
-		{
-			"01"				"item_ethereal_blade;item_pers"
-		}
-	}
-	//=================================================================================================================
 	// Recipe: Aether Medallion
 	//=================================================================================================================
 	"item_recipe_aether_medallion"
@@ -3647,7 +3586,7 @@
 		"ItemResult"					"item_dawnbreaker"
 		"ItemRequirements"
 		{
-			"01"						"item_soul;item_relic;item_relic;item_aeon_disk"
+			"01"						"item_relic;item_relic;item_aeon_disk"
 		}
 	}
 	"item_recipe_death_scyche"
@@ -3965,28 +3904,6 @@
 			"01"						"item_bloodstone;item_aether_lens;item_pers"
 		}
 	}
-	"item_recipe_glimmers_armor"
-	 {
-	       	// General
-	     	//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9242"
-	      	"BaseClass"						"item_datadriven"
-	       	"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"            "recipe"
-	       	// Item Info
-	       	//-------------------------------------------------------------------------------------------------------------
-	       	"ItemCost"						"3000"
-	       	"ItemShopTags"					""
-	
-	       	// Recipe
-	       	//-------------------------------------------------------------------------------------------------------------
-	      	"ItemRecipe"					"1"
-	       	"ItemResult"					"item_glimmers_armor"
-	       	"ItemRequirements"
-	       	{
-	       		"01"						"item_aether;item_glimmer_cape"
-	       	}
-	  }
 	//=================================================================================================================
 	//Infinity Gauntlet
 	//=================================================================================================================
@@ -4010,7 +3927,7 @@
 		"ItemResult"					"item_glove_of_the_creator"
 		"ItemRequirements"
 		{
-			"01"				 "item_inf_balvanka;item_aether;item_soul;item_shere2;item_time;item_stoneofinity;item_tesseract"
+			"01"				 "item_inf_balvanka;item_reality_gem;item_soul;item_power_gem;item_time;item_mind_gem;item_space_stone"
 		}
 	}
 	//=================================================================================================================
@@ -4497,29 +4414,6 @@
 		}
 	}
 	//=================================================================================================================
-	"item_recipe_shere2"
-	{
-		// General
-		"BaseClass"                    "item_datadriven"
-	//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9223"
-	
-		"AbilityTextureName"            "recipe"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_shere2"
-		"ItemRequirements"
-		{
-			"01"						"item_ultimate_orb;item_soul_booster;item_mekansm"
-		}
-	}
-	//=================================================================================================================
 	// Recipe: Shine of Sea
 	//=================================================================================================================
 	"item_recipe_shine_of_sea"
@@ -4542,31 +4436,6 @@
 		"ItemRequirements"
 		{
 			"01"						"item_mekansm;item_shivas_guard;item_vanguard"
-		}
-	}
-	//=================================================================================================================
-	"item_recipe_soul"
-	{
-		// General
-		"BaseClass"                    "item_datadriven"
-		"AbilityTextureName"			"recipe"
-	//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9001"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-	
-	
-		// Item Info
-	
-	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_soul"
-		"ItemRequirements"
-		{
-			"01"				"item_soul_booster;item_cloak;item_pers"
 		}
 	}
 	"item_recipe_soul_urn"
@@ -4611,30 +4480,6 @@
 		"ItemRequirements"
 		{
 			"01"						"item_wind_lace"
-		}
-	}
-	//=================================================================================================================
-	"item_recipe_stoneofinity"
-	{
-		// General
-		"BaseClass"                    "item_datadriven"
-	//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9225"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityTextureName"            "recipe"
-	
-		// Item Info
-	
-	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_stoneofinity"
-		"ItemRequirements"
-		{
-			"01"					"item_sheepstick;item_staff_of_wizardry"
 		}
 	}
 	//=================================================================================================================
@@ -4707,31 +4552,6 @@
 		"ItemRequirements"
 		{
 			"01"						"item_demonic_claws;item_ultimate_orb"
-		}
-	}
-	//=================================================================================================================
-	// Recipe: Tesseract
-	//=================================================================================================================
-	"item_recipe_tesseract"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9252"
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"AbilityTextureName"            "recipe"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1250"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_tesseract"
-		"ItemRequirements"
-		{
-			"01"						"item_blink_2;item_blink_2"
 		}
 	}
 	"item_recipe_time"
@@ -5192,56 +5012,6 @@
 			}
 		}
 	}
-	"item_shere2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_lua"
-		"ID"							"9222"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"            "custom/shere2"
-		"ScriptFile"					"items/item_shere2.lua"
-		"ItemQuality"					"epic"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "50.0"
-		"ItemCost"						"7575"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "275"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"7"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"35"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"400"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"4"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"active_crit"			"245"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Shine of Sea
 	//=================================================================================================================
@@ -5313,56 +5083,6 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"heal"					"400"
-			}
-		}
-	}
-	"item_soul"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9000"
-		"BaseClass"                     "item_lua"
-		"ScriptFile"					"items/item_soul.lua"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityTextureName"            "custom/soul"
-		"AbilityCastRange"				"450" //
-		"MaxLevel"						"1"
-	    "ItemQuality"					"common"
-	    // Casting
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCastPoint"              "0.01"
-	
-	    // Time
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "50.0"
-	
-	    // Cost
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityManaCost"               "275"
-		"ItemCost"						"5450"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_brain_sap_heal_amt"		"450"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"stats"						"30"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"armor"						"10"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"soul_reverse_duration"		"7"
 			}
 		}
 	}
@@ -5452,62 +5172,6 @@
 				"bonus_move_speed"		"20"
 			}
 		}
-	}
-	//=================================================================================================================
-	"item_stoneofinity"
-	{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"                     "item_lua"
-	"ID"							"9224"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityTextureName"            "custom/stoneofinity"
-	"ScriptFile"					"items/item_stoneofinity.lua"
-	    "ItemQuality"					"rare"
-	
-	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"650"
-	"AbilityCastPoint"				"0.5"
-	"AbilityCooldown"				"45.0"
-	"AbilityDamage"					"40"
-	
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"365"
-	
-	// Stats
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityModifierSupportValue"	"0.5"	// Applies two modifiers
-	"ItemCost"						"6650"
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"7.0"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"all_stats_bonus"			"35"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_mana_regen"			"10"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"35"
-		}
-	}
 	}
 	//=================================================================================================================
 	// Int Boots
@@ -5717,128 +5381,67 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	//Tesseract
-	//=================================================================================================================
-	"item_tesseract"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_lua"
-		"ID"							"9253"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"Model"							"models/props_gameplay/red_box.vmdl"
-		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"            "custom/tesseract"
-		"ItemQuality"					"epic"
-		"FightRecapLevel"				"1"
-		"ScriptFile"					"items/item_tesseract.lua"
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"99999"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"75.0"
-		"AbilityChannelTime"		    "1.87"
-		"ItemCost"						"10250"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemShopTags"					"teleport"
-		"ItemQuality"					"component"
-		"ItemAliases"					"blink dagger"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"800"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_health"				"800"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mana_regen_cons"		"35"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chanell"				"1.88"
-			}
-		}
-	}
 	"item_time"
 	{
-	// General
-	    	//-------------------------------------------------------------------------------------------------------------
-	    	"BaseClass"						"item_lua"
-	    	"ID"							"9027"
-	    	"ScriptFile"					"items/item_time.lua"
-	    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	    	"Model"							"models/props_gameplay/red_box.vmdl"
-	    	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-	    	"AbilityTextureName"            "custom/time"
-	
-	    	// Stats
-	    	//-------------------------------------------------------------------------------------------------------------
-	    	"AbilityCooldown"				"160"
-	    	"AbilityCastRange"				"0"
-	    	"AbilityCastPoint"				"0.2"
-	    	"AbilityManaCost"				"575"
-	    	// Item Info
-	    	//-------------------------------------------------------------------------------------------------------------
-	    	"ItemCost"						"15350"
-	    	"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
-	    	"ItemQuality"					"rare"
-	    	"ItemAliases"					"vod;veil of discord"
-	    	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-	    	"precache"
-	    	{
-	    		"particle"  "particles/item_time/time_gem_active.vpcf"
-	    		"particle"  "particles/item_time/time_gem_active_respawn.vpcf"
-	    		"particle"  "particles/status_fx/status_effect_necrolyte_spirit.vpcf"
-	    		"particle"  "particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf"
-	    		"soundfile" "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
-	    		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
-	    		"soundfile" "soundevents/game_sounds_heroes/hero_manhattan.vsndevts"
-	    		"soundfile" "soundevents/game_sounds_heroes/hero_zoom.vsndevts"
-	    	}
-	    	"AbilitySpecial"
-	    	{
-	    		"01"
-	    		{
-	    			"var_type"					"FIELD_INTEGER"
-	    			"bonus_health_regen"		"25"
-	    		}
-	    		"02"
-	    		{
-	    			"var_type"					"FIELD_INTEGER"
-	    			"bonus_stats"				"35"
-	    		}
-	    		"03"
-	    		{
-	    			"var_type"					"FIELD_INTEGER"
-	    			"bonus_damage"				"90"
-	    		}
-	    		"04"
-	    		{
-	    			"var_type"					"FIELD_INTEGER"
-	    			"duration"					"15"
-	    		}
-	    	}
-	   }
+		// General
+    	//-------------------------------------------------------------------------------------------------------------
+    	"BaseClass"						"item_lua"
+    	"ID"							"9027"
+    	"ScriptFile"					"items/item_time.lua"
+    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    	"Model"							"models/props_gameplay/red_box.vmdl"
+    	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+    	"AbilityTextureName"            "custom/time"
+
+    	// Stats
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityCooldown"				"160"
+    	"AbilityCastRange"				"0"
+    	"AbilityCastPoint"				"0.2"
+    	"AbilityManaCost"				"575"
+    	// Item Info
+    	//-------------------------------------------------------------------------------------------------------------
+    	"ItemCost"						"15350"
+    	"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
+    	"ItemQuality"					"rare"
+    	"ItemAliases"					"vod;veil of discord"
+    	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+    	"precache"
+    	{
+    		"particle"  "particles/item_time/time_gem_active.vpcf"
+    		"particle"  "particles/item_time/time_gem_active_respawn.vpcf"
+    		"particle"  "particles/status_fx/status_effect_necrolyte_spirit.vpcf"
+    		"particle"  "particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf"
+    		"soundfile" "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+    		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
+    		"soundfile" "soundevents/game_sounds_heroes/hero_manhattan.vsndevts"
+    		"soundfile" "soundevents/game_sounds_heroes/hero_zoom.vsndevts"
+    	}
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"					"FIELD_INTEGER"
+    			"bonus_health_regen"		"25"
+    		}
+    		"02"
+    		{
+    			"var_type"					"FIELD_INTEGER"
+    			"bonus_stats"				"35"
+    		}
+    		"03"
+    		{
+    			"var_type"					"FIELD_INTEGER"
+    			"bonus_damage"				"90"
+    		}
+    		"04"
+    		{
+    			"var_type"					"FIELD_INTEGER"
+    			"duration"					"15"
+    		}
+    	}
+   }
 	//=================================================================================================================
 	// Orchid
 	//=================================================================================================================
@@ -6840,6 +6443,476 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"percent_cleave"			"50"
+			}
+		}
+	}
+   //=================================================================================================================
+	"item_recipe_reality_gem"
+	{
+		// General
+		"BaseClass"                    "item_datadriven"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityTextureName"            "recipe"
+		// Item Info
+	
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"750"
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_reality_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_aether_lens;item_soul_booster;item_soul_booster"
+		}
+	}
+    //=================================================================================================================
+	// The Aether
+	//=================================================================================================================
+	"item_reality_gem"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_lua"	
+		"ScriptFile"					"items/item_reality_gem.lua"	
+		"AbilityTextureName"            "custom/aether"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"90"
+		"AbilityManaCost"				"325"
+
+		"AbilityCastPoint"              "0.75"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"8625"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mh;meteor hammer"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		"precache"
+		{
+			"particle"  "particles/items/reality_gem_aoe.vpcf"
+			"particle"  "particles/items/reality_gem_rebuff.vpcf"
+			"particle"  "particles/units/heroes/hero_nevermore/nevermore_shadowraze_debuff.vpcf"
+			"particle"  "particles/status_fx/status_effect_gods_strength.vpcf"
+			"particle"  "particles/units/heroes/hero_sven/sven_gods_strength_hero_effect.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"2000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"2000"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"reality_reverse_duration"	"4.5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"reality_reverse_radius"	"600"
+			}
+		}
+	}
+	//=================================================================================================================
+	"item_recipe_mind_gem"
+	{
+		// General
+		"BaseClass"                    "item_datadriven"
+	//-----------------------------------------------------------------------------------// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityTextureName"            "recipe"
+	
+		// Item Info
+	
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1225"
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mind_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_sheepstick;item_staff_of_wizardry;item_mystic_staff"
+		}
+	}
+	//=================================================================================================================
+	"item_mind_gem"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_lua"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityTextureName"            "custom/mind_gem"
+		"ScriptFile"					"items/item_mind_gem.lua"
+		"ItemQuality"					"rare"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"60.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"245"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Applies two modifiers
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/terrorblade/terrorblade_back_ti8/terrorblade_sunder_ti8.vpcf"
+			"particle"  "particles/status_fx/status_effect_terrorblade_reflection.vpcf"
+			"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_reflection_slow.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_intellect"			"175"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana_regen"			"35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana_cost"			"85"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_casttime"			"85"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Tesseract
+	//=================================================================================================================
+	"item_recipe_space_stone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"            "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1250"
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_space_stone"
+		"ItemRequirements"
+		{
+			"01"						"item_soul_booster;item_blink_2"
+		}
+	}
+	//=================================================================================================================
+	//Tesseract
+	//=================================================================================================================
+	"item_space_stone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"            "custom/space_stone"
+		"ItemQuality"					"epic"
+
+		"FightRecapLevel"				"1"
+		"ScriptFile"					"items/item_space_stone.lua"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"GLOBAL"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"75.0"
+		"ItemCost"						"10250"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemShopTags"					"teleport"
+		"ItemQuality"					"component"
+		"ItemAliases"					"blink dagger"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_final_ti5.vpcf"
+			"particle"  "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"3500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health"				"3500"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_speed"				"100"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wormhole_delay"			"1.75"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wormhole_radius"			"375"
+			}
+		}
+	}
+	//=================================================================================================================
+	"item_recipe_power_gem"
+	{
+		// General
+		"BaseClass"                    "item_datadriven"
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"9223"
+	
+		"AbilityTextureName"            "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_power_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_kaya;item_mystic_staff;item_reaver"
+		}
+	}
+	//=================================================================================================================
+	//=================================================================================================================
+	"item_power_gem"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_lua"		
+		"AbilityTextureName"            "custom/power_gem"
+		"ScriptFile"					"items/item_power_gem.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"70"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"8975"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"power"
+		"ItemSellable"					"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"precache"
+		{
+			"particle"  "particles/status_fx/status_effect_gods_strength.vpcf"
+			"particle"  "particles/items_fx/armlet.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"75"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"120"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"70"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_spell_damage"	"40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"power_duration"		"4.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"power_totaldmg"		"75"
+			}
+		}
+	}
+	//=================================================================================================================
+	"item_recipe_soul"
+	{
+		// General
+		"BaseClass"                    "item_datadriven"
+		"AbilityTextureName"			"recipe"
+	//-------------------------------------------------------------------------------------------------------------
+		"ID"							"9001"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	
+	
+		// Item Info
+	
+	//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_soul"
+		"ItemRequirements"
+		{
+			"01"				"item_soul_booster;item_gem;item_ghost;item_moon_shard_marvel"
+		}
+	}	
+	"item_soul"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_soul.lua"
+		"AbilityTextureName"            "custom/soul"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"AbilityCastRange"				"450" 
+		"MaxLevel"						"1"
+
+	    "ItemQuality"					"common"
+	    // Casting
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastPoint"              "0.01"
+	
+	    // Time
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCooldown"               "60.0"
+		
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
+		}
+	    // Cost
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityManaCost"               "275"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"130"
+			}			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_vision"			"600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"35"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magical_damage_return"	"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"1200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"overseer_duration"		"6"
 			}
 		}
 	}

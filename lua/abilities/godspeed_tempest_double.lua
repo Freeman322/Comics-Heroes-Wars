@@ -37,6 +37,10 @@ end
 
 if godspeed_tempest_double == nil then godspeed_tempest_double = class({}) end 
 
+function godspeed_tempest_double:IsRefreshable()
+    return false
+end
+
 function godspeed_tempest_double:OnSpellStart()
 	if IsServer() then 
 		local duration = self:GetSpecialValueFor("duration")

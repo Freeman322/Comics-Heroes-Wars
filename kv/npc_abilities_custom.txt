@@ -12318,113 +12318,6 @@
 					}
 			}
 	}
-	"po_smoke_strike"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			        	"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityTextureName"			"custom/po_smoke"
-		"AOERadius"						"%radius"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"550"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"29 26 23 20"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 90 100 110"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"radius"				"320 360 400 440"
-				}
-				"02"
-				{
-					"var_type"				"FIELD_FLOAT"
-					"duration"				"4 5 6 7"
-				}
-				"02"
-				{
-					"var_type"				"FIELD_FLOAT"
-					"linger_duration"		"0.5"
-				}
-		}
-
-		"precache"
-		{
-			"soundfile"	"sounds/weapons/hero/riki/riki_smokescreen.vsnd"
-			"particle"  "particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
-			"particle"  "particles/units/heroes/hero_riki/riki_smokebomb_b.vpcf"
-		}
-
-		"OnSpellStart"
-		{
-			 	"CreateThinker"
-			 	{
-			 		"ModifierName"	"modifier_smoke_screen_po"
-			 		"Target" 		"POINT"
-			 	}
-		}
-
-		"Modifiers"
-		{
-				"modifier_smoke_screen_po"
-				{
-						"Aura"					"modifier_invis_buff"
-						"Aura_Radius"			"%radius"
-						"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-						"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
-						"Duration"				"%duration"
-
-						"OnCreated"
-						{
-								"FireSound"
-								{
-									"EffectName"	"Hero_Riki.Smoke_Screen"
-									"Target"		"CASTER"
-								}
-
-								"AttachEffect"
-								{
-										"EffectName"		"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
-										"EffectAttachType"	"follow_origin"
-										"Target"			"TARGET"
-											"ControlPoints"
-											{
-												"00" "0 0 0"
-												"01" "%radius %radius %radius"
-											}
-									}
-							}
-					}
-
-					"modifier_invis_buff"
-					{
-							"IsDebuff"		"1"
-							"Duration"			"%linger_duration"
-
-							"Properties"
-							{
-								"MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY"	        "1"
-							}
-							"States"
-							{
-								"MODIFIER_STATE_INVISIBLE"	                    	"MODIFIER_STATE_VALUE_ENABLED"
-							}
-					}
-			}
-	}
 	"po_degen_aura"
 	{
 		// General
@@ -12464,275 +12357,54 @@
 		 }
 	}
 
-	///////PO
-	"po_walrus_punch"
-	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"			    	    	"ability_lua"
-			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-			"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-			"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
-			"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
-			"FightRecapLevel"						"1"
-			"AbilityTextureName"				"custom/po_walrus_punch"
-			"MaxLevel"                  "3"
-			"ScriptFile"								"abilities/po_walrus_punch.lua"
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastPoint"				"0"
-
-			"AbilityCooldown"				"40 30 20"
-
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"80 100 120"
-
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-				"01"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"crit"          		"600 900 1200"
-					}
-					"02"
-					{
-							"var_type"				"FIELD_FLOAT"
-							"duration"				"1.5 2.0 2.5"
-					}
-					"03"
-	        {
-		        	"var_type"				"FIELD_INTEGER"
-		        	"heigh"				    "325"
-	        }
-	        "04"
-	        {
-	             "var_type"				"FIELD_INTEGER"
-	            "dictance"		        "305 450 550"
-	        }
-			}
-	}
-	"golden_god_aoe"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"			"custom/golden_gold_aoe"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24 22 20 18"
-		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.0"
-		"AbilityManaCost"				"70 80 90 100"
-		"AOEradius"						"600"
-		"precache"
-		{
-			"particle"  "particles/golden_gold_hypernova_discharge.vpcf"
-			"particle"  "particles/golden_god_reborn.vpcf"
-			"particle"  "particles/goldengod/hypernova/arcana_hypernova.vpcf"
-			"particle"  "particles/goldengod/goldengod_ambient_hands.vpcf"
-			"particle"  "particles/goldengod/goldengod_ambient.vpcf"
-			"particle"  "particles/goldengod/goldengod_ambient_inner.vpcf"
-			"particle"  "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes.vpcf"
-			"model"  	"models/heroes/hero_goldengod/osiris_legacy/golden_god_arcana.vmdl"
-			"model"		"models/heroes/hero_goldengod/goldengod_left_weapon.vmdl"
-			"model"		"models/heroes/hero_goldengod/goldengod_right_weapon.vmdl"
-		}
-		"AbilitySpecial"
-		{
-				"01"
-				{
-					"var_type"		"FIELD_INTEGER"
-					"duration"	     "3 4 5 6"
-				}
-		}
-
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-					"EffectName"			"DOTA_Item.VeilofDiscord.Activate"
-					"Target"				"CASTER"
-			}
-    "ApplyModifier"
-			{
-					"Target"			"CASTER"
-					"ModifierName"		"golden_god_aoe_radius"
-			}
-			"FireEffect"
-			{
-					"TargetPoint"			"POINT"
-					"EffectName"			"particles/items2_fx/veil_of_discord.vpcf"
-					"EffectAttachType"		"world_origin"
-					"ControlPoints"
-					{
-						"01"				"%debuff_radius %debuff_radius %debuff_radius"
-					}
-			}
-
-			"ActOnTargets"
-			{
-						"Target"
-						{
-								"Center"			"POINT"
-								"Radius"			"600"
-								"Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-								"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						}
-
-						"Action"
-						{
-								"ApplyModifier"
-								{
-									"Target"			"TARGET"
-									"ModifierName"		"golden_god_aoe_radius"
-								}
-						}
-				}
-		}
-
-		"Modifiers"
-		{
-			"golden_god_aoe_radius"
-			{
-							"Duration"			"%duration"
-							"IsHidden"			"0"
-							"IsBuff"			"1"
-							"IsPurgable"		"1"
-
-							"EffectName"			"particles/items2_fx/veil_of_discord_debuff.vpcf"
-							"EffectAttachType"		"follow_origin"
-	            "States"
-	            {
-	                "MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
-	            }
-		    	}
-	    }
-	}
-"golden_god_penitence"
+///////PO
+"po_walrus_punch"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"custom/golden_god_passive"
-
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
-		"particle"			"particles/units/heroes/hero_chen/chen_penitence.vpcf"
-		"particle"			"particles/units/heroes/hero_chen/chen_penitence_debuff.vpcf"
-	}
-
+	"BaseClass"			    	    	"ability_lua"
+	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"						"1"
+	"AbilityTextureName"				"custom/po_walrus_punch"
+	"MaxLevel"                  "3"
+	"ScriptFile"								"abilities/po_walrus_punch.lua"
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastPoint"				"0.2"
+	"AbilityCastPoint"				"0"
 
-	// Time
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"800"
-	"AbilityCooldown"				"18 16 14 12"
+	"AbilityCooldown"				"40 30 20"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"60 80 100 120"
+	"AbilityManaCost"				"80 100 120"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5 6 7 8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"2000 2000 2000 2000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"-15 -20 -25 -30"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_taken"	"15 20 25 30"
-			}
-	}
-
-	"OnSpellStart"
-	{
-			"FireSound"
-			{
-				"EffectName"	"Hero_Chen.PenitenceCast"
-				"Target" 		"CASTER"
-			}
-
-			"TrackingProjectile"
-			{
-				"Target"           	"TARGET"
-				"EffectName"		""
-				"Dodgeable"			"0"
-				"ProvidesVision"	"0"
-				"MoveSpeed"        	"%speed"
-				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-			}
-	}
-
-	"OnProjectileHitUnit"
-	{
-			"DeleteOnHit"	"1"
-
-			"FireSound"
-			{
-				"EffectName"	"Hero_Chen.PenitenceImpact"
-				"Target" 		"TARGET"
-			}
-
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_chen/chen_penitence.vpcf"
-				"EffectAttachType"  "follow_origin"
-				"Target"            "TARGET"
-			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_penitence_datadriven"
-				"Target" 		"TARGET"
-				"Duration"		"%duration"
-			}
-	}
-
-	"Modifiers"
-	{
-			"modifier_penitence_datadriven"
-			{
-					"Passive"			"0"
-					"IsHidden"			"0"
-					"IsDebuff"			"1"
-
-					"EffectName"		"particles/units/heroes/hero_chen/chen_penitence_debuff.vpcf"
-					"EffectAttachType"	"follow_origin"
-
-					"Properties"
-					{
-						"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%bonus_damage_taken"
-					    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed"
-					}
-			}
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"crit"          		"600 900 1200"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1.5 2.0 2.5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heigh"				    "325"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dictance"		        "305 450 550"
+		}
 	}
 }
 "golden_gold_rift"
@@ -37099,6 +36771,485 @@
 				"var_type"				"FIELD_INTEGER"
 				"dragon_cast_range"			"450 500 550 600"
 			}
+		}
+	}
+	"golden_god_aoe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"custom/golden_gold_aoe"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24 22 20 18"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"70 80 90 100"
+		"AOEradius"						"600"
+		"precache"
+		{
+			"particle"  "particles/golden_gold_hypernova_discharge.vpcf"
+			"particle"  "particles/golden_god_reborn.vpcf"
+			"particle"  "particles/goldengod/hypernova/arcana_hypernova.vpcf"
+			"particle"  "particles/goldengod/goldengod_ambient_hands.vpcf"
+			"particle"  "particles/goldengod/goldengod_ambient.vpcf"
+			"particle"  "particles/goldengod/goldengod_ambient_inner.vpcf"
+			"particle"  "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes.vpcf"
+			"model"  	"models/heroes/hero_goldengod/osiris_legacy/golden_god_arcana.vmdl"
+			"model"		"models/heroes/hero_goldengod/goldengod_left_weapon.vmdl"
+			"model"		"models/heroes/hero_goldengod/goldengod_right_weapon.vmdl"
+		}
+		"AbilitySpecial"
+		{
+				"01"
+				{
+					"var_type"		"FIELD_INTEGER"
+					"duration"	     "3 4 5 6"
+				}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+					"EffectName"			"DOTA_Item.VeilofDiscord.Activate"
+					"Target"				"CASTER"
+			}
+    "ApplyModifier"
+			{
+					"Target"			"CASTER"
+					"ModifierName"		"golden_god_aoe_radius"
+			}
+			"FireEffect"
+			{
+					"TargetPoint"			"POINT"
+					"EffectName"			"particles/items2_fx/veil_of_discord.vpcf"
+					"EffectAttachType"		"world_origin"
+					"ControlPoints"
+					{
+						"01"				"%debuff_radius %debuff_radius %debuff_radius"
+					}
+			}
+
+			"ActOnTargets"
+			{
+						"Target"
+						{
+								"Center"			"POINT"
+								"Radius"			"600"
+								"Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+								"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+
+						"Action"
+						{
+								"ApplyModifier"
+								{
+									"Target"			"TARGET"
+									"ModifierName"		"golden_god_aoe_radius"
+								}
+						}
+				}
+		}
+
+		"Modifiers"
+		{
+			"golden_god_aoe_radius"
+			{
+							"Duration"			"%duration"
+							"IsHidden"			"0"
+							"IsBuff"			"1"
+							"IsPurgable"		"1"
+
+							"EffectName"			"particles/items2_fx/veil_of_discord_debuff.vpcf"
+							"EffectAttachType"		"follow_origin"
+	            "States"
+	            {
+	                "MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+		    	}
+	    }
+	}
+	//=================================================================================================================
+	// Ability: Antimage Mana Void
+	//=================================================================================================================
+	"golden_god_aoe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/golden_god_aoe.lua"
+		"AbilityTextureName"			"custom/golden_gold_aoe"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"2"
+		"AOEradius"						"600"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24 22 20 18"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"70 80 90 100"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		"AbilityModifierSupportValue"	"0.0"	// damage only
+		"precache"
+		{
+			"particle"  "particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_purification_ti6_immortal.vpcf"
+			"particle"  "particles/items2_fx/veil_of_discord.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration"	    				"3 4 5 6"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"	    				"600"
+			}
+		}
+	}
+	//=================================================================================================================
+	// golden_god_penitence
+	//=================================================================================================================
+	"golden_god_penitence"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"chen_penitence"		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Chen.PenitenceCast"
+		"AbilityTextureName"			"custom/golden_god_passive"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"14.0 13.0 12.0 11.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"2000 2000 2000 2000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"-18 -24 -30 -36"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage_taken"	"18 24 30 36"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"po_smoke_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/po_smoke_strike.lua"
+		"AbilityTextureName"			"custom/po_smoke"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AOERadius"						"%radius"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"550"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"29 26 23 20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"320 360 400 440"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4 5 6 7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"linger_duration"		"0.5"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
+			"particle"  "particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
+			"particle"  "particles/units/heroes/hero_riki/riki_smokebomb_b.vpcf"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Phantom Assassin's Stifling Dagger
+	//=================================================================================================================
+	"ebonymaw_aether_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/ebonymaw_aether_strike"
+		"ScriptFile"					"abilities/ebonymaw_aether_strike"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_PhantomAssassin.Dagger.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200 1400 1600 1800"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10"
+		"AbilityDuration"				"1 2 3 4"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"30 25 20 15"
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_stifling_dagger.vpcf"
+			"particle"  "particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_stifling_dagger_explosion.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dagger_speed"			"1800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"24 64 96 128"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"1.95 2.45 3.2 3.75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"silence_duration"		"1.5 1.85 2.35 2.85"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Ebonymaw: Reflect
+	//=================================================================================================================
+	"ebonymaw_nether_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/ebonymaw_nether_shield"
+		"ScriptFile"					"abilities/ebonymaw_nether_shield"		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"				"12.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_antimage/antimage_spellshield.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_underlord.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Ebonymaw: hazard
+	//=================================================================================================================
+	"ebonymaw_hazard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/ebonymaw_hazard"
+		"ScriptFile"					"abilities/ebonymaw_hazard"		
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"375"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityChannelTime"			"4.0 4.0 4.0"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40 35 30 25"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 125 155 185"
+		
+		"precache"
+		{
+			"particle"  "particles/hero_ebony/ebonymaw_false_predict.vpcf"
+			"particle"  "particles/hero_ebony/ebonymaw_hazard.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"50 100 150 200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hazard_damage"			"1.25 1.5 1.75 2.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hazard_duration"		"2.0 3.0 4.0 5.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hazard_mult_creture"	"1.05 1.07 1.085 1.1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"450"
+			}				
+		}
+	}
+	//=================================================================================================================
+	// Ebonymaw: Magnetize
+	//=================================================================================================================
+	"ebonymaw_magnetize"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/ebonymaw_magnetize"
+		"ScriptFile"					"abilities/ebonymaw_magnetize"		
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"		
+		"AbilitySound"					"Hero_EarthSpirit.Magnetize.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.01"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100 90 80"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100.0"
+		"precache"
+		{
+			"particle"  				"particles/econ/items/lion/lion_ti8/lion_spell_finger_ti8.vpcf"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300 500 800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"80 135 180"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_mana_pct"		"25 45 75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_kill_border"		"10 12 15"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4 5 6"
+			}			
 		}
 	}
 }

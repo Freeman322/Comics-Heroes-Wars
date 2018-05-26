@@ -100,7 +100,7 @@ end
 
 function modifier_carnage_tombstone_modifier:OnCreated( kv )
     if IsServer() then
-        self:GetParent():Purge(true, false, false, false, false)
+        ----self:GetParent():Purge(true, false, false, false, false)
     end
 end
 

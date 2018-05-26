@@ -3,55 +3,34 @@ if item_soul == nil then
 end
 
 LinkLuaModifier("modifier_item_soul", "items/item_soul.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_soul_transition", "items/item_soul.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_soul_aura", "items/item_soul.lua", LUA_MODIFIER_MOTION_NONE)
+----LinkLuaModifier("modifier_item_mind_gem_active", "items/item_soul.lua", LUA_MODIFIER_MOTION_NONE)
 
 function item_soul:GetIntrinsicModifierName()
 	return "modifier_item_soul"
 end
 
-function item_soul:CastFilterResultTarget( hTarget )
-	if IsServer() then
-		if hTarget:HasModifier("modifier_item_soul_transition") or hTarget:HasModifier("modifier_spawn_soul_trick") or hTarget:HasModifier("modifier_celebrimbor_overseer") then
-			return UF_FAIL_DOMINATED
-		end
-
-		if hTarget ~= nil and hTarget:IsMagicImmune() then
-			return UF_FAIL_MAGIC_IMMUNE_ENEMY
-		end
-
-		local nResult = UnitFilter( hTarget, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), self:GetCaster():GetTeamNumber() )
-		return nResult
-	end
-
-	return UF_SUCCESS
-end
 
 function item_soul:OnSpellStart()
-	local caster = self:GetCaster()
-	local target = self:GetCursorTarget()
-	if target ~= nil then
-		local drain = self:GetSpecialValueFor("tooltip_brain_sap_heal_amt")
-		caster:Heal(drain, caster)
-		target:ModifyHealth(target:GetHealth() - drain, self, true, 0)
+	if IsServer() then 
+		local duration = self:GetSpecialValueFor(  "overseer_duration" )
 
-		local particleName = "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"	
-		local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, target )
-
-		ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-		ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-
-		-- Show the particle target-> caster
-		local particleName = "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"	
-		local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, caster )
-
-		ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-		ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-
-		EmitSoundOn("Hero_Terrorblade.Sunder.Cast", target)
-		EmitSoundOn("Hero_Terrorblade.Sunder.Target", caster)
-		if target:GetHealth() > 0 then
-			target:AddNewModifier(caster, self, "modifier_item_soul_transition", {duration = self:GetSpecialValueFor("soul_reverse_duration")})
+		local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), 99999, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
+		if #units > 0 then
+			for _,unit in pairs(units) do
+				unit:AddNewModifier( self:GetCaster(), self, "modifier_item_soul_aura", { duration = duration } )
+			end
 		end
+
+		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_silencer/silencer_global_silence.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+		ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin() )
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+		EmitSoundOn( "Hero_ElderTitan.EchoStomp.Channel.ti7", self:GetCaster() )
+		EmitSoundOn( "Hero_ElderTitan.EchoStomp.ti7", self:GetCaster() )
+
+		self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_3 );
 	end
 end
 
@@ -59,103 +38,145 @@ if modifier_item_soul == nil then
     modifier_item_soul = class ( {})
 end
 
-function modifier_item_soul:IsHidden ()
-    return true
+function modifier_item_soul:IsHidden()
+	return true
 end
 
-function modifier_item_soul:DeclareFunctions ()
-    local funcs = {
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+--------------------------------------------------------------------------------
+
+function modifier_item_soul:IsAura()
+	return true
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_item_soul:GetModifierAura()
+	return "modifier_item_soul_aura"
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_item_soul:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_item_soul:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_ALL
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_item_soul:GetAuraSearchFlags()
+	return DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_item_soul:GetAuraRadius()
+	return self:GetAbility():GetSpecialValueFor("soul_radius")
+end
+
+
+function modifier_item_soul:DeclareFunctions()
+	local funcs = {
+		MODIFIER_EVENT_ON_DEATH,
+		MODIFIER_EVENT_ON_TAKEDAMAGE,
+		MODIFIER_PROPERTY_BONUS_DAY_VISION,
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
-    }
-
-    return funcs
-end
-
-function modifier_item_soul:GetModifierPhysicalArmorBonus (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("armor")
-end
-function modifier_item_soul:GetModifierBonusStats_Strength (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("stats")
-end
-function modifier_item_soul:GetModifierBonusStats_Intellect (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("stats")
-end
-function modifier_item_soul:GetModifierBonusStats_Agility (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("stats")
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+	}
+	return funcs
 end
 
 
-if modifier_item_soul_transition == nil then modifier_item_soul_transition = class({}) end
+function modifier_item_soul:OnTakeDamage( params )
+	if IsServer() then
+		if self:GetCaster() == nil then
+			return 0
+		end
 
-function modifier_item_soul_transition:IsPurgable()
+		if self:GetCaster():PassivesDisabled() then
+			return 0
+		end
+
+		if self:GetCaster() ~= self:GetParent() then
+			return 0
+		end
+
+		local hAttacker = params.attacker
+		local hVictim = params.unit
+		local fDamage = params.damage
+
+		if hVictim ~= nil and hAttacker ~= nil and hVictim == self:GetCaster() and hAttacker:GetTeamNumber() ~= hVictim:GetTeamNumber() then
+			if params.damage_type > 1 then 
+				ApplyDamage ( {
+	                victim = hAttacker,
+	                attacker = self:GetParent(),
+	                damage = fDamage * (self:GetAbility():GetSpecialValueFor("magical_damage_return") / 100),
+	                damage_type = DAMAGE_TYPE_PURE,
+	                ability = self:GetAbility(),
+	                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
+	            })
+			end
+		end
+	end
+
+	return 0
+end
+
+function modifier_item_soul:GetBonusDayVision (params)
+    return self:GetAbility():GetSpecialValueFor ("bonus_vision")
+end
+
+function modifier_item_soul:GetModifierBonusStats_Agility( params )
+    return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" )
+end
+
+function modifier_item_soul:GetModifierBonusStats_Intellect( params )
+    return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" )
+end
+
+function modifier_item_soul:GetModifierBonusStats_Strength( params )
+    return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" )
+end
+
+function modifier_item_soul:GetModifierConstantManaRegen( params )
+    return self:GetAbility():GetSpecialValueFor( "bonus_mana_regen" )
+end
+
+function modifier_item_soul:GetModifierAttackSpeedBonus_Constant( params )
+    return self:GetAbility():GetSpecialValueFor( "bonus_attack_speed" )
+end
+
+if modifier_item_soul_aura == nil then modifier_item_soul_aura = class({}) end 
+
+function modifier_item_soul_aura:IsPurgable()
     return false
 end
 
-function modifier_item_soul_transition:GetStatusEffectName()
-	return "particles/status_fx/status_effect_terrorblade_reflection.vpcf"
+function modifier_item_soul_aura:IsHidden()
+    return true
 end
 
---------------------------------------------------------------------------------
-
-function modifier_item_soul_transition:StatusEffectPriority()
-	return 1000
+function modifier_item_soul_aura:GetPriority()
+    return MODIFIER_PRIORITY_SUPER_ULTRA
 end
 
---------------------------------------------------------------------------------
-
-function modifier_item_soul_transition:GetEffectName()
-	return "particles/units/heroes/hero_terrorblade/terrorblade_reflection_slow.vpcf"
+function modifier_item_soul_aura:GetEffectAttachType ()
+    return PATTACH_ABSORIGIN_FOLLOW
 end
 
---------------------------------------------------------------------------------
-
-function modifier_item_soul_transition:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
-end
-
---------------------------------------------------------------------------------
-
-function modifier_item_soul_transition:GetModifierAura()
-	return "modifier_sven_gods_strength_child_lua"
-end
-
-
-function modifier_item_soul_transition:OnCreated( params )
-    if IsServer() then
-        EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Cast", self:GetParent())
-		local caster = self:GetParent()
-		self.original_team = caster:GetTeamNumber()
-		if caster:GetTeamNumber() == 2 then
-			self.target_team = 3
-		else
-			self.target_team = 2
-		end
-		caster:SetTeam(self.target_team)
-    end
-end
-
-
-function modifier_item_soul_transition:DeclareFunctions()
-    local funcs = {
-        MODIFIER_PROPERTY_REFLECT_SPELL
+function modifier_item_soul_aura:CheckState ()
+    local state = {
+        [MODIFIER_STATE_INVISIBLE] = false,
+        [MODIFIER_STATE_PROVIDES_VISION] = true,
+        [MODIFIER_STATE_ATTACK_IMMUNE] = false,
     }
 
-    return funcs
+    return state
 end
-
-function modifier_item_soul_transition:OnDestroy()
-    if IsServer() then
-		local caster = self:GetParent()
-
-		caster:SetTeam(self.original_team)
-	end
-end
-function item_soul:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
