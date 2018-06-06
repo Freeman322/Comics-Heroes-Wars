@@ -9,6 +9,10 @@ function item_glove_of_the_creator:GetBehavior()
     return DOTA_ABILITY_BEHAVIOR_NO_TARGET
 end
 
+function item_glove_of_the_creator:OnEquip(hItem)
+    print("equiped")
+end
+
 function item_glove_of_the_creator:OnSpellStart()
 	if IsServer() then
         EmitSoundOn("IG.Cast", self:GetCaster())
@@ -74,4 +78,17 @@ function modifier_item_glove_of_the_creator:GetModifierConstantManaRegen( params
 end
 function modifier_item_glove_of_the_creator:GetModifierConstantHealthRegen( params )
     return self:GetAbility():GetSpecialValueFor("bonus_health_regen" )
+end
+
+function modifier_item_glove_of_the_creator:OnCreated(params)
+   if IsServer() then 
+        if self:GetParent():GetUnitName() == "npc_dota_hero_elder_titan" then 
+            EmitGlobalSound("IG.Thanos")
+            local pfx = ParticleManager:CreateParticle("particles/econ/items/luna/luna_lucent_ti5_gold/luna_eclipse_cast_moonfall_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+            ParticleManager:SetParticleControlEnt( pfx, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_gauntlet" , self:GetParent():GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( pfx, 2, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_gauntlet" , self:GetParent():GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( pfx, 3, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_gauntlet" , self:GetParent():GetAbsOrigin(), true )
+            ParticleManager:ReleaseParticleIndex(pfx)
+        end
+   end
 end

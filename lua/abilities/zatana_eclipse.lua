@@ -16,7 +16,9 @@ function zatana_eclipse:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
 	if hTarget ~= nil then
 		local duration = self:GetSpecialValueFor( "duration" )
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_zatana_eclipse", { duration = duration } )
+		
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_oracle_false_promise", { duration = duration } )
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_oracle_false_promise_timer", { duration = duration } )
 
 		EmitSoundOn( "Hero_Antimage.ManaVoidCast", hTarget )
 		EmitSoundOn( "Hero_Oracle.PurifyingFlames.Damage", self:GetCaster() )

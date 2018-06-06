@@ -5,7 +5,7 @@ LinkLuaModifier( "modifier_spawn_soul_trick", "abilities/spawn_soul_trick.lua", 
 
 function spawn_soul_trick:CastFilterResultTarget( hTarget )
 	if IsServer() then
-		if hTarget:HasModifier("modifier_item_soul_transition") or hTarget:HasModifier("modifier_spawn_soul_trick") or hTarget:HasModifier("modifier_celebrimbor_overseer") then
+		if hTarget:HasModifier("modifier_item_mind_gem_active") or hTarget:HasModifier("modifier_spawn_soul_trick") or hTarget:HasModifier("modifier_celebrimbor_overseer") then
 			return UF_FAIL_DOMINATED
 		end
 

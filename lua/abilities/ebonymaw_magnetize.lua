@@ -3,7 +3,7 @@ LinkLuaModifier( "modifier_ebonymaw_magnetize", "abilities/ebonymaw_magnetize.lu
 ebonymaw_magnetize = class ({})
 
 function ebonymaw_magnetize:GetAOERadius()
-    return self:GetSpecialValueFor("szName")
+    return self:GetSpecialValueFor("radius")
 end
 
 function ebonymaw_magnetize:GetBehavior()
@@ -33,11 +33,16 @@ function ebonymaw_magnetize:OnSpellStart()
 		end
 		EmitSoundOn( "Hero_Lion.FingerOfDeath.TI8", self:GetCaster() )
 		EmitSoundOn( "Hero_Lion.FingerOfDeathImpact.TI8", hTarget )
+        
+        local dmg = self:GetSpecialValueFor("damage_mana_pct")
+        if self:GetCaster():HasTalent("special_bonus_unique_ebonymaw_3") then 
+            dmg = dmg + self:GetCaster():FindTalentValue("special_bonus_unique_ebonymaw_3")
+        end
 
 		local damage = {
             victim = hTarget,
             attacker = self:GetCaster(),
-            damage = (self:GetSpecialValueFor("damage_mana_pct") / 100) * hTarget:GetMaxMana(),
+            damage = (dmg / 100) * hTarget:GetMaxMana(),
             damage_type = DAMAGE_TYPE_PURE,
             ability = self
         }

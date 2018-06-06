@@ -22,14 +22,12 @@ function marvel_duel:OnSpellStart()
 	self.hTarget = self:GetCursorTarget()
 	self.hCaster = self:GetCaster()
 	if self.hTarget ~= nil then
-		if ( not self.hTarget:TriggerSpellAbsorb( self ) ) then
-			local duration = self:GetSpecialValueFor( "duration" )
+		local duration = self:GetSpecialValueFor( "duration" )
 
-			self.hTarget:AddNewModifier( self:GetCaster(), self, "modifier_marvel_duel_target", { duration = duration } )
-			self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_marvel_duel_caster", { duration = duration } )
+		self.hTarget:AddNewModifier( self:GetCaster(), self, "modifier_marvel_duel_target", { duration = duration } )
+		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_marvel_duel_caster", { duration = duration } )
 
-			EmitSoundOn( "Hero_LegionCommander.Duel.Cast.Arcana", self.hTarget )
-		end
+		EmitSoundOn( "Hero_LegionCommander.Duel.Cast.Arcana", self.hTarget )
 
 		EmitSoundOn( "Hero_LegionCommander.Duel.Cast", self:GetCaster() )
 	end

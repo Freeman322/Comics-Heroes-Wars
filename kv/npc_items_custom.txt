@@ -1528,13 +1528,12 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemDroppable"       			"0"
-	  "ItemSellable"        		    "0"
-		"ItemDroppable"					"0"
+		"ItemDroppable"       			"1"
+	  	"ItemSellable"        		    "1"
 		"ItemPurchasable"				"1"
-		"ItemKillable"					"0"
+		"ItemKillable"					"1"
 	
-		"ItemCost"                      "10000"
+		"ItemCost"                      "5000"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -2525,7 +2524,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60"
+				"bonus_damage"			"120"
 			}
 			"04"
 			{
@@ -2638,10 +2637,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemQuality"					"component"
-		"ItemDroppable"       			"0"
+		"ItemDroppable"       			"1"
 	    "ItemSellable"        		    "0"
-		"ItemDroppable"					"0"
-		"ItemKillable"					"0"
+		"ItemKillable"					"1"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3635,30 +3633,6 @@
 		}
 	}
 	//=================================================================================================================
-	"item_recipe_demon_shard"
-	{
-		// General
-		"BaseClass"                    "item_datadriven"
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"						   "9002"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-	
-		"AbilityTextureName"			"recipe"
-		// Item Info
-	
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"75"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_demon_shard"
-		"ItemRequirements"
-		{
-			"01"						"item_relic;item_greater_crit"
-		}
-	}
-	//=================================================================================================================
 	//Recipe Demon Shard
 	//=================================================================================================================
 	"item_recipe_demon_shard_2"
@@ -3673,7 +3647,7 @@
 		// Item Info
 		
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2150"
+		"ItemCost"						"4150"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -3682,7 +3656,7 @@
 		"ItemResult"					"item_demon_shard_2"
 		"ItemRequirements"
 		{
-			"01"						"item_demon_shard;item_bfury"
+			"01"						"item_greater_crit;item_bfury;item_lesser_crit"
 		}
 	}
 	"item_recipe_desolator_2"
@@ -4065,7 +4039,7 @@
 		"ItemResult"					"item_high_frequency_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_demon_shard;item_echoe_sabre_marvel"
+			"01"						"item_greater_crit;item_relic;item_echoe_sabre_marvel"
 		}
 	}
 	//=================================================================================================================
@@ -4574,7 +4548,7 @@
 		"ItemResult"					"item_time"
 		"ItemRequirements"
 		{
-			"01"				"item_blink;item_rod_of_atos;item_refresher;item_relic"
+			"01"				"item_rod_of_atos;item_refresher"
 		}
 	}
 	//=================================================================================================================
@@ -4598,7 +4572,7 @@
 		"ItemResult"					"item_timepiece"
 		"ItemRequirements"
 		{
-			"01"						"item_time;item_orchid"
+			"01"						"item_relic;item_orchid;item_relic;item_relic"
 		}
 	}
 	//=================================================================================================================
@@ -5388,17 +5362,17 @@
     	"BaseClass"						"item_lua"
     	"ID"							"9027"
     	"ScriptFile"					"items/item_time.lua"
-    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
     	"Model"							"models/props_gameplay/red_box.vmdl"
     	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
     	"AbilityTextureName"            "custom/time"
 
     	// Stats
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityCooldown"				"160"
+    	"AbilityCooldown"				"60"
     	"AbilityCastRange"				"0"
     	"AbilityCastPoint"				"0.2"
-    	"AbilityManaCost"				"575"
+    	"AbilityManaCost"				"125"
     	// Item Info
     	//-------------------------------------------------------------------------------------------------------------
     	"ItemCost"						"15350"
@@ -5490,7 +5464,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"150"
+				"bonus_all_stats"		"90"
 			}
 			"02"
 			{
@@ -5500,7 +5474,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100"
+				"bonus_damage"			"80"
 			}
 			"04"
 			{
@@ -6076,7 +6050,7 @@
 		"ItemResult"					"item_anti_life_equation"
 		"ItemRequirements"
 		{
-			"01"						"item_greater_crit;item_rod_of_atos;item_ultimate_nullifier"
+			"01"						"item_demon_shard;item_ultimate_nullifier"
 		}
 	}
 	
@@ -6328,58 +6302,7 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Demon Shard
-	//=================================================================================================================
-	"item_demon_shard"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9003"
-		"BaseClass"             		"item_lua"
-		"AbilityTextureName"            "custom/demon_shard"
-		"ScriptFile"					"items/item_demon_shard.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"9592"
-		"ItemShopTags"					"damage;crit"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"daedalus"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"all_stats"				"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_bonus"			"375"
-			}
-		}
-	}
+
 	//=================================================================================================================
 	//Blade of Darkness
 	//=================================================================================================================
@@ -6402,12 +6325,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"475"
+				"crit_bonus"				"380"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"15"
+				"crit_chance"				"25"
 			}
 			"03"
 			{
@@ -6522,7 +6445,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"50"
+				"bonus_health_regen"	"40"
 			}
 			"03"
 			{
@@ -6532,12 +6455,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"2000"
+				"bonus_health"			"1500"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"2000"
+				"bonus_mana"			"1500"
 			}
 			"06"
 			{
@@ -6581,7 +6504,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_lua"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
 		"AbilityTextureName"            "custom/mind_gem"
@@ -6617,7 +6540,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"bonus_intellect"			"175"
+				"bonus_intellect"			"100"
 			}
 			"02"
 			{
@@ -6708,17 +6631,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"3500"
+				"bonus_mana"				"2300"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_health"				"3500"
+				"bonus_health"				"2300"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_speed"				"100"
+				"bonus_speed"				"150"
 			}
 			"04"
 			{
@@ -6799,17 +6722,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"120"
+				"bonus_intellect"		"75"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"70"
+				"bonus_damage"			"100"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_spell_damage"	"40"
+				"bonus_spell_damage"	"25"
 			}
 			"05"
 			{
@@ -6892,12 +6815,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"40"
+				"bonus_mana_regen"		"20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"35"
+				"bonus_all_stats"		"30"
 			}
 			"05"
 			{
@@ -6913,6 +6836,219 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"overseer_duration"		"6"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Demon Shard
+	//=================================================================================================================
+	"item_recipe_demon_shard"
+	{
+		"BaseClass"                    "item_datadriven"
+		"AbilityTextureName"			"recipe"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2300"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_demon_shard"
+		"ItemRequirements"
+		{
+			"01"						"item_relic;item_greater_crit"
+		}
+	}	
+	
+	//=================================================================================================================
+	// Battlefury
+	//=================================================================================================================
+	"item_demon_shard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"9003"
+		"BaseClass"             		"item_lua"
+		"AbilityTextureName"            "custom/demon_shard"
+		"ScriptFile"					"items/item_demon_shard.lua"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"4.0"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"9592"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"daedalus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"all_stats"				"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"60"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_bonus"			"395"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Eye of Terror
+	//=================================================================================================================
+	"item_recipe_eye_of_terror"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                    "item_datadriven"
+		"AbilityTextureName"		   "recipe"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1400"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_eye_of_terror"
+		"ItemRequirements"
+		{
+			"01"						"item_ethereal_blade;item_kaya;item_soul_booster"
+		}
+	}	
+
+	//=================================================================================================================
+	// Ethereal Blade
+	//=================================================================================================================
+	"item_eye_of_terror"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"item_lua"
+		"AbilityTextureName"            "custom/eye_of_terror"
+		"ScriptFile"					"items/item_eye_of_terror.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"30.0"	    
+		"AbilitySharedCooldown"			"ethereal"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"4700"
+		"ItemShopTags"					"agi;str;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemAliases"					"eye;terror eye;eblade"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		"precache"
+		{
+			"particle" 					"particles/items2_fx/mekanism_recipient.vpcf"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_agility"						"70"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_strength"					"10"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_intellect"					"70"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"spell_amp"							"25"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"manacost_reduction"				"25"
+			}
+			"06"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"mana_bonus"						"600"
+			}
+			"07"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"health_bonus"						"600"
+			}
+			"08"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"magical_splash_radius"				"420"
+			}
+			"09"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"magical_splash_ammount"			"20"
+			}
+			"10"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"duration"							"3.0"
+			}
+			"11"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"blast_stats_multiplier"			"2.0"
+			}
+			"12"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"blast_damage_mult"					"2"
 			}
 		}
 	}

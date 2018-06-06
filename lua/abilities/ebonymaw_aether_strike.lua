@@ -29,7 +29,10 @@ function ebonymaw_aether_strike:OnProjectileHit( hTarget, vLocation )
 		EmitSoundOn( "Hero_VengefulSpirit.Missile.Cast.TI8.Layer", hTarget )
 
 		local fDamage = self:GetSpecialValueFor("base_damage") + (hTarget:GetMaxHealth() * (self:GetSpecialValueFor("damage") / 100))
-
+		if self:GetCaster():HasTalent("special_bonus_unique_ebonymaw_2") then 
+	        fDamage = fDamage + (hTarget:GetMaxHealth() * (self:GetCaster():FindTalentValue("special_bonus_unique_ebonymaw_2") / 100))
+	    end
+	    
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),

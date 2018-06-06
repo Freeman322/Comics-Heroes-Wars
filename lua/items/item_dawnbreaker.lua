@@ -151,5 +151,8 @@ function modifier_item_dawnbreaker_active:OnDestroy()
     if IsServer() then 
         EmitSoundOn("Hero_Oracle.FalsePromise.Healed", self:GetParent())
         print("OnDestroy()")
+        if self:GetParent():GetHealth() == 0 then
+            self:GetParent():ForceKill(false) 
+        end
     end 
 end

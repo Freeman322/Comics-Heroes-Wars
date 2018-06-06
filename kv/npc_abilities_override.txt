@@ -347,6 +347,16 @@
   "item_recipe_effulgent_sword"      "REMOVE"
   "item_angels_dagger"      "REMOVE"
   "item_recipe_angels_dagger"      "REMOVE"
+
+  "item_heart_of_universe"        "REMOVE"
+  "item_recipe_heart_of_universe"      "REMOVE"
+
+  "item_ghost_staff"             "REMOVE"
+  "item_recipe_ghost_staff"      "REMOVE"
+
+  "item_recipe_oathbreaker"      "REMOVE"
+  "item_oathbreaker"             "REMOVE"
+
 	"special_bonus_strength_25"
 	{
 		"AbilitySpecial"
@@ -524,4 +534,16 @@
       }
     }
   }
+
+	"special_bonus_attack_damage_75"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"475"
+			}
+		}
+	}
 }

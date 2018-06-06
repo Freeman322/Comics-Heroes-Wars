@@ -4,13 +4,15 @@ if item_demon_shard == nil then
     item_demon_shard = class ( {})
 end
 
-function item_demon_shard:GetBehavior ()
-    local behav = DOTA_ABILITY_BEHAVIOR_PASSIVE
-    return behav
-end
-
 function item_demon_shard:GetIntrinsicModifierName ()
     return "modifier_item_demon_shard"
+end
+
+function item_demon_shard:OnSpellStart(  )
+    if IsServer() then
+        local hTaget = self:GetCursorTarget()
+        hTaget:CutDown(self:GetCaster():GetTeamNumber())
+    end
 end
 
 if modifier_item_demon_shard == nil then

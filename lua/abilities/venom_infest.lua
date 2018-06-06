@@ -7,7 +7,12 @@ LinkLuaModifier( "modifier_infest_buff", "abilities/venom_infest.lua", LUA_MODIF
 function venom_infest:CastFilterResultTarget( hTarget )
    if self:GetCaster() == hTarget then
 		return UF_FAIL_CUSTOM
-	end
+    end
+    
+    if hTarget:HasModifier("modifier_item_mind_gem_active") or hTarget:HasModifier("modifier_spawn_soul_trick") or hTarget:HasModifier("modifier_celebrimbor_overseer") then
+        return UF_FAIL_DOMINATED
+    end
+
 	if IsServer() then
 		local nResult = UnitFilter( hTarget, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), self:GetCaster():GetTeamNumber() )
 		return nResult

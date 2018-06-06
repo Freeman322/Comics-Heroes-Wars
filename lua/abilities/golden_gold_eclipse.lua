@@ -60,10 +60,6 @@ function golden_gold_eclipse:OnSpellStart()
 			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_golden_gold_eclipse", { duration = damage_delay } )
 			EmitSoundOn( "chw.golden_god_ulti", hTarget )
 		end
-		if self:GetCaster():HasScepter() then
-			self:EndCooldown()
-			self:StartCooldown(55)
-		end
 		if self:GetCaster():HasModifier("modifier_arcana") then
 			local nFXIndex = ParticleManager:CreateParticle( "particles/goldengod/hypernova/arcana_hypernova.vpcf", PATTACH_CUSTOMORIGIN, nil );
 			ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );

@@ -76,10 +76,6 @@ function strange_faces_reality:OnSpellStart(  )
           ParticleManager:ReleaseParticleIndex( nFXIndex )
 
           EmitSoundOn( "Hero_Weaver.TimeLapse", hUnit )
-
-          if self:GetCaster():HasItemInInventory("item_time") then 
-            hUnit:AddNewModifier(self:GetCaster(), self, "item_time_gem_active", {duration = 20})
-          end
         end
     end
 end

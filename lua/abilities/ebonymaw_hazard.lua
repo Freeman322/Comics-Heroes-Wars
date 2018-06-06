@@ -10,6 +10,9 @@ end
 
 function ebonymaw_hazard:OnSpellStart()
 	local duration = self:GetSpecialValueFor(  "hazard_duration" )
+    if self:GetCaster():HasTalent("special_bonus_unique_ebonymaw_1") then 
+        duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_ebonymaw_1")
+    end
 
 	local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetCursorPosition(), self:GetCaster(), self:GetAOERadius(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 	if #targets > 0 then

@@ -21,7 +21,7 @@ function celebrimbor_overseer:CastFilterResultTarget( hTarget )
 		return UF_FAIL_CUSTOM
 	end
 
-	if hTarget:HasModifier("modifier_item_soul_transition") or hTarget:HasModifier("modifier_spawn_soul_trick") or hTarget:HasModifier("modifier_celebrimbor_overseer") then
+	if hTarget:HasModifier("modifier_item_mind_gem_active") or hTarget:HasModifier("modifier_spawn_soul_trick") or hTarget:HasModifier("modifier_celebrimbor_overseer") then
 		return UF_FAIL_DOMINATED
 	end
 

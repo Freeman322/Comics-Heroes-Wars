@@ -89,7 +89,7 @@ end
 
 function modifier_thanos:CheckState()
 	local state = {
-		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
+		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = false,
 		[MODIFIER_STATE_MAGIC_IMMUNE] = true,
 	}
 
@@ -110,5 +110,5 @@ function modifier_thanos:GetAbsoluteNoDamagePure(params)
 end
 
 function modifier_thanos:GetModifierMoveSpeed_Absolute(params)
-	return 522
+	return 320
 end

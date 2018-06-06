@@ -1,7 +1,6 @@
 if item_timepiece == nil then item_timepiece = class({}) end 
 
 LinkLuaModifier( "modifier_item_timepiece", "items/item_timepiece.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "item_time_gem_active", "items/item_time.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_item_timepiece_stats", "items/item_timepiece.lua", LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
 function item_timepiece:GetIntrinsicModifierName()
@@ -14,7 +13,6 @@ function item_timepiece:OnSpellStart ()
         if ( not hTarget:TriggerSpellAbsorb (self) ) then
             local duration = self:GetSpecialValueFor ("time_freeze_duration")
 		    hTarget:AddNewModifier (self:GetCaster (), self, "modifier_item_timepiece", { duration = duration } )
-            self:GetCaster():AddNewModifier (self:GetCaster (), self, "item_time_gem_active", { duration = 10 } )
 
 		    EmitSoundOn ("Hero_DarkWillow.Fear.Target", hTarget)
 	    	EmitSoundOn ("Hero_DarkWillow.Fear.Location", hTarget)

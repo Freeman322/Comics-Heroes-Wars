@@ -33,11 +33,13 @@ function item_ancient_cursed_helmet:OnSpellStart ()
         golem:AddNewModifier(caster, self, "modifier_zombies", {duration = self:GetSpecialValueFor("summon_duration")})
       end
     else
-      target:Kill(self, caster)
-      local golem = CreateUnitByName( "npc_lich_zombie", origin, true, caster, caster:GetOwner(), caster:GetTeamNumber())
-      golem:SetControllableByPlayer(caster:GetPlayerID(), false)
-      golem:AddNewModifier(caster, self, "modifier_kill", {duration = self:GetSpecialValueFor("summon_duration")})
-      golem:AddNewModifier(caster, self, "modifier_zombies", {duration = self:GetSpecialValueFor("summon_duration")})
+      if not target:IsConsideredHero() and not target:IsAncient() then 
+          target:Kill(self, caster)
+          local golem = CreateUnitByName( "npc_lich_zombie", origin, true, caster, caster:GetOwner(), caster:GetTeamNumber())
+          golem:SetControllableByPlayer(caster:GetPlayerID(), false)
+          golem:AddNewModifier(caster, self, "modifier_kill", {duration = self:GetSpecialValueFor("summon_duration")})
+          golem:AddNewModifier(caster, self, "modifier_zombies", {duration = self:GetSpecialValueFor("summon_duration")})
+      end
     end
   end
 end
