@@ -49,7 +49,15 @@ function modifier_thanos:OnCreated( kv )
 end
 
 function modifier_thanos:OnIntervalThink()
-  if IsServer() then
+	if IsServer() then
+		if self:GetHealthPercent() < 16 then 
+			pcall(function()
+				local item = self:GetParent():FindItemInInventory("item_glove_of_the_creator")
+				if item then
+					item:OnSpellStart() 
+				end
+			end)
+		end
     if self:FindUnits() > 3 and self.Ability2:IsCooldownReady() then
       local unit = self:GetUnitForCast()
       if not unit then
@@ -110,5 +118,5 @@ function modifier_thanos:GetAbsoluteNoDamagePure(params)
 end
 
 function modifier_thanos:GetModifierMoveSpeed_Absolute(params)
-	return 320
+	return 460
 end

@@ -69,7 +69,7 @@ end
 
 function modifier_item_dawnbreaker:OnAttackStart (params)
     if IsServer () then
-        if params.attacker == self:GetParent () then
+        if params.attacker == self:GetParent() and target ~= nil then
             local target = params.target
             self.bonus_damage = target:GetHealth()*(self:GetAbility():GetSpecialValueFor("damage_pers")/100)
             if target:IsBuilding() or target:IsConsideredHero() or target:IsAncient() then 

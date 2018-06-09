@@ -34,15 +34,14 @@ end
 
 function modifier_ironfist_chi_energy:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE -- GetModifierHealthRegenPercentage
 	}
 
 	return funcs
 end
 
-function modifier_ironfist_chi_energy:GetModifierConstantHealthRegen( params )
-  local regen = self:GetCaster():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("heal")/100)
-  return regen
+function modifier_ironfist_chi_energy:GetModifierHealthRegenPercentage( params )
+  return self:GetAbility():GetSpecialValueFor("heal")
 end
 function ironfist_chi_energy:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

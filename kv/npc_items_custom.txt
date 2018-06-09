@@ -3191,16 +3191,18 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"							"item_lua"
-		"ScriptFile"						"items/item_rapier_ancient.lua"
-		"ID"										"9020"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_rapier_ancient.lua"
+		"ID"							"9020"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"									"models/items/ember_spirit/rapier_burning_god_offhand/rapier_burning_god_offhand.vmdl"
-		"Effect"								"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"    "custom/rapier_ancient"
+		"Model"							"models/items/ember_spirit/rapier_burning_god_offhand/rapier_burning_god_offhand.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"    		"custom/rapier_ancient"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemQuality"           "epic"
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+		"ItemQuality"          	 		"epic"
 		"ItemCost"					  	"10000"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3213,7 +3215,7 @@
 			"01"
 			{
 				"var_type"		 		"FIELD_FLOAT"
-				"dmg"		            	"1200"
+				"dmg"		            "1500"
 			}
 		}
 	}
@@ -3224,11 +3226,13 @@
 		"BaseClass"						"item_lua"
 		"ID"							"9019"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"							"models/items/legion_commander/demon_sword.vmdl"
+		"Model"							"models/items/abaddon/sword_iceshard/sword_iceshard.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"            "custom/rapier_ethereal"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
 		"ItemQuality"                   "epic"
 		"ScriptFile"					"items/item_rapier_ethereal.lua"
 	
@@ -6968,7 +6972,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"30.0"	    
+		"AbilityCooldown"				"40.0"	    
 		"AbilitySharedCooldown"			"ethereal"
 
 		// Item Info

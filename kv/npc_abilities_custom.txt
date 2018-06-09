@@ -4818,122 +4818,122 @@
 //=================================================================================================================
 "gambit_leap"
 {
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"						    				"12216"
-		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"        "custom/gambit_leap"
-		"ScriptFile"				   			"abilities/gambit_leap.lua"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"						    				"12216"
+	"BaseClass"             		"ability_lua"
+	"AbilityTextureName"        "custom/gambit_leap"
+	"ScriptFile"				   			"abilities/gambit_leap.lua"
+	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+	"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0"
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0"
 
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 18 16 14"
+	// Time
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20 18 16 14"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"55 70 85 100"
-		"precache"
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"55 70 85 100"
+	"precache"
+	{
+		"particle"  "particles/hero_gambit/backtrack.vpcf"
+		"particle" 	"particles/hero_gambit/backtrack_end.vpcf"
+	}
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"particle"  "particles/hero_gambit/backtrack.vpcf"
-			"particle" 	"particles/hero_gambit/backtrack_end.vpcf"
+			"var_type"				"FIELD_INTEGER"
+			"leap_distance"			"600 700 800 900"
 		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"02"
 		{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"leap_distance"			"600 700 800 900"
-				}
-				"02"
-				{
-					"var_type"				"FIELD_FLOAT"
-					"damage_aoe"			"250 300 350 400"
-				}
-				"03"
-				{
-					"var_type"				"FIELD_FLOAT"
-					"stun_duration"			"1.25 1.5 1.75 2.0"
-				}
-				"04"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"radius"				"550"
-				}
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"250 300 350 400"
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stun_duration"			"1.25 1.5 1.75 2.0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"550"
+		}
+	}
 }
 //=================================================================================================================
 // Tarp
 //=================================================================================================================
 "gambit_kinetic_trap"
 {
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"						   				 "12217"
-		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"        "custom/gambit_hp"
-		"ScriptFile"				    		"abilities/gambit_kinetic_trap.lua"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityType"								"DOTA_ABILITY_TYPE_BASIC"
-		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"						   				 "12217"
+	"BaseClass"             		"ability_lua"
+	"AbilityTextureName"        "custom/gambit_hp"
+	"ScriptFile"				    		"abilities/gambit_kinetic_trap.lua"
+	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityType"								"DOTA_ABILITY_TYPE_BASIC"
+	"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
+	"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"400"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"400"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80.0"
+	// Time
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"80.0"
 
-		"AbilityCastPoint"				"1.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"15"
-		"precache"
+	"AbilityCastPoint"				"1.0"
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"15"
+	"precache"
+	{
+		"particle"  "particles/hero_gambit/kinetic_trap_cast.vpcf"
+		"particle"  "particles/hero_gambit/kinetic_trap.vpcf"
+	}
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"particle"  "particles/hero_gambit/kinetic_trap_cast.vpcf"
-			"particle"  "particles/hero_gambit/kinetic_trap.vpcf"
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"50"
 		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"02"
 		{
-				"01"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"damage"					"50"
-				}
-				"02"
-				{
-					"var_type"					"FIELD_FLOAT"
-					"radius"					"700"
-				}
-				"03"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"movement_speed_slow"		"-50"
-				}
-				"04"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"movement_speed_duration"	"6"
-				}
-				"05"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"duration"					"60"
-				}
+			"var_type"					"FIELD_FLOAT"
+			"radius"					"700"
 		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movement_speed_slow"		"-50"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movement_speed_duration"	"6"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"60"
+		}
+	}
 }
 //=================================================================================================================
 // Ability: Gambit Kinetic Energy
@@ -29134,18 +29134,14 @@
 		"AbilityManaCost"				"0"
 		"precache"
 		{
-			"model"		"models/items/antimage/pw_tustarkuri_head/antimage_head.vmdl"
-			"model"		"models/items/antimage/mage_eraser_belt/mage_eraser_belt.vmdl"
-			"model"		"models/items/antimage/witch_hunter_head/witch_hunter_head.vmdl"
-			"model"		"models/items/antimage/witch_hunter_shoulder/witch_hunter_shoulder.vmdl"
-			"model"		"models/items/antimage/ti7_antimage_immortal/ti7_immortal_armor.vmdl"
+			"model"		"models/heroes/hero_ironfist/econs/waiths_of_faith.vmdl"
 			"particle"  "particles/hero_iron_fist/iron_fist_iron_strike_immortal_ambient.vpcf"
 			"particle"  "particles/hero_iron_fist/iron_fist_iron_strike_immortal.vpcf"
 			"particle"	"particles/hero_iron_fist/ironfist_iron_strike_ground.vpcf"
 			"particle"	"particles/hero_iron_fist/ironfist_iron_strike_line.vpcf"
 			"particle"	"particles/hero_iron_fist/ironfist_iron_strike_buff.vpcf"
-			"particle"  "particles/econ/items/antimage/antimage_ti7_golden/antimage_ti7_golden_ambient.vpcf"
-			"particle"  "particles/econ/items/antimage/antimage_ti7/antimage_ti7_ambient.vpcf"
+			"particle"  "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+			"particle"  "particles/econ/ironfist_golden_item.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

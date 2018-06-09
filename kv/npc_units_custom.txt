@@ -627,7 +627,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"ogre_magi_bloodlust"			// Ability 1
+		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -685,34 +685,6 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	
-		// Creature Data
-		//----------------------------------------------------------------------------------------------------------------------
-		"Creature"
-		{
-			"CanRespawn"				"0"
-			"States"
-			{
-				"Invade"
-				{
-					"Name"				"Invade"
-					"Aggression"		"100.0"
-					"Avoidance"			"0.0"
-					"Support"			"60.0"
-				}
-			}
-	
-			"DefaultState"				"Invade"
-	
-			"DefensiveAbilities"
-			{
-				"Ability1"
-				{
-					"Name"				"ogre_magi_bloodlust"
-					"Buff"				"1"
-				}
-			}
-		}
 	}
 	//=================================================================================
 	  // Creature: Berserk Zombie
@@ -2700,7 +2672,7 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	
+		"HasInventory" "1"
 		//Precache
 		//---------------------------------------------------------------------
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
@@ -4944,8 +4916,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"4800"
-		"AttackDamageMax"			"4900"
+		"AttackDamageMin"			"74800"
+		"AttackDamageMax"			"74900"
 		"AttackRate"				"1.2"
 		"AttackAnimationPoint"		"0.35"
 		"AttackAcquisitionRange"	"1200"
@@ -4971,9 +4943,9 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				  "150000"
+		"StatusHealth"				"150000"
 		"StatusHealthRegen"			"50.0"
-		"StatusMana"				    "2000"
+		"StatusMana"				"2000"
 		"StatusManaRegen"		   	"30.0"
 	
 		// Vision
@@ -5025,6 +4997,10 @@
 				{
 					"Item"					"item_black_king_bar"
 				}
+				"MonkeyKingBar"
+				{
+					"Item"					"item_monkey_king_bar"
+				}
 			}
 	
 			//Level Up Parameters
@@ -5054,6 +5030,10 @@
 				"Wearable4"
 				{
 					"ItemDef"			"621"
+				}
+				"Wearable5"
+				{
+					"ItemDef"			"622"
 				}
 			}
 		}
@@ -5233,7 +5213,7 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
-	
+		"HasInventory" "1"
 		// Creature Data
 		//----------------------------------------------------------------
 		"Creature"
@@ -5251,16 +5231,26 @@
 					"Support"			"0.0"
 				}
 			}
-	
-			//Level Up Parameters
-			//------------------------------------------------------------
-			"HPGain"					"75"
-			"DamageGain"				"15"
-			"ArmorGain"					"1"
-			"MagicResistGain"			"1"
-			"MoveSpeedGain"				"1"
-			"BountyGain"				"5"
-			"XPGain"					"20"
+
+			"EquippedItems"
+			{
+				"ShivasGuard"
+				{
+					"Item"					"item_shivas_guard"
+				}
+				"PhaseBoots"
+				{
+					"Item"					"item_phase_boots"
+				}
+				"BlackKingBar"
+				{
+					"Item"					"item_black_king_bar"
+				}
+				"MonkeyKingBar"
+				{
+					"Item"					"item_monkey_king_bar"
+				}
+			}
 		}
 	}
 	//=================================================================================
@@ -10541,8 +10531,8 @@
 		"Ability1"					"roshan_slam"			// Ability 1
 		"Ability2"					"roshan_bash"			// Ability 2
 		"Ability3"					"roshan_spell_block"			// Ability 3
-		"Ability4"					"ragnaros_scorched_earth"			// Ability 4
-	    "Ability5"          		"generic_gold_bag_fountain_200"
+		"Ability4"					""			// Ability 4
+	    "Ability5"          		""
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -10597,50 +10587,6 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	
-		// Creature Data
-		//----------------------------------------------------------------
-		"Creature"
-		{
-			//Basic AI State
-			//------------------------------------------------------------
-			"DefaultState"				"Invade"
-			"States"
-			{
-				"Invade"
-				{
-					"Name"				"Invade"
-					"Aggression"		"100.0"
-					"Avoidance"			"0.0"
-					"Support"			"0.0"
-				}
-			}
-	
-			//Level Up Parameters
-			//------------------------------------------------------------
-			"HPGain"					"800"
-			"DamageGain"				"30"
-			"ArmorGain"					"1"
-			"MagicResistGain"			"5"
-			"MoveSpeedGain"				"0"
-			"BountyGain"				"0"
-			"XPGain"					"20"
-	
-			"DefaultState"				"Invade"
-	
-			"OffensiveAbilities"
-			{
-				"Ability1"
-				{
-					"Name"				"roshan_slam"
-					"AOE"				"1"
-					"Radius"			"150"
-					"MinimumTargets"	"1"
-				}
-			}
-	
-			"DisableResistance"			"100.0"
-		}
 	}
 	//=================================================================================
 	// Creature: Proxima
@@ -10664,8 +10610,8 @@
 		"Ability1"					"roshan_slam"			// Ability 1
 		"Ability2"					"roshan_bash"			// Ability 2
 		"Ability3"					"roshan_spell_block"			// Ability 3
-		"Ability4"					"ragnaros_scorched_earth"			// Ability 4
-	    "Ability5"          		"generic_gold_bag_fountain_200"
+		"Ability4"					""			// Ability 4
+	    "Ability5"          		""
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -10695,7 +10641,9 @@
 		"BountyXP"					"345"		// Experience earn.
 		"BountyGoldMin"				"0"			// Gold earned min.
 		"BountyGoldMax"				"0"			// Gold earned max.
-	
+
+
+		"HasInventory" 				"1"
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
@@ -10720,49 +10668,29 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	
-		// Creature Data
-		//----------------------------------------------------------------
+		"HasInventory"				"1"
+
 		"Creature"
 		{
-			//Basic AI State
-			//------------------------------------------------------------
-			"DefaultState"				"Invade"
-			"States"
+			"EquippedItems"
 			{
-				"Invade"
+				"ShivasGuard"
 				{
-					"Name"				"Invade"
-					"Aggression"		"100.0"
-					"Avoidance"			"0.0"
-					"Support"			"0.0"
+					"Item"					"item_shivas_guard"
+				}
+				"PhaseBoots"
+				{
+					"Item"					"item_phase_boots"
+				}
+				"BlackKingBar"
+				{
+					"Item"					"item_black_king_bar"
+				}
+				"MonkeyKingBar"
+				{
+					"Item"					"item_monkey_king_bar"
 				}
 			}
-	
-			//Level Up Parameters
-			//------------------------------------------------------------
-			"HPGain"					"800"
-			"DamageGain"				"30"
-			"ArmorGain"					"1"
-			"MagicResistGain"			"5"
-			"MoveSpeedGain"				"0"
-			"BountyGain"				"0"
-			"XPGain"					"20"
-	
-			"DefaultState"				"Invade"
-	
-			"OffensiveAbilities"
-			{
-				"Ability1"
-				{
-					"Name"				"roshan_slam"
-					"AOE"				"1"
-					"Radius"			"150"
-					"MinimumTargets"	"1"
-				}
-			}
-	
-			"DisableResistance"			"100.0"
 		}
 	}
 	//=================================================================================
@@ -10819,6 +10747,7 @@
 		"BountyGoldMin"				"0"			// Gold earned min.
 		"BountyGoldMax"				"0"			// Gold earned max.
 	
+		"HasInventory" 				"1"
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
@@ -10843,49 +10772,29 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	
-		// Creature Data
-		//----------------------------------------------------------------
+		"HasInventory"				"1"
+
 		"Creature"
 		{
-			//Basic AI State
-			//------------------------------------------------------------
-			"DefaultState"				"Invade"
-			"States"
+			"EquippedItems"
 			{
-				"Invade"
+				"ShivasGuard"
 				{
-					"Name"				"Invade"
-					"Aggression"		"100.0"
-					"Avoidance"			"0.0"
-					"Support"			"0.0"
+					"Item"					"item_shivas_guard"
+				}
+				"PhaseBoots"
+				{
+					"Item"					"item_phase_boots"
+				}
+				"BlackKingBar"
+				{
+					"Item"					"item_black_king_bar"
+				}
+				"MonkeyKingBar"
+				{
+					"Item"					"item_monkey_king_bar"
 				}
 			}
-	
-			//Level Up Parameters
-			//------------------------------------------------------------
-			"HPGain"					"800"
-			"DamageGain"				"30"
-			"ArmorGain"					"1"
-			"MagicResistGain"			"5"
-			"MoveSpeedGain"				"0"
-			"BountyGain"				"0"
-			"XPGain"					"20"
-	
-			"DefaultState"				"Invade"
-	
-			"OffensiveAbilities"
-			{
-				"Ability1"
-				{
-					"Name"				"roshan_slam"
-					"AOE"				"1"
-					"Radius"			"150"
-					"MinimumTargets"	"1"
-				}
-			}
-	
-			"DisableResistance"			"100.0"
 		}
 	}
 	//=================================================================================
@@ -10900,7 +10809,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"150"
-		"ModelScale" 				"3.0"
+		"ModelScale" 				"2.0"
 		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_enemyicon"
 		"MinimapIconSize"			"275"
@@ -10929,7 +10838,9 @@
 		"AttackRange"				"120"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"0"			// Speed of projectile.
-	
+
+		"HasInventory" "1"
+
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"			// Hull type used for navigation/locomotion.
@@ -10966,6 +10877,29 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+		"Creature"
+		{
+			"EquippedItems"
+			{
+				"ShivasGuard"
+				{
+					"Item"					"item_shivas_guard"
+				}
+				"PhaseBoots"
+				{
+					"Item"					"item_phase_boots"
+				}
+				"BlackKingBar"
+				{
+					"Item"					"item_black_king_bar"
+				}
+				"MonkeyKingBar"
+				{
+					"Item"					"item_monkey_king_bar"
+				}
+			}
+		}
 	}
 	//=================================================================================
 	// Creature: Thanos
@@ -10979,7 +10913,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"150"
-		"ModelScale" 				"6.0"
+		"ModelScale" 				"4.3"
 		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_enemyicon"
 		"MinimapIconSize"			"275"
@@ -11001,8 +10935,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"395924"		// Damage range min.
-		"AttackDamageMax"			"393930"		// Damage range max.
+		"AttackDamageMin"			"190000"		// Damage range min.
+		"AttackDamageMax"			"290000"		// Damage range max.
 		"AttackRate"				"0.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"180"		// Range within a target can be acquired.
@@ -11030,11 +10964,13 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"4000000"		// Base health.
+		"StatusHealth"				"1700000"		// Base health.
 		"StatusHealthRegen"			"20"			// Health regeneration rate.
 		"StatusMana"				"2000"			// Base mana.
 		"StatusManaRegen"			"140"			// Mana regeneration rate.
-	
+
+		"HasInventory" 				"1"
+
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"800"		// Range of vision during day light.
@@ -11046,5 +10982,20 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"					"1"
+		"Creature"
+		{
+			"EquippedItems"
+			{
+				"Glove"
+				{
+					"Item"					"item_glove_of_the_creator"
+				}
+				"AeonDisk"
+				{
+					"Item"					"item_aeon_disk"
+				}
+			}
+		}
 	}
 }

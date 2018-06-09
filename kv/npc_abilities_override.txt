@@ -24,17 +24,7 @@
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
 	}
-	"item_rapier_ancient"
-	{
-		"ItemPurchasable"				"1"
-		"ItemDroppable"					"0"
-	}
 
-  "item_rapier_ethereal"
-	{
-		"ItemPurchasable"				"1"
-		"ItemDroppable"					"0"
-	}
 	"pudge_dismember"
 	{
 		// General

@@ -29,7 +29,7 @@ end
 
 function modifier_item_space_stone:DeclareFunctions() 
     local funcs = {
-        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_MANA_BONUS,
         MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
     }

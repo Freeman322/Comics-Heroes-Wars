@@ -238,6 +238,7 @@
 	"npc_dota_hero_black_bolt"
 	{
 		"AbilityLayout"  "4"
+		"ModelScale"		"1.08"
 		"override_hero"		"npc_dota_hero_night_stalker"
 		"DisableWearables" 				"1"
 		"Model"          "models/heroes/hero_black_bolt/black_bolt.vmdl"

@@ -98,7 +98,7 @@ function modifier_gambit_leap:ApplyLeapDamage()
 				local damage = {
 					victim = target,
 					attacker = self:GetCaster(),
-					damage = self:GetAbility():GetSpecialValueFor("damage_aoe"),
+					damage = self:GetAbility():GetSpecialValueFor("damage"),
 					damage_type = DAMAGE_TYPE_MAGICAL,
 					ability = self:GetAbility()
 				}
