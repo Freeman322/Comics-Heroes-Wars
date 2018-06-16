@@ -37,7 +37,7 @@ function blackzoom_surge:OnSpellStart()
   		iVisionRadius = 100,
   	}
   	self.nProjID = ProjectileManager:CreateLinearProjectile( info )
-  	EmitSoundOn( "Hero_EmberSpirit.FireRemnant.Cas" , self:GetCaster() )
+  	EmitSoundOn( "Hero_EmberSpirit.FireRemnant.Cast" , self:GetCaster() )
   end
 
   function blackzoom_surge:OnProjectileHit( hTarget, vLocation )
