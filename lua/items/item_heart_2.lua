@@ -20,8 +20,8 @@ function modifier_item_heart_2:DeclareFunctions () --we want to use these functi
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+        MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
         MODIFIER_EVENT_ON_TAKEDAMAGE
     }
 
@@ -29,27 +29,22 @@ function modifier_item_heart_2:DeclareFunctions () --we want to use these functi
 end
 
 function modifier_item_heart_2:GetModifierBonusStats_Strength (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_all_stats")
+    return self:GetAbility():GetSpecialValueFor ("bonus_all_stats")
 end
 
 function modifier_item_heart_2:GetModifierBonusStats_Intellect (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_all_stats")
+    return self:GetAbility():GetSpecialValueFor ("bonus_all_stats")
 end
 function modifier_item_heart_2:GetModifierBonusStats_Agility (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_all_stats")
+    return self:GetAbility():GetSpecialValueFor ("bonus_all_stats")
 end
 
-function modifier_item_heart_2:GetModifierConstantHealthRegen (params)
-    return 40
+function modifier_item_heart_2:GetModifierHealthRegenPercentage (params)
+    return self:GetAbility():GetSpecialValueFor ("health_regen_percent_per_second")
 end
 
-function modifier_item_heart_2:GetModifierConstantManaRegen (params)
-    local hAbility = self:GetAbility ()
-    local hCaster = self:GetParent ()
-    return hCaster:GetMaxMana () * (hAbility:GetSpecialValueFor ("mana_reget_percent_per_second") / 100)
+function modifier_item_heart_2:GetModifierTotalPercentageManaRegen (params)
+    return self:GetAbility():GetSpecialValueFor ("mana_reget_percent_per_second")
 end
 
 function modifier_item_heart_2:OnTakeDamage (params)

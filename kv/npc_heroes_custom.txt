@@ -154,7 +154,7 @@
 	{
 	    "override_hero"			 "npc_dota_hero_alchemist"
 		"Model"					 "models/heroes/hero_batman/batman.vmdl"
-		"ModelScale"			"1.3"
+		"ModelScale"			"1"
 		"DisableWearables"		"1"
 		"AbilityLayout"			"4"
 		"Ability1"				"batman_betarang"
@@ -457,7 +457,7 @@
 		"override_hero"		   		"npc_dota_hero_morphling"
 		"Model"						"models/heroes/hero_carnage/carnage.vmdl"
 		"DisableWearables"			"1"
-		"ModelScale"				"37"
+		"ModelScale"				"1"
 		"LoadoutScale"				"1"
 	
 		"Ability1"					"carnage_blood_spray"
@@ -468,13 +468,13 @@
 		"Ability6"					"carnage_assimilate"
 		"Ability7"					""
 		"Ability8"					""
-	     	"Ability10"					"special_bonus_exp_boost_30"
-	      	"Ability11"					"special_bonus_gold_income_50"
-	      	"Ability12"					"special_bonus_movement_speed_50"
-	      	"Ability13"					"special_bonus_attack_speed_100"
-	      	"Ability14"					"special_bonus_cooldown_reduction_25"
-	      	"Ability15"					"special_bonus_attack_damage_90"
-	      	"Ability16"					"special_bonus_agility_25"
+     	"Ability10"					"special_bonus_exp_boost_30"
+      	"Ability11"					"special_bonus_gold_income_50"
+      	"Ability12"					"special_bonus_movement_speed_50"
+      	"Ability13"					"special_bonus_attack_speed_100"
+      	"Ability14"					"special_bonus_cooldown_reduction_25"
+      	"Ability15"					"special_bonus_attack_damage_90"
+      	"Ability16"					"special_bonus_agility_25"
 		"Ability17"					"special_bonus_all_stats_20"
 		"AbilityTalentStart"		"10"
 	
@@ -1053,7 +1053,7 @@
 	{
 		"override_hero"     "npc_dota_hero_life_stealer"
 		"ModelScale"		"0.910000"
-	    	"DisableWearables"  "1"
+	    "DisableWearables"  "1"
 		"AbilityLayout" 	"5"
 		"Ability1"			   "doomsday_death_pact"
 		"Ability2"			   "doomsday_speed"
@@ -1435,7 +1435,7 @@
   	{
 		"override_hero"			"npc_dota_hero_warlock"
 		"Model"					"models/heroes/hero_franklin/franklin.vmdl"
-		"ModelScale"			"0.7600"
+		"ModelScale"			"1"
 		"DisableWearables"		"1"
 
 		"AbilityLayout"			"4"
@@ -1658,14 +1658,14 @@
 		"override_hero"		   		"npc_dota_hero_batrider"
 		"Model"						"models/heroes/hero_godspeed/models/godspeed.vmdl"
 		"DisableWearables"			"1"
-	    	"ModelScale"            "0.9" //размер модели
+	    "ModelScale"            	"0.9" //размер модели
 		"Ability1"					"godspeed_bend_time"
 		"Ability2"					"godspeed_ember_field"
 		"Ability3"					"godspeed_hyperpath"
 		"Ability4"					"godspeed_tempest_double"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"godspeed_desolate"
-	    	"Ability10"					"special_bonus_exp_boost_30"
+	    "Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_gold_income_50"
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_armor_15"
@@ -1742,7 +1742,7 @@
 	    "override_hero"					"npc_dota_hero_storm_spirit"
 	    "model"             			"models/heroes/hero_greenlantern/greenlantern.vmdl"
 	    "DisableWearables"  			"1"
-	    "ModelScale"					"80"
+	    "ModelScale"					"1"
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityLayout"					"4"
 	    //-------------------------------------------------------------------------------------------------------------
@@ -2103,7 +2103,7 @@
 	{
 	    "override_hero"					"npc_dota_hero_dazzle"
 	    "Model"		       	 			"models/heroes/hero_joker/joker.vmdl"
-	    "ModelScale" 					"85"
+	    "ModelScale" 					"1"
 	    "DisableWearables"				"1"
 	    "AbilityLayout"   				"5"
 	    "Ability1"		    			"joker_land_mines"
@@ -3498,7 +3498,7 @@
 	{
 		"Model"		"models/heroes/hero_racoon/racoon.vmdl"
 		"override_hero"		"npc_dota_hero_sniper"
-		"ModelScale"		"20.840000"
+		"ModelScale"		"1"
 		"DisableWearables"	"1"
 		"AbilityLayout" 	"4"
 		"Ability1"		"rocket_alacrity"
@@ -3548,7 +3548,7 @@
 	      "Model"						"models/heroes/hero_ronan/ronan.vmdl"		// Model.
 	      "override_hero"		        "npc_dota_hero_troll_warlord"
 	      "DisableWearables" 			"1"
-		  "ModelScale"					"30"
+		  "ModelScale"					"1"
 	
 	      "AbilityLayout"				"4"
 	      "Ability1"					"ronan_passive"
@@ -3610,7 +3610,7 @@
 	      "Model"					"models/heroes/hero_rough/rough.vmdl"		// Model.
 	      "override_hero"		    "npc_dota_hero_vengefulspirit"
 	      "DisableWearables"		"1"
-	      "ModelScale"				"90"
+	      "ModelScale"				"1"
 	
 	      // Abilitie s
 	      //-------------------------------------------------------------------------------------------------------------
@@ -4288,7 +4288,7 @@
 	{
 	    "override_hero"     "npc_dota_hero_treant"
 	    "Model"				"models/heroes/hero_groot/groot.vmdl"
-	    "ModelScale"		"90"
+	    "ModelScale"		"1"
 	    "DisableWearables"	"1"
 		"AbilityLayout" 	"4"
 		"Ability1"			"groot_treants"

@@ -88,7 +88,7 @@ function modifier_groot_divided_we_stand:OnDestroy()
         hero:SetModel(self.caster_model)
         hero:SetOriginalModel(self.caster_model)
         hero:SetAttackCapability(self.caster_attack)
-        hero:SetModelScale(90)
+        hero:SetModelScale(1)
     end
 end
 

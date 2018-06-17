@@ -2295,7 +2295,7 @@
 			}
 			"02"
 			{
-				"var_type"							"FIELD_INTEGER"
+				"var_type"							"FIELD_FLOAT"
 				"health_regen_percent_per_second"	"4.5"
 			}
 			"03"
@@ -6508,7 +6508,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_lua"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
 		"AbilityTextureName"            "custom/mind_gem"
@@ -6794,7 +6794,7 @@
 	
 	    // Time
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "60.0"
+	    "AbilityCooldown"               "90.0"
 		
 		"precache"
 		{
@@ -6972,7 +6972,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"40.0"	    
+		"AbilityCooldown"				"60.0"	    
 		"AbilitySharedCooldown"			"ethereal"
 
 		// Item Info
@@ -6997,7 +6997,7 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_agility"						"70"
+				"bonus_agility"						"45"
 			}
 			"02"
 			{
@@ -7007,37 +7007,37 @@
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_intellect"					"70"
+				"bonus_intellect"					"45"
 			}
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"spell_amp"							"25"
+				"spell_amp"							"20"
 			}
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"manacost_reduction"				"25"
+				"manacost_reduction"				"20"
 			}
 			"06"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"mana_bonus"						"600"
+				"mana_bonus"						"500"
 			}
 			"07"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"health_bonus"						"600"
+				"health_bonus"						"500"
 			}
 			"08"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"magical_splash_radius"				"420"
+				"magical_splash_radius"				"320"
 			}
 			"09"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"magical_splash_ammount"			"20"
+				"magical_splash_ammount"			"16"
 			}
 			"10"
 			{
@@ -7047,7 +7047,7 @@
 			"11"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"blast_stats_multiplier"			"2.0"
+				"blast_stats_multiplier"			"1.4"
 			}
 			"12"
 			{
