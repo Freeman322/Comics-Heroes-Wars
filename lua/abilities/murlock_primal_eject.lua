@@ -165,7 +165,7 @@ end
 
 
 function modifier_murlock_primal_eject:GetModifierBaseAttackTimeConstant( params )
-    return 0.25
+    return 0.35
 end
 
 --------------------------------------------------------------------------------
