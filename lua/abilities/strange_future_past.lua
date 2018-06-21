@@ -125,9 +125,7 @@ function modifier_strange_future_past:OnDeath( params )
 		local hAttacker = params.attacker
 		local hVictim = params.unit
 
-		if hVictim ~= nil and hAttacker ~= nil and hVictim == self:GetCaster() and hAttacker:GetTeamNumber() ~= hVictim:GetTeamNumber() then
-			self.damage = 0
-		end
+		self.damage = 0
 	end
 
 	return 0

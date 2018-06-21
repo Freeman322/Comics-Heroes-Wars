@@ -80,6 +80,10 @@ function modifier_item_glove_of_the_creator:GetModifierConstantHealthRegen( para
     return self:GetAbility():GetSpecialValueFor("bonus_health_regen" )
 end
 
+function modifier_item_glove_of_the_creator:GetAttributes ()
+    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 function modifier_item_glove_of_the_creator:OnCreated(params)
    if IsServer() then 
         if self:GetParent():GetUnitName() == "npc_dota_hero_elder_titan" then 
