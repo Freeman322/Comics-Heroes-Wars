@@ -21,7 +21,7 @@ end
 
 function doctor_doom_sanity_curse:GetCooldown (nLevel)
     if self:GetCaster ():HasScepter () then
-        return 30
+        return 20
     end
 
     return self.BaseClass.GetCooldown (self, nLevel)
