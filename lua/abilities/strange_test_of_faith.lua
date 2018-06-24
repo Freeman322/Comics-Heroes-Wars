@@ -55,7 +55,7 @@ function modifier_strange_test_of_faith:OnDestroy( params )
                     victim = unit,
                     attacker = self:GetParent(),
                     damage = self:GetAbility():GetSpecialValueFor("damage_expire"),
-                    damage_type = DAMAGE_TYPE_MAGICAL,
+                    damage_type = DAMAGE_TYPE_PURE,
                     ability = self,
                 }
 

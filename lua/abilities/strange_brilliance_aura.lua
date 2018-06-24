@@ -59,11 +59,11 @@ function modifier_modifier_brilliance_aura_effect_radius:DeclareFunctions()
     return funcs
 end
 
-function modifier_modifier_brilliance_aura_effect_radius:GetModifierConstantHealthRegen( params )
+function modifier_modifier_brilliance_aura_effect_radius:GetModifierConstantManaRegen( params )
     return self:GetAbility():GetSpecialValueFor("mana_regen")
 end
 
-function modifier_modifier_brilliance_aura_effect_radius:GetModifierConstantManaRegen( params )
+function modifier_modifier_brilliance_aura_effect_radius:GetModifierConstantHealthRegen( params )
     if self:GetParent():HasScepter() then
         return self:GetAbility():GetSpecialValueFor("health_regen") + GameRules:GetGameTime()/60
     end

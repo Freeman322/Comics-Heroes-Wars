@@ -37269,7 +37269,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Terrorblade.Sunder.Target"
 
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"		
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"		
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------

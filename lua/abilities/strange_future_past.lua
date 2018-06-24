@@ -57,7 +57,7 @@ function strange_future_past:OnSpellStart(  )
                 victim = hTarget,
                 attacker = self:GetCaster(),
                 damage = damage,
-                damage_type = DAMAGE_TYPE_PURE,
+                damage_type = DAMAGE_TYPE_MAGICAL,
                 ability = self
             }
             ApplyDamage( damage_table )
