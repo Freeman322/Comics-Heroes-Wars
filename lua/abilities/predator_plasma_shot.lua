@@ -24,7 +24,7 @@ end
 
 function predator_plasma_shot:GetCooldown( nLevel )
 	if self:GetCaster():HasModifier("modifier_predator_plasma_shot_mode") then
-		return self.BaseClass.GetCooldown( self, nLevel ) + self.BaseClass.GetCooldown( self, nLevel )/2
+		return self.BaseClass.GetCooldown( self, nLevel ) + self.BaseClass.GetCooldown( self, nLevel )/5
 	end
 
 	return self.BaseClass.GetCooldown( self, nLevel )
@@ -42,7 +42,7 @@ end
 function predator_plasma_shot:OnSpellStart()
   if IsServer() then
     if self:GetCaster():HasModifier("modifier_predator_plasma_shot_mode") then
-        self:GetCaster():ModifyHealth(self:GetCaster():GetHealth() - (self:GetCaster():GetMaxHealth() * 0.40), self, false, 0)
+        self:GetCaster():ModifyHealth(self:GetCaster():GetHealth() - (self:GetCaster():GetMaxHealth() * 0.33), self, false, 0)
     end
   end
 	local info = {
@@ -66,7 +66,7 @@ function predator_plasma_shot:OnProjectileHit( hTarget, vLocation )
 
 		self.damage = self:GetAbilityDamage() + (hTarget:GetMaxHealth() * (self:GetSpecialValueFor("bonus_damage")/100))
 	    if self:GetCaster():HasModifier("modifier_predator_plasma_shot_mode") then
-	        self.damage = self.damage + (hTarget:GetMaxHealth() * 0.25)
+	        self.damage = self.damage + (hTarget:GetMaxHealth() * 0.33)
 	    end
 	    self.bonus = 0
 	    if self:GetCaster():HasTalent("special_bonus_unique_predator") then

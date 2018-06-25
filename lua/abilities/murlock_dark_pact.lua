@@ -65,7 +65,7 @@ function modifier_murlock_dark_pact:OnIntervalThink()
     local enemies = FindUnitsInRadius( caster:GetTeamNumber(), caster:GetOrigin(), self:GetCaster(), self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
       if #enemies > 0 then
           for _,target in pairs(enemies) do
-             ApplyDamage({victim = target, attacker = caster, damage = damage, ability = damage, damage_type = DAMAGE_TYPE_PHYSICAL})
+             ApplyDamage({victim = target, attacker = caster, damage = damage, ability = damage, damage_type = DAMAGE_TYPE_MAGICAL})
           end
       end
   end

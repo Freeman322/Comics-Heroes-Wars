@@ -3,6 +3,12 @@ deadpool_hypersonic_slashes = class ( {})
 LinkLuaModifier ("modifier_deadpool_hypersonic_slashes", "abilities/deadpool_hypersonic_slashes.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier ("modifier_deadpool_hypersonic_slashes_target", "abilities/deadpool_hypersonic_slashes.lua", LUA_MODIFIER_MOTION_NONE)
 
+function deadpool_hypersonic_slashes:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_neo_noir") then return GetAbilityTextureNameFor("weapon", self:GetCaster():GetUnitName(), "the_old_facion", 6, self.BaseClass.GetAbilityTextureName(self) ) end
+    return self.BaseClass.GetAbilityTextureName(self) 
+end
+  
+
 function deadpool_hypersonic_slashes:GetAOERadius ()
     if self:GetCaster ():HasScepter () then
         return 450
@@ -170,6 +176,4 @@ function modifier_deadpool_hypersonic_slashes_target:FindNearestTarget ()
         end
     end
 end
-
-function deadpool_hypersonic_slashes:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

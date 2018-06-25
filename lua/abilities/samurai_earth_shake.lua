@@ -1,8 +1,15 @@
 samurai_earth_shake = class({})
 LinkLuaModifier( "modifier_samurai_earth_shake", "abilities/samurai_earth_shake.lua", LUA_MODIFIER_MOTION_NONE )
+
 function samurai_earth_shake:IsStealable(  )
     return false
 end
+
+function samurai_earth_shake:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_legacy_of_blast_gold") then return GetAbilityTextureNameFor("weapon", self:GetCaster():GetUnitName(), "legacy_of_blast_gold", 6, self.BaseClass.GetAbilityTextureName(self) ) end
+    return self.BaseClass.GetAbilityTextureName(self) 
+end
+  
 function samurai_earth_shake:OnSpellStart(  )
     if IsServer() then
         local caster = self:GetCaster()
@@ -12,10 +19,22 @@ function samurai_earth_shake:OnSpellStart(  )
         local vDirection = self:GetCursorPosition() - self:GetCaster():GetOrigin()
         vDirection = vDirection:Normalized()
         local fDistance = (self:GetCursorPosition() - self:GetCaster():GetOrigin()):Length2D()
-        EmitSoundOn ("Hero_Axe.CounterHelix", caster)
-        EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace", target)
+
+
+        local prj = "particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf"
+
+        if self:GetCaster():HasModifier("modifier_legacy_of_blast_gold") then
+            prj = "particles/hero_khan/khan_echo_strike_projectile.vpcf"
+
+            EmitSoundOn ("Hero_Necrolyte.ReapersScythe.Target", caster)
+            EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast", target)
+        else 
+            EmitSoundOn ("Hero_Axe.CounterHelix", caster)
+            EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace", target)
+        end
+
         local info = {
-            EffectName = "particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf",
+            EffectName = prj,
             Ability = self,
             vSpawnOrigin = self:GetCaster():GetOrigin(),
             fStartRadius = 300,
@@ -89,6 +108,3 @@ function modifier_samurai_earth_shake:CheckState()
 
 	return state
 end
-
-function samurai_earth_shake:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-

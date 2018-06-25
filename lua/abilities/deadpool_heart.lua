@@ -19,7 +19,7 @@ modifier_deadpool_heart = class ( {})
 
 
 function modifier_deadpool_heart:DeclareFunctions ()
-    return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT}
+    return {MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE}
 end
 
 function modifier_deadpool_heart:IsHidden ()
@@ -40,11 +40,12 @@ function modifier_deadpool_heart:OnCreated(table)
     end
 end
 
-function modifier_deadpool_heart:GetModifierConstantHealthRegen ()
-    local percent = self:GetAbility ():GetSpecialValueFor ("health_regen_percent_per_second")/100
-    local regen = (self:GetParent ():GetMaxHealth () * percent) + self:GetAbility():GetSpecialValueFor("health_regen_base")
-    return regen + self.stacks
+function modifier_deadpool_heart:GetModifierHealthRegenPercentage()
+    return self:GetAbility():GetSpecialValueFor("health_regen_base") + (self.stacks or 1) + ((self:GetAbility ():GetSpecialValueFor ("health_regen_percent_per_second")) * (GameRules:GetGameTime() / 420))
 end
 
-function deadpool_heart:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function deadpool_heart:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_neo_noir") then return GetAbilityTextureNameFor("weapon", self:GetCaster():GetUnitName(), "the_old_facion", 1, self.BaseClass.GetAbilityTextureName(self) ) end
+    return self.BaseClass.GetAbilityTextureName(self) 
+end
+  

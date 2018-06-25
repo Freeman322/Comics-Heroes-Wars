@@ -64,7 +64,11 @@ function modifier_item_timepiece:OnCreated( kv )
 	        end
 	    end
 
-	    self:StartIntervalThink(0.03)
+        self:StartIntervalThink(0.03)
+        
+        if self:GetParent():HasModifier("modifier_bynder_rim") then 
+            self:Destroy()
+        end
 	end
 end
 

@@ -4,7 +4,7 @@ LinkLuaModifier( "thanos_dying_star_modifier", "abilities/thanos_dying_star.lua"
 thanos_dying_star = class ( {})
 
 function thanos_dying_star:GetAbilityTextureName()
-    if self:GetCaster():HasModifier("item_glove_of_the_creator_modifier") then
+    if self:GetCaster():HasModifier("modifier_item_glove_of_the_creator") then
         return "custom/thanos_dying_star_gauntelt"
     end
     return "custom/thanos_supernova"
@@ -26,7 +26,7 @@ function thanos_dying_star_thinker:OnCreated(event)
         local target = self:GetAbility():GetCaster():GetCursorPosition()
         self.damage = ability:GetSpecialValueFor("damage")/100
         self.radius = ability:GetSpecialValueFor("radius")
-        if self:GetCaster():HasModifier("item_glove_of_the_creator_modifier") then
+        if self:GetCaster():HasModifier("modifier_item_glove_of_the_creator") then
             self.radius = 99999
         end
         self:StartIntervalThink(0.1)

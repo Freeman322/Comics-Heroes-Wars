@@ -82,7 +82,7 @@ function modifier_item_adamachi_core:DeclareFunctions() --we want to use these f
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_MANA_BONUS,
-        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING
+        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE
     }
 
     return funcs
@@ -103,7 +103,7 @@ function modifier_item_adamachi_core:GetModifierManaBonus( params )
     return hAbility:GetSpecialValueFor( "bonus_mana" )
 end
 
-function modifier_item_adamachi_core:GetModifierPercentageCooldownStacking( params )
+function modifier_item_adamachi_core:GetModifierPercentageCooldown( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor( "bonus_cooldown" )
 end

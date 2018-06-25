@@ -35,6 +35,10 @@ function modifier_thor_empower:OnIntervalThink()
             chance = chance + self:GetCaster():FindTalentValue("special_bonus_unique_thor_2")
         end
 
+        if self:GetCaster():IsAlive() == false then
+            return 
+        end
+
         local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_CLOSEST, false )
         if #units > 0 then
             for _,unit in pairs(units) do
@@ -47,7 +51,7 @@ function modifier_thor_empower:OnIntervalThink()
                     EmitSoundOn( "Item.Maelstrom.Chain_Lightning", self:GetCaster() )
                     EmitSoundOn( "Item.Maelstrom.Chain_Lightning.Jump", unit )
 
-                    ApplyDamage({victim = unit, attacker = self:GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE})
+                    ApplyDamage({victim = unit, attacker = self:GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
 
                     self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
                end

@@ -42,7 +42,6 @@ end
 function strange_future_past:OnSpellStart(  )
     if IsServer() then 
         local hTarget = self:GetCursorTarget()
-        print(hTarget:GetUnitName())
 
         if hTarget:HasModifier("modifier_strange_future_past") then 
             local damage = hTarget:FindModifierByName("modifier_strange_future_past"):GetTotalLifetimeDamage()
@@ -57,7 +56,7 @@ function strange_future_past:OnSpellStart(  )
                 victim = hTarget,
                 attacker = self:GetCaster(),
                 damage = damage,
-                damage_type = DAMAGE_TYPE_MAGICAL,
+                damage_type = DAMAGE_TYPE_PURE,
                 ability = self
             }
             ApplyDamage( damage_table )
@@ -109,23 +108,11 @@ function modifier_strange_future_past:DeclareFunctions()
 end
 
 function modifier_strange_future_past:OnDeath( params )
-	if IsServer() then
-		if self:GetCaster() == nil then
-			return 0
-		end
-
-		if self:GetCaster():PassivesDisabled() then
-			return 0
-		end
-
-		if self:GetCaster() ~= self:GetParent() then
-			return 0
-		end
-
-		local hAttacker = params.attacker
-		local hVictim = params.unit
-
-		self.damage = 0
+    if IsServer() then        
+        DeepPrintTable(params)
+        if self:GetParent() == params.unit then 
+            self.damage = 0
+        end
 	end
 
 	return 0
