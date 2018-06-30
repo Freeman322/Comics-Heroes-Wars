@@ -31,15 +31,19 @@ function onepunchman_ult:OnSpellStart()
           ParticleManager:SetParticleControl( nFXIndex, 12, hTarget:GetAbsOrigin())
           ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-          local damage = {
-              victim = hTarget,
-              attacker = self:GetCaster(),
-              damage = hTarget:GetMaxHealth() * 100,
-              damage_type = DAMAGE_TYPE_PURE,
-              ability = self,
-              damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
-          }
-          ApplyDamage( damage )
+          hTarget:Kill(self, self:GetCaster())
+
+          self:StartCooldown(self:GetCooldown(self:GetLevel()))
+          self:PayManaCost()
+          --local damage = {
+              --victim = hTarget,
+              --attacker = self:GetCaster(),
+              --damage = hTarget:GetMaxHealth() * 100,
+              --damage_type = DAMAGE_TYPE_PURE,
+              --ability = self,
+              --damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
+          --}
+          --ApplyDamage( damage )
         end
       end
     end
@@ -95,15 +99,16 @@ function modifier_onepunchman_ult:OnAttackLanded (params)
                 ParticleManager:SetParticleControl( nFXIndex, 12, hTarget:GetAbsOrigin())
                 ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-                local damage = {
-                    victim = hTarget,
-                    attacker = self:GetParent(),
-                    damage = hTarget:GetMaxHealth() * 100,
-                    damage_type = DAMAGE_TYPE_PURE,
-                    ability = self:GetAbility(),
-                    damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
-                }
-                ApplyDamage( damage )
+                hTarget:Kill(self, self:GetCaster())
+                --local damage = {
+                    --victim = hTarget,
+                    --attacker = self:GetParent(),
+                    --damage = hTarget:GetMaxHealth() * 100,
+                    --damage_type = DAMAGE_TYPE_PURE,
+                    --ability = self:GetAbility(),
+                    --damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
+                --}
+                --ApplyDamage( damage )
 
                 self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
                 self:GetAbility():PayManaCost()

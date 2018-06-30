@@ -59,7 +59,7 @@ end
 function modifier_black_panther_shadow_warrior:CheckState ()
     local state = {
         [MODIFIER_STATE_INVISIBLE] = true,
-        [MODIFIER_STATE_ROOTED] = true,
+        --[MODIFIER_STATE_ROOTED] = true,
         [MODIFIER_STATE_TRUESIGHT_IMMUNE] = true,
     }
 

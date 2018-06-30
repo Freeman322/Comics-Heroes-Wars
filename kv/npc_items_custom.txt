@@ -3163,12 +3163,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"210"
+				"bonus_movement"		"160"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"20"
+				"bonus_all_stats"		"25"
 			}
 			"03"
 			{
