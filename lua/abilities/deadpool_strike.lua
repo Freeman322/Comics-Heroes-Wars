@@ -68,7 +68,7 @@ function modifier_deadpool_strike:OnAttackLanded (params)
 end
 
 function deadpool_strike:GetAbilityTextureName()
-    if self:GetCaster():HasModifier("modifier_neo_noir") then return GetAbilityTextureNameFor("weapon", self:GetCaster():GetUnitName(), "the_old_facion", 3, self.BaseClass.GetAbilityTextureName(self) ) end
+    if self:GetCaster():HasModifier("modifier_neo_noir") then return "custom/the_old_facion_crit" end
     return self.BaseClass.GetAbilityTextureName(self) 
 end
   

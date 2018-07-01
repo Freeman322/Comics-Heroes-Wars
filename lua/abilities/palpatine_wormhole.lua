@@ -139,11 +139,11 @@ function modifier_palpatine_wormhole:OnDestroy()
         local damage = ability:GetSpecialValueFor( "enemy_damage" )/100
 		Timers:CreateTimer(0.1, function()
 			for _, units in pairs(nearby_units) do
-				if not units:IsConsideredHero() then 
+				if not units:IsAncient() then 
 					units:SetAbsOrigin(vPoint)
+					FindClearSpaceForUnit(units, vPoint, false)
 				end
 				EmitSoundOn("Hero_ObsidianDestroyer.EssenceAura", units)
-				FindClearSpaceForUnit(units, vPoint, false)
                 if units:GetTeamNumber() ~= caster:GetTeamNumber() then
                     ApplyDamage({attacker = caster, victim = units, ability = ability, damage = (damage * units:GetMaxHealth()) + 300, damage_type = DAMAGE_TYPE_PURE})
                 end

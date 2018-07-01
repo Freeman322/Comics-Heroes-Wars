@@ -43,5 +43,7 @@ function modifier_zoom_time_jump:OnDestroy()
    end
 end
 
-function zoom_time_jump:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function zoom_time_jump:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_doomsday_clock") then return "custom/reverse_speed_back" end
+	return self.BaseClass.GetAbilityTextureName(self) 
+end

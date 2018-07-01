@@ -4,7 +4,7 @@ LinkLuaModifier ("modifier_deadpool_hypersonic_slashes", "abilities/deadpool_hyp
 LinkLuaModifier ("modifier_deadpool_hypersonic_slashes_target", "abilities/deadpool_hypersonic_slashes.lua", LUA_MODIFIER_MOTION_NONE)
 
 function deadpool_hypersonic_slashes:GetAbilityTextureName()
-    if self:GetCaster():HasModifier("modifier_neo_noir") then return GetAbilityTextureNameFor("weapon", self:GetCaster():GetUnitName(), "the_old_facion", 6, self.BaseClass.GetAbilityTextureName(self) ) end
+    if self:GetCaster():HasModifier("modifier_neo_noir") then return "custom/the_old_facion_ult" end
     return self.BaseClass.GetAbilityTextureName(self) 
 end
   

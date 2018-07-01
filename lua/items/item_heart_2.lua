@@ -47,6 +47,7 @@ function modifier_item_heart_2:GetModifierTotalPercentageManaRegen (params)
     return self:GetAbility():GetSpecialValueFor ("mana_reget_percent_per_second")
 end
 
+--[[
 function modifier_item_heart_2:OnTakeDamage (params)
     if IsServer () then
         if params.unit == self:GetParent() then
@@ -63,7 +64,7 @@ function modifier_item_heart_2:OnTakeDamage (params)
         end
     end
 end
-
+ --]]
 function modifier_item_heart_2:GetAttributes ()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end

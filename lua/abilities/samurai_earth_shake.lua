@@ -6,7 +6,7 @@ function samurai_earth_shake:IsStealable(  )
 end
 
 function samurai_earth_shake:GetAbilityTextureName()
-    if self:GetCaster():HasModifier("modifier_legacy_of_blast_gold") then return GetAbilityTextureNameFor("weapon", self:GetCaster():GetUnitName(), "legacy_of_blast_gold", 6, self.BaseClass.GetAbilityTextureName(self) ) end
+    if self:GetCaster():HasModifier("modifier_legacy_of_blast_gold") then return "custom/legacy_of_blast_gold" end
     return self.BaseClass.GetAbilityTextureName(self) 
 end
   

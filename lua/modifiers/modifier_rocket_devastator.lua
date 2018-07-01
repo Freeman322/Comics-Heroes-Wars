@@ -31,5 +31,5 @@ function modifier_rocket_devastator:DeclareFunctions()
 end
 
 function modifier_rocket_devastator:GetAttackSound( params )
-    return "Hero_Sniper.MKG_attack"
+    return "DOTA_Item.Nullifier.Cast"
 end

@@ -16,8 +16,8 @@ function zoom_charge_of_darkness:CastFilterResultTarget( hTarget )
 end
 
 function zoom_charge_of_darkness:GetAbilityTextureName()
-  if self:GetCaster():HasModifier("modifier_zoom_arcana") then return GetAbilityTextureNameFor("armor", self:GetCaster():GetUnitName(), "speed_wraith", 6, self.BaseClass.GetAbilityTextureName(self) ) end
-  if self:GetCaster():HasModifier("modifier_zoom_kalyaska") then return GetAbilityTextureNameFor("armor", self:GetCaster():GetUnitName(), "stygians_kolyaska", 6, self.BaseClass.GetAbilityTextureName(self) ) end
+  if self:GetCaster():HasModifier("modifier_zoom_arcana") then return "custom/bh_relativistic_run" end
+  if self:GetCaster():HasModifier("modifier_zoom_kalyaska") then return "custom/stygian_kolyaska_charge_of_darkness" end
   return self.BaseClass.GetAbilityTextureName(self)
 end
 

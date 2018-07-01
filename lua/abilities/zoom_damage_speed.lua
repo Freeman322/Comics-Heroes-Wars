@@ -44,5 +44,7 @@ function zoom_damage_speed:OnSpellStart()
 	end
 end
 
-function zoom_damage_speed:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function zoom_damage_speed:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_doomsday_clock") then return "custom/reverse_speed_entire_speed" end
+	return self.BaseClass.GetAbilityTextureName(self) 
+end

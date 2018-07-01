@@ -1,7 +1,7 @@
 if galactus_world_devour == nil then galactus_world_devour = class({}) end
 
 function galactus_world_devour:GetAbilityTextureName()
-  if self:GetCaster():HasModifier("modifier_galactus_seed_of_ambition") then return GetAbilityTextureNameFor("offhand", self:GetCaster():GetUnitName(), "seed_of_ambitions", 6, self.BaseClass.GetAbilityTextureName(self) ) end
+  if self:GetCaster():HasModifier("modifier_galactus_seed_of_ambition") then return "custom/galactus_seed_of_ambition" end
   return self.BaseClass.GetAbilityTextureName(self) 
 end
 

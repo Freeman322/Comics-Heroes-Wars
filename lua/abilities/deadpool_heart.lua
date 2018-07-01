@@ -45,7 +45,7 @@ function modifier_deadpool_heart:GetModifierHealthRegenPercentage()
 end
 
 function deadpool_heart:GetAbilityTextureName()
-    if self:GetCaster():HasModifier("modifier_neo_noir") then return GetAbilityTextureNameFor("weapon", self:GetCaster():GetUnitName(), "the_old_facion", 1, self.BaseClass.GetAbilityTextureName(self) ) end
+    if self:GetCaster():HasModifier("modifier_neo_noir") then return "custom/the_old_facion_heal" end
     return self.BaseClass.GetAbilityTextureName(self) 
 end
   

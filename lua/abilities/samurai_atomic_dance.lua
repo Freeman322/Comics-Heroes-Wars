@@ -14,20 +14,16 @@ end
 
 function samurai_atomic_dance:GetCooldown (nLevel)
     if self:GetCaster ():HasScepter () then
-        return 20
+        return self:GetSpecialValueFor("cooldown_scepter")
     end
 
     return self.BaseClass.GetCooldown (self, nLevel)
 end
-function samurai_atomic_dance:GetAbilityTexture( ... )
-    return "lich_aura_passive"
-end
 
 function samurai_atomic_dance:GetAbilityTextureName()
-    if self:GetCaster():HasModifier("modifier_daredevil_arcana") then
-        return "custom/lich_aura_passive"
-    end
-    return "custom/samurai_atomic_dance"
+    if self:GetCaster():HasModifier("modifier_daredevil_arcana") then return "custom/lich_aura_passive" end
+    if self:GetCaster():HasModifier("modifier_samurai_ancestors") then return "custom/samurai_omnislash_helmet" end
+    return self.BaseClass.GetAbilityTextureName(self) 
 end
 
 function samurai_atomic_dance:OnAbilityPhaseStart()
@@ -129,6 +125,17 @@ function samurai_atomic_dance:OnSpellStart()
                     ParticleManager:SetParticleControlEnt (nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin () + Vector (0, 0, 96), true);
                     ParticleManager:SetParticleControl(nFXIndex, 1, Vector (500, 500, 0));
                     ParticleManager:ReleaseParticleIndex (nFXIndex);
+                elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "samurai_ancestors") == true then
+                    local nFXIndex = ParticleManager:CreateParticle( "particles/hero_samurai/samurai_stomic_dance_helmet_rope.vpcf", PATTACH_CUSTOMORIGIN, unit );
+                    ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_attack1", unit:GetOrigin(), true );
+                    ParticleManager:SetParticleControlEnt( nFXIndex, 1, next_unit, PATTACH_POINT_FOLLOW, "attach_hitloc", next_unit:GetOrigin(), true );
+                    ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+                    local nFXIndex = ParticleManager:CreateParticle ("particles/hero_samurai/samurai_stomic_dance_helmet_tgt.vpcf", PATTACH_ABSORIGIN, unit);
+                    ParticleManager:ReleaseParticleIndex (nFXIndex);
+
+                    EmitSoundOn("Hero_Omniknight.Purification.Wingfall", self:GetCaster())
+                    EmitSoundOn("Hero_Omniknight.Repel.TI8", self:GetCaster())
                 else
                      local nFXIndex = ParticleManager:CreateParticle ("particles/samurai/samurai_atomic_dance_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit);
                     ParticleManager:SetParticleControl(nFXIndex, 0, unit:GetAbsOrigin());

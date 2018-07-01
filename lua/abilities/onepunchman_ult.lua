@@ -32,18 +32,7 @@ function onepunchman_ult:OnSpellStart()
           ParticleManager:ReleaseParticleIndex( nFXIndex );
 
           hTarget:Kill(self, self:GetCaster())
-
-          self:StartCooldown(self:GetCooldown(self:GetLevel()))
-          self:PayManaCost()
-          --local damage = {
-              --victim = hTarget,
-              --attacker = self:GetCaster(),
-              --damage = hTarget:GetMaxHealth() * 100,
-              --damage_type = DAMAGE_TYPE_PURE,
-              --ability = self,
-              --damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
-          --}
-          --ApplyDamage( damage )
+          hTarget:ForceKill(false)
         end
       end
     end
@@ -60,10 +49,7 @@ function modifier_onepunchman_ult:IsHidden()
 end
 
 function modifier_onepunchman_ult:GetEffectName()
-  if self:GetAbility():IsCooldownReady() then 
-    return "particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
-  end
-  return ""
+  return "particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
 end
 
 function modifier_onepunchman_ult:GetEffectAttachType()
@@ -100,15 +86,7 @@ function modifier_onepunchman_ult:OnAttackLanded (params)
                 ParticleManager:ReleaseParticleIndex( nFXIndex );
 
                 hTarget:Kill(self, self:GetCaster())
-                --local damage = {
-                    --victim = hTarget,
-                    --attacker = self:GetParent(),
-                    --damage = hTarget:GetMaxHealth() * 100,
-                    --damage_type = DAMAGE_TYPE_PURE,
-                    --ability = self:GetAbility(),
-                    --damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
-                --}
-                --ApplyDamage( damage )
+                hTarget:ForceKill(false)
 
                 self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
                 self:GetAbility():PayManaCost()

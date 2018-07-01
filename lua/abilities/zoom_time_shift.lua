@@ -45,6 +45,15 @@ function modifier_proffesor_zoom_time_shift:GetModifierPreAttack_BonusDamage()
 	  return self:GetAbility():GetSpecialValueFor("damage")
 end
 
+function modifier_proffesor_zoom_time_shift:GetEffectName()
+	if self:GetCaster():HasModifier("modifier_doomsday_clock") then return "particles/econ/events/ti6/mjollnir_shield_ti6.vpcf" end
+	return
+end
+
+function modifier_proffesor_zoom_time_shift:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
+end
+
 function modifier_proffesor_zoom_time_shift:GetModifierEvasion_Constant( params )
     return self:GetAbility():GetSpecialValueFor( "evasion" )
 end
@@ -65,5 +74,7 @@ function modifier_proffesor_zoom_time_shift:GetModifierMoveSpeed_Max( params )
 	  return 5000
 end
 
-function zoom_time_shift:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function zoom_time_shift:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_doomsday_clock") then return "custom/reverse_speed_ult" end
+	return self.BaseClass.GetAbilityTextureName(self) 
+end

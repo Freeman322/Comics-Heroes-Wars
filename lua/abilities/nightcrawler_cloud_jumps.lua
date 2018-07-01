@@ -85,7 +85,7 @@ function modifier_nightcrawler_nightcrawler_cloud_jumps:OnIntervalThink()
                     local damage = thinker:GetAverageTrueAttackDamage(target) * 5
                     ApplyDamage( {attacker = thinker, victim = target, ability = self:GetAbility(), 
                         damage = damage, 
-                        damage_type = DAMAGE_TYPE_PURE})
+                        damage_type = DAMAGE_TYPE_PHYSICAL})
 
 
                     EmitSoundOn("Hero_MonkeyKing.Attack", target)

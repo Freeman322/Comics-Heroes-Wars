@@ -25,7 +25,7 @@ function butcher_meat_hook:OnSpellStart()
 	self.hook_followthrough_constant = 0.65
 	
 	if self:GetCaster() and self:GetCaster():IsHero() then
-		local hHook = self:GetCaster():GetTogglableWearable( DOTA_LOADOUT_TYPE_WEAPON )
+		local hHook = self:GetCaster().wearables["weapon"]
 		if hHook ~= nil then
 			hHook:AddEffects( EF_NODRAW )
 		end
@@ -47,7 +47,14 @@ function butcher_meat_hook:OnSpellStart()
 	local vHookTarget = self.vTargetPosition + self.vHookOffset
 	local vKillswitch = Vector( ( ( self.hook_distance / self.hook_speed ) * 2 ), 0, 0 )
 
-	self.nChainParticleFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_meathook.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
+	local pfx = "particles/units/heroes/hero_pudge/pudge_meathook.vpcf"
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "pudge_hook_gharpoon") == true then
+		pfx = "particles/units/heroes/hero_pudge/econs/pudge_meathook_hook_dragonclaw.vpcf"
+	end
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "scorching_talon") == true then
+		pfx = "particles/econ/items/pudge/pudge_ti6_immortal_gold/pudge_ti6_meathook_gold.vpcf"
+	end
+	self.nChainParticleFXIndex = ParticleManager:CreateParticle( pfx, PATTACH_CUSTOMORIGIN, self:GetCaster() )
 	ParticleManager:SetParticleAlwaysSimulate( self.nChainParticleFXIndex )
 	ParticleManager:SetParticleControlEnt( self.nChainParticleFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_weapon_chain_rt", self:GetCaster():GetOrigin() + self.vHookOffset, true )
 	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 1, vHookTarget )
@@ -212,7 +219,7 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 		self.bRetracting = true
 	else
 		if self:GetCaster() and self:GetCaster():IsHero() then
-			local hHook = self:GetCaster():GetTogglableWearable( DOTA_LOADOUT_TYPE_WEAPON )
+			local hHook = self:GetCaster().wearables["weapon"]
 			if hHook ~= nil then
 				hHook:RemoveEffects( EF_NODRAW )
 			end

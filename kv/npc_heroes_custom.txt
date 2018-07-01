@@ -2714,7 +2714,7 @@
 	    "Ability16"				"special_bonus_agility_25"
 	    "Ability17"				"special_bonus_unique_murloc"
 	    "DisableWearables"			"1"
-	    "ArmorPhysical"		"2"
+	    "ArmorPhysical"		"3"
 	    "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	    "AttackDamageMin"		"42"
 	    "AttackDamageMax"		"49"
@@ -2729,7 +2729,7 @@
 	    "AttributeBaseIntelligence"		"20"
 	    "AttributeIntelligenceGain"		"1.900000"
 	    "AttributeBaseAgility"		"17"
-	    "AttributeAgilityGain"		"1.300000"
+	    "AttributeAgilityGain"		"1.700000"
 	    "VisionDaytimeRange"		"1800"
 	    "VisionNighttimeRange"		"1800"
 	    "MovementSpeed"		"300"
@@ -3582,11 +3582,11 @@
 	      //-------------------------------------------------------------------------------------------------------------
 	      "AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
 	      "AttributeBaseStrength"			"22"									// Base strength
-	      "AttributeStrengthGain"			"3"									// Strength bonus per level.
-	      "AttributeBaseAgility"			"12"									// Base agility
-	      "AttributeAgilityGain"			"1.4"									// Agility bonus per level.
+	      "AttributeStrengthGain"			"3.4"									// Strength bonus per level.
+	      "AttributeBaseAgility"			"8"									// Base agility
+	      "AttributeAgilityGain"			"0.8"									// Agility bonus per level.
 	      "AttributeBaseIntelligence"		"27"									// Base intelligence
-	      "AttributeIntelligenceGain"		"2.2"									// Intelligence bonus per level.
+	      "AttributeIntelligenceGain"		"2.5"									// Intelligence bonus per level.
 	
 	      // Movement
 	      //-------------------------------------------------------------------------------------------------------------

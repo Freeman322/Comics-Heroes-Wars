@@ -26,6 +26,9 @@ function modifier_neo_noir:GetAttackSound( params )
 end
 
 function modifier_neo_noir:GetModifierAttackRangeBonus( params )
-    return -250
+    if self:GetParent():GetUnitName() == "npc_dota_hero_templar_assassin" then 
+        return -250
+    end
+    return
 end
 

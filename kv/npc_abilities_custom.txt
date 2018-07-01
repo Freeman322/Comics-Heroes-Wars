@@ -48,29 +48,29 @@
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
+		"AbilitySpecial"
+		{
+			"01"
 			{
-					"01"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"stun_duration"				"1.25 1.5 1.75 2.0"
-					}
-					"02"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"strike_crit_mult"			"175 200 225 250"
-					}
-					"03"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"strike_radius"				"200"
-					}
-					"04"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"strike_cast_range"			"1000 1100 1200 1300"
-					}
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.25 1.5 1.75 2.0"
 			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"strike_crit_mult"			"140 160 180 200"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"strike_radius"				"200"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"strike_cast_range"			"1000 1100 1200 1300"
+			}
+		}
 	}
 	//=================================================================================================================
 	// Ability: Daredevil Super Leash
@@ -94,7 +94,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 10 8 6"
+		"AbilityCooldown"				"13 11 9 7"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4921,14 +4921,14 @@
 			"particle"  "particles/hero_samurai/samurai_stomic_dance_arcana_tgt.vpcf"
 			"particle"  "particles/hero_samurai/samurai_stomic_dance_arcana_snow.vpcf"
 			"particle"  "particles/hero_samurai/samurai_stomic_dance_arcana_trail.vpcf"
-			"model" 		"models/heroes/juggernaut/juggernaut_arcana.vmdl"
-			"model"			"models/items/juggernaut/arcana/juggernaut_arcana_mask.vmdl"
+			"model" 	"models/heroes/juggernaut/juggernaut_arcana.vmdl"
+			"model"		"models/items/juggernaut/arcana/juggernaut_arcana_mask.vmdl"
 			"particle"  "particles/econ/items/juggernaut/bladekeeper_bladefury/_dc_juggernaut_blade_fury.vpcf"
 			"particle"  "particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf"
-
 			"model"		"models/heroes/hero_atomic_samurai/legacy_of_blast/blast_sword.vmdl"
 			"particle"  "particles/econ/legacy_of_blast.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"particle"	"particles/hero_samurai/legacy_sword.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -4958,6 +4958,11 @@
 		{
 			"model"		"models/heroes/hero_samurai/samurai_hat.vmdl"
 			"model"		"models/heroes/hero_samurai/samurai_weapon.vmdl"
+			"model"		"models/samurai/samurai_extraordinary_helmet.vmdl"
+			"particle"	"particles/hero_samurai/extroordinary_helmet_head.vpcf"
+			"particle"	"particles/hero_samurai/extroordinary_helmet_top.vpcf"
+			"particle"	"particles/hero_samurai/samurai_stomic_dance_helmet_tgt.vpcf"
+			"particle"	"particles/hero_samurai/samurai_stomic_dance_helmet_rope.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -4991,7 +4996,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"great_cleave_radius"	"325 350 375 400"
+				"great_cleave_radius"	"350"
 			}
 
 			"02"
@@ -5020,7 +5025,7 @@
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"				"DAMAGE_TYPE_PURE"
 		"FightRecapLevel"					"2"
-
+		"HasScepterUpgrade"					"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200 1700 2200"
@@ -5050,6 +5055,7 @@
 			"particle"  "particles/hero_arthas/arthas_eyes.vpcf"
 			"particle"  "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_ambient.vpcf"
 			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
 		}
 		"AbilitySpecial"
 		{
@@ -5067,6 +5073,11 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"width"						"250"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cooldown_scepter"			"20"
 			}
 		}
 	}
@@ -6072,6 +6083,8 @@
 				"particle"				"particles/econ/items/pudge/pudge_immortal_arm/pudge_immortal_arm_ambient.vpcf"
 				"particle"				"particles/econ/items/pudge/pudge_immortal_arm/pudge_immortal_arm_ambient_gold.vpcf"
 				"model"					"models/items/pudge/combover/combover.vmdl"
+				"particle"				"particles/units/heroes/hero_pudge/econs/pudge_meathook_hook_dragonclaw.vpcf"
+				"particle"				"particles/econ/items/pudge/pudge_ti6_immortal_gold/pudge_ti6_meathook_gold.vpcf"
 			}
 
 			// Special
@@ -6750,58 +6763,58 @@
 	//=================================================================================================================
 	"palpatine_lightnings"
 	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"ID"											"7626"
-			"BaseClass"								"ability_lua"
-			"ScriptFile"							"abilities/palpatine_lightnings.lua"
-			"AbilityTextureName"			"custom/palpatine_lightnings"
-			"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
-			"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-			"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
-			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-			"FightRecapLevel"					"2"
-			"MaxLevel"								"3"
-			
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"700"
-			"AbilityCastPoint"				"0.1"
-			"AbilityChannelTime"			"3.0 3.5 4.0"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"											"7626"
+		"BaseClass"								"ability_lua"
+		"ScriptFile"							"abilities/palpatine_lightnings.lua"
+		"AbilityTextureName"			"custom/palpatine_lightnings"
+		"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"					"2"
+		"MaxLevel"								"3"
 
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"70 60 50"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.1"
+		"AbilityChannelTime"			"3.0 3.5 4.0"
 
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"200 250 300"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90 70 50"
 
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 250 300"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
 			{
-					"01"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"damage"				"110 160 210"
-					}
-					"02"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"far_radius"			"450 475 500"
-					}
-					"03"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"duration"				"3.0 3.5 4.0"
-					}
-					"04"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"damage_perc"			"3 4 5"
-					}
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"120 185 250"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"far_radius"			"450 475 500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_perc"			"3 4 5"
+			}
+		}
 	}
 	"palpatine_armor_weakness"
 	{
@@ -7723,23 +7736,23 @@
 	    }
 		"AbilitySpecial"
 		{
-				"01"
-				{
-					"var_type"						"FIELD_FLOAT"
-					"health_bonus"		            "2 3 4 5"
-				}
-				"02"
-				{
-					"var_type"						"FIELD_FLOAT"
-					"damage_bonus"		             "0.4 0.6 0.8 1.0"
-				}
-				"03"
-				{
-					"var_type"						"FIELD_FLOAT"
-					"duration"		          	   	"60"
-				}
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"health_bonus"		            "3.5 5.0 6.5 8.0"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage_bonus"		             "0.4 0.6 0.8 1.0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"		          	   	"60"
+			}
 		}
-}
+	}
 
 "bonder_tank"
 {
@@ -7764,24 +7777,24 @@
 		"AbilityManaCost"               "80 100 120 140"
 		"AbilitySpecial"
 		{
-				"01"
-				{
-					"var_type"						"FIELD_FLOAT"
-					"health_bonus"		            "0.3 0.5 0.7 0.9"
-				}
-				"02"
-				{
-					"var_type"						"FIELD_FLOAT"
-					"damage_bonus"		             "0.4 0.6 0.8 1.0"
-				}
-				"03"
-				{
-					"var_type"						"FIELD_FLOAT"
-					"duration"		          	   	"60"
-				}
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"health_bonus"		            "0.2 0.3 0.4 0.5"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage_bonus"		             "0.2 0.3 0.4 0.5"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"		          	   	"60"
+			}
 		}
-}
-"bynder_passive"
+	}
+	"bynder_passive"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -10874,7 +10887,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"		"custom/zoom_passive2"
 		"ScriptFile"						"abilities/zoom_time_jump.lua"
-
+		"precache"
+		{
+			"model"						"models/heroes/hero_reverse_flash_arcana/reverseflash_arcana.vmdl"
+		}
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
@@ -11057,7 +11073,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 11 9 7"
+		"AbilityCooldown"				"14 12 10 8"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -12270,7 +12286,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 12 10 8"
+		"AbilityCooldown"				"13 11 9 7"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -12385,21 +12401,23 @@
 			"particle"  "particles/econ/items/genji_sword.vpcf"
 			"particle"  "particles/frostivus_herofx/juggernaut_fs_omnislash_slashers.vpcf"
 			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+			"model"		"models/b2/b2.vmdl"
+			"model"		"models/b2/weapon/weapon.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-				"01"
-				{
-					"var_type"							"FIELD_FLOAT"
-					"health_regen_percent_per_second"	"0.7 0.8 0.9 1.0"
-				}
-				"02"
-				{
-					"var_type"							"FIELD_FLOAT"
-					"health_regen_base"					"3 4 5 6"
-				}
+			"01"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"health_regen_percent_per_second"	"0.7 0.8 0.9 1.0"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"health_regen_base"					"1.0 1.4 1.8 2.2"
+			}
 		}
 }
 "deadpool_hypersonic_slashes"
@@ -14232,7 +14250,7 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_INTEGER"
+			"var_type"				"FIELD_FLOAT"
 			"duration"				"4 4.5 5"
 		}
 	}
@@ -17366,7 +17384,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"attack_count"				"4 5 6 7"
+			"attack_count"				"4"
 		}
 		"03"
 		{
@@ -30073,7 +30091,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 
-		"AbilityCooldown"				"11 8 5"
+		"AbilityCooldown"				"5 4 3"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -37139,7 +37157,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70 65 60 55"
+		"AbilityCooldown"				"39 36 33 30"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -37164,7 +37182,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_mult"					"8.5 12.0 14.5 17.0"
+				"damage_mult"					"10 14 18 22"
 				"LinkedSpecialBonus"			"special_bonus_unique_strange"
 				"CalculateSpellDamageTooltip"	"1"
 			}
@@ -37610,7 +37628,9 @@
 			"particle"							"particles/galactus/galactus_seed_of_ambition_eternal_item.vpcf"
 
 			"model"								"models/items/doom/herald_khorne_weapon_alt/herald_khorne_weapon_alt.vmdl"
+			"model"								"models/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_arms.vmdl"
 			"particle"							"particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_devour.vpcf"
+			"particle"							"particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_ambient.vpcf"
 		}
 		"AbilitySpecial"
 		{

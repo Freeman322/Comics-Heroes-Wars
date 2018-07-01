@@ -64,5 +64,7 @@ function modifier_zoom_aura_passive:GetModifierMoveSpeedBonus_Percentage( params
     return self:GetAbility():GetSpecialValueFor("speed_bonus")
 end
 
-function zoom_aura:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function zoom_aura:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_doomsday_clock") then return "custom/reverse_speed_passive" end
+	return self.BaseClass.GetAbilityTextureName(self) 
+end
