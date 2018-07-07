@@ -12170,7 +12170,7 @@
 					"02"
 					{
 						"var_type"						"FIELD_FLOAT"
-						"stun_duration"					"1.8 2.2 2.6 3.0"
+						"stun_duration"					"0.8 1.2 1.6 2.0"
 					}
 					"03"
 					{
@@ -12254,7 +12254,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.5 2.0 2.5"
+				"duration"				"1.0 1.5 2.0"
 			}
 			"03"
 			{
