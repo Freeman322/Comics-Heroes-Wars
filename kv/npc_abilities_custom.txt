@@ -11474,7 +11474,7 @@
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-			"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 			"FightRecapLevel"				"2"
 			"AbilityTextureName"		    "custom/blackzoom_time_shift"
 		  "ScriptFile"						"abilities/blackzoom_time_shift.lua"
