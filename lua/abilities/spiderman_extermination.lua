@@ -99,10 +99,6 @@ function spiderman_extermination:GetIntrinsicModifierName ()
 end
 
 function spiderman_extermination:GetCooldown( nLevel )
-    if self:GetCaster():HasModifier("modifier_special_bonus_unique_spiderman") then
-        return 1
-    end
-
     return self.BaseClass.GetCooldown( self, nLevel )
 end
 
@@ -134,7 +130,11 @@ function modifier_spiderman_extermination:OnTakeDamage( params )
             if self:GetAbility():IsCooldownReady() then
                 self:GetParent():SetHealth( self:GetParent():GetHealth() + damage)
                 EmitSoundOn( "Hero_Oracle.FalsePromise.Healed", target )
-                self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
+                local cooldown = self:GetAbility():GetCooldown(self:GetAbility():GetLevel())
+                if self:GetParent():HasTalent("special_bonus_unique_spiderman") then 
+                    cooldown = cooldown - self:GetParent():FindTalentValue("special_bonus_unique_spiderman")
+                end
+                self:GetAbility():StartCooldown(cooldown)
             end
         end
     end

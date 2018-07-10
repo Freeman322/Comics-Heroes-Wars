@@ -14000,10 +14000,10 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"FightRecapLevel"				"2"
 	"AbilityTextureName"		    "custom/spiderman_extermination"
-  "ScriptFile"					"abilities/spiderman_extermination.lua"
+  	"ScriptFile"					"abilities/spiderman_extermination.lua"
 
 	"AbilityCastPoint"				"0"
-	"AbilityCooldown"				"3.0 2.25 1.5"
+	"AbilityCooldown"				"3.0 2.5 2.0"
 	"AbilityManaCost"				"0"
 }
 //=================================================================================================================
@@ -37704,6 +37704,7 @@
 		{
 			"particle"			"particles/econ/items/sniper/sniper_charlie/sniper_assassinate_charlie.vpcf"
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+			"model"				"models/heroes/hero_ghost_rider/econs/pistol/pistol.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -38770,7 +38771,7 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"30"
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"				"30"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

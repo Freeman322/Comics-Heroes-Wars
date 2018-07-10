@@ -7,9 +7,9 @@ function antman_spirit_ant:OnUpgrade()
             PrecacheUnitByNameAsync("npc_dota_antman_ant", function()
                 self._hAnt = CreateUnitByName("npc_dota_antman_ant", self:GetCaster():GetAbsOrigin(), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber())
                 self._hAnt:SetControllableByPlayer(self:GetCaster():GetPlayerOwnerID(), true)
-                self._hAnt:AddNewModifier(self:GetCaster(), self, "modifier_antman_spirit_ant", nil)
-
                 self._hAnt:SetUnitCanRespawn(true)
+
+                self._hAnt:AddNewModifier(self:GetCaster(), self, "modifier_antman_spirit_ant", nil)
             end)
         end
     end
@@ -42,7 +42,7 @@ function antman_spirit_ant:OnSpellStart ()
         FindClearSpaceForUnit(self._hAnt, hCaster:GetAbsOrigin(), true)
         self._hAnt:Heal(self._hAnt:GetMaxHealth(), self)
 
-        self._hAnt:AddNewModifier(self:GetCaster(), self, "modifier_lone_druid_spirit_bear_attack_check", nil)
+        self._hAnt:FindModifierByName("modifier_antman_spirit_ant"):ForceRefresh()
 	end
 end
 
@@ -63,15 +63,15 @@ function modifier_antman_spirit_ant:OnCreated(params)
         self._iEntityHealth = self:GetParent():GetMaxHealth()
 
         self:StartIntervalThink(1)
-        self:SetStackCount(self:GetCaster():GetHealth())
+        self:SetStackCount(self:GetCaster():GetMaxHealth())
 	end
 end
 
 function modifier_antman_spirit_ant:OnIntervalThink()
 	if IsServer() then
-        self:SetStackCount(self:GetCaster():GetHealth())
+        self:SetStackCount(self:GetCaster():GetMaxHealth())
 
-        self:GetParent():SetMaxHealth(self._iEntityHealth + (self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("spider_health_damage") / 100)))
+        self:GetParent():SetMaxHealth(self._iEntityHealth + (self:GetCaster():GetMaxHealth() * (self:GetAbility():GetSpecialValueFor("spider_health_damage") / 100)))
 	end
 end
 

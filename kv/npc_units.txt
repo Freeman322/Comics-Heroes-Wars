@@ -11428,7 +11428,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"warlock_golem_flaming_fists"			// Ability 1
-		"Ability2"					"warlock_golem_permanent_immolation"			// Ability 2
+		"Ability2"					"ursa_fury_swipes"			// Ability 2
 		"Ability3"					"roshan_spell_block"	// Ability 1.
 		"Ability4"					"roshan_bash"			// Ability 2.
 		"Ability5"					"neutral_spell_immunity"			// Ability 2.

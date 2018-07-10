@@ -21,7 +21,7 @@ local heroes = {
   "npc_dota_hero_omniknight",
   "npc_dota_hero_chaos_knight",
   "npc_dota_hero_silencer",
-  "npc_dota_hero_centaur",
+ ---- "npc_dota_hero_centaur",
   "npc_dota_hero_invoker",
   "npc_dota_hero_storm_spirit",
   "npc_dota_hero_elder_titan",
@@ -75,7 +75,7 @@ local heroes = {
   "npc_dota_hero_skywrath_mage",
   "npc_dota_hero_nevermore",
   "npc_dota_hero_dragon_knight",
-  "npc_dota_hero_viper",
+----  "npc_dota_hero_viper",
   "npc_dota_hero_bane",
   "npc_dota_hero_slark",
   "npc_dota_hero_spirit_breaker",
@@ -183,6 +183,10 @@ end
 function Pick:OnRandomHeroSelected(params)
   local playerid = params.playerID
 
+  if TIMER >= 50 then 
+    return
+  end
+  
   local temp = RandomInt(1, #heroes)
 
   while HERO_TABLE[hero_name] do
@@ -199,8 +203,8 @@ end
 
 function Pick:OnConnectFull(  )
   Timers:CreateTimer(1, function()
-  CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(0), "OnConnectFull", {})
-  return nil
+    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(0), "OnConnectFull", {})
+    return nil
   end)
 end
 

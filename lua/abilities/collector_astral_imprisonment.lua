@@ -120,7 +120,8 @@ function modifier_collector_astral_imprisonment:CheckState()
 		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
 		[MODIFIER_STATE_PASSIVES_DISABLED] = true,
 		[MODIFIER_STATE_PROVIDES_VISION] = true,
-		[MODIFIER_STATE_LOW_ATTACK_PRIORITY] = true,
+        [MODIFIER_STATE_LOW_ATTACK_PRIORITY] = true,
+        [MODIFIER_STATE_STUNNED] = true
 	}
 
 	return state

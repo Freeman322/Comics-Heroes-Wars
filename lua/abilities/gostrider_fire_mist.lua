@@ -77,15 +77,16 @@ end
 function modifier_gostrider_fire_mist_passive:OnIntervalThink()
     if IsServer() then 
         self._iMultiplier = self._iMultiplier + 1
-
-        local damage = {
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            damage =  self:GetAbility():GetSpecialValueFor("aura_damage") * self._iMultiplier,
-            damage_type = self:GetAbility():GetAbilityDamageType(),
-            ability = self
-        }
-        ApplyDamage( damage ) 
+        if not self:GetParent():IsAncient() then 
+            local damage = {
+                victim = self:GetParent(),
+                attacker = self:GetCaster(),
+                damage =  self:GetAbility():GetSpecialValueFor("aura_damage") * self._iMultiplier,
+                damage_type = self:GetAbility():GetAbilityDamageType(),
+                ability = self
+            }
+            ApplyDamage( damage ) 
+        end
     end
 end
 

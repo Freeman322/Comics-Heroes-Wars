@@ -31,7 +31,7 @@ function modifier_nightking_frost_embrace:OnAttackLanded( params )
         return 0
       end
       local target = params.target
-      if target ~= nil and target:IsBuilding() == false and not target:IsHero() then
+      if target ~= nil and target:IsBuilding() == false and not target:IsHero() and not target:IsAncient() and not target:IsConsideredHero() then
         ApplyDamage({
             attacker = self:GetParent(),
             victim = target, 
