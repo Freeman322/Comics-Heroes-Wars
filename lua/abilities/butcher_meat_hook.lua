@@ -70,7 +70,7 @@ function butcher_meat_hook:OnSpellStart()
 		Ability = self,
 		vSpawnOrigin = self:GetCaster():GetOrigin(),
 		vVelocity = vDirection:Normalized() * self.hook_speed,
-		fDistance = self.hook_distance,
+		fDistance = self:GetCastRange(self:GetCursorPosition(), self:GetCaster()),
 		fStartRadius = self.hook_width ,
 		fEndRadius = self.hook_width ,
 		Source = self:GetCaster(),
@@ -138,8 +138,6 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 				ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true )
 				ParticleManager:ReleaseParticleIndex( nFXIndex )
 			end
-
-			
 
 			AddFOWViewer( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), self.vision_radius, self.vision_duration, false )
 			self.hVictim = hTarget
@@ -335,7 +333,13 @@ function modifier_butcher_meat_hook:OnIntervalThink()
     	else
       		if self:GetAbility().nChainParticleFXIndex ~= nil then
       			 ParticleManager:DestroyParticle(self:GetAbility().nChainParticleFXIndex, true)
-      		end
+			end
+			if self:GetCaster() and self:GetCaster():IsHero() then
+				local hHook = self:GetCaster().wearables["weapon"]
+				if hHook ~= nil then
+					hHook:RemoveEffects( EF_NODRAW )
+				end
+			end
       		FindClearSpaceForUnit( self:GetParent(), self:GetParent():GetAbsOrigin(), true )
     		self:Destroy()
     	end

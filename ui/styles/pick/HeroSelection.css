@@ -1967,3 +1967,30 @@ DOTACompManila2016PredictionsPage.DashboardPage.PageVisible
 {
 	sound: "ui_custom_lobby_quit";
 }
+
+#ClosePick
+{
+    width: 24px;
+    height: 54px;
+
+    background-image: url("s2r://panorama/images/control_icons/arrow_solid_right_png.vtex");
+
+    vertical-align: top;
+    horizontal-align: right;
+    
+    background-position: 50% 50%;
+    background-size: 18px 28px;
+    background-repeat: no-repeat;
+}
+
+#ClosePick:active
+{
+	sound: "ui_custom_lobby_quit";
+}
+
+#ClosePick Label
+{
+	text-transform: uppercase;
+	color: white;
+	font-size: 26px;
+}

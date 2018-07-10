@@ -12,6 +12,7 @@
    </scripts>
    <Panel class="HeroSelection" hittest="false">
       <Panel id="PickScreen" camera="shot_cameraA" map="backgrounds/pregame_phase" hittest="true" particleonly="false">
+        <Button id="ClosePick" onactivate="ForeClosePickMenu();"/>
          <Panel id="TopPanel" hittest="false">
             <Panel id="RadiantPlayers" hittest="false" />
             <Panel id="ClockTopPanel" hittest="false">

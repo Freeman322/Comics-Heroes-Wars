@@ -3,14 +3,16 @@ if item_rapier_ancient == nil then item_rapier_ancient = class({}) end
 LinkLuaModifier("modifier_item_rapier_ancient", "items/item_rapier_ancient.lua", LUA_MODIFIER_MOTION_NONE)
 
 function item_rapier_ancient:OnOwnerDied()
- if IsServer() then
-  	local itemName = tostring(self:GetAbilityName())
-  	if self:GetCaster():IsHero() or self:GetCaster():HasInventory() then
-      local newItem = CreateItem(itemName, nil, nil)
-      CreateItemOnPositionSync(self:GetCaster():GetOrigin(), newItem)
-      self:GetCaster():RemoveItem(self)
+    if IsServer() then
+        local itemName = tostring(self:GetAbilityName())
+        if self:GetCaster():IsHero() or self:GetCaster():HasInventory() then
+          if not self:GetCaster():IsReincarnating() then 
+              local newItem = CreateItem(itemName, nil, nil)
+              CreateItemOnPositionSync(self:GetCaster():GetOrigin(), newItem)
+              self:GetCaster():RemoveItem(self)
+          end
+      end
     end
-  end
 end
 
 function item_rapier_ancient:GetIntrinsicModifierName()
@@ -48,7 +50,10 @@ function modifier_item_rapier_ancient:GetAttributes()
 end
 
 function modifier_item_rapier_ancient:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("dmg")
+    pcall(function()
+        return self:GetAbility():GetSpecialValueFor("dmg") 
+    end)
+    return 
 end
 
 function item_rapier_ancient:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

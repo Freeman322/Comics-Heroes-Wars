@@ -33,6 +33,7 @@ function bynder_rim:OnSpellStart ()
     if self:GetCaster():HasTalent("special_bonus_unique_byonder") then
         duration = duration + 1
     end
+
     if self:GetCaster():HasScepter() then
       duration = duration + 1
       hCaster:AddNewModifier (self:GetCaster (), self, "modifier_bynder_rim_scepter", { duration = duration } )
@@ -67,7 +68,10 @@ end
 function modifier_bynder_rim:OnTakeDamage(params)
     if self:GetParent () == params.unit then
         self:GetParent ():SetHealth(self:GetParent():GetHealth() + params.damage)
-        self:SetStackCount(self:GetStackCount() + params.damage)
+
+        if not params.attacker:IsBuilding() then 
+            self:SetStackCount(self:GetStackCount() + params.damage)
+        end
 
         local RemovePositiveBuffs = false
         local RemoveDebuffs = true

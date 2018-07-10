@@ -49,18 +49,27 @@ function monkey_king_earth_splitter:OnSpellStart()
 	local vStartPos = hCaster:GetAbsOrigin()
 	local vEndPos = vStartPos + vForward * nLenght
 
-	local nFXIndex = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_slash_strike_ground.vpcf", PATTACH_CUSTOMORIGIN, nil );
-	ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
-	ParticleManager:SetParticleControlOrientation(nFXIndex,0,vForward,Vector(0, 0, 0),Vector(0, 0, 0))
-	ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos );
-	ParticleManager:SetParticleControl( nFXIndex, 2, self:GetCaster():GetAbsOrigin());
-	ParticleManager:ReleaseParticleIndex( nFXIndex );
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "monkey_king_golden_staff") then
+		local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/monkey_king/ti7_weapon/mk_ti7_golden_immortal_strike.vpcf", PATTACH_CUSTOMORIGIN, nil );
+		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
+		ParticleManager:SetParticleControlOrientation(nFXIndex,0,vForward,Vector(0, 0, 0),Vector(0, 0, 0))
+		ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos );
+		ParticleManager:SetParticleControl( nFXIndex, 2, self:GetCaster():GetAbsOrigin());
+		ParticleManager:ReleaseParticleIndex( nFXIndex );
+	else 
+		local nFXIndex = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_slash_strike_ground.vpcf", PATTACH_CUSTOMORIGIN, nil );
+		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
+		ParticleManager:SetParticleControlOrientation(nFXIndex,0,vForward,Vector(0, 0, 0),Vector(0, 0, 0))
+		ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos );
+		ParticleManager:SetParticleControl( nFXIndex, 2, self:GetCaster():GetAbsOrigin());
+		ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-  local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_earthshaker/earthshaker_fissure.vpcf", PATTACH_CUSTOMORIGIN, nil );
-  ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
-	ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos );
-	ParticleManager:SetParticleControl( nFXIndex, 2, Vector(0.1, 0, 0));
-	ParticleManager:ReleaseParticleIndex( nFXIndex );
+		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_earthshaker/earthshaker_fissure.vpcf", PATTACH_CUSTOMORIGIN, nil );
+		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
+		ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos );
+		ParticleManager:SetParticleControl( nFXIndex, 2, Vector(0.1, 0, 0));
+		ParticleManager:ReleaseParticleIndex( nFXIndex );
+	end
 
 	EmitSoundOn("Hero_MonkeyKing.Strike.Impact", hCaster)
 

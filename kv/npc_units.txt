@@ -11413,7 +11413,7 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/hl1_bullsquid/bullsquid_reference.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole_lamp.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creep_neutral"
 		"SoundSet"					"Hero_WarlockGolem"			// Name of sound set.
 		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
@@ -11441,8 +11441,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"200"		// Damage range min.
-		"AttackDamageMax"			"200"		// Damage range max.
+		"AttackDamageMin"			"900"		// Damage range min.
+		"AttackDamageMax"			"1500"		// Damage range max.
 		"AttackRate"				"0.6"		// Speed of attack.
 		"AttackAnimationPoint"		"0.26"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.

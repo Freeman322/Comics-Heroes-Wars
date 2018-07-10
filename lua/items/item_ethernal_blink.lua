@@ -22,13 +22,14 @@ function item_ethernal_blink:OnSpellStart()
     end
 end
 function item_ethernal_blink:OnOwnerDied(keys)
-    local killedUnit = self:GetCaster()
-    local itemName = self:GetName()
-    if killedUnit:IsHero() or killedUnit:HasInventory() then
-        if killedUnit ~= nil then---and killedUnit:GetUnitName() ~= "npc_dota_hero_pudge" then
-            local newItem = CreateItem(itemName, nil, nil)
-            CreateItemOnPositionSync(killedUnit:GetOrigin(), newItem)
-            self:RemoveSelf()
+    if IsServer() then
+        local itemName = tostring(self:GetAbilityName())
+        if self:GetCaster():IsHero() or self:GetCaster():HasInventory() then
+            if not self:GetCaster():IsReincarnating() then 
+                local newItem = CreateItem(itemName, nil, nil)
+                CreateItemOnPositionSync(self:GetCaster():GetOrigin(), newItem)
+                self:GetCaster():RemoveItem(self)
+            end
         end
     end
 end

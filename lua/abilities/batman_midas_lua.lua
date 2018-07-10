@@ -77,6 +77,17 @@ function batman_midas_lua:OnSpellStart()
         end
     end
 
+    if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") then
+        local particle = ParticleManager:CreateParticle ("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+        ParticleManager:SetParticleControlEnt (particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin (), false)
+        ParticleManager:ReleaseParticleIndex(particle)
+
+        local particle = ParticleManager:CreateParticle ("particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+        ParticleManager:SetParticleControlEnt (particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin (), false)
+        ParticleManager:SetParticleControlEnt (particle, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin (), false)
+        ParticleManager:ReleaseParticleIndex(particle)
+    end
+
     local passives = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, 350, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS + DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_ANY_ORDER, false)
     for i = 1, #passives do
         local targets = passives[i]
@@ -103,7 +114,22 @@ function batman_midas_lua:OnSpellStart()
                     ParticleManager:SetParticleControlEnt (midas_particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin (), false)
                 end
             end
+            if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") then
+                local particle = ParticleManager:CreateParticle ("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, targets)
+                ParticleManager:SetParticleControlEnt (particle, 0, targets, PATTACH_POINT_FOLLOW, "attach_hitloc", targets:GetAbsOrigin (), false)
+                ParticleManager:SetParticleControlEnt (particle, 1, targets, PATTACH_POINT_FOLLOW, "attach_hitloc", targets:GetAbsOrigin (), false)
+                ParticleManager:ReleaseParticleIndex(particle)
+
+                local particle = ParticleManager:CreateParticle ("particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, targets)
+                ParticleManager:SetParticleControlEnt (particle, 0, targets, PATTACH_POINT_FOLLOW, "attach_hitloc", targets:GetAbsOrigin (), false)
+                ParticleManager:SetParticleControlEnt (particle, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin (), false)
+                ParticleManager:ReleaseParticleIndex(particle)
+            end
         end
+    end
+
+    if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") then
+        EmitSoundOn("Batman.InfinityMidas.Cast", self:GetCaster())
     end
 
     if self:GetCaster():HasTalent("special_bonus_unique_batman") and self:GetCaster():HasModifier("modifier_batman_midas_lua") == false then 
@@ -114,7 +140,12 @@ function batman_midas_lua:OnSpellStart()
     end
 end
 
-function batman_midas_lua:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function batman_midas_lua:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") then
+      return "custom/batman_midas_infinity"
+    end
+    return self.BaseClass.GetAbilityTextureName(self)
+end
 
 modifier_batman_midas_lua = class({})
 

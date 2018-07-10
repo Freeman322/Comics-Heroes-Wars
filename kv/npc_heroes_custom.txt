@@ -278,13 +278,13 @@
 	
 	    // Abilities
 	    //-------------------------------------------------------------------------------------------------------------
-	    "Ability1"					"black_panther_cat_leap"						// Ability 1
-	    "Ability2"					"black_panther_bleeding_blow"							// Ability 2
-	    "Ability3"					"black_panther_adamantium_armor"					// Ability 3
-	    "Ability4"					"generic_hidden"					// Ability 4
-	    "Ability5"					"generic_hidden"					// Ability 4
-	    "Ability6"					"black_panther_shadow_warrior"
-	    "Ability7"					"black_panther_shadow_warrior_release"
+	    "Ability1"				"black_panther_cat_leap"						// Ability 1
+	    "Ability2"				"black_panther_bleeding_blow"							// Ability 2
+	    "Ability3"				"black_panther_adamantium_armor"					// Ability 3
+	    "Ability4"				"generic_hidden"					// Ability 4
+	    "Ability5"				"generic_hidden"					// Ability 4
+	    "Ability6"				"black_panther_absorb"
+	    "Ability7"				""
 	    "Ability10"				"special_bonus_exp_boost_30"
 	    "Ability11"				"special_bonus_gold_income_50"
 	    "Ability12"				"special_bonus_movement_speed_50"
@@ -514,9 +514,9 @@
 		"Ability1"					"celebrimbor_tahion_spear"
 		"Ability2"					"celebrimbor_agility"
 		"Ability3"					"celebrimbor_battle_call"
-		"Ability4"					"celebrimbor_deciver"
+		"Ability4"					"celebrimbor_overseer"
 		"Ability5"					"generic_hidden"
-		"Ability6"					"celebrimbor_overseer"
+		"Ability6"					"celebrimbor_deciver"
 		"Ability7"					""
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_gold_income_50"
@@ -599,43 +599,55 @@
 	  }
 	"npc_dota_hero_collector" //имя юнита
 	{
-	      // General
-	      //----------------------------------------------------------------
-	      "override_hero"			"npc_dota_hero_invoker"
-	      "DisableWearables"	"1"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AbilityLayout"				"4"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "Ability1"		"collector_alacrity"
-	      "Ability2"		"collector_passive"
-	      "Ability3"		"collector_coup_de_grace"
-	      "Ability4"		"generic_hidden"
-	      "Ability5"		"generic_hidden"
-	      "Ability6"		"collector_ult"
-	      "Ability7"		""
-	      "Ability10"					"special_bonus_exp_boost_30"
-	      "Ability11"					"special_bonus_gold_income_50"
-	      "Ability12"					"special_bonus_cast_range_250"
-	      "Ability13"					"special_bonus_intelligence_10"
-	      "Ability14"					"special_bonus_cooldown_reduction_25"
-	      "Ability15"					"special_bonus_attack_damage_90"
-	      "Ability16"					"special_bonus_intelligence_25"
-	      "Ability17"					"special_bonus_unique_collector"
-	      "AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-	  		"AttributeBaseStrength"		"16"
-	  		"AttributeStrengthGain"		"2.200000"
-	  		"AttributeBaseAgility"		"14"
-	  		"AttributeAgilityGain"		"1.900000"
-	  		"AttributeBaseIntelligence"		"28"
-	  		"AttributeIntelligenceGain"		"4.000000"
-	  		"MovementSpeed"		"280"
-	  		"MovementTurnRate"		"0.500000"
-	  		"HealthBarOffset"		"170"
-	      "precache"
-	      {
-	          "model"		"models/collector/collector_head_final.vmdl"
-	      }
-	      "AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
+		// General
+		//----------------------------------------------------------------
+		"override_hero"			"npc_dota_hero_invoker"
+		"DisableWearables"	"1"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"					"collector_quas"
+		"Ability2"					"collector_wex"
+		"Ability3"					"collector_exort"
+		"Ability4"					"invoker_empty1"
+		"Ability5"					"invoker_empty2"
+		"Ability6"					"collector_collect"
+
+		"Ability7" 					"collector_cold_snap"
+		"Ability8" 					"collector_ice_blast"
+		"Ability9"				    "collector_ghost_walk"
+		"Ability10" 				"collector_sanity_eclipse"
+		"Ability11" 				"collector_tornado"
+		"Ability12" 				"collector_aboriginal_power"
+		"Ability13" 				"collector_sun_strike"
+		"Ability14" 				"collector_astral_imprisonment"
+		"Ability15" 				"collector_chaos_meteor"
+		"Ability16"				    "collector_sonic_boom"
+
+		"Ability17"					"special_bonus_exp_boost_30"
+		"Ability18"					"special_bonus_gold_income_50"
+		"Ability19"					"special_bonus_movement_speed_50"
+		"Ability20"					"special_bonus_attack_speed_100"
+		"Ability21"					"special_bonus_cooldown_reduction_25"
+		"Ability22"					"special_bonus_attack_damage_90"
+		"Ability23"					"special_bonus_agility_25"
+		"Ability24"					"special_bonus_all_stats_20"
+		"AbilityTalentStart"	 	"17"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"16"
+		"AttributeStrengthGain"		"2.200000"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"1.900000"
+		"AttributeBaseIntelligence"	"28"
+		"AttributeIntelligenceGain"	"4.000000"
+		"MovementSpeed"				"280"
+		"MovementTurnRate"			"0.500000"
+		"HealthBarOffset"			"170"
+		"precache"
+		{
+			"model"		"models/collector/collector_head_final.vmdl"
+		}
+		"AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
 	  }
 	"npc_dota_hero_daredevil" //имя юнита
 	{
@@ -1174,7 +1186,7 @@
 	{
 		"override_hero"   			"npc_dota_hero_kunkka"
 		"Model"			 			"models/heroes/hero_drstrange/dr_strange.vmdl"
-		"ModelScale"				"5"
+		"ModelScale"				"1"
 		"DisableWearables"			"1"
 		"AbilityLayout" 			"4"
 		"Ability1"					"strange_test_of_faith"
@@ -1182,11 +1194,11 @@
 		"Ability3"					"strange_brilliance_aura"
 		"Ability4"					"generic_hidden"
 	    "Ability5"    				"generic_hidden"
-		"Ability6"					"strange_faces_reality"
+		"Ability6"					"strange_quantum_entanglement"
 		"Ability9"					""
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_gold_income_50"
-		"Ability12"					"special_bonus_cast_range_250"
+		"Ability12"					"special_bonus_unique_strange_2"
 		"Ability13"					"special_bonus_intelligence_10"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
 		"Ability15"					"special_bonus_unique_strange"
@@ -1264,20 +1276,20 @@
 	}
 	"npc_dota_hero_elza"
 	{
-		"override_hero"			"npc_dota_hero_crystal_maiden"
-		"Model"					"models/heroes/hero_elsa/elsa.vmdl"
-		"ModelScale"			"1.18"
-		"LoadoutScale"		"0"
-		"DisableWearables"	"1"
+		"override_hero"				"npc_dota_hero_crystal_maiden"
+		"Model"						"models/heroes/hero_elsa/elsa.vmdl"
+		"ModelScale"				"1.18"
+		"LoadoutScale"				"0"
+		"DisableWearables"			"1"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"   "4"
-		"Ability1"	   	 "crystal_maiden_crystal_nova_new"
-		"Ability2"		   "crystal_maiden_frostbite_new"
-	   		 "Ability3"       "crystal_maiden_frost_shield"
-		"Ability4"		   "generic_hidden"
-	    "Ability5"      "generic_hidden"
-		"Ability6"      "jaina_overvoid"
+		"AbilityLayout"   			"4"
+		"Ability1"	   		 		"crystal_maiden_crystal_nova_new"
+		"Ability2"		    		"crystal_maiden_frostbite_new"
+		"Ability3"       			"crystal_maiden_frost_shield"
+		"Ability4"		    		"generic_hidden"
+	    "Ability5"      			"generic_hidden"
+		"Ability6"      			"jaina_overvoid"
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_gold_income_50"
 		"Ability12"					"special_bonus_cast_range_250"
@@ -1566,93 +1578,92 @@
 		"Ability15"					"special_bonus_attack_damage_90"
 		"Ability16"					"special_bonus_strength_25"
 		"Ability17"					"special_bonus_all_stats_20"
-	
-	  		"precache"
-	  		{
-	  			"model"		"models/items/courier/blotto_and_stick/blotto.vmdl"
-	  		}
+
+		"precache"
+		{
+			"model"		"models/items/courier/blotto_and_stick/blotto.vmdl"
+		}
 	}
 	"npc_dota_hero_ghost_rider" //имя юнита
 	{
-	      // General
-	      //----------------------------------------------------------------
-	      "override_hero"			"npc_dota_hero_chaos_knight"
-	      "HealthBarOffset"       "140" //насколько высоко будет хп бар
-	      "Model"					"models/heroes/chaos_knight/chaos_knight.vmdl"
-	      "DisableWearables"		"1"
-	      "ModelScale"			"0.57"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AbilityLayout"				"4"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "Ability1"				"ghost_rider_assassinate"							// Ability 1
-	      "Ability2"				"ghost_rider_searing_chains"									// Ability 2
-	      "Ability3"				"ghost_rider_drain"							// Ability 3
-	      "Ability4"				"generic_hidden"							     // Ability 4
-	  "Ability5"			    "generic_hidden"
-	  "Ability6"			    "ghost_rider_punishing_gaze_lua"
-	  "Ability7"			    ""
-	      "Ability10"				"special_bonus_exp_boost_30"
-	      "Ability11"				"special_bonus_gold_income_50"
-	      "Ability12"				"special_bonus_hp_regen_40"
-	      "Ability13"				"special_bonus_armor_15"
-	      "Ability14"				"special_bonus_cooldown_reduction_25"
-	      "Ability15"				"special_bonus_attack_damage_90"
-	      "Ability16"				"special_bonus_strength_25"
-	      "Ability17"				"special_bonus_all_stats_20"
-	
-	      // Armor
-	      //----------------------------------------------------------------
-	      "ArmorPhysical"         "4"
-	      "MagicalResistance"     "24"
-	
-	      // Attack
-	      //----------------------------------------------------------------
-	      "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-	      "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	      "AttackDamageMin"       "42.0"
-	      "AttackDamageMax"       "53.0"
-	      "AttackRate"            "1.45"
-	      "AttackAnimationPoint"  "0.5"
-	      "AttackAcquisitionRange" "500"
-	      "AttackRange"           "150"
-	
-	      // Bounds
-	      //----------------------------------------------------------------
-	      "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	      "RingRadius"            "70"
-	
-	      // Movement
-	      //----------------------------------------------------------------
-	      "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-	      "MovementSpeed"         "315"
-	      "MovementTurnRate"      "0.6"
-	
-	      // Status
-	      //----------------------------------------------------------------
-	      "StatusHealth"          "620"
-	      "StatusHealthRegen"     "0.95"
-	      "StatusMana"            "750"
-	      "StatusManaRegen"       "1"
-	
-	      // Vision
-	      //----------------------------------------------------------------
-	      "VisionDaytimeRange"    "1400"
-	      "VisionNighttimeRange"  "800"
-	
-	      "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
-	      "AttributeBaseStrength"   "18"                   // Base strength
-	      "AttributeStrengthGain"   "2.4"                   // Strength bonus per level.
-	      "AttributeBaseIntelligence" "14"                   // Base intelligence
-	      "AttributeIntelligenceGain" "1"                   // Intelligence bonus per level.
-	      "AttributeBaseAgility"    "20"                   // Base agility
-	      "AttributeAgilityGain"    "1.7"                   // Agility bonus per level.
-			"precache"
-			{
-				"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
-				"soundfile"					"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
-				"soundfile"					"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
-			}
-	  }
+		// General
+		//----------------------------------------------------------------
+		"override_hero"			"npc_dota_hero_chaos_knight"
+		"HealthBarOffset"       	"140" //насколько высоко будет хп бар
+		"Model"					"models/heroes/hero_ghost_rider/ghost_rider.vmdl"
+		"DisableWearables"		"1"
+		"ModelScale"				"0.85"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"				"ghost_rider_assassinate"							// Ability 1
+		"Ability2"				"gostrider_angel_of_death"									// Ability 2
+		"Ability3"				"gostrider_fire_mist"							// Ability 3
+		"Ability4"				"generic_hidden"							     // Ability 4
+		"Ability5"			    "generic_hidden"
+		"Ability6"			    "gostrider_punishing_gaze"
+		"Ability7"			    ""
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_gold_income_50"
+		"Ability12"				"special_bonus_hp_regen_40"
+		"Ability13"				"special_bonus_armor_15"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_attack_damage_90"
+		"Ability16"				"special_bonus_strength_25"
+		"Ability17"				"special_bonus_all_stats_20"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"         "4"
+		"MagicalResistance"     "24"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+		"AttackDamageMin"       "42.0"
+		"AttackDamageMax"       "53.0"
+		"AttackRate"            "1.45"
+		"AttackAnimationPoint"  "0.5"
+
+		"AttackAcquisitionRange"	"950"
+		"AttackRange"				"550"
+		"ProjectileModel"			"particles/econ/items/sniper/sniper_charlie/sniper_base_attack_charlie.vpcf"
+		"ProjectileSpeed"			"3000"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+		"RingRadius"            "70"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"         "315"
+		"MovementTurnRate"      "0.6"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"          "620"
+		"StatusHealthRegen"     "0.95"
+		"StatusMana"            "750"
+		"StatusManaRegen"       "1"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"    "1400"
+		"VisionNighttimeRange"  "800"
+
+		"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"   "18"                   // Base strength
+		"AttributeStrengthGain"   "2.4"                   // Strength bonus per level.
+		"AttributeBaseIntelligence" "14"                   // Base intelligence
+		"AttributeIntelligenceGain" "1"                   // Intelligence bonus per level.
+		"AttributeBaseAgility"    "20"                   // Base agility
+		"AttributeAgilityGain"    "1.7"                   // Agility bonus per level.
+		"particle_folder"		"particles/units/heroes/hero_sniper"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+	}
 	"npc_dota_hero_godspeed"
 	{
 		"override_hero"		   		"npc_dota_hero_batrider"
@@ -2238,48 +2249,48 @@
 	}
 	"npc_dota_hero_king_lich" //имя юнита
 	{
-	      // General
-	      //----------------------------------------------------------------
-	      "override_hero"		     	"npc_dota_hero_skeleton_king"
-	      "ModelScale"		        "0.70"
-	      "DisableWearables"	     "1"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "Model"		             "models/heroes/arthas/arthas.vmdl"
-	      "AbilityLayout"				 "4"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "Ability1"       		"king_lich_frost_nova"
-	      "Ability2"		    "lich_king_winter_curse"
-	      "Ability3"        	"lich_stealer"
-	      "Ability4"       	    "generic_hidden"
-	      "Ability5"		    "generic_hidden"
-	      "Ability6"		    "lich_king_cold_reaper"
-	      "Ability7"		    "lich_king_reincarnation"
-	      "Ability10"				"special_bonus_exp_boost_30"
-	      "Ability11"				"special_bonus_gold_income_50"
-	      "Ability12"				"special_bonus_hp_regen_40"
-	      "Ability13"				"special_bonus_armor_15"
-	      "Ability14"				"special_bonus_cooldown_reduction_25"
-	      "Ability15"				"special_bonus_attack_damage_90"
-	      "Ability16"				"special_bonus_strength_25"
-	      "Ability17"				"special_bonus_unique_lich_king"
-	      "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
-	      "AttackDamageMin"		"39"
-	  		"AttackDamageMax"		"41"
-	  		"AttackRate"		"1.700000"
-	  		"AttackAnimationPoint"		"0.560000"
-	  		"AttackAcquisitionRange"		"600"
-	  		"AttackRange"		"150"
-	  		"ProjectileSpeed"		"0"
-	  		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	  		"AttributeBaseStrength"		"22"
-	  		"AttributeStrengthGain"		"3.200000"
-	  		"AttributeBaseIntelligence"		"18"
-	  		"AttributeIntelligenceGain"		"1.600000"
-	  		"AttributeBaseAgility"		"18"
-	  		"AttributeAgilityGain"		"1.700000"
-	  		"MovementSpeed"		"310"
-	  		"MovementTurnRate"		"0.400000"
-	    }
+		// General
+		//----------------------------------------------------------------
+		"override_hero"		     	"npc_dota_hero_skeleton_king"
+		///"ModelScale"		        "0.70"
+		"DisableWearables"	     "1"
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"		             "models/heroes/wraith_king/wraith_king.vmdl"
+		"AbilityLayout"				 "4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"       			"king_lich_frost_nova"
+		"Ability2"		    		"lich_king_winter_curse"
+		"Ability3"        			"lich_stealer"
+		"Ability4"       	   		"generic_hidden"
+		"Ability5"		    		"generic_hidden"
+		"Ability6"		    		"lich_king_cold_reaper"
+		"Ability7"		    		"lich_king_reincarnation"
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_gold_income_50"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_armor_15"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_strength_25"
+		"Ability17"					"special_bonus_unique_lich_king"
+		"AttributePrimary"      	"DOTA_ATTRIBUTE_STRENGTH"
+		"AttackDamageMin"			"39"
+		"AttackDamageMax"			"41"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.560000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"3.200000"
+		"AttributeBaseIntelligence"	"18"
+		"AttributeIntelligenceGain"	"1.600000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.700000"
+		"MovementSpeed"				"310"
+		"MovementTurnRate"			"0.400000"
+	}
 	"npc_dota_hero_legion_commander"
     {
 		// General
@@ -2505,6 +2516,8 @@
 	    "Ability16"		"special_bonus_cooldown_reduction_25"
 	    "Ability17"		"special_bonus_intelligence_25"
 	    "Ability18"		"special_bonus_unique_loki"
+
+		"AbilityTalentStart" "11"
 	
 	    "ArmorPhysical"						"0"
 	    "AttackCapabilities"				"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -2904,26 +2917,27 @@
 	"npc_dota_hero_night_king"
 	{
 		"override_hero"				"npc_dota_hero_sand_king"
-		"Model"						"models/heroes/wraith_king/leoric_base.vmdl"
+		"Model"						"models/heroes/hero_night_king/night_king.vmdl"
 		"DisableWearables"			"1"
-		"Ability1"					"night_king_frost_embrace"
-		"Ability2"					"night_king_corruption"
-		"Ability3"					"night_king_flesh_hunger"
+		"ModelScale"				"0.70"
+		"Ability1"					"nightking_frostbite"
+		"Ability2"					"nightking_ice_strike"
+		"Ability3"					"nightking_frost_embrace"
 		"Ability4"					"generic_hidden"
-	    "Ability5"          "generic_hidden"
-		"Ability6"					"night_king_winter_is_coming"
-	  "Ability7"					""
-		"Ability10"				"special_bonus_exp_boost_30"
-		"Ability11"				"special_bonus_gold_income_50"
-		"Ability12"				"special_bonus_hp_regen_40"
-		"Ability13"				"special_bonus_armor_15"
-		"Ability14"				"special_bonus_cooldown_reduction_25"
-		"Ability15"				"special_bonus_attack_damage_90"
-		"Ability16"				"special_bonus_strength_25"
-		"Ability17"				"special_bonus_unique_night_king"
+	    "Ability5"         			"generic_hidden"
+		"Ability6"					"nightking_necromastery"
+	  	"Ability7"					""
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_gold_income_50"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_armor_15"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_strength_25"
+		"Ability17"					"special_bonus_unique_night_king"
 	
 		"ArmorPhysical"				"3"
-	    "StatusHealthRegen"		"2.50000"
+	    "StatusHealthRegen"			"2.50000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"25"
 		"AttackDamageMax"			"41"
@@ -2942,10 +2956,6 @@
 		"MovementTurnRate"			"0.500000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"130"
-		"precache"
-		{
-			"model" "models/heroes/wraith_king/leoric_base.vmdl"
-		}
 	}
 	"npc_dota_hero_nurgle"
 	{
@@ -4863,5 +4873,45 @@
 		"particle_folder"		"particles/units/heroes/hero_enigma"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_viper.vsndevts"
+	}
+	"npc_dota_hero_antman"
+	{
+		"override_hero"			"npc_dota_hero_tinker"
+		"ModelScale"			"1"
+		"Model"				    "models/heroes/hero_antman/antman.vmdl"
+		"DisableWearables"		"1"
+		"Ability1"				"antman_size_down"
+		"Ability2"				"antman_size_up"
+		"Ability3"				"antman_spirit_ant"
+		"Ability4"				"antman_battle_state"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"antman_quantum_realm"
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_gold_income_50"
+		"Ability12"				"special_bonus_movement_speed_50"
+		"Ability13"				"special_bonus_attack_speed_100"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_attack_damage_90"
+		"Ability16"				"special_bonus_agility_25"
+		"Ability17"				"special_bonus_unique_katana"
+	
+		"ArmorPhysical"				"1.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"34"
+		"AttackDamageMax"			"38"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"128"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"1.800000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"2.80000"
+		"AttributeBaseIntelligence"	"20"
+		"AttributeIntelligenceGain"	"2.200000"
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.500000"
+		"HealthBarOffset"			"200"
 	}
 }

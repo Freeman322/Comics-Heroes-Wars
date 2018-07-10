@@ -1,7 +1,11 @@
 LinkLuaModifier( "modifier_joker_nuclear_mine", "abilities/joker_nuclear_mine.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_joker_nuclear_mine_scepter", "abilities/joker_nuclear_mine.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_joker_nuclear_mine_scepter_layout", "abilities/joker_nuclear_mine.lua", LUA_MODIFIER_MOTION_NONE )
+
 joker_nuclear_mine = class({})
+
+function joker_nuclear_mine:OnInventoryContentsChanged()
+    self:SetHidden(not self:GetCaster():HasScepter())
+    self:SetLevel(1)
+end
 
 
 function joker_nuclear_mine:OnSpellStart()
@@ -99,57 +103,3 @@ function modifier_joker_nuclear_mine:StartParcticles(unit, ability, caster)
 		FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
 	end
 end
-
-modifier_joker_nuclear_mine_scepter = class({})
-
-function modifier_joker_nuclear_mine_scepter:RemoveOnDeath()
-	return false
-end
-
-function modifier_joker_nuclear_mine_scepter:IsPurgable()
-	return false
-end
-
-function modifier_joker_nuclear_mine_scepter:IsHidden()
-	return true
-end
-
-function modifier_joker_nuclear_mine_scepter:OnCreated()
-	if IsServer() then
-		local ability = self:GetParent():FindAbilityByName("joker_nuclear_mine")
-		Timers:CreateTimer(0.1, function()
-			if self:GetParent():HasScepter() then
-				if ability:IsHidden() then
-					ability:SetHidden(false)
-					ability:SetLevel(1)
-				end
-			else
-				if not ability:IsHidden() then
-					ability:SetHidden(true)
-					ability:SetLevel(0)
-				end
-			end
-			return 0.1
-		end)
-	end
-end
-
-function modifier_joker_nuclear_mine_scepter:IsHidden()
-	return true
-end
-
-function modifier_joker_nuclear_mine_scepter:DeclareFunctions()
-	local funcs = {
-  	MODIFIER_PROPERTY_ABILITY_LAYOUT
-	}
-	return funcs
-end
-
-function modifier_joker_nuclear_mine_scepter:GetModifierAbilityLayout( params )
-	if self:GetParent():HasScepter() then
-		return 6
-	end
-end
-
-function joker_nuclear_mine:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-

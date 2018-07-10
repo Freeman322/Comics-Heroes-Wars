@@ -297,94 +297,7 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// item_ancient_cursed_helmet
-	//=================================================================================================================
-	"item_ancient_cursed_helmet"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9309"
-		"BaseClass"             		"item_lua"
-		"AbilityTextureName"            "custom/ancient_cursed_helmet"
-		"ScriptFile"					"items/item_ancient_cursed_helmet.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"FightRecapLevel"				"2"
 	
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.0"
-	
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-		"ItemCost"						"8650"
-		"ItemShopTags"					"int;regen_mana;agi;hard_to_tag"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"helmet"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"precache"
-		{
-			"model"  "models/heroes/undying/undying_flesh_golem.vmdl"
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"35"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"35"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen"			"5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lifesteal_percent"		"15"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"600"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"400"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"summon_duration"		"40"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Radiance
 	//=================================================================================================================
@@ -1212,8 +1125,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"9274"
 		"BaseClass"        				"item_lua"
-	   		"AbilityTextureName"            "custom/echoe_sabre_marvel"
-	        "ScriptFile"                	"items/item_echoe_sabre_marvel.lua"
+		"AbilityTextureName"            "custom/echoe_sabre_marvel"
+		"ScriptFile"                	"items/item_echoe_sabre_marvel.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"FightRecapLevel"				"1"
 		"AbilitySharedCooldown"			"echoe"
@@ -2539,7 +2452,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"450"
+				"crit_damage"			"350"
 			}
 		}
 	}
@@ -3354,32 +3267,7 @@
 			"01"						"item_power_treads;item_blade_of_alacrity"
 		}
 	}
-	//=================================================================================================================
-	// Recipe: Ancient Cursed Helmet
-	//=================================================================================================================
-	"item_recipe_ancient_cursed_helmet"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9308"
-		"BaseClass"             		"item_datadriven"
-		"AbilityTextureName"            "recipe"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_ancient_cursed_helmet"
-		"ItemRequirements"
-		{
-			"01"						"item_mystic_staff;item_necronomicon_3;item_helm_of_the_dominator"
-		}
-	}
+
 	//=================================================================================================================
 	// Recipe: Radiance
 	//=================================================================================================================
@@ -4239,29 +4127,7 @@
 			"01"						"item_sphere;item_soul_booster;"
 		}
 	}
-	//=================================================================================================================
-	// Recipe: Perseus Boots
-	//=================================================================================================================
-	"item_recipe_perseus_boots"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9039"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"						"item_lua"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					""
 	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_perseus_boots"
-		"ItemRequirements"
-		{
-			"01"						"item_travel;item_force_boots"
-		}
-	}
 	"item_recipe_rapier_ancient"
 		{
 		// General
@@ -4577,24 +4443,6 @@
 		"ItemRequirements"
 		{
 			"01"						"item_relic;item_orchid;item_relic;item_relic"
-		}
-	}
-	//=================================================================================================================
-	"item_recipe_travel"
-	{
-		// General
-		"BaseClass"                    "item_datadriven"
-		"AbilityTextureName"            "recipe"
-		"ID"							"9007"
-		"ItemCost"						"0"
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_travel"
-		"ItemRequirements"
-		{
-			"01"				"item_travel_boots_2;item_blink"
 		}
 	}
 	//=================================================================================================================
@@ -5535,127 +5383,7 @@
 		"ItemKillable"					"0"
 	
 	}
-	"item_travel"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"9226"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"Model"							"models/props_gameplay/red_box.vmdl"
-		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"            "custom/travel"
-		"MaxLevel"						"1"
-		"ItemQuality"					"epic"
-		"FightRecapLevel"				"1"
-	
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"99999"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"60.0"
-		"AbilityChannelTime"		          	"3.27"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemShopTags"					"teleport"
-		"ItemQuality"					"component"
-		"ItemAliases"					"blink dagger"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemCost"						"6650"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	  	 "FIELD_INTEGER"
-				"chanell"			"1.88"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"all"			   	"7"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"move"				"120"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"mana"				"7"
-			}
-		}
-		"OnSpellStart"
-		{
-			"CreateThinker"
-			{
-				"ModifierName"	"modifier_item_travel_thinker"
-				"Target" 		"POINT"
-			}
-		}
-		"OnChannelSucceeded"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"items/item_travel.lua"
-				"Function"				"travel"
-				"Target"				"POINT"
-			}
-			"FireSound"
-			{
-				"EffectName"		"Hero_Enigma.Malefice"
-				"Target"			  "CASTER"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_item_travel_thinker"
-			{
-				"Duration"		"3"
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"EffectName"		"Hero_Nevermore.ROS.Arcana.Cast"
-						"Target"			  "CASTER"
-					}
-	
-					"AttachEffect"
-					{
-						"EffectName"		"particles/econ/events/fall_major_2015/teleport_end_fallmjr_2015_lvl2.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						"ControlPoints"
-						{
-							"00"	"0 0 0"
-							"01"	"0 0 0"
-							"02"	"255 255 255"
-							"03"	"0 0 0"
-							"04"	"0 0 0"
-							"05"	"1 0 0"
-						}
-					}
-				}
-			}
-		 "travel"
-			{
-				"Passive"			"1" // ������ ���������
-				"IsHidden"          "1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 		"%all"
-		    		"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" 			"%all"
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"                    "%all"
-					"MODIFIER_PROPERTY_MANA_BONUS"                "%mana"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%move"
-	
-				}
-			}
-		}
-	}
+
 	"item_treasure"
 	  {
 	  	"BaseClass"                 "item_lua"
@@ -7053,6 +6781,206 @@
 			{
 				"var_type"							"FIELD_INTEGER"
 				"blast_damage_mult"					"2"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Void Orb
+	//=================================================================================================================
+	"item_recipe_void_orb"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                    "item_datadriven"
+		"AbilityTextureName"		   "recipe"		
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2200"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_void_orb"
+		"ItemRequirements"
+		{
+			"01"						"item_sphere;item_kaya"
+		}
+	}
+	
+	//=================================================================================================================
+	// Sphere
+	//=================================================================================================================
+	"item_void_orb"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"item_lua"
+		"AbilityTextureName"            "custom/void_orb"
+		"ScriptFile"					"items/item_void_orb.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"FightRecapLevel"				"1"
+
+		
+		"AbilityCastRange"				"700"
+		"AbilityCooldown"				"20.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"9050"
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ls;linken's sphere"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ActiveDescriptionLine"			"2"
+		"ShouldBeSuggested"				"1"
+
+		"precache"
+		{
+			"particle"					"particles/void_orb/void_orb.vpcf"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"4.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"15"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_spells_block"		"3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"active_duration"		"5.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Cursed Helmet
+	//=================================================================================================================
+	"item_recipe_cursed_helmet"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                    "item_datadriven"
+		"AbilityTextureName"		   "recipe"		
+		"Model"						   "models/props_gameplay/recipe.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"250"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_cursed_helmet"
+		"ItemRequirements"
+		{
+			"01"						"item_satanic;item_reaver;item_mask_of_madness;item_reaver"
+		}
+	}
+
+	//=================================================================================================================
+	// Cursed Helmet
+	//=================================================================================================================
+	"item_cursed_helmet"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"item_lua"
+		"AbilityTextureName"            "custom/cursed_helmet"
+		"ScriptFile"					"items/item_cursed_helmet.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"9800"
+		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"satanic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"precache"
+		{
+			"particle"					"particles/cursed_helmet/cursed_helmet_buff.vpcf"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_strength"			"80"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"80"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_status_resist"		"15"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lifesteal_percent"			"35"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"unholy_lifesteal_percent"	"235"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"unholy_attack_speed"		"200"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"unholy_duration"			"4.5"
 			}
 		}
 	}

@@ -6,11 +6,13 @@ end
 
 function item_rapier_ethereal:OnOwnerDied()
  if IsServer() then
-  	local itemName = tostring(self:GetAbilityName())
-  	if self:GetCaster():IsHero() or self:GetCaster():HasInventory() then
-      local newItem = CreateItem(itemName, nil, nil)
-      CreateItemOnPositionSync(self:GetCaster():GetOrigin(), newItem)
-      self:GetCaster():RemoveItem(self)
+	  local itemName = tostring(self:GetAbilityName())
+	  if self:GetCaster():IsHero() or self:GetCaster():HasInventory() then
+		if not self:GetCaster():IsReincarnating() then 
+			local newItem = CreateItem(itemName, nil, nil)
+			CreateItemOnPositionSync(self:GetCaster():GetOrigin(), newItem)
+			self:GetCaster():RemoveItem(self)
+		end
     end
   end
 end

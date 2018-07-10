@@ -62,7 +62,7 @@ function modifier_overvoid_infinite:OnCreated( kv )
 	if IsServer() then
 		self:GetParent():InterruptChannel()
 		self:OnIntervalThink()
-		self:StartIntervalThink( 0.3 )
+		self:StartIntervalThink( 0.25 )
 	end
 end
 

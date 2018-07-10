@@ -702,3 +702,8 @@ function OpenPremiumMenu()
         }
     }
 }
+
+function ForeClosePickMenu()
+{
+    EndPick()
+}

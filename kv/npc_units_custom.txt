@@ -7288,6 +7288,9 @@
 		"Level"					  	"0"
 		"UnitLabel"					"healing_ward"
 		"wearable"			  	"8365"
+
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -7379,6 +7382,9 @@
 		"GameSoundsFile"		 "soundevents/game_sounds_heroes/game_sounds_witch_doctor.vsndevts"
 	    "Level"						   "3"
 		"wearable"					 "602"
+
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -10998,4 +11004,83 @@
 			}
 		}
 	}
+	//=================================================================================
+	// Ant Man's Ant
+	//=================================================================================
+	"npc_dota_antman_ant"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/spiders/spider_kidnap.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"LoneDruid_SpiritBear"
+		"Level"						"7"
+		"ModelScale" 				"1.15"
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		"UnitLabel"					"spirit_bear"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"neutral_spell_immunity"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"3"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"35"		// Damage range min.
+		"AttackDamageMax"			"35"		// Damage range max.	
+		"AttackRate"				"1.65"		// Speed of attack.
+		"AttackAnimationPoint"		"0.43"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"128"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"215"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"300"		// Experience earn.
+		"BountyGoldMin"				"300"		// Gold earned min.
+		"BountyGoldMax"				"300"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"320"		// Speed.
+		"MovementTurnRate"			"0.6"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"5"			// Health regeneration rate.
+		"StatusMana"				"300"		// Base mana.
+		"StatusManaRegen"			"0.5"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		//Inventory
+		"HasInventory"				"1"
+		
+	}	
 }

@@ -2203,7 +2203,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"
+		"ItemCost"						"4000"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -2212,10 +2212,42 @@
 		"ItemResult"					"item_travel_boots_2"
 		"ItemRequirements"
 		{
-			"01"						"item_travel_boots"
+			"01"						"item_boots"
 		}
 	}
+	//=================================================================================================================
+	// Boots
+	//=================================================================================================================
+	"item_boots"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"29"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/boots_of_speed.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"
+		"ItemShopTags"					"move_speed"
+		"ItemQuality"					"component"
+		"ItemAliases"					"boots of speed"
+		"SideShop"						"1"
+		"ShouldBeSuggested"	"1"
+		"ShouldBeInitiallySuggested"	"1"
 
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"50"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Travel Boots
 	//=================================================================================================================
@@ -2277,7 +2309,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"45.0"
+		"AbilityCooldown"				"25.0"
 		"AbilitySharedCooldown"			"teleport"
 		"AbilityChannelTime"			"3.0"
 

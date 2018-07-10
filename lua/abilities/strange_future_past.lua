@@ -15,6 +15,13 @@ function strange_future_past:CastFilterResultTarget( hTarget )
 	return UF_SUCCESS
 end
 
+
+function strange_future_past:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_strange_eternal_bracers") then return "custom/strange_eternal_bracers_future_past" end
+    return self.BaseClass.GetAbilityTextureName(self) 
+end
+
+
 function strange_future_past:GetCustomCastErrorTarget( hTarget )
 	if not hTarget:HasModifier("modifier_strange_future_past") then
 		return "#dota_hud_error_cant_cast_on_invalid_target"
@@ -109,7 +116,6 @@ end
 
 function modifier_strange_future_past:OnDeath( params )
     if IsServer() then        
-        DeepPrintTable(params)
         if self:GetParent() == params.unit then 
             self.damage = 0
         end
@@ -120,8 +126,8 @@ end
 
 function modifier_strange_future_past:OnTakeDamage( params )
     if IsServer() then
-      if params.unit == self:GetParent() then
+        if params.unit == self:GetParent() then
         self.damage = (self.damage or 0) + params.damage
-      end
+        end
     end
-  end
+end

@@ -11,6 +11,10 @@ function celebrimbor_overseer:GetBehavior()
     return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK + DOTA_ABILITY_BEHAVIOR_AOE
 end
 
+function celebrimbor_overseer:OnInventoryContentsChanged()
+    self:SetHidden(not self:GetCaster():HasScepter())
+    self:SetLevel(1)
+end
 
 function celebrimbor_overseer:GetIntrinsicModifierName()
   return "modifier_celebrimbor_overseer_passive"
