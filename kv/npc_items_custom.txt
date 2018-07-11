@@ -2195,7 +2195,7 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of tarrasque"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"3.0"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3127,7 +3127,7 @@
 		{
 			"01"
 			{
-				"var_type"		 		"FIELD_FLOAT"
+				"var_type"		 		"FIELD_INTEGER"
 				"dmg"		            "1500"
 			}
 		}

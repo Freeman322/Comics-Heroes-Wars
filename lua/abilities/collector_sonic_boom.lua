@@ -9,7 +9,7 @@ function collector_sonic_boom:OnSpellStart()
     local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), iAoE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
   	if #units > 0 then
   		for _, target in pairs(units) do
-  			target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor( "stun" ) } )
+  			    target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetOrbSpecialValueFor( "stun_duration", "w"  ) } )
             ApplyDamage({victim = target, attacker = self:GetCaster(), ability = self, damage = iDmg, damage_type = DAMAGE_TYPE_MAGICAL})
             EmitSoundOn("Hero_ElderTitan.EarthSplitter.Destroy", target)
   		end

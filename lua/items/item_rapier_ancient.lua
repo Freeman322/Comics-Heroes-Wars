@@ -50,10 +50,7 @@ function modifier_item_rapier_ancient:GetAttributes()
 end
 
 function modifier_item_rapier_ancient:GetModifierPreAttack_BonusDamage()
-    pcall(function()
-        return self:GetAbility():GetSpecialValueFor("dmg") 
-    end)
-    return 
+    return self:GetAbility():GetSpecialValueFor("dmg") 
 end
 
 function item_rapier_ancient:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

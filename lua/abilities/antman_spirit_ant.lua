@@ -3,7 +3,7 @@ LinkLuaModifier("modifier_antman_spirit_ant", "abilities/antman_spirit_ant.lua",
 
 function antman_spirit_ant:OnUpgrade()
     if IsServer() then 
-        if self:GetLevel() == 1 then 
+        if self:GetLevel() == 1 and self:GetCaster():IsRealHero() then 
             PrecacheUnitByNameAsync("npc_dota_antman_ant", function()
                 self._hAnt = CreateUnitByName("npc_dota_antman_ant", self:GetCaster():GetAbsOrigin(), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber())
                 self._hAnt:SetControllableByPlayer(self:GetCaster():GetPlayerOwnerID(), true)

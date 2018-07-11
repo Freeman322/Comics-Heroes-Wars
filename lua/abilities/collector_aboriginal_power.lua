@@ -20,7 +20,7 @@ function collector_aboriginal_power:OnSpellStart ()
     caster:AddNewModifier (caster, self, "modifier_collector_aboriginal_power", data)
     EmitSoundOn ("Hero_Nevermore.ROS.Arcana", caster)
 
-    if self:GetCaster():HasModifier("modifier_arcana") then
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "collector_gloves_of_elder_one") then
         local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/earthshaker/earthshaker_totem_ti6/earthshaker_totem_ti6_cast.vpcf", PATTACH_CUSTOMORIGIN, nil );
         ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin());
         ParticleManager:ReleaseParticleIndex( nFXIndex );
@@ -55,34 +55,27 @@ end
 function modifier_collector_aboriginal_power:OnAttackLanded (params)
   if IsServer () then
     if params.attacker == self:GetParent () then
-      if self:GetAbility():IsCooldownReady() and self:GetAbility():GetAutoCastState() and self:GetAbility():IsOwnersManaEnough() then
-        if not params.target:IsBuilding() and not params.target:IsAncient() then
-          self:GetAbility():PayManaCost()
-          self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
-
-          EmitSoundOn("DOTA_Item.EtherealBlade.Target", params.target)
-          if self.bBracers then
-            EmitSoundOn("Hero_Clinkz.SearingArrows.Impact.Immortal", params.target)
-          end
-          if self:GetCaster():HasModifier("modifier_arcana") then
-              local target = params.target
-              local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/antimage/antimage_weapon_basher_ti5/am_basher.vpcf", PATTACH_CUSTOMORIGIN, nil );
-              ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
-              ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetParent():GetOrigin(), true );
-              ParticleManager:SetParticleControlEnt( nFXIndex, 2, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
-              ParticleManager:SetParticleControlEnt( nFXIndex, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
-              ParticleManager:ReleaseParticleIndex( nFXIndex );
-  
-              EmitSoundOn( "Hero_ChaosKnight.ChaosStrike", target )
-          end
-
-          local iNtdx = ParticleManager:CreateParticle( "particles/collector/collector_sanity_eclipse_enemy.vpcf", PATTACH_WORLDORIGIN, params.target )
-          ParticleManager:ReleaseParticleIndex( iNtdx )
-
-          self:GetAbility():PayManaCost()
-
-          ApplyDamage({victim = params.target, attacker = self:GetAbility():GetCaster(), damage = (self:GetAbility():GetOrbSpecialValueFor("int_mult","e") / 100) * self:GetCaster():GetIntellect(), damage_type = DAMAGE_TYPE_PURE})
+      if not params.target:IsBuilding() and not params.target:IsAncient() then
+        EmitSoundOn("DOTA_Item.EtherealBlade.Target", params.target)
+        if self.bBracers then
+          EmitSoundOn("Hero_Clinkz.SearingArrows.Impact.Immortal", params.target)
         end
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "collector_gloves_of_elder_one") then
+            local target = params.target
+            local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/antimage/antimage_weapon_basher_ti5/am_basher.vpcf", PATTACH_CUSTOMORIGIN, nil );
+            ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
+            ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetParent():GetOrigin(), true );
+            ParticleManager:SetParticleControlEnt( nFXIndex, 2, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
+            ParticleManager:SetParticleControlEnt( nFXIndex, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
+            ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+            EmitSoundOn( "Hero_ChaosKnight.ChaosStrike", target )
+        end
+
+        local iNtdx = ParticleManager:CreateParticle( "particles/collector/collector_sanity_eclipse_enemy.vpcf", PATTACH_WORLDORIGIN, params.target )
+        ParticleManager:ReleaseParticleIndex( iNtdx )
+
+        ApplyDamage({victim = params.target, attacker = self:GetAbility():GetCaster(), damage = (self:GetAbility():GetOrbSpecialValueFor("int_mult","e") / 100) * self:GetCaster():GetIntellect(), damage_type = DAMAGE_TYPE_PURE})
       end
     end
   end

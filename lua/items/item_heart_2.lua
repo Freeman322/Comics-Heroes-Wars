@@ -32,6 +32,22 @@ function modifier_item_heart_2:GetModifierBonusStats_Strength (params)
     return self:GetAbility():GetSpecialValueFor ("bonus_all_stats")
 end
 
+function modifier_item_heart_2:OnCreated(params)
+    if IsServer() then
+        self:StartIntervalThink(0.1) 
+    end 
+end
+
+function modifier_item_heart_2:OnIntervalThink()
+    if IsServer() then
+        if self:GetAbility():IsCooldownReady() then 
+            self:SetStackCount(1)
+        else
+            self:SetStackCount(0) 
+        end 
+    end 
+end
+
 function modifier_item_heart_2:GetModifierBonusStats_Intellect (params)
     return self:GetAbility():GetSpecialValueFor ("bonus_all_stats")
 end
@@ -40,31 +56,26 @@ function modifier_item_heart_2:GetModifierBonusStats_Agility (params)
 end
 
 function modifier_item_heart_2:GetModifierHealthRegenPercentage (params)
-    return self:GetAbility():GetSpecialValueFor ("health_regen_percent_per_second")
+    if self:GetStackCount() == 1 then 
+        return self:GetAbility():GetSpecialValueFor ("health_regen_percent_per_second")
+    end 
+    return 
 end
 
 function modifier_item_heart_2:GetModifierTotalPercentageManaRegen (params)
     return self:GetAbility():GetSpecialValueFor ("mana_reget_percent_per_second")
 end
 
---[[
 function modifier_item_heart_2:OnTakeDamage (params)
     if IsServer () then
-        if params.unit == self:GetParent() then
-            local hAbility = self:GetAbility ()
-            local hCaster = self:GetParent ()
-            local attacker = params.attacker
-            if attacker:IsHero () then
-               if attacker == self:GetParent() then
-                    print(attacker:GetUnitName())
-               else
-                    hAbility:StartCooldown (hAbility:GetCooldown(hAbility:GetLevel()))
-               end
+        if params.unit == self:GetParent() and not self:GetParent() ~= params.attacker then
+            if params.attacker:IsHero() then
+               self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
            end
         end
     end
 end
- --]]
+
 function modifier_item_heart_2:GetAttributes ()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
