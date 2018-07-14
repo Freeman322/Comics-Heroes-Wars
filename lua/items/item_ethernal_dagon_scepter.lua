@@ -1,17 +1,17 @@
 LinkLuaModifier("modifier_item_ethernal_dagon_scepter", "items/item_ethernal_dagon_scepter.lua", LUA_MODIFIER_MOTION_NONE)
-if item_ethernal_dagon_scepter == nil then
-	item_ethernal_dagon_scepter = class({})
+if item_ethernal_dagon == nil then
+	item_ethernal_dagon = class({})
 end
 
-function item_ethernal_dagon_scepter:GetCastRange( vLocation, hTarget )
+function item_ethernal_dagon:GetCastRange( vLocation, hTarget )
 	return self.BaseClass.GetCastRange( self, vLocation, hTarget )
 end
 
-function item_ethernal_dagon_scepter:GetIntrinsicModifierName()
+function item_ethernal_dagon:GetIntrinsicModifierName()
 	return "modifier_item_ethernal_dagon_scepter"
 end
 
-function item_ethernal_dagon_scepter:OnSpellStart()
+function item_ethernal_dagon:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
 	if hTarget ~= nil then
 		if ( not hTarget:TriggerSpellAbsorb( self ) ) then
@@ -90,5 +90,5 @@ function modifier_item_ethernal_dagon_scepter:GetAttributes ()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
 
-function item_ethernal_dagon_scepter:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function item_ethernal_dagon:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 
