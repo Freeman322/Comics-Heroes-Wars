@@ -4703,6 +4703,16 @@
 				"var_type"					"FIELD_INTEGER"
 				"cooldown_scepter"			"20"
 			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_scepter"			"450 600 750"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lenght_scepter"			"1500 2000 2500"
+			}
 		}
 	}
 	"beast_jinada"
@@ -11762,7 +11772,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"stun_duration"					"1.8 2.2 2.6 3.0"
+				"stun_duration"					"1.4 1.6 1.8 2.0"
 			}
 			"03"
 			{
@@ -11846,7 +11856,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.5 2.0 2.5"
+				"duration"				"1.0 1.5 2.0"
 			}
 			"03"
 			{
@@ -17654,7 +17664,7 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 	"FightRecapLevel"				"2"
-	"HasScepterUpgrade"				"0"
+	"HasScepterUpgrade"				"1"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
@@ -17705,7 +17715,12 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration_scepter"		"8 10 12"
+			"duration_scepter"		"8 9 10"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cooldown_scepter"		"60 50 40"
 		}
 	}
 }
@@ -35071,7 +35086,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"10.0"
+				"duration_creep"		"0.8 1.0 1.2 1.4"
 			}
 		}
 	}
@@ -35961,12 +35976,12 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cooldown_scepter"			"60 50 40"
+				"cooldown_scepter"			"100 80 60"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"120 160 200"
+				"damage_scepter"			"140 170 200"
 			}
 		}
 	}

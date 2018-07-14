@@ -28,7 +28,7 @@ local funcs = {
     MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
     MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
     MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-    MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+    MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
     MODIFIER_EVENT_ON_DEATH
 }
 
@@ -39,7 +39,6 @@ function item_time_gem:GetModifierBonusStats_Strength( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor( "bonus_all_stats" )
 end
-
 function item_time_gem:GetModifierBonusStats_Intellect( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor( "bonus_all_stats" )
@@ -51,7 +50,7 @@ end
 
 function item_time_gem:GetModifierConstantHealthRegen( params )
     local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "bonus_attack_speed" )
+    return hAbility:GetSpecialValueFor( "bonus_health_regen" )
 end
 
 function item_time_gem:GetModifierPreAttack_BonusDamage( params )

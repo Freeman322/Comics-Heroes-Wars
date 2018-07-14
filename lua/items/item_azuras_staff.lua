@@ -175,7 +175,7 @@ function modifier_item_azuras_staff:GetModifierConstantHealthRegen( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor( "bonus_health_regen" )
 end
-function modifier_item_azuras_staff:GetModifierPercentageManaRegen( params )
+function modifier_item_azuras_staff:GetModifierConstantManaRegen( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor ("bonus_mana_regen" )
 end

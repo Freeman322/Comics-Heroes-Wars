@@ -27,7 +27,7 @@ end
 
 function modifier_item_high_frequency_blade:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
@@ -60,7 +60,7 @@ function modifier_item_high_frequency_blade:GetModifierAttackSpeedBonus_Constant
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_attack_speed")
 end
-function modifier_item_high_frequency_blade:GetModifierPercentageManaRegen(params)
+function modifier_item_high_frequency_blade:GetModifierConstantManaRegen(params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_mana_regen")
 end

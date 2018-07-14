@@ -630,7 +630,7 @@
 		"Ability20"					"special_bonus_attack_speed_100"
 		"Ability21"					"special_bonus_cooldown_reduction_25"
 		"Ability22"					"special_bonus_attack_damage_90"
-		"Ability23"					"special_bonus_agility_25"
+		"Ability23"					"special_bonus_intelligence_25"
 		"Ability24"					"special_bonus_all_stats_20"
 		"AbilityTalentStart"	 	"17"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"

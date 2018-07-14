@@ -42,10 +42,11 @@ function modifier_item_telescope_tube:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_CAST_RANGE_BONUS,
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
     }
 
     return funcs
@@ -56,14 +57,18 @@ function modifier_item_telescope_tube:GetModifierConstantHealthRegen( params )
     return hAbility:GetSpecialValueFor( "bonus_health_regen" )
 end
 
+function modifier_item_telescope_tube:GetModifierPreAttack_BonusDamage( params )
+    local hAbility = self:GetAbility()
+    return hAbility:GetSpecialValueFor("bonus_damage")
+
 function modifier_item_telescope_tube:GetModifierSpellAmplify_Percentage( params )
     local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "bonus_spell_damage" )
+    return hAbility:GetSpecialValueFor( "spell_amp" )
 end
 
 function modifier_item_telescope_tube:GetModifierCastRangeBonus( params )
     local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "bonus_cast_range" )
+    return hAbility:GetSpecialValueFor( "cast_range_bonus" )
 end
 
 function modifier_item_telescope_tube:GetModifierBonusStats_Strength( params )
@@ -81,7 +86,7 @@ function modifier_item_telescope_tube:GetModifierBonusStats_Agility( params )
     return hAbility:GetSpecialValueFor( "bonus_all_stats" )
 end
 
-function modifier_item_telescope_tube:GetModifierPercentageManaRegen( params )
+function modifier_item_telescope_tube:GetModifierConstantManaRegen( params )
     return self:GetAbility():GetSpecialValueFor ("bonus_mana_regen")
 end
 

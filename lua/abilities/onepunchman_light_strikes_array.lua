@@ -54,7 +54,7 @@ function modifier_onepunchman_light_strikes_array_thinker:OnIntervalThink()
 	    if #unit_table > 0 then      
 		    for _, unit in pairs(unit_table) do
 		    	if self:GetCaster():HasTalent("special_bonus_unique_saitama_2") and self.strikes == 2 then 
-		    		self:GetCaster():PerformAttack(unit, true, true, true, true, false, false, true)
+		    		self:GetCaster():PerformAttack(unit, true, true, true, false, false, false, true)
 		    	end
 
 		    	EmitSoundOn("Hero_Pangolier.Swashbuckle.Damage", unit)

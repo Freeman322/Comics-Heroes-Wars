@@ -49,7 +49,7 @@ function modifier_item_dark_sabre:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK,
-        MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
 
@@ -88,7 +88,7 @@ function modifier_item_dark_sabre:GetModifierAttackSpeedBonus_Constant (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_attack_speed")
 end
-function modifier_item_dark_sabre:GetModifierPercentageManaRegen(params)
+function modifier_item_dark_sabre:GetModifierConstantManaRegen(params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_mana_regen")
 end

@@ -18,7 +18,7 @@ function item_soul_urn_modifier:DeclareFunctions() --we want to use these functi
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
     }
 
     return funcs
@@ -47,7 +47,7 @@ function item_soul_urn_modifier:GetModifierConstantHealthRegen( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor( "bonus_health_regen" )
 end
-function item_soul_urn_modifier:GetModifierPercentageManaRegen( params )
+function item_soul_urn_modifier:GetModifierConstantManaRegen( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor ("bonus_mana_regen" )
 end

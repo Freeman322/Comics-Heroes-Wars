@@ -34,7 +34,7 @@ function modifier_gostrider_fire_mist:GetAuraSearchType()
 end
 
 function modifier_gostrider_fire_mist:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_NONE
+	return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 end
 
 function modifier_gostrider_fire_mist:GetModifierAura()

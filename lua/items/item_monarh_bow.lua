@@ -29,10 +29,10 @@ end
 
 function modifier_item_monarh_bow:DeclareFunctions ()
     local funcs = {
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
+        MODIFIER_PROPERTY_PREATTACK_BONUSDAMAGE,
         MODIFIER_PROPERTY_EVASION_CONSTANT,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
@@ -40,7 +40,7 @@ function modifier_item_monarh_bow:DeclareFunctions ()
     return funcs
 end
 
-function modifier_item_monarh_bow:GetModifierBaseAttack_BonusDamage (params)
+function modifier_item_monarh_bow:GetModifierPreAttack_BonusDamage (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_damage")
 end

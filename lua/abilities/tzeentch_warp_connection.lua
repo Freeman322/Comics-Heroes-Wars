@@ -3,6 +3,9 @@ LinkLuaModifier( "modifier_tzeentch_warp_connection", "abilities/tzeentch_warp_c
 if tzeentch_warp_connection == nil then tzeentch_warp_connection = class({}) end
 
 function tzeentch_warp_connection:GetCooldown (nLevel)
+    if self:GetCaster():HasScepter() then
+        return self:GetSpecialValueFor("cooldown_scepter")
+    end
     return self.BaseClass.GetCooldown (self, nLevel)
 end
 

@@ -3,9 +3,8 @@ joker_suicide = class({})
 --------------------------------------------------------------------------------
 function joker_suicide:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then
-        return 70
+        return self:GetSpecialValueFor("cooldown_scepter")
     end
-
     return self.BaseClass.GetCooldown( self, nLevel )
 end
 

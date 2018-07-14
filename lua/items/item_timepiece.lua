@@ -191,7 +191,7 @@ function modifier_item_timepiece_stats:DeclareFunctions() --we want to use these
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-        MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
     }
@@ -211,9 +211,9 @@ function modifier_item_timepiece_stats:GetModifierBonusStats_Agility (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_all_stats")
 end
-function modifier_item_timepiece_stats:GetModifierPercentageManaRegen( params )
+function modifier_item_timepiece_stats:GetModifierConstantManaRegen( params )
     local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor ("bonus_mana_regen_pct" )
+    return hAbility:GetSpecialValueFor ("bonus_mana_regen" )
 end
 function modifier_item_timepiece_stats:GetModifierPreAttack_BonusDamage (params)
     local hAbility = self:GetAbility ()
