@@ -32,7 +32,7 @@ function modifier_item_monarh_bow:DeclareFunctions ()
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_PREATTACK_BONUSDAMAGE,
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_EVASION_CONSTANT,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
@@ -79,7 +79,8 @@ end
 function modifier_item_monarh_bow_active:DeclareFunctions ()
     local funcs = {
         MODIFIER_PROPERTY_EVASION_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
+        MODIFIER_PROPERTY_MOVESPEED_MAX
     }
 
     return funcs
@@ -93,12 +94,16 @@ function modifier_item_monarh_bow_active:StatusEffectPriority ()
     return 1000
 end
 
+function modifier_item_monarh_bow_active:GetModifierMoveSpeed_Max (params)
+    local hAbility = self:GetAbility()
+    return hAbility:GetSpecialValueFor ("active_movement_speed")
+end
 function modifier_item_monarh_bow_active:GetModifierEvasion_Constant (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("active_evasion")
 end
 
-function modifier_item_monarh_bow_active:GetModifierMoveSpeedBonus_Constant (params)
+function modifier_item_monarh_bow_active:GetModifierMoveSpeed_Absolute (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("active_movement_speed")
 end
