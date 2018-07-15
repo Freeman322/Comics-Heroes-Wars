@@ -60,6 +60,7 @@ end
 function modifier_item_telescope_tube:GetModifierPreAttack_BonusDamage( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor("bonus_damage")
+end
 
 function modifier_item_telescope_tube:GetModifierSpellAmplify_Percentage( params )
     local hAbility = self:GetAbility()
@@ -96,16 +97,13 @@ function modifier_item_telescope_tube_buff:IsPurgable()
     return false
 end
 
-
 function modifier_item_telescope_tube_buff:GetStatusEffectName()
     return "particles/status_fx/status_effect_gods_strength.vpcf"
 end
 
-
 function modifier_item_telescope_tube_buff:StatusEffectPriority()
     return 1
 end
-
 
 function modifier_item_telescope_tube_buff:GetEffectName()
     return "particles/units/heroes/hero_broodmother/broodmother_hunger_buff.vpcf"
@@ -118,7 +116,6 @@ end
 function modifier_item_telescope_tube_buff:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_CAST_RANGE_BONUS
-
     }
 
     return funcs

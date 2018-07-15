@@ -17510,7 +17510,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"mana_regen"			"5 10 15 20"
+			"mana_regen"			"4 8 12 16"
 		}
 	}
 }
