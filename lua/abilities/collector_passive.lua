@@ -6,6 +6,11 @@ function collector_passive:GetIntrinsicModifierName()
 	return "collector_passive_aura"
 end
 
+function collector_passive:IsStealable()
+	return false
+end
+
+
 collector_passive_aura = class({})
 
 function collector_passive_aura:IsAura()

@@ -4,6 +4,12 @@ if collector_coup_de_grace == nil then
     collector_coup_de_grace = class({})
 end
 
+
+function collector_coup_de_grace:IsStealable()
+	return false
+end
+
+
 function collector_coup_de_grace:GetIntrinsicModifierName ()
     return "modifier_collector_coup_de_grace"
 end

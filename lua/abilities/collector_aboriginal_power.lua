@@ -6,6 +6,10 @@ function collector_aboriginal_power:GetAbilityTextureName()
   return self.BaseClass.GetAbilityTextureName(self)
 end
 
+function collector_aboriginal_power:IsStealable()
+  return false
+end
+
 
 function collector_aboriginal_power:OnSpellStart ()
   if IsServer() then

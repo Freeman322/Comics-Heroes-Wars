@@ -1,6 +1,10 @@
 if not collector_wex then collector_wex = class({}) end 
 LinkLuaModifier("modifier_collector_wex", "abilities/collector_wex.lua", LUA_MODIFIER_MOTION_NONE)
 
+function collector_wex:IsStealable()
+	return false
+end
+
 function collector_wex:OnSpellStart()
     if IsServer() then 
         local modifier = self:GetCaster():AddNewModifier(

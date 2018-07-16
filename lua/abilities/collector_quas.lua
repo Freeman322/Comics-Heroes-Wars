@@ -14,6 +14,11 @@ function collector_quas:OnSpellStart()
     end
 end
 
+
+function collector_quas:IsStealable()
+	return false
+end
+
 --------------------------------------------------------------------------------
 -- Ability Events
 function collector_quas:OnUpgrade()

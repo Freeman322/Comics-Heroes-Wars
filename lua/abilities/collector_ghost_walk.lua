@@ -18,6 +18,12 @@ function collector_ghost_walk:OnSpellStart()
 	self:PlayEffects()
 end
 
+
+function collector_ghost_walk:IsStealable()
+	return false
+end
+
+
 function collector_ghost_walk:PlayEffects()
 	local particle_cast = "particles/units/heroes/hero_invoker/invoker_ghost_walk.vpcf"
 	local sound_cast = "Hero_Invoker.GhostWalk"

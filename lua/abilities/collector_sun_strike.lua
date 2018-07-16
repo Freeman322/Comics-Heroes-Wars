@@ -1,6 +1,9 @@
 collector_sun_strike = class({})
 LinkLuaModifier( "modifier_collector_sun_strike_thinker", "abilities/collector_sun_strike.lua", LUA_MODIFIER_MOTION_NONE )
 
+function collector_sun_strike:IsStealable()
+	return false
+end
 
 function collector_sun_strike:GetAOERadius()
 	return self:GetSpecialValueFor( "area_of_effect" )

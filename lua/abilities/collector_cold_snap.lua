@@ -1,6 +1,11 @@
 collector_cold_snap = class({})
 LinkLuaModifier( "modifier_collector_cold_snap", "abilities/collector_cold_snap.lua", LUA_MODIFIER_MOTION_NONE )
 
+function collector_cold_snap:IsStealable()
+	return false
+  end
+
+  
 function collector_cold_snap:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()

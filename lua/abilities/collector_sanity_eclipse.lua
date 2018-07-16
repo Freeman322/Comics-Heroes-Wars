@@ -5,6 +5,11 @@ function collector_sanity_eclipse:GetAOERadius()
 	return self:GetSpecialValueFor( "area_of_effect" )
 end
 
+function collector_sanity_eclipse:IsStealable()
+	return false
+end
+
+
 function collector_sanity_eclipse:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()

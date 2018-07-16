@@ -7,6 +7,12 @@ function collector_chaos_meteor:GetAOERadius()
 	return self:GetSpecialValueFor( "area_of_effect" )
 end
 
+
+function collector_chaos_meteor:IsStealable()
+  return false
+end
+
+
 --------------------------------------------------------------------------------
 -- Ability Start
 function collector_chaos_meteor:OnSpellStart()

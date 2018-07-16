@@ -4,6 +4,12 @@ function collector_ice_blast:GetAOERadius()
 	return self:GetSpecialValueFor( "radius" )
 end
 
+function collector_ice_blast:IsStealable()
+	return false
+end
+
+
+
 function collector_ice_blast:OnSpellStart()
     if IsServer() then 
         local duration = self:GetOrbSpecialValueFor("duration","q")

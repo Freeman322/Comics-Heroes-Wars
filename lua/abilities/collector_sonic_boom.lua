@@ -1,5 +1,10 @@
 if not collector_sonic_boom then collector_sonic_boom = class({}) end
 
+
+function collector_sonic_boom:IsStealable()
+	return false
+end
+
 function collector_sonic_boom:OnSpellStart()
   if IsServer() then
     local iAoE = self:GetSpecialValueFor( "radius" )

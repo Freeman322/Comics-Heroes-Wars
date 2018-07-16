@@ -3,6 +3,11 @@ collector_collect = class({})
 orb_manager = {}
 ability_manager = {}
 
+function collector_collect:IsStealable()
+	return false
+end
+
+  
 function collector_collect:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then 
         return self:GetSpecialValueFor("cooldown_scepter")

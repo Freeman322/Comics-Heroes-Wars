@@ -2,6 +2,11 @@ collector_astral_imprisonment = class({})
 LinkLuaModifier ("modifier_collector_astral_imprisonment", "abilities/collector_astral_imprisonment.lua" , LUA_MODIFIER_MOTION_NONE)
 --------------------------------------------------------------------------------
 
+function collector_astral_imprisonment:IsStealable()
+    return false
+  end
+  
+
 function collector_astral_imprisonment:OnSpellStart()
     if IsServer() then 
         local info = {

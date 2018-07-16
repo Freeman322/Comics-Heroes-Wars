@@ -1,6 +1,12 @@
 if not collector_exort then collector_exort = class({}) end 
 LinkLuaModifier("modifier_collector_exort", "abilities/collector_exort.lua", LUA_MODIFIER_MOTION_NONE)
 
+
+function collector_exort:IsStealable()
+	return false
+end
+
+
 function collector_exort:OnSpellStart()
     if IsServer() then 
         local modifier = self:GetCaster():AddNewModifier(

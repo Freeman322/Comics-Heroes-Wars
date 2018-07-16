@@ -4,6 +4,10 @@ function collector_blink:GetCooldown( nLevel )
 	return self.BaseClass.GetCooldown( self, nLevel )
 end
 
+function collector_blink:IsStealable()
+    return false
+  end
+  
 
 function collector_blink:OnSpellStart()
     if IsServer() then 

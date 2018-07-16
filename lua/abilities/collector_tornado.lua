@@ -6,6 +6,10 @@ function collector_tornado:GetConceptRecipientType()
 	return DOTA_SPEECH_USER_ALL
 end
 
+function collector_tornado:IsStealable()
+	return false
+end
+
 --------------------------------------------------------------------------------
 
 function collector_tornado:SpeakTrigger()
