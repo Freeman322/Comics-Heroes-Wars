@@ -2,7 +2,7 @@ murlock_pounce = class({})
 
 function murlock_pounce:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then
-        return 4
+        return self:GetSpecialValueFor("cooldown_scepter")
     end
 
     return self.BaseClass.GetCooldown( self, nLevel )

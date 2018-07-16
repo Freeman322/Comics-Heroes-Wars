@@ -102,7 +102,7 @@ function modifier_item_spear_of_destiny:GetAuraSearchTeam()
   return DOTA_UNIT_TARGET_TEAM_ENEMY
 end
 function modifier_item_spear_of_destiny:GetAuraSearchType()
-  return DOTA_UNIT_TARGET_ALL
+  return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
 end
 function modifier_item_spear_of_destiny:GetAuraSearchFlags()
   return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
@@ -189,6 +189,7 @@ function modifier_item_spear_of_destiny_active:CheckState()
 	local state = {
         [MODIFIER_STATE_ATTACK_IMMUNE] = true,
         [MODIFIER_STATE_MAGIC_IMMUNE] = true,
+        [MODIFIER_STATE_DISARMED] = true
 	}
 
 	return state

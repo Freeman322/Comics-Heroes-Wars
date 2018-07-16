@@ -6,8 +6,13 @@ if item_overpower_bow == nil then item_overpower_bow = class({}) end
 function item_overpower_bow:GetIntrinsicModifierName() 	return "modifier_item_overpower_bow" end
 
 function item_overpower_bow:OnSpellStart()
-    local duration = self:GetSpecialValueFor ("active_attack_speed_duration")
-    self:GetCaster ():AddNewModifier (self:GetCaster (), self, "modifier_item_overpower_bow_active", { duration = duration } )
+	local duration = self:GetSpecialValueFor ("active_attack_speed_duration")
+	EmitSoundOn("DOTA_Item.Butterfly", self:GetCaster()) 
+	EmitSoundOn("Item.CrimsonGuard.Cast", self:GetCaster())
+	local particle = "particles/units/heroes/hero_lone_druid/lone_druid_rabid_buff_speed.vpcf"
+	local fx = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+	ParticleManager:SetParticleControl(fx, 0, self:GetCaster():GetAbsOrigin())
+    self:GetCaster():AddNewModifier (self:GetCaster(), self, "modifier_item_overpower_bow_active", { duration = duration } )
 end
 
 if modifier_item_overpower_bow == nil then modifier_item_overpower_bow = class ({}) end
@@ -91,4 +96,21 @@ function modifier_item_overpower_bow_active:GetModifierAttackSpeedBonus_Constant
 	return self:GetAbility():GetSpecialValueFor ("active_attack_speed")
 end
 
---The End
+function modifier_item_overpower_bow_active:GetStatusEffectName()
+    return "particles/status_fx/status_effect_enigma_blackhole_tgt.vpcf"
+end
+
+
+function modifier_item_overpower_bow_active:StatusEffectPriority()
+    return 1
+end
+
+
+function modifier_item_overpower_bow_active:GetEffectName()
+    return "particles/units/heroes/hero_troll_warlord/troll_warlord_berserk_buff.vpcf"
+end
+
+
+function modifier_item_overpower_bow_active:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end

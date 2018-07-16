@@ -76,7 +76,7 @@ function modifier_item_cursed_helmet:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
+        MODIFIER_PROPERTY_STATUS_RESISTANCE,
         MODIFIER_EVENT_ON_ATTACK_LANDED 
     }
 
@@ -91,7 +91,7 @@ function modifier_item_cursed_helmet:GetModifierBonusStats_Strength( params )
     return self:GetAbility():GetSpecialValueFor("bonus_strength") or 0
 end
 
-function modifier_item_cursed_helmet:GetModifierStatusResistanceStacking( params )
+function modifier_item_cursed_helmet:GetModifierStatusResistance( params )
     return self:GetAbility():GetSpecialValueFor("bonus_status_resist") or 0
 end
 

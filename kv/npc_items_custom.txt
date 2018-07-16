@@ -3,63 +3,72 @@
 	"item_overpower_bow"
 	{
 		"BaseClass"					"item_lua"
-		"AbilityTextureName"		"custom/item_overpower_bow"
+		"AbilityTextureName"		"custom/overpower_bow"
 		"ScriptFile"				"items/item_overpower_bow.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
 		/// Stats
-		"AbilityCooldown"			"30"
-		"AbilityManaCost"			"50"
+		"AbilityCooldown"			"60"
+		"AbilityManaCost"			"200"
+
 		/// Item Info
 		"ItemCost"					"15000"
 		"ItemShopTags"				"damage;attack_speed"
 		"ItemQuality"				"epic"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_troll_warlord/troll_warlord_berserk_buff.vpcf"
+			"particle"				"particles/status_fx/status_effect_enigma_blackhole_tgt.vpcf"
+			"particle"				"particles/units/heroes/hero_lone_druid/lone_druid_rabid_buff_speed.vpcf"
+		}
 		///Special
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"45"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_all_stats"				"45"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"180"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"180"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"10"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_health_regen"			"10"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"3"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_mana_regen"				"3"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"15"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion"					"15"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"active_attack_speed"	"99999"
+				"var_type"						"FIELD_INTEGER"
+				"active_attack_speed"			"99999"
 			}
 			"07"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"						"FIELD_INTEGER"
 				"active_attack_speed_duration" "3"
 			}
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"60"
 			}
 			"09"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"180"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_range"			"180"
 			}
 		}
 	}
