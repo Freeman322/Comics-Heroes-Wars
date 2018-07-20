@@ -35,14 +35,6 @@ function golden_gold_eclipse:GetAbilityDamageType()
 	return 2
 end
 
-function golden_gold_eclipse:GetCooldown( nLevel )
-	if self:GetCaster():HasScepter() then
-		return self:GetSpecialValueFor( "cooldown_scepter" )
-	end
-
-	return self.BaseClass.GetCooldown( self, nLevel )
-end
-
 function golden_gold_eclipse:GetManaCost( hTarget )
 	if 	self:GetCaster():HasScepter() then
 			return 0
@@ -55,7 +47,7 @@ end
 function golden_gold_eclipse:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
 	if hTarget ~= nil then
-		if ( not hTarget:TriggerSpellAbsorb( self ) ) then
+		if ( not hTarget:TriggerSpellAbsorb( self ) ) then 
 			local damage_delay = self:GetSpecialValueFor( "damage_delay" )
 			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_golden_gold_eclipse", { duration = damage_delay } )
 			EmitSoundOn( "chw.golden_god_ulti", hTarget )
@@ -79,6 +71,12 @@ function golden_gold_eclipse:OnSpellStart()
 		end
 
 		EmitSoundOn( "chw.golden_god_ulti", self:GetCaster() )
+	end
+	self:EndCooldown()
+	if self:GetCaster():HasScepter() then 
+		self:StartCooldown(self:GetSpecialValueFor("cooldown_scepter"))
+	else
+		self:StartCooldown(self:GetSpecialValueFor("cooldown"))
 	end
 end
 
@@ -106,11 +104,11 @@ end
 
 function modifier_golden_gold_eclipse:OnDestroy()
 	if IsServer() then
-		local damage_mult = 0.8
+		local damage_mult = self:GetAbility():GetSpecialValueFor("damage_mult")
 		local nCaster_damage = self:GetCaster():GetHealth()
 		local nDamageType = DAMAGE_TYPE_MAGICAL
 		if self:GetCaster():HasScepter() then
-			damage_mult = 1
+			damage_mult = self:GetAbility():GetSpecialValueFor("damage_mult")
 			nCaster_damage = self:GetCaster():GetMaxHealth()
 			nDamageType = DAMAGE_TYPE_PURE
 		end
@@ -120,6 +118,7 @@ function modifier_golden_gold_eclipse:OnDestroy()
 			attacker = self:GetCaster(),
 			damage = nCaster_damage*damage_mult,
 			damage_type = nDamageType,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
 			ability = self:GetAbility()
 		}
 		ApplyDamage( damage )

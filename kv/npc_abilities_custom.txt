@@ -2380,6 +2380,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"duration"					"4"
 			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"miss_chance"				"30 50 70"
+			}
 		}
 	}
 	"enigma_missile"
@@ -3241,7 +3246,7 @@
 					"04"
 					{
 						"var_type"					"FIELD_FLOAT"
-						"duration"					"3 3.5 4"
+						"duration"					"2 2.5 3"
 					}
 					"05"
 					{
@@ -10580,12 +10585,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed_bonus"			"-10 -15 -20 -25"
+				"speed_bonus"			"-5 -10 -15 -20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_bonus_tooltip"	"-31 -54 -77 -100"
+				"attack_bonus_tooltip"	"-35 -50 -65 -80"
 			}
 			"03"
 			{
@@ -11971,6 +11976,11 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"damagetype_scepter"		    ""
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cooldown"					"100 80 60"
 			}
 		}
 	}
@@ -13929,7 +13939,7 @@
 
 	// Time
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"14 12 10 8"
+	"AbilityCooldown"				"16 14 12 10"
 	"AbilityDuration"				"2.5 3.0 3.5 4.0"
 
 	// Damage.
@@ -13960,7 +13970,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"slowing"					"-25 -30 -35 -40"
+			"slowing"					"-15 -20 -25 -30"
 		}
 		"03"
 		{
@@ -37762,7 +37772,7 @@
 				
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"500"
 
 		"precache"
 		{
@@ -37777,7 +37787,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"600"		// If you change this, also change the AbilityCastRange above
+				"aura_radius"				"500"		// If you change this, also change the AbilityCastRange above
 			}
 			"02"
 			{

@@ -1,5 +1,15 @@
 nightbringer_offer_of_life = class({})
 
+function nightbringer_offer_of_life:CastFilterResultTarget( hTarget )
+	if IsServer() then
+		if hTarget ~= nil and hTarget:IsMagicImmune()  then
+			return UF_SUCCESS
+		end
+	return UF_SUCCESS
+	end
+end
+
+
 function nightbringer_offer_of_life:OnSpellStart()
   local caster = self:GetCaster()
   local target = self:GetCursorTarget()

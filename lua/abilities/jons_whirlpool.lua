@@ -41,7 +41,7 @@ function jons_whirlpool_thinker:OnIntervalThink()
     local radius = ability:GetSpecialValueFor("radius")
     local target_teams = DOTA_UNIT_TARGET_TEAM_ENEMY
     local target_types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
-    local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE
+    local target_flags = DOTA_UNIT_TARGET_NONE
 
     local units = FindUnitsInRadius(caster:GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, radius, target_teams, target_types, target_flags, 0, false)
 

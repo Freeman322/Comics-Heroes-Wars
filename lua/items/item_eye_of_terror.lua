@@ -40,7 +40,7 @@ function item_eye_of_terror:OnSpellStart()
              local info = {
                 EffectName = "particles/items_fx/ethereal_blade.vpcf",
                 Ability = self,
-                iMoveSpeed = 1200,
+                iMoveSpeed = 5000,
                 Source = hCaster,
                 Target = hTarget,
                 iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2

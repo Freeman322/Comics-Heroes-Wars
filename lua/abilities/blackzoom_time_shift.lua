@@ -66,7 +66,7 @@ end
 
 function modifier_blackzoom_time_shift:OnCreated(htable)
 	if IsServer() then
-    ApplyDamage({attacker = self:GetCaster(), victim = self:GetParent(), damage = self:GetParent():GetMaxHealth() * (self:GetAbility():GetSpecialValueFor("damage")/100), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_PURE})
+    ApplyDamage({attacker = self:GetCaster(), victim = self:GetParent(), damage = self:GetParent():GetMaxHealth() * (self:GetAbility():GetSpecialValueFor("damage")/100), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_PHYSICAL})
 
 		if self:GetCaster():HasScepter() then
 			local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("aoe_radius_scepter"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false )

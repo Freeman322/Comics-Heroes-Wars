@@ -27,7 +27,6 @@ function modifier_po_degen_aura:OnIntervalThink()
 	        end
 	  		end
 		end
-		self.agility = self:GetParent():GetAgility()
 	end
 end
 
@@ -37,17 +36,6 @@ end
 
 function modifier_po_degen_aura:IsHidden()
     return true
-end
-
-function modifier_po_degen_aura:DeclareFunctions()
-	local funcs = {
-    MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
-  }
-	return funcs
-end
-
-function modifier_po_degen_aura:GetModifierMoveSpeedBonus_Constant( params )
-    return self.agility
 end
 
 function po_degen_aura:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

@@ -26,7 +26,11 @@ function modifier_item_anti_life_equation:IsHidden ()
 end
 
 function modifier_item_anti_life_equation:IsPurgable()
-    return false
+    return true
+end
+
+function modifier_item_anti_life_equation:IsPurgeException()
+    return true
 end
 
 function modifier_item_anti_life_equation:DeclareFunctions ()

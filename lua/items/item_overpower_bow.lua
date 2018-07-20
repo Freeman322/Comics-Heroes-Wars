@@ -87,13 +87,18 @@ end
 function modifier_item_overpower_bow_active:DeclareFunctions()
 	local stats1 = 
 		{
-			MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+			MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+			MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT
 		}
 	return stats1
 end
 
 function modifier_item_overpower_bow_active:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor ("active_attack_speed")
+	return 50000
+end
+
+function modifier_item_overpower_bow_active:GetModifierBaseAttackTimeConstant(params)
+    return 0.3
 end
 
 function modifier_item_overpower_bow_active:GetStatusEffectName()

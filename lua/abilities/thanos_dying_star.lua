@@ -145,7 +145,8 @@ function thanos_dying_star_modifier:DeclareFunctions ()
 end
 
 function thanos_dying_star_modifier:GetModifierMiss_Percentage()
-    return 100
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("miss_chance")
 end
 
 function thanos_dying_star_modifier:GetEffectName()
