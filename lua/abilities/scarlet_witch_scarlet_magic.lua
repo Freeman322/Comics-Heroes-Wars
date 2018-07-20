@@ -140,7 +140,8 @@ function modifier_scarlet_witch_scarlet_magic:OnIntervalThink()
             damage_base = hAbility:GetSpecialValueFor ("base_damage")
         end
         local damage = (thinker:GetMaxHealth () * damage_pers) + damage_base
-        ApplyDamage ( { attacker = self:GetCaster (), victim = thinker, ability = hAbility, damage = damage, damage_type = hAbility:GetAbilityDamageType()})
+
+        ApplyDamage ( { attacker = self:GetCaster (), victim = thinker, ability = hAbility, damage = damage, damage_type = hAbility:GetAbilityDamageType(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS})
     end
 end
 function modifier_scarlet_witch_scarlet_magic:DeclareFunctions ()

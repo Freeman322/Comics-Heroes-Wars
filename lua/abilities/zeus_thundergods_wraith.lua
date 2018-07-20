@@ -50,20 +50,26 @@ function zeus_thundergods_wraith:OnSpellStart()
     local targets = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), nil, 99999, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
     for i = 1, #targets do
       local target = targets[i]
+
       EmitSoundOn("Hero_Zuus.GodsWrath.Target", target)
       if not target:HasModifier("modifier_thundergods_wrath_vision") then
         target:AddNewModifier(self:GetCaster(), self, "modifier_thundergods_wrath_stun", {duration = 2})
       end
+      
       AddFOWViewer(self:GetCaster():GetTeam(), target:GetAbsOrigin(), 250, 1.5, false)
       target:AddNewModifier(self:GetCaster(), self, "modifier_truesight", {duration = 3.5})
       GridNav:DestroyTreesAroundPoint( target:GetAbsOrigin(), 250, false)
+
       self.damage = self:GetSpecialValueFor( "damage" )
       self.damage_pers = self:GetSpecialValueFor( "damage_pers" )/100
+
       if self:GetCaster():HasScepter() then
           self.damage_pers = self:GetSpecialValueFor( "damage_pers_scepter" )/100
       end
-      local damage = self.damage + (target:GetMaxHealth()*self.damage_pers)
-      ApplyDamage({victim = target, attacker = self:GetCaster(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self})
+
+      ApplyDamage ( {victim = target,attacker = self:GetCaster(),damage = target:GetMaxHealth() * self.damage_pers,damage_type = self:GetAbilityDamageType(),ability = self, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS })      
+      ApplyDamage ( {victim = target,attacker = self:GetCaster(),damage = self:GetAbilityDamage(), damage_type = DAMAGE_TYPE_MAGICAL,ability = self})
+
       if self:GetCaster():HasModifier("modifier_zuus_immortal") then
         local particle = ParticleManager:CreateParticle("particles/hero_zuus/zeus_immortal_thundergod.vpcf", PATTACH_WORLDORIGIN, target)
         ParticleManager:SetParticleControl(particle, 0, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,1000 ))

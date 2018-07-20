@@ -10,6 +10,9 @@ end
 function item_flash_boots:OnSpellStart()
 	local duration = self:GetSpecialValueFor("active_duration")
 	self:GetCaster():AddNewModifier (self:GetCaster (), self, "modifier_item_flash_boots_active", {duration = duration})
+
+	EmitSoundOn("Hero_Rubick.NullField.Offense", self:GetCaster())
+	EmitSoundOn("Hero_Rubick.NullField.Defense", self:GetCaster())
 end
 
 modifier_item_flash_boots = class ({})
@@ -72,6 +75,18 @@ modifier_item_flash_boots_active = class ({})
 function modifier_item_flash_boots_active:IsBuff()
 	return true
 end
+
+
+function modifier_item_flash_boots_active:GetEffectName()
+    return "particles/units/heroes/hero_rubick/rubick_fade_bolt_debuff.vpcf"
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_item_flash_boots_active:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
 
 function modifier_item_flash_boots_active:IsHidden()
 	return false

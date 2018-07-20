@@ -10999,6 +10999,10 @@
 			"particle"  "particles/one_punch.vpcf"
 			"particle"  "particles/punch_cracks.vpcf"
 			"particle"	"particles/econ/courier/courier_roshan_darkmoon/courier_roshan_darkmoon_flying.vpcf"
+			"particle"	"particles/zoom_golden_wheelchair_run.vpcf"
+			"particle"	"particles/zoom_golden_wheelchair_start.vpcf"
+			"particle"	"particles/econ/items/pudge/pudge_immortal_arm/pudge_immortal_arm_rot_gold.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
 		}
   		"AbilitySpecial"
   		{
@@ -11161,6 +11165,7 @@
 			"particle"  "particles/hero_zoom/blackflash/blackflash_ambient.vpcf"
 			"particle"  "particles/units/heroes/hero_zeus/zeus_ambient_eyes.vpcf"
 			"particle"  "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf"
+			"particle"	"particles/golden_wheelchair.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

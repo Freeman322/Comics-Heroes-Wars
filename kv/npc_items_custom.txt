@@ -3,7 +3,7 @@
 	"item_flash_boots"
 	{
 		"BaseClass"					"item_lua"
-		"AbilityTextureName"		""
+		"AbilityTextureName"		"custom/intelligence_boots"
 		"ScriptFile"				"items/item_flash_boots.lua"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
@@ -16,6 +16,10 @@
 		"ItemShopTags"				""
 		"ItemQuality"				""
 
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_rubick/rubick_fade_bolt_debuff.vpcf"
+		}
 		///Special
 		"AbilitySpecial"
 		{
@@ -62,12 +66,14 @@
 		"BaseClass"					"item_datadriven"
 		"Model"						"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"		"recipe"
-		"ItemCost"					"435"
+
+		"ItemCost"					"450"
+
 		"ItemRecipe"				"1"
 		"ItemResult"				"item_flash_boots"
 		"ItemRequirements"
 		{
-			"01"	"item_force_boots;item_travel_boots_2"
+			"01"					"item_force_boots;item_travel_boots_2"
 		}
 	}
 
