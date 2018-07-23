@@ -21,7 +21,7 @@ end
 --------------------------------------------------------------------------------
 
 function apocalypse_revalation:OnProjectileHit( hTarget, vLocation )
-	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
+	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:IsMagicImmune() ) then
 		EmitSoundOn( "Hero_Oracle.FatesEdict", hTarget )
 		local dur = self:GetSpecialValueFor("intelligence_stole_dur")
 		local bonus = 0

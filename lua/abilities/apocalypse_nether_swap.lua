@@ -56,7 +56,7 @@ function apocalypse_nether_swap:OnSpellStart()
 	local hCaster = self:GetCaster()
 	local hTarget = self:GetCursorTarget()
 
-	if hCaster == nil or hTarget == nil or hTarget:TriggerSpellAbsorb( this ) then
+	if hCaster == nil or hTarget == nil then
 		return
 	end
 

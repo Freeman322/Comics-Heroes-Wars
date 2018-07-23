@@ -5762,6 +5762,8 @@
 		"AbilityCastPoint"						"0"
 		"AbilityCooldown"						"14 12 10 8"
 
+		"AbilityCastRange"						"130"
+
 		"AbilityManaCost"						"50 60 70 80"
 		"AbilityDuration"						"2 3 4 5"
 
@@ -7612,260 +7614,260 @@
 	}
 	"zuus_arc_lightning_new"
 	{
-				// General
-				//-------------------------------------------------------------------------------------------------------------
-				"ID"					"5110"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-				"BaseClass"                     "zuus_arc_lightning"
-				"AbilityTextureName"            "custom/zuus_arc_lightning_new"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5110"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"BaseClass"                     "zuus_arc_lightning"
+		"AbilityTextureName"            "custom/zuus_arc_lightning_new"
 
-				// Casting
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastRange"				"850"
-				"AbilityCastPoint"				"0.1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350 400 450 500"
+		"AbilityCastPoint"				"0.1"
 
-				// Damage.
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityDamage"					"70 95 120 145"
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"70 95 120 145"
 
-				// Time
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"1.4 1.2 1.0 0.8"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"4.0 3.0 2.0 1.0"
 
-				// Cost
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"40 50 60 70"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 100 130 160"
 
-				// Special
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilitySpecial"
-				{
-					"01"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"arc_damage"			"70 95 120 145"
-					}
-					"02"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"radius"				"600"
-					}
-					"03"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"jump_count"			"4 6 8 10"
-					}
-					"04"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"jump_delay"			"0.2"
-					}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"arc_damage"			"40 60 80 100"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_count"			"4 6 8 10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_delay"			"0.4"
+			}
+		}
 	}
 	//=================================================================================================================
 	// Zuus: Lightning Bolt
 	//=================================================================================================================
 	"zuus_lightning_bolt_new"
 	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"ID"					"5111"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-			"FightRecapLevel"				"1"
-			"BaseClass"                     "zuus_lightning_bolt"
-			"AbilityTextureName"            "custom/zuus_lightning_bolt_new"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5111"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"BaseClass"                     "zuus_lightning_bolt"
+		"AbilityTextureName"            "custom/zuus_lightning_bolt_new"
 
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"700 750 800 850"
-			"AbilityCastPoint"				"0.1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.1"
 
-			// Damage.
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityDamage"					"125 200 275 350"
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"90 140 220 310"
 
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"6 5 4 3"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6 5 4 3"
 
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"90 105 120 135"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 105 120 135"
 
-			// Stats
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityModifierSupportValue"	"0.1"	// just a ministun
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.1"	// just a ministun
 
 
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
 			{
-					"01"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"true_sight_radius"		"750"
-					}
-					"02"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"sight_radius_day"		"750"
-					}
-					"03"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"sight_radius_night"	"750"
-					}
-					"04"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"sight_duration"		"4.5"
-					}
-					"05"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"spread_aoe"	"350"
-					}
+				"var_type"				"FIELD_INTEGER"
+				"true_sight_radius"		"750"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sight_radius_day"		"750"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sight_radius_night"	"750"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"sight_duration"		"4.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spread_aoe"	"350"
+			}
+		}
 	}
-"zuus_laguna_blade"
+	"zuus_laguna_blade"
 	{
-				// General
-				//-------------------------------------------------------------------------------------------------------------
-				"BaseClass"									"ability_lua"
-				"AbilityType"								"DOTA_ABILITY_TYPE_BASIC"
-				"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-				"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"							// Changes dynamically with scepter
-				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-				"FightRecapLevel"						"2"
-				"AbilityTextureName"				"custom/zuus_laguna_blade"
-				"MaxLevel"                  "4"
-				"ScriptFile"								"abilities/zuus_laguna_blade.lua"
-				// Precache
-				//-------------------------------------------------------------------------------------------------------------
-				"precache"
-				{
-					"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-					"particle"	"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
-					"model"			"models/heroes/hero_zeus/zeus_immortal_armor.vmdl"
-					"model"			"models/heroes/hero_zeus/zeus_immortal_belt.vmdl"
-					"model"			"models/heroes/hero_zeus/zeus_immortal_shoulder.vmdl"
-					"model"			"models/heroes/hero_zeus/zeus_immortal_head.vmdl"
-					"particle"  "particles/econ/items/axe/axe_helm_shoutmask/axe_beserkers_call_buff_shout_mask_eye.vpcf"
-				}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"									"ability_lua"
+		"AbilityType"								"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"							// Changes dynamically with scepter
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"						"2"
+		"AbilityTextureName"				"custom/zuus_laguna_blade"
+		"MaxLevel"                  "4"
+		"ScriptFile"								"abilities/zuus_laguna_blade.lua"
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+			"particle"	"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+			"model"			"models/heroes/hero_zeus/zeus_immortal_armor.vmdl"
+			"model"			"models/heroes/hero_zeus/zeus_immortal_belt.vmdl"
+			"model"			"models/heroes/hero_zeus/zeus_immortal_shoulder.vmdl"
+			"model"			"models/heroes/hero_zeus/zeus_immortal_head.vmdl"
+			"particle"  "particles/econ/items/axe/axe_helm_shoutmask/axe_beserkers_call_buff_shout_mask_eye.vpcf"
+		}
 
-				// Casting
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastRange"				"650 700 750 800"
-				"AbilityCastPoint"				"0.1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"340 410 530 600"
+		"AbilityCastPoint"				"0.1"
 
-				// Time
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"30 27 24 21"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30 27 24 21"
 
-				// Cost
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"110 140 170 200"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110 140 170 200"
 
-				// Stats
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
 
-				// Special
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilitySpecial"
-				{
-					"01"
-					{
-							"var_type"					"FIELD_INTEGER"
-							"damage"					"120 180 240 300"
-					}
-					"02"
-					{
-							"var_type"					"FIELD_INTEGER"
-							"damage_side"				"120 180 240 300"
-					}
-					"03"
-					{
-							"var_type"					"FIELD_FLOAT"
-							"damage_delay"				"0.1"
-					}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"120 180 240 300"
 			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_side"				"90 120 160 200"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0.1"
+			}
+		}
 	}
 	"zeus_gods_eye"
 	{
-			"BaseClass"			        	"ability_lua"
-			"ScriptFile"					    "abilities/zeus_gods_eye.lua"
-			"AbilityType"			     		"DOTA_ABILITY_TYPE_BASIC"
-			"AbilityBehavior"			   	"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
-			"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-			"SpellImmunityType"			  "SPELL_IMMUNITY_ENEMIES_YES"
-			"AbilityUnitDamageType"		"DAMAGE_TYPE_PURE"
-			"FightRecapLevel"				  "2"
-			"AbilityTextureName"			"custom/zeus_gods_eye"
-			"AOERadius"					     	"600 700 800 900"
-			"MaxLevel"                "4"
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"GLOBAL"
-			"AbilityCastPoint"				"0.1"
+		"BaseClass"			        	"ability_lua"
+		"ScriptFile"					    "abilities/zeus_gods_eye.lua"
+		"AbilityType"			     		"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"			   	"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"			  "SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_PURE"
+		"FightRecapLevel"				  "2"
+		"AbilityTextureName"			"custom/zeus_gods_eye"
+		"AOERadius"					     	"600 700 800 900"
+		"MaxLevel"                "4"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"GLOBAL"
+		"AbilityCastPoint"				"0.1"
 
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"55 50 45 40"
-			"HasScepterUpgrade"				"1"
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"80 100 120 140"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"55 50 45 40"
+		"HasScepterUpgrade"				"1"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 100 120 140"
 
-			// Stats
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityModifierSupportValue"	"0.0"	// damage only
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// damage only
 
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-		  	"AbilitySpecial"
-		  	{
-				"01"
-				{
-					"var_type"					"FIELD_FLOAT"
-					"duration"		       		"3 4 5 6"
-				}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"		       		"3 4 5 6"
+			}
 
-				"02"
-				{
-					"var_type"					"FIELD_INTEGER"
-					"aoe_radius_scepter"		"2100 2400 2700 3000"
-				}
-				"03"
-				{
-					"var_type"				    "FIELD_INTEGER"
-					"radius"					"1600 1800 2000 2200"
-				}
-				"04"
-				{
-					 "var_type"				    "FIELD_FLOAT"
-				   	 "damage"			        "2 3 4 5"
-				}
-				"05"
-				{
-					"var_type"			    	"FIELD_INTEGER"
-					"magic_damage"				"0"
-				}
-		  	}
-	  }
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aoe_radius_scepter"		"2100 2400 2700 3000"
+			}
+			"03"
+			{
+				"var_type"				    "FIELD_INTEGER"
+				"radius"					"1600 1800 2000 2200"
+			}
+			"04"
+			{
+					"var_type"				    "FIELD_FLOAT"
+					"damage"			        "2 3 4 5"
+			}
+			"05"
+			{
+				"var_type"			    	"FIELD_INTEGER"
+				"magic_damage"				"0"
+			}
+		}
+	}
 	"zeus_thundergods_wraith"
 	{
 		// General
@@ -10544,6 +10546,9 @@
 		"precache"
 		{
 			"model"						"models/heroes/hero_reverse_flash_arcana/reverseflash_arcana.vmdl"
+			"particle"					"particles/hero_zoom/blackflash/blackflash_ambient.vpcf"
+			"particle"					"particles/reverse_flash/reverse_flash_debuff.vpcf"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_zoom.vsndevts"
 		}
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -33493,7 +33498,11 @@
 			"model" 		"models/heroes/hero_sitama/saitama_god_cloack.vmdl"
 			"particle"  	"particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf"
 			"particle"  	"particles/econ/items/axe/axe_cinder/axe_cinder_ambient_glow.vpcf"
+			"model"			"models/items/antimage/ti7_antimage_immortal/ti7_immortal_armor.vmdl"
+			"particle"		"particles/econ/items/antimage/antimage_ti7_golden/antimage_ti7_golden_ambient.vpcf"
 			"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_arcana.vmdl"
+			"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_foulfell_head.vmdl"
+			"particle"		"particles/econ/courier/courier_jadehoof_ambient/jadehoof_ambient.vpcf"
 			"particle"  	"particles/units/heroes/hero_chaos_knight/chaos_knight_human_eye_glow_a.vpcf"
 			"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_foulfell.vmdl"
 			"model"			"models/heroes/hero_sitama/saitama_arcana/saitama_foulfell_offhand.vmdl"

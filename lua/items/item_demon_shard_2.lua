@@ -21,6 +21,10 @@ function modifier_item_demon_shard_2:IsHidden()
     return true
 end
 
+function modifier_item_demon_shard_2:IsPurgable()
+    return false
+end
+
 function modifier_item_demon_shard_2:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,

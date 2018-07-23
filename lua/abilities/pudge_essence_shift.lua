@@ -74,8 +74,7 @@ function modifier_pudge_essence_shift:OnAttackLanded (params)
         end
         end
     end
-
-return 0
+    return 0
 end
 
 
