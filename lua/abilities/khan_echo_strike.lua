@@ -47,15 +47,12 @@ function khan_echo_strike:OnProjectileHit( hTarget, vLocation )
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = self.damage,
-			damage_type = DAMAGE_TYPE_PURE,
+			damage_type = DAMAGE_TYPE_PHYSICAL,
 			ability = self,
 		}
 
 		ApplyDamage( damage )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_khan_echo_strike_armor", { duration = self:GetSpecialValueFor("reduction_duration") } )
-		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
-		EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)
-
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
 		EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)
 
@@ -72,12 +69,9 @@ function khan_echo_strike:OnProjectileHit( hTarget, vLocation )
 		ParticleManager:SetParticleControl( nFXIndex1, 1, hTarget:GetOrigin())
 		ParticleManager:SetParticleControl( nFXIndex1, 3, hTarget:GetOrigin())
 
-		local random = math.random(100)
-		if random <= self:GetSpecialValueFor("kill_chance_ptc") then
-			hTarget:Kill(self, self:GetCaster())
-		end
 		EmitSoundOn( "Hero_PhantomAssassin.CoupDeGrace" , self:GetCaster() )
 		EmitSoundOn( "Hero_Juggernaut.OmniSlash.Damage" , self:GetCaster() )
+		
 		ScreenShake(hTarget:GetAbsOrigin(), 500, 500, 0.25, 2000, 0, true)
 	end
 

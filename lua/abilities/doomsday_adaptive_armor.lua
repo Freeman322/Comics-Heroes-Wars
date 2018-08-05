@@ -6,7 +6,7 @@ LinkLuaModifier( "modifier_doomsday_adaptive_armor_active", "abilities/doomsday_
 --------------------------------------------------------------------------------
 function doomsday_adaptive_armor:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then
-        return 180
+        return 80
     end
 
     return 0
@@ -22,6 +22,7 @@ end
 function doomsday_adaptive_armor:GetIntrinsicModifierName()
     return "modifier_doomsday_adaptive_armor"
 end
+
 function doomsday_adaptive_armor:OnSpellStart()
     local duration = self:GetSpecialValueFor( "duration_scepter" )
 
@@ -44,11 +45,10 @@ function modifier_doomsday_adaptive_armor:IsHidden()
 end
 
 function modifier_doomsday_adaptive_armor:DeclareFunctions() --we want to use these functions in this item
-local funcs = {
-    MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
-}
-
-return funcs
+    local funcs = {
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
+    }
+    return funcs
 end
 
 function modifier_doomsday_adaptive_armor:GetModifierIncomingDamage_Percentage( params )
@@ -66,6 +66,7 @@ end
 
 --------------------------------------------------------------------------------
 modifier_doomsday_adaptive_armor_active = class({})
+
 function modifier_doomsday_adaptive_armor_active:OnCreated( kv )
     if IsServer() then
         self:GetParent():SetRenderColor(255, 0, 0)

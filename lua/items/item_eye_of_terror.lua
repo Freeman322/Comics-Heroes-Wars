@@ -15,7 +15,7 @@ function item_eye_of_terror:CastFilterResultTarget( hTarget )
 		return UF_FAIL_CUSTOM
 	end
 
-	local nResult = UnitFilter( hTarget, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, self:GetCaster():GetTeamNumber() )
+	local nResult = UnitFilter( hTarget, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_NONE, self:GetCaster():GetTeamNumber() )
 	if nResult ~= UF_SUCCESS then
 		return nResult
 	end
@@ -40,7 +40,7 @@ function item_eye_of_terror:OnSpellStart()
              local info = {
                 EffectName = "particles/items_fx/ethereal_blade.vpcf",
                 Ability = self,
-                iMoveSpeed = 5000,
+                iMoveSpeed = 6000,
                 Source = hCaster,
                 Target = hTarget,
                 iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
@@ -67,7 +67,7 @@ function item_eye_of_terror:OnProjectileHit( hTarget, vLocation )
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = damage,
-			damage_type = DAMAGE_TYPE_PURE,
+			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self
 		}
 
@@ -135,7 +135,7 @@ function modifier_item_eye_of_terror:OnTakeDamage( params )
                             victim = unit,
                             attacker = self:GetParent(),
                             damage = fDamage * (self:GetAbility():GetSpecialValueFor("magical_splash_ammount") / 100),
-                            damage_type = DAMAGE_TYPE_PURE,
+                            damage_type = DAMAGE_TYPE_MAGICAL,
                             ability = self:GetAbility(),
                             damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
                         })
@@ -250,5 +250,5 @@ function modifier_item_eye_of_terror_active:GetModifierMoveSpeedBonus_Percentage
 end
 
 function modifier_item_eye_of_terror_active:GetModifierIncomingDamage_Percentage (params)
-    return 200
+    return 100
 end

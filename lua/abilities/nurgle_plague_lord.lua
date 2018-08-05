@@ -38,7 +38,7 @@ function nurgle_plague_lord:OnOwnerDied()
                 victim = unit,
                 attacker = self:GetCaster(),
                 damage = flDamagePerTick,
-                damage_type = DAMAGE_TYPE_MAGICAL,
+                damage_type = DAMAGE_TYPE_PURE,
                 ability = self
             }
             ApplyDamage( damage )

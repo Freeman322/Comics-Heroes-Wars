@@ -102,13 +102,9 @@ function modifier_monkey_king_the_shattered_dreams:DoWidghAttack(caster, target,
     EmitSoundOn("Hero_MonkeyKing.IronCudgel", unit)
     EmitSoundOn( "Hero_Juggernaut.OmniSlash.Damage", unit )
 
-    unit:AddNewModifier(caster, self:GetAbility(), "modifier_stunned", {duration = 2})
+    unit:AddNewModifier(caster, self:GetAbility(), "modifier_stunned", {duration = 1.5})
 
-    ApplyDamage( {attacker = caster, victim = unit, ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("bonus_damage"), damage_type = DAMAGE_TYPE_PHYSICAL} )
-
-    caster:PerformAttack(unit, true, false, true, true, false, false, true)
-    caster:PerformAttack(unit, true, false, true, true, false, false, true)
-    caster:PerformAttack(unit, true, false, true, true, false, false, true)
+    ApplyDamage( {attacker = caster, victim = unit, ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_PHYSICAL} )
 
     if next_target then
       local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_CUSTOMORIGIN, nil );

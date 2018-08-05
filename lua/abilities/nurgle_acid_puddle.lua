@@ -61,7 +61,7 @@ function thinker_nurgle_acid_puddle:OnIntervalThink()
                 victim = unit,
                 attacker = self:GetCaster(),
                 damage = flDamagePerTick,
-                damage_type = DAMAGE_TYPE_MAGICAL,
+                damage_type = DAMAGE_TYPE_PURE,
                 ability = self:GetAbility()
             }
             if not unit:IsMagicImmune() then
@@ -106,7 +106,7 @@ function modifier_nurgle_acid_puddle:DeclareFunctions()
 end
 
 function modifier_nurgle_acid_puddle:GetModifierMoveSpeedBonus_Percentage( params )
-	return -25
+	return -20
 end
 
 function modifier_nurgle_acid_puddle:OnIntervalThink()
@@ -116,7 +116,7 @@ function modifier_nurgle_acid_puddle:OnIntervalThink()
         victim = self:GetParent(),
         attacker = self:GetCaster(),
         damage = flDamagePerTick,
-        damage_type = DAMAGE_TYPE_MAGICAL,
+        damage_type = DAMAGE_TYPE_PURE,
         ability = self:GetAbility()
     }
     ApplyDamage( damage )

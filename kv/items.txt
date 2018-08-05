@@ -1200,7 +1200,7 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemStockMax"					"1"
-		"ItemStockTime"					"600.0"
+		"ItemStockTime"					"120.0"
 		"ItemSupport"					"1"
 		"ItemKillable"					"0"
 		"ItemContributesToNetWorthWhenDropped"	"0"
@@ -2054,7 +2054,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"45"
+				"bonus_movement_speed"	"50"
 			}
 			"02"
 			{
@@ -2089,7 +2089,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"phase_duration"		"2.5"
+				"phase_duration"		"3.0"
 			}
 			"09"
 			{
@@ -6343,7 +6343,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"10"
+				"bonus_evasion"			"30"
 			}
 			"04"
 			{

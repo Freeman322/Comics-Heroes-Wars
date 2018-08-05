@@ -64,7 +64,7 @@ end
 if modifier_carnage_blood_spray_modifier == nil then modifier_carnage_blood_spray_modifier = class({}) end
 
 function modifier_carnage_blood_spray_modifier:IsPurgeException()
-    return true
+    return false
 end
 
 function modifier_carnage_blood_spray_modifier:GetStatusEffectName()
@@ -93,7 +93,6 @@ end
 
 function modifier_carnage_blood_spray_modifier:OnCreated( kv )
     if IsServer() then
-        self:GetParent():Purge(true, false, false, false, false)
         self:OnIntervalThink()
         self:StartIntervalThink(1)
     end

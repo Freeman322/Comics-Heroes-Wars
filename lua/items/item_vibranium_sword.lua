@@ -80,8 +80,8 @@ function modifier_item_vibranium_sword:OnAttackStart (params)
             if random <= chance then
                 self:GetParent ():AddNewModifier (self:GetCaster (), self:GetAbility (), "modifier_item_vibranium_sword_crit", nil)
                 return 0
-            elseif random >= 85 then
-                params.target:AddNewModifier (self:GetCaster (), self:GetAbility (), "modifier_item_vibranium_sword_rupture", {duration = 6})
+            elseif random >= 81 then
+                params.target:AddNewModifier (self:GetCaster (), self:GetAbility (), "modifier_item_vibranium_sword_rupture", {duration = 5})
                 return 0
             end
         end
@@ -237,7 +237,7 @@ end
 
 function modifier_item_vibranium_sword_rupture:OnIntervalThink()
     local target = self:GetParent()
-    local dmg_pers = 1
+    local dmg_pers = 1.2
     if target:GetAbsOrigin() ~= self.ElapsedDistance then
         local targetDistance = (target:GetAbsOrigin() - self.ElapsedDistance):Length2D()
         ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), damage = targetDistance*dmg_pers, damage_type = DAMAGE_TYPE_PURE, ability = self:GetAbility()})

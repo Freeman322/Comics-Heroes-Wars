@@ -14,7 +14,7 @@ function collector_ice_blast:OnSpellStart()
     if IsServer() then 
         local duration = self:GetOrbSpecialValueFor("duration","q")
         local damage = self:GetOrbSpecialValueFor("damage","q")
-        local radius = self:GetOrbSpecialValueFor("radius","w")
+        local radius = self:GetOrbSpecialValueFor("radius","e")
 
         local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetCursorPosition(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
         if #targets > 0 then

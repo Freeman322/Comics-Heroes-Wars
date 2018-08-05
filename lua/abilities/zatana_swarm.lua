@@ -25,7 +25,7 @@ function zatana_swarm:OnSpellStart()
 		Source = self:GetCaster(),
 		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
 		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP,
-		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
 		bProvidesVision = true,
 		iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 		iVisionRadius = self.vision_aoe,
@@ -45,13 +45,13 @@ function zatana_swarm:OnProjectileHit( hTarget, vLocation )
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = damage,
-			damage_type = DAMAGE_TYPE_PURE,
+			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self,
 		}
 
 		ApplyDamage( damage )
 		EmitSoundOn( "Hero_DeathProphet.CarrionSwarm.Damage.Mortis" , hTarget )
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_zatana_swarm", { duration = self.tooltip_duration } )
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_zatana_swarm", { duration = self:GetSpecialValueFor("stun_duration") } )
 	end
 
 	return false

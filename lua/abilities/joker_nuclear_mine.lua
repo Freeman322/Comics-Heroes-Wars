@@ -97,7 +97,7 @@ function modifier_joker_nuclear_mine:StartParcticles(unit, ability, caster)
 	local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
     local units = FindUnitsInRadius(caster:GetTeamNumber(), unit:GetAbsOrigin(), nil, radius, target_teams, target_types, 0, 0, false)
 	for i,unit in ipairs(units) do
-		local damage_table = {attacker = caster, victim = unit, ability = ability, damage = unit:GetMaxHealth()*self.damage, damage_type = DAMAGE_TYPE_PURE}
+		local damage_table = {attacker = caster, victim = unit, ability = ability, damage = unit:GetMaxHealth()*self.damage, damage_type = DAMAGE_TYPE_MAGICAL}
 		ApplyDamage(damage_table)
 		unit:AddNewModifier(caster, ability, "modifier_stunned", {duration = 1})
 		FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)

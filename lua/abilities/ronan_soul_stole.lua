@@ -38,9 +38,9 @@ function modifier_ronan_soul_stole:OnCreated( kv )
             self.armor = self.armor + self:GetCaster():FindTalentValue("special_bonus_unique_ronan_1")
         end
 
-        self.armor = self:GetAbility():GetSpecialValueFor("movespeed")
+        self.move = self:GetAbility():GetSpecialValueFor("movespeed")
 
-        if self:GetCaster():HasItemInInventory("item_shere2")then 
+        if self:GetCaster():HasItemInInventory("item_power_gem")then 
             self.str = self:GetAbility():GetSpecialValueFor("bonus_stats_power_gem")
         end
     end
