@@ -107,7 +107,8 @@ local heroes = {
   "npc_dota_hero_disruptor",
   "npc_dota_hero_bristleback",
   "npc_dota_hero_pangolier",
-  "npc_dota_hero_batrider",
+  "npc_dota_hero_miraak",
+  ---"npc_dota_hero_batrider",
   "npc_dota_hero_nyx_assassin"
 }
 
@@ -155,10 +156,10 @@ function Pick:OnPick(params)
     return
   end
 
-  local gold = 2000;
+  local gold = 1000;
   local HasRandomed = false;
   if PlayerResource:HasRandomed(playerid) then
-    gold = 3000;
+    gold = 800;
     HasRandomed = true;
   end
 

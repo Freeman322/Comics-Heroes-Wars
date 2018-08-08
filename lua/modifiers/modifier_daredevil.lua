@@ -38,11 +38,6 @@ end
 
 function modifier_daredevil:OnCreated(htable)
 	self.sound = "Hero_MonkeyKing.Attack"
-	if IsServer() then
-		if _G.clients[PlayerResource:GetSteamAccountID(self:GetCaster():GetPlayerOwnerID())] then
-			self.sound = "Hero_EarthSpirit.Attack.Impact"
-		end
-	end
 end
 
 function modifier_daredevil:DeclareFunctions()

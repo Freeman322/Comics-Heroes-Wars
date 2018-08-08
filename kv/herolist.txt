@@ -100,4 +100,5 @@
   "npc_dota_hero_disruptor" "1"
   "npc_dota_hero_jakiro"    "1"
   "npc_dota_hero_pangolier" "1"
+  "npc_dota_hero_miraak" "1"
 }

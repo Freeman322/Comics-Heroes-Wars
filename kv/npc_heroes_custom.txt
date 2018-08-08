@@ -2117,10 +2117,10 @@
 	      "Ability10"				"special_bonus_exp_boost_30"
 	      "Ability11"				"special_bonus_gold_income_50"
 	      "Ability12"				"special_bonus_hp_regen_40"
-	      "Ability13"				"special_bonus_spell_block_20"
+	      "Ability13"				"special_bonus_unique_iron_man"
 	      "Ability14"				"special_bonus_cooldown_reduction_25"
 	      "Ability15"				"special_bonus_spell_amplify_3"
-	      "Ability16"				"special_bonus_unique_iron_man"
+	      "Ability16"				"special_bonus_spell_block_15"
 	      "Ability17"				"special_bonus_all_stats_20"
 	      "ArmorPhysical"				"5"
 	      "AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -4946,25 +4946,104 @@
 	}
 	"npc_dota_hero_miraak"
 	{
-		"Model"					"models/heroes/hero_miraak/miraak.vmdl"
-		"DisableWearables"		"1"
-		"override_hero"			"npc_dota_hero_chen"
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "200"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/heroes/hero_miraak/miraak.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
 
-		"Ability1"				""
-		"Ability2"				""
-		"Ability3"				""
-		"Ability4"				""
-		"Ability5"				""
-		"Ability6"				""
-		"Ability7"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				""
-		"Ability17"				""
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+        "SoundSet"					"Hero_DoomBringer"
+		"IdleSoundLoop"				"Hero_DoomBringer.IdleLoop"
+    	"PickSound"					"doom_bringer_doom_spawn_01"
+		"BanSound"					"doom_bringer_doom_anger_02"
+        "HeroSelectSoundEffect"     "Hero_DoomBringer.Pick"
+     
+	 	"particle_folder"			"particles/units/heroes/hero_doom_bringer"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_miraak.vsndevts"
+        
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
+        "AttributeBaseStrength"     "23"
+        "AttributeStrengthGain"     "2.000000"
+        "AttributeBaseIntelligence" "22"
+        "AttributeIntelligenceGain" "2.300000"
+        "AttributeBaseAgility"      "14"
+        "AttributeAgilityGain"      "1.400000"
+
+        // Misc stats
+        "ArmorPhysical"             "3"
+        "MagicalResistance"			"25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "22"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "128"
+        "ProjectileSpeed"           "0"
+        "MovementSpeed"             "295"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"miraak_mark_for_death"
+		"Ability2"					"miraak_dragon_aspect"
+		"Ability3"					"miraak_mana_void"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"miraak_soul_devour"
+        
+        // Talents
+		"Ability10"					"special_bonus_unique_doom_4"
+		"Ability11"					"special_bonus_unique_doom_6"
+		"Ability12"					"special_bonus_evasion_20"
+		"Ability13"					"special_bonus_unique_doom_3"
+		"Ability14"					"special_bonus_unique_doom_5"
+		"Ability15"					"special_bonus_unique_doom_2"
+		"Ability16"					"special_bonus_unique_doom_1"
+		"Ability17"					"special_bonus_cleave_100"
+        
+        // Card info
+        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    			"1,1,1,1,1"
+        "Complexity"    			"2"
+        
+        // Misc
+        "NameAliases"      			 "wr"
+        "url"       "Windranger"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+	}
+	"npc_dota_hero_slaanesh"
+	{
+		"Model"					"models/heroes/hero_slaanesh/slaanesh.vmdl"
+		"DisableWearables"		"1"
+		"ModelScale"			"1"
+
+		"override_hero"			"npc_dota_hero_queenofpain"
+
+		"Ability1"				"slaanesh_lust"
+		"Ability2"				"slaanesh_subordination"
+		"Ability3"				"slaanesh_obedience"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"slaanesh_omnidrain"
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_gold_income_50"
+		"Ability12"				"special_bonus_unique_slaanesh_1"
+		"Ability13"				"special_bonus_cooldown_reduction_25"
+		"Ability14"				"special_bonus_unique_slaanesh_2"
+		"Ability15"				"special_bonus_unique_slaanesh_3"
+		"Ability16"				"special_bonus_hp_regen_12"
+		"Ability17"				"special_bonus_all_stats_20"
 
 		"AbilityDraftAbilities"
 		{
@@ -4974,23 +5053,112 @@
 		}
 
 		"ArmorPhysical"						"0"
-		"AttackCapabilities"				"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"				"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"					"44"
 		"AttackDamageMax"					"50"
 		"AttackRate"						"1.700000"
 		"AttackAnimationPoint"				"0.40000"
 		"AttackAcquisitionRange"			"600"
-		"AttackRange"				 		"150"
+		"AttackRange"				 		"380"
 		"AttributePrimary"					"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"				"30"
+		"ProjectileModel"					"particles/neutral_fx/satyr_trickster_projectile.vpcf"
+		"ProjectileSpeed"					"1500"
+		"AttributeBaseStrength"				"23"
 		"AttributeStrengthGain"				"3.600000"
-		"AttributeBaseIntelligence"			"17"
+		"AttributeBaseIntelligence"			"31"
 		"AttributeIntelligenceGain"			"1.600000"
-		"AttributeBaseAgility"				"0"
-		"AttributeAgilityGain"				"0.00000"
+		"AttributeBaseAgility"				"15"
+		"AttributeAgilityGain"				"1.20000"
 		"StatusHealthRegen"					"1.5000"
 		"MovementSpeed"						"285"
 		"MovementTurnRate"					"0.500000"
 		"BoundsHullName"					"DOTA_HULL_SIZE_HERO"
+	}
+	"npc_dota_hero_thief"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "201"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/creeps/thief/thief_01.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+        "SoundSet"					"Hero_MonkeyKing"
+		"IdleSoundLoop"				"Hero_MonkeyKing.IdleLoop"
+
+        "PickSound"					"antimage_anti_spawn_01"
+		"BanSound"					"antimage_anti_anger_04"
+     
+	 	// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"-1"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"29"
+		"AttackDamageMax"			"33"
+		"AttackRate"				"1.400000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"1.300000"
+		"AttributeBaseIntelligence"	"12"
+		"AttributeIntelligenceGain"	"1.800000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"2.800000"
+		"StatusHealthRegen"			"1.75"
+        
+        // Abilities
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+        
+        // Talents
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
+		"Ability13"					""
+		"Ability14"					""
+		"Ability15"					""
+		"Ability16"					""
+		"Ability17"					""
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"310"
+		"MovementTurnRate"			"0.500000"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"particle_folder"			"particles/units/heroes/hero_antimage"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_antimage.vsndevts"
+        
+        // Card info
+        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    			"1,1,1,1,1"
+        "Complexity"    			"2"
+        
+        // Misc
+        "NameAliases"      			"wr"
+        "url"       				"Windranger"
+
+        "LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
+		"HeroSelectSoundEffect"		"Hero_Antimage.Pick"
 	}
 }

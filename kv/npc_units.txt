@@ -18993,4 +18993,241 @@
 		"VisionNighttimeRange"		"0"		// Range of vision at night time.
 	}
 
+	///////////////CUSTOM HERES DECLARATIONS/////////////////////////////////////
+	
+	"npc_dota_hero_miraak"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "200"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/heroes/hero_miraak/miraak.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+        "SoundSet"					"Hero_DoomBringer"
+		"IdleSoundLoop"				"Hero_DoomBringer.IdleLoop"
+    	"PickSound"					"doom_bringer_doom_spawn_01"
+		"BanSound"					"doom_bringer_doom_anger_02"
+        "HeroSelectSoundEffect"     "Hero_DoomBringer.Pick"
+     
+	 	"particle_folder"			"particles/units/heroes/hero_doom_bringer"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_miraak.vsndevts"
+        
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
+        "AttributeBaseStrength"     "23"
+        "AttributeStrengthGain"     "2.000000"
+        "AttributeBaseIntelligence" "22"
+        "AttributeIntelligenceGain" "2.300000"
+        "AttributeBaseAgility"      "14"
+        "AttributeAgilityGain"      "1.400000"
+
+        // Misc stats
+        "ArmorPhysical"             "3"
+        "MagicalResistance"			"25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "22"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "128"
+        "ProjectileSpeed"           "0"
+        "MovementSpeed"             "295"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"miraak_mark_for_death"
+		"Ability2"					"miraak_dragon_aspect"
+		"Ability3"					"miraak_mana_void"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"miraak_soul_devour"
+        
+        // Talents
+		"Ability10"					"special_bonus_unique_doom_4"
+		"Ability11"					"special_bonus_unique_doom_6"
+		"Ability12"					"special_bonus_evasion_20"
+		"Ability13"					"special_bonus_unique_doom_3"
+		"Ability14"					"special_bonus_unique_doom_5"
+		"Ability15"					"special_bonus_unique_doom_2"
+		"Ability16"					"special_bonus_unique_doom_1"
+		"Ability17"					"special_bonus_cleave_100"
+        
+        // Card info
+        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    			"1,1,1,1,1"
+        "Complexity"    			"2"
+        
+        // Misc
+        "NameAliases"      			 "wr"
+        "url"       "Windranger"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+        
+        //TODO: RenderablePortrait
+
+        // Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"200"
+		"StatusHealthRegen"			"1.5000"
+		"StatusMana"				"75"
+		"StatusManaRegen"			"0.9"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+
+		// Health Bar	
+		"HealthBarOffset"     "180"
+	}
+	"npc_dota_hero_thief"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "201"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/creeps/thief/thief_01.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+        "SoundSet"					"Hero_MonkeyKing"
+		"IdleSoundLoop"				"Hero_MonkeyKing.IdleLoop"
+
+        "PickSound"					"antimage_anti_spawn_01"
+		"BanSound"					"antimage_anti_anger_04"
+     
+	 	// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"-1"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"29"
+		"AttackDamageMax"			"33"
+		"AttackRate"				"1.400000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"2500"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"1.300000"
+		"AttributeBaseIntelligence"	"12"
+		"AttributeIntelligenceGain"	"1.800000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"2.800000"
+		"StatusHealthRegen"			"1.75"
+        
+        // Abilities
+		"Ability1"					"sven_great_cleave"
+		"Ability2"					"slardar_bash"
+		"Ability3"					"ursa_fury_swipes"
+		"Ability4"					"lycan_summon_wolves_critical_strike"
+		"Ability5"					"gnoll_assassin_envenomed_weapon"
+		"Ability6"					"sven_gods_strength"
+        
+        // Talents
+		"Ability10"					"special_bonus_strength_10"
+		"Ability11"					"special_bonus_agility_10"
+		"Ability12"					"special_bonus_agility_40"
+		"Ability13"					"special_bonus_strength_40"
+		"Ability14"					"special_bonus_armor_30"
+		"Ability15"					"special_bonus_attack_damage_50"
+		"Ability16"					"special_bonus_attack_speed_250"
+		"Ability17"					"special_bonus_hp_regen_50"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"310"
+		"MovementTurnRate"			"0.500000"
+
+        // Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"200"
+		"StatusHealthRegen"			"1.5000"
+		"StatusMana"				"75"
+		"StatusManaRegen"			"0.9"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+
+		// Health Bar	
+		"HealthBarOffset"     "180"
+
+		"particle_folder"			"particles/units/heroes/hero_antimage"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_antimage.vsndevts"
+        
+        // Card info
+        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    			"1,1,1,1,1"
+        "Complexity"    			"2"
+        
+        // Misc
+        "NameAliases"      			"wr"
+        "url"       				"Windranger"
+
+        "LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
+		"HeroSelectSoundEffect"		"Hero_Antimage.Pick"
+	}
 }

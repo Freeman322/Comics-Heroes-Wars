@@ -53,34 +53,26 @@ function daredevil_boundless_strike:OnSpellStart()
 	local vEndPos = vStartPos + vForward * nLenght
 
 	hCaster:AddNewModifier(hCaster, self, "modifier_daredevil_boundless_strike_self", {duration = 0.3})
-	if _G.clients[PlayerResource:GetSteamAccountID(self:GetCaster():GetPlayerOwnerID())] then
-		local nFXIndex = ParticleManager:CreateParticle( "particles/hero_daredevil/jade_strike.vpcf", PATTACH_CUSTOMORIGIN, nil );
-		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
-		ParticleManager:SetParticleControlOrientation(nFXIndex,0,vForward,Vector(0, 0, 0),Vector(0, 0, 0))
-		ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos );
-		ParticleManager:SetParticleControl( nFXIndex, 2, self:GetCaster():GetAbsOrigin());
-		ParticleManager:ReleaseParticleIndex( nFXIndex );
-		EmitSoundOn("Hero_EarthSpirit.RollingBoulder.Target", hCaster)
-	else
-		local nFXIndex = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_slash_strike_ground.vpcf", PATTACH_CUSTOMORIGIN, nil );
-		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
-		ParticleManager:SetParticleControlOrientation(nFXIndex,0,vForward,Vector(0, 0, 0),Vector(0, 0, 0))
-		ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos );
-		ParticleManager:SetParticleControl( nFXIndex, 2, self:GetCaster():GetAbsOrigin());
-		ParticleManager:ReleaseParticleIndex( nFXIndex );
-		EmitSoundOn("Hero_MonkeyKing.Strike.Impact", hCaster)
-	end
+
+	local nFXIndex = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_slash_strike_ground.vpcf", PATTACH_CUSTOMORIGIN, nil );
+	ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
+	ParticleManager:SetParticleControlOrientation(nFXIndex,0,vForward,Vector(0, 0, 0),Vector(0, 0, 0))
+	ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos );
+	ParticleManager:SetParticleControl( nFXIndex, 2, self:GetCaster():GetAbsOrigin());
+	ParticleManager:ReleaseParticleIndex( nFXIndex );
+	EmitSoundOn("Hero_MonkeyKing.Strike.Impact", hCaster)
+
 	local units = FindUnitsInLine( hCaster:GetTeamNumber(), vStartPos, vEndPos , nil, nRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, FIND_CLOSEST  )
 	for _, unit in pairs(units) do
 		EmitSoundOn("Hero_MonkeyKing.Spring.Target", hCaster)
 		unit:AddNewModifier(hCaster, self, "modifier_stunned", {duration = nStun})
 		local damage = {
-					victim = unit,
-					attacker = hCaster,
-					damage = self:GetAbilityDamage(),
-					damage_type = DAMAGE_TYPE_PHYSICAL,
-					ability = self
-				}
+			victim = unit,
+			attacker = hCaster,
+			damage = self:GetAbilityDamage(),
+			damage_type = DAMAGE_TYPE_PHYSICAL,
+			ability = self
+		}
 
 		ApplyDamage( damage )
 		hCaster:PerformAttack(unit, true, true, true, true, true, false, true)

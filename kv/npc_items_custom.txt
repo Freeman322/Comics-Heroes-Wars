@@ -1594,7 +1594,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"99999"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"12.0"
+		"AbilityCooldown"				"24.0"
 		"AbilityManaCost"				"0"
 	
 		// Item Info

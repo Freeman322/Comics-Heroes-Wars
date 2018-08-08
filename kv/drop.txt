@@ -1,0 +1,37 @@
+"Bosses" 
+{ 
+    "npc_dota_creature_boss_wraith_king"
+    { 
+        "item_book_of_knowledge"        "100"
+        "item_greater_crit"             "50"
+        "item_refresher"                "10"
+    }
+    "npc_dota_creature_boss_pudge"
+    { 
+        "item_book_of_knowledge"        "100"
+    }
+    "npc_dota_creature_boss_phantom_assassin"
+    { 
+        "item_book_of_knowledge"        "100"
+    }
+    "npc_dota_creature_boss_underlord"
+    { 
+        "item_book_of_knowledge"        "100"
+    }
+    "npc_dota_creature_boss_terrorblade"
+    { 
+        "item_book_of_knowledge"        "100"
+    }
+    "npc_dota_creature_boss_faceless_void"
+    { 
+        "item_book_of_knowledge"        "100"
+    }
+    "npc_dota_creature_boss_dark_willow"
+    { 
+        "item_book_of_knowledge"        "100"
+    }
+    "npc_dota_creature_boss_seaghoul"
+    { 
+        "item_book_of_knowledge"        "100"
+    }
+}

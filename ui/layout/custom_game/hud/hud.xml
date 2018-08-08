@@ -1,0 +1,58 @@
+<root>
+    <styles>
+        <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+        <include src="file://{resources}/styles/hud/hud.css" />
+        <include src="s2r://panorama/styles/hud/dota_hud_stat_branch.vcss_c" />	
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/hud/hud.js" />
+    </scripts>
+    <Panel class="HudRoot" hittest="false">
+        <Panel id="HudRoot" hittest="false">
+            <Panel id="Center" hittest="false">
+               <Label id="DiscoverText" class="Hidden" text="" />
+               <Label id="EscapeText" class="Hidden" text="Escape in 3 sec" />
+            </Panel>
+            <Label id="ExpText" text="" />
+            <Button id="OpenButton" class="Button" onactivate="OnOpenBook()">
+                <Label text="BOOK" />
+            </Button>
+            <Panel id="Book" class="Hidden" hittest="true">
+                <Panel id="Book_Left" hittest="true">
+                    <DOTAAvatarImage id="PlayerAvatar"/>
+                    <Panel id="PlayerNameContainer">
+                         <Label id="PlayerName" tabindex="auto" text="Player" />
+                         <Label id="PlayerExp" tabindex="auto" text="Points: 120" />
+                         <Label id="PlayerWins" tabindex="auto" text="Wins: 1" />
+                         <Label id="PlayerDeaths" tabindex="auto" text="Deaths: 1" />
+                    </Panel>
+
+                     <Panel id="Heroes">
+                         <Image class="Hero" src="file://{images}/event/heroes/palladin.png">
+                            <Button class="HeroButton" onactivate="OnBuyHero('1')">
+                                <Label text="Buy PALLADIN" />
+                            </Button>
+                         </Image>
+
+                         <Image class="Hero" src="file://{images}/event/heroes/archer.png">
+                            <Button class="HeroButton" onactivate="OnBuyHero('2')">
+                                <Label text="Buy ARCHER" />
+                            </Button>
+                         </Image>
+
+                         <Image class="Hero" src="file://{images}/event/heroes/warrior.png">
+                            <Button class="HeroButton" onactivate="OnBuyHero('3')">
+                                <Label text="Buy WARRIOR" />
+                            </Button>
+                         </Image>
+                    </Panel>
+                </Panel>
+                <Panel id="Book_Right" hittest="true">
+                    <Image id="Map" src="file://{images}/event/map.psd" />
+                    <Image src="file://{images}/event/badge-active.png" />
+                    <Image id="Clip" src="file://{images}/event/clip.png" />
+                </Panel>
+            </Panel>
+        </Panel>
+    </Panel>
+</root>
