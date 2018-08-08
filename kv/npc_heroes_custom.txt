@@ -1689,48 +1689,7 @@
 		"particle_folder"			"particles/units/heroes/hero_sniper"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
 	}
-	"npc_dota_hero_godspeed"
-	{
-		"override_hero"		   		"npc_dota_hero_batrider"
-		"Model"						"models/heroes/hero_godspeed/models/godspeed.vmdl"
-		"DisableWearables"			"1"
-	    "ModelScale"            	"0.9" //размер модели
-		"Ability1"					"godspeed_bend_time"
-		"Ability2"					"godspeed_ember_field"
-		"Ability3"					"godspeed_hyperpath"
-		"Ability4"					"godspeed_tempest_double"
-		"Ability5"					"generic_hidden"
-		"Ability6"					"godspeed_desolate"
-	    "Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_gold_income_50"
-		"Ability12"					"special_bonus_hp_regen_40"
-		"Ability13"					"special_bonus_armor_15"
-		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_attack_damage_90"
-		"Ability16"					"special_bonus_agility_25"
-		"Ability17"					"special_bonus_all_stats_20"
-		"ArmorPhysical"				"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"14"
-		"AttackDamageMax"			"18"
-		"AttackRate"				"1.700000"
-		"AttackAnimationPoint"		"0.300000"
-		"AttackAcquisitionRange"	"800"
-		"AttackRange"				"128"
-		"ProjectileModel"			""
-		"ProjectileSpeed"			"900"
-		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"23"
-		"AttributeStrengthGain"		"2.700000"
-		"AttributeBaseAgility"		"15"
-		"AttributeAgilityGain"		"1.500000"
-		"AttributeBaseIntelligence"	"24"
-		"AttributeIntelligenceGain"	"2.500000"
-		"StatusHealthRegen"			"1.7500000"
-		"MovementSpeed"				"290"
-		"MovementTurnRate"			"1.000000"
-		"VisionDaytimeRange"		"1200"
-	}
+	
 	"npc_dota_hero_golden_god"
 	{
 		"DisableWearables"		"1"
@@ -4695,7 +4654,7 @@
 		}
 	}
 	"npc_dota_hero_zoom"
-	   	{
+	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"override_hero"		        "npc_dota_hero_razor"
@@ -4705,25 +4664,25 @@
 		"PickSound"					"night_stalker_nstalk_spawn_01"
 		"BanSound"					"night_stalker_nstalk_anger_07"
 		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"			"1"											// Physical protection.
-		"ModelScale"			"2.6"
+		"ArmorPhysical"				"1"											// Physical protection.
+		"ModelScale"				"2.6"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"				"zoom_charge_of_darkness"							// Ability 1
-		"Ability2"				"blackzoom_time_crystal"								// Ability 2
-		"Ability3"				"blackzoom_surge"						// Ability 3
-		"Ability4"				"generic_hidden"
-		"Ability5"				"generic_hidden"
-		"Ability6"		  	    "blackzoom_time_shift"
-		"Ability7"      	    "zoom_aura_sparks"
-		"Ability10"				"special_bonus_exp_boost_30"
-		"Ability11"				"special_bonus_gold_income_50"
-		"Ability12"				"special_bonus_spell_block_20"
-		"Ability13"				"special_bonus_attack_speed_100"
-		"Ability14"				"special_bonus_cooldown_reduction_25"
-		"Ability15"				"special_bonus_agility_15"
-		"Ability16"				"special_bonus_unique_zoom"
-		"Ability17"				"special_bonus_all_stats_20"
+		"Ability1"					"zoom_charge_of_darkness"							// Ability 1
+		"Ability2"					"blackzoom_time_crystal"								// Ability 2
+		"Ability3"					"blackzoom_surge"						// Ability 3
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"		  	    	"blackzoom_time_shift"
+		"Ability7"      	   		"zoom_aura_sparks"
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_gold_income_50"
+		"Ability12"					"special_bonus_spell_block_20"
+		"Ability13"					"special_bonus_attack_speed_100"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_agility_15"
+		"Ability16"					"special_bonus_unique_zoom"
+		"Ability17"					"special_bonus_all_stats_20"
 	
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
@@ -4756,9 +4715,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"230"
-		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_night_stalker.vsndevts"
-		"particle_folder"		"particles/units/heroes/hero_night_stalker"
-		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_night_stalker.vsndevts"
+		"particle_folder"			"particles/units/heroes/hero_night_stalker"
+		"GameSoundsFile"			"soundevents/voscripts/game_sounds_vo_zoom.vsndevts"
 		"precache"
 		{
 			"model"	  "models/items/antimage/acolyte_vengeance_hooded_mask/acolyte_vengeance_hooded_mask.vmdl"
@@ -4771,7 +4730,7 @@
 	{
 		"Model"       	 "models/heroes/zeus/zeus.vmdl"
 		"override_hero"	 "npc_dota_hero_zuus"
-	    	"DisableWearables"  "1"
+		"DisableWearables"  "1"
 		"AbilityLayout"  "6"
 		"Ability1"		 	 "zuus_arc_lightning_new"
 		"Ability2"				"zuus_lightning_bolt_new"
@@ -4789,7 +4748,7 @@
 		"Ability16"					"special_bonus_intelligence_25"
 		"Ability17"					"special_bonus_spell_amplify_15"
 		"AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
-	    	"ArmorPhysical"		"0"
+		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"21"
 		"AttackDamageMax"		"29"
@@ -5074,6 +5033,86 @@
 		"MovementTurnRate"					"0.500000"
 		"BoundsHullName"					"DOTA_HULL_SIZE_HERO"
 	}
+	"npc_dota_hero_godspeed"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "202"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/heroes/hero_godspeed/models/godspeed.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+		"Portrait"					"vgui/hud/heroportraits/portrait_razor"
+		"IdleExpression"			"scenes/razor/razor_exp_idle_01.vcd"
+		"PickSound"					"razor_raz_spawn_01"
+		"BanSound"					"razor_raz_anger_04"
+		"SoundSet"					"Hero_Razor"
+		"IdleSoundLoop"				"Hero_Razor.IdleLoop"
+     
+	 	"particle_folder"			"particles/units/heroes/hero_antimage"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_antimage.vsndevts"
+        
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"     "21"
+        "AttributeStrengthGain"     "1.700000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.900000"
+        "AttributeBaseAgility"      "29"
+        "AttributeAgilityGain"      "2.400000"
+
+        // Misc stats
+        "ArmorPhysical"             "3"
+        "MagicalResistance"			"25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "22"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "128"
+        "ProjectileSpeed"           "0"
+        "MovementSpeed"             "295"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"godspeed_bend_time"
+		"Ability2"					"godspeed_ember_field"
+		"Ability3"					"godspeed_hyperpath"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"godspeed_desolate"
+
+	    "Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_gold_income_50"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_armor_15"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_agility_25"
+		"Ability17"					"special_bonus_all_stats_20"
+        
+        // Card info
+        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    			"1,1,1,1,1"
+        "Complexity"    			"2"
+        
+        // Misc
+        "NameAliases"      			 "wr"
+        "url"       "Windranger"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+	}
+
+
+	/////////////////////EVENT HERO///////////////
 	"npc_dota_hero_thief"
 	{
 		"BaseClass"             	"npc_dota_hero"       

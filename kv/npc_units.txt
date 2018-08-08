@@ -19109,6 +19109,117 @@
 		// Health Bar	
 		"HealthBarOffset"     "180"
 	}
+	"npc_dota_hero_godspeed"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "202"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/heroes/hero_godspeed/models/godspeed.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+		"Portrait"					"vgui/hud/heroportraits/portrait_razor"
+		"IdleExpression"			"scenes/razor/razor_exp_idle_01.vcd"
+		"PickSound"					"razor_raz_spawn_01"
+		"BanSound"					"razor_raz_anger_04"
+		"SoundSet"					"Hero_Razor"
+		"IdleSoundLoop"				"Hero_Razor.IdleLoop"
+     
+	 	"particle_folder"			"particles/units/heroes/hero_antimage"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_antimage.vsndevts"
+        
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"     "21"
+        "AttributeStrengthGain"     "1.700000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.900000"
+        "AttributeBaseAgility"      "29"
+        "AttributeAgilityGain"      "2.400000"
+
+        // Misc stats
+        "ArmorPhysical"             "3"
+        "MagicalResistance"			"25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "22"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "128"
+        "ProjectileSpeed"           "0"
+        "MovementSpeed"             "295"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"godspeed_bend_time"
+		"Ability2"					"godspeed_ember_field"
+		"Ability3"					"godspeed_hyperpath"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"godspeed_desolate"
+
+	    "Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_gold_income_50"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_armor_15"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_agility_25"
+		"Ability17"					"special_bonus_all_stats_20"
+        
+        // Card info
+        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    			"1,1,1,1,1"
+        "Complexity"    			"2"
+        
+        // Misc
+        "NameAliases"      			 "wr"
+        "url"       "Windranger"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		 // Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"100"
+		"StatusHealthRegen"			"1.5000"
+		"StatusMana"				"75"
+		"StatusManaRegen"			"0.9"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+
+		// Health Bar	
+		"HealthBarOffset"     		"180"
+	}
 	"npc_dota_hero_thief"
 	{
 		"BaseClass"             	"npc_dota_hero"       
