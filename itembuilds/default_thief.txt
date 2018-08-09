@@ -1,0 +1,42 @@
+"itembuilds"
+{
+	"author"		"PG Games"
+	"hero"			"npc_dota_hero_thief"
+	"Title"			"Recommended items for Thief"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_ward_observer"
+			"item"		"item_tango"
+			"item"		"item_flask"
+			"item"		"item_clarity"
+			"item"		"item_stout_shield"
+
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{
+			"item"		"item_force_boots"
+			"item"		"item_hand_of_midas"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"
+		{
+
+		}
+		
+		"#DOTA_Item_Build_Late_Items"
+		{
+			
+			"item"		"item_solar_crest"
+			"item"		"item_assault"
+		}	
+	
+		"#DOTA_Item_Build_Other_Items"
+		{
+
+		}
+	}
+}

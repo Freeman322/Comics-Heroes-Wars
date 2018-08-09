@@ -123,11 +123,3 @@ function modifier_thanos_first_blood:CheckState()
 	return state
 end
 
-
-function modifier_thanos_first_blood:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
-	}
-
-	return funcs
-end

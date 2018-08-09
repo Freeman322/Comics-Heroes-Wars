@@ -23,7 +23,7 @@ end
 function modifier_godspeed_hyperpath:CheckState()
 	local state = {
   	[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
-    [MODIFIER_STATE_ATTACK_IMMUNE] = true
+    [MODIFIER_STATE_INVULNERABLE] = true
 	}
 	return state
 end

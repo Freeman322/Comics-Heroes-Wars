@@ -7141,4 +7141,40 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// 
+	//=================================================================================================================
+	"item_book_of_knowledge"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"    		"tome_of_knowledge"
+		"ScriptFile"					"items/item_book_of_knowledge.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_items/necronomicon.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemQuality"					"component"
+		"ItemDroppable"       			"1"
+	    "ItemSellable"        		    "0"
+		"ItemKillable"					"0"
+		"ItemPurchasable"				"0"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"1000"
+			}
+		}
+	}
 }

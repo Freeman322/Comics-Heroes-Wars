@@ -35,14 +35,7 @@ function miraak_soul_devour:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
 	if hTarget ~= nil then
 		if ( not hTarget:TriggerSpellAbsorb( self ) ) then
-			local damage = {
-                victim = hTarget,
-                attacker = self:GetCaster(),
-                damage = self:GetSpecialValueFor("damage"),
-                damage_type = DAMAGE_TYPE_MAGICAL,
-                ability = self
-            }
-            ApplyDamage( damage )
+			hTarget:SetMana(hTarget:GetMana() - self:GetSpecialValueFor("mana_burn"))
 
             if hTarget:GetManaPercent() <= self:GetSpecialValueFor("mana_threshold_ptc") then 
                 self:GetCaster():Heal(hTarget:GetHealth(), self)

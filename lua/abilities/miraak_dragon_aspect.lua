@@ -62,14 +62,14 @@ function modifier_miraak_dragon_aspect:OnTakeDamage( params )
 
                 EmitSoundOn("Hero_Pugna.NetherWard.Target", unit)
 
-                local damage = {
+                local damage_table = {
                     victim = unit,
                     attacker = self:GetCaster(),
                     damage = damage * (self:GetAbility():GetSpecialValueFor("damage_return") / 100),
                     damage_type = DAMAGE_TYPE_PURE,
                     ability = self:GetAbility()
                 }
-                ApplyDamage( damage )
+                ApplyDamage( damage_table )
 
                 if self:GetCaster():HasTalent("special_bonus_unique_miraak_3") then 
                     self:GetCaster():Heal(damage, self:GetAbility())

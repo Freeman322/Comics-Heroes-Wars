@@ -95,6 +95,8 @@ function modifier_miraak_mana_void:OnAttackLanded (params)
             damage_type = DAMAGE_TYPE_PURE,
             ability = self:GetAbility()
         })
+
+        self:GetAbility():UseResources(true, false, true)
       end
     end
   end

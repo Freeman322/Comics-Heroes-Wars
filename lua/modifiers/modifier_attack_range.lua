@@ -26,7 +26,7 @@ function modifier_attack_range:DeclareFunctions()
 end
 
 function modifier_attack_range:GetModifierAttackRangeBonus()
-	return 1000
+	return 500
 end
 
 

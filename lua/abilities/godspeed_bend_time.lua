@@ -1,5 +1,4 @@
 if not godspeed_bend_time then godspeed_bend_time = class({}) end
-function godspeed_bend_time:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
 LinkLuaModifier ("modifier_godspeed_bend_time", "abilities/godspeed_bend_time.lua", LUA_MODIFIER_MOTION_NONE)
 
 
@@ -7,29 +6,24 @@ function godspeed_bend_time:OnSpellStart()
     if IsServer() then
         local hTarget = self:GetCursorTarget()
         local info = {
-    			EffectName = "particles/units/heroes/hero_arc_warden/arc_warden_base_attack.vpcf",
+    			EffectName = "particles/units/heroes/hero_phantom_lancer/phantomlancer_spiritlance_projectile.vpcf",
     			Ability = self,
     			iMoveSpeed = 1200,
     			Source = self:GetCaster(),
     			Target = self:GetCursorTarget(),
     			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
-    		}
-	      ProjectileManager:CreateTrackingProjectile( info )
-        EmitSoundOn("Hero_Oracle.FatesEdict", self:GetCaster())
+		}
+	    ProjectileManager:CreateTrackingProjectile( info )
+	   
+		EmitSoundOn("Hero_PhantomLancer.SpiritLance.Throw", self:GetCaster())
     end
 end
 
 function godspeed_bend_time:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
-		local damage = {
-			victim = hTarget,
-			attacker = self:GetCaster(),
-			damage = self:GetAbilityDamage(),
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self
-		}
-		ApplyDamage( damage )
-    hTarget:AddNewModifier(self:GetCaster(), self, "modifier_godspeed_bend_time", {duration = self:GetSpecialValueFor("duration")})
+		EmitSoundOn("Hero_PhantomLancer.SpiritLance.Impact", self:GetCaster())
+
+   		hTarget:AddNewModifier(self:GetCaster(), self, "modifier_godspeed_bend_time", {duration = self:GetSpecialValueFor("duration")})
 	end
 
 	return true
@@ -50,73 +44,86 @@ function modifier_godspeed_bend_time:StatusEffectPriority()
 end
 
 
-function modifier_godspeed_bend_time:GetHeroEffectName()
-	return "particles/units/heroes/hero_arc_warden/arc_warden_flux_tgt.vpcf"
+function modifier_godspeed_bend_time:GetEffectName()
+	return "particles/godspeed/godspeed_bend_time.vpcf"
 end
 
 
-function modifier_godspeed_bend_time:HeroEffectPriority()
-	return 100
+function modifier_godspeed_bend_time:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
 end
 
 
 function modifier_godspeed_bend_time:OnCreated( kv )
-    if IsServer() then
-       EmitSoundOn("Hero_ArcWarden.Flux.Target", self:GetParent())
+	if IsServer() then
+		self._tAbilities = {}
+
+		for i = 0, 5 do
+			table.insert( self._tAbilities,  self:GetParent():GetAbilityByIndex(i))
+		end
+
+		for k, ability in pairs(self._tAbilities) do
+			ability:SetFrozenCooldown(true)
+		end
+
+		self._iPtc = self:GetAbility():GetSpecialValueFor("damage")
+		if self:GetParent():HasTalent("special_bonus_godspeed_1") then self._iPtc = self._iPtc + self:GetParent():FindTalentValue("special_bonus_godspeed_1") end 
+
+		self._vPosition = self:GetParent():GetAbsOrigin()
     end
+end
+
+function modifier_godspeed_bend_time:OnDestroy()
+	if IsServer() then
+		for k, ability in pairs(self._tAbilities) do
+			ability:SetFrozenCooldown(false)
+		end
+	end
 end
 
 function modifier_godspeed_bend_time:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
-        MODIFIER_EVENT_ON_TAKEDAMAGE,
-        MODIFIER_PROPERTY_MOVESPEED_MAX,
-    		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-    		MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE,
-    		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+        MODIFIER_EVENT_ON_UNIT_MOVED
     }
 
     return funcs
 end
 
-function modifier_godspeed_bend_time:GetModifierMoveSpeed_Max()
-	return 50
+function modifier_godspeed_bend_time:OnUnitMoved(params)
+	if IsServer() then 
+		if params.unit == self:GetParent() then 
+			if self._vPosition ~= self:GetParent():GetAbsOrigin() then 
+				local distance = (self:GetParent():GetAbsOrigin() - self._vPosition):Length2D()
+
+				self._vPosition = self:GetParent():GetAbsOrigin()
+
+				self:OnPositionChanged(distance)
+			end 			
+		end
+	end 
 end
 
-function modifier_godspeed_bend_time:GetModifierMoveSpeed_Limit()
-	return 50
+function modifier_godspeed_bend_time:OnPositionChanged( distance )
+	if IsServer() then 
+		local damage_table = {
+			victim = self:GetParent(),
+			attacker = self:GetCaster(),
+			damage = distance,
+			damage_type = self:GetAbility():GetAbilityDamageType(),
+			damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
+			ability = self:GetAbility()
+		}
+
+		ApplyDamage( damage_table )
+	end
 end
 
-function modifier_godspeed_bend_time:GetModifierTurnRate_Percentage()
-	return -500
-end
 
-function modifier_godspeed_bend_time:GetModifierMoveSpeedBonus_Constant()
-	return 50
-end
+function modifier_godspeed_bend_time:CheckState()
+	local state = {
+		[MODIFIER_STATE_FAKE_ALLY] = true,
+		[MODIFIER_STATE_SILENCED] = true
+	}
 
-function modifier_godspeed_bend_time:GetModifierIncomingDamage_Percentage( params )
-    return self:GetAbility():GetSpecialValueFor("damage_incoming")
-end
-
-function modifier_godspeed_bend_time:IsHidden()
-	return false
-end
-
-function modifier_godspeed_bend_time:OnDestroy()
-    if IsServer() then
-        EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse", self:GetParent())
-        EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse.Cast", self:GetParent())
-    end
-end
-
-function modifier_godspeed_bend_time:OnTakeDamage( params )
-   local parent = params.unit
-   local attacker = params.attacker
-   local damage = params.damage
-   local damage_type = params.damage_type
-
-   if parent == self:GetParent() then
-   		self:Destroy()
-   end
+	return state
 end
