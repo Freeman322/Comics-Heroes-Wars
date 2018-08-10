@@ -16,6 +16,7 @@ function godspeed_speed_void:OnUpgrade()
 end
 
 function godspeed_speed_void:GetCooldown( nLevel )
+    if IsServer() then if self:GetCaster():HasTalent("special_bonus_godspeed_2") then return self:GetCaster():FindTalentValue("special_bonus_godspeed_2") end end 
     return self.BaseClass.GetCooldown( self, nLevel )
 end
 

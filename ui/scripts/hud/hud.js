@@ -78,6 +78,40 @@ function UpdatePickState() {
 function OnOpenBook()
 {
     $("#Book").SetHasClass("Hidden", !$("#Book").BHasClass("Hidden"))
+
+    UpdateBookData()
+}
+
+function UpdateBookData() {
+    var payload = {
+        "type": 3,
+        "data": GetPlayerSteamID3()
+    }
+    $.AsyncWebRequest('http://pggames.pw/games/chw/src/Event/Event.php', {
+        type: 'POST',
+        data: { payload: JSON.stringify(payload) },
+        success: function(data) {
+            var respounce = JSON.parse(data)
+            
+            $("#PlayerExp").text = $.Localize("Event_Points") + respounce.exp
+            $("#PlayerWins").text = $.Localize("Event_Wins") + respounce.wins
+            $("#PlayerDeaths").text = $.Localize("Event_Deaths") + respounce.death
+        }
+    });
+}
+
+
+function OnBooksCombined()
+{
+    Game.EmitSound("Event.Escaped")
+
+    $("#EscapeText").SetHasClass("Hidden", false)
+    
+    $("#EscapeText").text = $.Localize("Event_Books_Combined")
+
+    $.Schedule( 5, function() {
+        $("#EscapeText").SetHasClass("Hidden", true)
+    });
 }
 
 function GetPlayerData()
@@ -86,8 +120,6 @@ function GetPlayerData()
 
     $("#PlayerName").text = player.player_name
     $("#PlayerAvatar").steamid = player.player_steamid
-
-    ///{"player_id":0,"player_name":"Freeman","player_connection_state":2,"player_steamid":"76561198047935884","player_kills":0,"player_deaths":0,"player_assists":0,"player_selected_hero_id":201,"player_selected_hero":"npc_dota_hero_thief","player_selected_hero_entity_index":353,"possible_hero_selection":"","player_level":1,"player_respawn_seconds":-1,"player_gold":600,"player_team_id":2,"player_is_local":true,"player_has_host_privileges":true}
 }
 
 function OnBuyHero(id)
@@ -102,7 +134,7 @@ function OnBuyHero(id)
     GameEvents.Subscribe( "on_escape", OnEscape );
     GameEvents.Subscribe( "on_escape_done", OnEscapeDone );
     GameEvents.Subscribe( "on_boss_killed", OnBossKilled );
-
+    GameEvents.Subscribe( "on_books_combined", OnBooksCombined );
 
     CustomNetTables.SubscribeNetTableListener("event", OnEventStateChanged);
 

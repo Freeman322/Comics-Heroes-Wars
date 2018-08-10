@@ -322,3 +322,29 @@
 
 	vertical-align: bottom;
 }
+
+#EventText
+{
+	font-size: 30px;
+	color: darkred;
+	text-shadow: 0px 0px 8px 1 red;
+	text-overflow: shrink;
+	height: 200px;
+	text-align: center;
+
+	horizontal-align: middle;
+	vertical-align: bottom;
+}
+
+.Price
+{
+	font-size: 30px;
+	color: gold;
+	text-shadow: 0px 0px 8px 1 gold;
+	text-overflow: shrink;
+	height: 30px;
+	text-align: center;
+
+	horizontal-align: middle;
+	vertical-align: top;
+}

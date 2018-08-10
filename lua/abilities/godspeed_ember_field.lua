@@ -42,7 +42,6 @@ function modifier_godspeed_ember_field_aura:IsPurgable()
 end
 
 function modifier_godspeed_ember_field_aura:GetAuraRadius()
-	if IsServer() then if self:GetCaster():HasTalent("special_bonus_godspeed_2") then return 99999 end end 
 	return self:GetAbility():GetSpecialValueFor("radius")
 end
 

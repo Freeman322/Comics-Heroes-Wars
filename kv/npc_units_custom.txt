@@ -2431,7 +2431,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"350"		// Speed
+		"MovementSpeed"				"550"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
 
 		"particle_folder"			"particles/units/heroes/hero_faceless_void"
@@ -2832,7 +2832,7 @@
 
 		"particle_folder"			"particles/units/heroes/hero_faceless_void"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
-		
+		"SoundSet"					"n_creep_Ranged"
 
 		// Status
 		//----------------------------------------------------------------
@@ -2941,6 +2941,7 @@
 		"ModelScale"				"1.7"
 		"Level"						"100"
 		"ConsideredHero"			"1"
+		"SoundSet"					"LoneDruid_SpiritBear"
 
 		"MinimapIcon"				"minimap_roshancamp"
 		"MinimapIconSize"			"300"
@@ -2955,11 +2956,11 @@
 		//----------------------------------------------------------------
 
 		"Ability1"					"tidehunter_kraken_shell"
-		"Ability2"					"medusa_mana_shield"
-		"Ability3"					"troll_warlord_fervor"
-		"Ability4"					"magnataur_reverse_polarity"
-		"Ability5"					"medusa_stone_gaze"
-		"Ability6"					"neutral_spell_immunity"
+		"Ability2"					"troll_warlord_fervor"
+		"Ability3"					"medusa_stone_gaze"
+		"Ability4"					"neutral_spell_immunity"
+		"Ability5"					""
+		"Ability6"					""
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
@@ -3003,12 +3004,8 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"350"		// Speed
+		"MovementSpeed"				"420"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
-
-		"particle_folder"			"particles/units/heroes/hero_faceless_void"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
-		
 
 		// Status
 		//----------------------------------------------------------------
@@ -3037,18 +3034,7 @@
 
 			"OffensiveAbilities"
 			{
-				"Ability1"
-				{
-					"Name"				"medusa_mana_shield"
-					"Heal"				"1"
-				}
-				"Ability2"
-				{
-					"Name"				"magnataur_reverse_polarity"
-					"Damage"			"1"
-					"Stun"				"1"
-				}
-				"Ability3"				
+				"Ability1"				
 				{
 					"Name"				"medusa_stone_gaze"
 					"AOE"				"1"
@@ -3212,13 +3198,15 @@
 	  	{		
 			"DisableResistance"			"20.0"
 		}
+
+		"vscripts"					"ai/scp_173.lua"
 	}
 	"npc_dota_creature_boss_shy_guy"
 	{
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to
-		"ModelScale"				"2.5"
+		"ModelScale"				"4.5"
 		"Level"						"100"
 		"ConsideredHero"			"1"
 
@@ -3262,9 +3250,9 @@
 		"AttackRange"				"230"
 		"ProjectileModel"			""
 		"ProjectileSpeed"			"0"
-		"AttackDamageMin"			"6700"		// Damage range min.
-		"AttackDamageMax"			"9120"		// Damage range max.
-		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackDamageMin"			"136700"		// Damage range min.
+		"AttackDamageMax"			"449120"		// Damage range max.
+		"AttackRate"				"0.1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
 
@@ -3283,18 +3271,18 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"350"		// Speed
+		"MovementSpeed"				"550"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
 
-		"particle_folder"			"particles/units/heroes/hero_faceless_void"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"SoundSet"					"Hero_WarlockGolem"			// Name of sound set.
+		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
 		
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"320000"		// Base health.
+		"StatusHealth"				"300000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
-		"StatusMana"				"1000"		// Base mana.
+		"StatusMana"				"90000"		// Base mana.
 		"StatusManaRegen"			"290.0"		// Mana regeneration rate.
 
 		// Team
@@ -3308,5 +3296,7 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"2000"		// Range of vision during day light.
 		"VisionNighttimeRange"		"2000"		// Range of vision at night time.
+
+		"vscripts"					"ai/scp_096.lua"
 	}
 }

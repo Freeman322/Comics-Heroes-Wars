@@ -30235,7 +30235,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_speed"				"750 1500 2250 3000"
+				"max_speed"				"700 900 1100 1300"
 			}
 		}
 	}
@@ -30261,7 +30261,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"26 24 22 20"
+		"AbilityCooldown"				"39 36 33 30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -30301,7 +30301,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0 55.0 50.0"
+		"AbilityCooldown"				"120.0 110.0 100.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -30339,33 +30339,6 @@
 				"attack_damage_ptc"		"6.0 9.0 12.0"
 			}
 		}
-	}
-	//=================================================================================================================
-	// Savitar: Gods Speed
-	//=================================================================================================================
-	"savitar_gods_speed"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"custom/savitar_gods_speed"
-		"ScriptFile"					"abilities/savitar_gods_speed.lua"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"0.0 0.0 0.0 0.0"
-		"AbilityCastRange"				"GLOBAL"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 16 12 8"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40"
-
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 	}
 	//=================================================================================================================
 	// Ability: Speedforce Gift
@@ -30573,7 +30546,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"1"
+				"value"						"25"
 			}
 		}
 	}
@@ -30746,7 +30719,7 @@
 		"AbilityTextureName"			"custom/event_madness"
 		"ScriptFile"					"abilities/event_madness.lua"	
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -30768,5 +30741,88 @@
 				"duration"				"5"
 			}
 		}
-	}		
+	}
+	//=================================================================================================================
+	// Savitar: gods speed
+	//=================================================================================================================
+	"savitar_gods_speed"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/savitar_gods_speed"
+		"ScriptFile"					"abilities/savitar_gods_speed.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Abaddon.BorrowedTime"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		"AbilityCooldown"				"%cooldown_tooltip"
+		"precache"
+		{
+			"particle"					"particles/hero_savitar/savitar_godspeed.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_threshold"				"2 3 4 5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"chance_dodge"				"15 20 25 30"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_tooltip"			"0.5"
+			}
+		}
+	}
+	"special_bonus_savitar_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"special_bonus_undefined"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1"
+			}
+		}
+	}
+	"special_bonus_savitar_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"special_bonus_undefined"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"12"
+			}
+		}
+	}
 }

@@ -117,13 +117,3 @@ function modifier_godspeed_bend_time:OnPositionChanged( distance )
 		ApplyDamage( damage_table )
 	end
 end
-
-
-function modifier_godspeed_bend_time:CheckState()
-	local state = {
-		[MODIFIER_STATE_FAKE_ALLY] = true,
-		[MODIFIER_STATE_SILENCED] = true
-	}
-
-	return state
-end

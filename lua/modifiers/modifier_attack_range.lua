@@ -10,10 +10,6 @@ function modifier_attack_range:IsPurgable()
 	return false
 end
 
-function modifier_attack_range:RemoveOnDeath()
-	return false
-end
-
 function modifier_attack_range:GetEffectName()
     return "particles/hw_fx/cursed_rapier.vpcf"
 end

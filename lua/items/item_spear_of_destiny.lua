@@ -187,7 +187,7 @@ end
 
 function modifier_item_spear_of_destiny_active:CheckState()
 	local state = {
-        [MODIFIER_STATE_ATTACK_IMMUNE] = true,
+        [MODIFIER_STATE_INVULNERABLE] = true,
         [MODIFIER_STATE_MAGIC_IMMUNE] = true,
         [MODIFIER_STATE_DISARMED] = true
 	}
