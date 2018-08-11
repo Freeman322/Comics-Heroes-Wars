@@ -19025,24 +19025,24 @@
         // Attribute Stats
         "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
         "AttributeBaseStrength"     "23"
-        "AttributeStrengthGain"     "2.000000"
-        "AttributeBaseIntelligence" "22"
-        "AttributeIntelligenceGain" "2.300000"
-        "AttributeBaseAgility"      "14"
-        "AttributeAgilityGain"      "1.400000"
+        "AttributeStrengthGain"     "1.900000"
+        "AttributeBaseIntelligence" "24"
+        "AttributeIntelligenceGain" "2.800000"
+        "AttributeBaseAgility"      "18"
+        "AttributeAgilityGain"      "2.100000"
 
         // Misc stats
-        "ArmorPhysical"             "3"
+        "ArmorPhysical"             "1"
         "MagicalResistance"			"25"
         "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"           "22"
         "AttackDamageMax"           "34"
-        "AttackRate"                "1.700000"
+        "AttackRate"                "1.600000"
         "AttackAnimationPoint"      "0.400000"
         "AttackAcquisitionRange"    "600"
         "AttackRange"               "128"
         "ProjectileSpeed"           "0"
-        "MovementSpeed"             "295"
+        "MovementSpeed"             "300"
         "MovementTurnRate"          "0.600000"
         
         // Abilities
@@ -19087,9 +19087,9 @@
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
 		"StatusHealth"				"200"
-		"StatusHealthRegen"			"1.5000"
+		"StatusHealthRegen"			"1.0000"
 		"StatusMana"				"75"
-		"StatusManaRegen"			"0.9"
+		"StatusManaRegen"			"1.0"
 
 		// Team
 		//-------------------------------------------------------------------------------------------------------------
@@ -19141,24 +19141,24 @@
         // Attribute Stats
         "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength"     "21"
-        "AttributeStrengthGain"     "1.700000"
+        "AttributeStrengthGain"     "2.100000"
         "AttributeBaseIntelligence" "19"
         "AttributeIntelligenceGain" "1.900000"
-        "AttributeBaseAgility"      "29"
-        "AttributeAgilityGain"      "2.400000"
+        "AttributeBaseAgility"      "28"
+        "AttributeAgilityGain"      "3.200000"
 
         // Misc stats
-        "ArmorPhysical"             "3"
+        "ArmorPhysical"             "0"
         "MagicalResistance"			"25"
         "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"           "22"
         "AttackDamageMax"           "34"
-        "AttackRate"                "1.700000"
+        "AttackRate"                "1.450000"
         "AttackAnimationPoint"      "0.400000"
         "AttackAcquisitionRange"    "600"
         "AttackRange"               "128"
         "ProjectileSpeed"           "0"
-        "MovementSpeed"             "295"
+        "MovementSpeed"             "325"
         "MovementTurnRate"          "0.600000"
         
         // Abilities
@@ -19174,7 +19174,7 @@
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_godspeed_2"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability15"					"special_bonus_unique_faceless_void_4"
 		"Ability16"					"special_bonus_agility_25"
 		"Ability17"					"special_bonus_all_stats_20"
         
@@ -19200,9 +19200,9 @@
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
 		"StatusHealth"				"100"
-		"StatusHealthRegen"			"1.5000"
+		"StatusHealthRegen"			"2.0000"
 		"StatusMana"				"75"
-		"StatusManaRegen"			"0.9"
+		"StatusManaRegen"			"1.0"
 
 		// Team
 		//-------------------------------------------------------------------------------------------------------------
@@ -19256,24 +19256,24 @@
         // Attribute Stats
         "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
         "AttributeBaseStrength"     "21"
-        "AttributeStrengthGain"     "1.700000"
-        "AttributeBaseIntelligence" "19"
-        "AttributeIntelligenceGain" "1.900000"
-        "AttributeBaseAgility"      "29"
-        "AttributeAgilityGain"      "2.400000"
+        "AttributeStrengthGain"     "2.300000"
+        "AttributeBaseIntelligence" "18"
+        "AttributeIntelligenceGain" "1.800000"
+        "AttributeBaseAgility"      "28"
+        "AttributeAgilityGain"      "3.000000"
 
         // Misc stats
-        "ArmorPhysical"             "3"
+        "ArmorPhysical"             "0"
         "MagicalResistance"			"25"
         "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"           "22"
         "AttackDamageMax"           "34"
-        "AttackRate"                "1.700000"
+        "AttackRate"                "1.450000"
         "AttackAnimationPoint"      "0.400000"
         "AttackAcquisitionRange"    "600"
         "AttackRange"               "128"
         "ProjectileSpeed"           "0"
-        "MovementSpeed"             "315"
+        "MovementSpeed"             "325"
         "MovementTurnRate"          "0.600000"
         
         // Abilities
@@ -19289,7 +19289,7 @@
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_savitar_2"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability15"					"special_bonus_all_stats_15"
 		"Ability16"					"special_bonus_agility_25"
 		"Ability17"					"special_bonus_savitar_1"
         
@@ -19315,9 +19315,9 @@
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
 		"StatusHealth"				"100"
-		"StatusHealthRegen"			"1.5000"
+		"StatusHealthRegen"			"5.0000"
 		"StatusMana"				"75"
-		"StatusManaRegen"			"0.9"
+		"StatusManaRegen"			"1.0"
 
 		// Team
 		//-------------------------------------------------------------------------------------------------------------

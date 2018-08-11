@@ -86,7 +86,18 @@ function modifier_miraak_mana_void:OnAttackLanded (params)
 
         hTarget:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = stun_duration})
 
-        EmitSoundOn("Hero_Antimage.ManaBreak", hTarget)
+        if Util:PlayerEquipedItem(self:GetParent():GetPlayerOwnerID(), "emerald_whale_blade") == true then
+          EmitSoundOn("Hero_AbyssalUnderlord.PitOfMalice.TI8", hTarget)
+
+          local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_ti8_immortal_pitofmalice.vpcf", PATTACH_CUSTOMORIGIN, nil )
+          ParticleManager:SetParticleControl( nFXIndex, 0,  hTarget:GetAbsOrigin() )
+          ParticleManager:SetParticleControl( nFXIndex, 1,  Vector(200, 1, 1) )
+          ParticleManager:SetParticleControl( nFXIndex, 2,  Vector(1, 0, 0))
+          ParticleManager:SetParticleControl( nFXIndex, 6,  Vector(255, 255, 255) )
+          ParticleManager:ReleaseParticleIndex(nFXIndex)
+        else 
+          EmitSoundOn("Hero_Antimage.ManaBreak", hTarget)
+        end
 
         self:GetAbility():ApplyDamage({
             victim = hTarget,

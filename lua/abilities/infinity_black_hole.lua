@@ -6,6 +6,11 @@ function infinity_black_hole:GetCastRange (vLocation, hTarget)
     return self.BaseClass.GetCastRange (self, vLocation, hTarget)
 end
 
+function infinity_black_hole:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_arcana") then return "custom/enigma_singularity" end
+    return self.BaseClass.GetAbilityTextureName(self) 
+end
+
 function infinity_black_hole:GetAOERadius ()
     return 450
 end
@@ -53,23 +58,25 @@ function modifier_infinity_black_hole_thinker:OnCreated(event)
         self:StartIntervalThink (self.startup_time)
 
         self.soundName = "chw.black_hole_loop_01"
-        StartSoundEvent(self.soundName, self:GetAbility():GetCaster())
-        EmitSoundOn("Hero_Enigma.BlackHole.Cast.Chasm", thinker)
-        thinker:EmitSound ("enigma_enig_ability_black_01")
 
-        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "enigma_bracers") == true then
-          local bhParticle1 = ParticleManager:CreateParticle ("particles/econ/items/enigma/enigma_world_chasm/enigma_blackhole_ti5.vpcf", PATTACH_WORLDORIGIN, thinker)
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "enigma_singularity") == true then
+          local bhParticle1 = ParticleManager:CreateParticle ("particles/enigma/enigma_fundamental_of_gravity/enigma_black_hole_extr_hole.vpcf", PATTACH_WORLDORIGIN, thinker)
           ParticleManager:SetParticleControl(bhParticle1, 0, thinker_pos + Vector (0, 0, 65))
-          ParticleManager:SetParticleControl(bhParticle1, 1, thinker_pos + Vector (0, 0, 65))
+          ParticleManager:SetParticleControl(bhParticle1, 1, Vector (self.radius, self.radius, 0))
           ParticleManager:SetParticleControl(bhParticle1, 2, thinker_pos + Vector (0, 0, 65))
           ParticleManager:SetParticleControl(bhParticle1, 3, thinker_pos + Vector (0, 0, 65))
           ParticleManager:SetParticleControl(bhParticle1, 6, Vector (self.radius, self.radius, 0))
+          ParticleManager:SetParticleControl(bhParticle1, 5, thinker_pos + Vector (0, 0, 65))
+          ParticleManager:SetParticleControl(bhParticle1, 6, thinker_pos + Vector (0, 0, 65))
           ParticleManager:SetParticleControl(bhParticle1, 7, thinker_pos + Vector (0, 0, 65))
           ParticleManager:SetParticleControl(bhParticle1, 8, thinker_pos + Vector (0, 0, 65))
           ParticleManager:SetParticleControl(bhParticle1, 9, thinker_pos + Vector (0, 0, 65))
+          ParticleManager:SetParticleControl(bhParticle1, 20, thinker_pos + Vector (0, 0, 65))
           self:AddParticle( bhParticle1, false, false, -1, false, true )
+
+          self.soundName = "Enigma.Singularity_black_hole"
         else
-          local bhParticle1 = ParticleManager:CreateParticle ("particles/hero_enigma/enigma_blackhole.vpcf", PATTACH_WORLDORIGIN, thinker)
+          local bhParticle1 = ParticleManager:CreateParticle ("particles/econ/items/enigma/enigma_world_chasm/enigma_blackhole_ti5.vpcf", PATTACH_WORLDORIGIN, thinker)
           ParticleManager:SetParticleControl(bhParticle1, 0, thinker_pos + Vector (0, 0, 65))
           ParticleManager:SetParticleControl(bhParticle1, 1, thinker_pos + Vector (0, 0, 65))
           ParticleManager:SetParticleControl(bhParticle1, 2, thinker_pos + Vector (0, 0, 65))
@@ -82,6 +89,10 @@ function modifier_infinity_black_hole_thinker:OnCreated(event)
           self:AddParticle( bhParticle1, false, false, -1, false, true )
         end
         ScreenShake(thinker:GetOrigin (), 100, 100, 6, 9999, 0, true)
+
+        StartSoundEvent(self.soundName, self:GetAbility():GetCaster())
+        EmitSoundOn("Hero_Enigma.BlackHole.Cast.Chasm", thinker)
+        thinker:EmitSound ("enigma_enig_ability_black_01")
     end
 end
 
@@ -278,6 +289,3 @@ function modifier_infinity_black_hole:OnDestroy()
         FindClearSpaceForUnit(self:GetParent(), self:GetParent():GetAbsOrigin(), false)
     end
 end
-
-function infinity_black_hole:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-

@@ -79,9 +79,11 @@ function modifier_pudge_decay:OnCreated( kv )
 	self.rot_tick = self:GetAbility():GetSpecialValueFor( "decay_tick" )
 
 	if IsServer() then
+		local particle = "particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "champion_of_nurgle") == true then particle = "particles/econ/items/pudge/pudge_immortal_arm/pudge_immortal_arm_rot.vpcf" end 
 		if self:GetParent() == self:GetCaster() then
 			EmitSoundOn( "Hero_Pudge.Rot", self:GetCaster() )
-			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_rot.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+			local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( self.rot_radius, 1, self.rot_radius ) )
 			self:AddParticle( nFXIndex, false, false, -1, false, false )
 		else

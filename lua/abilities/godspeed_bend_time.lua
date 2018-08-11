@@ -56,16 +56,6 @@ end
 
 function modifier_godspeed_bend_time:OnCreated( kv )
 	if IsServer() then
-		self._tAbilities = {}
-
-		for i = 0, 5 do
-			table.insert( self._tAbilities,  self:GetParent():GetAbilityByIndex(i))
-		end
-
-		for k, ability in pairs(self._tAbilities) do
-			ability:SetFrozenCooldown(true)
-		end
-
 		self._iPtc = self:GetAbility():GetSpecialValueFor("damage")
 		if self:GetParent():HasTalent("special_bonus_godspeed_1") then self._iPtc = self._iPtc + self:GetParent():FindTalentValue("special_bonus_godspeed_1") end 
 
@@ -75,9 +65,7 @@ end
 
 function modifier_godspeed_bend_time:OnDestroy()
 	if IsServer() then
-		for k, ability in pairs(self._tAbilities) do
-			ability:SetFrozenCooldown(false)
-		end
+
 	end
 end
 
@@ -108,7 +96,7 @@ function modifier_godspeed_bend_time:OnPositionChanged( distance )
 		local damage_table = {
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
-			damage = distance,
+			damage = distance * (self._iPtc / 100),
 			damage_type = self:GetAbility():GetAbilityDamageType(),
 			damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
 			ability = self:GetAbility()

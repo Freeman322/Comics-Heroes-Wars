@@ -7,41 +7,29 @@ function Spawn( entityKeyValues )
     thisEntity.hasTarget = nil
     thisEntity.isAgred = nil
     
-    StartSoundEvent("SCP.096_Idle", thisEntity)
+    Timers:CreateTimer(20, function()
+        StartSoundEvent("SCP.096_Idle", thisEntity)
+    end)
 
     print("Spawn")
-
-    Timers:CreateTimer(1, function()
-        if thisEntity.hasTarget and thisEntity.hasTarget:IsAlive() then 
-            thisEntity:SetForceAttackTarget(thisEntity.hasTarget)
-        elseif thisEntity.isAgred and not thisEntity.hasTarget then 
-            thisEntity:SetForceAttackTarget(nil)
-
-            return nil
-        end 
-
-        return 1
-    end)
 end
 
 function AIThink() 
-    if thisEntity:GetHealth() < thisEntity:GetMaxHealth() then 
-        StopSoundEvent("SCP.096_Idle", thisEntity)
-        thisEntity:AddNewModifier(thisEntity, nil, "modifier_statue", nil)
-        Aggr()
-        return nil
-    end 
-
-    return 1
+    local units = AICore:GetAllUnitsInRange( thisEntity, 1000 )
+    if not units or #units == 0 then return 1 end Aggr(units[1]) return nil
 end
 
-function Aggr()
+function Aggr(unit)
+    StopSoundEvent("SCP.096_Idle", thisEntity)
+    thisEntity:AddNewModifier(thisEntity, nil, "modifier_statue", nil)
+
     StartSoundEvent("SCP.096_Alert", thisEntity)
     thisEntity:StartGesture(ACT_DOTA_CAST_ABILITY_1)
     Timers:CreateTimer(5.22, function()
         thisEntity:RemoveGesture(ACT_DOTA_CAST_ABILITY_1)
         thisEntity:StartGesture(ACT_DOTA_CHANNEL_ABILITY_1)
     end)
+
     Timers:CreateTimer(35, function()
         thisEntity:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_1)
         StopSoundEvent("SCP.096_Alert", thisEntity)
@@ -50,10 +38,20 @@ function Aggr()
 
         thisEntity:RemoveModifierByName("modifier_statue")
 
-        thisEntity.hasTarget = AICore:ClosestEnemyHeroInRange( thisEntity, 250000 )
+        thisEntity.hasTarget = unit
 
-        thisEntity:MoveToTargetToAttack(thisEntity.hasTarget)
+        thisEntity:MoveToTargetToAttack(unit)
+
+        thisEntity:SetForceAttackTarget(unit)
 
         thisEntity.isAgred = true
+    end)
+
+    Timers:CreateTimer(36, function( )
+        if not thisEntity.hasTarget or not thisEntity.hasTarget:IsAlive() then
+            thisEntity:SetForceAttackTarget(nil) return nil
+        end 
+
+        return 1
     end)
 end

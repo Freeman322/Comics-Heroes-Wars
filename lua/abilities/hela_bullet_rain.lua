@@ -102,11 +102,15 @@ end
 
 function modifier_hela_bullet_rain:OnIntervalThink()
 	if IsServer() then
+		local projectile = "particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
+		if Util:PlayerEquipedItem(self:GetParent():GetPlayerOwnerID(), "fate_of_asgard") == true then rojectile = "particles/econ/items/queen_of_pain/qop_ti8_immortal/qop_ti8_base_attack.vpcf" end 
+		if Util:PlayerEquipedItem(self:GetParent():GetPlayerOwnerID(), "golden_fate_of_asgard") == true then projectile = "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_golden_shadow_strike.vpcf" end 
+		
 		local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false )
 		if #units > 0 then
 			for _,target in pairs(units) do
 				local info = {
-					EffectName = "particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf",
+					EffectName = projectile,
 					Ability = self:GetAbility(),
 					iMoveSpeed = 1200,
 					Source = self:GetCaster(),

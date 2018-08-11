@@ -17,6 +17,7 @@ if modifier_tracer_overload == nil then
 end
 
 function modifier_tracer_overload:GetEffectName()
+    if self:GetCaster():HasModifier("modifier_arcana") then return "particles/reverse_flash/reverse_flash_debuff.vpcf" end 
     return "particles/hero_tracer/tracer_overload.vpcf"
 end
 

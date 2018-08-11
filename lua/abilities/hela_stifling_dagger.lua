@@ -92,6 +92,8 @@ function modifier_hela_stifling_dagger:OnCreated(table)
 	if IsServer() then 
 	    self:GetParent():SetAttackCapability(DOTA_UNIT_CAP_RANGED_ATTACK)
 		self:GetParent():SetRangedProjectileName("particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf")
+		if Util:PlayerEquipedItem(self:GetParent():GetPlayerOwnerID(), "fate_of_asgard") == true then self:GetParent():SetRangedProjectileName("particles/econ/items/queen_of_pain/qop_ti8_immortal/qop_ti8_base_attack.vpcf") end 
+		if Util:PlayerEquipedItem(self:GetParent():GetPlayerOwnerID(), "golden_fate_of_asgard") == true then self:GetParent():SetRangedProjectileName("particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_golden_shadow_strike.vpcf") end 
 	end 
 end
 
