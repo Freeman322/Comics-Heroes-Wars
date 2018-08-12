@@ -4733,7 +4733,7 @@
 		"DisableWearables"  "1"
 		"AbilityLayout"  "6"
 		"Ability1"		 	 "zuus_arc_lightning_new"
-		"Ability2"				"zuus_lightning_bolt_new"
+		"Ability2"				"zuus_lightning_bolt"
 		"Ability3"				"zuus_laguna_blade"
 		"Ability4"				"zuus_cloud"
 		"Ability5"				"generic_hidden"
