@@ -20,7 +20,7 @@ function modifier_item_demonic_claws:DeclareFunctions ()
     local funcs = {
         MODIFIER_PROPERTY_MANA_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
     }
 
@@ -32,9 +32,9 @@ function modifier_item_demonic_claws:GetModifierBonusStats_Intellect (params)
     return hAbility:GetSpecialValueFor ("bonus_intellect")
 end
 
-function modifier_item_demonic_claws:GetModifierConstantHealthRegen (params)
+function modifier_item_demonic_claws:GetModifierConstantManaRegen (params)
     local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_health_regen")
+    return hAbility:GetSpecialValueFor ("bonus_mana_regen")
 end
 
 function modifier_item_demonic_claws:GetModifierManaBonus (params)

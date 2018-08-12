@@ -40,7 +40,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_item_sentinels_cuirass:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_BUILDING
 end
 
 --------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_item_sentinels_cuirass:GetAuraRadius()
-	return 600
+	return 900
 end
 
 function modifier_item_sentinels_cuirass:DeclareFunctions ()

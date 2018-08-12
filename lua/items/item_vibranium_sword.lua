@@ -33,7 +33,7 @@ end
 
 function modifier_item_vibranium_sword:DeclareFunctions ()
     local funcs = {
-        MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
@@ -65,7 +65,7 @@ function modifier_item_vibranium_sword:GetModifierAttackSpeedBonus_Constant (par
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_attack_speed")
 end
-function modifier_item_vibranium_sword:GetModifierPercentageManaRegen (params)
+function modifier_item_vibranium_sword:GetModifierConstantManaRegen (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_mana_regen")
 end

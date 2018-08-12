@@ -2485,7 +2485,7 @@
 				"Damage"
 				{
 					"Target"		"TARGET"
-					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Type"			"DAMAGE_TYPE_PURE"
 					"Damage"		"%AbilityDamage"
 				}
 		}
@@ -7685,7 +7685,7 @@
 	//=================================================================================================================
 	// Zuus: Lightning Bolt
 	//=================================================================================================================
-	"zuus_lightning_bolt_new"
+	"zuus_lightning_bolt"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -11019,7 +11019,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"99999"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -30784,7 +30784,6 @@
 		"AbilityTextureName"			"zuus_cloud"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"

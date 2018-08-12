@@ -65,7 +65,7 @@ end
 
 function modifier_modifier_brilliance_aura_effect_radius:GetModifierConstantHealthRegen( params )
     if self:GetParent():HasScepter() then
-        return self:GetAbility():GetSpecialValueFor("health_regen") + GameRules:GetGameTime()/60
+        return self:GetAbility():GetSpecialValueFor("health_regen") + GameRules:GetGameTime()/30
     end
     return self:GetAbility():GetSpecialValueFor("health_regen")
 end
