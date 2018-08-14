@@ -2955,10 +2955,10 @@
 		// Abilities
 		//----------------------------------------------------------------
 
-		"Ability1"					"tidehunter_kraken_shell"
-		"Ability2"					"troll_warlord_fervor"
-		"Ability3"					"medusa_stone_gaze"
-		"Ability4"					"neutral_spell_immunity"
+		"Ability1"					"troll_warlord_fervor"
+		"Ability2"					"medusa_stone_gaze"
+		"Ability3"					"neutral_spell_immunity"
+		"Ability4"					""
 		"Ability5"					""
 		"Ability6"					""
 		"Ability7"					""			// Ability 7 - Extra.
@@ -3058,10 +3058,9 @@
 
 			"EquippedItems"
 			{	      
-				"Drums"
+				"Gem"
 				{
-					"Item"					"item_ancient_janggo"
-					"Charges"				"10"
+					"Item"					"item_gem"
 				}
 				"Scepter"
 				{
@@ -3224,8 +3223,8 @@
 
 		"Ability1"					"shy_guy_basic_ability"
 		"Ability2"					"neutral_spell_immunity"
-		"Ability3"					""
-		"Ability4"					""
+		"Ability3"					"necronomicon_warrior_sight"
+		"Ability4"					"tidehunter_kraken_shell"
 		"Ability5"					""
 		"Ability6"					""
 		"Ability7"					""			// Ability 7 - Extra.
@@ -3298,5 +3297,65 @@
 		"VisionNighttimeRange"		"2000"		// Range of vision at night time.
 
 		"vscripts"					"ai/scp_096.lua"
+
+		"Creature"
+	  	{
+			"CanRespawn"				"0"
+
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+	
+			"DefaultState"				"Invade"
+
+			"EquippedItems"
+			{	      
+				"Gem"
+				{
+					"Item"					"item_gem"
+				}
+				"Heart"
+				{
+					"Item"					"item_heart"
+				}
+				"ShivasGuard"
+				{
+					"Item"					"item_shivas_guard"
+				}
+				"PhaseBoots"
+				{
+					"Item"					"item_phase_boots"
+				}
+				"BlackKingBar"
+				{
+					"Item"					"item_black_king_bar"
+				}
+				"MonkeyKingBar"
+				{
+					"Item"					"item_monkey_king_bar"
+				}			
+			}
+				
+			"DisableResistance"			"100.0"
+		
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"500"
+			"DamageGain"				"25"
+			"ArmorGain"					"1"
+			"MagicResistGain"			"1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"100"
+		
+			"DefaultState"				"Invade"
+		}
 	}
 }

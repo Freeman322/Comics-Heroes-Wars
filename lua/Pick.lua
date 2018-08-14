@@ -159,7 +159,7 @@ function Pick:OnPick(params)
   local gold = 1000;
   local HasRandomed = false;
   if PlayerResource:HasRandomed(playerid) then
-    gold = 800;
+    gold = gold + 800;
     HasRandomed = true;
   end
 

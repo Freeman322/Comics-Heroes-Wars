@@ -629,7 +629,7 @@
 		"Ability19"					"special_bonus_intelligence_10"
 		"Ability20"					"special_bonus_spell_amplify_20"
 		"Ability21"					"special_bonus_cooldown_reduction_25"
-		"Ability22"					"special_bonus_"
+		"Ability22"					"special_bonus_cast_range_200"
 		"Ability23"					"special_bonus_intelligence_25"
 		"Ability24"					"special_bonus_all_stats_20"
 		"AbilityTalentStart"	 	"17"
@@ -4728,17 +4728,17 @@
 	}
 	"npc_dota_hero_zuus"
 	{
-		"Model"       	 "models/heroes/zeus/zeus.vmdl"
-		"override_hero"	 "npc_dota_hero_zuus"
-		"DisableWearables"  "1"
-		"AbilityLayout"  "6"
-		"Ability1"		 	 "zuus_arc_lightning_new"
-		"Ability2"				"zuus_lightning_bolt"
-		"Ability3"				"zuus_laguna_blade"
-		"Ability4"				"zuus_cloud"
-		"Ability5"				"generic_hidden"
-		"Ability6"				"zeus_thundergods_vengeance"
-		"Ability7"				""
+		"Model"       				"models/heroes/zeus/zeus.vmdl"
+		"override_hero"	 			"npc_dota_hero_zuus"
+		"DisableWearables" 			"1"
+		"AbilityLayout"  			"6"
+		"Ability1"		 		 	"zuus_arc_lightning_new"
+		"Ability2"					"zuus_lightning_bolt"
+		"Ability3"					"zuus_laguna_blade"
+		"Ability4"					"zuus_cloud"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"zeus_thundergods_vengeance"
+		"Ability7"					""
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_gold_income_50"
 		"Ability12"					"special_bonus_cast_range_200"
@@ -4747,7 +4747,7 @@
 		"Ability15"					"special_bonus_attack_damage_90"
 		"Ability16"					"special_bonus_intelligence_25"
 		"Ability17"					"special_bonus_spell_amplify_15"
-		"AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
+		"AttributePrimary"      	"DOTA_ATTRIBUTE_INTELLECT"
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"22"
@@ -4980,6 +4980,102 @@
         "NameAliases"      			 "wr"
         "url"       "Windranger"
         "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_Offhand_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
 	}
 	"npc_dota_hero_slaanesh"
 	{
@@ -5121,6 +5217,102 @@
 
         "LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
 		"HeroSelectSoundEffect"		"Hero_Antimage.Pick"
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_Offhand_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
 	}
 	"npc_dota_hero_godspeed"
 	{
@@ -5198,6 +5390,101 @@
         "NameAliases"      			"gs"
         "url"      				    "Godspeed"
         "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_Offhand_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
 	}
 	"npc_dota_hero_savitar"
 	{
@@ -5277,5 +5564,101 @@
         "NameAliases"      			 "sv"
         "url"       				"Savitar"
         "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_Offhand_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
 	}
 }

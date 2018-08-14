@@ -101,6 +101,12 @@ function modifier_gostrider_punishing_gaze:OnCreated(params)
     end
 end
 
+function modifier_gostrider_punishing_gaze:Destroy()
+    if IsServer() then 
+        self._hUnits = nil
+    end
+end
+
 function modifier_gostrider_punishing_gaze:OnTakeDamage( params )
     if IsServer() then
         if params.unit == self:GetParent() then

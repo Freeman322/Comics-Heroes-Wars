@@ -2436,61 +2436,61 @@
 		}
 		"AbilitySpecial"
 		{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"magic_missile_speed"	"1250"
-				}
-				"02"
-				{
-					"var_type"				"FIELD_FLOAT"
-					"magic_missile_stun"	"1.4 1.8 2.2 2.6"
-				}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_missile_speed"	"1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"magic_missile_stun"	"1.4 1.8 2.2 2.6"
+			}
 		}
 
 		"OnSpellStart"
 		{
-				"FireSound"
-				{
-					"EffectName"	"Hero_VengefulSpirit.MagicMissile"
-					"Target" 		"CASTER"
-				}
+			"FireSound"
+			{
+				"EffectName"	"Hero_VengefulSpirit.MagicMissile"
+				"Target" 		"CASTER"
+			}
 
-				"TrackingProjectile"
-				{
-					"Target"           	"TARGET"
-					"EffectName"		"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
-					"Dodgeable"			"1"
-					"ProvidesVision"	"0"
-					"MoveSpeed"        	"%magic_missile_speed"
-					"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-				}
+			"TrackingProjectile"
+			{
+				"Target"           	"TARGET"
+				"EffectName"		"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+				"Dodgeable"			"1"
+				"ProvidesVision"	"0"
+				"MoveSpeed"        	"%magic_missile_speed"
+				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
 		}
 
-	"OnProjectileHitUnit"
+		"OnProjectileHitUnit"
 		{
-				"DeleteOnHit"	"1"
-				"FireSound"
-				{
-					"EffectName"	"Hero_VengefulSpirit.MagicMissileImpact"
-					"Target" 		"TARGET"
-				}
+			"DeleteOnHit"	"1"
+			"FireSound"
+			{
+				"EffectName"	"Hero_VengefulSpirit.MagicMissileImpact"
+				"Target" 		"TARGET"
+			}
 
-				"Stun"
-				{
-					"Duration"   "%magic_missile_stun"
-					"Target" 	 "TARGET"
-				}
+			"Stun"
+			{
+				"Duration"   "%magic_missile_stun"
+				"Target" 	 "TARGET"
+			}
 
-				"Damage"
-				{
-					"Target"		"TARGET"
-					"Type"			"DAMAGE_TYPE_PURE"
-					"Damage"		"%AbilityDamage"
-				}
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_PURE"
+				"Damage"		"%AbilityDamage"
+			}
 		}
-}
-"enigma_vacuum"
+	}
+	"enigma_vacuum"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -7685,7 +7685,7 @@
 	//=================================================================================================================
 	// Zuus: Lightning Bolt
 	//=================================================================================================================
-	"zuus_lightning_bolt"
+	"zuus_lightning_bolt_new"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -11019,7 +11019,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"99999"
-		"AbilityCastPoint"				"0"
+		"AbilityCastPoint"				"0.1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -23713,7 +23713,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"180 140 100"
+		"AbilityCooldown"				"200 165 130"
 
 		"AbilityManaCost"				"150 200 250"
 		"precache"
@@ -30078,7 +30078,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage"						"13 15 17 19"
+				"damage"						"20 30 40 50"
 				"CalculateSpellDamageTooltip"	"1"
 				"LinkedSpecialBonus"			"special_bonus_godspeed_1"
 			}
@@ -30110,7 +30110,7 @@
 		"AbilityCastRange"				"600"
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 100 80"
+		"AbilityCooldown"				"120"
 
 		"precache"
 		{
@@ -30135,7 +30135,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"3.0 5.0 9.0"
+				"damage"				"7.0 10.0 13.0"
 			}
 			"03"
 			{
@@ -30177,7 +30177,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"heal_ptc"				"0.5 1.0 1.5 2.0"
+				"heal_ptc"				"1.5 2.0 2.5 3.0"
 			}
 			"03"
 			{
@@ -30220,8 +30220,8 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"3 4 5 6"
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2.6 3.4 4.2 5.0"
 			}
 		}
 	}
@@ -30494,7 +30494,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"25"
+				"value"						"50"
 			}
 		}
 	}
@@ -30672,7 +30672,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"60 30 20"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -30681,7 +30681,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"400"
+				"bonus_attack_speed"	"400 600 900"
 			}
 			"02"
 			{
@@ -30784,6 +30784,7 @@
 		"AbilityTextureName"			"zuus_cloud"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
@@ -30852,11 +30853,11 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"250 340 420"
+		"AbilityDamage"					"245 455 675"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"160 130 100"
+		"AbilityCooldown"				"140"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200 300 400"
@@ -30885,24 +30886,19 @@
 		{
 			"01"
 			{
-				"var_type"			    		"FIELD_FLOAT"
-				"damage_pers"		    		"1.5 2.5 3.5"
-				"CalculateSpellDamageTooltip" 	"0"
+				"var_type"			    		"FIELD_INTEGER"
+				"duration"						"6"
 			}
 			"02"
 			{
 				"var_type"			    		"FIELD_INTEGER"
-				"duration"						"7 9 11"
+				"miss"							"14 21 28"
 			}
 			"03"
 			{
 				"var_type"			    		"FIELD_INTEGER"
-				"miss"							"14 21 28"
-			}
-			"04"
-			{
-				"var_type"			    		"FIELD_INTEGER"
-				"damage_chance"					"12 16 22"
+				"damage_chance"					"35 45 55"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 	}

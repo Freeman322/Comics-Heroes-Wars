@@ -12,7 +12,7 @@
     flow-children: none;
 
     background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326 ), to( #111111 ) );
-    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-image: url("s2r://panorama/images/backgrounds/pick_png.vtex");
 
     background-repeat: no-repeat;
     background-size: cover;

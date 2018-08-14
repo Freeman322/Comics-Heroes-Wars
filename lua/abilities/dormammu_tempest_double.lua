@@ -46,10 +46,12 @@ function dormammu_tempest_double:OnSpellStart()
 
 			for item_id = 0, 5 do
 				local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
-				if item_in_caster ~= nil then
+				if item_in_caster ~= nil and not item_in_caster:IsDroppableAfterDeath() then
 					local item_name = item_in_caster:GetName()
-					local item_created = CreateItem( item_in_caster:GetName(), double, double)
-					double:AddItem(item_created)
+					if not (item_name == "item_aegis" or item_name == "item_smoke_of_deceit" or item_name == "item_recipe_refresher" or item_name == "item_refresher" or item_name == "item_ward_observer" or item_name == "item_ward_sentry") then
+						local item_created = CreateItem( item_in_caster:GetName(), double, double)
+						double:AddItem(item_created)
+					end
 				end
 			end
 

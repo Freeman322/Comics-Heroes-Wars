@@ -1,6 +1,7 @@
 require( "ai/ai_core" )
 
 LinkLuaModifier("modifier_statue","modifiers/modifier_statue.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_shy","modifiers/modifier_shy.lua", LUA_MODIFIER_MOTION_NONE)
 
 function Spawn( entityKeyValues )
     thisEntity:SetContextThink( "AIThink", AIThink, 1 )
@@ -22,6 +23,9 @@ end
 function Aggr(unit)
     StopSoundEvent("SCP.096_Idle", thisEntity)
     thisEntity:AddNewModifier(thisEntity, nil, "modifier_statue", nil)
+    thisEntity:AddNewModifier(thisEntity, nil, "modifier_shy", nil)
+    
+    unit:AddNewModifier(unit, nil, "modifier_truesight", {duration = 30})
 
     StartSoundEvent("SCP.096_Alert", thisEntity)
     thisEntity:StartGesture(ACT_DOTA_CAST_ABILITY_1)
@@ -50,6 +54,9 @@ function Aggr(unit)
     Timers:CreateTimer(36, function( )
         if not thisEntity.hasTarget or not thisEntity.hasTarget:IsAlive() then
             thisEntity:SetForceAttackTarget(nil) return nil
+        else 
+            if thisEntity.hasTarget:HasModifier("modifier_smoke_of_deceit") then thisEntity.hasTarget:RemoveModifierByName("modifier_smoke_of_deceit") end 
+            thisEntity:SetForceAttackTarget(thisEntity.hasTarget)
         end 
 
         return 1

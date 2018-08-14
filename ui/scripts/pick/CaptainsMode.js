@@ -1,4 +1,19 @@
-var countdown = 60
+var BUTTON_BECAME_CAPTAIN = 0;
+var BUTTON_SELECT_HERO = 1;
+var BUTTON_PICK_HERO = 2;
+
+var HEROES_PANELS = [];
+var CURRENT_STAGE = -1;
+var PLAYER_TEAM = -1;
+var PLAYER_ID = -1;
+
+var TEAMS_DATA = []
+TEAMS_DATA[0] = "RadiantBan_";
+TEAMS_DATA[1] = "DireBan_";
+TEAMS_DATA[2] = "RadiantPick_";
+TEAMS_DATA[3] = "DirePick_";
+
+var BUTTONS = [];
 
 function RebuildUI() {
     var radiant = Game.GetPlayerIDsOnTeam(2);
@@ -295,294 +310,159 @@ function RebuildUI() {
     }
     Game.EmitSound("announcer_dlc_crystal_maiden_cm_ann_ancient_attack_follow_up_04")
 
-    $("#Arrow").style.backgroundImage = 'url("s2r://panorama/images/custom_game/heroes/npc_dota_hero_drow_ranger_png.vtex")';
-    $("#Arrow").hittest = true;
-    $("#PlayerName").text = Players.GetPlayerName( Game.GetLocalPlayerID() )
+    BUTTONS.push($("#CaptainsModeBecomeCaptainButton")); BUTTONS.push($("#CaptainsModeSelectHero")); BUTTONS.push($("#PickButton"))
 }
 
-function OnHeroSelected(name, panel) {
-    previewHero(name);
+function OnHeroSelected(hero, panel)
+{
+    SelectHero(hero, panel)
 }
 
-function previewHero(hero) {
-    var abilities = CustomNetTables.GetTableValue("heroes", "abilities")
-    var i = 0;
-    while (i < $("#Abilityanel").GetChildCount()) {
-        $("#Abilityanel").GetChild(i).DeleteAsync(0)
-        i++;
-    }
-    $("#HeroName").text = $.Localize(hero)
-    for (var i in abilities['1'][hero]) {
-        var ability = abilities['1'][hero][i]
-        if (ability && ability != "") {
-            var Ability = $.CreatePanel("DOTAAbilityImage", $("#Abilityanel"), ability);
-            Ability.AddClass("Ability")
-            Ability.abilityname = ability
-
-            var mouseOverCapture = (function(ability, Ability) {
-                    return function() {
-                        OnTooltipStart(ability, Ability)
-                    }
-                }
-                (ability, Ability));
-
-
-            var mouseOutCapture = (function(ability, Ability) {
-                    return function() {
-                        OnTooltipOver(ability, Ability)
-                    }
-                }
-                (ability, Ability));
-
-
-            Ability.SetPanelEvent("onmouseover", mouseOverCapture);
-            Ability.SetPanelEvent("onmouseout", mouseOutCapture);
-        }
-    }
-    $("#HeroLore").text = $.Localize("new_" + hero + "_hype")
-    $("#HeroMovie").heroname = hero
-
-    $("#HeroSelectedTarget").text = $.Localize(hero)
-
-    $("#PickButton").selectedhero = hero
-}
-
-function PickHero() {
-    var hero = $("#PickButton").selectedhero
-    if (hero) {
-        var data = {
-            playerID: Game.GetLocalPlayerID(),
-            hero: hero
-        }
-        GameEvents.SendCustomGameEventToServer("hero_picked", data);
-    }
-    var time = CustomNetTables.GetTableValue("pick", "timer")
-    if (time) {
-        var timer = time['time']
-        countdown = time['time']
-        if ((timer <= 0 || timer == undefined || timer == null)) {
-            EndPick();
-            return null;
-        }
-    } else {
-        EndPick()
-    }
-    Timer()
-}
-
-function Timer() {
-    countdown = countdown - 1
-    $.Msg(countdown)
-    if ((countdown <= 0 || countdown == undefined || countdown == null)) {
-        EndPick();
-        return null;
-    }
-    $.Schedule(1, Timer)
-}
-
-function PickRandomHero() {
-    var id = Players.GetLocalPlayer()
-    var data = {
-        playerID: id
-    }
-    GameEvents.SendCustomGameEventToServer("random_hero", data);
-
-    var time = CustomNetTables.GetTableValue("pick", "timer")
-    if (time) {
-        var timer = time['time']
-        if ((timer <= 0 || timer == undefined || timer == null)) {
-            EndPick();
-        }
-    }
-}
-
-function ToColor(num) {
-    num >>>= 0;
-    var b = num & 0xFF,
-        g = (num & 0xFF00) >>> 8,
-        r = (num & 0xFF0000) >>> 16,
-        a = ((num & 0xFF000000) >>> 24) / 255;
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
-function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-}
-
-function OnPickStateChanged(table_name, key, data) {
-    if (key == "timer") {
-        if ($("#Time")) {
-            var time = data.time || 0      
-            $("#Time").text = time;
-            if (time >= 50)
-            {
-                $("#Type").text = "BANS";
-            }
-            else
-            {
-                $("#Type").text = "PICKS";
-            }
-        }
-        if (time <= 0 && Entities.GetUnitName(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())) != "npc_dota_hero_wisp") {
-            EndPick();
-        }
-    }
-    if (key == "bans") {
-       for(var i in data[2])
-       {
-            if ($("#" + data[2][i])) {
-                $("#" + data[2][i]).SetHasClass("Banned", true);
-                $("#" + data[2][i]).hittest = false;
-            }
-       }
-       for(var i in data[3])
-       {
-            if ($("#" + data[3][i])) {
-                $("#" + data[3][i]).SetHasClass("Banned", true);
-                $("#" + data[3][i]).hittest = false;
-            }
-       }
-       $("#BanCount").text = "BANS: " + data['TOTAL']
-    }
-    if (key == "heroes") {
-        for (var i in data) {
-            var name = data[i]["hero"]
-            var pID = data[i]["playerid"]
-            if ($("#PlayerHero_" + pID)) {
-                $("#PlayerHero_" + pID).style.backgroundImage = 'url("s2r://panorama/images/custom_game/heroes/' + name + '_png.vtex")';
-            }
-            if ($("#" + name)) {
-                $("#" + name).SetHasClass("Picked", true);
-                $("#" + name).hittest = false;
-            }
-            if (pID == Players.GetLocalPlayer()) {
-                previewHero(name)
-                DisablePickMenu()
-            }
-        }
-    }
-}
-
-function UpdatePickState() {
-    var data = CustomNetTables.GetTableValue("pick", "heroes")
-    var timer = CustomNetTables.GetTableValue("pick", "timer")
-    if (timer) {
-        var time = timer.time || 0
-
-        if (time <= 0 && Entities.GetUnitName(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())) != "npc_dota_hero_wisp") {
-            EndPick();
-        }
-    }
-    if (data) {
-        for (var i in data) {
-            var name = data[i]["hero"]
-            var pID = data[i]["playerid"]
-
-            if ($("#PlayerHero_" + pID)) {
-                $("#PlayerHero_" + pID).style.backgroundImage = 'url("s2r://panorama/images/custom_game/heroes/' + name + '_png.vtex")';
-            }
-            if ($("#" + name)) {
-                $("#" + name).SetHasClass("Picked", true);
-                $("#" + name).hittest = false;
-            }
-
-            if (pID == Players.GetLocalPlayer()) {
-                previewHero(name)
-                DisablePickMenu();
-            }
-        }
-    }
-}
-
-function EndPick() {
-    $("#PickScreen").style.visibility = "collapse;"
-    $("#PickScreen").enabled = false;
-    $("#PickScreen").hittest = false;
-}
-
-function DisablePickMenu() {
-    var HeroesStr = $("#HeroesStr")
-    var HeroesAgi = $("#HeroesAgi")
-    var HeroesInt = $("#HeroesInt")
-
-    var i = 0;
-    while (i < HeroesStr.GetChildCount()) {
-        var hero = HeroesStr.GetChild(i)
-        var hero_name = HeroesStr.GetChild(i).id
-        hero.AddClass("Disabled")
-        hero.hittest = false
-        i++;
-    }
-    var b = 0;
-    while (b < HeroesAgi.GetChildCount()) {
-        var hero = HeroesAgi.GetChild(b)
-        var hero_name = HeroesAgi.GetChild(b).id
-        hero.AddClass("Disabled")
-        hero.hittest = false
-        b++;
-    }
-    var c = 0;
-    while (c < HeroesInt.GetChildCount()) {
-        var hero = HeroesInt.GetChild(c)
-        var hero_name = HeroesInt.GetChild(c).id
-        hero.AddClass("Disabled")
-        hero.hittest = false
-        c++;
-    }
-    $("#RandomButton").hittest = false
-    $("#RandomButton").AddClass("Disabled")
-
-    $("#PickButton").hittest = false
-    $("#PickButton").AddClass("Disabled")
-}
-
-function OnChatSubmitted() {
-    var playerId = Game.GetLocalPlayerID()
-    var playerInfo = Game.GetPlayerInfo(playerId);
-    var hero = Players.GetPlayerHeroEntityIndex(playerId)
-    var text = $("#ChatInputField").text
-    if (text == "")
-        return;
+function PickOrBanHero()
+{
+    var hero = GetSelectedHero();
+    if (!hero) return;
 
     var data = {
-        pID: playerId,
-        text: text
+        playerID: PLAYER_ID,
+        team: PLAYER_TEAM,
+        hero: hero
     }
-    GameEvents.SendCustomGameEventToServer("on_chat_recived", data);
-    $("#ChatInputField").text = "";
+    GameEvents.SendCustomGameEventToServer("hero_selected", data);
 }
 
-function OnChatUpdated(data) {
-    var pID = data["pID"]
-    var text = data["text"]
-    var color = ToColor(Players.GetPlayerColor(pID))
-    var name = "<font color=\"" + color + "\"> " + Players.GetPlayerName(pID) + " </font>"
-    var result = name + " :  " + text
+function PickHero()
+{
+    var hero = GetSelectedHero()
+    if (!hero) return;
 
-    var label = $.CreatePanel("Label", $("#ChatTextField"), undefined);
-    label.AddClass("ChatText")
-    label.html = true;
-    label.text = result
+    var data = {
+        playerID: PLAYER_ID,
+        team: PLAYER_TEAM,
+        hero: hero
+    }
+
+    GameEvents.SendCustomGameEventToServer("selected_hero_picked", data);
 }
 
-function OnBan(argument) {
-   var hero = $("#PickButton").selectedhero
-    if (hero) {
-        var data = {
-            playerID: Game.GetLocalPlayerID(),
-            hero: hero
+
+function OnStateChanged(table_name, key, data) {
+    if (key == "timer") UpdateTimerValue(data);
+    if (key == "captains"){
+        if (data == undefined || data[PLAYER_TEAM] == undefined)
+        {
+            BUTTONS[BUTTON_BECAME_CAPTAIN].SetHasClass("hidden", false);
         }
-        GameEvents.SendCustomGameEventToServer("hero_banned", data);
-
-        $("#BanButton").hittest = false;
+        else 
+        {
+            for (var captain in data) {
+                $("#PlayerHero_" + data[captain]).SetHasClass("Captain", true)
+            }
+            BUTTONS[BUTTON_BECAME_CAPTAIN].SetHasClass("hidden", true); BUTTONS[BUTTON_SELECT_HERO].SetHasClass("hidden", true);
+            if(data[PLAYER_TEAM] == PLAYER_ID){
+                BUTTONS[BUTTON_SELECT_HERO].SetHasClass("hidden", false);
+            }
+        }
     }
+    if (key == "heroes")
+    {
+        for(var hero in data){ ////heroes{"npc_dota_hero_zuus":{"number":1,"isUsed":1,"IsPick":0,"team":2},"npc_dota_hero_rattletrap":{"number":1,"isUsed":1,"IsPick":1,"team":2},"npc_dota_hero_jakiro":{"number":2,"isUsed":1,"IsPick":0,"team":2}}
+            var heroParams = data[hero]
+
+            if (heroParams.IsPick == 0){
+                var panel =  $("#" + TEAMS_DATA[heroParams.team - 2] + heroParams.number); panel.style.backgroundImage = 'url("s2r://panorama/images/custom_game/heroes/' + hero + '_png.vtex")';           
+                panel.style.backgroundSize = '100%';
+            }else {
+                var panel = $("#" + TEAMS_DATA[heroParams.team] + heroParams.number); panel.style.backgroundImage = 'url("s2r://panorama/images/custom_game/heroes/' + hero + '_png.vtex")';           
+                panel.style.backgroundSize = '100%';
+            }
+        }
+    }
+    if (key == "picked_players"){
+        for(var player in data) {
+            if (data[player].team == PLAYER_TEAM){
+                if (data[player].IsPicked){
+                    $("#" + data[player].hero).enabled = false;  $("#" + data[player].hero).hittest = true;  $("#" + data[player].hero).SetHasClass("Picked", false);
+                }
+            }
+        }
+        if (data[PLAYER_ID] && data[PLAYER_ID].IsPicked){
+            EndPick()
+        }
+    }
+}
+
+function UpdateState()
+{
+    var data = CustomNetTables.GetTableValue("captains_mode", "timer")
+    var captains = CustomNetTables.GetTableValue("captains_mode", "captains")
+    var heroes = CustomNetTables.GetTableValue("captains_mode", "heroes")
+    var players = CustomNetTables.GetTableValue("captains_mode", "picked_players")
+    if (captains == undefined || captains[PLAYER_TEAM] == undefined)
+    {
+        BUTTONS[BUTTON_BECAME_CAPTAIN].SetHasClass("hidden", false);
+    }
+    else 
+    {
+        for (var captain in captains) {
+            $("#PlayerHero_" + captains[captain]).SetHasClass("Captain", true)
+        }
+        BUTTONS[BUTTON_BECAME_CAPTAIN].SetHasClass("hidden", true); BUTTONS[BUTTON_SELECT_HERO].SetHasClass("hidden", true);
+        if(captains[PLAYER_TEAM] == PLAYER_ID){
+            BUTTONS[BUTTON_SELECT_HERO].SetHasClass("hidden", false);
+        }
+    }
+    if (heroes)
+    {
+        for(var hero in heroes){ 
+            var heroParams = heroes[hero]
+
+            if (heroParams.IsPick == 0){
+                var panel =  $("#" + TEAMS_DATA[heroParams.team - 2] + heroParams.number); panel.style.backgroundImage = 'url("s2r://panorama/images/custom_game/heroes/' + hero + '_png.vtex")';           
+                panel.style.backgroundSize = '100%';
+            }else {
+                var panel = $("#" + TEAMS_DATA[heroParams.team] + heroParams.number); panel.style.backgroundImage = 'url("s2r://panorama/images/custom_game/heroes/' + hero + '_png.vtex")';           
+                panel.style.backgroundSize = '100%';
+            }
+        }
+    }
+    if (data)
+    {
+        if (data.pick_stage >= 21){
+            OnPickHeroes()
+        }
+    }
+    if (players){
+        for(var player in players) {
+            if (players[player].team == PLAYER_TEAM){
+                if (players[player].IsPicked){
+                    $("#" + players[player].hero).enabled = false;  $("#" + players[player].hero).hittest = true;  $("#" + players[player].hero).SetHasClass("Picked", false);
+                }
+            }
+        }
+        if (players[PLAYER_ID] && players[PLAYER_ID].IsPicked){
+            EndPick()
+        }
+    }
+}
+
+function BecomeCaptain()
+{
+    var player = Players.GetLocalPlayer()
+    var data = {
+        playerID: PLAYER_ID,
+        team: PLAYER_TEAM
+    }
+    GameEvents.SendCustomGameEventToServer("captain_selected", data);
 }
 
 (function() {
+    HEROES_PANELS = GetAllStagePanels(); PLAYER_TEAM = Players.GetTeam(Players.GetLocalPlayer()); PLAYER_ID = Players.GetLocalPlayer();
+
     RebuildUI()
-    UpdatePickState()
-    CustomNetTables.SubscribeNetTableListener("pick", OnPickStateChanged);
+    UpdateState()
+
+    CustomNetTables.SubscribeNetTableListener("captains_mode", OnStateChanged);
     GameEvents.Subscribe("on_chat_new_mess", OnChatUpdated);
 })()
 
@@ -618,10 +498,162 @@ function OnTooltipOver(name, panel) {
     $.DispatchEvent("DOTAHideAbilityTooltip", panel);
 }
 
-function Filter(argument) {
-    ResetFilter()
-    
-    var text = $("#SearchTextEntry").text
+function OnChatSubmitted() {
+    var playerId = Game.GetLocalPlayerID()
+    var playerInfo = Game.GetPlayerInfo(playerId);
+    var hero = Players.GetPlayerHeroEntityIndex(playerId)
+    var text = $("#ChatInputField").text
+    if (text == "")
+        return;
+
+    var data = {
+        pID: playerId,
+        text: text
+    }
+    GameEvents.SendCustomGameEventToServer("on_chat_recived", data);
+    $("#ChatInputField").text = "";
+}
+
+function OnPickHeroes(heroes)
+{
+    Disableheroes();
+
+    var heroes = CustomNetTables.GetTableValue("captains_mode", "heroes")
+
+    for(var hero in heroes){ 
+        var heroParams = heroes[hero]
+
+        if (heroParams.IsPick && heroParams.team == PLAYER_TEAM)
+        {
+            $("#" + hero).enabled = true; $("#" + hero).hittest = true; $("#" + hero).SetHasClass("Picked", false);
+        }
+    }
+
+    for(var buttun in BUTTONS) BUTTONS[buttun].SetHasClass("hidden", true)
+    BUTTONS[BUTTON_PICK_HERO].SetHasClass("hidden", false);
+}
+
+function OnChatUpdated(data) {
+    var pID = data["pID"]
+    var text = data["text"]
+    var color = ToColor(Players.GetPlayerColor(pID))
+    var name = "<font color=\"" + color + "\"> " + Players.GetPlayerName(pID) + " </font>"
+    var result = name + " :  " + text
+
+    var label = $.CreatePanel("Label", $("#ChatTextField"), undefined);
+    label.AddClass("ChatText")
+    label.html = true;
+    label.text = result
+}
+
+function ToColor(num) {
+    num >>>= 0;
+    var b = num & 0xFF,
+        g = (num & 0xFF00) >>> 8,
+        r = (num & 0xFF0000) >>> 16,
+        a = ((num & 0xFF000000) >>> 24) / 255;
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function UpdateTimerValue(params) {
+    $("#Time").text = params.time;
+    var lable = $("#Type")
+    global_stage = params.pick_stage
+    var text;
+    var IsFirstTime
+    if (global_stage == 1) {
+        text = "Ban Radiant"
+    } else if (global_stage == 2) {
+        text = "Ban Dire"
+    } else if (global_stage == 3) {
+        text = "Ban Radiant"
+    } else if (global_stage == 4) {
+        text = "Ban Dire"
+    } else if (global_stage == 5) {
+        text = "Pick Radiant"
+    } else if (global_stage == 6) {
+        text = "Pick Dire"
+    } else if (global_stage == 7) {
+        text = "Pick Dire"
+    } else if (global_stage == 8) {
+        text = "Pick Radiant"
+    } else if (global_stage == 9) {
+        text = "Ban Radiant"
+    } else if (global_stage == 10) {
+        text = "Ban Dire"
+    } else if (global_stage == 11) {
+        text = "Ban Radiant"
+    } else if (global_stage == 12) {
+        text = "Ban Dire"
+    } else if (global_stage == 13) {
+        text = "Pick Dire"
+    } else if (global_stage == 14) {
+        text = "Pick Radiant"
+    } else if (global_stage == 15) {
+        text = "Pick Dire"
+    } else if (global_stage == 16) {
+        text = "Pick Radiant"
+    } else if (global_stage == 17) {
+        text = "Ban Dire"
+    } else if (global_stage == 18) {
+        text = "Ban Radiant"
+    } else if (global_stage == 19) {
+        text = "Pick Dire"
+    } else if (global_stage == 20) {
+        text = "Pick Radiant"
+    } else {
+        text = "-=-"
+    }
+    lable.text = text
+
+    if (global_stage != CURRENT_STAGE) 
+    {
+        CURRENT_STAGE = global_stage;
+
+        for(var panel in HEROES_PANELS)
+        {
+            HEROES_PANELS[panel].RemoveClass("NexStage")
+        }
+
+        if (CURRENT_STAGE >= 21) {
+            OnPickHeroes();
+
+            return;
+        }
+
+        if (params.stage_data.pick == false)
+            $("#" + TEAMS_DATA[params.stage_data.team - 2] + params.stage_data.number).SetHasClass("NexStage", true)
+        else 
+            $("#" + TEAMS_DATA[params.stage_data.team] + params.stage_data.number).SetHasClass("NexStage", true)
+    }
+}
+
+function GetAllStagePanels()
+{
+    var panels = []
+    var radiant = $("#BanPicksRadiant")
+    var dire = $("#BanPicksDire")
+    var i = 0;
+    while (i < radiant.GetChildCount()) {
+        panels.push(radiant.GetChild(i))
+        i++;
+    }
+    var b = 0;
+    while (b < dire.GetChildCount()) {
+        panels.push(dire.GetChild(b))
+        b++;
+    }
+
+    return panels;
+}
+
+function GetAllHeroesPanel() {
+    var heroes = []
 
     var HeroesStr = $("#HeroesStr")
     var HeroesAgi = $("#HeroesAgi")
@@ -629,79 +661,62 @@ function Filter(argument) {
 
     var i = 0;
     while (i < HeroesStr.GetChildCount()) {
-        var hero = HeroesStr.GetChild(i)
-        var hero_name = HeroesStr.GetChild(i).id
-        if (hero_name.indexOf(text) == -1)
-        {
-            hero.AddClass("NotFinded")
-        }
+        heroes.push(HeroesStr.GetChild(i))
         i++;
     }
     var b = 0;
     while (b < HeroesAgi.GetChildCount()) {
-        var hero = HeroesAgi.GetChild(b)
-        var hero_name = HeroesAgi.GetChild(b).id
-         if (hero_name.indexOf(text) == -1)
-        {
-            hero.AddClass("NotFinded")
-        }
+        heroes.push(HeroesAgi.GetChild(b))
         b++;
     }
     var c = 0;
     while (c < HeroesInt.GetChildCount()) {
-        var hero = HeroesInt.GetChild(c)
-        var hero_name = HeroesInt.GetChild(c).id
-         if (hero_name.indexOf(text) == -1)
-        {
-            hero.AddClass("NotFinded")
-        }
+        heroes.push(HeroesInt.GetChild(c))
         c++;
     }
+
+    return heroes;
 }
 
-function ResetFilter() {
-   var HeroesStr = $("#HeroesStr")
-    var HeroesAgi = $("#HeroesAgi")
-    var HeroesInt = $("#HeroesInt")
-
-    var i = 0;
-    while (i < HeroesStr.GetChildCount()) {
-        var hero = HeroesStr.GetChild(i)
-        var hero_name = HeroesStr.GetChild(i).id
-        hero.RemoveClass("NotFinded")
-        hero.RemoveClass("Finded")
-        i++;
-    }
-    var b = 0;
-    while (b < HeroesAgi.GetChildCount()) {
-        var hero = HeroesAgi.GetChild(b)
-        var hero_name = HeroesAgi.GetChild(b).id
-        hero.RemoveClass("NotFinded")
-        hero.RemoveClass("Finded")
-        b++;
-    }
-    var c = 0;
-    while (c < HeroesInt.GetChildCount()) {
-        var hero = HeroesInt.GetChild(c)
-        var hero_name = HeroesInt.GetChild(c).id
-        hero.RemoveClass("NotFinded")
-        hero.RemoveClass("Finded")
-        c++;
-    }
-}
-
-function ClosePremiumMenu()
+function GetSelectedHero()
 {
-    $("#MainContents").SetHasClass("Closed", true)
+    var heroes = GetAllHeroesPanel()
+    for (var panel in heroes)
+    {
+        if (heroes[panel].isSelected == true) return heroes[panel].heroname
+    }
+
+    return null;
 }
 
-function OpenPremiumMenu()
+function Clean()
 {
-    if (getPremiumStatus(Players.GetLocalPlayer())) {
-        if ((Players.IsSpectator(Players.GetLocalPlayer()) == false) && getPremiumStatus(Players.GetLocalPlayer()) == 1) {
-            $("#MainContents").SetHasClass("Closed", false)
-        }
+    var heroes = GetAllHeroesPanel()
+    for (var panel in heroes)
+    {
+        heroes[panel].isSelected = false; heroes[panel].SetHasClass("Selected", false)
     }
+
+}
+
+function SelectHero(hero, panel)
+{
+    Clean(); panel.isSelected = true; panel.SetHasClass("Selected", true)
+}
+
+function Disableheroes()
+{
+    var heroes = GetAllHeroesPanel() 
+    for(var hero in heroes)
+    {
+        heroes[hero].enabled = false; heroes[hero].hittest = false; heroes[hero].SetHasClass("Picked", true);
+    }
+}
+
+function EndPick() {
+    $("#PickScreen").style.visibility = "collapse;"
+    $("#PickScreen").enabled = false;
+    $("#PickScreen").hittest = false;
 }
 
 function ForeClosePickMenu()

@@ -110,11 +110,11 @@ function modifier_zeus_thundergods_vengeance_thinker:GetAuraSearchTeam()
 end
 
 function modifier_zeus_thundergods_vengeance_thinker:GetAuraSearchType()
-    return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
+    return DOTA_UNIT_TARGET_HERO
 end
 
 function modifier_zeus_thundergods_vengeance_thinker:GetAuraSearchFlags()
-    return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS
+    return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS + DOTA_UNIT_TARGET_FLAG_NO_INVIS
 end
 
 function modifier_zeus_thundergods_vengeance_thinker:GetModifierAura()
@@ -147,7 +147,7 @@ end
 
 function modifier_zeus_thundergods_vengeance:OnIntervalThink()
     if IsServer() then
-        if RollPercentage(self:GetAbility():GetSpecialValueFor("damage_chance")) then
+        if RollPercentage(self:GetAbility():GetSpecialValueFor("damage_chance")) and not self:GetParent():IsMagicImmune() then
             EmitSoundOn("Hero_Zuus.Cloud.Cast", self:GetParent())
             EmitSoundOn("Hero_Zeus.BlinkDagger.Arcana", self:GetParent())
             EmitSoundOn("Hero_Zuus.LightningBolt.Cast.Righteous", self:GetParent())
@@ -155,7 +155,7 @@ function modifier_zeus_thundergods_vengeance:OnIntervalThink()
             EmitSoundOn("Hero_Zuus.GodsWrath.Target", self:GetParent())
 
             if not self:GetParent():HasModifier("modifier_thundergods_wrath_vision") then
-                self:GetParent():AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = 2})
+                self:GetParent():AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = 0.5})
             end
 
             AddFOWViewer(self:GetAbility():GetCaster():GetTeamNumber(), self:GetParent():GetAbsOrigin(), 250, 4, false)
@@ -164,7 +164,7 @@ function modifier_zeus_thundergods_vengeance:OnIntervalThink()
 
             ApplyDamage ( {victim = self:GetParent(),
                 attacker = self:GetAbility():GetCaster(),
-                damage = self:GetAbility():GetAbilityDamage() + (self:GetParent():GetMaxHealth() * (self:GetAbility():GetSpecialValueFor("damage_pers") / 100)),
+                damage = self:GetAbility():GetAbilityDamage(),
                 damage_type = self:GetAbility():GetAbilityDamageType(),
                 ability = self:GetAbility()
             })
