@@ -6,11 +6,6 @@ LinkLuaModifier ("modifier_scarlet_witch_scarlet_magic", "abilities/scarlet_witc
 
 function scarlet_witch_scarlet_magic:CastFilterResultTarget (hTarget)
     if IsServer () then
-
-        if hTarget ~= nil and hTarget:IsMagicImmune() then
-            return UF_FAIL_MAGIC_IMMUNE_ENEMY
-        end
-
         local nResult = UnitFilter (hTarget, self:GetAbilityTargetTeam (), self:GetAbilityTargetType (), self:GetAbilityTargetFlags (), self:GetCaster ():GetTeamNumber () )
         return nResult
     end

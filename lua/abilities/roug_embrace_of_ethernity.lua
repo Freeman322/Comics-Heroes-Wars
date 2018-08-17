@@ -120,7 +120,7 @@ function modifier_roug_embrace_of_ethernity:OnIntervalThink()
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
 			damage = flDamage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = DAMAGE_TYPE_PURE,
 			ability = self:GetAbility()
 		}
     local hTarget = self:GetParent()

@@ -45,7 +45,7 @@ function collector_tornado:OnSpellStart()
             Source = self:GetCaster(),
             iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
             iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP,
-            iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+            iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
             bProvidesVision = true,
             iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
             iVisionRadius = self.vision_aoe,
@@ -83,7 +83,7 @@ function collector_tornado:OnProjectileHit( hTarget, vLocation )
                 victim = hTarget,
                 attacker = self:GetCaster(),
                 damage = self.wave_damage,
-                damage_type = DAMAGE_TYPE_PURE,
+                damage_type = DAMAGE_TYPE_MAGICAL,
                 ability = self,
             }
 
@@ -119,7 +119,7 @@ end
 function modifier_collector_tornado:CheckState()
 local state = {
         [MODIFIER_STATE_DISARMED] = true,
-        [MODIFIER_STATE_PASSIVES_DISABLED] = true
+        [MODIFIER_STATE_PASSIVES_DISABLED] = false
 	}
     return state
 end

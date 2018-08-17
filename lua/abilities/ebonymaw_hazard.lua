@@ -18,7 +18,7 @@ function ebonymaw_hazard:OnSpellStart()
 	if #targets > 0 then
 		for _,target in pairs(targets) do
 			target:AddNewModifier( self:GetCaster(), self, "modifier_ebonymaw_hazard", { duration = duration } )
-			ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetSpecialValueFor("damage"), ability = self, damage_type = DAMAGE_TYPE_PURE})
+			ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetSpecialValueFor("damage"), ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
 		end
 	end
 
@@ -72,10 +72,10 @@ function modifier_ebonymaw_hazard:OnIntervalThink()
         local base_damage = ((self:GetAbility():GetSpecialValueFor("hazard_damage") / 100) * thinker:GetMaxHealth())
         local mult = self:GetAbility():GetSpecialValueFor("hazard_mult_creture")
 
-        local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), thinker:GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false )
+        local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), thinker:GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, 0, false )
         if #targets > 0 then
            mult = mult * #targets
         end
-        ApplyDamage({attacker = self:GetCaster(), victim = self:GetParent(), damage = base_damage * mult, ability = hAbility, damage_type = DAMAGE_TYPE_PURE})
+        ApplyDamage({attacker = self:GetCaster(), victim = self:GetParent(), damage = base_damage * mult, ability = hAbility, damage_type = DAMAGE_TYPE_MAGICAL})
     end
 end

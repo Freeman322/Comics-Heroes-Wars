@@ -259,7 +259,7 @@
 		"AbilityManaCost"				"175"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"14200"
+		"ItemCost"						"14000"
 		"ItemShopTags"					"move_speed;boost_mana;mana_pool"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"mana;mb;octarine core"
@@ -327,7 +327,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"FightRecapLevel"				"1"
 	
-		"ItemCost"							"16715"
+		"ItemCost"							"14000"
 		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
 		"ItemQuality"						"artifact"
 		"ItemAliases"						"aether medallion"
@@ -350,7 +350,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"45"
+				"bonus_all_stats"			"35"
 			}
 			"04"
 			{
@@ -3364,7 +3364,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2225"	
+		"ItemCost"						"2025"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -3389,7 +3389,7 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"3500"
+		"ItemCost"							"785"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -3700,7 +3700,7 @@
 		// Item Info
 		
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3000"
+		"ItemCost"						"2860"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -4522,7 +4522,7 @@
 		"BaseClass"							"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1300"
+		"ItemCost"						"1200"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -4688,7 +4688,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3600"
+		"ItemCost"						"3550"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -4867,7 +4867,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"4.0"
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4885,22 +4885,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"25"
+				"bonus_intellect"		"40"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"25"
+				"bonus_strength"		"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"25"
+				"bonus_attack_speed"	"40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"75"
+				"bonus_damage"			"80"
 			}
 			"05"
 			{
@@ -4925,7 +4925,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"0.7"
+				"slow_duration"			"1.2"
 			}
 		}
 	}
@@ -5229,7 +5229,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"					"200"
-		"ItemCost"								"20000"
+		"ItemCost"								"19000"
 		"ItemShopTags"						"int;armor;hard_to_tag"
 		"ItemQuality"							"epic"
 		"ItemAliases"							"sun"

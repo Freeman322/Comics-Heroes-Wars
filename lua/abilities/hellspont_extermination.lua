@@ -53,7 +53,7 @@ function hellspont_extermination_thinker:OnDestroy(event)
         EmitSoundOn("Hero_Invoker.SunStrike.Ignite", thinker)
         GridNav:DestroyTreesAroundPoint(thinker:GetAbsOrigin(), 500, false)
         local thinker =  self:GetParent()
-        local nearby_targets = FindUnitsInRadius(thinker:GetTeam(), thinker:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+        local nearby_targets = FindUnitsInRadius(thinker:GetTeam(), thinker:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
         for i, target in ipairs(nearby_targets) do
             local health = target:GetHealth()

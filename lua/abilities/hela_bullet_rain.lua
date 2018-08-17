@@ -51,7 +51,7 @@ function hela_bullet_rain:OnChannelFinish( bInterrupted )
 end
 
 function hela_bullet_rain:OnProjectileHit( hTarget, vLocation )
-	if hTarget ~= nil and not hTarget:TriggerSpellAbsorb( self )  then
+	if hTarget ~= nil then
 		EmitSoundOn( "Hero_PhantomAssassin.Dagger.Target", hTarget )
 
 		local damage = {

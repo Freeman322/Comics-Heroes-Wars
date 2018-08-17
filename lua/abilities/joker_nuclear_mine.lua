@@ -53,7 +53,7 @@ function modifier_joker_nuclear_mine:OnIntervalThink()
 		local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 
 		-- Units to be caught in the black hole
-		local units = FindUnitsInRadius(caster:GetTeamNumber(), target_location, nil, radius, target_teams, target_types, 0, 0, false)
+		local units = FindUnitsInRadius(caster:GetTeamNumber(), target_location, nil, radius, target_teams, target_types, target_flags, 0, false)
 
 		-- Calculate the position of each found unit in relation to the center
 		for i,unit in ipairs(units) do

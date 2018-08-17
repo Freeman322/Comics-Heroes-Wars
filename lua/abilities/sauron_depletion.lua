@@ -27,9 +27,9 @@ function sauron_depletion:OnSpellStart ()
             if bourder >= hTarget:GetHealthPercent() then
                 hTarget:Kill(self, self:GetCaster())
             end
-            ApplyDamage ( { attacker = self:GetCaster (), victim = hTarget, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self})
+            ApplyDamage ( { attacker = self:GetCaster (), victim = hTarget, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = self})
             self:GetCaster ():Heal (damage * (self:GetSpecialValueFor ("heal_pct")/100), self:GetCaster ())
-            hTarget:AddNewModifier (self:GetCaster (), self, "modifier_stunned", { duration = 0.5 } )
+            hTarget:AddNewModifier (self:GetCaster (), self, "modifier_stunned", { duration = 1.0 } )
             EmitSoundOn ("Hero_Lina.LagunaBlade.Immortal", hTarget)
         end
 

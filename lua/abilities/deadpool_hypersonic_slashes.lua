@@ -135,7 +135,7 @@ function modifier_deadpool_hypersonic_slashes_target:OnIntervalThink ()
         caster:StartGestureWithPlaybackRate (ACT_DOTA_ATTACK, 2)
         EmitSoundOn ("Hero_Juggernaut.OmniSlash.Damage", target)
         caster:PerformAttack (target, true, true, true, true, false, false, true)
-        ApplyDamage ( { victim = target, attacker = caster, damage = self.damage, ability = self:GetAbility (), damage_type = DAMAGE_TYPE_PURE })
+        ApplyDamage ( { victim = target, attacker = caster, damage = self.damage, ability = self:GetAbility (), damage_type = DAMAGE_TYPE_PHYSICAL })
         self.jumps = self.jumps - 1
     end
 end

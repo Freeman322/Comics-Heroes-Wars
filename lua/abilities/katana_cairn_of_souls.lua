@@ -57,7 +57,7 @@ function modifier_katana_cairn_of_souls_thinker:GetAuraSearchType ()
 end
 
 function modifier_katana_cairn_of_souls_thinker:GetAuraSearchFlags ()
-    return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+    return DOTA_UNIT_TARGET_FLAG_NONE
 end
 
 function modifier_katana_cairn_of_souls_thinker:GetModifierAura ()

@@ -6,7 +6,7 @@ LinkLuaModifier( "modifier_odin_gods_wraith_timer", "abilities/odin_gods_wraith.
 function odin_gods_wraith:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
 	if hTarget ~= nil then
-        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_odin_gods_wraith_timer", { duration = 2.25 } )
+        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_odin_gods_wraith_timer", { duration = 1 } )
 		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_CUSTOMORIGIN, nil );
 		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
 		ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );

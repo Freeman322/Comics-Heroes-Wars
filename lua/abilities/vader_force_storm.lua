@@ -62,7 +62,7 @@ function modifier_vader_force_storm_thinker:GetAuraSearchType ()
 end
 
 function modifier_vader_force_storm_thinker:GetAuraSearchFlags ()
-    return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+    return DOTA_UNIT_TARGET_FLAG_NONE
 end
 
 function modifier_vader_force_storm_thinker:GetModifierAura ()

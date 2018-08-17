@@ -112,7 +112,7 @@ function celebrimbor_tahion_spear:OnProjectileHit_ExtraData( hTarget, vLocation,
         ParticleManager:SetParticleControl(nFXIndex, 3, vLocation)
         ParticleManager:ReleaseParticleIndex(nFXIndex)
 
-        local units = FindUnitsInRadius(hCaster:GetTeam(), vLocation, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+        local units = FindUnitsInRadius(hCaster:GetTeam(), vLocation, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
 
         for i, target in ipairs(units) do 
             target:EmitSound("Hero_ObsidianDestroyer.EssenceAura")

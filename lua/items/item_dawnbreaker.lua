@@ -136,10 +136,7 @@ end
 function modifier_item_dawnbreaker_active:CheckState ()
     local state = {
         [MODIFIER_STATE_INVULNERABLE] = true,
-        [MODIFIER_STATE_SILENCED] = true,
         [MODIFIER_STATE_ATTACK_IMMUNE] = true,
-        [MODIFIER_STATE_MUTED] = true,
-        [MODIFIER_STATE_DISARMED] = true,
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
         [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true
     }

@@ -36,7 +36,7 @@ end
 --------------------------------------------------------------------------------
 
 function cap_sheild_blast:OnProjectileHit( hTarget, vLocation )
-    if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
+    if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:IsMagicImmune() ) then
         EmitSoundOn( "Hero_VengefulSpirit.MagicMissileImpact", hTarget )
         EmitSoundOn( "Hero_WitchDoctor.Paralyzing_Cask_Bounce", hTarget )
         local stun_duration = self:GetSpecialValueFor( "hero_duration" )

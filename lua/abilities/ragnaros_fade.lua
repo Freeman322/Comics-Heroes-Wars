@@ -62,7 +62,7 @@ function ragnaros_fade:OnSpellStart()
         ParticleManager:SetParticleControl( nFXIndex, 3, hTarget:GetOrigin());
         ParticleManager:SetParticleControl( nFXIndex, 4, hTarget:GetOrigin());
         ParticleManager:ReleaseParticleIndex( nFXIndex );
-        ApplyDamage ( { attacker = hCaster, victim = hTarget, ability = self, damage = health, damage_type = DAMAGE_TYPE_MAGICAL})
+        ApplyDamage ( { attacker = hCaster, victim = hTarget, ability = self, damage = health, damage_type = DAMAGE_TYPE_PURE})
         hCaster:SetMana(hCaster:GetMana() + mana)
         hTarget:Heal( health, hCaster )
         local player_id = hCaster:GetPlayerID()
@@ -70,7 +70,7 @@ function ragnaros_fade:OnSpellStart()
         local illusion = CreateUnitByName(hTarget:GetUnitName(), hTarget:GetAbsOrigin(  ), true, hCaster, nil, caster_team)  --handle_UnitOwner needs to be nil, or else it will crash the game.
         illusion:SetPlayerID(player_id)
         illusion:SetControllableByPlayer(player_id, true)
-        illusion:AddNewModifier(hCaster, self, "modifier_illusion", {duration = duration, outgoing_damage = 100, incoming_damage = 400})
+        illusion:AddNewModifier(hCaster, self, "modifier_illusion", {duration = duration, outgoing_damage = 200, incoming_damage = 50})
 
     	illusion:MakeIllusion()
     else
@@ -80,7 +80,7 @@ function ragnaros_fade:OnSpellStart()
         ParticleManager:ReleaseParticleIndex( nFXIndex );
 
         hTarget:Kill( self, hCaster )
-        killed_heroes = killed_heroes + 1
+        killed_heroes = killed_heroes + 5
         hCaster:CalculateStatBonus(  )
         -- Recalculate all stats after the hero gains stats.
     end

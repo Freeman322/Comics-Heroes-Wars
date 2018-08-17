@@ -30,7 +30,7 @@ function thor_ravage:OnSpellStart()
       bonus_damage = bonus_damage + self:GetCaster():FindTalentValue("special_bonus_unique_thor_4")
     end
 
-    local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+    local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false )
     if #units > 0 then
       for _,target in pairs(units) do
         local damage = {
@@ -42,7 +42,7 @@ function thor_ravage:OnSpellStart()
 
         ApplyDamage( damage )
 
-        target:AddNewModifier(self:GetCaster(), self, "modifier_thor_ravage_stun", {duration = self:GetSpecialValueFor("duration")})
+        target:AddNewModifier(self:GetCaster(), self, "modifier_thor_ravage_stun", {duration = self:GetSpecialValueFor("duration"0)})
 
         if self:GetCaster():HasScepter() then
           self:GetCaster():PerformAttack(target, false, true, true, true, false, true, true)
