@@ -1,38 +1,49 @@
 zatana_magic_knowledge = class({})
 
-LinkLuaModifier( "modifier_zatana_magic_knowledge_aura", "abilities/zatana_magic_knowledge.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_zatana_magic_knowledge", "abilities/zatana_magic_knowledge.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_zatana_magic_knowledge_aura","abilities/zatana_magic_knowledge.lua", LUA_MODIFIER_MOTION_NONE)
 
 --------------------------------------------------------------------------------
 
 function zatana_magic_knowledge:GetIntrinsicModifierName()
-    return "modifier_zatana_magic_knowledge_aura"
+    return "modifier_zatana_magic_knowledge"
 end
 
-modifier_zatana_magic_knowledge_aura = class({})
+modifier_zatana_magic_knowledge = class({})
 
-function modifier_zatana_magic_knowledge_aura:IsAura()
+function modifier_zatana_magic_knowledge:IsAura()
     return true
 end
 
-function modifier_zatana_magic_knowledge_aura:GetAuraRadius()
+function modifier_zatana_magic_knowledge:GetAuraRadius()
     return 999999
 end
+
+function modifier_zatana_magic_knowledge:IsHidden()
+    return true
+end
+
+function modifier_zatana_magic_knowledge:RemoveOnDeath()
+    return false
+end
  
-function modifier_zatana_magic_knowledge_aura:GetAuraSearchTeam()
+function modifier_zatana_magic_knowledge:GetAuraSearchTeam()
     return DOTA_UNIT_TARGET_TEAM_FRIENDLY
 end
 
-function modifier_zatana_magic_knowledge_aura:GetAuraSearchType()
+function modifier_zatana_magic_knowledge:GetAuraSearchType()
     return DOTA_UNIT_TARGET_HERO
 end
 
-function modifier_zatana_magic_knowledge_aura:GetAuraSearchFlags()
-    return DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO
+function modifier_zatana_magic_knowledge:GetAuraSearchFlags()
+    return DOTA_UNIT_TARGET_FLAG_NONE
 end
 
-function modifier_zatana_magic_knowledge_aura:GetModifierAura()
+function modifier_zatana_magic_knowledge:GetModifierAura()
     return "modifier_zatana_magic_knowledge_aura"
 end
+
+modifier_zatana_magic_knowledge_aura = class ({})
 
 function modifier_zatana_magic_knowledge_aura:DeclareFunctions()
 	local funcs = 
@@ -49,7 +60,7 @@ end
 function modifier_zatana_magic_knowledge_aura:GetModifierManaBonus (params)
     return self:GetAbility():GetSpecialValueFor ("bonus_mana")
 end
-
+ 
 function modifier_zatana_magic_knowledge_aura:GetModifierConstantHealthRegen (params)
     return self:GetAbility():GetSpecialValueFor ("bonus_health_regen")
 end
