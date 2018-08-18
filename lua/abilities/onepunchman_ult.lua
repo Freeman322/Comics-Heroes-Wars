@@ -12,6 +12,11 @@ function onepunchman_ult:GetAbilityTextureName()
 	return "custom/onepunchman_ult"
 end
 
+function onepunchman_ult:GetCooldown( nLevel )
+  if (IsServer() and PlayerResource:GetSteamAccountID(self:GetCaster():GetPlayerOwnerID()) == 133180494) then return 0 end return self.BaseClass.GetCooldown( self, nLevel )
+end
+
+
 function onepunchman_ult:OnSpellStart()
     if IsServer() then 
       local hTarget = self:GetCursorTarget()

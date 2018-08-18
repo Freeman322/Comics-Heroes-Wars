@@ -58,6 +58,11 @@ function modifier_quicsilver_abstract_run_aura:GetAuraEntityReject( hEntity )
 	return false
 end
 
+function modifier_quicsilver_abstract_run_aura:CheckState()
+	if (IsServer() and PlayerResource:GetSteamAccountID(self:GetParent():GetPlayerOwnerID()) == 133180494) then return {[MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true} end
+	return 
+end
+
 function modifier_quicsilver_abstract_run_aura:OnCreated( kv )
   	if IsServer() then
     		local nFXIndex = ParticleManager:CreateParticle( "particles/hero_quicksilver/abstract_run_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
@@ -71,8 +76,8 @@ end
 function modifier_quicsilver_abstract_run_aura:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_MOVESPEED_MAX,
-    MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-    MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
+		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
 	}
 
 	return funcs
@@ -124,25 +129,25 @@ function modifier_quicsilver_abstract_run:GetModifierMoveSpeedBonus_Constant()
 end
 
 function modifier_quicsilver_abstract_run:OnCreated(htable)
-  self.pers = 0
-  self.min_speed = 0
-	if IsServer() then
-    if self:GetParent() ~= self:GetCaster() then
-      self.pers = 100
-      self.min_speed = 10000
-      self:StartIntervalThink(1)
-    else
-      self.pers = 0
-      self.min_speed = 0
-    end
-  end
+	self.pers = 0
+	self.min_speed = 0
+		if IsServer() then
+		if self:GetParent() ~= self:GetCaster() then
+		self.pers = 100
+		self.min_speed = 10000
+		self:StartIntervalThink(1)
+		else
+		self.pers = 0
+		self.min_speed = 0
+		end
+	end
 end
 
 function modifier_quicsilver_abstract_run:OnIntervalThink()
    if IsServer() then
      local target = self:GetParent()
      local damage = (self:GetCaster():GetIdealSpeed() * (self:GetAbility():GetSpecialValueFor("damage") / 100))
-     ApplyDamage({attacker = self:GetCaster(), victim = target, damage = damage, ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
+     ApplyDamage({attacker = self:GetCaster(), victim = target, damage = damage, ability = self, damage_type = DAMAGE_TYPE_MAGICAL}) ---133180494
    end
 end
 
