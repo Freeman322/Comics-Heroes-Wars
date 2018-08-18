@@ -42,7 +42,7 @@ function thor_ravage:OnSpellStart()
 
         ApplyDamage( damage )
 
-        target:AddNewModifier(self:GetCaster(), self, "modifier_thor_ravage_stun", {duration = self:GetSpecialValueFor("duration"0)})
+        target:AddNewModifier(self:GetCaster(), self, "modifier_thor_ravage_stun", {duration = self:GetSpecialValueFor("duration")})
 
         if self:GetCaster():HasScepter() then
           self:GetCaster():PerformAttack(target, false, true, true, true, false, true, true)
