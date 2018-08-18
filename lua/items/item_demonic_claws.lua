@@ -22,7 +22,6 @@ function modifier_item_demonic_claws:DeclareFunctions ()
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-        MODIFIER_PROPERTY_CAST_RANGE_BONUS
     }
 
     return funcs
@@ -31,11 +30,6 @@ end
 function modifier_item_demonic_claws:GetModifierBonusStats_Intellect (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_intellect")
-end
-
-function modifier_item_demonic_claws:GetModifierCastRangeBonus (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("cast_range_bonus")
 end
 
 function modifier_item_demonic_claws:GetModifierConstantManaRegen (params)

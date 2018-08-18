@@ -1118,8 +1118,8 @@
 			}	
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"soul_keep_duration"	"3.5"
+				"var_type"				"FIELD_INTEGER"
+				"soul_keep_duration"	"8"
 			}
 		}
 	}
@@ -6181,7 +6181,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana_regen"			"12"
+				"bonus_health_regen"		"15"
 			}
 			"03"
 			{
