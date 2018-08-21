@@ -61,7 +61,7 @@
       "Ability10"				"special_bonus_exp_boost_30"
       "Ability11"				"special_bonus_gold_income_50"
       "Ability12"				"special_bonus_spell_block_20"
-      "Ability13"				"special_bonus_attack_speed_100"
+      "Ability13"				"special_bonus_agility_10"
       "Ability14"				"special_bonus_cooldown_reduction_25"
       "Ability15"				"special_bonus_unique_faceless_void_4"
       "Ability16"				"special_bonus_agility_25"
@@ -471,7 +471,7 @@
      	"Ability10"					"special_bonus_exp_boost_30"
       	"Ability11"					"special_bonus_gold_income_50"
       	"Ability12"					"special_bonus_hp_regen_40"
-      	"Ability13"					"special_bonus_intelligence_10"
+      	"Ability13"					"special_bonus_attack_speed_100"
       	"Ability14"					"special_bonus_cooldown_reduction_25"
       	"Ability15"					"special_bonus_movement_speed_100"
       	"Ability16"					"special_bonus_lifesteal_100"
@@ -1528,7 +1528,7 @@
 	      "Ability10"				"special_bonus_exp_boost_30"
 	      "Ability11"				"special_bonus_gold_income_50"
 	      "Ability12"				"special_bonus_intelligence_10"
-	      "Ability13"				"special_bonus_lifesteal_30"
+	      "Ability13"				"special_bonus_all_stats_10"
 	      "Ability14"				"special_bonus_cooldown_reduction_25"
 	      "Ability15"				"special_bonus_unique_faceless_void_4"
 	      "Ability16"				"special_bonus_spell_amplify_15"
@@ -2166,7 +2166,7 @@
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_gold_income_50"
 		"Ability12"				"special_bonus_spell_block_20"
-		"Ability13"				"special_bonus_attack_speed_100"
+		"Ability13"				"special_bonus_agility_10"
 		"Ability14"				"special_bonus_cooldown_reduction_25"
 		"Ability15"				"special_bonus_attack_damage_90"
 		"Ability16"				"special_bonus_agility_25"
@@ -3099,8 +3099,8 @@
 	    "Ability17"					"special_bonus_all_stats_20"
 	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"40"									// Damage range min.
-		"AttackDamageMax"			"60"									// Damage range max.
+		"AttackDamageMin"			"35"									// Damage range min.
+		"AttackDamageMax"			"55"									// Damage range max.
 		"AttackRate"				"1.55"									// Speed of attack.
 		"AttackAnimationPoint"		"0.4"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
@@ -4313,7 +4313,7 @@
 		"AttackRange"		"128"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"30"
-		"AttributeStrengthGain"		"3.300000"
+		"AttributeStrengthGain"		"3.600000"
 		"AttributeBaseAgility"		"18"
 		"AttributeAgilityGain"		"1.900000"
 		"AttributeBaseIntelligence"		"17"
@@ -4742,9 +4742,9 @@
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_gold_income_50"
 		"Ability12"					"special_bonus_cast_range_200"
-		"Ability13"					"special_bonus_intelligence_10"
+		"Ability13"					"special_bonus_spell_block_20"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability15"					"special_bonus_all_stats_15"
 		"Ability16"					"special_bonus_intelligence_25"
 		"Ability17"					"special_bonus_spell_amplify_15"
 		"AttributePrimary"      	"DOTA_ATTRIBUTE_INTELLECT"
@@ -4962,10 +4962,10 @@
 		"Ability6"					"miraak_soul_devour"
         
         // Talents
-		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability10"					"special_bonus_unique_miraak_2"
 		"Ability11"					"special_bonus_gold_income_50"
-		"Ability12"					"special_bonus_evasion_30"
-		"Ability13"					"special_bonus_magic_resistance_35"
+		"Ability12"					"special_bonus_unique_miraak_1"
+		"Ability13"					"special_bonus_cast_range_200"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
 		"Ability15"					"special_bonus_unique_faceless_void_4"
 		"Ability16"					"special_bonus_spell_block_15"
@@ -5096,7 +5096,7 @@
 		"Ability12"				"special_bonus_unique_slaanesh_1"
 		"Ability13"				"special_bonus_unique_slaanesh_3"
 		"Ability14"				"special_bonus_unique_slaanesh_2"
-		"Ability15"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_cast_range_400"
 		"Ability16"				"special_bonus_hp_regen_12"
 		"Ability17"				"special_bonus_all_stats_20"
 
@@ -5374,10 +5374,10 @@
 
 	    "Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_gold_income_50"
-		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability12"					"special_bonus_attack_speed_100"
 		"Ability13"					"special_bonus_armor_15"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability15"					"special_bonus_20_bash_2"
 		"Ability16"					"special_bonus_agility_25"
 		"Ability17"					"special_bonus_all_stats_20"
         

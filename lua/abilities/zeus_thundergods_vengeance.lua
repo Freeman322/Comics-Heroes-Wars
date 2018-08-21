@@ -154,10 +154,6 @@ function modifier_zeus_thundergods_vengeance:OnIntervalThink()
 
             EmitSoundOn("Hero_Zuus.GodsWrath.Target", self:GetParent())
 
-            if not self:GetParent():HasModifier("modifier_thundergods_wrath_vision") then
-                self:GetParent():AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = 0.5})
-            end
-
             AddFOWViewer(self:GetAbility():GetCaster():GetTeamNumber(), self:GetParent():GetAbsOrigin(), 250, 4, false)
             self:GetParent():AddNewModifier(self:GetCaster(), self, "modifier_truesight", {duration = 3.5})
             GridNav:DestroyTreesAroundPoint( self:GetParent():GetAbsOrigin(), 250, false)
