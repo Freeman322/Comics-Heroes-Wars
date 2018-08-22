@@ -6260,6 +6260,16 @@
 				"var_type"					"FIELD_INTEGER"
 				"percent_cleave"			"50"
 			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"splash_damage"				"0.3"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"splash_radius"				"325"
+			}
 		}
 	}
    //=================================================================================================================
