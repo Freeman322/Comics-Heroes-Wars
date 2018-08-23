@@ -6885,6 +6885,7 @@
 			"FightRecapLevel"				"1"
 			"AbilityTextureName"			"custom/outsider_mark"
 			"ScriptFile"					"abilities/outsider_mark.lua"
+			"HasScepterUpgrade"				"1"
 
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
@@ -6906,26 +6907,31 @@
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilitySpecial"
 			{
-					"01"
-					{
-						"var_type"			"FIELD_INTEGER"
-						"duration_tooltip"	"50"
-					}
-					"02"
-					{
-						"var_type"			"FIELD_FLOAT"
-						"spell_amp"			"30 45 60"
-					}
-					"03"
-					{
-						"var_type"			"FIELD_FLOAT"
-						"damage_red"		"-17 -26 -35"
-					}
-					"04"
-					{
-						"var_type"			"FIELD_FLOAT"
-						"damage_enemy"		"2.1 2.8 3.5"
-					}
+				"01"
+				{
+					"var_type"			"FIELD_INTEGER"
+					"duration_tooltip"	"50"
+				}
+				"02"
+				{
+					"var_type"			"FIELD_FLOAT"
+					"spell_amp"			"30 45 60"
+				}
+				"03"
+				{
+					"var_type"			"FIELD_FLOAT"
+					"damage_red"		"-17 -26 -35"
+				}
+				"04"
+				{
+					"var_type"			"FIELD_FLOAT"
+					"damage_enemy"		"2.1 2.8 3.5"
+				}
+				"05"
+				{
+					"var_type"			"FIELD_INTEGER"
+					"cooldown_scepter"	"30"
+				}
 			}
 	}
 	"out_walk"
