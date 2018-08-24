@@ -7,26 +7,26 @@ function item_speed_essence:GetIntrinsicModifierName()
 	return "modifier_item_speed_essence"
 end
 
+function item_speed_essence:OnSpellStart()
+    if IsServer() then 
+        if not self:GetCaster():HasModifier("modifier_item_speed_essence_activated") then 
+            self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_speed_essence_activated", nil)
+            local mod = self:GetCaster():FindModifierByName("modifier_item_speed_essence_activated")
+            mod:SetStackCount(1)
+        else
+            local mod = self:GetCaster():FindModifierByName("modifier_item_speed_essence_activated")
+            mod:SetStackCount(mod:GetStackCount() + 1)
+        end
+        self:RemoveSelf()
+    end
+end
+
 if modifier_item_speed_essence == nil then
 	modifier_item_speed_essence = class({})
 end
 
 function modifier_item_speed_essence:IsHidden()
 	return true
-end
-
-function modifier_item_speed_essence:OnCreated(htable)
-    if IsServer() then 
-        if not self:GetParent():HasModifier("modifier_item_speed_essence_activated") then 
-            self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_speed_essence_activated", nil)
-            local mod = self:GetParent():FindModifierByName("modifier_item_speed_essence_activated")
-            mod:SetStackCount(1)
-        else
-            local mod = self:GetParent():FindModifierByName("modifier_item_speed_essence_activated")
-            mod:SetStackCount(mod:GetStackCount() + 1)
-        end
-        self:GetParent():RemoveItem(self:GetAbility())
-    end
 end
 
 if modifier_item_speed_essence_activated == nil then
@@ -58,7 +58,7 @@ local funcs = {
 end
 
 function modifier_item_speed_essence_activated:GetModifierMoveSpeedBonus_Constant( params )
- 	 return 20 * self:GetStackCount()
+ 	 return 25 * self:GetStackCount()
 end
 
 function modifier_item_speed_essence_activated:GetAttributes ()
