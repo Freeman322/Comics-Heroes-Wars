@@ -92,19 +92,36 @@ end
 
 function modifier_item_demon_shard_2:OnAttackLanded (params)
     if params.attacker == self:GetParent() then
-        if params.target ~= nil and params.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
-            local cleaveDamage = ( self:GetAbility():GetSpecialValueFor("percent_cleave") * params.damage ) / 100.0
-            DoCleaveAttack( self:GetParent(), params.target, self:GetAbility(), cleaveDamage, 150, 300, 570, "particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave.vpcf" )
+        if self:GetParent():IsRangedAttacker() then
+            local target = params.target
+            local splash_radius = self:GetAbility():GetSpecialValueFor("splash_radius")
+            local splash_damage = self:GetAbility():GetSpecialValueFor("splash_damage")
+            local splash_range = FindUnitsInRadius(self:GetCaster():GetTeam(), target:GetAbsOrigin(), nil, splash_radius, DOTA_UNIT_TARGET_TEAM_ENEMY	, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
+            local damage_table = {}
+            damage_table.attacker = self:GetCaster()
+            damage_table.damage_type = DAMAGE_TYPE_PHYSICAL
+            damage_table.damage = self:GetCaster():GetAverageTrueAttackDamage(target) * splash_damage
+        	for i,v in ipairs(splash_range) do
+                if v ~= target then 
+                    damage_table.victim = v
+                    ApplyDamage(damage_table)
+                end
+            end
+        else
+            if params.target ~= nil and params.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
+                local cleaveDamage = ( self:GetAbility():GetSpecialValueFor("percent_cleave") * params.damage ) / 100.0
+                DoCleaveAttack( self:GetParent(), params.target, self:GetAbility(), cleaveDamage, 150, 300, 570, "particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave.vpcf" )
+            end
         end
-    	if IsHasCrit and not params.target:IsBuilding() then
-        local hTarget = params.target
-        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
-        ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
-        ParticleManager:ReleaseParticleIndex( nFXIndex )
-        EmitSoundOn("Hero_Winter_Wyvern.WintersCurse.Target", hTarget)
-        ScreenShake(hTarget:GetOrigin(), 100, 0.1, 0.3, 500, 0, true)
-    	end
+        if IsHasCrit and not params.target:IsBuilding() then
+            local hTarget = params.target
+            local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+            ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+            ParticleManager:ReleaseParticleIndex( nFXIndex )
+            EmitSoundOn("Hero_Winter_Wyvern.WintersCurse.Target", hTarget)
+            ScreenShake(hTarget:GetOrigin(), 100, 0.1, 0.3, 500, 0, true)
+        end
     end
 end
 
