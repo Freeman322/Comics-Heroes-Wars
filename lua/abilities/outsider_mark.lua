@@ -6,14 +6,6 @@ function outsider_mark:IsStealable()
 	return false
 end
 
-function outsider_mark:GetCooldown(nLevel)
-    if self:GetCaster ():HasScepter () then
-        return self:GetSpecialValueFor("cooldown_scepter")
-    end
-
-    return self.BaseClass.GetCooldown (self, nLevel)
-end
-
 function outsider_mark:CastFilterResultTarget( hTarget )
 	if self:GetCaster() == hTarget then
 		return UF_FAIL_CUSTOM
