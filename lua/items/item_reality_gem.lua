@@ -70,21 +70,40 @@ end
 
 function modifier_item_reality_gem_active:DeclareFunctions() 
     local funcs = {
-        MODIFIER_PROPERTY_MAGICDAMAGEOUTGOING_PERCENTAGE,
-        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
+        MODIFIER_EVENT_ON_TAKEDAMAGE
     }
 
     return funcs
 end
 
-function modifier_item_reality_gem_active:GetModifierMagicDamageOutgoing_Percentage( params )
-    return -200
-end
+function modifier_item_reality_gem_active:OnTakeDamage( params )
+    if IsServer() then
+        if params.attacker == self:GetParent() then
+            local unit = params.unit
 
-function modifier_item_reality_gem_active:GetModifierDamageOutgoing_Percentage( params )
-    return -200
-end
+            if unit == self:GetParent() then
+                return
+            end
 
+            if unit:GetClassname() == "ent_dota_fountain" then
+        	   return
+            end
+
+            ApplyDamage ( {
+                victim = params.attacker,
+                attacker = unit,
+                damage = params.damage,
+                damage_type = DAMAGE_TYPE_PURE,
+                ability = self:GetAbility(),
+                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
+            })
+
+            unit:Heal(params.damage * 2, self:GetAbility())
+
+            EmitSoundOn("DOTA_Item.BladeMail.Damage", target)
+        end
+    end
+end
 
 if modifier_item_reality_gem == nil then
     modifier_item_reality_gem = class({})

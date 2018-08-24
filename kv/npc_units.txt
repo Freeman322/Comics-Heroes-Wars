@@ -184,7 +184,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Range"					// Name of sound set.
 		"ModelScale" 					"0.93"
 		"Level"						"2"
@@ -216,7 +216,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -277,7 +277,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_troll_dark_b/n_creep_troll_dark_frost.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Range"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -309,7 +309,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -370,7 +370,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged_mega.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_troll_dark_b/n_creep_troll_dark_b.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Range"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -402,7 +402,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -463,9 +463,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/creeps_range/radiant/creep_ranged.vmdl"	// Model.
+		"Model"						"models/creeps/thief/thief_01_archer.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
-		"ModelScale" 					".28"
+		"ModelScale" 				".90"
 		"Level"						"2"
 
 		// Abilities
@@ -495,7 +495,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -556,9 +556,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/creeps_range/radiant/creep_ranged_mega.vmdl"	// Model.
+		"Model"						"models/creeps/thief/thief_01_archer.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
-		"ModelScale"				"0.32"
+		"ModelScale"				"0.97"
 		"Level"						"1"
 
 		// Abilities
@@ -588,7 +588,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -637,8 +637,6 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"850"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-
-		//Inventory
 	}
 
 //=================================================================================
@@ -649,9 +647,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/creeps_range/radiant/creep_ranged_mega.vmdl"	// Model.
+		"Model"						"models/creeps/thief/thief_01_archer.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
-		"ModelScale"				"0.32"
+		"ModelScale"				"1.1"
 		"Level"						"1"
 
 		// Abilities
@@ -681,7 +679,7 @@
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		// Speed of projectile.
 
 		// Attributes
@@ -730,8 +728,6 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"850"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-
-		//Inventory
 	}
 
 //=================================================================================
@@ -742,9 +738,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_berserker.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Melee"					// Name of sound set.
-		"ModelScale" 					".93"
+		"ModelScale" 				".93"
 		"Level"						"3"
 
 		// Abilities
@@ -835,7 +831,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_berserker.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Melee_Mega"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -928,7 +924,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_troll_dark_a/n_creep_troll_dark_a.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Melee_Mega"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -1021,9 +1017,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/creep_meee_mega/creep_melee_enemy.vmdl"	// Model.
+		"Model"						"models/creeps/thief/thief_01.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
-		"ModelScale" 					"0.23"
+		"ModelScale" 					"0.90"
 		"Level"						"3"
 
 		// Abilities
@@ -1114,9 +1110,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/creep_meee_mega/creep_melee_enemy.vmdl"	// Model.
+		"Model"						"models/creeps/thief/thief_01_leader.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee_Mega"					// Name of sound set.
-		"ModelScale"				"0.32"
+		"ModelScale"				"0.90"
 		"Level"						"1"
 
 			// Abilities
@@ -1207,9 +1203,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/creep_meee_mega/creep_melee_enemy.vmdl"	// Model.
+		"Model"						"models/creeps/omniknight_golem/omniknight_golem.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee_Mega"					// Name of sound set.
-		"ModelScale"				"0.32"
+		"ModelScale"				"1.1"
 		"Level"						"1"
 
 			// Abilities
@@ -19339,7 +19335,7 @@
 
 		"vscripts"					"heroes/savitar.lua"
 	}
-	"npc_dota_hero_thief"
+	"npc_dota_hero_ghost"
 	{
 		"BaseClass"             	"npc_dota_hero"       
         "HeroID"                    "201"
@@ -19347,7 +19343,7 @@
         "DisableWearables"          "1"
         
         // Model info
-        "Model"                     "models/creeps/thief/thief_01.vmdl"
+        "Model"                     "models/heroes/hero_ghost/ghost.vmdl"
         "ModelScale"                "1.02"
         "LoadoutScale"              "1.1"
 
@@ -19355,8 +19351,8 @@
         "HealthBarOffset"           "160"
         
         // Sound info
-        "SoundSet"					"Hero_MonkeyKing"
-		"IdleSoundLoop"				"Hero_MonkeyKing.IdleLoop"
+        "SoundSet"					"Hero_Spectre"
+		"IdleSoundLoop"				"Hero_Spectre.IdleLoop"
 
         "PickSound"					"antimage_anti_spawn_01"
 		"BanSound"					"antimage_anti_anger_04"
@@ -19373,7 +19369,7 @@
 		"AttackRate"				"1.400000"
 		"AttackAnimationPoint"		"0.300000"
 		"AttackAcquisitionRange"	"600"
-		"AttackRange"				"150"
+		"AttackRange"				"128"
 		"ProjectileSpeed"			"2500"
 
 		// Attributes
@@ -19381,29 +19377,29 @@
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"23"
 		"AttributeStrengthGain"		"1.300000"
-		"AttributeBaseIntelligence"	"12"
+		"AttributeBaseIntelligence"	"21"
 		"AttributeIntelligenceGain"	"1.800000"
 		"AttributeBaseAgility"		"22"
 		"AttributeAgilityGain"		"2.800000"
 		"StatusHealthRegen"			"1.75"
         
         // Abilities
-		"Ability1"					"event_agility"
-		"Ability2"					"event_str"
-		"Ability3"					"event_armor"
-		"Ability4"					"event_bash"
-		"Ability5"					"event_evasion"
-		"Ability6"					"event_madness"
+		"Ability1"					"ghost_quantum_phase"
+		"Ability2"					"ghost_fate"
+		"Ability3"					"ghost_quantum_mirror"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"ghost_mental_chaos"
         
         // Talents
-		"Ability10"					"special_bonus_strength_10"
-		"Ability11"					"special_bonus_agility_10"
-		"Ability12"					"special_bonus_agility_40"
-		"Ability13"					"special_bonus_strength_40"
-		"Ability14"					"special_bonus_armor_30"
-		"Ability15"					"special_bonus_attack_damage_50"
-		"Ability16"					"special_bonus_attack_speed_250"
-		"Ability17"					"special_bonus_hp_regen_50"
+	    "Ability10"					"special_bonus_unique_ghost_4"
+		"Ability11"					"special_bonus_gold_income_50"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_unique_ghost_3"
+		"Ability14"					"special_bonus_unique_ghost_2"
+		"Ability15"					"special_bonus_all_stats_15"
+		"Ability16"					"special_bonus_agility_25"
+		"Ability17"					"special_bonus_unique_ghost_1"
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
@@ -19421,7 +19417,7 @@
 
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"200"
+		"StatusHealth"				"120"
 		"StatusHealthRegen"			"1.5000"
 		"StatusMana"				"75"
 		"StatusManaRegen"			"0.9"
@@ -19444,8 +19440,8 @@
 		// Health Bar	
 		"HealthBarOffset"     "180"
 
-		"particle_folder"			"particles/units/heroes/hero_antimage"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_dark_seer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_antimage.vsndevts"
         
         // Card info
@@ -19460,4 +19456,214 @@
         "LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
 		"HeroSelectSoundEffect"		"Hero_Antimage.Pick"
 	}
+	"npc_dota_hero_superman"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "204"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/heroes/hero_superman/superman.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+		"SoundSet"					"Hero_Beastmaster"
+
+	 	"particle_folder"			"particles/units/heroes/hero_beastmaster"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
+        
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "28"
+        "AttributeStrengthGain"     "1.700000"
+        "AttributeBaseIntelligence" "21"
+        "AttributeIntelligenceGain" "1.900000"
+        "AttributeBaseAgility"      "22"
+        "AttributeAgilityGain"      "2.400000"
+
+        // Misc stats
+        "ArmorPhysical"             "3"
+        "MagicalResistance"			"25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "22"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "128"
+        "ProjectileSpeed"           "0"
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+
+  		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
+		"Ability13"					""
+		"Ability14"					""
+		"Ability15"					""
+		"Ability16"					""
+		"Ability17"					""
+        
+        // Card info
+        "Role"          			"Carry,Durable"
+        "Rolelevels"    			"2,3"
+        "Complexity"    			"1"
+        
+        // Misc
+        "NameAliases"      			 "sm"
+        "url"       				"Superman"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		 // Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"120"
+		"StatusHealthRegen"			"1.5000"
+		"StatusMana"				"75"
+		"StatusManaRegen"			"0.9"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}
+	"npc_dota_hero_molag_bal"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "205"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/heroes/hero_molag_bal/molag_bal.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Beastmaster"
+
+	 	"particle_folder"			"particles/units/heroes/hero_beastmaster"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
+        
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "21"
+        "AttributeStrengthGain"     "1.700000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.900000"
+        "AttributeBaseAgility"      "29"
+        "AttributeAgilityGain"      "2.400000"
+
+        // Misc stats
+        "ArmorPhysical"             "3"
+        "MagicalResistance"			"25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "22"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "128"
+        "ProjectileSpeed"           "0"
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"molagbal_mace_of_oblivion"
+		"Ability2"					"molagbal_vampire"
+		"Ability3"					"molagbal_lord_of_darkness"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"molagbal_sacrifice"
+
+		"Ability10"					"special_bonus_unique_molag_bal"
+		"Ability11"					"special_bonus_gold_income_50"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_unique_molag_bal_1"
+		"Ability14"					"special_bonus_unique_molag_bal_3"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_strength_25"
+		"Ability17"					"special_bonus_all_stats_20"
+        
+        // Card info
+
+		"Role"						"Support,Disabler,Nuker,Durable"
+		"Rolelevels"				"2,3,1,1"
+		"Complexity"				"2"
+		"Team"						"Bad"
+        
+        // Misc
+        "NameAliases"      			"mb"
+        "url"       				"Molag Bal"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"120"
+		"StatusHealthRegen"			"1.5000"
+		"StatusMana"				"75"
+		"StatusManaRegen"			"0.9"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}	
 }

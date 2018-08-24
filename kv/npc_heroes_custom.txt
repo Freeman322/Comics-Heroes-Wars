@@ -1212,9 +1212,9 @@
 		"Ability1"					"strange_test_of_faith"
 		"Ability2"					"strange_future_past"
 		"Ability3"					"strange_brilliance_aura"
-		"Ability4"					"generic_hidden"
+		"Ability4"					"strange_global_time_reverse"
 	    "Ability5"    				"generic_hidden"
-		"Ability6"					"strange_quantum_entanglement"
+		"Ability6"					"strange_obliteration_of_eternity"
 		"Ability9"					""
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_gold_income_50"
@@ -3329,10 +3329,10 @@
 	  	}
 	"npc_dota_hero_quicksilver"
 	{
-	    "override_hero" "npc_dota_hero_ancient_apparition"
-		"Model"		"models/heroes/antimage/antimage.vmdl"
-		"DisableWearables"		"1"
-		"ModelScale"		"0.900000"
+	    "override_hero" 	"npc_dota_hero_ancient_apparition"
+		"Model"				"models/heroes/hero_qucksilver/quicksilver.vmdl"
+		"DisableWearables"	"1"
+		"ModelScale"		"1.000000"
 		"AbilityLayout" 	"5"
 		"Ability1"		    "quicsilver_relative_blast"
 		"Ability2"			"quicsilver_speed_drain"
@@ -5129,9 +5129,7 @@
 		"MovementTurnRate"					"0.500000"
 		"BoundsHullName"					"DOTA_HULL_SIZE_HERO"
 	}
-
-	/////////////////////EVENT HERO///////////////
-	"npc_dota_hero_thief"
+	"npc_dota_hero_ghost"
 	{
 		"BaseClass"             	"npc_dota_hero"       
         "HeroID"                    "201"
@@ -5139,7 +5137,7 @@
         "DisableWearables"          "1"
         
         // Model info
-        "Model"                     "models/creeps/thief/thief_01.vmdl"
+        "Model"                     "models/heroes/hero_ghost/ghost.vmdl"
         "ModelScale"                "1.02"
         "LoadoutScale"              "1.1"
 
@@ -5147,8 +5145,8 @@
         "HealthBarOffset"           "160"
         
         // Sound info
-        "SoundSet"					"Hero_MonkeyKing"
-		"IdleSoundLoop"				"Hero_MonkeyKing.IdleLoop"
+        "SoundSet"					"Hero_Spectre"
+		"IdleSoundLoop"				"Hero_Spectre.IdleLoop"
 
         "PickSound"					"antimage_anti_spawn_01"
 		"BanSound"					"antimage_anti_anger_04"
@@ -5165,8 +5163,8 @@
 		"AttackRate"				"1.400000"
 		"AttackAnimationPoint"		"0.300000"
 		"AttackAcquisitionRange"	"600"
-		"AttackRange"				"150"
-		"ProjectileSpeed"			"0"
+		"AttackRange"				"128"
+		"ProjectileSpeed"			"2500"
 
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
@@ -5180,30 +5178,30 @@
 		"StatusHealthRegen"			"1.75"
         
         // Abilities
-		"Ability1"					""
-		"Ability2"					""
-		"Ability3"					""
-		"Ability4"					""
-		"Ability5"					""
-		"Ability6"					""
+		"Ability1"					"ghost_quantum_phase"
+		"Ability2"					"ghost_fate"
+		"Ability3"					"ghost_quantum_mirror"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"ghost_mental_chaos"
         
         // Talents
-		"Ability10"					""
-		"Ability11"					""
-		"Ability12"					""
-		"Ability13"					""
-		"Ability14"					""
-		"Ability15"					""
-		"Ability16"					""
-		"Ability17"					""
+	    "Ability10"					"special_bonus_unique_ghost_4"
+		"Ability11"					"special_bonus_gold_income_50"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_unique_ghost_3"
+		"Ability14"					"special_bonus_unique_ghost_2"
+		"Ability15"					"special_bonus_all_stats_15"
+		"Ability16"					"special_bonus_agility_25"
+		"Ability17"					"special_bonus_unique_ghost_1"
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
 		"MovementSpeed"				"310"
 		"MovementTurnRate"			"0.500000"
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"particle_folder"			"particles/units/heroes/hero_antimage"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+
+		"particle_folder"			"particles/units/heroes/hero_dark_seer"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_antimage.vsndevts"
         
         // Card info
@@ -5212,107 +5210,11 @@
         "Complexity"    			"2"
         
         // Misc
-        "NameAliases"      			"wr"
-        "url"       				"Windranger"
+        "NameAliases"      			"gh"
+        "url"       				"ghost"
 
         "LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
 		"HeroSelectSoundEffect"		"Hero_Antimage.Pick"
-
-		// Items
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemSlots"
-		{
-			"0"
-			{
-				"SlotIndex"		"0"
-				"SlotName"		"weapon"
-				"SlotText"		"#LoadoutSlot_Weapon"
-				"TextureWidth"		"256"
-				"TextureHeight"		"256"
-				"MaxPolygonsLOD0"		"1000"
-				"MaxPolygonsLOD1"		"500"
-			}
-			"1"
-			{
-				"SlotIndex"		"1"
-				"SlotName"		"offhand_weapon"
-				"SlotText"		"#LoadoutSlot_Offhand_Weapon"
-				"TextureWidth"		"256"
-				"TextureHeight"		"256"
-				"MaxPolygonsLOD0"		"1000"
-				"MaxPolygonsLOD1"		"500"
-			}
-			"2"
-			{
-				"SlotIndex"		"2"
-				"SlotName"		"head"
-				"SlotText"		"#LoadoutSlot_Head_Accessory"
-				"TextureWidth"		"256"
-				"TextureHeight"		"256"
-				"MaxPolygonsLOD0"		"1000"
-				"MaxPolygonsLOD1"		"500"
-			}
-			"3"
-			{
-				"SlotIndex"		"3"
-				"SlotName"		"armor"
-				"SlotText"		"#LoadoutSlot_Armor"
-				"TextureWidth"		"256"
-				"TextureHeight"		"256"
-				"MaxPolygonsLOD0"		"1000"
-				"MaxPolygonsLOD1"		"600"
-			}
-			"4"
-			{
-				"SlotIndex"		"4"
-				"SlotName"		"arms"
-				"SlotText"		"#LoadoutSlot_Arms"
-				"TextureWidth"		"256"
-				"TextureHeight"		"256"
-				"MaxPolygonsLOD0"		"800"
-				"MaxPolygonsLOD1"		"600"
-			}
-			"5"
-			{
-				"SlotIndex"		"5"
-				"SlotName"		"belt"
-				"SlotText"		"#LoadoutSlot_Belt"
-				"TextureWidth"		"256"
-				"TextureHeight"		"256"
-				"MaxPolygonsLOD0"		"800"
-				"MaxPolygonsLOD1"		"600"
-			}
-			"6"
-			{
-				"SlotIndex"		"6"
-				"SlotName"		"shoulder"
-				"SlotText"		"#LoadoutSlot_Shoulder"
-				"TextureWidth"		"256"
-				"TextureHeight"		"256"
-				"MaxPolygonsLOD0"		"800"
-				"MaxPolygonsLOD1"		"600"
-			}
-			"7"
-			{
-				"SlotIndex"		"7"
-				"SlotName"		"taunt"
-				"SlotText"		"#LoadoutSlot_Taunt"
-			}
-		}
-		"Bot"
-		{
-			"HeroType"		"DOTA_BOT_HARD_CARRY"
-			"LaningInfo"
-			{
-				"SoloDesire"		"1"
-				"RequiresBabysit"		"2"
-				"ProvidesBabysit"		"0"
-				"SurvivalRating"		"2"
-				"RequiresFarm"		"2"
-				"ProvidesSetup"		"0"
-				"RequiresSetup"		"1"
-			}
-		}
 	}
 	"npc_dota_hero_godspeed"
 	{
@@ -5660,5 +5562,157 @@
 				"RequiresSetup"		"1"
 			}
 		}
+	}
+	"npc_dota_hero_superman"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "204"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/heroes/hero_superman/superman.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+		"SoundSet"					"Hero_Beastmaster"
+
+	 	"particle_folder"			"particles/units/heroes/hero_beastmaster"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
+        
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "21"
+        "AttributeStrengthGain"     "1.700000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.900000"
+        "AttributeBaseAgility"      "29"
+        "AttributeAgilityGain"      "2.400000"
+
+        // Misc stats
+        "ArmorPhysical"             "3"
+        "MagicalResistance"			"25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "22"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "128"
+        "ProjectileSpeed"           "0"
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+
+  		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
+		"Ability13"					""
+		"Ability14"					""
+		"Ability15"					""
+		"Ability16"					""
+		"Ability17"					""
+        
+        // Card info
+        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
+        "Rolelevels"    			"3,1,1,1,1"
+        "Complexity"    			"1"
+        
+        // Misc
+        "NameAliases"      		    "sm"
+        "url"       				"Superman"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+	}
+	"npc_dota_hero_molag_bal"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "205"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/heroes/hero_molag_bal/molag_bal.vmdl"
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "160"
+        
+        // Sound info
+		"SoundSet"					"Hero_Beastmaster"
+
+	 	"particle_folder"			"particles/units/heroes/hero_beastmaster"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
+        
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "21"
+        "AttributeStrengthGain"     "1.700000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.900000"
+        "AttributeBaseAgility"      "29"
+        "AttributeAgilityGain"      "2.400000"
+
+        // Misc stats
+        "ArmorPhysical"             "3"
+        "MagicalResistance"			"25"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "22"
+        "AttackDamageMax"           "34"
+        "AttackRate"                "1.700000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "128"
+        "ProjectileSpeed"           "0"
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"molagbal_mace_of_oblivion"
+		"Ability2"					"molagbal_vampire"
+		"Ability3"					"molagbal_lord_of_darkness"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"molagbal_sacrifice"
+
+		"Ability10"					"special_bonus_unique_molag_bal"
+		"Ability11"					"special_bonus_gold_income_50"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_unique_molag_bal_1"
+		"Ability14"					"special_bonus_unique_molag_bal_3"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_strength_25"
+		"Ability17"					"special_bonus_all_stats_20"
+        
+        // Card info
+
+		"Role"						"Support,Disabler,Nuker,Durable"
+		"Rolelevels"				"2,3,1,1"
+		"Complexity"				"2"
+		"Team"						"Bad"
+        
+        // Misc
+        "NameAliases"      			"mb"
+        "url"       				"Molag Bal"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
 	}
 }

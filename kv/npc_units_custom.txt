@@ -3358,4 +3358,135 @@
 			"DefaultState"				"Invade"
 		}
 	}
+	"npc_dota_creature_yaz"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to
+		"ModelScale"				"1"
+		"Level"						"100"
+		"ConsideredHero"			"1"
+
+		"MinimapIcon"				"minimap_roshancamp"
+		"MinimapIconSize"			"300"
+
+		"Model"						"models/creeps/ice_biome/diregull/diregull.vmdl"
+	
+		// Inventory
+		//----------------------------------------------------------------
+		"HasInventory"				"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"25"			// Physical protection.
+		"MagicalResistance"			"100"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"200"
+			"faster"	"300"
+		}
+
+		"AttackAnimationPoint"		"0.30000"
+		"AttackRange"				"230"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+		"AttackDamageMin"			"659"		// Damage range min.
+		"AttackDamageMax"			"1230"		// Damage range max.
+		"AttackRate"				"0.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"16500"		// Experience earn.
+		"BountyGoldMin"				"11000"		// Gold earned min.
+		"BountyGoldMax"				"12310"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"300"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"340"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		"SoundSet"					"Hero_WarlockGolem"			// Name of sound set.
+		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
+		
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"255000"		// Base health.
+		"StatusHealthRegen"			"30.0"		// Health regeneration rate.
+		"StatusMana"				"200"		// Base mana.
+		"StatusManaRegen"			"10000.0"		// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"2000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"		// Range of vision at night time.
+
+		///"vscripts"					"ai/scp_096.lua"
+
+		"Creature"
+	  	{
+			"CanRespawn"				"0"
+			
+			"EquippedItems"
+			{	      
+				"Gem"
+				{
+					"Item"					"item_gem"
+				}
+				"Gauntelt"
+				{
+					"Item"					"item_inf_balvanka"
+				}
+				"MonkeyKingBar"
+				{
+					"Item"					"item_monkey_king_bar"
+				}			
+			}
+				
+			"DisableResistance"			"100.0"
+		
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"500"
+			"DamageGain"				"25"
+			"ArmorGain"					"1"
+			"MagicResistGain"			"1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"100"
+		}
+	}
 }

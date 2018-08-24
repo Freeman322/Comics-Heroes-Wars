@@ -38,7 +38,6 @@ function strange_future_past:OnUpgrade( params )
     if IsServer() then 
         self._tUnits = HeroList:GetAllHeroes()
         for _, hero in pairs(self._tUnits) do
-            print(hero:GetUnitName())
             if hero:IsRealHero() and hero:HasModifier("modifier_strange_future_past") == false then 
                 hero:AddNewModifier(self:GetCaster(), self, "modifier_strange_future_past", nil)
             end

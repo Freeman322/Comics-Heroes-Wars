@@ -125,10 +125,6 @@ function item_time_gem:OnIntervalThink()
         self.tStates[need_time].health    = self:GetParent():GetHealth()
         self.tStates[need_time].mana      = self:GetParent():GetMana()
 
-        for k,v in pairs(self.tStates) do
-            print(k,v)
-        end
-
         self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_weaver_timelapse", {duration = 1})
     end
 end

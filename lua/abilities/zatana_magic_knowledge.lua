@@ -36,7 +36,7 @@ function modifier_zatana_magic_knowledge:GetAuraSearchType()
 end
 
 function modifier_zatana_magic_knowledge:GetAuraSearchFlags()
-    return DOTA_UNIT_TARGET_FLAG_NONE
+    return DOTA_UNIT_TARGET_FLAG_INVULNERABLE
 end
 
 function modifier_zatana_magic_knowledge:GetModifierAura()
@@ -44,6 +44,10 @@ function modifier_zatana_magic_knowledge:GetModifierAura()
 end
 
 modifier_zatana_magic_knowledge_aura = class ({})
+
+function modifier_zatana_magic_knowledge_aura:IsPurgable()
+    return false
+end
 
 function modifier_zatana_magic_knowledge_aura:DeclareFunctions()
 	local funcs = 

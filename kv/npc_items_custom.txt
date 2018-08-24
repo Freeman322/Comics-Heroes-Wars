@@ -1,82 +1,5 @@
 "DOTAAbilities"
 {
-	"item_flash_boots"
-	{
-		"BaseClass"					"item_lua"
-		"AbilityTextureName"		"custom/intelligence_boots"
-		"ScriptFile"				"items/item_flash_boots.lua"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-
-		///Stats
-		"AbilityCooldown"			"100"
-		"AbilityManaCost"			"300"
-
-		///Item Info
-		"ItemCost"					"9515"
-		"ItemShopTags"				""
-		"ItemQuality"				""
-
-		"precache"
-		{
-			"particle"				"particles/units/heroes/hero_rubick/rubick_fade_bolt_debuff.vpcf"
-		}
-		///Special
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_speed"		"180"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"60"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_all_stats"	"20"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"health_regen"		"6"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_duration"	"5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_move_speed"	"100000"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_speed"		"2000"
-			}
-		}
-	}
-
-	"item_recipe_flash_boots"
-	{
-		"BaseClass"					"item_datadriven"
-		"Model"						"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"		"recipe"
-
-		"ItemCost"					"450"
-
-		"ItemRecipe"				"1"
-		"ItemResult"				"item_flash_boots"
-		"ItemRequirements"
-		{
-			"01"					"item_force_boots;item_travel_boots_2"
-		}
-	}
-
 	"item_overpower_bow"
 	{
 		"BaseClass"					"item_lua"
@@ -159,89 +82,6 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Absolute Staff
-	//=================================================================================================================
-	"item_absolute_staff"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"						"9268"
-		"BaseClass"        			"item_lua"
-   		"AbilityTextureName"        "custom/absolute_staff"
-        "ScriptFile"                "items/item_absolute_staff.lua"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"FightRecapLevel"			"1"
-	
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"65.0"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"225"
-		"ItemCost"						"14725"
-		"ItemShopTags"					"unique;hard_to_tag"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"mom;mask of madness"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"35"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"65"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_speed"			"65"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"overfloat_duration"	"6.0"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"overfloat_evasion"		"100"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"overfloat_speed"		"500"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"time_lock_chance"		"17"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"time_lock_duration"	"0.1"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Octarine Core
 	//=================================================================================================================
@@ -404,31 +244,26 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Agi Boots
-	//=================================================================================================================
-	"item_agility_boots"
+	"item_axe_of_phractos"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9322"
 		"BaseClass"						"item_lua"
-		"AbilityTextureName"   			"custom/agility_boots"
-		"ScriptFile"					"items/item_agility_boots.lua"
+		"ID"							"9030"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-	
+		"ScriptFile"					"items/item_axe_of_phractos.lua"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"            "custom/axe_of_phractos"
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5900"
-		"ItemShopTags"					"move_speed;regen_health;armor"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"int boots"
-		"ItemHideCharges"		     	"1"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
-	
+		"ItemCost"						"11000"
+		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mkb;monkey king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -436,144 +271,29 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"85"
+				"bonus_damage"			"130"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"30"
+				"bonus_attack_speed"	"45"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"		"30"
+				"var_type"				"FIELD_FLOAT"
+				"all" 				    "45"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_hp_regen"		"3"
-			}
-		}
-	}
-	
-	//=================================================================================================================
-	// Radiance
-	//=================================================================================================================
-	"item_angels_dagger"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"												"9046"
-		"BaseClass"									"item_lua"
-		"ScriptFile"								"items/item_angels_dagger.lua"
-		"AbilityTextureName"    		"custom/angels_dagger"		// Stats
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityCastRange" 					"700"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"									"12150"
-		"ItemShopTags"							"damage"
-		"ItemQuality"								"epic"
-		"ItemAliases"								"radiance"
-		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_damage"			"200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blind_pct"				"15"
+				"bash_chance" 		    "25"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"	"45"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"		"50"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_vision"		"1800"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"true_sight_radius"		"900"
+				"var_type"				"FIELD_FLOAT"
+				"burn_damage" 				 "2.0"
 			}
 		}
-	}
-	"item_axe_of_phractos"
-	{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"item_lua"
-	"ID"							"9030"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ScriptFile"					"items/item_axe_of_phractos.lua"
-	"Model"							"models/props_gameplay/red_box.vmdl"
-	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-	"AbilityTextureName"            "custom/axe_of_phractos"
-	
-	// Item Info
-	//-------------------------------------------------------------------------------------------------------------
-	"ItemCost"						"11000"
-	"ItemShopTags"					"damage;attack_speed;hard_to_tag"
-	"ItemQuality"					"epic"
-	"ItemAliases"					"mkb;monkey king bar"
-	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"130"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_attack_speed"	"45"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"all" 				    "45"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"bash_chance" 		    "25"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"burn_damage" 				 "2.0"
-		}
-	}
 	}
 	//=================================================================================================================
 	// Azura's Star
@@ -1420,63 +1140,6 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Butterfly
-	//=================================================================================================================
-	"item_effulgent_sword"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_lua"
-		"ID"							"9259"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityTextureName"            "custom/effulgent_sword"
-		"ScriptFile"					"items/item_effulgent_sword.lua"
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35.0"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"13420"
-		"ItemShopTags"					"agi;damage;evasion;attack_speed"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"bfly;butterfly"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"35"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"70"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"80"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"6"
-			}
-		}
-	}
 	"item_enchanted_pineapple"
 	{
 		// General
@@ -1864,67 +1527,7 @@
 			}
 		}
 	}
-	"item_ghost_staff"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	        "BaseClass"						"item_lua"
-	        "ScriptFile"					"items/item_ghost_staff.lua"
-	        "AbilityTextureName"            "custom/ghost_staff"
-	        "AbilityCooldown"				"60.0"
-	    	"AbilityManaCost"				"375"
-	    	"AbilityCastPoint"              "0.1"
-	    	"ID"							"19001"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"8875"
-		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"aether lens"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"			        "35"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_magical_armor"	"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"250"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"15"
-			}
-	            "06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"active_damage"			"30"
-			}
-	        "07"
-	    		{
-	    			"var_type"				"FIELD_INTEGER"
-	    			"duration"	    		"5"
-	    		}
-		}
-	}
 	"item_recipe_glimmers_armor"
 	{
 		// General
@@ -2054,8 +1657,8 @@
 	
 		"precache"
 		{
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
-			"particle"  "particles/items/infinity_gauntlet_snap_full.vpcf"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+			"particle"  				"particles/items/infinity_gauntlet_snap_full.vpcf"
 		}
 		
 		"AbilitySpecial"
@@ -2063,17 +1666,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"1000"
+				"bonus_all_stats"		"500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"1000"
+				"bonus_health_regen"	"250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"1000"
+				"bonus_mana_regen"		"250"
 			}
 			"04"
 			{
@@ -2082,93 +1685,6 @@
 			}
 		}
 	}
-	////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////
-	
-	
-	
-	//=================================================================================================================
-	//	"item_ds"
-	//	{
-	//		// General
-	//		//-------------------------------------------------------------------------------------------------------------
-	//		"BaseClass"                     "item_lua"
-	//		"ScriptFile"					"items/item_ds.lua"
-	//		"ID"							"9215"
-	//       "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	//		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	//		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	//		"AbilityTextureName"            "custom/ds"
-	//		"AbilityCastRange"				"600"
-	//        "ItemQuality"					"epic"
-	//        // Casting
-	//        //-------------------------------------------------------------------------------------------------------------
-	//        "AbilityCastPoint"              "0.1"
-	//
-	//        // Time
-	//        //-------------------------------------------------------------------------------------------------------------
-	//        "AbilityCooldown"               "70.0"
-	//		"ItemCost"						"6375"
-	//        // Cost
-	//        //-------------------------------------------------------------------------------------------------------------
-	 //       "AbilityManaCost"               "175"
-	//		"AbilitySpecial"
-	//		{
-	//			"01"
-	//			{
-	//				"var_type"				"FIELD_INTEGER"
-	//				"bonus_health"			"500"
-	//			}
-	//			"02"
-	//			{
-	//				"var_type"				"FIELD_INTEGER"
-	//				"bonus_int"				"45"
-	//			}
-	//			"03"
-	//			{
-	//				"var_type"				"FIELD_FLOAT"
-	//				"bonus_health_regen"	"10"
-	//			}
-	//			"04"
-	//			{
-	//				"var_type"				"FIELD_FLOAT"
-	//				"bonus_mana_regen"		"1"
-	//			}
-	//			"05"
-	//			{
-	//				"var_type"				"FIELD_FLOAT"
-	//				"duration"				"6"
-	//			}
-	//			"06"
-	//			{
-	//				"var_type"				"FIELD_FLOAT"
-	//				"incoming_damage"		"25"
-	//			}
-	//		}
-	//   }
-	//=================================================================================================================
-	//	"item_recipe_ds"
-	//	{
-	//		// General
-	//		"BaseClass"                    "item_datadriven"
-	//-------------------------------------------------------------------------------------------------------------
-	//		"ID"							"9216"
-	//		// Item Info
-	//
-	//-------------------------------------------------------------------------------------------------------------
-	////		"ItemCost"						"0"
-	//		"ItemShopTags"					""
-	//		"AbilityTextureName"            "recipe"
-	//		// Recipe
-	//		//-------------------------------------------------------------------------------------------------------------
-	//		"ItemRecipe"					"1"
-	////		"ItemResult"					"item_ds"
-	//		"ItemRequirements"
-	//		{
-	//			"01"				"item_orchid;item_headdress;item_pers"
-	//		}
-	//	}
-	//=================================================================================================================
 	"item_greater_salve"
 	{
 		// General
@@ -2433,72 +1949,6 @@
 		}
 	}
 	//=================================================================================================================
-	//  Heart
-	//=================================================================================================================
-	"item_heart_of_universe"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9278"
-		"BaseClass"        				"item_lua"
-	   		"AbilityTextureName"            "custom/heart_of_universe"
-	        "ScriptFile"                	"items/item_heart_of_universe.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"FightRecapLevel"				"1"
-	
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"45.0"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"6175"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"solar crest"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen_pct"	"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"25"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"7"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Black King Bar
 	//=================================================================================================================
 	"item_hells_glare"
@@ -2725,57 +2175,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Int Boots
-	//=================================================================================================================
-	"item_intelligence_boots"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9318"
-		"BaseClass"						"item_lua"
-		"AbilityTextureName"   			"custom/intelligence_boots"
-		"ScriptFile"					"items/item_intelligence_boots.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5900"
-		"ItemShopTags"					"move_speed;regen_health;armor"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"int boots"
-		"ItemHideCharges"		     	"1"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"85"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"30"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Midas Tube
 	//=================================================================================================================
 	"item_midas_tube"
@@ -2953,100 +2352,35 @@
 		}
 	}
 	"item_necronomicon_4"
-	    	{
-	    		// General
-	    		//-------------------------------------------------------------------------------------------------------------
-	    	"ID"							"2194"
-	    	"BaseClass"						"item_lua"
-	   		"AbilityTextureName" 			"custom/necronomicon_4"
-	   		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	   		"ScriptFile"					"items/item_necronomicon_4.lua"
-	    	// Stats
-	   		//-------------------------------------------------------------------------------------------------------------
-	   		"AbilityCastPoint"				"0.0"
-	    	"AbilityCooldown"				"90.0"
-	    	"AbilitySharedCooldown"			"necrobook"
-	    	"FightRecapLevel"				"1"
-	
-	    	// Item Info
-	    		//-------------------------------------------------------------------------------------------------------------
-	    	"AbilityManaCost"				"150"
-	    	"ItemCost"						"7400"
-	    	"ItemShopTags"					"int;str;hard_to_tag;see_invis"
-	    	"ItemQuality"					"rare"
-	    	"ItemAliases"					"necronomicon 4; draconomicon"
-	    	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	    	"MaxUpgradeLevel"				"4"
-	    	"ItemBaseLevel"					"4"
-	
-	    	"UpgradesItems"					"item_necronomicon_4"
-	    	"UpgradeRecipe"					"item_recipe_necronomicon"
-			"ItemCost"						"7400"
-	    	// Special
-	    	//-------------------------------------------------------------------------------------------------------------
-	   		"AbilitySpecial"
-	   		{
-	    		"01"
-	    		{
-	    			"var_type"				"FIELD_INTEGER"
-	    			"bonus_intellect"		"50"
-	    		}
-	        	"02"
-	    		{
-	    			"var_type"				"FIELD_INTEGER"
-	    			"bonus_strength"		"40"
-	    		}
-	    		"03"
-	    		{
-	    			"var_type"				"FIELD_FLOAT"
-	    	    	"summon_duration"		"60.0"
-	    		}
-	    		"04"
-	    		{
-	    			"var_type"				"FIELD_INTEGER"
-	    			"warrior_health"		"2200"
-	    		}
-	    		"05"
-	    		{
-	    			"var_type"				"FIELD_INTEGER"
-	    			"archer_health"			"2200"
-	    		}
-	    	}
-	    }
-	//=================================================================================================================
-	// Ethereal Blade
-	//=================================================================================================================
-	"item_oathbreaker"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9276"
-		"BaseClass"        				"item_lua"
-	   		"AbilityTextureName"            "custom/oathbreaker"
-	        "ScriptFile"                	"items/item_oathbreaker.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
-		"FightRecapLevel"				"1"
-	
+		"ID"							"2194"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName" 			"custom/necronomicon_4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ScriptFile"					"items/item_necronomicon_4.lua"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"60.0"
-		"AbilitySharedCooldown"			"ethereal"
-	
+		"AbilityCooldown"				"90.0"
+		"AbilitySharedCooldown"			"necrobook"
+		"FightRecapLevel"				"1"
+
 		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-		"ItemCost"						"10475"
-		"ItemShopTags"					"agi;str;int;hard_to_tag"
-		"ItemQuality"					"epic"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ItemAliases"					"eb;ethereal blade"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-	
+			//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		"ItemCost"						"7400"
+		"ItemShopTags"					"int;str;hard_to_tag;see_invis"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"necronomicon 4; draconomicon"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"4"
+		"ItemBaseLevel"					"4"
+
+		"UpgradesItems"					"item_necronomicon_4"
+		"UpgradeRecipe"					"item_recipe_necronomicon"
+		"ItemCost"						"7400"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -3054,75 +2388,31 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"80"
+				"bonus_intellect"		"50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"10"
+				"bonus_strength"		"40"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"10"
+				"var_type"				"FIELD_FLOAT"
+				"summon_duration"		"60.0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"50"
+				"warrior_health"		"2200"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_movement_slow"	"-80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_stats_multiplier"	"2.0"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_damage_base"		"275"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_ally"			"4.0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ethereal_damage_bonus"	"-40"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"1200"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magical_splash_radius"	"230"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magical_splash_damage"	"15"
+				"archer_health"			"2200"
 			}
 		}
 	}
+	
 	//=================================================================================================================
 	// Meteor Hammer
 	//=================================================================================================================
@@ -3330,30 +2620,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Recipe: Absolute Staff
-	//=================================================================================================================
-	"item_recipe_absolute_staff"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9267"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_datadriven"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"900"
-		"ItemShopTags"					""
-		"AbilityTextureName"            "recipe"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_absolute_staff"
-		"ItemRequirements"
-		{
-			"01"						"item_time;item_butterfly;item_basher"
-		}
-	}
-	//=================================================================================================================
 	// Recipe: Octarine Core
 	//=================================================================================================================
 	"item_recipe_adamachi_core"
@@ -3400,58 +2666,6 @@
 		"ItemRequirements"
 		{
 			"01"						"item_octarine_core;item_demonic_claws;item_veil_of_discord"
-		}
-	}
-	//=================================================================================================================
-	// Recipe: Agi Boots
-	//=================================================================================================================
-	"item_recipe_agility_boots"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9321"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"   			"recipe"
-	
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_agility_boots"
-		"ItemRequirements"
-		{
-			"01"						"item_power_treads;item_blade_of_alacrity"
-		}
-	}
-
-	//=================================================================================================================
-	// Recipe: Radiance
-	//=================================================================================================================
-	"item_recipe_angels_dagger"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"									"9045"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"Model"								"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_datadriven"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1350"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_angels_dagger"
-		"ItemRequirements"
-		{
-			"01"						"item_radiance;item_assault;item_heavens_halberd"
 		}
 	}
 	"item_recipe_axe_of_phractos"
@@ -3810,30 +3024,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Recipe: Effulgent Sword
-	//=================================================================================================================
-	"item_recipe_effulgent_sword"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_datadriven"
-		"ID"							"9258"															// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"250"
-		"ItemShopTags"					""
-		"AbilityTextureName"            "recipe"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_effulgent_sword"
-		"ItemRequirements"
-		{
-			"01"						"item_butterfly;item_bloodthorn"
-		}
-	}
-	//=================================================================================================================
 	// Recipe: Ethernal Dagon Scepter
 	//=================================================================================================================
 	"item_recipe_ethernal_dagon"
@@ -3907,28 +3097,6 @@
 		"ItemRequirements"
 		{
 			"01"						"item_death_scyche"
-		}
-	}
-	"item_recipe_ghost_staff"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_datadriven"
-		"ID"							"19000"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"AbilityTextureName"            "recipe"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_ghost_staff"
-		"ItemRequirements"
-		{
-			"01"						"item_bloodstone;item_aether_lens;item_pers"
 		}
 	}
 	//=================================================================================================================
@@ -4027,31 +3195,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Recipe: Heart
-	//=================================================================================================================
-	"item_recipe_heart_of_universe"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9277"
-		"BaseClass"        				"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"775"
-		"ItemShopTags"					""
-		"AbilityTextureName"            "recipe"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heart_of_universe"
-		"ItemRequirements"
-		{
-			"01"						"item_pipe;item_mekansm"
-		}
-	}
-	//=================================================================================================================
 	// Recipe: Black King Bar
 	//=================================================================================================================
 	"item_recipe_hells_glare"
@@ -4118,32 +3261,6 @@
 		"ItemRequirements"
 		{
 			"01"						"item_shivas_guard;item_blade_mail"
-		}
-	}
-	//=================================================================================================================
-	// Recipe: Int Boots
-	//=================================================================================================================
-	"item_recipe_intelligence_boots"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"									"9317"
-		"BaseClass"								"item_datadriven"
-		"AbilityTextureName"   					"recipe"
-	
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_intelligence_boots"
-		"ItemRequirements"
-		{
-			"01"						"item_power_treads;item_staff_of_wizardry"
 		}
 	}
 	//=================================================================================================================
@@ -4220,50 +3337,28 @@
 		}
 	}
 	"item_recipe_necronomicon_4"
-	      	{
-	      		// General
-	      		//-------------------------------------------------------------------------------------------------------------
-	      		"ID"							"9032"
-	      		"BaseClass"						"item_datadriven"
-	      		"Model"							"models/props_gameplay/recipe.mdl"
-	
-	      		// Item Info
-	      		//-------------------------------------------------------------------------------------------------------------
-	      		"ItemCost"						"0"
-	      		"ItemShopTags"					""
-	
-	      		// Recipe
-	      		//-------------------------------------------------------------------------------------------------------------
-	      		"ItemRecipe"					"1"
-	      		"ItemResult"					"item_necronomicon_4"
-	      		"ItemRequirements"
-	      		{
-	      			"01"						"item_necronomicon_3;item_ogre_axe"
-	      		}
-	      	}
-	//=================================================================================================================
-	// Recipe: Ethereal Blade
-	//=================================================================================================================
-	"item_recipe_oathbreaker"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9275"
-		"BaseClass"        				"item_datadriven"
+		"ID"							"9032"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1480"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
-		"AbilityTextureName"            "recipe"
+
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_oathbreaker"
+		"ItemResult"					"item_necronomicon_4"
 		"ItemRequirements"
 		{
-			"01"						"item_ethereal_blade;item_talisman_of_evasion;item_demon_edge"
+			"01"						"item_necronomicon_3;item_ogre_axe"
 		}
 	}
+
 	//=================================================================================================================
 	// Recipe: Meteor Hammer
 	//=================================================================================================================
@@ -4336,33 +3431,6 @@
 		"ItemRequirements"
 		{
 			"01"						"item_pers;item_pers;item_pers"
-		}
-	}
-	//=================================================================================================================
-	// Recipe: Ritual Rapier
-	//=================================================================================================================
-	"item_recipe_ritual_rapier"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9306"
-		"BaseClass"             		"item_datadriven"
-		"AbilityTextureName"            "recipe"
-	
-		"Model"							"models/props_gameplay/recipe.vmdl"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4700"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_ritual_rapier"
-		"ItemRequirements"
-		{
-			"01"						"item_heavens_halberd;item_helm_of_the_dominator;item_satanic"
 		}
 	}
 	//=================================================================================================================
@@ -4487,32 +3555,7 @@
 			"01"						"item_wind_lace"
 		}
 	}
-	//=================================================================================================================
-	// Recipe: Str Boots
-	//=================================================================================================================
-	"item_recipe_strength_boots"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"									"9319"
-		"BaseClass"								"item_datadriven"
-		"AbilityTextureName"   					"recipe"
 	
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
-		"ItemShopTags"					""
-	
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_strength_boots"
-		"ItemRequirements"
-		{
-			"01"						"item_power_treads;item_ogre_axe"
-		}
-	}
 	"item_recipe_sunshines_aromor"
 	{
 		// General
@@ -4770,83 +3813,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"0"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Ritual Rapier
-	//=================================================================================================================
-	"item_ritual_rapier"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"												"9307"
-		"BaseClass"             		"item_lua"
-		"AbilityTextureName"        "custom/ritual_rapier"
-		"ScriptFile"								"items/item_ritual_rapier.lua"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"FightRecapLevel"						"1"
-	
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"					"40.0"
-		"AbilitySharedCooldown"			"heavens_halberd"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"7195"
-		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"heavens halberd"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"120"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"12"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"feast_dmg"				"25"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"unholy_lifesteal_percent"	"175"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"unholy_lifesteal_total_tooltip"	"200"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"unholy_duration"			"4"
 			}
 		}
 	}
@@ -5157,57 +4123,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_move_speed"		"20"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Int Boots
-	//=================================================================================================================
-	"item_strength_boots"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9320"
-		"BaseClass"						"item_lua"
-		"AbilityTextureName"   			"custom/strength_boots"
-		"ScriptFile"					"items/item_strength_boots.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5900"
-		"ItemShopTags"					"move_speed;regen_health;armor"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"int boots"
-		"ItemHideCharges"		     	"1"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"85"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"30"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_hp_regen"		"3"
 			}
 		}
 	}
@@ -6181,7 +5096,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_health_regen"		"15"
+				"bonus_mana_regen"			"15"
 			}
 			"03"
 			{
@@ -7146,30 +6061,211 @@
 		}
 	}
 	//=================================================================================================================
-	// 
+	// Recipe: Avernus
 	//=================================================================================================================
-	"item_book_of_knowledge"
+	"item_recipe_avernos_mist"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                    "item_datadriven"
+		"AbilityTextureName"		   "recipe"		
+		"Model"						   "models/props_gameplay/recipe.vmdl"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1725"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_avernos_mist"
+		"ItemRequirements"
+		{
+			"01"						"item_vermilion_robe;item_guardian_greaves"
+		}
+	}
+	
+	//=================================================================================================================
+	// Avernus's
+	//=================================================================================================================
+	"item_avernos_mist"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_lua"
-		"AbilityTextureName"    		"tome_of_knowledge"
-		"ScriptFile"					"items/item_book_of_knowledge.lua"
+		"AbilityTextureName"    		"custom/avernos_mist"
+		"ScriptFile"					"items/item_avernos_mist.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"							"models/props_items/necronomicon.vmdl"
-		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
-	
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityCastRange"				"900"
+
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5000"
-		"ItemQuality"					"component"
-		"ItemDroppable"       			"1"
-	    "ItemSellable"        		    "0"
-		"ItemKillable"					"0"
-		"ItemPurchasable"				"0"
+		"AbilityManaCost"				"100"
+		"ItemCost"						"18750"
+		"ItemShopTags"					"int;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"vermilion;avernos"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		"precache"
+		{
+			"particle"					"particles/items_fx/avernos_mist.vpcf"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{				
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement"			"70"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"500"
+			}		
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"			"40"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"30"
+			}	
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"aura_health_regen"			"8"
+			}			
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_armor"				"4"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_health_regen_bonus"	"24"
+			}			
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_armor_bonus"			"30"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_bonus_threshold"		"25"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"900"
+			}	
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"active_duration"			"6"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"status_resistance"			"55"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"active_hp_regen"			"2"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"active_mana_regen"			"1"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Majestic Scepter
+	//=================================================================================================================
+	"item_recipe_majestic_staff"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                    "item_datadriven"
+		"AbilityTextureName"		   "recipe"		
+		"Model"						   "models/props_gameplay/recipe.vmdl"
 
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1750"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_majestic_staff"
+		"ItemRequirements"
+		{
+			"01"						"item_spirit_vessel;item_ancient_janggo"
+		}
+	}
+	
+	//=================================================================================================================
+	// Majestic Scepter
+	//=================================================================================================================
+	"item_majestic_staff"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"    		"custom/majestic_staff"
+		"ScriptFile"					"items/item_majestic_staff.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"950"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+		"AbilitySharedCooldown"			"urn"
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemPermanent"					"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"16975"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"sv;spirit vessel"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		"precache"
+		{
+			"particle"					"particles/econ/items/dark_willow/dark_willow_ti8_immortal_head/dw_ti8_immortal_cursed_crown_marker.vpcf"
+			"particle"  				"particles/items2_fx/majestic_staff_debuff.vpcf"
+		}
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -7177,7 +6273,161 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"1000"
+				"bonus_health"			"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"status_resistance"		"50"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_regen_reduction_enemy"	"-85"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_regen_increase_allies"	"100"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"enemy_hp_drain"			"4.5"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"ally_hp_gain"				"5"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"active_radius"				"900"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Etereal Boots
+	//=================================================================================================================
+	"item_recipe_ethereal_boots"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                    "item_datadriven"
+		"AbilityTextureName"		   "recipe"		
+		"Model"						   "models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_boots"
+		"ItemRequirements"
+		{
+			"01"						"item_travel_boots_2;item_blink_2"
+		}
+	}
+	
+	//=================================================================================================================
+	// Etereal Boots
+	//=================================================================================================================
+	"item_ethereal_boots"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"    		"custom/ethereal_boots"
+		"ScriptFile"					"items/item_ethereal_boots.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45.0"
+		"AbilitySharedCooldown"			"teleport"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"175"
+		"ItemCost"						"7500"
+		"ItemShopTags"					"teleport;move_speed"
+		"ItemQuality"					"common"
+		"ItemAliases"					"bot;boots of travel;tp"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"precache"
+		{
+			"particle"  "particles/econ/events/league_teleport_2014/teleport_end_league.vpcf"
+			"particle"  "particles/econ/events/fall_major_2016/blink_dagger_end_fm06.vpcf"
+			"particle"  "particles/econ/events/fall_major_2016/blink_dagger_start_fm06.vpcf"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"24"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"15"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maximum_distance"		"1375"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_cooldown"		"8"
 			}
 		}
 	}

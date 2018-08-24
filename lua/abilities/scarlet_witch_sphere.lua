@@ -74,6 +74,7 @@ end
 function scarlet_witch_sphere_modifier:CheckState()
     local state = {
         [MODIFIER_STATE_INVULNERABLE] = true,
+        [MODIFIER_STATE_MAGIC_IMMUNE] = true
     }
 
     return state
