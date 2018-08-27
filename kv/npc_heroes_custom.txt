@@ -237,18 +237,18 @@
 	}
 	"npc_dota_hero_black_bolt"
 	{
-		"AbilityLayout"  "4"
-		"ModelScale"		"1.08"
-		"override_hero"		"npc_dota_hero_night_stalker"
-		"DisableWearables" 				"1"
-		"Model"          "models/heroes/hero_black_bolt/black_bolt.vmdl"
-		"Ability1"		"bolt_aoe"
-		"Ability2"		"bolt_passive"
-		"Ability3"		"bolt_primal_roar"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"bolt_ultimate"
-		"Ability7"		""
+		"AbilityLayout" 		 "4"
+		"ModelScale"			"1.08"
+		"override_hero"			"npc_dota_hero_night_stalker"
+		"DisableWearables" 		"1"
+		"Model"          		"models/heroes/hero_blackbolt/black_bolt.vmdl"
+		"Ability1"				"bolt_aoe"
+		"Ability2"				"bolt_passive"
+		"Ability3"				"bolt_primal_roar"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"bolt_ultimate"
+		"Ability7"				""
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_gold_income_50"
 		"Ability12"				"special_bonus_intelligence_10"
@@ -258,15 +258,7 @@
 		"Ability16"				"special_bonus_unique_black_bolt"
 		"Ability17"				"special_bonus_all_stats_20"
 		"AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
-		"ArmorPhysical"		"0"
-		"precache"
-		{
-			"model"		"models/items/antimage/acolyte_vengeance_hooded_mask/acolyte_vengeance_hooded_mask.vmdl"
-			"model"		"models/items/antimage/mage_eraser_armor/mage_eraser_armor.vmdl"
-			"model"		"models/items/antimage/pw_tustarkuri_weapon/antimage_weapon_lod0.vmdl"
-			"model"		"models/items/antimage/pw_tustarkuri_arms/antimage_arms_lod0.vmdl"
-			"model"		"models/items/antimage/pw_tustarkuri_weapon_offhand/antimage_weapon_offhand_lod0.vmdl"
-		}
+		"ArmorPhysical"			"0"
 	}
 	"npc_dota_hero_black_panther"
 	{
@@ -5180,7 +5172,7 @@
         // Abilities
 		"Ability1"					"ghost_quantum_phase"
 		"Ability2"					"ghost_fate"
-		"Ability3"					"ghost_quantum_mirror"
+		"Ability3"					"ghost_quantum_entanglement"
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"ghost_mental_chaos"
@@ -5655,6 +5647,9 @@
         
         // Sound info
 		"SoundSet"					"Hero_Beastmaster"
+
+		"CMEnabled"					"0"
+		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
 
 	 	"particle_folder"			"particles/units/heroes/hero_beastmaster"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"

@@ -24,7 +24,7 @@ function item_reality_gem:OnSpellStart()
         local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), target, self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
         if #targets > 0 then
             for _,enemy in pairs(targets) do
-                EmitSoundOn("Hero_Oracle.FortunesEnd.Target", enemy)
+                EmitSoundOn("Item.RealityStone.Unit", enemy)
                 enemy:AddNewModifier(self:GetCaster(), self, "modifier_item_reality_gem_active", {duration = duration})
             end
         end
@@ -36,7 +36,7 @@ function item_reality_gem:OnSpellStart()
         ParticleManager:SetParticleControl( nFXIndex, 3,  target )
         ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-        EmitSoundOn( "Hero_Oracle.FortunesEnd.Channel", self:GetCaster() )
+        EmitSoundOn( "Item.RealityStone.Cast", self:GetCaster() )
 
         self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_3 );
     end

@@ -47,7 +47,10 @@ function modifier_ghost_fate:OnTakeDamage( params )
                 local damage = params.damage * (self:GetAbility():GetSpecialValueFor("damage_drain_ptc") / 100)
                 if self:GetParent():HasTalent("special_bonus_unique_ghost_2") then damage = damage * (self:GetParent():FindTalentValue("special_bonus_unique_ghost_2") or 1) end 
 
-                self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_ghost_fate_damage", {duration = self:GetAbility():GetSpecialValueFor("damage_drain_duration")}):SetStackCount(math.floor(damage))
+                local duration = self:GetAbility():GetSpecialValueFor("damage_drain_duration") 
+                if self:GetParent():HasTalent("special_bonus_unique_ghost_1") then duration = duration + (self:GetParent():FindTalentValue("special_bonus_unique_ghost_1") or 1) end 
+
+                self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_ghost_fate_damage", {duration = duration}):SetStackCount(math.floor(damage))
 
                 local nFXIndex = ParticleManager:CreateParticle( "particles/ghost/fate.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true);
@@ -65,7 +68,7 @@ function modifier_ghost_fate_damage:IsPurgable()
 end
 
 function modifier_ghost_fate_damage:IsHidden()
-  return true
+  return false
 end
 
 function modifier_ghost_fate_damage:GetAttributes ()

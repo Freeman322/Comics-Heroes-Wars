@@ -32,6 +32,13 @@ function modifier_item_avernos_mist_active:IsPurgable()
     return false
 end
 
+function modifier_item_avernos_mist_active:OnCreated(params)
+    if IsServer() then
+        self:GetParent():Purge(false, true, false, true, false) 
+    end 
+end
+
+
 function modifier_item_avernos_mist_active:GetEffectName()
     return "particles/items_fx/avernos_mist.vpcf"
 end

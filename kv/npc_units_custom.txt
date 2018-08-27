@@ -3363,7 +3363,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to
-		"ModelScale"				"1"
+		"ModelScale"				"1.2"
 		"Level"						"100"
 		"ConsideredHero"			"1"
 
@@ -3379,11 +3379,11 @@
 		// Abilities
 		//----------------------------------------------------------------
 
-		"Ability1"					""
-		"Ability2"					""
-		"Ability3"					""
-		"Ability4"					""
-		"Ability5"					""
+		"Ability1"					"warlock_golem_flaming_fists"
+		"Ability2"					"ursa_fury_swipes"
+		"Ability3"					"roshan_spell_block"
+		"Ability4"					"roshan_bash"
+		"Ability5"					"neutral_spell_immunity"
 		"Ability6"					""
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -3395,7 +3395,7 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 
 		"AttackSpeedActivityModifiers"
 		{
@@ -3404,9 +3404,9 @@
 		}
 
 		"AttackAnimationPoint"		"0.30000"
-		"AttackRange"				"230"
-		"ProjectileModel"			""
-		"ProjectileSpeed"			"0"
+		"AttackRange"				"475"
+		"ProjectileModel"			"particles/econ/items/bristleback/ti7_head_nasal_goo/bristleback_ti7_crimson_nasal_goo_proj.vpcf"
+		"ProjectileSpeed"			"600"
 		"AttackDamageMin"			"659"		// Damage range min.
 		"AttackDamageMax"			"1230"		// Damage range max.
 		"AttackRate"				"0.6"		// Speed of attack.
@@ -3427,12 +3427,14 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"340"		// Speed
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"350"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
 
-		"SoundSet"					"Hero_WarlockGolem"			// Name of sound set.
-		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
+		"particle_folder"			"particles/units/heroes/hero_faceless_void"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"SoundSet"					"n_creep_Ranged"
+
 		
 
 		// Status

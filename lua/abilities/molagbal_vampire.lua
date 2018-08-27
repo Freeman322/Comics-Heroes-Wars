@@ -15,8 +15,7 @@ function molagbal_vampire:OnSpellStart ()
       local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_night_stalker/nightstalker_change.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() );
       ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-      EmitSoundOn( "Hero_Nightstalker.Void", self:GetCaster() )
-
+      EmitSoundOn( "Hero_Grimstroke.InkCreature.Death", self:GetCaster() )
     else self:RefundManaCost() self:EndCooldown() end 
   end
 end
@@ -89,21 +88,32 @@ if not modifier_molagbal_vampire_invs then modifier_molagbal_vampire_invs = clas
 
 
 function modifier_molagbal_vampire_invs:IsHidden()
-  return true
+  return false
 end
 
 
 function modifier_molagbal_vampire_invs:GetStatusEffectName()
   if not self:GetParent():HasModifier("modifier_molagbal_vampire_invs_fade") then
-    return "particles/status_fx/status_effect_dark_willow_wisp_fear.vpcf"
+    return "particles/status_fx/status_effect_grimstroke_ink_swell.vpcf"
   end 
   return
+end
+
+function modifier_molagbal_vampire_invs:GetEffectName()
+  if not self:GetParent():HasModifier("modifier_molagbal_vampire_invs_fade") then
+    return "particles/units/heroes/hero_grimstroke/grimstroke_ink_swell_buff.vpcf"
+  end 
+
+  return
+end
+
+function modifier_molagbal_vampire_invs:GetEffectAttachType()
+  return PATTACH_OVERHEAD_FOLLOW
 end
 
 function modifier_molagbal_vampire_invs:StatusEffectPriority()
   return 1000
 end
-
 
 function modifier_molagbal_vampire_invs:IsPurgable()
   return false
@@ -132,9 +142,9 @@ end
 
 function modifier_molagbal_vampire_invs:GetModifierInvisibilityLevel()
   if not self:GetParent():HasModifier("modifier_molagbal_vampire_invs_fade") then
-    return 1
-  end 
-  return
+    return 0.3
+  end
+  return 
 end
 
 function modifier_molagbal_vampire_invs:CheckState()

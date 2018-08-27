@@ -8,6 +8,10 @@ function antman_size_down:ProcsMagicStick()
 	return false
 end
 
+function antman_size_down:IsStealable()
+	return false
+end
+
 function antman_size_down:OnUpgrade()
     if IsServer() then 
         if self:GetLevel() == 1 then 

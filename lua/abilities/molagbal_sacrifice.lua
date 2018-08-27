@@ -35,13 +35,12 @@ function modifier_molagbal_sacrifice_thinker:OnCreated(event)
 
         local nFXIndex = ParticleManager:CreateParticle( "particles/molag_bal/sacrifice.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent() )
         ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetAbsOrigin())
-        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetAbility():GetSpecialValueFor("radius"), 1, 0))
-        ParticleManager:SetParticleControl( nFXIndex, 2, Vector(self:GetAbility():GetSpecialValueFor("duration"), 0, 0))
+        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetSpecialValueFor("radius"), 1))
+        ParticleManager:SetParticleControl( nFXIndex, 2, Vector(self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetSpecialValueFor("radius"), 0))
         ParticleManager:SetParticleControl( nFXIndex, 10, self:GetParent():GetAbsOrigin())
         self:AddParticle( nFXIndex, false, false, -1, false, true )
 
-        EmitSoundOn("Hero_Nightstalker.Trickling_Fear", self:GetParent())
-        EmitSoundOn("Hero_Nightstalker.Trickling_Fear_lp", self:GetParent())
+        EmitSoundOn("MolagBal.Sacrifice.Cast", self:GetParent())
 
         AddFOWViewer( self:GetParent():GetTeam(), self:GetParent():GetAbsOrigin(), self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetSpecialValueFor("duration"), false)
         GridNav:DestroyTreesAroundPoint(self:GetParent():GetAbsOrigin(), self:GetAbility():GetSpecialValueFor("radius"), false)
@@ -49,7 +48,7 @@ function modifier_molagbal_sacrifice_thinker:OnCreated(event)
 end
 
 function modifier_molagbal_sacrifice_thinker:OnDestroy()
-    if IsServer() then StopSoundOn("Hero_Nightstalker.Trickling_Fear_lp", self:GetParent()) end 
+    if IsServer() then StopSoundOn("MolagBal.Sacrifice.Cast", self:GetParent()) end 
 end
 
 function modifier_molagbal_sacrifice_thinker:CheckState()
@@ -98,6 +97,14 @@ end
 function modifier_molagbal_sacrifice_modifier:OnCreated(htable)
     if IsServer() then
         self:StartIntervalThink(1)     
+
+        EmitSoundOn("MolagBal.Sacrifice.Target", self:GetParent())
+
+        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_grimstroke/grimstroke_soulchain.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() );
+        ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true );
+        ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetOrigin(), true );
+        
+        self:AddParticle(nFXIndex, false, false, -1, false, false)
     end
 end
 
@@ -105,7 +112,11 @@ function modifier_molagbal_sacrifice_modifier:OnDestroy()
     if IsServer() then
         if not self:GetParent():IsAlive() then 
             self:GetAbility():AddDamage()
+
+            EmitSoundOn("MolagBal.Sacrifice.TargetDead", self:GetParent())
         end 
+
+        StopSoundOn("MolagBal.Sacrifice.Target", self:GetParent())
     end
 end
 
@@ -125,6 +136,10 @@ if modifier_molagbal_sacrifice_damage == nil then modifier_molagbal_sacrifice_da
 
 function modifier_molagbal_sacrifice_damage:IsPurgable()
     return false
+end
+
+function modifier_molagbal_sacrifice_damage:IsHidden()
+    return true
 end
 
 function modifier_molagbal_sacrifice_damage:RemoveOnDeath()

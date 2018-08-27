@@ -4103,9 +4103,7 @@
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_speed_essence.lua"
 		"AbilityTextureName"    		"custom/speed_essence"		// Stats
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4114,6 +4112,8 @@
 		"ItemQuality"					"common"
 		"ItemAliases"					"moon shard"
 		"SideShop"						"0"
+
+		"ItemCastOnPickup"				"1"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -6132,17 +6132,17 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"500"
+				"bonus_mana"				"800"
 			}		
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"40"
+				"bonus_all_stats"			"50"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"30"
+				"bonus_armor"				"35"
 			}	
 			"05"
 			{

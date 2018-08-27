@@ -17,16 +17,14 @@ end
 
 function modifier_item_speed_essence:OnCreated(htable)
     if IsServer() then 
-        if not self:GetParent():HasModifier("modifier_item_speed_essence_activated") then 
-            self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_speed_essence_activated", nil)
-            local mod = self:GetParent():FindModifierByName("modifier_item_speed_essence_activated")
-            mod:SetStackCount(1)
-        else
-            local mod = self:GetParent():FindModifierByName("modifier_item_speed_essence_activated")
-            mod:SetStackCount(mod:GetStackCount() + 1)
-        end
+        self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_speed_essence_activated", nil):IncrementStackCount()
+
         self:GetParent():RemoveItem(self:GetAbility())
     end
+end
+
+function modifier_item_speed_essence:GetAttributes ()
+    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
 
 if modifier_item_speed_essence_activated == nil then
@@ -62,7 +60,7 @@ function modifier_item_speed_essence_activated:GetModifierMoveSpeedBonus_Constan
 end
 
 function modifier_item_speed_essence_activated:GetAttributes ()
-    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
+    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT
 end
 
 function item_speed_essence:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

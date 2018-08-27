@@ -60,7 +60,7 @@ function modifier_item_ethereal_boots:DeclareFunctions ()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
     }
 
@@ -68,7 +68,7 @@ function modifier_item_ethereal_boots:DeclareFunctions ()
 end
 
 function modifier_item_ethereal_boots:GetModifierPreAttack_BonusDamage (params) return self:GetAbility():GetSpecialValueFor ("bonus_damage") end
-function modifier_item_ethereal_boots:GetModifierMoveSpeedBonus_Special_Boots (params) return self:GetAbility():GetSpecialValueFor ("bonus_movement") end
+function modifier_item_ethereal_boots:GetModifierMoveSpeedBonus_Constant (params) return self:GetAbility():GetSpecialValueFor ("bonus_movement_speed") end
 function modifier_item_ethereal_boots:GetModifierBonusStats_Intellect (params) return self:GetAbility():GetSpecialValueFor ("bonus_all_stats") end
 function modifier_item_ethereal_boots:GetModifierBonusStats_Agility (params) return self:GetAbility():GetSpecialValueFor ("bonus_all_stats") end
 function modifier_item_ethereal_boots:GetModifierBonusStats_Strength (params) return self:GetAbility():GetSpecialValueFor ("bonus_all_stats") end

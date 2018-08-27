@@ -34,7 +34,7 @@ function strange_future_past:IsStealable(  )
     return false
 end
 
-function strange_future_past:OnUpgrade( params )
+function strange_future_past:OnHeroLevelUp()
     if IsServer() then 
         self._tUnits = HeroList:GetAllHeroes()
         for _, hero in pairs(self._tUnits) do

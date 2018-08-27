@@ -45,9 +45,7 @@ function ghost_quantum_mirror:OnSpellStart()
 				local ability = double:GetAbilityByIndex(ability_id)
 				if ability then	
 					ability:SetLevel(hTarget:GetAbilityByIndex(ability_id):GetLevel())
-					if ability_id > 5 or ability:GetAbilityType() == DOTA_ABILITY_TYPE_ULTIMATE then
-						ability:SetActivated(false)
-					end
+					ability:SetActivated(false)
 				end
 			end
 

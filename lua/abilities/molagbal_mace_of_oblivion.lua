@@ -17,9 +17,11 @@ function molagbal_mace_of_oblivion:OnSpellStart()
             hTarget:AddNewModifier( self:GetCaster(), self, "modifier_molagbal_mace_of_oblivion_atr", { duration = duration, attr = hTarget:GetPrimaryAttribute() } )
             self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_molagbal_mace_of_oblivion_atr", { duration = duration, attr = hTarget:GetPrimaryAttribute() } )
 
-            EmitSoundOn( "Hero_Huskar.Life_Break.Impact", hTarget )
+            EmitSoundOn( "MolagBal.Maceofoblivion.Cast", hTarget ) EmitSoundOn( "MolagBal.Maceofoblivion.Target", self:GetCaster() )
 
-            local nFXIndex = ParticleManager:CreateParticle( "particles/econ/events/ti7/shivas_guard_impact_ti7.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget );
+            hTarget:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = 0.1})
+
+            local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_grimstroke/grimstroke_sfm_ink_swell_reveal.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget );
             ParticleManager:ReleaseParticleIndex( nFXIndex );
 
             if hTarget:GetHealthPercent() <= self:GetSpecialValueFor("kill_threshold") then ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = 99999, damage_type = DAMAGE_TYPE_PURE, ability = self}) end 
@@ -60,7 +62,7 @@ function modifier_molagbal_mace_of_oblivion:OnAttackLanded(params)
                 local manaDrain = self:GetAbility():GetSpecialValueFor("mana_drain")
                 if self:GetCaster():HasTalent("special_bonus_unique_molag_bal_3") then manaDrain = manaDrain + self:GetCaster():FindTalentValue("special_bonus_unique_molag_bal_3") end 
                 
-                if not params.target:IsMagicImmune() then params.target:SpendMana(manaDrain, self:GetAbility()) end 
+                if not params.target:IsMagicImmune() then params.target:SpendMana(manaDrain, self:GetAbility()) self:GetParent():GiveMana(manaDrain) end 
             end
         end
     end
@@ -104,9 +106,9 @@ end
 
 function modifier_molagbal_mace_of_oblivion_buff:GetModifierAttackSpeedBonus_Constant (params)
     if self:IsDebuff() then 
-        return self:GetAbility():GetSpecialValueFor ("attack_speed_slow") * self:GetStackCount() * (-1)
+        return self:GetAbility():GetSpecialValueFor ("attack_speed_slow") * (-1)
     end 
-    return self:GetAbility():GetSpecialValueFor ("attack_speed_slow") * self:GetStackCount()
+    return self:GetAbility():GetSpecialValueFor ("attack_speed_slow") 
 end
 
 function modifier_molagbal_mace_of_oblivion_buff:GetAttributes ()
@@ -132,6 +134,15 @@ function modifier_molagbal_mace_of_oblivion_atr:OnCreated(parmas)
         self:SetStackCount(parmas.attr)
     end 
 end
+
+function modifier_molagbal_mace_of_oblivion_atr:GetEffectName(  )
+    return "particles/units/heroes/hero_bloodseeker/bloodseeker_bloodrage.vpcf"
+end
+
+function modifier_molagbal_mace_of_oblivion_atr:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
 
 function modifier_molagbal_mace_of_oblivion_atr:DeclareFunctions()
     local funcs = {

@@ -56,7 +56,8 @@ function modifier_ghost_quantum_phase:CheckState()
         [MODIFIER_STATE_INVULNERABLE] = true,
         [MODIFIER_STATE_DISARMED] = true,
         [MODIFIER_STATE_OUT_OF_GAME] = true,
-        [MODIFIER_STATE_NOT_ON_MINIMAP] = true
+        [MODIFIER_STATE_NOT_ON_MINIMAP] = true,
+        [MODIFIER_STATE_MUTED] = true
 	}
 	return state
 end
