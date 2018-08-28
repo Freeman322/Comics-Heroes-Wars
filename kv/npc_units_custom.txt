@@ -3366,6 +3366,7 @@
 		"ModelScale"				"1.2"
 		"Level"						"100"
 		"ConsideredHero"			"1"
+		"IsAncient"					"1"
 
 		"MinimapIcon"				"minimap_roshancamp"
 		"MinimapIconSize"			"300"
@@ -3384,7 +3385,7 @@
 		"Ability3"					"roshan_spell_block"
 		"Ability4"					"roshan_bash"
 		"Ability5"					"neutral_spell_immunity"
-		"Ability6"					""
+		"Ability6"					"neutral_magical_immunity"
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 

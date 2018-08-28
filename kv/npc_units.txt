@@ -19359,14 +19359,14 @@
      
 	 	// Armor
 		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"-1"
+		"ArmorPhysical"				"0"
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"29"
-		"AttackDamageMax"			"33"
-		"AttackRate"				"1.400000"
+		"AttackDamageMin"			"32"
+		"AttackDamageMax"			"38"
+		"AttackRate"				"1.500000"
 		"AttackAnimationPoint"		"0.300000"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"128"
@@ -19376,12 +19376,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"23"
-		"AttributeStrengthGain"		"1.300000"
+		"AttributeStrengthGain"		"2.000000"
 		"AttributeBaseIntelligence"	"21"
-		"AttributeIntelligenceGain"	"1.800000"
+		"AttributeIntelligenceGain"	"1.900000"
 		"AttributeBaseAgility"		"22"
-		"AttributeAgilityGain"		"2.800000"
-		"StatusHealthRegen"			"1.75"
+		"AttributeAgilityGain"		"3.100000"
+		"StatusHealthRegen"			"2.0"
         
         // Abilities
 		"Ability1"					"ghost_quantum_phase"
@@ -19397,8 +19397,8 @@
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_unique_ghost_3"
 		"Ability14"					"special_bonus_unique_ghost_2"
-		"Ability15"					"special_bonus_all_stats_15"
-		"Ability16"					"special_bonus_agility_25"
+		"Ability15"					"special_bonus_agility_15"
+		"Ability16"					"special_bonus_all_stats_20"
 		"Ability17"					"special_bonus_unique_ghost_1"
 
 		// Movement
@@ -19417,10 +19417,10 @@
 
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"120"
-		"StatusHealthRegen"			"1.5000"
-		"StatusMana"				"75"
-		"StatusManaRegen"			"0.9"
+		"StatusHealth"				"100"
+		"StatusHealthRegen"			"2.0000"
+		"StatusMana"				"100"
+		"StatusManaRegen"			"1.0"
 
 		// Team
 		//-------------------------------------------------------------------------------------------------------------
@@ -19589,22 +19589,22 @@
         // Attribute Stats
         "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
         "AttributeBaseStrength"     "21"
-        "AttributeStrengthGain"     "1.700000"
+        "AttributeStrengthGain"     "2.600000"
         "AttributeBaseIntelligence" "19"
         "AttributeIntelligenceGain" "1.900000"
-        "AttributeBaseAgility"      "29"
+        "AttributeBaseAgility"      "24"
         "AttributeAgilityGain"      "2.400000"
 
         // Misc stats
-        "ArmorPhysical"             "3"
+        "ArmorPhysical"             "0"
         "MagicalResistance"			"25"
         "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "22"
-        "AttackDamageMax"           "34"
-        "AttackRate"                "1.700000"
+        "AttackDamageMin"           "30"
+        "AttackDamageMax"           "38"
+        "AttackRate"                "1.550000"
         "AttackAnimationPoint"      "0.400000"
         "AttackAcquisitionRange"    "600"
-        "AttackRange"               "128"
+        "AttackRange"               "150"
         "ProjectileSpeed"           "0"
         "MovementSpeed"             "315"
         "MovementTurnRate"          "0.600000"
@@ -19650,9 +19650,9 @@
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
 		"StatusHealth"				"120"
-		"StatusHealthRegen"			"1.5000"
+		"StatusHealthRegen"			"2.0000"
 		"StatusMana"				"75"
-		"StatusManaRegen"			"0.9"
+		"StatusManaRegen"			"1.0"
 
 		// Team
 		//-------------------------------------------------------------------------------------------------------------
@@ -19663,8 +19663,8 @@
 
 		// Vision
 		//-------------------------------------------------------------------------------------------------------------
-		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"1300"									// Range of vision at night time.
+		"VisionDaytimeRange"		"1300"									// Range of vision during day light.
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 
 		"vscripts"					"heroes/molagbal.lua"
 

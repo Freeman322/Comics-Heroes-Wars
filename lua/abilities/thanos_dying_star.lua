@@ -61,7 +61,7 @@ function thanos_dying_star_thinker:OnIntervalThink()
 
     for i, target in ipairs(nearby_targets) do
         local damage =  target:GetMaxHealth()*self.damage
-        ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage*0.1, damage_type = DAMAGE_TYPE_PURE})
+        ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage*0.1, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
     end
 end
 

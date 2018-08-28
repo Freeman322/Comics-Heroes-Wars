@@ -79,7 +79,7 @@ function modifier_item_ice_pearl:OnTakeDamage( params )
                 damage = params.damage * damage_amplify,
                 damage_type = params.damage_type,
                 ability = self:GetAbility(),
-                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
+                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
             })
 
             self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_ice_pearl_cooldown", {duration = 13})
@@ -185,7 +185,7 @@ function modifier_item_ice_pearl_active:OnTakeDamage( params )
                 damage = params.damage,
                 damage_type = params.damage_type,
                 ability = self:GetAbility(),
-                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
+                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
             })
         	EmitSoundOn("DOTA_Item.BladeMail.Damage", target)
         end

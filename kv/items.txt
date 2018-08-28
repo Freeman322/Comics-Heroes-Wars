@@ -1892,7 +1892,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4000"
+		"ItemCost"						"1500"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -2004,8 +2004,8 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
-		"ItemCost"						"4400"
+		"AbilityManaCost"				"50"
+		"ItemCost"						"2000"
 		"ItemShopTags"					"teleport;move_speed"
 		"ItemQuality"					"common"
 		"ItemAliases"					"bot;boots of travel"

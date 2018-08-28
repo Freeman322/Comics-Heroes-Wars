@@ -1,22 +1,22 @@
 if item_axe_of_phractos == nil then
-	item_axe_of_phractos = class({})
+    item_axe_of_phractos = class({})
 end
 LinkLuaModifier( "item_axe_of_phractos_modifier", "items/item_axe_of_phractos.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "item_axe_of_phractos_modifier_aura", "items/item_axe_of_phractos.lua", LUA_MODIFIER_MOTION_NONE )
 
 function item_axe_of_phractos:GetBehavior()
-	local behav = DOTA_ABILITY_BEHAVIOR_PASSIVE
-	return behav
+    local behav = DOTA_ABILITY_BEHAVIOR_PASSIVE
+    return behav
 end
 
 function item_axe_of_phractos:GetIntrinsicModifierName()
-	return "item_axe_of_phractos_modifier"
+    return "item_axe_of_phractos_modifier"
 end
 
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 if item_axe_of_phractos_modifier == nil then
-	item_axe_of_phractos_modifier = class({})
+    item_axe_of_phractos_modifier = class({})
 end
 
 function item_axe_of_phractos_modifier:GetEffectName()
@@ -28,27 +28,27 @@ function item_axe_of_phractos_modifier:GetEffectAttachType()
 end
 
 function item_axe_of_phractos_modifier:DeclareFunctions()
-	local funcs = {
-    MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-    MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-    MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-    MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-    MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-    MODIFIER_EVENT_ON_ATTACK_LANDED
+    local funcs = {
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_EVENT_ON_ATTACK_LANDED
     }
-	return funcs
+    return funcs
 end
 
 function item_axe_of_phractos_modifier:IsHidden()
-	return true
+    return true
 end
 
 function item_axe_of_phractos_modifier:GetAttributes()
-	return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
+    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
 
 function item_axe_of_phractos_modifier:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_damage")
+    return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
 
 function item_axe_of_phractos_modifier:GetModifierAttackSpeedBonus_Constant( params )
@@ -73,17 +73,17 @@ end
 function item_axe_of_phractos_modifier:OnAttackLanded( params )
     if params.attacker == self:GetParent() then
         if RollPercentage(self:GetAbility():GetSpecialValueFor("bash_chance")) then
-						if not params.target:IsTower() then
-	            params.target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 0.1})
-	            ApplyDamage({attacker = self:GetParent(), victim = params.target, ability = self:GetAbility(), damage = 100, damage_type = DAMAGE_TYPE_PURE})
-						end
+            if not params.target:IsTower() then
+                params.target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 0.1})
+                ApplyDamage({attacker = self:GetParent(), victim = params.target, ability = self:GetAbility(), damage = 100, damage_type = DAMAGE_TYPE_PURE})
+            end
         end
     end
 end
 
 function item_axe_of_phractos_modifier:CheckState()
     local state = {
-    [MODIFIER_STATE_CANNOT_MISS] = true,
+        [MODIFIER_STATE_CANNOT_MISS] = true,
     }
 
     return state
@@ -145,9 +145,9 @@ end
 
 function item_axe_of_phractos_modifier_aura:OnIntervalThink()
     if IsServer() then
-        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+25), damage_type = DAMAGE_TYPE_PURE})
+        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+25), damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
     end
 end
 
-function item_axe_of_phractos:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function item_axe_of_phractos:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
 

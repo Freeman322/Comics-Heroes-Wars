@@ -54,6 +54,7 @@ function butcher_meat_hook:OnSpellStart()
 	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "scorching_talon") == true then
 		pfx = "particles/econ/items/pudge/pudge_ti6_immortal_gold/pudge_ti6_meathook_gold.vpcf"
 	end
+
 	self.nChainParticleFXIndex = ParticleManager:CreateParticle( pfx, PATTACH_CUSTOMORIGIN, self:GetCaster() )
 	ParticleManager:SetParticleAlwaysSimulate( self.nChainParticleFXIndex )
 	ParticleManager:SetParticleControlEnt( self.nChainParticleFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_weapon_chain_rt", self:GetCaster():GetOrigin() + self.vHookOffset, true )
@@ -129,17 +130,12 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 					self.bDiedInHook = true
 					ParticleManager:DestroyParticle(self.nChainParticleFXIndex, true)
 				end
-
-				if not hTarget:IsMagicImmune() then
-					hTarget:Interrupt()
-				end
 		
 				local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf", PATTACH_CUSTOMORIGIN, hTarget )
 				ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true )
 				ParticleManager:ReleaseParticleIndex( nFXIndex )
 			end
 
-			AddFOWViewer( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), self.vision_radius, self.vision_duration, false )
 			self.hVictim = hTarget
 			bTargetPulled = true
 		end
@@ -158,24 +154,26 @@ function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )
 		local flDistance = vVelocity:Length2D() - flPad
 		vVelocity = vVelocity:Normalized() * self.hook_speed
 
-		if hTarget then 
-			local info = 
+		if hTarget then 		
+			local info =
 			{
-				Target = self:GetCaster(),
-				Source = hTarget,
-				Ability = self,	
-				iMoveSpeed = vVelocity,
-				vSourceLoc= hTarget:GetAbsOrigin(),                -- Optional (HOW)
-				bDrawsOnMinimap = false,                          -- Optional
-				bDodgeable = false,                                -- Optional
-				bIsAttack = false,                                -- Optional
-				bVisibleToEnemies = false,                         -- Optional
-				bReplaceExisting = false,                         -- Optional
-				bProvidesVision = true,                           -- Optional
-				iVisionRadius = 400,                              -- Optional
-				iVisionTeamNumber = self:GetCaster():GetTeamNumber()        -- Optional
+		        Target = self:GetCaster(),
+		        Source = hTarget,
+		        Ability = self,
+		        iMoveSpeed = 1600,
+		        vSourceLoc= hTarget:GetAbsOrigin(),                -- Optional (HOW)
+		        bDrawsOnMinimap = false,                          -- Optional
+		        bDodgeable = true,                                -- Optional
+		        bIsAttack = false,                                -- Optional
+		        bVisibleToEnemies = true,                         -- Optional
+		        bReplaceExisting = false,                         -- Optional
+		        flExpireTime = GameRules:GetGameTime() + 10,      -- Optional but recommended
+		        bProvidesVision = true,                           -- Optional
+		        iVisionRadius = 400,                              -- Optional
+		        iVisionTeamNumber = self:GetCaster():GetTeamNumber()        -- Optional
 			}
-			ProjectileManager:CreateTrackingProjectile(info)
+
+		    ProjectileManager:CreateTrackingProjectile(info)
 		else
 			local info = {
 				Ability = self,
@@ -246,6 +244,11 @@ end
 
 function butcher_meat_hook:OnProjectileThink( vLocation )
 	self.vProjectileLocation = vLocation
+
+	if IsLocationVisible(self:GetCaster():GetOpposingTeamNumber(), vLocation) then 
+		AddFOWViewer(self:GetCaster():GetOpposingTeamNumber(), self:GetCaster():GetAbsOrigin(), 10, 0.15, false)
+		AddFOWViewer(self:GetCaster():GetOpposingTeamNumber(), vLocation, 10, 0.15, false)
+	end
 end
 
 --------------------------------------------------------------------------------

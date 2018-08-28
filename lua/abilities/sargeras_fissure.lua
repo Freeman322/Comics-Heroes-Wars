@@ -89,6 +89,8 @@ function sargeras_fissure_thinker:OnIntervalThink()
 			local unit = units[i]
 			ApplyDamage({victim = unit, attacker = self:GetAbility():GetCaster(), damage = (self:GetAbility():GetSpecialValueFor("damage_per_sec")/10), damage_type = self:GetAbility():GetAbilityDamageType()})
 		end
+
+		AddFOWViewer(2, self:GetCaster():GetAbsOrigin(), 10, 0.15, false) AddFOWViewer(3, self:GetCaster():GetAbsOrigin(), 10, 0.15, false)
 	end
 end
 
