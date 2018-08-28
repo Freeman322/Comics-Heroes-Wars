@@ -1,3 +1,5 @@
+LinkLuaModifier( "modifier_zatana_resistance", "abilities/zatana_eclipse.lua", LUA_MODIFIER_MOTION_NONE)
+
 if zatana_eclipse == nil then zatana_eclipse = class({}) end
 
 function zatana_eclipse:CastFilterResultTarget( hTarget )
@@ -10,15 +12,18 @@ function zatana_eclipse:CastFilterResultTarget( hTarget )
 	return UF_SUCCESS
 end
 
-
 function zatana_eclipse:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
 	if hTarget ~= nil then
-		local duration = self:GetSpecialValueFor( "duration" )
-		
+		local duration = self:GetSpecialValueFor("duration")
+		if self:GetCaster():HasScepter() then
+			duration = self:GetSpecialValueFor("duration_scepter")
+		end
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_oracle_false_promise", { duration = duration } )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_oracle_false_promise_timer", { duration = duration } )
-
+		if self:GetCaster():HasScepter() then
+			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_zatana_resistance", {duration = duration} )
+		end
 		EmitSoundOn( "Hero_Antimage.ManaVoidCast", hTarget )
 		EmitSoundOn( "Hero_Oracle.PurifyingFlames.Damage", self:GetCaster() )
 
@@ -32,3 +37,21 @@ function zatana_eclipse:OnSpellStart()
 		ParticleManager:ReleaseParticleIndex( nFXIndex );
 	end
 end
+
+modifier_zatana_resistance = class ({})
+
+function modifier_zatana_resistance:IsHidden()
+	return true
+end
+
+function modifier_zatana_resistance:DeclareFunctions()
+	local funcs = {
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
+    }
+    return funcs
+end
+
+function modifier_zatana_resistance:GetModifierIncomingDamage_Percentage()
+	return 50
+end
+

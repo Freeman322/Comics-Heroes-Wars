@@ -17060,6 +17060,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17090,6 +17091,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"9 12 15"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_scepter"		"8 9 10"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -17104,6 +17110,7 @@
 		"ScriptFile"					"abilities/zatana_magic_knowledge.lua"
 		"AbilityTextureName"			"custom/zatana_magic_knowledge"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"HasScepterUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
