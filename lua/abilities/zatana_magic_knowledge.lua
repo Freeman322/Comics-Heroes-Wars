@@ -49,16 +49,16 @@ end
 modifier_zatana_magic_knowledge_aura = class ({})
 
 function modifier_zatana_magic_knowledge_aura:OnCreated()
-    self:StartIntervalThink(0.1)
+    self:StartIntervalThink(FrameTime())
 end
 
 function modifier_zatana_magic_knowledge_aura:OnIntervalThink()
     if IsServer() then
-        if self:GetCaster():HasItemInInventory("item_ultimate_scepter") then
+        if self:GetCaster():HasModifier("modifier_item_ultimate_scepter") or self:GetCaster():HasModifier("modifier_aghanim") or self:GetCaster():HasModifier("modifier_item_ethernal_dagon_scepter") then
             self:GetParent():AddNewModifier(self:GetCaster(), self, "modifier_zatana_magic_knowldege_aura_scepter", nil)
         end
 
-        if self:GetParent():HasModifier("modifier_zatana_magic_knowldege_aura_scepter") and not self:GetCaster():HasItemInInventory("item_ultimate_scepter")  then
+        if self:GetParent():HasModifier("modifier_zatana_magic_knowldege_aura_scepter") and not self:GetCaster():HasModifier("modifier_item_ultimate_scepter") or self:GetCaster():HasModifier("modifier_aghanim") or self:GetCaster():HasModifier("modifier_item_ethernal_dagon_scepter")  then
             self:GetParent():RemoveModifierByName("modifier_zatana_magic_knowldege_aura_scepter")
         end
     end
