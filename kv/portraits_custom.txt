@@ -1990,4 +1990,35 @@
 			}
 		}
 	}
+	"models/heroes/hero_doctor_fate/fate.vmdl"
+	{
+		"PortraitLightPosition"		"27.29 -103.23 154.23"
+		"PortraitLightAngles"		"34.67 84.22 0.00"
+		"PortraitLightFOV"		"90"
+		"PortraitLightDistance"		"231"
+		"PortraitLightColor"		"254 238 238"
+		"PortraitShadowColor"		"93 84 84"
+		"PortraitShadowScale"		"2.300000"
+		"PortraitAmbientColor"		"167 48 25"
+		"PortraitAmbientScale"		"2.800000"
+		"PortraitSpecularColor"		"251 251 253"
+		"PortraitBackgroundColor1"		"0 0 0"
+		"PortraitBackgroundColor2"		"1 1 1"
+		"PortraitBackgroundColor3"		"1 1 1"
+		"PortraitBackgroundColor4"		"0 0 0"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_brokenlight.vmat"
+		"PortraitLightScale"		"1.800000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-16.580 57.250 -36.280"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"102.82 -110.22 158.13"
+				"PortraitAngles"		"351.00 133.99 0.00"
+				"PortraitFOV"			"16"
+			}
+		}
+	}
 }

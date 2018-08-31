@@ -120,3 +120,7 @@ end
 function modifier_item_glove_of_the_creator_death:RemoveOnDeath()
     return false 
 end
+
+function modifier_item_glove_of_the_creator_death:IsDebuff()
+    return true
+end

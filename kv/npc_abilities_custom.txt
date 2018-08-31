@@ -13625,7 +13625,7 @@
 		"ScriptFile"					"abilities/spiderman_extermination.lua"
 
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"3.0 2.0 1.0"
+		"AbilityCooldown"				"3.5 2.5 1.5"
 		"AbilityManaCost"				"0"
 	}
 	//=================================================================================================================
@@ -17060,7 +17060,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17091,11 +17090,6 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"9 12 15"
 			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration_scepter"		"8 9 10"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -17110,7 +17104,6 @@
 		"ScriptFile"					"abilities/zatana_magic_knowledge.lua"
 		"AbilityTextureName"			"custom/zatana_magic_knowledge"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"HasScepterUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -31282,4 +31275,307 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	}
+	//=================================================================================================================
+	// Fate: Fatebind
+	//=================================================================================================================
+	"fate_fatebind"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/fate_fatebind"
+		"ScriptFile"					"abilities/fate_fatebind.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"80 65 50"
+		"AbilityCastRange"				"700 800 900"
+		"AbilityCastPoint"				"0.15"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityManaCost"				"150 200 250"
+		
+		"AbilityModifierSupportValue"	"0.75"
+
+		"precache"
+		{
+			"particle"  "particles/status_fx/status_effect_grimstroke_ink_swell.vpcf"
+			"particle"  "particles/hero_doctor_fate/fatebind_buff.vpcf"
+			"particle"  "particles/hero_doctor_fate/fatebind_rope.vpcf"
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"chain_duration"			"4.0 6.0 8.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"chain_latch_radius"		"550"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"chain_break_distance"		"700 800 900"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_ptc"				"60 80 100"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_ablosulte"		"150"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Fate: Phase Mirror
+	//=================================================================================================================
+	"fate_phase_mirror"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/fate_phase_mirror"
+		"ScriptFile"					"abilities/fate_phase_mirror.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilitySound"					"Fate.Phasemirror.Cast"
+		"FightRecapLevel"				"1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30 25 20 15"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400 500 600 700"
+		"AbilityCastPoint"				"0.15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 100 110 120"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.75"
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold.vpcf"
+			"particle"  "particles/econ/courier/courier_devourling_gold/courier_devourling_gold_ambient.vpcf"
+			"particle"  "particles/hero_doctor_fate/phase_mirror_aura.vpcf"
+			"particle"  "particles/hero_doctor_fate/phase_mirror_damage.vpcf"
+			"particle"  "particles/econ/events/ti5/blink_dagger_start_lvl2_ti5.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"5.0 6.5 7.0 8.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed_bonus_pct"	"18 22 26 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+				"LinkedSpecialBonus"	"special_bonus_unique_fate_1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"220 280 340 400"
+				"LinkedSpecialBonus"	"special_bonus_unique_fate_2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_stun"				"2.2 2.8 3.4 4.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_ptc"			"25 45 75 95"
+			}			
+		}
+	}
+	//=================================================================================================================
+	// Fate: Mistery
+	//=================================================================================================================
+	"fate_mistery"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/fate_mistery"
+		"ScriptFile"					"abilities/fate_mistery.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"OnCastbar"						"0"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"manacost"						"30 40 50 60"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"magical_armor"					"20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"900"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Fate: Teleport
+	//=================================================================================================================
+	"fate_quasi_beam"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/fate_quasi_beam_release"
+		"ScriptFile"					"abilities/fate_quasi_beam.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600 600 600 600"
+		"AbilityCooldown"				"24.0 24.0 24.0 24.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 200 200 200"
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/slardar/slardar_takoyaki_gold/status_effect_slardar_crush_tako_gold.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+			"particle"  "particles/econ/courier/courier_huntling_gold/courier_huntling_gold_ambient.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hero_teleport_delay"	"6.0 5.0 4.0 3.0"
+			}
+		}
+	}
+	/////=================================================================================================================
+	// Ability: Fate 2
+	//=================================================================================================================
+	"fate_lord_of_order"
+	{
+		// General
+		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/fate_quasi_beam"
+		"ScriptFile"					"abilities/fate_lord_of_order.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"		
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"FightRecapLevel"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"600"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14 13 12 11"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 115 140 165"
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/warlock/warlock_staff_hellborn/warlock_rain_of_chaos_hellborn_cast.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage"						"4.5 6.5 8.5 10.0"
+				"LinkedSpecialBonus"			"special_bonus_unique_fate_3"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"heal_amt"						"4.5 6.5 8.5 10.0"
+				"LinkedSpecialBonus"			"special_bonus_unique_fate_3"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cooldown_scepter"				"1.5"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+		
 }

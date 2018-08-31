@@ -113,7 +113,7 @@ function modifier_gostrider_punishing_gaze:OnTakeDamage( params )
             local target = params.attacker
             local victim = params.unit
 
-            if victim:GetTeamNumber() == self:GetCaster():GetTeamNumber() and target:IsRealHero() and target:GetTeamNumber() ~= self:GetCaster():GetTeamNumber()  then 
+            if target:IsRealHero() and target:GetTeamNumber() ~= self:GetCaster():GetTeamNumber()  then 
                 self._hUnits[target] = (self._hUnits[target] or 0) + params.damage
             end
         end

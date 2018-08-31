@@ -19392,14 +19392,14 @@
 		"Ability6"					"ghost_mental_chaos"
         
         // Talents
-	    "Ability10"					"special_bonus_unique_ghost_4"
+	    "Ability10"					"special_bonus_unique_ghost_1"
 		"Ability11"					"special_bonus_gold_income_50"
 		"Ability12"					"special_bonus_hp_regen_40"
-		"Ability13"					"special_bonus_unique_ghost_3"
-		"Ability14"					"special_bonus_unique_ghost_2"
+		"Ability13"					"special_bonus_unique_ghost_4"
+		"Ability14"					"special_bonus_unique_ghost_3"
 		"Ability15"					"special_bonus_agility_15"
 		"Ability16"					"special_bonus_all_stats_20"
-		"Ability17"					"special_bonus_unique_ghost_1"
+		"Ability17"					"special_bonus_unique_ghost_2"
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
@@ -19670,5 +19670,190 @@
 
 		// Inventory
 		"HasInventory"				"1"
-	}	
+	}
+	"npc_dota_hero_doctor_fate"
+	{
+		"BaseClass"      			"npc_dota_hero"     
+		"HeroID"					"206"
+		"IsCustom"                  "1"
+        "DisableWearables"          "1"
+
+		"Model"						"models/heroes/hero_doctor_fate/fate.vmdl"
+		"IdleExpression"			"scenes/lion/lion_exp_idle_01.vcd"
+		"SoundSet"					"Hero_Lion"
+		"HeroUnlockOrder"			"0"
+		"Role"						"Support,Disabler,Nuker,Initiator"
+		"Rolelevels"				"2,3,3,2"
+		"Complexity"				"3"
+		"Team"						"Good"
+		"ModelScale"				"0.980000"
+		"LoadoutScale"				"0.920000"
+		"SpectatorLoadoutScale"		"0.8"
+		"HeroGlowColor"				"110 50 165"
+		"PickSound"					"lion_lion_spawn_01"
+		"BanSound"					"lion_lion_anger_03"
+		"CMDisabled"				"0"
+		"workshop_guide_name"		"Fate"
+		"LastHitChallengeRival"		"npc_dota_hero_witch_doctor"
+
+		"HeroSelectSoundEffect"		"Hero_Lion.Pick"
+
+		"GibType"		"default"
+
+		"Ability1"		"fate_quasi_beam"
+		"Ability2"		"fate_lord_of_order"
+		"Ability3"		"fate_mistery"
+		"Ability4"		"fate_phase_mirror"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"fate_fatebind"
+		"Ability10"		"special_bonus_cast_range_75"
+		"Ability11"		"special_bonus_attack_damage_90"
+		"Ability12"		"special_bonus_unique_lion_3"
+		"Ability13"		"special_bonus_gold_income_20"
+		"Ability14"		"special_bonus_hp_500"
+		"Ability15"		"special_bonus_unique_lion"
+		"Ability16"		"special_bonus_unique_lion_2"
+		"Ability17"		"special_bonus_unique_lion_4"
+
+		"ArmorPhysical"					"-1"
+		"MagicalResistance"				"24"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"29"
+		"AttackDamageMax"				"35"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"			"0.430000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"600"
+		"ProjectileModel"				"particles/units/heroes/hero_lion/lion_base_attack.vpcf"
+		"ProjectileSpeed"				"900"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"18"
+		"AttributeStrengthGain"			"2.000000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"3.000000"
+		"AttributeBaseAgility"			"15"
+		"AttributeAgilityGain"			"1.500000"
+		"MovementSpeed"					"290"
+		"MovementTurnRate"		    	"0.500000"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"precache"
+		{
+			"model"		"models/props_gameplay/frog.vmdl"
+		}
+
+		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_lion.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_lion"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+
+				// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"120"
+		"StatusHealthRegen"			"2.0000"
+		"StatusMana"				"75"
+		"StatusManaRegen"			"1.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1300"									// Range of vision during day light.
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_lion/lion_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_attachment"
+						"location"		"attach_attack1"
+					}
+					"1"
+					{
+						"type"		"follow_origin"
+						"location"		"attach_hitloc"
+					}
+				}
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_LeftArm"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"850"
+				"MaxPolygonsLOD1"		"450"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"650"
+				"MaxPolygonsLOD1"		"350"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"800"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+		}
+	}		
 }

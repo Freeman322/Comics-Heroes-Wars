@@ -17,11 +17,15 @@ function ghost_quantum_phase:OnToggle()
             self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_ghost_quantum_phase_disabled_mana_regen", nil )
 
             EmitSoundOn("Ghost.Quantum_phase.Cast", self:GetCaster())
+
+            self:EndCooldown()
         else
             local hBuff = self:GetCaster():FindModifierByName( "modifier_ghost_quantum_phase" )
             if hBuff ~= nil then
                 hBuff:Destroy()
             end
+
+            self:UseResources(false, false, true)
         end
     end
 end

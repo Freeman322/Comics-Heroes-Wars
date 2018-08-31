@@ -71,7 +71,7 @@ function modifier_item_majestic_staff_active:OnIntervalThink()
             ApplyDamage({attacker = self:GetCaster(), victim = self:GetParent(), damage = (self:GetAbility():GetSpecialValueFor("enemy_hp_drain") / 100) * self:GetParent():GetHealth(), damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()})
             EmitSoundOn("DOTA_Item.DiffusalBlade.Target", caster) 
         else 
-            self:GetParent():Heal((self:GetAbility():GetSpecialValueFor("ally_hp_gain") / 100) * self:GetParent():GetHealth(), self:GetAbility())
+            self:GetParent():Heal((self:GetAbility():GetSpecialValueFor("ally_hp_gain") / 100) * self:GetParent():GetMaxHealth(), self:GetAbility())
         end 
     end 
 end
