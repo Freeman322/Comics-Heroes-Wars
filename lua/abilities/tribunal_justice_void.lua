@@ -85,6 +85,7 @@ function modifier_tribunal_justice_void:CheckState ()
         [MODIFIER_STATE_DISARMED] = true,
         [MODIFIER_STATE_PASSIVES_DISABLED] = true,
         [MODIFIER_STATE_EVADE_DISABLED] = true,
+        [MODIFIER_STATE_MUTED] = true
     }
 
     return state

@@ -3365,8 +3365,11 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to
 		"ModelScale"				"1.2"
 		"Level"						"100"
-		"ConsideredHero"			"1"
+		
+		"IsSummoned"				"1"
 		"IsAncient"					"1"
+		"ConsideredHero"			"1"
+		"IsNeutralUnitType"         "1"
 
 		"MinimapIcon"				"minimap_roshancamp"
 		"MinimapIconSize"			"300"
@@ -3490,6 +3493,162 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"3"
 			"XPGain"					"100"
+		}
+	}
+	//=================================================================================
+	// Beast
+	//=================================================================================
+	"npc_dota_beast"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+
+		"Model"						"models/creeps/nian/nian_creep.vmdl"	// Model.
+		"SoundSet"					"cny_beast"
+		"MinimapIcon"				"minimap_nian"
+
+		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
+
+		"Level"						"40"
+		"IsSummoned"				"1"
+		"IsAncient"					"1"
+		"ConsideredHero"			"1"
+
+
+		// Abilities
+		//----------------------------------------------------------------
+
+		"Ability1"					"cny_beast_ability"			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"10"			// Physical protection.
+		"MagicalResistance"			"10"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1000"		// Damage range min.
+		"AttackDamageMax"			"1000"		// Damage range max.
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"120"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.
+
+
+		// Attributes
+		//----------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"			// Base strength
+		"AttributeStrengthGain"		"0"			// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"			// Base intelligence
+		"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"			// Base agility
+		"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"1250"		// Experience earn.
+		"BountyGoldMin"				"2250"		// Gold earned min.
+		"BountyGoldMax"				"4250"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"			// Hull type used for navigation/locomotion.
+		"RingRadius"				"80"
+		"HealthBarOffset"			"160"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"420"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"10000"		// Base health.
+		"StatusHealthRegen"			"5.0"			// Health regeneration rate.
+		"StatusMana"				"500"		// Base mana.
+		"StatusManaRegen"			"1.0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"50"		// Range of vision during day light.
+		"VisionNighttimeRange"		"50"		// Range of vision at night time.
+
+		//----------------------------------------------------------------
+		"particle_folder"				"particles/units/heroes/hero_chen"
+
+		// Inventory
+		//----------------------------------------------------------------
+		"HasInventory"				"1"
+
+
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+
+			//Basic AI State
+			//------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+
+			"CanRespawn"				"1"
+
+			//Level Up Parameters
+			//------------------------------------------------------------
+			"HPGain"					"350"
+			"DamageGain"				"35"
+			"ArmorGain"					"1"
+			"MagicResistGain"			"5"
+			"MoveSpeedGain"				"5"
+			"BountyGain"				"50"
+			"XPGain"					"50"
+
+			"DefaultState"				"Invade"
+
+			"EquippedItems"
+			{
+				"Radiance"
+				{
+					"Item"					"item_radiance"
+				}
+				"Gem"
+				{
+					"Item"					"item_gem"
+				}
+				"MonkeyKingBar"
+				{
+					"Item"					"item_monkey_king_bar"
+				}
+			}
 		}
 	}
 }

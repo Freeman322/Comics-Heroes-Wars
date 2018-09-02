@@ -1,4 +1,10 @@
 spectre_lvl_death = class ( {})
+LinkLuaModifier ("modifier_spectre_lvl_death", "abilities/spectre_lvl_death.lua", LUA_MODIFIER_MOTION_NONE)
+
+function spectre_lvl_death:GetIntrinsicModifierName()
+    return "modifier_spectre_lvl_death"
+end
+
 
 function spectre_lvl_death:CastFilterResultTarget (hTarget)
 
@@ -49,8 +55,11 @@ function spectre_lvl_death:OnSpellStart ()
             ParticleManager:SetParticleControlEnt (nFXIndex2, 0, self:GetCaster (), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster ():GetOrigin (), true);
             ParticleManager:ReleaseParticleIndex (nFXIndex2);
             local pers_damage = self:GetSpecialValueFor ("pers_damage") / 100
+            local damage = 100
 
-            local damage = _G.PunishingGazeTable[hTarget] or 0
+            local modifier = self:GetCaster():FindModifierByName("modifier_spectre_lvl_death") 
+            if modifier then if modifier._hUnits then damage = modifier._hUnits[hTarget] or 100 end end 
+
 
             ApplyDamage ( { victim = hTarget, attacker = hCaster, damage = damage * pers_damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self })
 
@@ -67,3 +76,55 @@ end
 
 function spectre_lvl_death:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 
+
+if modifier_spectre_lvl_death == nil then
+    modifier_spectre_lvl_death = class({})
+end
+
+function modifier_spectre_lvl_death:IsHidden()
+    return true
+end
+
+function modifier_spectre_lvl_death:IsPurgable()
+    return false
+end
+
+function modifier_spectre_lvl_death:DeclareFunctions()
+    local funcs = {
+        MODIFIER_EVENT_ON_TAKEDAMAGE,
+        MODIFIER_EVENT_ON_DEATH
+    }
+
+    return funcs
+end
+
+function modifier_spectre_lvl_death:OnCreated(params)
+    if IsServer() then 
+        self._hUnits = {}
+    end
+end
+
+function modifier_spectre_lvl_death:Destroy()
+    if IsServer() then 
+        self._hUnits = nil
+    end
+end
+
+function modifier_spectre_lvl_death:OnTakeDamage( params )
+    if IsServer() then
+        local target = params.attacker
+        local victim = params.unit
+
+        if target:IsRealHero() and victim:IsRealHero() and target:GetTeamNumber() ~= victim:GetTeamNumber()  then 
+            self._hUnits[target] = (self._hUnits[target] or 0) + params.damage
+        end
+    end
+end
+
+function modifier_spectre_lvl_death:OnDeath( params )
+    if IsServer() then
+        local unit = params.unit
+
+        if unit:IsRealHero() and self._hUnits[unit] then self._hUnits[unit] = 0 end 
+    end
+end

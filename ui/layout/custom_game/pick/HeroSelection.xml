@@ -8,6 +8,7 @@
    </styles>
    <scripts>
       <include src="file://{resources}/scripts/Players.js" />
+      <include src="file://{resources}/scripts/heroes.js" />
       <include src="file://{resources}/scripts/pick/HeroSelection.js" />
    </scripts>
    <Panel class="HeroSelection" hittest="false">
@@ -55,12 +56,7 @@
                </Panel>
             </Panel>
             <Panel id="HeroContainer">
-               <Label id="HeroName" text="" />
-               <DOTAHeroMovie id="HeroMovie" />
-               <Panel id="HeroLorePanel">
-                  <Label id="HeroLore" text="" />
-               </Panel>
-               <Panel id="Abilityanel" />
+               <DOTAHeroInspect id="HeroInspect" class="BioTabVisible InspectingHero InspectHeroIntelligence InspectHeroComplexity3" tabindex="auto" selectionpos="auto" heroid="1"/>
                <Button id="PickButton" onactivate="PickHero()">
                   <Label id="HeroSelectedTarget" text="" />
                   <Label class="PickText" text="Select" />

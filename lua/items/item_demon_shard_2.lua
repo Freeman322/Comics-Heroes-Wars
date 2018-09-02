@@ -34,20 +34,9 @@ function modifier_item_demon_shard_2:DeclareFunctions()
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
         MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE,
-         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-        MODIFIER_EVENT_ON_ATTACK_LANDED
     }
 
     return funcs
-end
-
-function modifier_item_demon_shard_2:GetModifierConstantHealthRegen (params)
-    return self:GetAbility():GetSpecialValueFor ("bonus_health_regen")
-end
-
-function modifier_item_demon_shard_2:GetModifierConstantManaRegen (params)
-    return self:GetAbility():GetSpecialValueFor ("bonus_mana_regen")
 end
 
 function modifier_item_demon_shard_2:GetModifierProcAttack_BonusDamage_Pure (params)
@@ -82,11 +71,18 @@ function modifier_item_demon_shard_2:GetModifierAttackSpeedBonus_Constant (param
 end
 
 function modifier_item_demon_shard_2:GetModifierPreAttack_CriticalStrike(params)
-	if RollPercentage(self:GetAbility():GetSpecialValueFor("crit_chance")) then
-		IsHasCrit = true
-		return self:GetAbility():GetSpecialValueFor("crit_bonus")
-	end
-	IsHasCrit = false
+    if IsServer() then 
+    	if RollPercentage(self:GetAbility():GetSpecialValueFor("crit_chance")) then
+            local hTarget = params.target
+            local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+            ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+            ParticleManager:ReleaseParticleIndex( nFXIndex )
+            EmitSoundOn("Hero_Winter_Wyvern.WintersCurse.Target", hTarget)
+            ScreenShake(hTarget:GetOrigin(), 100, 0.1, 0.3, 500, 0, true)
+    		return self:GetAbility():GetSpecialValueFor("crit_bonus")
+    	end
+    end 
 	return
 end
 

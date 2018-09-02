@@ -206,6 +206,8 @@ function RebuildUI() {
     var heroes_str = CustomNetTables.GetTableValue("heroes", "CS_heroes_str")
     var heroes_agi = CustomNetTables.GetTableValue("heroes", "CS_heroes_agi")
     var heroes_int = CustomNetTables.GetTableValue("heroes", "CS_heroes_int")
+    var heroes_disabled = CustomNetTables.GetTableValue("heroes", "cm_mode_disabled")
+
     for (var hero in heroes_str["1"]) {
         var Hero = $.CreatePanel("Panel", $("#HeroesStr"), hero);
         Hero.AddClass("HeroIcon")
@@ -311,6 +313,8 @@ function RebuildUI() {
     Game.EmitSound("announcer_dlc_crystal_maiden_cm_ann_ancient_attack_follow_up_04")
 
     BUTTONS.push($("#CaptainsModeBecomeCaptainButton")); BUTTONS.push($("#CaptainsModeSelectHero")); BUTTONS.push($("#PickButton"))
+
+    for(var hero_id in heroes_disabled) {if ($("#" + heroes_disabled[hero_id])) { $("#" + heroes_disabled[hero_id]).enabled = false;  $("#" + heroes_disabled[hero_id]).hittest = false;  $("#" + heroes_disabled[hero_id]).SetHasClass("Picked", true);} }
 }
 
 function OnHeroSelected(hero, panel)

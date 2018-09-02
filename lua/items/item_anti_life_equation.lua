@@ -41,7 +41,6 @@ function modifier_item_anti_life_equation:DeclareFunctions ()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
 
@@ -61,13 +60,6 @@ end
 function modifier_item_anti_life_equation:GetModifierConstantHealthRegen (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_health_regen")
-end
-
-function modifier_item_anti_life_equation:GetModifierPreAttack_CriticalStrike(params)
-    if RollPercentage(self:GetAbility():GetSpecialValueFor("crit_chance")) then
-        return self:GetAbility():GetSpecialValueFor("crit_multiplier")
-    end
-    return
 end
 
 function modifier_item_anti_life_equation:GetModifierBonusStats_Strength (params)
@@ -91,6 +83,7 @@ function modifier_item_anti_life_equation:OnAttackLanded (params)
             if self:GetParent():PassivesDisabled() then
                 return 0
             end
+
             local target = params.target
             if target:GetMana() > 0 then 
                 target:SetMana(target:GetMana() - self:GetAbility():GetSpecialValueFor("mana_burn"))
@@ -104,9 +97,17 @@ function modifier_item_anti_life_equation:OnAttackLanded (params)
                 }
                 ApplyDamage( damage )
             end
+
             local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
             ParticleManager:ReleaseParticleIndex(nFXIndex)
             EmitSoundOn("Hero_Antimage.ManaBreak", target)
+
+            if RollPercentage(self:GetAbility():GetSpecialValueFor("minibash_chance")) then
+                if not target:IsTower() then
+                    params.target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 0.1})
+                    ApplyDamage({attacker = self:GetParent(), victim = target, ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("minibash_damage"), damage_type = DAMAGE_TYPE_PURE})
+                end
+            end
          end
     end
     return 0

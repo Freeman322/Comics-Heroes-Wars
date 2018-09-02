@@ -22,7 +22,7 @@ function modifier_item_heart_2:DeclareFunctions () --we want to use these functi
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
         MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
-        MODIFIER_EVENT_ON_TAKEDAMAGE
+        ---MODIFIER_EVENT_ON_TAKEDAMAGE
     }
 
     return funcs

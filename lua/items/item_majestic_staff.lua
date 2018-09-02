@@ -40,7 +40,7 @@ end
 if not modifier_item_majestic_staff then modifier_item_majestic_staff = class({}) end 
 
 function modifier_item_majestic_staff:IsHidden() return true end
-function modifier_item_majestic_staff:IsPurgable() return false end
+function modifier_item_majestic_staff:IsPurgable() return true end
 function modifier_item_majestic_staff:DeclareFunctions() return {MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_BONUS} end
 function modifier_item_majestic_staff:GetModifierBonusStats_Strength( params ) return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" ) end
 function modifier_item_majestic_staff:GetModifierBonusStats_Intellect( params ) return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" ) end

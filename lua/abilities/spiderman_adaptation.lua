@@ -1,113 +1,13 @@
---[[spiderman_adaptation = class ( {})
-
-LinkLuaModifier ("spiderman_adaptation_thinker", "heroes/hero_spiderman/spiderman_adaptation.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier ("modifier_spiderman_adaptation", "heroes/hero_spiderman/spiderman_adaptation.lua", LUA_MODIFIER_MOTION_NONE)
-
-function spiderman_adaptation:GetAOERadius ()
-    return self:GetSpecialValueFor ("radius")
-end
-
-function spiderman_adaptation:GetBehavior ()
-    return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK + DOTA_ABILITY_BEHAVIOR_AOE
-end
-function spiderman_adaptation:OnSpellStart ()
-    local point = self:GetCursorPosition ()
-    local caster = self:GetCaster ()
-    local team_id = caster:GetTeamNumber ()
-    local duration = self:GetSpecialValueFor ("duration")
-    local thinker = CreateModifierThinker (caster, self, "spiderman_adaptation_thinker", {duration = duration }, point, team_id, false)
-end
-
-spiderman_adaptation_thinker = class ( {})
-
-function spiderman_adaptation_thinker:OnCreated (event)
-    if IsServer() then
-        local thinker = self:GetParent ()
-        local ability = self:GetAbility ()
-        local point = self:GetCaster():GetCursorPosition ()
-        self.team_number = thinker:GetTeamNumber ()
-        self.radius = ability:GetSpecialValueFor ("radius")
-        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_broodmother/broodmother_web.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-        ParticleManager:SetParticleControl( nFXIndex, 0, point)
-        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self.radius, 0, 150))
-        self:AddParticle( nFXIndex, false, false, -1, false, true )
-    end
-end
-
-function spiderman_adaptation_thinker:IsAura ()
-    return true
-end
-
-function spiderman_adaptation_thinker:GetAuraRadius ()
-    return self.radius
-end
-
-function spiderman_adaptation_thinker:GetAuraSearchTeam ()
-    return DOTA_UNIT_TARGET_TEAM_FRIENDLY
-end
-
-function spiderman_adaptation_thinker:GetAuraSearchType ()
-    return DOTA_UNIT_TARGET_HERO
-end
-
-function spiderman_adaptation_thinker:GetAuraSearchFlags ()
-    return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS
-end
-
-function spiderman_adaptation_thinker:GetModifierAura ()
-    return "modifier_spiderman_adaptation"
-end
-
-
-modifier_spiderman_adaptation = class ( {})
-
-function modifier_spiderman_adaptation:IsBuff ()
-    return true
-end
-
-function modifier_spiderman_adaptation:OnCreated (event)
-    if IsServer() then
-        local ability = self:GetAbility ()
-        self:GetParent():AddNewModifier(ability:GetCaster(), ability, "modifier_persistent_invisibility", nil)
-    end
-end
-
-function modifier_spiderman_adaptation:OnDestroy(event)
-    if IsServer() then
-        local ability = self:GetAbility ()
-        if self:GetParent():HasModifier("modifier_persistent_invisibility") then
-            self:GetParent():RemoveModifierByName("modifier_persistent_invisibility")
-        end
-    end
-end
-
-function modifier_spiderman_adaptation:DeclareFunctions ()
-    return { MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT }
-end
-
-function modifier_spiderman_adaptation:GetModifierMoveSpeedBonus_Percentage ()
-    local ability = self:GetAbility ()
-    return ability:GetSpecialValueFor("bonus_movespeed")
-end
-
-function modifier_spiderman_adaptation:GetModifierConstantHealthRegen ()
-    local ability = self:GetAbility ()
-    return ability:GetSpecialValueFor("heath_regen")
-end
-
-function modifier_spiderman_adaptation:CheckState()
-    local state = {
-        [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
-    }
-
-    return state
-end]]
 LinkLuaModifier ("modifier_spiderman_adaptation", "abilities/spiderman_adaptation.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
 LinkLuaModifier ("modifier_spiderman_adaptation_slowing", "abilities/spiderman_adaptation.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
 spiderman_adaptation = class ( {})
 
 function spiderman_adaptation:GetAOERadius()
    return 275
+end
+
+function spiderman_adaptation:GetCooldown( nLevel )
+    return self.BaseClass.GetCooldown( self, nLevel ) - (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_spiderman_4") or 0)
 end
 
 function spiderman_adaptation:GetBehavior ()
@@ -205,6 +105,8 @@ function modifier_spiderman_adaptation:OnHorizontalMotionInterrupted ()
         for i, taget in ipairs (nearby_units) do  --Restore health and play a particle effect for every found ally.
             local duration = self:GetAbility ():GetSpecialValueFor ("duration")
             local damage = self:GetAbility ():GetAbilityDamage ()
+            if self:GetCaster():HasTalent("special_bonus_unique_spiderman_3") then damage = damage + self:GetCaster():FindTalentValue("special_bonus_unique_spiderman_3") end
+
 
             taget:AddNewModifier (self:GetCaster (), self:GetAbility (), "modifier_spiderman_adaptation_slowing", { duration = duration })
             ApplyDamage ( { attacker = self:GetAbility ():GetCaster (), victim = taget, ability = self:GetAbility (), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })

@@ -111,7 +111,7 @@ function item_axe_of_phractos_modifier:GetAuraSearchType()
 end
 
 function item_axe_of_phractos_modifier:GetAuraSearchFlags()
-    return DOTA_UNIT_TARGET_FLAG_NONE
+    return DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS
 end
 
 function item_axe_of_phractos_modifier:GetModifierAura()

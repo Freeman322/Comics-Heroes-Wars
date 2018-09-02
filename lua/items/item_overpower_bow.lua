@@ -98,7 +98,7 @@ function modifier_item_overpower_bow_active:GetModifierAttackSpeedBonus_Constant
 end
 
 function modifier_item_overpower_bow_active:GetModifierBaseAttackTimeConstant(params)
-    return 0.3
+    return 0.6
 end
 
 function modifier_item_overpower_bow_active:GetStatusEffectName()

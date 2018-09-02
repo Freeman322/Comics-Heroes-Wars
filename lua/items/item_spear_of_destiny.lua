@@ -29,8 +29,8 @@ function modifier_item_spear_of_destiny:IsPurgable()
 end
 function modifier_item_spear_of_destiny:DeclareFunctions()
 local funcs = {
-        MODIFIER_PROPERTY_FIXED_DAY_VISION,
-        MODIFIER_PROPERTY_FIXED_NIGHT_VISION,
+        MODIFIER_PROPERTY_BONUS_DAY_VISION,
+        MODIFIER_PROPERTY_BONUS_NIGHT_VISION,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
@@ -86,10 +86,10 @@ end
 function modifier_item_spear_of_destiny:GetAttributes ()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
-function modifier_item_spear_of_destiny:GetFixedNightVision( params )
+function modifier_item_spear_of_destiny:GetBonusNightVision( params )
     return self:GetAbility():GetSpecialValueFor("aura_radius")
 end
-function modifier_item_spear_of_destiny:GetFixedDayVision( params )
+function modifier_item_spear_of_destiny:GetBonusDayVision( params )
     return self:GetAbility():GetSpecialValueFor("aura_radius")
 end
 function modifier_item_spear_of_destiny:IsAura()
@@ -147,15 +147,6 @@ function modifier_item_spear_of_destiny_aura:OnIntervalThink()
     if IsServer() then
         ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("bonus_aura_damage"), damage_type = DAMAGE_TYPE_PURE})
     end
-end
-
-function modifier_item_spear_of_destiny_aura:CheckState()
-	local state = {
-        [MODIFIER_STATE_INVISIBLE] = false,
-        [MODIFIER_STATE_TRUESIGHT_IMMUNE] = false,
-	}
-
-	return state
 end
 
 if modifier_item_spear_of_destiny_active == nil then modifier_item_spear_of_destiny_active = class({}) end

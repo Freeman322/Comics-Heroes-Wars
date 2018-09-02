@@ -6,7 +6,10 @@ function fate_quasi_beam:OnSpellStart()
 		local hCaster = self:GetCaster()
 		local hTarget = self:GetCursorTarget()
 
-		if hTarget then hTarget:AddNewModifier(hCaster, self, "modifier_fate_quasi_beam", {duration = self:GetSpecialValueFor("hero_teleport_delay")}) end 
+    local duration = self:GetSpecialValueFor("hero_teleport_delay")
+    if self:GetCaster():HasTalent("special_bonus_unique_fate_5") then duration = duration + (self:GetCaster():FindTalentValue("special_bonus_unique_fate_5") or 0) end
+
+		if hTarget then hTarget:AddNewModifier(hCaster, self, "modifier_fate_quasi_beam", {duration = duration}) end 
 		
 		EmitSoundOn( "Hero_Chen.TestOfFaith.Cast", hCaster )
 		EmitSoundOn( "Hero_Chen.TestOfFaith.Target", hTarget )

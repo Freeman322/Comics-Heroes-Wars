@@ -65,6 +65,18 @@ function modifier_beast_shapeshift:GetModifierMoveSpeed_Max(params)
   return self:GetAbility():GetSpecialValueFor("speed")
 end
 
+function modifier_beast_shapeshift:OnCreated(params)
+  if IsServer() then
+    self:StartIntervalThink(0.1) 
+  end
+end
+
+function modifier_beast_shapeshift:OnIntervalThink()
+  if IsServer() then 
+    self:GetParent():Purge(false, true, false, true, true)
+  end 
+end
+
 if modifier_beast_shapeshift_passive == nil then modifier_beast_shapeshift_passive = class({}) end
 
 function modifier_beast_shapeshift_passive:IsBuff()

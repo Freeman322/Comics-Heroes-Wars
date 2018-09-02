@@ -1,94 +1,5 @@
---[[spiderman_extermination = class ( {})
-LinkLuaModifier ("modifier_spiderman_extermination", "heroes/hero_spiderman/spiderman_extermination.lua", LUA_MODIFIER_MOTION_NONE)
-
-function spiderman_extermination:OnSpellStart ()
-    local caster = self:GetCaster ()
-    local duration = self:GetSpecialValueFor ("duration")
-    local radius = self:GetSpecialValueFor ("radius")
-    local damage = self:GetSpecialValueFor ("bonus_damage")
-
-    local nFXIndex = ParticleManager:CreateParticle ("particles/spiderman/spiderman_extermination_cast.vpcf", PATTACH_CUSTOMORIGIN, nil);
-    ParticleManager:SetParticleControlEnt (nFXIndex, 0, self:GetCaster (), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster ():GetOrigin () + Vector (0, 0, 96), true);
-    ParticleManager:SetParticleControl (nFXIndex, 1, Vector (1, 1, 1))
-    ParticleManager:SetParticleControl (nFXIndex, 2, Vector (1, 1, 1))
-    ParticleManager:SetParticleControl (nFXIndex, 3, Vector (1, 1, 1))
-    ParticleManager:ReleaseParticleIndex (nFXIndex);
-
-    EmitSoundOn ("Hero_Huskar.Life_Break", caster)
-
-    local nearby_units = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-
-    for i, targets in ipairs(nearby_units) do
-        ParticleManager:CreateParticle("particles/items2_fx/mekanism_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, nearby_ally)
-        targets:AddNewModifier(caster, self, "modifier_spiderman_extermination", {duration = duration})
-        ApplyDamage({attacker = caster, victim = targets, ability = self, damage = damage , damage_type = DAMAGE_TYPE_PURE})
-    end
-end
-
-function spiderman_extermination:GetCastRange (vLocation, hTarget)
-    return  self:GetSpecialValueFor ("radius")
-end
-
-modifier_spiderman_extermination = class ( {})
-
-function modifier_spiderman_extermination:OnCreated( kv )
-    if IsServer() then
-        local nFXIndex = ParticleManager:CreateParticle( "particles/spiderman/spiderman_extermination_status.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-        ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin())
-        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(1, 1, 1) )
-        self:AddParticle( nFXIndex, false, false, -1, false, true )
-    end
-end
---------------------------------------------------------------------------------
-
-function modifier_spiderman_extermination:IsDebuff ()
-    return true
-end
-
---------------------------------------------------------------------------------
-
-function modifier_spiderman_extermination:IsStunDebuff ()
-    return true
-end
-
---------------------------------------------------------------------------------
-
-function modifier_spiderman_extermination:GetEffectName ()
-    return "particles/generic_gameplay/generic_stunned.vpcf"
-end
-
---------------------------------------------------------------------------------
-
-function modifier_spiderman_extermination:GetEffectAttachType ()
-    return PATTACH_OVERHEAD_FOLLOW
-end
-
---------------------------------------------------------------------------------
-
-function modifier_spiderman_extermination:DeclareFunctions ()
-    local funcs = {
-        MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
-    }
-
-    return funcs
-end
-
---------------------------------------------------------------------------------
-
-function modifier_spiderman_extermination:GetOverrideAnimation (params)
-    return ACT_DOTA_DISABLED
-end
-
---------------------------------------------------------------------------------
-
-function modifier_spiderman_extermination:CheckState ()
-    local state = {
-        [MODIFIER_STATE_STUNNED] = true,
-    }
-
-    return state
-end]]
 LinkLuaModifier ("modifier_spiderman_extermination", "abilities/spiderman_extermination.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier ("modifier_spiderman_extermination_active", "abilities/spiderman_extermination.lua", LUA_MODIFIER_MOTION_NONE)
 
 if spiderman_extermination == nil then
     spiderman_extermination = class ( {})
@@ -99,7 +10,26 @@ function spiderman_extermination:GetIntrinsicModifierName ()
 end
 
 function spiderman_extermination:GetCooldown( nLevel )
+    if self:GetCaster():HasScepter() then return self:GetSpecialValueFor("cooldown_scepter") end
     return self.BaseClass.GetCooldown( self, nLevel )
+end
+
+function spiderman_extermination:GetBehavior()
+    if self:GetCaster():HasScepter() then return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE end return DOTA_ABILITY_BEHAVIOR_PASSIVE
+end
+
+function spiderman_extermination:OnSpellStart()
+    local duration = self:GetSpecialValueFor( "duration_scepter" )
+
+    self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_spiderman_extermination_active", { duration = duration }  )
+
+    local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+    ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetCaster(), PATTACH_ABSORIGIN_FOLLOW, nil, self:GetCaster():GetOrigin(), true )
+    ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+    EmitSoundOn( "Item.CrimsonGuard.Cast", self:GetCaster() )
+
+    self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_4 );
 end
 
 if modifier_spiderman_extermination == nil then
@@ -142,3 +72,46 @@ end
 
 function spiderman_extermination:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 
+if not modifier_spiderman_extermination_active then modifier_spiderman_extermination_active = class({}) end 
+
+function modifier_spiderman_extermination_active:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_EVASION_CONSTANT
+    }
+
+    return funcs
+end
+-------------------------------------------------------------------------------
+function modifier_spiderman_extermination_active:IsPurgable()
+    return false
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_spiderman_extermination_active:GetStatusEffectName()
+    return "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone_dire.vpcf"
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_spiderman_extermination_active:StatusEffectPriority()
+    return 1000
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_spiderman_extermination_active:GetEffectName()
+    return "particles/econ/items/broodmother/bm_lycosidaes/bm_lycosidaes_spiderlings_debuff.vpcf"
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_spiderman_extermination_active:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_spiderman_extermination_active:GetModifierEvasion_Constant( params )
+    return self:GetAbility():GetSpecialValueFor( "evasion_scepter" )
+end

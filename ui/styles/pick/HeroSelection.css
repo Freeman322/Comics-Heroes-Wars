@@ -439,11 +439,15 @@
 }
 
 #HeroLorePanel {
-    height: 302px;
-    width: 46%;
+    height: 200px;
+    width: 98%;
     margin-top: 5%;
     vertical-align: top;
     horizontal-align: right;
+}
+
+#HeroInspect{
+    width: 100%;
 }
 
 #HeroLorePanel Label {
@@ -457,7 +461,7 @@
 
 #Abilityanel {
     height: 100px;
-    margin-top: 30%;
+    margin-top: 50%;
     vertical-align: middle;
     horizontal-align: center;
     flow-children: right;

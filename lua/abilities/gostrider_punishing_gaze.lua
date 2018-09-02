@@ -90,6 +90,7 @@ end
 function modifier_gostrider_punishing_gaze:DeclareFunctions()
     local funcs = {
         MODIFIER_EVENT_ON_TAKEDAMAGE,
+        MODIFIER_EVENT_ON_DEATH
     }
 
     return funcs
@@ -109,14 +110,20 @@ end
 
 function modifier_gostrider_punishing_gaze:OnTakeDamage( params )
     if IsServer() then
-        if params.unit == self:GetParent() then
-            local target = params.attacker
-            local victim = params.unit
+        local target = params.attacker
+        local victim = params.unit
 
-            if target:IsRealHero() and target:GetTeamNumber() ~= self:GetCaster():GetTeamNumber()  then 
-                self._hUnits[target] = (self._hUnits[target] or 0) + params.damage
-            end
+        if target:IsRealHero() and victim:IsRealHero() and target:GetTeamNumber() ~= victim:GetTeamNumber()  then 
+            self._hUnits[target] = (self._hUnits[target] or 0) + params.damage
         end
+    end
+end
+
+function modifier_gostrider_punishing_gaze:OnDeath(params)
+    if IsServer() then
+        local unit = params.unit
+
+        if unit:IsRealHero() and self._hUnits[unit] then self._hUnits[unit] = 0 end 
     end
 end
 

@@ -98,5 +98,26 @@ function modifier_spiderman_adaptation_buff:GetModifierMoveSpeedBonus_Percentage
     return ability:GetSpecialValueFor("web_slowing")
 end
 
+function modifier_spiderman_adaptation_buff:OnCreated(params)
+    if IsServer() then 
+         self:StartIntervalThink(1) self:OnIntervalThink()
+    end 
+end
+
+function modifier_spiderman_adaptation_buff:OnIntervalThink()
+    if IsServer() then 
+        local flDamage = self:GetAbility():GetSpecialValueFor("web_damage")
+        if self:GetCaster():HasTalent("special_bonus_unique_spiderman_2") then flDamage = flDamage + self:GetCaster():FindTalentValue("special_bonus_unique_spiderman_2") end
+
+        local damage = {
+            victim = self:GetParent(),
+            attacker = self:GetCaster(),
+            damage = flDamage,
+            damage_type = self:GetAbility():GetAbilityDamageType(),
+            ability = self:GetAbility()
+        } ApplyDamage( damage )
+    end 
+end
+
 function spiderman_poision_attack:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

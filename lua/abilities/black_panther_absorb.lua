@@ -19,6 +19,9 @@ end
 
 function black_panther_absorb:OnOwnerDied()
     if IsServer() then 
+        local modifier = self:GetCaster():FindModifierByName("modifier_black_panther_absorb_dummy")
+        if modifier then modifier:SetStackCount(0) end 
+        
         self._iDamage = 0
     end
 end

@@ -305,44 +305,7 @@ function OnHeroSelected(name, panel) {
 }
 
 function previewHero(hero) {
-    var abilities = CustomNetTables.GetTableValue("heroes", "abilities")
-    var i = 0;
-    while (i < $("#Abilityanel").GetChildCount()) {
-        $("#Abilityanel").GetChild(i).DeleteAsync(0)
-        i++;
-    }
-    $("#HeroName").text = $.Localize(hero)
-    for (var i in abilities['1'][hero]) {
-        var ability = abilities['1'][hero][i]
-        if (ability && ability != "") {
-            var Ability = $.CreatePanel("DOTAAbilityImage", $("#Abilityanel"), ability);
-            Ability.AddClass("Ability")
-            Ability.abilityname = ability
-
-            var mouseOverCapture = (function(ability, Ability) {
-                    return function() {
-                        OnTooltipStart(ability, Ability)
-                    }
-                }
-                (ability, Ability));
-
-
-            var mouseOutCapture = (function(ability, Ability) {
-                    return function() {
-                        OnTooltipOver(ability, Ability)
-                    }
-                }
-                (ability, Ability));
-
-
-            Ability.SetPanelEvent("onmouseover", mouseOverCapture);
-            Ability.SetPanelEvent("onmouseout", mouseOutCapture);
-        }
-    }
-    $("#HeroLore").text = $.Localize("new_" + hero + "_hype")
-    $("#HeroMovie").heroname = hero
-
-    $("#HeroSelectedTarget").text = $.Localize(hero)
+    $("#HeroContainer").BCreateChildren('<DOTAHeroInspect id="HeroInspect" class="BioTabVisible InspectingHero InspectHeroIntelligence InspectHeroComplexity3" tabindex="auto" selectionpos="auto" heroid="'+ Heroes.GetHeroID(hero) +'"/>');
 
     $("#PickButton").selectedhero = hero
 }

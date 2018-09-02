@@ -159,7 +159,7 @@ function CaptainsMode:Start()
     GameRules:GetGameModeEntity():SetThink("OnIntervalThink", CaptainsMode, 1)
     CM_MODE_CURRENT_STAGE = 1
     
-    heroes = Util:GetAllHeroes()
+    heroes = Util:GetAllHeroesCMMode()
 
     CURRENT_TIME = 180
 end

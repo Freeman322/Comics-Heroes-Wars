@@ -24,9 +24,7 @@ function item_heart_of_abyss:OnSpellStart ()
     for i=0, 5, 1 do
         local current_item = self:GetCaster ():GetItemInSlot (i)
         if current_item ~= nil then
-            if current_item:GetName () == "item_refresher" or current_item:GetName () == "item_heart_of_abyss"  then  
-                current_item:StartCooldown(195)
-            else
+            if current_item:GetName () ~= "item_refresher" and current_item:GetName () ~= "item_heart_of_abyss"  then  
                 current_item:EndCooldown()
             end
 

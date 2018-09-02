@@ -40,7 +40,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_item_sentinels_cuirass:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_BUILDING
 end
 
 --------------------------------------------------------------------------------
@@ -52,12 +52,15 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_item_sentinels_cuirass:GetAuraRadius()
-	return 600
+	return 900
 end
 
 function modifier_item_sentinels_cuirass:DeclareFunctions ()
     local funcs = {
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
@@ -67,26 +70,21 @@ function modifier_item_sentinels_cuirass:DeclareFunctions ()
     return funcs
 end
 
-function modifier_item_sentinels_cuirass:GetModifierPreAttack_BonusDamage (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_damage")
-end
-function modifier_item_sentinels_cuirass:GetModifierPhysicalArmorBonus(params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_armor")
-end
-function modifier_item_sentinels_cuirass:GetModifierAttackSpeedBonus_Constant (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_attack_speed")
-end
+function modifier_item_sentinels_cuirass:GetModifierPreAttack_BonusDamage (params) return self:GetAbility():GetSpecialValueFor ("bonus_damage") end
+function modifier_item_sentinels_cuirass:GetModifierPhysicalArmorBonus(params) return self:GetAbility():GetSpecialValueFor("bonus_armor") end
+function modifier_item_sentinels_cuirass:GetModifierAttackSpeedBonus_Constant (params) return self:GetAbility():GetSpecialValueFor ("bonus_attack_speed") end
+function modifier_item_sentinels_cuirass:GetModifierBonusStats_Strength( params ) return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" ) end
+function modifier_item_sentinels_cuirass:GetModifierBonusStats_Intellect( params ) return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" ) end
+function modifier_item_sentinels_cuirass:GetModifierBonusStats_Agility( params ) return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" ) end
+
 
 function modifier_item_sentinels_cuirass:OnAttackLanded(params)
     if IsServer () then
         if params.attacker == self:GetParent() then
-            local hAbility = self:GetAbility ()
+            local hAbility = self:GetAbility()
             local hTarget = params.target
             local chance = hAbility:GetSpecialValueFor ("strike_chance")
-            if RollPercentage(chance) and hTarget:IsBuilding() == false then
+            if RollPercentage(chance) and hTarget:IsBuilding() == false and hTarget:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
                 local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", PATTACH_CUSTOMORIGIN, nil );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );
@@ -120,7 +118,7 @@ function modifier_item_sentinels_cuirass:OnTakeDamage(params)
             local hAbility = self:GetAbility ()
             local hTarget = params.attacker
             local chance = hAbility:GetSpecialValueFor ("strike_chance")
-            if RollPercentage(chance) and hTarget:IsBuilding() == false then
+            if RollPercentage(chance) and hTarget:IsBuilding() == false and hTarget:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
                 local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", PATTACH_CUSTOMORIGIN, nil );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );

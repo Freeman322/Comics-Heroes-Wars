@@ -52,12 +52,14 @@ function fate_fatebind:OnSpellStart()
         end
     end
 
+    local duration = self:GetSpecialValueFor("chain_duration")
+    if self:GetCaster():HasTalent("special_bonus_unique_fate_4") then duration = duration + (self:GetCaster():FindTalentValue("special_bonus_unique_fate_4") or 0) end
 
     if hTarget_Unit then 
-        hTarget:AddNewModifier(hCaster, self, "modifier_fate_fatebind", {duration = self:GetSpecialValueFor("chain_duration"), unit = hTarget_Unit:entindex()})
-        hTarget_Unit:AddNewModifier(hCaster, self, "modifier_fate_fatebind", {duration = self:GetSpecialValueFor("chain_duration"), unit = hTarget:entindex()})
+        hTarget:AddNewModifier(hCaster, self, "modifier_fate_fatebind", {duration = duration, unit = hTarget_Unit:entindex()})
+        hTarget_Unit:AddNewModifier(hCaster, self, "modifier_fate_fatebind", {duration = duration, unit = hTarget:entindex()})
     else 
-        hTarget:AddNewModifier(hCaster, self, "modifier_fate_fatebind", {duration = self:GetSpecialValueFor("chain_duration")})
+        hTarget:AddNewModifier(hCaster, self, "modifier_fate_fatebind", {duration = duration})
     end
 end
 

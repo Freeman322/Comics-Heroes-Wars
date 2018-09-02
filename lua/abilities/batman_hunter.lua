@@ -9,9 +9,10 @@ end
 function batman_hunter:OnSpellStart(params)
 	local ability = self
 	local duration = 15
-	if self:GetCaster():HasTalent("special_bonus_unique_batman") then
-        duration = 60
-  end
+
+	if self:GetCaster():HasTalent("special_bonus_unique_batman_2") then
+        duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_batman_2")
+  	end
 
 	-- Time variables
 	local time_flow = 0.0020833333
@@ -46,7 +47,7 @@ function modifier_batman_hunter:IsPurgable()
 end
 
 function modifier_batman_hunter:IsHidden()
-	return true
+	return false
 end
 
 function modifier_batman_hunter:OnCreated(table)
@@ -58,9 +59,9 @@ end
 function modifier_batman_hunter:OnIntervalThink()
 	if IsServer() then
 		if not GameRules:IsDaytime() then
-			self.IsNight = true
+			self:SetStackCount(1)
 		else
-			self.IsNight = false
+			self:SetStackCount(0)
 		end
 	end
 end
@@ -75,15 +76,27 @@ function modifier_batman_hunter:DeclareFunctions()
 end
 
 
+function modifier_batman_hunter:GetEffectName()
+	if self:GetStackCount() == 1 then
+		return "particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_body_glow.vpcf"
+	end 
+
+	return
+end
+
+function modifier_batman_hunter:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
+end
+
 function modifier_batman_hunter:GetModifierMoveSpeedBonus_Percentage( params )
-	if self.IsNight then
+	if self:GetStackCount() == 1 then
 		return self:GetAbility():GetSpecialValueFor("bonus_movement_speed_pct_night")
 	end
 	return
 end
 
 function modifier_batman_hunter:GetModifierAttackSpeedBonus_Constant(params)
-	if self.IsNight then
+	if self:GetStackCount() == 1 then
 		return self:GetAbility():GetSpecialValueFor("bonus_attack_speed_night")
 	end
 	return

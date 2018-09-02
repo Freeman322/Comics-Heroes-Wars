@@ -57,11 +57,17 @@ end
 
 function modifier_fate_phase_mirror:OnDestroy( params )
     if IsServer() then
-        local nearby_units = FindUnitsInRadius(self:GetParent():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+        local radius = self:GetAbility():GetSpecialValueFor("radius")
+        if self:GetCaster():HasTalent("special_bonus_unique_fate_1") then radius  = radius  + (self:GetCaster():FindTalentValue("special_bonus_unique_fate_1") or 1) end
+
+        local nearby_units = FindUnitsInRadius(self:GetParent():GetTeam(), self:GetParent():GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
         EmitSoundOn("Fate.Phasemirror.Damage", self:GetParent())
 
         self._iDamage = self._iDamage * (self:GetAbility():GetSpecialValueFor("damage_ptc") / 100)
+
+        if self:GetCaster():HasTalent("special_bonus_unique_fate_2") then self._iDamage  = self._iDamage  + (self:GetCaster():FindTalentValue("special_bonus_unique_fate_2") or 1) end
+
 
         for i, unit in ipairs(nearby_units) do  --Restore health and play a particle effect for every found ally.             	
             EmitSoundOn("Fate.Phasemirror.Target", unit)

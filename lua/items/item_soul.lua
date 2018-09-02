@@ -3,13 +3,10 @@ if item_soul == nil then
 end
 
 LinkLuaModifier("modifier_item_soul", "items/item_soul.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_soul_aura", "items/item_soul.lua", LUA_MODIFIER_MOTION_NONE)
-----LinkLuaModifier("modifier_item_mind_gem_active", "items/item_soul.lua", LUA_MODIFIER_MOTION_NONE)
 
 function item_soul:GetIntrinsicModifierName()
 	return "modifier_item_soul"
 end
-
 
 function item_soul:OnSpellStart()
 	if IsServer() then 
@@ -30,6 +27,17 @@ function item_soul:OnSpellStart()
 		EmitSoundOn( "Hero_ElderTitan.EchoStomp.Channel.ti7", self:GetCaster() )
 		EmitSoundOn( "Hero_ElderTitan.EchoStomp.ti7", self:GetCaster() )
 
+		local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), 900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
+		if #units > 0 then
+			for _,unit in pairs(units) do
+				unit:AddNewModifier( self:GetCaster(), self, "modifier_item_dustofappearance", { duration = duration } )
+			end
+		end
+
+		local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/elder_titan/elder_titan_ti7/elder_titan_echo_stomp_ti7_dust.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
+
 		self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_3 );
 	end
 end
@@ -41,43 +49,6 @@ end
 function modifier_item_soul:IsHidden()
 	return true
 end
-
---------------------------------------------------------------------------------
-
-function modifier_item_soul:IsAura()
-	return true
-end
-
---------------------------------------------------------------------------------
-
-function modifier_item_soul:GetModifierAura()
-	return "modifier_item_soul_aura"
-end
-
---------------------------------------------------------------------------------
-
-function modifier_item_soul:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_ENEMY
-end
-
---------------------------------------------------------------------------------
-
-function modifier_item_soul:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_ALL
-end
-
---------------------------------------------------------------------------------
-
-function modifier_item_soul:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
-end
-
---------------------------------------------------------------------------------
-
-function modifier_item_soul:GetAuraRadius()
-	return self:GetAbility():GetSpecialValueFor("soul_radius")
-end
-
 
 function modifier_item_soul:DeclareFunctions()
 	local funcs = {
@@ -153,30 +124,3 @@ function modifier_item_soul:GetModifierAttackSpeedBonus_Constant( params )
     return self:GetAbility():GetSpecialValueFor( "bonus_attack_speed" )
 end
 
-if modifier_item_soul_aura == nil then modifier_item_soul_aura = class({}) end 
-
-function modifier_item_soul_aura:IsPurgable()
-    return false
-end
-
-function modifier_item_soul_aura:IsHidden()
-    return true
-end
-
-function modifier_item_soul_aura:GetPriority()
-    return MODIFIER_PRIORITY_SUPER_ULTRA
-end
-
-function modifier_item_soul_aura:GetEffectAttachType ()
-    return PATTACH_ABSORIGIN_FOLLOW
-end
-
-function modifier_item_soul_aura:CheckState ()
-    local state = {
-        [MODIFIER_STATE_INVISIBLE] = false,
-        [MODIFIER_STATE_PROVIDES_VISION] = true,
-        [MODIFIER_STATE_ATTACK_IMMUNE] = false,
-    }
-
-    return state
-end

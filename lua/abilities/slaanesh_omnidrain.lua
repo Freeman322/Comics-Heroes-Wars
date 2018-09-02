@@ -136,7 +136,15 @@ function modifier_slaanesh_omnidrain:OnIntervalThink()
         
         damage = damage * self:GetAbility():GetSpecialValueFor("tick_rate")
 
-        self:GetParent():ModifyHealth(self:GetParent():GetHealth() - damage, self:GetAbility(), true, 0)
+        local damage_table = {
+            victim = self:GetParent(),
+            attacker = self:GetCaster(),
+            damage = damage,
+            damage_type = DAMAGE_TYPE_PURE,
+            ability = self:GetAbility()
+        }
+        ApplyDamage( damage_table )
+
         self:GetCaster():Heal(damage, self:GetAbility())
 	end
 end

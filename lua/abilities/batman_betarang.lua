@@ -13,6 +13,16 @@ function batman_betarang:OnSpellStart()
 	ProjectileManager:CreateTrackingProjectile( info )
 	EmitSoundOn( "Hero_BountyHunter.Shuriken", self:GetCaster() )
 	self.max_bounces = self:GetSpecialValueFor("max_bounce")
+
+	if self:GetCaster():HasTalent("special_bonus_unique_batman_1") then self.max_bounces = self.max_bounces + (self:GetCaster():FindTalentValue("special_bonus_unique_batman_1") or 1) end
+
+	if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") then
+        EmitSoundOn("Batman.InfinityMidas.Cast", self:GetCaster())
+    end
+end
+
+function batman_betarang:GetCooldown( nLevel )
+    return IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_batman") or self.BaseClass.GetCooldown( self, nLevel )
 end
 
 --------------------------------------------------------------------------------
@@ -33,6 +43,18 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 		}
 
 		ApplyDamage( damage )
+
+		if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") then
+	        local particle = ParticleManager:CreateParticle ("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget)
+	        ParticleManager:SetParticleControlEnt (particle, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetAbsOrigin (), false)
+	        ParticleManager:ReleaseParticleIndex(particle)
+
+	        local particle = ParticleManager:CreateParticle ("particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget)
+	        ParticleManager:SetParticleControlEnt (particle, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetAbsOrigin (), false)
+	        ParticleManager:SetParticleControlEnt (particle, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin (), false)
+	        ParticleManager:ReleaseParticleIndex(particle)
+	    end
+
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
 		if self.max_bounces == 0 then
 			return nil

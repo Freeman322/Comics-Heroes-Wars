@@ -2021,4 +2021,35 @@
 			}
 		}
 	}
+	"models/creeps/ice_biome/diregull/diregull.vmdl"
+	{
+		"PortraitLightPosition"		"66.74 15.58 118.13"
+		"PortraitLightAngles"		"45.81 204.64 0.00"
+		"PortraitLightFOV"		"90"
+		"PortraitLightDistance"		"100"
+		"PortraitLightColor"		"249 224 187"
+		"PortraitShadowColor"		"38 38 25"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"108 126 129"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_gradient_top.vmat"
+		"PortraitBackgroundColor1"		".57 .34 .6"
+		"PortraitBackgroundColor2"		".57 .34 .6"
+		"PortraitBackgroundColor3"		".57 .34 .6"
+		"PortraitBackgroundColor4"		".57 .34 .6"
+		"PortraitLightScale"		"1.000000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"22.330 21.900 44.720"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"189.55 -103.39 32.55"
+				"PortraitAngles"		"350.66 148.96 0.0"
+				"PortraitFOV"		"20"
+			}
+		}
+	}
 }
