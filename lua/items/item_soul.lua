@@ -30,7 +30,7 @@ function item_soul:OnSpellStart()
 		local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), 900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
 		if #units > 0 then
 			for _,unit in pairs(units) do
-				unit:AddNewModifier( self:GetCaster(), self, "modifier_item_dustofappearance", { duration = duration } )
+				unit:AddNewModifier( self:GetCaster(), self, "modifier_item_dustofappearance", { duration = duration * 3 } )
 			end
 		end
 

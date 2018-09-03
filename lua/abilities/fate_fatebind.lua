@@ -131,7 +131,7 @@ function modifier_fate_fatebind:OnModifierApplied( params )
         if unit and unit == self:GetParent() and self._hUnit and modifier ~= self:GetName() then 
             local debuff = self:GetParent():FindModifierByName(modifier)
             if debuff and debuff:IsDebuff() == true then 
-                self._hUnit:AddNewModifier(attacker, ability, modifier, {duration = debuff:GetDuration()})
+                if not self._hUnit:HasModifier(modifier) then self._hUnit:AddNewModifier(attacker, ability, modifier, {duration = debuff:GetDuration()}) end 
             end 
         end 
     end 

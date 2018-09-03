@@ -286,7 +286,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_chance" 		    "25"
+				"bash_chance" 		    "85"
 			}
 			"05"
 			{
@@ -3886,7 +3886,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"200"
+				"bonus_attack_speed"	"160"
 			}
 			"02"
 			{
@@ -4913,12 +4913,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"minibash_chance"		"80"
+				"minibash_chance"		"90"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"minibash_damage"		"200"
+				"minibash_damage"		"150"
 			}
 			"09"
 			{
@@ -6474,12 +6474,12 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_regen_per_stack"	"3.0"
+				"health_regen_per_stack"	"0.25"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"mana_regen_per_stack"		"0.5"
+				"mana_regen_per_stack"		"0.06"
 			}
 		}
 	}

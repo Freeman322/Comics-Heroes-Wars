@@ -43,19 +43,6 @@ function modifier_item_spirit_orb_active:RemoveOnDeath()
 	return false 
 end
 
-function modifier_item_spirit_orb_active:OnCreated(htable)
-	if IsServer() then 
-		self._iHealthRegen = self:GetAbility():GetSpecialValueFor("bonus_health_regen")
-	    self._iManaRegen = self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
-
-	    self._iHealthRegen_Stack = self:GetAbility():GetSpecialValueFor("health_regen_per_stack")
-	    self._iManaRegen_Stack = self:GetAbility():GetSpecialValueFor("mana_regen_per_stack")
-
-	    self._iHealth = self:GetAbility():GetSpecialValueFor("bonus_health")
-	    self._iMana = self:GetAbility():GetSpecialValueFor("bonus_mana")
-	end
-end
-
 function modifier_item_spirit_orb_active:GetAttributes ()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT
 end
@@ -77,29 +64,31 @@ local funcs = {
 end
 
 function modifier_item_spirit_orb_active:GetModifierHealthBonus( params )
- 	return self._iHealth or 800
+ 	return 800
 end
 
 function modifier_item_spirit_orb_active:GetModifierManaBonus( params )
- 	return self._iMana or 800
+ 	return 800
 end
 
 function modifier_item_spirit_orb_active:GetModifierConstantHealthRegen( params )
- 	return (self._iHealthRegen or 7) + ((self._iHealthRegen_Stack or 3.0) * self:GetStackCount())
+ 	return 7 + (0.25 * self:GetStackCount())
 end
 
 function modifier_item_spirit_orb_active:GetModifierConstantManaRegen( params )
- 	return (self._iManaRegen or 2) + ((self._iManaRegen_Stack or 0.5) * self:GetStackCount())
+ 	return 2 + (0.06 * self:GetStackCount())
 end
 
 function modifier_item_spirit_orb_active:OnAbilityExecuted( params )
  	if IsServer() then 
  		local unit = params.unit 
- 		if unit ~= self:GetParent() and params.ability ~= nil and params.ability:ProcsMagicStick() == false then 
- 			if (unit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() <= 900 then self:IncrementStackCount() 
- 				local nFXIndex = ParticleManager:CreateParticle( "particles/items_fx/arcane_boots_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-				ParticleManager:ReleaseParticleIndex(nFXIndex)
- 			end 
+ 		if unit ~= self:GetParent() and unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and params.ability ~= nil and params.ability:ProcsMagicStick() == false then
+ 			if params.ability:GetCooldown(params.ability:GetLevel()) > 0 then  
+	 			if (unit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() <= 21215 then self:IncrementStackCount() 
+	 				local nFXIndex = ParticleManager:CreateParticle( "particles/items_fx/arcane_boots_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+					ParticleManager:ReleaseParticleIndex(nFXIndex)
+	 			end 
+	 		end
  		end 
  	end 
 end
