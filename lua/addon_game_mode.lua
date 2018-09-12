@@ -506,7 +506,7 @@ function GameMode:DmgFilter(ftable)
 					  local chance = math.random(100)
 					  if RollPercentage(25) then
 						  ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_dmg.vpcf", PATTACH_POINT_FOLLOW, victim)
-						  ftable.damage = ftable.damage + (ftable.damage * 0.75)
+						  ftable.damage = ftable.damage + ftable.damage
 					  end
 				  end
 				  if attacker:HasItemInInventory("item_ethernal_dagon") and ftable.damagetype_const > 1 then
