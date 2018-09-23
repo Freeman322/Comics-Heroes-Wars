@@ -147,13 +147,18 @@ function Precache( context )
 	print("PRECASHE ENDED")
 end
 
+
+---CONSTANTS 
+
+DOTA_DAMAGE_MULTIPLIER_MAGICAL_HEAL = 0.35
+DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT = 0.75
+DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT_CHANCE = 25
 -- Create the game mode when we activate
 function Activate()
 	GameRules.GameMode = GameMode()
 	GameRules.GameMode:InitGameMode()
 	Convars:SetInt("dota_wait_for_players_to_load_timeout", 240)
 end
-
 function GameMode:InitGameMode()
 	GameRules:SetTimeOfDay( 0.75 )
 	GameRules:SetHeroRespawnEnabled( true )
@@ -299,7 +304,6 @@ function GameMode:InitGameMode()
 
 	GameRules.Globals.Event = {}
 end
-
 function GameMode:OnGameRulesStateChange(keys)
   local newState = GameRules:State_Get()
   if newState == DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD then
@@ -323,12 +327,10 @@ function GameMode:OnGameRulesStateChange(keys)
 		GameMode:OnGameEnded(keys)
   	end
 end
-
 function GameMode:OnGameStarted(keys)
 	Network:GetData("stats", 0)
 	Network:GetInventories()
 end
-
 function GameMode:OnGameEnded(keys)
 	if GameRules:IsCheatMode() == false and IsInToolsMode() == false then
 		local playes_rad = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)
@@ -344,7 +346,6 @@ function GameMode:OnGameEnded(keys)
 		end
 	end
 end
-
 function GameMode:OnGameInProgress()
 	_G.Players[DOTA_TEAM_GOODGUYS] = Util:GetPlayersForTeam(DOTA_TEAM_GOODGUYS)
 	_G.Players[DOTA_TEAM_BADGUYS] = Util:GetPlayersForTeam(DOTA_TEAM_BADGUYS)
@@ -352,7 +353,6 @@ function GameMode:OnGameInProgress()
 
 	Network:CheckGameState()
 end
-
 function GameMode:OnThink()
 	local playes_rad = PlayerResource:GetPlayerCountForTeam(2)
 	local playes_dire = PlayerResource:GetPlayerCountForTeam(3)
@@ -385,7 +385,6 @@ function GameMode:OnThink()
 	end
 	return 1
 end
-
 function GameMode:OnNPCSpawned(keys)
   local npc = EntIndexToHScript(keys.entindex)
 
@@ -394,7 +393,6 @@ function GameMode:OnNPCSpawned(keys)
       Util:OnHeroInGame(npc)
   end
 end
-
 function GameMode:OnEntityKilled( keys )
   local killedUnit = EntIndexToHScript( keys.entindex_killed )
 
@@ -429,7 +427,6 @@ function GameMode:OnEntityKilled( keys )
 		end
     end
 end
-
 function GameMode:DmgFilter(ftable)
 	if pcall(function ()
 			local attacker
@@ -503,18 +500,18 @@ function GameMode:DmgFilter(ftable)
 					  return false
 				  end
 				  if attacker:HasItemInInventory("item_soul_urn") and ftable.damagetype_const > 1 then
-					  local chance = math.random(100)
-					  if RollPercentage(25) then
+					  if RollPercentage(DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT_CHANCE) then
 						  ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_dmg.vpcf", PATTACH_POINT_FOLLOW, victim)
-						  ftable.damage = ftable.damage + ftable.damage
+						  ftable.damage = ftable.damage + (ftable.damage * DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT)
 					  end
 				  end
-				  if attacker:HasItemInInventory("item_ethernal_dagon") and ftable.damagetype_const > 1 then
-					  local restore = damage*0.35
+				  if attacker:HasItemInInventory("item_ethernal_dagon_scepter") and ftable.damagetype_const > 1 then
 					  local particle_lifesteal = "particles/items3_fx/octarine_core_lifesteal.vpcf"
 					  local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, attacker)
 					  ParticleManager:SetParticleControl(lifesteal_fx, 0, attacker:GetAbsOrigin())
-					  attacker:Heal(restore, attacker)
+
+
+					  attacker:Heal(ftable.damage * DOTA_DAMAGE_MULTIPLIER_MAGICAL_HEAL, attacker)
 				  end
 				  if attacker:HasModifier("modifier_item_adamachi_core") and ftable.damagetype_const > 1 then
 					  local restore = damage*0.15

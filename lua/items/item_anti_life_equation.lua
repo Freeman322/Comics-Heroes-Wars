@@ -145,10 +145,25 @@ end
 
 function modifier_item_anti_life_equation_active:DeclareFunctions () --we want to use these functions in this item
     local funcs = {
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
+        MODIFIER_PROPERTY_MOVESPEED_MAX,
+        MODIFIER_PROPERTY_MOVESPEED_LIMIT
     }
 
     return funcs
+end
+
+function modifier_item_anti_life_equation_active:GetModifierMoveSpeed_Absolute(params)
+    return 128
+end
+
+function modifier_item_anti_life_equation_active:GetModifierMoveSpeed_Max(params)
+    return 128
+end
+
+function modifier_item_anti_life_equation_active:GetModifierMoveSpeed_Limit(params)
+    return 128
 end
 
 function modifier_item_anti_life_equation_active:GetModifierMoveSpeedBonus_Percentage (params)

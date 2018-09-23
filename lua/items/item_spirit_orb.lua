@@ -82,7 +82,7 @@ end
 function modifier_item_spirit_orb_active:OnAbilityExecuted( params )
  	if IsServer() then 
  		local unit = params.unit 
- 		if unit ~= self:GetParent() and unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and params.ability ~= nil and params.ability:ProcsMagicStick() == false then
+ 		if unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and params.ability ~= nil then
  			if params.ability:GetCooldown(params.ability:GetLevel()) > 0 then  
 	 			if (unit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() <= 21215 then self:IncrementStackCount() 
 	 				local nFXIndex = ParticleManager:CreateParticle( "particles/items_fx/arcane_boots_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )

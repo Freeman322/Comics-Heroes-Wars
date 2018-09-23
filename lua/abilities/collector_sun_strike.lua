@@ -32,6 +32,22 @@ function collector_sun_strike:OnSpellStart()
 
 	-- create vision
 	AddFOWViewer( caster:GetTeamNumber(), point, vision_distance, vision_duration, false )
+
+    if self:GetCaster():HasTalent("special_bonus_unique_collector_4") then 
+        local num = self:GetCaster():FindTalentValue("special_bonus_unique_collector_4")
+
+        for i = 1, num do
+        	CreateModifierThinker(
+				caster,
+				self,
+				"modifier_collector_sun_strike_thinker",
+				{ duration = delay },
+				point + RandomVector(1) * RandomFloat(0, 450),
+				caster:GetTeamNumber(),
+				false
+			)
+        end
+    end 
 end
 
 modifier_collector_sun_strike_thinker = class({})

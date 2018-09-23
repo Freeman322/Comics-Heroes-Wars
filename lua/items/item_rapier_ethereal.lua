@@ -44,12 +44,13 @@ end
 
 function modifier_item_rapier_ethereal:DeclareFunctions()
 	local funcs = {
-    MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
+    	MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
     }
 	return funcs
 end
 
 function modifier_item_rapier_ethereal:GetModifierSpellAmplify_Percentage()
+	if self:GetParent():GetUnitName() == "npc_dota_hero_oracle" or self:GetParent():GetUnitName() == "npc_dota_hero_zuus" then return 0 end 
 	return 100
 end
 

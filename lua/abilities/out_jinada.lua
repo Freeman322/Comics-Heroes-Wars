@@ -27,15 +27,10 @@ function modifier_out_jinada:OnAttackLanded (params)
     if IsServer () then
         if params.attacker == self:GetParent () then
             local hTarget = params.target
-            if hTarget:IsBuilding() then
-              return nil
-            end
-            if hTarget:GetUnitName() == "npc_dota_warlock_golem_1" then
-              return nil
-            end
-            if hTarget:GetUnitName() == "npc_dota_boss_thanos" then
-              return nil
-            end
+            
+            if hTarget:IsBuilding() then return end
+            if hTarget:IsAncient() then return end
+
             ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = self:GetAbility():GetSpecialValueFor("dmg")*hTarget:GetMaxHealth(), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_PHYSICAL})
             EmitSoundOn("Hero_Antimage.ManaBreak", hTarget)
             local nFXIndex = ParticleManager:CreateParticle("particles/econ/items/antimage/antimage_weapon_basher_ti5/am_basher_c.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget)

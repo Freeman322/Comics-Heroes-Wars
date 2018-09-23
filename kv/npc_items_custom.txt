@@ -263,6 +263,9 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityCooldown"				"3.5"
+		"AbilityDamage"					"200"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -286,12 +289,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_chance" 		    "85"
+				"bash_chance" 		    "75"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_damage" 				 "2.0"
+				"burn_damage" 			"2.0"
 			}
 		}
 	}
@@ -315,7 +318,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"35.0"
+		"AbilityCooldown"				"50.0"
 		"AbilitySharedCooldown"			"orchid"
 	
 		// Item Info
@@ -4913,7 +4916,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"minibash_chance"		"90"
+				"minibash_chance"		"35"
 			}
 			"08"
 			{

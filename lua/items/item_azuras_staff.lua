@@ -9,19 +9,17 @@ end
 function item_azuras_staff:OnSpellStart ()
     local hTarget = self:GetCursorTarget ()
     if hTarget ~= nil then
-        if ( not hTarget:TriggerSpellAbsorb (self) ) then
-            local info = {
-                EffectName = "particles/units/heroes/hero_arc_warden/arc_warden_flux_cast.vpcf",
-                Ability = self,
-                iMoveSpeed = 2500,
-                Source = self:GetCaster (),
-                Target = self:GetCursorTarget (),
-                iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
-            }
+        local info = {
+            EffectName = "particles/units/heroes/hero_arc_warden/arc_warden_flux_cast.vpcf",
+            Ability = self,
+            iMoveSpeed = 2500,
+            Source = self:GetCaster (),
+            Target = self:GetCursorTarget (),
+            iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
+        }
 
-            ProjectileManager:CreateTrackingProjectile (info)
-            EmitSoundOn ("Hero_ArcWarden.Flux.Cast", self:GetCaster () )
-        end
+        ProjectileManager:CreateTrackingProjectile (info)
+        EmitSoundOn ("Hero_ArcWarden.Flux.Cast", self:GetCaster () )
     end
 end
 

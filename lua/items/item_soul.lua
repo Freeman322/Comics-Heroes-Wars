@@ -3,6 +3,7 @@ if item_soul == nil then
 end
 
 LinkLuaModifier("modifier_item_soul", "items/item_soul.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_daredevil_supersence", "abilities/daredevil_supersence.lua", LUA_MODIFIER_MOTION_NONE)
 
 function item_soul:GetIntrinsicModifierName()
 	return "modifier_item_soul"
@@ -15,7 +16,7 @@ function item_soul:OnSpellStart()
 		local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), 99999, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
 		if #units > 0 then
 			for _,unit in pairs(units) do
-				unit:AddNewModifier( self:GetCaster(), self, "modifier_item_soul_aura", { duration = duration } )
+				unit:AddNewModifier( self:GetCaster(), self, "modifier_daredevil_supersence", { duration = duration } )
 			end
 		end
 

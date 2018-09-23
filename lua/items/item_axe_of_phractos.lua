@@ -72,10 +72,12 @@ end
 
 function item_axe_of_phractos_modifier:OnAttackLanded( params )
     if params.attacker == self:GetParent() then
-        if RollPercentage(self:GetAbility():GetSpecialValueFor("bash_chance")) then
+        if RollPercentage(self:GetAbility():GetSpecialValueFor("bash_chance")) and self:GetAbility():IsCooldownReady() then
             if not params.target:IsTower() then
                 params.target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 0.1})
-                ApplyDamage({attacker = self:GetParent(), victim = params.target, ability = self:GetAbility(), damage = 100, damage_type = DAMAGE_TYPE_PURE})
+                ApplyDamage({attacker = self:GetParent(), victim = params.target, ability = self:GetAbility(), damage = self:GetAbility():GetAbilityDamage(), damage_type = DAMAGE_TYPE_PURE})
+                
+                self:GetAbility():UseResources(false, false, true)
             end
         end
     end

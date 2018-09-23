@@ -617,12 +617,12 @@
 		"Ability16"				    "collector_sonic_boom"
 
 		"Ability17"					"special_bonus_exp_boost_30"
-		"Ability18"					"special_bonus_all_stats_12"
-		"Ability19"					"special_bonus_intelligence_10"
-		"Ability20"					"special_bonus_spell_amplify_20"
-		"Ability21"					"special_bonus_cooldown_reduction_25"
+		"Ability18"					"special_bonus_unique_collector_3"
+		"Ability19"					"special_bonus_unique_collector_2"
+		"Ability20"					"special_bonus_unique_collector_5"
+		"Ability21"					"special_bonus_unique_collector_1"
 		"Ability22"					"special_bonus_cast_range_400"
-		"Ability23"					"special_bonus_intelligence_25"
+		"Ability23"					"special_bonus_unique_collector_4"
 		"Ability24"					"special_bonus_all_stats_20"
 		"AbilityTalentStart"	 	"17"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
@@ -2339,7 +2339,7 @@
 		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"130"
+		"HealthBarOffset"			"220"
 		"precache"
 		{
 			"model"	  "models/heroes/hero_marvel/weapon/spear.vmdl"

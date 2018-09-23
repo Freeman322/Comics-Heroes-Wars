@@ -8,6 +8,10 @@ function collector_ice_blast:IsStealable()
 	return false
 end
 
+function collector_ice_blast:GetAbilityTextureName()
+  if self:GetCaster():HasModifier("modifier_alma") then return "custom/alma_cold" end
+  return self.BaseClass.GetAbilityTextureName(self)
+end
 
 
 function collector_ice_blast:OnSpellStart()
@@ -22,6 +26,26 @@ function collector_ice_blast:OnSpellStart()
                 target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = duration } )
                 ApplyDamage({attacker = self:GetCaster(), victim = target, damage = damage, ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
             end
+        end
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+            particle_cast = "particles/collector/alma_ice_blast.vpcf"
+            sound_cast =    "Alma.IcaBlast.Cast"
+
+            local nFXIndex = ParticleManager:CreateParticle( particle_cast, PATTACH_CUSTOMORIGIN, self:GetCaster() )
+            ParticleManager:SetParticleControl(nFXIndex, 0, self:GetCaster():GetCursorPosition())
+            ParticleManager:SetParticleControl(nFXIndex, 2, Vector (600, 600, 0))
+            ParticleManager:SetParticleControl(nFXIndex, 4, self:GetCaster():GetCursorPosition())
+
+            EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), sound_cast, self:GetCaster() )
+
+            Timers:CreateTimer(2, function()
+                if nFXIndex then 
+                    ParticleManager:DestroyParticle(nFXIndex, true)
+                end 
+            end)
+
+          return 
         end
 
         EmitSoundOn("Hero_Crystal.CrystalNova", self:GetCaster())

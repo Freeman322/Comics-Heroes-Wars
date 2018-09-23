@@ -5,6 +5,11 @@ function collector_sonic_boom:IsStealable()
 	return false
 end
 
+function collector_sonic_boom:GetAbilityTextureName()
+  if self:GetCaster():HasModifier("modifier_alma") then return "custom/alma_aoe" end
+  return self.BaseClass.GetAbilityTextureName(self)
+end
+
 function collector_sonic_boom:OnSpellStart()
   if IsServer() then
     local iAoE = self:GetSpecialValueFor( "radius" )
@@ -19,7 +24,23 @@ function collector_sonic_boom:OnSpellStart()
             EmitSoundOn("Hero_ElderTitan.EarthSplitter.Destroy", target)
   		end
     end
-      
+    
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+        particle_cast = "particles/collector/alma_sonic_boom.vpcf"
+        sound_cast =    "Alma.SonicBoom.Cast"
+
+        local nFXIndex = ParticleManager:CreateParticle( particle_cast, PATTACH_CUSTOMORIGIN, self:GetCaster() )
+        ParticleManager:SetParticleControl(nFXIndex, 0, self:GetCaster():GetAbsOrigin())
+        ParticleManager:SetParticleControl(nFXIndex, 1, Vector (iAoE, iAoE, 0))
+        ParticleManager:SetParticleControl(nFXIndex, 2, Vector(255, 0, 0))
+        ParticleManager:SetParticleControl(nFXIndex, 3, self:GetCaster():GetAbsOrigin())
+        ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+        EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), sound_cast, self:GetCaster() )
+
+      return 
+    end
+
     local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/elder_titan/elder_titan_ti7/elder_titan_echo_stomp_ti7.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() );
     ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
     ParticleManager:SetParticleControl( nFXIndex, 1, Vector(iAoE, iAoE, 0));

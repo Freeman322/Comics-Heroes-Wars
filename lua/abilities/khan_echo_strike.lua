@@ -3,14 +3,30 @@ LinkLuaModifier("modifier_khan_echo_strike", "abilities/khan_echo_strike.lua", L
 
 khan_echo_strike = class({})
 
+function khan_echo_strike:GetAbilityTextureName()
+  if self:GetCaster():HasModifier("modifier_khan") then return "custom/khan_manifold" end
+  return self.BaseClass.GetAbilityTextureName(self)
+end
+
+
 function khan_echo_strike:OnSpellStart()
 	local vDirection = self:GetCursorPosition() - self:GetCaster():GetOrigin()
 	vDirection = vDirection:Normalized()
 	local vDistance = vDirection:Length2D()
 	self.damage = self:GetAbilityDamage()
+	local particle = "particles/hero_khan/khan_echo_strike_projectile.vpcf"
+
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "khan_manifold_paradox") then
+		particle = "particles/econ/items/spectre/spectre_transversant_soul/spectre_transversant_spectral_dagger.vpcf"
+
+		EmitSoundOn( "Khan.Paradox.Cast" , self:GetCaster() )
+	else 
+		EmitSoundOn( "Ability.Powershot" , self:GetCaster() )
+		EmitSoundOn( "Ability.Windrun" , self:GetCaster() )
+	end 
 
 	local info = {
-		EffectName = "particles/hero_khan/khan_echo_strike_projectile.vpcf",
+		EffectName = particle,
 		Ability = self,
 		vSpawnOrigin = self:GetCaster():GetOrigin(),
 		fStartRadius = 300,
@@ -28,9 +44,6 @@ function khan_echo_strike:OnSpellStart()
 	self.nProjID = ProjectileManager:CreateLinearProjectile( info )
 	local duration = vDistance/2000
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_khan_echo_strike", {duration = duration})
-
-	EmitSoundOn( "Ability.Powershot" , self:GetCaster() )
-	EmitSoundOn( "Ability.Windrun" , self:GetCaster() )
 end
 
 --------------------------------------------------------------------------------
@@ -63,15 +76,22 @@ function khan_echo_strike:OnProjectileHit( hTarget, vLocation )
 		ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
 		ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
 
+		local particle = "particles/hero_khan/khan_echo_strike_jump.vpcf"
 
-		local nFXIndex1 = ParticleManager:CreateParticle( "particles/hero_khan/khan_echo_strike_jump.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "khan_manifold_paradox") then
+			particle = "particles/econ/items/spectre/spectre_transversant_soul/spectre_transversant_spectral_dagger_path_owner_impact.vpcf"
+
+			EmitSoundOn( "Khan.Paradox.Damage" , hTarget )
+		else 
+			EmitSoundOn( "Hero_PhantomAssassin.CoupDeGrace" , hTarget )
+			EmitSoundOn( "Hero_Juggernaut.OmniSlash.Damage" , hTarget )	
+		end 
+
+		local nFXIndex1 = ParticleManager:CreateParticle( particle, PATTACH_ABSORIGIN_FOLLOW, hTarget )
 		ParticleManager:SetParticleControl( nFXIndex1, 0, hTarget:GetOrigin())
 		ParticleManager:SetParticleControl( nFXIndex1, 1, hTarget:GetOrigin())
 		ParticleManager:SetParticleControl( nFXIndex1, 3, hTarget:GetOrigin())
 
-		EmitSoundOn( "Hero_PhantomAssassin.CoupDeGrace" , self:GetCaster() )
-		EmitSoundOn( "Hero_Juggernaut.OmniSlash.Damage" , self:GetCaster() )
-		
 		ScreenShake(hTarget:GetAbsOrigin(), 500, 500, 0.25, 2000, 0, true)
 	end
 
@@ -134,6 +154,4 @@ end
 function modifier_khan_echo_strike_armor:GetModifierPhysicalArmorBonus( params )
 	return self:GetAbility():GetSpecialValueFor("armor_reduction")
 end
-
-function khan_echo_strike:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

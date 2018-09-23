@@ -10,6 +10,11 @@ function hellspont_extermination:GetBehavior ()
     return DOTA_ABILITY_BEHAVIOR_AOE + DOTA_ABILITY_BEHAVIOR_POINT
 end
 
+function hellspont_extermination:GetAbilityTextureName()
+  if self:GetCaster():HasModifier("modifier_hellspont") then return "custom/helspont_hammer" end
+  return self.BaseClass.GetAbilityTextureName(self)
+end
+
 function hellspont_extermination:OnSpellStart ()
     local caster = self:GetCaster ()
     local point = self:GetCursorPosition ()
@@ -25,11 +30,19 @@ function hellspont_extermination_thinker:OnCreated(event)
         local ability = self:GetAbility()
         self.target = self:GetAbility():GetCaster():GetCursorPosition()
         self.radius = ability:GetSpecialValueFor("radius")
-        local nFXIndex = ParticleManager:CreateParticleForTeam( "particles/hellspont/hellspont_extermination_load.vpcf", PATTACH_CUSTOMORIGIN, thinker, thinker:GetTeamNumber())
-        ParticleManager:SetParticleControl( nFXIndex, 0, self.target)
-        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(450, 0, 0))
-        ParticleManager:SetParticleControl( nFXIndex, 3, self.target)
-        self:AddParticle( nFXIndex, false, false, -1, false, true )
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "hellspont_immortal_axe") then
+             local nFXIndex = ParticleManager:CreateParticleForTeam( "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_immortal1.vpcf", PATTACH_CUSTOMORIGIN, thinker, thinker:GetTeamNumber())
+            ParticleManager:SetParticleControl( nFXIndex, 0, self.target)
+            ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self.radius, self.radius, 0))
+            ParticleManager:SetParticleControl( nFXIndex, 3, self.target)
+            self:AddParticle( nFXIndex, false, false, -1, false, true )
+        else 
+            local nFXIndex = ParticleManager:CreateParticleForTeam( "particles/hellspont/hellspont_extermination_load.vpcf", PATTACH_CUSTOMORIGIN, thinker, thinker:GetTeamNumber())
+            ParticleManager:SetParticleControl( nFXIndex, 0, self.target)
+            ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self.radius, self.radius, 0))
+            ParticleManager:SetParticleControl( nFXIndex, 3, self.target)
+            self:AddParticle( nFXIndex, false, false, -1, false, true )
+        end
         EmitSoundOn("Hero_Invoker.SunStrike.Charge", thinker)
         AddFOWViewer( thinker:GetTeam(), self.target, 500, 3, false)
     end
@@ -40,12 +53,22 @@ function hellspont_extermination_thinker:OnDestroy(event)
         local thinker = self:GetParent()
         local ability = self:GetAbility()
 
-        local nFXIndex1 = ParticleManager:CreateParticle( "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_immortal1.vpcf", PATTACH_WORLDORIGIN, nil )
-        ParticleManager:SetParticleControl( nFXIndex1, 0, thinker:GetAbsOrigin())
-        ParticleManager:SetParticleControl( nFXIndex1, 1, Vector(500, 500, 0))
-        ParticleManager:SetParticleControl( nFXIndex1, 2, thinker:GetAbsOrigin())
-        ParticleManager:SetParticleControl( nFXIndex1, 3, thinker:GetAbsOrigin())
-        ParticleManager:ReleaseParticleIndex( nFXIndex1 );
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "hellspont_immortal_axe") then
+            local nFXIndex1 = ParticleManager:CreateParticle( "particles/hellspont/hellspont_extermination_hammer.vpcf", PATTACH_WORLDORIGIN, nil )
+            ParticleManager:SetParticleControl( nFXIndex1, 0, thinker:GetAbsOrigin())
+            ParticleManager:SetParticleControl( nFXIndex1, 1, Vector(self.radius, 1, 1))
+            ParticleManager:SetParticleControl( nFXIndex1, 2, Vector(self.radius, self.radius, 1))
+            ParticleManager:SetParticleControl( nFXIndex1, 3, thinker:GetAbsOrigin())
+            ParticleManager:SetParticleControl( nFXIndex1, 4, thinker:GetAbsOrigin())
+            ParticleManager:ReleaseParticleIndex( nFXIndex1 );
+        else 
+            local nFXIndex1 = ParticleManager:CreateParticle( "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_immortal1.vpcf", PATTACH_WORLDORIGIN, nil )
+            ParticleManager:SetParticleControl( nFXIndex1, 0, thinker:GetAbsOrigin())
+            ParticleManager:SetParticleControl( nFXIndex1, 1, Vector(self.radius, self.radius, 0))
+            ParticleManager:SetParticleControl( nFXIndex1, 2, thinker:GetAbsOrigin())
+            ParticleManager:SetParticleControl( nFXIndex1, 3, thinker:GetAbsOrigin())
+            ParticleManager:ReleaseParticleIndex( nFXIndex1 );
+        end 
 
         self.damage = ability:GetSpecialValueFor("damage")
         self.damage_percent = ability:GetSpecialValueFor("damage_percent")/100
@@ -70,7 +93,6 @@ function hellspont_extermination_thinker:OnDestroy(event)
     end
 end
 
-function hellspont_extermination:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
 
 if hellspont_extermination_scepter == nil then hellspont_extermination_scepter = class({}) end
 

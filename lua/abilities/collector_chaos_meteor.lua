@@ -51,8 +51,12 @@ end
 -- Initializations
 function modifier_collector_chaos_meteor_delay:OnCreated( kv )
 	if IsServer() then
-			-- Create Particle
-        local fx = ParticleManager:CreateParticle( "particles/items4_fx/meteor_hammer_aoe.vpcf", PATTACH_WORLDORIGIN, self:GetParent() )
+        local particle = "particles/items4_fx/meteor_hammer_aoe.vpcf"
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+            particle = "particles/collector/alma_meteor_aoe.vpcf"        
+        end 
+
+        local fx = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, self:GetParent() )
         ParticleManager:SetParticleControl( fx, 0, self:GetParent():GetOrigin() )
         ParticleManager:SetParticleControl( fx, 1, Vector( self:GetAbility():GetSpecialValueFor("area_of_effect"), 1, 1 ) )
         self:AddParticle(fx, false, false, -1, false, false)
@@ -95,8 +99,8 @@ function modifier_collector_chaos_meteor_thinker:OnCreated( kv )
 	if IsServer() then
 		self.burn_duration = self:GetAbility():GetSpecialValueFor("burn_duration")
 		self.radius = self:GetAbility():GetSpecialValueFor("area_of_effect")
-    self.damage_pct = self:GetAbility():GetSpecialValueFor("damage")
-    self._iDamage = self:GetAbility():GetOrbSpecialValueFor( "damage", "e" )
+        self.damage_pct = self:GetAbility():GetSpecialValueFor("damage")
+        self._iDamage = self:GetAbility():GetOrbSpecialValueFor( "damage", "e" )
     
 		self:StartIntervalThink(1)
 	end
@@ -104,12 +108,16 @@ end
 
 function modifier_collector_chaos_meteor_thinker:OnIntervalThink()
     if IsServer() then
-        local fx = ParticleManager:CreateParticle( "particles/items4_fx/meteor_hammer_spell.vpcf", PATTACH_WORLDORIGIN, self:GetCaster() )
+        local particle = "particles/items4_fx/meteor_hammer_spell.vpcf"
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+            particle = "particles/collector/alma_meteor_proj.vpcf"        
+        end 
+       
+        local fx = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, self:GetCaster() )
         ParticleManager:SetParticleControl( fx, 0, Vector(self:GetParent():GetOrigin().x + 1000, self:GetParent():GetOrigin().y + 1000, self:GetParent():GetOrigin().z + 3000) )
         ParticleManager:SetParticleControl( fx, 1, self:GetParent():GetOrigin() )
         ParticleManager:SetParticleControl( fx, 2, Vector( 0.5, self.radius, 0 ) )
         ParticleManager:ReleaseParticleIndex( fx )
-
 		-- find caught units
 		local enemies = FindUnitsInRadius(
 			self:GetCaster():GetTeamNumber(),	
@@ -124,6 +132,10 @@ function modifier_collector_chaos_meteor_thinker:OnIntervalThink()
         )
 		for _, enemy in pairs(enemies) do
             enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_collector_chaos_meteor_burn", {duration = self.burn_duration})
+
+            if self:GetCaster():HasTalent("special_bonus_unique_collector_1") then 
+                enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetCaster():FindTalentValue("special_bonus_unique_collector_1")})
+            end 
             
             local damageTable = {
                 attacker = self:GetAbility():GetCaster(),

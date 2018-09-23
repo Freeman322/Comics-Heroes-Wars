@@ -3,9 +3,19 @@ LinkLuaModifier( "modifier_collector_cold_snap", "abilities/collector_cold_snap.
 
 function collector_cold_snap:IsStealable()
 	return false
-  end
+end
 
-  
+function collector_cold_snap:GetAOERadius()
+    return IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_collector_3") or 0
+end
+
+function collector_cold_snap:GetBehavior()
+    if IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_collector_3") then 
+        return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK + DOTA_ABILITY_BEHAVIOR_AOE
+    end
+    return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK
+end
+ 
 function collector_cold_snap:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()
@@ -23,6 +33,23 @@ function collector_cold_snap:OnSpellStart()
 	)
 
 	self:PlayEffects( target )
+
+	if self:GetCaster():HasTalent("special_bonus_unique_collector_3") then 
+         local enemies = FindUnitsInRadius(
+			self:GetCaster():GetTeamNumber(),	
+			target:GetOrigin(),	
+			nil,	
+			350,
+			DOTA_UNIT_TARGET_TEAM_ENEMY,
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	
+			DOTA_UNIT_TARGET_FLAG_NONE,
+			0,
+			false	
+        )
+		for _, enemy in pairs(enemies) do
+            enemy:AddNewModifier(self:GetCaster(), self, "modifier_collector_cold_snap", {duration = duration})         
+        end
+    end 
 end
 
 --------------------------------------------------------------------------------

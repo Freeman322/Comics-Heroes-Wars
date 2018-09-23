@@ -63,6 +63,8 @@ function modifier_item_timepiece:DeclareFunctions()
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
         MODIFIER_EVENT_ON_TAKEDAMAGE,
         MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
+        MODIFIER_PROPERTY_MOVESPEED_MAX,
+        MODIFIER_PROPERTY_MOVESPEED_LIMIT,
         MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE 
     }
     return funcs
@@ -94,7 +96,15 @@ function modifier_item_timepiece:GetModifierMPRegenAmplify_Percentage(params)
 end
 
 function modifier_item_timepiece:GetModifierMoveSpeed_Absolute(params)
-    return 200
+    return 128
+end
+
+function modifier_item_timepiece:GetModifierMoveSpeed_Max(params)
+    return 128
+end
+
+function modifier_item_timepiece:GetModifierMoveSpeed_Limit(params)
+    return 128
 end
 
 function modifier_item_timepiece:OnTakeDamage( params )

@@ -6873,36 +6873,36 @@
 	}
 	"out_jinada"
 	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"							"ability_lua"
-			"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			"AbilityTextureName"				"custom/out_1"
-			"AbilityUnitDamageType"				"DAMAGE_TYPE_PHYSICAL"
-			"ScriptFile"						"abilities/out_jinada.lua"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"ability_lua"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"				"custom/out_1"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PHYSICAL"
+		"ScriptFile"						"abilities/out_jinada.lua"
 
-			// Stats
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"0"
-			"precache"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"precache"
+		{
+			"particle"  "particles/econ/items/antimage/antimage_weapon_basher_ti5/am_basher_c.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
 			{
-				"particle"  "particles/econ/items/antimage/antimage_weapon_basher_ti5/am_basher_c.vpcf"
+				"var_type"				"FIELD_INTEGER"
+				"gmg_pers"		        "3 4 5 6"
 			}
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
+			"02"
 			{
-					"01"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"gmg_pers"		        "3 4 5 6"
-					}
-					"02"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"dmg"		           "0.05 0.06 0.07 0.08"
-					}
+				"var_type"				"FIELD_FLOAT"
+				"dmg"		           "0.05 0.06 0.07 0.08"
 			}
+		}
 	}
 	//=================================================================================================================
 	// Headshot
@@ -7984,6 +7984,12 @@
 			"particle"  "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
 			"particle"  "particles/hellspont/hellspont_extermination_load.vpcf"
 			"particle"  "particles/hero_hellspont/hellspont_ambient.vpcf"
+			"particle"  "particles/hellspont/hellspont_extermination_hammer.vpcf"
+			"particle"  "particles/econ/items/lina/lina_ti7/light_strike_array_pre_ti7.vpcf"
+			"particle"  "particles/econ/items/riki/riki_head_ti8_crimson/riki_head_ambient_ti8_crimson_head.vpcf"
+			"particle"  "particles/hellspont/hellspont_ambient.vpcf"
+			"particle"  "particles/econ/items/undying/undying_manyone/undying_pale_gold_tombstone_ambient_eyes.vpcf"
+			"model"  	"models/heroes/hero_hellspont/helmet/hellspont_immortal_axe.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -15213,8 +15219,11 @@
 			"model"		 "models/heroes/han/han_weapon_offhand.vmdl"
 			"model"		 "models/items/antimage/pw_tustarkuri_arms/antimage_arms_lod0.vmdl"
 			"model"		 "models/heroes/han/han_weapon.vmdl"
-					"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
-					"particle"  "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"particle"   "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+			"particle"   "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"model"		 "models/heroes/han/khan_manifold_paradox/manifold_paradox.vmdl"
+			"particle"   "particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
+			"model"		 "models/heroes/han/khan_manifold_paradox/manifold_paradox_offhand.vmdl"
 		}
 		"AbilitySpecial"
 		{
@@ -28026,13 +28035,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"5"
 		"AbilityManaCost"				"50"
-		"AbilityCastAnimation"			"ACT_INVALID"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		
 		"precache"
 		{
 			"model"						"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_belt/ti8_invoker_prism_crystal_spellcaster_belt.vmdl"
 			"model"						"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_shoulder/ti8_invoker_prism_crystal_spellcaster_shoulder.vmdl"
 			"model"						"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_back/ti8_invoker_prism_crystal_spellcaster_capevmdl"
+			"model"						"models/heroes/hero_collector/collector_arcana/collector.vmdl"
+			"particle"  				"particles/collector/alma_ambient.vpcf"
+			"particle"  				"particles/collector/alma_collect_cast.vpcf"
+			"particle" 					"particles/collector/alma_emp_cast.vpcf"
+			"particle"  				"particles/collector/alma_emp_release.vpcf"
+			"particle"  				"particles/collector/alma_sonic_boom.vpcf"
+			"particle"  				"particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf"
+			"particle"  				"particles/econ/items/dark_willow/dark_willow_ti8_immortal_head/dw_crimson_ti8_immortal_cursed_crownmarker.vpcf"
+			"particle"  				"particles/collector/alma_tornado.vpcf"
+			"particle"  				"particles/collector/alma_ice_blast.vpcf"
+
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -31564,6 +31584,101 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"duration"				"3"
+			}
+		}
+	}
+	"special_bonus_unique_collector_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1.25"
+			}
+		}
+	}
+	"special_bonus_unique_collector_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"350"
+			}
+		}
+	}
+	"special_bonus_unique_collector_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"-1"
+			}
+		}
+	}
+	"special_bonus_unique_collector_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1000"
+			}
+		}
+	}
+	"special_bonus_unique_collector_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"5"
 			}
 		}
 	}

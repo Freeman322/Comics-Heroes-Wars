@@ -15,6 +15,13 @@ function collector_collect:GetCooldown( nLevel )
 	return self.BaseClass.GetCooldown( self, nLevel )
 end
 
+
+function collector_collect:GetAbilityTextureName()
+  if self:GetCaster():HasModifier("modifier_alma") then return "custom/alma_collect" end
+  return self.BaseClass.GetAbilityTextureName(self)
+end
+
+
 --------------------------------------------------------------------------------
 -- Invoke List and Constants
 orb_manager.orb_order = "qwe"
@@ -91,9 +98,15 @@ function collector_collect:GetOrbs()
 	return ret
 end
 function collector_collect:PlayEffects()
-	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_invoker/invoker_invoke.vpcf"
 	local sound_cast = "Hero_Invoker.Invoke"
+
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+		particle_cast = "particles/collector/alma_collect_cast.vpcf"
+		sound_cast = "MolagBal.Maceofoblivion.Cast"
+
+		self:GetCaster():StartGesture(ACT_DOTA_CAST_ABILITY_6)
+	end
 
 	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_POINT_FOLLOW, self:GetCaster() )

@@ -20,6 +20,11 @@ end
 function collector_tornado:OnSpellStart()
     if IsServer() then 
         self._iDistance = self:GetOrbSpecialValueFor( "travel_distance", "w" )
+
+        if self:GetCaster():HasTalent("special_bonus_unique_collector_2") then 
+            self._iDistance = self._iDistance + 27850
+        end 
+
         self._iSpeed = self:GetSpecialValueFor( "travel_speed" )
         self._iWidth = self:GetSpecialValueFor( "radius_end" )
         self.vision_aoe = self:GetSpecialValueFor( "radius_start" )
@@ -33,9 +38,14 @@ function collector_tornado:OnSpellStart()
 
         local vDirection = ( vDirection:Normalized() ) * self._iDistance
         
+        local particle_cast = "particles/econ/items/invoker/invoker_ti6/invoker_tornado_ti6.vpcf"
 
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+            particle_cast = "particles/collector/alma_tornado.vpcf"
+        end
+        
         local info = {
-            EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_tornado_ti6.vpcf",
+            EffectName = particle_cast,
             Ability = self,
             vSpawnOrigin = self:GetCaster():GetOrigin(), 
             fStartRadius = self._iWidth,

@@ -98,6 +98,9 @@ function modifier_collector_ghost_walk:DeclareFunctions()
 		MODIFIER_PROPERTY_INVISIBILITY_LEVEL,
 		MODIFIER_EVENT_ON_ABILITY_EXECUTED,
 		MODIFIER_EVENT_ON_ATTACK,
+        MODIFIER_PROPERTY_MOVESPEED_MAX,
+		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
 	}
 
 	return funcs
@@ -110,6 +113,19 @@ end
 function modifier_collector_ghost_walk:GetModifierInvisibilityLevel()
 	return 1
 end
+
+function modifier_collector_ghost_walk:GetModifierMoveSpeed_Max()
+	return 1000
+end
+
+function modifier_collector_ghost_walk:GetModifierMoveSpeed_Limit()
+	return 1000
+end
+
+function modifier_collector_ghost_walk:GetModifierMoveSpeedBonus_Constant()
+	return IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_collector_5") or 0 
+end
+
 
 function modifier_collector_ghost_walk:OnAbilityExecuted( params )
 	if IsServer() then

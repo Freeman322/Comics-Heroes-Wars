@@ -9,6 +9,11 @@ function collector_sanity_eclipse:IsStealable()
 	return false
 end
 
+function collector_sanity_eclipse:GetAbilityTextureName()
+  if self:GetCaster():HasModifier("modifier_alma") then return "custom/alma_emp" end
+  return self.BaseClass.GetAbilityTextureName(self)
+end
+
 
 function collector_sanity_eclipse:OnSpellStart()
 	-- unit identifier
@@ -107,6 +112,12 @@ function modifier_collector_sanity_eclipse_thinker:PlayEffects1()
 	local particle_cast = "particles/units/heroes/hero_invoker/invoker_emp.vpcf"
 	local sound_cast = "Hero_Invoker.EMP.Charge"
 
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+		particle_cast = "particles/collector/alma_emp_cast.vpcf"
+		sound_cast = "Fate.Phasemirror.Cast"
+	end
+
+
 	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, self:GetCaster() )
 	ParticleManager:SetParticleControl( effect_cast, 0, self:GetParent():GetOrigin() )
@@ -120,8 +131,28 @@ end
 function modifier_collector_sanity_eclipse_thinker:PlayEffects2()
 	-- Get Resources
     local sound_cast = "Hero_ObsidianDestroyer.SanityEclipse.TI8"
-    
-    local nFXIndex = ParticleManager:CreateParticle( "particles/galactus/galactus_seed_of_ambition_eternal_item.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
+    local particle_cast = "particles/galactus/galactus_seed_of_ambition_eternal_item.vpcf"
+
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+		particle_cast = "particles/collector/alma_emp_release.vpcf"
+		sound_cast = "Alma.Emp.Cast"
+
+		local nFXIndex = ParticleManager:CreateParticle( particle_cast, PATTACH_CUSTOMORIGIN, self:GetCaster() )
+	    ParticleManager:SetParticleControl(nFXIndex, 0, self:GetParent():GetAbsOrigin())
+	   	ParticleManager:SetParticleControl(nFXIndex, 1, Vector (self.radius, self.radius, 0))
+	    ParticleManager:SetParticleControl(nFXIndex, 2, Vector(self.radius, self.radius, 0))
+	    ParticleManager:SetParticleControl(nFXIndex, 3, self:GetParent():GetAbsOrigin())
+	    ParticleManager:SetParticleControl(nFXIndex, 4, self:GetParent():GetAbsOrigin())
+	    ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+		EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), sound_cast, self:GetCaster() )
+
+		return 
+	end
+
+
+
+    local nFXIndex = ParticleManager:CreateParticle( particle_cast, PATTACH_CUSTOMORIGIN, self:GetCaster() )
     ParticleManager:SetParticleControl(nFXIndex, 0, self:GetParent():GetAbsOrigin())
     ParticleManager:SetParticleControl(nFXIndex, 2, self:GetParent():GetAbsOrigin())
     ParticleManager:SetParticleControl(nFXIndex, 3, self:GetParent():GetAbsOrigin())
