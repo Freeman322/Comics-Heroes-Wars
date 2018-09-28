@@ -54,6 +54,9 @@ function modifier_miraak_mark_for_death:OnIntervalThink()
         local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetParent():GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
         if #units > 0 then
             for _, target in pairs(units) do
+                if self:GetCaster():HasTalent("special_bonus_unique_miraak_4") then
+                    self:GetParent():ReduceMana(self:GetAbility():GetSpecialValueFor("damage") + self:GetParent():GetMaxMana() / 50 )
+                end
                 local damage = {
                     victim = target,
                     attacker = self:GetCaster(),

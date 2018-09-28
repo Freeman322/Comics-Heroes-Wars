@@ -62,6 +62,7 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_batrider.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts", context)
@@ -151,7 +152,7 @@ end
 ---CONSTANTS 
 
 DOTA_DAMAGE_MULTIPLIER_MAGICAL_HEAL = 0.35
-DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT = 0.75
+DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT = 1
 DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT_CHANCE = 25
 -- Create the game mode when we activate
 function Activate()
@@ -505,7 +506,7 @@ function GameMode:DmgFilter(ftable)
 						  ftable.damage = ftable.damage + (ftable.damage * DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT)
 					  end
 				  end
-				  if attacker:HasItemInInventory("item_ethernal_dagon_scepter") and ftable.damagetype_const > 1 then
+				  if attacker:HasItemInInventory("item_ethernal_dagon") and ftable.damagetype_const > 1 then
 					  local particle_lifesteal = "particles/items3_fx/octarine_core_lifesteal.vpcf"
 					  local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, attacker)
 					  ParticleManager:SetParticleControl(lifesteal_fx, 0, attacker:GetAbsOrigin())

@@ -2288,14 +2288,14 @@
 		"Ability3"				"marvel_charge_of_darkness"				        	// Ability 3
 		"Ability4"				"generic_hidden"				            // Ability 4
 		"Ability5"				"generic_hidden"
-		"Ability6"			    "marvel_challange_call"
+		"Ability6"			    "legion_commander_duel"
 		"Ability7"			    ""
-		"Ability10"				"special_bonus_unique_marvel"
+		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_all_stats_12"
 		"Ability12"				"special_bonus_unique_marvel_3"
 		"Ability13"				"special_bonus_unique_marvel_2"
 		"Ability14"				"special_bonus_cooldown_reduction_25"
-		"Ability15"				"special_bonus_unique_marvel_1"
+		"Ability15"				"special_bonus_unique_legion_commander"
 		"Ability16"				"special_bonus_strength_25"
 		"Ability17"				"special_bonus_all_stats_20"
 
@@ -2311,8 +2311,7 @@
 		"AttackRate"				"1.6"									// Speed of attack.
 		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"128"									// Range within a target can be attacked.
-				// Particle system model for projectile.
+		"AttackRange"				"128"									// Range within a target can be attacked.		
 		"ProjectileSpeed"			"0"									// Speed of projectile.
 
 		// Attributes
@@ -2339,10 +2338,14 @@
 		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		"SoundSet"					"Hero_Alchemist"
+
 		"HealthBarOffset"			"220"
 		"precache"
 		{
-			"model"	  "models/heroes/hero_marvel/weapon/spear.vmdl"
+			"model"	  "models/heroes/hero_marvel/weapon/spear.vmdl"		
 		}
 	}
 	"npc_dota_hero_lion"
@@ -4966,7 +4969,7 @@
 		"Ability10"					"special_bonus_unique_miraak_2"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_unique_miraak_3"
-		"Ability13"					"special_bonus_cast_range_200"
+		"Ability13"					"special_bonus_unique_miraak_4"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
 		"Ability15"					"special_bonus_unique_miraak_1"
 		"Ability16"					"special_bonus_spell_block_15"
