@@ -187,7 +187,7 @@ end
 function modifier_item_frostmourne_slowing:DeclareFunctions ()
     local funcs = {
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
     }
 
     return funcs
@@ -208,7 +208,7 @@ function modifier_item_frostmourne_slowing:GetModifierAttackSpeedBonus_Constant 
     return hAbility:GetSpecialValueFor ("cold_attack_speed")
 end
 
-function modifier_item_frostmourne_slowing:GetModifierMoveSpeedBonus_Constant (params)
+function modifier_item_frostmourne_slowing:GetModifierMoveSpeedBonus_Percentage (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("cold_movement_speed")
 end
