@@ -922,17 +922,17 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"4"
+		"ArmorPhysical"				"15"
 		"MagicalResistance"			"35"
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"225"
-		"AttackDamageMax"			"225"
+		"AttackDamageMin"			"240"
+		"AttackDamageMax"			"260"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.75"
-		"AttackAnimationPoint"		"0.94"
+		"AttackRate"				"0.7"
+		"AttackAnimationPoint"		"0.56"
 		"AttackAcquisitionRange"	"1050"
 		"AttackRange"				"750"
 		"ProjectileModel"			"particles/neutral_fx/black_dragon_attack.vpcf"
@@ -966,15 +966,15 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"390"
+		"MovementSpeed"				"410"
 		"MovementTurnRate"			"0.5"
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1900"
-		"StatusHealthRegen"			"5"
-		"StatusMana"				"0"
-		"StatusManaRegen"			"0"
+		"StatusHealth"				"2000"
+		"StatusHealthRegen"			"10"
+		"StatusMana"				"400"
+		"StatusManaRegen"			"4"
 
 		// Team
 		//----------------------------------------------------------------
@@ -1011,14 +1011,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"20"
+		"ArmorPhysical"				"30"
 		"MagicalResistance"			"35"
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"220"
-		"AttackDamageMax"			"220"
+		"AttackDamageMin"			"210"
+		"AttackDamageMax"			"230"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.75"
 		"AttackAnimationPoint"		"0.56"
@@ -1055,13 +1055,13 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"390"
+		"MovementSpeed"				"410"
 		"MovementTurnRate"			"0.5"
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"
-		"StatusHealthRegen"			"24"
+		"StatusHealth"				"3500"
+		"StatusHealthRegen"			"30"
 		"StatusMana"				"0"
 		"StatusManaRegen"			"0"
 
