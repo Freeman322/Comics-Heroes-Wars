@@ -1,0 +1,287 @@
+// No spaces in event names, max length 32
+// All strings are case sensitive
+//
+// valid data key types are:
+//   string : a zero terminated string
+//   bool   : unsigned int, 1 bit
+//   byte   : unsigned int, 8 bit
+//   short  : signed int, 16 bit
+//   long   : signed int, 32 bit
+//   float  : float, 32 bit
+//   uint64 : unsigned int 64 bit
+//   local  : any data, but not networked to clients
+//
+// following key names are reserved:
+//   local      : if set to 1, event is not networked to clients
+//   unreliable : networked, but unreliable
+//   suppress   : never fire this event
+//   time	: firing server time
+//   eventid	: holds the event ID
+
+"CustomEvents"
+{
+	"add_script_reloaded"
+	{
+		"fileName"				"string"
+	}
+
+	"fof_game_paused"
+	{
+		"bPaused"		    	"byte"
+	}
+
+	"fof_game_ended"
+	{
+		"bWinner"				"byte"
+		"bLoser"		    	"byte"
+	}
+
+	"fof_game_time"
+	{
+		"fGameTime"				"float"
+		"fDeltaTime"			"float"
+	}
+
+	"flag_glyph_visible"
+	{
+		"bVisible"				"bool"
+	}
+    
+    "fof_glyph_used"
+	{
+		"teamnumber"			"short"
+	}
+
+	"flag_glyph_used"
+	{
+		"team"					"short"
+		"sPlayerInfo"			"string"
+	}
+
+	"flag_glyph_end"
+	{
+		"team"					"short"
+		"cooldown"				"float"
+		"sPlayerInfo"			"string"
+	}
+
+	"fof_score_update"
+	{
+		"nRadiantScore"	    	"short"
+		"nDireScore"			"short"
+		"firedByTeam"			"short"
+	}
+
+	"fof_logs_update"
+	{
+		"nRadiantLogs"			"short"
+		"nDireLogs"				"short"
+	}
+	
+	// --------------------------------------------------------
+	// In all flag events, bTeam refers to the team of the flag
+	// --------------------------------------------------------
+
+	"fof_first_flag_spawned"
+	{
+
+	}
+
+	"fof_flag_spawned"
+	{
+		"bTeam"					"byte"
+	}
+
+	"fof_flag_taken"
+	{
+		"bTeam"					"byte"
+		"entindex"				"long"
+	}
+
+	// This is to prevent the announcer repeating the line twice
+	// In case two or more players take the orb at the same time
+	// It is used exclusivly on item_rota_orb.lua
+	"fof_flag_item_taken"
+	{
+		"bTeam"					"byte"
+		"entindex"				"long"
+	}
+
+
+	"fof_flag_returned"
+	{
+		"bTeam"					"byte"
+		"entindex"				"long"
+	}
+
+
+	"fof_flag_captured"
+	{
+		"bTeam"					"byte"
+		"entindex"				"long"
+	}
+
+	"fof_flag_dropped"
+	{
+		"bTeam"					"byte"
+		"entindex"				"long"
+	}
+
+
+	"fof_altar_captured"
+	{
+		"bOldTeam"				"byte"
+		"bNewTeam"				"byte"
+	}
+
+	"fof_outpost_captured"
+	{
+		"bOutpost"				"byte"
+		"bOldTeam"				"byte"
+		"bNewTeam"				"byte"
+		"nEntIndex"				"long"
+	}
+
+	"fof_log_used"
+	{
+		"bTeam"					"byte"
+		"amount"				"short"
+	}
+
+	"fof_update_item_draft_turn"
+	{
+		"nCurrentTeamBanning"	"byte"
+	}
+
+	"fof_item_draft_state_changed"
+	{
+		"nState"				"short"
+	}
+
+	"fof_captains_mode_state_changed"
+	{
+		"nState"				"short"
+	}
+
+	"fof_all_pick_state_changed"
+	{
+		"nState"				"short"
+	}
+
+	"fof_coin_toss_state_changed"
+	{
+		"nState"				"short"
+	}
+
+	"fof_preparation_state_changed"
+	{
+		"nState"				"short"
+	}
+
+	"fof_item_draft_end"
+	{
+	
+	}
+    
+    "fof_team_select_end"
+    {
+    
+    }
+
+	"custom_error_show"
+	{
+		"nPlayerID"				"short"
+		"sError"				"string"
+	}
+
+	"fof_voting_state_changed"
+	{
+		"nState"				"short"
+	}
+    
+    "fof_captain_select_state_changed"
+	{
+		"nState"				"short"
+	}
+
+	"fof_player_voted"
+	{
+		"nCasualVotes"			"short"
+		"nCompetitiveVotes"	"short"
+	}
+
+	"fof_voting_update_clock"
+	{
+		"nTimeRemaining"		"short"
+	}
+
+	"fof_item_tpscroll_info"
+	{
+		"nChannelTime"			"short"
+		"entindex"				"long"
+	}
+
+	"fof_item_travel_boots_info"
+	{
+		"nChannelTime"			"short"
+		"entindex"				"long"
+	}
+
+	"fof_item_travel_boots_2_info"
+	{
+		"nChannelTime"			"short"
+		"entindex"				"long"
+	}
+
+	"fof_well_used"
+	{
+		"entindex"				"long"
+	}
+
+	"fof_well_cooldown_end"
+	{
+		"entindex"				"long"
+	}
+
+	"fof_pronin_crystal_captured"
+	{
+		"entindex"				"long"
+	}
+    
+    "fof_pronin_spawn"
+    {
+        "team"                  "byte"
+    }
+    
+    "fof_pronin_captured"
+    {
+        "team"                  "byte"
+    }
+    
+    "fof_pronin_defeated"
+    {
+        "team"                  "byte"
+    }
+    
+    "fof_item_rota_lost_effect_end"
+    {
+        "entindex"              "long"
+    }
+    
+    "fof_goblin_artillery_begin"
+    {
+        "entindex"              "long"
+    }
+    
+    "fof_goblin_artillery_end"
+    {
+        "entindex"              "long"
+    }
+
+    "fof_player_picked_hero"
+    {
+    	"nPlayerID"				"short"
+    	"sHeroName"				"string"
+    }
+}
+
