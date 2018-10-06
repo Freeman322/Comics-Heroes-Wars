@@ -19724,7 +19724,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"						"2"
 		"ScriptFile"								"abilities/spawn_respawn.lua"
-		"HasScepterUpgrade"					"0"
+		"HasScepterUpgrade"					"1"
 		"AbilitySound"							"Hero_SkeletonKing.Reincarnate"
 
 		// Cost
@@ -19750,32 +19750,32 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"reincarnate_time"	    	"3.0"
+				"reincarnate_time"	    		"3.0"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"spell_amp"					"50 75 100"
+				"spell_amp"						"50 75 100"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"health_bonus"				"600 1050 1500"
+				"health_bonus"					"500 1000 1500"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"buff_duration"				"30"
+				"buff_duration"					"10"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius_scepter"			"100"
+				"radius_scepter"				"700"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_scepter"			"0"
+				"damage_scepter"				"400 700 1000"
 			}
 		}
 	}

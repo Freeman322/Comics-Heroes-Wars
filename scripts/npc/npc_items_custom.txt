@@ -6633,10 +6633,20 @@
 				"var_type"				"FIELD_INTEGER"
 				"cleave_ending_width"			"330"
 			}			
-			"09"
+			"17"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cleave_distance"			"350"
+			}
+			"18"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp_regen"		"8"
+			}
+			"19"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mp_regen"		"2"
 			}
 		}
 	}
