@@ -136,6 +136,19 @@ function samurai_atomic_dance:OnSpellStart()
 
                     EmitSoundOn("Hero_Omniknight.Purification.Wingfall", self:GetCaster())
                     EmitSoundOn("Hero_Omniknight.Repel.TI8", self:GetCaster())
+                 elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "samurai_sword_od_darkness") == true then
+                 
+                    local nFXIndex = ParticleManager:CreateParticle( "particles/hero_samurai/custom_sword_ulti_trail.vpcf", PATTACH_CUSTOMORIGIN, unit );
+                    ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
+                    ParticleManager:SetParticleControlEnt( nFXIndex, 1, next_unit, PATTACH_POINT_FOLLOW, "attach_hitloc", next_unit:GetOrigin(), true );
+                    ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+                    local nFXIndex = ParticleManager:CreateParticle ("particles/hero_samurai/custom_sword_ulti_attacked.vpcf", PATTACH_ABSORIGIN, unit);
+                    ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", next_unit:GetOrigin(), true );
+                    ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", next_unit:GetOrigin(), true );
+                    ParticleManager:ReleaseParticleIndex (nFXIndex);
+
+                     EmitSoundOn("Hero_Juggernaut.BladeDance.Arcana", self:GetCaster())
                 else
                      local nFXIndex = ParticleManager:CreateParticle ("particles/samurai/samurai_atomic_dance_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit);
                     ParticleManager:SetParticleControl(nFXIndex, 0, unit:GetAbsOrigin());

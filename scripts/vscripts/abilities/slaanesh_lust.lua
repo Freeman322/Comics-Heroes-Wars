@@ -113,7 +113,7 @@ function modifier_slaanesh_lust:OnIntervalThink()
         
         local damage = (thinker:GetMaxHealth () * damage_pers) + damage_base
 
-        ApplyDamage ( { attacker = self:GetCaster (), victim = thinker, ability = hAbility, damage = damage, damage_type = hAbility:GetAbilityDamageType()}) 
+        ApplyDamage ( { attacker = self:GetCaster (), victim = thinker, ability = hAbility, damage = damage, damage_type = hAbility:GetAbilityDamageType(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION}) 
     end
 end
 

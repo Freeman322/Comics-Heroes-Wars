@@ -337,27 +337,27 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_health"				"1000"
+				"bonus_health"				"1200"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"1000"
+				"bonus_mana"				"1200"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"75"
+				"bonus_all_stats"			"80"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"100"
+				"bonus_attack_speed"		"120"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"100"
+				"bonus_damage"				"120"
 			}
 			"06"
 			{
@@ -1413,7 +1413,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"80"
+				"bonus_all_stats"		"90"
 			}
 			"02"
 			{
@@ -1478,12 +1478,12 @@
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed"				"-75"
+				"movespeed"				"-35"
 			}
 			"15"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attackslow_tooltip"	"-75"
+				"attackslow_tooltip"	"-55"
 			}
 			"16"
 			{
@@ -1899,7 +1899,7 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_all_stats"			       	"60"
+				"bonus_all_stats"			       	"55"
 			}
 			"02"
 			{
@@ -1909,7 +1909,7 @@
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_health_regen"				"60"
+				"bonus_health_regen"				"55"
 			}
 		}
 	}
@@ -3530,7 +3530,7 @@
 		"BaseClass"							"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"200"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -3539,7 +3539,7 @@
 		"ItemResult"					"item_sunshines_aromor"
 		"ItemRequirements"
 		{
-			"01"						"item_shine_of_sea;item_shivas_guard;item_pipe"
+			"01"						"item_shine_of_sea;item_shivas_guard;item_pipe;item_vitality_booster"
 		}
 	}
 	//=================================================================================================================
@@ -4114,7 +4114,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
-		"ItemCost"						"17500"
+		"ItemCost"						"18400"
 		"ItemShopTags"					"int;armor;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"sun"
@@ -4128,12 +4128,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"70"
+				"bonus_strength"		"80"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"65"
+				"bonus_intellect"		"80"
 			}
 			"04"
 			{
@@ -4143,7 +4143,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1200"
+				"bonus_health"			"1400"
 			}
 			"06"
 			{
@@ -5386,7 +5386,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"GLOBAL"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"60.0"
+		"AbilityCooldown"				"50.0"
 		"ItemCost"						"8950"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5470,7 +5470,7 @@
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"50"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -5568,7 +5568,7 @@
 	
 	    // Time
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "25.0"
+	    "AbilityCooldown"               "30.0"
 		
 		"precache"
 		{
@@ -6111,7 +6111,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"aura_health_regen"			"30"
+				"aura_health_regen"			"50"
 			}			
 			"06"
 			{
@@ -6121,7 +6121,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_health_regen_bonus"	"60"
+				"aura_health_regen_bonus"	"100"
 			}			
 			"08"
 			{
@@ -6407,7 +6407,7 @@
 		"Model"						   "models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -6633,7 +6633,7 @@
 				"var_type"				"FIELD_INTEGER"
 				"cleave_ending_width"			"330"
 			}			
-			"17"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cleave_distance"			"350"
@@ -6709,7 +6709,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"18"
+				"spell_amp"				"16"
 			}
 			"03"
 			{
@@ -6734,7 +6734,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magical_splash"		"15"
+				"magical_splash"		"18"
 			}
 			"08"
 			{

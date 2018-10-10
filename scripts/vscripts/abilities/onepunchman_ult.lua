@@ -36,8 +36,13 @@ function onepunchman_ult:OnSpellStart()
           ParticleManager:SetParticleControl( nFXIndex, 12, hTarget:GetAbsOrigin())
           ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-          hTarget:Kill(self, self:GetCaster())
-          hTarget:ForceKill(false)
+          ApplyDamage({
+            victim = hTarget,
+            attacker = self:GetCaster(),
+            ability = self,
+            damage = 99999999,
+            damage_type = self:GetAbilityDamageType()
+          })
         end
       end
     end
@@ -90,8 +95,13 @@ function modifier_onepunchman_ult:OnAttackLanded (params)
                 ParticleManager:SetParticleControl( nFXIndex, 12, hTarget:GetAbsOrigin())
                 ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-                hTarget:Kill(self, self:GetCaster())
-                hTarget:ForceKill(false)
+                ApplyDamage({
+                  victim = hTarget,
+                  attacker = self:GetCaster(),
+                  ability = self:GetAbility(),
+                  damage = 99999999,
+                  damage_type = self:GetAbility():GetAbilityDamageType()
+                })
 
                 self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
                 self:GetAbility():PayManaCost()

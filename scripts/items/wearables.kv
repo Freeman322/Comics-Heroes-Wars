@@ -3319,6 +3319,10 @@
                     }
                 }
             }
+            "nemesis_custom"
+            {
+
+            }
         } 
         "weapon_right"
         {
@@ -3352,6 +3356,10 @@
                     }
                }
             }
+            "nemesis_custom"
+            {
+
+            }
         } 
         "armor"
         {
@@ -3364,6 +3372,10 @@
                         "model"             "models/items/antimage/avenging_anchorite_armor/avenging_anchorite_armor.vmdl"
                     }
                 }
+            }
+            "nemesis_custom"
+            {
+
             }
         }
         "belt"
@@ -3378,6 +3390,18 @@
                     }
                 }
             }
+            "nemesis_custom"
+            {
+                "model"                     "models/heroes/han/nemesis_custom/nemesis.vmdl"
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_nemesis"
+                        "modifier_path"     "modifiers/modifier_nemesis.lua"
+                    }
+                }    
+            }
         }
         "head"
         {
@@ -3391,6 +3415,53 @@
                     }
                 }
             }
+            "nemesis_custom"
+            {
+
+            }
         }
+    }
+    "npc_dota_hero_bloodseeker"
+    {
+        "armor"
+        {
+            "flash_custom"
+            {
+                "model"                     "models/heroes/hero_flash/flash_custom/flash.vmdl"   
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_flash_custom"
+                        "modifier_path"     "modifiers/modifier_flash_custom.lua"
+                    }
+                }              
+            }
+        }      
+    }
+    "npc_dota_hero_dazzle"
+    {
+        "global"
+        {
+            "joker_custom"
+            {
+                "model"                     "models/heroes/hero_joker/joker_custom/joker.vmdl"    
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/hero_joker/joker_ambient.vpcf"
+                    } 
+                }         
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_joker_custom"
+                        "modifier_path"     "modifiers/modifier_joker_custom.lua"
+                    }
+                }          
+            }
+        }      
     }
 }

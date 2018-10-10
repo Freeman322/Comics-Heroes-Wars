@@ -435,7 +435,7 @@
 			"03"
 			{
 				"var_type"									"FIELD_INTEGER"
-				"damage_per_stack"					"10 15 20 25"
+				"damage_per_stack"					"14 21 28 35"
 			}
 		}
 	}
@@ -3284,75 +3284,75 @@
 	//=================================================================================================================
 	"lich_king_reincarnation"
 	{
-			// General
-			//---------------------	----------------------------------------------------------------------------------------
-			"ID"												"7641"
-			"BaseClass"									"skeleton_king_reincarnation"
-			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-			"AbilityType"								"DOTA_ABILITY_TYPE_BASIC"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-			"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
-			"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-			"FightRecapLevel"						"2"
+		// General
+		//---------------------	----------------------------------------------------------------------------------------
+		"ID"												"7641"
+		"BaseClass"									"skeleton_king_reincarnation"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"								"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"						"2"
 
-			"HasScepterUpgrade"					"0"
+		"HasScepterUpgrade"					"0"
 
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"						"0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"						"0"
 
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"						"60"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"60"
 
-			// Stats
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityModifierSupportValue"	"0.2"	// Slow isn't the main function of this ability.
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.2"	// Slow isn't the main function of this ability.
 
-				"AbilitySpecial"
-				{
-					"01"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"reincarnate_time"		"3.0"
-					}
-					"02"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"slow_radius"			"900"
-					}
-					"03"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"movespeed"				"-75"
-					}
-					"04"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"attackslow_tooltip"	"-75"
-					}
-					"05"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"slow_duration"			"5.0"
-					}
-					"07"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"scepter_duration"		"0"
-					}
-					"08"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"aura_radius"					"0"
-					}
-					"09"
-					{
-						"var_type"				"FIELD_INTEGER"
-						"aura_radius_tooltip_scepter"	"0"
-					}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reincarnate_time"		"3.0"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_radius"			"900"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed"				"-75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attackslow_tooltip"	"-75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"5.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"scepter_duration"		"0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"					"0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius_tooltip_scepter"	"0"
+			}
+		}
 	}
 	"flash_stampede"
 	{
@@ -3384,33 +3384,35 @@
 			    "model"		 "models/items/antimage/mage_eraser_belt/mage_eraser_belt.vmdl"
 			    "model"		 "models/items/antimage/pw_tustarkuri_arms/antimage_arms_lod0.vmdl"
 			    "model"		 "models/items/antimage/mage_eraser_armor/mage_eraser_armor.vmdl"
+			    "model"		 "models/heroes/hero_flash/flash_custom/flash.vmdl"
+			    "particle"   "particles/hero_flash/flash_custom_ambient.vpcf"
 			  }
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilitySpecial"
 			{
-					"01"
-					{
-							"var_type"			"FIELD_FLOAT"
-							"duration"			"3.5 4.0 4.5 5.0"
-					}
-					"02"
-					{
-							"var_type"			"FIELD_FLOAT"
-							"strength_damage"	"0.5 1.0 1.5 2.0"
-					}
-					"03"
-					{
-							"var_type"			"FIELD_INTEGER"
-							"radius"			"250"
-					}
+				"01"
+				{
+						"var_type"			"FIELD_FLOAT"
+						"duration"			"3.5 4.0 4.5 5.0"
+				}
+				"02"
+				{
+						"var_type"			"FIELD_FLOAT"
+						"strength_damage"	"0.5 1.0 1.5 2.0"
+				}
+				"03"
+				{
+						"var_type"			"FIELD_INTEGER"
+						"radius"			"250"
+				}
 			}
 
 			"precache"
 			{
-					"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
-					"particle"	"particles/units/heroes/hero_centaur/centaur_stampede_overhead.vpcf"
-					"particle"	"particles/units/heroes/hero_centaur/centaur_stampede.vpcf"
+				"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+				"particle"	"particles/units/heroes/hero_centaur/centaur_stampede_overhead.vpcf"
+				"particle"	"particles/units/heroes/hero_centaur/centaur_stampede.vpcf"
 			}
 	}
 	//=================================================================================================================
@@ -4586,6 +4588,8 @@
 			"particle"  "particles/hero_samurai/custom_sword_ambient_a.vpcf"
 			"particle"  "particles/hero_samurai/custom_sword_ambient_b.vpcf"
 			"particle"  "particles/econ/courier/courier_crystal_rift/courier_ambient_crystal_rift.vpcf"
+			"particle"  "particles/hero_samurai/custom_sword_ulti_trail.vpcf"
+			"particle"  "particles/hero_samurai/custom_sword_ulti_attacked.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -4791,12 +4795,12 @@
 					"04"
 					{
 						"var_type"				"FIELD_INTEGER"
-						"creeps_per_damage"		"5 10 15 20"
+						"creeps_per_damage"		"1"
 					}
 					"05"
 					{
 						"var_type"				"FIELD_INTEGER"
-					"creeps_per_damage_scepter"		"65 70 75 80"
+					"creeps_per_damage_scepter"		"1"
 					}
 			}
 	}
@@ -6727,7 +6731,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12 10 8 6"
-		"AbilityCastRange"				"750 1000 1250 1500"
+		"AbilityCastRange"				"800 1000 1200 1400"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50 60 70 80"
@@ -6739,7 +6743,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blink_range"			"750 1000 1250 1500"
+				"blink_range"			"800 1000 1200 1400"
 			}
 
 			"02"
@@ -6904,7 +6908,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"		           "0.05 0.06 0.07 0.08"
+				"dmg"		           "0.03 0.04 0.05 0.06"
 			}
 		}
 	}
@@ -8481,7 +8485,7 @@
 					"01"
 					{
 						"var_type"				"FIELD_INTEGER"
-						"health_gain_pct"		"7 8 9 10"
+						"health_gain_pct"		"3 4 5 6"
 					}
 			}
 	}
@@ -8551,7 +8555,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_pct_fake"			"5 6 7 8"
+				"damage_pct_fake"			"3 4 5 6"
 			}
 		}
 	}
@@ -8704,7 +8708,7 @@
 				"Aura"          	"modifier_dark_lord_presence"
 				"Aura_Radius"   	"%presence_radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO" //mechanic?
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" //mechanic?
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE" //immune?
 			}
 
@@ -15167,6 +15171,9 @@
 			"model"		 "models/heroes/han/khan_manifold_paradox/manifold_paradox.vmdl"
 			"particle"   "particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
 			"model"		 "models/heroes/han/khan_manifold_paradox/manifold_paradox_offhand.vmdl"
+			"model"		 "models/heroes/han/nemesis_custom/nemesis.vmdl"
+			"particle"   "particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_projectile.vpcf"
+			"particle"   "particles/hero_khan/khan_nemesis_target.vpcf"
 		}
 		"AbilitySpecial"
 		{
@@ -17343,7 +17350,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.0 3.5 4.0 4.5"
+				"duration"					"2.5 3.0 3.5 4.0"
 			}
 			"03"
 			{
@@ -17654,7 +17661,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"armor_per_hit"				"-1.3 -1.7 -2.1 -2.5"
+				"armor_per_hit"				"-1.9 -2.6 -3.3 -4.0"
 			}
 			"02"
 			{
@@ -18542,7 +18549,7 @@
 		"ScriptFile"					"abilities/darkseid_resurgent.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityCooldown"				"34 32 30 28"
+		"AbilityCooldown"				"32 30 28 26"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -18556,7 +18563,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"health_restore"				"13 22 31 40"
+				"health_restore"				"16 24 32 40"
 			}
 		}
 	}
@@ -19535,7 +19542,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"					"500"
+		"AbilityCastRange"					"600"
 		"AbilityCastPoint"					"0.0"
 
 		// Time
@@ -19566,7 +19573,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"manahealth"					"3.5 4.0 4.5 5.0"
+				"manahealth"					"5"
 			}
 			"02"
 			{
@@ -19581,7 +19588,7 @@
 			"07"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"3.5 4.0 4.5 5.0"
+				"duration"						"4 5 6 7"
 			}
 		}
 	}
@@ -19724,7 +19731,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"						"2"
 		"ScriptFile"								"abilities/spawn_respawn.lua"
-		"HasScepterUpgrade"					"1"
+		"HasScepterUpgrade"					"0"
 		"AbilitySound"							"Hero_SkeletonKing.Reincarnate"
 
 		// Cost
@@ -23206,6 +23213,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"custom/onepunchman_ult"
 		"ScriptFile"                    "abilities/onepunchman_ult.lua"
@@ -23449,6 +23457,25 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"						"100"
+			}
+		}
+	}
+	"special_bonus_unique_predator"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1000"
 			}
 		}
 	}
@@ -25349,6 +25376,7 @@
 			"model"		 "models/joker_head.vmdl"
 			"model"		"models/items/techies/bigshot/fx_bigshot_stasis.vmdl"
 			"model"		"models/items/silencer/pauldrons_of_the_silent_guardian/pauldrons_of_the_silent_guardian.vmdl"
+			"particle"  "particles/econ/items/elder_titan/elder_titan_ti7/elder_titan_echo_stomp_ti7.vpcf"
 		}
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -25413,6 +25441,11 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"  			"custom/joker_explosive_spec"
 		"ScriptFile"					"abilities/joker_explosive_spec.lua"
+		"precache"
+		{
+			"particle"  "particles/hero_joker/joker_ambient.vpcf"
+			"model"		"models/heroes/hero_joker/joker_custom/joker.vmdl"
+		}
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -29978,7 +30011,7 @@
 		"AbilitySound"					"Hero_Abaddon.BorrowedTime"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"%cooldown_tooltip"
+		"AbilityCooldown"				"1.50 1.25 1.00 0.75"
 		"precache"
 		{
 			"particle"					"particles/hero_savitar/savitar_godspeed.vpcf"
@@ -30000,7 +30033,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_tooltip"			"0.5"
+				"cooldown_tooltip"			"1.50 1.25 1.00 0.75"
 			}
 		}
 	}
@@ -30194,7 +30227,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130.0"
+		"AbilityCooldown"				"175 150 125"
 		"AbilityDuration"				"4.5 5.25 6.0"
 
 
@@ -30224,7 +30257,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_reduction"				"-40"
+				"damage_reduction"				"-50"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -30287,7 +30320,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilitySound"					"Ghost.Quantum_phase.Cast"
 
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"14 12 10 8"
 		"AbilityCastPoint"				"0.2"
 		
 		// Special
@@ -30297,12 +30330,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"mana_cost_tick"			"3.0"
+				"mana_cost_tick"			"4.0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"active_bonus_speed"		"80 120 160 200"
+				"active_bonus_speed"		"100 150 200 250"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -30723,7 +30756,7 @@
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_AbyssalUnderlord.PitOfMalice"
 
@@ -31040,7 +31073,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_bonus_pct"	"26 38 42 64"
+				"movespeed_bonus_pct"	"26 38 50 62"
 			}
 			"04"
 			{
@@ -31051,13 +31084,13 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"220 280 340 400"
+				"bonus_damage"			"190 260 330 400"
 				"LinkedSpecialBonus"	"special_bonus_unique_fate_2"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"max_stun"				"2.2 2.8 3.4 4.0"
+				"max_stun"				"1.9 2.6 3.3 4.0"
 			}
 			"07"
 			{
@@ -31133,7 +31166,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"GLOBAL"
-		"AbilityCooldown"				"24.0 24.0 24.0 24.0"
+		"AbilityCooldown"				"30 27 24 21"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -31179,7 +31212,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastRange"				"600"
 
 		// Time		
@@ -31200,13 +31233,13 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage"						"8 10 12 14"
+				"damage"						"10 14 18 22"
 				"LinkedSpecialBonus"			"special_bonus_unique_fate_3"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"heal_amt"						"8 10 12 14"
+				"heal_amt"						"10 14 18 22"
 				"LinkedSpecialBonus"			"special_bonus_unique_fate_3"
 			}
 		}
@@ -31284,7 +31317,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"120 180 240 300"
+				"crit_bonus"				"150 200 250 300"
 			}
 			"02"
 			{
@@ -31360,7 +31393,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"175"
+				"value"						"250"
 			}
 		}
 	}
@@ -31398,7 +31431,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"6"
+				"value"						"8"
 			}
 		}
 	}

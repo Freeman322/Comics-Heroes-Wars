@@ -99,7 +99,7 @@ function modifier_slaanesh_obedience:OnCreated(params)
             bonus_damage = bonus_damage + self:GetCaster():FindTalentValue("special_bonus_unique_slaanesh_1")
         end 
 
-        ApplyDamage ( { attacker = self:GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = bonus_damage + damage_ptc, damage_type = self:GetAbility():GetAbilityDamageType()})
+        ApplyDamage ( { attacker = self:GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = bonus_damage + damage_ptc, damage_type = self:GetAbility():GetAbilityDamageType(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
 
         EmitSoundOn("Hero_DarkWillow.WispStrike.Cast", self:GetParent())
     end 

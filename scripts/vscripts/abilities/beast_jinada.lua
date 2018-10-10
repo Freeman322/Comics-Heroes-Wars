@@ -53,7 +53,7 @@ function modifier_beast_jinada:OnAttackLanded(params)
             if target:IsRealHero() then
                 flDamage = self:GetParent():GetLastHits() / 2
             else
-                if target:IsAncient() or target:IsConsideredHero() or target:IsBuilding() or target:GetUnitName() == "npc_dota_warlock_golem_1" or target:GetUnitName() == "npc_mega_greevil" then
+                if target:IsConsideredHero() or target:IsBuilding() then
                     flDamage = 0
                 else
                     flDamage = flDamage

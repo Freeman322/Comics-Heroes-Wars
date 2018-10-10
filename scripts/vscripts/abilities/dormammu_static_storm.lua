@@ -43,9 +43,12 @@ function modifier_dormammu_static_storm_thinker:OnIntervalThink()
         local thinker = self:GetParent()
         local thinker_pos = thinker:GetAbsOrigin()
         local nearby_targets = FindUnitsInRadius(thinker:GetTeam(), thinker:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-
+        self.bonus = 0
+	    if self:GetCaster():HasTalent("special_bonus_unique_dormammu_3") then
+		     self.bonus = self:GetCaster():FindTalentValue("special_bonus_unique_dormammu_3")	
+        end	
         for i, target in ipairs(nearby_targets) do
-            local damage = self.damage
+            local damage = self.damage + self.bonus
             ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE})
         end 
     end) then end
@@ -98,7 +101,7 @@ function modifier_dormammu_static_storm_thinker_modifier:OnCreated (event)
     self.miss = 0
     if IsServer() then 
         if self:GetCaster():HasTalent("special_bonus_unique_dormammu_4") then 
-            self.miss = 90
+            self.miss = self:GetCaster():FindTalentValue("special_bonus_unique_dormammu_4")
         end
         EmitSoundOn("Hero_ArcWarden.SparkWraith.Activate", self:GetParent())
         EmitSoundOn("Hero_ArcWarden.SparkWraith.Damage", self:GetParent())

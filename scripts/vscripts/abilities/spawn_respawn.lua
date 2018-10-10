@@ -42,41 +42,41 @@ end
 modifier_spawn_respawn_astral = class({})
 
 function modifier_spawn_respawn_astral:IsDebuff()
-	return false
+  return false
 end
 
 function modifier_spawn_respawn_astral:IsHidden()
-	return true
+  return true
 end
 
 function modifier_spawn_respawn_astral:IsPurgable()
-	return false
+  return false
 end
 
 function modifier_spawn_respawn_astral:GetEffectName()
-	return "particles/hero_spawn/spawn_respawn.vpcf"
+  return "particles/hero_spawn/spawn_respawn.vpcf"
 end
 
 function modifier_spawn_respawn_astral:GetEffectAttachType()
-	return PATTACH_ABSORIGIN
+  return PATTACH_ABSORIGIN
 end
 
 function modifier_spawn_respawn_astral:CheckState()
-	local state = {
-  	[MODIFIER_STATE_STUNNED] = true,
+  local state = {
+    [MODIFIER_STATE_STUNNED] = true,
     [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
     [MODIFIER_STATE_OUT_OF_GAME] = true,
     [MODIFIER_STATE_UNSELECTABLE] = true,
     [MODIFIER_STATE_INVULNERABLE] = true,
     [MODIFIER_STATE_INVISIBLE] = true,
     [MODIFIER_STATE_NOT_ON_MINIMAP] = true
-	}
+  }
 
-	return state
+  return state
 end
 
 function modifier_spawn_respawn_astral:OnCreated(args)
-	if IsServer() then
+  if IsServer() then
         self:GetCaster():SetModelScale(0)
    end
 end
@@ -120,11 +120,11 @@ end
 if modifier_spawn_respawn_buff == nil then modifier_spawn_respawn_buff = class({}) end
 
 function modifier_spawn_respawn_buff:GetStatusEffectName()
-	return "particles/status_fx/status_effect_templar_slow.vpcf"
+  return "particles/status_fx/status_effect_templar_slow.vpcf"
 end
 
 function modifier_spawn_respawn_buff:StatusEffectPriority()
-	return 1000
+  return 1000
 end
 
 function modifier_spawn_respawn_buff:IsHidden()

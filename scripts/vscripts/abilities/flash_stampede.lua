@@ -36,10 +36,15 @@ end
 function modifier_flash_stampede:OnCreated( kv )
     self.htable = {}
   	if IsServer() then
-    		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_sven/sven_warcry_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-    		ParticleManager:SetParticleControlEnt( nFXIndex, 2, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_head", self:GetCaster():GetOrigin(), true )
-    		self:AddParticle( nFXIndex, false, false, -1, false, true )
-        self:StartIntervalThink(0.05)
+  		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_sven/sven_warcry_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+  		ParticleManager:SetParticleControlEnt( nFXIndex, 2, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_head", self:GetCaster():GetOrigin(), true )
+  		self:AddParticle( nFXIndex, false, false, -1, false, true )
+      self:StartIntervalThink(0.05)
+
+      if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "flash_custom") == true then
+        local nFXIndex = ParticleManager:CreateParticle( "particles/hero_flash/flash_custom_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+        self:AddParticle( nFXIndex, false, false, -1, false, true )
+      end 
   	end
 end
 

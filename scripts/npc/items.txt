@@ -466,7 +466,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"			"500"
+				"hp_restore"			"550"
 			}
 		}
 	}
@@ -2643,7 +2643,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"400"
+		"ItemCost"						"300"
 		"ItemShopTags"					"agi;block"
 		"ItemQuality"					"common"
 		"ItemAliases"					"pms;poor man's shield"
@@ -2655,22 +2655,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"6"
+				"bonus_agility"			"4"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_block_melee"	"35"
+				"damage_block_melee"	"30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_block_ranged"	"25"
+				"damage_block_ranged"	"20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"75"
+				"block_chance"			"100"
 			}
 			"05"
 			{
@@ -2751,22 +2751,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"33"
+				"bonus_strength"		"35"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"33"
+				"bonus_agility"			"35"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"33"
+				"bonus_intellect"		"35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"33"
+				"bonus_damage"			"35"
 			}
 		}
 	}
@@ -6985,7 +6985,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"unholy_health_drain_per_second_tooltip"	"126"
+				"unholy_health_drain_per_second_tooltip"	"144"
 			}
 			"11"
 			{

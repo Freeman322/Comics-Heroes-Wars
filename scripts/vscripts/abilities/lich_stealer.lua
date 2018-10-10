@@ -35,7 +35,7 @@ function modifier_lich_stealer:OnAttackStart (params)
         if params.attacker == self:GetParent () then
             local target = params.target
             self.bonus_damage = target:GetHealth()*(self:GetAbility():GetSpecialValueFor("hp_leech_percent")/100)
-            if target:IsBuilding() or target:IsAncient() or target:IsConsideredHero() then
+            if target:IsBuilding() or target:IsConsideredHero() then
             	self.bonus_damage = 0
             end
         end

@@ -33,6 +33,10 @@ function samurai_earth_shake:OnSpellStart(  )
             EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace", target)
         end
 
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "samurai_sword_od_darkness") == true then
+            prj = "particles/units/heroes/hero_demonartist/demonartist_darkartistry_proj.vpcf"
+        end
+
         local info = {
             EffectName = prj,
             Ability = self,

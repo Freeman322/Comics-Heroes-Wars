@@ -29,7 +29,7 @@ function modifier_out_jinada:OnAttackLanded (params)
             local hTarget = params.target
             
             if hTarget:IsBuilding() then return end
-            if hTarget:IsAncient() then return end
+            if hTarget:IsConsideredHero() then return end
 
             ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = self:GetAbility():GetSpecialValueFor("dmg")*hTarget:GetMaxHealth(), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_PHYSICAL})
             EmitSoundOn("Hero_Antimage.ManaBreak", hTarget)

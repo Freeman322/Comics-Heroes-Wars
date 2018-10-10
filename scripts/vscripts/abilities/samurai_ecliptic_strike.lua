@@ -33,7 +33,7 @@ end
 
 function modifier_samurai_ecliptic_strike:OnAttackLanded( params )
     if IsServer() then
-        if params.attacker == self:GetParent() and ( not self:GetParent():IsIllusion() ) then
+        if params.attacker == self:GetParent() then
             if self:GetParent():PassivesDisabled() then
                 return 0
             end

@@ -43,6 +43,14 @@ function modifier_item_ionic_vapor:DeclareFunctions()
     return funcs
 end
 
+function modifier_item_ionic_vapor:GetModifierConstantHealthRegen(params)
+    return self:GetAbility():GetSpecialValueFor("bonus_hp_regen")
+end
+
+function modifier_item_ionic_vapor:GetModifierConstantManaRegen(params)
+    return self:GetAbility():GetSpecialValueFor("bonus_mp_regen")
+end
+
 function modifier_item_ionic_vapor:GetModifierPreAttack_BonusDamage (params)
     return self:GetAbility ():GetSpecialValueFor ("bonus_damage")
 end
@@ -61,14 +69,6 @@ end
 
 function modifier_item_ionic_vapor:GetModifierAttackSpeedBonus_Constant (params)
     return self:GetAbility ():GetSpecialValueFor ("bonus_attack_speed")
-end
-
-function modifier_item_ionic_vapor:GetModifierConstantHealthRegen(params)
-    return self:GetAbility():GetSpecialValueFor("bonus_hp_regen")
-end
-
-function modifier_item_ionic_vapor:GetModifierConstantManaRegen(params)
-    return self:GetAbility():GetSpecialValueFor("bonus_mp_regen")
 end
 
 function modifier_item_ionic_vapor:OnAttackLanded (params)

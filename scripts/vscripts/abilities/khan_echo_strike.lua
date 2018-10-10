@@ -5,6 +5,7 @@ khan_echo_strike = class({})
 
 function khan_echo_strike:GetAbilityTextureName()
   if self:GetCaster():HasModifier("modifier_khan") then return "custom/khan_manifold" end
+  if self:GetCaster():HasModifier("modifier_nemesis") then return "custom/nemesis_custom_ult" end
   return self.BaseClass.GetAbilityTextureName(self)
 end
 
@@ -20,7 +21,10 @@ function khan_echo_strike:OnSpellStart()
 		particle = "particles/econ/items/spectre/spectre_transversant_soul/spectre_transversant_spectral_dagger.vpcf"
 
 		EmitSoundOn( "Khan.Paradox.Cast" , self:GetCaster() )
-	else 
+	elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "nemesis_custom") then
+		particle = "particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_projectile.vpcf"
+		EmitSoundOn( "Khan.Nemesis.Cast" , self:GetCaster() )
+	else
 		EmitSoundOn( "Ability.Powershot" , self:GetCaster() )
 		EmitSoundOn( "Ability.Windrun" , self:GetCaster() )
 	end 
@@ -82,6 +86,9 @@ function khan_echo_strike:OnProjectileHit( hTarget, vLocation )
 			particle = "particles/econ/items/spectre/spectre_transversant_soul/spectre_transversant_spectral_dagger_path_owner_impact.vpcf"
 
 			EmitSoundOn( "Khan.Paradox.Damage" , hTarget )
+		elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "nemesis_custom") then
+			EmitSoundOn( "Khan.Nemesis.Target" , self:GetCaster() )
+			particle = "particles/hero_khan/khan_nemesis_target.vpcf"
 		else 
 			EmitSoundOn( "Hero_PhantomAssassin.CoupDeGrace" , hTarget )
 			EmitSoundOn( "Hero_Juggernaut.OmniSlash.Damage" , hTarget )	

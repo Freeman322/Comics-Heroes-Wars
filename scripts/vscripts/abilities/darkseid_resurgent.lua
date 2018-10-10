@@ -22,6 +22,9 @@ end
 function modifier_darkseid_resurgent:OnTakeDamage(args)
     if self:GetParent() == args.unit then 
         if IsServer() then 
+            if self:GetCaster():IsRealHero() == false then 
+                return
+            end
             if self:GetParent():GetHealth() <= 0 and self:GetAbility():IsCooldownReady() then 
                 local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_windrunner/windrunner_loadout.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent() );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetOrigin(), true );
