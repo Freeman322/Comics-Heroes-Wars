@@ -3439,7 +3439,7 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"450"
+		"ItemCost"						"1850"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -6267,7 +6267,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"status_resistance"		"50"
+				"status_resistance"		"35"
 			}
 			"08"
 			{

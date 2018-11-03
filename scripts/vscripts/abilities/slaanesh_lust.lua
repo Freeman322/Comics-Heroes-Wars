@@ -18,26 +18,6 @@ function slaanesh_lust:CastFilterResultTarget (hTarget)
     return UF_SUCCESS
 end
 
-
---function scarlet_witch_scarlet_magic:GetCooldown (nLevel)
-    --if self:GetCaster ():HasScepter () then
-        --return 40
-    --end
-
-    --return self.BaseClass.GetCooldown (self, nLevel)
---end
---------------------------------------------------------------------------------
-
---function scarlet_witch_scarlet_magic:GetCastRange (vLocation, hTarget)
-    --if self:GetCaster ():HasScepter () then
-        --return self:GetSpecialValueFor ("cast_range_scepter")
-    --end
-
-    --return self.BaseClass.GetCastRange (self, vLocation, hTarget)
---end
-
---------------------------------------------------------------------------------
-
 function slaanesh_lust:OnSpellStart ()
     local hTarget = self:GetCursorTarget ()
     if hTarget ~= nil then
@@ -57,7 +37,7 @@ function slaanesh_lust:OnSpellStart ()
         EmitSoundOn ("Hero_VengefulSpirit.MagicMissile", self:GetCaster () )
     end
 end
---particles/scarlet_witch_flux.vpcf
+
 function slaanesh_lust:OnProjectileHit (hTarget, vLocation)
     if IsServer() then 
         EmitSoundOn ("Hero_Oracle.FortunesEnd.Target", hTarget)
@@ -83,7 +63,8 @@ function modifier_slaanesh_lust:IsPurgable()
     return false
 end
 
-function modifier_slaanesh_lust:GetEffectName()
+function modifier_slaanesh_lust:GetEffectName() 
+    if self:GetCaster():HasModifier("modifier_voland_custom") then return "particles/units/heroes/hero_stormspirit/stormspirit_electric_vortex_custom.vpcf" end  
     return "particles/units/heroes/hero_dark_willow/dark_willow_bramble.vpcf"
 end
 
@@ -125,4 +106,7 @@ function modifier_slaanesh_lust:CheckState()
 	return state
 end
 
-function slaanesh_lust:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
+function slaanesh_lust:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_voland_custom") then return "custom/voland_lust" end  
+    return self.BaseClass.GetAbilityTextureName(self)  
+end

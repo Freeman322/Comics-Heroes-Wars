@@ -18,7 +18,7 @@ function item_ethernal_dagon:OnSpellStart()
 			local base_damage = self:GetSpecialValueFor("tooltip_damage")
 			local stats = self:GetCaster():GetIntellect() + self:GetCaster():GetStrength() + self:GetCaster():GetAgility()
 			local mult = self:GetSpecialValueFor("blast_stats_multiplier")
-			local damage = (base_damage + stats + mult)
+			local damage = ((base_damage + stats) * mult)
 			local DamageTable = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -55,7 +55,6 @@ function modifier_item_ethernal_dagon_scepter:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
-		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
 		MODIFIER_PROPERTY_IS_SCEPTER,
 	}
 

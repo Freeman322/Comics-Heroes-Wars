@@ -2880,6 +2880,34 @@
                     } 
                 }
             }
+            "voland"
+            {
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/econ/courier/courier_jade_horn/courier_jade_horn_ambient_eye.vpcf"
+                        "ControlPoints"
+                        {
+                            "0"
+                            {
+                                "attach_point"      "attach_eye_l"
+                            }
+                        }
+                    } 
+                    "2" 
+                    {
+                        "particle"          "particles/econ/courier/courier_jade_horn/courier_jade_horn_ambient_eye.vpcf"
+                        "ControlPoints"
+                        {
+                            "0"
+                            {
+                                "attach_point"      "attach_eye_r"
+                            }
+                        }
+                    } 
+                }
+            }
         }
         "head"
         {          
@@ -2916,6 +2944,10 @@
                     }            
                 }   
             }
+            "voland"
+            {
+
+            }
         } 
         "weapon"
         {
@@ -2949,6 +2981,32 @@
                         "material"      "gold"
                     }
                 }
+            }
+            "voland"
+            {
+                "model"                 "models/heroes/hero_slaanesh/voland_skin/voland.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/heroes/hero_slaanesh/voland_skin/wand/wand.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/voland.vpcf"
+                    }
+                }
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_voland_custom"
+                        "modifier_path"     "modifiers/modifier_voland_custom.lua"
+                    }
+                }    
             }
         }
     }
@@ -3463,5 +3521,86 @@
                 }          
             }
         }      
+    }
+    "npc_dota_hero_rattletrap"
+    {
+        "armor"
+        {       
+            "dark_custom"
+            {
+                "model"         "models/heroes/dark_custom/jeanne.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"     "models/heroes/dark_custom/flag.vmdl"
+                    }
+                    "2"
+                    {
+                        "model"     "models/heroes/dark_custom/dress.vmdl"
+                    }
+                    "3"
+                    {
+                        "model"     "models/heroes/dark_custom/sword.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"          "particles/effects/jeannie_sword.vpcf"
+                            }
+                        }
+                    }
+                    "4"
+                    {
+                        "model"     "models/heroes/dark_custom/hair.vmdl"
+                    }
+                }   
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_jeannie_arcana"
+                        "modifier_path"     "modifiers/modifier_jeannie_arcana.lua"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/econ/courier/courier_jadehoof_ambient/jadehoof_ambient.vpcf"
+                    }
+                }
+            }
+        }
+    }
+    "npc_dota_hero_mercer"
+    {
+        "__default"
+        {       
+            "__default"
+            {
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_mercer"
+                        "modifier_path"     "modifiers/modifier_mercer.lua"
+                    }
+                }
+            }
+        }
+        "arms"
+        {
+            "__default"
+            {
+                "models"
+                {
+                    "1" 
+                    {
+                        "model"         "models/heroes/hero_mercer/econs/arms.vmdl"
+                    }
+                }
+            }
+        }
     }
 }

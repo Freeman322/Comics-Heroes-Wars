@@ -19,6 +19,8 @@ function ragnaros_essence_strike:OnToggle()
 			hRotBuff:Destroy()
 		end
 	end
+
+    self:RefundManaCost()
 end
 
 

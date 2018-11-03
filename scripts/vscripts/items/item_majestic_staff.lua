@@ -53,7 +53,7 @@ function modifier_item_majestic_staff:GetModifierHealthBonus( params ) return se
 if not modifier_item_majestic_staff_active then modifier_item_majestic_staff_active = class({}) end 
 
 function modifier_item_majestic_staff_active:IsHidden() return false end
-function modifier_item_majestic_staff_active:IsPurgable() return false end
+function modifier_item_majestic_staff_active:IsPurgable() return true end
 function modifier_item_majestic_staff_active:DeclareFunctions() return { MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_STATUS_RESISTANCE } end
 function modifier_item_majestic_staff_active:IsDebuff()
     if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then 
@@ -67,6 +67,8 @@ function modifier_item_majestic_staff_active:OnCreated(params) if IsServer() the
 
 function modifier_item_majestic_staff_active:OnIntervalThink()
     if IsServer() then
+        if self:GetParent():IsMagicImmune() and self:IsDebuff() then self:Destroy() end  
+
         if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
             ApplyDamage({attacker = self:GetCaster(), victim = self:GetParent(), damage = (self:GetAbility():GetSpecialValueFor("enemy_hp_drain") / 100) * self:GetParent():GetHealth(), damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()})
             EmitSoundOn("DOTA_Item.DiffusalBlade.Target", caster) 

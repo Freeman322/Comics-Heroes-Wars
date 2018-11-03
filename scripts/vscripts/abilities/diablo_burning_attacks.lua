@@ -54,7 +54,7 @@ function modifier_diablo_burning_attacks:OnAttackLanded (params)
   if IsServer () then
     if params.attacker == self:GetParent () then
       if self:GetAbility():IsCooldownReady() and self:GetAbility():GetAutoCastState() and self:GetAbility():IsOwnersManaEnough() then
-        if not params.target:IsBuilding() and not params.target:IsAncient() then
+        if not params.target:IsBuilding() and not params.target:IsMagicImmune() then
           params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_diablo_burning_target", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")})
           params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("ministun_duration")})
 

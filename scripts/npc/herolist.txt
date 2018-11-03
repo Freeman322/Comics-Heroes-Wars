@@ -98,10 +98,4 @@
   "npc_dota_hero_disruptor" "1"
   "npc_dota_hero_jakiro"    "1"
   "npc_dota_hero_pangolier" "1"
-  "npc_dota_hero_miraak"  "1"
-  "npc_dota_hero_godspeed"  "1"
-  "npc_dota_hero_savitar"      "1"
-  "npc_dota_hero_ghost"             "1"
-  "npc_dota_hero_molag_bal"    "1"
-  "npc_dota_hero_doctor_fate"   "1"
 }

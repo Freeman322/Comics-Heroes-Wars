@@ -4588,8 +4588,8 @@
 			"particle"  "particles/hero_samurai/custom_sword_ambient_a.vpcf"
 			"particle"  "particles/hero_samurai/custom_sword_ambient_b.vpcf"
 			"particle"  "particles/econ/courier/courier_crystal_rift/courier_ambient_crystal_rift.vpcf"
-			"particle"  "particles/hero_samurai/custom_sword_ulti_trail.vpcf"
-			"particle"  "particles/hero_samurai/custom_sword_ulti_attacked.vpcf"
+			"particle"  "particles/econ/items/juggernaut/jugg_serrakura/juggernaut_omni_slash_trail_serrakura.vpcf"
+			"particle"  "particles/econ/items/juggernaut/jugg_serrakura/juggernaut_omni_slash_tgt_serrakura.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -21708,6 +21708,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
 
+		"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"particle"  "particles/effects/jeannie_sword.vpcf"
+			"particle"  "particles/econ/courier/courier_jadehoof_ambient/jadehoof_ambient.vpcf"
+			"model"		"models/heroes/dark_custom/sword.vmdl"
+			"model"		"models/heroes/dark_custom/dress.vmdl"
+			"model"		"models/heroes/dark_custom/flag.vmdl"
+			"model"		"models/heroes/dark_custom/jeanne.vmdl"
+			"model"		"models/heroes/dark_custom/hair.vmdl"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -28706,6 +28717,13 @@
 			"particle"					"particles/econ/courier/courier_platinum_roshan/platinum_roshan_eyes.vpcf"
 			"model"						"models/heroes/hero_slaanesh/weapons/weapon_final.vmdl"
 			"model"						"models/heroes/hero_slaanesh/weapons/immortal_weapon_1.vmdl"
+			"model"						"models/heroes/hero_slaanesh/voland_skin/voland.vmdl"
+			"model"						"models/heroes/hero_slaanesh/voland_skin/wand/wand.vmdl"
+			"particle"  				"particles/voland.vpcf"
+			"particle" 				    "particles/econ/courier/courier_jade_horn/courier_jade_horn_ambient_eye.vpcf"
+			"particle"  				"particles/units/heroes/hero_pugna/pugna_life_drain_beam_give.vpcf"
+			"particle"  				"particles/units/heroes/hero_stormspirit/stormspirit_electric_vortex_custom.vpcf"
+			"particle"  				"particles/voland_ability.vpcf"
 		}
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -31729,6 +31747,589 @@
 				"var_type"						"FIELD_INTEGER"
 				"bonus_damage_outgoing"			"80 100 120"
 				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Mercer Mutate Ability
+	//=================================================================================================================
+	"mercer_mutate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"rubick_empty1"
+		"ScriptFile"					"abilities/mercer_mutate.lua"			
+											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"100 300 500 700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blades_splash_ptc"		"25 35 45 55"
+				"LinkedSpecialBonus"	"special_bonus_unique_mercer_2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blades_splash_radius"	"400"
+			}
+			"04"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"claws_attack_speed"	"40 70 90 120"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"claws_pierce_atack"	"100 140 180 220"
+			}	
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"claws_pierce_atack_chance"		"14 18 24 28"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"punch_bash_duration"			"0.8 1.2 1.6 2.0"
+				"LinkedSpecialBonus"			"special_bonus_unique_mercer_3"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"punch_bash_chance"		"20 22 24 26"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Ability: Mercer Bloodrage
+	//=================================================================================================================
+	"mercer_bloodrage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/mercer_feral_jump"
+		"ScriptFile"					"abilities/mercer_bloodrage.lua"			
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7 5 3 1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"heal_ptc"					"14 18 23 27"
+				"LinkedSpecialBonus"		"special_bonus_unique_mercer_1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Ability: Mercer's Ambush
+	//=================================================================================================================
+	"mercer_ambush"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/mercer_ambush"
+		"ScriptFile"					"abilities/mercer_ambush.lua"		
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_SUMMONED"
+
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+
+		"FightRecapLevel"				"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"160"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 225 250"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+			
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// Only does damage
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"20 30 40 50"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Mercer: Ravage
+	//=================================================================================================================
+	"mercer_ravage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/mercer_ravage"
+		"ScriptFile"					"abilities/mercer_ravage.lua"	
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"2"
+
+		"AbilitySound"					"Ability.Ravage"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"150.0 150.0 150.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 225 325"
+
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf"
+			"particle"					"particles/units/heroes/hero_life_stealer/life_stealer_infest_cast.vpcf"
+			"particle"					"particles/econ/items/bloodseeker/bloodseeker_eztzhok_weapon/bloodseeker_bloodrage_eztzhok.vpcf"
+			"particle"					"particles/econ/items/bloodseeker/bloodseeker_eztzhok_weapon/bloodseeker_bloodbath_eztzhok.vpcf"
+
+			"model"						"models/heroes/hero_mercer/econs/arms.vmdl"
+			"model"						"models/heroes/hero_mercer/econs/blades.vmdl"
+			"model"						"models/heroes/hero_mercer/econs/claws.vmdl"
+			"model"						"models/heroes/hero_mercer/econs/punches.vmdl"
+
+			"particle"					"particles/hero_mercer/mercer_chain.vpcf"
+			"particle"					"particles/units/heroes/hero_nevermore/nevermore_souls_hero_effect.vpcf"
+			"particle"					"particles/status_fx/status_effect_grimstroke_ink_swell.vpcf"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"560"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"break_radius"		"725"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3.0 4.5 6.0"
+			}
+			"04"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"break_damage"		"375 500 725"
+			}
+			"05"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"think_damage"			"85 140 195"
+				"LinkedSpecialBonus"	"special_bonus_unique_mercer_4"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Superman: Recoil
+	//=================================================================================================================
+	"superman_recoil"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/superman_recoil"
+		"ScriptFile"					"abilities/superman_recoil.lua"	
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dodge_chance_pct"		"10 12 14 16"
+				"LinkedSpecialBonus"	"special_bonus_unique_superman_4"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Ice Wave
+	//=================================================================================================================
+	"superman_ice_wave"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/superman_ice_wave"
+		"ScriptFile"					"abilities/superman_ice_wave.lua"	
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilitySound"					"Hero_VengefulSpirit.WaveOfTerror"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1400"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10"
+		"AbilityDuration"				"8"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"60 80 100 120"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25 30 35 40"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"wave_speed"		"2000.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wave_width"		"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.8 1.4 1.8 2.2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage"						"150 200 250 300"
+				"LinkedSpecialBonus"		    "special_bonus_unique_superman_3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_aoe"		"300"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"	"3.0 3.0 3.0 3.0"
+			}
+			
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	//=================================================================================================================
+	// Superman: Punch
+	//=================================================================================================================
+	"superman_punch"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/superman_punch"
+		"ScriptFile"					"abilities/superman_punch.lua"	
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12.0 10.0 8.0 6.0"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"150 175 200 225"
+				"LinkedSpecialBonus"	"special_bonus_unique_superman_1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	//=================================================================================================================
+	// Superman: Kryptonian
+	//=================================================================================================================
+	"superman_kryptonian"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"custom/superman_kryptonian"
+		"ScriptFile"					"abilities/superman_kryptonian.lua"	
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
+			"particle"					"particles/units/heroes/hero_crystalmaiden/maiden_frostbite.vpcf"
+			"particle"					"particles/hero_superman/superman_projectile_stout.vpcf"
+			"particle"					"particles/econ/items/legion/legion_overwhelming_odds_ti7/legion_commander_odds_ti7_proj_impact.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+            {
+                "var_type"                    "FIELD_FLOAT"
+                "damage_per_stack"            "0.45 1.85 2.35"
+            }
+            "02"
+            {
+                "var_type"                    "FIELD_FLOAT"
+                "attack_speed_per_stack"      "0.25 0.75 1.0"
+            }
+            "03"
+            {
+                "var_type"                    "FIELD_FLOAT"
+                "armor_per_stack"             "0.1 0.2 0.3"
+            }
+            "04"
+            {
+                "var_type"                    "FIELD_INTEGER"
+                "max_stacks"    			  "100 150 200"
+				"LinkedSpecialBonus"		  "special_bonus_unique_superman_2"
+            }
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	"special_bonus_unique_superman_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"125"
+			}
+		}
+	}	
+
+	"special_bonus_unique_superman_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"80"
+			}
+		}
+	}	
+
+	"special_bonus_unique_superman_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"240"
+			}
+		}
+	}	
+
+	"special_bonus_unique_superman_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"9"
+			}
+		}
+	}	
+
+	"special_bonus_unique_mercer_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"21"
+			}
+		}
+	}	
+
+	"special_bonus_unique_mercer_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"16"
+			}
+		}
+	}	
+
+	"special_bonus_unique_mercer_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"0.45"
+			}
+		}
+	}	
+
+	"special_bonus_unique_mercer_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"110"
 			}
 		}
 	}

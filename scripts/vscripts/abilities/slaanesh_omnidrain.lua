@@ -7,6 +7,11 @@ function slaanesh_omnidrain:GetConceptRecipientType()
 	return DOTA_SPEECH_USER_ALL
 end
 
+function slaanesh_omnidrain:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_voland_custom") then return "custom/voland_ulti" end  
+    return self.BaseClass.GetAbilityTextureName(self)  
+end
+
 function slaanesh_omnidrain:GetCooldown (nLevel)
     if self:GetCaster():HasScepter() then
         return self:GetSpecialValueFor("cooldown_scepter")
@@ -113,8 +118,11 @@ end
 function modifier_slaanesh_omnidrain:OnCreated(htable)
     if IsServer() then
         self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("tick_rate"))
+        local particle = "particles/econ/items/lion/lion_demon_drain/lion_spell_mana_drain_demon.vpcf"
         
-        local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/lion/lion_demon_drain/lion_spell_mana_drain_demon.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
+        if self:GetCaster():HasModifier("modifier_voland_custom") then particle = "particles/units/heroes/hero_pugna/pugna_life_drain_beam_give.vpcf" end  
+
+        local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_CUSTOMORIGIN, self:GetCaster() )
         ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetParent():GetOrigin() + Vector( 0, 0, 96 ), true );
 		ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true );
         self:AddParticle( nFXIndex, false, false, -1, false, true )

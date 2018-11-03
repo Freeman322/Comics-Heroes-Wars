@@ -386,7 +386,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"25"
+				"value"				"20"
 			}
 		}
 	}
@@ -405,7 +405,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"crit_multiplier"   "500" 
+				"crit_multiplier"   "450" 
 			}
 		}
 	}

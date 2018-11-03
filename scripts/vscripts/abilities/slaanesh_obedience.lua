@@ -7,6 +7,11 @@ function slaanesh_obedience:GetAOERadius()
     return self:GetSpecialValueFor("radius")
 end
 
+function slaanesh_obedience:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_voland_custom") then return "custom/voland_obdience" end  
+    return self.BaseClass.GetAbilityTextureName(self)  
+end
+
 function slaanesh_obedience:OnSpellStart()
     if IsServer() then 
         local hTarget = self:GetCursorTarget()

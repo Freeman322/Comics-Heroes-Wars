@@ -14,6 +14,7 @@ require('FreeForAll')
 require('addon_init')
 require('CaptainsMode')
 require('heroes/Responses')
+require('Event')
 
 if GameMode == nil then
 	GameMode = class({})
@@ -34,7 +35,7 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_crystal_maiden.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_bane.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts", context)
@@ -91,6 +92,7 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts", context)
@@ -152,20 +154,23 @@ end
 ---CONSTANTS 
 
 DOTA_DAMAGE_MULTIPLIER_MAGICAL_HEAL = 0.35
-DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT = 0.75
+DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT = 1.0
 DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT_CHANCE = 25
+
 -- Create the game mode when we activate
 function Activate()
 	GameRules.GameMode = GameMode()
 	GameRules.GameMode:InitGameMode()
-	Convars:SetInt("dota_wait_for_players_to_load_timeout", 240)
 end
+
 function GameMode:InitGameMode()
 	GameRules:SetTimeOfDay( 0.75 )
 	GameRules:SetHeroRespawnEnabled( true )
 	GameRules:SetUseUniversalShopMode( true )
 	GameRules:SetHeroSelectionTime( 0.0 )
 	GameRules:GetGameModeEntity():SetDraftingBanningTimeOverride( 20 )
+
+	Convars:SetBool( "dota_suggest_disable", true )
 
 	if GetMapName() == "dota_captains_mode" then GameRules:SetPreGameTime( 700.0 ) else GameRules:SetPreGameTime( 120.0 ) end
 
@@ -182,9 +187,9 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
 
-	if GetMapName() == "the_summoning_event" then
+	if GetMapName() == "world_war_hulk" then
 		GameRules:SetCustomGameTeamMaxPlayers(3, 0)
-		GameRules:SetCustomGameTeamMaxPlayers(2, 6)
+		GameRules:SetCustomGameTeamMaxPlayers(2, 10)
 		GameRules:SetHeroRespawnEnabled( false )
 		GameRules:GetGameModeEntity():SetBuybackEnabled( false )
 		GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled( true )
@@ -442,6 +447,7 @@ function GameMode:DmgFilter(ftable)
 						  local target = EntIndexToHScript(modifier:GetTarget())
 						  if target:IsAlive() then 
 							  target:ModifyHealth(target:GetHealth() - damage, modifier:GetAbility(), true, 0)
+							  ApplyDamage ({victim = target, attacker = victim, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = modifier:GetAbility(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS })      
 						  end
 						  ftable.damage = 0
 					  end					
@@ -506,7 +512,7 @@ function GameMode:DmgFilter(ftable)
 						  ftable.damage = ftable.damage + (ftable.damage * DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT)
 					  end
 				  end
-				  if attacker:HasItemInInventory("item_ethernal_dagon_scepter") and ftable.damagetype_const > 1 then
+				  if attacker:HasItemInInventory("item_ethernal_dagon") and ftable.damagetype_const > 1 then
 					  local particle_lifesteal = "particles/items3_fx/octarine_core_lifesteal.vpcf"
 					  local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, attacker)
 					  ParticleManager:SetParticleControl(lifesteal_fx, 0, attacker:GetAbsOrigin())
@@ -665,8 +671,8 @@ function GameMode:OnAllPlayersLoaded()
 			end
 		end
 	end
-	if GetMapName() == "the_summoning_event" then
-		Event:Start()
+	if GetMapName() == "world_war_hulk" then
+		Event:Start() Pick:Start()
 	elseif GetMapName() == "dota_captains_mode" then
 		CaptainsMode:Start()
 	else

@@ -89,16 +89,18 @@ function modifier_item_reality_gem_active:OnTakeDamage( params )
         	   return
             end
 
-            ApplyDamage ( {
-                victim = params.attacker,
-                attacker = unit,
-                damage = params.damage,
-                damage_type = DAMAGE_TYPE_PURE,
-                ability = self:GetAbility(),
-                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
-            })
+            if not params.attacker:IsMagicImmune() then 
+                ApplyDamage ( {
+                    victim = params.attacker,
+                    attacker = unit,
+                    damage = params.damage,
+                    damage_type = DAMAGE_TYPE_PURE,
+                    ability = self:GetAbility(),
+                    damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
+                })
+            end 
 
-            unit:Heal(params.damage * 2, self:GetAbility())
+            unit:Heal(params.damage * 0.5, self:GetAbility())
 
             EmitSoundOn("DOTA_Item.BladeMail.Damage", target)
         end

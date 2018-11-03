@@ -28,8 +28,7 @@ function modifier_out_jinada:OnAttackLanded (params)
         if params.attacker == self:GetParent () then
             local hTarget = params.target
             
-            if hTarget:IsBuilding() then return end
-            if hTarget:IsConsideredHero() then return end
+            if not hTarget:IsRealHero() then return end
 
             ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = self:GetAbility():GetSpecialValueFor("dmg")*hTarget:GetMaxHealth(), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_PHYSICAL})
             EmitSoundOn("Hero_Antimage.ManaBreak", hTarget)

@@ -44,6 +44,7 @@ function modifier_slaanesh_subordination:IsHidden()
 end
 
 function modifier_slaanesh_subordination:GetEffectName()
+	if self:GetCaster():HasModifier("modifier_voland_custom") then return "particles/voland_ability.vpcf" end  
     return "particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher_debuff.vpcf"
 end
 
@@ -53,9 +54,7 @@ end
 
 function modifier_slaanesh_subordination:OnCreated(params)
     if IsServer() then
-
-     EmitSoundOn( "Hero_Bane.Nightmare.Loop", hTarget )
-    
+    	EmitSoundOn( "Hero_Bane.Nightmare.Loop", hTarget )
     end
 end
 
@@ -95,4 +94,7 @@ function modifier_slaanesh_subordination:GetModifierIncomingDamage_Percentage( p
 	return self:GetAbility():GetSpecialValueFor("incoming_damage")
 end
 
-function slaanesh_subordination:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
+function slaanesh_subordination:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_voland_custom") then return "custom/voland_subordination" end  
+	return self.BaseClass.GetAbilityTextureName(self)  
+end
