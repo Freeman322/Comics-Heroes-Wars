@@ -22,6 +22,17 @@ function modifier_marvel_primal_shield:IsPurgable()
     return true
 end
 
+function modifier_marvel_primal_shield:OnCreated(table)
+	if IsServer() then
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "jiren") == true then
+			local nFXIndex = ParticleManager:CreateParticle("particles/econ/generic/generic_buff_1/generic_buff_1.vpcf", PATTACH_ABSORIGIN, self:GetParent())
+			ParticleManager:SetParticleControl( nFXIndex, 14, Vector(1, 1, 1) );
+			ParticleManager:SetParticleControl( nFXIndex, 15, Vector(255, 0, 0) );
+			self:AddParticle(nFXIndex, false, false, -1, false, false)
+		end 
+	end
+end
+
 function modifier_marvel_primal_shield:GetStatusEffectName()
     return "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2_dire.vpcf"
 end
@@ -31,6 +42,7 @@ function modifier_marvel_primal_shield:StatusEffectPriority()
 end
 
 function modifier_marvel_primal_shield:GetEffectName()
+    if self:GetParent():HasModifier("modifier_jiren") then return end 
     return "particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift_buff.vpcf"
 end
 

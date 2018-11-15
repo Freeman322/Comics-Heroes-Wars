@@ -5178,7 +5178,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_lua"	
 		"ScriptFile"					"items/item_reality_gem.lua"	
-		"AbilityTextureName"            "custom/aether"
+		"AbilityTextureName"            "custom/reality_gem"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -6173,7 +6173,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1750"	
+		"ItemCost"						"2750"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -6746,6 +6746,44 @@
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_bonus"		"300"
 			}
+		}
+	}
+
+	//=================================================================================================================
+	// Courier
+	//=================================================================================================================
+	"item_courier"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"    		"courier"
+		"ScriptFile"					"items/item_courier.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"100"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"donkey;chicken;animal courier"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"120.0"
+		"ItemSupport"					"1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemPurchasable"				"1"
+
+		"precache"
+		{
+			"model"						"models/items/courier/mighty_chicken/mighty_chicken.vmdl"
+			"model"						"models/items/courier/mighty_chicken/mighty_chicken_flying.vmdl"
+			"model"						"models/courier/baby_rosh/babyroshan.vmdl"
+			"model"						"models/courier/baby_rosh/babyroshan_flying.vmdl"
+			"particle"					"particles/econ/courier/courier_platinum_roshan/platinum_roshan_ambient.vpcf"
+			"particle"					"particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
 		}
 	}
 }

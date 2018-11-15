@@ -13,14 +13,14 @@ function ragnaros_essence_strike:OnToggle()
 	if self:GetToggleState() then
 		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_ragnaros_essence_strike", nil )
         self:EndCooldown()
+
+        self:RefundManaCost()
 	else
 		local hRotBuff = self:GetCaster():FindModifierByName( "modifier_ragnaros_essence_strike" )
 		if hRotBuff ~= nil then
 			hRotBuff:Destroy()
-		end
+        end
 	end
-
-    self:RefundManaCost()
 end
 
 
@@ -41,15 +41,15 @@ end
 
 function modifier_ragnaros_essence_strike:OnAttackLanded (params)
     if self:GetParent () == params.attacker then
-        local hAbility = self:GetAbility()
-        local duration = hAbility:GetSpecialValueFor ("burn_duration")
-        if hAbility:IsCooldownReady () and self:GetCaster():GetMana() >= 40 then
+        local duration = self:GetAbility():GetSpecialValueFor("burn_duration")
+        if self:GetAbility():IsCooldownReady() and self:GetAbility():IsOwnersManaEnough() then
             local hTarget = params.target
-            if not hTarget:IsBuilding(  ) then
-                self:GetCaster():SpendMana( 40, hAbility )
-                hAbility:StartCooldown (hAbility:GetCooldown (hAbility:GetLevel ()))
+            if not hTarget:IsBuilding() then
+                self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
+                self:GetCaster():SpendMana(self:GetAbility():GetManaCost(self:GetAbility():GetLevel()), self:GetAbility())
+
                 EmitSoundOn ("Hero_DoomBringer.InfernalBlade.PreAttack", hTarget)
-                hTarget:AddNewModifier (hAbility:GetCaster (), hAbility, "modifier_ragnaros_essence_strike_target", { duration = duration })
+                hTarget:AddNewModifier (self:GetAbility():GetCaster(), self:GetAbility(), "modifier_ragnaros_essence_strike_target", { duration = duration })
             end
         end
     end

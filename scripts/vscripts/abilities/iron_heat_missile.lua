@@ -3,6 +3,9 @@ iron_heat_missile = class({})
 function iron_heat_missile:OnSpellStart()
 	local radius = self:GetSpecialValueFor( "radius" )
 
+	local particle = "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "dark_custom") == true then particle = "particles/hero_ironman/iron_rockets.vpcf" end 
+
 	local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false )
 	if #targets > 0 then
 		local count = 0
@@ -10,7 +13,7 @@ function iron_heat_missile:OnSpellStart()
 			if count < self:GetSpecialValueFor("targets") then
 				count = count + 1
 				local info = {
-						EffectName = "particles/units/heroes/hero_tinker/tinker_missile.vpcf",
+						EffectName = particle,
 						Ability = self,
 						iMoveSpeed = self:GetSpecialValueFor( "speed" ),
 						Source = self:GetCaster(),

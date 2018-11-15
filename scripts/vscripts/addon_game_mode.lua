@@ -108,9 +108,18 @@ function Precache( context )
 
 
 	PrecacheResource("model", "models/development/invisiblebox.vmdl", context)
+	PrecacheResource("model", "models/items/courier/amaterasu/amaterasu.vmdl", context)
+	PrecacheResource("model", "models/pets/drodo/drodo.vmdl", context)
+	PrecacheResource("model", "models/heroes/hero_elsa/elsa.vmdl", context)
+	PrecacheResource("model", "models/pets/osky/osky.vmdl", context)
+	PrecacheResource("model", "models/pets/icewrack_wolf/icewrack_wolf.vmdl", context)
+	
+	PrecacheResource("particle", "particles/econ/pets/pet_drodo_ambient.vpcf", context)
+	
 	PrecacheResource("particle", "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_weather_underwater.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_snow.vpcf", context)
+	PrecacheResource("particle", "particles/econ/pets/otto_ambient.vpcf", context)
 
 	PrecacheResource("soundfile", "soundevents/custom_sounds.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/hero_zoom.vsndevts", context)
@@ -189,7 +198,7 @@ function GameMode:InitGameMode()
 
 	if GetMapName() == "world_war_hulk" then
 		GameRules:SetCustomGameTeamMaxPlayers(3, 0)
-		GameRules:SetCustomGameTeamMaxPlayers(2, 10)
+		GameRules:SetCustomGameTeamMaxPlayers(2, 8)
 		GameRules:SetHeroRespawnEnabled( false )
 		GameRules:GetGameModeEntity():SetBuybackEnabled( false )
 		GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled( true )
@@ -199,7 +208,7 @@ function GameMode:InitGameMode()
 		GameRules:SetCreepMinimapIconScale( 0.5 )
 		GameRules:SetRuneMinimapIconScale( 0.5 )
 		GameRules:SetGoldTickTime( 1 )
-		GameRules:SetGoldPerTick( 1 )
+		GameRules:SetGoldPerTick( 1000 )
 
 		GameRules:SetPreGameTime( 20.0 )
 	end

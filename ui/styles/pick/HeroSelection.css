@@ -329,8 +329,11 @@
 }
 
 .PlayerMedalIcon {
-    width: 54px;
-    height: 54px;
+    width: 86px;
+    height: 64px;
+
+    margin-right: -10px;
+
     vertical-align: center;
     horizontal-align: right;
     background-position: center;

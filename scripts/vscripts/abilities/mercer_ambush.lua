@@ -56,7 +56,7 @@ end
 function modifier_mercer_ambush:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-        MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS,
+        MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
     }
 
@@ -67,12 +67,16 @@ function modifier_mercer_ambush:GetModifierPhysicalArmorBonus( params )
     return self.armor
 end
 
-function modifier_mercer_ambush:GetModifierExtraHealthBonus(args)
+function modifier_mercer_ambush:GetModifierHealthBonus(args)
     return self.hp
 end
 
 function modifier_mercer_ambush:GetModifierBaseAttack_BonusDamage( params )
     return self.damage
+end
+
+function modifier_mercer_ambush:GetAttributes ()
+    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
 
 function modifier_mercer_ambush:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

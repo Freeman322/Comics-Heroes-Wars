@@ -29,17 +29,17 @@ function RebuildUI() {
             PlayerColor.AddClass("PlayerColorPanel")
             PlayerColor.style.backgroundColor = ToColor(pColor)
 
-            if (getPrestige(pID) && getPrestige(pID) != 0) {
+            if (getMedal(pID) && getMedal(pID) != 0) {
                 PlayerName.AddClass(getPrestigeIcon(getPrestige(pID)))
                 PlayerRank.AddClass("rank_" + getPrestigeIcon(getPrestige(pID)))
 
-                var prestigeIcon = getPrestigeIcon(getPrestige(pID))
-                if (prestigeIcon) {
+                var medalIcon = getMedalIcon(getMedal(pID))
+                if (medalIcon) {
                     var PlayerMedal = $.CreatePanel("Panel", playerPanel, undefined);
                     PlayerMedal.AddClass("PlayerMedalIcon")
-                    PlayerMedal.style.backgroundImage = 'url("s2r://panorama/images/prestige/' + prestigeIcon + '_png.vtex")';
+                    PlayerMedal.style.backgroundImage = 'url("s2r://panorama/images/econs/' + medalIcon + '_png.vtex")';
 
-                    var medal = "DOTA_Prestige_" + getPrestige(pID)
+                    var medal = $.Localize(medalIcon)
 
                     var mouseOverCapture = (function(medal, PlayerMedal) {
                             return function() {
@@ -59,11 +59,6 @@ function RebuildUI() {
 
                     PlayerMedal.SetPanelEvent("onmouseover", mouseOverCapture);
                     PlayerMedal.SetPanelEvent("onmouseout", mouseOutCapture);
-
-                    /*var previewPanel = $.CreatePanel("Panel", playerPanel, undefined);
-                    previewPanel.BLoadLayoutFromString('<root><Panel><DOTAScenePanel style="width: 100%; height: 100%;" hittest="false" map="scenes/sparkles" camera="shot_camera"/></Panel></root>', false, false);
-                    previewPanel.hittest = false
-                    previewPanel.AddClass("scene_" + getPrestigeIcon(getPrestige(pID)))*/
                 }
             }
 
@@ -73,14 +68,14 @@ function RebuildUI() {
                 if (rank) {
                     var mouseOverCapture = (function(rank, PlayerRank) {
                             return function() {
-                                OnInspectRank(rank, PlayerRank)
+                                OnInspectRank(rank, PlayerRank, getPrestige(pID))
                             }
                         }
                         (rank, PlayerRank));
 
                     var mouseOutCapture = (function(rank, PlayerRank) {
                             return function() {
-                                OnInspectRankOver(rank, PlayerRank)
+                                OnInspectRankOver(rank, PlayerRank, getPrestige(pID))
                             }
                         }
                         (rank, PlayerRank));
@@ -117,17 +112,17 @@ function RebuildUI() {
             PlayerColor.AddClass("PlayerColorPanel")
             PlayerColor.style.backgroundColor = ToColor(pColor)
 
-            if (getPrestige(pID) && getPrestige(pID) != 0) {
+            if (getMedal(pID) && getMedal(pID) != 0) {
                 PlayerName.AddClass(getPrestigeIcon(getPrestige(pID)))
                 PlayerRank.AddClass("rank_" + getPrestigeIcon(getPrestige(pID)))
 
-                var prestigeIcon = getPrestigeIcon(getPrestige(pID))
-                if (prestigeIcon) {
+                var medalIcon = getMedalIcon(getMedal(pID))
+                if (medalIcon) {
                     var PlayerMedal = $.CreatePanel("Panel", playerPanel, undefined);
                     PlayerMedal.AddClass("PlayerMedalIcon")
-                    PlayerMedal.style.backgroundImage = 'url("s2r://panorama/images/prestige/' + prestigeIcon + '_png.vtex")';
+                    PlayerMedal.style.backgroundImage = 'url("s2r://panorama/images/econs/' + medalIcon + '_png.vtex")';
 
-                    var medal = "DOTA_Prestige_" + getPrestige(pID)
+                    var medal = $.Localize(medalIcon)
 
                     var mouseOverCapture = (function(medal, PlayerMedal) {
                             return function() {
@@ -147,11 +142,6 @@ function RebuildUI() {
 
                     PlayerMedal.SetPanelEvent("onmouseover", mouseOverCapture);
                     PlayerMedal.SetPanelEvent("onmouseout", mouseOutCapture);
-
-                    /*var previewPanel = $.CreatePanel("Panel", playerPanel, undefined);
-                    previewPanel.BLoadLayoutFromString('<root><Panel><DOTAScenePanel style="width: 100%; height: 100%;" hittest="false" map="scenes/sparkles" camera="shot_camera"/></Panel></root>', false, false);
-                    previewPanel.hittest = false
-                    previewPanel.AddClass("scene_" + getPrestigeIcon(getPrestige(pID)))*/
                 }
             }
 
@@ -161,14 +151,14 @@ function RebuildUI() {
                 if (rank) {
                     var mouseOverCapture = (function(rank, PlayerRank) {
                             return function() {
-                                OnInspectRank(rank, PlayerRank)
+                                OnInspectRank(rank, PlayerRank, getPrestige(pID))
                             }
                         }
                         (rank, PlayerRank));
 
                     var mouseOutCapture = (function(rank, PlayerRank) {
                             return function() {
-                                OnInspectRankOver(rank, PlayerRank)
+                                OnInspectRankOver(rank, PlayerRank, getPrestige(pID))
                             }
                         }
                         (rank, PlayerRank));
@@ -298,6 +288,13 @@ function RebuildUI() {
     $("#Arrow").style.backgroundImage = 'url("s2r://panorama/images/custom_game/heroes/npc_dota_hero_drow_ranger_png.vtex")';
     $("#Arrow").hittest = true;
     $("#PlayerName").text = Players.GetPlayerName( Game.GetLocalPlayerID() )
+
+    if (info.map_name == "maps/world_war_hulk.vpk") {
+        $("#npc_dota_hero_vengefulspirit").SetHasClass("Picked", true); $("#npc_dota_hero_vengefulspirit").hittest = false;
+        $("#npc_dota_hero_elder_titan").SetHasClass("Picked", true); $("#npc_dota_hero_elder_titan").hittest = false;
+        $("#npc_dota_hero_troll_warlord").SetHasClass("Picked", true); $("#npc_dota_hero_troll_warlord").hittest = false;
+        $("#npc_dota_hero_warlock").SetHasClass("Picked", true); $("#npc_dota_hero_warlock").hittest = false;
+    }
 }
 
 function OnHeroSelected(name, panel) {

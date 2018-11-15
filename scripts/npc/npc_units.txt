@@ -19519,13 +19519,13 @@
 
 
 		"Ability10"					"special_bonus_unique_superman_4"
-		"Ability11"					"special_bonus_all_stats_12"
+		"Ability11"					"special_bonus_unique_superman_5"
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_unique_superman_3"
 		"Ability14"					"special_bonus_unique_superman_1"
 		"Ability15"					"special_bonus_unique_superman_2"
 		"Ability16"					"special_bonus_strength_25"
-		"Ability17"					"special_bonus_all_stats_20"
+		"Ability17"					"special_bonus_unique_superman_6"
         
         // Card info
         "Role"          			"Carry,Durable"

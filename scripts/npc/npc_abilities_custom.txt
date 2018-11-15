@@ -3548,7 +3548,11 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
+		"precache"
+		{
+			"model"						"models/items/beastmaster/bm_ti7_immortal_shoulder/bm_ti7_immortal_shoulder.vmdl"
+			"particle"					"particles/econ/items/beastmaster/bm_shoulder_ti7/bm_shoulder_ti7_ambient.vpcf"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -3570,75 +3574,75 @@
 			}
 		}
 	}
-"draks_double_edge"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"									"ability_lua"
-	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-	"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
-	"FightRecapLevel"						"2"
-	"AbilityTextureName"				"custom/Return_Centaur_icon"
-	"ScriptFile"								"abilities/draks_double_edge.lua"
-	// Stats
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"					"21 18 15 12"
-	"AbilityCastRange"				"300"
-	"AbilityCastPoint"				"0.1"
-
-	//------------------------------------------------------------------------------
-	"AbilityManaCost"				"80 100 120 140"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	"draks_double_edge"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"									"ability_lua"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"						"2"
+		"AbilityTextureName"				"custom/Return_Centaur_icon"
+		"ScriptFile"								"abilities/draks_double_edge.lua"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"					"21 18 15 12"
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.1"
 
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"edge_damage"					"190 260 330 400"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"300"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_per_strngth"			"2.25 2.5 2.75 3"
-			}
-	}
+		//------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 100 120 140"
 
-	"precache"
-	{
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
-		"particle"	"particles/units/heroes/hero_centaur/centaur_double_edge.vpcf"
-	}
-
-		"OnSpellStart"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-				"FireSound"
+
+				"01"
 				{
-					"Target" 			"CASTER"
-					"EffectName"		"Hero_Centaur.DoubleEdge"
+					"var_type"						"FIELD_INTEGER"
+					"edge_damage"					"190 260 330 400"
 				}
-				"RunScript"
+				"02"
 				{
-					"ScriptFile"	"heroes/hero_centaur/double_edge.lua"
-					"Function"		"DoubleEdgeParticle"
+					"var_type"						"FIELD_INTEGER"
+					"radius"						"300"
 				}
-				"RunScript"
+				"03"
 				{
-					"ScriptFile"	"heroes/hero_centaur/double_edge.lua"
-					"Function"		"DoubleEdgeDamage"
+					"var_type"						"FIELD_FLOAT"
+					"damage_per_strngth"			"2.25 2.5 2.75 3"
 				}
-		 }
-  }
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+			"particle"	"particles/units/heroes/hero_centaur/centaur_double_edge.vpcf"
+		}
+
+			"OnSpellStart"
+			{
+					"FireSound"
+					{
+						"Target" 			"CASTER"
+						"EffectName"		"Hero_Centaur.DoubleEdge"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_centaur/double_edge.lua"
+						"Function"		"DoubleEdgeParticle"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_centaur/double_edge.lua"
+						"Function"		"DoubleEdgeDamage"
+					}
+			}
+	}
 	"draks_flesh_heap"
 	{
 			// General
@@ -3787,6 +3791,11 @@
 				"particle"			"particles/econ/items/axe/axe_cinder/axe_cinder_ambient_alt.vpcf"
 				"model"				"models/items/axe/generic_blinkdag/generic_blinkdag.vmdl"
 				"model"				"models/items/axe/hood_executioner.vmdl"
+				"model"				"models/items/axe/oglodi_big_boss_head/oglodi_big_boss_head.vmdl"
+				"model"				"models/items/axe/oglodi_big_boss_misc/oglodi_big_boss_misc.vmdl"
+				"model"				"models/items/axe/oglodi_big_boss_belt/oglodi_big_boss_belt.vmdl"
+				"model"				"models/items/axe/oglodi_big_boss_armor/oglodi_big_boss_armor.vmdl"
+				"model"				"models/items/axe/oglodi_big_boss_weapon/oglodi_big_boss_weapon.vmdl"
 			}
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
@@ -4717,6 +4726,7 @@
 			"particle"  "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_ambient.vpcf"
 			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"model"		"models/samurai/samurai_emirald_atomic_blade.vmdl"
 		}
 		"AbilitySpecial"
 		{
@@ -7884,11 +7894,11 @@
 	{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"ID"					"5252"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"ID"							"5252"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
-			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_SUMMONED"
 			"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 			"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
 			"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
@@ -9750,6 +9760,8 @@
 			"particle"					"particles/econ/courier/courier_flopjaw_gold/courier_flopjaw_ambient_gold.vpcf"
 			"particle"					"particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf"
 			"particle"					"particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf"
+			"model"						"models/heroes/hero_batman/batman_of_darkness/batman.vmdl"
+			"particle"					"particles/hero_batman/batman_immortal_ambient.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -10194,6 +10206,8 @@
 			"model"		"models/items/lifestealer/promo_bloody_ripper_arms/promo_bloody_ripper_arms.vmdl"
 			"model"		"models/items/lifestealer/mad_naix_of_the_fury_dungeon_belt/mad_naix_of_the_fury_dungeon_belt.vmdl"
 			"model"		"models/items/lifestealer/mad_naix_of_the_fury_dungeon_back/mad_naix_of_the_fury_dungeon_back.vmdl"
+			"model"		"models/heroes/hero_venom/venomous_duck/hovard.vmdl"
+			"particle"	"particles/hero_venom/venom_immoeral_ambient.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -14547,7 +14561,7 @@
 		"ScriptFile"						"abilities/ragnaros_fade.lua"
 		"AbilityTextureName"				"custom/ragnaros_sunder"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
@@ -16367,6 +16381,17 @@
 		"precache"
 		{
 			"model"		 "models/items/terrorblade/corrupted_form/corrupted_form.vmdl"
+			"particle"		"particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation_fire_arcana.vpcf"
+			"model"		"models/heroes/shadow_fiend/shadow_fiend_arcana.vmdl"
+			"model"		"models/items/nevermore/krakens_ravager_head/krakens_ravager_head.vmdl"
+			"model"		"models/items/nevermore/krakens_ravager_shoulder/krakens_ravager_shoulder.vmdl"
+			"model"		"models/items/nevermore/ferrum_chiroptera_shoulder/ferrum_chiroptera_shoulder.vmdl"
+			"model"		"models/items/shadow_fiend/arms_deso/arms_deso.vmdl"
+			"particle"		"particles/econ/items/shadow_fiend/sf_ferrum/shadow_fiend_ferrum_shoulder_ambient.vpcf"
+			"particle"		"particles/econ/courier/courier_platinum_roshan/platinum_roshan_ambient.vpcf"
+			"particle"		"particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"particle"		"particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf"
+			"particle"		"particles/econ/courier/courier_greevil_white/courier_greevil_white_ambient_3.vpcf"
 			"particle"  "particles/econ/items/ancient_apparition/aa_blast_ti_5/aa_ti5_eyes.vpcf"
 		}
 		// Casting
@@ -17940,7 +17965,8 @@
 		"AbilityDamage"						"180 260 340 420"
 		"precache"
 		{
-			"particle"  "particles/econ/events/winter_major_2017/dagon_wm07.vpcf"
+			"particle"  					"particles/econ/events/winter_major_2017/dagon_wm07.vpcf"
+			"model"							"models/heroes/hero_franklin/franklin_immortal_helmet.vmdl"
 		}
 
 		// Special
@@ -19745,11 +19771,15 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.2"	// Slow isn't the main function of this ability.
+		
 		"precache"
 		{
 			"particle"  "particles/status_fx/status_effect_templar_slow.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
 			"particle"  "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_prison_end.vpcf"
+			"model"		"models/items/rubick/gambling_mage_rubick_weapon/gambling_mage_rubick_weapon.vmdl"
+			"particle"	"particles/econ/items/rubick/rubick_gambling_mage/rubick_gambling_mage_ambient.vpcf"
+			"model"		"models/items/rubick/gambling_mage_rubick_back/gambling_mage_rubick_back.vmdl"
 		}
 
 		"AbilitySpecial"
@@ -20311,6 +20341,10 @@
 			"model"			"models/heroes/monkey_king/monkey_king_hair.vmdl"
 			"particle"  	"particles/units/heroes/hero_arc_warden/arc_warden_tempest_cast.vpcf"
 			"particle"  	"particles/status_fx/status_effect_terrorblade_reflection.vpcf"
+			"model"			"models/items/monkey_king/the_havoc_of_dragon_palacesix_ear_weapon/the_havoc_of_dragon_palacesix_ear_weapon.vmdl"
+			"particle"		"particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"model"			"models/items/monkey_king/the_havoc_of_dragon_palacesix_ear_head/the_havoc_of_dragon_palacesix_ear_head.vmdl"
+			"particle"		"particles/econ/mkb_ambient.vpcf"
 			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
 		}
 		// Special
@@ -21765,6 +21799,7 @@
 			"model"			"models/heroes/rattletrap/rattletrap_hook.vmdl"
 			"model"			"models/items/rattletrap/eternal_machine_head/eternal_machine_head.vmdl"
 			"particle"  	"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+			"particle"		"particles/units/heroes/hero_tinker/tinker_missile.vpcf"
 		}
 	}
 
@@ -22750,6 +22785,9 @@
 			"particle"  "particles/status_fx/status_effect_arc_warden_tempest.vpcf"
 			"particle"  "particles/units/heroes/hero_arc_warden/arc_warden_tempest_cast.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"model"		"models/items/shadow_demon/conqueror_measurement_armor/conqueror_measurement_armor.vmdl"
+			"model"		"models/items/shadow_demon/conqueror_measurement_back/conqueror_measurement_back.vmdl"
+			"model"		"models/items/shadow_demon/conqueror_measurement_tail/conqueror_measurement_tail.vmdl"
 		}
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -27605,6 +27643,13 @@
 			"particle"					"particles/hero_nightking/nightking_frost_debuff.vpcf"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
 			"particle"					"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_frosty_dire.vpcf"
+			"model"						"models/items/abaddon/the_sunken_horseman_abaddon_weapon/the_sunken_horseman_abaddon_weapon.vmdl"
+			"model"						"models/items/abaddon/the_sunken_horseman_abaddon_head/the_sunken_horseman_abaddon_head.vmdl"
+			"model"						"models/heroes/abaddon/abaddon.vmdl"
+
+			"model"						"models/items/abaddon/the_sunken_horseman_abaddon_mount/the_sunken_horseman_abaddon_mount.vmdl"
+			"model"						"models/items/abaddon/the_sunken_horseman_abaddon_shoulder/the_sunken_horseman_abaddon_shoulder.vmdl"
+			"model"						"models/items/abaddon/the_sunken_horseman_abaddon_back/the_sunken_horseman_abaddon_back.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -27847,6 +27892,13 @@
 		"AbilityManaCost"				"0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		
+		"precache"
+		{
+			"model"						"models/items/invoker/nightlord_shoulder/nightlord_shoulder.vmdl"
+			"model"						"models/items/invoker/nightlord_belt/nightlord_belt.vmdl"
+			"particle"					"particles/econ/items/invoker/invoker_darklord/invoker_darklord_ambient.vpcf"
+			"particle"					"particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_base_attack.vpcf"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -29075,6 +29127,7 @@
 			"particle"						"particles/econ/items/kunkka/kunkka_weapon_whaleblade_retro/kunkka_weapon_glow_whaleblade_retro_lvl2_ambient.vpcf"
 			"particle"						"particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_ti8_immortal_pitofmalice.vpcf"
 			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
+			"model"							"models/heroes/hero_miraak/econs/sword.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -31713,7 +31766,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 45 30"
+		"AbilityCooldown"				"90 75 60"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -31732,6 +31785,10 @@
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
 			"model"		"models/heroes/hero_marvel/hair.vmdl"
+			"model"		"models/heroes/hero_marvel/jiren_custom/jiren.vmdl"
+			"particle"	"particles/econ/items/bloodseeker/bloodseeker_eztzhok_weapon/bloodseeker_bloodrage_eztzhok.vpcf"
+			"particle"	"particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+			"particle"	"particles/hero_marvel/quantum_fier_custom.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -31740,12 +31797,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"5.0 6.0 7.0"
+				"duration"						"3.25 3.95 4.35"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage_outgoing"			"80 100 120"
+				"bonus_damage_outgoing"			"100 150 200"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -31805,7 +31862,7 @@
 			"08"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"punch_bash_duration"			"0.8 1.2 1.6 2.0"
+				"punch_bash_duration"			"0.25 0.45 0.65 0.85"
 				"LinkedSpecialBonus"			"special_bonus_unique_mercer_3"
 			}
 			"09"
@@ -31849,7 +31906,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"heal_ptc"					"14 18 23 27"
+				"heal_ptc"					"18 22 26 32"
 				"LinkedSpecialBonus"		"special_bonus_unique_mercer_1"
 			}
 		}
@@ -31869,7 +31926,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_SUMMONED"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_SUMMONED | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
@@ -31884,7 +31941,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"160"
+		"AbilityCooldown"				"80 60 40 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -31905,7 +31962,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"20 30 40 50"
+				"duration"					"30 50 80 100"
 			}
 		}
 	}
@@ -31938,7 +31995,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"150.0 150.0 150.0"
+		"AbilityCooldown"				"180 170 160"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -31988,7 +32045,7 @@
 			"05"
 			{	
 				"var_type"				"FIELD_INTEGER"
-				"think_damage"			"85 140 195"
+				"think_damage"			"140 230 295"
 				"LinkedSpecialBonus"	"special_bonus_unique_mercer_4"
 			}
 		}
@@ -32043,16 +32100,16 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"26 24 22 20"
 		"AbilityDuration"				"8"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"60 80 100 120"
+		"AbilityDamage"					"80 100 140 160"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"25 30 35 40"
+		"AbilityManaCost"				"100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -32066,7 +32123,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"wave_width"		"300"
+				"wave_width"		"200"
 			}
 			"03"
 			{
@@ -32104,12 +32161,17 @@
 		"AbilityTextureName"			"custom/superman_punch"
 		"ScriptFile"					"abilities/superman_punch.lua"	
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12.0 10.0 8.0 6.0"
+		"AbilityCastRange"				"140"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -32135,14 +32197,24 @@
 		"AbilityTextureName"			"custom/superman_kryptonian"
 		"ScriptFile"					"abilities/superman_kryptonian.lua"	
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCooldown"				"140 100 60"
+		"AbilityManaCost"				"230 370 435"
 		
 		"precache"
 		{
 			"particle"					"particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
 			"particle"					"particles/units/heroes/hero_crystalmaiden/maiden_frostbite.vpcf"
 			"particle"					"particles/hero_superman/superman_projectile_stout.vpcf"
+			"particle"					"particles/warp/ground.vpcf"
+			"particle"					"particles/warp/punch.vpcf"
+			"particle"					"particles/warp/cracks.vpcf"
 			"particle"					"particles/econ/items/legion/legion_overwhelming_odds_ti7/legion_commander_odds_ti7_proj_impact.vpcf"
 		}
 		// Special
@@ -32169,6 +32241,12 @@
                 "var_type"                    "FIELD_INTEGER"
                 "max_stacks"    			  "100 150 200"
 				"LinkedSpecialBonus"		  "special_bonus_unique_superman_2"
+            }
+			"05"
+            {
+                "var_type"                    "FIELD_INTEGER"
+                "stack_mult"    			  "8 12 15"
+				"LinkedSpecialBonus"		  "special_bonus_unique_superman_5"
             }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -32233,6 +32311,46 @@
 			}
 		}
 	}	
+
+	"special_bonus_unique_superman_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"8"
+			}
+		}
+	}
+
+	"special_bonus_unique_superman_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1"
+			}
+		}
+	}
 
 	"special_bonus_unique_superman_4"
 	{

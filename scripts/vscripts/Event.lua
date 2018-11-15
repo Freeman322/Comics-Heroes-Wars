@@ -1,5 +1,7 @@
 Event = class({})
 
+Event.m_nRounds = 1
+
 function Event:Start()
 	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Event, "OnNPCSpawned" ), self )
 	ListenToGameEvent( "entity_killed", Dynamic_Wrap( Event, 'OnEntityKilled' ), self )
@@ -9,6 +11,7 @@ function Event:Start()
 
 	LinkLuaModifier("modifier_escape","modifiers/modifier_escape.lua", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_attack_range","modifiers/modifier_attack_range.lua", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_hulk_dummy","ai/hulk.lua", LUA_MODIFIER_MOTION_NONE)
 end
 
 function Event:CheckEventState()	
@@ -30,7 +33,7 @@ function Event:OnNPCSpawned( event )
 		for i = 1, 35 do
 			spawnedUnit:HeroLevelUp(false)
 		end
-		PlayerResource:ModifyGold(spawnedUnit:GetPlayerOwnerID(), 10000, true, DOTA_ModifyGold_Unspecified)
+		PlayerResource:ModifyGold(spawnedUnit:GetPlayerOwnerID(), 6000, true, DOTA_ModifyGold_Unspecified)
 	end
 end
 
@@ -54,9 +57,77 @@ function Event:_CheckForDefeat()
 	end
 
 	if bAllPlayersDead then
+		self:Save()
 		GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
 		return
 	end
+end
+
+function Event:Save()
+	if IsServer() and not IsInToolsMode() and not GameRules:IsCheatMode() then 
+		local data = {}
+		local players = Network:GetAllPlayersID()
+		local drop_item = 250
+
+		data.players = players
+		data.rounds = Event.m_nRounds or 1
+		data.time = GameRules:GetGameTime()
+
+		local connection = CreateHTTPRequestScriptVM('POST', "http://pggames.pw/games/chw/src/Deritide/Event.php")
+		local encoded_data = json.encode(data)
+		connection:SetHTTPRequestGetOrPostParameter('payload', encoded_data)
+		connection:Send (function(result_keys) end)
+
+		if Event.m_nRounds >= 5 then 
+			local value = PlayerTables:GetTableValue("globals", "econs")
+			local players = Network:GetAllPlayersIDAndSteams()
+			local drop = {}
+			for steam_id, player_id in pairs(players) do
+				local counter = math.floor( (Event.m_nRounds / 10) + 1 )
+				for i = 1, counter do
+					local econ = {
+						item = drop_item, 
+						rarity = value[tostring(drop_item)]['rarity'], 
+						quality = value[tostring(drop_item)]['quality'], 
+						is_medal = value[tostring(drop_item)]['is_medal'], 
+						is_treasure = value[tostring(drop_item)]['is_treasure'], 
+						tradeable = 1, 
+						steam_id = tostring(steam_id)
+					}
+					Network:CreateEconItem(econ)
+				end
+				
+				drop[player_id] = {}
+				drop[player_id].steam_id = steam_id
+				drop[player_id].item = drop_item
+				drop[player_id].rarity = value[tostring(drop_item)]['rarity']
+
+				if RollPercentage(1) then 
+					if RollPercentage(45) then
+						local econ = {
+							item = 236, 
+							rarity = 10, 
+							quality = 10, 
+							is_medal = 0, 
+							is_treasure = 0, 
+							tradeable = 1, 
+							steam_id = tostring(steam_id)
+						}
+						Network:CreateEconItem(econ)
+	
+						drop[player_id] = {}
+						drop[player_id].steam_id = steam_id
+						drop[player_id].item = 236
+						drop[player_id].rarity = 10 
+					end 
+				end 
+			end
+			
+			if drop then
+				CustomNetTables:SetTableValue("globals", "drop", drop)
+			end
+		end 
+	end 
 end
 
 
@@ -109,3 +180,20 @@ function Event:OnGameLoaded()
 	end)
 end 
 
+function OnHulkInTrigger( data )
+	if IsServer() then 
+		local hulk = data.activator
+
+		hulk:RemoveModifierByName("modifier_hulk_dummy")
+	end 
+end
+
+function OnHulkEndTouch( data )
+	if IsServer() then 
+		local hulk = data.activator
+
+		hulk:AddNewModifier(hulk, nil, "modifier_hulk_dummy", nil)
+
+		hulk:MoveToPosition(Vector(-597, 316, 128))
+	end 
+end

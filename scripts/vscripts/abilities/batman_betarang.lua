@@ -44,21 +44,15 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 
 		ApplyDamage( damage )
 
-		if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") then
-	        local particle = ParticleManager:CreateParticle ("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget)
-	        ParticleManager:SetParticleControlEnt (particle, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetAbsOrigin (), false)
-	        ParticleManager:ReleaseParticleIndex(particle)
-
-	        local particle = ParticleManager:CreateParticle ("particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget)
-	        ParticleManager:SetParticleControlEnt (particle, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetAbsOrigin (), false)
-	        ParticleManager:SetParticleControlEnt (particle, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin (), false)
-	        ParticleManager:ReleaseParticleIndex(particle)
-	    end
 
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
+
 		if self.max_bounces == 0 then
 			return nil
 		end
+
+		local next_target = self:GetCaster()
+
 		local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), hTarget:GetAbsOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 		if #units > 0 then
 			for _,target in pairs(units) do
@@ -73,10 +67,23 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 					}
 					self.max_bounces = self.max_bounces - 1
 					ProjectileManager:CreateTrackingProjectile( info )
+
+					next_target = target
 					break
 				end
 			end
 		end
+
+		if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") then
+	        local particle = ParticleManager:CreateParticle ("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget)
+	        ParticleManager:SetParticleControlEnt (particle, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetAbsOrigin (), false)
+	        ParticleManager:ReleaseParticleIndex(particle)
+
+	        local particle = ParticleManager:CreateParticle ("particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget)
+	        ParticleManager:SetParticleControlEnt (particle, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetAbsOrigin (), false)
+	        ParticleManager:SetParticleControlEnt (particle, 1, next_target, PATTACH_POINT_FOLLOW, "attach_attack1", next_target:GetAbsOrigin (), false)
+	        ParticleManager:ReleaseParticleIndex(particle)
+	    end
 	end
 
 	return true

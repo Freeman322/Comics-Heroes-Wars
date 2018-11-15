@@ -3673,15 +3673,15 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-
-		"Ability1"					""
-		"Ability2"					""
-		"Ability3"					"neutral_spell_immunity"
-		"Ability4"					"tidehunter_kraken_shell"
-		"Ability5"					""
-		"Ability6"					""
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
+		"Ability1"						"skeleton_king_hellfire_blast"
+		"Ability2"						"skeleton_king_vampiric_aura"
+		"Ability3"						"skeleton_king_mortal_strike"
+		"Ability4"						"neutral_spell_immunity"
+		"Ability5"						"tidehunter_kraken_shell"
+		"Ability6"						"abyssal_underlord_firestorm"
+		"Ability7"						"abyssal_underlord_pit_of_malice"
+		"Ability8"						"abyssal_underlord_atrophy_aura"
+		"Ability8"						"faceless_void_chronosphere"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -3704,8 +3704,8 @@
 		"ProjectileSpeed"			"0"
 		"AttackDamageMin"			"25"		// Damage range min.
 		"AttackDamageMax"			"45"		// Damage range max.
-		"AttackRate"				"0.1"		// Speed of attack.
-		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.430000"
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
 
 		// Bounty
@@ -3755,6 +3755,37 @@
 	  	{
 			"CanRespawn"				"1"
 
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"skeleton_king_hellfire_blast"
+					"Damage"			"1"
+					"Stun"				"1"
+				}
+				"Ability2"
+				{
+					"Name"				"abyssal_underlord_firestorm"
+					"AOE"				"1"
+					"Radius"			"650"
+					"MinimumTargets"	"2"
+				}
+				"Ability3"
+				{
+					"Name"				"abyssal_underlord_pit_of_malice"
+					"AOE"				"1"
+					"Radius"			"650"
+					"MinimumTargets"	"1"
+				}
+				"Ability4"
+				{
+					"Name"				"faceless_void_chronosphere"
+					"AOE"				"1"
+					"Radius"			"650"
+					"MinimumTargets"	"3"
+				}
+			}
+
 			"States"
 			{
 				"Invade"
@@ -3776,19 +3807,19 @@
 				}
 				"Heart"
 				{
-					"Item"					"item_heart"
+					"Item"					"item_heart_2"
 				}
-				"ShivasGuard"
+				"Assault"
 				{
-					"Item"					"item_shivas_guard"
+					"Item"					"item_assault"
 				}
-				"PhaseBoots"
+				"Pearl"
 				{
-					"Item"					"item_phase_boots"
+					"Item"					"item_ice_pearl"
 				}
-				"BlackKingBar"
+				"Axe"
 				{
-					"Item"					"item_black_king_bar"
+					"Item"					"item_axe_of_phractos"
 				}
 				"MonkeyKingBar"
 				{

@@ -6,10 +6,11 @@ if item_frostmourne == nil then
     item_frostmourne = class ( {})
 end
 
+function item_frostmourne:IsRefreshable()
+    return false
+end
+
 function item_frostmourne:GetCooldown(iLevel)
-    if self:GetCaster():GetUnitName() == "npc_dota_hero_sand_king" or self:GetCaster():GetUnitName() == "npc_dota_hero_skeleton_king" then
-        return 60
-    end
     return self.BaseClass.GetCooldown( self, iLevel )
 end
 
@@ -130,12 +131,13 @@ function modifier_item_frostmourne:OnAttackLanded (params)
             local hAbility = self:GetAbility ()
             params.target:AddNewModifier (self:GetCaster (), self:GetAbility (), "modifier_item_frostmourne_slowing", { duration = 5 })
             local cold_attack_damage = hAbility:GetSpecialValueFor ("cold_attack_damage")
+
             if params.target:IsBuilding() then
                 cold_attack_damage = cold_attack_damage / 2
             end
-            if self:GetParent():IsIllusion() then 
-              return nil
-            end
+
+            if self:GetParent():IsIllusion() then return nil end
+            
             EmitSoundOn ("Hero_Ancient_Apparition.Attack", params.target)
             ApplyDamage ( { attacker = hAbility:GetCaster (), victim = params.target, ability = hAbility, damage = cold_attack_damage, damage_type = DAMAGE_TYPE_PURE })
         end
@@ -144,32 +146,56 @@ function modifier_item_frostmourne:OnAttackLanded (params)
 end
 
 function modifier_item_frostmourne:ReincarnateTime (params)
-    if IsServer () then
-        local parent = self:GetParent ()
-        if self:GetAbility ():IsCooldownReady () and self:GetAbility():GetName() == "item_frostmourne" then
-            self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
-            self.IsReincarnating = true
-            
-            local respawnPosition = parent:GetAbsOrigin()
+    if IsServer() then
+		if self:GetAbility():IsFullyCastable() then
+			self:Reincarnate()
+			return 3
+		end
+		return 0
+	end
+end
 
-            local particleName = "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
-            self.ReincarnateParticle = ParticleManager:CreateParticle (particleName, PATTACH_ABSORIGIN_FOLLOW, parent)
-            ParticleManager:SetParticleControl (self.ReincarnateParticle, 0, respawnPosition)
-            ParticleManager:SetParticleControl (self.ReincarnateParticle, 1, Vector (500, 0, 0))
-            ParticleManager:SetParticleControl (self.ReincarnateParticle, 1, Vector (500, 500, 0))
-            parent:EmitSound ("Hero_SkeletonKing.Reincarnate")
-            parent:EmitSound ("Hero_SkeletonKing.Death")
+function modifier_item_frostmourne:Reincarnate()
+    if IsServer() then 
+        -- spend resources
+        self:GetAbility():UseResources(true, false, true)
 
-            Timers:CreateTimer (3, function ()
-                ParticleManager:DestroyParticle (self.ReincarnateParticle, false)
-                parent:EmitSound ("Hero_SkeletonKing.Reincarnate.Stinger")
+        -- find affected enemies
+        local enemies = FindUnitsInRadius(
+            self:GetParent():GetTeamNumber(),	-- int, your team number
+            self:GetParent():GetOrigin(),	-- point, center point
+            nil,	-- handle, cacheUnit. (not known)
+            600,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+            DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+            0,	-- int, flag filter
+            0,	-- int, order filter
+            false	-- bool, can grow cache
+        )
 
-                self.IsReincarnating = false
-            end)
-            return 3
+        -- apply slow
+        for _,enemy in pairs(enemies) do
+            enemy:AddNewModifier(
+                self:GetParent(),
+                self:GetAbility(),
+                "modifier_wraith_king_reincarnation_debuff",
+                { duration = self.slow_duration }
+            )
         end
-        return
-    end
+
+        -- play effects
+        local particle_cast = "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+        local sound_cast = "Hero_SkeletonKing.Reincarnate"
+
+        -- play particle
+        local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN, self:GetParent() )
+        ParticleManager:SetParticleControl( effect_cast, 0, self:GetParent():GetOrigin() )
+        ParticleManager:SetParticleControl( effect_cast, 1, Vector( 3, 0, 0 ) )
+        ParticleManager:ReleaseParticleIndex( effect_cast )
+
+        -- play sound
+        EmitSoundOn( sound_cast, self:GetParent() )
+    end 
 end
 
 if modifier_item_frostmourne_slowing == nil then

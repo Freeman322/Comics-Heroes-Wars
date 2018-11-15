@@ -14,7 +14,7 @@ function item_refresher:OnSpellStart ()
     for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.
         local current_ability = self:GetCaster ():GetAbilityByIndex (i)
         if current_ability ~= nil then
-            if (current_ability:GetName () ~= "zoom_charge_of_darkness" or current_ability:GetName () ~= "lich_king_reincarnation") and current_ability:IsRefreshable() then 
+            if current_ability:IsRefreshable() then 
                 current_ability:EndCooldown ()
             end
         end
@@ -22,11 +22,7 @@ function item_refresher:OnSpellStart ()
     for i=0, 5, 1 do
         local current_item = self:GetCaster ():GetItemInSlot (i)
         if current_item ~= nil then
-            if current_item:GetName () == "item_refresher" or current_item:GetName () == "item_heart_of_abyss"  then
-                current_item:StartCooldown(195)
-            else
-                current_item:EndCooldown ()
-            end
+            if current_item ~= self and current_item:GetSharedCooldownName() ~= "refresher" then current_item:EndCooldown() end 
         end
     end
 end

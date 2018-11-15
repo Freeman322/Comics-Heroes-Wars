@@ -165,7 +165,7 @@ function modifier_mercer_ravage:OnIntervalThink()
 			attacker = self:GetCaster(),
 			damage = damage,
 			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self:GetAbility(), --Optional.
+			ability = self:GetAbility(), 
 		}
 
 		ApplyDamage(damageTable)
@@ -205,30 +205,17 @@ function modifier_mercer_ravage:OnUnitMoved( params )
 		if params.unit ~= self:GetParent() then
 			return
 		end
+		
+		local damage = params.gain * FrameTime() if damage <= 0 then damage = 1 end 
 
-		if (self:GetParent():GetAbsOrigin() - self:GetCaster():GetAbsOrigin()):Length2D() > self:GetAbility():GetSpecialValueFor( "break_radius" )  then
-			local damageTable = {
-				victim = self:GetParent(),
-				attacker = self:GetCaster(),
-				damage = self:GetAbility():GetSpecialValueFor( "break_damage" ) ,
-				damage_type = DAMAGE_TYPE_MAGICAL,
-				ability = self:GetAbility(), --Optional.
-			}
-			ApplyDamage(damageTable)
+		local damageTable = {
+			victim = self:GetParent(),
+			attacker = self:GetCaster(),
+			damage = damage,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = self:GetAbility(), 
+		} 
 
-			if not self:GetParent():IsMagicImmune() then
-				self:GetParent():AddNewModifier(
-					self:GetCaster(), 
-					self, 
-					"modifier_stunned",
-					{ duration = self:GetAbility():GetSpecialValueFor( "duration" )  } 
-				)
-
-			end
-
-			EmitSoundOn( "Hero_LifeStealer.Assimilate.Destroy", self:GetParent() )
-
-			self:Destroy()
-		end
+		ApplyDamage(damageTable)
 	end
 end

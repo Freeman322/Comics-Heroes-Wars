@@ -32,18 +32,30 @@ end
 
 function modifier_marvel_quantum_fier:OnCreated(table)
 	if IsServer() then
-		local nFXIndex = ParticleManager:CreateParticle("particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8_eyes.vpcf", PATTACH_ABSORIGIN, self:GetParent())
-		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_eye_l", self:GetCaster():GetOrigin(), true );
-		ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_eye_r", self:GetCaster():GetOrigin(), true );
-		ParticleManager:SetParticleControlEnt( nFXIndex, 2, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_eye_r", self:GetCaster():GetOrigin(), true );
-		self:AddParticle(nFXIndex, false, false, -1, false, false)
 
-		local nFXIndex1 = ParticleManager:CreateParticle("particles/hero_marvel/quantum_fier.vpcf", PATTACH_ABSORIGIN, self:GetParent())
-		ParticleManager:SetParticleControl( nFXIndex1, 3, Vector(300, 300, 0) );
-		ParticleManager:SetParticleControl( nFXIndex1, 9, Vector(300, 300, 0) );
-		self:AddParticle(nFXIndex1, false, false, -1, false, false)
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "jiren") == true then
+			EmitSoundOn("Jiren.Custom.Cast", self:GetCaster())
 
-		EmitSoundOn("Marvel.Ult.Cast", self:GetCaster())
+			local nFXIndex = ParticleManager:CreateParticle("particles/hero_marvel/quantum_fier_custom.vpcf", PATTACH_ABSORIGIN, self:GetParent())
+			ParticleManager:SetParticleControl( nFXIndex, 3, Vector(300, 300, 0) );
+			ParticleManager:SetParticleControl( nFXIndex, 9, Vector(300, 300, 0) );
+			self:AddParticle(nFXIndex, false, false, -1, false, false)
+
+			self:GetParent():StartGesture(ACT_DOTA_CAST_ABILITY_6)
+		else 
+			EmitSoundOn("Marvel.Ult.Cast", self:GetCaster())
+
+			local nFXIndex = ParticleManager:CreateParticle("particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8_eyes.vpcf", PATTACH_ABSORIGIN, self:GetParent())
+			ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_eye_l", self:GetCaster():GetOrigin(), true );
+			ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_eye_r", self:GetCaster():GetOrigin(), true );
+			ParticleManager:SetParticleControlEnt( nFXIndex, 2, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_eye_r", self:GetCaster():GetOrigin(), true );
+			self:AddParticle(nFXIndex, false, false, -1, false, false)
+	
+			local nFXIndex1 = ParticleManager:CreateParticle("particles/hero_marvel/quantum_fier.vpcf", PATTACH_ABSORIGIN, self:GetParent())
+			ParticleManager:SetParticleControl( nFXIndex1, 3, Vector(300, 300, 0) );
+			ParticleManager:SetParticleControl( nFXIndex1, 9, Vector(300, 300, 0) );
+			self:AddParticle(nFXIndex1, false, false, -1, false, false)
+		end 
 
 		self._hUnits = {}
 	end

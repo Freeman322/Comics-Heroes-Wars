@@ -12,16 +12,18 @@ function franklin_global_retrocausality:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
 
 	if hTarget then 
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_franklin_global_retrocausality_target", { duration = duration } )
+		if ( not hTarget:TriggerSpellAbsorb( self ) ) then
+			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_franklin_global_retrocausality_target", { duration = duration } )
 
-		local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), 999999, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, 0, false )
-		if #units > 0 then
-			for _,unit in pairs(units) do
-				unit:AddNewModifier( self:GetCaster(), self, "modifier_franklin_global_retrocausality_friendly", { duration = duration, target = hTarget:entindex() } )
+			local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), 999999, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, 0, false )
+			if #units > 0 then
+				for _,unit in pairs(units) do
+					unit:AddNewModifier( self:GetCaster(), self, "modifier_franklin_global_retrocausality_friendly", { duration = duration, target = hTarget:entindex() } )
+				end
 			end
-		end
 
-		EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse.Cast", self:GetCaster())
+			EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse.Cast", self:GetCaster())
+		end 
 	end
 end
 

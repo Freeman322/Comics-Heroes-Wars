@@ -12,5 +12,6 @@
     "talents",
     "medals",
     "event",
+    "players"
   ]
 }
