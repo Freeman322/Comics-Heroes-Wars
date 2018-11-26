@@ -1476,6 +1476,32 @@
                     }
                 }
             }
+            "sephiroth"
+            {
+                "model"     "models/heroes/hero_deadpool/econs/sephiroth_custom/sephiroth.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model" "models/heroes/hero_deadpool/econs/sephiroth_custom/econs/katana.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/plus/pugalo_ambient.vpcf"
+                    }
+                }
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_sephiroth"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+            }
             "the_primal_fear"
             {
                 "model"     "models/heroes/hero_atomic_arcana/dante.vmdl"
@@ -3562,6 +3588,10 @@
             {
 
             }
+            "nemesis_custom_gold"
+            {
+
+            }
         } 
         "weapon_right"
         {
@@ -3599,6 +3629,10 @@
             {
 
             }
+            "nemesis_custom_gold"
+            {
+
+            }
         } 
         "armor"
         {
@@ -3613,6 +3647,11 @@
                 }
             }
             "nemesis_custom"
+            {
+
+            }
+            
+            "nemesis_custom_gold"
             {
 
             }
@@ -3641,6 +3680,58 @@
                     }
                 }    
             }
+            "nemesis_custom_gold"
+            {
+                "render"                    "gold"
+                "model"                     "models/heroes/han/nemesis_custom/nemesis.vmdl"
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_nemesis"
+                        "modifier_path"     "modifiers/modifier_nemesis.lua"
+                    }
+                }
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"                  "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf"
+                        
+                        "ControlPoints"
+                        {
+                            "0"
+                            {
+                                "attach_point"      "attach_eye_r"
+                            }
+                            "1"
+                            {
+                                "attach_point"      "attach_eye_r"
+                            }
+                        }
+                    }
+                    "2" 
+                    {
+                        "particle"                  "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf"
+
+                        "ControlPoints"
+                        {
+                            "0"
+                            {
+                                "attach_point"      "attach_eye_l"
+                            }
+                            "1"
+                            {
+                                "attach_point"      "attach_eye_l"
+                            }
+                        }
+                    }
+                    "3" 
+                    {
+                        "particle"                  "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+                    }
+                }    
+            }
         }
         "head"
         {
@@ -3655,6 +3746,10 @@
                 }
             }
             "nemesis_custom"
+            {
+
+            }
+            "nemesis_custom_gold"
             {
 
             }
@@ -4252,6 +4347,156 @@
                     "1"
                     {
                         "model"         "models/heroes/hero_franklin/franklin_immortal_helmet.vmdl"
+                    }
+                }
+            }
+        }
+    }
+    "npc_dota_hero_dragon_knight"
+    {
+        "armor"
+        {
+            "alisa"
+            {
+                "model"                 "models/heroes/hero_america/econs/alisa/alisa.vmdl"
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_alisa"
+                        "modifier_path"     "modifiers/modifier_alisa.lua"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/hero_joker/joker_ambient.vpcf"
+                    }
+                }
+            }
+            "vibranium_shield"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/heroes/hero_america/econs/shield_right.vmdl"
+                    }
+                    "2"
+                    {
+                        "model"         "models/heroes/hero_america/econs/shield_left.vmdl"
+                    }
+                }
+            }
+        }
+    }
+    "npc_dota_hero_disruptor"
+    {
+        "armor"
+        {
+            "__default"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/heroes/hero_nurgle/nurgle_spikes.vmdl"
+                    }
+                    "2"
+                    {
+                        "model"         "models/heroes/hero_nurgle/nurgle_cloth.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/econ/items/rubick/rubick_puppet_master/rubick_head_puppet_ambient_eye.vpcf"
+                    }
+                }
+            }
+            "pugalo"
+            {
+                "model"                 "models/heroes/plus_skins/pugalo_skin/pugalo.vmdl"
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_pugalo"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/plus/pugalo_ambient.vpcf"
+                    }
+                }
+            }
+        }
+    }
+    "npc_dota_hero_spirit_breaker"
+    {
+        "armor"
+        {
+            "deadshot"
+            {
+                "model"                 "models/heroes/plus_skins/deadshot_skin/deadshot.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/heroes/plus_skins/deadshot_skin/econ/rifle.vmdl"
+                    }
+                }
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_deadshot"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+            }
+        }
+    }
+    "npc_dota_hero_ezekyle"
+    {
+        "weapon"
+        {
+            "__default"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/heroes/hero_abaddon_the_despoier/demonshard_weapon/draknien.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/abaddon/abaddon_ambient.vpcf"
+                    }
+                }
+            }
+        }
+    }
+    "npc_dota_hero_kyloren"
+    {
+        "__default"
+        {
+            "__default"
+            {
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_kyloren"
+                        "modifier_path"     "modifiers/modifier_kyloren.lua"
                     }
                 }
             }

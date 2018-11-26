@@ -9,8 +9,14 @@ function cap_sheild_blast:GetCooldown( nLevel )
 end
 
 function cap_sheild_blast:OnSpellStart()
+    local pfx = "particles/cap_magic_missle.vpcf"
+
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then
+        pfx = "particles/alisa/alisa_punch.vpcf"
+    end 
+
     local info = {
-        EffectName = "particles/cap_magic_missle.vpcf",
+        EffectName = pfx,
         Ability = self,
         iMoveSpeed = 800,
         Source = self:GetCaster(),
@@ -37,14 +43,20 @@ end
 
 function cap_sheild_blast:OnProjectileHit( hTarget, vLocation )
     if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:IsMagicImmune() ) then
-        EmitSoundOn( "Hero_VengefulSpirit.MagicMissileImpact", hTarget )
-        EmitSoundOn( "Hero_WitchDoctor.Paralyzing_Cask_Bounce", hTarget )
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then
+            EmitSoundOn( "Alisa.Ult.Impact", hTarget )
+        else 
+            EmitSoundOn( "Hero_VengefulSpirit.MagicMissileImpact", hTarget )
+            EmitSoundOn( "Hero_WitchDoctor.Paralyzing_Cask_Bounce", hTarget )
+        end 
+
         local stun_duration = self:GetSpecialValueFor( "hero_duration" )
         local damage = self:GetSpecialValueFor( "hero_damage" )
         local bonus = 0
-        if self:GetCaster():HasScepter() then
-            bonus = self:GetSpecialValueFor("bonus_damage_scepter")
-        end
+        
+        if self:GetCaster():HasScepter() then bonus = self:GetSpecialValueFor("bonus_damage_scepter") end
+        
         local damage = {
             victim = hTarget,
             attacker = self:GetCaster(),
@@ -54,7 +66,9 @@ function cap_sheild_blast:OnProjectileHit( hTarget, vLocation )
         }
 
         ApplyDamage( damage )
+        
         hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = stun_duration } )
+        
         local caster = self:GetCaster()
         local target = hTarget
         local ability = self
@@ -107,11 +121,17 @@ function cap_sheild_blast:OnProjectileHit( hTarget, vLocation )
                     -- If there is a new target to bounce to, we create the a projectile
                     if target_to_jump then
                         -- Create the next projectile
+                        local pfx = "particles/cap_magic_missle.vpcf"
+
+                        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then
+                            pfx = "particles/alisa/alisa_punch.vpcf"
+                        end 
+
                         local info = {
                             Target = target_to_jump,
                             Source = target,
                             Ability = ability,
-                            EffectName = "particles/cap_magic_missle.vpcf",
+                            EffectName = pfx,
                             bDodgeable = true,
                             bProvidesVision = false,
                             iMoveSpeed = speed,

@@ -1,0 +1,35 @@
+<root>
+   <styles>
+      <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+      <include src="s2r://panorama/styles/hudstyles.vcss_c"/>
+      <include src="s2r://panorama/styles/hud/hud_reborn.vcss_c" />
+      <include src="file://{resources}/styles/plus/plus.css" />
+   </styles>
+   <scripts>
+      <include src="file://{resources}/scripts/plus/plus.js" />
+   </scripts>
+
+   <Panel hittest="false" class="PlusRootClass">
+      <Panel id="PlusMain" class="Closed" hittest="false">
+        <Button id="PlusButton" onactivate="OnPlusOpen()">
+            <Label id="PlusButtonText" text="PLUS" />
+        </Button>
+        <Panel id="Plus" hittest="false">
+            <Panel id="ButtonsPanel" hittest="false">
+                <Panel class="PlusLogo" tabindex="auto" />
+                <Button id="HeroPlus" class="ButtonClass" onactivate="OnPageSelected('1')">
+                    <Label text="HERO" />
+                </Button>
+                <Button id="ProfilePlus" class="ButtonClass" onactivate="OnPageSelected('2')">
+                    <Label text="PROFILE" />
+                </Button>
+                <Button id="QuestsPlus" class="ButtonClass" onactivate="OnPageSelected('3')">
+                    <Label text="QUESTS" />
+                </Button>
+                <Label id="PlusExpire" text="Expire in: 23 days" />
+            </Panel>
+            <Panel id="PlusInject" hittest="false"/>
+        </Panel>
+      </Panel>
+   </Panel>
+</root>

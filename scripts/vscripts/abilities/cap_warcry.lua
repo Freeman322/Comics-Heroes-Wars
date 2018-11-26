@@ -12,7 +12,11 @@ function cap_warcry:OnSpellStart()
     ParticleManager:SetParticleControlEnt( nFXIndex, 2, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_head", self:GetCaster():GetOrigin(), true )
     ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-    EmitSoundOn( "Hero_Sven.WarCry", self:GetCaster() )
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then
+        EmitSoundOn( "Alisa.Third.Cast", self:GetCaster() )
+    else 
+        EmitSoundOn( "Hero_Sven.WarCry", self:GetCaster() )
+    end 
 
     self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_3 );
 end
@@ -46,9 +50,9 @@ function modifier_cap_warcry:DeclareFunctions()
         MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
-        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
+        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
     }
-
     return funcs
 end
 
@@ -95,6 +99,12 @@ end
 
 function modifier_cap_warcry:GetModifierDamageOutgoing_Percentage( params )
     return self:GetAbility():GetSpecialValueFor("warcry_damage")
+end
+
+function modifier_cap_warcry:GetAttackSound( params )
+    if self:GetParent():HasModifier("modifier_alisa") then 
+        return "Alisa.Attack"
+    end 
 end
 
 

@@ -59,15 +59,19 @@ function modifier_item_ice_pearl:OnTakeDamage( params )
         if params.unit == self:GetParent() and not self:GetParent():HasModifier("modifier_item_ice_pearl_cooldown") then
             local target = params.attacker
             local damage = params.damage
+
             if self:GetParent() == target then 
                 return
             end
+
             if target:IsBuilding() then
                 return
             end 
-            if not target:IsRealHero() then 
+
+            if not target:IsRealHero() or not self:GetParent():IsRealHero() then 
                 return
             end
+
             local damage_amplify = self:GetAbility():GetSpecialValueFor("damage_return") / 100
             target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_ice_pearl_reduction", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")})
             EmitSoundOn("Hero_Winter_Wyvern.WintersCurse.Cast", target)
@@ -77,7 +81,7 @@ function modifier_item_ice_pearl:OnTakeDamage( params )
                 victim = target,
                 attacker = self:GetParent(),
                 damage = params.damage * damage_amplify,
-                damage_type = params.damage_type,
+                damage_type = DAMAGE_TYPE_PURE,
                 ability = self:GetAbility(),
                 damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
             })

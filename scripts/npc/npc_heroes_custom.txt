@@ -545,50 +545,50 @@
 	}
 	"npc_dota_hero_chifu"
 	{
-	      "override_hero"		"npc_dota_hero_meepo"
-	      "Model"		        "models/items/courier/mei_nei_rabbit/mei_nei_rabbit.vmdl"
-	      "DisableWearables" "1"
-	      "ModelScale"		  "1.4000"
-	      "AbilityLayout"   "4"
-	      "Ability1"		    "chifu_blink"
-	      "Ability2"		    "sheefu_frostmourne"
-	      "Ability3"		    "sheefu_heartpiercer"
-	      "Ability4"		    "generic_hidden"
-	  		"Ability5"		    "generic_hidden"
-	  		"Ability6"		    "sheefu_king_wukongs_command"
-	      "Ability7"		    ""
-	      "Ability10"				"special_bonus_exp_boost_30"
-	      "Ability11"				"special_bonus_all_stats_12"
-	      "Ability12"				"special_bonus_movement_speed_60"
-	      "Ability13"				"special_bonus_attack_speed_100"
-	      "Ability14"				"special_bonus_cooldown_reduction_25"
-	      "Ability15"				"special_bonus_attack_damage_90"
-	      "Ability16"				"special_bonus_agility_25"
-	      "Ability17"				"special_bonus_all_stats_20"
-	      "ArmorPhysical"		"0"
-	      "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	      "AttackDamageMin"		"30"
-	      "AttackDamageMax"		"34"
-	      "AttackRate"		"1.700000"
-	      "AttackAnimationPoint"		"0.330000"
-	      "AttackAcquisitionRange"		"800"
-	      "AttackRange"		"600"
-	      "AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-	      "ProjectileModel"		"particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation_desolator.vpcf"
-	      "ProjectileSpeed"		"1900"
-	      "AttributeBaseStrength"		"22"
-	      "AttributeStrengthGain"		"1.900000"
-	      "AttributeBaseAgility"		"23"
-	      "AttributeAgilityGain"		"3.00000"
-	      "AttributeBaseIntelligence"		"19"
-	      "AttributeIntelligenceGain"		"1.700000"
-	      "MovementSpeed"		"300"
-	      "MovementTurnRate"		"0.600000"
-	  		"precache"
-	  		{
+		"override_hero"		"npc_dota_hero_meepo"
+		"Model"		        "models/items/courier/mei_nei_rabbit/mei_nei_rabbit.vmdl"
+		"DisableWearables" "1"
+		"ModelScale"		  "1.4000"
+		"AbilityLayout"   "4"
+		"Ability1"		    "chifu_blink"
+		"Ability2"		    "sheefu_frostmourne"
+		"Ability3"		    "sheefu_heartpiercer"
+		"Ability4"		    "generic_hidden"
+		"Ability5"		    "generic_hidden"
+		"Ability6"		    "sheefu_king_wukongs_command"
+		"Ability7"		    ""
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_unique_abaddon_3"
+		"Ability12"				"special_bonus_movement_speed_60"
+		"Ability13"				"special_bonus_attack_speed_100"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_attack_damage_90"
+		"Ability16"				"special_bonus_agility_25"
+		"Ability17"				"special_bonus_all_stats_20"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"34"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.330000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"ProjectileModel"		"particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation_desolator.vpcf"
+		"ProjectileSpeed"		"1900"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"1.900000"
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"3.00000"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.700000"
+		"MovementSpeed"		"300"
+		"MovementTurnRate"		"0.600000"
+		"precache"
+		{
 	  			   "model"		"models/items/courier/mei_nei_rabbit/mei_nei_rabbit.vmdl"
 	    }
-	  }
+	}
 	"npc_dota_hero_collector" //имя юнита
 	{
 		// General
@@ -1816,7 +1816,7 @@
 	}
 	"npc_dota_hero_hellspont"
 	{
-	  "override_hero"		 	"npc_dota_hero_pugna"
+	  	"override_hero"		 	"npc_dota_hero_pugna"
 		"HeroGlowColor"		 	"100 149 237"
 		"DisableWearables" 	 	"1"
 		"Model"           	 	"models/heroes/hero_hellspont/hellspont.vmdl"
@@ -4582,7 +4582,7 @@
 		{
 			"model"	  "models/heroes/life_stealer/life_stealer.vmdl"
 		}
-	    }
+	}
 	"npc_dota_hero_wisp"
 	{
 		"Model"		"models/development/invisiblebox.vmdl"
@@ -5006,9 +5006,6 @@
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 
-		// Inventory
-		"HasInventory"				"1"
-
 		// Health Bar	
 		"HealthBarOffset"     "180"
 
@@ -5262,9 +5259,6 @@
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 
-		// Inventory
-		"HasInventory"				"1"
-
 		// Health Bar	
 		"HealthBarOffset"     "180"
 
@@ -5388,9 +5382,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
-
-		// Inventory
-		"HasInventory"				"1"
 
 		// Health Bar	
 		"HealthBarOffset"     		"180"
@@ -5598,9 +5589,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
-
-		// Inventory
-		"HasInventory"				"1"
 
 		// Health Bar	
 		"HealthBarOffset"     		"180"
@@ -6134,6 +6122,180 @@
 		"particle_folder"				"particles/units/heroes/hero_ogre_magi"
 		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 		"VoiceFile"						"soundevents/voscripts/game_sounds_vo_mercer.vsndevts"
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_ogre_magi/ogre_magi_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_origin"
+						"location"		"attach_hitloc"
+					}
+				}
+			}
+		}
+		"ItemSlots"
+		{
+
+		}
+	}
+	"npc_dota_hero_ezekyle"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "208"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+        // Model info
+        "Model"                     "models/heroes/hero_abaddon_the_despoier/abaddon.vmdl"
+
+        "ModelScale"                "1.02"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_DoomBringer"
+		"IdleSoundLoop"				"Hero_DoomBringer.IdleLoop"
+
+	 	"particle_folder"			"particles/units/heroes/hero_doom_bringer"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "32"
+        "AttributeStrengthGain"     "2.900000"
+        "AttributeBaseIntelligence" "18"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "18"
+        "AttributeAgilityGain"      "1.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "-2"
+        "MagicalResistance"			"34"
+
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+
+        "AttackDamageMin"           "60"
+        "AttackDamageMax"           "78"
+
+        "AttackRate"                "1.760000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "200"
+        "ProjectileSpeed"           "0"
+
+        "MovementSpeed"             "265"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"ezekyle_dark_force"
+		"Ability2"					"ezekyle_draknien"
+		"Ability3"					"ezekyle_chaos_mark"
+		"Ability4"					"ezekyle_dark_gods_bless"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"ezekyle_anxiety"
+
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_unique_ezekyle_2"
+		"Ability12"					"special_bonus_unique_ezekyle_4"
+		"Ability13"					"special_bonus_unique_ezekyle_1"
+		"Ability14"					"special_bonus_unique_ezekyle_3"
+		"Ability15"					"special_bonus_magic_resistance_50"
+		"Ability16"					"special_bonus_strength_25"
+		"Ability17"					"special_bonus_mp_500"
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_ogre_magi/ogre_magi_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_origin"
+						"location"		"attach_hitloc"
+					}
+				}
+			}
+		}
+		"ItemSlots"
+		{
+
+		}
+	}
+	"npc_dota_hero_kyloren"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "209"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        "HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/hero_kyloren/kyloren.vmdl"
+
+        "ModelScale"                "1.15"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Kyloren"
+		"IdleSoundLoop"				"Kyloren.IdleLoop"
+
+	 	"particle_folder"			"particles/kyloren"
+		"GameSoundsFile"			"soundevents/heroes/hero_kyloren.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"     "16"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "21"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "31"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+
+        "AttackDamageMin"           "20"
+        "AttackDamageMax"           "28"
+
+        "AttackRate"                "1.760000"
+        "AttackAnimationPoint"      "0.400000"
+        "AttackAcquisitionRange"    "600"
+        "AttackRange"               "130"
+        "ProjectileSpeed"           "0"
+
+        "MovementSpeed"             "305"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_movement_speed_60"
+		"Ability13"					"special_bonus_attack_speed_100"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_all_stats_20"
+		"Ability17"					"special_bonus_20_crit_15"
 
 		"RenderablePortrait"
 		{

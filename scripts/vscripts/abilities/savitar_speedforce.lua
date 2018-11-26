@@ -72,29 +72,21 @@ if modifier_savitar_speedforce == nil then modifier_savitar_speedforce = class({
 
 function modifier_savitar_speedforce:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_MAX,
-		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN
     }
 
     return funcs
 end
 
-function modifier_savitar_speedforce:GetModifierMoveSpeed_Max()
-	return self:GetAbility():GetSpecialValueFor("max_speed")
-end
-
-function modifier_savitar_speedforce:GetModifierMoveSpeed_Limit()
-	return self:GetAbility():GetSpecialValueFor("max_speed")
+function modifier_savitar_speedforce:GetModifierMoveSpeed_AbsoluteMin()
+	return self:GetAbility():GetSpecialValueFor("speed_bonus")
 end
 
 function modifier_savitar_speedforce:GetPriority()
     return MODIFIER_PRIORITY_SUPER_ULTRA
 end
 
-function modifier_savitar_speedforce:GetModifierMoveSpeedBonus_Constant()
-    return self:GetAbility():GetSpecialValueFor("speed_bonus")
-end
+
 
 function modifier_savitar_speedforce:IsHidden()
 	return true

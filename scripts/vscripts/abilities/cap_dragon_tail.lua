@@ -27,7 +27,11 @@ function cap_dragon_tail:OnProjectileHit (hTarget, vLocation)
         ParticleManager:SetParticleControl (nFXIndex, 12, hTarget:GetOrigin () )
         ParticleManager:ReleaseParticleIndex (nFXIndex)
 
-        EmitSoundOn ("Hero_DragonKnight.DragonTail.Target", hTarget)
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then
+            EmitSoundOn( "Alisa.First.Impact", hTarget )
+        else 
+            EmitSoundOn ("Hero_DragonKnight.DragonTail.Target", hTarget)
+        end 
 
         local damage = {
             victim = hTarget,

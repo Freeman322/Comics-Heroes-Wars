@@ -54,17 +54,17 @@ function modifier_blade_mail:OnTakeDamage( params )
 
             if target:GetClassname() == "ent_dota_fountain" then
         	   return
-					  end
+            end
 
-						ApplyDamage ( {
+            ApplyDamage ( {
                 victim = target,
                 attacker = self:GetParent(),
                 damage = params.damage,
-                damage_type = params.damage_type,
+                damage_type = DAMAGE_TYPE_PURE,
                 ability = self:GetAbility(),
                 damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
             })
-        		EmitSoundOn("DOTA_Item.BladeMail.Damage", target)
+            EmitSoundOn("DOTA_Item.BladeMail.Damage", target)
         end
     end
 end

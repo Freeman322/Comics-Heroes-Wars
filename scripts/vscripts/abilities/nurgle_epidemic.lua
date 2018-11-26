@@ -64,26 +64,28 @@ end
 
 
 function modifier_nurgle_epidemic:OnCreated( kv )
-	self.radius = self:GetAbility():GetSpecialValueFor("radius")
-	self.slow = self:GetAbility():GetSpecialValueFor( "movement_slow" )
-	self.damage = self:GetAbility():GetSpecialValueFor( "tick_damage" ) + self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("tick_damage_per")/100)
-	self.tick = 0.25
+	if IsServer() then 
+		self.radius = self:GetAbility():GetSpecialValueFor("radius")
+		self.slow = self:GetAbility():GetSpecialValueFor( "movement_slow" )
+		self.damage = self:GetAbility():GetSpecialValueFor( "tick_damage" ) + self:GetParent():GetMaxHealth() * (self:GetAbility():GetSpecialValueFor("tick_damage_per")/100)
+		self.tick = 0.25
 
-	if IsServer() then
-        EmitSoundOn( "Hero_Pudge.Rot", self:GetParent() )
-        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_rot.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-        ParticleManager:SetParticleControl( nFXIndex, 1, Vector( self.radius, 1, self.radius ) )
-        self:AddParticle( nFXIndex, false, false, -1, false, false )
-        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_rot_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-        self:AddParticle( nFXIndex, false, false, -1, false, false )
+		EmitSoundOn( "Hero_Pudge.Rot", self:GetParent() )
+
+		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_rot.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		ParticleManager:SetParticleControl( nFXIndex, 1, Vector( self.radius, 1, self.radius ) )
+		self:AddParticle( nFXIndex, false, false, -1, false, false )
+		
+		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_rot_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		self:AddParticle( nFXIndex, false, false, -1, false, false )
 
 		self:StartIntervalThink( self.tick )
 		self:OnIntervalThink()
-	end
+	end 
 end
 
 
-function modifier_nurgle_epidemic:OnRemoved()
+function modifier_nurgle_epidemic:OnDestroy()
 	if IsServer() then
 		StopSoundOn( "Hero_Pudge.Rot", self:GetParent() )
 	end
@@ -106,26 +108,31 @@ end
 
 function modifier_nurgle_epidemic:OnIntervalThink()
 	if IsServer() then
-		local flDamagePerTick = self.tick * self.damage
-    local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetParent(), self.radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-    if #units > 0 then
-        for _,unit in pairs(units) do
-            local damage = {
-                victim = self:GetParent(),
-                attacker = self:GetCaster(),
-                damage = flDamagePerTick,
-                damage_type = DAMAGE_TYPE_MAGICAL,
-                ability = self:GetAbility()
-            }
-
-            ApplyDamage( damage )
-						if not unit == self:GetParent() then
-		            unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_nurgle_epidemic", { duration = self:GetAbility():GetSpecialValueFor( "duration" ) } )
-						end
-				end
-     end
-	end
+	  local flDamagePerTick = self.tick * self.damage
+	  local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetParent(), self.radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+	  if #units > 0 then
+		for _,unit in pairs(units) do
+		  local damage = {
+			victim = self:GetParent(),
+			attacker = self:GetCaster(),
+			damage = flDamagePerTick,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = self:GetAbility()
+		  }
+  
+		  ApplyDamage( damage )
+		  if not unit == self:GetParent() then
+			unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_nurgle_epidemic", { duration = self:GetAbility():GetSpecialValueFor( "duration" ) } )
+		  end
+		end
+	  end
+	end	
 end
 
+function modifier_nurgle_epidemic:GetAttributes ()
+    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
+  
 function nurgle_epidemic:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

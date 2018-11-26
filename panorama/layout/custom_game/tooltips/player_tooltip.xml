@@ -1,0 +1,34 @@
+<root>
+   <styles>
+      <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+      <include src="s2r://panorama/styles/tooltips/player_tooltip.css" />
+   </styles>
+   <scripts>
+      <include src="file://{resources}/scripts/tooltips/player_tooltip.js" />
+   </scripts>
+   <Panel class="PlayerTooltipContents" hittest="false" ontooltiploaded="OnTooltipLoad()">
+      <Panel id="ContentsMain">     
+            <DOTAAvatarImage id="AvatarImage" />
+            <Label id="UserName"/>
+
+            <Panel id="MedalImage"/>        
+            <Image id="PremiumStatus" class="close" src="file://{images}/backgrounds/premiumemb.png" />
+            <Panel id="Ranks">
+                <Panel id="RankImage"/>
+                <Panel id="PrestigeImage"/>
+                <Label id="PrestigeName" text="" />
+            </Panel>
+		</Panel>
+
+		<Panel id="CardOverlay" hittest="false">
+            <Panel id="ComicsPlus"/>
+            <Image id="_img" src="file://{images}/backgrounds/cup.png" />
+            <Label id="Winrate" text="31%" />
+
+            <Image id="_games" src="file://{images}/backgrounds/games.psd" />
+            <Label id="Games" text="4245" />
+		</Panel>
+
+      <Panel id="PlusOverlay"/>
+   </Panel>
+</root>

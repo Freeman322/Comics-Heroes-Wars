@@ -31,9 +31,7 @@ function modifier_item_force_boots_passive:DeclareFunctions ()
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-        MODIFIER_PROPERTY_MOVESPEED_MAX
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
     }
 
     return funcs
@@ -58,16 +56,6 @@ end
 function modifier_item_force_boots_passive:GetModifierConstantHealthRegen (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_health_regen")
-end
-
-function modifier_item_force_boots_passive:GetModifierMoveSpeed_Limit (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("max_move_speed")
-end
-
-function modifier_item_force_boots_passive:GetModifierMoveSpeed_Max (params)
-    local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("max_move_speed")
 end
 
 

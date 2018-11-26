@@ -7,11 +7,10 @@
     "heroes",
   	"captains_mode",
   	"globals",
-  	"preparation_state",
     "pick",
     "talents",
-    "medals",
     "event",
-    "players"
+    "players",
+    "comics_plus"
   ]
 }

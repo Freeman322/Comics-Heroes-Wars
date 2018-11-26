@@ -76,15 +76,14 @@ end
 function modifier_godspeed_ember_field_aura:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_MAX,
-		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+        MODIFIER_PROPERTY_MOVESPEED_LIMIT 
     }
 
     return funcs
 end
 
-function modifier_godspeed_ember_field_aura:GetModifierMoveSpeed_Max()
-	return self:GetAbility():GetSpecialValueFor("max_speed")
+function modifier_godspeed_ember_field_aura:GetModifierMoveSpeedBonus_Constant()
+	return self:GetStackCount()
 end
 
 function modifier_godspeed_ember_field_aura:GetModifierMoveSpeed_Limit()

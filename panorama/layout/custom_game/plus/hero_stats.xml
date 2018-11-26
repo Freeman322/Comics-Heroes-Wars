@@ -1,0 +1,67 @@
+<root>
+   <styles>
+      <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+      <include src="s2r://panorama/styles/hudstyles.vcss_c"/>
+      <include src="s2r://panorama/styles/hud/hud_reborn.vcss_c" />
+      <include src="file://{resources}/styles/plus/plus.css" />
+      <include src="file://{resources}/styles/plus/hero_stats.css" />
+   </styles>
+   <scripts>
+      <include src="file://{resources}/scripts/plus/plus.js" />
+   </scripts>
+
+   <Panel hittest="false" class="PlusRootClass">
+      <Panel id="PlusMain" hittest="false">
+        <Panel id="Plus" hittest="false">
+            <Label id="PanelText" text="HERO GLOBAL STATISTIC" />
+            <Panel id="PlusTop" hittest="false">
+                 <DOTAHeroImage id="ThisHero" heroname="npc_dota_hero_wisp" hittest="false"/>
+                 <Label id="HeroName" text="" />
+                 <Panel id="LoreContainer" hittest="false">
+                    <Label id="HeroLore" text="" />
+                 </Panel>
+            </Panel>
+            <Panel id="PlusBottom" hittest="false">
+                <Panel id="PlusBottomLeft" hittest="false">
+                    <Label class="Label" text="Hero stats" />
+                    <Panel id="Stats" hittest="false">
+                        <Panel class="HeroStats" tabindex="auto">
+                            <Label id="Hero_Winrate" class="Stats_Upper" text="" />
+                            <Label class="Stats_Bottom" text="WINRATE" />
+                        </Panel>
+                        <Panel class="HeroStats" tabindex="auto">
+                            <Label id="Hero_Deaths" class="Stats_Upper" text="" />
+                            <Label class="Stats_Bottom" text="AVG DEATHS" />
+                        </Panel>
+                        <Panel class="HeroStats" tabindex="auto">
+                            <Label id="Hero_Kills" class="Stats_Upper" text="" />
+                            <Label class="Stats_Bottom" text="AVG KILLS" />
+                        </Panel>
+                        <Panel class="HeroStats" tabindex="auto">
+                            <Label id="Hero_LH" class="Stats_Upper" text="" />
+                            <Label class="Stats_Bottom" text="LAST HITS" />
+                        </Panel>
+                        <Panel class="HeroStats" tabindex="auto">
+                            <Label id="Hero_Level" class="Stats_Upper" text="" />
+                            <Label class="Stats_Bottom" text="AVG LEVEL" />
+                        </Panel>
+                        <Panel class="HeroStats" tabindex="auto">
+                            <Label id="Hero_NW" class="Stats_Upper" text="" />
+                            <Label class="Stats_Bottom" text="NET WORTH" />
+                        </Panel>
+
+                        <Panel class="HeroStatsTotal" tabindex="auto">
+                            <Label id="Hero_TP" class="Stats_Upper" text="" />
+                            <Label class="Stats_Bottom" text="TOTAL PICKS RATIO IN ALL GAMES" />
+                        </Panel>
+                    </Panel>
+                </Panel>
+                <Panel id="PlusBottomRight" hittest="false">
+                    <Label class="Label" text="Most popular items" />
+                    <Panel id="Items" hittest="false"/>
+                </Panel>
+            </Panel>
+        </Panel>
+      </Panel>
+   </Panel>
+</root>

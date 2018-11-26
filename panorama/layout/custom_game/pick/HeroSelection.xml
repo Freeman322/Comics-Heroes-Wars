@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <styles>
+      <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+      <include src="s2r://panorama/styles/hudstyles.vcss_c" />
+      <include src="file://{resources}/styles/pick/HeroSelection.css" />
+      <include src="file://{resources}/styles/pick/RankStyles.css" />
+   </styles>
+   <scripts>
+      <include src="file://{resources}/scripts/Util.js" />
+      <include src="file://{resources}/scripts/Stats.js" />
+      <include src="file://{resources}/scripts/heroes.js" />
+      <include src="file://{resources}/scripts/pick/HeroSelection.js" />
+   </scripts>
+   <Panel class="HeroSelection" hittest="false">
+      <Panel id="PickScreen" camera="shot_cameraA" map="backgrounds/pregame_phase" hittest="true" particleonly="false">
+        <Button id="ClosePick" onactivate="ForeClosePickMenu();"/>
+         <Panel id="TopPanel" hittest="false">
+            <Panel id="RadiantPlayers" hittest="false" />
+            <Panel id="ClockTopPanel" hittest="false">
+               <Panel id="AvrRadiant" hittest="false">
+                  <Label class="TopText" text="Average rating" />
+                  <Label id="RadiantRating" text="0" />
+               </Panel>
+               <Panel id="ClockPanel" hittest="false">
+                  <Label id="Time" text="" />
+                  <Label id="Type" text="BANS" />
+               </Panel>
+               <Panel id="AvrDire" hittest="false">
+                  <Label class="TopText" text="Average rating" />
+                  <Label id="DireRating" text="0" />
+               </Panel>
+            </Panel>
+            <Panel id="DirePlayers" hittest="false" />
+         </Panel>
+         <TextEntry id="SearchTextEntry" multiline="false" textmode="normal" oninputsubmit="Filter()" />
+         <Button id="SearchButton" onactivate="Filter()" />
+         <Panel id="DownPanel" hittest="false">
+            <Panel id="HeroGrid">
+               <Panel id="HeroStrConrainer">
+                  <Panel class="AttributeLabel">
+                     <Image class="Attribute" src="file://{images}/hud/Icon_Str.png" />
+                  </Panel>
+                  <Panel id="HeroesStr" />
+               </Panel>
+               <Panel id="HeroAgiConrainer">
+                  <Panel class="AttributeLabel">
+                     <Image class="Attribute" src="file://{images}/hud/Icon_Agi.png" />
+                  </Panel>
+                  <Panel id="HeroesAgi" />
+               </Panel>
+               <Panel id="HeroIntConrainer">
+                  <Panel class="AttributeLabel">
+                     <Image class="Attribute" src="file://{images}/hud/Icon_Int.png" />
+                  </Panel>
+                  <Panel id="HeroesInt" />
+               </Panel>
+            </Panel>
+            <Panel id="HeroContainer">
+               <DOTAHeroInspect id="HeroInspect" class="BioTabVisible InspectingHero InspectHeroIntelligence InspectHeroComplexity3" tabindex="auto" selectionpos="auto" heroid="1"/>
+               <Button id="PickButton" onactivate="PickHero()">
+                  <Label id="HeroSelectedTarget" text="" />
+                  <Label class="PickText" text="Select" />
+               </Button>
+               <Button id="RandomButton" onactivate="PickRandomHero()">
+                  <Panel class="RandomIcon" />
+               </Button>
+               <Label id="BanCount" text="BANS: 0" />
+               <Button id="BanButton" onactivate="OnBan()">
+                  <Label text="BAN" />
+               </Button>
+            </Panel>
+            <Panel id="CustomChat" hittest="false">
+               <Panel id="ChatTextField" hittest="true" html="true" />
+               <TextEntry id="ChatInputField" maxchars="300" placeholder="Type here..." oninputsubmit="OnChatSubmitted()" />
+            </Panel>
+         </Panel>
+      </Panel>
+   </Panel>
+</root>

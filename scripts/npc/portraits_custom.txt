@@ -2284,4 +2284,73 @@
 			}
 		}
 	}
+	"models/heroes/hero_abaddon_the_despoier/abaddon.vmdl"
+	{
+		"PortraitLightPosition"		"71.43 15.15 208.34"
+		"PortraitLightAngles"		"34.09 196.63 0.00"
+		"PortraitLightFOV"		"51"
+		"PortraitLightDistance"		"90"
+		"PortraitLightColor"		"226 222 254"
+		"PortraitShadowColor"		"93 93 93"
+		"PortraitShadowScale"		"4.025000"
+		"PortraitAmbientColor"		"25 56 120"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_moon.vmat"
+		"PortraitBackgroundColor1"		"1 1 1"
+		"PortraitBackgroundColor2"		"1 1 1"
+		"PortraitBackgroundColor3"		"0 .3 1"
+		"PortraitBackgroundColor4"		"0 .2 1"
+		"PortraitParticle"		"particles/units/heroes/hero_luna/luna_portrait_glow.vpcf"
+		"PortraitLightScale"		"1.900000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-4.400 39.940 13.190"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"124.55 -83.39 184.55"
+				"PortraitAngles"		"350.66 148.96 0.0"
+				"PortraitFOV"			"20"
+			}
+		}
+	}
+	"models/heroes/hero_kyloren/kyloren.vmdl"
+	{
+		"PortraitLightPosition"		"64.418190 -16.055740 211.088272"
+		"PortraitLightAngles"		"54.110001 166.169998 0.000000"
+		"PortraitLightFOV"		"90.000000"
+		"PortraitLightDistance"		"99.000000"
+		"PortraitLightColor"		"112 84 254"
+		"PortraitShadowColor"		"70 70 70"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientColor"		"0 133 186"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitBackgroundColor1"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor2"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor3"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor4"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/spectre.vmat"
+		"PortraitAnimationActivity"		"ACT_DOTA_CAPTURE"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitLightScale"		"2.254900"
+		"PortraitAmbientDirection"		"-14.590 42.120 -5.590"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"281.256805 -152.545273 42.246773"
+				"PortraitAngles"		"344.970703 151.677246 0.000000"
+				"PortraitFOV"			"6.000000"
+				"PortraitFar"			"400.000000"
+			}
+		}
+	}
 }

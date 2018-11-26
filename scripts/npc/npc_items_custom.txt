@@ -195,7 +195,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"10"
+				"bonus_armor"				"5"
 			}
 			"05"
 			{
@@ -461,7 +461,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"6"
+				"bonus_armor"			"4"
 			}
 			"03"
 			{
@@ -568,7 +568,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"10"
+				"bonus_armor"			"5"
 			}
 			"03"
 			{
@@ -788,7 +788,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"12"
+				"bonus_armor"			"8"
 			}
 			"03"
 			{
@@ -903,7 +903,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-15"
+				"corruption_armor"		"-12"
 			}
 			"03"
 			{
@@ -950,7 +950,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-30"
+				"corruption_armor"		"-20"
 			}
 			"04"
 			{
@@ -1382,7 +1382,7 @@
 	// Frostmourne
 	//=================================================================================================================
 	"item_frostmourne"
-		{
+	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_lua"
@@ -1844,18 +1844,18 @@
 		{
 			"01"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_all_stats"				     "90"
+				"var_type"						    "FIELD_INTEGER"
+				"bonus_all_stats"				    "100"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"health_regen_percent_per_second"	"1.25"
+				"health_regen_percent_per_second"	"2.5"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"mana_reget_percent_per_second"		"1.5"
+				"mana_reget_percent_per_second"		"1.85"
 			}
 			"04"
 			{
@@ -1957,7 +1957,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"35"
+				"bonus_armor"			"21"
 			}
 			"04"
 			{
@@ -2080,7 +2080,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"30"
+				"bonus_armor"			"18"
 			}
 			"04"
 			{
@@ -2125,9 +2125,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"5000"
 		"ItemQuality"					"component"
-		"ItemDroppable"       			"1"
-	    "ItemSellable"        		    "1"
-		"ItemKillable"					"0"
+		"ItemDroppable"       			"0"
+	    "ItemSellable"        		    "0"
+		"ItemKillable"					"1"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -3901,7 +3901,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"30"
+				"bonus_armor"			"20"
 			}
 			"04"
 			{
@@ -3921,12 +3921,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_positive_armor"	"20"
+				"aura_positive_armor"	"9"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_negative_armor"	"-20"
+				"aura_negative_armor"	"-9"
 			}
 			"09"
 			{
@@ -3975,7 +3975,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"30"
+				"bonus_armor"			"20"
 			}
 			"03"
 			{
@@ -4038,7 +4038,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"15"
+				"bonus_armor"			"7"
 			}
 			"03"
 			{
@@ -4138,7 +4138,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"45"
+				"bonus_armor"			"26"
 			}
 			"05"
 			{
@@ -4595,7 +4595,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"12"
+				"bonus_armor"			"6"
 			}
 			"03"
 			{
@@ -4619,50 +4619,7 @@
 			}
 		}
 	}
-	"item_ultimate_scepter"
-	{
 	
-		"ID"							"108"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-	    "ItemSellable"							"1"
-		"AbilityCastRange"					"600"
-		"BaseClass"									"item_lua"
-		"ScriptFile"								"items/item_ultimate_scepter.lua"
-		"AbilityTextureName"				"item_ultimate_scepter"
-	
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"									"4375"
-		"ItemShopTags"							"int;str;agi;mana_pool;health_pool;hard_to_tag"
-		"ItemQuality"								"rare"
-		"ItemAliases"								"ultimate;aghanim's scepter"
-		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"200"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"150"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Vermilion Robe
 	//=================================================================================================================
@@ -4714,7 +4671,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
+				"bonus_armor"			"10"
 			}
 			"05"
 			{
@@ -4893,7 +4850,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
+				"bonus_armor"			"10"
 			}
 			"03"
 			{
@@ -6106,7 +6063,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"25"
+				"bonus_armor"				"12"
 			}	
 			"05"
 			{
@@ -6116,7 +6073,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_armor"				"25"
+				"aura_armor"				"7"
 			}
 			"07"
 			{
@@ -6257,7 +6214,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_armor"			"8"
+				"bonus_armor"			"4"
 			}
 			"06"
 			{

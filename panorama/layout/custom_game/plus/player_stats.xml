@@ -1,0 +1,73 @@
+<root>
+   <styles>
+      <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+      <include src="s2r://panorama/styles/hudstyles.vcss_c"/>
+      <include src="s2r://panorama/styles/hud/hud_reborn.vcss_c" />
+      <include src="file://{resources}/styles/plus/player_stats.css" />
+   </styles>
+   <scripts>
+      <include src="file://{resources}/scripts/plus/plus.js" />
+   </scripts>
+
+   <Panel hittest="false" class="PlusRootClass">
+      <Panel id="PlusMain" hittest="false">
+           <Panel id="ProfileContainer" class="ProfileTopLevel" hittest="false">
+			<Panel id="PlayerProfile" class="StatsContainer" hittest="false">
+                <Label id="Username" text="local"/>
+
+				<Panel id="RankPanel"/>
+                <Label id="RankName" text="" />
+                <Panel id="Prestige"/>
+                <Label id="PrestigeTextLabel" text="" />
+			</Panel>
+            <Panel id="PlayerStats" class="StatsContainer" hittest="false">
+                <Panel class="HeroStats" tabindex="auto">
+                    <Label id="Player_Winrate" class="Stats_Upper" text="" />
+                    <Label class="Stats_Bottom" text="WINRATE" />
+                </Panel>
+                <Panel class="HeroStats" tabindex="auto">
+                    <Label id="Player_Deaths" class="Stats_Upper" text="" />
+                    <Label class="Stats_Bottom" text="AVG DEATHS" />
+                </Panel>
+                <Panel class="HeroStats" tabindex="auto">
+                    <Label id="Player_Kills" class="Stats_Upper" text="" />
+                    <Label class="Stats_Bottom" text="AVG KILLS" />
+                </Panel>
+                <Panel class="HeroStats" tabindex="auto">
+                    <Label id="Player_LH" class="Stats_Upper" text="" />
+                    <Label class="Stats_Bottom" text="LAST HITS" />
+                </Panel>
+                <Panel class="HeroStats" tabindex="auto">
+                    <Label id="Player_Level" class="Stats_Upper" text="" />
+                    <Label class="Stats_Bottom" text="RATING" />
+                </Panel>
+                <Panel class="HeroStats" tabindex="auto">
+                    <Label id="Player_NW" class="Stats_Upper" text="" />
+                    <Label class="Stats_Bottom" text="NET WORTH" />
+                </Panel>
+			</Panel>
+            <Panel id="LastGame" class="StatsContainer">
+                <Panel id="PlayerGamesBox">
+                    <Label id="LastGamesHeader" class="ProfileBoxHeader" text="LAST PLAYER GAME   " />
+                    <DOTAHeroImage id="LastHero" heroname=""/>
+                    <Panel id="GameParamsContainer">
+                        <Label id="HeroName" text="{s:hero_name}"/>
+                        <Panel class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_Mode"/><Label id="GameMode" class="StatValue" text="{s:game_mode}"/></Panel>
+                        <Panel class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_KDA"/><Label id="kda" class="StatValue" text="{i:kills} / {i:deaths} / {i:assists}"/></Panel>
+                        <Panel class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_Duration"/><Label id="GameDuration" class="StatValue" text="#DOTA_RecentGame_Duration"/></Panel>
+                        <Panel id="Win" class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_Result"/><Label id="Winner" class="StatValue Green" text="#dota_profile_recent_game_result_win"/></Panel>
+                        <Panel id="NotScored" class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_Result"/><Label class="StatValue" text="#dota_profile_recent_game_result_notscored"/></Panel>
+                        <Panel id="LastMatchHeader">
+                            <Label id="Date" class="DateTimeLabel" text=""/>
+                        </Panel>
+                    </Panel>
+                </Panel>
+                <Panel id="PlayerItems"/>
+            </Panel>
+            <Panel id="LastGameOthers" class="StatsContainer">
+            </Panel>
+            <DOTAAvatarImage id="AvatarImage" accountid="local"/>
+        </Panel>
+      </Panel>
+   </Panel>
+</root>
