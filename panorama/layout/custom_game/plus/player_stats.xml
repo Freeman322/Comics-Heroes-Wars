@@ -55,7 +55,7 @@
                         <Panel class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_Mode"/><Label id="GameMode" class="StatValue" text="{s:game_mode}"/></Panel>
                         <Panel class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_KDA"/><Label id="kda" class="StatValue" text="{i:kills} / {i:deaths} / {i:assists}"/></Panel>
                         <Panel class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_Duration"/><Label id="GameDuration" class="StatValue" text="#DOTA_RecentGame_Duration"/></Panel>
-                        <Panel id="Win" class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_Result"/><Label id="Winner" class="StatValue Green" text="#dota_profile_recent_game_result_win"/></Panel>
+                        <Panel id="Win" class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_Result"/><Label id="Winner" class="StatValue Red" text="#dota_profile_recent_game_result_win"/></Panel>
                         <Panel id="NotScored" class="SmallerDetails"><Label class="StatCategory" text="#DOTA_Frontpage_LastMatch_Result"/><Label class="StatValue" text="#dota_profile_recent_game_result_notscored"/></Panel>
                         <Panel id="LastMatchHeader">
                             <Label id="Date" class="DateTimeLabel" text=""/>

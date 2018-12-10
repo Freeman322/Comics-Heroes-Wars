@@ -38,14 +38,10 @@ function modifier_predator_observer:OnAttackLanded (params)
         if params.attacker == self:GetParent () then
             local target = params.target
             local ability = self:GetAbility ()
-            if self:GetCaster():IsRealHero() == false then 
-                return
-            end
+            if self:GetCaster():IsRealHero() == false then return end
+            if target:IsTower() then return end 
             if target:HasModifier("modifier_predator_observer_debuff") == false then
               local duration = ability:GetSpecialValueFor("debuff_duration")
-              if target:IsTower() then
-                duration = 4
-              end
             	target:AddNewModifier(self:GetParent(), ability, "modifier_predator_observer_debuff", {duration = duration})
             	target:FindModifierByName("modifier_predator_observer_debuff"):SetStackCount(1)
             else

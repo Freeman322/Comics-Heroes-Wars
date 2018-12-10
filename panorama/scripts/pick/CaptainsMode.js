@@ -95,7 +95,6 @@ function RebuildUI() {
 
     var info = Game.GetMapInfo()
     var heroes = CustomNetTables.GetTableValue("heroes", "heroes")
-    var stats = CustomNetTables.GetTableValue("players", "heroes")
     var total_games = getTotalGames()
 
     for (var hero in heroes)

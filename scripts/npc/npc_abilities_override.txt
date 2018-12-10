@@ -3,13 +3,7 @@
 "DOTAAbilities"
 {
   "Version"   "1"
-
-	"item_inf_balvanka"
-	{
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"0"
-	}
-
+	
   "item_iron_talon"     "REMOVE"
   "item_recipe_iron_talon"      "REMOVE"
   "item_stout_shield"     "REMOVE"
@@ -632,4 +626,8 @@
 			}
 		}
 	}
+
+
+	"item_vibranium_sword"     "REMOVE"
+  "item_recipe_vibranium_sword"      "REMOVE"
 }

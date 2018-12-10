@@ -93,8 +93,7 @@ function RebuildUI() {
 
     var info = Game.GetMapInfo()
     var heroes = CustomNetTables.GetTableValue("heroes", "heroes")
-    var stats = CustomNetTables.GetTableValue("players", "heroes")
-    var total_games = getTotalGames()
+    var stats = GameUI.CustomUIConfig().PlayerTables.GetTableValue("heroes", "heroes")
 
     for (var hero in heroes)
     {
@@ -147,7 +146,7 @@ function RebuildUI() {
     
                 var trend = $.CreatePanel("Label", Hero, undefined);
                 trend.AddClass("Plus_Trend")
-                trend.text = "HTV: " + (Number(stats[hero].picks) / getTotalGames()).toFixed(2)
+                trend.text = "HTV: " + (Number(stats[hero].picks) / Number(getTotalGames())).toFixed(3)
             }
         }
     }
@@ -389,11 +388,11 @@ function OnBan(argument) {
 }
 
 function OnInspectPlayer(panel, pID) {
-    $.DispatchEvent("UIShowCustomLayoutParametersTooltip", panel, "PlayerTooltip", "file://{resources}/layout/custom_game/tooltips/player_tooltip.xml", "player=" + pID);
+    if (serverHasData()) $.DispatchEvent("UIShowCustomLayoutParametersTooltip", panel, "PlayerTooltip", "file://{resources}/layout/custom_game/tooltips/player_tooltip.xml", "player=" + pID);
 }
 
 function OnInspectPlayerEnd(panel) {
-    $.DispatchEvent("UIHideCustomLayoutTooltip", panel, "PlayerTooltip");
+    if (serverHasData()) $.DispatchEvent("UIHideCustomLayoutTooltip", panel, "PlayerTooltip");
 }
 
 (function() {
@@ -566,6 +565,12 @@ var PRESTIGES = {
     20: "XX",
 };
 
+function serverHasData()
+{
+    var value = CustomNetTables.GetTableValue("players", "stats")
+
+    return value != null
+}
 
 function getPlayerRankValue(pID) {
     var value = CustomNetTables.GetTableValue("players", "stats")
@@ -582,7 +587,7 @@ function getPlayerRankValueForPick(pID)
 {
     var value = CustomNetTables.GetTableValue("players", "stats")
 
-    if (value[pID])
+    if (value && value[pID])
     {
         if (isCalibrated(pID))
         {
@@ -806,11 +811,11 @@ function getPlayerAVGStats(pID)
 
 function getTotalGames() {
     var value = 1
-    var stats = CustomNetTables.GetTableValue("players", "heroes")
+    var stats = GameUI.CustomUIConfig().PlayerTables.GetTableValue("heroes", "heroes")
 
     for(var hero in stats)
     {
-        value += Number(stats[hero].picks)
+        value = value + Number(stats[hero].picks)
     }
 
     return Number(value)

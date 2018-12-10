@@ -54,6 +54,8 @@
 		"item"		"item_blink"		
 		"item"		"item_shadow_amulet"	
 		"item"		"item_majestic_staff"
+		"item"		"item_grief_vessel"	
+		"item"		"item_dvine_armor"
 	}
 			
 	"misc"
@@ -63,7 +65,7 @@
 		"item"		"item_gem"
 		"item"		"item_lifesteal"
 		"item"		"item_void_stone"
-		"item"		"item_ethernal_dagon_scepter"
+		"item"		"item_bloodstaff"
 		"item"		"item_gungner"
 		"item"		"item_heart_2"
 		"item"		"item_heart_of_abyss"
@@ -72,6 +74,7 @@
 		"item"		"item_ice_pearl"	
 		"item"		"item_cursed_necklace"
 		"item"		"item_ionic_vapor"
+		"item"		"item_rapier_of_despair"
 	}	
 	
 	// Level 1 - Green Recipes
@@ -79,7 +82,6 @@
 	{
 		"item"		"item_ultimate_nullifier"
 		"item"		"item_vermilion_robe"
-		"item"		"item_vibranium_sword"
 		"item"		"item_anti_life_equation"
 		"item"		"item_spear_of_destiny"
 		"item"		"item_demon_shard_2"
@@ -91,7 +93,8 @@
 		"item"		"item_moon_shard_marvel"	
 		"item"		"item_mjollnir"
  		"item"		"item_skadi" 
- 		"item"		"item_satanic"				
+ 		"item"		"item_satanic"		
+		"item"		"item_boots_of_merlin"		
 	}
 
 	// Level 2 - Blue Recipes

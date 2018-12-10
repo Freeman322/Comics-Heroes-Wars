@@ -7,6 +7,12 @@ function item_dawnbreaker:GetIntrinsicModifierName()
     return "modifier_item_dawnbreaker"
 end
 
+function item_dawnbreaker:OnSpellStart()
+    if IsServer () then
+        self:GetCursorTarget():AddNewModifier(self:GetCaster(), self, "modifier_item_dawnbreaker_active", { duration = self:GetSpecialValueFor ("sunbright_duration") })
+    end
+end
+
 if modifier_item_dawnbreaker == nil then modifier_item_dawnbreaker = class({}) end 
 
 function modifier_item_dawnbreaker:IsPurgable()
@@ -14,15 +20,23 @@ function modifier_item_dawnbreaker:IsPurgable()
 end
 
 function modifier_item_dawnbreaker:IsHidden()
-    return true
+    return false
+end
+
+function modifier_item_dawnbreaker:DestroyOnExpire()
+    return false
+end
+
+function modifier_item_dawnbreaker:IsCooldownReady()
+   return self:GetRemainingTime() <= 0
+end
+
+function modifier_item_dawnbreaker:StartCooldown(flCooldown)
+    self:SetDuration(flCooldown, true)
 end
 
 function modifier_item_dawnbreaker:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
-end
-
-function modifier_item_dawnbreaker:OnCreated(table)
-	self.bonus_damage = 0
+    return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
 end
 
 function modifier_item_dawnbreaker:DeclareFunctions()
@@ -34,10 +48,20 @@ function modifier_item_dawnbreaker:DeclareFunctions()
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE,
-        MODIFIER_EVENT_ON_ATTACK_START
+        MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
+        MODIFIER_PROPERTY_STATUS_RESISTANCE,
+        MODIFIER_EVENT_ON_TAKEDAMAGE
     }
 
     return funcs
+end
+
+function modifier_item_dawnbreaker:GetModifierStatusResistance (params)
+    return self:GetAbility():GetSpecialValueFor ("bonus_status_resist")
+end
+
+function modifier_item_dawnbreaker:GetModifierHPRegenAmplify_Percentage (params)
+    return self:GetAbility():GetSpecialValueFor ("bonus_hp_amp")
 end
 
 function modifier_item_dawnbreaker:GetModifierPreAttack_BonusDamage (params)
@@ -61,33 +85,25 @@ function modifier_item_dawnbreaker:GetModifierPhysicalArmorBonus (params)
 end
 
 function modifier_item_dawnbreaker:GetModifierProcAttack_BonusDamage_Pure (params)
- 	if self.bonus_damage == nil then
- 		self.bonus_damage = 0
- 	end
-    return self.bonus_damage
+    if IsServer() then 
+        if not params.target:IsBuilding() and not params.target:IsAncient() then
+            return params.target:GetHealth() * (self:GetAbility():GetSpecialValueFor("damage_pers") / 100)
+        end 
+    end 
 end
 
-function modifier_item_dawnbreaker:OnAttackStart (params)
-    if IsServer () then
-        if params.attacker == self:GetParent() and target ~= nil then
-            local target = params.target
-            self.bonus_damage = target:GetHealth()*(self:GetAbility():GetSpecialValueFor("damage_pers")/100)
-            if target:IsBuilding() or target:IsConsideredHero() or target:IsAncient() then 
-            	self.bonus_damage = 0
-            end
-        end
-    end
+function modifier_item_dawnbreaker:OnTakeDamage(params)
+    if IsServer() then 
+        if params.unit == self:GetParent() then
+            if self:IsCooldownReady() and self:GetParent():GetHealthPercent() <= self:GetAbility():GetSpecialValueFor("trigger_value") and self:GetParent():IsRealHero() then
+                self:GetParent():Heal(params.damage, self:GetAbility())
 
-    return 0
-end
+                EmitSoundOn("Hero_Oracle.FortunesEnd.Target", self:GetParent())
 
-
-function modifier_item_dawnbreaker:SoulTransform()
-	if IsServer() then 
-		if self:GetAbility():IsCooldownReady() and self:GetParent():HasModifier("modifier_item_dawnbreaker_active") == false and not self:GetParent():PassivesDisabled() then 
-			self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_dawnbreaker_active", {duration = self:GetAbility():GetSpecialValueFor("soul_keep_duration")})
-			self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
-		end 
+                self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_aeon_disk_buff", {duration = self:GetAbility():GetSpecialValueFor("soul_keep_duration")})
+                self:StartCooldown(self:GetAbility():GetSpecialValueFor("soul_keep_cooldown"))
+            end 
+        end 
 	end
 end
 
@@ -106,15 +122,21 @@ function modifier_item_dawnbreaker_active:GetPriority()
 end
 
 function modifier_item_dawnbreaker_active:OnCreated(table)
-    if IsServer() then 
-        local nFXIndex = ParticleManager:CreateParticle( "particles/items4_fx/combo_breaker_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-        self:AddParticle( nFXIndex, false, false, -1, false, true )
-        
-        EmitSoundOn("Hero_Oracle.FalsePromise.FP", self:GetParent())
-
-         print("OnCreated()")
-         print(self:GetRemainingTime())
+    if IsServer() then         
+        EmitSoundOn("Hero_Oracle.FalsePromise.Healed", self:GetParent())
     end 
+end
+
+function modifier_item_dawnbreaker_active:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE 
+    }
+
+    return funcs
+end
+
+function modifier_item_dawnbreaker_active:GetModifierHPRegenAmplify_Percentage (params)
+    return self:GetAbility():GetSpecialValueFor ("sunbright_heal_amp")
 end
 
 function modifier_item_dawnbreaker_active:GetStatusEffectName()
@@ -126,30 +148,5 @@ function modifier_item_dawnbreaker_active:StatusEffectPriority()
 end
 
 function modifier_item_dawnbreaker_active:GetEffectName ()
-    return "particles/dawnbreaker/dawnbreaker_active.vpcf"
-end
-
-function modifier_item_dawnbreaker_active:GetEffectAttachType ()
-    return PATTACH_ABSORIGIN_FOLLOW
-end
-
-function modifier_item_dawnbreaker_active:CheckState ()
-    local state = {
-        [MODIFIER_STATE_INVULNERABLE] = true,
-        [MODIFIER_STATE_ATTACK_IMMUNE] = true,
-        [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
-        [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true
-    }
-
-    return state
-end
-
-function modifier_item_dawnbreaker_active:OnDestroy()
-    if IsServer() then 
-        EmitSoundOn("Hero_Oracle.FalsePromise.Healed", self:GetParent())
-        print("OnDestroy()")
-        if self:GetParent():GetHealth() == 0 then
-            self:GetParent():ForceKill(false) 
-        end
-    end 
+    return "particles/dawnbreaker/dawnbreaker.vpcf"
 end

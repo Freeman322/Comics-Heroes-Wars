@@ -147,7 +147,7 @@ end
 
 function modifier_item_frostmourne:ReincarnateTime (params)
     if IsServer() then
-		if self:GetAbility():IsFullyCastable() then
+		if self:GetAbility():IsFullyCastable() and self:GetParent():IsRealHero() then
 			self:Reincarnate()
 			return 3
 		end

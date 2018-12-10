@@ -49,7 +49,14 @@ function item_necronomicon_4:OnSpellStart()
 	    melee_ability_3:SetLevel(1)
 	    ranged_ability_1:SetLevel(1)
 	    ranged_ability_2:SetLevel(1)
-   	    ranged_ability_3:SetLevel(1)
+		ranged_ability_3:SetLevel(1)
+		   
+		if Util:PlayerEquipedItem(caster:GetPlayerOwnerID(), "ultron") == true then
+			melee_summon:SetOriginalModel("models/heroes/hero_dormammu/dormammu_custom/modern/ultron_modern.vmdl")
+			ranged_summon:SetOriginalModel("models/heroes/hero_dormammu/dormammu_custom/flying/ultron.vmdl")
+			ranged_summon:SetMoveCapability(DOTA_UNIT_CAP_MOVE_FLY)
+			ranged_summon:SetRangedProjectileName("particles/econ/events/ti5/dagon_lvl2_ti5.vpcf")
+		end
 	end
 end
 

@@ -32,7 +32,18 @@ function item_courier:OnSpellStart ()
             unit:SetMaterialGroup(material)
 
             ParticleManager:CreateParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
+        elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "onibi") == true then
+            m_model = "models/items/courier/onibi_lvl_21/onibi_lvl_21.vmdl"
+            m_model_flyuing = "models/items/courier/onibi_lvl_21/onibi_lvl_21_flying.vmdl"
+            material = "0"
+
+            unit:AddNewModifier(self:GetCaster(), nil, "modifier_courier_model", {model = m_model, model_flying = m_model_flyuing})
+
+            unit:SetMaterialGroup(material)
+
+            ParticleManager:CreateParticle( "particles/econ/courier/courier_onibi/courier_onibi_black_lvl21_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
         end 
+
 
         FindClearSpaceForUnit(unit, self:GetCaster():GetAbsOrigin(), true)
         unit:SetControllableByPlayer(self:GetCaster():GetPlayerOwnerID(), true)

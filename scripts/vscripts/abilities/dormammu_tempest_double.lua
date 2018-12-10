@@ -4,7 +4,7 @@ if dormammu_tempest_double == nil then dormammu_tempest_double = class({}) end
 
 function dormammu_tempest_double:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then
-        return 30
+        return self:GetSpecialValueFor("cooldown_scepter")
     end
 
     return self.BaseClass.GetCooldown( self, nLevel )
@@ -89,6 +89,17 @@ end
 
 function modifier_dormammu_tempest_double:IsHidden()
 	return true
+end
+
+function modifier_dormammu_tempest_double:DeclareFunctions() 
+    local funcs = {
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
+    }
+    return funcs
+end
+
+function modifier_dormammu_tempest_double:GetModifierIncomingDamage_Percentage( params )
+    return self:GetAbility():GetSpecialValueFor( "double_incoming_damage" )
 end
 
 function modifier_dormammu_tempest_double:GetAttributes()

@@ -2,77 +2,29 @@ var has_hero_data_plus = false
 
 PAGE_ID_HERO = 1
 PAGE_ID_PLAYER = 2
+PAGE_ID_QUESTS = 3
 
 function OnPlusOpen(){
+    if (!serverHasData()) return;
     if (getPlusSubscribe(Players.GetLocalPlayer()) == false) return; 
     
     if ($("#PlusMain").BHasClass("Closed")){ $("#PlusMain").SetHasClass("Closed", false); if (has_hero_data_plus == false) { RequestDataForHero(); has_hero_data_plus = true; } } else { $("#PlusMain").SetHasClass("Closed", true) }
 }
-
 function RequestDataForHero()
 {
-    var data = CustomNetTables.GetTableValue("comics_plus", "heroes")
     var player_hero = Players.GetPlayerSelectedHero( Players.GetLocalPlayer() )
-    if (data != undefined && data[player_hero] != undefined && data[player_hero] != null)
-    {
-        $("#PlusInject").LoadLayoutAsync("file://{resources}/layout/custom_game/plus/hero_stats.xml", false, true);
+    $("#PlusInject").LoadLayoutAsync("file://{resources}/layout/custom_game/plus/hero_stats.xml", false, true);
 
-        var hero = data[player_hero]
-        var items = new Array()
+    GetHeroData(player_hero)
 
-        var picks = hero.picks
-        var hero_id = hero.hero_id
-        var wins = hero.wins
-        var level = hero.level
-        var games = hero.games
-        var net_worth = hero.net_worth
-        var last_hits = hero.last_hits
-        var kills = hero.kills
-        var deaths = hero.deaths
-
-
-        $("#Hero_Winrate").text = Math.floor((Number(wins) / Number(games)) * 100) + "%";
-        $("#Hero_Deaths").text = deaths;
-        $("#Hero_Kills").text = kills;
-        $("#Hero_LH").text = last_hits;
-        $("#Hero_Level").text = level;
-        $("#Hero_NW").text = net_worth;
-        $("#Hero_TP").text = Math.floor((Number(games) / getTotalGames()) * 100).toFixed(2);
-
-        for(var hero_data in hero)
-        {
-            if (hero_data.indexOf("item_") !== -1)
-            {
-                items.push([hero_data, Number(hero[hero_data])])          
-            }
-        }
-
-        items.sort(function(a, b) { 
-            return a[1] < b[1] ? 1 : -1;
-        });
-
-        for(var i in items)
-        {
-            AddItem(items[i][0], items[i][1], games)
-        }
-
-        $("#ThisHero").heroname = player_hero
-        $("#HeroName").text = $.Localize(player_hero)
-        $("#HeroLore").text = $.Localize(player_hero + "_hype")
-
-        var time_seconds = getUNIXTime(Players.GetLocalPlayer()) - (Date.now() / 1000)
-
-        var time = formatDateTime(Math.floor(time_seconds))
-    
-        $("#PlusExpire").text = "EXPIRE IN: " + time.toUpperCase();
-    }
+    var time_seconds = getUNIXTime(Players.GetLocalPlayer()) - (Date.now() / 1000)
+    var time = formatDateTime(Math.floor(time_seconds))
+    $("#PlusExpire").text = "EXPIRE IN: " + time.toUpperCase();
 }
-
 function OnPageSelected(id)
 {
-    if (id == PAGE_ID_HERO)  RequestDataForHero(); else if (id == PAGE_ID_PLAYER) LoadPlayerStats();
+    if (id == PAGE_ID_HERO) RequestDataForHero(); else if (id == PAGE_ID_PLAYER) LoadPlayerStats(); else if (id == PAGE_ID_QUESTS) LoadQuests();
 }
-
 function LoadPlayerStats()
 {
     $("#PlusInject").LoadLayoutAsync("file://{resources}/layout/custom_game/plus/player_stats.xml", false, true);
@@ -111,7 +63,65 @@ function LoadPlayerStats()
 
     LoadLastGame()
 }
+function GetHeroData(heroname)
+{
+    var payload = {
+        type: 9,
+        data: heroname
+    };
 
+    $.AsyncWebRequest('http://82.146.43.107', {
+        type: 'POST',
+        data: { payload: JSON.stringify(payload) },
+        success: function(data) {
+            var data = JSON.parse(data)
+
+            var hero = data
+            var items = new Array()
+    
+            var picks = hero.picks
+            var hero_id = hero.hero_id
+            var wins = hero.wins
+            var level = hero.level
+            var games = hero.games
+            var net_worth = hero.net_worth
+            var last_hits = hero.last_hits
+            var kills = hero.kills
+            var deaths = hero.deaths
+            var total_games = data["total_games"]
+    
+    
+            $("#Hero_Winrate").text = Math.floor((Number(wins) / Number(games)) * 100) + "%";
+            $("#Hero_Deaths").text = deaths;
+            $("#Hero_Kills").text = kills;
+            $("#Hero_LH").text = last_hits;
+            $("#Hero_Level").text = level;
+            $("#Hero_NW").text = net_worth;
+            $("#Hero_TP").text = (Number(picks) / Number(total_games)).toFixed(4)
+    
+            for(var hero_data in hero)
+            {
+                if (hero_data.indexOf("item_") !== -1)
+                {
+                    items.push([hero_data, Number(hero[hero_data])])          
+                }
+            }
+    
+            items.sort(function(a, b) { 
+                return a[1] < b[1] ? 1 : -1;
+            });
+    
+            for(var i in items)
+            {
+                AddItem(items[i][0], items[i][1], games)
+            }
+    
+            $("#ThisHero").heroname = heroname
+            $("#HeroName").text = $.Localize(heroname)
+            $("#HeroLore").text = $.Localize(heroname + "_hype")
+        }
+    });
+}
 function LoadLastGame()
 {
     var payload = {
@@ -144,7 +154,7 @@ function LoadLastGame()
             $("#GameDuration").text = formatDateTime(Math.floor(dota_time))
 
             $("#Win").visible = true
-            $("#Winner").text = Number(result["winner"]) == 2 ? "Radiant Won" : "Dire Won"
+            $("#Winner").text = Number(result["winner"]) == 2 ? "Radiant Lost" : "Dire Lost"
 
             $("#Date").text = time
 
@@ -190,7 +200,6 @@ function LoadLastGame()
         }
     });
 }
-
 function Schedule()
 {
     var time_seconds = getUNIXTime(Players.GetLocalPlayer()) - (Date.now() / 1000)
@@ -201,7 +210,6 @@ function Schedule()
 
     $.Schedule( 0.2, Schedule );
 }
-
 function AddItem(item, value, picks) 
 {
     var percent = Math.floor((Number(value) / Number(picks)) * 100)
@@ -223,8 +231,13 @@ function AddItem(item, value, picks)
         ItemPanel.AddClass("BestItem")
     }
 }
+function LoadQuests()
+{
+    $("#PlusInject").LoadLayoutAsync("file://{resources}/layout/custom_game/plus/quests.xml", false, true);
+}
 
 (function(){
+    if (!serverHasData()) return;
     if (getPlusSubscribe(Players.GetLocalPlayer()) == false) return; 
     Schedule()
 })();
@@ -282,6 +295,12 @@ var PRESTIGES = {
     20: "XX",
 };
 
+function serverHasData()
+{
+    var value = CustomNetTables.GetTableValue("players", "stats")
+
+    return value != null
+}
 
 function getPlayerRankValue(pID) {
     var value = CustomNetTables.GetTableValue("players", "stats")
@@ -539,4 +558,18 @@ function getKeyByValue(array, value ) {
                  return prop;
         }
     }
+}
+
+function ShowPlusTooltip(value, panel) {
+    if (!serverHasData()) return;
+    if (getPlusSubscribe(Players.GetLocalPlayer()) == true) return; 
+
+    $.DispatchEvent("DOTAShowTextTooltip", $("#PlusButton"), $.Localize("plus_info"));
+}
+
+function HidePlusTooltip(value, panel) {
+    if (!serverHasData()) return;
+    if (getPlusSubscribe(Players.GetLocalPlayer()) == true) return; 
+
+    $.DispatchEvent("DOTAHideTextTooltip", $("#PlusButton"));
 }

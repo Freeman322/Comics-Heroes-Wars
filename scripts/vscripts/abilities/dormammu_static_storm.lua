@@ -49,7 +49,7 @@ function modifier_dormammu_static_storm_thinker:OnIntervalThink()
         end	
         for i, target in ipairs(nearby_targets) do
             local damage = self.damage + self.bonus
-            ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE})
+            ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = self:GetAbility():GetAbilityDamageType()})
         end 
     end) then end
 end

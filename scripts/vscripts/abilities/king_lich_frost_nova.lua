@@ -12,9 +12,13 @@ function king_lich_frost_nova:OnSpellStart()
 	if #units > 0 then
         for _,unit in pairs(units) do
             unit:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("duration") } )
-			unit:AddNewModifier( self:GetCaster(), self, "modifier_king_lich_frost_nova", { duration = self:GetDuration() } )
+            unit:AddNewModifier( self:GetCaster(), self, "modifier_king_lich_frost_nova", { duration = self:GetDuration() } )
+            
+            ApplyDamage({attacker = self:GetCaster(), victim = unit, damage = self:GetSpecialValueFor("aoe_damage"), damage_type = self:GetAbilityDamageType(), ability = self})
 		end
 	end
+
+    ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetAbilityDamage(), damage_type = self:GetAbilityDamageType(), ability = self})
 
 	local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lich/lich_frost_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
     ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_ABSORIGIN, "attach_hitloc", target:GetOrigin(), true )

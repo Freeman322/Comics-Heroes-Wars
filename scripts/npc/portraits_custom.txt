@@ -2353,4 +2353,97 @@
 			}
 		}
 	}
+	"models/heroes/hero_mercy/mercy.vmdl"
+	{
+		"PortraitLightPosition"		"47.84 4.52 166.77"
+		"PortraitLightAngles"		"30.28 191.43 0.00"
+		"PortraitLightFOV"		"90"
+		"PortraitLightDistance"		"66"
+		"PortraitLightColor"		"134 198 254"
+		"PortraitShadowColor"		"48 48 69"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"84 108 120"
+		"PortraitAmbientScale"		"4.750000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_glacier.vmat"
+		"PortraitBackgroundColor1"		"0 0 0"
+		"PortraitBackgroundColor2"		"1 1 1"
+		"PortraitBackgroundColor3"		"1 1 1"
+		"PortraitBackgroundColor4"		"1 1 1"
+		"PortraitLightScale"		"2.300000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"18.200 -36.780 -11.370"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"254.84 51.37 208.08"
+				"PortraitAngles"		"14.22 191.62 0.00"
+				"PortraitFOV"		"11"
+			}
+		}
+	}
+	"models/heroes/hero_palpatine/palpatine.vmdl"
+	{
+		"PortraitLightPosition"		"53.39 26.85 164.37"
+		"PortraitLightAngles"		"164.53 15.71 0.00"
+		"PortraitLightFOV"		"90"
+		"PortraitLightDistance"		"216"
+		"PortraitLightColor"		"194 245 254"
+		"PortraitShadowColor"		"63 63 89"
+		"PortraitShadowScale"		"4.350000"
+		"PortraitAmbientColor"		"167 79 108"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_purple.vmat"
+		"PortraitBackgroundColor1"		"1 1 1"
+		"PortraitBackgroundColor2"		"1 .2 1"
+		"PortraitBackgroundColor3"		"1 .2 1"
+		"PortraitBackgroundColor4"		"1 1 1"
+		"PortraitLightScale"		"1.200000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-215.720 -16.230 4.660"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"60.66 -70.79 159.41"
+				"PortraitAngles"		"8.97 119.92 350.00"
+				"PortraitFOV"		"17"
+			}
+		}
+	}
+	"models/heroes/hero_dark_rider/black_rider.vmdl"
+	{
+		"PortraitLightPosition"		"53.39 26.85 164.37"
+		"PortraitLightAngles"		"164.53 15.71 0.00"
+		"PortraitLightFOV"		"90"
+		"PortraitLightDistance"		"216"
+		"PortraitLightColor"		"194 245 254"
+		"PortraitShadowColor"		"63 63 89"
+		"PortraitShadowScale"		"4.350000"
+		"PortraitAmbientColor"		"167 79 108"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_purple.vmat"
+		"PortraitBackgroundColor1"		"1 1 1"
+		"PortraitBackgroundColor2"		"1 .2 1"
+		"PortraitBackgroundColor3"		"1 .2 1"
+		"PortraitBackgroundColor4"		"1 1 1"
+		"PortraitLightScale"		"1.200000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-215.720 -16.230 4.660"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"254.84 51.37 143.08"
+				"PortraitAngles"		"14.22 191.62 0.00"
+				"PortraitFOV"		"3"
+			}
+		}
+	}
 }

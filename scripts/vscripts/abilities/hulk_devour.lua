@@ -84,6 +84,10 @@ function modifier_hulk_devour:OnCreated(params)
             self:Destroy()
         end
         self:StartIntervalThink(0.05)
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "pursuer") == true then
+            StartSoundEvent("Hulk.Ult.Custom", self:GetParent())
+        end 
 	end
 end
 
@@ -93,6 +97,10 @@ function modifier_hulk_devour:OnDestroy()
 		self:GetParent():SetForceAttackTarget(nil)
         self:GetParent():SetForceAttackTargetAlly(nil)
         self:GetParent():Stop()
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "pursuer") == true then
+            StopSoundEvent("Hulk.Ult.Custom", self:GetParent())
+        end
 	end
 end
 

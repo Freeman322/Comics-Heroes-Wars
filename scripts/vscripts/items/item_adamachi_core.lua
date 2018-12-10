@@ -82,10 +82,26 @@ function modifier_item_adamachi_core:DeclareFunctions() --we want to use these f
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_MANA_BONUS,
-        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE
+        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
+        MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT
     }
 
     return funcs
+end
+
+function modifier_item_adamachi_core:OnTakeDamageKillCredit( params )
+    if IsServer() then
+        if params.inflictor and params.attacker == self:GetParent()	then 
+			local damage = (params.damage * (self:GetAbility():GetSpecialValueFor("bonus_lifesteal") / 100))
+
+			self:GetParent():Heal(damage, self:GetAbility())
+
+			local nFXIndex = ParticleManager:CreateParticle( "particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() );
+			ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+			SendOverheadEventMessage( self:GetParent(), OVERHEAD_ALERT_HEAL , self:GetParent(), math.floor( damage ), nil )
+        end 
+    end 
 end
 
 function modifier_item_adamachi_core:GetModifierBonusStats_Intellect( params )

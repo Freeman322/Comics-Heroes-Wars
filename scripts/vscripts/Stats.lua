@@ -131,7 +131,7 @@ function stats.get_data()
 		}
 
 		if result.code == 0 then
-			print("Request to " .. endpoint .. " timed out")
+			print("Request timed out")
 			return
         end
         
@@ -150,7 +150,7 @@ function stats.get_data()
             end
             
             stats.prepare(decoded["players"])
-            CustomNetTables:SetTableValue("players", "heroes", decoded["heroes"])
+            PlayerTables:CreateTable("heroes", {heroes = decoded["heroes"]}, true)
 		else
 			print("Warning: Recieved response for request " .. endpoint .. " without body!")
 		end
@@ -192,7 +192,7 @@ function stats.set_data()
 		}
 
 		if result.code == 0 then
-			print("Request to " .. endpoint .. " timed out")
+			print("Request timed out")
 			return
         end
         
@@ -460,7 +460,7 @@ function stats.request_hero_data(hero_name)
 		}
 
 		if result.code == 0 then
-			print("Request to " .. endpoint .. " timed out")
+			print("Request timed out")
 			return
         end
         
@@ -482,7 +482,7 @@ function stats.request_hero_data(hero_name)
                 stats.data[decoded["hero_name"]] = decoded
             end 
 
-            CustomNetTables:SetTableValue("comics_plus", "heroes", stats.data)
+            PlayerTables:SetTableValue("heroes_data", "heroes", stats.data)
 		else
 			print("Warning: Recieved response for request " .. endpoint .. " without body!")
 		end
@@ -523,7 +523,7 @@ function stats.get_all_inventories()
         }
 
 		if result.code == 0 then
-			print("Request to " .. endpoint .. " timed out")
+			print("Request timed out")
 			return
         end
         

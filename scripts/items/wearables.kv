@@ -3010,6 +3010,32 @@
                     }                 
                 }   
             }
+            "ozaruu"
+            {
+                "model"                 "models/heroes/hero_hela/hela_custom_ozaruu/ozaruu.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/heroes/hero_hela/hela_custom_ozaruu/econs/spear.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/hero_joker/joker_ambient.vpcf"
+                    } 
+                }         
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_ozaruu"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }    
+            }
         }     
     }
     "npc_dota_hero_queenofpain"
@@ -4071,6 +4097,7 @@
                     }
                 }
             }
+            "pursuer" {}
         }
         "helmet"
         {
@@ -4089,6 +4116,21 @@
                     "1"
                     {
                         "model"             "models/heroes/hero_hulk/econs/hammer.vmdl"
+                    }
+                }
+            }
+            "pursuer" 
+            {
+                "model"                     "models/heroes/hero_hulk/econs/hulk_custom/pursuer.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"             "models/heroes/hero_hulk/econs/hulk_custom/econs/sword.vmdl"
+                    }
+                    "2"
+                    {
+                        "model"             "models/heroes/hero_hulk/econs/hulk_custom/econs/shield.vmdl"
                     }
                 }
             }
@@ -4133,6 +4175,10 @@
         }
         "head"
         {
+            "ultron"
+            {
+
+            }
             "dormammu_mask_of_dark_god"
             {
                 "models"
@@ -4153,6 +4199,25 @@
         }
         "armor"
         {
+            "ultron"
+            {
+                "model"                     "models/heroes/hero_ultron/ultron.vmdl"
+                "projectile"
+                {
+                    "particle"              "particles/items_fx/dagon.vpcf"
+                }
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/units/heroes/hero_abaddon/abaddon_ambient.vpcf"
+                    }
+                    "2" 
+                    {
+                        "particle"          "particles/units/heroes/hero_abaddon/abaddon_ambient.vpcf"
+                    }
+                } 
+            }
             "eternal_harvester"
             {
                 "models"
@@ -4500,6 +4565,88 @@
                     }
                 }
             }
+        }
+    }
+    "npc_dota_hero_mercy"
+    {
+        "weapon"
+        {
+            "__default"          
+            {
+                "models"
+                {      
+                    "1"
+                    {
+                        "model"                 "models/heroes/hero_mercy/staff.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"      "particles/hero_mercy/econ_stuff.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_staff"
+                                    "1"         "attach_staff"
+                                }
+                            }
+                        }
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/econ/items/omniknight/omni_sacred_light_head/omni_ambient_sacred_light.vpcf"
+                        "ControlPoints"
+                        {
+                            "1"
+                            {
+                                "attach_point"      "attach_gem"
+                            }
+                            "2"
+                            {
+                                "attach_point"      "attach_halo"
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+        "head"          
+        {
+            "__default"          
+            {
+                "models"
+                {      
+                    "1"
+                    {
+                        "model"                 "models/heroes/hero_mercy/wings.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"      "particles/hero_mercy/econ_wings_ambient.vpcf"
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+    "npc_dota_hero_necrolyte"
+    {
+        "armor"
+        {
+            "__default"          
+            {
+                "models"
+                {      
+                    "1"
+                    {
+                        "model"                 "models/heroes/hero_palpatine/palpatine_cape.vmdl"
+                    }
+                }
+            } 
         }
     }
 }

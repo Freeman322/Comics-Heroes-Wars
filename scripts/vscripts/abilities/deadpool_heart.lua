@@ -41,7 +41,10 @@ function modifier_deadpool_heart:OnCreated(table)
 end
 
 function modifier_deadpool_heart:GetModifierHealthRegenPercentage()
-    return self:GetAbility():GetSpecialValueFor("health_regen_base") + (self.stacks or 1) + ((self:GetAbility ():GetSpecialValueFor ("health_regen_percent_per_second")) * (GameRules:GetGameTime() / 420))
+    local regen = self:GetAbility():GetSpecialValueFor("health_regen_base") + (self.stacks or 1) + ((self:GetAbility ():GetSpecialValueFor ("health_regen_percent_per_second")) * (GameRules:GetGameTime() / 420))
+    if regen > 400 then regen = 400 end 
+    
+    return regen
 end
 
 function deadpool_heart:GetAbilityTextureName()

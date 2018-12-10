@@ -822,7 +822,7 @@
 	      "Ability3"				"deadpool_strike"
 	      "Ability4"				"generic_hidden"
 	      "Ability5"				"generic_hidden"
-	      "Ability6"				"deadpool_hypersonic_slashes"
+	      "Ability6"				"deadpool_omniverse"
 	      "Ability10"				"special_bonus_exp_boost_30"
 	      "Ability11"				"special_bonus_all_stats_12"
 	      "Ability12"				"special_bonus_hp_regen_40"
@@ -1303,7 +1303,7 @@
 	    "Ability5"      			"generic_hidden"
 		"Ability6"      			"jaina_overvoid"
 		"Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_all_stats_12"
+		"Ability11"					"special_bonus_unique_crystal_maiden_1"
 		"Ability12"					"special_bonus_cast_range_200"
 		"Ability13"					"special_bonus_frozen_attacks"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
@@ -2734,34 +2734,43 @@
 	}
 	"npc_dota_hero_necrolyte"
 	{
-		"override_hero"			    "npc_dota_hero_necrolyte"
-		"AbilityLayout"    			 "4"
-	    "DisableWearables" 			 "1"
+		"override_hero"			    	"npc_dota_hero_necrolyte"
 
-		"Ability1"		      		"palpatine_wormhole"
-		"Ability2"		      		"palpatine_astral_damage"
-		"Ability3"		      		"palpatine_armor_weakness"
-		"Ability4"		     	 	"generic_hidden"
-		"Ability5"		    		"generic_hidden"
-		"Ability6"		    		"palpatine_lightnings"
-		"Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_all_stats_12"
-		"Ability12"					"special_bonus_movement_speed_60"
-		"Ability13"					"special_bonus_attack_speed_100"
-		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_spell_amplify_3"
-		"Ability16"					"special_bonus_unique_palpatine"
-		"Ability17"					"special_bonus_all_stats_20"
+		"Model"		                	"models/heroes/hero_palpatine/palpatine.vmdl"
+
+		"AbilityLayout"    			 	"4"
+	    "DisableWearables" 			 	"1"
+
+		"SoundSet"						"Hero_zuus"
+
+		"Ability1"		      			"palpatine_force"
+		"Ability2"		      			"palpatine_chain_lighning"
+		"Ability3"		      			"palpatine_refraction"
+		"Ability4"		     	 		"generic_hidden"
+		"Ability5"		    			"generic_hidden"
+		"Ability6"		    			"palpatine_dark_aura"
+		"Ability10"						"special_bonus_exp_boost_30"
+		"Ability11"						"special_bonus_unique_palpatine_1"
+		"Ability12"						"special_bonus_unique_palpatine_2"
+		"Ability13"						"special_bonus_unique_palpatine_5"
+		"Ability14"						"special_bonus_cooldown_reduction_25"
+		"Ability15"						"special_bonus_unique_palpatine_4"
+		"Ability16"						"special_bonus_unique_palpatine_3"
+		"Ability17"						"special_bonus_all_stats_20"
+
 		"ArmorPhysical"					"0"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+
 		"AttackDamageMin"				"32"
 		"AttackDamageMax"				"40"
 		"AttackRate"					"1.650000"
 		"AttackAnimationPoint"			"0.500000"
 		"AttackAcquisitionRange"		"800"
 		"AttackRange"					"600"
-		"ProjectileModel"				"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
-		"ProjectileSpeed"				"9000"
+
+		"ProjectileModel"				"particles/econ/items/zeus/zeus_ti8_immortal_arms/zeus_ti8_immortal_arc.vpcf"
+		"ProjectileSpeed"				"3000"
+
 		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"			"18"
 		"AttributeStrengthGain"			"1.900000"
@@ -2771,8 +2780,11 @@
 		"AttributeAgilityGain"			"2.000000"
 		"MovementSpeed"					"300"
 		"MovementTurnRate"				"0.500000"
+
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"				"160"
+
+		"StatusHealth"					"570"
 	}
 	"npc_dota_hero_nightbringer"
 	{
@@ -6240,7 +6252,7 @@
         // Model info
         "Model"                     "models/heroes/hero_kyloren/kyloren.vmdl"
 
-        "ModelScale"                "1.15"
+        "ModelScale"                "2.0"
         "LoadoutScale"              "1.1"
 
         "HeroGlowColor"             "200 200 200"
@@ -6293,6 +6305,187 @@
 		"Ability12"					"special_bonus_movement_speed_60"
 		"Ability13"					"special_bonus_attack_speed_100"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_all_stats_20"
+		"Ability17"					"special_bonus_20_crit_15"
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_ogre_magi/ogre_magi_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_origin"
+						"location"		"attach_hitloc"
+					}
+				}
+			}
+		}
+		"ItemSlots"
+		{
+
+		}
+	}
+
+	//=================================================================================================================
+	// HERO: Mercy
+	//=================================================================================================================
+	"npc_dota_hero_mercy"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "210"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        "HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/hero_mercy/mercy.vmdl"
+        "ModelScale"                "0.92"
+        "LoadoutScale"              "1.1"
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Oracle"
+		"IdleSoundLoop"				"Hero_Oracle.IdleLoop"
+
+	 	"particle_folder"			"particles/units/heroes/hero_oracle"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_oracle.vsndevts"
+
+		"Role"						"Support,Nuker,Disabler,Escape"
+		"Rolelevels"				"3,2,2,1"
+		"Complexity"				"2"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
+        "AttributeBaseStrength"     "16"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "21"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "31"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+       	"AttackAcquisitionRange"	"800"
+		"AttackRange"				"620"
+		"ProjectileModel"			"particles/econ/items/templar_assassin/templar_assassin_butterfly/templar_assassin_meld_attack_butterfly.vpcf"
+		"ProjectileSpeed"			"900"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+
+        "AttackDamageMin"           "20"
+        "AttackDamageMax"           "28"
+
+        "AttackRate"                "1.760000"
+        "AttackAnimationPoint"      "0.400000"
+        "MovementSpeed"             "305"
+        "MovementTurnRate"          "0.600000"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					""
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_intelligence_10"
+		"Ability13"					"special_bonus_corruption_4"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_20_crit_15"
+		"Ability17"					"special_bonus_all_stats_20"
+ 
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_ogre_magi/ogre_magi_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_origin"
+						"location"		"attach_hitloc"
+					}
+				}
+			}
+		}
+		"ItemSlots"
+		{
+
+		}
+	}
+	"npc_dota_hero_dark_rider"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "211"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        ///"HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/hero_dark_rider/black_rider.vmdl"
+
+        "ModelScale"                "1.35"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Undying"
+		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
+
+	 	"particle_folder"			"particles/units/heroes/hero_grimstroke"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_grimstroke.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_grimstroke.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
+        "AttributeBaseStrength"     "26"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "18"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+
+        "AttackDamageMin"           "25"
+        "AttackDamageMax"           "32"
+
+       	"AttackAcquisitionRange"	"800"
+		"AttackRange"				"620"
+		"ProjectileModel"			"particles/units/heroes/hero_grimstroke/grimstroke_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"darkrider_speedforce_necromacy"
+		"Ability2"					"darkrider_heartbeat"
+		"Ability3"					"darkrider_inverse"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"darkrider_time_aura"
+
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_unique_darkrider_2"
+		"Ability13"					"special_bonus_unique_darkrider_1"
+		"Ability14"					"special_bonus_unique_darkrider_3"
 		"Ability15"					"special_bonus_attack_damage_90"
 		"Ability16"					"special_bonus_all_stats_20"
 		"Ability17"					"special_bonus_20_crit_15"

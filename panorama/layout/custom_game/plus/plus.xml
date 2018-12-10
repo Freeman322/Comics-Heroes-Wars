@@ -11,7 +11,7 @@
 
    <Panel hittest="false" class="PlusRootClass">
       <Panel id="PlusMain" class="Closed" hittest="false">
-        <Button id="PlusButton" onactivate="OnPlusOpen()">
+        <Button id="PlusButton" onactivate="OnPlusOpen()" onmouseover="ShowPlusTooltip()" onmouseout="HidePlusTooltip()">
             <Label id="PlusButtonText" text="PLUS" />
         </Button>
         <Panel id="Plus" hittest="false">

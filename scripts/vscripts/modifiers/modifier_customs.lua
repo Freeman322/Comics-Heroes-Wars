@@ -55,3 +55,8 @@ function modifier_sephiroth:OnIntervalThink()
         end
     end 
 end
+
+if modifier_ozaruu == nil then modifier_ozaruu = class({}) end
+function modifier_ozaruu:IsHidden() return true end
+function modifier_ozaruu:IsPurgable() return false end
+function modifier_ozaruu:RemoveOnDeath() return false end

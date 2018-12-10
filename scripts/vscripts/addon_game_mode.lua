@@ -98,6 +98,8 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts", context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts", context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts", context )
+	PrecacheResource("soundfile", "soundevents/voscripts/game_sounds_vo_grimstroke.vsndevts", context )
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_grimstroke.vsndevts", context )
 
 	PrecacheResource("soundfile", "soundevents/voscripts/game_sounds_vo_zoom.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/heroes/hero_kyloren.vsndevts", context )
@@ -109,8 +111,10 @@ function Precache( context )
 	PrecacheResource("model", "models/heroes/hero_elsa/elsa.vmdl", context)
 	PrecacheResource("model", "models/pets/osky/osky.vmdl", context)
 	PrecacheResource("model", "models/pets/icewrack_wolf/icewrack_wolf.vmdl", context)
+	PrecacheResource("model", "models/items/courier/onibi_lvl_21/onibi_lvl_21.vmdl", context)
 	
 	PrecacheResource("particle", "particles/econ/pets/pet_drodo_ambient.vpcf", context)
+	PrecacheResource("particle", "particles/econ/courier/courier_onibi/courier_onibi_black_lvl21_ambient.vpcf", context)
 	
 	PrecacheResource("particle", "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_weather_underwater.vpcf", context)
@@ -242,7 +246,8 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_wisp" ) 
 
 	Convars:SetInt("dota_wait_for_players_to_load_timeout", 260)
-	Convars:SetInt("dota_combine_models", 0 )
+	Convars:SetInt("dota_combine_models", 1 )
+	SendToServerConsole( "dota_combine_models 1" )	
 
 	-- Hook into game events allowing reload of functions at run time
 	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( GameMode, "OnNPCSpawned" ), self )
@@ -254,18 +259,13 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, 10 )
 
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
-	GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter(Dynamic_Wrap( GameMode, "InventoryFilter" ), self)
 	GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
-	
-	SendToServerConsole( "dota_combine_models 0" )	
-	self._tPlayerIDToAccountRecord = {}
 
 	Util:OnInit()
 	Trades:Init()
 	Vote:OnInit()
 
 	GameRules.Globals = {};
-
 	GameRules.Players = {}
 	GameRules.Players[DOTA_TEAM_BADGUYS] = {}
 	GameRules.Players[DOTA_TEAM_GOODGUYS] = {}
@@ -364,156 +364,70 @@ function GameMode:OnEntityKilled( keys )
      	local res = playerName .. " killed Yaz'!"
     	GameRules:SendCustomMessage(res, 0, 0)
     end
-    if killedUnit:IsRealHero() then
-		if GetMapName() == "dota_overthrow" and GetTeamHeroKills(killerEntity:GetTeam()) >= 50 then
-			GameRules:SetSafeToLeave( true )
-			GameRules:SetGameWinner( killerEntity:GetTeam() )
-		end
-    end
 end
 function GameMode:DmgFilter(ftable)
 	if pcall(function ()
-			local attacker
-			if ftable.entindex_attacker_const then attacker = EntIndexToHScript(ftable.entindex_attacker_const) end
-			local victim = EntIndexToHScript(ftable.entindex_victim_const)
-			local damage = ftable.damage
-  
-			  if attacker ~= nil then
-				  if victim:HasModifier("modifier_franklin_global_retrocausality_friendly") then
-					  local modifier = victim:FindModifierByName("modifier_franklin_global_retrocausality_friendly")
-					  if modifier then
-						  local target = EntIndexToHScript(modifier:GetTarget())
-						  if target:IsAlive() then 
-							  target:ModifyHealth(target:GetHealth() - damage, modifier:GetAbility(), true, 0)
-							  ApplyDamage ({victim = target, attacker = victim, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = modifier:GetAbility(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS })      
-						  end
-						  ftable.damage = 0
-					  end					
-				  end
-				  if attacker:HasModifier( "modifier_tzeentch_warp_connection" ) then
-					  local modifier = attacker:FindModifierByName("modifier_tzeentch_warp_connection")
-					  if attacker:GetTeamNumber() == modifier:GetCaster():GetTeamNumber() then
-						  ftable.damage = ftable.damage * modifier:GetAbility():GetSpecialValueFor("damage_amplification")
-					  else
-						  ftable.damage = ftable.damage * modifier:GetAbility():GetSpecialValueFor("damage_reducrion")
-					  end
-					  return true
-				  end
-				  if victim:HasModifier( "modifier_thanos_believer" ) and not victim:HasModifier("modifier_item_timepiece")  then 
-					  if damage > victim:GetHealth() then 
-						  local modifer = victim:FindModifierByName("modifier_thanos_believer")
-						  if modifer and modifer:GetAbility():IsCooldownReady() then
-							  modifer:GetAbility():StartCooldown(modifer:GetAbility():GetCooldown(modifer:GetAbility():GetLevel()))
-							  victim:AddNewModifier( victim, modifer, "modifier_item_aeon_disk_buff", {duration = modifer:GetAbility():GetDuration()} )
-							  victim:AddNewModifier( victim, modifer, "modifier_item_lotus_orb_active", {duration = modifer:GetAbility():GetDuration()} ) 
-  
-							  ftable.damage = 0
-						  end
-					  end
-				  end
-				  if victim:HasModifier( "item_time_gem" ) then
-					  if damage > victim:GetHealth() then 
-						  local modifer = victim:FindModifierByName("item_time_gem")
-						  if modifer ~= nil then
-							  if modifer:OnTime(attacker, victim) then 
-								  ftable.damage = 0
-								  return false
-							  end					
-						  end 
-					  end					
-				  end
-				  if victim:HasModifier( "modifier_item_dawnbreaker" ) and not victim:HasModifier("modifier_item_timepiece")  then 
-					  if damage > victim:GetHealth() then 
-						  local modifer = victim:FindModifierByName("modifier_item_dawnbreaker")
-						  if modifer:GetAbility():IsCooldownReady() then 
-							  ftable.damage = 0
-						  end
-						  modifer:SoulTransform() 
-						  return false
-					  end					
-				  end
-				  if victim:HasModifier( "modifier_item_dawnbreaker_active" ) then 
-					  return false
-				  end
-				  if attacker:HasItemInInventory("item_soul_urn") and ftable.damagetype_const > 1 then
-					  if RollPercentage(DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT_CHANCE) then
-						  ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_dmg.vpcf", PATTACH_POINT_FOLLOW, victim)
-						  ftable.damage = ftable.damage + (ftable.damage * DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT)
-					  end
-				  end
-				  if attacker:HasItemInInventory("item_ethernal_dagon") and ftable.damagetype_const > 1 then
-					  local particle_lifesteal = "particles/items3_fx/octarine_core_lifesteal.vpcf"
-					  local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, attacker)
-					  ParticleManager:SetParticleControl(lifesteal_fx, 0, attacker:GetAbsOrigin())
+		local attacker
+		if ftable.entindex_attacker_const then attacker = EntIndexToHScript(ftable.entindex_attacker_const) end
+		local victim = EntIndexToHScript(ftable.entindex_victim_const)
+		local damage = ftable.damage
 
+			if attacker ~= nil then
+				if victim:HasModifier("modifier_franklin_global_retrocausality_friendly") then
+					local modifier = victim:FindModifierByName("modifier_franklin_global_retrocausality_friendly")
+					if modifier then
+						local target = EntIndexToHScript(modifier:GetTarget())
+						if target:IsAlive() then 
+							target:ModifyHealth(target:GetHealth() - damage, modifier:GetAbility(), true, 0)
+							ApplyDamage ({victim = target, attacker = victim, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = modifier:GetAbility(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS })      
+						end
+						ftable.damage = 0
+					end					
+				end
+				if attacker:HasModifier( "modifier_tzeentch_warp_connection" ) then
+					local modifier = attacker:FindModifierByName("modifier_tzeentch_warp_connection")
+					if attacker:GetTeamNumber() == modifier:GetCaster():GetTeamNumber() then
+						ftable.damage = ftable.damage * modifier:GetAbility():GetSpecialValueFor("damage_amplification")
+					else
+						ftable.damage = ftable.damage * modifier:GetAbility():GetSpecialValueFor("damage_reducrion")
+					end
+					return true
+				end
+				if victim:HasModifier( "modifier_thanos_believer" ) and not victim:HasModifier("modifier_item_timepiece")  then 
+					if damage > victim:GetHealth() then 
+						local modifer = victim:FindModifierByName("modifier_thanos_believer")
+						if modifer and modifer:GetAbility():IsCooldownReady() then
+							modifer:GetAbility():StartCooldown(modifer:GetAbility():GetCooldown(modifer:GetAbility():GetLevel()))
+							victim:AddNewModifier( victim, modifer, "modifier_item_aeon_disk_buff", {duration = modifer:GetAbility():GetDuration()} )
+							victim:AddNewModifier( victim, modifer, "modifier_item_lotus_orb_active", {duration = modifer:GetAbility():GetDuration()} ) 
 
-					  attacker:Heal(ftable.damage * DOTA_DAMAGE_MULTIPLIER_MAGICAL_HEAL, attacker)
-				  end
-				  if attacker:HasModifier("modifier_item_adamachi_core") and ftable.damagetype_const > 1 then
-					  local restore = damage*0.15
-					  local particle_lifesteal = "particles/items3_fx/octarine_core_lifesteal.vpcf"
-					  local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, attacker)
-					  ParticleManager:SetParticleControl(lifesteal_fx, 0, attacker:GetAbsOrigin())
-					  attacker:Heal(restore, attacker)
-				  end
-				  if ftable.entindex_inflictor_const then
-					  local ability = EntIndexToHScript(ftable.entindex_inflictor_const)
-					  if ability:GetName() == "joker_land_mines" or ability:GetName() == "joker_remote_mines" then
-						  local new_damage = GameMode:GetCompositeDamage(ftable.damage, victim)
-						  ftable.damage = new_damage
-  
-						  if ability:GetCaster():HasTalent("special_bonus_unique_joker") then 
-							  ftable.damage = ftable.damage + ability:GetCaster():FindTalentValue("special_bonus_unique_joker")
-						  end
-					  end
-				  end
-				  if attacker:GetUnitName() == "npc_dota_kracken" and victim:IsBuilding() then
-					  ftable.damage = ftable.damage / 4
-				  end
-			  end	
-			  if victim:HasModifier("modifier_ares_terrorize") then
-				  local dmf = ftable.damage
-				  ftable.damage = 0
-  
-				  local buff = victim:FindModifierByName("modifier_ares_terrorize")
-				  victim:ModifyHealth(victim:GetHealth() - dmf, buff:GetAbility(), true, 0)
-			  end
+							ftable.damage = 0
+						end
+					end
+				end
+				if victim:HasModifier( "item_time_gem" ) then
+					if damage > victim:GetHealth() then 
+						local modifer = victim:FindModifierByName("item_time_gem")
+						if modifer ~= nil then
+							if modifer:OnTime(attacker, victim) then 
+								ftable.damage = 0
+								return false
+							end					
+						end 
+					end					
+				end
+			end	
+			if victim:HasModifier("modifier_ares_terrorize") then
+				local dmf = ftable.damage
+				ftable.damage = 0
+
+				local buff = victim:FindModifierByName("modifier_ares_terrorize")
+				victim:ModifyHealth(victim:GetHealth() - dmf, buff:GetAbility(), true, 0)
+			end
 		end) then else
 		printd("We have an eror in dmg filter")
 		print("We have an eror in dmg filter")
 	end
-	return true
-end
-function GameMode:UpdateTowersAbilities()
-	local towers = Entities:FindAllByClassname("dota_fountain")
-    for k, tower in pairs(towers) do
-        for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.
-            local current_ability = tower:GetAbilityByIndex(i)
-            if current_ability ~= nil then
-                if current_ability:GetLevel() == 0 then
-                    current_ability:SetLevel(4)
-                end
-            end
-        end
-    end
-    local forts = Entities:FindAllByClassname("npc_dota_fort")
-    for k, fort in pairs(towers) do
-        for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.
-           local current_ability = fort:GetAbilityByIndex(i)
-           if current_ability ~= nil then
-                if current_ability:GetLevel() == 0 then
-                    current_ability:SetLevel(4)
-                end
-            end
-        end
-    end
-end
-function GameMode:InventoryFilter(params)
-	local item_name = EntIndexToHScript(params.item_entindex_const) or nil
-	if item_name then 
-		if item_name:GetName() == "item_inf_balvanka" and GetMapName() == "dota_captains_mode" then return false end 
-	end
-
 	return true
 end
 function GameMode:GetCompositeDamage(damage, target)

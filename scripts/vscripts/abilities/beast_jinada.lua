@@ -44,35 +44,35 @@ end
 
 function modifier_beast_jinada:OnAttackLanded(params)
     if IsServer () then
-        if params.attacker == self:GetParent () then
-            local target = params.target
-            local flDamage = self:GetAbility():GetSpecialValueFor("creep_dmg") + ((self:GetAbility():GetSpecialValueFor("creeps_per_damage")/100) * target:GetMaxHealth())
-            if self:GetParent():HasScepter() then
-                flDamage = flDamage + ((self:GetAbility():GetSpecialValueFor("creeps_per_damage_scepter")/100)*target:GetMaxHealth())
-            end
-            if target:IsRealHero() then
-                flDamage = self:GetParent():GetLastHits() / 2
-            else
-                if target:IsConsideredHero() or target:IsBuilding() then
-                    flDamage = 0
-                else
-                    flDamage = flDamage
-                end
-            end
-            ApplyDamage ({attacker = self:GetParent(), victim = target, ability = self:GetAbility(), damage = flDamage, damage_type = DAMAGE_TYPE_PHYSICAL })
-						print(self:GetParent():HasModifier("modifier_beast_arcana"))
-						if self:GetParent():HasModifier("modifier_beast_arcana") then
-							local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/antimage/antimage_weapon_basher_ti5/am_basher.vpcf", PATTACH_CUSTOMORIGIN, nil );
-							ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
-							ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetParent():GetOrigin(), true );
-							ParticleManager:SetParticleControlEnt( nFXIndex, 2, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
-							ParticleManager:SetParticleControlEnt( nFXIndex, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
-							ParticleManager:ReleaseParticleIndex( nFXIndex );
-
-							EmitSoundOn( "Hero_Antimage.ManaBreak", target )
-						end
+      if params.attacker == self:GetParent () then
+        local target = params.target
+        local flDamage = self:GetAbility():GetSpecialValueFor("creep_dmg") + ((self:GetAbility():GetSpecialValueFor("creeps_per_damage")/100) * target:GetMaxHealth())
+        if self:GetParent():HasScepter() then
+          flDamage = flDamage + ((self:GetAbility():GetSpecialValueFor("creeps_per_damage_scepter")/100)*target:GetMaxHealth())
         end
+        if target:IsRealHero() then
+          flDamage = self:GetParent():GetLastHits() / 2
+        else
+          if target:IsConsideredHero() or target:IsBuilding() then
+            flDamage = 0
+          else
+            flDamage = flDamage
+          end
+        end
+        ApplyDamage ({attacker = self:GetParent(), victim = target, ability = self:GetAbility(), damage = flDamage, damage_type = DAMAGE_TYPE_PHYSICAL })
+        print(self:GetParent():HasModifier("modifier_beast_arcana"))
+        if self:GetParent():HasModifier("modifier_beast_arcana") then
+          local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/antimage/antimage_weapon_basher_ti5/am_basher.vpcf", PATTACH_CUSTOMORIGIN, nil );
+          ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
+          ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetParent():GetOrigin(), true );
+          ParticleManager:SetParticleControlEnt( nFXIndex, 2, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
+          ParticleManager:SetParticleControlEnt( nFXIndex, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
+          ParticleManager:ReleaseParticleIndex( nFXIndex );
+  
+          EmitSoundOn( "Hero_Antimage.ManaBreak", target )
+        end
+      end
     end
-
+  
     return 0
-end
+  end

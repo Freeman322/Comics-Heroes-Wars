@@ -922,7 +922,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"15"
+		"ArmorPhysical"				"2"
 		"MagicalResistance"			"25"
 
 		// Attack
@@ -971,7 +971,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"4000"
+		"StatusHealth"				"900"
 		"StatusHealthRegen"			"10"
 		"StatusMana"				"400"
 		"StatusManaRegen"			"4"
@@ -1011,7 +1011,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"40"
+		"ArmorPhysical"				"8"
 		"MagicalResistance"			"40"
 
 		// Attack
@@ -1060,7 +1060,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"4000"
+		"StatusHealth"				"1800"
 		"StatusHealthRegen"			"40"
 		"StatusMana"				"0"
 		"StatusManaRegen"			"0"
@@ -3468,9 +3468,9 @@
 			
 			"EquippedItems"
 			{	      
-				"Gem"
+				"IcePearl"
 				{
-					"Item"					"item_gem"
+					"Item"					"item_ice_pearl"
 				}
 				"Gauntelt"
 				{
@@ -5063,5 +5063,229 @@
 
 		// Inventory
 		"HasInventory"				"1"
-	}	
+	}
+	//=================================================================================================================
+	// HERO: Mercy
+	//=================================================================================================================
+	"npc_dota_hero_mercy"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "210"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        "HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/hero_mercy/mercy.vmdl"
+        "ModelScale"                "0.92"
+        "LoadoutScale"              "1.1"
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Oracle"
+		"IdleSoundLoop"				"Hero_Oracle.IdleLoop"
+
+	 	"particle_folder"			"particles/units/heroes/hero_oracle"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_oracle.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
+        "AttributeBaseStrength"     "16"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "21"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "31"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+		"AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+       	"AttackAcquisitionRange"	"800"
+		"AttackRange"				"620"
+		"ProjectileModel"			"particles/econ/items/templar_assassin/templar_assassin_butterfly/templar_assassin_meld_attack_butterfly.vpcf"
+		"ProjectileSpeed"			"900"
+
+        "AttackDamageMin"           "20"
+        "AttackDamageMax"           "28"
+
+        "AttackRate"                "1.760000"
+        "AttackAnimationPoint"      "0.400000"
+        "MovementSpeed"             "305"
+        "MovementTurnRate"          "0.600000"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					""
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_intelligence_10"
+		"Ability13"					"special_bonus_corruption_4"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_20_crit_15"
+		"Ability17"					"special_bonus_all_stats_20"
+ 
+		"Enabled"					"1"
+
+		"Role"						"Support,Nuker,Disabler,Escape"
+		"Rolelevels"				"3,2,2,1"
+		"Complexity"				"2"
+		"Team"						"Good"
+        
+        // Misc
+        "NameAliases"      			"mr"
+        "url"       				"Mercy"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"900"
+		"StatusHealthRegen"			"2.2000"
+		"StatusMana"				"145"
+		"StatusManaRegen"			"1.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}
+	"npc_dota_hero_dark_rider"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "211"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        ///"HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/hero_dark_rider/black_rider.vmdl"
+
+        "ModelScale"                "2.0"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Undying"
+		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
+
+	 	"particle_folder"			"particles/units/heroes/hero_grimstroke"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_grimstroke.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_grimstroke.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
+        "AttributeBaseStrength"     "26"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "18"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+
+        "AttackDamageMin"           "25"
+        "AttackDamageMax"           "32"
+
+       	"AttackAcquisitionRange"	"800"
+		"AttackRange"				"620"
+		"ProjectileModel"			"particles/units/heroes/hero_grimstroke/grimstroke_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"darkrider_speedforce_necromacy"
+		"Ability2"					"darkrider_heartbeat"
+		"Ability3"					"darkrider_inverse"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"darkrider_time_aura"
+
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_unique_darkrider_2"
+		"Ability13"					"special_bonus_unique_darkrider_1"
+		"Ability14"					"special_bonus_unique_darkrider_3"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_all_stats_20"
+		"Ability17"					"special_bonus_20_crit_15"
+
+		"Enabled"					"1"
+
+		"Role"						"Support,Nuker,Disabler,Escape"
+		"Rolelevels"				"1,2,2,3"
+		"Complexity"				"3"
+		"Team"						"bad"
+        
+        // Misc
+        "NameAliases"      			"mr"
+        "url"       				"Dark Rider"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"900"
+		"StatusHealthRegen"			"2.2000"
+		"StatusMana"				"145"
+		"StatusManaRegen"			"1.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}
 }
