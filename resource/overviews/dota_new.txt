@@ -1,8 +1,0 @@
-dota_new
-{
-	material materials/overviews/dota_new.vmat
-	pos_x -11520
-	pos_y 11520
-	scale 22.500
-}
-

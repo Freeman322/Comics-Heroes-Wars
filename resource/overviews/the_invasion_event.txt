@@ -1,8 +1,0 @@
-the_invasion_event
-{
-	material materials/overviews/the_invasion_event.vmat
-	pos_x -3584
-	pos_y 4544
-	scale 8.938
-}
-
