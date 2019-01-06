@@ -61,7 +61,18 @@ end
 
 function modifier_tzeentch_warp_connection:OnCreated(table)
     if IsServer() then
-        local nFXIndex = ParticleManager:CreateParticle( "particles/hero_tzeench/tzeentch_warp_connection.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+        local pfx = "particles/hero_tzeench/tzeentch_warp_connection.vpcf"
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "mera") then
+            pfx = "particles/units/heroes/hero_razor_reduced_flash/razor_rain_storm_reduced_flash.vpcf"
+
+            EmitSoundOn("Hero_Razor.Storm.Cast", self:GetParent())
+
+            local paticle = ParticleManager:CreateParticle( "particles/econ/items/lion/fish_stick/lion_fish_stick_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+            ParticleManager:SetParticleControlEnt( paticle, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_eye_l", self:GetParent():GetOrigin(), false )
+            ParticleManager:SetParticleControlEnt( paticle, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_eye_r", self:GetParent():GetOrigin(), false )
+        end 
+
+        local nFXIndex = ParticleManager:CreateParticle( pfx, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControl (nFXIndex, 0, self:GetCaster ():GetAbsOrigin())
         ParticleManager:SetParticleControl (nFXIndex, 1, Vector(1, 0, 0))
         ParticleManager:SetParticleControl (nFXIndex, 2, Vector(400, 400, 0))

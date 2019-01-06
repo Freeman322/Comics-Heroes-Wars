@@ -41,7 +41,7 @@ function modifier_flash_void:OnIntervalThink()
        if self.forced_traveled < self.forced_distance then
           target:SetAbsOrigin(target:GetAbsOrigin() + self.forced_direction * self.forced_speed)
           self.forced_traveled = self.forced_traveled + (self.forced_direction * self.forced_speed):Length2D()
-          local units = FindUnitsInRadius( target:GetTeamNumber(), target:GetOrigin(), target, 100, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+          local units = FindUnitsInRadius( target:GetTeamNumber(), target:GetOrigin(), target, 100, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS, 0, false )
         	if #units > 0 then
           		for _,unit in pairs(units) do
                   if not unit:HasModifier("modifier_eul_cyclone") then

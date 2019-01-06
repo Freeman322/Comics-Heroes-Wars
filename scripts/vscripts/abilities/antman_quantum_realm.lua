@@ -23,14 +23,6 @@ function modifier_antman_quantum_realm:IsPurgable()
   return false
 end
 
-function modifier_antman_quantum_realm:GetEffectName()
-  return "particles/generic_gameplay/screen_death_indicator.vpcf"
-end
-
-function modifier_antman_quantum_realm:GetEffectAttachType()
-    return PATTACH_EYES_FOLLOW
-end
-
 function modifier_antman_quantum_realm:DeclareFunctions()
   local funcs = {
     MODIFIER_EVENT_ON_TAKEDAMAGE,

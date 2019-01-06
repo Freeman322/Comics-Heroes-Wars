@@ -21,7 +21,7 @@ function item_refresher:OnSpellStart ()
     end
     for i=0, 5, 1 do
         local current_item = self:GetCaster ():GetItemInSlot (i)
-        if current_item ~= nil then
+        if current_item ~= nil and current_item:IsRefreshable() then
             if current_item ~= self and current_item:GetSharedCooldownName() ~= "refresher" then current_item:EndCooldown() end 
         end
     end

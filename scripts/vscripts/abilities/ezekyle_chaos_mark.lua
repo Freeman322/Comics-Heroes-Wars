@@ -36,6 +36,7 @@ modifier_ezekyle_chaos_mark = class({})
 
 function modifier_ezekyle_chaos_mark:GetEffectName () return "particles/items4_fx/spirit_vessel_damage_spirit.vpcf" end
 function modifier_ezekyle_chaos_mark:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_ezekyle_chaos_mark:IsPurgable() return true end
 
 function modifier_ezekyle_chaos_mark:OnCreated( kv )
     if IsServer() then

@@ -10,6 +10,14 @@ function predator_hunter_strike:OnSpellStart ()
         local caster = self:GetCaster ()
         EmitSoundOn ("Hero_Axe.CounterHelix", caster)
 
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "beerus") then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/hero_ares/ares_shadow_realm_ground.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+            ParticleManager:SetParticleControl( nFXIndex, 0,  self:GetCaster():GetAbsOrigin())
+            ParticleManager:SetParticleControl( nFXIndex, 1,  Vector(radius, 1, 0))
+            ParticleManager:SetParticleControl( nFXIndex, 3,  self:GetCaster():GetAbsOrigin())
+            ParticleManager:ReleaseParticleIndex( nFXIndex )
+        end
+
         local nearby_units = FindUnitsInRadius (caster:GetTeam (), caster:GetAbsOrigin (), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
         for i, target in ipairs (nearby_units) do
             EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace", target)

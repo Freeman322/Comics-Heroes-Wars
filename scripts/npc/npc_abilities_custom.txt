@@ -5217,9 +5217,9 @@
 		"precache"
 		{
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
-			"particle"  "particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf"
-			"particle"  "particles/econ/items/zeus/arcana_chariot/zeus_arcana_thundergods_wrath_start.vpcf"
-			"particle"  "particles/hero_zuus/zeus_immortal_thundergod.vpcf"
+			"particle"  			"particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf"
+			"particle" 	 			"particles/econ/items/zeus/arcana_chariot/zeus_arcana_thundergods_wrath_start.vpcf"
+			"particle"  			"particles/hero_zuus/zeus_immortal_thundergod.vpcf"
 			"particle"				"particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
 		}
 
@@ -5254,12 +5254,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_scepter"		"5.5 6.0 6.5"
+				"magical_armor_bonus"		"-16 -24 -36"
 			}
 			"03"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_scepter"		"5.5 6.0 6.5"
+			}
+			"04"
+			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"	            "260 430 600"
+				"cooldown_scepter"	    "60"
 			}
 		}
 	}
@@ -6621,11 +6626,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"gmg_pers"		        "3 4 5 6"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"		           "0.03 0.04 0.05 0.06"
 			}
 		}
 	}
@@ -9345,7 +9345,13 @@
 	    {
 	      "model"		 "models/items/silencer/whispertribunal_arms/whispertribunal_arms.vmd"
 	      "model"		 "models/dcu_spectre/spectre_head_final.vmdl"
+	      "model"		 "models/items/silencer/frostivus2018_silencer_silent_paragon_head/frostivus2018_silencer_silent_paragon_head.vmdl"
 	      "model"		 "models/items/silencer/bts_final_utterance_shoulder/bts_final_utterance_shoulder.vmdl"
+	      "model"		 "models/items/silencer/frostivus2018_silencer_silent_paragon_belt/frostivus2018_silencer_silent_paragon_belt.vmdl"
+	      "model"		 "models/items/silencer/frostivus2018_silencer_silent_paragon_off_hand/frostivus2018_silencer_silent_paragon_off_hand.vmdl"
+	      "model"		 "models/items/silencer/frostivus2018_silencer_silent_paragon_shoulder/frostivus2018_silencer_silent_paragon_shoulder.vmdl"
+	      "particle"     "particles/econ/items/silencer/silencer_silent_paragon/silencer_silent_paragon_shield_ambient.vpcf"
+	      "particle"     "particles/econ/items/silencer/silencer_silent_paragon/silencer_silent_paragon_belt_ambient.vpcf"
 	    }
 		"AbilitySpecial"
 		{
@@ -16554,12 +16560,19 @@
 
 		"precache"
 		{
-		"model"		 "models/heroes/hero_tzeentch/tzeentch_armor.vmdl"
-		"model"		 "models/heroes/hero_tzeentch/tzeentch_cape.vmdl"
-		"model"		 "models/heroes/hero_tzeentch/tzeentch_knife.vmdl"
-		"model"		 "models/heroes/hero_tzeentch/tzeench_chaos_god_arcana/chaos_god_crown.vmdl"
-		"particle"  "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_eye_lvl21.vpcf"
-		"particle"  "particles/econ/courier/courier_onibi/courier_onibi_yellow_ambient_eye_lvl16.vpcf"
+			"model"		 "models/heroes/hero_tzeentch/tzeentch_armor.vmdl"
+			"model"		 "models/heroes/hero_tzeentch/tzeentch_cape.vmdl"
+			"model"		 "models/heroes/hero_tzeentch/tzeentch_knife.vmdl"
+			"model"		 "models/heroes/hero_tzeentch/tzeench_chaos_god_arcana/chaos_god_crown.vmdl"
+			"particle"  "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_eye_lvl21.vpcf"
+			"particle"  "particles/econ/courier/courier_onibi/courier_onibi_yellow_ambient_eye_lvl16.vpcf"
+			"particle"  "particles/econ/courier/courier_onibi/courier_onibi_green_ambient_eye.vpcf"
+			"particle"  "particles/hero_tzeench/mera_marker.vpcf"
+			"particle"  "particles/hero_tzeench/mera_auravpcf.vpcf"
+			"particle"  "particles/units/heroes/hero_razor_reduced_flash/razor_rain_storm_reduced_flash.vpcf"
+			"particle"  "particles/econ/events/ti7/ti7_hero_effect.vpcf"
+			"model"		"models/heroes/hero_tzeentch/custom/mera.vmdl"
+			"particle"  "particles/hero_tzeench/mera_aura.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -17039,10 +17052,10 @@
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-		"ID"						        	      "12210"
-		"BaseClass"             		    "ability_lua"
-		"AbilityTextureName"            "custom/predator_tree_dance"
-		"ScriptFile"				          	"abilities/predator_tree_dance.lua"
+			"ID"						        	      "12210"
+			"BaseClass"             		    "ability_lua"
+			"AbilityTextureName"            "custom/predator_tree_dance"
+			"ScriptFile"				          	"abilities/predator_tree_dance.lua"
 			"AbilityBehavior"				        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 			"AbilityUnitTargetType"			    "DOTA_UNIT_TARGET_TREE"
 			"AbilityUnitTargetTeam"			    "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -17061,7 +17074,16 @@
 			// Cost
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityManaCost"				         "0"
-
+			"precache"
+			{
+				"particle"  "particles/hero_joker/joker_ambient.vpcf"
+				"particle"  "particles/galactus/galactus_seed_of_ambition_eternal_item.vpcf"
+				"model"		"models/heroes/hero_predator/custom/beerus.vmdl"
+				"particle"  "particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle.vpcf"
+				"particle"  "particles/econ/items/shadow_demon/sd_ti7_shadow_poison/sd_ti7_shadow_poison_proj.vpcf"
+				"particle"  "particles/hero_ares/ares_shadow_realm_ground.vpcf"
+				"model"		"models/heroes/hero_predator/custom/beerus_tail.vmdl"
+			}
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilitySpecial"
@@ -21926,7 +21948,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"26 24 22 20"
-		"AbilityDamage"					"30 50 70 90"
+		"AbilityDamage"					"60 90 130 200"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75 90 105 120"
@@ -22011,7 +22033,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"90 160 230 300"
+				"damage"				"150 240 310 390"
 			}
 			"05"
 			{
@@ -22071,7 +22093,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"20 30 40 50"
+				"health_regen"			"30 40 50 60"
 			}
 			"05"
 			{
@@ -22432,7 +22454,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"46 42 38 34"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -22950,6 +22972,10 @@
 			"particle"		"particles/econ/events/ti8/radiance_owner_ti8.vpcf"
 			"model"			"models/items/pudge/scorching_talon/scorching_talon.vmdl"
 			"particle"		"particles/econ/items/pudge/pudge_scorching_talon/pudge_scorching_talon_ambient.vpcf"
+			"model"			"models/items/pudge/frostivus2018_pudge_walrus_slaughterer_head/frostivus2018_pudge_walrus_slaughterer_head.vmdl"
+			"model"			"models/items/pudge/frostivus2018_pudge_walrus_slaughterer_head/frostivus2018_pudge_walrus_slaughterer_belt.vmdl"
+			"model"			"models/items/pudge/frostivus2018_pudge_walrus_slaughterer_head/frostivus2018_pudge_walrus_slaughterer_back.vmdl"
+			"particle"  	"particles/econ/items/batrider/batrider_ti8_immortal_mount/batrider_ti8_immortal_ambient_eyes_b.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -24369,9 +24395,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"           	 		"slardar_bash"
-		"AbilityTextureName"			"custom/overvoid_firestorm"				
-		
+		"ID"					"5116"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -24389,24 +24413,20 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"				"6 8 10 12"
+				"bonus_damage"			"75 125 175 225"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"90 130 170 220"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1 1.1 1.2 1.3"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.4 0.5 0.6 0.7"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"0.8 1.0 1.2 1.4"
+				"var_type"				"FIELD_INTEGER"
+				"attack_count"			"5"
 			}
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	//=================================================================================================================
 	// Tidehunter: Anchor Smash
@@ -27589,8 +27609,13 @@
 			"particle"  				"particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf"
 			"particle"  				"particles/econ/items/dark_willow/dark_willow_ti8_immortal_head/dw_crimson_ti8_immortal_cursed_crownmarker.vpcf"
 			"particle"  				"particles/collector/alma_tornado.vpcf"
+			"particle"  				"particles/econ/items/lich/lich_ti8_immortal_arms/lich_ti8_chain_frost.vpcf"
 			"particle"  				"particles/collector/alma_ice_blast.vpcf"
-
+			"model"						"models/items/invoker/frostivus2018_invoker_keeper_of_magic_arms/frostivus2018_invoker_keeper_of_magic_arms.vmdl"
+			"model"						"models/items/invoker/frostivus2018_invoker_keeper_of_magic_back/frostivus2018_invoker_keeper_of_magic_back.vmdl"
+			"model"						"models/items/invoker/frostivus2018_invoker_keeper_of_magic_belt/frostivus2018_invoker_keeper_of_magic_belt.vmdl"
+			"model"						"models/items/invoker/frostivus2018_invoker_keeper_of_magic_shoulder/frostivus2018_invoker_keeper_of_magic_shoulder.vmdl"
+			"particle"  				"particles/items4_fx/meteor_hammer_spell_debuff_detail.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -29127,7 +29152,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_speed"				"550 650 750 850"
+				"max_speed"				"450 550 650 750"
 			}
 		}
 	}
@@ -32681,12 +32706,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_regen"				"0.17 0.25 0.35 0.5"
+				"health_regen"				"0.5 0.75 1.0 1.5"
 			}		
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"mana_regen"				"0.08 0.12 0.17 0.25"
+				"mana_regen"				"0.15 0.25 0.5 0.75"
 			}	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"

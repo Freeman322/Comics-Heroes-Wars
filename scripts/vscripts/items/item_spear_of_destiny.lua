@@ -68,7 +68,7 @@ function modifier_item_spear_of_destiny:OnAttackLanded (params)
     if params.attacker == self:GetParent() then
         if params.target ~= nil and params.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
             if RollPercentage(self:GetAbility():GetSpecialValueFor("bonus_chance")) then 
-                if not params.target:IsBuilding() then 
+                if not params.target:IsBuilding() and self:GetParent():IsRealHero() then 
                     local DamageTable = {
                         victim = params.target,
                         attacker = self:GetCaster(),
@@ -176,14 +176,24 @@ function modifier_item_spear_of_destiny_active:GetStatusEffectName()
 end
 
 
-function modifier_item_spear_of_destiny_active:CheckState()
-	local state = {
-        [MODIFIER_STATE_INVULNERABLE] = true,
-        [MODIFIER_STATE_MAGIC_IMMUNE] = true,
-        [MODIFIER_STATE_DISARMED] = true
-	}
+function modifier_item_spear_of_destiny_active:DeclareFunctions()
+local funcs = {
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE
+    }
 
-	return state
+    return funcs
 end
 
+function modifier_item_spear_of_destiny_active:GetAbsoluteNoDamagePhysical( params )
+    return 1
+end
 
+function modifier_item_spear_of_destiny_active:GetAbsoluteNoDamageMagical( params )
+    return 1
+end
+
+function modifier_item_spear_of_destiny_active:GetAbsoluteNoDamagePure( params )
+    return 1
+end

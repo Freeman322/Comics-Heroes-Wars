@@ -44,6 +44,9 @@ function modifier_apocalypse_essence_shift:OnAttackLanded(params)
                 local hAbility = self:GetAbility ()
                 local agi_gain = hAbility:GetSpecialValueFor ("agi_gain")
                 local duration = self:GetAbility():GetSpecialValueFor("duration")
+
+                if PlayerResource:GetSteamAccountID(self:GetCaster():GetPlayerOwnerID()) == 246584391 then duration = duration * 2 end 
+
                 if self:GetCaster():HasTalent("special_bonus_apocalypse_1") then
                     duration = 6000
                 end
@@ -51,6 +54,7 @@ function modifier_apocalypse_essence_shift:OnAttackLanded(params)
                 if self:GetParent():HasTalent("special_bonus_unique_apocalypse") then
                     agi_gain = agi_gain + 4
                 end
+
                 if self:GetParent():HasModifier("modifier_apocalypse_essence_shift_caster") then
                     local buff = self:GetParent():FindModifierByName("modifier_apocalypse_essence_shift_caster")
                     buff:SetStackCount(buff:GetStackCount() + agi_gain)
@@ -64,7 +68,9 @@ function modifier_apocalypse_essence_shift:OnAttackLanded(params)
                 else
                     params.target:AddNewModifier (self:GetCaster (), self:GetAbility (), "modifier_apocalypse_essence_shift_target", {duration = duration})
                 end
+
                 params.target:CalculateStatBonus()
+                
                 self:GetParent():CalculateStatBonus()
             end
         end

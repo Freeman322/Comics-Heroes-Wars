@@ -12,7 +12,11 @@ function godspeed_ember_field:GetTotalThisLifeMovespeed()
 end
 
 function godspeed_ember_field:AddSpeed(value)
-    self._iMovespeed = (self._iMovespeed or 0) + value
+	if not self._iMovespeed then self._iMovespeed = 0 end 
+	
+	if self._iMovespeed <= self:GetSpecialValueFor("max_speed") then 
+    	self._iMovespeed = (self._iMovespeed or 0) + value
+    end
 end
 
 function godspeed_ember_field:OnOwnerDied()
@@ -70,33 +74,29 @@ end
 function modifier_godspeed_ember_field_aura:OnIntervalThink()
     if IsServer() then
         self:SetStackCount(self:GetAbility():GetTotalThisLifeMovespeed()) 
+
+        ---if (not self:GetParent():HasModifier("modifier_dark_seer_surge")) then self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_dark_seer_surge", nil) end 
     end
 end
 
 function modifier_godspeed_ember_field_aura:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_LIMIT 
+        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
     }
 
     return funcs
 end
 
-function modifier_godspeed_ember_field_aura:GetModifierMoveSpeedBonus_Constant()
-	return self:GetStackCount()
+function modifier_godspeed_ember_field_aura:GetModifierMoveSpeed_Absolute()
+	return self:GetStackCount() + 350
 end
 
-function modifier_godspeed_ember_field_aura:GetModifierMoveSpeed_Limit()
+function modifier_godspeed_ember_field_aura:GetModifierIgnoreMovespeedLimit()
 	return self:GetAbility():GetSpecialValueFor("max_speed")
 end
 
 function modifier_godspeed_ember_field_aura:GetPriority()
     return MODIFIER_PRIORITY_SUPER_ULTRA
-end
-
-
-function modifier_godspeed_ember_field_aura:GetModifierMoveSpeedBonus_Constant()
-    return self:GetStackCount()
 end
 
 

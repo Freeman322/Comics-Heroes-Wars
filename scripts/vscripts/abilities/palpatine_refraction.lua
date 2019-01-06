@@ -29,6 +29,18 @@ function modifier_palpatine_refraction:OnCreated( kv )
     end
 end
 
+function modifier_palpatine_refraction:OnRefresh(params)
+    if IsServer() then
+        self.instances = self:GetAbility():GetSpecialValueFor("instances")
+
+        if self:GetCaster():HasTalent("special_bonus_unique_palpatine_5") then 
+           self.instances = self.instances + (self:GetCaster():FindTalentValue("special_bonus_unique_palpatine_5") or 0)
+        end
+
+        self:SetStackCount(self.instances)
+    end
+end
+
 function modifier_palpatine_refraction:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,

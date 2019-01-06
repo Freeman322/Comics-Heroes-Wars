@@ -11,7 +11,13 @@ end
 function tzeentch_echo_boom:OnSpellStart()
 	local duration = self:GetSpecialValueFor(  "slowing_duration" )
 
-    self.mana_dmg = self:GetCaster():GetMana()*(self:GetSpecialValueFor("mana_pool_ptc")/100)
+    self.mana_dmg = self:GetSpecialValueFor("mana_pool_ptc")
+
+    if self:GetCaster():HasTalent("special_bonus_unique_tzeench") then
+        self.mana_dmg = self.mana_dmg + self:GetCaster():FindTalentValue("special_bonus_unique_tzeench")
+    end
+
+    self.mana_dmg = self:GetCaster():GetMana() * ( self.mana_dmg / 100)
 
 	local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetCursorPosition(), self:GetCaster(), self:GetAOERadius(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 	if #targets > 0 then
@@ -20,7 +26,8 @@ function tzeentch_echo_boom:OnSpellStart()
 			ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetAbilityDamage() + self.mana_dmg, ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
 		end
 	end
-    if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "tzeentch_chaos_crown") then
+
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "mera") then
 	    EmitSoundOn("Hero_MonkeyKing.Spring.Impact", self:GetCaster())
         EmitSoundOn("Hero_MonkeyKing.Spring.Water", self:GetCaster())
         EmitSoundOn("Hero_MonkeyKing.Spring.Impact.Water", self:GetCaster())

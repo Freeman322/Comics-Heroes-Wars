@@ -34,6 +34,8 @@ end
 function predator_plasma_shot:OnAbilityPhaseStart()
 	if IsServer() then
 		self.hVictim = self:GetCursorTarget()
+
+		EmitSoundOn("Beerus.Ult", self:GetCaster())
 	end
 
 	return true
@@ -45,8 +47,15 @@ function predator_plasma_shot:OnSpellStart()
         self:GetCaster():ModifyHealth(self:GetCaster():GetHealth() - (self:GetCaster():GetMaxHealth() * 0.33), self, false, 0)
     end
   end
+
+  	local effect = "particles/items2_fx/skadi_projectile.vpcf"
+
+  	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "beerus") then
+  		effect = "particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle.vpcf"
+  	end 
+  	
 	local info = {
-			EffectName = "particles/items2_fx/skadi_projectile.vpcf",
+			EffectName = effect,
 			Ability = self,
 			iMoveSpeed = 1700,
 			Source = self:GetCaster(),
@@ -90,6 +99,18 @@ function predator_plasma_shot:OnProjectileHit( hTarget, vLocation )
 	  	ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = 0.50 } )
+
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "beerus") then
+			local nFXIndex = ParticleManager:CreateParticle( "particles/galactus/galactus_seed_of_ambition_eternal_item.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+		    ParticleManager:SetParticleControl(nFXIndex, 0, hTarget:GetAbsOrigin())
+		    ParticleManager:SetParticleControl(nFXIndex, 2, hTarget:GetAbsOrigin())
+		    ParticleManager:SetParticleControl(nFXIndex, 3, hTarget:GetAbsOrigin())
+		    ParticleManager:SetParticleControl(nFXIndex, 6, hTarget:GetAbsOrigin())
+		    ParticleManager:SetParticleControl (nFXIndex, 1, Vector (750, 750, 0))
+		    ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+		    EmitSoundOn( "Hero_ObsidianDestroyer.SanityEclipse.TI8", self:GetCaster() )
+		end
 	end
 
 	return true

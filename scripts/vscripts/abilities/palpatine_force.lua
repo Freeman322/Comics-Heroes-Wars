@@ -24,6 +24,7 @@ modifier_palpatine_force = class({})
 -- Classifications
 function modifier_palpatine_force:IsHidden() return false end
 function modifier_palpatine_force:IsDebuff() return false end
+function modifier_palpatine_force:RemoveOnDeath() return false end
 function modifier_palpatine_force:IsPurgable() return false end
 function modifier_palpatine_force:DestroyOnExpire() return false end
 --------------------------------------------------------------------------------

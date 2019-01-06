@@ -7,9 +7,14 @@ function predator_flying_blade:OnSpellStart()
 	local vDirection = self:GetCursorPosition() - self:GetCaster():GetOrigin()
 	vDirection = vDirection:Normalized()
 
+	local effect = "particles/hero_predator/predator_flying_blade.vpcf"
 
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "beerus") then
+		effect = "particles/econ/items/shadow_demon/sd_ti7_shadow_poison/sd_ti7_shadow_poison_proj.vpcf"
+	end 
+	
 	local info = {
-		EffectName = "particles/hero_predator/predator_flying_blade.vpcf",
+		EffectName = effect,
 		Ability = self,
 		vSpawnOrigin = self:GetCaster():GetOrigin(),
 		fStartRadius = 100,

@@ -98,11 +98,8 @@ function modifier_ezekyle_dark_force:OnIntervalThink()
         local distance = (target_point - caster_location):Length2D()
         local direction = (target_point - caster_location):Normalized()
         
-        self:GetParent():SetAbsOrigin(self:GetParent():GetAbsOrigin() + direction * (45 * FrameTime()))
-
-        if distance <= 128 then
-      		FindClearSpaceForUnit( self:GetParent(), self:GetParent():GetAbsOrigin(), true )
-    		self:Destroy()
+        if distance >= 128 then
+      		self:GetParent():SetAbsOrigin(self:GetParent():GetAbsOrigin() + direction * (45 * FrameTime()))
         end
         
         local damage = self:GetAbility():GetSpecialValueFor( "damage_tick" )
@@ -123,6 +120,7 @@ end
 
 function modifier_ezekyle_dark_force:OnDestroy( )
     if IsServer() then 
+    	FindClearSpaceForUnit( self:GetParent(), self:GetParent():GetAbsOrigin(), true )
         EmitSoundOn( "Hero_AbyssalUnderlord.DarkRift.Complete", self:GetParent())
     end 
 end

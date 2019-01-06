@@ -81,9 +81,14 @@ function modifier_predator_observer_debuff:OnCreated(htable)
     	if self.nFXIndex then
     		ParticleManager:DestroyParticle(self.nFXIndex, true)
     	end
-    	self.nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_sven/sven_warcry_buff.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent() )
+        local pfx = "particles/units/heroes/hero_sven/sven_warcry_buff.vpcf"
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "beerus") then
+            pfx = "particles/items4_fx/nullifier_mute_debuff.vpcf"
+        end 
+    	self.nFXIndex = ParticleManager:CreateParticle( pfx, PATTACH_OVERHEAD_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControlEnt( self.nFXIndex, 0, self:GetCaster(), PATTACH_OVERHEAD_FOLLOW, "attach_overhead", self:GetCaster():GetOrigin(), true )
 		ParticleManager:SetParticleControl( self.nFXIndex, 1, Vector(0, self:GetStackCount(), 1) )
+
 		self:AddParticle( self.nFXIndex, false, false, -1, false, true )
     end
 end

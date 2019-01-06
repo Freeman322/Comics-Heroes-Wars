@@ -92,7 +92,11 @@ function modifier_tzeentch_magic_mystic:OnCreated()
         self.mag_red = self:GetParent():GetMagicalArmorValue() * (self:GetAbility():GetSpecialValueFor("magical_armor_reduction")/100)
         self:OnIntervalThink()
         local pert = "particles/units/heroes/hero_necrolyte/necrolyte_spirit.vpcf"
-
+        
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "mera") then
+             pert = "particles/hero_tzeench/mera_marker.vpcf"
+        end 
+       
         local nFXIndex = ParticleManager:CreateParticle( pert, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControl( nFXIndex, 0,  self:GetParent():GetAbsOrigin() )
 		ParticleManager:SetParticleControl( nFXIndex, 2,  Vector(200, 200, 0) )

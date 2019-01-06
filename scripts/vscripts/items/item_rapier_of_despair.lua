@@ -65,8 +65,8 @@ function modifier_item_rapier_of_despair:DeclareFunctions()
     return funcs
 end
 
-function modifier_item_rapier_of_despair:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("bonus_agi") end
-function modifier_item_rapier_of_despair:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_str") end
+function modifier_item_rapier_of_despair:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
+function modifier_item_rapier_of_despair:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 
 function modifier_item_rapier_of_despair:GetModifierPreAttack_BonusDamage() return self:GetAbility():GetSpecialValueFor("bonus_damage") end
 function modifier_item_rapier_of_despair:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end

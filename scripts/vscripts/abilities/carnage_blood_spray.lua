@@ -50,7 +50,7 @@ function modifier_carnage_blood_spray_thinker:GetAuraSearchTeam()
 end
 
 function modifier_carnage_blood_spray_thinker:GetAuraSearchType()
-    return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING
+    return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
 end
 
 function modifier_carnage_blood_spray_thinker:GetAuraSearchFlags()

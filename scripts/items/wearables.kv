@@ -88,6 +88,60 @@
                     }
                 }
             } 
+            "butcher_of_blaviken"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/items/pudge/frostivus2018_pudge_walrus_slaughterer_head/frostivus2018_pudge_walrus_slaughterer_head.vmdl"
+                    } 
+                    "2"
+                    {
+                        "model"         "models/items/pudge/frostivus2018_pudge_walrus_slaughterer_belt/frostivus2018_pudge_walrus_slaughterer_belt.vmdl"
+                    } 
+                    "3"
+                    {
+                        "model"         "models/items/pudge/frostivus2018_pudge_walrus_slaughterer_back/frostivus2018_pudge_walrus_slaughterer_back.vmdl"
+                    } 
+                }
+
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"                  "particles/econ/items/batrider/batrider_ti8_immortal_mount/batrider_ti8_immortal_ambient_eyes_b.vpcf"
+
+                        "ControlPoints"
+                        {
+                            "0"
+                            {
+                                "attach_point"      "attach_eye_l"
+                            }
+                            "1"
+                            {
+                                "attach_point"      "attach_eye_l"
+                            }
+                        }
+                    }
+                    "2" 
+                    {
+                        "particle"                  "particles/econ/items/batrider/batrider_ti8_immortal_mount/batrider_ti8_immortal_ambient_eyes_b.vpcf"
+
+                        "ControlPoints"
+                        {
+                            "0"
+                            {
+                                "attach_point"      "attach_eye_r"
+                            }
+                            "1"
+                            {
+                                "attach_point"      "attach_eye_r"
+                            }
+                        }
+                    }
+                }
+            }
         }
         "weapon"
         {
@@ -796,6 +850,32 @@
                     }
                 }
             } 
+            "sephiroth"
+            {
+                "model"     "models/heroes/hero_deadpool/econs/sephiroth_custom/sephiroth.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model" "models/heroes/hero_deadpool/econs/sephiroth_custom/econs/katana.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/plus/pugalo_ambient.vpcf"
+                    }
+                }
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_sephiroth"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+            }
             "kantusa_the_script_sword"          
             {
                 "models"
@@ -1007,6 +1087,10 @@
                         "model" "models/heroes/hero_samurai/samurai_hat.vmdl"
                     }
                 }
+            }
+            "sephiroth"
+            {
+                
             }
             "samurai_ancestors" 
             {
@@ -1424,6 +1508,10 @@
                     }
                 }
             }
+            "night_of_terror"
+            {
+                
+            }
         }
         "belt"
         {
@@ -1436,6 +1524,10 @@
                         "model"         "models/items/silencer/silent_guardian_belt/silent_guardian_belt.vmdl"
                     }         
                 }
+            }
+            "night_of_terror"
+            {
+
             }
         }
         "hand"
@@ -1457,6 +1549,49 @@
                     "1"
                     {
                         "model" "models/items/silencer/bts_final_utterance_arms/bts_final_utterance_arms.vmdl"
+                    }
+                }
+            }
+            "night_of_terror"
+            {
+
+            }
+        }
+        "weapon"
+        {
+            "night_of_terror"
+            {
+               "models"
+                {
+                    "1"
+                    {
+                        "model" "models/items/silencer/frostivus2018_silencer_silent_paragon_shoulder/frostivus2018_silencer_silent_paragon_shoulder.vmdl"                
+                    }
+                    "2"
+                    {
+                        "model" "models/items/silencer/frostivus2018_silencer_silent_paragon_off_hand/frostivus2018_silencer_silent_paragon_off_hand.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"      "particles/econ/items/silencer/silencer_silent_paragon/silencer_silent_paragon_shield_ambient.vpcf"
+                            }
+                        }
+                    }
+                    "3"
+                    {
+                        "model" "models/items/silencer/frostivus2018_silencer_silent_paragon_belt/frostivus2018_silencer_silent_paragon_belt.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"      "particles/econ/items/silencer/silencer_silent_paragon/silencer_silent_paragon_belt_ambient.vpcf"
+                            }
+                        }
+                    }
+                    "4"
+                    {
+                        "model" "models/items/silencer/frostivus2018_silencer_silent_paragon_head/frostivus2018_silencer_silent_paragon_head.vmdl"                
                     }
                 }
             }
@@ -1738,6 +1873,39 @@
                     {
                         "modifier"          "modifier_alma"
                         "modifier_path"     "modifiers/modifier_alma.lua"
+                    }
+                }
+            }
+            "edward_scissorhands"
+            {
+                "projectile"
+                {
+                    "particle"              "particles/econ/items/lich/lich_ti8_immortal_arms/lich_ti8_chain_frost.vpcf"
+                }
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/items/invoker/frostivus2018_invoker_keeper_of_magic_arms/frostivus2018_invoker_keeper_of_magic_arms.vmdl"                          
+                    }
+                    "2"
+                    {
+                        "model"         "models/items/invoker/frostivus2018_invoker_keeper_of_magic_back/frostivus2018_invoker_keeper_of_magic_back.vmdl"                          
+                    }
+                    "3"
+                    {
+                        "model"         "models/items/invoker/frostivus2018_invoker_keeper_of_magic_belt/frostivus2018_invoker_keeper_of_magic_belt.vmdl"                          
+                    }
+                    "4"
+                    {
+                        "model"         "models/items/invoker/frostivus2018_invoker_keeper_of_magic_shoulder/frostivus2018_invoker_keeper_of_magic_shoulder.vmdl"                          
+                    }
+                }
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"                  "particles/items4_fx/meteor_hammer_spell_debuff_detail.vpcf"
                     }
                 }
             }
@@ -4647,6 +4815,99 @@
                     }
                 }
             } 
+        }
+    }
+    "npc_dota_hero_leshrac"
+    {
+        "armor"
+        {
+            "__default"
+            {
+                 "models"
+                {      
+                    "1"
+                    {
+                        "model"                 "models/heroes/hero_tzeentch/tzeentch_armor.vmdl"
+                    }
+                    "2"
+                    {
+                        "model"                 "models/heroes/hero_tzeentch/tzeentch_cape.vmdl"
+                    }
+                    "3"
+                    {
+                        "model"                 "models/heroes/hero_tzeentch/tzeentch_knife.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/econ/courier/courier_onibi/courier_onibi_yellow_ambient_eye_lvl16.vpcf"
+                        "ControlPoints"
+                        {
+                            "0"
+                            {
+                                "attach_point"      "attach_eye_l"
+                            }                    
+                        }
+                    }
+                    "2"
+                    {
+                        "particle"      "particles/econ/courier/courier_onibi/courier_onibi_yellow_ambient_eye_lvl16.vpcf"
+                        "ControlPoints"
+                        {
+                            "0"
+                            {
+                                "attach_point"      "attach_eye_r"
+                            }                    
+                        }
+                    }
+                }
+            }
+            "mera"
+            {
+                "model"                 "models/heroes/hero_tzeentch/custom/mera.vmdl"
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_mera"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/hero_tzeench/mera_aura.vpcf"
+                    }
+                }
+            }
+        }
+    }
+    "npc_dota_hero_bounty_hunter"
+    {
+        "armor"
+        {
+            "beerus"
+            {
+                "model"                 "models/heroes/hero_predator/custom/beerus.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/heroes/hero_predator/custom/beerus_tail.vmdl"
+                    }
+                }
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_beerus"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+            }
         }
     }
 }

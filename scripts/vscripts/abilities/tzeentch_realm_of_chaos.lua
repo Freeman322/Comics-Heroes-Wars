@@ -114,5 +114,14 @@ function modifier_tzeentch_realm_of_chaos_caster:CheckState()
     return state
 end
 
+function modifier_tzeentch_realm_of_chaos_caster:GetEffectName()
+    if self:GetParent():HasModifier("modifier_mera") then return "particles/hero_tzeench/mera_auravpcf.vpcf" end 
+    return 
+end
+
+function modifier_tzeentch_realm_of_chaos_caster:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
 function tzeentch_realm_of_chaos:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

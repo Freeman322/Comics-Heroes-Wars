@@ -56,16 +56,10 @@ function modifier_savitar_speedforce_rage:DeclareFunctions ()
   local funcs = {
     MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
     MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-    MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
-    MODIFIER_PROPERTY_MOVESPEED_MAX,
-    MODIFIER_PROPERTY_MOVESPEED_LIMIT
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
   }
 
   return funcs
-end
-
-function modifier_savitar_speedforce_rage:GetModifierMoveSpeed_Max()
-	return 10000
 end
 
 function modifier_savitar_speedforce_rage:GetModifierMoveSpeed_Limit()
@@ -93,6 +87,8 @@ end
 function modifier_savitar_speedforce_rage:OnIntervalThink()
   if IsServer() then 
     self:SetStackCount(math.floor( self:GetParent():GetIdealSpeed() * (self:GetAbility():GetSpecialValueFor("attack_damage_ptc") / 100) ))
+
+    if (not self:GetParent():HasModifier("modifier_dark_seer_surge")) then self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_dark_seer_surge", nil) end 
   end 
 end
 

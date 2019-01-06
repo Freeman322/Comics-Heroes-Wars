@@ -9,6 +9,13 @@ function eternity_ult:GetAbilityTextureName()
 	return "custom/eternity_2"
 end
 
+function eternity_ult:GetCooldown (nLevel)
+    if self:GetCaster ():HasScepter () then
+        return self:GetSpecialValueFor("cooldown_scepter")
+    end
+
+    return self.BaseClass.GetCooldown (self, nLevel)
+end
 
 function eternity_ult:OnSpellStart()
 	local duration = self:GetSpecialValueFor(  "tooltip_duration" )
@@ -19,8 +26,10 @@ function eternity_ult:OnSpellStart()
 	local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), 999999, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 	if #units > 0 then
 		for _,target in pairs(units) do
-			target:AddNewModifier( self:GetCaster(), self, "modifier_eternity_ult", { duration = duration } )
-      		EmitSoundOn( "Hero_Oracle.FalsePromise.Cast", self:GetCaster() )
+			if not target:IsMagicImmune() then 
+				target:AddNewModifier( self:GetCaster(), self, "modifier_eternity_ult", { duration = duration } )
+				EmitSoundOn( "Hero_Oracle.FalsePromise.Cast", self:GetCaster() )
+			end 
 		end
 	end
 
@@ -64,7 +73,8 @@ function modifier_eternity_ult:OnCreated(ht)
 			self:AddParticle(nFXIndex, false, false, -1, false, false)
 
 			EmitSoundOn("Hero_Zeus.BlinkDagger.Arcana", target)
-        	EmitSoundOn("Hero_Zuus.LightningBolt.Cast.Righteous", target)
+			EmitSoundOn("Hero_Zuus.LightningBolt.Cast.Righteous", target)
+			
 			local particle = ParticleManager:CreateParticle("particles/hero_zuus/zeus_immortal_thundergod.vpcf", PATTACH_WORLDORIGIN, target)
 			ParticleManager:SetParticleControl(particle, 0, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,1000 ))
 			ParticleManager:SetParticleControl(particle, 1, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
@@ -77,25 +87,30 @@ function modifier_eternity_ult:GetEffectName()
 	return "particles/units/heroes/hero_oracle/oracle_false_promise.vpcf"
 end
 
-function modifier_eternity_ult:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
+function modifier_eternity_ult:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
+    }
+
+    return funcs
 end
 
-function modifier_eternity_ult:OnDestroy()
-	if IsServer() then
-      ApplyDamage({attacker = self:GetCaster(), victim = self:GetParent(), damage = self:GetAbility():GetSpecialValueFor("damage"), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_MAGICAL})
-  end
+function modifier_eternity_ult:GetModifierMagicalResistanceBonus( params )
+    return self:GetAbility():GetSpecialValueFor("magical_armor_bonus")
+end
+
+function modifier_eternity_ult:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
 end
 
 function modifier_eternity_ult:CheckState()
   if self:GetCaster():HasScepter() then
     return {
 	  	[MODIFIER_STATE_SILENCED] = true,
-	    [MODIFIER_STATE_MUTED] = true,
 	    [MODIFIER_STATE_DISARMED] = true
   	}
   end
 	return {
-	[MODIFIER_STATE_SILENCED] = true,
+		[MODIFIER_STATE_SILENCED] = true,
 	}
 end

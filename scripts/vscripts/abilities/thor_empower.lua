@@ -39,21 +39,27 @@ function modifier_thor_empower:OnIntervalThink()
             return 
         end
 
+        if self:GetCaster():IsRealHero() == false then
+            return 
+        end
+
         local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_CLOSEST, false )
         if #units > 0 then
             for _,unit in pairs(units) do
                if self:GetAbility():IsCooldownReady() and RollPercentage(chance) then 
-                    local nFXIndex = ParticleManager:CreateParticle( "particles/econ/events/ti7/maelstorm_ti7.vpcf", PATTACH_CUSTOMORIGIN, nil );
-                    ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
-                    ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
-                    ParticleManager:ReleaseParticleIndex( nFXIndex );
+                    if not unit:IsMagicImmune() then 
+                        local nFXIndex = ParticleManager:CreateParticle( "particles/econ/events/ti7/maelstorm_ti7.vpcf", PATTACH_CUSTOMORIGIN, nil );
+                        ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
+                        ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
+                        ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-                    EmitSoundOn( "Item.Maelstrom.Chain_Lightning", self:GetCaster() )
-                    EmitSoundOn( "Item.Maelstrom.Chain_Lightning.Jump", unit )
+                        EmitSoundOn( "Item.Maelstrom.Chain_Lightning", self:GetCaster() )
+                        EmitSoundOn( "Item.Maelstrom.Chain_Lightning.Jump", unit )
 
-                    ApplyDamage({victim = unit, attacker = self:GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
+                        ApplyDamage({victim = unit, attacker = self:GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
 
-                    self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
+                        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
+                    end
                end
             end
         end

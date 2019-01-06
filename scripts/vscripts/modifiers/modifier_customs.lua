@@ -60,3 +60,15 @@ if modifier_ozaruu == nil then modifier_ozaruu = class({}) end
 function modifier_ozaruu:IsHidden() return true end
 function modifier_ozaruu:IsPurgable() return false end
 function modifier_ozaruu:RemoveOnDeath() return false end
+
+
+if modifier_mera == nil then modifier_mera = class({}) end 
+function modifier_mera:IsHidden() return true end
+function modifier_mera:IsPurgable() return false end
+function modifier_mera:RemoveOnDeath() return false end
+
+if modifier_beerus == nil then modifier_beerus = class({}) end 
+function modifier_beerus:IsHidden() return true end
+function modifier_beerus:IsPurgable() return false end
+function modifier_beerus:RemoveOnDeath() return false end
+
