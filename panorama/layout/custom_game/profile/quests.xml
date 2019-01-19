@@ -1,0 +1,50 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="s2r://panorama/styles/dashboard.vcss_c" />
+    <include src="s2r://panorama/styles/hudstyles.vcss_c" />
+    <include src="file://{resources}/styles/profile/profile.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/simple_panel_animation.js" />
+    <include src="file://{resources}/scripts/profile/quests.js" />
+  </scripts>
+  <Panel class="RootQuests" hittest="false">
+    <Label id="ProfileHeader" text="#DOTA_Quests"/>
+    <Panel id="RootQuests" hittest="false">
+      <Panel id="Quests">
+        <Panel id="CompendiumBody" class="CompendiumBody">
+          <Panel id="QuestCarry" QuestID="1">
+            <DOTAUIEconSetPreview class="Item" itemstyle="0" itemdef="11872" hittest="false" drawbackground="true" />
+            <RadioButton group="Quests" class="QuestButton" id="QuestButton1" text="#DOTA_Select_Quest" onactivate="SelectQuest('quest1')"/>
+            <Label class="QuestName" text="#DOTA_Quest1"/>
+            <ProgressBar id="Quest1" class="QuestProgress" min="0" max="1">
+                <Label text="0 / 5" html="true"/>
+	          </ProgressBar>
+            <Label class="QuestText" text="#DOTA_Quest1_Detail"/>
+          </Panel>
+          <Panel id="QuestNuker" QuestID="2">
+            <DOTAUIEconSetPreview class="Item" itemdef="6914" hittest="false" drawbackground="true" />
+            <RadioButton group="Quests" class="QuestButton" id="QuestButton2" text="#DOTA_Select_Quest" onactivate="SelectQuest('quest2')"/>
+            <Label class="QuestName" text="#DOTA_Quest2"/>
+            <ProgressBar id="Quest2" class="QuestProgress" min="0" max="100">
+                <Label text="0 / 1" html="true"/>
+	          </ProgressBar>
+
+            <Label class="QuestText" text="#DOTA_Quest2_Detail"/>
+          </Panel>
+          <Panel id="QuestSupport" QuestID="3">
+            <DOTAUIEconSetPreview class="Item" itemdef="8591" hittest="false" drawbackground="true" />
+            <RadioButton group="Quests" class="QuestButton" id="QuestButton3" text="#DOTA_Select_Quest" onactivate="SelectQuest('quest3')"/>
+            <Label class="QuestName" text="#DOTA_Quest3"/>
+            <ProgressBar id="Quest3" class="QuestProgress" min="0" max="100">
+                <Label text="0 / 1" html="true"/>
+	          </ProgressBar>
+
+            <Label class="QuestText" text="#DOTA_Quest3_Detail"/>
+          </Panel>
+        </Panel>
+      </Panel>
+    </Panel>
+  </Panel>
+</root>

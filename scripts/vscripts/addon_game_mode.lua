@@ -11,6 +11,7 @@ require('addon_init')
 require('CaptainsMode')
 require('Stats')
 
+
 if GameMode == nil then
 	GameMode = class({})
 end
@@ -182,6 +183,8 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
 
+	GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_wisp" ) 
+
 	if GetMapName() == "free_for_all" then
 		FreeForAll:Start()
 		GameRules:GetGameModeEntity():SetFixedRespawnTime(5)
@@ -198,6 +201,26 @@ function GameMode:InitGameMode()
 
 		GameRules:SetGoldTickTime( 1 )
 		GameRules:SetGoldPerTick( 25 )
+	end
+
+	if GetMapName() == "hunt_event" then
+		Event:Start()
+		
+		GameRules:GetGameModeEntity():SetFixedRespawnTime(5)
+		GameRules:SetHeroRespawnEnabled( false )
+
+		GameRules:SetCustomGameTeamMaxPlayers(3, 2)
+		GameRules:SetCustomGameTeamMaxPlayers(2, 2)
+		GameRules:SetCustomGameTeamMaxPlayers(6, 2)
+		GameRules:SetCustomGameTeamMaxPlayers(7, 2)
+		GameRules:SetCustomGameTeamMaxPlayers(8, 2)
+		
+		GameRules:SetGoldTickTime( 1 )
+		GameRules:SetGoldPerTick( 25 )
+
+		GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
+
+		GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_thief" ) 
 	end
 
 	XP_PER_LEVEL_TABLE = {
@@ -243,8 +266,7 @@ function GameMode:InitGameMode()
 
 	GameRules:GetGameModeEntity():SetUseCustomHeroLevels(true)
 	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel(XP_PER_LEVEL_TABLE)
-	GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_wisp" ) 
-
+	
 	Convars:SetInt("dota_wait_for_players_to_load_timeout", 260)
 	Convars:SetInt("dota_combine_models", 1 )
 	SendToServerConsole( "dota_combine_models 1" )	
@@ -269,6 +291,8 @@ function GameMode:InitGameMode()
 	GameRules.Players = {}
 	GameRules.Players[DOTA_TEAM_BADGUYS] = {}
 	GameRules.Players[DOTA_TEAM_GOODGUYS] = {}
+
+	GameRules.Globals.Event = {}
 end
 function GameMode:OnAllPlayersLoaded()
 	if GetMapName() == "dota_captains_mode" then CaptainsMode:Start() else Pick:Start() end

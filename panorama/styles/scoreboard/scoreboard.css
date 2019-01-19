@@ -1,0 +1,16 @@
+.ScoreboardPanel{
+    width: 60%;
+    height: 9%;
+    horizontal-align: center;
+    vertical-align: top;
+}
+
+#ScoreboardRoot{
+    width: 100%;
+    height: 100%;
+}
+
+#Scoreboard{
+    height: 50%;
+    width: 100%;
+}

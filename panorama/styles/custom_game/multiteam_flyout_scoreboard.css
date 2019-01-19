@@ -1,0 +1,472 @@
+
+
+.FlyoutScoreboardRoot
+{
+	horizontal-align: left;
+	vertical-align: top;
+	margin-top: 150px;
+    flow-children: down;
+    padding: 10px;
+
+    transform: translatex( -700px );
+    transition-property: transform;
+    transition-duration: 0.1s;
+}
+
+.FlyoutScoreboardRoot.flyout_scoreboard_visible
+{
+    transform: translatey( 0px );
+}
+
+#TeamsContainer
+{
+    flow-children: down;
+    horizontal-align: center;
+}
+
+.FlyoutTeam
+{
+	margin-top: 8px;
+}
+
+.FlyoutTeam.no_players
+{
+	visibility: collapse;
+}
+
+.local_player_team.FlyoutTeam
+{
+	z-index: 99;
+}
+
+.FlyoutTeamData
+{
+    flow-children: right;
+}
+
+.TeamInfo
+{
+	margin-top: 1px;
+	height: 100%;
+
+}
+
+#TeamColor_GradentFromTransparentLeft
+{
+	width: 100%;
+	height: 100%;
+}
+
+#TeamColorOverlay
+{
+	background-color: gradient( linear, 80% 0%, 100% 0%, from( #00000000 ), to( #000000FF ) );
+	width: 100%;
+	height: 100%;
+}
+
+.FlyoutPlayer
+{
+    flow-children: right;
+}
+
+.TeamCloseSpacer
+{
+}
+
+#PlayersContainer
+{
+    flow-children: down;
+}
+
+.local_player_team #PlayersContainer
+{
+
+}
+
+.TeamId
+{
+    flow-children: right;
+}
+
+#TeamLogo
+{
+	vertical-align: top;
+	horizontal-align: right;
+    height: 30px;
+    width: 30px;
+	margin-top: 2px;
+	margin-right: 2px;
+}
+
+#TeamScore
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #cccccc;
+	font-size: 42px;
+	font-weight: bold;
+	margin-top: -3px;
+	text-overflow: clip;
+}
+
+.one_player #TeamScore
+{
+	font-size: 32px;
+}
+
+
+#TeamScorePanel
+{
+	margin-top: 1px;
+	margin-left: 286px;
+	width: 49px;
+	height: 100%;
+	background-color: #1E2F41;
+}
+
+.Legend
+{
+	flow-children: right;
+}
+
+.Legend Label
+{
+	text-shadow: 2px 2px 2px black;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #90999b;
+}
+
+.PlayerRow
+{
+	height: 32px;
+}
+
+#PlayerRowContainer
+{
+	flow-children: right;
+	height: 32px;
+}
+
+#HeroIcon
+{
+    vertical-align: middle;
+	border: 1px solid black;
+}
+
+#LevelContainer,
+#KillsContainer,
+#DeathsContainer,
+#AssistsContainer
+{
+	height: 100%;
+}
+
+.ScoreboardPanel
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #202030f8 ), color-stop( 0.15, #202030f8 ), to( #20203088 ) );
+	background-size: cover;
+	background-position: 100%;
+	background-repeat: no-repeat;
+	margin-top: 1px;
+	margin-left: 1px;
+	background-color: #1E2F41;
+}
+
+.LegendPanel
+{
+	margin-top: 1px;
+	margin-left: 1px;
+}
+
+.is_local_player .ScoreboardPanel
+{
+
+}
+
+.ScoreboardPanel Label
+{
+	font-size: 30px;
+	text-shadow: 2px 2px 2px black;
+}
+
+.UltimateIndicatorShared
+{
+	margin-left: 44px;
+	margin-top: 2px;
+	vertical-align: center;
+	width: 20px;
+	height: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#Level
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #898b8c;
+}
+
+#Kills,
+#Deaths,
+#Assists
+{
+	vertical-align: center;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 3px;
+	width: 100%;
+}
+
+#PlayerName
+{
+	color: white;
+	font-size: 14px;
+	margin-bottom: -4px;
+	margin-top: 0px;
+	white-space: nowrap;
+}
+
+#HeroNameAndDescription
+{
+	color: #898b8c;
+	font-size: 13px;
+	text-shadow: 2px 2px 2px black;
+	margin-top: -1px;
+}
+#MuteButton
+{
+	margin-right: 0px;
+	margin-top: 0px;
+	horizontal-align: right;
+	vertical-align: top;
+	width: 18px;
+	height: 18px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url( "file://{images}/custom_game/button_audio_on.psd" );
+	visibility: collapse;
+	opacity: 0.8;
+}
+
+.local_player_teammate #MuteButton
+{
+	visibility: visible;
+}
+
+#MuteButton:hover
+{
+	opacity: 1;
+}
+
+.player_muted #MuteButton
+{
+    background-image: url( "file://{images}/custom_game/button_audio_off.psd" );
+}
+
+#TeammateGoldAmount
+{
+	margin-right: -1px;
+	margin-bottom: -2px;
+	vertical-align: bottom;
+	horizontal-align: right;
+	color: #ffd300;
+	font-size: 13px;
+	text-shadow: 2px 2px 2px black;
+	visibility: collapse;
+}
+
+.local_player_team #TeammateGoldAmount
+{
+	visibility: visible;
+}
+
+#PlayerDetailsContainer
+{
+	height: 100%;
+}
+
+#PlayerAndHeroName
+{
+	flow-children: down;
+	padding-left: 8px;
+}
+
+.is_local_player #Kills,
+.is_local_player #Deaths,
+.is_local_player #Assists,
+.is_local_player #Level,
+.is_local_player #HeroName
+{
+	color: white;
+}
+
+.ScoreCol_TeamInfo
+{
+	width: 60px;
+}
+
+.ScoreCol_PlayerDetails
+{
+	width: 170px;
+}
+
+.ScoreCol_Hero
+{
+	width: 53px;
+}
+
+.ScoreCol_TeamScore
+{
+	width: 50px;
+	text-align: center;
+}
+
+.ScoreCol_Kills,
+.ScoreCol_Deaths,
+.ScoreCol_Assists
+{
+	width: 50px;
+	text-align: center;
+}
+.ScoreCol_Rating
+{
+	width: 75px;
+	height: 100%;
+	text-align: center;
+
+	transition-property: transform, saturation, wash-color, box-shadow, position;
+	transition-duration: 0.1s;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.ScoreCol_Prestige{
+	width: 46px;
+	height: 100%;
+	background-color: none;
+	transition-property: transform, saturation, wash-color, box-shadow, position;
+	transition-duration: 0.1s;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.rank_prestige_1{
+  box-shadow: #20B2AA 0px 0px 5px 2px;
+  border: 3px solid deepskyblue;
+}
+
+.rank_prestige_2{
+	box-shadow: goldenrod 0px 0px 5px 2px;
+  border: 3px solid #F0E68C;
+}
+
+.rank_prestige_3{
+  box-shadow: #7FFF00 0px 0px 5px 2px;
+  border: 3px solid black;
+}
+
+.rank_prestige_4{
+  box-shadow: darkred 0px 0px 5px 2px;
+  border: 3px solid black;
+}
+
+.rank_prestige_5{
+  box-shadow: #00008B 0px 0px 10px 2px;
+  border: 3px solid black;
+}
+
+.rank_prestige_6{
+  box-shadow: #ffcc00 0px 0px 12px 1px;
+  border: 3px solid #33ccff;
+}
+
+.rank_prestige_7{
+  box-shadow: #33ccff 0px 0px 12px 1px;
+  border: 3px solid pink;
+}
+
+.rank_prestige_8{
+  box-shadow: #ff6600 0px 0px 12px 1px;
+  border: 3px solid orange;
+}
+.rank_prestige_9{
+  box-shadow: #b3b3b3 0px 0px 12px 1px;
+  border: 3px solid white;
+}
+
+.rank_prestige_10{
+  box-shadow: #993300 0px 0px 12px 1px;
+  border: 3px solid #80ff80;
+}
+
+.rank_prestige_11{
+  box-shadow: #e60000 0px 0px 12px 1px;
+  border: 3px solid #cc00cc;
+  border-radius: 4px;
+}
+
+.prestige_21{
+  color: gradient( linear, 0% 100%, 0% 0%, from( #8B008B ), to( #9932CC ) );
+  font-size: 24px;
+}
+
+.rank_prestige_21{
+  box-shadow: #8B008B 0px 0px 12px 1px;
+  border: 3px solid #8B008B;
+  border-radius: 6px;
+}
+
+
+.scene_prestige_5{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: middle;
+	hue-rotation: 60deg;
+}
+
+.scene_prestige_4{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: middle;
+	hue-rotation: 210deg;
+}
+
+.scene_prestige_3{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: middle;
+	hue-rotation: 310deg;
+}
+
+.scene_prestige_2{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: middle;
+  	hue-rotation: 280deg;
+}
+
+.scene_prestige_1{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: middle;
+ 	hue-rotation: 40deg;
+}
+
+.rank_prestige_20{
+  box-shadow: #E5E4E2 0px 0px 12px 1px;
+  border: 3px solid #FFDF00;
+  border-radius: 6px;
+}
+
+

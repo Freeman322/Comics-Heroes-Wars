@@ -1,0 +1,14 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/UI.css" />
+	</styles>
+	<scripts>
+	  	<include src="file://{resources}/scripts/Util.js" />
+      	<include src="file://{resources}/scripts/Stats.js" />
+  	</scripts>
+	<Panel class="Panel" hittest="false">
+		<Panel id="GlobalPanel" hittest="false">
+		
+		</Panel>
+	</Panel>
+</root>

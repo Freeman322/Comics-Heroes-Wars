@@ -1211,7 +1211,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/omniknight_golem/omniknight_golem.vmdl"	// Model.
+		"Model"						"models/creeps/thief/thief_01_leader.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee_Mega"					// Name of sound set.
 		"ModelScale"				"1.1"
 		"Level"						"1"

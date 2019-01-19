@@ -1,4 +1,5 @@
 var countdown = 60
+var PREMIUM = ["npc_dota_hero_drow_ranger"];
 
 function RebuildUI() {
     var radiant = Game.GetPlayerIDsOnTeam(DOTATeam_t.DOTA_TEAM_GOODGUYS);
@@ -149,6 +150,47 @@ function RebuildUI() {
                 trend.text = "HTV: " + (Number(stats[hero].picks) / Number(getTotalGames())).toFixed(3)
             }
         }
+    }
+
+    if (getClientStatus(Players.GetLocalPlayer()) < 1) return;
+    
+    for(var index in PREMIUM)
+    {
+        var panel = $("#HeroesAgi")
+        var hero = PREMIUM[index]
+
+        var Hero = $.CreatePanel("Panel", panel, hero);
+        Hero.AddClass("HeroIcon")
+        Hero.style.backgroundImage = 'url("s2r://panorama/images/custom_game/heroes/' + hero + '_png.vtex")';
+        Hero.hittest = true;
+        Hero.heroname = hero
+
+        var fBtPress = (function(hero, Hero) {
+                return function() {
+                    OnHeroSelected(hero, Hero)
+                }
+            }
+            (hero, Hero));
+        Hero.SetPanelEvent('onactivate', fBtPress)
+
+        var mouseOverCapture = (function(hero, Hero) {
+                return function() {
+                    OnInspectHeroStart(hero, Hero)
+                }
+            }
+            (hero, Hero));
+
+
+        var mouseOutCapture = (function(hero, Hero) {
+                return function() {
+                    OnInspectHeroOver(hero, Hero)
+                }
+            }
+            (hero, Hero));
+
+
+        Hero.SetPanelEvent("onmouseover", mouseOverCapture);
+        Hero.SetPanelEvent("onmouseout", mouseOutCapture);
     }
 }
 

@@ -1,0 +1,37 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="s2r://panorama/styles/dashboard.vcss_c" />
+    <include src="s2r://panorama/styles/hudstyles.vcss_c" />
+    <include src="file://{resources}/styles/profile/profile.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/Players.js" />
+    <include src="file://{resources}/scripts/custom_game/simple_panel_animation.js" />
+    <include src="file://{resources}/scripts/profile/primary.js" />
+  </scripts>
+  <Panel class="RootProfile">
+      <Panel id="HelpLeft">
+        <Panel class="TopBottomFlow FullWidthHeight">
+          <Label id="ProfileHeader" text="#DOTA_Profile"/>
+          <Panel id="MainProfilePanel" map="backgrounds/pregame_phase" camera="shot_cameraA" particleonly="false">
+            <DOTAAvatarImage id="avatar" steamid="local" />
+            <Label id="PlayerName" text="-----"/>
+            <Panel id="Rank" class="RankIcon"/>
+            <Label id="RankName" text="-----"/>
+            <Label id="Games" text="-----"/>
+            <Panel id="Medal"/>
+            <Label id="MedalName" text=""/>
+            <Panel id="RanksList"/>
+            <Panel id="ProgressBar" hittest="false">
+                <Panel id="ProgressBarRoot">
+                    <DOTAScenePanel id="XP" hittest="false" map="scenes/hud/healthbarburner" camera="camera_1" />
+                </Panel>
+                <Panel id="RankLeft" class="RankIconLeft"/>
+                <Panel id="RankRight" class="RankIconRight"/>
+            </Panel>
+          </Panel>
+        </Panel>
+      </Panel>
+  </Panel>
+</root>

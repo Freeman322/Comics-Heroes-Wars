@@ -149,6 +149,7 @@ function modifier_mercer_ravage:OnCreated( kv )
 		)
 
 		self:StartIntervalThink(1) 
+		self:OnIntervalThink()
 	end
 
 	self.m_speed = self:GetParent():GetMoveSpeedModifier(self:GetParent():GetBaseMoveSpeed())
@@ -164,7 +165,7 @@ function modifier_mercer_ravage:OnIntervalThink()
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
 			damage = damage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = DAMAGE_TYPE_PURE,
 			ability = self:GetAbility(), 
 		}
 

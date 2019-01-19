@@ -33,14 +33,14 @@ end
 function modifier_monkey_king_dragon_strike:OnAttackLanded(params)
 	if params.attacker == self:GetParent() then
 		if not self:GetParent():HasModifier("modifier_monkey_king_dragon_strike_charges") then 
-	    self.counter = self.counter + 1
-	    if self.counter >= self:GetAbility():GetSpecialValueFor("required_hits") then
-	      self.counter = 0
-	      if not self:GetParent():IsIllusion() then
-	        local modifier = self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_monkey_king_dragon_strike_charges", {duration = 35})
-	        modifier:SetStackCount(self:GetAbility():GetSpecialValueFor("charges"))
-	      end
-	    end
+		    self.counter = self.counter + 1
+		    if self.counter >= self:GetAbility():GetSpecialValueFor("required_hits") then
+		      self.counter = 0
+		      if not self:GetParent():IsIllusion() then
+		        local modifier = self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_monkey_king_dragon_strike_charges", {duration = 35})
+		        modifier:SetStackCount(self:GetAbility():GetSpecialValueFor("charges"))
+		      end
+		    end
 		end
 	end
 end
@@ -83,14 +83,18 @@ end
 function modifier_monkey_king_dragon_strike_charges:OnAttackLanded(params)
 	if params.attacker == self:GetParent() then
 		self:SetStackCount(self:GetStackCount() - 1)
+		
 		if self:GetStackCount() <= 0 then
-		self:Destroy()
+			self:Destroy()
 		end
+
+
 		----params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
-		self:GetParent():Heal(params.damage*(self:GetAbility():GetSpecialValueFor("lifesteal")/100), self:GetAbility())
+		self:GetParent():Heal((params.damage * (self:GetAbility():GetSpecialValueFor("lifesteal") / 100) * (params.target:GetPhysicalArmorReduction() / 100)), self:GetAbility())
 		local lifesteal_fx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent ())
 		ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetParent ():GetAbsOrigin())
 		ParticleManager:ReleaseParticleIndex(lifesteal_fx)
+		
 		EmitSoundOn("Hero_MonkeyKing.IronCudgel", params.target)
 		EmitSoundOn("DOTA_Item.MKB.Minibash", params.target)
 	end

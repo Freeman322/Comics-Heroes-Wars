@@ -1,0 +1,24 @@
+<root>
+  <styles>
+		<include src="file://{resources}/styles/custom_game/ban.css" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/ban.js" />
+		<include src="file://{resources}/scripts/custom_game/simple_panel_animation.js" />
+	</scripts>
+
+	<Panel class="BanRow">
+		  <DOTAScenePanel id="BanScreen" camera="shot_cameraA" map="backgrounds/pregame_phase" hittest="true" particleonly="false">
+        <Panel id="DOTAPageWebBrowser" tabindex="auto" hittest="true">
+          <HTML id="Browser_1" hittest="true" url="https://vk.com/dota2chw">
+
+  				</HTML>
+        </Panel>
+        <Panel id="DOTAPageBanned" tabindex="auto" hittest="true">
+          <Label id="Ban" class="PrimaryBanText" text="#BAN" hittest="false" />
+          <Label id="BanText" class="BanText" text="#BAN_TEXT" hittest="false" />
+        </Panel>
+      </DOTAScenePanel>
+	</Panel>
+</root>

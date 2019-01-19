@@ -1,0 +1,21 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="s2r://panorama/styles/dashboard.vcss_c" />
+    <include src="s2r://panorama/styles/hudstyles.vcss_c" />
+    <include src="file://{resources}/styles/profile/profile.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/simple_panel_animation.js" />
+    <include src="file://{resources}/scripts/items.js" />
+    <include src="file://{resources}/scripts/profile/inventory.js" />
+  </scripts>
+  <Panel class="RootInventory">
+    <Label id="ProfileHeader" text="#DOTA_Inventory"/>
+    <Panel id="RootInventory">
+      <Panel id="Inventory">
+
+      </Panel>
+    </Panel>
+  </Panel>
+</root>

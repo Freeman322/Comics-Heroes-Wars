@@ -73,7 +73,9 @@ function modifier_ragnaros_shine_soul_passive:OnIntervalThink()
     }
 
     ApplyDamage( damage )
-    caster:Heal(self:GetAbility():GetSpecialValueFor("aura_damage") * 0.3, self:GetAbility())
+    
+    caster:Heal(self:GetAbility():GetSpecialValueFor("aura_damage") * 0.15, self:GetAbility())
+
     local particle_lifesteal = "particles/items3_fx/octarine_core_lifesteal.vpcf"
     local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, caster)
     ParticleManager:SetParticleControl(lifesteal_fx, 0, caster:GetAbsOrigin())

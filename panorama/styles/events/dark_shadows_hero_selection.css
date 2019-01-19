@@ -1,0 +1,271 @@
+.CorePanel{
+  width: 100%;
+  height: 100%;
+}
+
+#CorePanel{
+  width: 100%;
+  height: 100%;
+
+  background-image: url("s2r://panorama/images/event/dash_bg_dashboard5_png.vtex");
+  background-size: 100%;
+}
+
+#topSide{
+  width: 100%;
+  height: 13%;
+}
+
+#leftSide{
+  width: 48%;
+  height: 85%;
+
+  margin: 20px;
+
+  horizontal-align: left;
+  vertical-align: bottom;
+}
+
+#rightSide{
+  width: 48%;
+  height: 85%;
+
+  margin: 20px;
+
+  horizontal-align: right;
+  vertical-align: bottom;
+
+  background-image: url("s2r://panorama/images/event/redeem_fragments_i2f_psd.vtex");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#Players{
+  height: 90px;
+
+  margin: 2px;
+
+  flow-children: right;
+
+  horizontal-align: center;
+  vertical-align: top;
+}
+
+#EventName{
+  font-size: 43px;
+  font-family: Goudy Trajan Medium,FZKai-Z03,TH Sarabun New,YDYGO 540;
+  text-align: center;
+  horizontal-align: center;
+  vertical-align: bottom;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 4px #000000;
+  letter-spacing: 3px;
+  text-overflow: shrink;
+  color: gradient( linear, 0% 0%, 0% 100%, from( #ACC7CE ), color-stop( .3, #123038 ), color-stop( .3, #123038 ), color-stop( .8, #08536A ), to( #04FFD4 ) );
+}
+
+#ObjectivesPanel{
+  width: 70%;
+  height: 40%;
+
+  margin-bottom: 10%;
+  margin-right: 15px;
+
+  flow-children: down;
+
+  horizontal-align: center;
+  vertical-align: bottom;
+
+  border: 2px solid brown;
+}
+
+.AspectRatio4x3 #ObjectivesPanel{
+  width: 70%;
+  height: 35%;
+
+  margin-bottom: 30%;
+  margin-right: 15px;
+
+  flow-children: down;
+
+  horizontal-align: center;
+  vertical-align: bottom;
+
+  border: 2px solid brown;
+}
+
+.AspectRatio16x10 #ObjectivesPanel{
+  width: 70%;
+  height: 35%;
+
+  margin-bottom: 22%;
+  margin-right: 15px;
+
+  flow-children: down;
+
+  horizontal-align: center;
+  vertical-align: bottom;
+
+  border: 2px solid brown;
+}
+
+#HeroesRoot{
+  width: 100%;
+  height: 70%;
+
+  margin-bottom: 10%;
+  margin-right: 15px;
+
+  flow-children: down;
+
+  horizontal-align: center;
+  vertical-align: top;
+}
+#Heroes{
+  width: 100%;
+  height: 80%;
+
+  margin: 20px;
+
+  horizontal-align: center;
+  flow-children: right;
+  vertical-align: top;
+
+  background-image: url("s2r://panorama/images/event/scoreboard_i232_psd.vtex");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#PickButton{
+  width: 300px;
+  height: 100px;
+
+  horizontal-align: center;
+  vertical-align: bottom;
+
+  background-image: url("s2r://panorama/images/event/select_button_psd.vtex");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#MiniMapContainer{
+  width: 250px;
+  height: 250px;
+
+  horizontal-align: left;
+  vertical-align: bottom;
+
+  margin: 20px;
+
+  ///background-image: url("s2r://panorama/images/event/dark_shadows_png.vtex");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#HeroSelectedTarget{
+  text-shadow: 1px 1px 0px 2.0 #000000;
+	color: white;
+  vertical-align: bottom;
+  horizontal-align: left;
+  font-size: 30px;
+
+  margin-bottom: 13px;
+  margin-left: 30px;
+
+  text-transform: uppercase;
+}
+.PickText
+{
+	color: black;
+	text-transform: uppercase;
+  vertical-align: top;
+  horizontal-align: left;
+  font-size: 25px;
+  font-family: Goudy Trajan Medium,FZKai-Z03,TH Sarabun New,YDYGO 540;
+  text-shadow: 0px 3px 4px #000000;
+  letter-spacing: 3px;
+  text-overflow: shrink;
+  margin-top: 13px;
+  margin-left: 30px;
+}
+
+.PlayerPanel{
+  height: 120px;
+  width: 120px;
+  vertical-align: center;
+  flow-children: none;
+  margin: 3px;
+}
+
+.PlayerColorPanel{
+  width: 73%;
+  height: 9px;
+  vertical-align: top;
+  horizontal-align: center;
+
+  border: 1px solid black;
+}
+
+.PlayerAvatarIcon{
+  width: 100px;
+  height: 100px;
+
+  vertical-align: bottom;
+  horizontal-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.hero{
+  width: 23%;
+  height: 80%;
+
+  horizontal-align: left;
+  vertical-align: center;
+
+  margin: 35px;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  border: 2px solid grey;
+
+  saturation: 0.1;
+}
+.hero:hover
+{
+    transform: translatez( 10px );
+    saturation: 1;
+}
+
+.hero:active
+{
+    background-color: white;
+    sound: "Item.PickUpGemShop";
+    wash-color: #999999;
+    saturation: 0;
+    transform: translatez( -10px );
+}
+
+#Sera{
+  background-image: url("s2r://panorama/images/event/sera_png.vtex");
+}
+
+
+.Selected
+{
+  transform: translateZ(10px);
+  box-shadow: fill #00FF7F 0px 0px 8px 0px;
+}
+
+.Picked
+{
+    background-color: white;
+    wash-color: #999999;
+    saturation: 0;
+    transform: translatez( -20px );
+}
+.Disabled
+{
+  wash-color: #999999;
+  saturation: 0;
+}

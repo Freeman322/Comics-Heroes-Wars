@@ -61,7 +61,7 @@ function spectre_lvl_death:OnSpellStart ()
             if modifier then if modifier._hUnits then damage = modifier._hUnits[hTarget] or 100 end end 
 
 
-            ApplyDamage ( { victim = hTarget, attacker = hCaster, damage = damage * pers_damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self })
+            ApplyDamage ( { victim = hTarget, attacker = hCaster, damage = (damage * pers_damage) + self:GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_MAGICAL, ability = self })
 
             local nFXIndex3 = ParticleManager:CreateParticle ("particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death.vpcf", PATTACH_CUSTOMORIGIN, hTarget);
             ParticleManager:SetParticleControlEnt (nFXIndex3, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin (), true);

@@ -1,0 +1,220 @@
+@define rarity_color_common: #b0c3d9;
+@define rarity_color_uncommon: #5e98d9;
+@define rarity_color_rare: #4b69ff;
+@define rarity_color_mythical: #8847ff;
+@define rarity_color_legendary: #d32ce6;
+@define rarity_color_ancient: #eb4b4b;
+@define rarity_color_immortal: #e4ae39;
+@define rarity_color_arcana: #ade55c;
+@define rarity_color_seasonal: #fff34f;
+@define rarity_color_ethernal: #476291;
+@define rarity_color_extraordinary: #A50F79;
+@define rarity_color_custom: #fff34f;
+
+.PopupItemReceived_common             { hue-rotation: 160deg; saturation: 0.5; opacity: 0.1; }
+.PopupItemReceived_uncommon           { saturation: 0.0; wash-color: #5E98D9; opacity: 1; }
+.PopupItemReceived_rare               { hue-rotation: 190deg; saturation: 0.6; wash-color: #4B69FF; opacity: 1;}
+.PopupItemReceived_mythical           { hue-rotation: 220deg; wash-color: #5E98D955; opacity: 1;}
+.PopupItemReceived_legendary          { hue-rotation: 250deg; opacity: 1;}
+.PopupItemReceived_ancient            { hue-rotation: 330deg; opacity: 1;}
+.PopupItemReceived_immortal           { hue-rotation: 0deg; opacity: 1;}
+.PopupItemReceived_arcana             { hue-rotation: 66deg; saturation: 0.6; wash-color: #ADE55C88; opacity: 1;}
+.PopupItemReceived_ethernal					 { hue-rotation: 218deg; saturation: 0.6; wash-color: #476291; opacity: 1;}
+.PopupItemReceived_extraordinary			 { hue-rotation: 318deg; saturation: 0.6; wash-color: #A50F79; opacity: 1;}
+.PopupItemReceived_custom			 { hue-rotation: 318deg; saturation: 0.6; wash-color: #fff34f; opacity: 1;}
+
+.ItemIcon
+{
+	width: 99px;
+  height: 72px;
+
+  background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+  margin: 3px;
+
+  border: 1px solid black;
+
+	transition-property: position, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+}
+
+.item{
+  width: 120px;
+  height: 90px;
+
+  background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+  margin: 3px;
+
+  border: 3px solid black;
+}
+
+.item_small{
+  width: 73px;
+  height: 56px;
+
+  background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  margin: 3px;
+
+  border: 1px solid black;
+}
+
+.item_medium{
+  width: 94px;
+  height: 71px;
+
+  background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+  margin: 3px;
+
+  border: 1px solid black;
+}
+
+.common
+{
+  width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: middle;
+	background-color: rarity_color_common;
+
+  opacity: 0.8;
+}
+
+.uncommon
+{
+  width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: middle;
+	background-color: rarity_color_uncommon;
+
+  opacity: 0.8;
+}
+
+.rare
+{
+  width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: middle;
+	background-color: rarity_color_rare;
+
+  opacity: 0.8;
+}
+
+.mythical
+{
+  width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: middle;
+	background-color: rarity_color_mythical;
+
+  opacity: 0.8;
+}
+
+.legendary
+{
+  width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: middle;
+	background-color: rarity_color_legendary;
+
+  opacity: 0.8;
+}
+
+.ancient
+{
+  width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: middle;
+	background-color: rarity_color_ancient;
+
+  opacity: 0.8;
+}
+
+.immortal
+{
+  width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: middle;
+	background-color: rarity_color_immortal;
+
+  opacity: 0.8;
+}
+
+.arcana
+{
+  width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: middle;
+	background-color: rarity_color_arcana;
+  opacity: 0.8;
+}
+
+.ethernal
+{
+  width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: center;
+	background-color: rarity_color_ethernal;
+
+  opacity: 0.9;
+}
+
+.extraordinary{
+	width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: center;
+	background-color: rarity_color_extraordinary;
+
+  opacity: 0.9;
+}
+
+.custom{
+	width: 100%;
+  height: 35%;
+
+  vertical-align: bottom;
+  horizontal-align: center;
+	background-color: rarity_color_custom;
+
+  opacity: 0.9;
+}
+
+.item_name{
+  font-size: 18px;
+	horizontal-align: center;
+  vertical-align: bottom;
+	color: white;
+}
+
+.player_name{
+  font-size: 18px;
+	horizontal-align: center;
+  vertical-align: top;
+	color: white;
+}

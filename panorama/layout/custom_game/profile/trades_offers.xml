@@ -1,0 +1,18 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="s2r://panorama/styles/dashboard.vcss_c" />
+    <include src="s2r://panorama/styles/hudstyles.vcss_c" />
+    <include src="file://{resources}/styles/profile/profile.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/simple_panel_animation.js" />
+    <include src="file://{resources}/scripts/profile/trades_offers.js" />
+  </scripts>
+  <Panel class="RootTrades">
+    <Label id="ProfileHeader" text="#DOTA_Tardes"/>
+    <Panel id="RootTrades">
+  
+    </Panel>
+  </Panel>
+</root>

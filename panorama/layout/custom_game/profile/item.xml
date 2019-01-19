@@ -1,0 +1,17 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="s2r://panorama/styles/dashboard.vcss_c" />
+    <include src="s2r://panorama/styles/hudstyles.vcss_c" />
+    <include src="file://{resources}/styles/profile/profile.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/profile/item.js" />
+  </scripts>
+	<Panel class="item" hittest="true">
+		<Panel id="item">
+			<Panel id="item_rarity" />
+			<Label id="item_name" text="item" />
+		</Panel>
+	</Panel>
+</root>

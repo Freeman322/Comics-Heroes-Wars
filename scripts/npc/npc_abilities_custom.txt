@@ -2287,7 +2287,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reflection_pct"	"12 16 20 24"
+				"damage_reflection_pct"	"16 20 24 28"
 			}
 			"02"
 			{
@@ -2961,7 +2961,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"65 100 135 170"
+		"AbilityDamage"					"100 160 245 300"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4269,7 +4269,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"4"
 
-		"AbilityCooldown"				"120 100 80"
+		"AbilityCooldown"				"90 60 40"
 
 		"AbilityDamage"					"120 220 320"
 		// Cost
@@ -7871,7 +7871,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"					"500 750 1000"
+				"damage"				"700 950 1250"
 			}
 			"05"
 			{
@@ -15951,7 +15951,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"aura_damage"		"14 22 30"
+				"aura_damage"		"18 24 36"
 			}
 		}
 	}
@@ -16144,7 +16144,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"150 225 300"
+				"damage"					"200 285 370"
 			}
 			"04"
 			{
@@ -24078,7 +24078,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_reduction"				"12 17 22 27"
+				"damage_reduction"				"18 22 26 30"
 				"CalculateSpellDamageTooltip" 	"0"
 				"LinkedSpecialBonus"			"special_bonus_unique_ursa_warrior_2"
 			}
@@ -24663,7 +24663,7 @@
 			"01"
 			{
 				"var_type"	    		"FIELD_FLOAT"
-				"damage"		        "1.1 1.4 1.7"
+				"damage"		        "1.35 1.75 2.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_ronan_2"
 			}
 		}
@@ -31403,7 +31403,7 @@
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
@@ -31419,7 +31419,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"180 170 160"
+		"AbilityCooldown"				"90"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -31469,7 +31469,7 @@
 			"05"
 			{	
 				"var_type"				"FIELD_INTEGER"
-				"think_damage"			"140 230 295"
+				"think_damage"			"220 380 455"
 				"LinkedSpecialBonus"	"special_bonus_unique_mercer_4"
 			}
 		}

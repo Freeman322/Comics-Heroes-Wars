@@ -51,18 +51,23 @@ function Util:OnInit(args)
 
     Util:SetupConsole()
 end
+
 function Util:OnChatUpdated( data )
   CustomGameEventManager:Send_ServerToAllClients("on_chat_new_mess", data)
 end
+
 function Util:GetNetworkStatsData()
 	stats.get_data()
 end
+
 function Util:SetNetworkStatsData()
 	stats.set_data()
 end
+
 function Util:DeleteEconItem(data)
   stats.delete_item(data)
 end
+
 function Util:GetHeroID( hero_name )
   if Util.heroes_ids then 
     for k, hero in pairs(Util.heroes_ids) do
@@ -71,6 +76,7 @@ function Util:GetHeroID( hero_name )
   end 
   return nil
 end
+
 function Util:OnItemPickUp( event )
   pcall(function()
     local item = EntIndexToHScript( event.ItemEntityIndex )
@@ -83,6 +89,7 @@ function Util:OnItemPickUp( event )
     end
   end)
 end
+
 function Util:GetAbilityBehavior(name)
   local path = LoadKeyValues('scripts/npc/npc_abilities_custom.txt')
   if path[name] then
@@ -91,6 +98,7 @@ function Util:GetAbilityBehavior(name)
     end
   end
 end
+
 function Util:GetAllHeroesCMMode()
   local heroes = {}
   local path = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
@@ -106,6 +114,7 @@ function Util:GetAllHeroesCMMode()
   
   return heroes
 end
+
 function Util:GetAllHeroesCMModeDisabled()
   local heroes = {}
   local path = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
@@ -121,6 +130,7 @@ function Util:GetAllHeroesCMModeDisabled()
   
   return heroes
 end
+
 function Util:GetHeroList()    
     local path = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
     local heroes = CustomNetTables:GetTableValue("players", "heroes")
@@ -136,6 +146,7 @@ function Util:GetHeroList()
     
     return result
 end
+
 function Util:GetHeroAbilityList()
     local Abilities = {}
 
@@ -149,6 +160,7 @@ function Util:GetHeroAbilityList()
 
     return Abilities
 end
+
 function Util:GetItemID(string)
   local id = -1
   local array = {}
@@ -160,6 +172,7 @@ function Util:GetItemID(string)
   end
   return array
 end
+
 function Util:PlayerEquipedItem(pID, string)
   local steam_id = PlayerResource:GetSteamAccountID(pID)
   steam_id = tostring(steam_id)
@@ -178,6 +191,7 @@ function Util:PlayerEquipedItem(pID, string)
   end
   return false
 end
+
 function Util:PlayerHasItem(pID, string)
   local steam_id = PlayerResource:GetSteamAccountID(pID)
   steam_id = tostring(steam_id)
@@ -193,6 +207,7 @@ function Util:PlayerHasItem(pID, string)
   end
   return false
 end
+
 function Util:GetItemForHero(def_id)
   for k, v in pairs(Util.econs) do
     if(tostring(v["def_id"])) == tostring(def_id) then 
@@ -202,6 +217,7 @@ function Util:GetItemForHero(def_id)
 
   return nil
 end
+
 function Util:GetItemName(def_id)
   for k, v in pairs(Util.econs) do
     if(tostring(v["def_id"])) == tostring(def_id) then 
@@ -211,6 +227,7 @@ function Util:GetItemName(def_id)
 
   return nil
 end
+
 function Util:PlayerHasAdminRules(pID)
   local data = CustomNetTables:GetTableValue("players", "stats")
   if data and data[tostring(pID)] then 
@@ -219,6 +236,7 @@ function Util:PlayerHasAdminRules(pID)
 
   return false
 end
+
 function Util:UpdateWearables(hero, playerID)
   local items = {}
   local name = hero:GetUnitName()
@@ -235,6 +253,7 @@ function Util:UpdateWearables(hero, playerID)
   end
   Util:_EquipItem(hero, items)
 end
+
 function Util:_EquipItem(hero, items)
   if __wearables == nil then __wearables = LoadKeyValues("scripts/items/wearables.kv") end
 
@@ -270,10 +289,12 @@ function Util:_EquipItem(hero, items)
     end
   end
 end
+
 function Util:ParseRenderColor( color, hero )
   if color == "black" then hero:SetRenderColor(0, 0, 0) end 
   if color == "gold" then hero:SetRenderColor(255, 215, 0) end 
 end
+
 function Util:EquipItemData(hero, item_data, slot)
   local econ_params = item_data
   if econ_params["model"] then 
@@ -331,6 +352,7 @@ function Util:EquipItemData(hero, item_data, slot)
     StartSoundEvent(econ_params["ambient"], hero)
   end
 end
+
 function Util:OnHeroInGame(hero)
     LinkLuaModifier("modifier_hero_selection", "modifiers/modifier_hero_selection.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_respawn_time", "modifiers/modifier_respawn_time.lua", LUA_MODIFIER_MOTION_NONE)
@@ -1599,12 +1621,14 @@ function Util:OnHeroInGame(hero)
       end
     end
 end
+
 function CDOTA_BaseNPC:HasTalent(talentName)
     if self:HasAbility(talentName) then
         if self:FindAbilityByName(talentName):GetLevel() > 0 then return true end
     end
     return false
 end
+
 function CDOTA_BaseNPC:WillReflectAnySpell()
   local modifiersList = {
     "modifier_item_lotus_orb_active",
@@ -1619,10 +1643,12 @@ function CDOTA_BaseNPC:WillReflectAnySpell()
   end
   return false
 end
+
 function CDOTA_BaseNPC:IsAbilityOnCooldown(ability)
   if self:HasAbility(ability) then return not self:FindAbilityByName(ability):IsCooldownReady() end
   return nil
 end
+
 function CDOTA_Ability_Lua:IsIgnoreCooldownReduction()
   if Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] ~= nil then
     if Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == "1" or Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == 1 then 
@@ -1632,12 +1658,14 @@ function CDOTA_Ability_Lua:IsIgnoreCooldownReduction()
 
   return false
 end
+
 function CDOTA_BaseNPC:FindTalentValue(talentName)
     if self:HasAbility(talentName) then
         return self:FindAbilityByName(talentName):GetSpecialValueFor("value")
     end
     return nil
 end
+
 function Util:FindTalentScriptFile(talentName)
   if Util.abilities and Util.abilities[talentName] and Util.abilities[talentName]["BaseClass"] == "special_bonus_undefined" then
     return Util.abilities[talentName]["ScriptFile"]
@@ -1645,6 +1673,7 @@ function Util:FindTalentScriptFile(talentName)
 
   return nil
 end
+
 function CDOTABaseAbility:GetTalentSpecialValueFor(value)
     local base = self:GetSpecialValueFor(value)
     local talentName
@@ -1664,6 +1693,7 @@ function CDOTABaseAbility:GetTalentSpecialValueFor(value)
     end
     return base
 end
+
 function CDOTA_BaseNPC:SetGodeMode(tBool)
 	LinkLuaModifier( "modifier_god", "modifiers/modifier_god.lua" ,LUA_MODIFIER_MOTION_NONE )
     if tBool == "true" then
@@ -1678,6 +1708,7 @@ function CDOTA_BaseNPC:SetGodeMode(tBool)
     end
     return
 end
+
 function CDOTA_BaseNPC:SetDemiGodeMode(tBool)
 	LinkLuaModifier( "modifier_demigod", "modifiers/modifier_demigod.lua" ,LUA_MODIFIER_MOTION_NONE )
     if tBool == "true" then
@@ -1692,6 +1723,7 @@ function CDOTA_BaseNPC:SetDemiGodeMode(tBool)
     end
     return
 end
+
 function CDOTA_BaseNPC:SwapDebuffs(hTarget)
     if not hTarget then
       return
@@ -1710,6 +1742,7 @@ function CDOTA_BaseNPC:SwapDebuffs(hTarget)
     end
     return
 end
+
 function CDOTA_BaseNPC:CanReincarnate()
   local items = {
     "item_aegis",
@@ -1724,6 +1757,7 @@ function CDOTA_BaseNPC:CanReincarnate()
   end
   return false
 end
+
 function CDOTA_BaseNPC:RefreshUnit()
 	for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.
 		local current_ability = self:GetAbilityByIndex(i)
@@ -1742,6 +1776,7 @@ function CDOTA_BaseNPC:RefreshUnit()
 	self:SetHealth(self:GetMaxHealth())
 	self:SetMana(self:GetMaxMana())
 end
+
 function Util:SetupConsole()
     Convars:RegisterCommand("ban", function(command, userid )
       pcall(function()
@@ -2046,6 +2081,7 @@ function Util:SetupConsole()
       end)
     end, "Set time", 0)
 end
+
 function Util:KillUnitsInRadius(data)
   local radius = data['radius']
   local hero = data['hero']
@@ -2060,6 +2096,7 @@ function Util:KillUnitsInRadius(data)
     end
   end
 end
+
 function Util:CheckGameState()
   if GameRules.Players[DOTA_TEAM_GOODGUYS] then
     local state = true   
@@ -2083,6 +2120,7 @@ function Util:CheckGameState()
     if state then GameRules:EndGame(DOTA_TEAM_BADGUYS) end 
   end 
 end
+
 function Util:GetPlayersForTeam(team)
   local result = {}
   for i = 0, DOTA_MAX_PLAYERS do
@@ -2093,6 +2131,7 @@ function Util:GetPlayersForTeam(team)
 
   return result
 end
+
 function Util:GetArrayLength(array)
   local result = 0
   for k,v in pairs(array) do
@@ -2100,12 +2139,14 @@ function Util:GetArrayLength(array)
   end
   return result
 end
+
 function Util:DisplayError(pID, error)
     local player = PlayerResource:GetPlayer(pid)
     if player then
         CustomGameEventManager:Send_ServerToPlayer(player, "dota_hud_error_message", {message=error})
     end
 end
+
 function Util:IsTableContains( table, element )
   for _, v in pairs( table ) do
   	if v == element then
@@ -2115,9 +2156,11 @@ function Util:IsTableContains( table, element )
 
   return false
 end
+
 function Util:SendCustomMessage(data)
   CustomGameEventManager:Send_ServerToAllClients("create_custom_message", data)
 end
+
 function CDOTA_BaseNPC:SetSkillBuild(hero)
   local abilities = Util:GetHeroAbilityList()
   for i,v in ipairs(abilities[self:GetUnitName()]) do
@@ -2127,6 +2170,7 @@ function CDOTA_BaseNPC:SetSkillBuild(hero)
     self:AddAbility(v)
   end
 end
+
 function CDOTA_BaseNPC:SetCreatureHealth(health, update_current_health)
 
   self:SetBaseMaxHealth(health)
@@ -2136,6 +2180,7 @@ function CDOTA_BaseNPC:SetCreatureHealth(health, update_current_health)
     self:SetHealth(health)
   end
 end
+
 function CDOTA_BaseNPC:CreateUnit(hCaster, duration)
   local double = CreateUnitByName( self:GetUnitName(), self:GetAbsOrigin(), true, self, self:GetOwner(), hCaster:GetTeamNumber())
   double:SetControllableByPlayer(hCaster:GetPlayerID(), false)
@@ -2183,9 +2228,11 @@ function CDOTA_BaseNPC:CreateUnit(hCaster, duration)
 
   return double
 end
+
 function CDOTA_BaseNPC:HasTimeStone()
   return self:HasItemInInventory("item_time")
 end
+
 function CDOTA_BaseNPC:CreateIllusion(caster, ability, duration)
   local illusion = CreateUnitByName(self:GetUnitName(), self:GetAbsOrigin(), true, caster, nil, caster:GetTeamNumber())  --handle_UnitOwner needs to be nil, or else it will crash the game.
   illusion:SetPlayerID(caster:GetPlayerOwnerID())
@@ -2224,6 +2271,7 @@ function CDOTA_BaseNPC:CreateIllusion(caster, ability, duration)
 
   return illusion
 end
+
 function Util:CreateCreep(unit_name, model, caster, kv, modifiers )
     PrecacheUnitByNameAsync(model, function()
       local unit = CreateUnitByName( unit_name, caster:GetAbsOrigin(), true, caster, caster:GetOwner(), caster:GetTeamNumber())
@@ -2242,6 +2290,7 @@ function Util:CreateCreep(unit_name, model, caster, kv, modifiers )
       return unit
     end)
 end
+
 function Util:OnCosmeticItemUpdated( data )
   pcall(function()
     local hero = PlayerResource:GetPlayer(data["PlayerID"]):GetAssignedHero()
@@ -2279,44 +2328,56 @@ function Util:OnCosmeticItemUpdated( data )
     end
   end)
 end
+
 function Util:vector_unit( vector )
   local mag = Util:vector_magnitude(vector)
   return Vector(vector.x/math.sqrt(mag), vector.y/math.sqrt(mag))
 end
+
 function Util:vector_magnitude( vector )
   return vector.x * vector.x + vector.y * vector.y
 end
+
 function Util:vector_is_clockwise(v1, v2)
   return -v1.x * v2.y + v1.y * v2.x > 0
 end
+
 function CDOTA_Item:IsDroppableAfterDeath()
   if Util.items and Util.items[self:GetName()] and Util.items[self:GetName()]["DropOnDeath"] then 
     return true
   end
   return false
 end
+
 function CDOTA_Modifier_Lua:GetClass()
   return "CDOTA_Modifier_Lua"
 end
+
 function CDOTA_Buff:IsDebuff()
   return string.find(self:GetClass(), "debuff") ~= nil or string.find(self:GetClass(), "stun") ~= nil 
 end
+
 function Util:OnAbilityWasUpgraded( ability, unit ) end
+
 function Util:OnModifierWasApplied( ability, unit, caster, modifier )
   if unit:HasModifier("modifier_fate_fatebind") and ability and caster ~= unit then
     local mod = unit:FindModifierByName("modifier_fate_fatebind")
     mod:OnModifierApplied({ability = ability, unit = unit, attacker = caster, modifier_name = modifier})
   end 
 end
+
 function Util:LearnedAbility( params )
   if params.abilityname and params.PlayerID and string.find(params.abilityname, "special_bonus") ~= nil then 
     Talents:OnTalentLearned(params.PlayerID, params.abilityname)
   end 
 end
+
 function CDOTA_BaseNPC:Heal_Engine(flHeal)
   self:ModifyHealth(self:GetHealth() + flHeal, nil, false, 0)
 end
+
 function CDOTABaseAbility:IsUltimate() return self:GetMaxLevel() <= 3 end
+
 function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbol)
   local pfxPath = string.format("particles/msg_fx/msg_%s.vpcf", pfx)
   local pidx = ParticleManager:CreateParticle(pfxPath, PATTACH_ABSORIGIN_FOLLOW, target) -- target:GetOwner()
@@ -2336,15 +2397,24 @@ function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbo
   ParticleManager:SetParticleControl(pidx, 2, Vector(lifetime, digits, 0))
   ParticleManager:SetParticleControl(pidx, 3, color)
 end
+
 function Util:OnGauntletAbilitySelected( params )
   local hero = EntIndexToHScript(params.hero)
 
   local item = hero:FindItemInInventory("item_glove_of_the_creator")
   if item then item:SelectAbility(params.ability) end 
 end
+
 function CDOTAGamerules:EndGame(team)
 	local ancients = Entities:FindAllByClassname("npc_dota_fort")
 	for _, ancient in pairs(ancients) do
 		if (ancient:GetTeamNumber() == team) then ancient:ForceKill(false) return end 
 	end
+end
+
+function CDOTA_BaseNPC:GetPhysicalArmorReduction()
+    local armornpc = self:GetPhysicalArmorValue()
+    local armor_reduction = 1 - (0.06 * armornpc) / (1 + (0.06 * math.abs(armornpc)))
+    armor_reduction = 100 - (armor_reduction * 100)
+    return armor_reduction
 end

@@ -1,0 +1,212 @@
+<root>
+   <styles>
+      <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+      <include src="s2r://panorama/styles/dashboard.vcss_c" />
+      <include src="s2r://panorama/styles/hudstyles.vcss_c" />
+      <include src="file://{resources}/styles/profile/profile.css" />
+      <include src="file://{resources}/styles/profile/inventory.css" />
+   </styles>
+   <scripts>
+      <include src="file://{resources}/scripts/Util.js" />
+      <include src="file://{resources}/scripts/Stats.js" />
+      <include src="file://{resources}/scripts/custom_game/simple_panel_animation.js" />
+      <include src="file://{resources}/scripts/profile/profile.js" />
+      <include src="file://{resources}/scripts/profile/trade.js" />
+      <include src="file://{resources}/scripts/profile/inventory.js" />
+      <include src="file://{resources}/scripts/playertables/playertables_base.js" />
+   </scripts>
+   <Panel class="rating" hittest="false">
+      <Panel id="PlayerInventory" class="Deleted">
+         <Panel id="PlayerInventoryFilter">
+            <Label id="FilterLabel" text="FILTER" />
+            <Panel id="RaritiesFilter">
+               <Label class="Title" text="#DOTA_Armory_Filter_Rarity"/>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(10)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeExtraordinary" class="RarityStripe"/>
+                  <Label class="RarityText" id="Extraordinary" html="true" text="Extraordinary"/>
+               </RadioButton>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(9)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeArcana" class="RarityStripe"/>
+                  <Label id="Arcana" class="RarityText" html="true" text="Arcana"/>
+               </RadioButton>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(8)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeEthernal" class="RarityStripe"/>
+                  <Label id="Ethernal" class="RarityText" html="true" text="Ethernal"/>
+               </RadioButton>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(7)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeImmortal" class="RarityStripe"/>
+                  <Label id="Immortal" class="RarityText" html="true" text="Immortal" />
+               </RadioButton>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(6)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeAncient" class="RarityStripe"/>
+                  <Label id="Ancient" class="RarityText" html="true" text="Ancient" />
+               </RadioButton>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(5)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeLegendary" class="RarityStripe"/>
+                  <Label id="Legendary" class="RarityText" html="true" text="Legendary" />
+               </RadioButton>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(4)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeMythical" class="RarityStripe"/>
+                  <Label id="Mythical" class="RarityText" html="true" text="Mythical" />
+               </RadioButton>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(3)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeRare" class="RarityStripe"/>
+                  <Label id="Rare" class="RarityText" html="true" text="Rare" />
+               </RadioButton>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(2)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeUncommon" class="RarityStripe"/>
+                  <Label id="Uncommon" class="RarityText" html="true" text="Uncommon" />
+               </RadioButton>
+               <RadioButton group="Rarity" onactivate="SelectFilterRarity(1)" class="Rarity LeftRightFlow">
+                  <Panel id="StripeCommon" class="RarityStripe"/>
+                  <Label id="Common" class="RarityText" html="true" text="Common" />
+               </RadioButton>
+               <Label id="QualityTitle" class="Title" text="#DOTA_Armory_Filter_Quality"/>
+               <DropDown id="Quality" html="true" oninputsubmit="SelectFilterQuality()">
+                  <Label text="Genuine" html="true" id="genuine" class="DropText"/>
+                  <Label text="Elder" html="true" id="elder" class="DropText"/>
+                  <Label text="Unusual" html="true" id="unusual" class="DropText"/>
+                  <Label text="Unique" html="true" id="unique" class="DropText"/>
+                  <Label text="Haunted" html="true" id="haunted" class="DropText"/>
+                  <Label text="Tournament" html="true" id="tournament" class="DropText"/>
+                  <Label text="Ascendant" html="true" id="ascendant" class="DropText"/>
+                  <Label text="Favored" html="true" id="favored" class="DropText"/>
+                  <Label text="Legacy" html="true" id="legacy" class="DropText"/>
+               </DropDown>
+               <RadioButton group="Rarity" onactivate="ClearFilter()" id="ClearFilter"><Label id="FilterText" html="true" text="CLEAR FILTER" /></RadioButton>
+            </Panel>
+            <Button onactivate="ShowInventoryMenu()" id="CloseInventoryButton">
+            <Label html="true" text="CLOSE" />
+            </Button>
+            <Button onactivate="RefreshInventory()" id="RefreshButton">
+            </Button>
+         </Panel>
+         <Panel id="PlayerInventoryItems" map="backgrounds/pregame_phase" camera="shot_cameraA" particleonly="false">
+            <Panel id="Inventory">
+            </Panel>
+         </Panel>
+      </Panel>
+       <!--<Image id="ConsoleButton" src="file://{images}/backgrounds/settings_phrases_png.png" hittest="true" onactivate="OpenConsole();"/>
+      <Panel id="Console" hittest="false" class="Closed">
+          <Panel id="ConsoleField" hittest="true" html="true"/>
+          <TextEntry id="HeroFilter" maxchars="100" placeholder="Type here..." oninputsubmit="OnSubmitted()" />
+      </Panel>-->
+      <Panel id="Surrender" class="VoteClosed" hittest="false">
+         <Button id="SurrenderButton" hittest="true" onactivate="Surrender()" >
+         <Label text="Surrender" />
+         </Button>
+         <Panel id="SurrenderPanel" hittest="false">
+         </Panel>
+         <Button id="CloseVotePanel" hittest="true" onactivate="CloseVotePanel()" >
+            <Panel class="PanelSlideThumbArrow"/>
+         </Button>
+         <Panel id="VoteApplied" class="Disabled" hittest="false">
+            <Label text="Applied!" />
+         </Panel>
+      </Panel>
+      <Panel id="EventScoreRoot" hittest="false" class="Closed">
+        <ProgressBar id="CreepsLeft" value="0" max="100">
+            <Label id="CreepsLeftLabel" class="DetailsHeader" text="0 / 240" />
+        </ProgressBar>
+      </Panel>
+      <Panel id="ConsoleMessegeRoot" hittest="false">
+
+      </Panel>
+
+      <Panel id="Event" class="Disabled">
+      </Panel>
+
+      <!--<Image id="Tournament" src="file://{images}/backgrounds/tournament.png">
+        <Label id="TournamentText" text="#info_tournament" />
+        <Button class="CloseButton" onactivate="DisableContextMenu()"/>
+      </Image> -->
+
+      <Panel id="PlayerInventoryButton" onmouseover="ShowTextToltip(2)" onmouseout="EndTextToltip()" hittest="true" onactivate="ShowInventoryMenu();">
+         <Panel id="PlayerInventoryButtonImage"/>
+      </Panel>
+      <Panel id="TreasurePanel" class="Off" hittest="true">
+         <Label id="TresName" class="TresName" text="Treasure" html="true" hittest="false"/>
+         <Panel id="TreasureImage" hittest="true"/>
+         <Panel id="Contain" hittest="true"/>
+         <Panel id="ContainExtremelyRare" hittest="true">
+            <Label id="ItemText" text="Extremely Rare Item" html="true" hittest="false"/>
+            <Panel id="ContainItem" hittest="true"/>
+         </Panel>
+         <Panel id="DropResultPanel" class="Disabled" hittest="true">
+            <DOTAScenePanel id="BackgroundFXWindow" hittest="false"  map="scenes/item_received" camera="shot_camera" particleonly="true"/>
+            <Label class="TreasText" text="You received: " html="true" hittest="false"/>
+            <Image id="DropRarityImage" src="file://{images}/drop/image_mytical.png" hittest="false"/>
+            <Panel id="DropResult" hittest="false">
+               <Panel id="DropRarity" hittest="false">
+                  <Label id="DropItemName" text="1" html="true" hittest="false"/>
+               </Panel>
+            </Panel>
+         </Panel>
+         <Panel id="OpenTreasurePanel" hittest="true">
+            <Label id="ItemTextOpen" text="This treassure already opened!" html="true" hittest="false"/>
+            <Button id="OpenTreasure" hittest="true" onactivate="OpenTreasureStart();" >
+            <Label text="Open" html="true" hittest="false"/>
+            </Button>
+            <Button id="CloseTreasure" hittest="true" onactivate="CloseTreasure();" >
+            <Label text="Close" html="true" hittest="false"/>
+            </Button>
+         </Panel>
+      </Panel>
+      <Panel id="Trade" class="Off" hittest="false">
+         <Panel id="LeftSide" hittest="true">
+         </Panel>
+         <Panel id="Menu" hittest="true">
+            <Label id="TradeLabel" text="Trade" html="true" hittest="false"/>
+            <Panel id="Submit" hittest="true" onactivate="SubmitTradre();">
+               <Label text="Apply" html="true" hittest="false"/>
+            </Panel>
+            <Panel id="Cancel" hittest="true" onactivate="DismissTradre();">
+               <Label text="Dismiss" html="true" hittest="false"/>
+            </Panel>
+            <Label id="TradeNote" text="#DOTA_ItemsNote" html="true" hittest="false"/>
+         </Panel>
+         <Panel id="RightSide" hittest="true">
+         </Panel>
+         <Panel id="Players" hittest="true">
+         </Panel>
+      </Panel>
+      <Panel id="ContractPanel" class="ContractClosed" hittest="false">
+         <Panel id="ContractDropResult" hittest="false">
+            <Panel id="ContractDropRarity" hittest="false">
+               <Label id="ContractDropItemName" class="item_name" text="Item" html="true" hittest="false"/>
+            </Panel>
+         </Panel>
+         <DOTAScenePanel id="ContractItemAnimation" hittest="false"  map="scenes/item_received" camera="shot_camera" particleonly="true"/>
+         <Panel id="LeftSideContract" hittest="true">
+         </Panel>
+         <Panel id="RightSideContract" hittest="true">
+         </Panel>
+         <Panel id="ContractYes" hittest="true" onactivate="SubmitContract();">
+            <Label text="Apply" html="true" hittest="false"/>
+         </Panel>
+         <Panel id="ContractNo" hittest="true" onactivate="DismissContract();">
+            <Label text="Dismiss" html="true" hittest="false"/>
+         </Panel>
+      </Panel>
+      <Panel id="EventWaveImage" class="ImageClosed">
+          <Label id="RoundName" text="" />
+      </Panel>
+      <Panel id="FantasyHelpContainer" hittest="false">
+         <Panel id="FantasyHelpDetails">
+            <!--<RadioButton id="TopBarHeroes" backgroundcamera="shot_cameraB" backgroundcameralerptime="1.2" group="Profile" class="TopBarMenuItem"  onactivate="ShowPrimaryTabPage( 1 );">
+               <Label class="TitleFont" text="#DOTA_Profile" />
+            </RadioButton>
+            <RadioButton id="TopBarStore" backgroundcamera="shot_cameraB" backgroundcameralerptime="1.2" group="Profile" class="TopBarMenuItem"  onactivate="ShowPrimaryTabPage( 2 );">
+               <Label class="TitleFont" text="#DOTA_Guides" />
+            </RadioButton>-->
+            <RadioButton id="TopBarTrades" backgroundcamera="shot_cameraD" backgroundcameralerptime="1.2" group="Profile" class="TopBarMenuItem" onactivate="ShowPrimaryTabPage( 5 );">
+               <Label class="TitleFont" text="#DOTA_Tardes" />
+            </RadioButton>
+         </Panel>
+         <Panel id="FantasyHelpOverview">
+         </Panel>
+      </Panel>
+      <Image id="TradeButton" src="file://{images}/backgrounds/inventory_ic1.png" hittest="true" onactivate="ShowTradeMenu();"/>
+      <Image id="ProfileButton" src="file://{images}/badges/ti5__fall_majors_comp_badge_5.png" hittest="true" onactivate="OpenPanel();"/>
+   </Panel>
+</root>

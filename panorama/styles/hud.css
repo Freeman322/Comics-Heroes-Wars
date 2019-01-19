@@ -1,0 +1,94 @@
+@define TotalLength: 40s;
+@define TimingFunc: linear;
+@define IterationCount: 1;
+@define AnimationDelay: 0s;
+
+.Root
+{
+    width: 100%;
+    height: 100%;
+}
+
+#Hud
+{
+    height: 420px;
+	width: 420px;
+
+	horizontal-align: center;
+	vertical-align: middle;	
+
+
+    background-image: url("s2r://panorama/images/gauntlet/gem_wheel_png.vtex");
+	background-repeat: no-repeat;
+	
+	background-size: 100%;
+}
+
+.GemButton{
+    height: 96px;
+	width: 96px;
+}
+
+.GemButton:hover
+{
+    brightness: 2.0;
+}
+.GemButton:active
+{
+    brightness: 1.5;
+
+    sound: "ui_generic_button_click";
+    transform: translatez( -2px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#Soul{
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+#Mind{
+    margin-left: 225px;
+    margin-top: 40px;
+}
+
+#Space{
+    margin-left: 275px;
+    margin-top: 10px;
+
+    horizontal-align: center;
+	vertical-align: middle;
+}
+
+#Reality{
+    margin-left: 25px;
+    margin-top: 10px;
+
+    horizontal-align: left;
+	vertical-align: middle;
+}
+
+#Time{
+    margin-left: 100px;
+    margin-bottom: 40px;
+
+    horizontal-align: left;
+	vertical-align: bottom;
+}
+
+#Power{
+    margin-right: 100px;
+    margin-bottom: 40px;
+
+    horizontal-align: right;
+	vertical-align: bottom;
+}
+
+#Snap{
+    horizontal-align: center;
+    vertical-align: middle;
+    
+    margin-top: -2px;
+}

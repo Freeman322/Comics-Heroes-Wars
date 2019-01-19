@@ -78,8 +78,7 @@ function modifier_item_dvine_armor_active:OnIntervalThink()
                     attacker = self:GetCaster(),
                     damage = damage * self:GetAbility():GetSpecialValueFor("active_flux_mult"),
                     damage_type = DAMAGE_TYPE_MAGICAL,
-                    ability = self:GetAbility(),
-                    damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS
+                    ability = self:GetAbility()
                 })
             end
         end

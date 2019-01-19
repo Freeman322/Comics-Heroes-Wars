@@ -1,0 +1,63 @@
+.root
+{
+    flow-children: down;
+	width: 100%;
+	height: 100%;
+}
+#profile_menu
+{
+    flow-children: down;
+	width: 40%;
+	height: 40%;
+    margin-left: 25%;
+    horizontal-align: center;
+    vertical-align: middle;
+    opacity: 0.99;
+	background-color: gradient( linear, 0px 0%, 225px 0%, from( #13538A ), to( #1D6AAB ) );
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+
+	border: 4px solid deepskyblue;
+    box-shadow: deepskyblue 0px 0px 8px 0px;
+}
+
+#open
+{
+    margin-top: 12%;
+    height: 44px;
+    width: 44px;
+    horizontal-align: left;
+    vertical-align: middle;
+    background-image: url("file://{images}/profile.png");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%; 
+}
+
+.visible
+{
+    opacity: 1;
+}
+
+.hidden
+{
+    opacity: 0;
+}
+
+.destroy
+{
+    visibility: collapse;
+}
+
+#open:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca966 -4px -4px 18px 8px;
+}
+
+#open:active
+{
+    sound: "ui_team_select_lock_and_start";
+}
+

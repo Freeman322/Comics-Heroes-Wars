@@ -1,0 +1,4989 @@
+@define rarity_color_common: #b0c3d9;
+@define rarity_color_uncommon: #5e98d9;
+@define rarity_color_rare: #4b69ff;
+@define rarity_color_mythical: #8847ff;
+@define rarity_color_legendary: #d32ce6;
+@define rarity_color_ancient: #eb4b4b;
+@define rarity_color_immortal: #e4ae39;
+@define rarity_color_arcana: #ade55c;
+@define rarity_color_seasonal: #fff34f;
+@define rarity_color_ethernal: #476291;
+@define rarity_color_extraordinary: #A50F79;
+@define rarity_color_custom: #fff34f;
+.PopupItemReceived_common {
+    hue-rotation: 160deg;
+    saturation: 0.5;
+    opacity: 0.1;
+}
+
+.PopupItemReceived_uncommon {
+    saturation: 0.0;
+    wash-color: #5E98D9;
+    opacity: 1;
+}
+
+.PopupItemReceived_rare {
+    hue-rotation: 190deg;
+    saturation: 0.6;
+    wash-color: #4B69FF;
+    opacity: 1;
+}
+
+.PopupItemReceived_mythical {
+    hue-rotation: 220deg;
+    wash-color: #5E98D955;
+    opacity: 1;
+}
+
+.PopupItemReceived_legendary {
+    hue-rotation: 250deg;
+    opacity: 1;
+}
+
+.PopupItemReceived_ancient {
+    hue-rotation: 330deg;
+    opacity: 1;
+}
+
+.PopupItemReceived_immortal {
+    hue-rotation: 0deg;
+    opacity: 1;
+}
+
+.PopupItemReceived_arcana {
+    hue-rotation: 66deg;
+    saturation: 0.6;
+    wash-color: #ADE55C88;
+    opacity: 1;
+}
+
+.PopupItemReceived_ethernal {
+    hue-rotation: 218deg;
+    saturation: 0.6;
+    wash-color: #476291;
+    opacity: 1;
+}
+
+.PopupItemReceived_extraordinary {
+    hue-rotation: 318deg;
+    saturation: 0.6;
+    wash-color: #A50F79;
+    opacity: 1;
+}
+
+.rating {
+    width: 100%;
+    height: 100%;
+}
+
+#FantasyHelpContainer {
+    width: 1392px;
+    height: 770px;
+    vertical-align: middle;
+    horizontal-align: left;
+    flow-children: right;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    /* background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-repeat: no-repeat;
+    box-shadow: #000000 -12px -12px 24px 24px;
+    z-index: -10;*/
+}
+
+.Closed {
+    visibility: collapse;
+}
+
+#FantasyHelpContainer .ButtonDark {
+    width: 100%;
+    height: 58px;
+    vertical-align: middle;
+    margin: 8px;
+    border-width: 1px;
+}
+
+#ViewDetailsButton Label {
+    font-size: 24px;
+    letter-spacing: 2px;
+    padding: 0px;
+}
+
+#ViewDetailsButton .DetailsButtonContainer {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#ViewDetailsButton .PanelSlideThumbArrow {
+    transform: translateX(-10px) rotateZ(180deg);
+    horizontal-align: left;
+}
+
+#ViewDetailsButton:hover .PanelSlideThumbArrow {
+    transform: translateX(-16px) rotateZ(180deg);
+}
+
+.FantasyHelpExpandedDetails #ViewDetailsButton .PanelSlideThumbArrow {
+    transform: translateX(8px) rotateZ(0deg);
+}
+
+.FantasyHelpExpandedDetails #ViewDetailsButton:hover .PanelSlideThumbArrow {
+    transform: translateX(0px) rotateZ(0deg);
+}
+
+.FantasyHelpExpanded #FantasyHelpContainer {
+    transform: translateX(-655px);
+}
+
+.FantasyHelpExpandedDetails #FantasyHelpContainer {
+    transform: translateX(0px);
+}
+
+#FantasyHelpDetails {
+    width: 250px;
+    background-color: #221613ed;
+    height: 100%;
+    flow-children: down;
+    padding: 24px;
+    background-color: gradient( linear, 100% 0%, 0% 0%, from( #171412), to( #4D211A));
+    z-index: -10;
+    background-size: cover;
+}
+
+#DetailsHeader {
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    horizontal-align: center;
+    color: #F1D7AF;
+}
+
+.HelpSubsection {
+    margin-left: 8px;
+    height: 100%;
+}
+
+.HelpSubsection .Header {
+    margin-top: 8px;
+    font-size: 18px;
+    color: #CCA86E;
+    letter-spacing: 2px;
+    border-bottom: 0px;
+    text-transform: uppercase;
+}
+
+.HelpSubsection .HelpDetail {
+    color: #999999;
+    font-size: 14px;
+    margin-left: 0px;
+}
+
+#FantasyHelpDetails .HelpSubsection {
+    width: 100%;
+    margin: 0px;
+}
+
+#ScoringStats {
+    width: 100%;
+    padding: 16px;
+    padding-top: 16px;
+    box-shadow: fill #4a585666 -3px -3px 6px 6px;
+    vertical-align: bottom;
+    flow-children: down;
+    overflow: clip scroll;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d2d2dfc), to( #000000fc));
+    border: 2px solid black;
+}
+
+#ScoringStats .Header {
+    horizontal-align: center;
+}
+
+#FantasyHelpOverView {
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid #000000;
+    background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-repeat: no-repeat;
+    box-shadow: #000000 -12px -12px 24px 24px;
+    z-index: 1;
+    background-size: cover;
+}
+
+.Header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 36px;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px 1.0 #9BCAF488;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-shadow: 0px 0px 4px 1.0 #9BCAF488;
+    text-overflow: shrink;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#TipsRow {
+    flow-children: down;
+}
+
+.TipText {}
+
+#DamageTypesHeade {}
+
+#DamageTypesRow {
+    flow-children: down;
+}
+
+.TipTextDamage {
+    margin-top: 0px;
+}
+
+.InfoRow {
+    flow-children: right;
+    width: 100%;
+}
+
+#TipsRow {
+    flow-children: right;
+    margin-right: 92px;
+}
+
+.TipText {
+    margin-left: 16px;
+    margin-top: 0px;
+}
+
+.InfoRow {
+    flow-children: right;
+    width: 100%;
+}
+
+Label .midas_throne,
+Label .overboss,
+Label .treasure {
+    color: #cccccc;
+    font-weight: bold;
+}
+
+Label .items,
+Label .gold,
+Label .xp {
+    color: #fcaf3d;
+    font-weight: bold;
+}
+
+.TipAbIm {
+    border: 9px solid black;
+    border-radius: 100px;
+    width: 100px;
+    height: 80px;
+}
+
+#HelpLeft {
+    width: 800px;
+    height: 100%;
+    padding: 16px;
+    border: 1px solid black;
+    background-color: gradient( linear, 100% 0%, 0% 0%, from( #171412), to( #4D211A));
+}
+
+#HelpLeft .DetailsQuad {
+    width: 100%;
+    height: 140px;
+    margin: 8px;
+    border: 1px solid #A9483A33;
+    background-color: gradient( linear, 100% 0%, 0% 0%, from( #171412), to( #4D211A));
+}
+
+#HelpLeft .DetailsQuad:hover {
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2D1815), color-stop( 0.5, #2D1815dd), to( #2D1815dd));
+}
+
+#HelpLeft .DetailsQuad .DetailsTitle {
+    vertical-align: middle;
+    horizontal-align: center;
+    margin-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    transition-property: opacity;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    color: #cca86e;
+}
+
+#HelpLeft .DetailsQuad:hover .DetailsTitle {
+    opacity: 0;
+}
+
+#HelpLeft .DetailsText {
+    padding-top: 0px;
+    vertical-align: middle;
+    horizontal-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    background-color: none;
+    color: #CCA86E;
+}
+
+.Title {
+    vertical-align: middle;
+    horizontal-align: center;
+}
+
+#HelpLeft .DetailsNext {
+    width: 53px;
+    height: 64px;
+    transform: rotateZ(90deg);
+    saturation: 0.9;
+    horizontal-align: center;
+    margin-top: 64px;
+    background-image: url("s2r://panorama/images/compendium/spring2016/wagerdesc_next_psd.vtex");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#HelpLeft #DetailsNext1 {
+    margin-top: 125px;
+}
+
+#HelpLeft #DetailsNext2 {
+    margin-top: 280px;
+}
+
+#HelpLeft #DetailsNext3 {
+    margin-top: 435px;
+}
+
+#HelpLeft .DetailsQuad .InfoIcon {
+    horizontal-align: right;
+    vertical-align: bottom;
+    wash-color: #c8a778;
+}
+
+#HelpToggle {
+    vertical-align: middle;
+    height: 200px;
+    background-color: gradient( linear, 0% 0%, 100% 0%, from( #1C1411), to( #2D1814));
+    //background-color: #232A29;
+    width: 64px;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    z-index: -1;
+    transform: translateX(-2px);
+    opacity: 1;
+    border: 1px solid #3D1C17;
+    transition-property: opacity, wash-color, background-color;
+    transition-duration: .25s;
+    margin-top: 15%;
+}
+
+#FantasyHelpToggle:hover {
+    background-color: gradient( linear, 0% 0%, 100% 0%, from( #1C1411), to( #502B24));
+}
+
+#FantasyHelpToggle .HelpIcon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 48px;
+    horizontal-align: center;
+    wash-color: #A27D46;
+}
+
+#FantasyHelpToggle .PanelSlideThumbArrow {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 48px;
+    horizontal-align: center;
+    wash-color: #A27D46;
+    vertical-align: middle;
+    margin-top: 100px;
+    margin-left: 4px;
+    transform: rotateZ( 180deg);
+}
+
+#FantasyHelpToggle:hover .PanelSlideThumbArrow {
+    transform: translateX(-6px) rotateZ( 180deg);
+    wash-color: #DBB66A;
+}
+
+#FantasyHelpToggle:hover .HelpIcon {
+    wash-color: #DBB66A;
+}
+
+.FantasyHelpExpanded #FantasyHelpToggle .PanelSlideThumbArrow {
+    transform: rotateZ( 0deg);
+}
+
+.FantasyHelpExpanded #FantasyHelpToggle:hover .PanelSlideThumbArrow {
+    transform: translateX(-6px) rotateZ( 0deg);
+}
+
+#FantasyHelpToggle:hover {
+    //wash-color: #B64B37;
+}
+
+.DecorativeHBar {
+    background-image: url("s2r://panorama/images/textures/fantasy_hbar_short_psd.vtex");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 530px;
+    height: 30px;
+}
+
+#CoreTopHbar,
+#CoreBottomHbar {
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 140px;
+    transform: scaleY(-1);
+    margin-right: 840px;
+}
+
+#CoreBottomHbar {
+    margin-top: 545px;
+    transform: scaleY(1);
+}
+
+#SupportTopHbar,
+#SupportBottomHbar {
+    background-image: url("s2r://panorama/images/textures/fantasy_hbar_short_psd.vtex");
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 140px;
+    transform: scaleY(-1);
+    margin-left: 840px;
+}
+
+#SupportBottomHbar {
+    margin-top: 545px;
+    transform: scaleY(1);
+}
+
+#OfflaneTopHbar,
+#OfflaneBottomHbar {
+    background-image: url("s2r://panorama/images/textures/fantasy_hbar_very_short_psd.vtex");
+    width: 265px;
+    height: 30px;
+    vertical-align: top;
+    margin-top: 140px;
+    transform: scaleY(-1);
+    margin-left: 732px;
+}
+
+#OfflaneBottomHbar {
+    margin-top: 545px;
+    transform: scaleY(1);
+}
+
+#GrandFinals {
+    visibility: collapse;
+}
+
+#TopSection #DayContainer #Day9 #GrandFinals {
+    height: 14px;
+    max-width: 90px;
+    text-overflow: shrink;
+    visibility: visible;
+    font-size: 11px;
+    margin: 0px;
+    margin-top: -6px;
+    color: #6F88A0;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-align: center;
+    horizontal-align: center;
+    background-color: #2C3341;
+    border-left: 1px solid #40505E;
+    border-right: 1px solid #40505E;
+    z-index: 3;
+}
+
+#TopSection #DayContainer #Day9.Selected #GrandFinals {
+    box-shadow: -2px -4px 4px 4px #668BBCaa;
+    border-left: 1px solid #A3CBEF;
+    border-right: 1px solid #A3CBEF;
+}
+
+#DateLocked {
+    font-size: 34px;
+    font-weight: bold;
+    padding-left: 84px;
+    padding-right: 84px;
+    padding-bottom: -6px;
+    color: #2F3543;
+    margin-top: -7px;
+    opacity: 0;
+    background-color: gradient( linear, 100% 0%, 0% 0%, from( #79242B00), color-stop( 0.2, #79242Bdd), color-stop( 0.8, #79242Bdd), to( #79242B00));
+    text-transform: uppercase;
+    horizontal-align: center;
+    transition-property: opacity;
+    transition-duration: .25s;
+    transition-timing-function: ease-in-out;
+}
+
+.DayLocked #DateLocked {
+    opacity: 1;
+}
+
+#PlayerScoreStats {
+    width: 200px;
+    height: 280px;
+    border: 1px solid #966F33;
+    background-color: #000000f8;
+    border-radius: 12px;
+    padding: 10px;
+    transition-property: opacity;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    opacity: 0;
+}
+
+.DayLocked .ShowStats #PlayerScoreStats {
+    opacity: 1;
+}
+
+#PlayerScoreStats .HorizontalLineFill {
+    background-color: #645751;
+}
+
+#PlayerScoreStats .FantasyStatsLine Label {
+    font-size: 14px;
+    color: #C3B699;
+    margin-top: 2.5px;
+}
+
+#PlayerScoreStats .FantasyStatsLine Label.Stat {
+    text-align: right;
+    min-width: 30px;
+}
+
+#PlayerScoreStats .FantasyStatsLine Label.negStat {
+    color: red;
+}
+
+#PlayerScoreStats .FantasyStatsLine Label.bonusStat {
+    color: #00ff00;
+}
+
+#PlayerScoreStats.ShowPlayerScore {
+    visibility: visible;
+}
+
+#DetailsHeader {
+    height: 60px;
+    vertical-align: top;
+    horizontal-align: center;
+    text-align: center;
+    font-size: 40px;
+    padding: 6px;
+    letter-spacing: 2.25px;
+    text-transform: uppercase;
+    z-index: 2;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-shadow: 0px 0px 4px 1.0 #9BCAF488;
+    text-overflow: shrink;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#ProfileHeader {
+    height: 60px;
+    vertical-align: top;
+    horizontal-align: center;
+    text-align: center;
+    font-size: 40px;
+    padding: 6px;
+    letter-spacing: 2.25px;
+    text-transform: uppercase;
+    z-index: 2;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-shadow: 0px 0px 4px 1.0 #9BCAF488;
+    text-overflow: shrink;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#MainProfilePanel {
+    vertical-align: top;
+    horizontal-align: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #966F33;
+    flow-children: none;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #272d2efa), to( #131617f7));
+}
+
+#avatar {
+    vertical-align: top;
+    horizontal-align: left;
+    background-color: white;
+    width: 27%;
+    height: 24.8%;
+}
+
+#PlayerName {
+    horizontal-align: center;
+    vertical-align: top;
+    font-size: 40px;
+    font-weight: black;
+    text-overflow: shrink;
+    color: black;
+    text-shadow: 0px 0px 2px 3.0 #aa0000aa;
+    transition-property: opacity-mask;
+    transition-duration: .3s;
+    background-color: gradient( radial, 50% 50%, 0% 0%, 300px 300px, from( #822222), color-stop( .76, #1B3020), to( #9FE09500));
+    opacity-mask: url("s2r://panorama/images/masks/brush_horizontal_psd.vtex")1;
+}
+
+.PlayerMedal {
+    width: 50%;
+    height: 16%;
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-bottom: 23%;
+    margin-left: 20%;
+    transition-property: transform, saturation, wash-color, box-shadow, position;
+    transition-duration: 0.1s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.RankIcon {
+    width: 180px;
+    height: 90px;
+    horizontal-align: left;
+    vertical-align: middle;
+    margin-top: -20.1%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#RankName {
+    vertical-align: middle;
+    horizontal-align: left;
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    padding: 6px;
+    letter-spacing: 2.25px;
+    text-transform: uppercase;
+    z-index: 2;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-shadow: 0px 0px 4px 1.0 #DC143C88;
+    text-overflow: shrink;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: -12%;
+}
+
+#Medal {
+    width: 100px;
+    height: 100px;
+    horizontal-align: left;
+    vertical-align: top;
+    margin-top: 15%;
+    margin-left: 17%;
+    transition-property: transform, saturation, wash-color, box-shadow, position;
+    transition-duration: 0.1s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#MedalName {
+    visibility: visible;
+    font-size: 25px;
+    font-weight: black;
+    text-overflow: shrink;
+    text-transform: uppercase;
+    transition-property: opacity-mask;
+    transition-duration: .3s;
+    opacity-mask: url("s2r://panorama/images/masks/killcammask_right_psd.vtex") 0.3;
+    text-shadow: 1px 1px 3px 3.0 #000000ff;
+    vertical-align: center;
+    horizontal-align: left;
+    z-index: 2;
+    font-family: Goudy Trajan Medium, FZKai-Z03, TH Sarabun New, YDYGO 540;
+    margin-top: 33%;
+    background-color: #1E2F41;
+    color: #92B4D9;
+}
+
+#Games {
+    visibility: visible;
+    font-size: 20px;
+    font-weight: black;
+    text-overflow: shrink;
+    text-transform: uppercase;
+    transition-property: opacity-mask;
+    transition-duration: .3s;
+    padding: 6px;
+    letter-spacing: 2.25px;
+    text-transform: uppercase;
+    z-index: 2;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-shadow: 0px 0px 4px 1.0 #9BCAF488;
+    text-overflow: shrink;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: center;
+    horizontal-align: left;
+    z-index: 2;
+    font-family: Goudy Trajan Medium, FZKai-Z03, TH Sarabun New, YDYGO 540;
+    margin-top: -7%;
+}
+
+#RanksList {
+    height: 100%;
+    width: 130px;
+    vertical-align: bottom;
+    horizontal-align: right;
+    flow-children: up;
+}
+
+.RanksAll {
+    width: 90px;
+    height: 34px;
+    horizontal-align: right;
+    vertical-align: top;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.RankNow {
+    border: 1px solid gold;
+    box-shadow: fill #ffd200 0px 0px 1px 0px;
+}
+
+#HeroFilter {
+    horizontal-align: left;
+    vertical-align: bottom;
+}
+
+#ItemEconText {
+    visibility: visible;
+    font-size: 20px;
+    font-weight: black;
+    text-overflow: shrink;
+    text-transform: uppercase;
+    transition-property: opacity-mask;
+    transition-duration: .3s;
+    padding: 6px;
+    letter-spacing: 2.25px;
+    text-transform: uppercase;
+    z-index: 2;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-shadow: 0px 0px 4px 1.0 #9BCAF488;
+    text-overflow: shrink;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    horizontal-align: left;
+    z-index: 2;
+    font-family: Goudy Trajan Medium, FZKai-Z03, TH Sarabun New, YDYGO 540;
+    margin-bottom: 26%;
+    margin-left: -0.5%;
+}
+
+#ItemEcon {
+    width: 26%;
+    height: 13%;
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-bottom: 12%;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d2d2dfc), to( #000000fc));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#minimap {
+    width: 100%;
+    height: 600px;
+}
+
+#MinimapLable {
+    height: 60px;
+    vertical-align: top;
+    horizontal-align: center;
+    text-align: center;
+    font-size: 40px;
+    padding: 6px;
+    letter-spacing: 2.25px;
+    text-transform: uppercase;
+    z-index: 2;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-shadow: 0px 0px 4px 1.0 #9BCAF488;
+    text-overflow: shrink;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#ProgressBar {
+    width: 84%;
+    height: 9%;
+    horizontal-align: left;
+    vertical-align: bottom;
+}
+
+.RankIconLeft {
+    width: 100px;
+    height: 40px;
+    horizontal-align: left;
+    vertical-align: bottom;
+    transition-property: transform, saturation, wash-color, box-shadow, position;
+    transition-duration: 0.1s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.RankIconRight {
+    width: 120px;
+    height: 40px;
+    horizontal-align: right;
+    vertical-align: bottom;
+    transition-property: transform, saturation, wash-color, box-shadow, position;
+    transition-duration: 0.1s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#ProgressBarRoot {
+    width: 100%;
+    height: 30%;
+    background-color: #000044;
+}
+
+#XP {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: gold;
+    hue-rotation: 340deg;
+}
+
+#Report {
+    width: 32px;
+    height: 32px;
+    horizontal-align: left;
+    vertical-align: top;
+    margin-top: 1.1%;
+    margin-left: 10%;
+}
+
+#Report:hover {
+    transform: translatez( 5px);
+    brightness: 1.2;
+    wash-color: #ffd200;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#Report:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -2px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#ReportPanel {
+    width: 25%;
+    height: 40%;
+    vertical-align: middle;
+    horizontal-align: left;
+    flow-children: down;
+    margin-left: 5%;
+    margin-top: 5%;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-repeat: no-repeat;
+    box-shadow: #000000 -12px -12px 24px 24px;
+    z-index: -10;
+}
+
+.players {
+    width: 100%;
+    height: 20%;
+    vertical-align: top;
+    horizontal-align: left;
+    flow-children: none;
+    border-bottom: 1px solid black;
+}
+
+.PlayerAvatar {
+    vertical-align: center;
+    horizontal-align: left;
+    width: 20%;
+    height: 90%;
+}
+
+.Name {
+    horizontal-align: center;
+    vertical-align: middle;
+    font-size: 28px;
+    font-weight: black;
+    color: black;
+    text-shadow: 0px 0px 1px 1.4 #aa0000aa;
+}
+
+.ContainerName {
+    vertical-align: center;
+    horizontal-align: left;
+    width: 50%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+.Reportbutton {
+    width: 60px;
+    height: 80%;
+    vertical-align: center;
+    horizontal-align: right;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    background-image: url("s2r://panorama/images/guide_panel_i45_png.vtex");
+    background-repeat: no-repeat;
+    z-index: -10;
+}
+
+.Reportbutton:hover {
+    brightness: 1.7;
+    wash-color: #ffd200;
+}
+
+.Reportbutton:active {
+    sound: "ui.set_applied";
+}
+
+#MedalsPanel {
+    height: 18%;
+    width: 50%;
+    vertical-align: center;
+    horizontal-align: left;
+    margin-top: 30%;
+    flow-children: right;
+    overflow: scroll clip;
+}
+
+#MedalPanelCollection {
+    visibility: visible;
+    font-size: 25px;
+    font-weight: black;
+    text-overflow: shrink;
+    text-transform: uppercase;
+    transition-property: opacity-mask;
+    transition-duration: .3s;
+    opacity-mask: url("s2r://panorama/images/masks/killcammask_right_psd.vtex") 0.3;
+    text-shadow: 1px 1px 3px 3.0 #000000ff;
+    vertical-align: center;
+    horizontal-align: left;
+    z-index: 2;
+    font-family: Goudy Trajan Medium, FZKai-Z03, TH Sarabun New, YDYGO 540;
+    margin-top: 9%;
+    background-color: #1E2F41;
+    color: #92B4D9;
+}
+
+.Medal {
+    width: 116px;
+    height: 116px;
+    vertical-align: center;
+    horizontal-align: left;
+    margin: 4px;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    z-index: -10;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#prestiges {
+    width: 100%;
+    height: 156px;
+}
+
+.rank_prestige_1 {
+    box-shadow: #20B2AA 0px 0px 5px 2px;
+    border: 3px solid deepskyblue;
+}
+
+.rank_prestige_2 {
+    box-shadow: goldenrod 0px 0px 5px 2px;
+    border: 3px solid #F0E68C;
+}
+
+.rank_prestige_3 {
+    box-shadow: #7FFF00 0px 0px 5px 2px;
+    border: 3px solid black;
+}
+
+.rank_prestige_4 {
+    box-shadow: darkred 0px 0px 5px 2px;
+    border: 3px solid black;
+}
+
+.rank_prestige_5 {
+    box-shadow: #00008B 0px 0px 5px 2px;
+    border: 3px solid #00BFFF;
+}
+
+.RootProfile {
+    width: 100%;
+    height: 100%;
+}
+
+.Settings {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*.RootInventory{
+  width: 100%;
+  height: 100%;
+}
+#RootInventory{
+  width: 100%;
+  height: 90%;
+
+  vertical-align: bottom;
+
+  border: 2px solid black;
+}
+
+#Inventory{
+  width: 100%;
+  height: 100%;
+  flow-children: right-wrap;
+	overflow: clip scroll;
+}*/
+
+.item {
+    width: 120px;
+    height: 90px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 3px;
+    border: 3px solid black;
+}
+
+.item_small {
+    width: 73px;
+    height: 56px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 3px;
+    border: 1px solid black;
+}
+
+.item_medium {
+    width: 94px;
+    height: 71px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 3px;
+    border: 1px solid black;
+}
+
+.common {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    background-color: rarity_color_common;
+    opacity: 0.8;
+}
+
+.uncommon {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    background-color: rarity_color_uncommon;
+    opacity: 0.8;
+}
+
+.rare {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    background-color: rarity_color_rare;
+    opacity: 0.8;
+}
+
+.mythical {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    background-color: rarity_color_mythical;
+    opacity: 0.8;
+}
+
+.legendary {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    background-color: rarity_color_legendary;
+    opacity: 0.8;
+}
+
+.ancient {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    background-color: rarity_color_ancient;
+    opacity: 0.8;
+}
+
+.immortal {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    background-color: rarity_color_immortal;
+    opacity: 0.8;
+}
+
+.arcana {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    background-color: rarity_color_arcana;
+    opacity: 0.8;
+}
+
+.ethernal {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: center;
+    background-color: rarity_color_ethernal;
+    opacity: 0.9;
+}
+
+.extraordinary {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: center;
+    background-color: rarity_color_extraordinary;
+    opacity: 0.9;
+}
+
+.custom {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: center;
+    background-color: rarity_color_custom;
+    opacity: 0.9;
+}
+
+.item_name {
+    font-size: 18px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    color: white;
+}
+
+.RootQuests {
+    width: 100%;
+    height: 100%;
+}
+
+#RootQuests {
+    width: 100%;
+    height: 90%;
+    vertical-align: bottom;
+    border: 2px solid black;
+}
+
+#Quests {
+    width: 100%;
+    height: 100%;
+    flow-children: none;
+}
+
+@define RewardItemsOffset16x9: 245.0f;
+@define RewardItemsOffset4x3: -5.0f;
+@define RewardItemsOffset16x10: 150.0f;
+@define RewardItemsOffset5x4: 10.0f;
+@define RewardsLength: 3030.0f;
+
+/* TI6
+@define accentColorBright: #e54e42;
+@define accentColor: #A9372E;
+*/
+
+
+/* Fall 2016
+@define accentColorBright: #96e542;
+@define accentColor: #69992b;
+*/
+
+
+/* Winter 2017 */
+
+@define accentColorBright: #50b7ff;
+@define accentColor: #317cb0;
+DOTAReferencePage {
+    width: 100%;
+    height: 100%;
+    flow-children: none;
+}
+
+.FullScreenBackground {
+    width: 100%;
+    height: 100%;
+    background-color: #344862cc;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #192331aa), color-stop( 0.2, #344862cc), color-stop( 0.8, #344862cc), to( #192331aa));
+}
+
+#CompendiumBG {}
+
+.CompendiumContainer {
+    width: 100%;
+    height: 762px;
+    border: 1px solid red;
+    margin-top: 170px;
+}
+
+.CompendiumHeader {
+    width: 1392px;
+    height: 72px;
+    //border: 1px solid yellow;
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 100px;
+}
+
+.SecondaryNavTabs {
+    vertical-align: bottom;
+}
+
+.CompendiumHeaderTitle {
+    //border: 1px solid green;
+    horizontal-align: right;
+}
+
+.CompendiumHeaderTitle Label {
+    //text-align: right;
+    vertical-align: middle;
+    text-transform: uppercase;
+    margin: 0px;
+    letter-spacing: 3px;
+}
+
+.CompendiumBody {
+    background-color: #00000066;
+    border: 1px solid #487098;
+    margin-top: 1px;
+}
+
+#CompendiumBody {
+    width: 100%;
+    height: 770px;
+    flow-children: down;
+}
+
+.SecondaryTabButton Label {
+    color: #768e8d;
+    vertical-align: middle;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0px;
+    letter-spacing: 3px;
+}
+
+.SecondaryTabButton.RightAlignTab {
+    width: fill-parent-flow( 1.0);
+    margin-right: 300px;
+}
+
+.AspectRatio4x3 .SecondaryTabButton.RightAlignTab,
+.AspectRatio5x4 .SecondaryTabButton.RightAlignTab {
+    margin-right: 400px;
+}
+
+.SecondaryTabButton.RightAlignTab Label {
+    width: 100%;
+    text-align: right;
+}
+
+.CompendiumOpen .SecondaryTabButton Label {
+    /* TI6 */
+    //color: #c3b699;
+    /* Fall 2016 */
+    color: #acbfa6;
+    /* Winter 2017 */
+    color: #a6b5bf;
+    /* TI7 */
+    color: #86aeac;
+}
+
+.CompendiumOpen .SecondaryTabButton:disabled Label {
+    color: #504b3f;
+}
+
+.CompendiumOpen .SecondaryTabButton:Selected Label {
+    /* Fall 2016 */
+    text-shadow: 0px 0px 12px #F7DEB555;
+    /* Winter 2017*/
+    text-shadow: 0px 0px 12px #72ebe188;
+    /* TI7*/
+    text-shadow: 0px 0px 12px #23a4ff88;
+}
+
+.CompendiumOpen RadioButton:selected Label {
+    color: white;
+}
+
+.CompendiumOpen RadioButton:enabled:hover Label {
+    color: white;
+}
+
+.CompendiumOpen .SecondaryTabSeparator {
+    /* TI6 */
+    //color: #5b493d;
+    //color: #a67659;
+    wash-color: none;
+    /* Fall 2016 */
+    color: #3d5b4e;
+    /* Winter 2017*/
+    color: #436579;
+}
+
+.CompendiumOpen .SecondaryTabButton .SecondaryTabPostfixImage {
+    /* TI6 */
+    //wash-color: #a67659;
+    /* Fall 2016 */
+    wash-color: #3d5b4e;
+    margin-left: 0px;
+    /* Winter 2017 */
+    wash-color: #436579;
+    margin-left: 0px;
+}
+
+#CampaignContainer {
+    width: 100%;
+    height: 100%;
+    padding-top: 64px;
+    //pre-transform-scale2d: 1.2;
+    background-image: url("s2r://panorama/images/textures/papergrain_psd.vtex");
+    background-position: 50% 50%;
+    overflow: scroll;
+    transition-property: pre-transform-scale2d;
+    transition-duration: .45s;
+    flow-children: down;
+}
+
+.RewardsShowing #CampaignBody {
+    visibility: collapse;
+}
+
+#CampaignBody {
+    width: 100%;
+    height: 100%;
+}
+
+.QuestLine {
+    height: 132px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    horizontal-align: center;
+    overflow: noclip;
+    transition-property: height;
+    transition-duration: .45s;
+}
+
+.Mystery .QuestLine:hover .QuestPath,
+.QuestLine:hover .QuestNode {
+    //brightness: 3;
+}
+
+.QuestPath {
+    width: 64px;
+    height: 2px;
+    background-color: #56647777;
+    vertical-align: middle;
+    //box-shadow: #00000088 -4px -4px 8px 8px;
+    z-index: 0;
+    //margin-left: -1px;
+    transition-property: width, brightness;
+    transition-duration: .25s;
+}
+
+.QuestPath.PathComplete {
+    background-color: #abbfd8;
+    height: 6px;
+}
+
+.QuestPath.QuestPathDown.PathComplete,
+.QuestPath.QuestPathUp.PathComplete {
+    background-color: #abbfd8;
+    width: 6px;
+    height: 50%;
+}
+
+.QuestPath.PathAvailable {
+    background-color: #4488ff;
+}
+
+.QuestNode {
+    width: 32px;
+    height: 32px;
+    background-color: black;
+    border: 2px solid #566477;
+    border-radius: 50%;
+    vertical-align: middle;
+    horizontal-align: center;
+    margin: -1px;
+    box-shadow: fill #00000077 -9px -5px 18px 18px;
+    z-index: 1;
+    pre-transform-scale2d: 1;
+    transition-property: brightness, pre-transform-scale2d;
+    transition-duration: .25s;
+}
+
+.BossQuest {
+    width: 48px;
+    height: 48px;
+    border-radius: 15%;
+}
+
+.Reward {
+    width: 96px;
+    height: 96px;
+    border-radius: 15%;
+}
+
+.QuestNode:hover {
+    border: 2px solid white;
+    pre-transform-scale2d: 1.2;
+}
+
+.QuestNode:active {
+    background-color: white;
+    border: 2px solid white;
+}
+
+.QuestNode.QuestAvailable {
+    border: 2px solid #4488ff;
+}
+
+.QuestNode.QuestAvailable:hover {
+    border: 2px solid white;
+}
+
+.QuestNode.QuestSelected {
+    border: 4px solid #66aaff;
+    box-shadow: #55aaff77 -9px -9px 18px 18px;
+    animation-name: SelectedGlow;
+    animation-duration: 1.6s;
+    animation-delay: 0.15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.QuestNode.QuestSelected .QuestNodeCenter {
+    background-color: #66aaff55;
+}
+
+.QuestNode.QuestSelected:hover {
+    box-shadow: #ffffff77 -9px -9px 18px 18px;
+    border: 2px solid white;
+}
+
+@keyframes 'SelectedGlow' {
+    0% {
+        box-shadow: #55aaff77 -9px -9px 18px 18px;
+    }
+    50% {
+        box-shadow: #55aaff22 -7px -7px 14px 14px;
+    }
+    100% {
+        box-shadow: #55aaff77 -9px -9px 18px 18px;
+    }
+}
+
+.QuestNode.QuestComplete {
+    border: 2px solid white;
+}
+
+.QuestNode.QuestComplete .QuestNodeCenter {
+    background-color: white;
+}
+
+.QuestNodeCenter {
+    width: 100%;
+    height: 100%;
+    margin: 4px;
+    background-color: #44556666;
+    border-radius: 50%;
+}
+
+.QuestNode:hover .QuestNodeCenter {
+    background-color: #444444ff;
+}
+
+.BossQuest .QuestNodeCenter {
+    border-radius: 15%;
+}
+
+.Reward .QuestNodeCenter {
+    border-radius: 10%;
+}
+
+.QuestColumn {
+    height: 100%;
+    min-width: 32px;
+    margin-left: -1px;
+    overflow: noclip;
+    z-index: 1;
+}
+
+.QuestColumn.RewardColumn {
+    width: 96px;
+}
+
+.QuestNodeTop {
+    vertical-align: top;
+}
+
+.QuestNodeBottom {
+    vertical-align: bottom;
+}
+
+.QuestPathDown {
+    horizontal-align: center;
+    vertical-align: bottom;
+    width: 2px;
+    height: 50%;
+    margin-bottom: 16px;
+}
+
+.QuestPathUp {
+    horizontal-align: center;
+    vertical-align: top;
+    width: 2px;
+    height: 50%;
+    margin-top: 16px;
+}
+
+.QuestPathUpRight {
+    horizontal-align: right;
+    vertical-align: top;
+    width: 50%;
+    height: 2px;
+    margin-top: 16px;
+}
+
+.QuestPathUpLeft {
+    horizontal-align: left;
+    vertical-align: top;
+    width: 50%;
+    height: 2px;
+    margin-top: 16px;
+}
+
+.QuestPathDownRight {
+    horizontal-align: right;
+    vertical-align: bottom;
+    width: 50%;
+    height: 2px;
+    margin-bottom: 16px;
+}
+
+.QuestPathDownLeft {
+    horizontal-align: left;
+    vertical-align: bottom;
+    width: 50%;
+    height: 2px;
+    margin-bottom: 16px;
+}
+
+.QuestPathUpper {
+    vertical-align: top;
+    width: 100%;
+    height: 2px;
+    margin-top: 16px;
+}
+
+.QuestPathBottom {
+    vertical-align: bottom;
+    width: 100%;
+    height: 2px;
+    margin-bottom: 16px;
+}
+
+#CampaignVignette {
+    width: 100%;
+    height: 100%;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000aa), color-stop( 0.2, #00000000), color-stop( 0.8, #00000000), to( #000000aa));
+    z-index: 2;
+}
+
+#LeftNavContainer {
+    background-color: #000000aa;
+    width: 254px;
+    height: 100%;
+    z-index: 3;
+}
+
+#ActiveCampaign {
+    margin-left: 254px;
+    //height: 100%;
+    padding: 18px;
+    vertical-align: top;
+    z-index: 3;
+}
+
+.QuestDesc,
+.QuestTitle {
+    color: #566477;
+    font-size: 20px;
+    margin: 0px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 2px 2 #000000;
+}
+
+.QuestTitle {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.QuestDesc {
+    font-style: italic;
+}
+
+#Reward1 {
+    background-image: url("s2r://panorama/images/econ/loading_screens/twilights_rest_loading_screen_png.vtex");
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+#Reward2 {
+    background-image: url("s2r://panorama/images/econ/courier/seekling_gold/seekling_gold_png.vtex");
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+#Reward3 {
+    background-image: url("s2r://panorama/images/econ/loading_screens/phantasmal_disruptions_loading_screen_png.vtex");
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.MaxIt {
+    width: 100%;
+    height: 100%;
+}
+
+// REWARDS ------------------------------------------------------------------------------------------------------------------
+#RewardsBody {
+    width: 100%;
+    height: 100%;
+    background-color: #00000099;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000dd), to( #00000099));
+    visibility: collapse;
+    flow-children: right;
+}
+
+#RewardScheduleContainer {
+    height: 100%;
+    width: 100%;
+    perspective: 1200px;
+    perspective-origin: 41% 50%;
+    opacity-mask: url("s2r://panorama/images/masks/armory_opacity_mask_png.vtex_c");
+    visibility: collapse;
+}
+
+.Dragging #RewardItems,
+.Dragging #RewardPath {
+    transition-duration: 0.0s;
+}
+
+#RewardPath {
+    overflow: noclip;
+    transform: translateY( 0px) translateX( 0px) rotateX( 50deg);
+    transition-property: transform;
+    transition-duration: 0.6s;
+    z-index: -1;
+}
+
+#RewardItems {
+    overflow: noclip;
+    transform: translateY( -100px) translateX( 0px) translateZ( 0px);
+    z-index: 2;
+    transition-property: transform;
+    transition-duration: 0.6s;
+}
+
+.MoveIt #RewardPath {
+    transform: translateY( 486px) translateX( -80px) rotateX( 55deg);
+}
+
+.MoveIt #RewardItems {
+    transform: translateY( 190px) translateX( -80px) translateZ( 405px);
+}
+
+.RewardNode {
+    width: 48px;
+    //flow-children: down;
+    margin: 8px;
+    overflow: noclip;
+    height: 350px;
+}
+
+.RewardNode.RewardMilestone {
+    width: 64px;
+}
+
+.RewardsShowing #RewardsBody {
+    visibility: visible;
+}
+
+.RewardPathTop {
+    width: 100%;
+    height: 260px;
+    background-color: #0000aaaa;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2A4F7500), color-stop( .5, #2A4F7522), to( #2A4F7566));
+}
+
+.RewardPathBackground {
+    width: 52px;
+    height: 350px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2A4F7500), color-stop( .5, #4A4E5333), color-stop( .55, #4A4E5388), color-stop( .74, #4A4E5388), color-stop( .8, #4A4E5333), to( #2A4F7500));
+    animation-duration: 1.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.RewardAchieved .RewardPathBackground {
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2A4F7500), color-stop( .5, #2A4F7566), color-stop( .8, #2A4F7566), to( #2A4F7500));
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2A4F7500), color-stop( .5, #2A4F7544), color-stop( .55, #2A4F7588), color-stop( .74, #2A4F7588), color-stop( .8, #2A4F7544), to( #2A4F7500));
+}
+
+.RewardPathCore {
+    width: 48px;
+    height: 72px;
+    //	background-color: gradient( linear, 0% 0%, 0% 100%, from( #293039 ), to( #3D434A ) );
+    //border: 1px solid #00000044;
+    //border-radius: 3px;
+    vertical-align: bottom;
+    margin: 2px;
+    margin-bottom: 90px;
+    transition-property: transform, saturation;
+    transition-duration: .15s;
+}
+
+.RewardPathTier {
+    width: 32px;
+    height: 32px;
+    vertical-align: bottom;
+    horizontal-align: center;
+    margin-bottom: 42px;
+    margin-left: 2px;
+    background-size: cover;
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    visibility: collapse;
+}
+
+#RewardPath .Bronze .RewardPathTier {
+    background-image: url("s2r://panorama/images/badges/winter_2016_battle_pass_badge_1_png.vtex");
+    visibility: visible;
+}
+
+#RewardPath .Silver .RewardPathTier {
+    background-image: url("s2r://panorama/images/badges/winter_2016_battle_pass_badge_2_png.vtex");
+    visibility: visible;
+}
+
+#RewardPath .Gold .RewardPathTier {
+    background-image: url("s2r://panorama/images/badges/winter_2016_battle_pass_badge_3_png.vtex");
+    visibility: visible;
+}
+
+#RewardPath .Max .RewardPathTier {
+    background-image: url("s2r://panorama/images/badges/winter_2016_battle_pass_badge_4_png.vtex");
+    visibility: visible;
+}
+
+#RewardPath .Mystery .RewardPathCore {
+    background-image: url("s2r://panorama/images/compendium/spinwheel_icon_psd.vtex");
+    background-size: contain;
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 94px;
+    saturation: 0;
+    brightness: .2;
+    animation-duration: 1.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#RewardPath .RewardAchieved.Mystery .RewardPathCore {
+    saturation: 1;
+    brightness: 1;
+}
+
+#RewardPath .RewardAchieved.MysteryPending .RewardPathCore {
+    brightness: 2.5;
+}
+
+#RewardPath .RewardAchieved.MysteryPending .RewardPathBackground {
+    //animation-name: Pulse;
+}
+
+#RewardItems .RewardAchieved.MysteryPending .RewardPathBackground {
+    animation-name: Pulse;
+}
+
+@keyframes 'Pulse' {
+    0% {
+        brightness: 1;
+    }
+    50% {
+        brightness: 4;
+    }
+    100% {
+        brightness: 1;
+    }
+}
+
+#RewardPath .Mystery .RewardPathCore Label {
+    font-size: 30px;
+}
+
+.RewardMilestone .RewardPathBackground {
+    width: 64px;
+}
+
+.RewardMilestone .RewardPathCore {
+    width: 60px;
+}
+
+.RewardPathCore:hover {
+    //transform: translateY(-4px);
+}
+
+.RewardAchieved .RewardPathCore {
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2A4F75), to( #4186C6));
+    border: 1px solid #98C7EA66;
+}
+
+.RewardAchieved.RewardMilestone .RewardPathCore {
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #375879), to( #9AC9EC));
+}
+
+#RewardC2 .RewardAchieved.RewardMilestone .RewardPathCore {
+    background-color: none;
+    border: 0px solid transparent;
+}
+
+#RewardC2 .RewardAchieved.RewardMilestone DOTAEconItem.RewardPathCore {
+    border: 2px solid #3B79B2;
+    border-top-color: #8EC0EA;
+    border-left-color: #527593;
+    border-right-color: #527593;
+    border-bottom-color: #344F6A;
+    tooltip-position: right;
+}
+
+#RewardC2 .RewardPathCore {
+    tooltip-position: bottom;
+    tooltip-body-position: 50% 35%;
+}
+
+.RewardPathBottom {
+    width: 100%;
+    height: 90px;
+    background-color: #0000aaaa;
+    background-color: gradient( linear, 0% 100%, 0% 0%, from( #2A4F7500), to( #2A4F7566));
+}
+
+.RewardCurrentLevel .RewardPathCore {
+    border: 1px solid #9AC9EC;
+    brightness: 2;
+}
+
+.RewardCurrentLevel .RewardPathCore Label {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 1px 8px 1 #97C5FF;
+}
+
+.RewardCurrentLevel:hover .RewardPathCore Label {
+    color: white;
+}
+
+.RewardCurrentLevel .RewardPathBackground {
+    background-image: url("s2r://panorama/images/compendium/rightedgeglow_psd.vtex");
+    background-size: 100% 80%;
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+}
+
+.RewardMilestone .RewardPathCore {
+    //	background-color: gradient( linear, 0% 0%, 0% 100%, from( #454C54 ), to( #58616C ) );
+}
+
+.RewardPathCore Label {
+    font-size: 22px;
+    color: #000000aa;
+    horizontal-align: center;
+    vertical-align: middle;
+    margin-top: 6px;
+    vertical-align: middle;
+    transition-property: color;
+    transition-duration: .15s;
+}
+
+.RewardMilestone .RewardPathCore Label {
+    font-size: 52px;
+    color: black;
+    horizontal-align: center;
+    margin-top: 6px;
+}
+
+.RewardCurrentLevel.RewardMilestone .RewardPathCore Label {
+    color: white;
+}
+
+.RewardNode:hover Label {
+    //	color: #000000ff;
+}
+
+#RewardItems .RewardPathBackground,
+#RewardItems .NoReward .RewardPathBackground {
+    opacity: 0;
+}
+
+#RewardItems .RewardAchieved .RewardPathBackground {
+    opacity: 1;
+    opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+    opacity-mask: url("s2r://panorama/images/masks/softedge_circle_png.vtex");
+    width: 92px;
+    background-color: gradient( linear, 0% 30%, 0% 90%, from( #3179BD00), color-stop( .5, #3179BD44), color-stop( .60, #3179BD33), color-stop( .75, #3179BD00), to( #3179BD00));
+    overflow: noclip;
+    margin-left: -14px;
+    margin-top: 28px;
+    z-index: -2;
+}
+
+#RewardItems .RewardAchieved.RewardMilestone .RewardPathBackground {
+    background-color: gradient( linear, 0% 15%, 0% 97%, from( #3179BD00), color-stop( .65, #3179BD66), color-stop( .70, #3179BD00), to( #3179BD00));
+}
+
+#RewardItems .RewardAchieved.NoReward .RewardPathBackground {
+    background-color: none;
+}
+
+#RewardItems .RewardAchieved.RewardMilestone .RewardPathBackground {
+    width: 100px;
+    margin-left: -16px;
+}
+
+.NoReward .RewardPathCore {
+    opacity: 0;
+}
+
+#RewardItems .RewardPathCore {
+    height: 65px;
+    width: 65px;
+}
+
+#RewardItems .SmallReward {
+    background-image: none;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-color: none;
+    saturation: .3;
+    contrast: 1;
+    brightness: .5;
+    width: 48px;
+    height: 48px;
+    border-color: transparent;
+}
+
+#RewardItems .SmallReward:hover,
+#RewardItems .RewardAchieved .SmallReward {
+    saturation: 1;
+    contrast: 1;
+    brightness: 1;
+}
+
+#RewardItems .RewardMilestone .RewardPathCore {
+    height: 60px;
+    width: 60px;
+}
+
+#RewardItems .Mystery .RewardPathCore,
+#RewardItems .MysteryPending .RewardPathCore {
+    height: 68px;
+    width: 68px;
+    margin-left: -4px;
+    width: 68px;
+    height: 68px;
+    pre-transform-scale2d: 0.8;
+    brightness: .8;
+    transform-origin: 50% 70%;
+    transition-property: pre-transform-scale2d, brightness;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    animation-duration: 1.8s;
+    animation-delay: 1.15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#RewardItems .MysteryPending .RewardPathCore {
+    animation-name: HeadShake;
+}
+
+#RewardItems .MysteryPending .RewardPathCore:hover {
+    border: 1px solid transparent;
+    brightness: 1.1;
+    pre-transform-scale2d: 1;
+}
+
+@keyframes 'HeadShake' {
+    0% {
+        transform: rotateZ( 0deg);
+    }
+    10% {
+        transform: rotateZ( 10deg);
+    }
+    20% {
+        transform: rotateZ( -10deg);
+    }
+    30% {
+        transform: rotateZ( 5deg);
+    }
+    40% {
+        transform: rotateZ( -5deg);
+    }
+    50% {
+        transform: rotateZ( 0deg);
+    }
+    100% {
+        transform: rotateZ( 0deg);
+    }
+}
+
+.Reward2 {
+    margin-bottom: 140px;
+}
+
+#RewardItems .RewardMilestone .Reward2 {
+    margin-bottom: 150px;
+    height: 32px;
+}
+
+#RewardItems .RewardMilestone .Reward3 {
+    margin-bottom: 191px;
+    height: 32px;
+}
+
+.RewardMilestone .Reward3 {
+    margin-bottom: 199px;
+}
+
+.RewardIcon {
+    background-position: 50% 50%;
+    background-size: cover;
+    saturation: .3;
+    contrast: 0.9;
+    brightness: .5;
+    transition-property: saturation, contrast, brightness;
+    transition-duration: 0.15s;
+}
+
+.RewardPathCore.SmallReward,
+.RewardPathCore.RewardIcon {
+    margin-bottom: 80px;
+}
+
+.RewardAchieved .RewardPathCore.SmallReward,
+.RewardAchieved .RewardPathCore.RewardIcon {
+    margin-bottom: 80px;
+}
+
+.RewardIcon:hover {
+    saturation: 1;
+    contrast: 1;
+    brightness: 1;
+}
+
+.RewardAchieved .RewardIcon {
+    //	background-image: url("s2r://panorama/images/econ/loading_screens/twilights_rest_loading_screen_png.vtex");
+    saturation: 1;
+    contrast: 1;
+    brightness: 1;
+}
+
+#Icon2 {}
+
+#Icon3 {}
+
+.SecondReward.RewardIcon {
+    //background-image: url("s2r://panorama/images/econ/tools/fall_major_2015_immortal_treasure_1_png.vtex");
+}
+
+.RewardTimelineContainer {
+    width: 100%;
+    height: 32px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 32px;
+}
+
+.RewardTimelineSelector {
+    width: 480px;
+    height: 48px;
+    border: 2px solid #4488ff44;
+    vertical-align: bottom;
+    margin-bottom: 26px;
+    transition-property: transform;
+    transition-duration: 1s;
+    z-index: 3;
+}
+
+.RewardTimelineSelector.Dragging {
+    transition-duration: 0s;
+}
+
+.MoveIt .RewardTimelineSelector {
+    transform: translateX( -210px);
+}
+
+#RandomCard.RewardPathCore {
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid black;
+    transition-property: transform;
+    transition-duration: .35s;
+}
+
+#RandomCard.RewardPathCore Label {
+    color: #ffffff44;
+    font-size: 52px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+#RandomCard.Hover {
+    //	transform: rotateY( 180deg );
+    brightness: 2;
+}
+
+//---------------------------
+#RewardsHud {
+    width: 1392px;
+    height: 100%;
+    horizontal-align: center;
+}
+
+#LevelContainer {
+    margin-top: 56px;
+    horizontal-align: right;
+}
+
+#XPLabelContainer {
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+#XPLabelContainer Label {
+    horizontal-align: right;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 4px;
+    color: #5A82A5;
+}
+
+#XPValueContainer {
+    margin-top: 16px;
+}
+
+#XPValueContainer Label {
+    horizontal-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+#LevelInfoContainer {
+    horizontal-align: right;
+}
+
+#Level {
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    margin-right: 16px;
+    color: white;
+}
+
+#LevelNumber {
+    font-size: 40px;
+    margin-top: 4px;
+    margin-right: 0px;
+    color: white;
+}
+
+.Description {
+    margin-top: 24px;
+    margin-left: 32px;
+    width: 720px;
+}
+
+.Description Label {
+    color: #5A82A5;
+    font-size: 30px;
+    brightness: 1.5;
+}
+
+#LevelProgress {
+    horizontal-align: right;
+    margin-top: 48px;
+}
+
+#LastReward {
+    vertical-align: bottom;
+    horizontal-align: left;
+    margin-bottom: 104px;
+}
+
+#NextReward {
+    vertical-align: bottom;
+    horizontal-align: right;
+    margin-bottom: 104px;
+}
+
+#LastLabel,
+#NextLabel {
+    margin-right: 8px;
+    color: #5A82A5;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#LastName,
+#NextName {
+    margin-right: 8px;
+    color: white;
+    font-size: 20px;
+}
+
+.RewardContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.AspectRatio4x3 .RewardContainer {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#CardPopup {
+    width: 100%;
+    height: 100%;
+    background-color: #000000ee;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .35s;
+}
+
+.CardPopup #CardPopup {
+    opacity: 1;
+}
+
+#CardTable {
+    width: 1224px;
+    height: 712px;
+    //	border: 1px solid red;
+    horizontal-align: center;
+    vertical-align: middle;
+}
+
+#CardsContainer {
+    flow-children: right;
+    horizontal-align: center;
+    vertical-align: middle;
+    overflow: noclip;
+}
+
+.ItemCard {
+    border: 1px solid #88888888;
+    width: 218px;
+    height: 312px;
+    border-radius: 16px;
+    vertical-align: middle;
+    margin: 32px;
+    background-image: url("s2r://panorama/images/compendium/cardback_psd.vtex");
+    background-size: cover;
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    pre-transform-scale2d: 1.0;
+    opacity: 1;
+    box-shadow: #000000 -9px -9px 18px 18px;
+    transition-property: transform, pre-transform-scale2d, opacity;
+    transition-duration: .4s;
+}
+
+#Card3Back {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.001s;
+    transition-delay: .2s;
+}
+
+#Card3Front {
+    background-image: url("s2r://panorama/images/compendium/cardfront_psd.vtex");
+    transform: ScaleX( -1);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.001s;
+    transition-delay: .2s;
+}
+
+.ItemCard:hover {
+    //pre-transform-scale2d: 1.05;
+    //transform: translateY( -10px );
+    brightness: 2;
+}
+
+.CardPopupOff #Card1 {
+    transform: translateY( -120px) translatez( -200px) rotateX(90deg);
+    transition-delay: 0s;
+    opacity: 0;
+}
+
+.CardPopupOff #Card2 {
+    transform: translateY( -120px) translatez( -200px) rotateX(90deg);
+    transition-delay: .3s;
+    opacity: 0;
+}
+
+.CardPopupOff #Card3 {
+    transform: translateY( -120px) translatez( -200px) rotateX(90deg);
+    transition-delay: .6s;
+    opacity: 0;
+}
+
+#Card3 {
+    brightness: 1;
+    transform: translateY( 0px) rotateY(0deg);
+    transition-property: transform, pre-transform-scale2d, opacity, brightness;
+    transition-duration: .4s;
+    overflow: noclip;
+}
+
+#Card3.Flip {
+    transform: translateX( 280px) rotateY(180deg) translateZ( 120px);
+}
+
+#Card3.Flip #Card3Back {
+    opacity: 0;
+}
+
+#Card3.Flip #Card3Front {
+    opacity: 1;
+}
+
+#Card1.DropOff,
+#Card2.DropOff {
+    transform: translateX( 180px) rotateX( 90deg) rotateY( 90deg)translateZ( -1120px);
+    opacity: 0;
+}
+
+.Hidden #CardFX {
+    opacity: 0.0;
+    pre-transform-scale2d: 1.1;
+    //transform: translateY( -10px );
+}
+
+#CardFX {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+    hue-rotation: 90deg;
+    wash-color: #487098;
+    transition-property: pre-transform-scale2d, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    transition-delay: 0.0s;
+}
+
+#RandomCardNode:hover {
+    brightness: 2;
+}
+
+#CardTitleContainer {
+    horizontal-align: center;
+    margin-top: 72px;
+    pre-transform-scale2d: 1;
+    transition-property: pre-transform-scale2d, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+#CardTitleContainer.DropOff {
+    pre-transform-scale2d: 0.5;
+    opacity: 0;
+}
+
+.CardTitle {
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    horizontal-align: center;
+}
+
+.CardTitleItem {
+    text-transform: none;
+    color: #aaddff;
+    font-size: 42px;
+}
+
+#CardWinContainer {
+    horizontal-align: center;
+    margin-top: 52px;
+    transition-property: pre-transform-scale2d, opacity;
+    transition-duration: 0.5s;
+    transition-delay: 0.9s;
+    transition-timing-function: ease-in;
+    pre-transform-scale2d: 0.95;
+    opacity: 0;
+}
+
+#CardWinContainer.Flip {
+    pre-transform-scale2d: 1;
+    opacity: 1;
+    transition-duration: 0.15s;
+    transition-delay: 0s;
+}
+
+#AchievementsBody {
+    width: 1392px;
+    height: 100%;
+    //	background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000dd ), to( #00000099 ) );
+    horizontal-align: center;
+}
+
+#AchievementsContainer {
+    height: 600px;
+    width: 100%;
+    flow-children: right-wrap;
+    overflow: clip scroll;
+    margin-top: 85px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+    opacity-mask: url("s2r://panorama/images/masks/softedge_vertical_big_bottom_vscroll_wide_psd.vtex") 1.0;
+}
+
+#AchievementsContainer VerticalScrollBar {
+    margin-top: 10px;
+}
+
+#AchievementsHeader {
+    vertical-align: top;
+    horizontal-align: center;
+    height: 56px;
+    width: 1392px;
+    //border: 2px solid red;
+    z-index: 0;
+    overflow: noclip;
+}
+
+#EarnedBlock {
+    horizontal-align: right;
+    margin-right: 16px;
+    margin-top: 16px;
+    z-index: -2;
+}
+
+.QuestText {
+    font-size: 20px;
+    vertical-align: bottom;
+    horizontal-align: center;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+.EarnedNumber {
+    font-size: 32px;
+    vertical-align: top;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+.QuestName {
+    font-size: 32px;
+    horizontal-align: center;
+    vertical-align: top;
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+#QuestCarry {
+    width: 650px;
+    height: 27%;
+    border-bottom: 2px solid black;
+}
+
+#QuestNuker {
+    width: 650px;
+    height: 27%;
+    border-bottom: 2px solid black;
+    margin: 5px;
+}
+
+#QuestSupport {
+    width: 650px;
+    height: 27%;
+    border-bottom: 2px solid black;
+    margin: 5px;
+}
+
+.EarnedNumberSmall {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-top: 6px;
+    margin-right: 16px;
+}
+
+.EarnedLabel {
+    //color: #375270; winter 2016 color
+    color: accentColor;
+    margin-right: 16px;
+}
+
+.VerticalDivider {
+    wash-color: accentColor;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.LabelSpacer {
+    margin-left: 10px;
+    margin-right: 4px;
+}
+
+#ExpiredTag {
+    border: 1px solid #D54E5044;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #5D343588), to( #72454488));
+    padding: 10px 16px 8px 16px;
+    border-radius: 6px;
+    vertical-align: bottom;
+    horizontal-align: center;
+    z-index: 15;
+    margin-bottom: 176px;
+    opacity: 0;
+    pre-transform-scale2d: .5;
+    transition-property: pre-transform-scale2d, opacity;
+    transition-duration: 0.25s;
+    transition-delay: 0.35s;
+    transition-timing-function: ease-in;
+}
+
+#ExpiredTag Label {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #DAB79D;
+    text-shadow: 1px 2px 2px 2 #000000;
+    letter-spacing: 2px;
+}
+
+.CompendiumOpen #ExpiredTag {
+    opacity: 0;
+    pre-transform-scale2d: 1;
+    transition-delay: 0.0s;
+    transition-duration: 0.15s;
+}
+
+.OwnedFrame {
+    background-image: url("s2r://panorama/images/compendium/winter/setowned_psd.vtex");
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition-property: brightness;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+
+.QuestButton:hover Label,
+.TopBarMenuItem:active Label {
+    color: white;
+}
+
+.QuestButton:selected {
+    sound: "ui_topmenu_activate";
+}
+
+.QuestButton:selected Label {
+    color: white;
+    text-shadow: 0px 0px 20px 1.5 #3382ff;
+}
+
+.QuestButton {
+    white-space: nowrap;
+    width: 100px;
+    height: 60px;
+    padding: 0px 14px 0px 10px;
+    border: 1px solid black;
+    background-color: gradient( linear, 0% 0%, 100% 0%, from( #191919), to( #2a2a2a));
+}
+
+.QuestButton Label {
+    font-size: 20px;
+    vertical-align: middle;
+    horizontal-align: center;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+ProgressBar {
+    border-radius: 15px;
+    height: 30px;
+    background-color: #000000ff;
+    box-shadow: none;
+}
+
+ProgressBar Label {
+    vertical-align: middle;
+    horizontal-align: center;
+    text-shadow: 0px 1px 3px 3 #000000;
+    color: accentColorBright;
+    font-size: 20px;
+}
+
+.QuestProgress {
+    vertical-align: middle;
+    horizontal-align: center;
+    margin-top: 35%;
+}
+
+.QuestButton .RadioBox {
+    visibility: collapse;
+}
+
+.Item {
+    width: 20%;
+    height: 100%;
+    horizontal-align: right;
+    transform: scale3d( 0.8, 0.8, 1.0);
+}
+
+#CurrentQuest {
+    width: 250px;
+    height: 120px;
+    vertical-align: top;
+    horizontal-align: left;
+    margin-top: 15%;
+    margin-left: 15px;
+}
+
+.Disabled {
+    opacity: 0;
+}
+
+.Not_Visible {
+    opacity: 0;
+}
+
+.Off {
+    visibility: collapse;
+}
+
+.Compilite {
+    saturation: 0;
+}
+
+#CurrentQuestCheck {
+    vertical-align: top;
+    horizontal-align: right;
+    background-image: url("s2r://panorama/images/backgrounds/compendium_i151_png.vtex");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+}
+
+#CurrentQuestName {
+    vertical-align: bottom;
+    font-size: 20px;
+    horizontal-align: left;
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+.DebutJuggernaut #TakeoverPageLeft,
+.DebutJuggernaut #DebutBackgroundImage {
+    background-image: none;
+    background-color: black;
+    width: 100%;
+}
+
+#ModelBackground,
+#JuggernautArcanaScene {
+    transform: scaleX(1);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pre-transform-scale2d: 1;
+    //background-color: black;
+    //blur: gaussian( 1, 1, 1);
+    vertical-align: middle;
+    horizontal-align: center;
+    transition-property: opacity, wash-color, saturation;
+    transition-duration: 2s;
+    transition-timing-function: ease-in;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#JuggernautArcanaScene.SceneLoaded {
+    opacity: 1;
+}
+
+#DebutInformation {
+    background-color: none;
+    width: 620px;
+    height: 820px;
+    opacity: 0;
+}
+
+#TakeoverPageLeft.Initialize #DebutInformation {
+    opacity: 1;
+}
+
+#InformationBackground {
+    width: 100%;
+    height: 100%;
+}
+
+#InformationBody {
+    padding: 32px;
+    padding-top: 0px;
+    //width: 100%;
+    horizontal-align: center;
+    //box-shadow: fill #000000cc -5px -5px 10px 10px;
+    overflow: clip scroll;
+}
+
+#InformationBodyBackground {
+    width: 100%;
+    height: 100%;
+    background-image: url("s2r://panorama/images/leaf_pages/debut_arcana_juggernaut/debut_brush_bg_psd.vtex");
+    background-size: contain;
+    background-repeat: no-repeat;
+    wash-color: rgb(138, 84, 34);
+    opacity: .8;
+    transition-property: wash-color;
+    transition-duration: .8s;
+    transition-timing-function: ease-in-out;
+}
+
+.Style2Visible #InformationBodyBackground {
+    wash-color: #9A4A51;
+}
+
+.Style1Visible #Style1ButtonLabel,
+.Style2Visible #Style2ButtonLabel {
+    opacity: 0;
+}
+
+.Style2Visible #Style1ButtonLabel,
+.Style1Visible #Style2ButtonLabel {
+    opacity: 1;
+}
+
+#DemoButtonStyle1,
+#DemoButtonStyle2 {
+    visibility: collapse;
+}
+
+.Style1Visible #DemoButtonStyle1,
+.Style2Visible #DemoButtonStyle2 {
+    visibility: visible;
+}
+
+.DebutJuggernaut #Intro {
+    color: #5A7C52;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.DebutJuggernaut #HeroNameGlow,
+.DebutJuggernaut #HeroName {
+    font-size: 68px;
+    font-weight: semibold;
+    text-transform: uppercase;
+    color: #9BF79E;
+    letter-spacing: 3px;
+    margin-left: 16px;
+    margin-top: -16px;
+    text-shadow: none;
+    opacity-mask: url("s2r://panorama/images/masks/scratches_horizontal_psd.vtex")1;
+}
+
+.DebutJuggernaut #HeroNameGlow {
+    color: transparent;
+    text-shadow: 0px 1px 12px 1.0 #e5a6a444;
+    opacity-mask: url("s2r://panorama/images/masks/scratches_horizontal_psd.vtex")0;
+}
+
+#HeroNameCellContainer {
+    vertical-align: bottom;
+    margin-bottom: 48px;
+    transition-property: brightness;
+    transition-duration: .15s;
+    transition-timing-function: ease-in-out;
+}
+
+#HeroNameCellContainer.DebutJuggernaut Label {
+    font-size: 28px;
+    margin-top: 0px;
+    text-shadow: 0px 1px 6px 1.0 #e5a6a422;
+}
+
+#FrontpageCellUnderlordDebut:hover #HeroNameCellContainer {
+    brightness: 3;
+}
+
+.DebutJuggernaut #Ability1 {
+    background-image: url("s2r://panorama/images/spellicons/abyssal_underlord_firestorm_png.vtex");
+}
+
+.DebutJuggernaut #Ability2 {
+    background-image: url("s2r://panorama/images/spellicons/abyssal_underlord_pit_of_malice_png.vtex");
+}
+
+.DebutJuggernaut #Ability3 {
+    background-image: url("s2r://panorama/images/spellicons/abyssal_underlord_atrophy_aura_png.vtex");
+}
+
+.DebutJuggernaut #Ability4 {
+    background-image: url("s2r://panorama/images/spellicons/abyssal_underlord_dark_rift_png.vtex");
+    margin-right: 0px;
+}
+
+.DebutJuggernaut #ItemLore {
+    margin: 16px;
+    font-size: 18px;
+    opacity-mask: url("s2r://panorama/images/masks/textvignette_psd.vtex");
+}
+
+#FrontPageUnderlordCell {
+    width: 689px;
+    height: 500px;
+}
+
+#FrontPageUnderlordCell #ModelBackground {
+    opacity: 0;
+    transition-property: opacity, pre-transform-scale2d;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+
+#FrontPageUnderlordCell #ModelBackground.SceneLoaded {
+    opacity: 1;
+}
+
+#CustomFooterDetails.DebutJuggernaut {
+    opacity: 1;
+    margin-bottom: 6px;
+    margin-left: 8px;
+    color: #808f8d;
+}
+
+#FrontpageCellUnderlordDebut:hover #CustomHeader {
+    background-color: #7AFCFC;
+}
+
+.DebutJuggernaut #InnerPanel {
+    height: 372px;
+    vertical-align: bottom;
+    background-color: transparent;
+    border: 0px solid transparent;
+    opacity-mask: url("s2r://panorama/images/masks/softedge_vertical_vscroll_wide_psd.vtex")1;
+    padding-right: 24px;
+}
+
+.DebutJuggernaut #InnerPanel #Buttons {
+    vertical-align: bottom;
+}
+
+#ItemName {
+    font-size: 46px;
+    letter-spacing: 3px;
+    text-overflow: shrink;
+    height: 54px;
+    text-align: center;
+    vertical-align: bottom;
+    //border: 1px solid red;
+    horizontal-align: center;
+    color: #34EEC5;
+    transition-property: opacity;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+
+#ItemName2 {
+    color: #D05050;
+    text-shadow: 0px 1px 12px 3.0 #D0505022;
+}
+
+.VideoPanel {
+    margin-bottom: 16px;
+    border-radius: 16px;
+    width: 176px;
+    height: 130px;
+    margin-top: 20px;
+    vertical-align: bottom;
+    border: 1px solid green;
+    horizontal-align: center;
+}
+
+.HeaderPanel {
+    width: 100%;
+    //border: 1px solid green;
+}
+
+#TitleFX {
+    width: 100%;
+    height: 100px;
+    //border: 1px solid blue;
+    //	opacity-mask: url("s2r://panorama/images/masks/softedge_vertical_softer_png.vtex")1;
+    //	background-color: red;
+}
+
+#TitleContainer {
+    width: 100%;
+    horizontal-align: center;
+    //border: 1px solid white;
+    transform: translateY(-16px);
+    transition-property: hue-rotation, wash-color, saturation;
+    transition-duration: .8s;
+    transition-timing-function: ease-in-out;
+}
+
+.Style2Visible #TitleFX {
+    hue-rotation: 200deg;
+    saturation: .8;
+    wash-color: #f77;
+}
+
+#ItemSubtitle {
+    horizontal-align: center;
+    margin-top: -24px;
+}
+
+.HeaderPanel Label {
+    color: #51aB74;
+}
+
+#Portrait {
+    background-image: url("s2r://panorama/images/leaf_pages/debut_arcana_juggernaut/customportrait_psd.vtex");
+    width: 96px;
+    height: 118px;
+}
+
+#HeroIcon {
+    background-image: url("s2r://panorama/images/heroes/npc_dota_hero_juggernaut_alt1_png.vtex");
+    width: 96px;
+    height: 54px;
+    vertical-align: top;
+    margin-top: 16px;
+}
+
+#AbilityIcons {
+    width: 130px;
+    flow-children: right-wrap;
+}
+
+#AbilityIcon {
+    background-image: url("s2r://panorama/images/spellicons/juggernaut_blade_dance_arcana_png.vtex");
+    background-size: 100%;
+    width: 48px;
+    height: 48px;
+    vertical-align: top;
+}
+
+#AbilityIcon2 {
+    background-image: url("s2r://panorama/images/spellicons/juggernaut_blade_fury_arcana_png.vtex");
+    background-size: 100%;
+    width: 48px;
+    height: 48px;
+    vertical-align: top;
+}
+
+#AbilityIcon3 {
+    background-image: url("s2r://panorama/images/spellicons/juggernaut_healing_ward_arcana_png.vtex");
+    background-size: 100%;
+    width: 48px;
+    height: 48px;
+    vertical-align: top;
+}
+
+#AbilityIcon4 {
+    background-image: url("s2r://panorama/images/spellicons/juggernaut_omni_slash_arcana_png.vtex");
+    background-size: 100%;
+    width: 48px;
+    height: 48px;
+    vertical-align: top;
+}
+
+.CustomSquare {
+    border-color: #255D61;
+}
+
+#MinimapIcon {
+    background-image: url("s2r://panorama/images/heroes/icons/npc_dota_hero_juggernaut_alt1_png.vtex");
+    width: 32px;
+    height: 32px;
+    vertical-align: bottom;
+    margin-bottom: 10px;
+    border: 0px solid transparent;
+}
+
+.HeaderLabel {
+    color: #7B8C8D;
+}
+
+VerticalScrollBar .ScrollThumb {
+    background-color: #245A5E;
+}
+
+VerticalScrollBar:hover .ScrollThumb,
+VerticalScrollBar:active .ScrollThumb {
+    background-color: #31BDAC;
+}
+
+#MainContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.DemoSpacer {
+    height: 8px;
+}
+
+DOTAPurchaseButton {
+    width: 100%;
+}
+
+#Buttons {
+    flow-children: down;
+    margin-right: 48px;
+    min-width: 200px;
+}
+
+#FooterPanel {
+    margin-bottom: 72px;
+    height: fit-children;
+}
+
+.Promo {
+    visibility: visible;
+    width: 390px;
+    margin-bottom: 22px;
+}
+
+.CloseButton {
+    horizontal-align: right;
+    background-color: #133843;
+    border: 1px solid #25907F;
+    margin: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    wash-color: #25907F;
+}
+
+.BulletList {
+    margin-bottom: 6px;
+}
+
+#StyleContainer {
+    opacity: 0;
+    width: 600px;
+    height: 200px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 190px;
+    margin-right: 792px;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: 3s;
+    transition-timing-function: ease-in;
+}
+
+.FormLabel {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin-bottom: -6px;
+    color: #FFE9CC88;
+    text-shadow: 0px 1px 3px 3.0 #000;
+}
+
+.FormName {
+    text-transform: uppercase;
+    font-size: 32px;
+    color: #FFE9CC;
+    text-shadow: 0px 0px 13px 1.0 #EF8D2855;
+    text-shadow: 0px 1px 3px 3.0 #000;
+}
+
+.Style1Visible .FormName {
+    color: #95E2E3;
+}
+
+.Style2Visible .FormName {
+    color: #F2BC92;
+}
+
+#Form1,
+#Form2 {
+    opacity: 0;
+    transition-property: opacity, wash-color, saturation;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+}
+
+.Style1Visible #Form1 {
+    opacity: 1;
+}
+
+.Style2Visible #Form2 {
+    opacity: 1;
+}
+
+.StylesBlock {
+    flow-children: down;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .32s;
+    transition-timing-function: ease-in;
+}
+
+.FormLore {
+    font-size: 18px;
+    color: white;
+    text-shadow: 0px 1px 3px 3.0 #000;
+}
+
+#StyleButtons {
+    width: 700px;
+    opacity: 0;
+    height: fit-children;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 190px;
+    margin-right: 690px;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: 3s;
+    transition-timing-function: ease-in;
+}
+
+#NextButton {
+    horizontal-align: right;
+    border-radius: 8px;
+    height: 64px;
+    background-image: url("s2r://panorama/images/textures/glassbutton_pink_psd.vtex");
+    background-size: 100%;
+    border: 0px solid transparent;
+    padding-left: 16px;
+    padding-right: 16px;
+    transition-property: brightness, hue-rotation, background-image;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+}
+
+#NextButton:hover {
+    brightness: 3;
+}
+
+.Style2Visible #NextButton {
+    background-image: url("s2r://panorama/images/textures/glassbutton_teal_psd.vtex");
+}
+
+.ButtonBevel:disabled {
+    opacity: 0;
+}
+
+#ButtonFX {
+    width: 520px;
+    height: 160px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 140px;
+    margin-right: 200px;
+    hue-rotation: 230deg;
+    brightness: 5;
+    contrast: 1.2;
+    saturation: 1;
+    wash-color: #f008;
+    opacity-mask: url("s2r://panorama/images/masks/softedge_circle_png.vtex")1;
+    opacity: 0;
+    transition-property: brightness, hue-rotation, wash-color, contrast, opacity;
+    transition-duration: 0.3s;
+    transition-delay: 3s;
+    transition-timing-function: ease-in;
+}
+
+.Style2Visible #ButtonFX {
+    hue-rotation: 0deg;
+    wash-color: #3EEBB088;
+}
+
+#TakeoverPageLeft.Initialize #StyleButtons,
+#TakeoverPageLeft.Initialize #ButtonFX,
+#TakeoverPageLeft.Initialize #StyleContainer {
+    opacity: 1;
+}
+
+#Event {
+    width: 560px;
+    height: 770px;
+    vertical-align: middle;
+    horizontal-align: center;
+    flow-children: none;
+    margin-top: 10%;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-repeat: no-repeat;
+    box-shadow: #000000 -12px -12px 24px 24px;
+    z-index: -10;
+    ////hue-rotation: 220deg; wash-color: #5E98D955;
+}
+
+.Event {
+    width: 560px;
+    height: 770px;
+}
+
+#EventInformation {
+    width: 560px;
+    height: 770px;
+}
+
+.Delete {
+    visibility: collapse;
+}
+
+// normal
+.default {
+    border-color: white;
+}
+
+// genuine
+.genuine {
+    border-color: #4D7455;
+}
+
+// vintage
+.vintage {
+    border-color: #476291;
+}
+
+// unusual
+.unusual {
+    border-color: #8650AC;
+}
+
+// unique
+.unique {
+    border-color: #D2D2D2;
+}
+
+// community
+.community {
+    border-color: #70B04A;
+}
+
+// developer
+.developer {
+    border-color: #A50F79;
+}
+
+// selfmade
+.selfmade {
+    border-color: #70B04A;
+}
+
+// customized
+.customized {
+    border-color: #00FF00;
+}
+
+// strange
+.strange {
+    border-color: #CF6A32;
+}
+
+// completed
+.completed {
+    border-color: #8650AC;
+}
+
+// haunted
+.haunted {
+    border-color: #8650AC;
+}
+
+// tournament
+.tournament {
+    border-color: #8650AC;
+}
+
+// favored
+.favored {
+    border-color: #FFFF00;
+}
+
+// ascendant
+.ascendant {
+    border-color: #EB4B4B;
+}
+
+// autographed
+.autographed {
+    border-color: #ADE55C;
+}
+
+// legacy
+.legacy {
+    border-color: #000000;
+}
+
+//
+.exalted {
+    border-color: #CCCCCC;
+}
+
+// frozen
+.frozen {
+    border-color: #4682B4;
+}
+
+// corrupted
+.corrupted {
+    border-color: #A52A2A;
+}
+
+// lucky
+.lucky {
+    border-color: #32CD32;
+}
+
+// infused
+.infused {
+    border-color: #8847ff;
+}
+
+.brilliance {
+    border-color: #F0FFFF;
+}
+
+.ItemMenu {
+    flow-children: down;
+}
+
+.dragging_from {
+    saturation: 0.5;
+    wash-color: #808080;
+}
+
+.is_active {
+    saturation: 1.5;
+}
+
+#DropTargetHighlight {
+    width: 100%;
+    height: 100%;
+    background-color: gradient( radial, 50% -20%, 0% 0%, 80% 80%, from( #FFFFFF), to( #FFFFFF00));
+    opacity: 0;
+}
+
+.potential_drop_target #DropTargetHighlight {
+    opacity: 0.3;
+}
+
+#Contents {
+    padding: 0px;
+    margin: 0px;
+}
+
+.ItemMenuButton {
+    width: 200px;
+    height: 40px;
+    border: 1px solid black;
+    padding: 4px;
+    padding-left: 8px;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_item_build_psd.vtex");
+}
+
+.ItemMenuButton:hover {
+    background-color: #443837;
+}
+
+.ItemMenuButton Label {
+    font-size: 16px;
+    vertical-align: center;
+    color: #acaaaa;
+}
+
+.ItemMenuButton:hover Label {
+    color: #eae9e9;
+}
+
+.item_selection {
+    width: 24px;
+    height: 24px;
+    vertical-align: top;
+    horizontal-align: right;
+    background-image: url("s2r://panorama/images/hud/puton_png.vtex");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#TradeButton {
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+    horizontal-align: left;
+    margin-top: 1.15%;
+    margin-left: 8%;
+}
+
+.AspectRatio4x3 #TradeButton {
+    width: 28px;
+    height: 28px;
+    vertical-align: top;
+    horizontal-align: left;
+    margin-top: 4.3%;
+    margin-left: 63px;
+}
+
+#TradeButton:hover {
+    transform: translatez( 1px);
+    brightness: 1.2;
+    wash-color: #ffd200;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#TradeButton:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -2px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#ProfileButton {
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+    horizontal-align: left;
+    background-color: black;
+    margin-top: 1.15%;
+    margin-left: 12%;
+}
+
+.AspectRatio4x3 #ProfileButton {
+    width: 28px;
+    height: 28px;
+    vertical-align: top;
+    horizontal-align: left;
+    margin-top: 4.3%;
+    margin-left: 110px;
+}
+
+#ProfileButton:hover {
+    transform: translatez( 1px);
+    brightness: 1.2;
+    wash-color: #ffd200;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#ProfileButton:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -2px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#Trade {
+    width: 1500px;
+    height: 670px;
+    vertical-align: middle;
+    horizontal-align: center;
+    flow-children: none;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: #000000 -12px -12px 24px 24px;
+    margin-left: 15%;
+}
+
+#LeftSide {
+    width: 37%;
+    height: 670px;
+    vertical-align: middle;
+    horizontal-align: left;
+    flow-children: right-wrap;
+    overflow: clip scroll;
+}
+
+#Menu {
+    width: 150px;
+    height: 670px;
+    vertical-align: middle;
+    horizontal-align: center;
+    flow-children: none;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    margin-left: -7%;
+}
+
+#RightSide {
+    width: 34%;
+    height: 670px;
+    vertical-align: middle;
+    horizontal-align: right;
+    flow-children: right-wrap;
+    overflow: clip scroll;
+    margin-right: 16.4%;
+}
+
+#Players {
+    width: 200px;
+    height: 670px;
+    vertical-align: middle;
+    horizontal-align: right;
+    flow-children: right-wrap;
+    overflow: clip scroll;
+    border-left: 2px solid black;
+}
+
+#TradeLabel {
+    font-size: 32px;
+    vertical-align: middle;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+    margin-top: -15%;
+}
+
+#Submit {
+    width: 80%;
+    height: 45px;
+    vertical-align: middle;
+    horizontal-align: center;
+    background-color: lightgreen;
+}
+
+#Cancel {
+    width: 80%;
+    height: 45px;
+    vertical-align: middle;
+    horizontal-align: center;
+    margin-top: 18%;
+    background-color: darkred;
+}
+
+#Submit:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -15px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#Cancel:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -15px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#Submit Label {
+    font-size: 20px;
+    vertical-align: middle;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+#Cancel Label {
+    font-size: 20px;
+    vertical-align: middle;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+.Player {
+    width: 90%;
+    height: 40px;
+    margin-left: 5%;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_item_build_psd.vtex");
+    background-size: cover;
+    flow-children: none;
+    margin-top: 5px;
+}
+
+.Player Label {
+    font-size: 20px;
+    font-weight: black;
+    text-overflow: shrink;
+    vertical-align: middle;
+    horizontal-align: center;
+    color: black;
+    text-shadow: 0px 0px 2px 3.0 #aa0000aa;
+    transition-property: opacity-mask;
+    transition-duration: .3s;
+    background-color: gradient( radial, 50% 50%, 0% 0%, 300px 300px, from( #822222), color-stop( .76, #1B3020), to( #9FE09500));
+    opacity-mask: url("s2r://panorama/images/masks/brush_horizontal_psd.vtex")1;
+}
+
+.Selected {
+    transform: translateZ(1px);
+    box-shadow: fill #00FF7F 0px 0px 8px 0px;
+}
+
+.ItemSelected {
+    transform: translateZ(1px);
+    box-shadow: fill #00FF7F 0px 0px 8px 0px;
+}
+
+.RootTrades {
+    width: 700px;
+    height: 100%;
+    background-color: gradient( linear, 100% 0%, 0% 0%, from( #171412), to( #4D211A));
+}
+
+#RootTrades {
+    width: 95%;
+    height: 700px;
+    vertical-align: bottom;
+    horizontal-align: center;
+    overflow: clip scroll;
+    flow-children: down-wrap;
+}
+
+.TradeOffer {
+    width: 95%;
+    height: 300px;
+    vertical-align: top;
+    horizontal-align: center;
+    border: 2px solid black;
+    flow-children: none;
+    margin-top: 5px;
+}
+
+.NameLeft {
+    font-size: 30px;
+    font-weight: black;
+    text-overflow: shrink;
+    vertical-align: top;
+    horizontal-align: left;
+    color: black;
+    text-shadow: 0px 0px 2px 3.0 #aa0000aa;
+    transition-property: opacity-mask;
+    transition-duration: .3s;
+    background-color: gradient( radial, 50% 50%, 0% 0%, 300px 300px, from( #822222), color-stop( .76, #1B3020), to( #9FE09500));
+    opacity-mask: url("s2r://panorama/images/masks/brush_horizontal_psd.vtex")1;
+    margin-left: 10%;
+}
+
+.NameRight {
+    font-size: 30px;
+    font-weight: black;
+    text-overflow: shrink;
+    vertical-align: top;
+    horizontal-align: right;
+    color: black;
+    text-shadow: 0px 0px 2px 3.0 #aa0000aa;
+    transition-property: opacity-mask;
+    transition-duration: .3s;
+    background-color: gradient( radial, 50% 50%, 0% 0%, 300px 300px, from( #822222), color-stop( .76, #1B3020), to( #9FE09500));
+    opacity-mask: url("s2r://panorama/images/masks/brush_horizontal_psd.vtex")1;
+    margin-right: 10%;
+}
+
+.TradeFromU {
+    width: 40%;
+    height: 200px;
+    flow-children: right-wrap;
+    vertical-align: middle;
+    horizontal-align: left;
+    overflow: clip scroll;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_item_build_psd.vtex");
+    background-size: cover;
+}
+
+.TradeToU {
+    width: 40%;
+    height: 200px;
+    flow-children: right-wrap;
+    vertical-align: middle;
+    horizontal-align: right;
+    overflow: clip scroll;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_item_build_psd.vtex");
+    background-size: cover;
+}
+
+.Apply {
+    width: 86px;
+    height: 35px;
+    vertical-align: bottom;
+    horizontal-align: right;
+    background-color: lightgreen;
+}
+
+.NotApply {
+    width: 86px;
+    height: 35px;
+    vertical-align: bottom;
+    horizontal-align: right;
+    margin-right: 16%;
+    background-color: darkred;
+}
+
+.NotApply:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -15px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+.Apply:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -15px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+.Apply Label {
+    font-size: 20px;
+    vertical-align: middle;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+.NotApply Label {
+    font-size: 15px;
+    vertical-align: middle;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+#TradeNote {
+    font-size: 20px;
+    vertical-align: bottom;
+    color: white;
+    text-shadow: 0px 1px 3px 3 #000000;
+    visibility: collapse;
+}
+
+.TradeImage {
+    width: 100px;
+    height: 70px;
+    vertical-align: middle;
+    horizontal-align: center;
+    background-image: url("s2r://panorama/images/backgrounds/trade_png.vtex");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#TreasurePanel {
+    width: 900px;
+    height: 870px;
+    vertical-align: middle;
+    horizontal-align: center;
+    flow-children: none;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow: #000000 -12px -12px 24px 24px;
+    z-index: -10;
+}
+
+#TreasureImage {
+    width: 200px;
+    height: 150px;
+    vertical-align: center;
+    horizontal-align: middle;
+    z-index: 2;
+    wash-color: #00000025;
+    border: 1px solid black;
+    /*box-shadow: fill #ffd200 0px 0px 29px 0px;*/
+    opacity-mask: url("s2r://panorama/images/masks/killcammask_left_psd.vtex") 0.4;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 1;
+    transition-property: opacity, transform;
+    transition-duration: .2s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+    margin-bottom: 60%;
+}
+
+#ResultIcon {
+    width: 738px;
+    height: 120px;
+    box-shadow: black 0px 0px 9px 2px;
+    vertical-align: center;
+    horizontal-align: middle;
+    z-index: 2;
+    wash-color: #00000025;
+    border: 1px solid black;
+    /*box-shadow: fill #ffd200 0px 0px 29px 0px;*/
+    opacity-mask: url("s2r://panorama/images/masks/killcammask_left_psd.vtex") 0.4;
+    opacity: 1;
+    transition-property: opacity, transform;
+    transition-duration: .2s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+    margin-bottom: 50%;
+    flow-children: none;
+}
+
+#DropResultPanel {
+    width: 90%;
+    height: 40%;
+    box-shadow: black 0px 0px 9px 2px;
+    margin-top: 4%;
+    vertical-align: center;
+    horizontal-align: middle;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    box-shadow: #000000 -12px -12px 24px 24px;
+}
+
+#Border {
+    width: 50%;
+    height: 100%;
+    vertical-align: center;
+    horizontal-align: left;
+    border-right: 3px solid gold;
+}
+
+#ThrowBar {
+    height: 95px;
+    flow-children: right;
+    vertical-align: center;
+    horizontal-align: left;
+    margin-left: 0px;
+}
+
+.icon {
+    width: 120px;
+    height: 90px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    vertical-align: center;
+    horizontal-align: middle;
+    margin-left: 5px;
+}
+
+#BackgroundFXWindow {
+    width: 100%;
+    height: 100%;
+    pre-transform-scale2d: 1;
+    vertical-align: center;
+    horizontal-align: middle;
+    margin-top: 20%;
+    opacity: 0;
+    //transform: rotateX( 80deg ) translateY( 120px );
+    opacity: .75;
+    opacity-mask: url("s2r://panorama/images/masks/softedge_top_png.vtex");
+    transition-property: opacity;
+    transition-duration: 1.5s;
+}
+
+#DropRarityImage {
+    vertical-align: center;
+    horizontal-align: middle;
+    transition-property: rotate;
+    transition-duration: 4.5s;
+    transform: rotateZ( -32deg) rotateX( 30deg);
+}
+
+#OpenTreasure Label {
+    font-size: 20px;
+    vertical-align: middle;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+.TresName {
+    font-size: 30px;
+    vertical-align: top;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+    margin-top: 5%;
+}
+
+#OpenTreasure {
+    width: 150px;
+    height: 55px;
+    vertical-align: bottom;
+    horizontal-align: left;
+    background-color: lightgreen;
+    margin-left: 10%;
+    margin-bottom: 15px;
+    border: 3px solid darkgreen;
+    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.3), inset 0 -2px 3px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+#OpenTreasure:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -15px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#CloseTreasure:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -15px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#CloseTreasure {
+    width: 150px;
+    height: 55px;
+    margin-bottom: 15px;
+    margin-right: 3%;
+    vertical-align: bottom;
+    horizontal-align: right;
+    background-color: darkred;
+    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.3), inset 0 -2px 3px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+#CloseTreasure Label {
+    font-size: 20px;
+    vertical-align: middle;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+.treasure_count {
+    font-size: 20px;
+    vertical-align: top;
+    horizontal-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+#Contain {
+    width: 85%;
+    height: 40%;
+    margin-top: 17%;
+    vertical-align: middle;
+    horizontal-align: center;
+    flow-children: right-wrap;
+}
+
+#Surrender {
+    width: 300px;
+    height: 100px;
+    vertical-align: top;
+    horizontal-align: left;
+    margin-top: 12%;
+    flow-children: none;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#SurrenderButton {
+    width: 88%;
+    height: 40%;
+    vertical-align: bottom;
+    horizontal-align: left;
+    background-color: lightgreen;
+    opacity: 0.7;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#SurrenderButton Label {
+    font-size: 24px;
+    color: black;
+    horizontal-align: center;
+    margin-top: 2.5px;
+}
+
+#SurrenderButton:hover {
+    opacity: 1;
+    transform: translatez( 5px);
+    brightness: 1.2;
+}
+
+#SurrenderButton:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -2px);
+}
+
+#SurrenderPanel {
+    flow-children: right;
+    width: 88%;
+    height: 50px;
+    background-image: url("s2r://panorama/images/hud/reborn/quickbuy_bg_psd.vtex");
+}
+
+#CloseVotePanel {
+    flow-children: none;
+    horizontal-align: right;
+    width: 25px;
+    height: 100%;
+    background-image: url("s2r://panorama/images/hud/reborn/quickbuy_bg_psd.vtex");
+}
+
+.VoteClosed {
+    transform: translateX(-275px);
+}
+
+#VoteApplied {
+    width: 90%;
+    height: 100%;
+    vertical-align: middle;
+    horizontal-align: left;
+    background-color: darkgreen;
+}
+
+#VoteApplied Label {
+    color: black;
+    vertical-align: middle;
+    horizontal-align: center;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin: 0px;
+    letter-spacing: 3px;
+}
+
+.SHeroPanel {
+    height: 50px;
+    width: 48px;
+    border: 1px solid black;
+    margin: 1px;
+    flow-children: none;
+}
+
+.SHeroImage {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.SHeroVote {
+    width: 100%;
+    height: 100%;
+    background-image: url("s2r://panorama/images/hud/puton_png.vtex");
+    background-size: contain;
+    background-repeat: no-repeat;
+    hue-rotation: 220deg;
+    wash-color: #5E98D955;
+}
+
+#ContractPanel {
+    flow-children: none;
+    vertical-align: middle;
+    horizontal-align: center;
+    width: 1200px;
+    height: 500px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    box-shadow: #000000 -12px -12px 24px 24px;
+    z-index: -10;
+}
+
+#LeftSideContract {
+    width: 37%;
+    height: 100%;
+    vertical-align: middle;
+    horizontal-align: left;
+    flow-children: right-wrap;
+    overflow: clip scroll;
+    border-right: 2px solid black;
+}
+
+#RightSideContract {
+    width: 60%;
+    height: 80%;
+    vertical-align: top;
+    horizontal-align: right;
+    flow-children: right-wrap;
+    overflow: clip scroll;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#ContractYes {
+    width: 186px;
+    height: 45px;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    margin-bottom: 6%;
+    background-color: white;
+}
+
+#ContractNo {
+    width: 186px;
+    height: 45px;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    margin-left: 45%;
+    margin-bottom: 6%;
+    background-color: darkred;
+}
+
+#ContractYes:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -15px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#ContractNo:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -15px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#ContractYes Label {
+    font-size: 20px;
+    vertical-align: middle;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+#ContractNo Label {
+    font-size: 15px;
+    vertical-align: middle;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+.ContractClosed {
+    visibility: collapse;
+}
+
+.ContractItemSelected {
+    border: 4px solid #66aaff;
+    box-shadow: #55aaff77 -9px -9px 18px 18px;
+    animation-name: SelectedGlow;
+    animation-duration: 1.6s;
+    animation-delay: 0.15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#ContractItemAnimation {
+    width: 100%;
+    height: 100%;
+    pre-transform-scale2d: 3;
+    vertical-align: center;
+    horizontal-align: middle;
+    margin-left: 40%;
+    opacity: 1;
+}
+
+#ContractDropResult {
+    width: 120px;
+    height: 90px;
+    border: 1px solid white;
+    vertical-align: center;
+    horizontal-align: middle;
+    margin-left: 35%;
+    margin-top: -12%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 1px solid white;
+}
+
+#ContractDropRarity {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    opacity: 0.8;
+}
+
+.ContractItemIcon {
+    width: 99px;
+    height: 72px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 3px;
+    border: 1px solid black;
+    transition-property: position, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.ContractItemAnim {
+    border: 1px solid white;
+    vertical-align: center;
+    horizontal-align: middle;
+    margin-left: 35%;
+    margin-top: -12%;
+}
+
+.rare_anim {
+    margin: 3px;
+    animation-name: SelectedGlowRare;
+    animation-duration: 1.6s;
+    animation-delay: 0.15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.mythical_anim {
+    animation-name: SelectedGlowMytical;
+    animation-duration: 1.6s;
+    animation-delay: 0.15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.legendary_anim {
+    animation-name: SelectedGlowLegendary;
+    animation-duration: 1.6s;
+    animation-delay: 0.15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.ancient_anim {
+    animation-name: SelectedGlowAncient;
+    animation-duration: 1.6s;
+    animation-delay: 0.15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.immortal_anim {
+    animation-name: SelectedGlowImmortal;
+    animation-duration: 1.6s;
+    animation-delay: 0.15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.arcana_anim {
+    animation-name: SelectedGlowArcana;
+    animation-duration: 1.6s;
+    animation-delay: 0.15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes 'SelectedGlowRare' {
+    0% {
+        box-shadow: #4b69ff -3px -3px 6px 6px;
+    }
+    50% {
+        box-shadow: #4b69ff -4px -4px 7px 7px;
+    }
+    100% {
+        box-shadow: #4b69ff -3px -3px 6px 6px;
+    }
+}
+
+@keyframes 'SelectedGlowMytical' {
+    0% {
+        box-shadow: #8847ff -3px -3px 6px 6px;
+    }
+    50% {
+        box-shadow: #8847ff -4px -4px 7px 7px;
+    }
+    100% {
+        box-shadow: #8847ff -3px -3px 6px 6px;
+    }
+}
+
+@keyframes 'SelectedGlowLegendary' {
+    0% {
+        box-shadow: #d32ce6 -3px -3px 6px 6px;
+    }
+    50% {
+        box-shadow: #d32ce6 -4px -4px 7px 7px;
+    }
+    100% {
+        box-shadow: #d32ce6 -3px -3px 6px 6px;
+    }
+}
+
+@keyframes 'SelectedGlowAncient' {
+    0% {
+        box-shadow: #eb4b4b -3px -3px 6px 6px;
+    }
+    50% {
+        box-shadow: #eb4b4b -4px -4px 7px 7px;
+    }
+    100% {
+        box-shadow: #eb4b4b -3px -3px 6px 6px;
+    }
+}
+
+@keyframes 'SelectedGlowImmortal' {
+    0% {
+        box-shadow: #e4ae39 -3px -3px 6px 6px;
+    }
+    50% {
+        box-shadow: #e4ae39 -5px -5px 10px 10px;
+    }
+    100% {
+        box-shadow: #e4ae39 -3px -3px 6px 6px;
+    }
+}
+
+@keyframes 'SelectedGlowArcana' {
+    0% {
+        box-shadow: #ade55c -3px -3px 6px 6px;
+    }
+    50% {
+        box-shadow: #ade55c -5px -5px 10px 10px;
+    }
+    100% {
+        box-shadow: #ade55c -3px -3px 6px 6px;
+    }
+}
+
+#ContainExtremelyRare {
+    width: 48%;
+    height: 200px;
+    vertical-align: bottom;
+    horizontal-align: left;
+    flow-children: none;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: #000000 -6px -6px 12px 12px;
+    margin-left: 1%;
+    margin-bottom: 20px;
+}
+
+#ContainItem {
+    height: 100px;
+    vertical-align: middle;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+#ItemText {
+    color: #ffffff44;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 2px;
+    vertical-align: top;
+    horizontal-align: center;
+}
+
+#DropItemName {
+    color: #ffffff44;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2px;
+    vertical-align: top;
+    horizontal-align: center;
+}
+
+.TreasText {
+    font-size: 36px;
+    vertical-align: top;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    //color: #54A1F1; winter 2016 color
+    color: accentColorBright;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+#DropResult {
+    width: 128px;
+    height: 94px;
+    border: 1px solid white;
+    vertical-align: center;
+    horizontal-align: middle;
+    margin-top: 1%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 1px solid white;
+}
+
+#DropRarity {
+    width: 100%;
+    height: 35%;
+    vertical-align: bottom;
+    horizontal-align: middle;
+    opacity: 0.8;
+}
+
+#OpenTreasurePanel {
+    width: 47%;
+    height: 200px;
+    vertical-align: bottom;
+    horizontal-align: right;
+    flow-children: none;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    background-color: black;
+    background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: #000000 -6px -6px 12px 12px;
+    margin-right: 1%;
+    margin-bottom: 20px;
+}
+
+#ItemTextOpen {
+    font-size: 20px;
+    vertical-align: top;
+    horizontal-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #54A1F1;
+    text-shadow: 0px 1px 3px 3 #000000;
+    margin-top: 5px;
+}
+
+.TooltipItem {
+    background-color: black;
+    border-top: 1px solid #3b404777;
+    border-right: 1px solid #00000088;
+    border-left: 1px solid #4c434677;
+    border-bottom: 1px solid #00000088;
+    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326), to( #111111));
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    box-shadow: fill #00000055 -2px -2px 6px 6px;
+    transition-property: box-shadow, brightness;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+}
+
+#PlayerInventoryButton {
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+    horizontal-align: left;
+    margin-top: 1.22%;
+    margin-left: 10%;
+}
+
+.AspectRatio4x3 #PlayerInventoryButton {
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-position: center;
+    background-size: contain;
+    width: 28px;
+    height: 28px;
+    vertical-align: top;
+    horizontal-align: left;
+    margin-top: 4.3%;
+    margin-left: 17px;
+}
+
+#PlayerInventoryButton:hover {
+    transform: translatez( 1px);
+    brightness: 1.2;
+    wash-color: #ffd200;
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#PlayerInventoryButton:active {
+    sound: "ui_generic_button_click";
+    transform: translatez( -2px);
+    transition-property: opacity, wash-color, transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+}
+
+#PlayerInventoryButtonImage {
+    width: 100%;
+    height: 100%;
+    background-image: url("s2r://panorama/images/topbar/armory_icon_on_png.vtex");
+    background-position: center;
+    background-size: 100%;
+}
+
+#PlayerInventory {
+    flow-children: right;
+    margin-left: 2px;
+    height: 700px;
+    width: 1502px;
+    horizontal-align: right;
+    vertical-align: middle;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+
+#PlayerInventoryItems {
+    flow-children: none;
+    height: 100%;
+    width: 1250px;
+    horizontal-align: right;
+    vertical-align: middle;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #272d2efa), to( #131617f7));
+    border-left: 3px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#PlayerInventoryFilter {
+    flow-children: none;
+    height: 100%;
+    width: 250px;
+    horizontal-align: left;
+    vertical-align: middle;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #272d2efa), to( #131617f7));
+    border: 2px solid black;
+}
+
+#Inventory {
+    height: 100%;
+    margin: 2px;
+    flow-children: down-wrap;
+    overflow: scroll clip;
+    vertical-align: bottom;
+}
+
+.Deleted {
+    visibility: collapse;
+}
+
+#FilterLabel {
+    horizontal-align: left;
+    vertical-align: top;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+    color: #ADC6C8;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 25%;
+}
+
+#CloseInventoryButton Label {
+    horizontal-align: middle;
+    vertical-align: top;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+    color: #ADC6C8;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#FilterText {
+    horizontal-align: middle;
+    vertical-align: top;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+    color: #ADC6C8;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#RaritiesFilter {
+    width: 100%;
+    height: 70%;
+    flow-children: down;
+    horizontal-align: left;
+    vertical-align: top;
+    background-color: gradient( linear, 90% 0%, 100% 0%, from( #00000088), to( #00000000));
+    margin-top: 5%;
+}
+
+#RefreshButton {
+    width: 42px;
+    height: 42px;
+    margin: 4px;
+    horizontal-align: right;
+    vertical-align: bottom;
+    background-image: url("s2r://panorama/images/control_icons/refresh_psd.vtex");
+    background-position: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#RefreshButton:hover {
+    wash-color: white;
+}
+
+#CloseInventoryButton {
+    width: 170px;
+    height: 42px;
+    margin: 4px;
+    vertical-align: bottom;
+    background-color: black;
+    border-top: 1px solid #3b404777;
+    border-right: 1px solid #00000088;
+    border-left: 1px solid #4c434677;
+    border-bottom: 1px solid #00000088;
+    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326), to( #111111));
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    box-shadow: fill #00000055 -2px -2px 6px 6px;
+    transition-property: box-shadow, brightness;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+}
+
+#ClearFilter {
+    width: 100%;
+    height: 42px;
+    margin: 4px;
+    vertical-align: bottom;
+    background-color: black;
+    border-top: 1px solid #3b404777;
+    border-right: 1px solid #00000088;
+    border-left: 1px solid #4c434677;
+    border-bottom: 1px solid #00000088;
+    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326), to( #111111));
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    box-shadow: fill #00000055 -2px -2px 6px 6px;
+    transition-property: box-shadow, brightness;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes '2dpanelanimation' {
+    0% {
+        transform: translateZ( 0px) translateX( 0px) translateY( 0px) rotateY( 0deg) rotateX( 0deg);
+        box-shadow: fill #000000aa 0px 3px 2px 0px;
+    }
+    25% {
+        transform: translateZ( -3px) translateX( -3px) translateY( 0px) rotateY( -3deg) rotateX( 3deg);
+        box-shadow: fill #00000033 30px 40px 8px 0px;
+    }
+    50% {
+        transform: translateZ( 0px) translateX( 0px) translateY( 0px) rotateY( 0deg) rotateX( 0deg);
+        box-shadow: fill #000000aa 0px 3px 2px 0px;
+    }
+    75% {
+        transform: translateZ( -3px) translateX( 3px) translateY( 0px) rotateY( 3deg) rotateX( 3deg);
+        box-shadow: fill #00000033 -30px 40px 8px 0px;
+    }
+    100% {
+        transform: translateZ( 0px) translateX( 0px) translateY( 0px) rotateY( 0deg) rotateX( 0deg);
+        box-shadow: fill #000000aa 0px 3px 2px 0px;
+    }
+}
+
+#Tournament {
+    width: 900px;
+    height: 600px;
+    vertical-align: middle;
+    horizontal-align: center;
+    border-top: 1px solid #3b404777;
+    border-right: 1px solid #00000088;
+    border-left: 1px solid #4c434677;
+    border-bottom: 1px solid #00000088;
+}
+
+#TournamentText {
+    margin-top: 10px;
+    width: 520px;
+    horizontal-align: left;
+    vertical-align: bottom;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #a38863;
+    margin: 10px;
+    font-size: 20px;
+    color: #c8a778;
+    text-align: center;
+}
+
+#ConsoleMessegeRoot {
+    width: 400px;
+    height: 200px;
+    margin: 4px;
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-bottom: 250px;
+    flow-children: down-wrap;
+}
+
+.ConsoleText {
+    horizontal-align: left;
+    margin: 2px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.ImageClosed {
+    transform: translateX(-100%);
+}
+
+#EventWaveImage {
+    width: 571px;
+    height: 299px;
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 15%;
+    transition-property: transform;
+    transition-duration: .32s;
+    transition-timing-function: ease-in-out;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    opacity: 0;
+}
+
+#RoundName {
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+    horizontal-align: left;
+    vertical-align: top;
+    margin-top: 70px;
+    margin-left: 50px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-shadow: 0px 0px 1px 2.0 lightskyblue;
+    text-overflow: shrink;
+    font-family: Goudy Trajan Medium, FZKai-Z03, TH Sarabun New, YDYGO 540;
+    transition-property: text-shadow;
+    transition-duration: 0.25s;
+    transition-delay: 0.0s;
+    transition-timing-function: ease-in-out;
+    font-family: Goudy Trajan Medium, FZKai-Z03, TH Sarabun New, YDYGO 540;
+    z-index: 1;
+}
+
+#Console {
+    width: 280px;
+    height: 400px;
+    horizontal-align: right;
+    vertical-align: top;
+}
+
+#ConsoleField {
+    width: 280px;
+    height: 380px;
+    background-color: #101413;
+    horizontal-align: center;
+    vertical-align: top;
+    flow-children: down-wrap;
+}
+
+#ConsoleButton {
+    width: 32px;
+    height: 32px;
+    margin-top: 405px;
+    horizontal-align: right;
+    vertical-align: top;
+}
+
+#EventScoreRoot {
+    width: 250px;
+    height: 60px;
+    background-color: #00000099;
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-bottom: 250px;
+    box-shadow: #00000033 -2px -2px 1px 4px;
+    opacity-mask: url("s2r://panorama/images/masks/chat_preview_opacity_mask_png.vtex") 0.0;
+}
+
+#CreepsLeft {
+    width: 100%;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.DetailsHeader {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    horizontal-align: center;
+    color: #F1D7AF;
+}
