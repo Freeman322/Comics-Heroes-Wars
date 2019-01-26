@@ -2446,4 +2446,30 @@
 			}
 		}
 	}
+	"models/heroes/wraith_king/leoric_base.vmdl"
+	{
+		"PortraitLightPosition"		"86.56 23.62 204.19"
+		"PortraitLightAngles"		"158.54 7.73 0.00"
+		"PortraitLightFOV"		"75"
+		"PortraitLightDistance"		"99"
+		"PortraitLightColor"		"171 237 254"
+		"PortraitShadowColor"		"25 123 89"
+		"PortraitShadowScale"		"0.575000"
+		"PortraitAmbientColor"		"84 84 84"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitLightScale"		"1.350000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-2.180 3.290 -43.590"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"172.67 16.12 165.71"
+				"PortraitAngles"		"3.74 186.09 0.00"
+				"PortraitFOV"		"15"
+			}
+		}
+	}
 }

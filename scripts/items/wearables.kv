@@ -2077,39 +2077,24 @@
                 {
                     "1" 
                     {
-                        "particle"                  "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"                                       
-                    }
-                    "2" 
-                    {
-                        "particle"                  "particles/econ/items/lich/lich_ti8_immortal_arms/lich_ti8_ambient_skull_eye.vpcf"
-
+                        "particle"                  "particles/units/heroes/hero_skeletonking/skeletonking_eyes.vpcf"            
                         "ControlPoints"
                         {
-                            "2"
+                            "0"
                             {
-                                "attach_point"      "attach_eye_r"
+                                "attach_point"      "attach_left_eye"
                             }
-                            "3"
+                            "1"
                             {
-                                "attach_point"      "attach_eye_l"
+                                "attach_point"      "attach_right_eye"
                             }
-                        }
+                        }                           
                     }
                 }
             }
         }
         "weapon"
         {
-            "__default"
-            {
-                 "models"
-                {
-                    "1"
-                    {
-                        "model"        "models/heroes/hero_night_king/night_king_sword.vmdl"
-                    }
-                }
-            }
             "shadow_king"
             {
                 "models"
@@ -2120,43 +2105,9 @@
                     }
                 }
             }
-            "ancient_relic"
-            {
-                 "models"
-                {
-                    "1"
-                    {
-                        "model"        "models/heroes/hero_night_king/night_king_ancient_sword.vmdl"
-                        "particles"
-                        {
-                            "1"
-                            {
-                                "particle"  "particles/econ/courier/courier_wabbit/courier_wabbit_ambient_lvl2.vpcf"
-                                "ControlPoints"
-                                {
-                                    "1"         "attach_sword"
-                                    "2"         "attach_sword"
-                                    "3"         "attach_sword"
-                                    "4"         "attach_sword"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
         "head"
         {
-            "__default"
-            {
-                 "models"
-                {
-                    "1"
-                    {
-                        "model"        "models/heroes/hero_night_king/night_king_crown.vmdl"
-                    }
-                }
-            }
             "shadow_king"
             {
                 "models"
@@ -2170,16 +2121,6 @@
         }
         "armor"
         {
-            "__default"
-            {
-                 "models"
-                {
-                    "1"
-                    {
-                        "model"        "models/heroes/hero_night_king/night_king_armor.vmdl"
-                    }
-                }
-            }
             "shadow_king"
             {
                 "model"                 "models/heroes/abaddon/abaddon.vmdl"
@@ -4905,6 +4846,35 @@
                     {
                         "modifier"          "modifier_beerus"
                         "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+            }
+        }
+    }
+    "npc_dota_hero_earth_spirit"
+    {
+        "skin"
+        {
+            "jiren"
+            {
+                "model"                     "models/heroes/hero_marvel/jiren_custom/jiren.vmdl"    
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_jiren"
+                        "modifier_path"     "modifiers/modifier_jiren.lua"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift_buff.vpcf"
+                    }
+                    "2"
+                    {
+                        "particle"      "particles/hero_marvel/quantum_fier_custom.vpcf"
                     }
                 }
             }

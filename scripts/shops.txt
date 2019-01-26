@@ -54,7 +54,7 @@
 		"item"		"item_blink"		
 		"item"		"item_shadow_amulet"	
 		"item"		"item_majestic_staff"
-		"item"		"item_grief_vessel"	
+		"item"		"item_glimmerdark_shield"	
 		"item"		"item_dvine_armor"
 	}
 			

@@ -241,7 +241,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1500"
+		"ItemCost"						"1100"
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"component"
 		"ItemAliases"					"javelin"
@@ -258,12 +258,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_chance"			"25"
+				"bonus_chance"			"35"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"	"85"
+				"bonus_chance_damage"	"60"
 			}
 		}
 	}
@@ -384,7 +384,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"ItemCost"						"200"
+		"ItemCost"						"300"
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"component"
 		"ItemAliases"					"quelling blade"
@@ -397,12 +397,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"24"
+				"damage_bonus"			"36"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"7"
+				"damage_bonus_ranged"	"14"
 			}
 			"03"
 			{
@@ -466,7 +466,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"			"550"
+				"hp_restore"			"500"
 			}
 		}
 	}
@@ -561,7 +561,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"250"
+		"ItemCost"						"100"
 		"ItemShopTags"					"armor"
 		"ItemQuality"					"component"
 		"ItemAliases"					"wind lace"
@@ -583,12 +583,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed"			"20"
+				"movement_speed"			"5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_speed"			"8"
+				"bonus_speed"			"4"
 			}
 			"03"
 			{
@@ -1024,7 +1024,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2100"
+		"ItemCost"						"2000"
 		"ItemShopTags"					"agi;int;str"
 		"ItemQuality"					"secret_shop"
 		"ItemAliases"					"ultimate orb"
@@ -1592,7 +1592,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime"				"3600"
+				"lifetime"				"3000"
 			}
 			"02"
 			{
@@ -1654,7 +1654,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime"				"240"
+				"lifetime"				"700"
 			}
 			"02"
 			{
@@ -1760,12 +1760,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime_observer"				"360"
+				"lifetime_observer"				"3000"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime_sentry"				"240"
+				"lifetime_sentry"				"700"
 			}
 			"06"
 			{
@@ -2044,12 +2044,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"15"
+				"bonus_movement_speed"	"25"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"0"
+				"bonus_damage"			"25"
 			}			
 			"03"
 			{
@@ -2069,7 +2069,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"phase_movement_speed"  "20"
+				"phase_movement_speed"  "28"
 			}		
 			"07"
 			{
@@ -2084,7 +2084,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"25"
+				"bonus_attack_speed"	"45"
 			}		
 			"10"
 			{
@@ -2616,7 +2616,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"		"10"
+				"bonus_damage"		"15"
 			}
 		}
 	}
@@ -2650,7 +2650,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_block_melee"	"30"
+				"damage_block_melee"	"25"
 			}
 			"03"
 			{
@@ -3140,12 +3140,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"7"
+				"bonus_damage"			"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0"
+				"bonus_armor"			"3"
 			}
 			"03"
 			{
@@ -3155,12 +3155,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen"		"0.65"
+				"aura_mana_regen"		"1"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"2"
+				"aura_bonus_armor"		"3"
 			}
 		}
 	}
@@ -3935,7 +3935,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"250"
+		"ItemCost"						"550"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3984,7 +3984,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"10"
+				"bonus_intellect"		"15"
 			}
 			"02"
 			{
@@ -3994,7 +3994,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"20"
+				"bonus_agility"			"30"
 			}
 			"04"
 			{
@@ -4505,7 +4505,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1900"
+		"ItemCost"						"2000"
 		"ItemShopTags"					""
 		"ItemAliases"					"hom"
 
@@ -4564,7 +4564,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"190"
+				"bonus_gold"			"200"
 			}
 			"04"
 			{
@@ -5135,7 +5135,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"400"	
+		"ItemCost"						"1000"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -5787,7 +5787,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"250"
+				"bonus_health"			"350"
 			}
 			"02"
 			{
@@ -5824,7 +5824,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"600"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -5866,7 +5866,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"250"
+				"bonus_health"			"500"
 			}
 			"02"
 			{
@@ -5876,7 +5876,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"2"
+				"bonus_all_stats"		"10"
 			}
 			"04"
 			{
@@ -5886,7 +5886,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_damage_melee"	"70"
+				"block_damage_melee"	"75"
 			}
 			"06"
 			{
@@ -6840,7 +6840,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"600"
+		"ItemCost"						"750"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -6879,17 +6879,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"14"
+				"bonus_agility"			"18"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"12"
+				"bonus_strength"		"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_attack_range"		"140"
+				"base_attack_range"		"130"
 			}
 		}
 	}
@@ -8785,7 +8785,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"450"
+		"ItemCost"						"1000"
 		"ItemShopTags"					"agi;int;str"
 		"ItemQuality"					"component"
 		"ItemAliases"					"crown"
@@ -8799,7 +8799,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"4"
+				"bonus_all_stats"		"15"
 			}
 		}
 	}
@@ -8872,7 +8872,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"10"
+				"bonus_all_stats"		"15"
 			}
 			"03"
 			{
@@ -8927,7 +8927,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"50"
+		"ItemCost"						"100"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"smoke of deceit"
@@ -8961,7 +8961,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"		"15"
+				"bonus_movement_speed"		"25"
 			}
 			"04"
 			{
@@ -8988,7 +8988,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"150"
+		"ItemCost"						"80"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"tome of knowledge"
@@ -8999,8 +8999,8 @@
 		"ItemDisplayCharges"			"1"
 		"ItemStockMax"					"30"
 		"ItemStockInitial"				"0"
-		"ItemStockTime"					"180.0"
-		"ItemInitialStockTime"			"180.0"
+		"ItemStockTime"					"90.0"
+		"ItemInitialStockTime"			"90.0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemSupport"					"1"
 		"IsTempestDoubleClonable"		"0"
@@ -9013,7 +9013,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"xp_bonus"				"500"
+				"xp_bonus"				"200"
 			}
 		}
 	}
@@ -9315,7 +9315,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.0"
+				"duration"				"3.0"
 			}
 		}
 	}
@@ -9456,7 +9456,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"30"
 		"AbilityCastRange"				"140"
 		"AbilityCastPoint"				"0.0"
 
@@ -9538,7 +9538,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"				"2"
+				"stun_duration"				"2.5"
 			}
 		}
 	}
@@ -9698,7 +9698,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"42"
+				"bonus_movement_speed"	"30"
 			}
 			"02"
 			{
@@ -9743,7 +9743,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"broken_movement_speed"	"32"
+				"broken_movement_speed"	"20"
 			}
 		}
 	}
@@ -11896,7 +11896,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"700"
+		"ItemCost"						"800"
 		"ItemShopTags"					"regen_health"
 		"ItemQuality"					"component"
 		"ItemAliases"					"rot"
@@ -11916,12 +11916,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"150"
+				"bonus_health"			"300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"3.75"
+				"bonus_health_regen"	"5"
 			}
 		}
 		

@@ -1790,6 +1790,11 @@ function Util:SetupConsole()
             GameRules:SendCustomMessage(res, 0, 0)
 
            ---Network:BanPlayer(tonumber(userid))
+            local p = PlayerResource:GetPlayer(tonumber(userid))
+            local h = p:GetAssignedHero()
+
+            UTIL_Remove(h)
+            UTIL_Remove(p)
           end)
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -2417,4 +2422,17 @@ function CDOTA_BaseNPC:GetPhysicalArmorReduction()
     local armor_reduction = 1 - (0.06 * armornpc) / (1 + (0.06 * math.abs(armornpc)))
     armor_reduction = 100 - (armor_reduction * 100)
     return armor_reduction
+end
+
+function CDOTA_BaseNPC:GetTarget()
+  local unit
+
+  if IsServer() then
+    local units = FindUnitsInRadius( self:GetTeamNumber(), self:GetOrigin(), self, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, FIND_CLOSEST, false )
+    if #units > 0 then
+      unit = units[1]
+    end
+  end
+
+  return unit;
 end

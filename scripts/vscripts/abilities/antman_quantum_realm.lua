@@ -38,13 +38,7 @@ function modifier_antman_quantum_realm:OnTakeDamage( params )
     if params.unit == self:GetParent() then
       local target = params.attacker
 
-      if target == self:GetParent() then
-        return
-      end
-
-      if target:GetClassname() == "ent_dota_fountain" then
-        return
-      end
+      if not target:IsHero() or not target:IsCreep() then return end
 
       ApplyDamage ( {
         victim = target,

@@ -46,6 +46,7 @@ function modifier_beast_shapeshift:DeclareFunctions ()
 end
 
 function modifier_beast_shapeshift:GetModifierModelChange(params)
+  if self:GetParent():HasModifier("modifier_jiren") then return "models/heroes/hero_marvel/jiren_custom/jiren.vmdl" end 
   return "models/creeps/nian/nian_creep.vmdl"
 end
 
