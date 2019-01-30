@@ -179,21 +179,25 @@ end
 function modifier_item_spear_of_destiny_active:DeclareFunctions()
 local funcs = {
         MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
-        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
-        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL
     }
 
     return funcs
 end
+
+function modifier_item_spear_of_destiny_active:CheckState ()
+    local state = {
+        [MODIFIER_STATE_DISARMED] = true
+    }
+
+    return state
+end
+
 
 function modifier_item_spear_of_destiny_active:GetAbsoluteNoDamagePhysical( params )
     return 1
 end
 
 function modifier_item_spear_of_destiny_active:GetAbsoluteNoDamageMagical( params )
-    return 1
-end
-
-function modifier_item_spear_of_destiny_active:GetAbsoluteNoDamagePure( params )
     return 1
 end

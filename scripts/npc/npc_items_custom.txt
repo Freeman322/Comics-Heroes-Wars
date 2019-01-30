@@ -1202,11 +1202,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"					"250"
 		"AbilityCastPoint"					"0.0"
-		"AbilityCooldown"					"4.0"
+		"AbilityCooldown"					"14.0"
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"150"
+		"ItemCost"							"180"
 		"ItemShopTags"						"epic"
 		"ItemQuality"						"epic"
 		"ItemAliases"						"berry"
@@ -1334,17 +1334,17 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cooldown_reduction_bonus"	"24"
+				"cooldown_reduction_bonus"	"25"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"spell_amp_bonus"			"30"
+				"spell_amp_bonus"			"35"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tooltip_damage"			"1000"
+				"tooltip_damage"			"2000"
 			}
 			"05"
 			{
@@ -1354,7 +1354,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"magical_vampirism"			"28"
+				"magical_vampirism"			"30"
 			}
 		}
 	}
@@ -1580,6 +1580,7 @@
 		"AbilityCooldown"				"60.0"
 		"AbilityManaCost"				"300"
 		"AbilityCastPoint"              "0"
+		"AbilityCastRange"				"1000"
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3235,7 +3236,7 @@
 		"ItemResult"					"item_heart_2"
 		"ItemRequirements"
 		{
-	      		"01"						"item_bloodstone;item_heart"
+	      		"01"						"item_bloodstone;item_heart;item_wraith_band"
 		}
 	}
 	"item_recipe_heart_of_abyss"

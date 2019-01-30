@@ -16,7 +16,7 @@ end
 --------------------------------------------------------------------------------
 
 function pudge_dismember_lua:GetChannelTime()
-	return 3
+	return 4
 end
 
 --------------------------------------------------------------------------------
@@ -70,15 +70,18 @@ end
 
 function modifier_pudge_dismember_lua:OnCreated( kv )
 	self.dismember_damage = self:GetAbility():GetSpecialValueFor( "dismember_damage" )
-	self.tick_rate = 1
-	self.strength_damage_scepter = self:GetAbility():GetSpecialValueFor( "strength_damage_scepter" )
+	self.tick_rate = 0.5
+	self.health_damage = self:GetAbility():GetSpecialValueFor( "health_damage" )
+
     self.damage = self.dismember_damage
 
 	if IsServer() then
-		if self:GetCaster():HasScepter() then
-	        self.damage = self.dismember_damage + (self:GetCaster():GetStrength()*self.strength_damage_scepter)
-	    end
 		self:GetParent():InterruptChannel()
+
+		if self:GetCaster():HasTalent("special_bonus_unique_pudge") then self.health_damage = self.health_damage + self:GetCaster():FindTalentValue("special_bonus_unique_pudge") end
+
+		self.damage = self.damage + (self:GetCaster():GetHealth() * (self.health_damage / 100))
+		
 		self:OnIntervalThink()
 		self:StartIntervalThink( self.tick_rate )
 
@@ -100,25 +103,21 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_pudge_dismember_lua:OnIntervalThink()
-	if IsServer() then
-		local flDamage = self.damage
-		local dmgType = DAMAGE_TYPE_MAGICAL
-		if self:GetCaster():HasScepter() then
-			self:GetCaster():Heal( flDamage, self:GetAbility() )
-		end
-		if self:GetCaster():HasTalent("special_bonus_unique_pudge_3") then 
-			dmgType = DAMAGE_TYPE_PURE
-		end
+	if IsServer() then		
+		self:GetCaster():Heal( self.damage, self:GetAbility() )
+
 		local damage = {
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
-			damage = flDamage,
-			damage_type = dmgType,
+			damage = self.damage / 2,
+			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self:GetAbility()
 		}
 
 		ApplyDamage( damage )
+
 		EmitSoundOn( "Hero_Pudge.Dismember", self:GetParent() )
+		EmitSoundOn( "Hero_Pudge.DismemberSwings", self:GetParent() )
 	end
 end
 

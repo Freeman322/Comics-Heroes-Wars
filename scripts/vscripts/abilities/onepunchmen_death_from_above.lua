@@ -1,9 +1,6 @@
 if onepunchmen_death_from_above == nil then onepunchmen_death_from_above = class({}) end 
 LinkLuaModifier( "modifier_onepunchmen_death_from_above", "abilities/onepunchmen_death_from_above", LUA_MODIFIER_MOTION_VERTICAL )
 
---[[function onepunchmen_death_from_above:GetCooldown( nLevel )
-	if (IsServer() and PlayerResource:GetSteamAccountID(self:GetCaster():GetPlayerOwnerID()) == 133180494) then return 0 end return self.BaseClass.GetCooldown( self, nLevel )
-end]]--
 
 function onepunchmen_death_from_above:OnSpellStart()
 	if IsServer() then

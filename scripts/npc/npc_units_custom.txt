@@ -1208,8 +1208,8 @@
 		"AttackRange"				"475"
 		"ProjectileModel"			"particles/econ/items/bristleback/ti7_head_nasal_goo/bristleback_ti7_crimson_nasal_goo_proj.vpcf"
 		"ProjectileSpeed"			"600"
-		"AttackDamageMin"			"659"		// Damage range min.
-		"AttackDamageMax"			"1230"		// Damage range max.
+		"AttackDamageMin"			"1659"		// Damage range min.
+		"AttackDamageMax"			"1930"		// Damage range max.
 		"AttackRate"				"0.6"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.

@@ -15,6 +15,9 @@ function Talents:OnTalentLearned(pID, talent)
 
         self._hTalents[pID] = (self._hTalents[pID] or {}) self._hTalents[pID][talent] = hero:FindTalentValue(talent)
 
+        local ability = Talents:GetTalentLinkedAbility(talent)
+        if ability then hero:FindAbilityByName(ability):SetHidden(false) hero:FindAbilityByName(ability):SetLevel(1) end 
+
         CustomNetTables:SetTableValue("talents", "talents", self._hTalents)
     end 
 end
@@ -37,5 +40,14 @@ function Talents:ApplyTalentMpdifier( talent, hero )
         hero:AddNewModifier(hero, hero:FindAbilityByName(talent), talent, nil)
     end 
 end
+
+function Talents:GetTalentLinkedAbility(talent)
+    if IsServer() and Util.abilities and Util.abilities[talent] then
+        return Util.abilities[talent]["LinkedTalentAbility"]
+    end 
+    
+    return nil
+end
+
 
 Talents:Init()

@@ -7,9 +7,6 @@ function onepunchman_light_strikes_array:GetAOERadius()
     return 400
 end
 
---[[function onepunchman_light_strikes_array:GetCooldown( nLevel )
-	if (IsServer() and PlayerResource:GetSteamAccountID(self:GetCaster():GetPlayerOwnerID()) == 133180494) then return 0 end return self.BaseClass.GetCooldown( self, nLevel )
-end]]--
 
 function onepunchman_light_strikes_array:GetBehavior()
     return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK + DOTA_ABILITY_BEHAVIOR_AOE

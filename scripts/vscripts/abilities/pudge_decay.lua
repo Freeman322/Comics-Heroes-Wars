@@ -80,9 +80,12 @@ function modifier_pudge_decay:OnCreated( kv )
 
 	if IsServer() then
 		local particle = "particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+		
 		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "champion_of_nurgle") == true then particle = "particles/econ/items/pudge/pudge_immortal_arm/pudge_immortal_arm_rot.vpcf" end 
+		
 		if self:GetParent() == self:GetCaster() then
 			EmitSoundOn( "Hero_Pudge.Rot", self:GetCaster() )
+			
 			local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( self.rot_radius, 1, self.rot_radius ) )
 			self:AddParticle( nFXIndex, false, false, -1, false, false )
@@ -128,8 +131,8 @@ end
 
 function modifier_pudge_decay:OnIntervalThink()
 	if IsServer() then
-		local flDamagePerTick = self.rot_tick * (self.rot_damage*self:GetCaster():GetMaxHealth())
-		local flDamagePerTick = flDamagePerTick + (self:GetAbility():GetSpecialValueFor("damage")/10)
+		local flDamagePerTick = self:GetAbility():GetSpecialValueFor("damage") / 10
+		
 		if self:GetCaster():IsAlive() then
 			local damage = {
 				victim = self:GetParent(),

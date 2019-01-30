@@ -25,7 +25,7 @@ end
 --------------------------------------------------------------------------------
 
 function item_glimmerdark_shield:Spawn()
-	print(self:GetName())
+	
 end
 
 

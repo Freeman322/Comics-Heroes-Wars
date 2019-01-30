@@ -53,10 +53,12 @@ end
 
 function item_soul_urn_modifier:OnTakeDamageKillCredit( params )
     if IsServer() then
-        if params.inflictor and params.attacker == self:GetParent()	then 
+        if params.inflictor and params.attacker == self:GetParent() then 
             if RollPercentage(self:GetAbility():GetSpecialValueFor("critical_chance")) then 
                 local damage = (params.damage * (self:GetAbility():GetSpecialValueFor("critical_strike") / 100))
 
+                if params.target == self:GetParent() then return end 
+                
                 ApplyDamage ( {
                     victim = params.target,
                     attacker = self:GetParent(),
