@@ -126,6 +126,19 @@ function modifier_item_glimmerdark_shield_prism:IsPurgable()
 	return false
 end
 
+
+function modifier_item_glimmerdark_shield_prism:OnCreated(params)
+	if IsServer() then 
+		self:StartIntervalThink(FrameTime())
+	end
+end
+
+function modifier_item_glimmerdark_shield_prism:OnIntervalThink()
+	if IsServer() then 
+		self:GetParent():Purge(false, true, false, true, true)
+	end
+end
+
 function modifier_item_glimmerdark_shield_prism:DeclareFunctions()
 	local funcs = 
 	{

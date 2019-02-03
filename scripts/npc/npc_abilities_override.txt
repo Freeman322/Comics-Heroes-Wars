@@ -641,4 +641,120 @@
 
 	"item_vibranium_sword"     "REMOVE"
   "item_recipe_vibranium_sword"      "REMOVE"
+
+	//=================================================================================================================
+	// Lion: Finger of Death
+	//=================================================================================================================
+	"lion_finger_of_death"
+	{
+	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient.vpcf"
+			"particle"			"particles/econ/items/lion/fish_stick_retro/fish_stick_spell_ambient_retro.vpcf"
+			"particle"  			"particles/econ/items/lion/lion_demon_drain/lion_demon_drain_ambient.vpcf"
+			"model" 			 "models/items/lion/fish_stick_retro/fish_stick_retro.vmdl"
+			"model"  "models/items/lion/lion_ti8_arm/lion_ti8_arm_alt.vmdl"
+			"model"  "models/items/lion/demon_drain/demon_drain.vmdl"
+			"model"  "models/items/lion/mana_drain_immortal/mesh/mana_drain_immortal_model.vmdl"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"400 600 800"
+				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_scepter"			"600 800 1000"
+				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_kill"			"75"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_cost_scepter"			"200 420 625"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0.25"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"100.0 60.0 20.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"splash_radius_scepter"		"325"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Shadow Demon: Shadow Demon Soul Catcher
+	//=================================================================================================================
+	"shadow_demon_soul_catcher"
+	{
+	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_lost"			"10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"175 200 225 250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_outgoing_damage"	"-70 -55 -40 -25"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_outgoing_damage_tooltip"	"30 45 60 75"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_incoming_damage"	"100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_incoming_damage_tooltip"	"200"
+			}		
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
 }

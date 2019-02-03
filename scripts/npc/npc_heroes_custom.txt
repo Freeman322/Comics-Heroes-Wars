@@ -2912,7 +2912,7 @@
 		"Ability3"					"ostarion_mortal_strike"
 		"Ability4"					"generic_hidden"
 	    "Ability5"         			"generic_hidden"
-		"Ability6"					"ostarion_reincarnation"
+		"Ability6"					"skeleton_king_reincarnation"
 	  	"Ability7"					""
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_unique_ostarion_2"
@@ -6513,5 +6513,67 @@
 		{
 
 		}
+	}
+	"npc_dota_hero_custom_lion"
+	{
+		"override_hero"					"npc_dota_hero_ogre_magi"  
+
+		"DisableWearables"				"1"
+		
+		"CMDisabled"					"1"
+		"HeroDisabled"					"1"
+
+		"Model"							"models/heroes/lion/lion.vmdl"
+		"Portrait"						"vgui/hud/heroportraits/portrait_lion"
+		"IdleExpression"				"scenes/lion/lion_exp_idle_01.vcd"
+		"SoundSet"						"Hero_Lion"
+	
+		"ModelScale"					"0.700000"
+		"LoadoutScale"					"0.820000"
+	
+		"Ability1"						"lion_impale"
+		"Ability2"						"lion_voodoo"
+		"Ability3"						"shadow_demon_soul_catcher"
+		"Ability4"						"generic_hidden"
+		"Ability5"						"generic_hidden"
+		"Ability6"						"lion_finger_of_death"
+		"Ability10"						"special_bonus_cast_range_100"
+		"Ability11"						"special_bonus_attack_damage_90"
+		"Ability12"						"special_bonus_unique_lion_3"
+		"Ability13"						"special_bonus_gold_income_25"
+		"Ability14"						"special_bonus_hp_500"
+		"Ability15"						"special_bonus_unique_lion"
+		"Ability16"						"special_bonus_unique_lion_2"
+		"Ability17"						"special_bonus_unique_lion_4"
+	
+		"ArmorPhysical"					"-1"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"29"
+		"AttackDamageMax"				"35"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"			"0.430000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"600"
+		"ProjectileModel"				"particles/units/heroes/hero_lion/lion_base_attack.vpcf"
+		"ProjectileSpeed"				"900"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"18"
+		"AttributeStrengthGain"			"2.200000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"3.500000"
+		"AttributeBaseAgility"			"15"
+		"AttributeAgilityGain"			"1.500000"
+		"MovementSpeed"					"290"
+		"MovementTurnRate"				"0.500000"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		
+		"precache"
+		{
+			"model"		"models/props_gameplay/frog.vmdl"
+		}
+		
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_lion.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_lion"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
 	}
 }

@@ -2723,6 +2723,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"6775"	
 		"BaseClass"             		"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"            "recipe"

@@ -544,7 +544,7 @@
 		"AbilityTextureName"            "custom/boots_of_protection"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"4"
 		"AbilityManaCost"				"0"
 	
 		// Item Info
@@ -1946,7 +1946,7 @@
 			"01"
 			{
 				"var_type"						    "FIELD_INTEGER"
-				"bonus_all_stats"				    "80"
+				"bonus_all_stats"				    "100"
 			}
 			"02"
 			{
@@ -2338,12 +2338,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"50"
+				"bonus_strength"		"70"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"50"
+				"bonus_intellect"		"70"
 			}
 			"04"
 			{
@@ -2745,7 +2745,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1300"
+		"ItemCost"						"2000"
 		"ItemShopTags"					""
 	
 		// Recipe
@@ -5208,7 +5208,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_post_attack"	"80"
+				"bonus_damage_post_attack"	"90"
 			}
 			"05"
 			{
@@ -6636,12 +6636,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"30"
+				"bonus_strength"				"38"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"30"
+				"bonus_agility"					"38"
 			}			
 			"04"
 			{
@@ -6883,7 +6883,7 @@
             "01"
             {
                 "var_type"            	"FIELD_INTEGER"
-                "spell_amp"            	"15"
+                "spell_amp"            	"25"
             }
             "02"
             {
@@ -7117,7 +7117,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"120"
+				"bonus_intellect"		"100"
 			}
 			"02"
 			{
@@ -7192,7 +7192,7 @@
 			"16"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"40"
+				"bonus_all_stats"			"50"
 			}
 		}
 	}
@@ -7428,7 +7428,7 @@
 		"ScriptFile"					"items/item_glimmerdark_shield"
 		"AbilityTextureName"        	"custom/glimmerdark_shield"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------

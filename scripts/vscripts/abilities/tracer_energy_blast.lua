@@ -29,7 +29,7 @@ function tracer_energy_blast:OnSpellStart()
 			if self:GetCaster():HasTalent("special_bonus_unique_tracer") then
 		        damage = self:GetCaster():FindTalentValue("special_bonus_unique_tracer") + self:GetSpecialValueFor( "damage" )
 			end
-			ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self})
+			ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = self})
 			EmitSoundOn( "Hero_Lina.LagunaBlade.Immortal", hTarget )
 		end
 
