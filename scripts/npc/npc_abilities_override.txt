@@ -667,19 +667,19 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"400 600 800"
+				"damage"					"600 800 1200"
 				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"600 800 1000"
+				"damage_scepter"			"800 1000 1250"
 				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_kill"			"75"
+				"damage_per_kill"			"165"
 			}
 			"04"
 			{
@@ -722,7 +722,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_lost"			"10 15 20 25"
+				"health_lost"			"10 20 30 40"
 			}
 			"02"
 			{

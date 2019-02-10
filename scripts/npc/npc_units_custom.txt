@@ -1082,7 +1082,7 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/creeps/spiders/spider_kidnap.vmdl"	// Model.
+		"Model"						"models/heroes/broodmother/spiderling.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"LoneDruid_SpiritBear"
 		"Level"						"7"

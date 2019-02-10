@@ -38,7 +38,7 @@ function modifier_antman_quantum_realm:OnTakeDamage( params )
     if params.unit == self:GetParent() then
       local target = params.attacker
 
-      if not target:IsHero() or not target:IsCreep() then return end
+      if target:IsAncient() or target:IsBuilding() then return end
 
       ApplyDamage ( {
         victim = target,

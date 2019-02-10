@@ -25,6 +25,11 @@ function modifier_bynder_passive:RemoveOnDeath()
 	return false
 end
 
+function modifier_bynder_passive:IsPurgable()
+	return false
+end
+
+
 function modifier_bynder_passive:OnRefresh( kv )
 	if IsServer() then
 		self:GetParent():CalculateStatBonus()

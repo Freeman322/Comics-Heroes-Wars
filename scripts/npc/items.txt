@@ -630,7 +630,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_armor"			"23"
+				"bonus_armor"			"1.65"
 			}
 		}
 	}

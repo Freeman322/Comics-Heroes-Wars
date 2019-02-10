@@ -24295,10 +24295,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"           	 		"clinkz_searing_arrows"
-		"AbilityTextureName"			"custom/arror_searing_arrows"				
+		"BaseClass"           	 		"ability_lua"
+		"AbilityTextureName"				"custom/arror_searing_arrows"
+		"ScriptFile"								"abilities/arror_searing_arrows.lua"		
 		
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -26793,6 +26794,7 @@
 		"precache"
 		{
 			"particle"					"particles/units/heroes/hero_sven/sven_spell_warcry.vpcf"
+			"model"					"models/heroes/broodmother/spiderling.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
