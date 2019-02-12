@@ -85,7 +85,7 @@ function modifier_flash_stampede:DeclareFunctions()
 end
 
 function modifier_flash_stampede:GetModifierMoveSpeed_Absolute( params )
-	return 1500
+	return 950
 end
 
 if modifier_flash_stampede_passive == nil then modifier_flash_stampede_passive = class({}) end

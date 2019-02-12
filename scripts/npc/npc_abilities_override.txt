@@ -667,13 +667,13 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"600 800 1200"
+				"damage"					"650 850 1250"
 				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"800 1000 1250"
+				"damage_scepter"			"500 700 900"
 				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
 			}
 			"03"
@@ -684,22 +684,22 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_cost_scepter"			"200 420 625"
+				"mana_cost_scepter"			"350 550 700"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_delay"				"0.25"
+				"damage_delay"				"0.20"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"100.0 60.0 20.0"
+				"cooldown_scepter"			"35.0 35.0 35.0"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"splash_radius_scepter"		"325"
+				"splash_radius_scepter"		"425"
 			}
 		}
 	}
@@ -722,7 +722,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_lost"			"10 20 30 40"
+				"health_lost"			"15 25 35 45"
 			}
 			"02"
 			{
@@ -756,5 +756,76 @@
 			}		
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Lion: Impale
+	//=================================================================================================================
+	"lion_impale"
+	{
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12.0 12.0 12.0 12.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 100 130 160"
+		
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"100 180 260 340"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"125 125 125 125"
+			}
+			"02"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.4 1.8 2.2 2.6"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"length_buffer"		"325"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1600 1600 1600 1600"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_gold_income_10"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5956"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"350"
+			}
+		}
 	}
 }

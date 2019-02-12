@@ -1626,7 +1626,7 @@
 		"Ability6"					"godspeed_speed_void"
 
 	    "Ability10"					"special_bonus_godspeed_1"
-		"Ability11"					"special_bonus_gold_income_50"
+		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_attack_speed_100"
 		"Ability13"					"special_bonus_godspeed_2"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
@@ -1741,7 +1741,7 @@
 		"Ability6"					"savitar_speedforce_rage"
 
 	    "Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_gold_income_50"
+		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_savitar_2"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
@@ -1853,7 +1853,7 @@
         
         // Talents
 	    "Ability10"					"special_bonus_unique_ghost_1"
-		"Ability11"					"special_bonus_gold_income_50"
+		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_unique_ghost_4"
 		"Ability14"					"special_bonus_unique_ghost_3"
@@ -2079,7 +2079,7 @@
 		"Ability6"					"molagbal_sacrifice"
 
 		"Ability10"					"special_bonus_unique_molag_bal"
-		"Ability11"					"special_bonus_gold_income_50"
+		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_unique_molag_bal_1"
 		"Ability14"					"special_bonus_unique_molag_bal_3"
@@ -2612,20 +2612,21 @@
         "MovementSpeed"             "305"
         "MovementTurnRate"          "0.600000"
         
-        // Abilities
-		"Ability1"					""
-		"Ability2"					""
-		"Ability3"					""
-		"Ability4"					""
-		"Ability5"					""
-		"Ability6"					""
+    // Abilities
+		"Ability1"					"kyloren_freeze"
+		"Ability2"					"kyloren_ways_of_faith"
+		"Ability3"					"kyloren_dark_side"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"kyloren_force"
 
-		"Ability10"					"special_bonus_exp_boost_30"
+	
+		"Ability10"					"special_bonus_unique_kyloren_1"
 		"Ability11"					"special_bonus_all_stats_12"
-		"Ability12"					"special_bonus_movement_speed_60"
-		"Ability13"					"special_bonus_attack_speed_100"
-		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability12"					"special_bonus_unique_kyloren_2"
+		"Ability13"					"special_bonus_unique_kyloren_4"
+		"Ability14"					"special_bonus_unique_kyloren_3"
+		"Ability15"					"special_bonus_unique_kyloren_5"
 		"Ability16"					"special_bonus_all_stats_20"
 		"Ability17"					"special_bonus_20_crit_15"
 

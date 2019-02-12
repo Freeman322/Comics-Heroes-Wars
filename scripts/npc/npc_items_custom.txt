@@ -274,22 +274,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"130"
+				"bonus_damage"			"100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"45"
+				"bonus_attack_speed"	"60"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"all" 				    "65"
+				"all" 				    "50"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_chance" 		    "75"
+				"bash_chance" 		    "65"
 			}
 			"05"
 			{

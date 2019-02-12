@@ -3183,7 +3183,7 @@
 			"01"
 			{
 					"var_type"			"FIELD_FLOAT"
-					"duration"			"3.5 4.0 4.5 5.0"
+					"duration"			"2 2.5 3 3.5"
 			}
 			"02"
 			{
@@ -3823,7 +3823,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"					"40 30 20"
+		"AbilityCooldown"					"30 20 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -3861,7 +3861,7 @@
 			"03"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"cast_range_scepter"					"2500"
+				"cast_range_scepter"					"3500"
 			}
 			"04"
 			{
@@ -5913,7 +5913,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				       	    "rattletrap_rocket_flare"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"				"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"					"1"
 		"AbilityTextureName"				"custom/iron_man_solo"
@@ -8229,7 +8229,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"								"ability_lua"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"custom/doomsday_orb"
 		"ScriptFile"							"abilities/doomsday_orb.lua"
@@ -8241,7 +8241,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_pct_fake"			"3 4 5 6"
+				"damage_pct_fake"			"2 2.5 3.5 4"
 			}
 		}
 	}
@@ -11412,7 +11412,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"speed"							"3 2.6 2 1.5"
+				"speed"							"2 1.6 1.4 1.2"
 			}
 		}
 	}
@@ -17422,7 +17422,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"180 140 100"
-		"AbilityDuration"				"5 6 7"
+		"AbilityDuration"				"4 5 6"
 
 
 		// Cost
@@ -17449,12 +17449,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tooltip_duration"		"5 6 7"
+				"tooltip_duration"		"4 5 6"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_damage_outgoing"	"40 60 80"
+				"bonus_damage_outgoing"	"30 50 70"
 			}
 		}
 	}
@@ -32448,12 +32448,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"push_length"			"600 800 1000 1000"
+				"push_length"			"600 800 1000 1200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charges"				"1 2 3 3"
+				"charges"				"3"
 			}
 			"03"
 			{
@@ -33249,5 +33249,314 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	//=================================================================================================================
+	// Ability: Freeze
+	//=================================================================================================================
+	"kyloren_freeze"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_lua"
+		"ScriptFile"							"abilities/kyloren_freeze.lua"
+		"AbilityTextureName"			"custom/kyloren_freeze"
+
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"	
+
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"		"SPELL_DISPELLABLE_YES"
+
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilityCastGestureSlot"		"DEFAULT"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24 20 16 12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 75 100 125"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"freeze_duration"			"0.75 1.35 2.0 2.5"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"							"150 200 250 300"
+				"LinkedSpecialBonus"			"special_bonus_unique_kyloren_1"
+			}
+			"03"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"radius_scepter"					"370"
+			}
+		}
+	}
+	"special_bonus_unique_kyloren_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"200"
+			}
+		}
+	}
+	"special_bonus_unique_kyloren_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lyloren: Wais of Faith
+	//=================================================================================================================
+	"kyloren_ways_of_faith"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"									"ability_lua"
+		"ScriptFile"								"abilities/kyloren_ways_of_faith.lua"
+		"AbilityTextureName"				"custom/kyloren_ways_of_faith"
+
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"									"FIELD_INTEGER"
+				"radius"										"450"
+			}
+			"02"
+			{
+				"var_type"									"FIELD_INTEGER"
+				"damage_reduction_pct"	    "10 15 20 25"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Dark Side
+	//=================================================================================================================
+	"kyloren_dark_side"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"									"ability_lua"
+		"ScriptFile"								"abilities/kyloren_dark_side.lua"
+		"AbilityTextureName"				"custom/kyloren_dark_side"
+
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"						"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.2"
+
+		"AbilityCooldown"					"40"
+		"AbilityManaCost"					"300"
+
+		"precache"
+		{
+			"model"									"models/heroes/hero_kyloren/kyloren_weapon.vmdl"
+			"particle"							"particles/kyloren/kyloren_sword_color.vpcf"
+			"particle"							"particles/units/heroes/hero_queenofpain/queen_sonic_wave_streak.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"travel_distance"				"1000"
+			}
+			"02"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"travel_speed"						"1100"
+			}
+			"03"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"radius_start"						"175"
+			}
+			"04"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"radius_end"							"225"
+			}
+			"05"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"end_vision_duration"			"1.75"
+			}
+			"06"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"damage"									"40 80 120 160"
+			}
+			"07"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"knockback_duration"			"1.25 1.5 1.75 2.0"
+				"LinkedSpecialBonus"			"special_bonus_unique_kyloren_3"
+			}
+		}
+	}
+	"special_bonus_unique_kyloren_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"special_bonus_undefined"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"							"1.0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Kyloren: Force
+	//=================================================================================================================
+	"kyloren_force"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"									"ability_lua"
+		"ScriptFile"								"abilities/kyloren_force.lua"
+		"AbilityTextureName"				"custom/kyloren_force"
+
+		"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"						"2"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"					"0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"130.0"
+		"AbilityDuration"						"4.5 5.25 6.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"						"300 450 600"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"tooltip_duration"				"4.5 5.25 6.0"
+				"LinkedSpecialBonus"			"special_bonus_unique_kyloren_4"
+			}
+			"02"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"outgoing_damage_mult"		"0.1 0.24 0.36"
+				"LinkedSpecialBonus"			"special_bonus_unique_kyloren_5"
+			}
+		}
+	}
+	"special_bonus_unique_kyloren_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"special_bonus_undefined"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"							"1.0"
+			}
+		}
+	}
+	"special_bonus_unique_kyloren_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"special_bonus_undefined"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"							"0.5"
+			}
+		}
 	}
 }
