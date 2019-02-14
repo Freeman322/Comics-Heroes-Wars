@@ -3183,7 +3183,7 @@
 			"01"
 			{
 					"var_type"			"FIELD_FLOAT"
-					"duration"			"2 2.5 3 3.5"
+					"duration"			"2.5 3 3.5 4"
 			}
 			"02"
 			{
@@ -8241,7 +8241,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_pct_fake"			"2 2.5 3.5 4"
+				"damage_pct_fake"			"2 3 4 5"
 			}
 		}
 	}
@@ -8273,12 +8273,12 @@
 			"01"
 			{
 				"var_type"					 	"FIELD_FLOAT"
-				"absorb_fake"					"-26 -39 -52"
+				"absorb_fake"					"-20 -32 -49"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"absorb"						"0.26 0.39 0.52"
+				"absorb"						"0.20 0.32 0.49"
 			}
 			"03"
 			{
@@ -10503,7 +10503,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"cooldown"		    "8 12 16 20"
+				"cooldown"		    "8 12 14 16"
 			}
 			"02"
 			{
@@ -33394,7 +33394,7 @@
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"FightRecapLevel"						"1"
 
 		// Stats
@@ -33402,8 +33402,8 @@
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.2"
 
-		"AbilityCooldown"					"40"
-		"AbilityManaCost"					"300"
+		"AbilityCooldown"					"35 30 25 20"
+		"AbilityManaCost"					"250 200 150 100"
 
 		"precache"
 		{
@@ -33428,12 +33428,12 @@
 			"03"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"radius_start"						"175"
+				"radius_start"						"250"
 			}
 			"04"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"radius_end"							"225"
+				"radius_end"							"350"
 			}
 			"05"
 			{
@@ -33443,7 +33443,7 @@
 			"06"
 			{
 				"var_type"								"FIELD_FLOAT"
-				"damage"									"40 80 120 160"
+				"damage"									"100 180 260 340"
 			}
 			"07"
 			{
@@ -33496,7 +33496,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"						"130.0"
+		"AbilityCooldown"						"25.0"
 		"AbilityDuration"						"4.5 5.25 6.0"
 
 		// Cost

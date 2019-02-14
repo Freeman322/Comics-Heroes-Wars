@@ -18,13 +18,13 @@ end
 
 function modifier_doomsday_orb:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL,
+        MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE,
         MODIFIER_EVENT_ON_ATTACK_START
     }
     return funcs
 end
 
-function modifier_doomsday_orb:GetModifierProcAttack_BonusDamage_Physical(params)
+function modifier_doomsday_orb:GetModifierProcAttack_BonusDamage_Pure(params)
  	if self.bonus_damage == nil then
  		self.bonus_damage = 0
  	end

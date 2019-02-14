@@ -3625,7 +3625,7 @@
 	      "Ability11"				"special_bonus_all_stats_12"
 	      "Ability12"				"special_bonus_movement_speed_60"
 	      "Ability13"				"special_bonus_attack_speed_100"
-	      "Ability14"				"special_bonus_cooldown_reduction_25"
+	      "Ability14"				"special_bonus_cooldown_reduction_30"
 	      "Ability15"				"special_bonus_attack_damage_90"
 	      "Ability16"				"special_bonus_agility_25"
 	      "Ability17"				"special_bonus_all_stats_20"
@@ -4085,7 +4085,7 @@
 		"Ability14"					"special_bonus_magic_resistance_50"
 		"Ability15"					"special_bonus_all_stats_15"
 		"Ability16"					"special_bonus_apocalypse_1"
-		"Ability17"					"special_bonus_cooldown_reduction_40"
+		"Ability17"					"special_bonus_cooldown_reduction_30"
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"27"
@@ -6272,12 +6272,12 @@
 
         // Attribute Stats
         "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"     "16"
-        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseStrength"     "17"
+        "AttributeStrengthGain"     "1.300000"
         "AttributeBaseIntelligence" "21"
         "AttributeIntelligenceGain" "1.100000"
-        "AttributeBaseAgility"      "31"
-        "AttributeAgilityGain"      "2.200000"
+        "AttributeBaseAgility"      "32"
+        "AttributeAgilityGain"      "2.500000"
 
         // Misc stats
         "ArmorPhysical"             "2"
@@ -6307,10 +6307,10 @@
 
 	
 		"Ability10"					"special_bonus_unique_kyloren_1"
-		"Ability11"					"special_bonus_all_stats_12"
+		"Ability11"					"special_bonus_unique_kyloren_3"
 		"Ability12"					"special_bonus_unique_kyloren_2"
 		"Ability13"					"special_bonus_unique_kyloren_4"
-		"Ability14"					"special_bonus_unique_kyloren_3"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
 		"Ability15"					"special_bonus_unique_kyloren_5"
 		"Ability16"					"special_bonus_all_stats_20"
 		"Ability17"					"special_bonus_20_crit_15"
@@ -6488,13 +6488,13 @@
 		"Ability6"					"darkrider_time_aura"
 
 		"Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_all_stats_12"
+		"Ability11"					"special_bonus_haste"
 		"Ability12"					"special_bonus_unique_darkrider_2"
 		"Ability13"					"special_bonus_unique_darkrider_1"
 		"Ability14"					"special_bonus_unique_darkrider_3"
 		"Ability15"					"special_bonus_cooldown_reduction_25"
 		"Ability16"					"special_bonus_all_stats_20"
-		"Ability17"					"special_bonus_20_crit_15"
+		"Ability17"					"special_bonus_cooldown_reduction_30"
 
 		"RenderablePortrait"
 		{
@@ -6542,9 +6542,9 @@
 		"Ability11"						"special_bonus_exp_boost_30"
 		"Ability12"						"special_bonus_spell_block_20"
 		"Ability13"						"special_bonus_cast_range_200"
-		"Ability14"						"special_bonus_unique_lion_4"
+		"Ability14"						"special_bonus_cooldown_reduction_30"
 		"Ability15"						"special_bonus_unique_lion_2"
-		"Ability16"						"special_bonus_cooldown_reduction_40"
+		"Ability16"						"special_bonus_unique_lion_3"
 		"Ability17"						"special_bonus_spell_amplify_3"
 	
 		"ArmorPhysical"					"3"

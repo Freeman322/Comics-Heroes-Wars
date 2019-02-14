@@ -66,7 +66,7 @@ function modifier_superman_knockback:OnCreated(params)
         victim = self:GetParent(),
         attacker = self:GetCaster(),
         damage = self:GetCaster():FindModifierByName("modifier_superman_kryptonian"):GetStackCount() * mult,
-        damage_type = DAMAGE_TYPE_MAGICAL,
+        damage_type = DAMAGE_TYPE_PHYSICAL,
         ability = self:GetAbility(),
     }
 

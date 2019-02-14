@@ -32,7 +32,7 @@ function kyloren_dark_side:OnProjectileHit( hTarget, vLocation )
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = self:GetSpecialValueFor("damage"),
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = DAMAGE_TYPE_PURE,
 			ability = self,
 		}
 
