@@ -72,7 +72,7 @@ function khan_echo_strike:OnProjectileHit( hTarget, vLocation )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_khan_echo_strike_armor", { duration = self:GetSpecialValueFor("reduction_duration") } )
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
 		EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)
-
+		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
 		EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)
 
@@ -84,7 +84,6 @@ function khan_echo_strike:OnProjectileHit( hTarget, vLocation )
 
 		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "khan_manifold_paradox") then
 			particle = "particles/econ/items/spectre/spectre_transversant_soul/spectre_transversant_spectral_dagger_path_owner_impact.vpcf"
-
 			EmitSoundOn( "Khan.Paradox.Damage" , hTarget )
 		elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "nemesis_custom") then
 			EmitSoundOn( "Khan.Nemesis.Target" , self:GetCaster() )

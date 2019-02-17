@@ -3375,7 +3375,7 @@
 		"ItemResult"					"item_monarh_bow"
 		"ItemRequirements"
 		{
-			"01"						"item_butterfly;item_ultimate_orb;item_point_booster"
+			"01"						"item_butterfly;item_ultimate_orb;item_wraith_band"
 		}
 	}
 	//=================================================================================================================

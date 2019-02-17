@@ -489,6 +489,7 @@ function Util:OnHeroInGame(hero)
     end
     if hero:GetUnitName() == "npc_dota_hero_drow_ranger" then
       Attachments:AttachProp(hero, "attach_attack1", "models/items/windrunner/rainmaker_bow/rainmaker_bow.vmdl", 1)
+      if PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID()) == 77291876 then hero:SetMaterialGroup("blue") end 
     end
     if hero:GetUnitName() == "npc_dota_hero_bristleback" then
       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "whispers_of_the_dead") == true then

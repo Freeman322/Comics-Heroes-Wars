@@ -52,7 +52,7 @@ function modifier_darkrider_heartbeat:OnCreated( params )
 end
 
 function modifier_darkrider_heartbeat:OnUnitMoved(params)
-	if IsServer() then 
+	if IsServer() and self:GetParent():IsRealHero() then 
 		if params.unit == self:GetParent() then 
 			if self._vPosition ~= self:GetParent():GetAbsOrigin() then 
 				local distance = (self:GetParent():GetAbsOrigin() - self._vPosition):Length2D()
