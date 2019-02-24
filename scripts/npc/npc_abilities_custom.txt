@@ -3861,7 +3861,7 @@
 			"03"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"cast_range_scepter"					"3500"
+				"cast_range_scepter"					"4000"
 			}
 			"04"
 			{
@@ -5691,7 +5691,7 @@
 		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"					"SPELL_DISPELLABLE_YES_STRONG"
 
-		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_PURE"
 		"FightRecapLevel"						"2"
 
 		"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_4"
@@ -19135,7 +19135,7 @@
 		"AbilityTextureName"				"custom/spawn_mystic_absorb"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"						"1"
@@ -22923,7 +22923,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
+				"value"						"2"
 			}
 		}
 	}
@@ -22946,7 +22946,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1100 1400 1700 2000"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.3"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -23136,7 +23136,7 @@
 		"ID"								"7516"
 		"BaseClass"							"ability_lua"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"					"1"
 		"AbilityTextureName"				"custom/pudge_decay"
@@ -29167,7 +29167,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_speed"				"450 550 650 750"
+				"max_speed"				"250 350 450 550"
 			}
 		}
 	}
@@ -33403,7 +33403,7 @@
 		"AbilityCastPoint"				"0.2"
 
 		"AbilityCooldown"					"35 30 25 20"
-		"AbilityManaCost"					"250 200 150 100"
+		"AbilityManaCost"					"50 100 150 200"
 
 		"precache"
 		{
@@ -33443,12 +33443,12 @@
 			"06"
 			{
 				"var_type"								"FIELD_FLOAT"
-				"damage"									"100 180 260 340"
+				"damage"									"120 200 280 360"
 			}
 			"07"
 			{
 				"var_type"								"FIELD_FLOAT"
-				"knockback_duration"			"1.25 1.5 1.75 2.0"
+				"knockback_duration"			"1.75 2.0 2.25 2.5"
 				"LinkedSpecialBonus"			"special_bonus_unique_kyloren_3"
 			}
 		}
@@ -33558,5 +33558,246 @@
 				"value"							"0.5"
 			}
 		}
+	}
+	//=================================================================================================================
+	// Rattletrap: Hookshot
+	//=================================================================================================================
+	"grimskull_hookshot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"rattletrap_hookshot"
+		"AbilityTextureName"			"custom/grimskull_hookshot"
+				
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"		"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"					"2"
+		"AbilitySound"						"Hero_Rattletrap.Hookshot.Fire"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"1000 1200 1400 1800"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"					"35 30 25 20"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"					"150 150 150"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"latch_radius"		"125 125 125 125"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun_radius"			"175 175 175 175"
+			}
+			"03"
+			{	
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1 1.25 1.5 1.75"
+			}
+			"04"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"speed"						"4000 5000 6000 7000"
+			}
+			"05"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"		"1000 1200 1400 1800"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"					"75 150 225 290"
+			}
+			"07"
+			{	
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"	"35 30 25 20"
+			}
+		}
+	}
+	"grimskull_rage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"									"ability_lua"
+		"ScriptFile"								"abilities/grimskull_rage.lua"
+		"AbilityTextureName"				"custom/grimskull_rage"
+
+		"AbilityTextureName"				"custom/grimskull_rage"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Castin
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"400"	
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_damage"		"30 50 80 120"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Huskar: Berserker's Blood
+	//=================================================================================================================
+	"grimskull_berserkers_blood"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"huskar_berserkers_blood"
+		"AbilityTextureName"			"custom/grimskull_berserkers_blood"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maximum_attack_speed"			"160 220 280 340"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maximum_health_regen"			"20 40 60 80"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"hp_threshold_max"				"10"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	//=================================================================================================================
+	//=================================================================================================================
+	"grimskull_goblins_greed"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"alchemist_goblins_greed"
+		"AbilityTextureName"			"custom/grimskull_goblins_greed"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"MaxLevel"								"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_bonus_gold"		"6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold_cap"		"60"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bounty_multiplier"		"4"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	//=================================================================================================================
+	// Alchemist: Goblin's Greed
+	//=================================================================================================================
+	"grimskull_waagh"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"									"ability_lua"
+		"ScriptFile"								"abilities/grimskull_waagh.lua"
+		"AbilityTextureName"				"custom/grimskull_waagh"
+
+		"LevelsBetweenUpgrades"			"2"
+		"RequiredLevel"							"3"
+		"MaxLevel"									"7"
+
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityUpgradeGoldCost"    "%price"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"health"							"600 900 1300 1800 2400 3800 6800"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor"								"7 10 14 19 25 39 60"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"hp_regen"						"20 41 63 86 110 160 240"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"str"									"20 41 63 86 110 160 240"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"magic_resist"				"7 10 14 19 25 39 50"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage"							"5 7 10 14 19 25 35"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"price"								"5000 8000 12000 17000 23000 30000 40000"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 }

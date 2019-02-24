@@ -110,7 +110,7 @@ function modifier_pudge_dismember_lua:OnIntervalThink()
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
 			damage = self.damage / 2,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = DAMAGE_TYPE_PURE,
 			ability = self:GetAbility()
 		}
 

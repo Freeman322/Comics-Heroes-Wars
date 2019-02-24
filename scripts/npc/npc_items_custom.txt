@@ -274,17 +274,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100"
+				"bonus_damage"			"80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"60"
+				"bonus_attack_speed"	"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"all" 				    "50"
+				"all" 				    "45"
 			}
 			"04"
 			{
@@ -3366,7 +3366,7 @@
 		"BaseClass"             		"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2980"
+		"ItemCost"						"1200"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -6636,12 +6636,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"38"
+				"bonus_strength"				"40"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"38"
+				"bonus_agility"					"40"
 			}			
 			"04"
 			{
@@ -7056,7 +7056,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2500"	
+		"ItemCost"						"2000"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -7065,7 +7065,7 @@
 		"ItemResult"					"item_rapier_of_despair"
 		"ItemRequirements"
 		{
-			"01"						"item_jetsu;item_sange_and_yasha;item_kaya;item_orchid"
+			"01"						"item_jetsu;item_sange_and_yasha;item_kaya;item_bloodthorn"
 		}
 	}
 	

@@ -2766,17 +2766,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"20"
+				"bonus_strength"		"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"20"
+				"bonus_agility"			"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"20"
+				"bonus_intellect"		"15"
 			}
 			"04"
 			{
@@ -7667,7 +7667,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"26"
+				"bonus_strength"		"20"
 			}
 			"03"
 			{
@@ -7961,7 +7961,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
+		"ItemCost"						"100"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -7970,7 +7970,7 @@
 		"ItemResult"					"item_yasha"
 		"ItemRequirements"
 		{
-			"01"						"item_blade_of_alacrity"
+			"01"						"item_blade_of_alacrity;item_blade_of_alacrity"
 		}
 	}
 
@@ -7998,12 +7998,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"16"
+				"bonus_agility"			"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"15"
+				"bonus_attack_speed"	"20"
 			}
 			"03"
 			{

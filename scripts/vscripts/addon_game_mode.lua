@@ -162,7 +162,7 @@ end
 function GameMode:InitGameMode()
 	GameRules:SetTimeOfDay( 0.75 )
 	GameRules:SetHeroRespawnEnabled( true )
-	GameRules:SetUseUniversalShopMode( true )
+	GameRules:SetUseUniversalShopMode( false )
 	GameRules:SetHeroSelectionTime( 0.0 )
 	GameRules:GetGameModeEntity():SetDraftingBanningTimeOverride( 20 )
 

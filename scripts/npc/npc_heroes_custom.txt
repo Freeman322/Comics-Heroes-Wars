@@ -2617,7 +2617,7 @@
 		"AttackAnimationPoint"			"0.460000"
 		"AttackAcquisitionRange"		"800"
 		"AttackRange"					"550"
-		"ProjectileModel"				"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
+		"ProjectileModel"				"particles/units/heroes/hero_bane/bane_projectile.vpcf"
 		"ProjectileSpeed"				"1100"
 		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"			"19"
@@ -3778,7 +3778,7 @@
 		"AttackAnimationPoint"		"0.300000"
 		"AttackAcquisitionRange"		"800"
 		"AttackRange"		"500"
-		"ProjectileModel"		"particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation_desolator.vpcf"
+		"ProjectileModel"		"particles/econ/items/shadow_fiend/sf_fire_arcana_base_attack.vpcf"
 		"ProjectileSpeed"		"1200"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"		"19"
@@ -4668,7 +4668,7 @@
 		"override_hero"		        "npc_dota_hero_razor"
 		"DisableWearables"			"1"
 		"Model"						"models/heroes/hero_zoom/zoom.vmdl"			// Model.
-		"SoundSet"					"Hero_NightStalker"
+		"SoundSet"					"Hero_Razor"
 		"PickSound"					"night_stalker_nstalk_spawn_01"
 		"BanSound"					"night_stalker_nstalk_anger_07"
 		//-------------------------------------------------------------------------------------------------------------
@@ -6272,8 +6272,8 @@
 
         // Attribute Stats
         "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"     "17"
-        "AttributeStrengthGain"     "1.300000"
+        "AttributeBaseStrength"     "25"
+        "AttributeStrengthGain"     "1.900000"
         "AttributeBaseIntelligence" "21"
         "AttributeIntelligenceGain" "1.100000"
         "AttributeBaseAgility"      "32"
@@ -6310,7 +6310,7 @@
 		"Ability11"					"special_bonus_unique_kyloren_3"
 		"Ability12"					"special_bonus_unique_kyloren_2"
 		"Ability13"					"special_bonus_unique_kyloren_4"
-		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability14"					"special_bonus_unique_faceless_void_4"
 		"Ability15"					"special_bonus_unique_kyloren_5"
 		"Ability16"					"special_bonus_all_stats_20"
 		"Ability17"					"special_bonus_20_crit_15"
@@ -6576,5 +6576,93 @@
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_lion.vsndevts"
 		"particle_folder"		"particles/units/heroes/hero_lion"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+	}
+	"npc_dota_hero_grimskull"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "212"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        
+		"CMDisabled"				"1"
+		"HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/hero_grimskull/grimskull.vmdl"
+
+        "ModelScale"                "1.15"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Alchemist"
+		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
+
+	 	"particle_folder"			"particles/units/heroes/hero_alchemist"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_alchemist.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "26"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "18"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+
+        "AttackDamageMin"           "25"
+        "AttackDamageMax"           "32"
+
+       	"AttackAcquisitionRange"	"800"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"grimskull_hookshot"
+		"Ability2"					"grimskull_rage"
+		"Ability3"					"grimskull_berserkers_blood"
+		"Ability4"					"grimskull_goblins_greed"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"grimskull_waagh"
+
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_attack_speed_100"
+		"Ability13"				"special_bonus_armor_15"
+		"Ability14"				"special_bonus_all_stats_15"
+		"Ability15"				"special_bonus_hp_regen_50"
+		"Ability16"				"special_bonus_attack_damage_75"
+		"Ability17"				"special_bonus_strength_25"
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_ogre_magi/ogre_magi_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_origin"
+						"location"		"attach_hitloc"
+					}
+				}
+			}
+		}
+		"ItemSlots"
+		{
+
+		}
 	}
 }
