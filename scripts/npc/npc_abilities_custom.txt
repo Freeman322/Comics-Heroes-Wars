@@ -33758,6 +33758,15 @@
 
 		"AbilityUpgradeGoldCost"    "%price"
 
+		"precache"
+		{
+			"model"										"models/heroes/hero_grimskull/head_reference.vmdl"
+			"model"										"models/items/alchemist/waaagh_alchemist_armor/waaagh_alchemist_armor.vmdl"
+			"model"										"models/items/alchemist/waaagh_alchemist_arms/waaagh_alchemist_arms.vmdl"
+			"model"										"models/items/alchemist/waaagh_alchemist_shoulder/waaagh_alchemist_shoulder.vmdl"
+			"model"										"models/heroes/hero_grimskull/grimskull.vmdl"
+		}
+
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -33765,12 +33774,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"health"							"600 900 1300 1800 2400 3800 6800"
+				"health"							"600 900 1300 1800 2400 3800 4800"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"armor"								"7 10 14 19 25 39 60"
+				"armor"								"4 8 12 16 20 24 28"
 			}
 			"03"
 			{
@@ -33795,7 +33804,7 @@
 			"07"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"price"								"5000 8000 12000 17000 23000 30000 40000"
+				"price"								"2500 4000 6000 8500 12000 15000 20000"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"

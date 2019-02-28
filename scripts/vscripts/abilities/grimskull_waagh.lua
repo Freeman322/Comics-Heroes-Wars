@@ -36,7 +36,6 @@ function modifier_grimskull_waagh:DeclareFunctions()
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
         MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
     }
 
@@ -47,5 +46,4 @@ function modifier_grimskull_waagh:GetModifierHealthBonus(params) return self:Get
 function modifier_grimskull_waagh:GetModifierPhysicalArmorBonus(params) return self:GetAbility():GetSpecialValueFor ("armor") end
 function modifier_grimskull_waagh:GetModifierConstantHealthRegen(params) return self:GetAbility():GetSpecialValueFor ("hp_regen") end
 function modifier_grimskull_waagh:GetModifierBonusStats_Strength(params) return self:GetAbility():GetSpecialValueFor ("str") end
-function modifier_grimskull_waagh:GetModifierMagicalResistanceBonus(params) return self:GetAbility():GetSpecialValueFor ("magic_resist") end
 function modifier_grimskull_waagh:GetModifierDamageOutgoing_Percentage(params) return self:GetAbility():GetSpecialValueFor ("damage") end
