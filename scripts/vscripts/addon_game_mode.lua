@@ -6,7 +6,7 @@ require('Trades')
 require('Vote')
 require('playertables')
 require('utils/Talents')
-require('FreeForAll')
+require('tdm')
 require('addon_init')
 require('CaptainsMode')
 require('Stats')
@@ -37,6 +37,7 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts", context)
@@ -176,7 +177,7 @@ function GameMode:InitGameMode()
 	GameRules:SetCreepMinimapIconScale( 0.7 )
 	GameRules:SetRuneMinimapIconScale( 0.7 )
 	GameRules:SetGoldTickTime( 1 )
-	GameRules:SetGoldPerTick( 6 )
+	GameRules:SetGoldPerTick( 10 )
 	GameRules:GetGameModeEntity():SetFixedRespawnTime(10)
 	GameRules:GetGameModeEntity():SetRemoveIllusionsOnDeath( true )
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride( true )
@@ -186,41 +187,7 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_wisp" ) 
 
 	if GetMapName() == "free_for_all" then
-		FreeForAll:Start()
-		GameRules:GetGameModeEntity():SetFixedRespawnTime(5)
-		GameRules:SetCustomGameTeamMaxPlayers(3, 1)
-		GameRules:SetCustomGameTeamMaxPlayers(2, 1)
-		GameRules:SetCustomGameTeamMaxPlayers(6, 1)
-		GameRules:SetCustomGameTeamMaxPlayers(7, 1)
-		GameRules:SetCustomGameTeamMaxPlayers(8, 1)
-		GameRules:SetCustomGameTeamMaxPlayers(9, 1)
-		GameRules:SetCustomGameTeamMaxPlayers(10, 1)
-		GameRules:SetCustomGameTeamMaxPlayers(11, 1)
-		GameRules:SetCustomGameTeamMaxPlayers(12, 1)
-		GameRules:SetCustomGameTeamMaxPlayers(13, 1)
-
-		GameRules:SetGoldTickTime( 1 )
-		GameRules:SetGoldPerTick( 25 )
-	end
-
-	if GetMapName() == "hunt_event" then
-		Event:Start()
-		
-		GameRules:GetGameModeEntity():SetFixedRespawnTime(5)
-		GameRules:SetHeroRespawnEnabled( false )
-
-		GameRules:SetCustomGameTeamMaxPlayers(3, 2)
-		GameRules:SetCustomGameTeamMaxPlayers(2, 2)
-		GameRules:SetCustomGameTeamMaxPlayers(6, 2)
-		GameRules:SetCustomGameTeamMaxPlayers(7, 2)
-		GameRules:SetCustomGameTeamMaxPlayers(8, 2)
-		
-		GameRules:SetGoldTickTime( 1 )
-		GameRules:SetGoldPerTick( 25 )
-
-		GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled(true)
-
-		GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_thief" ) 
+		tdm:start()
 	end
 
 	XP_PER_LEVEL_TABLE = {
@@ -282,6 +249,7 @@ function GameMode:InitGameMode()
 
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
 	GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
+	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "GoldFilter" ), self)
 
 	Util:OnInit()
 	Trades:Init()
@@ -492,4 +460,13 @@ function GameMode:ModifierFilter(params)
 end
 function GameMode:OnAbilityLearned(params)
 	Util:LearnedAbility( params )
+end
+function GameMode:GoldFilter(ftable)
+	local reason = ftable.reason_const
+	local pid = ftable.player_id_const	
+	local gold = ftable.gold
+
+	---if reason == DOTA_ModifyGold_HeroKill then gold = RandomInt(50, 300) end
+	
+	return true
 end

@@ -213,7 +213,6 @@ end
 function modifier_infinity_black_hole:CheckState ()
     local state = {
         [MODIFIER_STATE_STUNNED] = true,
-        [MODIFIER_STATE_MAGIC_IMMUNE] = true,
         [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
     }
 

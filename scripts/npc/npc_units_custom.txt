@@ -3006,4 +3006,227 @@
 		// Inventory
 		"HasInventory"				"1"
 	}
+	"npc_dota_hero_kratos"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "213"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+
+        ///"HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/hero_kratos/kratos.vmdl"
+
+        "ModelScale"                "1.4"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Beastmaster"
+		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
+
+		"particle_folder"			"particles/units/heroes/hero_beastmaster"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "26"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "18"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+
+        "AttackDamageMin"           "25"
+        "AttackDamageMax"           "32"
+
+        "AttackRate"				"1.700000"
+       	"AttackAcquisitionRange"	"800"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"kratos_axe_twrow"
+		"Ability2"					"kratos_final_strike"
+		"Ability3"					"kratos_god_of_war"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"kratos_chaos"
+
+		"Ability10"					"special_bonus_unique_kratos"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_attack_speed_100"
+		"Ability13"					"special_bonus_armor_15"
+		"Ability14"					"special_bonus_unique_kratos_1"
+		"Ability15"					"special_bonus_hp_regen_50"
+		"Ability16"					"special_bonus_attack_damage_75"
+		"Ability17"					"special_bonus_strength_25"
+
+		"Enabled"					"1"
+
+		"Role"						"Support,Nuker,Disabler,Escape"
+		"Rolelevels"				"1,2,2,3"
+		"Complexity"				"3"
+		"Team"						"bad"
+        
+        // Misc
+        "NameAliases"      			"mr"
+        "url"       				"Kratos"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"500"
+		"StatusHealthRegen"			"2.2000"
+		"StatusMana"				"145"
+		"StatusManaRegen"			"1.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}
+	"npc_dota_hero_warboss"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "214"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        ///"HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/shredder/shredder.vmdl"
+
+        "ModelScale"                "1.0"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Alchemist"
+		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
+
+	 	"particle_folder"			"particles/units/heroes/hero_alchemist"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_alchemist.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "26"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "18"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+
+        "AttackDamageMin"           "25"
+        "AttackDamageMax"           "32"
+
+       	"AttackAcquisitionRange"	"800"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        "Ability1"					"shredder_whirling_death"
+		"Ability2"					"shredder_timber_chain"
+		"Ability3"					"batrider_sticky_napalm"
+		"Ability4"					"shredder_chakram_2"
+		"Ability5"					"shredder_chakram"
+		"Ability6"					"shredder_boiz"
+		"Ability7"					"shredder_return_chakram"
+		"Ability8"					"shredder_return_chakram_2"
+		
+		"Ability10"					"special_bonus_attack_damage_75"
+		"Ability11"					"special_bonus_exp_boost_30"
+		"Ability12"					"special_bonus_spell_block_20"
+		"Ability13"					"special_bonus_cast_range_200"
+		"Ability14"					"special_bonus_cooldown_reduction_30"
+		"Ability15"					"special_bonus_all_stats_15"
+		"Ability16"					"special_bonus_spell_amplify_20"
+		"Ability17"					"special_bonus_unique_timbersaw"
+
+		"Enabled"					"1"
+
+		"Role"						"Support,Nuker,Disabler,Escape"
+		"Rolelevels"				"1,2,2,3"
+		"Complexity"				"3"
+		"Team"						"bad"
+        
+        // Misc
+        "NameAliases"      			"mr"
+        "url"       				"Dark Rider"
+        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"900"
+		"StatusHealthRegen"			"2.2000"
+		"StatusMana"				"145"
+		"StatusManaRegen"			"1.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}
 }

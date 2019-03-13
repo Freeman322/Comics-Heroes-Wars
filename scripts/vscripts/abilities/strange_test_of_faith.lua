@@ -71,20 +71,24 @@ end
 function modifier_strange_test_of_faith:DeclareFunctions()
     local funcs = {
         MODIFIER_EVENT_ON_TAKEDAMAGE,
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
     }
 
     return funcs
+end
+
+function modifier_strange_test_of_faith:GetModifierIncomingDamage_Percentage( params )
+    return -100
 end
 
 function modifier_strange_test_of_faith:OnTakeDamage( params )
     if IsServer() then
         if params.unit == self:GetParent() then
             local caster = params.unit
-            local damage = params.damage
+            local damage = params.original_damage
 
             if self.damage_absorb >= damage then
                 self.damage_absorb = self.damage_absorb - damage
-                caster:Heal( damage, caster )
 
                 EmitSoundOn("Hero_Pugna.NetherWard.Target", self:GetParent())
 

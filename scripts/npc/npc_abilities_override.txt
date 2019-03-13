@@ -828,4 +828,296 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Shredder: Chakram
+	//=================================================================================================================
+	"shredder_chakram"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"HasScepterUpgrade"				"0"
+		"AbilitySound"					"Hero_Shredder.Chakram.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200 1200 1200 1200"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0 8.0 8.0 8.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"900.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"200.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pass_damage"			"100 140 180 230"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"25 30 35 40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"0.2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"break_distance"		"2000.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_second"		"16 23 30 45"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pass_slow_duration"	"0.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Shredder: Chakram 2
+	//=================================================================================================================
+	"shredder_chakram_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"		
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"IsGrantedByScepter"			"0"
+		"HasScepterUpgrade"				"0"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200 1200 1200 1200"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0 8.0 8.0 8.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"900.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"200.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pass_damage"			"100 140 180 230"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"25 30 35 40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"0.2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"break_distance"		"2000.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_second"		"16 23 30 45"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pass_slow_duration"	"0.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Batrider: Sticky Napalm
+	//=================================================================================================================
+	"batrider_sticky_napalm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"3.0 3.0 3.0 3.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"20 20 20 20"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Works by boosting damage
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 65 70 95"
+				"CalculateSpellDamageTooltip"		"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"375 375 375 375"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8.0 8.0 8.0 8.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_pct"	"-3 -5 -7 -9"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"turn_rate_pct"			"-70 -70 -70 -70"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"15"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Shredder: Whirling Death
+	//=================================================================================================================
+	"shredder_whirling_death"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"whirling_radius"			"300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"whirling_damage"			"90 120 150 180"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tree_damage_scale"			"12 18 24 30"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"whirling_tick"				"0.3"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stat_loss_pct"				"10 13 16 19"
+				"LinkedSpecialBonus"		"special_bonus_unique_timbersaw"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"14.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_timbersaw"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"21"
+			}
+		}
+	}
 }

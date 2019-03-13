@@ -75,15 +75,20 @@ function modifier_spawn_respawn_astral:CheckState()
   return state
 end
 
-function modifier_spawn_respawn_astral:OnCreated(args)
-  if IsServer() then
-        self:GetCaster():SetModelScale(0)
-   end
+function modifier_spawn_respawn_astral:DeclareFunctions()
+  local funcs = {
+      MODIFIER_PROPERTY_MODEL_SCALE
+  }
+
+  return funcs
+end
+
+function modifier_spawn_respawn_astral:GetModifierModelScale( params )
+  return -100
 end
 
 function modifier_spawn_respawn_astral:OnDestroy()
     if IsServer() then
-
         if self:GetCaster():HasScepter() then
             local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("radius_scepter"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
             if #units > 0 then
@@ -105,11 +110,10 @@ function modifier_spawn_respawn_astral:OnDestroy()
                 EmitSoundOn("Hero_ObsidianDestroyer.AstralImprisonment.End", target)
                 end
             end
+
             EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse.Cast", self:GetCaster())
             EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse", self:GetCaster())
         end
-
-        self:GetCaster():SetModelScale(0.7000)
 
         self:GetCaster():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_spawn_respawn_buff", {duration = self:GetAbility():GetSpecialValueFor("buff_duration")})
         EmitSoundOn("Hero_ObsidianDestroyer.AstralImprisonment.End", self:GetCaster())
@@ -139,10 +143,12 @@ function modifier_spawn_respawn_buff:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_HEALTH_BONUS,
+        MODIFIER_PROPERTY_MODEL_SCALE
     }
 
     return funcs
 end
+
 function modifier_spawn_respawn_buff:GetModifierHealthBonus( params )
     return self:GetAbility():GetSpecialValueFor( "health_bonus" )
 end

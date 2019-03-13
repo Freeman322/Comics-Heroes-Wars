@@ -28,7 +28,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"26 24 22 20"
-		"AbilityDamage"					"60 80 100 120"
+		"AbilityDamage"					"120 200 280 360"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"80 100 120 140"
@@ -2944,7 +2944,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 
@@ -2961,7 +2961,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 160 245 300"
+		"AbilityDamage"					"150 200 250 300"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -5873,9 +5873,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			         	"ability_datadriven"
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/iron_ower.lua"	
+
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"custom/iron_passive"
+		"AbilityTextureName"				"custom/iron_passive"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -5891,19 +5893,6 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"bonus"			                "5 10 15 20"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_iron_man"
-			{
-				"Passive"  "1"
-				"IsHidden" "1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus"
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%mana"
-				}
 			}
 		}
 	}
@@ -6088,210 +6077,6 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"attack_count"				"8 10 12"
-			}
-		}
-	}
-	//=================================================================================================================
-	// palpatine wormhole
-	//=================================================================================================================
-	"palpatine_wormhole"
-	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"ID"											"7625"
-			"BaseClass"							"ability_lua"
-			"ScriptFile"						"abilities/palpatine_wormhole.lua"
-			"AbilityTextureName"				"custom/palpatine_wormhole"
-			"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
-			"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_BOTH"
-			"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BUILDING"
-			"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-			"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
-
-
-			"AbilityCastRange"					"4000"
-			"AbilityCastPoint"					"0.2"
-
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"75 70 65 60"
-
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"100 140 180 220"
-			"AbilityDamage"					"100 150 200 250"
-	    "precache"
-	    {
-      		"model"		 	"models/items/necrolyte/apostle_of_decay_head/apostle_of_decay_head.vmdl"
-			"particle"  "particles/hero_palpatine/palpatine_wormhole.vpcf"
-			"particle"  "particles/econ/events/ti6/maelstorm_ti6.vpcf"
-			"model"		 	"models/items/necrolyte/apostle_of_decay_mask/apostle_of_decay_mask.vmdl"
-			"model"		 	"models/items/necrolyte/apostle_of_decay_weapon/apostle_of_decay_weapon.vmdl"
-			"model"		 	"models/items/necrolyte/apostle_of_decay_shoulder/apostle_of_decay_shoulder.vmdl"
-			"model"		 	"models/items/necrolyte/immortal_shoulders/immortal_shoulders.vmdl"
-			"particle"  "particles/econ/items/necrolyte/necrophos_sullen/necro_sullen_ambient.vpcf"
-	    }
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"					"450"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"teleport_delay"			"1"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"enemy_damage"				"7 10 13 16"
-			}
-		}
-	}
-	//=================================================================================================================
-	// palpatine lightnings
-	//=================================================================================================================
-	"palpatine_lightnings"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"											"7626"
-		"BaseClass"								"ability_lua"
-		"ScriptFile"							"abilities/palpatine_lightnings.lua"
-		"AbilityTextureName"					"custom/palpatine_lightnings"
-		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
-		"FightRecapLevel"						"2"
-		"MaxLevel"								"3"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.1"
-		"AbilityChannelTime"			"4.0"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 100 80"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 250 300"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"120 210 300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"far_radius"			"450 475 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_perc"			"5 6 7"
-			}
-		}
-	}
-	"palpatine_armor_weakness"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"7627"
-		"BaseClass"				        "ability_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"			 	"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"            "custom/palpatine_armor_weakness"
-		"ScriptFile"					"abilities/palpatine_armor_weakness.lua"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_mult"			"1.0 1.5 2.0 2.5"
-			}
-		}
-	}
-	"palpatine_astral_damage"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"										"7628"
-		"BaseClass"							"spirit_breaker_greater_bash"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"    "custom/palpatine_astral_damage"
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5.0 4.0 3.0 2.0"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportBonus"	"40"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"14 16 18 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 60 80 100"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"knockback_duration"	"0.5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"knockback_distance"	"1"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"knockback_height"		"0"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed_pct"	"0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"movespeed_duration"	"0"
 			}
 		}
 	}
@@ -6584,9 +6369,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
+		"BaseClass"				"ability_lua"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"	"custom/rocket_agiltity"
+		"ScriptFile"			"abilities/roket_agil.lua"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -6596,23 +6382,6 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"agility"			          	 "16 29 42 55"
-			}
-		}
-
-		// Data driven
-		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"modifier_take_aim_datadriven"
-			{
-				"Passive"			"1"
-				"IsPurgable"		"0"
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agility"
-				}
 			}
 		}
 	}
@@ -7846,7 +7615,7 @@
 		"FightRecapLevel"					"1"
 		"AbilityTextureName"				"custom/hellspont_extermination"
 		"AOERadius"							"%radius"
-		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"HasScepterUpgrade"					"1"
 
@@ -15702,7 +15471,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_damage_outgoing"	"30 45 60"
+				"bonus_damage_outgoing"	"75"
 			}
 			"04"
 			{
@@ -20579,7 +20348,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/thanos_believer.lua"
 		"AbilityTextureName"			"custom/thanos_believer"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"MaxLevel"						"1"
 		// Casting
@@ -20589,8 +20358,9 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"110"
+		"AbilityCooldown"				"150"
 		"AbilityDuration"				"3.0"
+
 		"precache"
 		{
 			"particle"  "particles/status_fx/status_effect_sylph_wisp_fear.vpcf"
@@ -20660,7 +20430,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"90 120 150 180"
+		"AbilityDamage"					"150 200 250 300"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -20763,7 +20533,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130 110 90"
+		"AbilityCooldown"				"70"
 		"AbilityDuration"				"13.0"
 
 		// Cost
@@ -31539,7 +31309,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"26 24 22 20"
+		"AbilityCooldown"				"16"
 		"AbilityDuration"				"8"
 
 		// Damage.
@@ -33805,6 +33575,378 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"price"								"2500 4000 6000 8500 12000 15000 20000"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	//=================================================================================================================
+	// Wild Axes
+	//=================================================================================================================
+	"kratos_axe_twrow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_lua"
+		"ScriptFile"							"abilities/kratos_axe_twrow.lua"
+		"AbilityTextureName"					"custom/kratos_axe_twrow"
+
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"						"1"
+
+		"AbilitySound"							"Hero_Beastmaster.Wild_Axes"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"						"1500"
+		"AbilityCastPoint"						"0.4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"8"	
+
+		"precache"
+		{
+			"particle"  						"particles/units/heroes/hero_beastmaster/beastmaster_wildaxe_copy.vpcf"
+			"soundfile" 						"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"radius"							"175"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"spread"							"450"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"range"								"1500"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"axe_damage"						"100 150 200 250"
+				"LinkedSpecialBonus"				"special_bonus_unique_kratos"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"duration"							"0.1"
+			}
+			"06"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"damage_amp"						"10 30 50 70"
+			}
+		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"special_bonus_unique_kratos"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"80"
+			}
+		}
+	}
+	//=================================================================================================================
+	// 
+	//=================================================================================================================
+	"kratos_final_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/kratos_final_strike.lua"
+		"AbilityTextureName"			"custom/kratos_final_strike"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+
+		// Casting
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_ptc_chance"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_critical_strike"	"190 240 280 320"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	"kratos_god_of_war"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/kratos_god_of_war.lua"
+		"AbilityTextureName"			"custom/kratos_god_of_war"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"10"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24 22 20 18"
+		"AbilityDuration"				"10.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 90 120 150"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.35"	// Primarily about the damage
+
+		"precache"
+		{
+			"particle"  "particles/status_fx/status_effect_burn.vpcf"
+			"particle"  "particles/hero_kratos/god_of_war_buff.vpcf"
+			"particle"  "particles/units/heroes/hero_elder_titan/elder_titan_ancestral_spirit_cast.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"60 70 80 90"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4 5 6 7"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Chaos
+	//=================================================================================================================
+	"kratos_chaos"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/kratos_chaos.lua"
+		"AbilityTextureName"			"custom/kratos_chaos"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 40 30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0"
+		
+		"precache"
+		{
+			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+			"particle"  "particles/econ/items/luna/luna_lucent_ti5_gold/luna_eclipse_impact_moonfall_gold.vpcf"
+			"particle"  "particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_dagger_debuff.vpcf"
+			"model"		"models/heroes/hero_kratos/econs/axe.vmdl"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_ptc"				"4 7 11"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_reduction"			"50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5"
+				"LinkedSpecialBonus"		"special_bonus_unique_kratos_1"
+			}
+		}
+	}
+	"special_bonus_unique_kratos_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2"
+			}
+		}
+	}
+	//=================================================================================================================
+	//=================================================================================================================
+	"thanos_decimation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/thanos_decimation.lua"
+		"AbilityTextureName"			"custom/thanos_decimation"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120 110 100"
+		"AbilityDuration"				"4.5"
+		"AbilityCastPoint"				"1.4"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_6"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 225 300"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.2"	// Damage is the main component of spell
+		
+		"precache"
+		{
+			"particle"  "particles/hero_thanos/thanos_decimation.vpcf"
+			"particle"  "particles/hero_doctor_fate/fatebind_buff_f.vpcf"
+			"particle"  "particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_buff.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"475 625 875"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Alchemist: Goblin's Greed
+	//=================================================================================================================
+	"shredder_boiz"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/shredder_boiz.lua"
+		"AbilityTextureName"				"custom/grimskull_waagh"
+
+		"LevelsBetweenUpgrades"				"2"
+		"RequiredLevel"						"3"
+		"MaxLevel"							"5"
+
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityUpgradeGoldCost"    		"%price"
+
+		"precache"
+		{
+			"model"							"models/items/shredder/frostivus2018_timber_timberzil_armor/frostivus2018_timber_timberzil_armor.vmdl"
+			"model"							"models/items/shredder/frostivus2018_timber_timberzil_back/frostivus2018_timber_timberzil_back.vmdl"
+			"model"							"models/items/shredder/frostivus2018_timber_timberzil_head/frostivus2018_timber_timberzil_head.vmdl"
+			"model"							"models/items/shredder/frostivus2018_timber_timberzil_off_hand/frostivus2018_timber_timberzil_off_hand.vmdl"
+			"model"							"models/items/shredder/frostivus2018_timber_timberzil_shoulder/frostivus2018_timber_timberzil_shoulder.vmdl"
+			"model"							"models/items/shredder/frostivus2018_timber_timberzil_weapon/frostivus2018_timber_timberzil_weapon.vmdl"
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mana_regen"					"0.7 1.0 1.4 1.8 2.2"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor"							"5 8 12 15 20"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_regen"						"0.3 0.6 0.9 1.4 2.0"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"spell_amp"						"14 18 22 26 30"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage"						"2 4 6 8 12"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"price"							"1000 1500 2000 2500 3500"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"

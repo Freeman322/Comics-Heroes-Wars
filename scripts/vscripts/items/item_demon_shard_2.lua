@@ -71,15 +71,23 @@ function modifier_item_demon_shard_2:GetModifierAttackSpeedBonus_Constant (param
 end
 
 function modifier_item_demon_shard_2:GetModifierPreAttack_CriticalStrike(params)
-    if IsServer() then 
-    	if RollPercentage(self:GetAbility():GetSpecialValueFor("crit_chance")) then
+    if IsServer() then
+        local chance = self:GetAbility():GetSpecialValueFor("crit_chance")
+
+        if self:GetAbility():GetCaster():IsHasSuperStatus() then chance = chance + 10 end
+
+    	if RollPercentage(chance) then
             local hTarget = params.target
+            
             local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
             ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
             ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
             ParticleManager:ReleaseParticleIndex( nFXIndex )
+
             EmitSoundOn("Hero_Winter_Wyvern.WintersCurse.Target", hTarget)
+
             ScreenShake(hTarget:GetOrigin(), 100, 0.1, 0.3, 500, 0, true)
+
     		return self:GetAbility():GetSpecialValueFor("crit_bonus")
     	end
     end 

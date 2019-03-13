@@ -30,11 +30,16 @@ function venom_posion_damage:OnProjectileHit( hTarget, vLocation )
         local stats = self:GetSpecialValueFor( "stats" )
         local caster = self:GetCaster()
         local damage = self:GetSpecialValueFor( "damage" )
+
         if self:GetCaster():HasTalent("special_bonus_unique_venom") then
             damage = self:GetCaster():FindTalentValue("special_bonus_unique_venom") + self:GetSpecialValueFor( "damage" )
         end
+
         local kill_bourder = self:GetSpecialValueFor( "bourder" )
+
         hTarget:EmitSound("Hero_Bristleback.ViscousGoo.Target")
+
+        if self:GetCaster():IsHasSuperStatus() then kill_bourder = kill_bourder + 10 if self:GetLevel() == 4 then damage = 500 end end 
 
         local damage = {
             victim = hTarget,
@@ -43,10 +48,12 @@ function venom_posion_damage:OnProjectileHit( hTarget, vLocation )
             damage_type = DAMAGE_TYPE_MAGICAL,
             ability = self
         }
+
         ApplyDamage( damage )
         if hTarget:GetHealthPercent() <= kill_bourder then
             hTarget:Kill(self, caster)
         end
+
         if not hTarget:IsAlive() and hTarget:IsRealHero() then
             caster:SetBaseStrength(caster:GetBaseStrength() + stats)
             caster:CalculateStatBonus()
