@@ -1,11 +1,14 @@
 if not thanos_decimation then thanos_decimation = class({}) end
 LinkLuaModifier( "modifier_thanos_decimation", "abilities/thanos_decimation.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_thanos_decimation_attack", "abilities/thanos_decimation.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_thanos_decimation_aura", "abilities/thanos_decimation.lua", LUA_MODIFIER_MOTION_NONE )
 
 function thanos_decimation:OnSpellStart()
 	if IsServer() then
 		local duration = self:GetDuration()
 
 		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_thanos_decimation", { duration = self:GetDuration() } )
+		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_thanos_decimation_aura", { duration = self:GetDuration() } )
 
 		EmitSoundOn( "Thanos.Decimation.Cast", self:GetCaster() )
 	end
@@ -56,8 +59,8 @@ function modifier_thanos_decimation:OnDestroy()
 						victim = enemy,
 						attacker = self:GetCaster(),
 						ability = self:GetAbility(),
-						damage = self.nDamage / #enemies,
-						damage_type = DAMAGE_TYPE_PURE,
+						damage = self.nDamage,
+						damage_type = DAMAGE_TYPE_MAGICAL,
 					}
 
 					ApplyDamage( DamageInfo )
@@ -113,3 +116,94 @@ function modifier_thanos_decimation:OnTakeDamage(params)
 	end
 end
 
+
+if modifier_thanos_decimation_attack == nil then modifier_thanos_decimation_attack = class({}) end
+
+function modifier_thanos_decimation_attack:IsHidden() return true end
+function modifier_thanos_decimation_attack:IsPurgable() return true end
+
+function modifier_thanos_decimation_attack:OnCreated(table)
+	if IsServer() then
+		local target = self:GetAbility():GetCaster()
+
+		local order_target =
+		{
+			UnitIndex = self:GetParent():entindex(),
+			OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
+			TargetIndex = target:entindex()
+		}
+
+		self:GetParent():Stop()
+
+		ExecuteOrderFromTable(order_target)
+
+		self:GetParent():SetForceAttackTarget(target)
+	end
+end
+
+function modifier_thanos_decimation_attack:OnDestroy()
+	if IsServer() then
+		self:GetParent():Stop()
+		self:GetParent():SetForceAttackTarget(nil)
+	end
+end
+
+
+function modifier_thanos_decimation_attack:GetStatusEffectName()
+	return "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+end
+
+function modifier_thanos_decimation_attack:StatusEffectPriority()
+	return 1000
+end
+
+function modifier_thanos_decimation_attack:GetHeroEffectName()
+	return "particles/frostivus_herofx/juggernaut_fs_omnislash_slashers.vpcf"
+end
+
+
+function modifier_thanos_decimation_attack:HeroEffectPriority()
+	return 100
+end
+
+function modifier_thanos_decimation_attack:CheckState()
+	local state = {
+  		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+	}
+
+	return state
+end
+
+if modifier_thanos_decimation_aura == nil then modifier_thanos_decimation_aura = class({}) end
+
+function modifier_thanos_decimation_aura:IsAura()
+	return true
+end
+
+function modifier_thanos_decimation_aura:IsHidden()
+	return true
+end
+
+function modifier_thanos_decimation_aura:IsPurgable()
+	return true
+end
+
+function modifier_thanos_decimation_aura:GetAuraRadius()
+	return 1000
+end
+
+function modifier_thanos_decimation_aura:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+function modifier_thanos_decimation_aura:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+end
+
+function modifier_thanos_decimation_aura:GetAuraSearchFlags()
+	return DOTA_UNIT_TARGET_FLAG_NONE
+end
+
+function modifier_thanos_decimation_aura:GetModifierAura()
+	return "modifier_thanos_decimation_attack"
+end

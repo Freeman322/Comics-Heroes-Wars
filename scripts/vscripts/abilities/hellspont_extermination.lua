@@ -73,21 +73,26 @@ function hellspont_extermination_thinker:OnDestroy(event)
         self.damage = ability:GetSpecialValueFor("damage")
         self.damage_percent = ability:GetSpecialValueFor("damage_percent")/100
         self.radius = ability:GetSpecialValueFor("radius")
+
         EmitSoundOn("Hero_Invoker.SunStrike.Ignite", thinker)
         GridNav:DestroyTreesAroundPoint(thinker:GetAbsOrigin(), 500, false)
+
         local thinker =  self:GetParent()
         local nearby_targets = FindUnitsInRadius(thinker:GetTeam(), thinker:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
         for i, target in ipairs(nearby_targets) do
-            local health = target:GetHealth()
-            local damage =  (target:GetMaxHealth()*self.damage_percent) + self.damage
+            if target and not target:IsNull() then 
+                local health = target:GetHealth()
+                local damage = (target:GetMaxHealth()*self.damage_percent) + self.damage
+               
+                target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 3})
 
-            ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE})
-            target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 3})
+                if self:GetCaster():HasScepter() then
+                    target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "hellspont_extermination_scepter", {duration = self:GetAbility():GetSpecialValueFor("debuff_dur_scepter")})
+                    ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage_scepter"), damage_type = DAMAGE_TYPE_PURE})
+                end
 
-            if self:GetCaster():HasScepter() then
-                target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "hellspont_extermination_scepter", {duration = self:GetAbility():GetSpecialValueFor("debuff_dur_scepter")})
-                ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage_scepter"), damage_type = DAMAGE_TYPE_PURE})
+                ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE})
             end
         end
     end

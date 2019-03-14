@@ -3549,65 +3549,66 @@
 		}
 	}
 	"npc_dota_hero_ronan"
-	    {
-	      "Model"						"models/heroes/hero_ronan/ronan.vmdl"		// Model.
-	      "override_hero"		        "npc_dota_hero_troll_warlord"
-	      "DisableWearables" 			"1"
-		  "ModelScale"					"1"
-	
-	      "AbilityLayout"				"4"
-	      "Ability1"					"ronan_passive"
-	      "Ability2"					"ronan_bash"
-	      "Ability3"					"ronan_soul_stole"
-	      "Ability4"					"generic_hidden"
-	      "Ability5"					"generic_hidden"
-	      "Ability6"					"ronan_strike_of_ethernity"
-	      "Ability7"					""
-	      "Ability10"				  	"special_bonus_unique_ronan_1"
-	      "Ability11"				  	"special_bonus_all_stats_12"
-	      "Ability12"				 	"special_bonus_hp_regen_40"
-	      "Ability13"			  		"special_bonus_unique_ronan"
-	      "Ability14"			  		"special_bonus_cooldown_reduction_25"
-	      "Ability15"			  		"special_bonus_all_stats_15"
-	      "Ability16"			  		"special_bonus_unique_ronan_2"
-	      "Ability17"					"special_bonus_unique_ronan_3"
-	      "ArmorPhysical"				"0"								// Physical protection.
-	
-	      // Attack
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	      "AttackDamageMin"			"32"									// Damage range min.
-	      "AttackDamageMax"			"40"									// Damage range max.
-	      "AttackRate"				"1.7"									// Speed of attack.
-	      "AttackAnimationPoint"		"0.4"									// Normalized time in animation cycle to attack.
-	      "AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-	      "AttackRange"				"128"									// Range within a target can be attacked.
-	
-	      // Attributes
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-	      "AttributeBaseStrength"			"23"									// Base strength
-	      "AttributeStrengthGain"			"3.3"									// Strength bonus per level.
-	      "AttributeBaseAgility"			"18"									// Base agility
-	      "AttributeAgilityGain"			"1.6"									// Agility bonus per level.
-	      "AttributeBaseIntelligence"		"26"									// Base intelligence
-	      "AttributeIntelligenceGain"		"2.2"									// Intelligence bonus per level.
-	
-	      // Movement
-	      //-------------------------------------------------------------------------------------------------------------
-	      "MovementSpeed"				"310"									// Speed.
-	      "MovementTurnRate"			"0.6"									// Turning rate.
-	
-	      "HealthBarOffset"			"250"
-			"precache"
-			{
-				"model"	  "models/items/axe/nethersteelbarbute_head/nethersteelbarbute_head.vmdl"
-				"model"	  "models/items/axe/searing_annihilator_armor/searing_annihilator_armor.vmdl"
-				"model"	  "models/items/axe/blacksmith_weapon.vmdl"
-				"model"	  "models/items/axe/axesaccess_belt_s2/axesaccess_belt_s2.vmdl"
-				"model"	  "models/ronan/ronan_weapon_shadowmorne.vmdl"
-			}
-	    }
+	{
+		"Model"						"models/heroes/hero_ronan/ronan.vmdl"		// Model.
+		"override_hero"		        "npc_dota_hero_troll_warlord"
+		"DisableWearables" 			"1"
+		"ModelScale"					"1"
+
+		"AbilityLayout"				"4"
+		"Ability1"					"ronan_passive"
+		"Ability2"					"ronan_bash"
+		"Ability3"					"ronan_soul_stole"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"ronan_strike_of_ethernity"
+		"Ability7"					""
+		"Ability10"				  	"special_bonus_unique_ronan_1"
+		"Ability11"				  	"special_bonus_all_stats_12"
+		"Ability12"				 	"special_bonus_hp_regen_40"
+		"Ability13"			  		"special_bonus_unique_ronan"
+		"Ability14"			  		"special_bonus_cooldown_reduction_25"
+		"Ability15"			  		"special_bonus_all_stats_15"
+		"Ability16"			  		"special_bonus_unique_ronan_2"
+		"Ability17"					"special_bonus_unique_ronan_3"
+		"ArmorPhysical"				"0"								// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"32"									// Damage range min.
+		"AttackDamageMax"			"40"									// Damage range max.
+		"AttackRate"				"1.7"									// Speed of attack.
+		"AttackAnimationPoint"		"0.4"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"128"									// Range within a target can be attacked.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"23"									// Base strength
+		"AttributeStrengthGain"			"3.3"									// Strength bonus per level.
+		"AttributeBaseAgility"			"18"									// Base agility
+		"AttributeAgilityGain"			"1.6"									// Agility bonus per level.
+		"AttributeBaseIntelligence"		"26"									// Base intelligence
+		"AttributeIntelligenceGain"		"2.2"									// Intelligence bonus per level.
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"310"									// Speed.
+		"MovementTurnRate"			"0.6"									// Turning rate.
+
+		"HealthBarOffset"			"250"
+
+		"precache"
+		{
+			"model"	  "models/items/axe/nethersteelbarbute_head/nethersteelbarbute_head.vmdl"
+			"model"	  "models/items/axe/searing_annihilator_armor/searing_annihilator_armor.vmdl"
+			"model"	  "models/items/axe/blacksmith_weapon.vmdl"
+			"model"	  "models/items/axe/axesaccess_belt_s2/axesaccess_belt_s2.vmdl"
+			"model"	  "models/ronan/ronan_weapon_shadowmorne.vmdl"
+		}
+	}
 	"npc_dota_hero_roug"
 	    {
 	      // General

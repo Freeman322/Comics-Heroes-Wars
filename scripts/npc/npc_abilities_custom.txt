@@ -9829,7 +9829,8 @@
 		"precache"
 		{
 			"particle"  "particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_hammer_ambient.vpcf"
-			"model"			"models/ronan/ronan_hammer_of_etrenity.vmdl"
+			"model"		"models/ronan/ronan_hammer_of_etrenity.vmdl"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
