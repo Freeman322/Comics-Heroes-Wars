@@ -8,7 +8,7 @@ function thanos_decimation:OnSpellStart()
 		local duration = self:GetDuration()
 
 		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_thanos_decimation", { duration = self:GetDuration() } )
-		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_thanos_decimation_aura", { duration = self:GetDuration() } )
+		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_thanos_decimation_aura", { duration = (self:GetDuration() - 3) } )
 
 		EmitSoundOn( "Thanos.Decimation.Cast", self:GetCaster() )
 	end
@@ -189,7 +189,7 @@ function modifier_thanos_decimation_aura:IsPurgable()
 end
 
 function modifier_thanos_decimation_aura:GetAuraRadius()
-	return 1000
+	return self:GetAbility():GetSpecialValueFor("radius")
 end
 
 function modifier_thanos_decimation_aura:GetAuraSearchTeam()

@@ -89,10 +89,10 @@ function hellspont_extermination_thinker:OnDestroy(event)
 
                 if self:GetCaster():HasScepter() then
                     target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "hellspont_extermination_scepter", {duration = self:GetAbility():GetSpecialValueFor("debuff_dur_scepter")})
-                    ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage_scepter"), damage_type = DAMAGE_TYPE_PURE})
+                    ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage_scepter"), damage_type = DAMAGE_TYPE_MAGICAL})
                 end
 
-                ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE})
+                ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
             end
         end
     end

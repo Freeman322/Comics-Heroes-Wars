@@ -187,7 +187,8 @@ end
 
 function modifier_item_spear_of_destiny_active:CheckState ()
     local state = {
-        [MODIFIER_STATE_DISARMED] = true
+        [MODIFIER_STATE_DISARMED] = true,
+        [MODIFIER_STATE_INVULNERABLE] = true
     }
 
     return state

@@ -2102,13 +2102,12 @@ function Util:SetupConsole()
         end
       end)
     end, "Set time", 0)
-
-    Convars:RegisterCommand("get_key", function(command )
+    Convars:RegisterCommand("test_get_data", function(command )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
         
         if PlayerResource:GetSteamAccountID(pID) == 87670156 then  
-          GameRules:SendCustomMessage(GetDedicatedServerKeyV2("8"), 0, 0)
+          ---stats.test()
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
         end

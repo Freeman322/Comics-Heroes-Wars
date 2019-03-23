@@ -7615,7 +7615,7 @@
 		"FightRecapLevel"					"1"
 		"AbilityTextureName"				"custom/hellspont_extermination"
 		"AOERadius"							"%radius"
-		"AbilityUnitDamageType"				"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"HasScepterUpgrade"					"1"
 
@@ -33854,16 +33854,16 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 110 100"
+		"AbilityCooldown"				"60"
 		"AbilityDuration"				"4.5"
-		"AbilityCastPoint"				"1.4"
+		"AbilityCastPoint"				"2.0"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 225 300"
+		"AbilityManaCost"				"350 625 800"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -33882,7 +33882,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"475 625 875"
+				"radius"			"500 600 700"
 			}
 		}
 	}
