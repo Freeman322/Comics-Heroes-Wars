@@ -335,11 +335,11 @@
 	}
 	"npc_dota_hero_butcher"
 	{
-	 	"override_hero"		     "npc_dota_hero_pudge"
-		"Model"	      	     "models/heroes/hero_pudge/butcher.vmdl"
-		"HealthBarOffset"		 "235"
-		"DisableWearables"			"1"
-		"AbilityLayout"      "5"
+	 	"override_hero"		    "npc_dota_hero_pudge"
+		"Model"	      	     	"models/heroes/hero_pudge/butcher.vmdl"
+		"HealthBarOffset"		"235"
+		"DisableWearables"		"1"
+		"AbilityLayout"      	"5"
 		"Ability1"		        "butcher_meat_hook"
 		"Ability2"          	"pudge_decay"
 		"Ability3"		        "pudge_flesh_heap_lua"
@@ -356,23 +356,24 @@
 		"Ability15"				"special_bonus_unique_pudge_1"
 		"Ability16"				"special_bonus_unique_pudge"
 		"Ability17"				"special_bonus_strength_25"
-		"ArmorPhysical"		"1"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"ArmorPhysical"			"0"
+		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"27"
 		"AttackDamageMax"		"33"
-		"AttackRate"		"1.700000"
+		"AttackRate"				"1.700000"
 		"AttackAnimationPoint"		"0.500000"
-		"AttackAcquisitionRange"		"600"
-		"AttackRange"		"128"
-		"ProjectileSpeed"		"0"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"25"
-		"AttributeStrengthGain"		"3.200000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"135"
+		"ProjectileSpeed"			"0"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"30"
+		"AttributeStrengthGain"		"2.900000"
 		"AttributeBaseIntelligence"		"19"
 		"AttributeIntelligenceGain"		"1.700000"
 		"AttributeBaseAgility"		"18"
 		"AttributeAgilityGain"		"1.600000"
 		"MovementSpeed"		"295"
+
 		"precache"
 		{
 			"model"				"models/vendetta_final.vmdl"
@@ -472,8 +473,8 @@
 	
 		"ArmorPhysical"				"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"27"
-		"AttackDamageMax"			"35"
+		"AttackDamageMin"			"50"
+		"AttackDamageMax"			"50"
 		"AttackRate"				"1.5000"
 		"AttackAnimationPoint"		"0.400000"
 		"AttackAcquisitionRange"	"600"
@@ -1183,8 +1184,8 @@
 	    "Ability17"				"special_bonus_unique_drax"
 	    "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
 	    "ArmorPhysical"					"0"
-		"AttributeBaseStrength"			"25"
-		"AttributeStrengthGain"			"2.800000"
+		"AttributeBaseStrength"			"18"
+		"AttributeStrengthGain"			"4.00000"
 		"AttributeBaseIntelligence"		"16"
 		"AttributeIntelligenceGain"		"1.800000"
 		"AttributeBaseAgility"			"18"
@@ -1193,6 +1194,7 @@
 		"MovementTurnRate"				"0.400000"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"				"180"
+		"StatusHealth"					"200"
 	}
 	"npc_dota_hero_dr_strange"
 	{
@@ -2343,10 +2345,12 @@
 	{
 		"Model"							"models/heroes/hero_diablo/diablo.vmdl"
 		"override_hero"					"npc_dota_hero_lion"
+
 		"ModelScale"					"1.1000000"
 		"LoadoutScale"					"0"
 		"DisableWearables" 				"1"
 		"AbilityLayout"					"4"
+
 		"Ability1"						"diablo_fire_dissipation"
 		"Ability2"						"diablo_burning_attacks"
 		"Ability3"						"diablo_fire_blast"
@@ -3254,8 +3258,8 @@
 	    		// Attack
 	    		//-------------------------------------------------------------------------------------------------------------
 	    		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	    		"AttackDamageMin"			"20"									// Damage range min.
-	    		"AttackDamageMax"			"40"									// Damage range max.
+	    		"AttackDamageMin"			"45"									// Damage range min.
+	    		"AttackDamageMax"			"60"									// Damage range max.
 	    		"AttackRate"				"1.6"									// Speed of attack.
 	    		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
 	    		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
@@ -3265,7 +3269,7 @@
 	    		//-------------------------------------------------------------------------------------------------------------
 	    		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 	    		"AttributeBaseStrength"		"22"									// Base strength
-	    		"AttributeStrengthGain"		"1.8"									// Strength bonus per level.
+	    		"AttributeStrengthGain"		"2.2"									// Strength bonus per level.
 	    		"AttributeBaseIntelligence"	"21"									// Base intelligence
 	    		"AttributeIntelligenceGain"	"2.0"									// Intelligence bonus per level.
 	    		"AttributeBaseAgility"		"25"									// Base agility
@@ -3476,7 +3480,7 @@
 	      "Ability15"				"special_bonus_attack_damage_90"
 	      "Ability16"				"special_bonus_agility_25"
 	      "Ability17"				"special_bonus_all_stats_20"
-	      "ArmorPhysical"		"0"
+	      "ArmorPhysical"		"2"
 	      "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	      "AttackDamageMin"		"27"
 	      "AttackDamageMax"		"37"
@@ -3545,65 +3549,66 @@
 		}
 	}
 	"npc_dota_hero_ronan"
-	    {
-	      "Model"						"models/heroes/hero_ronan/ronan.vmdl"		// Model.
-	      "override_hero"		        "npc_dota_hero_troll_warlord"
-	      "DisableWearables" 			"1"
-		  "ModelScale"					"1"
-	
-	      "AbilityLayout"				"4"
-	      "Ability1"					"ronan_passive"
-	      "Ability2"					"ronan_bash"
-	      "Ability3"					"ronan_soul_stole"
-	      "Ability4"					"generic_hidden"
-	      "Ability5"					"generic_hidden"
-	      "Ability6"					"ronan_strike_of_ethernity"
-	      "Ability7"					""
-	      "Ability10"				  	"special_bonus_unique_ronan_1"
-	      "Ability11"				  	"special_bonus_all_stats_12"
-	      "Ability12"				 	"special_bonus_hp_regen_40"
-	      "Ability13"			  		"special_bonus_unique_ronan"
-	      "Ability14"			  		"special_bonus_cooldown_reduction_25"
-	      "Ability15"			  		"special_bonus_all_stats_15"
-	      "Ability16"			  		"special_bonus_unique_ronan_2"
-	      "Ability17"					"special_bonus_unique_ronan_3"
-	      "ArmorPhysical"				"0"								// Physical protection.
-	
-	      // Attack
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	      "AttackDamageMin"			"32"									// Damage range min.
-	      "AttackDamageMax"			"40"									// Damage range max.
-	      "AttackRate"				"1.7"									// Speed of attack.
-	      "AttackAnimationPoint"		"0.4"									// Normalized time in animation cycle to attack.
-	      "AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-	      "AttackRange"				"128"									// Range within a target can be attacked.
-	
-	      // Attributes
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-	      "AttributeBaseStrength"			"23"									// Base strength
-	      "AttributeStrengthGain"			"3.3"									// Strength bonus per level.
-	      "AttributeBaseAgility"			"18"									// Base agility
-	      "AttributeAgilityGain"			"1.6"									// Agility bonus per level.
-	      "AttributeBaseIntelligence"		"26"									// Base intelligence
-	      "AttributeIntelligenceGain"		"2.2"									// Intelligence bonus per level.
-	
-	      // Movement
-	      //-------------------------------------------------------------------------------------------------------------
-	      "MovementSpeed"				"310"									// Speed.
-	      "MovementTurnRate"			"0.6"									// Turning rate.
-	
-	      "HealthBarOffset"			"250"
-			"precache"
-			{
-				"model"	  "models/items/axe/nethersteelbarbute_head/nethersteelbarbute_head.vmdl"
-				"model"	  "models/items/axe/searing_annihilator_armor/searing_annihilator_armor.vmdl"
-				"model"	  "models/items/axe/blacksmith_weapon.vmdl"
-				"model"	  "models/items/axe/axesaccess_belt_s2/axesaccess_belt_s2.vmdl"
-				"model"	  "models/ronan/ronan_weapon_shadowmorne.vmdl"
-			}
-	    }
+	{
+		"Model"						"models/heroes/hero_ronan/ronan.vmdl"		// Model.
+		"override_hero"		        "npc_dota_hero_troll_warlord"
+		"DisableWearables" 			"1"
+		"ModelScale"					"1"
+
+		"AbilityLayout"				"4"
+		"Ability1"					"ronan_passive"
+		"Ability2"					"ronan_bash"
+		"Ability3"					"ronan_soul_stole"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"ronan_strike_of_ethernity"
+		"Ability7"					""
+		"Ability10"				  	"special_bonus_unique_ronan_1"
+		"Ability11"				  	"special_bonus_all_stats_12"
+		"Ability12"				 	"special_bonus_hp_regen_40"
+		"Ability13"			  		"special_bonus_unique_ronan"
+		"Ability14"			  		"special_bonus_cooldown_reduction_25"
+		"Ability15"			  		"special_bonus_all_stats_15"
+		"Ability16"			  		"special_bonus_unique_ronan_2"
+		"Ability17"					"special_bonus_unique_ronan_3"
+		"ArmorPhysical"				"0"								// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"32"									// Damage range min.
+		"AttackDamageMax"			"40"									// Damage range max.
+		"AttackRate"				"1.7"									// Speed of attack.
+		"AttackAnimationPoint"		"0.4"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackRange"				"128"									// Range within a target can be attacked.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"23"									// Base strength
+		"AttributeStrengthGain"			"3.3"									// Strength bonus per level.
+		"AttributeBaseAgility"			"18"									// Base agility
+		"AttributeAgilityGain"			"1.6"									// Agility bonus per level.
+		"AttributeBaseIntelligence"		"26"									// Base intelligence
+		"AttributeIntelligenceGain"		"2.2"									// Intelligence bonus per level.
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"310"									// Speed.
+		"MovementTurnRate"			"0.6"									// Turning rate.
+
+		"HealthBarOffset"			"250"
+
+		"precache"
+		{
+			"model"	  "models/items/axe/nethersteelbarbute_head/nethersteelbarbute_head.vmdl"
+			"model"	  "models/items/axe/searing_annihilator_armor/searing_annihilator_armor.vmdl"
+			"model"	  "models/items/axe/blacksmith_weapon.vmdl"
+			"model"	  "models/items/axe/axesaccess_belt_s2/axesaccess_belt_s2.vmdl"
+			"model"	  "models/ronan/ronan_weapon_shadowmorne.vmdl"
+		}
+	}
 	"npc_dota_hero_roug"
 	    {
 	      // General
@@ -3746,6 +3751,8 @@
 		"AttributeAgilityGain"		"1.900000"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"Model"					"models/sauron/sauron.vmdl"
+
+		"StatusHealth"			"700"
 	
 	}
 	"npc_dota_hero_scarlet_witch"
@@ -4102,7 +4109,7 @@
 		"AttributeIntelligenceGain"		"3.300000"
 		"AttributeBaseAgility"		"19"
 		"AttributeAgilityGain"		"2.200000"
-	    	"MovementSpeed"		"305"
+	    "MovementSpeed"		"305"
 	}
 	"npc_dota_hero_thanos" //имя юнита
 	{
@@ -4116,12 +4123,12 @@
 	      "AbilityLayout"			"4"
 	
 	      //-------------------------------------------------------------------------------------------------------------
-	      "Ability1"				"tanos_dispersion"
-	      "Ability2"				"thanos_first_blood"
+	      "Ability1"				"thanos_first_blood"
+	      "Ability2"				"tanos_dispersion"
 	      "Ability3"				"tanos_dragon_blood"
 	      "Ability4"				"thanos_believer"
 	      "Ability5"				"generic_hidden"
-	      "Ability6"				"thanos_dying_star"
+	      "Ability6"				"thanos_decimation"
 	      "Ability7"				""
 	      "Ability10"				"special_bonus_exp_boost_30"
 	      "Ability11"				"special_bonus_all_stats_12"
@@ -4240,21 +4247,21 @@
 				"model"		"models/items/dragon_knight/dragon_lord_back/dragon_lord_back.vmdl"
 				"model"		"models/items/dragon_knight/wyvern_shoulder/wyvern_shoulder.vmdl"
 			}
-	  }
+	}
 	"npc_dota_hero_tracer"
 	{
-		"override_hero"					"npc_dota_hero_enchantress"
-		"Model"							"models/heroes/tracer/tracer.vmdl"
-		"DisableWearables"			"1"
-		"ModelScale"		"0.7"
-		"LoadoutScale"		"0.7"
-		"Ability1"		"tracer_overload"
-		"Ability2"		"tracer_blink"
-		"Ability3"		"tracer_energy_blast"
-		"Ability4"		"generic_hidden"
-		"Ability5"						"generic_hidden"
-		"Ability6"						"tracer_time_lapse"
-		"Ability7"						""
+		"override_hero"			"npc_dota_hero_enchantress"
+		"Model"					"models/heroes/tracer/tracer.vmdl"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.7"
+		"LoadoutScale"			"0.7"
+		"Ability1"				"tracer_overload"
+		"Ability2"				"tracer_blink"
+		"Ability3"				"tracer_energy_blast"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"tracer_time_lapse"
+		"Ability7"				""
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_all_stats_12"
 		"Ability12"				"special_bonus_spell_block_20"
@@ -4264,26 +4271,26 @@
 		"Ability16"				"special_bonus_unique_tracer"
 		"Ability17"				"special_bonus_all_stats_20"
 	
-		"ArmorPhysical"		"0.000000"
+		"ArmorPhysical"				"0.000000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"27"
-		"AttackDamageMax"		"35"
-		"AttackRate"		"1.500000"
+		"AttackDamageMin"			"27"
+		"AttackDamageMax"			"35"
+		"AttackRate"				"1.500000"
 		"AttackAnimationPoint"		"0.300000"
-		"AttackAcquisitionRange"		"800"
-		"AttackRange"		"450"
-		"ProjectileModel"		"particles/units/heroes/hero_tinker/tinker_base_attack.vpcf"
-		"ProjectileSpeed"		"1200"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"550"
+		"ProjectileModel"			"particles/units/heroes/hero_tinker/tinker_base_attack.vpcf"
+		"ProjectileSpeed"			"1200"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"18"
 		"AttributeStrengthGain"		"2.000000"
 		"AttributeBaseAgility"		"24"
 		"AttributeAgilityGain"		"3.100000"
 		"AttributeBaseIntelligence"		"20"
 		"AttributeIntelligenceGain"		"2.400000"
-		"MovementSpeed"		"320"
-		"MovementTurnRate"		"0.400000"
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"MovementSpeed"					"320"
+		"MovementTurnRate"				"0.400000"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
 	}
 	"npc_dota_hero_treant_new"
 	{
@@ -6664,5 +6671,161 @@
 		{
 
 		}
+	}
+	"npc_dota_hero_kratos"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "213"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+
+        ///"HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/hero_kratos/kratos.vmdl"
+
+        "ModelScale"                "1.4"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Beastmaster"
+		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
+
+	 	"particle_folder"			"particles/units/heroes/hero_beastmaster"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "26"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "18"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+
+        "AttackDamageMin"           "25"
+        "AttackDamageMax"           "32"
+
+       	"AttackAcquisitionRange"	"800"
+       	"AttackRate"				"1.700000"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+        // Abilities
+		"Ability1"					"kratos_axe_twrow"
+		"Ability2"					"kratos_final_strike"
+		"Ability3"					"kratos_god_of_war"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"kratos_chaos"
+
+		"Ability10"					"special_bonus_unique_kratos"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_attack_speed_100"
+		"Ability13"					"special_bonus_armor_15"
+		"Ability14"					"special_bonus_unique_kratos_1"
+		"Ability15"					"special_bonus_hp_regen_50"
+		"Ability16"					"special_bonus_attack_damage_75"
+		"Ability17"					"special_bonus_strength_25"
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_ogre_magi/ogre_magi_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_origin"
+						"location"		"attach_hitloc"
+					}
+				}
+			}
+		}
+		"ItemSlots"
+		{
+
+		}
+	}
+	"npc_dota_hero_warboss"
+	{
+		"BaseClass"             	"npc_dota_hero"       
+        "HeroID"                    "214"
+        "IsCustom"                  "1"
+        "DisableWearables"          "1"
+        "HeroDisabled"				"1"
+		
+        // Model info
+        "Model"                     "models/heroes/shredder/shredder.vmdl"
+
+        "ModelScale"                "1.0"
+        "LoadoutScale"              "1.1"
+
+        "HeroGlowColor"             "200 200 200"
+        "HealthBarOffset"           "240"
+        
+        // Sound info
+		"SoundSet"					"Hero_Alchemist"
+		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
+
+	 	"particle_folder"			"particles/units/heroes/hero_alchemist"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_alchemist.vsndevts"
+
+        // Attribute Stats
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"     "26"
+        "AttributeStrengthGain"     "1.100000"
+        "AttributeBaseIntelligence" "19"
+        "AttributeIntelligenceGain" "1.100000"
+        "AttributeBaseAgility"      "18"
+        "AttributeAgilityGain"      "2.200000"
+
+        // Misc stats
+        "ArmorPhysical"             "2"
+        "MagicalResistance"			"24"
+
+
+        "AttackDamageMin"           "25"
+        "AttackDamageMax"           "32"
+
+       	"AttackAcquisitionRange"	"800"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+
+        "MovementSpeed"             "315"
+        "MovementTurnRate"          "0.600000"
+        
+       	"Ability1"					"shredder_whirling_death"
+		"Ability2"					"shredder_timber_chain"
+		"Ability3"					"batrider_sticky_napalm"
+		"Ability4"					"shredder_chakram_2"
+		"Ability5"					"shredder_chakram"
+		"Ability6"					"shredder_boiz"
+		"Ability7"					"shredder_return_chakram"
+		"Ability8"					"shredder_return_chakram_2"
+
+		"Ability10"					"special_bonus_attack_damage_75"
+		"Ability11"					"special_bonus_exp_boost_30"
+		"Ability12"					"special_bonus_spell_block_20"
+		"Ability13"					"special_bonus_cast_range_200"
+		"Ability14"					"special_bonus_cooldown_reduction_30"
+		"Ability15"					"special_bonus_all_stats_15"
+		"Ability16"					"special_bonus_spell_amplify_20"
+		"Ability17"					"special_bonus_unique_timbersaw"
 	}
 }

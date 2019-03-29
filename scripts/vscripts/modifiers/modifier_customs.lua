@@ -72,3 +72,30 @@ function modifier_beerus:IsHidden() return true end
 function modifier_beerus:IsPurgable() return false end
 function modifier_beerus:RemoveOnDeath() return false end
 
+if modifier_neo_noir_khan == nil then modifier_neo_noir_khan = class({}) end
+
+function modifier_neo_noir_khan:IsHidden() return true end
+function modifier_neo_noir_khan:IsPurgable() return false end
+function modifier_neo_noir_khan:RemoveOnDeath() return false end
+function modifier_neo_noir_khan:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND,
+        MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
+        MODIFIER_PROPERTY_MODEL_SCALE
+    }
+
+    return funcs
+end
+
+function modifier_neo_noir_khan:GetAttackSound( params )
+    return "Hero_Juggernaut.Attack"
+end
+
+function modifier_neo_noir_khan:GetModifierAttackRangeBonus( params )
+    return
+end
+
+function modifier_neo_noir_khan:GetModifierModelScale( params )
+    return 100
+end
+

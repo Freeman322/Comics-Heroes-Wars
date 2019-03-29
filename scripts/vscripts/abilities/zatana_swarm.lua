@@ -37,9 +37,11 @@ end
 
 function zatana_swarm:OnProjectileHit( hTarget, vLocation )
 	local damage = self:GetAbilityDamage()
+
 	if self:GetCaster():HasTalent("special_bonus_unique_zatanna") then
-        damage = self:GetCaster():FindTalentValue("special_bonus_unique_zatanna") + self:GetAbilityDamage()
+        damage = self:GetCaster():FindTalentValue("special_bonus_unique_zatanna") + damage
 	end
+	
 	if hTarget ~= nil then
 		local damage = {
 			victim = hTarget,

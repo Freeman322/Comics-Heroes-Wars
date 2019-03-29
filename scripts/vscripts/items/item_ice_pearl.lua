@@ -180,18 +180,18 @@ function modifier_item_ice_pearl_active:OnTakeDamage( params )
             end
 
             if target:GetClassname() == "ent_dota_fountain" then
-        	   return
-			end
+               return
+            end
 
-			ApplyDamage ( {
+            ApplyDamage ( {
                 victim = target,
                 attacker = self:GetParent(),
                 damage = params.damage,
-                damage_type = params.damage_type,
+                damage_type = DAMAGE_TYPE_PURE,
                 ability = self:GetAbility(),
-                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
             })
-        	EmitSoundOn("DOTA_Item.BladeMail.Damage", target)
+            EmitSoundOn("DOTA_Item.BladeMail.Damage", target)
         end
     end
 end

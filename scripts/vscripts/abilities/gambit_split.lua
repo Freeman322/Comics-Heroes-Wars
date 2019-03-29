@@ -54,7 +54,7 @@ function gambit_split:OnChannelFinish( bInterrupted )
 end
 
 function gambit_split:OnProjectileHit( hTarget, vLocation )
-	if hTarget ~= nil then
+	if hTarget ~= nil and not hTarget:IsMagicImmune() then
 		EmitSoundOn( "Hero_StormSpirit.Overload", hTarget )
 		EmitSoundOn( "Hero_StormSpirit.Overload", hTarget )
 
@@ -66,6 +66,7 @@ function gambit_split:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 		ApplyDamage(damage)
+
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor( "stun_duration" ) } )
 	end
 

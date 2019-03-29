@@ -142,12 +142,18 @@ end
 
 function modifier_infest_buff:OnCreated(params)
     if IsServer() then
-        self.agi = self:GetCaster():GetAgility()*(self:GetAbility():GetSpecialValueFor("stats")/100)
-        self.str = self:GetCaster():GetStrength()*(self:GetAbility():GetSpecialValueFor("stats")/100)
-        self.int = self:GetCaster():GetIntellect()*(self:GetAbility():GetSpecialValueFor("stats")/100)
+        local mult = self:GetAbility():GetSpecialValueFor("stats") / 100
+
+        if self:GetAbility():GetCaster():IsHasSuperStatus() then mult = mult + 0.5 end 
+
+        self.agi = self:GetCaster():GetAgility() * mult
+        self.str = self:GetCaster():GetStrength() * mult
+        self.int = self:GetCaster():GetIntellect() * mult
 
         self:StartIntervalThink(0.05)
+
         self:GetParent():CalculateStatBonus()
+
         self:GetParent():SetHealth(self:GetParent():GetMaxHealth())
         self:GetParent():SetMana(self:GetParent():GetMaxMana())
 

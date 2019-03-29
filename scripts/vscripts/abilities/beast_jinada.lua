@@ -29,7 +29,7 @@ function modifier_beast_jinada:IsPurgable()
 end
 
 function modifier_beast_jinada:OnCreated(htable)
-    if IsServer then
+    if IsServer() then
         self.killed_creeps = 0
     end
 end

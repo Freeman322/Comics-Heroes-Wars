@@ -2472,4 +2472,84 @@
 			}
 		}
 	}
+	"models/heroes/hero_kratos/kratos.vmdl"
+	{
+		"PortraitLightPosition"		"-17.784119 -3.971481 312.205719"
+		"PortraitLightAngles"		"51.601379 -4.171567 -6.876636"
+		"PortraitLightFOV"		"65.260002"
+		"PortraitLightDistance"		"181.139999"
+		"PortraitLightColor"		"154 254 204"
+		"PortraitShadowColor"		"49 80 126"
+		"PortraitShadowScale"		"1.108000"
+		"PortraitAmbientColor"		"101 99 141"
+		"PortraitAmbientScale"		"3.997000"
+		"PortraitSpecularColor"		"254 254 254"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_bluebloom.vmat"
+		"PortraitBackgroundColor1"		"1.000000 0.384314 0.423529"
+		"PortraitBackgroundColor2"		"0.431373 0.039216 0.529412"
+		"PortraitBackgroundColor3"		"0.074510 0.552941 1.000000"
+		"PortraitBackgroundColor4"		"0.792157 0.000000 0.000000"
+		"PortraitLightScale"		"1.063000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"0.582 -0.002 0.813"
+		"PortraitAnimationActivity"		"ACT_DOTA_CAPTURE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"172.67 16.12 135.71"
+				"PortraitAngles"		"3.74 186.09 0.00"
+				"PortraitFOV"		"10"
+			}
+		}
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitHideParticles"		"0"
+		"PortraitHideDropShadow"		"0"
+		"PortraitDesaturateParticles"		"0"
+		"PortraitDesaturateHero"		"1"
+	}
+	"models/b2/b2.vmdl"
+	{
+		"PortraitLightPosition"		"-17.784119 -3.971481 312.205719"
+		"PortraitLightAngles"		"51.601379 -4.171567 -6.876636"
+		"PortraitLightFOV"		"65.260002"
+		"PortraitLightDistance"		"181.139999"
+		"PortraitLightColor"		"154 254 204"
+		"PortraitShadowColor"		"49 80 126"
+		"PortraitShadowScale"		"1.108000"
+		"PortraitAmbientColor"		"101 99 141"
+		"PortraitAmbientScale"		"3.997000"
+		"PortraitSpecularColor"		"254 254 254"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_bluebloom.vmat"
+		"PortraitBackgroundColor1"		"1.000000 0.384314 0.423529"
+		"PortraitBackgroundColor2"		"0.431373 0.039216 0.529412"
+		"PortraitBackgroundColor3"		"0.074510 0.552941 1.000000"
+		"PortraitBackgroundColor4"		"0.792157 0.000000 0.000000"
+		"PortraitLightScale"		"1.063000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"0.582 -0.002 0.813"
+		"PortraitAnimationActivity"		"ACT_DOTA_CAPTURE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"172.67 16.12 104.71"
+				"PortraitAngles"		"3.74 186.09 0.00"
+				"PortraitFOV"		"10"
+			}
+		}
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitHideParticles"		"0"
+		"PortraitHideDropShadow"		"0"
+		"PortraitDesaturateParticles"		"0"
+		"PortraitDesaturateHero"		"1"
+	}
 }

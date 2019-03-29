@@ -124,6 +124,8 @@ end
 function modifier_item_dawnbreaker_active:OnCreated(table)
     if IsServer() then         
         EmitSoundOn("Hero_Oracle.FalsePromise.Healed", self:GetParent())
+
+        if self:GetAbility():GetCaster():IsHasSuperStatus() then self:SetDuration(self:GetRemainingTime() + 2) end 
     end 
 end
 

@@ -104,7 +104,7 @@ function stats.get_data()
     
     local encoded_data = json.encode({
         type = stats.STATS_PRE_GAME,
-        key = GetDedicatedServerKey("7.8.1"),
+        key = GetDedicatedServerKeyV2("8.3"),
         time = {
             frames = tonumber(GetFrameCount()),
             server_time = tonumber(Time()),
@@ -165,7 +165,7 @@ function stats.set_data()
     
     local encoded_data = json.encode({
         type = stats.STATS_POST_GAME,
-        key = GetDedicatedServerKey("7.8.1"),
+        key = GetDedicatedServerKeyV2("8.3"),
         time = {
             frames = tonumber(GetFrameCount()),
             server_time = tonumber(Time()),
@@ -440,7 +440,7 @@ function stats.request_hero_data(hero_name)
     
     local encoded_data = json.encode({
         type = stats.PLUS_STATS,
-        key = GetDedicatedServerKey("7.8.1"),
+        key = GetDedicatedServerKeyV2("8.3"),
         data = hero_name
     })
 
@@ -496,7 +496,7 @@ function stats.get_all_inventories()
     
     local encoded_data = json.encode({
         type = stats.INVENTORY,
-        key = GetDedicatedServerKey("7.8.1"),
+        key = GetDedicatedServerKeyV2("8.3"),
         time = {
             frames = tonumber(GetFrameCount()),
             server_time = tonumber(Time()),
@@ -556,7 +556,7 @@ function stats.create_item( params )
     
     local encoded_data = json.encode({
         type = stats.ITEM,
-        key = GetDedicatedServerKey("7.8.1"),
+        key = GetDedicatedServerKeyV2("8.3"),
         time = {
             frames = tonumber(GetFrameCount()),
             server_time = tonumber(Time()),
@@ -612,7 +612,7 @@ function stats.submit_trade(params)
     
     local encoded_data = json.encode({
         type = stats.TRADE,
-        key = GetDedicatedServerKey("7.8.1"),
+        key = GetDedicatedServerKeyV2("8.3"),
         time = {
             frames = tonumber(GetFrameCount()),
             server_time = tonumber(Time()),
@@ -671,7 +671,7 @@ function stats.delete_item(params)
     
     local encoded_data = json.encode({
         type = stats.DELETE_ITEM,
-        key = GetDedicatedServerKey("7.8.1"),
+        key = GetDedicatedServerKeyV2("8.3"),
         time = {
             frames = tonumber(GetFrameCount()),
             server_time = tonumber(Time()),

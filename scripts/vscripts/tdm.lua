@@ -1,18 +1,35 @@
-FreeForAll = class({})
+tdm = class({})
 
-LinkLuaModifier("modifier_gold_overthrow", "modifiers/modifier_gold_overthrow.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tdm", "modifiers/modifier_tdm.lua", LUA_MODIFIER_MOTION_NONE)
 
 SCORE = {}
 MAX_KILLS = 50
 IS_GAME_ENDED = false
 
-function FreeForAll:Start()
-	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( FreeForAll, "OnNPCSpawned" ), self )
-	ListenToGameEvent( "entity_killed", Dynamic_Wrap( FreeForAll, 'OnEntityKilled' ), self )
-	ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( FreeForAll, "OnGameRulesStateChange" ), self )
+function tdm:start()
+	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( tdm, "OnNPCSpawned" ), self )
+	ListenToGameEvent( "entity_killed", Dynamic_Wrap( tdm, 'OnEntityKilled' ), self )
+	ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( tdm, "OnGameRulesStateChange" ), self )
+	
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled( true )
 	GameRules:GetGameModeEntity():SetUnseenFogOfWarEnabled( true )
-	GameRules:GetGameModeEntity():SetThink("CheckEventState", FreeForAll, 1)
+	GameRules:GetGameModeEntity():SetThink("CheckEventState", tdm, 1)
+
+	GameRules:GetGameModeEntity():SetFixedRespawnTime(5)
+
+	GameRules:SetCustomGameTeamMaxPlayers(3, 1)
+	GameRules:SetCustomGameTeamMaxPlayers(2, 1)
+	GameRules:SetCustomGameTeamMaxPlayers(6, 1)
+	GameRules:SetCustomGameTeamMaxPlayers(7, 1)
+	GameRules:SetCustomGameTeamMaxPlayers(8, 1)
+	GameRules:SetCustomGameTeamMaxPlayers(9, 1)
+	GameRules:SetCustomGameTeamMaxPlayers(10, 1)
+	GameRules:SetCustomGameTeamMaxPlayers(11, 1)
+	GameRules:SetCustomGameTeamMaxPlayers(12, 1)
+	GameRules:SetCustomGameTeamMaxPlayers(13, 1)
+
+	GameRules:SetGoldTickTime( 1 )
+	GameRules:SetGoldPerTick( 25 )
 
 	SCORE[DOTA_TEAM_GOODGUYS] = 0
 	SCORE[DOTA_TEAM_BADGUYS] = 0
@@ -26,30 +43,30 @@ function FreeForAll:Start()
 	SCORE[DOTA_TEAM_CUSTOM_8] = 0
 end
 
-function FreeForAll:CheckEventState()
+function tdm:CheckEventState()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		FreeForAll:_CheckForDefeat()
+		tdm:_CheckForDefeat()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
 	return 1
 end
 
-function FreeForAll:OnNPCSpawned( event )
+function tdm:OnNPCSpawned( event )
 	local spawnedUnit = EntIndexToHScript( event.entindex )
 	if spawnedUnit:IsRealHero() then
-		spawnedUnit:AddNewModifier(spawnedUnit, spawnedUnit:GetAbilityByIndex(0), "modifier_gold_overthrow", nil)
+		spawnedUnit:AddNewModifier(spawnedUnit, spawnedUnit:GetAbilityByIndex(0), "modifier_tdm", nil)
 		return
 	end
 end
 
-function FreeForAll:_CheckForDefeat()
+function tdm:_CheckForDefeat()
 	if GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or IS_GAME_ENDED then
 		return
 	end
 end
 
-function FreeForAll:OnEntityKilled( event )
+function tdm:OnEntityKilled( event )
 	local killedUnit = EntIndexToHScript( event.entindex_killed )
 	local attacker = EntIndexToHScript( event.entindex_attacker )
 	if killedUnit:IsRealHero() and attacker:IsRealHero() then
@@ -62,15 +79,15 @@ function FreeForAll:OnEntityKilled( event )
 		
 end
 
-function FreeForAll:EndGame()
+function tdm:end_game()
 end
 
-function FreeForAll:OnGameRulesStateChange()
+function tdm:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
 	if nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		for _, player in pairs(HeroList:GetAllHeroes()) do 
-			player:AddNewModifier(player, player:GetAbilityByIndex(0), "modifier_gold_overthrow", nil)
+			player:AddNewModifier(player, player:GetAbilityByIndex(0), "modifier_tdm", nil)
 		end
 	elseif nNewState == DOTA_GAMERULES_STATE_POST_GAME then
 	end
