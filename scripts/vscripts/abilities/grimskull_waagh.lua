@@ -7,11 +7,12 @@ grimskull_waagh.m_iLastLevel = 0
 function grimskull_waagh:GetBehavior() return DOTA_ABILITY_BEHAVIOR_PASSIVE end
 function grimskull_waagh:GetIntrinsicModifierName() return "modifier_grimskull_waagh" end
 
-function grimskull_waagh:GetGoldCost(level) return self:GetSpecialValueFor("price") end 
-function grimskull_waagh:GetGoldCostForUpgrade(level) return self:GetSpecialValueFor("price") end 
+function grimskull_waagh:GetGoldCost(level) return self:GetSpecialValueFor("price") end
+function grimskull_waagh:GetGoldCostForUpgrade(level) return self:GetSpecialValueFor("price") end
 
-function grimskull_waagh:OnUpgrade() 
+function grimskull_waagh:OnUpgrade()
     if IsServer() then
+      if not self:GetCaster():IsIllusion() then
         if (self:GetLevel() > self.m_iLastLevel) then
             if (self:GetGoldCost(self:GetLevel()) <= self:GetCaster():GetGold()) then
                 self:GetCaster():SpendGold(self:GetGoldCost(self:GetLevel()), DOTA_ModifyGold_AbilityCost)
@@ -20,10 +21,11 @@ function grimskull_waagh:OnUpgrade()
             else
                 self:SetLevel(self.m_iLastLevel)
                 self:GetCaster():SetAbilityPoints(self:GetCaster():GetAbilityPoints() + 1)
-            end 
+            end
         end
+      end
     end
-end 
+end
 
 if modifier_grimskull_waagh == nil then modifier_grimskull_waagh = class ( {}) end
 
