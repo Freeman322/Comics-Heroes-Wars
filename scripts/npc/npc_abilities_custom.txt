@@ -3330,17 +3330,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_lua"
-		"ScriptFile"					"abilities/draks_venom.lua"
+		"BaseClass"             		"ghost_frost_attack"
 		"AbilityTextureName"			"custom/20881932"
+		"MaxLevel"						"4"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"MaxLevel"						"4"
-
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"precache"
 		{
 			"model"						"models/items/beastmaster/bm_ti7_immortal_shoulder/bm_ti7_immortal_shoulder.vmdl"
@@ -3352,23 +3347,18 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"movespeed_slow"		"15 20 25 30"
+				"var_type"				"FIELD_INTEGER"
+				"movespeed_slow"		"-15 -20 -25 -30"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"attackspeed_slow"	"40 60 80 100"
+				"var_type"				"FIELD_INTEGER"
+				"attackspeed_slow"		"-34 -56 -78 -100"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"2.25 2.5 2.75 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"poison_damage"			"15 20 25 30"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.25 2.5 2.75 3.0"
 			}
 		}
 	}
@@ -3377,14 +3367,14 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"									"ability_lua"
-		"ScriptFile"								"abilities/draks_double_edge.lua"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"						"2"
 		"AbilityTextureName"				"custom/Return_Centaur_icon"
+		"ScriptFile"								"abilities/draks_double_edge.lua"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"					"21 18 15 12"
@@ -3411,18 +3401,14 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_per_strength"			"1.5 2.0 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_pct"					"125"
+				"damage_per_strngth"			"2.25 2.5 2.75 3"
 			}
 		}
 
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+			"particle"	"particles/units/heroes/hero_centaur/centaur_double_edge.vpcf"
 		}
 	}
 	"draks_flesh_heap"
@@ -3670,34 +3656,32 @@
 	}
 	"rulk_beast"
 	{
-		"BaseClass"									"ability_lua"
-		"ScriptFile"								"abilities/rulk_beast.lua"
-		"AbilityBehavior"							"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"						"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitDamageType"						"DAMAGE_TYPE_PURE"
-		"AbilityTextureName"						"custom/ralk_passive"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"									"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityTextureName"				"custom/ralk_passive"
 
+		// Casting
 		"AbilitySpecial"
 		{
-			"01"
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"str"				      "18 34 50 66"
+				}
+		}
+		"Modifiers"
+		{
+			"modifier_inner_beast_buff"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"base_chance"						"5"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"chance_per_str"					"0.01"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bash_damage"						"50 100 150 200"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bash_duration"						"0.1 0.2 0.3 0.4"
+					"Passive"			"1"
+					"IsHidden"			"1"
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%str"
+					}
 			}
 		}
 	}
@@ -6816,20 +6800,18 @@
 			{
 					"01"
 					{
-						"var_type"					 "FIELD_FLOAT"
+						"var_type"					"FIELD_FLOAT"
 						"duration"		             "4 5 6"
-						"LinkedSpecialBonus"		 "special_bonus_unique_byonder"
 					}
 					"02"
 					{
-						"var_type"					 "FIELD_FLOAT"
+						"var_type"					"FIELD_FLOAT"
 						"scepter_duration"		     "5 6 7"
-						"LinkedSpecialBonus"		 "special_bonus_unique_byonder"
 					}
 					"03"
 					{
-						"var_type"					 "FIELD_FLOAT"
-						"scepter_incoming_damage"	 "140 170 200"
+						"var_type"					"FIELD_FLOAT"
+						"scepter_incoming_damage"		     "140 170 200"
 					}
 			}
 	}
@@ -7824,33 +7806,43 @@
 			{
 					"01"
 					{
-						"var_type"					"FIELD_FLOAT"
-						"duration"					"40 44 48 52"
+						"var_type"				"FIELD_FLOAT"
+						"duration"				"40 44 48 52"
 					}
 					"02"
 					{
-						"var_type"					"FIELD_INTEGER"
-						"manacost_scepter_pct"	"2"
+						"var_type"				"FIELD_FLOAT"
+						"transformation_time"	"0.2"
+					}
+					"03"
+					{
+						"var_type"				"FIELD_FLOAT"
+						"base_attack_time"		"1.7 1.6 1.5 1.4"
 					}
 					"04"
 					{
-						"var_type"					"FIELD_INTEGER"
-						"bonus_range"				"360 400 440 480"
+						"var_type"				"FIELD_INTEGER"
+						"bonus_range"			"360 400 440 480"
 					}
 					"05"
 					{
-						"var_type"					"FIELD_INTEGER"
-						"bonus_damage"			"22 33 44 55"
+						"var_type"				"FIELD_INTEGER"
+						"tooltip_attack_range"			"480 520 560 600"
 					}
 					"06"
 					{
-						"var_type"					"FIELD_INTEGER"
-						"bonus_speed_pct"		"5 10 15 20"
+						"var_type"				"FIELD_INTEGER"
+						"bonus_damage"			"22 33 44 55"
 					}
 					"07"
 					{
 						"var_type"					"FIELD_INTEGER"
-						"bonus_str_scepter"	"30 50 70 90"
+						"speed_loss"				"-15 -10 -5 -0"
+					}
+					"08"
+					{
+						"var_type"					"FIELD_INTEGER"
+						"bonus_str_scepter"				"30 50 70 90"
 					}
 			}
 	}
@@ -8124,16 +8116,15 @@
 		}
 	}
 
-	"darkseid_presence"
+  "darkseid_dark_lord"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/darkseid_presence.lua"
-
+		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"OnCastbar"						"0"
 		"AbilityTextureName"			"custom/darkseid_passive_2"
 
 
@@ -8147,22 +8138,48 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"presence_armor_reduction"		"6 9 12 15"
+				"var_type"						"FIELD_INTEGER"
+				"presence_armor_reduction"		"-5 -8 -11 -14"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"presence_damage_reduction"		"15 20 25 30"
+				"presence_damage_reduction"		"-22 -33 -44 -55"
 			}
-			"03"
+			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"presence_radius"				"650 700 750 800"
 			}
 		}
+
+		"Modifiers"
+		{
+			"modifier_dark_lord"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Aura"          	"modifier_dark_lord_presence"
+				"Aura_Radius"   	"%presence_radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" //mechanic?
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE" //immune?
+			}
+
+			"modifier_dark_lord_presence"
+			{
+				"IsHidden"			"0" //hidden?
+				"IsDebuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%presence_armor_reduction"
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%presence_damage_reduction"
+				}
+			}
+		}
 	}
-	
 	//=================================================================================================================
 	// Teleportation
 	//=================================================================================================================
@@ -15449,7 +15466,6 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"20 25 30"
-				"LinkedSpecialBonus"	"special_bonus_unique_diablo_3"
 			}
 			"02"
 			{
@@ -17099,8 +17115,8 @@
 		"BaseClass"             		"ability_lua"
 		"AbilityTextureName"            "custom/predator_flying_blade"
 		"ScriptFile"				    "abilities/predator_flying_blade.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
@@ -23075,7 +23091,7 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
@@ -25041,7 +25057,7 @@
 		"AbilityType"				      	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"			     	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 		"SpellImmunityType"				  	"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"			     	"1"
@@ -27142,7 +27158,7 @@
 		"AbilityTextureName"			"custom/nightking_ice_strike"
 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
@@ -30995,7 +31011,6 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"duration"						"3.25 3.95 4.35"
-				"LinkedSpecialBonus"			"special_bonus_unique_marvel"
 			}
 			"02"
 			{

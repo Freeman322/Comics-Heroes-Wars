@@ -12,7 +12,7 @@ function fate_lord_of_order:OnSpellStart()
 	local hCaster = self:GetCaster()
 	local hTarget = self:GetCursorTarget()
 
-	if hCaster == nil or hTarget == nil or hTarget:TriggerSpellAbsorb(self) then
+	if hCaster == nil or hTarget == nil then
 		return
 	end
 
@@ -34,11 +34,11 @@ function fate_lord_of_order:OnSpellStart()
 
 	hCaster:StartGesture( ACT_DOTA_CHANNEL_END_ABILITY_4 )
 
-	if hTarget:GetTeamNumber() == hCaster:GetTeamNumber() then
+	if hTarget:GetTeamNumber() == hCaster:GetTeamNumber() then 
 		local damage_result = hCaster:GetHealth() * (damage / 100)
 
 		hTarget:Heal(damage_result, self) hCaster:ModifyHealth(hCaster:GetHealth() - damage_result, self, true, 0)
-	else
+	else 
 		local damage_result = hTarget:GetHealth() * (damage / 100)
 
 		local damage_tbl = {
@@ -52,5 +52,5 @@ function fate_lord_of_order:OnSpellStart()
 		ApplyDamage( damage_tbl )
 
 		self:GetCaster():Heal(damage_result, self)
-	end
+	end 
 end
