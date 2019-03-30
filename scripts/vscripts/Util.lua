@@ -960,6 +960,10 @@ function Util:OnHeroInGame(hero)
       hero:SetOriginalModel("models/heroes/hero_sauron_/sauron_.vmdl")
       SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_sauron_/econs/mace.vmdl"}):FollowEntity(hero, true)
     end
+	if hero:GetUnitName() == "npc_dota_hero_beastmaster" then
+	  local ability = hero:FindAbilityByName("draks_flesh_heap")
+	  ability:SetLevel(1)
+	end
     if hero:GetUnitName() == "npc_dota_hero_slark" then
       hero:SetRenderColor(191, 239, 255)
       local abil = hero:FindAbilityByName("murlock_agility_steal")
@@ -1677,23 +1681,30 @@ function Util:FindTalentScriptFile(talentName)
 end
 
 function CDOTABaseAbility:GetTalentSpecialValueFor(value)
-    local base = self:GetSpecialValueFor(value)
-    local talentName
-    local kv = self:GetAbilityKeyValues()
-    for k,v in pairs(kv) do -- trawl through keyvalues
-        if k == "AbilitySpecial" then
-            for l,m in pairs(v) do
-                if m[value] then
-                    talentName = m["LinkedSpecialBonus"]
-                end
-            end
-        end
-    end
-    if talentName then
-        local talent = self:GetCaster():FindAbilityByName(talentName)
-        if talent and talent:GetLevel() > 0 then base = base + talent:GetSpecialValueFor("value") end
-    end
-    return base
+	local base = self:GetSpecialValueFor(value)
+	local talentName
+	local valname = "value"
+	local multiply = false
+	local kv = self:GetAbilityKeyValues()
+	for k,v in pairs(kv) do -- trawl through keyvalues
+		if k == "AbilitySpecial" then
+			for l,m in pairs(v) do
+				if m[value] then
+					talentName = m["LinkedSpecialBonus"]
+					if m["LinkedSpecialBonusField"] then valname = m["LinkedSpecialBonusField"] end
+					if m["LinkedSpecialBonusOperation"] and m["LinkedSpecialBonusOperation"] == "SPECIAL_BONUS_MULTIPLY" then multiply = true end
+				end
+			end
+		end
+	end
+	if talentName and self:GetCaster():HasTalent(talentName) then
+		if multiply then
+			base = base * talent:GetSpecialValueFor(valname)
+		else
+			base = base + talent:GetSpecialValueFor(valname)
+		end
+	end
+	return base
 end
 
 function CDOTA_BaseNPC:SetGodeMode(tBool)

@@ -72,19 +72,18 @@ function modifier_item_ionic_vapor:GetModifierAttackSpeedBonus_Constant (params)
 end
 
 function modifier_item_ionic_vapor:OnAttackLanded (params)
-    if IsServer() then 
+    if IsServer() then
         if params.attacker == self:GetParent() then
         	if not params.target:IsBuilding() and RollPercentage(self:GetAbility():GetSpecialValueFor("maim_chance")) then
                 local hTarget = params.target
-                
+
                 hTarget:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_sange_and_yasha_buff", {duration = self:GetAbility():GetSpecialValueFor("maim_duration")})
 
                 EmitSoundOn("DOTA_Item.Maim", hTarget)
                 ScreenShake(hTarget:GetOrigin(), 100, 0.1, 0.3, 500, 0, true)
         	end
             if params.target ~= nil and params.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and not self:GetParent():IsRangedAttacker() then
-                EmitSoundOn("Hero_Magnataur.Empower.Target", params.target)
-                
+
                 local cleaveDamage = ( self:GetAbility():GetSpecialValueFor("cleave_damage_percent") * params.damage ) / 100.0
 
                 DoCleaveAttack( self:GetParent(), params.target, self:GetAbility(), cleaveDamage, self:GetAbility():GetSpecialValueFor("cleave_starting_width"), self:GetAbility():GetSpecialValueFor("cleave_ending_width"), self:GetAbility():GetSpecialValueFor("cleave_distance"), "particles/units/heroes/hero_magnataur/magnataur_empower_cleave_effect.vpcf" )
@@ -96,5 +95,3 @@ end
 function modifier_item_ionic_vapor:GetAttributes ()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
-
-
