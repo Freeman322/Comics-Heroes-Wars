@@ -3,7 +3,7 @@
 "DOTAAbilities"
 {
   "Version"   "1"
-	
+
   "item_iron_talon"     "REMOVE"
   "item_recipe_iron_talon"      "REMOVE"
   "item_stout_shield"     "REMOVE"
@@ -80,7 +80,7 @@
 					}
 			}
 	}
-	
+
 	"special_bonus_intelligence_10"  ////50 Интелекта
 	{
 			"AbilitySpecial"
@@ -183,7 +183,7 @@
   //=================================================================================================================
   "arc_warden_tempest_double"
   {
-                        
+
     "AbilityTextureName"    "custom/godspeed_tempest_double"
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
     "AbilityType"           "DOTA_ABILITY_TYPE_ULTIMATE"
@@ -196,12 +196,12 @@
     "IsGrantedByScepter"    "1"
     "HasScepterUpgrade"     "1"
 
-    // Time   
+    // Time
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCooldown"       "120"
 
 
-    // Special  
+    // Special
     //-------------------------------------------------------------------------------------------------------------
     "AbilitySpecial"
     {
@@ -393,12 +393,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"crit_chance"				"20" 
+				"crit_chance"				"20"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"crit_multiplier"   "450" 
+				"crit_multiplier"   "450"
 			}
 		}
 	}
@@ -647,8 +647,8 @@
 	//=================================================================================================================
 	"lion_finger_of_death"
 	{
-	
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGIC"	
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 
 		"precache"
 		{
@@ -708,10 +708,10 @@
 	//=================================================================================================================
 	"shadow_demon_soul_catcher"
 	{
-	
+
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"18"
 
@@ -753,7 +753,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"illusion_incoming_damage_tooltip"	"200"
-			}		
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -766,19 +766,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12.0 12.0 12.0 12.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"70 100 130 160"
-		
+
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"100 180 260 340"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -789,7 +789,7 @@
 				"width"				"125 125 125 125"
 			}
 			"02"
-			{	
+			{
 				"var_type"			"FIELD_FLOAT"
 				"duration"			"1.4 1.8 2.2 2.6"
 			}
@@ -816,7 +816,7 @@
 		"ID"					"5956"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -837,7 +837,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
@@ -850,7 +850,7 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"8.0 8.0 8.0 8.0"
 
@@ -918,8 +918,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"		
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"4"
@@ -932,7 +932,7 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"8.0 8.0 8.0 8.0"
 
@@ -1000,7 +1000,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		
+
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
@@ -1010,7 +1010,7 @@
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"3.0 3.0 3.0 3.0"
 

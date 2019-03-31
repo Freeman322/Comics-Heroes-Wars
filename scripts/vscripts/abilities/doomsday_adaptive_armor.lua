@@ -24,9 +24,7 @@ function doomsday_adaptive_armor:GetIntrinsicModifierName()
 end
 
 function doomsday_adaptive_armor:OnSpellStart()
-    local duration = self:GetSpecialValueFor( "duration_scepter" )
-
-    self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_doomsday_adaptive_armor_active", { duration = duration }  )
+    self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_doomsday_adaptive_armor_active", { duration = self:GetSpecialValueFor("duration_scepter") })
 
     local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
     ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetCaster(), PATTACH_ABSORIGIN_FOLLOW, nil, self:GetCaster():GetOrigin(), true )
@@ -40,20 +38,15 @@ end
 -------------------------------------------------------------------------------
 modifier_doomsday_adaptive_armor = class({})
 
-function modifier_doomsday_adaptive_armor:IsHidden()
-    return true
+function modifier_doomsday_adaptive_armor:IsHidden() return true end
+
+function modifier_doomsday_adaptive_armor:DeclareFunctions()
+    return { MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE }
 end
 
-function modifier_doomsday_adaptive_armor:DeclareFunctions() --we want to use these functions in this item
-    local funcs = {
-        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
-    }
-    return funcs
-end
-
-function modifier_doomsday_adaptive_armor:GetModifierIncomingDamage_Percentage( params )
-    local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "absorb_fake" )
+function modifier_doomsday_adaptive_armor:GetModifierIncomingDamage_Percentage()
+  if self:GetCaster():PassivesDisabled() then return end
+  return self:GetAbility():GetSpecialValueFor("absorb") * -1
 end
 function modifier_doomsday_adaptive_armor:GetStatusEffectName()
     return "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
@@ -67,26 +60,19 @@ end
 --------------------------------------------------------------------------------
 modifier_doomsday_adaptive_armor_active = class({})
 
-function modifier_doomsday_adaptive_armor_active:OnCreated( kv )
+function modifier_doomsday_adaptive_armor_active:OnCreated()
     if IsServer() then
         self:GetParent():SetRenderColor(255, 0, 0)
     end
 end
-function modifier_doomsday_adaptive_armor_active:OnDestroy( kv )
+function modifier_doomsday_adaptive_armor_active:OnDestroy()
     if IsServer() then
         self:GetParent():SetRenderColor(255, 255, 255)
-        EmitSoundOn( "Item.StarEmblem.Ally", self:GetCaster() )
+        EmitSoundOn("Item.StarEmblem.Ally", self:GetCaster())
     end
 end
 --------------------------------------------------------------------------------
 
 function modifier_doomsday_adaptive_armor_active:CheckState()
-    local state = {
-        [MODIFIER_STATE_INVULNERABLE] = true,
-    }
-
-    return state
+    return { [MODIFIER_STATE_INVULNERABLE] = true }
 end
-
-function doomsday_adaptive_armor:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-

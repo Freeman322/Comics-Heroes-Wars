@@ -1,12 +1,10 @@
-po_walrus_punch = class({})
 LinkLuaModifier( "modifier_po_walrus_punch", "abilities/po_walrus_punch.lua", LUA_MODIFIER_MOTION_NONE )
 
+po_walrus_punch = class({})
+
 function po_walrus_punch:OnSpellStart()
-	local duration = 12
 
-  self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_po_walrus_punch", { duration = duration } )
-
-  EmitSoundOn ("Item.CrimsonGuard.Cast", hTarget)
+  self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_po_walrus_punch", { duration = self:GetSpecialValueFor("buff_duration") })
 
   local nFXIndex = ParticleManager:CreateParticle ("particles/items3_fx/iron_talon_active.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster());
   ParticleManager:SetParticleControlEnt (nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin (), true);
@@ -20,15 +18,9 @@ function po_walrus_punch:OnSpellStart()
   self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_3 );
 end
 
-if modifier_po_walrus_punch == nil then modifier_po_walrus_punch = class({}) end
-
-function modifier_po_walrus_punch:IsHidden()
-    return false
-end
-
-function modifier_po_walrus_punch:IsPurgable()
-    return false
-end
+modifier_po_walrus_punch = class({})
+function modifier_po_walrus_punch:IsHidden() return false end
+function modifier_po_walrus_punch:IsPurgable() return false end
 
 function modifier_po_walrus_punch:GetStatusEffectName()
    return "particles/status_fx/status_effect_mjollnir_shield.vpcf"
@@ -39,12 +31,10 @@ function modifier_po_walrus_punch:StatusEffectPriority()
 end
 
 function modifier_po_walrus_punch:DeclareFunctions ()
-    local funcs = {
+    return {
         MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
     }
-
-    return funcs
 end
 
 function modifier_po_walrus_punch:OnAttackLanded (params)
@@ -53,16 +43,13 @@ function modifier_po_walrus_punch:OnAttackLanded (params)
             local hTarget = params.target
             EmitSoundOn("Hero_Tusk.WalrusPunch.Damage", hTarget)
             EmitSoundOn("Hero_Tusk.WalrusKick.Target", hTarget)
-            hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetAbility():GetSpecialValueFor("duration") } )
+            hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetAbility():GetSpecialValueFor("stun_duration") } )
             self:Destroy()
         end
     end
     return 0
 end
 
-function modifier_po_walrus_punch:GetModifierPreAttack_CriticalStrike (params)
+function modifier_po_walrus_punch:GetModifierPreAttack_CriticalStrike ()
     return self:GetAbility():GetSpecialValueFor("crit")
 end
-
-function po_walrus_punch:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-

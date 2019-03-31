@@ -23,15 +23,15 @@ function modifier_murlock_primal_eject_heal:IsPurgable(  )
 end
 
 function modifier_murlock_primal_eject_heal:OnCreated( kv )
-  self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )/100
-  self.movespeed = self:GetAbility():GetSpecialValueFor( "bonus_movement_speed" )
+  --self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )--/100
+  --self.movespeed = self:GetAbility():GetSpecialValueFor( "bonus_movement_speed" )
 	if IsServer() then
 		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_sven/sven_warcry_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControlEnt( nFXIndex, 2, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_head", self:GetCaster():GetOrigin(), true )
 		self:AddParticle( nFXIndex, false, false, -1, false, true )
-		if self:GetCaster():HasTalent("special_bonus_unique_murloc") then
-	        self.regen = self.regen * 2
-		end
+	--	if self:GetCaster():HasTalent("special_bonus_unique_murloc") then
+	--        self.regen = self.regen * 2
+	--	end
 
         self:StartIntervalThink(0.1)
 	end
@@ -39,7 +39,7 @@ end
 
 --------------------------------------------------------------------------------
 
-function modifier_murlock_primal_eject_heal:OnRefresh( kv )
+--[[function modifier_murlock_primal_eject_heal:OnRefresh( kv )
 	self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )
 	self.movespeed = self:GetAbility():GetSpecialValueFor( "bonus_movement_speed" )
 	if IsServer() then
@@ -47,16 +47,16 @@ function modifier_murlock_primal_eject_heal:OnRefresh( kv )
 	        self.regen = self.regen + 2
 		end
 	end
-end
+end]]
 
 function modifier_murlock_primal_eject_heal:OnIntervalThink()
     local caster = self:GetParent()
     local pos = caster:GetAbsOrigin()
     local radius = self:GetAbility():GetSpecialValueFor("radius")
     local units = FindUnitsInRadius(caster:GetTeam(), pos, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
-    self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )/100
+    self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )--/100
 
-    if #units > 0 then 
+    if #units > 0 then
         self.regen = 0
     else
         self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )
@@ -69,12 +69,15 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_murlock_primal_eject_heal:DeclareFunctions()
-	local funcs = {
+	--[[local funcs = {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE 
-	}
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
+	}]]
 
-	return funcs
+	return {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
+	}
 end
 
 function modifier_murlock_primal_eject_heal:GetModifierMoveSpeedBonus_Percentage( params )
@@ -115,7 +118,7 @@ function modifier_murlock_primal_eject:OnCreated( kv )
         ParticleManager:SetParticleControl( nFXIndex, 15, self:GetParent():GetOrigin())
         ParticleManager:SetParticleControl( nFXIndex, 16, self:GetParent():GetOrigin())
         self:AddParticle( nFXIndex, false, false, -1, false, true )
-        self:OnIntervalThink(  )
+        --self:OnIntervalThink(  )
         -- Runs when the think interval occurs.
         self:StartIntervalThink(0.3)
     end
@@ -144,23 +147,32 @@ function modifier_murlock_primal_eject:OnDestroy()
 end
 
 function modifier_murlock_primal_eject:DeclareFunctions()
-    local funcs = {
+    --[[local funcs = {
+        MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY,
+        MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT
+    }]]
+
+    return {
         MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY,
         MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT
     }
-
-    return funcs
 end
 function modifier_murlock_primal_eject:CheckState()
-    local state = {
+    --[[local state = {
+        [MODIFIER_STATE_INVISIBLE] = true,
+        [MODIFIER_STATE_TRUESIGHT_IMMUNE] = true,
+        [MODIFIER_STATE_INVULNERABLE] = true,
+        [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+        [MODIFIER_STATE_NO_HEALTH_BAR] = true,
+    }]]
+
+    return {
         [MODIFIER_STATE_INVISIBLE] = true,
         [MODIFIER_STATE_TRUESIGHT_IMMUNE] = true,
         [MODIFIER_STATE_INVULNERABLE] = true,
         [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
         [MODIFIER_STATE_NO_HEALTH_BAR] = true,
     }
-
-    return state
 end
 
 
@@ -231,5 +243,4 @@ function modifier_murlock_primal_eject_target:OnDestroy (kv)
     end
 end
 
-function murlock_primal_eject:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function murlock_primal_eject:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
