@@ -97,7 +97,7 @@ function modifier_black_panther_absorb:OnTakeDamage( params )
                 return
             end
             
-            if self:GetAbility()._iDamage < self:GetAbility():GetSpecialValueFor("damage_threshold") or self:GetCaster():HasScepter() then 
+            if (self:GetAbility()._iDamage < self:GetAbility():GetSpecialValueFor("damage_threshold")) or self:GetCaster():HasScepter() then 
                 self:GetAbility()._iDamage = (self:GetAbility()._iDamage or 0) + params.damage
 
                 self:GetAbility():GetModifier():SetStackCount(self:GetAbility():GetModifier():GetStackCount() + params.damage)

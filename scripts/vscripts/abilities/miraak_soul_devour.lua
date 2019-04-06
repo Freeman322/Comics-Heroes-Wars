@@ -54,6 +54,19 @@ function miraak_soul_devour:OnSpellStart()
         ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );
 		ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-		EmitSoundOn( "Hero_DeathProphet.CarrionSwarm.Damage.Mortis", self:GetCaster() )
+		
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "megumin") then
+			EmitSoundOn( "Megumin.CastUlti", self:GetCaster() )
+			
+			local nFXIndex1 = ParticleManager:CreateParticle( "particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf", PATTACH_CUSTOMORIGIN, hTarget );
+			ParticleManager:SetParticleControl( nFXIndex1, 0, hTarget:GetOrigin() );
+			ParticleManager:ReleaseParticleIndex( nFXIndex1 );
+
+			local nFXIndex2 = ParticleManager:CreateParticle( "particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start_bubble.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() );
+			ParticleManager:SetParticleControl( nFXIndex2, 0, self:GetCaster():GetOrigin() );
+			ParticleManager:ReleaseParticleIndex( nFXIndex2 );
+		else 
+			EmitSoundOn( "Hero_DeathProphet.CarrionSwarm.Damage.Mortis", self:GetCaster() )
+		end
 	end
 end

@@ -5,22 +5,20 @@ LinkLuaModifier( "modifier_tribunal_justice_void", "abilities/tribunal_justice_v
 function tribunal_justice_void:OnSpellStart ()
     if IsServer() then 
         local hTarget = self:GetCursorTarget ()
-        local source = self:GetCaster ()
         local effectName = "particles/units/heroes/hero_arc_warden/arc_warden_flux_cast.vpcf"
+
         if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "tribunal_supreme_harvester") == true then
             effectName = "particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
             EmitSoundOn("Hero_Zuus.LightningBolt.Cast.Righteous", self:GetCaster())
-            if self:GetCaster().spear then 
-                source = self:GetCaster().spear
-            end
         end
+
         if hTarget ~= nil then
             if ( not hTarget:TriggerSpellAbsorb (self) ) then
                 local info = {
                     EffectName = effectName,
                     Ability = self,
                     iMoveSpeed = 2500,
-                    Source = source,
+                    Source = self:GetCaster(),
                     Target = self:GetCursorTarget (),
                     iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
                 }
@@ -35,7 +33,8 @@ end
 function tribunal_justice_void:OnProjectileHit (hTarget, vLocation)
     if IsServer() then
 	    local duration = self:GetSpecialValueFor ("duration")
-	    hTarget:AddNewModifier (self:GetCaster (), self, "modifier_tribunal_justice_void", { duration = duration } )
+        hTarget:AddNewModifier (self:GetCaster (), self, "modifier_tribunal_justice_void", { duration = duration } )
+        
         if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "tribunal_supreme_harvester") == true then
             EmitSoundOn("Hero_Zuus.LightningBolt.Righteous", hTarget)
             EmitSoundOn("Hero_Zuus.Righteous.Layer", hTarget)

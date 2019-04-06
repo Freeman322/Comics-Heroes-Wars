@@ -12,6 +12,10 @@ function collector_chaos_meteor:IsStealable()
   return false
 end
 
+function collector_chaos_meteor:GetAbilityDamageType()
+  return IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_collector_1") or DAMAGE_TYPE_MAGICAL
+end
+
 
 --------------------------------------------------------------------------------
 -- Ability Start
@@ -50,34 +54,34 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_collector_chaos_meteor_delay:OnCreated( kv )
-	if IsServer() then
-        local particle = "particles/items4_fx/meteor_hammer_aoe.vpcf"
-        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
-            particle = "particles/collector/alma_meteor_aoe.vpcf"        
-        end 
+  if IsServer() then
+      local particle = "particles/items4_fx/meteor_hammer_aoe.vpcf"
+      if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+          particle = "particles/collector/alma_meteor_aoe.vpcf"
+      end
 
-        local fx = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, self:GetParent() )
-        ParticleManager:SetParticleControl( fx, 0, self:GetParent():GetOrigin() )
-        ParticleManager:SetParticleControl( fx, 1, Vector( self:GetAbility():GetSpecialValueFor("area_of_effect"), 1, 1 ) )
-        self:AddParticle(fx, false, false, -1, false, false)
+      local fx = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, self:GetParent() )
+      ParticleManager:SetParticleControl( fx, 0, self:GetParent():GetOrigin() )
+      ParticleManager:SetParticleControl( fx, 1, Vector( self:GetAbility():GetSpecialValueFor("area_of_effect"), 1, 1 ) )
+      self:AddParticle(fx, false, false, -1, false, false)
 
-        -- Create Sound
-        EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), "Hero_ElderTitan.EchoStomp.Channel.ti7", self:GetCaster() )
-	end
+      -- Create Sound
+      EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), "Hero_ElderTitan.EchoStomp.Channel.ti7", self:GetCaster() )
+  end
 end
 
 function modifier_collector_chaos_meteor_delay:OnDestroy( kv )
-	if IsServer() then
-		CreateModifierThinker(
-            self:GetAbility():GetCaster(), -- player source
-            self:GetAbility(), -- ability source
-            "modifier_collector_chaos_meteor_thinker", -- modifier name
-            { duration = self:GetAbility():GetOrbSpecialValueFor( "duration", "w" ) },
-            self:GetParent():GetAbsOrigin(),
-            self:GetAbility():GetCaster():GetTeamNumber(),
-            false
-        )
-	end
+  if IsServer() then
+      CreateModifierThinker(
+          self:GetAbility():GetCaster(), -- player source
+          self:GetAbility(), -- ability source
+          "modifier_collector_chaos_meteor_thinker", -- modifier name
+          { duration = self:GetAbility():GetOrbSpecialValueFor( "duration", "w" ) },
+          self:GetParent():GetAbsOrigin(),
+          self:GetAbility():GetCaster():GetTeamNumber(),
+          false
+      )
+  end
 end
 
 
@@ -107,50 +111,51 @@ function modifier_collector_chaos_meteor_thinker:OnCreated( kv )
 end
 
 function modifier_collector_chaos_meteor_thinker:OnIntervalThink()
-    if IsServer() then
-        local particle = "particles/items4_fx/meteor_hammer_spell.vpcf"
-        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
-            particle = "particles/collector/alma_meteor_proj.vpcf"        
-        end 
-       
-        local fx = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, self:GetCaster() )
-        ParticleManager:SetParticleControl( fx, 0, Vector(self:GetParent():GetOrigin().x + 1000, self:GetParent():GetOrigin().y + 1000, self:GetParent():GetOrigin().z + 3000) )
-        ParticleManager:SetParticleControl( fx, 1, self:GetParent():GetOrigin() )
-        ParticleManager:SetParticleControl( fx, 2, Vector( 0.5, self.radius, 0 ) )
-        ParticleManager:ReleaseParticleIndex( fx )
-		-- find caught units
-		local enemies = FindUnitsInRadius(
-			self:GetCaster():GetTeamNumber(),	
-			self:GetParent():GetOrigin(),	
-			nil,	
-			self.radius,
-			DOTA_UNIT_TARGET_TEAM_ENEMY,
-			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	
-			DOTA_UNIT_TARGET_FLAG_NONE,
-			0,
-			false	
-        )
-		for _, enemy in pairs(enemies) do
-            enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_collector_chaos_meteor_burn", {duration = self.burn_duration})
+  if IsServer() then
+      local particle = "particles/items4_fx/meteor_hammer_spell.vpcf"
+      if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+          particle = "particles/collector/alma_meteor_proj.vpcf"
+      end
 
-            if self:GetCaster():HasTalent("special_bonus_unique_collector_1") then 
-                enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetCaster():FindTalentValue("special_bonus_unique_collector_1")})
-            end 
-            
-            local damageTable = {
-                attacker = self:GetAbility():GetCaster(),
-                damage_type = DAMAGE_TYPE_MAGICAL,
-                ability = self:GetAbility(),
-                damage =  self._iDamage,
-                victim = enemy
-            }
+      local fx = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, self:GetCaster() )
+      ParticleManager:SetParticleControl( fx, 0, Vector(self:GetParent():GetOrigin().x + 1000, self:GetParent():GetOrigin().y + 1000, self:GetParent():GetOrigin().z + 3000) )
+      ParticleManager:SetParticleControl( fx, 1, self:GetParent():GetOrigin() )
+      ParticleManager:SetParticleControl( fx, 2, Vector( 0.5, self.radius, 0 ) )
+      ParticleManager:ReleaseParticleIndex( fx )
+      -- find caught units
+      local enemies = FindUnitsInRadius(
+          self:GetCaster():GetTeamNumber(),
+          self:GetParent():GetOrigin(),
+          nil,
+          self.radius,
+          DOTA_UNIT_TARGET_TEAM_ENEMY,
+          DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+          DOTA_UNIT_TARGET_FLAG_NONE,
+          0,
+          false
+      )
+      for _, enemy in pairs(enemies) do
+          enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_collector_chaos_meteor_burn", {duration = self.burn_duration})
 
-            ApplyDamage(damageTable)
-        end
-        
-        EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), "Hero_ElderTitan.EchoStomp.ti7", self:GetCaster() )
-	end
+          if self:GetCaster():HasTalent("special_bonus_unique_collector_1") then
+              enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetCaster():FindTalentValue("special_bonus_unique_collector_1")})
+          end
+
+          local damageTable = {
+              attacker = self:GetAbility():GetCaster(),
+              damage_type = self:GetAbility():GetAbilityDamageType(),
+              ability = self:GetAbility(),
+              damage =  self._iDamage,
+              victim = enemy
+          }
+
+          ApplyDamage(damageTable)
+      end
+
+      EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), "Hero_ElderTitan.EchoStomp.ti7", self:GetCaster() )
+  end
 end
+
 
 
 if modifier_collector_chaos_meteor_burn == nil then modifier_collector_chaos_meteor_burn = class ( {}) end

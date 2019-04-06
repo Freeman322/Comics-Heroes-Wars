@@ -63,7 +63,7 @@ end
 
 function modifier_zoom_aura_passive:OnCreated(params)
 	if IsServer() then 
-	    self:SetStackCount(self:GetAbility():GetSpecialValueFor("speed_bonus") * (-1)) if PlayerResource:GetSteamAccountID(self:GetCaster():GetPlayerOwnerID()) == 102494627 then self:SetStackCount(60) end
+	    self:SetStackCount(self:GetAbility():GetSpecialValueFor("speed_bonus") * (-1))
 	end
 end
 

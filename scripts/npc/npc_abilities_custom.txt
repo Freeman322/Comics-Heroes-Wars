@@ -6307,7 +6307,22 @@
 		{
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
 			"particle"					"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
+			"model"						"models/heroes/lich/lich.vmdl"
+			"model"						"models/items/lich/frostivus2018_lich_frozenworlds_head/frostivus2018_lich_frozenworlds_head.vmdl"
 			"particle"					"particles/units/heroes/hero_antimage/antimage_blink_start.vpcf"
+
+			"particle"					"particles/units/heroes/hero_antimage/antimage_blink_start.vpcf"
+			"particle"					"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_elder_ambient.vpcf"
+			"particle"					"particles/econ/items/lich/frozenworlds/lich_frozenworlds_belt_ambient.vpcf"
+			"particle"					"particles/econ/items/lich/frozenworlds/lich_frozenworlds_back_ambient.vpcf"
+			"particle"					"particles/econ/items/lich/frozen_chains_ti6/lich_frozenchains_ambient_neck.vpcf"
+			"particle"					"particles/econ/items/lich/lich_ti8_immortal_arms/lich_ti8_ambient_frost.vpcf"
+			"model"						"models/items/lich/frostivus2018_lich_frozenworlds_neck/frostivus2018_lich_frozenworlds_neck.vmdl"
+			"model"						"models/items/lich/frostivus2018_lich_frozenworlds_belt/frostivus2018_lich_frozenworlds_belt.vmdl"
+			"model"						"models/items/lich/frostivus2018_lich_frozenworlds_back/frostivus2018_lich_frozenworlds_back.vmdl"
+			"model"						"models/items/lich/frostivus2018_lich_frozenworlds_arms/frostivus2018_lich_frozenworlds_arms.vmdl"
+			"model"						"models/items/lich/lich_immortal/lich_immortal.vmdl"
+			"model"						"models/items/lich/lich_ti8_immortal_arms/lich_ti8_immortal_arms.vmdl"
 		}
 
 		// Casting
@@ -8746,6 +8761,7 @@
 			"model"			"models/heroes/hero_witch/wanda_immortal/wanda_belt_immortal.vmdl"
 			"model"			"models/heroes/hero_witch/wanda_arcana/wanda_arcana.vmdl"
 			"model"			"models/b2/b2.vmdl"
+			"particle"		"particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_base_attack_tormented.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -12965,8 +12981,9 @@
 		"AbilityDamage"					"175 250 325 400"
 		"precache"
 		{
-		"model"		 "models/heroes/hero_gaunter_odimm/gaunter_odimm_weapons.vmdl"
-			"particle"  "particles/dimm/dimm_ancient_contract.vpcf"
+			"model"		 "models/heroes/hero_gaunter_odimm/gaunter_odimm_weapons.vmdl"
+			"particle" 	 "particles/dimm/dimm_ancient_contract.vpcf"
+			"model"		"models/heroes/hero_dimm/infernal_spear/infernal_spear.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -14194,10 +14211,15 @@
 			"model"		"models/items/phantom_assassin/toll_of_the_fearful_aria_head/toll_of_the_fearful_aria_head.vmdl"
 			"model"		"models/katana/katana.vmdl"
 			"model"		"models/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_head.vmdl"
-			"particle"  "particles/hero_katana/katana_pit_of_souls.vpcf"
-			"particle"  "particles/econ/items/drow/drow_ti6/drow_ti6_silence_wave.vpcf"
-			"particle"  "particles/hero_katana/katana_ambient.vpcf"
-			"particle"  "particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_head_ambient.vpcf"
+			"particle"  	"particles/hero_katana/katana_pit_of_souls.vpcf"
+			"particle"  	"particles/econ/items/drow/drow_ti6/drow_ti6_silence_wave.vpcf"
+			"particle"  	"particles/hero_katana/katana_ambient.vpcf"
+			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_blade_ambient_b.vpcf"
+			"model"		"models/heroes/hero_katana/katana_arcana.vmdl"
+			"model"		"models/heroes/phantom_assassin/pa_arcana_weapons.vmdl"
+			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_elder_ambient.vpcf"
+			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_blade_ambient_a.vpcf"
+			"particle" 	 "particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_head_ambient.vpcf"
 		}
 		"AbilitySpecial"
 		{
@@ -14503,6 +14525,12 @@
 			"particle"	"particles/hero_samurai/custom_sword_ambient_a.vpcf"
 			"model"		"models/b2/b2.vmdl"
 			"model"		"models/b2/weapon/weapon.vmdl"
+			"particle"	"particles/econ/items/antimage/antimage_ti7/antimage_ti7_ambient.vpcf"
+			"model"		"models/items/antimage/ti7_antimage_immortal/ti7_immortal_armor.vmdl"
+			"model"		"models/items/antimage/arc_of_manta/arc_of_manta.vmdl"
+			"model"		"models/items/antimage/arc_of_manta__offhand/arc_of_manta__offhand.vmdl"
+			"particle"	"particles/econ/items/antimage/antimage_ti7_golden/antimage_ti7_golden_ambient.vpcf"
+			"model"		"models/items/antimage/anti_mage_dragon_fury_head/anti_mage_dragon_fury_head.vmdl"
 		}
 		"AbilitySpecial"
 		{
@@ -14991,7 +15019,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"wave_count"					"7"
+				"wave_count"					"7 8 9 10"
 			}
 			"04"
 			{
@@ -15001,7 +15029,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"wave_interval"					"0.9"
+				"wave_interval"					"0.5"
 			}
 			"06"
 			{
@@ -15069,7 +15097,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"strike_per_sec"		"4"
+				"strike_per_sec"		"3 4 4 5"
 			}
 		}
 	}
@@ -15205,7 +15233,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70 65 60"
+		"AbilityCooldown"				"60 50 40"
 		"AbilityDamage"					"330 550 770"
 
 		// Cost
@@ -20036,7 +20064,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"		"5 7 9 11"
+				"damage_bonus"		"10 13 16 19"
 			}
 		}
 	}
@@ -20059,9 +20087,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"1.6"
-		"AbilityCooldown"					"44 41 38 35"
+		"AbilityCooldown"					"34 31 28 25"
 		"AbilityManaCost"					"60 80 100 120"
-		"AbilityDamage"						"90 160 230 300"
+		"AbilityDamage"						"100 170 240 310"
 		"precache"
 		{
 			"particle"  "particles/hero_ares/ares_shadow_realm_ground.vpcf"
@@ -22041,6 +22069,10 @@
 			"particle"  "particles/units/heroes/hero_antimage/antimage_spellshield_reflect_energy.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
 			"soundfile"   "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+			"model"		"models/heroes/hero_drstrange/demonglove/demonhand.vmdl"
+			"model"		"models/heroes/hero_drstrange/fishstick/fishstic.vmdl"
+			"particle"	"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
+			"particle"	"particles/econ/items/lion/stone_hand/lion_stone_hand.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -23418,7 +23450,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.2"
-		"AbilityCooldown"				"140 120 100"
+		"AbilityCooldown"				"100 80 60"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
 		// Cost
@@ -23458,7 +23490,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"incoming_damage"				"-30 -20 -10"
+				"incoming_damage"				"-10 20 30"
 			}
 		}
 	}
@@ -26328,9 +26360,9 @@
 			"particle"						    "particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start.vpcf"
 			"soundfile"							"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
 			"soundfile"							"game_sounds_obsidian_destroyer.vsndevts"
-			"particle"  						"particles/effects/echo_slam.vpcf"
+			"particle"  							"particles/effects/echo_slam.vpcf"
 			"particle"							"particles/galactus/galactus_seed_of_ambition_eternal_item.vpcf"
-
+			"model"								"models/items/doom/pyre/pyre.vmdl"
 			"model"								"models/items/doom/herald_khorne_weapon_alt/herald_khorne_weapon_alt.vmdl"
 			"model"								"models/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_arms.vmdl"
 			"particle"							"particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_devour.vpcf"
@@ -28493,6 +28525,10 @@
 			"particle"						"particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_ti8_immortal_pitofmalice.vpcf"
 			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
 			"model"							"models/heroes/hero_miraak/econs/sword.vmdl"
+			"particle"						"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf"
+			"particle"						"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start_bubble.vpcf"
+			"model"							"models/heroes/hero_miraak/econs/megumin_custom/megumin.vmdl"
+			"model"							"models/heroes/hero_miraak/econs/megumin_custom/staff/source/staff.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -29875,7 +29911,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"3.5"
+				"duration"						"4 5 6 7"
 			}
 			"02"
 			{
@@ -29896,12 +29932,12 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"active_duration"				"5"
+				"active_duration"				"4 5 6 7"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"primary_atr_drain"				"15 20 25 30"
+				"primary_atr_drain"				"25 30 35 40"
 			}
 			"07"
 			{
@@ -29939,7 +29975,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"daynight_attr"				"10 15 20 25"
+				"daynight_attr"				"15 20 25 30"
 			}
 			"02"
 			{
@@ -30002,12 +30038,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"str_bonus"					"10 15 20 25"
+				"str_bonus"					"15 20 25 30"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_reduce"				"10 15 20 25"
+				"damage_reduce"				"15 20 25 30"
 			}
 		}
 	}
@@ -30034,7 +30070,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 100 80"
+		"AbilityCooldown"				"100 80 60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -30052,7 +30088,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius"						"800"
+				"radius"						"800 900 1000"
 			}
 			"02"
 			{
@@ -30068,7 +30104,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"ensnare_damage"				"10 15 20"
+				"ensnare_damage"				"15 20 25"
 				"LinkedSpecialBonus"			"special_bonus_unique_molag_bal"
 			}
 		}
@@ -30797,8 +30833,8 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"						"1.25"
+				"var_type"					"FIELD_INTEGER"
+				"value"						"4"
 			}
 		}
 	}
@@ -31695,6 +31731,7 @@
 			"particle"					"particles/plus/pugalo_ambient.vpcf"
 			"particle"					"particles/units/heroes/hero_spectre/spectre_desolate_debuff.vpcf"
 			"model"						"models/heroes/hero_abaddon_the_despoier/demonshard_weapon/draknien.vmdl"
+			"model"						"models/heroes/hero_abaddon_the_despoier/frostmourne/frostmourne.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -33338,16 +33375,16 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityCastRange"				"1000 1200 1400 1800"
+		"AbilityCastRange"				"1400 1600 1800 2000"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"					"35 30 25 20"
+		"AbilityCooldown"					"30 25 20 15"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"					"150 150 150"
+		"AbilityManaCost"					"20 30 40 50"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -33356,7 +33393,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"latch_radius"		"125 125 125 125"
+				"latch_radius"		"200 200 200 200"
 			}
 			"02"
 			{
@@ -33416,7 +33453,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"aura_damage"		"30 50 80 120"
+				"aura_damage"		"20 40 60 100"
 			}
 		}
 	}
@@ -33488,7 +33525,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold_cap"		"60"
+				"bonus_gold_cap"		"42"
 			}
 			"05"
 			{
@@ -33591,11 +33628,11 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"						"1500"
-		"AbilityCastPoint"						"0.4"
+		"AbilityCastPoint"						"0.2"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"						"8"
+		"AbilityCooldown"						"11 10 9 8"
 
 		"precache"
 		{
@@ -33624,7 +33661,7 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"axe_damage"						"100 150 200 250"
+				"axe_damage"						"120 170 220 270"
 				"LinkedSpecialBonus"				"special_bonus_unique_kratos"
 			}
 			"05"
@@ -33635,7 +33672,7 @@
 			"06"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"damage_amp"						"10 30 50 70"
+				"damage_amp"						"15 30 45 60"
 			}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -33679,12 +33716,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_ptc_chance"		"10"
+				"health_ptc_chance"		"9 10 11 12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_critical_strike"	"190 240 280 320"
+				"bonus_critical_strike"	"150 200 250 300"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -33795,12 +33832,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_reduction"			"50"
+				"damage_reduction"			"30 40 50"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5"
+				"duration"					"5 6 7"
 				"LinkedSpecialBonus"		"special_bonus_unique_kratos_1"
 			}
 		}
@@ -33939,5 +33976,324 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	//=================================================================================================================
+	// Cosmos: Space Warp
+	//=================================================================================================================
+	"cosmos_space_warp"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/cosmos_space_warp.lua"
+		"AbilityTextureName"			"custom/space_warp"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"130.0"
+		"AbilityDuration"				"4.5 5.25 6.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300 450 600"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Hits all units on the map.
+
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tooltip_duration"		"4.5 5.25 6.0"
+			}
+		}
+	}
+	//=================================================================================================================
+	//=================================================================================================================
+	"cosmos_jumper"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/cosmos_jumper.lua"
+		"AbilityTextureName"			"custom/jumper"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"22"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"GLOBAL"
+		"AbilityCastPoint"				"0.25 0.25 0.25 0.25"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5" // applies multiple modifiers
+
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+			"particle"				"particles/econ/items/monkey_king/arcana/water/monkey_king_spring_cast_water_ground.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tooltip_delay"		"5.0 4.0 3.0 2.0"
+			}
+		}
+	}	
+	//=================================================================================================================
+	//=================================================================================================================
+	"cosmos_q_continuum"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/cosmos_q_continuum.lua"
+		"AbilityTextureName"			"custom/relative_strike"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+ 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.1"
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40 30 20 10"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110 130 160 180"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3 4 5 6"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"				"90 140 180 230"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Mars Bulwark
+	//=================================================================================================================
+	"cosmos_first_fundamental"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/cosmos_first_fundamental.lua"
+		"AbilityTextureName"			"custom/first_fundamental"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.35"
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityDamage"				"130 210 340 420"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 90 130 170"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.5 0.75 1.0 1.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"				"350 400 450 500"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Cosmos
+	//=================================================================================================================
+	"cosmos_cosmos_power"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/cosmos_cosmos_power.lua"
+		"AbilityTextureName"			"custom/cosmos_power"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCastRange"				"450"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110 140 170 200"
+		"AbilityCooldown"				"6"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf"
+			"particle"				"particles/items4_fx/meteor_hammer_spell_debuff.vpcf"
+			"particle"				"particles/cosmos/cosmos_ambient.vpcf"
+			"particle"				"particles/econ/items/faceless_void/faceless_void_jewel_of_aeons/fv_time_walk_debuff_jewel.vpcf"
+			"particle"				"particles/units/heroes/hero_oracle/oracle_ambient_body.vpcf"
+			"particle"				"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6_knockback_debuff.vpcf"
+			"particle"				"particles/cosmos/cosmos_space_warp_cast.vpcf"
+			"particle"				"particles/effects/charity_warp.vpcf"
+			"particle"				"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_stifling_dagger_debuff_arcana.vpcf"
+			"particle"				"particles/cosmos/cosmos_space_warp_debuff.vpcf"
+			"particle"				"particles/status_fx/status_effect_enigma_malefice.vpcf"
+			"particle"				"particles/effects/charity_warp.vpcf"
+			"particle"				"particles/econ/items/monkey_king/arcana/water/monkey_king_spring_cast_water_ground.vpcf"
+			"particle"				"particles/status_fx/status_effect_mars_spear.vpcf"
+			"particle"				"particles/units/heroes/hero_vengeful/vengeful_nether_swap.vpcf"
+			"particle"				"particles/units/heroes/hero_vengeful/vengeful_nether_swap_target.vpcf"
+			"particle"				"particles/units/heroes/hero_vengeful/vengeful_nether_swap_target.vpcf"
+			"particle"				"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_stifling_dagger_debuff_arcana.vpcf"
+			"particle"				"particles/econ/items/enigma/enigma_absolute_armour/enigma_absolute_armour_ambient_eye.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_pool_damage_pct"		"9 11 13 15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"warp_duration"			"2.5"
+			}
+		}
+	}	
+	"special_bonus_unique_cosmos_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1"
+			}
+		}
+	}
+	"special_bonus_unique_cosmos_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1.5"
+			}
+		}
+	}
+	"special_bonus_unique_cosmos_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"500"
+			}
+		}
 	}
 }

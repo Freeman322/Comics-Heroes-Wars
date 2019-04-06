@@ -13,8 +13,11 @@ function miraak_dragon_aspect:OnSpellStart()
     if IsServer() then 
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_miraak_dragon_aspect", {duration = self:GetSpecialValueFor("duration")})      
         
-        EmitSoundOn( "Hero_Terrorblade.ConjureImage", self:GetCaster() )
-
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "megumin") then
+            EmitSoundOn( "Megumin.Cast2", self:GetCaster() )
+        else 
+            EmitSoundOn( "Hero_Terrorblade.ConjureImage", self:GetCaster() )
+        end 
     end
 end
 

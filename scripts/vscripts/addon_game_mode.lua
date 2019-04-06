@@ -11,6 +11,8 @@ require('addon_init')
 require('CaptainsMode')
 require('Stats')
 
+local vCenter = Vector( 706.149, 3112.51, 235.403 )
+local iCone = 0.08715 
 
 if GameMode == nil then
 	GameMode = class({})
@@ -250,6 +252,7 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
 	GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "GoldFilter" ), self)
+	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap( GameMode, "OrderFilter" ), self)
 
 	Util:OnInit()
 	Trades:Init()
@@ -468,5 +471,42 @@ function GameMode:GoldFilter(ftable)
 
 	---if reason == DOTA_ModifyGold_HeroKill then gold = RandomInt(50, 300) end
 	
+	return true
+end
+function GameMode:OrderFilter(params)
+	local unit = EntIndexToHScript(params.units["0"])
+
+	if unit:HasModifier("modifier_cosmos_space_warp") then 
+		if params.order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or params.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET then
+			local target = Vector(params.position_x, params.position_y, params.position_z)
+			
+			local movement = target - unit:GetAbsOrigin()
+			local targetPos = unit:GetAbsOrigin() - movement
+
+			
+			params.position_x = targetPos.x
+			params.position_y = targetPos.y
+			params.position_z = targetPos.z
+		end 
+		if params.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or params.order_type == DOTA_UNIT_ORDER_ATTACK_MOVE then
+			local target = params.entindex_target
+
+			local units = FindUnitsInRadius( unit:GetTeamNumber(), unit:GetOrigin(), unit, 99999, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, 0, FIND_CLOSEST, false )
+			if #units > 0 then
+				params.entindex_target = units[1]:entindex()
+			end
+		end 
+	end
+
+	if unit:HasModifier("cosmos_q_continuum_modifier") then 
+		if params.order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or params.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET then
+			local targetPos = vCenter + RandomVector(1) * RandomFloat(0, 10000)
+
+			params.position_x = targetPos.x
+			params.position_y = targetPos.y
+			params.position_z = targetPos.z
+		end 
+	end
+
 	return true
 end

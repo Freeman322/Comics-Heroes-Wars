@@ -3960,7 +3960,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"550"
+		"ItemCost"						"3800"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -4009,27 +4009,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"15"
+				"bonus_intellect"		"30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"4"
+				"bonus_health_regen"	"5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"30"
+				"bonus_agility"			"50"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"15"
+				"bonus_strength"		"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_attack_range"		"140"
+				"base_attack_range"		"150"
 			}
 			"06"
 			{
@@ -4059,7 +4059,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"100"
+				"bonus_attack_speed"	"120"
 			}
 		}
 	}

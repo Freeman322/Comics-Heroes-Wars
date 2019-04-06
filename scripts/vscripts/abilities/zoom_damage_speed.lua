@@ -26,8 +26,6 @@ function zoom_damage_speed:OnSpellStart()
 		damage = 2000 
 	end
 
-	if PlayerResource:GetSteamAccountID(self:GetCaster():GetPlayerOwnerID()) == 102494627 then damage = damage * 2 end 
-
 	hTarget:AddNewModifier(hCaster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun")})
 	
 	local damageTable = {

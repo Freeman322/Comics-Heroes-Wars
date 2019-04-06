@@ -144,10 +144,13 @@ function zoom_charge_of_darkness:OnSpellStart()
                 end
 
                 if not self:GetCaster():IsNull() then
+                    local kv = self:GetSpecialValueFor("damage")
+                    if self:GetCaster():IsHasSuperStatus() then kv = kv * 2 end 
+
                     local damage = {
                         victim = hTarget,
                         attacker = self:GetCaster(),
-                        damage = (self.start_speed * (self:GetSpecialValueFor("damage")/100)) + bonus,
+                        damage = (self.start_speed * (kv/100)) + bonus,
                         damage_type = DAMAGE_TYPE_PHYSICAL,
                         ability = self
                     }

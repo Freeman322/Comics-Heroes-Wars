@@ -12,7 +12,7 @@ function fate_lord_of_order:OnSpellStart()
 	local hCaster = self:GetCaster()
 	local hTarget = self:GetCursorTarget()
 
-	if hCaster == nil or hTarget == nil or hTarget:TriggerSpellAbsorb(self) then
+	if hCaster == nil or hTarget == nil then
 		return
 	end
 

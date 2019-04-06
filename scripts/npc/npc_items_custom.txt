@@ -77,7 +77,7 @@
 		"ItemResult"				"item_overpower_bow"
 		"ItemRequirements"
 		{
-			"01"	"item_hurricane_pike;item_butterfly;item_moon_shard_marvel"
+			"01"	"item_dragon_lance;item_butterfly;item_moon_shard_marvel"
 		}
 	}
 
@@ -179,22 +179,22 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"500"
+				"bonus_mana"				"1000"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_health"				"500"
+				"bonus_health"				"1000"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"35"
+				"bonus_all_stats"			"60"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"5"
+				"bonus_armor"				"10"
 			}
 			"05"
 			{
@@ -204,7 +204,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"bonus_mana_regen"  		"1.2"
+				"bonus_mana_regen"  		"2.5"
 			}
 			"07"
 			{
@@ -1098,17 +1098,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"150"
+				"bonus_damage"			"200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"45"
+				"bonus_attack_speed"	"80"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"35"
+				"bonus_all_stats"		"50"
 			}
 			"04"
 			{
@@ -2721,7 +2721,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"785"
+		"ItemCost"							"0"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -2731,7 +2731,7 @@
 
 		"ItemRequirements"
 		{
-			"01"						"item_octarine_core;item_demonic_claws;item_veil_of_discord"
+			"01"						"item_octarine_core;item_demonic_claws;item_veil_of_discord;item_jetsu"
 		}
 	}
 	"item_recipe_axe_of_phractos"
@@ -5029,7 +5029,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3500"
+		"ItemCost"						"1500"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -5088,27 +5088,27 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"55"
+				"bonus_all_stats"			"40"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"135"
+				"bonus_damage"				"130"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"40"
+				"bonus_attack_speed"		"50"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance"				"80"
+				"bonus_chance"				"90"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"160"
+				"bonus_chance_damage"		"180"
 			}
 			"06"
 			{
@@ -5128,7 +5128,7 @@
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"duration"						"3"
+				"duration"						"4"
 			}
 		}
 	}
@@ -5202,7 +5202,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"all"				        "45"
+				"all"				        "40"
 			}
 			"02"
 			{
@@ -5217,12 +5217,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_post_attack"	"90"
+				"bonus_damage_post_attack"	"100"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"365"
+				"crit_bonus"				"380"
 			}
 			"06"
 			{

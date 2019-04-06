@@ -2141,7 +2141,7 @@
 
 		"Model"						"models/heroes/hero_doctor_fate/fate.vmdl"
 		"IdleExpression"			"scenes/lion/lion_exp_idle_01.vcd"
-		"SoundSet"					"Hero_Lion"
+		"SoundSet"					"Hero_Oracle"
 		"HeroUnlockOrder"			"0"
 		"Role"						"Support,Disabler,Nuker,Initiator"
 		"Rolelevels"				"2,3,3,2"
@@ -2167,14 +2167,14 @@
 		"Ability4"		"fate_phase_mirror"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"fate_fatebind"
-		"Ability10"		"special_bonus_cast_range_200"
-		"Ability11"		"special_bonus_attack_damage_90"
-		"Ability12"		"special_bonus_unique_fate_1"
+		"Ability10"		"special_bonus_exp_boost_30"
+		"Ability11"		"special_bonus_unique_fate_3"
+		"Ability12"		"special_bonus_cast_range_400"
 		"Ability13"		"special_bonus_unique_fate_2"
-		"Ability14"		"special_bonus_all_stats_15"
-		"Ability15"		"special_bonus_unique_fate_3"
-		"Ability16"		"special_bonus_unique_fate_4"
-		"Ability17"		"special_bonus_unique_fate_5"
+		"Ability14"		"special_bonus_unique_fate_4"
+		"Ability15"		"special_bonus_unique_faceless_void_4"
+		"Ability16"		"special_bonus_all_stats_20"
+		"Ability17"		"special_bonus_hp_regen_12"
 
 		"ArmorPhysical"					"0"
 		"MagicalResistance"				"24"
@@ -2811,29 +2811,29 @@
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_grimstroke.vsndevts"
 
         // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
-        "AttributeBaseStrength"     "26"
+        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"     "20"
         "AttributeStrengthGain"     "1.100000"
-        "AttributeBaseIntelligence" "19"
+        "AttributeBaseIntelligence" "20"
         "AttributeIntelligenceGain" "1.100000"
-        "AttributeBaseAgility"      "18"
-        "AttributeAgilityGain"      "2.200000"
+        "AttributeBaseAgility"      "24"
+        "AttributeAgilityGain"      "3.200000"
 
         // Misc stats
         "ArmorPhysical"             "2"
         "MagicalResistance"			"24"
 
 
-        "AttackDamageMin"           "25"
+        "AttackDamageMin"           "26"
         "AttackDamageMax"           "32"
-
+        "AttackRate"                "1.450000"
        	"AttackAcquisitionRange"	"800"
-		"AttackRange"				"620"
+		"AttackRange"				"600"
 		"ProjectileModel"			"particles/units/heroes/hero_grimstroke/grimstroke_base_attack.vpcf"
-		"ProjectileSpeed"			"900"
+		"ProjectileSpeed"			"1000"
 		"AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 
-        "MovementSpeed"             "315"
+        "MovementSpeed"             "310"
         "MovementTurnRate"          "0.600000"
         
         // Abilities
@@ -2849,7 +2849,7 @@
 		"Ability12"					"special_bonus_unique_darkrider_2"
 		"Ability13"					"special_bonus_unique_darkrider_1"
 		"Ability14"					"special_bonus_unique_darkrider_3"
-		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability15"					"special_bonus_agility_15"
 		"Ability16"					"special_bonus_all_stats_20"
 		"Ability17"					"special_bonus_20_crit_15"
 
@@ -2923,20 +2923,20 @@
 
         // Attribute Stats
         "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
-        "AttributeBaseStrength"     "26"
-        "AttributeStrengthGain"     "1.100000"
-        "AttributeBaseIntelligence" "19"
+        "AttributeBaseStrength"     "30"
+        "AttributeStrengthGain"     "3.100000"
+        "AttributeBaseIntelligence" "16"
         "AttributeIntelligenceGain" "1.100000"
-        "AttributeBaseAgility"      "18"
-        "AttributeAgilityGain"      "2.200000"
+        "AttributeBaseAgility"      "16"
+        "AttributeAgilityGain"      "1.400000"
 
         // Misc stats
         "ArmorPhysical"             "2"
         "MagicalResistance"			"24"
 
 
-        "AttackDamageMin"           "25"
-        "AttackDamageMax"           "32"
+        "AttackDamageMin"           "30"
+        "AttackDamageMax"           "38"
 
        	"AttackAcquisitionRange"	"800"
 		"AttackRange"				"150"
@@ -2956,11 +2956,11 @@
 
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_all_stats_12"
-		"Ability12"					"special_bonus_attack_speed_100"
+		"Ability12"					"special_bonus_lifesteal_30"
 		"Ability13"					"special_bonus_armor_15"
 		"Ability14"					"special_bonus_all_stats_15"
-		"Ability15"					"special_bonus_hp_regen_50"
-		"Ability16"					"special_bonus_attack_damage_75"
+		"Ability15"					"special_bonus_cleave_60"
+		"Ability16"					"special_bonus_hp_800"
 		"Ability17"					"special_bonus_strength_25"
 
 		"Enabled"					"1"
@@ -3066,13 +3066,13 @@
 		"Ability5"					"generic_hidden"
 		"Ability6"					"kratos_chaos"
 
-		"Ability10"					"special_bonus_unique_kratos"
-		"Ability11"					"special_bonus_all_stats_12"
-		"Ability12"					"special_bonus_attack_speed_100"
-		"Ability13"					"special_bonus_armor_15"
-		"Ability14"					"special_bonus_unique_kratos_1"
-		"Ability15"					"special_bonus_hp_regen_50"
-		"Ability16"					"special_bonus_attack_damage_75"
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_unique_kratos"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_cleave_40"
+		"Ability14"					"special_bonus_all_stats_15"
+		"Ability15"					"special_bonus_magic_resistance_50"
+		"Ability16"					"special_bonus_unique_kratos_1"
 		"Ability17"					"special_bonus_strength_25"
 
 		"Enabled"					"1"
@@ -3177,13 +3177,13 @@
 		"Ability7"					"shredder_return_chakram"
 		"Ability8"					"shredder_return_chakram_2"
 		
-		"Ability10"					"special_bonus_attack_damage_75"
-		"Ability11"					"special_bonus_exp_boost_30"
-		"Ability12"					"special_bonus_spell_block_20"
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_mp_regen_10"
+		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_cast_range_200"
-		"Ability14"					"special_bonus_cooldown_reduction_30"
-		"Ability15"					"special_bonus_all_stats_15"
-		"Ability16"					"special_bonus_spell_amplify_20"
+		"Ability14"					"special_bonus_magic_resistance_50"
+		"Ability15"					"special_bonus_spell_amplify_20"
+		"Ability16"					"special_bonus_strength_25"
 		"Ability17"					"special_bonus_unique_timbersaw"
 
 		"Enabled"					"1"
@@ -3217,6 +3217,117 @@
 		// Team
 		//-------------------------------------------------------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}
+	"npc_dota_hero_cosmos"
+	{
+		"BaseClass"             	     "npc_dota_hero"       
+		"HeroID"                      "215"
+		"IsCustom"                    "1"
+		"DisableWearables"            "1"
+		///"HeroDisabled"				"1"
+
+		// Model info
+		"Model"                     	"models/heroes/hero_cosmos/cosmos.vmdl"
+
+		"ModelScale"                	"1"
+		"LoadoutScale"                "1"
+
+		"HeroGlowColor"            	 "200 200 200"
+		"HealthBarOffset"           	"240"
+
+		// Sound info
+		"SoundSet"				"Hero_Oracle"
+		"IdleSoundLoop"			"Hero_Oracle.IdleLoop"
+
+		"particle_folder"			"particles/units/heroes/hero_oracle"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_oracle.vsndevts"
+
+		// Attribute Stats
+		"AttributePrimary"         	 "DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"    	 "18"
+		"AttributeStrengthGain"    	 "1.100000"
+		"AttributeBaseIntelligence"	 "30"
+		"AttributeIntelligenceGain"	 "3.100000"
+		"AttributeBaseAgility"     	 "18"
+		"AttributeAgilityGain"     	 "1.100000"
+
+		// Misc stats
+		"ArmorPhysical"               "6"
+		"MagicalResistance"			"31"
+
+
+		"AttackDamageMin"             "39"
+		"AttackDamageMax"             "42"
+
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"				"720"
+		"ProjectileModel"			"particles/econ/items/templar_assassin/templar_assassin_focal/templar_assassin_meld_focal_attack.vpcf"
+		"ProjectileSpeed"			"900"
+		"AttackCapabilities"          "DOTA_UNIT_CAP_RANGED_ATTACK"
+
+		"MovementSpeed"             "365"
+		"MovementTurnRate"          "0.600000"
+
+		// Abilities
+		"Ability1"					"cosmos_jumper"
+		"Ability2"					"cosmos_q_continuum"
+		"Ability3"					"cosmos_first_fundamental"
+		"Ability4"					"cosmos_cosmos_power"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"cosmos_space_warp"
+
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_unique_cosmos_1"
+		"Ability12"					"special_bonus_unique_cosmos_2"
+		"Ability13"					"special_bonus_cast_range_200"
+		"Ability14"					"special_bonus_cooldown_reduction_30"
+		"Ability15"					"special_bonus_all_stats_15"
+		"Ability16"					"special_bonus_spell_amplify_20"
+		"Ability17"					"special_bonus_unique_cosmos_3"
+
+		"Enabled"					"1"
+
+		"Role"						"Support,Nuker,Disabler,Escape"
+		"Rolelevels"				"1,2,2,3"
+		"Complexity"				"3"
+		"Team"						"bad"
+
+		// Misc
+		"NameAliases"      			"mr"
+		"url"       				"Cosmos"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"30"
+		"StatusHealthRegen"			"-0.8000"
+		"StatusMana"				"645"
+		"StatusManaRegen"			"6.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"				"DOTA_TEAM_BADGUYS"
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"

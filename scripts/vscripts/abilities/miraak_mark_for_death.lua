@@ -19,8 +19,12 @@ function miraak_mark_for_death:OnSpellStart()
         local hTarget = self:GetCursorTarget()
         if hTarget ~= nil then
             hTarget:AddNewModifier(self:GetCaster(), self, "modifier_miraak_mark_for_death", {duration = self:GetSpecialValueFor("duration")})
-            
-            EmitSoundOn( "Hero_Terrorblade.Reflection", self:GetCaster() )
+                     
+            if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "megumin") then
+                EmitSoundOn( "Megumin.Cast1", self:GetCaster() )
+            else
+                EmitSoundOn( "Hero_Terrorblade.Reflection", self:GetCaster() )
+            end 
         end
     end
 end
