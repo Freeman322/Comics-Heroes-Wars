@@ -33,12 +33,7 @@ function modifier_cosmos_space_warp:GetEffectName() return "particles/cosmos/cos
 function modifier_cosmos_space_warp:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_cosmos_space_warp:GetStatusEffectName() return "particles/status_fx/status_effect_enigma_malefice.vpcf" end
 function modifier_cosmos_space_warp:StatusEffectPriority() return 1000 end
-
-
-function modifier_cosmos_space_warp:CheckState()
-	local state = {
-		[MODIFIER_STATE_SPECIALLY_DENIABLE] = true
-	}
-
-	return state
-end
+function modifier_cosmos_space_warp:CheckState() return { [MODIFIER_STATE_SPECIALLY_DENIABLE] = true } end
+function modifier_cosmos_space_warp:DeclareFunctions() return { MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE } end
+function modifier_cosmos_space_warp:GetModifierTotalDamageOutgoing_Percentage ( params ) return self:GetAbility():GetSpecialValueFor("bonus_damage_outgoing") end
+ 

@@ -29,6 +29,8 @@ function cosmos_jumper:OnSpellStart()
                EmitSoundOn( "Hero_VengefulSpirit.NetherSwap", hTarget )
 
                self.m_hTaget = hTarget
+               
+               self:EndCooldown()
           end 
      end 
 end

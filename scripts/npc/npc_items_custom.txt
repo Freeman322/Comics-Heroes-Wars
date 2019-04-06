@@ -214,7 +214,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_spell_damage"		"25"
+				"bonus_spell_damage"		"40"
 			}
 			"09"
 			{

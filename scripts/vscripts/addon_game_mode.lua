@@ -128,14 +128,14 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/custom_sounds.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/hero_zoom.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/hero_manhattan.vsndevts", context)
-    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
-    PrecacheResource("soundfile", "soundevents/soundevents_conquest.vsndevts", context )
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
+	PrecacheResource("soundfile", "soundevents/soundevents_conquest.vsndevts", context )
 	PrecacheResource("soundfile", "soundevents/event_lich_king.vsndevts", context )
-    PrecacheResource("particle", "particles/econ/events/nexon_hero_compendium_2014/teleport_end_nexon_hero_cp_2014.vpcf", context )
-    PrecacheResource("particle", "particles/rain_fx/econ_weather_aurora.vpcf", context )
-    PrecacheResource("particle", "particles/rain_fx/econ_weather_sirocco.vpcf", context )
-    PrecacheResource("particle", "particles/rain_fx/econ_rain.vpcf", context )
-    PrecacheResource("particle", "particles/rain_fx/econ_moonlight.vpcf", context )
+	PrecacheResource("particle", "particles/econ/events/nexon_hero_compendium_2014/teleport_end_nexon_hero_cp_2014.vpcf", context )
+	PrecacheResource("particle", "particles/rain_fx/econ_weather_aurora.vpcf", context )
+	PrecacheResource("particle", "particles/rain_fx/econ_weather_sirocco.vpcf", context )
+	PrecacheResource("particle", "particles/rain_fx/econ_rain.vpcf", context )
+	PrecacheResource("particle", "particles/rain_fx/econ_moonlight.vpcf", context )
 	PrecacheItemByNameSync( "item_bag_of_gold", context )
 	PrecacheResource("particle", "particles/econ/events/ti7/hero_levelup_ti7_flash_hit_magic.vpcf", context )
 
@@ -495,6 +495,17 @@ function GameMode:OrderFilter(params)
 			if #units > 0 then
 				params.entindex_target = units[1]:entindex()
 			end
+		end 
+		if params.order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+			local target = Vector(params.position_x, params.position_y, params.position_z)
+			
+			local movement = target - unit:GetAbsOrigin()
+			local targetPos = unit:GetAbsOrigin() - movement
+
+			
+			params.position_x = targetPos.x
+			params.position_y = targetPos.y
+			params.position_z = targetPos.z
 		end 
 	end
 

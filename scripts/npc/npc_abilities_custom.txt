@@ -30431,12 +30431,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"manacost"						"16 24 32 40"
+				"manacost"						"20 30 40 50"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"magical_armor"					"16 24 32 40"
+				"magical_armor"					"20 30 40 50"
 			}
 			"03"
 			{
@@ -30537,13 +30537,13 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage"						"10 14 18 22"
+				"damage"						"20 24 28 32"
 				"LinkedSpecialBonus"			"special_bonus_unique_fate_3"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"heal_amt"						"10 14 18 22"
+				"heal_amt"						"20 24 28 32"
 				"LinkedSpecialBonus"			"special_bonus_unique_fate_3"
 			}
 		}
@@ -33807,7 +33807,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"50 40 30"
+		"AbilityCooldown"				"70 60 50"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -34024,6 +34024,11 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"tooltip_duration"		"4.5 5.25 6.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_outgoing"	"-30 -40 -50"
 			}
 		}
 	}
