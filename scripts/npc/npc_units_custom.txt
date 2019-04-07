@@ -2899,54 +2899,54 @@
 	"npc_dota_hero_grimskull"
 	{
 		"BaseClass"             	"npc_dota_hero"       
-        "HeroID"                    "212"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
-        ///"HeroDisabled"				"1"
-		
-        // Model info
-        "Model"                     "models/heroes/hero_grimskull/grimskull.vmdl"
+		"HeroID"                    "212"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
+		///"HeroDisabled"				"1"
 
-        "ModelScale"                "1.15"
-        "LoadoutScale"              "1.1"
+		// Model info
+		"Model"                     "models/heroes/hero_grimskull/grimskull.vmdl"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "240"
-        
-        // Sound info
+		"ModelScale"                "1.15"
+		"LoadoutScale"              "1.1"
+
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "240"
+
+		// Sound info
 		"SoundSet"					"Hero_Alchemist"
 		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
 
-	 	"particle_folder"			"particles/units/heroes/hero_alchemist"
+		"particle_folder"			"particles/units/heroes/hero_alchemist"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_alchemist.vsndevts"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
-        "AttributeBaseStrength"     "30"
-        "AttributeStrengthGain"     "3.100000"
-        "AttributeBaseIntelligence" "16"
-        "AttributeIntelligenceGain" "1.100000"
-        "AttributeBaseAgility"      "16"
-        "AttributeAgilityGain"      "1.400000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "30"
+		"AttributeStrengthGain"     "2.100000"
+		"AttributeBaseIntelligence" "16"
+		"AttributeIntelligenceGain" "1.100000"
+		"AttributeBaseAgility"      "16"
+		"AttributeAgilityGain"      "1.400000"
 
-        // Misc stats
-        "ArmorPhysical"             "2"
-        "MagicalResistance"			"24"
+		// Misc stats
+		"ArmorPhysical"             "2"
+		"MagicalResistance"			"24"
 
 
-        "AttackDamageMin"           "30"
-        "AttackDamageMax"           "38"
+		"AttackDamageMin"           "30"
+		"AttackDamageMax"           "38"
 
-       	"AttackAcquisitionRange"	"800"
+		"AttackAcquisitionRange"	"800"
 		"AttackRange"				"150"
 		"ProjectileSpeed"			"0"
 		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
 
-        "MovementSpeed"             "315"
-        "MovementTurnRate"          "0.600000"
-        
-        // Abilities
+		"MovementSpeed"             "315"
+		"MovementTurnRate"          "0.600000"
+
+		// Abilities
 		"Ability1"					"grimskull_hookshot"
 		"Ability2"					"grimskull_rage"
 		"Ability3"					"grimskull_berserkers_blood"
@@ -2969,11 +2969,11 @@
 		"Rolelevels"				"1,2,2,3"
 		"Complexity"				"3"
 		"Team"						"bad"
-        
-        // Misc
-        "NameAliases"      			"mr"
-        "url"       				"Dark Rider"
-        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Misc
+		"NameAliases"      			"mr"
+		"url"       				"Dark Rider"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
 
 		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
@@ -2986,7 +2986,7 @@
 
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"900"
+		"StatusHealth"				"300"
 		"StatusHealthRegen"			"2.2000"
 		"StatusMana"				"145"
 		"StatusManaRegen"			"1.0"

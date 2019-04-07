@@ -15,15 +15,6 @@ modifier_item_force_boots_passive = class({})
 
 function modifier_item_force_boots_passive:IsHidden () return true end
 
-if IsServer() then
-  function modifier_item_force_boots_passive:OnCreated()
-    self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_dark_seer_surge", nil)
-  end
-  function modifier_item_force_boots_passive:OnDestroy()
-    self:GetParent():FindModifierByName("modifier_dark_seer_surge"):Destroy()
-  end
-end
-
 function modifier_item_force_boots_passive:DeclareFunctions ()
     return {
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
