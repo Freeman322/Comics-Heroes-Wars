@@ -34242,6 +34242,16 @@
 				"var_type"				"FIELD_FLOAT"
 				"warp_duration"			"2.5"
 			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_mana_damage"			"5000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slowing"					"-30 -45 -60 -75"
+			}
 		}
 	}	
 	"special_bonus_unique_cosmos_1"

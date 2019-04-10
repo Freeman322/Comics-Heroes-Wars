@@ -18,7 +18,7 @@ function item_hells_glare:OnSpellStart(  )
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_black_king_bar_immune", {duration = self:GetSpecialValueFor("duration")})
         EmitSoundOn("DOTA_Item.BlackKingBar.Activate", self:GetCaster())
 
-        self:GetCaster():Purge(false, true, false, true, false)
+        self:GetCaster():Purge(false, true, false, true, true)
     end
 end
 

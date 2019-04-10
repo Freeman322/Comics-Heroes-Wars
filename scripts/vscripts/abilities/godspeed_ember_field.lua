@@ -20,7 +20,7 @@ function godspeed_ember_field:AddSpeed(value)
 end
 
 function godspeed_ember_field:OnOwnerDied()
-	if IsServer() then if self:GetCaster():WillReincarnate() then return end end 
+	if IsServer() then if self:GetCaster():IsReincarnating() then return end end 
 	self._iMovespeed = 0
 end
 

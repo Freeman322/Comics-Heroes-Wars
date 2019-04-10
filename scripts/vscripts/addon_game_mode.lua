@@ -267,6 +267,8 @@ function GameMode:InitGameMode()
 end
 function GameMode:OnAllPlayersLoaded()
 	if GetMapName() == "dota_captains_mode" then CaptainsMode:Start() else Pick:Start() end
+
+	Util:Setup()
 end
 function GameMode:OnGameRulesStateChange(keys)
 	local newState = GameRules:State_Get()
@@ -323,14 +325,14 @@ function GameMode:OnThink()
 	return 10
 end
 function GameMode:OnNPCSpawned(keys)
-  local npc = EntIndexToHScript(keys.entindex)
+	local npc = EntIndexToHScript(keys.entindex)
 
-  if npc:HasAbility("creeps_gangsta_ability") then npc:FindAbilityByName("creeps_gangsta_ability"):SetLevel(1) end 
+	if npc:HasAbility("creeps_gangsta_ability") then npc:FindAbilityByName("creeps_gangsta_ability"):SetLevel(1) end 
 
-  if npc:IsRealHero() and npc.bFirstSpawned == nil then
-      npc.bFirstSpawned = true
-      Util:OnHeroInGame(npc)
-  end
+	if npc:IsRealHero() and npc.bFirstSpawned == nil then
+		npc.bFirstSpawned = true
+		Util:OnHeroInGame(npc)
+	end
 end
 function GameMode:OnEntityKilled( keys )
   local killedUnit = EntIndexToHScript( keys.entindex_killed )

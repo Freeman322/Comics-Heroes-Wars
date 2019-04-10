@@ -45,6 +45,7 @@ function Util:OnInit(args)
 
     LinkLuaModifier("modifier_arcana", "modifiers/modifier_arcana.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_pet_model", "modifiers/modifier_pet_model.lua", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_fountain", "modifiers/modifier_fountain.lua", LUA_MODIFIER_MOTION_NONE)
 
     CustomGameEventManager:RegisterListener("on_chat_recived", Dynamic_Wrap(Util, 'OnChatUpdated'))
     CustomGameEventManager:RegisterListener("on_gauntlet_ability_selected", Dynamic_Wrap(Util, 'OnGauntletAbilitySelected'))
@@ -2404,3 +2405,12 @@ function CDOTA_BaseNPC:IsHasSuperStatus()
 
   return false
 end
+
+function Util:Setup()
+  local ancients = Entities:FindAllByClassname("ent_dota_fountain")
+
+  for k, ancient in pairs(ancients) do
+    ancient:AddNewModifier(ancient, nil, "modifier_fountain", nil)
+  end
+end
+

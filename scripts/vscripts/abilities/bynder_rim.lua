@@ -9,16 +9,13 @@ function bynder_rim:GetAbilityTextureName()
 end
 
 function bynder_rim:OnSpellStart ()
-  local duration
+  local duration = self:GetSpecialValueFor("duration")
+
   if self:GetCaster():HasScepter() then
     duration = self:GetSpecialValueFor("scepter_duration")
-  else
-    duration = self:GetSpecialValueFor("duration")
   end
 
-  if self:GetCaster():HasTalent("special_bonus_unique_byonder") then
-    duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_byonder")
-  end
+  if self:GetCaster():HasTalent("special_bonus_unique_byonder") then duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_byonder") end
 
   self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_bynder_rim", {duration = duration})
 end
@@ -30,15 +27,17 @@ function modifier_bynder_rim:IsHidden() return true end
 function modifier_bynder_rim:IsPurgable() return false end
 
 function modifier_bynder_rim:DeclareFunctions ()
-    return { MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE }
+    return { MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE }
 end
 
 function modifier_bynder_rim:OnTakeDamage( params )
     if self:GetParent () == params.unit then
-        self:GetParent ():SetHealth(self:GetParent():GetHealth() + params.damage)
-
         if not params.attacker:IsBuilding() then
-            self:SetStackCount(self:GetStackCount() + params.damage)
+            self:SetStackCount(self:GetStackCount() + params.original_damage)
+        end
+
+        for k,v in pairs(params) do
+          print(k,v)
         end
 
         local RemovePositiveBuffs = false
@@ -46,36 +45,24 @@ function modifier_bynder_rim:OnTakeDamage( params )
         local BuffsCreatedThisFrameOnly = false
         local RemoveStuns = true
         local RemoveExceptions = true
+
         self:GetParent():Purge( RemovePositiveBuffs, RemoveDebuffs, BuffsCreatedThisFrameOnly, RemoveStuns, RemoveExceptions)
     end
 end
 
+function modifier_bynder_rim:GetMinHealth() return self:GetParent():GetHealth() end
+
 function modifier_bynder_rim:GetModifierIncomingDamage_Percentage()
   if self:GetCaster():HasScepter() then
     return self:GetAbility():GetSpecialValueFor("scepter_incoming_damage")
-  else
-    return 0
   end
+
+  return 0
 end
 
-function modifier_bynder_rim:GetAttributes ()
-    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-function modifier_bynder_rim:GetStatusEffectName()
-    return "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
-end
-
+function modifier_bynder_rim:GetAttributes () return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_bynder_rim:GetStatusEffectName() return "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf" end
 function modifier_bynder_rim:StatusEffectPriority() return 1000 end
-
-function modifier_bynder_rim:GetEffectName()
-    return "particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
-end
-
-function modifier_bynder_rim:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
-end
-
-function modifier_bynder_rim:GetModifierPreAttack_BonusDamage( params )
-    return self:GetStackCount()
-end
+function modifier_bynder_rim:GetEffectName() return "particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf" end
+function modifier_bynder_rim:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_bynder_rim:GetModifierPreAttack_BonusDamage( params ) return self:GetStackCount() end

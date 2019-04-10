@@ -97,11 +97,14 @@ function modifier_cosmos_cosmos_power_target:GetEffectAttachType() return PATTAC
 function modifier_cosmos_cosmos_power_target:GetAttributes () return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_cosmos_cosmos_power_target:DeclareFunctions ()
      local funcs = {
-          MODIFIER_PROPERTY_DISABLE_HEALING
+          MODIFIER_PROPERTY_DISABLE_HEALING,
+          MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
      }
  
      return funcs
  end
  
  function modifier_cosmos_cosmos_power_target:GetDisableHealing(params) return 1 end
+ function modifier_cosmos_cosmos_power_target:GetModifierMoveSpeedBonus_Percentage(params) return self:GetAbility():GetSpecialValueFor("slowing") end
+ 
  

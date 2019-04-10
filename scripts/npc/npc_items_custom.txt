@@ -5064,7 +5064,7 @@
 
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"22.0"
+		"AbilityCooldown"				"38.0"
 
 
 		// Item Info
@@ -5093,7 +5093,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"130"
+				"bonus_damage"				"190"
 			}
 			"03"
 			{
@@ -5108,7 +5108,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"180"
+				"bonus_chance_damage"		"200"
 			}
 			"06"
 			{

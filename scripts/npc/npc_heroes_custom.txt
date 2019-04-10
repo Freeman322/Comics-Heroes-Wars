@@ -5510,19 +5510,19 @@
 	"npc_dota_hero_savitar"
 	{
 		"BaseClass"             	"npc_dota_hero"       
-        "HeroID"                    "203"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
-        
-        // Model info
-        "Model"                     "models/heroes/hero_savitar/savitar.vmdl"
-        "ModelScale"                "1.02"
-        "LoadoutScale"              "1.1"
+		"HeroID"                    "203"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "160"
-        
-        // Sound info
+		// Model info
+		"Model"                     "models/heroes/hero_savitar/savitar.vmdl"
+		"ModelScale"                "1.02"
+		"LoadoutScale"              "1.1"
+
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "160"
+
+		// Sound info
 		"Portrait"					"vgui/hud/heroportraits/portrait_rattletrap"
 		"SoundSet"					"Hero_Rattletrap"
 
@@ -5531,35 +5531,35 @@
 		"BanSound"					"razor_raz_anger_04"
 
 		"IdleSoundLoop"				"Hero_Razor.IdleLoop"
-     
-	 	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_savitar.vsndevts"
+
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_savitar.vsndevts"
 		"particle_folder"			"particles/units/heroes/hero_rattletrap"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_savitar.vsndevts"
-        
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"     "21"
-        "AttributeStrengthGain"     "2.300000"
-        "AttributeBaseIntelligence" "18"
-        "AttributeIntelligenceGain" "1.800000"
-        "AttributeBaseAgility"      "28"
-        "AttributeAgilityGain"      "3.000000"
 
-        // Misc stats
-        "ArmorPhysical"             "0"
-        "MagicalResistance"			"25"
-        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "22"
-        "AttackDamageMax"           "34"
-        "AttackRate"                "1.450000"
-        "AttackAnimationPoint"      "0.400000"
-        "AttackAcquisitionRange"    "600"
-        "AttackRange"               "128"
-        "ProjectileSpeed"           "0"
-        "MovementSpeed"             "325"
-        "MovementTurnRate"          "0.600000"
-        
-        // Abilities
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"     "21"
+		"AttributeStrengthGain"     "2.300000"
+		"AttributeBaseIntelligence" "18"
+		"AttributeIntelligenceGain" "1.800000"
+		"AttributeBaseAgility"      "28"
+		"AttributeAgilityGain"      "3.000000"
+
+		// Misc stats
+		"ArmorPhysical"             "0"
+		"MagicalResistance"			"25"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"           "22"
+		"AttackDamageMax"           "34"
+		"AttackRate"                "1.450000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "600"
+		"AttackRange"               "128"
+		"ProjectileSpeed"           "0"
+		"MovementSpeed"             "325"
+		"MovementTurnRate"          "0.600000"
+
+		// Abilities
 		"Ability1"					"savitar_speedforce"
 		"Ability2"					"savitar_quantum_tunnel"
 		"Ability3"					"savitar_gods_speed"
@@ -5567,7 +5567,7 @@
 		"Ability5"					"generic_hidden"
 		"Ability6"					"savitar_speedforce_rage"
 
-	    "Ability10"					"special_bonus_exp_boost_30"
+		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_savitar_2"
@@ -5575,18 +5575,18 @@
 		"Ability15"					"special_bonus_all_stats_15"
 		"Ability16"					"special_bonus_agility_25"
 		"Ability17"					"special_bonus_savitar_1"
-        
-        // Card info
-        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
-        "Rolelevels"    			"3,1,1,1,1"
-        "Complexity"    			"1"
-        
-        // Misc
-        "NameAliases"      			 "sv"
-        "url"       				"Savitar"
-        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
 
-	    // Bounds
+		// Card info
+		"Role"          			"Carry,Support,Disabler,Escape,Nuker"
+		"Rolelevels"    			"3,1,1,1,1"
+		"Complexity"    			"1"
+
+		// Misc
+		"NameAliases"      			 "sv"
+		"url"       				"Savitar"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"RingRadius"				"70"
