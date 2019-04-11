@@ -514,6 +514,22 @@ Heroes.list = {
         {
             "name": "npc_dota_hero_dark_rider",
             "id": 211,
+        },
+        {
+            "name": "npc_dota_hero_grimskull",
+            "id": 212,
+        },
+        {
+            "name": "npc_dota_hero_kratos",
+            "id": 213,
+        },
+        {
+            "name": "npc_dota_hero_warboss",
+            "id": 214,
+        },
+        {
+            "name": "npc_dota_hero_cosmos",
+            "id": 215,
         }
     ]
 }

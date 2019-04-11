@@ -1,17 +1,29 @@
 function VerifyClient() {
-    if (getClientStatus(Players.GetLocalPlayer()) == CLIENT_STATUS_RESTRICTED)
+    if(serverHasData() && getClientStatus(Players.GetLocalPlayer()) == -1)
     {
         $("#GlobalPanel").BLoadLayout("file://{resources}/layout/custom_game/ban.xml", false, false);
     }
 }
 
-function OnStatsStateChanged(table_name, key, data)
-{
-    if (key == "stats") { VerifyClient() }
-}
-
 (function() {
-    CustomNetTables.SubscribeNetTableListener("players", OnStatsStateChanged);
-
     VerifyClient()
 })()
+
+function serverHasData()
+{
+    var value = CustomNetTables.GetTableValue("players", "stats")
+
+    return value != null
+}
+
+function getClientStatus(pID)
+{
+    var table = CustomNetTables.GetTableValue("players", "stats")
+
+    if (table[pID])
+    {
+        return Number(table[pID].status) 
+    }
+
+    return 0
+}

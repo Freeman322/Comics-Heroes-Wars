@@ -1,0 +1,40 @@
+<root>
+    <styles>
+        <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+        <include src="file://{resources}/styles/events/dark_shadows_hero_selection.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/events/dark_shadows_hero_selection.js" />
+    </scripts>
+    <Panel class="CorePanel" hittest="false">
+      <Panel id="CorePanel" hittest="false">
+        <Panel id="leftSide" hittest="false">
+          <Panel id="HeroesRoot" hittest="false">
+            <!--<Image src="file://{images}/event/npc.png"/>-->
+
+            <Panel id="Heroes" hittest="false">
+
+            </Panel>
+            <Button id="PickButton" hittest="true" onactivate="PickHero()">
+              <Label class="PickText" text="Select" />
+              <Label id="HeroSelectedTarget" text="Sera" />
+            </Button>
+          </Panel>
+          <Panel id="MiniMapContainer" hittest="false">
+
+          </Panel>
+        </Panel>
+        <Panel id="topSide" hittest="false">
+          <Panel id="Players" hittest="false">
+
+          </Panel>
+          <Label id="EventName" text="#dark_shadows" hittest="false"/>
+        </Panel>
+        <Panel id="rightSide" hittest="false">
+          <Panel id="ObjectivesPanel" hittest="false">
+
+          </Panel>
+        </Panel>
+      </Panel>
+    </Panel>
+</root>

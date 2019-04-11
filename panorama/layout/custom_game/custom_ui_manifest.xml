@@ -67,9 +67,10 @@
 		}else{
 		}
 	}
-	
+
+	$.GetContextPanel().BCreateChildren('<CustomUIElement id="UIHeroSelection" type="Hud"       				layoutfile="file://{resources}/layout/custom_game/UI.xml"/>');
+
 	</script>
-	
 	<Panel>
 		<CustomUIElement type="GameSetup"            				    	layoutfile="file://{resources}/layout/custom_game/team_select.xml" />
 		<CustomUIElement type="Hud"                  					  	layoutfile="file://{resources}/layout/custom_game/barebones_notifications.xml" />
@@ -77,6 +78,5 @@
 		<CustomUIElement type="Hud"                  					  	layoutfile="file://{resources}/layout/custom_game/profile/profile.xml"  />
 		<CustomUIElement type="Hud"                  					  	layoutfile="file://{resources}/layout/custom_game/hud.xml"  />
 		<CustomUIElement type="Hud"                  					  	layoutfile="file://{resources}/layout/custom_game/plus/plus.xml"  />
-		<CustomUIElement id="UIHeroSelection" type="Hud"       				layoutfile="file://{resources}/layout/custom_game/UI.xml"/>
 	</Panel>
 </root>

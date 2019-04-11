@@ -337,8 +337,8 @@
 }
 
 .HeroIcon {
-	width: 97px;
-	height: 55px;
+	width: 82px;
+	height: 48px;
 	background-size: 100%;
 	background-repeat: no-repeat;
 	box-shadow: black 0px 0px 9px 2px;
@@ -356,8 +356,8 @@
 }
 
 .AspectRatio4x3 .HeroIcon {
-	width: 73px;
-	height: 40px;
+	width: 68px;
+	height: 38px;
 	background-size: 100%;
 	background-repeat: no-repeat;
 	box-shadow: black 0px 0px 5px 2px;
@@ -375,7 +375,7 @@
 }
 
 .AspectRatio16x10 .HeroIcon {
-	width: 90px;
+	width: 82px;
 	height: 48px;
 	background-size: 100%;
 	background-repeat: no-repeat;

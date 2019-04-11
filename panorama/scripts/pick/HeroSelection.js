@@ -1,5 +1,5 @@
 var countdown = 60
-var PREMIUM = ["npc_dota_hero_drow_ranger"];
+var PREMIUM = ["npc_dota_hero_drow_ranger", "npc_dota_hero_ogre_magi", "npc_dota_hero_grimskull", "npc_dota_hero_warboss"];
 
 function RebuildUI() {
     var radiant = Game.GetPlayerIDsOnTeam(DOTATeam_t.DOTA_TEAM_GOODGUYS);
@@ -445,7 +445,7 @@ function OnInspectPlayerEnd(panel) {
 })()
 
 function OnInspectHeroStart(hero, panel) {
-    $.DispatchEvent("DOTAShowTitleImageTextTooltip", panel, "#new_" + hero, "file://{images}/custom_game/heroes/" + hero + ".png", "#new_" + hero + "_hype");
+    $.DispatchEvent("DOTAShowTitleImageTextTooltip", panel, "#" + hero, "file://{images}/custom_game/heroes/" + hero + ".png", "#" + hero + "_hype");
 }
 
 function OnInspectHeroOver(hero, panel) {

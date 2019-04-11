@@ -1,0 +1,25 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/simple_panel_animation.js" />
+    <include src="file://{resources}/scripts/events/dark_shadows_game_end.js" />
+	</scripts>
+
+
+	<Panel class="GameEndEvent">
+		<Panel id="GameEndEvent">
+			<Panel id="Event">
+				<Label id="EventName" text="#dark_shadows" hittest="false"/>
+				<Panel id="RadiantEvent">
+
+				</Panel>
+			</Panel>
+			<Panel id="DropContainerEvent">
+
+			</Panel>	
+		</Panel>
+	</Panel>
+</root>
