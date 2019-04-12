@@ -1,5 +1,6 @@
-bynder_rim = class({})
 LinkLuaModifier("modifier_bynder_rim", "abilities/bynder_rim.lua", LUA_MODIFIER_MOTION_NONE)
+
+bynder_rim = class({})
 
 function bynder_rim:GetAbilityTextureName()
 	if self:GetCaster():HasModifier("modifier_arcana") then
@@ -8,7 +9,7 @@ function bynder_rim:GetAbilityTextureName()
 	return "custom/bynder_astral"
 end
 
-function bynder_rim:OnSpellStart ()
+function bynder_rim:OnSpellStart()
   local duration = self:GetSpecialValueFor("duration")
 
   if self:GetCaster():HasScepter() then
@@ -27,37 +28,32 @@ function modifier_bynder_rim:IsHidden() return true end
 function modifier_bynder_rim:IsPurgable() return false end
 
 function modifier_bynder_rim:DeclareFunctions ()
-    return { MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE }
+	return { MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE }
 end
 
 function modifier_bynder_rim:OnTakeDamage( params )
-    if self:GetParent () == params.unit then
-        if not params.attacker:IsBuilding() then
-            self:SetStackCount(self:GetStackCount() + params.original_damage)
-        end
-
-        for k,v in pairs(params) do
-          print(k,v)
-        end
-
-        local RemovePositiveBuffs = false
-        local RemoveDebuffs = true
-        local BuffsCreatedThisFrameOnly = false
-        local RemoveStuns = true
-        local RemoveExceptions = true
-
-        self:GetParent():Purge( RemovePositiveBuffs, RemoveDebuffs, BuffsCreatedThisFrameOnly, RemoveStuns, RemoveExceptions)
+  if self:GetParent () == params.unit then
+    if not params.attacker:IsBuilding() then
+        self:SetStackCount(self:GetStackCount() + params.original_damage)
     end
+
+    local RemovePositiveBuffs = false
+		local RemoveDebuffs = true
+    local BuffsCreatedThisFrameOnly = false
+    local RemoveStuns = true
+    local RemoveExceptions = true
+
+    self:GetParent():Purge( RemovePositiveBuffs, RemoveDebuffs, BuffsCreatedThisFrameOnly, RemoveStuns, RemoveExceptions)
+  end
 end
 
 function modifier_bynder_rim:GetMinHealth() return self:GetParent():GetHealth() end
 
 function modifier_bynder_rim:GetModifierIncomingDamage_Percentage()
-  if self:GetCaster():HasScepter() then
-    return self:GetAbility():GetSpecialValueFor("scepter_incoming_damage")
-  end
-
-  return 0
+ if self:GetCaster():HasScepter() then
+	 return self:GetAbility():GetSpecialValueFor("scepter_incoming_damage")
+ end
+ return 0
 end
 
 function modifier_bynder_rim:GetAttributes () return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE end

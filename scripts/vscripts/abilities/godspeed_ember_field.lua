@@ -12,9 +12,9 @@ function godspeed_ember_field:GetTotalThisLifeMovespeed()
 end
 
 function godspeed_ember_field:AddSpeed(value)
-	if not self._iMovespeed then self._iMovespeed = 0 end 
-	
-	if self._iMovespeed <= self:GetSpecialValueFor("max_speed") then 
+	if not self._iMovespeed then self._iMovespeed = 0 end
+
+	if self._iMovespeed <= self:GetSpecialValueFor("max_speed") then
     	self._iMovespeed = (self._iMovespeed or 0) + value
     end
 end
@@ -74,9 +74,9 @@ end
 
 function modifier_godspeed_ember_field_aura:OnIntervalThink()
     if IsServer() then
-        self:SetStackCount(self:GetAbility():GetTotalThisLifeMovespeed()) 
+        self:SetStackCount(self:GetAbility():GetTotalThisLifeMovespeed())
 
-        ---if (not self:GetParent():HasModifier("modifier_dark_seer_surge")) then self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_dark_seer_surge", nil) end 
+        ---if (not self:GetParent():HasModifier("modifier_dark_seer_surge")) then self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_dark_seer_surge", nil) end
     end
 end
 
@@ -112,27 +112,27 @@ function modifier_godspeed_ember_field:DeclareFunctions()
 end
 
 function modifier_godspeed_ember_field:OnCreated( params )
-    if IsServer() then self._vPosition = self:GetParent():GetAbsOrigin() end 
+    if IsServer() then self._vPosition = self:GetParent():GetAbsOrigin() end
 end
 
 function modifier_godspeed_ember_field:OnUnitMoved(params)
-	if IsServer() then 
-		if params.unit == self:GetParent() then 
-			if self._vPosition ~= self:GetParent():GetAbsOrigin() then 
+	if IsServer() then
+		if params.unit == self:GetParent() then
+			if self._vPosition ~= self:GetParent():GetAbsOrigin() then
 				local distance = (self:GetParent():GetAbsOrigin() - self._vPosition):Length2D()
 
 				self._vPosition = self:GetParent():GetAbsOrigin()
 
 				self:OnPositionChanged(distance)
-			end 			
+			end
 		end
-	end 
+	end
 end
 
 function modifier_godspeed_ember_field:OnPositionChanged( distance )
-	if IsServer() then 
+	if IsServer() then
 		local value = math.floor( distance ) * (self:GetAbility():GetSpecialValueFor("heal_ptc") / 100)
-            
+
         self:GetCaster():Heal(value, self:GetCaster())
 
         self:GetAbility():AddSpeed(value)

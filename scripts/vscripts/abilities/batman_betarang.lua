@@ -1,10 +1,10 @@
-if batman_betarang == nil then batman_betarang = class({}) end
+batman_betarang = class({})
 
 function batman_betarang:OnSpellStart()
 	local info = {
 			EffectName = "particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf",
 			Ability = self,
-			iMoveSpeed = 500,
+			iMoveSpeed = self:GetSpecialValueFor("betarang_speed"),
 			Source = self:GetCaster(),
 			Target = self:GetCursorTarget(),
 			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
@@ -34,15 +34,13 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 		if self:GetCaster():HasScepter() then
 			dmg = dmg + self:GetCaster():GetStrength()
 		end
-		local damage = {
+		ApplyDamage({
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = dmg,
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self
-		}
-
-		ApplyDamage( damage )
+		})
 
 
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
@@ -53,14 +51,14 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 
 		local next_target = self:GetCaster()
 
-		local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), hTarget:GetAbsOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+		local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), hTarget:GetAbsOrigin(), nil, self:GetSpecialValueFor("bounce_range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 		if #units > 0 then
 			for _,target in pairs(units) do
-				if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) and target ~= hTarget then
+				if target ~= nil and (not target:IsMagicImmune()) and (not target:IsInvulnerable()) and target ~= hTarget then
 					local info = {
 						EffectName = "particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf",
 						Ability = self,
-						iMoveSpeed = 500,
+						iMoveSpeed = self:GetSpecialValueFor("betarang_speed"),
 						Source = hTarget,
 						Target = target,
 						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
@@ -89,5 +87,4 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 	return true
 end
 
-function batman_betarang:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function batman_betarang:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

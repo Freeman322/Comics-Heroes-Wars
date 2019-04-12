@@ -9,7 +9,7 @@ function zatana_swarm:OnSpellStart()
 	vDirection = vDirection:Normalized()
 
 	self.wave_speed = 1000
-	self.wave_width = 300
+	--self.wave_width = 300
 	self.vision_aoe = 100
 	self.vision_duration = 2
 	self.tooltip_duration = 4
@@ -18,8 +18,8 @@ function zatana_swarm:OnSpellStart()
 		EffectName = "particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf",
 		Ability = self,
 		vSpawnOrigin = self:GetCaster():GetOrigin(),
-		fStartRadius = self.wave_width,
-		fEndRadius = self.wave_width,
+		fStartRadius = self:GetSpecialValueFor("start_radius"),
+		fEndRadius = self:GetSpecialValueFor("end_radius"),
 		vVelocity = vDirection * self.wave_speed,
 		fDistance = self:GetCastRange( self:GetCaster():GetOrigin(), self:GetCaster() ),
 		Source = self:GetCaster(),
@@ -36,22 +36,20 @@ function zatana_swarm:OnSpellStart()
 end
 
 function zatana_swarm:OnProjectileHit( hTarget, vLocation )
-	local damage = self:GetAbilityDamage()
+	local damage = self:GetSpecialValueFor("base_damage")
 
 	if self:GetCaster():HasTalent("special_bonus_unique_zatanna") then
         damage = self:GetCaster():FindTalentValue("special_bonus_unique_zatanna") + damage
 	end
-	
+
 	if hTarget ~= nil then
-		local damage = {
+		ApplyDamage({
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = damage,
 			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self,
-		}
+			ability = self})
 
-		ApplyDamage( damage )
 		EmitSoundOn( "Hero_DeathProphet.CarrionSwarm.Damage.Mortis" , hTarget )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_zatana_swarm", { duration = self:GetSpecialValueFor("stun_duration") } )
 	end
@@ -111,5 +109,4 @@ function modifier_zatana_swarm:CheckState()
 	return state
 end
 
-function zatana_swarm:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function zatana_swarm:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

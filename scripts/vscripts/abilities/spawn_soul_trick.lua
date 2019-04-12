@@ -24,19 +24,17 @@ function spawn_soul_trick:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
 	if hTarget ~= nil then
 		if ( not hTarget:TriggerSpellAbsorb( self ) ) then
-			local duration = self:GetSpecialValueFor( "duration" )
-			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_spawn_soul_trick", { duration = duration } )
-			EmitSoundOn( "Hero_Winter_Wyvern.WintersCurse.Target", hTarget )
-
-      local damage = {
+			ApplyDamage({
 				victim = hTarget,
 				attacker = self:GetCaster(),
 				damage = self:GetSpecialValueFor("damage"),
 				damage_type = DAMAGE_TYPE_PURE,
 				ability = self
-			}
+			})
 
-			ApplyDamage( damage )
+			local duration = self:GetSpecialValueFor( "duration" )
+			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_spawn_soul_trick", { duration = duration } )
+			EmitSoundOn( "Hero_Winter_Wyvern.WintersCurse.Target", hTarget )
 		end
 
 		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_rubick/rubick_fade_bolt.vpcf", PATTACH_CUSTOMORIGIN, nil );
@@ -104,5 +102,4 @@ function modifier_spawn_soul_trick:OnDestroy()
 	end
 end
 
-function spawn_soul_trick:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function spawn_soul_trick:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

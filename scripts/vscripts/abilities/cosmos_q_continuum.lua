@@ -4,7 +4,7 @@ LinkLuaModifier( "cosmos_q_continuum_modifier", "abilities/cosmos_q_continuum.lu
 cosmos_q_continuum = class ( {})
 
 function cosmos_q_continuum:OnSpellStart()
-     if IsServer() then 
+     if IsServer() then
           local caster = self:GetCaster()
           local point = self:GetCursorPosition()
           local team_id = caster:GetTeamNumber()
@@ -50,17 +50,17 @@ function cosmos_q_continuum_modifier:OnCreated(event)
     self:OnIntervalThink()
 end
 
-function cosmos_q_continuum_modifier:GetModifierMoveSpeedBonus_Percentage() return -100 end
-function cosmos_q_continuum_modifier:GetModifierAttackSpeedBonus_Constant() return -525 end
+function cosmos_q_continuum_modifier:GetModifierMoveSpeedBonus_Percentage() return self:GetAbility():GetSpecialValueFor("movespeed_slow_pct") * -1 end
+function cosmos_q_continuum_modifier:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor("attackspeed_slow") * -1 end
 function cosmos_q_continuum_modifier:GetEffectName() return "particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_stifling_dagger_debuff_arcana.vpcf" end
 function cosmos_q_continuum_modifier:GetEffectAttachType() return PATTACH_POINT_FOLLOW end
 function cosmos_q_continuum_modifier:DeclareFunctions() return { MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT } end
- 
-function cosmos_q_continuum_modifier:OnIntervalThink() 
+
+function cosmos_q_continuum_modifier:OnIntervalThink()
      if IsServer() then
           local damage = self:GetAbility():GetSpecialValueFor("damage")
-          if self:GetCaster():HasTalent("special_bonus_unique_cosmos_3") then damage = damage + self:GetCaster():FindTalentValue("special_bonus_unique_cosmos_3") end 
+          if self:GetCaster():HasTalent("special_bonus_unique_cosmos_3") then damage = damage + self:GetCaster():FindTalentValue("special_bonus_unique_cosmos_3") end
 
           ApplyDamage({ victim = self:GetParent(), attacker = self:GetCaster(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()})
-     end 
+     end
 end

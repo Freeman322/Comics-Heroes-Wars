@@ -1,4 +1,4 @@
-if onepunchman_light_strikes_array == nil then onepunchman_light_strikes_array = class({}) end 
+if onepunchman_light_strikes_array == nil then onepunchman_light_strikes_array = class({}) end
 LinkLuaModifier( "modifier_onepunchman_light_strikes_array", "abilities/onepunchman_light_strikes_array.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_onepunchman_light_strikes_array_thinker", "abilities/onepunchman_light_strikes_array.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_onepunchman_light_strikes_array_caster", "abilities/onepunchman_light_strikes_array.lua" ,LUA_MODIFIER_MOTION_NONE )
@@ -13,7 +13,7 @@ function onepunchman_light_strikes_array:GetBehavior()
 end
 
 function onepunchman_light_strikes_array:OnSpellStart()
-	if IsServer() then 
+	if IsServer() then
 	    local caster = self:GetCaster()
 	    local point = self:GetCursorPosition()
 	    local team_id = caster:GetTeamNumber()
@@ -47,14 +47,13 @@ function modifier_onepunchman_light_strikes_array_thinker:OnCreated(event)
 end
 
 function modifier_onepunchman_light_strikes_array_thinker:OnIntervalThink()
-   if IsServer() then 
+   if IsServer() then
    		EmitSoundOn("Hero_Pangolier.Swashbuckle.Attack", self:GetCaster())
    		local hCaster = self:GetCaster()
-	    local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE
     	local unit_table = FindUnitsInRadius(self:GetParent():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-	    if #unit_table > 0 then      
+	    if #unit_table > 0 then
 		    for _, unit in pairs(unit_table) do
-		    	if self:GetCaster():HasTalent("special_bonus_unique_saitama_2") and self.strikes == 2 then 
+		    	if self:GetCaster():HasTalent("special_bonus_unique_saitama_2") and self.strikes == 2 then
 		    		self:GetCaster():PerformAttack(unit, true, true, true, false, false, false, true)
 		    	end
 
@@ -67,7 +66,7 @@ function modifier_onepunchman_light_strikes_array_thinker:OnIntervalThink()
 					damage = iDamage,
 					damage_type = DAMAGE_TYPE_PHYSICAL,
 					ability = self:GetAbility()
-				}	
+				}
 				ApplyDamage(damage)
 			    local nFXIndex = ParticleManager:CreateParticle ("particles/units/heroes/hero_doom_bringer/doom_infernal_blade_impact.vpcf", PATTACH_CUSTOMORIGIN, unit);
 			    ParticleManager:SetParticleControlEnt (nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin (), true);
@@ -78,8 +77,8 @@ function modifier_onepunchman_light_strikes_array_thinker:OnIntervalThink()
 	    end
 
 	    self.strikes = self.strikes + 1
-	    if self.strikes == 3 then 
-	    	self.strikes = 0 
+	    if self.strikes == 3 then
+	    	self.strikes = 0
 	    end
    end
 end

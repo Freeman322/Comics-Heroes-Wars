@@ -4686,9 +4686,8 @@
 		"ScriptFile"					"items/item_ultimate_nullifier.lua"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"FightRecapLevel"				"1"
 
 		"AbilityCooldown"				"35.0"
@@ -5401,25 +5400,30 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_intellect"			"100"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_strength"		"20"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana_regen"			"35"
+				"bonus_agility"			"20"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mana_cost"			"85"
+				"var_type"					"FIELD_FLOAT"
+				"bonus_intellect"			"80"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_casttime"			"85"
+				"bonus_mana_regen"			"10"
 			}
 			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+					"mana_cost_decrease_pct"			"35"
+			}
+			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"duration"					"5.0"
@@ -6417,25 +6421,25 @@
 		"AbilityTextureName"    		"custom/ethereal_boots"
 		"ScriptFile"					"items/item_ethereal_boots.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0"
+		"AbilityCooldown"						"25.0"
 		"AbilitySharedCooldown"			"teleport"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
-		"ItemCost"						"7500"
+		"ItemCost"							"7500"
 		"ItemShopTags"					"teleport;move_speed"
-		"ItemQuality"					"common"
-		"ItemAliases"					"bot;boots of travel;tp"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
+		"ItemQuality"						"common"
+		"ItemAliases"						"bot;boots of travel;tp"
+		"ItemDeclarations"			"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"			"1"
 
 		"precache"
 		{

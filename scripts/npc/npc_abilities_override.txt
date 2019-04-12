@@ -163,7 +163,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"70"
+				"value"				"167"
 			}
 		}
 	}
@@ -648,7 +648,7 @@
 	"lion_finger_of_death"
 	{
 
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
 		"precache"
 		{
@@ -824,7 +824,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"90"
+				"value"				"70"
 			}
 		}
 	}

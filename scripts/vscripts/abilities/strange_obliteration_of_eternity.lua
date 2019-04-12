@@ -3,13 +3,15 @@ LinkLuaModifier( "modifier_strange_obliteration_of_eternity_aura", "abilities/st
 
 strange_obliteration_of_eternity = class({})
 
+function strange_obliteration_of_eternity:IsRefreshable() return false end
+
 function strange_obliteration_of_eternity:OnSpellStart(  )
-    if IsServer() then 
-        local duration = self:GetSpecialValueFor("tooltip_duration") 
-        if self:GetCaster():HasTalent("special_bonus_unique_strange_2") then duration = duration + (self:GetCaster():FindTalentValue("special_bonus_unique_strange_2") or 0) end 
-        
+    if IsServer() then
+        local duration = self:GetSpecialValueFor("tooltip_duration")
+        if self:GetCaster():HasTalent("special_bonus_unique_strange_2") then duration = duration + (self:GetCaster():FindTalentValue("special_bonus_unique_strange_2") or 0) end
+
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_strange_obliteration_of_eternity_aura", {duration = duration})
-        
+
         EmitSoundOn("Strange.Obliteration_of_eternity.Cast", self:GetCaster())
 
         local nFXIndex = ParticleManager:CreateParticle("particles/hero_strange/strange_time_stop_spell.vpcf", PATTACH_EYES_FOLLOW, self:GetCaster())
@@ -20,11 +22,9 @@ function strange_obliteration_of_eternity:OnSpellStart(  )
     end
 end
 
-if modifier_strange_obliteration_of_eternity_aura == nil then modifier_strange_obliteration_of_eternity_aura = class({}) end
+modifier_strange_obliteration_of_eternity_aura = class({})
 
-function modifier_strange_obliteration_of_eternity_aura:IsAura()
-	return true
-end
+function modifier_strange_obliteration_of_eternity_aura:IsAura() return true end
 
 function modifier_strange_obliteration_of_eternity_aura:OnCreated()
     if IsServer () then
@@ -45,83 +45,30 @@ function modifier_strange_obliteration_of_eternity_aura:OnDestroy()
     end
 end
 
-function modifier_strange_obliteration_of_eternity_aura:IsHidden()
-	return false
-end
+function modifier_strange_obliteration_of_eternity_aura:IsHidden() return false end
+function modifier_strange_obliteration_of_eternity_aura:IsPurgable() return false end
+function modifier_strange_obliteration_of_eternity_aura:GetAuraRadius()	return 99999 end
+function modifier_strange_obliteration_of_eternity_aura:GetAuraSearchTeam()	return DOTA_UNIT_TARGET_TEAM_BOTH end
+function modifier_strange_obliteration_of_eternity_aura:GetAuraSearchType() return DOTA_UNIT_TARGET_ALL end
+function modifier_strange_obliteration_of_eternity_aura:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_DEAD end
+function modifier_strange_obliteration_of_eternity_aura:GetModifierAura()	return "modifier_strange_obliteration_of_eternity" end
 
-function modifier_strange_obliteration_of_eternity_aura:IsPurgable()
-	return false
-end
+modifier_strange_obliteration_of_eternity = class({})
 
-function modifier_strange_obliteration_of_eternity_aura:GetAuraRadius()
-	return 99999
-end
-
-function modifier_strange_obliteration_of_eternity_aura:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_BOTH
-end
-
-function modifier_strange_obliteration_of_eternity_aura:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_ALL
-end
-
-function modifier_strange_obliteration_of_eternity_aura:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_DEAD
-end
-
-function modifier_strange_obliteration_of_eternity_aura:GetModifierAura()
-	return "modifier_strange_obliteration_of_eternity"
-end
-
-if modifier_strange_obliteration_of_eternity == nil then modifier_strange_obliteration_of_eternity = class({}) end
-
-function modifier_strange_obliteration_of_eternity:IsPurgable(  )
-    return false
-end
-
-function modifier_strange_obliteration_of_eternity:RemoveOnDeath()
-    return false
-end
-
-function modifier_strange_obliteration_of_eternity:IsHidden()
-    return true
-end
-
-function modifier_strange_obliteration_of_eternity:GetStatusEffectName()
-    return "particles/status_fx/status_effect_faceless_chronosphere.vpcf"
-end
-
-function modifier_strange_obliteration_of_eternity:StatusEffectPriority()
-    return 1000
-end
-
-function modifier_strange_obliteration_of_eternity:OnCreated(htable)
-    if IsServer() then
-		
-	end
-end
-
-function modifier_strange_obliteration_of_eternity:IsPurgable(  )
-    return false
-end
-
-function modifier_strange_obliteration_of_eternity:DeclareFunctions()
-    local funcs = {
-        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
-    }
-
-    return funcs
-end
-
-function modifier_strange_obliteration_of_eternity:GetModifierDamageOutgoing_Percentage( params )
-    return self:GetAbility():GetSpecialValueFor("damage_reduction")
-end
+function modifier_strange_obliteration_of_eternity:IsPurgable() return false end
+function modifier_strange_obliteration_of_eternity:RemoveOnDeath() return false end
+function modifier_strange_obliteration_of_eternity:IsHidden() return true end
+function modifier_strange_obliteration_of_eternity:GetStatusEffectName() return "particles/status_fx/status_effect_faceless_chronosphere.vpcf" end
+function modifier_strange_obliteration_of_eternity:StatusEffectPriority() return 1000 end
+function modifier_strange_obliteration_of_eternity:IsPurgable() return false end
+function modifier_strange_obliteration_of_eternity:DeclareFunctions() return { MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE } end
+function modifier_strange_obliteration_of_eternity:GetModifierTotalDamageOutgoing_Percentage() return self:GetAbility():GetSpecialValueFor("damage_reduction") end
 
 function modifier_strange_obliteration_of_eternity:CheckState()
-    if IsServer() then 
-        if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() or not self:GetParent():IsRealHero() then 
+    if IsServer() then
+        if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() or not self:GetParent():IsRealHero() then
             return {[MODIFIER_STATE_STUNNED] = true,[MODIFIER_STATE_FROZEN] = true}
-        end 
-    end 
-    return 
+        end
+    end
+    return
 end

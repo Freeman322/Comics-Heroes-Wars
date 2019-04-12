@@ -1,15 +1,13 @@
-strange_test_of_faith = class({})
-
 LinkLuaModifier( "modifier_strange_test_of_faith", "abilities/strange_test_of_faith.lua", LUA_MODIFIER_MOTION_NONE )
 
+strange_test_of_faith = class({})
+
 function strange_test_of_faith:OnSpellStart()
-    if IsServer() then 
-    	local hTarget = self:GetCursorTarget()
-    	if hTarget ~= nil then
-            local duration = self:GetSpecialValueFor( "duration" )
-            hTarget:AddNewModifier( self:GetCaster(), self, "modifier_strange_test_of_faith", { duration = duration } )
-            hTarget:Purge( false, true, false, true, false )
-            EmitSoundOn( "Hero_Abaddon.AphoticShield.Cast", hTarget )
+    if IsServer() then
+    	if self:GetCursorTarget() ~= nil then
+            self:GetCursorTarget():AddNewModifier( self:GetCaster(), self, "modifier_strange_test_of_faith", { duration = self:GetSpecialValueFor( "duration" ) } )
+            self:GetCursorTarget():Purge( false, true, false, true, false )
+            EmitSoundOn( "Hero_Abaddon.AphoticShield.Cast", self:GetCursorTarget() )
     	end
     end
 end
@@ -20,7 +18,7 @@ function modifier_strange_test_of_faith:IsPurgable()
     return false
 end
 
-function modifier_strange_test_of_faith:OnCreated( params )
+function modifier_strange_test_of_faith:OnCreated()
     if IsServer() then
         local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/abaddon/abaddon_alliance/abaddon_aphotic_shield_alliance.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
         ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetOrigin(), true )
@@ -33,12 +31,12 @@ function modifier_strange_test_of_faith:OnCreated( params )
     end
 end
 
-function modifier_strange_test_of_faith:OnDestroy( params )
+function modifier_strange_test_of_faith:OnDestroy()
     if IsServer() then
-        EmitSoundOn( "Hero_Abaddon.AphoticShield.Destroy", hTarget )
-	    ParticleManager:CreateParticle("particles/items2_fx/mekanism.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+        EmitSoundOn( "Hero_Abaddon.AphoticShield.Destroy", self:GetParent() )
+	      ParticleManager:CreateParticle("particles/items2_fx/mekanism.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 
-        local nearby_units = FindUnitsInRadius(self:GetParent():GetTeam(), self:GetParent():GetAbsOrigin(), nil, 425, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+        local nearby_units = FindUnitsInRadius(self:GetParent():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("shield_explosion_radius"), DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
         for i, unit in ipairs(nearby_units) do  --Restore health and play a particle effect for every found ally.
             local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_oracle/oracle_false_promise_cast_enemy.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
@@ -46,20 +44,18 @@ function modifier_strange_test_of_faith:OnDestroy( params )
             ParticleManager:SetParticleControlEnt( nFXIndex, 4, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
             ParticleManager:ReleaseParticleIndex(nFXIndex)
 
-            if unit:GetTeamNumber() == self:GetParent():GetTeamNumber() then 
+            if unit:GetTeamNumber() == self:GetParent():GetTeamNumber() then
                 EmitSoundOn("Hero_Oracle.FalsePromise.Healed", unit)
                 unit:Heal(self:GetAbility():GetSpecialValueFor("heal_expier"), self:GetAbility())
             else
                 EmitSoundOn("Hero_Abaddon.DeathCoil.Target", unit)
-                 local damage = {
-                    victim = unit,
-                    attacker = self:GetParent(),
-                    damage = self:GetAbility():GetSpecialValueFor("damage_expire"),
-                    damage_type = DAMAGE_TYPE_PURE,
-                    ability = self,
-                }
-
-                ApplyDamage( damage )
+                ApplyDamage({
+                   victim = unit,
+                   attacker = self:GetParent(),
+                   damage = self:GetAbility():GetSpecialValueFor("damage_expire"),
+                   damage_type = DAMAGE_TYPE_PURE,
+                   ability = self,
+               })
 
                 unit:AddNewModifier (self:GetParent(), self, "modifier_stunned", { duration = 0.5 })
             end
@@ -77,7 +73,7 @@ function modifier_strange_test_of_faith:DeclareFunctions()
     return funcs
 end
 
-function modifier_strange_test_of_faith:GetModifierIncomingDamage_Percentage( params )
+function modifier_strange_test_of_faith:GetModifierIncomingDamage_Percentage()
     return -100
 end
 

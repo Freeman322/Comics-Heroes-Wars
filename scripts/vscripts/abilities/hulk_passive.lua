@@ -26,11 +26,11 @@ end
 
 function modifier_hulk_passive:OnAttackLanded (params)
     if IsServer () then
-        if params.attacker == self:GetParent () then
+        if params.attacker == self:GetParent() and params.attacker:IsRealHero() then
             if self:GetAbility():IsCooldownReady() and RollPercentage(self:GetAbility():GetSpecialValueFor("chance")) then
               local hTarget = params.target
               EmitSoundOn( "Hero_Slardar.Bash", hTarget )
-            
+
               local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_spirit_breaker/spirit_breaker_greater_bash.vpcf", PATTACH_CUSTOMORIGIN, nil );
               ParticleManager:SetParticleControlEnt(nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetAbsOrigin(), false)
               ParticleManager:ReleaseParticleIndex( nFXIndex );

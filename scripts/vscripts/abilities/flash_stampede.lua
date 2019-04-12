@@ -1,11 +1,6 @@
-if flash_stampede == nil then flash_stampede = class({}) end
-
 LinkLuaModifier( "modifier_flash_stampede", "abilities/flash_stampede.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_flash_stampede_passive", "abilities/flash_stampede.lua", LUA_MODIFIER_MOTION_NONE )
 
-function flash_stampede:GetIntrinsicModifierName()
-  return "modifier_flash_stampede_passive"
-end
+ flash_stampede = class({})
 
 function flash_stampede:OnSpellStart()
 	local duration = self:GetSpecialValueFor( "duration" )
@@ -19,19 +14,11 @@ function flash_stampede:OnSpellStart()
 	EmitSoundOn( "Hero_Centaur.Stampede.Cast", self:GetCaster() )
 end
 
-if modifier_flash_stampede == nil then modifier_flash_stampede = class({}) end
+modifier_flash_stampede = class({})
 
-function modifier_flash_stampede:IsPurgable()
-    return false
-end
-
-function modifier_flash_stampede:GetStatusEffectName()
-	return "particles/status_fx/status_effect_alacrity.vpcf"
-end
-
-function modifier_flash_stampede:StatusEffectPriority()
-	return 1000
-end
+function modifier_flash_stampede:IsPurgable() return false end
+function modifier_flash_stampede:GetStatusEffectName() return "particles/status_fx/status_effect_alacrity.vpcf" end
+function modifier_flash_stampede:StatusEffectPriority()	return 1000 end
 
 function modifier_flash_stampede:OnCreated( kv )
     self.htable = {}
@@ -44,7 +31,7 @@ function modifier_flash_stampede:OnCreated( kv )
       if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "flash_custom") == true then
         local nFXIndex = ParticleManager:CreateParticle( "particles/hero_flash/flash_custom_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
         self:AddParticle( nFXIndex, false, false, -1, false, true )
-      end 
+      end
   	end
 end
 
@@ -61,8 +48,7 @@ function modifier_flash_stampede:OnIntervalThink()
             dur = 3
           end
           self:SetDuration(self:GetRemainingTime() + dur, true)
-          local agility = self:GetCaster():GetAgility()
-          ApplyDamage({attacker = self:GetCaster(), victim = target, damage = agility*self:GetAbility():GetSpecialValueFor("strength_damage"), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_PHYSICAL})
+          ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetCaster():GetAgility() * self:GetAbility():GetSpecialValueFor("agility_damage"), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_PHYSICAL})
           self.htable[target] = true
        end
      end
@@ -75,45 +61,5 @@ function modifier_flash_stampede:OnDestroy()
   end
 end
 
-
-function modifier_flash_stampede:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
-	}
-
-	return funcs
-end
-
-function modifier_flash_stampede:GetModifierMoveSpeed_Absolute( params )
-	return 950
-end
-
-if modifier_flash_stampede_passive == nil then modifier_flash_stampede_passive = class({}) end
-
-function modifier_flash_stampede_passive:IsHidden()
-   return false
-end
-
-function modifier_flash_stampede_passive:IsPurgable()
-   return false
-end
-
-function modifier_flash_stampede_passive:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-    MODIFIER_PROPERTY_MOVESPEED_MAX
-	}
-
-	return funcs
-end
-
-function modifier_flash_stampede_passive:GetModifierMoveSpeed_Limit( params )
-	return 11500
-end
-
-function modifier_flash_stampede_passive:GetModifierMoveSpeed_Max( params )
-	return 11500
-end
-
-function flash_stampede:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function modifier_flash_stampede:DeclareFunctions()	return { MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE } end
+function modifier_flash_stampede:GetModifierMoveSpeed_Absolute() return self:GetAbility():GetSpecialValueFor("speed") end

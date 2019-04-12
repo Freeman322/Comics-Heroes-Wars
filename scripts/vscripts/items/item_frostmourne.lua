@@ -137,7 +137,7 @@ function modifier_item_frostmourne:OnAttackLanded (params)
             end
 
             if self:GetParent():IsIllusion() then return nil end
-            
+
             EmitSoundOn ("Hero_Ancient_Apparition.Attack", params.target)
             ApplyDamage ( { attacker = hAbility:GetCaster (), victim = params.target, ability = hAbility, damage = cold_attack_damage, damage_type = DAMAGE_TYPE_PURE })
         end
@@ -156,7 +156,7 @@ function modifier_item_frostmourne:ReincarnateTime (params)
 end
 
 function modifier_item_frostmourne:Reincarnate()
-    if IsServer() then 
+    if IsServer() then
         -- spend resources
         self:GetAbility():UseResources(true, false, true)
 
@@ -195,7 +195,7 @@ function modifier_item_frostmourne:Reincarnate()
 
         -- play sound
         EmitSoundOn( sound_cast, self:GetParent() )
-    end 
+    end
 end
 
 if modifier_item_frostmourne_slowing == nil then
@@ -239,7 +239,7 @@ function modifier_item_frostmourne_slowing:GetModifierMoveSpeedBonus_Percentage 
     return hAbility:GetSpecialValueFor ("cold_movement_speed")
 end
 
-function item_frostmourne:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function item_frostmourne:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
 
 if not modifier_item_frostmourne_cooldown_dummy then modifier_item_frostmourne_cooldown_dummy = class({}) end
 

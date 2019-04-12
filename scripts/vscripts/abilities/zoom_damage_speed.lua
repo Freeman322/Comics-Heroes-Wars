@@ -1,5 +1,4 @@
 LinkLuaModifier( "modifier_zoom_damage_speed", "abilities/zoom_damage_speed.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_zoom_damage_speed_caster", "abilities/zoom_damage_speed.lua", LUA_MODIFIER_MOTION_NONE )
 
 zoom_damage_speed = class({})
 
@@ -18,33 +17,34 @@ function zoom_damage_speed:OnSpellStart()
 	EmitSoundOn( "Hero_Invoker.ColdSnap", hCaster )
 	EmitSoundOn( "Hero_Invoker.ColdSnap.Cast", hTarget )
 
-	local caster_as = hCaster:GetIdealSpeed()
-
-	local damage = caster_as * self:GetSpecialValueFor("damage")/100
-
-	if damage > 2000 then
-		damage = 2000 
+	local caster_ms = hCaster:GetIdealSpeed()
+	if caster_ms > 1000 then
+		caster_ms = 1000
 	end
+print (caster_ms)
+	local damage = caster_ms * self:GetSpecialValueFor("damage") / 100
 
-	hTarget:AddNewModifier(hCaster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun")})
-	
-	local damageTable = {
+	hTarget:AddNewModifier(hCaster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
+
+	ApplyDamage({
 		victim = hTarget,
 		attacker = hCaster,
 		damage = damage,
 		damage_type = DAMAGE_TYPE_MAGICAL,
-		ability = self,
-	}
-	ApplyDamage(damageTable)
+		ability = self
+	})
 
 
-	if hTarget:GetHealth() <= 0 then
-		self:GetCaster():SetBaseMoveSpeed(self:GetCaster():GetBaseMoveSpeed() + 5)
-		hTarget:SetBaseMoveSpeed(hTarget:GetBaseMoveSpeed() - 5)
+	if hTarget:IsRealHero() then
+		if hTarget:GetHealth() <= 0 then
+			hCaster:SetBaseMoveSpeed(hCaster:GetBaseMoveSpeed() + self:GetSpecialValueFor("speed_steal"))
+			hTarget:SetBaseMoveSpeed(hTarget:GetBaseMoveSpeed() - self:GetSpecialValueFor("speed_steal"))
+		end
 	end
+
 end
 
 function zoom_damage_speed:GetAbilityTextureName()
 	if self:GetCaster():HasModifier("modifier_doomsday_clock") then return "custom/reverse_speed_entire_speed" end
-	return self.BaseClass.GetAbilityTextureName(self) 
+	return self.BaseClass.GetAbilityTextureName(self)
 end

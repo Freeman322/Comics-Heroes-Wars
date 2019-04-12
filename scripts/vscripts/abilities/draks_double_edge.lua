@@ -6,10 +6,10 @@ local hTarget = self:GetCursorTarget()
 				if not hTarget:TriggerSpellAbsorb( self ) then
 					local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), hTarget:GetAbsOrigin(), self:GetCaster(), self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
 						for _, target in pairs(enemies) do
-								local damage = self:GetSpecialValueFor("edge_damage") + self:GetCaster():GetStrength()*self:GetSpecialValueFor("damage_per_strength")
-							
+								local damage = self:GetSpecialValueFor("edge_damage") + self:GetCaster():GetStrength() * self:GetSpecialValueFor("damage_per_strength")
+
 								if target ~= hTarget then
-									damage = damage * (self:GetSpecialValueFor("damage_pct" / 100))
+									damage = damage * 1.25
 								end
 
 								local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/centaur/dc_centaur_double_edge/_dc_centaur_double_edge.vpcf", PATTACH_CUSTOMORIGIN, nil );

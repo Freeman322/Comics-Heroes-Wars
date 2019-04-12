@@ -4,7 +4,7 @@ function iron_heat_missile:OnSpellStart()
 	local radius = self:GetSpecialValueFor( "radius" )
 
 	local particle = "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
-	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "dark_custom") == true then particle = "particles/hero_ironman/iron_rockets.vpcf" end 
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "dark_custom") == true then particle = "particles/hero_ironman/iron_rockets.vpcf" end
 
 	local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false )
 	if #targets > 0 then
@@ -47,10 +47,12 @@ function iron_heat_missile:OnProjectileHit( hTarget, vLocation )
 		}
 
 		ApplyDamage( damage )
+		if self:GetCaster():HasTalent("special_bonus_unique_iron_man") then
+			hTarget:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = self:GetSpecialValueFor("talent_stun_duration")})
+		end
 	end
 
 	return true
 end
 
-function iron_heat_missile:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function iron_heat_missile:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

@@ -14,7 +14,6 @@ end
 modifier_item_force_boots_passive = class({})
 
 function modifier_item_force_boots_passive:IsHidden () return true end
-
 function modifier_item_force_boots_passive:DeclareFunctions ()
     return {
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,

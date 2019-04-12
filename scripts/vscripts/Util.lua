@@ -70,11 +70,11 @@ function Util:DeleteEconItem(data)
 end
 
 function Util:GetHeroID( hero_name )
-  if Util.heroes_ids then 
+  if Util.heroes_ids then
     for k, hero in pairs(Util.heroes_ids) do
-      if hero["name"] == hero_name then return tonumber(hero["id"]) end 
+      if hero["name"] == hero_name then return tonumber(hero["id"]) end
     end
-  end 
+  end
   return nil
 end
 
@@ -86,7 +86,7 @@ function Util:OnItemPickUp( event )
     if event.itemname == "item_bag_of_gold" then
       PlayerResource:ModifyGold( owner:GetPlayerID(), r, true, 0 )
       SendOverheadEventMessage( owner, OVERHEAD_ALERT_GOLD, owner, r, nil )
-      UTIL_Remove( item ) 
+      UTIL_Remove( item )
     end
   end)
 end
@@ -106,13 +106,13 @@ function Util:GetAllHeroesCMMode()
 
   for k,v in pairs(path) do
       local hero = v["override_hero"] or k
-      if hero then 
+      if hero then
         if v["CMDisabled"] == nil and v["HeroDisabled"] == nil then
           table.insert( heroes, hero )
         end
       end
   end
-  
+
   return heroes
 end
 
@@ -122,29 +122,29 @@ function Util:GetAllHeroesCMModeDisabled()
 
   for k,v in pairs(path) do
       local hero = v["override_hero"] or k
-      if hero then 
+      if hero then
         if v["CMDisabled"] or v["HeroDisabled"] then
           table.insert( heroes, hero )
         end
       end
   end
-  
+
   return heroes
 end
 
-function Util:GetHeroList()    
+function Util:GetHeroList()
     local path = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
     local heroes = CustomNetTables:GetTableValue("players", "heroes")
-    
+
     local result = {}
 
     for k,v in pairs(path) do
         local hero = v["override_hero"] or k
-        if hero and v["HeroDisabled"] == nil then 
+        if hero and v["HeroDisabled"] == nil then
           result[hero] = v["AttributePrimary"]
         end
     end
-    
+
     return result
 end
 
@@ -211,7 +211,7 @@ end
 
 function Util:GetItemForHero(def_id)
   for k, v in pairs(Util.econs) do
-    if(tostring(v["def_id"])) == tostring(def_id) then 
+    if(tostring(v["def_id"])) == tostring(def_id) then
       return v["hero"]
     end
   end
@@ -221,7 +221,7 @@ end
 
 function Util:GetItemName(def_id)
   for k, v in pairs(Util.econs) do
-    if(tostring(v["def_id"])) == tostring(def_id) then 
+    if(tostring(v["def_id"])) == tostring(def_id) then
       return v["item"]
     end
   end
@@ -231,7 +231,7 @@ end
 
 function Util:PlayerHasAdminRules(pID)
   local data = CustomNetTables:GetTableValue("players", "stats")
-  if data and data[tostring(pID)] then 
+  if data and data[tostring(pID)] then
     return data[tostring(pID)].status == "2"
   end
 
@@ -259,31 +259,31 @@ function Util:_EquipItem(hero, items)
   if __wearables == nil then __wearables = LoadKeyValues("scripts/items/wearables.kv") end
 
   local used_slots = {}
-  hero.wearables = {} 
+  hero.wearables = {}
   hero.modifiers = {}
   hero.particles = {}
-  local hero_slots = __wearables[hero:GetUnitName()] 
-  if hero_slots then 
+  local hero_slots = __wearables[hero:GetUnitName()]
+  if hero_slots then
     for _slot, slot in pairs(hero_slots) do
       used_slots[_slot] = false
       for __index, user_item in pairs(items) do
-        if slot[user_item] ~= nil then 
+        if slot[user_item] ~= nil then
           Util:EquipItemData(hero, slot[user_item], _slot)
           used_slots[_slot] = true
           break
-        end        
+        end
       end
     end
     for _i, _bool in pairs(used_slots) do
       if not _bool then
-        if hero_slots[_i]["__default"] then 
+        if hero_slots[_i]["__default"] then
           Util:EquipItemData(hero, hero_slots[_i]["__default"], _i)
         end
       end
     end
-    if not items then  
+    if not items then
       for _slot, slot in pairs(hero_slots) do
-        if slot["__default"] then 
+        if slot["__default"] then
           Util:EquipItemData(hero, slot["__default"], _slot)
         end
       end
@@ -292,13 +292,13 @@ function Util:_EquipItem(hero, items)
 end
 
 function Util:ParseRenderColor( color, hero )
-  if color == "black" then hero:SetRenderColor(0, 0, 0) end 
-  if color == "gold" then hero:SetRenderColor(255, 215, 0) end 
+  if color == "black" then hero:SetRenderColor(0, 0, 0) end
+  if color == "gold" then hero:SetRenderColor(255, 215, 0) end
 end
 
 function Util:EquipItemData(hero, item_data, slot)
   local econ_params = item_data
-  if econ_params["model"] then 
+  if econ_params["model"] then
     hero:SetOriginalModel(econ_params["model"])
   end
   if econ_params["models"] ~= nil then
@@ -306,24 +306,24 @@ function Util:EquipItemData(hero, item_data, slot)
       local _econ = SpawnEntityFromTableSynchronous("prop_dynamic", {model = model["model"]})
       _econ:FollowEntity(hero, true)
       hero.wearables[slot] = _econ
-      if model["material"] then     
+      if model["material"] then
         _econ:SetMaterialGroup(tostring(model["material"]))
       end
-      if model["particles"] ~= nil then 
+      if model["particles"] ~= nil then
         for __index, particle in pairs(model["particles"]) do
           local _particle = ParticleManager:CreateParticle( particle["particle"], PATTACH_ABSORIGIN_FOLLOW, _econ )
           table.insert( hero.particles , _particle )
           if particle["ControlPoints"] ~= nil then
             for _point, point_params in pairs(particle["ControlPoints"]) do
               ParticleManager:SetParticleControlEnt( _particle, tonumber(_point), _econ, PATTACH_POINT_FOLLOW, point_params, _econ:GetOrigin(), true )
-            end 
-          end 
+            end
+          end
         end
       end
     end
   end
 
-  if econ_params["render"] then Util:ParseRenderColor(econ_params["render"], hero) end 
+  if econ_params["render"] then Util:ParseRenderColor(econ_params["render"], hero) end
 
   if econ_params["projectile"] ~= nil then
     hero:SetRangedProjectileName(econ_params["projectile"]["particle"])
@@ -335,8 +335,8 @@ function Util:EquipItemData(hero, item_data, slot)
       if particle["ControlPoints"] ~= nil then
         for _point, point_params in pairs(particle["ControlPoints"]) do
           ParticleManager:SetParticleControlEnt( _particle, tonumber(_point), hero, PATTACH_POINT_FOLLOW, point_params["attach_point"] , hero:GetOrigin(), true )
-        end 
-      end        
+        end
+      end
     end
   end
   if econ_params["modifiers"] ~= nil then
@@ -346,10 +346,10 @@ function Util:EquipItemData(hero, item_data, slot)
       hero.modifiers[slot] = mod
     end
   end
-  if econ_params["material"] then 
+  if econ_params["material"] then
     hero:SetMaterialGroup(tostring(econ_params["material"]))
   end
-  if econ_params["ambient"] then 
+  if econ_params["ambient"] then
     StartSoundEvent(econ_params["ambient"], hero)
   end
 end
@@ -357,7 +357,7 @@ end
 function Util:OnHeroInGame(hero)
     LinkLuaModifier("modifier_hero_selection", "modifiers/modifier_hero_selection.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_respawn_time", "modifiers/modifier_respawn_time.lua", LUA_MODIFIER_MOTION_NONE)
-    
+
     if hero:GetUnitName() == "npc_dota_hero_wisp" then
       hero:SetModelScale(0.001)
       hero:AddNewModifier(hero, nil, "modifier_hero_selection", nil)
@@ -371,7 +371,7 @@ function Util:OnHeroInGame(hero)
 
     if hero:GetPrimaryAttribute() == 2 and hero:GetUnitName() ~= "npc_dota_hero_silencer" then hero:AddNewModifier(hero, hero:GetAbilityByIndex(0), "modifier_silencer_int_steal", nil) end
 
-    if not hero:HasModifier("modifier_kill") and not hero:IsIllusion() and not hero:IsTempestDouble() then 
+    if not hero:HasModifier("modifier_kill") and not hero:IsIllusion() and not hero:IsTempestDouble() then
       hero:AddNewModifier(hero, hero:GetAbilityByIndex(0), "modifier_respawn_time", nil)
 
       --[[ParticleManager:CreateParticleForPlayer("particles/rain_fx/econ_moonlight.vpcf", PATTACH_EYES_FOLLOW, hero, hero:GetPlayerOwner())
@@ -389,7 +389,7 @@ function Util:OnHeroInGame(hero)
             ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
             ParticleManager:ReleaseParticleIndex(nFXIndex)
           end)
-      end 
+      end
 
       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "icewrack_wolf") == true then
         PrecacheUnitByNameAsync("npc_dota_companion", function()
@@ -404,7 +404,7 @@ function Util:OnHeroInGame(hero)
           ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
           ParticleManager:ReleaseParticleIndex(nFXIndex)
         end)
-      end 
+      end
 
       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "otto_dragon") == true then
           PrecacheUnitByNameAsync("npc_dota_companion", function()
@@ -423,7 +423,7 @@ function Util:OnHeroInGame(hero)
           ParticleManager:SetParticleControl( nFXIndex, 16, Vector(1, 0, 0) )
           ParticleManager:ReleaseParticleIndex(nFXIndex)
           end)
-      end 
+      end
 
       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "argentum_swoedsmith") == true then
         PrecacheUnitByNameAsync("npc_dota_companion", function()
@@ -433,16 +433,22 @@ function Util:OnHeroInGame(hero)
           unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
           unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/heroes/hero_elsa/elsa.vmdl"})
         end)
-      end 
+      end
     end
 
     Util:UpdateWearables(hero, hero:GetPlayerOwnerID())
 
-    ----if stats.has_plus(hero:GetPlayerOwnerID()) then stats.request_hero_data(hero:GetUnitName()) end 
-  
+    ----if stats.has_plus(hero:GetPlayerOwnerID()) then stats.request_hero_data(hero:GetUnitName()) end
+
     if hero:GetUnitName() == "npc_dota_hero_pudge" then
       if hero:HasAbility("pudge_flesh_heap_lua") then
         hero:FindAbilityByName("pudge_flesh_heap_lua"):SetLevel(1)
+      end
+    end
+
+    if hero:GetUnitName() == "npc_dota_hero_cosmos" then
+      if hero:HasAbility("cosmos_jumper") then
+        hero:FindAbilityByName("cosmos_jumper"):SetLevel(1)
       end
     end
 
@@ -488,10 +494,14 @@ function Util:OnHeroInGame(hero)
         ParticleManager:SetParticleControl( wraith_donat2, 6, Vector(100, 100, 0) )
         Attachments:AttachProp(hero, "attach_crown", "models/heroes/hero_tzeentch/tzeench_chaos_god_arcana/chaos_god_crown.vmdl", 1)
       end
+
+      if hero:HasAbility("tzeentch_warp_god") then
+        hero:FindAbilityByName("tzeentch_warp_god"):SetLevel(1)
+      end
     end
     if hero:GetUnitName() == "npc_dota_hero_drow_ranger" then
       Attachments:AttachProp(hero, "attach_attack1", "models/items/windrunner/rainmaker_bow/rainmaker_bow.vmdl", 1)
-      if PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID()) == 77291876 then hero:SetMaterialGroup("blue") end 
+      if PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID()) == 77291876 then hero:SetMaterialGroup("blue") end
     end
     if hero:GetUnitName() == "npc_dota_hero_bristleback" then
       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "whispers_of_the_dead") == true then
@@ -606,7 +616,7 @@ function Util:OnHeroInGame(hero)
           local belt = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_daredevil/econs/armor/daredevil_cape.vmdl"})
           belt:FollowEntity(hero, true)
           belt:SetRenderColor(220, 20, 60)
-        else 
+        else
           local belt = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/antimage/pw_tustarkuri_belt/antimage_belt_lod0.vmdl"})
           belt:FollowEntity(hero, true)
           belt:SetRenderColor(220, 20, 60)
@@ -874,7 +884,7 @@ function Util:OnHeroInGame(hero)
         mask:FollowEntity(hero, true)
 
         ParticleManager:CreateParticle( "particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      
+
         local khan_donat = ParticleManager:CreateParticle( "particles/econ/items/lion/fish_stick/lion_fish_stick_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
         ParticleManager:SetParticleControlEnt( khan_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
         ParticleManager:SetParticleControlEnt( khan_donat, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
@@ -1024,7 +1034,7 @@ function Util:OnHeroInGame(hero)
       elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "golden_skadi") == true then
         local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/golden_barb_of_skadi/golden_barb_of_skadi.vmdl"})
         mask1:FollowEntity(hero, true)
-        
+
         local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deep_sea_dragoon_head/deep_sea_dragoon_head.vmdl"})
         mask:FollowEntity(hero, true)
         local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deepscoundrel_back/deepscoundrel_back.vmdl"})
@@ -1065,7 +1075,7 @@ function Util:OnHeroInGame(hero)
     if hero:GetUnitName() == "npc_dota_hero_spirit_breaker" then
       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "deadshot") == false then
         Attachments:AttachProp(hero, "attach_attack2", "models/deathstroke/weapon.vmdl", 1)
-      end 
+      end
     end
     if hero:GetUnitName() == "npc_dota_hero_lone_druid" then
       local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/earth_spirit/earth_spirit_arms.vmdl"})
@@ -1337,7 +1347,7 @@ function Util:OnHeroInGame(hero)
       elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "king_thanos") and not hasCosmetic then
         LinkLuaModifier("modifier_king_thanos", "modifiers/modifier_king_thanos.lua", LUA_MODIFIER_MOTION_NONE)
         hero:AddNewModifier(hero, nil, "modifier_king_thanos", nil)
-        
+
         local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/econs/king_thanos.vmdl"})
         mask2:FollowEntity(hero, true)
 
@@ -1345,7 +1355,7 @@ function Util:OnHeroInGame(hero)
       else
         SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/weap/weapon.vmdl"}):FollowEntity(hero, true)
       end
-      
+
     end
     if hero:GetUnitName() == "npc_dota_hero_shadow_demon" then
       LinkLuaModifier("modifier_sargeras_effect", "modifiers/modifier_sargeras_effect.lua", LUA_MODIFIER_MOTION_NONE)
@@ -1565,7 +1575,7 @@ function CDOTA_BaseNPC:WillReflectAnySpell()
     "modifier_roshan_spell_block"
   }
   for _, modifier in pairs(modifiersList) do
-    if self:HasModifier(modifier) then return true end 
+    if self:HasModifier(modifier) then return true end
   end
   return false
 end
@@ -1577,10 +1587,10 @@ end
 
 function CDOTA_Ability_Lua:IsIgnoreCooldownReduction()
   if Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] ~= nil then
-    if Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == "1" or Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == 1 then 
+    if Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == "1" or Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == 1 then
       return true
     end
-  end 
+  end
 
   return false
 end
@@ -1595,7 +1605,7 @@ end
 function Util:FindTalentScriptFile(talentName)
   if Util.abilities and Util.abilities[talentName] and Util.abilities[talentName]["BaseClass"] == "special_bonus_undefined" then
     return Util.abilities[talentName]["ScriptFile"]
-  end 
+  end
 
   return nil
 end
@@ -1682,8 +1692,8 @@ function CDOTA_BaseNPC:CanReincarnate()
     "item_frostmourne"
   }
   for _, item in pairs(items) do
-    if self:FindItemInInventory(item) then 
-      if self:FindItemInInventory(item):IsCooldownReady() then 
+    if self:FindItemInInventory(item) then
+      if self:FindItemInInventory(item):IsCooldownReady() then
         return true
       end
     end
@@ -1714,7 +1724,7 @@ function Util:SetupConsole()
     Convars:RegisterCommand("ban", function(command, userid )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then  
+        if Util:PlayerHasAdminRules(pID) then
           local playerName = tostring(PlayerResource:GetPlayerName(tonumber(userid)))
           local msg =  playerName .. " left the game. (Account is untrusted)"
           GameRules:SendCustomMessage(msg, 0, 0)
@@ -1736,8 +1746,8 @@ function Util:SetupConsole()
     end, "Permanently ban a user with specific id", 0)
 
     Convars:RegisterCommand("clients_status", function()
-      pcall(function() for i = 0, DOTA_MAX_PLAYERS do 
-        if PlayerResource:IsValidPlayerID(i) then 
+      pcall(function() for i = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(i) then
           local playerName = tostring(PlayerResource:GetPlayerName(i))
           GameRules:printd(playerName .. " as player ID: " .. i, Convars:GetCommandClient():GetPlayerID())
         end
@@ -1746,7 +1756,7 @@ function Util:SetupConsole()
 
     Convars:RegisterCommand("godmode", function(command, statement )
       local hero = Convars:GetCommandClient()
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         PlayerResource:GetPlayer(tonumber(Convars:GetCommandClient():GetPlayerID())):GetAssignedHero():SetGodeMode(statement)
       else
         Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -1755,7 +1765,7 @@ function Util:SetupConsole()
 
     Convars:RegisterCommand("demigod", function(command, statement )
       local hero = Convars:GetCommandClient()
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         PlayerResource:GetPlayer(tonumber(Convars:GetCommandClient():GetPlayerID())):GetAssignedHero():SetDemiGodeMode(statement)
       else
         Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -1764,7 +1774,7 @@ function Util:SetupConsole()
 
     Convars:RegisterCommand("givegold", function(command, player, ammount )
       local pID = Convars:GetCommandClient():GetPlayerID()
-      if Util:PlayerHasAdminRules(pID) then  
+      if Util:PlayerHasAdminRules(pID) then
         PlayerResource:ModifyGold(tonumber(player), tonumber(ammount), true, DOTA_ModifyGold_Unspecified)
       else
         Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -1772,7 +1782,7 @@ function Util:SetupConsole()
     end, "Set gold", 0)
 
     Convars:RegisterCommand("levelup", function(command, player, ammount )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         local hero = PlayerResource:GetPlayer(tonumber(player)):GetAssignedHero()
         for i = 1, tonumber(ammount) do
           hero:HeroLevelUp(true)
@@ -1783,7 +1793,7 @@ function Util:SetupConsole()
     end, "Set hero level under specific id", 0)
 
     Convars:RegisterCommand("killallinradius", function(command, radius )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         local data = {
           radius = tonumber(radius),
           hero = Convars:GetCommandClient():entindex()
@@ -1795,7 +1805,7 @@ function Util:SetupConsole()
     end, "Kill all in radius", 0)
 
     Convars:RegisterCommand("killplayer", function(command, player )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         if PlayerResource:IsValidPlayerID(tonumber(player)) then
           local hero = PlayerResource:GetPlayer(tonumber(player)):GetAssignedHero()
           if hero then
@@ -1808,7 +1818,7 @@ function Util:SetupConsole()
     end, "Kill player under specific pid", 0)
 
     Convars:RegisterCommand("giveitem", function(command, pid, item )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         if PlayerResource:IsValidPlayerID(tonumber(pid)) then
           local hero = PlayerResource:GetPlayer(tonumber(pid)):GetAssignedHero()
           local item_ = CreateItem(tostring(item), hero, hero)
@@ -1820,7 +1830,7 @@ function Util:SetupConsole()
     end, "Give item for player", 0)
 
     Convars:RegisterCommand("giveitemtoall", function(command, item )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         local heroes = HeroList:GetAllHeroes()
         for k, unit in pairs(heroes) do
           local _item = CreateItem(tostring(item), unit, unit)
@@ -1832,7 +1842,7 @@ function Util:SetupConsole()
     end, "Give item for all", 0)
 
     Convars:RegisterCommand("killall", function(command, item )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         local heroes = HeroList:GetAllHeroes()
         for k, unit in pairs(heroes) do
           if unit ~= hero then
@@ -1845,7 +1855,7 @@ function Util:SetupConsole()
     end, "Kill all", 0)
 
     Convars:RegisterCommand("killallally", function(command )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         local heroes = HeroList:GetAllHeroes()
         for k, unit in pairs(heroes) do
           if unit ~= hero and unit:GetTeamNumber() == Convars:GetCommandClient():GetTeamNumber() then
@@ -1858,7 +1868,7 @@ function Util:SetupConsole()
     end, "Kill all allies", 0)
 
     Convars:RegisterCommand("killallenemy", function(command )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         local heroes = HeroList:GetAllHeroes()
         for k, unit in pairs(heroes) do
           if unit ~= hero and unit:GetTeamNumber() ~= Convars:GetCommandClient():GetTeamNumber() then
@@ -1871,7 +1881,7 @@ function Util:SetupConsole()
     end, "Kill all enemy", 0)
 
     Convars:RegisterCommand("refresh", function(command)
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         PlayerResource:GetPlayer(tonumber(Convars:GetCommandClient():GetPlayerID())):GetAssignedHero():RefreshUnit()
       else
         Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
@@ -1879,7 +1889,7 @@ function Util:SetupConsole()
     end, "Refresh", 0)
 
     Convars:RegisterCommand("createunit", function(command, name )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         PrecacheUnitByNameAsync(name, function()
           CreateUnitByName( tostring(name), Convars:GetCommandClient():GetAssignedHero():GetAbsOrigin(), true, Convars:GetCommandClient(), Convars:GetCommandClient():GetOwner(), Convars:GetCommandClient():GetTeamNumber()):SetControllableByPlayer(Convars:GetCommandClient():GetPlayerID(), false)
         end)
@@ -1889,7 +1899,7 @@ function Util:SetupConsole()
     end, "Create unit", 0)
 
     Convars:RegisterCommand("wingame", function(command, team )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         if tonumber(team) == DOTA_TEAM_GOODGUYS then
           GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
         else
@@ -1902,7 +1912,7 @@ function Util:SetupConsole()
 
 
     Convars:RegisterCommand("setteam", function(command, palyer, team )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then  
+      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
         PlayerResource:GetPlayer(tonumber(palyer)):GetAssignedHero():SetTeam(tonumber(team))
       else
         Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
@@ -1912,11 +1922,11 @@ function Util:SetupConsole()
     Convars:RegisterCommand("sethealth", function(command, health )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then  
+        if Util:PlayerHasAdminRules(pID) then
           local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then 
+          if unit and IsValidEntity(unit) then
             unit:SetBaseMaxHealth(tonumber(health))
-          end 
+          end
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
         end
@@ -1926,12 +1936,12 @@ function Util:SetupConsole()
     Convars:RegisterCommand("setdamage", function(command, damage )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then  
+        if Util:PlayerHasAdminRules(pID) then
           local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then 
+          if unit and IsValidEntity(unit) then
             unit:SetBaseDamageMin(tonumber(damage))
             unit:SetBaseDamageMax(tonumber(damage + 1))
-          end 
+          end
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
         end
@@ -1941,11 +1951,11 @@ function Util:SetupConsole()
     Convars:RegisterCommand("setmagicarmor", function(command, damage )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then  
+        if Util:PlayerHasAdminRules(pID) then
           local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then 
+          if unit and IsValidEntity(unit) then
             unit:SetBaseMagicalResistanceValue(tonumber(damage))
-          end 
+          end
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
         end
@@ -1955,11 +1965,11 @@ function Util:SetupConsole()
     Convars:RegisterCommand("setagi", function(command, agility )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then  
+        if Util:PlayerHasAdminRules(pID) then
           local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then 
+          if unit and IsValidEntity(unit) then
             unit:SetBaseAgility(tonumber(agility))
-          end 
+          end
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
         end
@@ -1969,11 +1979,11 @@ function Util:SetupConsole()
     Convars:RegisterCommand("setint", function(command, int )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then  
+        if Util:PlayerHasAdminRules(pID) then
           local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then 
+          if unit and IsValidEntity(unit) then
             unit:SetBaseIntellect(tonumber(int))
-          end 
+          end
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
         end
@@ -1983,11 +1993,11 @@ function Util:SetupConsole()
     Convars:RegisterCommand("setstr", function(command, str )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then  
+        if Util:PlayerHasAdminRules(pID) then
           local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then 
+          if unit and IsValidEntity(unit) then
             unit:SetBaseStrength(tonumber(str))
-          end 
+          end
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
         end
@@ -1997,11 +2007,11 @@ function Util:SetupConsole()
     Convars:RegisterCommand("addability", function(command, ability )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then  
+        if Util:PlayerHasAdminRules(pID) then
           local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then 
+          if unit and IsValidEntity(unit) then
             unit:AddAbility(ability)
-          end 
+          end
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
         end
@@ -2011,7 +2021,7 @@ function Util:SetupConsole()
     Convars:RegisterCommand("settime", function(command, time )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then  
+        if Util:PlayerHasAdminRules(pID) then
           GameRules:SetTimeOfDay(tonumber(time))
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -2022,8 +2032,8 @@ function Util:SetupConsole()
     Convars:RegisterCommand("replace_hero", function(command )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        
-        if PlayerResource:GetSteamAccountID(pID) == 246584391 or PlayerResource:GetSteamAccountID(pID) == 87670156 then  
+
+        if PlayerResource:GetSteamAccountID(pID) == 246584391 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
           PrecacheUnitByNameAsync( "npc_dota_hero_spirit_breaker", function()
             local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_spirit_breaker", 1000, 0)
             nHero:RespawnHero(false, false)
@@ -2036,8 +2046,8 @@ function Util:SetupConsole()
     Convars:RegisterCommand("test_get_data", function(command )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
-        
-        if PlayerResource:GetSteamAccountID(pID) == 87670156 then  
+
+        if PlayerResource:GetSteamAccountID(pID) == 87670156 then
           ---stats.test()
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -2063,26 +2073,26 @@ end
 
 function Util:CheckGameState()
   if GameRules.Players[DOTA_TEAM_GOODGUYS] then
-    local state = true   
+    local state = true
     for _, pID in pairs(GameRules.Players[DOTA_TEAM_GOODGUYS]) do
       if not PlayerResource:GetConnectionState(pID) >= DOTA_CONNECTION_STATE_DISCONNECTED then
         state = false break
       end
     end
 
-    if state then GameRules:EndGame(DOTA_TEAM_GOODGUYS) end 
-  end 
+    if state then GameRules:EndGame(DOTA_TEAM_GOODGUYS) end
+  end
 
   if GameRules.Players[DOTA_TEAM_BADGUYS] then
-    local state = true   
+    local state = true
     for _, pID in pairs(GameRules.Players[DOTA_TEAM_BADGUYS]) do
       if not PlayerResource:GetConnectionState(pID) >= DOTA_CONNECTION_STATE_DISCONNECTED then
         state = false break
       end
     end
 
-    if state then GameRules:EndGame(DOTA_TEAM_BADGUYS) end 
-  end 
+    if state then GameRules:EndGame(DOTA_TEAM_BADGUYS) end
+  end
 end
 
 function Util:GetPlayersForTeam(team)
@@ -2149,7 +2159,7 @@ function CDOTA_BaseNPC:CreateUnit(hCaster, duration)
   local double = CreateUnitByName( self:GetUnitName(), self:GetAbsOrigin(), true, self, self:GetOwner(), hCaster:GetTeamNumber())
   double:SetControllableByPlayer(hCaster:GetPlayerID(), false)
 
-  if self:IsHero() then 
+  if self:IsHero() then
     local caster_level = self:GetLevel()
     for i = 2, caster_level do
       double:HeroLevelUp(false)
@@ -2158,7 +2168,7 @@ function CDOTA_BaseNPC:CreateUnit(hCaster, duration)
 
     for ability_id = 0, 15 do
       local ability = double:GetAbilityByIndex(ability_id)
-      if ability then	
+      if ability then
         ability:SetLevel(self:GetAbilityByIndex(ability_id):GetLevel())
         if ability:GetName() == "dormammu_tempest_double" then
           ability:SetActivated(false)
@@ -2179,7 +2189,7 @@ function CDOTA_BaseNPC:CreateUnit(hCaster, duration)
     double:SetMaximumGoldBounty(0)
     double:SetMinimumGoldBounty(0)
     double:SetDeathXP(0)
-    double:SetAbilityPoints(0) 
+    double:SetAbilityPoints(0)
 
     double:SetHasInventory(false)
     double:SetCanSellItems(false)
@@ -2213,7 +2223,7 @@ function CDOTA_BaseNPC:CreateIllusion(caster, ability, duration)
 
   for ability_slot = 0, 15 do
     local individual_ability = self:GetAbilityByIndex(ability_slot)
-    if individual_ability ~= nil then 
+    if individual_ability ~= nil then
       local illusion_ability = illusion:FindAbilityByName(individual_ability:GetAbilityName())
       if illusion_ability ~= nil then
         illusion_ability:SetLevel(individual_ability:GetLevel())
@@ -2231,7 +2241,7 @@ function CDOTA_BaseNPC:CreateIllusion(caster, ability, duration)
   end
 
   illusion:AddNewModifier(caster, ability, "modifier_illusion", {duration = duration or 8, outgoing_damage = 100, incoming_damage = 100})
-  illusion:MakeIllusion()  
+  illusion:MakeIllusion()
 
   return illusion
 end
@@ -2242,7 +2252,7 @@ function Util:CreateCreep(unit_name, model, caster, kv, modifiers )
       unit:SetControllableByPlayer(caster:GetPlayerID(), false)
 
       if model then
-        unit:SetOriginalModel(model) 
+        unit:SetOriginalModel(model)
       end
 
       for _, mod in pairs(modifiers) do
@@ -2250,7 +2260,7 @@ function Util:CreateCreep(unit_name, model, caster, kv, modifiers )
       end
 
       FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), false)
-    
+
       return unit
     end)
 end
@@ -2277,9 +2287,9 @@ function Util:OnCosmeticItemUpdated( data )
     if GameRules.Globals.Inventories then
       if GameRules.Globals.Inventories[steam_id] then
         for _, item in pairs(GameRules.Globals.Inventories[steam_id]) do
-          if item["id"] == tostring(data["item"]) then 
+          if item["id"] == tostring(data["item"]) then
             local state = 1
-            if data["isRemove"] == 1 then 
+            if data["isRemove"] == 1 then
               state = 0
             end
             item["state"] = tostring(state)
@@ -2307,7 +2317,7 @@ function Util:vector_is_clockwise(v1, v2)
 end
 
 function CDOTA_Item:IsDroppableAfterDeath()
-  if Util.items and Util.items[self:GetName()] and Util.items[self:GetName()]["DropOnDeath"] then 
+  if Util.items and Util.items[self:GetName()] and Util.items[self:GetName()]["DropOnDeath"] then
     return true
   end
   return false
@@ -2318,7 +2328,7 @@ function CDOTA_Modifier_Lua:GetClass()
 end
 
 function CDOTA_Buff:IsDebuff()
-  return string.find(self:GetClass(), "debuff") ~= nil or string.find(self:GetClass(), "stun") ~= nil 
+  return string.find(self:GetClass(), "debuff") ~= nil or string.find(self:GetClass(), "stun") ~= nil
 end
 
 function Util:OnAbilityWasUpgraded( ability, unit ) end
@@ -2327,13 +2337,13 @@ function Util:OnModifierWasApplied( ability, unit, caster, modifier )
   if unit:HasModifier("modifier_fate_fatebind") and ability and caster ~= unit then
     local mod = unit:FindModifierByName("modifier_fate_fatebind")
     mod:OnModifierApplied({ability = ability, unit = unit, attacker = caster, modifier_name = modifier})
-  end 
+  end
 end
 
 function Util:LearnedAbility( params )
-  if params.abilityname and params.PlayerID and string.find(params.abilityname, "special_bonus") ~= nil then 
+  if params.abilityname and params.PlayerID and string.find(params.abilityname, "special_bonus") ~= nil then
     Talents:OnTalentLearned(params.PlayerID, params.abilityname)
-  end 
+  end
 end
 
 function CDOTA_BaseNPC:Heal_Engine(flHeal)
@@ -2345,7 +2355,7 @@ function CDOTABaseAbility:IsUltimate() return self:GetMaxLevel() <= 3 end
 function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbol)
   local pfxPath = string.format("particles/msg_fx/msg_%s.vpcf", pfx)
   local pidx = ParticleManager:CreateParticle(pfxPath, PATTACH_ABSORIGIN_FOLLOW, target) -- target:GetOwner()
-  
+
   local digits = 0
   if number ~= nil then
       digits = #tostring(number)
@@ -2366,13 +2376,13 @@ function Util:OnGauntletAbilitySelected( params )
   local hero = EntIndexToHScript(params.hero)
 
   local item = hero:FindItemInInventory("item_glove_of_the_creator")
-  if item then item:SelectAbility(params.ability) end 
+  if item then item:SelectAbility(params.ability) end
 end
 
 function CDOTAGamerules:EndGame(team)
 	local ancients = Entities:FindAllByClassname("npc_dota_fort")
 	for _, ancient in pairs(ancients) do
-		if (ancient:GetTeamNumber() == team) then ancient:ForceKill(false) return end 
+		if (ancient:GetTeamNumber() == team) then ancient:ForceKill(false) return end
 	end
 end
 
@@ -2399,7 +2409,7 @@ function CDOTA_BaseNPC:IsHasSuperStatus()
   local data = CustomNetTables:GetTableValue("players", "stats")
   local pID = self:GetPlayerOwnerID()
 
-  if data and data[tostring(pID)] then 
+  if data and data[tostring(pID)] then
     return data[tostring(pID)].shards == "1"
   end
 
@@ -2413,4 +2423,3 @@ function Util:Setup()
     ancient:AddNewModifier(ancient, nil, "modifier_fountain", nil)
   end
 end
-

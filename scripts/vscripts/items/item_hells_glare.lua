@@ -35,7 +35,7 @@ function modifier_item_hells_glare:IsPurgable()
 end
 
 function modifier_item_hells_glare:DeclareFunctions()
-    local funcs = {  
+    local funcs = {
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
@@ -67,7 +67,7 @@ function modifier_item_hells_glare:OnAttackLanded (params)
                 return 0
             end
             local target = params.target
-            if RollPercentage(self:GetAbility():GetSpecialValueFor("bash_chance")) and self:GetParent():HasModifier("modifier_item_hells_glare_cooldown") == false then 
+            if RollPercentage(self:GetAbility():GetSpecialValueFor("bash_chance")) and self:GetParent():HasModifier("modifier_item_hells_glare_cooldown") == false then
                 EmitSoundOn("DOTA_Item.SkullBasher", target)
                 target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("bash_duration")})
                 self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_hells_glare_cooldown", {duration = 5})

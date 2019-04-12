@@ -15,7 +15,7 @@ function kratos_axe_twrow:OnSpellStart()
 
 	local info = {
 		Ability = self,
-		vSpawnOrigin = self:GetCaster():GetOrigin(), 
+		vSpawnOrigin = self:GetCaster():GetOrigin(),
 		fStartRadius = WIDTH,
 		fEndRadius = WIDTH,
 		vVelocity = vDirection * SPEED,
@@ -37,8 +37,8 @@ function kratos_axe_twrow:OnSpellStart()
         Target = self:GetCursorTarget(),
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
     })
-    
-    self.nDamage = self:GetSpecialValueFor("damage_amp")
+
+    self.nDamage = self:GetSpecialValueFor("axe_damage")
 
     self.nDamagePerHit = self:GetSpecialValueFor("damage_amp")
 
@@ -47,7 +47,7 @@ function kratos_axe_twrow:OnSpellStart()
     end
 
     self.nProjID = ProjectileManager:CreateLinearProjectile( info )
-    
+
 	EmitSoundOn( "Hero_Beastmaster.Wild_Axes" , self:GetCaster() )
 end
 --------------------------------------------------------------------------------
@@ -61,13 +61,13 @@ function kratos_axe_twrow:OnProjectileHit( hTarget, vLocation )
 			attacker = self:GetCaster(),
 			damage = self.nDamage,
 			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = this,
+			ability = self
 		}
 
         ApplyDamage( damage )
 
         EmitSoundOn("Hero_Beastmaster.Attack", hTarget)
-        
+
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("duration") } )
 	end
 

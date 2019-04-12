@@ -1,9 +1,7 @@
 LinkLuaModifier("modifier_item_mind_gem", "items/item_mind_gem.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_mind_gem_active", "items/item_mind_gem.lua", LUA_MODIFIER_MOTION_NONE)
 
-if item_mind_gem == nil then
-	item_mind_gem = class({})
-end
+item_mind_gem = class({})
 
 function item_mind_gem:GetIntrinsicModifierName()
 	return "modifier_item_mind_gem"
@@ -16,6 +14,10 @@ function item_mind_gem:CastFilterResultTarget( hTarget )
 		end
 
 		if self:GetCaster() == hTarget then
+			return UF_FAIL_CUSTOM
+		end
+
+		if self:GetCaster():HasModifier("modifier_storm_spirit_ball_lightning") then
 			return UF_FAIL_CUSTOM
 		end
 
@@ -34,6 +36,9 @@ function item_mind_gem:GetCustomCastErrorTarget( hTarget )
 	if self:GetCaster() == hTarget then
 		return "#dota_hud_error_cant_cast_on_self"
 	end
+	if self:GetCaster():HasModifier("modifier_storm_spirit_ball_lightning") then
+		return "#dota_hud_error_cant_cast_in_ball_lightning"
+	end
 
 	return ""
 end
@@ -42,7 +47,7 @@ function item_mind_gem:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	if target ~= nil then
-		local particleName = "particles/econ/items/terrorblade/terrorblade_back_ti8/terrorblade_sunder_ti8.vpcf"	
+		local particleName = "particles/econ/items/terrorblade/terrorblade_back_ti8/terrorblade_sunder_ti8.vpcf"
 		local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, target )
 		ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
@@ -59,73 +64,42 @@ function item_mind_gem:OnSpellStart()
 	end
 end
 
-if modifier_item_mind_gem == nil then
-    modifier_item_mind_gem = class ( {})
-end
+modifier_item_mind_gem = class({})
 
-function modifier_item_mind_gem:IsHidden ()
-    return true
-end
-
-function modifier_item_mind_gem:IsPurgable()
-    return false
-end
-
-function modifier_item_mind_gem:DeclareFunctions ()
-    local funcs = {
+function modifier_item_mind_gem:IsHidden() return true end
+function modifier_item_mind_gem:IsPurgable() return false end
+function modifier_item_mind_gem:DeclareFunctions()
+    return {
+				MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+				MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_MANACOST_PERCENTAGE,
-        MODIFIER_PROPERTY_CASTTIME_PERCENTAGE 
-    }
-
-    return funcs
+        MODIFIER_PROPERTY_MANACOST_PERCENTAGE }
 end
 
-function modifier_item_mind_gem:GetModifierBonusStats_Intellect (params)
-    return self:GetAbility():GetSpecialValueFor ("bonus_intellect")
-end
+function modifier_item_mind_gem:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_strength") end
+function modifier_item_mind_gem:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("bonus_agility") end
+function modifier_item_mind_gem:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("bonus_intellect") end
+function modifier_item_mind_gem:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") end
+function modifier_item_mind_gem:GetModifierPercentageManacost() return self:GetAbility():GetSpecialValueFor("bonus_mana_cost") end
+function modifier_item_mind_gem:GetModifierPercentageCasttime() return self:GetAbility():GetSpecialValueFor("bonus_casttime") end
+modifier_item_mind_gem_active = class({})
 
-function modifier_item_mind_gem:GetModifierConstantManaRegen (params)
-    return self:GetAbility():GetSpecialValueFor ("bonus_mana_regen")
-end
-
-function modifier_item_mind_gem:GetModifierPercentageManacost (params)
-    return self:GetAbility():GetSpecialValueFor ("bonus_mana_cost")
-end
-
-function modifier_item_mind_gem:GetModifierPercentageCasttime (params)
-    return self:GetAbility():GetSpecialValueFor ("bonus_casttime")
-end
-
-if modifier_item_mind_gem_active == nil then modifier_item_mind_gem_active = class({}) end
-
-function modifier_item_mind_gem_active:IsPurgable()
-    return false
-end
+function modifier_item_mind_gem_active:IsPurgable() return false end
 
 function modifier_item_mind_gem_active:GetStatusEffectName()
 	return "particles/status_fx/status_effect_terrorblade_reflection.vpcf"
 end
 
---------------------------------------------------------------------------------
-
 function modifier_item_mind_gem_active:StatusEffectPriority()
 	return 1000
 end
-
---------------------------------------------------------------------------------
 
 function modifier_item_mind_gem_active:GetEffectName()
 	return "particles/units/heroes/hero_terrorblade/terrorblade_reflection_slow.vpcf"
 end
 
---------------------------------------------------------------------------------
-
-function modifier_item_mind_gem_active:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
-end
-
+function modifier_item_mind_gem_active:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 --------------------------------------------------------------------------------
 
 function modifier_item_mind_gem_active:GetModifierAura()
@@ -133,7 +107,7 @@ function modifier_item_mind_gem_active:GetModifierAura()
 end
 
 
-function modifier_item_mind_gem_active:OnCreated( params )
+function modifier_item_mind_gem_active:OnCreated()
     if IsServer() then
         EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Cast", self:GetParent())
 		local caster = self:GetParent()
@@ -149,12 +123,10 @@ end
 
 
 function modifier_item_mind_gem_active:CheckState()
-	local state = {
+	return {
 		[MODIFIER_STATE_SPECIALLY_DENIABLE] = true,
 		[MODIFIER_STATE_PROVIDES_VISION] = true
 	}
-
-	return state
 end
 
 function modifier_item_mind_gem_active:OnDestroy()

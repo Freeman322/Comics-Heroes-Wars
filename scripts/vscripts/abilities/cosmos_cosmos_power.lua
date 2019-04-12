@@ -23,7 +23,7 @@ function cosmos_cosmos_power:OnSpellStart()
                               Target = self:GetCursorTarget(),
                               iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
                          }
-                    
+
                          ProjectileManager:CreateTrackingProjectile( info )
 
                          EmitSoundOn("Hero_Abaddon.Curse.Proc", self:GetCaster())
@@ -38,7 +38,7 @@ end
 function cosmos_cosmos_power:OnProjectileHit( hTarget, vLocation )
      if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
 		EmitSoundOn( "Hero_Lich.IceAge.Damage", hTarget )
-          
+
           local debuff_dur = self:GetSpecialValueFor( "warp_duration" )
 
 		local damage = {
@@ -50,7 +50,7 @@ function cosmos_cosmos_power:OnProjectileHit( hTarget, vLocation )
 		}
 
           ApplyDamage( damage )
-          
+
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_cosmos_cosmos_power_target", { duration = debuff_dur } )
 	end
 
@@ -76,7 +76,7 @@ function modifier_cosmos_cosmos_power:OnAttackStart (params)
                          Target = params.target,
                          iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
                     }
-               
+
                     ProjectileManager:CreateTrackingProjectile( info )
 
                     EmitSoundOn("Hero_Abaddon.Curse.Proc", self:GetCaster())
@@ -86,7 +86,7 @@ function modifier_cosmos_cosmos_power:OnAttackStart (params)
              end
          end
      end
- 
+
      return 0
 end
 
@@ -97,14 +97,12 @@ function modifier_cosmos_cosmos_power_target:GetEffectAttachType() return PATTAC
 function modifier_cosmos_cosmos_power_target:GetAttributes () return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_cosmos_cosmos_power_target:DeclareFunctions ()
      local funcs = {
-          MODIFIER_PROPERTY_DISABLE_HEALING,
-          MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+       MODIFIER_PROPERTY_DISABLE_HEALING,
+       MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
      }
- 
+
      return funcs
  end
- 
+
  function modifier_cosmos_cosmos_power_target:GetDisableHealing(params) return 1 end
  function modifier_cosmos_cosmos_power_target:GetModifierMoveSpeedBonus_Percentage(params) return self:GetAbility():GetSpecialValueFor("slowing") end
- 
- 

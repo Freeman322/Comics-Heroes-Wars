@@ -45,7 +45,9 @@ function thor_ravage:OnSpellStart()
         target:AddNewModifier(self:GetCaster(), self, "modifier_thor_ravage_stun", {duration = self:GetSpecialValueFor("duration")})
 
         if self:GetCaster():HasScepter() then
-          self:GetCaster():PerformAttack(target, false, true, true, true, false, true, true)
+          self:GetCaster():PerformAttack(target, false, true, true, true, false, false, true)
+          self:GetCaster():PerformAttack(target, false, true, true, true, false, false, true)
+          self:GetCaster():PerformAttack(target, false, true, true, true, false, false, true)
         end
 
         local particle = ParticleManager:CreateParticle("particles/hero_zuus/zeus_immortal_thundergod.vpcf", PATTACH_WORLDORIGIN, target)
@@ -108,4 +110,3 @@ end
 
     return state
   end
-

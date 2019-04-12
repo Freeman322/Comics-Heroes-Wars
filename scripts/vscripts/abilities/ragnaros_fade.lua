@@ -61,22 +61,22 @@ function ragnaros_fade:OnSpellStart()
     ParticleManager:ReleaseParticleIndex( nFXIndex );
 
     ApplyDamage ( { attacker = hCaster, victim = hTarget, ability = self, damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
-   
+
     hCaster:GiveMana(mana)
 
     local player_id = hCaster:GetPlayerID()
     local caster_team = hCaster:GetTeam()
     local illusion = CreateUnitByName(hTarget:GetUnitName(), hTarget:GetAbsOrigin(  ), true, hCaster, nil, hCaster:GetTeamNumber())  --handle_UnitOwner needs to be nil, or else it will crash the game.
-    
+
     illusion:SetPlayerID(player_id)
     illusion:SetControllableByPlayer(player_id, true)
     illusion:AddNewModifier(hCaster, self, "modifier_illusion", {duration = duration, outgoing_damage = 1000, incoming_damage = 10})
 
     illusion:MakeIllusion()
 
-    if not hTarget:IsAlive() then 
+    if not hTarget:IsAlive() then
         hCaster:FindModifierByName(self:GetIntrinsicModifierName()):IncrementStackCount()
-    end 
+    end
 end
 
 modifier_ragnaros_fade_bonus = class({})
@@ -103,16 +103,15 @@ function modifier_ragnaros_fade_bonus:GetAttributes()
 end
 
 function modifier_ragnaros_fade_bonus:GetModifierBonusStats_Strength( params )
-    return self:GetStackCount()
+    return self:GetStackCount() * 5
 end
 
 function modifier_ragnaros_fade_bonus:GetModifierBonusStats_Intellect( params )
-    return self:GetStackCount()
+    return self:GetStackCount() * 5
 end
 
 function modifier_ragnaros_fade_bonus:GetModifierBonusStats_Agility( params )
-    return self:GetStackCount()
+    return self:GetStackCount() * 5
 end
 
-function ragnaros_fade:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function ragnaros_fade:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
