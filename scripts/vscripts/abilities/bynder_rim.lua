@@ -50,9 +50,9 @@ end
 function modifier_bynder_rim:GetMinHealth() return self:GetParent():GetHealth() end
 
 function modifier_bynder_rim:GetModifierIncomingDamage_Percentage()
- if self:GetCaster():HasScepter() then
-	 return self:GetAbility():GetSpecialValueFor("scepter_incoming_damage")
- end
+  if self:GetCaster():HasScepter() then
+    return self:GetAbility():GetSpecialValueFor("scepter_incoming_damage")
+  end
  return 0
 end
 
