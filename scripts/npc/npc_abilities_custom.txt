@@ -32810,7 +32810,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 200 300 400"
+		"AbilityDamage"				"80 160 240 320"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -33964,16 +33964,16 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
-		"AbilityDuration"				"4.5"
-		"AbilityCastPoint"				"2.0"
+		"AbilityCooldown"				"80 75 70"
+		"AbilityDuration"				"1.5 2 2.5"
+		"AbilityCastPoint"				"0.75"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"350 625 800"
+		"AbilityManaCost"				"300 450 600"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -33991,8 +33991,8 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"500 600 700"
+				"var_type"		"FIELD_INTEGER"
+				"radius"			"400 450 500"
 			}
 		}
 	}
@@ -34108,7 +34108,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"tooltip_duration"		"4.5 5.25 6.0"
+				"tooltip_duration"		"4.5 5.5 6.5"
 			}
 			"02"
 			{
@@ -34191,11 +34191,11 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40 30 20 10"
+		"AbilityCooldown"				"33 30 27 24"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 130 160 180"
+		"AbilityManaCost"				"85 100 115 130"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -34204,7 +34204,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"3 4 5 6"
+				"duration"			"2.75 3.5 4.25 5.0"
 			}
 			"02"
 			{
@@ -34214,12 +34214,12 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"				"90 140 180 230"
+				"damage"				"100 150 200 250"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"movespeed_slow_pct" "100"
+				"movespeed_slow_pct" "40"
 			}
 			"05"
 			{
@@ -34251,11 +34251,11 @@
 		"AbilityCastRange"				"650"
 		"AbilityCastPoint"				"0.35"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityDamage"				"130 210 340 420"
+		"AbilityDamage"				"130 175 220 265"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24"
+		"AbilityCooldown"				"42 39 36 33"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -34268,7 +34268,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"0.5 0.75 1.0 1.5"
+				"stun_duration"		"0.8 1.0 1.2 1.4"
 			}
 			"02"
 			{
@@ -34331,12 +34331,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_pool_damage_pct"		"9 11 13 15"
+				"mana_pool_damage_pct"		"7 8 9 10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"warp_duration"			"2.5"
+				"warp_duration"			"2"
 			}
 			"03"
 			{
@@ -34346,7 +34346,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slowing"					"-30 -45 -60 -75"
+				"slowing"					"-25 -35 -45 -55"
 			}
 		}
 	}
@@ -34404,6 +34404,94 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"value"						"500"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Puck: Phase Shift
+	//=================================================================================================================
+	"darkrider_alter_reverse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/darkrider_alter_reverse.lua"
+		"AbilityTextureName"			"custom/ghost_walk"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCastRange"				"500"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityChannelTime"			"2.5 3.0 3.5 4.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45"
+
+		"AbilityDamage"				"100 200 300 400"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		"precache"
+		{
+			"particle"				"particles/econ/items/wisp/wisp_relocate_channel_ti7.vpcf"
+			"particle"				"particles/units/heroes/hero_demonartist/demonartist_engulf_disarm/items2_fx/heavens_halberd_debuff.vpcf"
+			"particle"				"particles/status_fx/status_effect_sylph_wisp_fear.vpcf"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"channel"					"2.5 3.0 3.5 4.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"distance_ptc"				"4.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.25 0.5 0.75 1.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"					"400 500 600 700"
+			}
+		}
+
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"special_bonus_unique_infinity_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1.6"
 			}
 		}
 	}

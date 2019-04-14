@@ -26,6 +26,7 @@ end
 
 function modifier_ragnaros_shine_soul_passive:OnIntervalThink()
     local damage = self:GetAbility():GetSpecialValueFor("aura_damage")
+
     if self:GetCaster():HasTalent("special_bonus_unique_ragnaros") then
         damage = self:GetCaster():FindTalentValue("special_bonus_unique_ragnaros") + damage
     end
@@ -38,11 +39,10 @@ function modifier_ragnaros_shine_soul_passive:OnIntervalThink()
         ability = self:GetAbility()
     })
 
-    self:GetCaster():Heal(self:GetAbility():GetSpecialValueFor("aura_damage") * self:GetAbility():GetSpecialValueFor("bonus_vampirism"), self:GetAbility())
+    self:GetCaster():Heal(damage * (self:GetAbility():GetSpecialValueFor("bonus_vampirism") / 100), self:GetAbility())
 
-    local particle_lifesteal = "particles/items3_fx/octarine_core_lifesteal.vpcf"
-    local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
-    ParticleManager:SetParticleControl(lifesteal_fx, 0, caster:GetAbsOrigin())
+    local lifesteal_fx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+    ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetCaster():GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(lifesteal_fx)
 end
 

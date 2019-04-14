@@ -5401,29 +5401,34 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_strength"		"20"
+				"bonus_strength"				"20"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_agility"			"20"
+				"bonus_agility"				"20"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"bonus_intellect"			"80"
+				"bonus_intellect"				"80"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana_regen"			"10"
+				"bonus_mana_regen"				"10"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-					"mana_cost_decrease_pct"			"35"
+				"bonus_mana_cost"				"60"
 			}
 			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_casttime"				"50"
+			}
+			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"duration"					"5.0"

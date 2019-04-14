@@ -2025,7 +2025,7 @@ function Util:SetupConsole()
         
         if PlayerResource:GetSteamAccountID(pID) == 246584391 or PlayerResource:GetSteamAccountID(pID) == 87670156 then  
           PrecacheUnitByNameAsync( "npc_dota_hero_spirit_breaker", function()
-            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_spirit_breaker", 1000, 0)
+            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_spirit_breaker", 0, 0)
             nHero:RespawnHero(false, false)
           end)
         else

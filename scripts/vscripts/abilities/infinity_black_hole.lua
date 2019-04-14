@@ -24,11 +24,14 @@ function infinity_black_hole:GetManaCost (hTarget)
 end
 
 function infinity_black_hole:GetBehavior ()
-    return DOTA_ABILITY_BEHAVIOR_AOE +  DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_CHANNELLED
+    return DOTA_ABILITY_BEHAVIOR_AOE + DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_CHANNELLED
 end
 
 function infinity_black_hole:GetChannelTime()
-    return 4
+    local talent_val = IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_infinity_1") 
+    if talent_val then return self:GetSpecialValueFor("duration") + talent_val end 
+
+    return self:GetSpecialValueFor("duration")
 end
 
 function infinity_black_hole:OnSpellStart ()

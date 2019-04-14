@@ -80,19 +80,19 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"10"			// Physical protection.
-		"MagicalResistance"	  "100"			// Magical protection.
+		"ArmorPhysical"			"10"			// Physical protection.
+		"MagicalResistance"	 		 "100"			// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"0"			// Damage range min.
-		"AttackDamageMax"			"0"			// Damage range max.
-		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				  "1.5"		// Speed of attack.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"10"			// Damage range min.
+		"AttackDamageMax"			"12"			// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.85"		// Speed of attack.
 		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
-		"AttackRange"				   "700"		// Range within a target can be attacked.
+		"AttackAcquisitionRange"		"700"		// Range within a target can be acquired.
+		"AttackRange"				 "700"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1000"		// Speed of projectile.
 
@@ -103,22 +103,22 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
-		"MovementSpeed"						"0"			// Speed
-		"MovementTurnRate"				"10"		// Turning rate.
+		"MovementSpeed"			"0"			// Speed
+		"MovementTurnRate"			"10"		// Turning rate.
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"				"0"			// Gold earned min.
-		"BountyGoldMax"				"0"			// Gold earned max.
+		"BountyGoldMin"			"4"			// Gold earned min.
+		"BountyGoldMax"			"9"			// Gold earned max.
 
-			// Status
+		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"10"		// Base health.
+		"StatusHealth"				"150"		// Base health.
 		"StatusHealthRegen"			"0"		// Health regeneration rate.
 
 		// Team
 		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"TeamName"				"DOTA_TEAM_GOODGUYS"			// Team name.
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
@@ -2748,59 +2748,59 @@
 	"npc_dota_hero_dark_rider"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "211"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
-        ///"HeroDisabled"				"1"
+		"HeroID"                    "211"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
+		///"HeroDisabled"				"1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_dark_rider/black_rider.vmdl"
+		// Model info
+		"Model"                     "models/heroes/hero_dark_rider/black_rider.vmdl"
 
-        "ModelScale"                "2.0"
-        "LoadoutScale"              "1.1"
+		"ModelScale"                "2.0"
+		"LoadoutScale"              "1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "240"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "240"
 
-        // Sound info
+		// Sound info
 		"SoundSet"					"Hero_Undying"
 		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
 
-	 	"particle_folder"			"particles/units/heroes/hero_grimstroke"
+		"particle_folder"			"particles/units/heroes/hero_grimstroke"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_grimstroke.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_grimstroke.vsndevts"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"     "20"
-        "AttributeStrengthGain"     "1.100000"
-        "AttributeBaseIntelligence" "20"
-        "AttributeIntelligenceGain" "1.100000"
-        "AttributeBaseAgility"      "24"
-        "AttributeAgilityGain"      "3.200000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"     "20"
+		"AttributeStrengthGain"     "1.100000"
+		"AttributeBaseIntelligence" "20"
+		"AttributeIntelligenceGain" "1.100000"
+		"AttributeBaseAgility"      "24"
+		"AttributeAgilityGain"      "3.200000"
 
-        // Misc stats
-        "ArmorPhysical"             "2"
-        "MagicalResistance"			"24"
+		// Misc stats
+		"ArmorPhysical"             "2"
+		"MagicalResistance"			"24"
 
 
-        "AttackDamageMin"           "26"
-        "AttackDamageMax"           "32"
-        "AttackRate"                "1.450000"
-       	"AttackAcquisitionRange"	"800"
+		"AttackDamageMin"           "26"
+		"AttackDamageMax"           "32"
+		"AttackRate"                "1.450000"
+		"AttackAcquisitionRange"	"800"
 		"AttackRange"				"600"
 		"ProjectileModel"			"particles/units/heroes/hero_grimstroke/grimstroke_base_attack.vpcf"
 		"ProjectileSpeed"			"1000"
 		"AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 
-        "MovementSpeed"             "310"
-        "MovementTurnRate"          "0.600000"
+		"MovementSpeed"             "310"
+		"MovementTurnRate"          "0.600000"
 
-        // Abilities
+		// Abilities
 		"Ability1"					"darkrider_speedforce_necromacy"
 		"Ability2"					"darkrider_heartbeat"
 		"Ability3"					"darkrider_inverse"
-		"Ability4"					"generic_hidden"
+		"Ability4"					"darkrider_alter_reverse"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"darkrider_time_aura"
 
@@ -2820,10 +2820,10 @@
 		"Complexity"				"3"
 		"Team"						"bad"
 
-        // Misc
-        "NameAliases"      			"dr"
-        "url"       				"Dark Rider"
-        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+		// Misc
+		"NameAliases"      			"dr"
+		"url"       				"Dark Rider"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
 
 		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
@@ -2859,54 +2859,54 @@
 	"npc_dota_hero_grimskull"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "212"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
-        ///"HeroDisabled"				"1"
+		"HeroID"                    "212"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
+		///"HeroDisabled"				"1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_grimskull/grimskull.vmdl"
+		// Model info
+		"Model"                     "models/heroes/hero_grimskull/grimskull.vmdl"
 
-        "ModelScale"                "1.15"
-        "LoadoutScale"              "1.1"
+		"ModelScale"                "1.15"
+		"LoadoutScale"              "1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "240"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "240"
 
-        // Sound info
+		// Sound info
 		"SoundSet"					"Hero_Alchemist"
 		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
 
-	 	"particle_folder"			"particles/units/heroes/hero_alchemist"
+		"particle_folder"			"particles/units/heroes/hero_alchemist"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_alchemist.vsndevts"
 
-    // Attribute Stats
-    "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
-    "AttributeBaseStrength"     "30"
-    "AttributeStrengthGain"     "2.100000"
-    "AttributeBaseIntelligence" "16"
-    "AttributeIntelligenceGain" "1.100000"
-    "AttributeBaseAgility"      "16"
-    "AttributeAgilityGain"      "1.400000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "30"
+		"AttributeStrengthGain"     "2.100000"
+		"AttributeBaseIntelligence" "16"
+		"AttributeIntelligenceGain" "1.100000"
+		"AttributeBaseAgility"      "16"
+		"AttributeAgilityGain"      "1.400000"
 
-    // Misc stats
-    "ArmorPhysical"             "2"
-    "MagicalResistance"			"24"
+		// Misc stats
+		"ArmorPhysical"             "2"
+		"MagicalResistance"			"24"
 
 
-    "AttackDamageMin"           "30"
-    "AttackDamageMax"           "38"
+		"AttackDamageMin"           "30"
+		"AttackDamageMax"           "38"
 
-    "AttackAcquisitionRange"	"800"
+		"AttackAcquisitionRange"	"800"
 		"AttackRange"				"150"
 		"ProjectileSpeed"			"0"
 		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
 
-    "MovementSpeed"             "315"
-    "MovementTurnRate"          "0.600000"
+		"MovementSpeed"             "315"
+		"MovementTurnRate"          "0.600000"
 
-    // Abilities
+		// Abilities
 		"Ability1"					"grimskull_hookshot"
 		"Ability2"					"grimskull_rage"
 		"Ability3"					"grimskull_berserkers_blood"
@@ -2930,10 +2930,10 @@
 		"Complexity"				"3"
 		"Team"						"bad"
 
-        // Misc
-        "NameAliases"      			"mr"
-        "url"       				"Dark Rider"
-        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+		// Misc
+		"NameAliases"      			"mr"
+		"url"       				"Dark Rider"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
 
 		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
@@ -3248,14 +3248,14 @@
 		"Ability5"					"generic_hidden"
 		"Ability6"					"cosmos_space_warp"
 
-		"Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_unique_cosmos_1"
-		"Ability12"					"special_bonus_unique_cosmos_2"
-		"Ability13"					"special_bonus_cast_range_200"
-		"Ability14"					"special_bonus_cooldown_reduction_30"
-		"Ability15"					"special_bonus_all_stats_15"
-		"Ability16"					"special_bonus_spell_amplify_20"
-		"Ability17"					"special_bonus_unique_cosmos_3"
+		"Ability10"                    "special_bonus_exp_boost_30"
+		"Ability11"                    "special_bonus_unique_cosmos_2"
+		"Ability12"                    "special_bonus_unique_cosmos_1"
+		"Ability13"                    "special_bonus_cast_range_200"
+		"Ability14"                    "special_bonus_cooldown_reduction_25"
+		"Ability15"                    "special_bonus_mp_500"
+		"Ability16"                    "special_bonus_spell_amplify_15"
+		"Ability17"                    "special_bonus_unique_cosmos_3"
 
 		"Enabled"					"1"
 

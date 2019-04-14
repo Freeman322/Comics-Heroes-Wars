@@ -70,11 +70,13 @@ function modifier_item_mind_gem:IsHidden() return true end
 function modifier_item_mind_gem:IsPurgable() return false end
 function modifier_item_mind_gem:DeclareFunctions()
     return {
-				MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-				MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_MANACOST_PERCENTAGE }
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_MANACOST_PERCENTAGE,
+		MODIFIER_PROPERTY_CASTTIME_PERCENTAGE
+	}
 end
 
 function modifier_item_mind_gem:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_strength") end
