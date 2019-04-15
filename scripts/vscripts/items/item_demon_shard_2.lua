@@ -111,7 +111,7 @@ function modifier_item_demon_shard_2:OnAttackLanded (params)
                     EmitSoundOn("Hero_Winter_Wyvern.WintersCurse.Target", hTarget)
                     ScreenShake(hTarget:GetOrigin(), 100, 0.1, 0.3, 500, 0, true)
                 end 
-            else 
+            --[[else 
                 local target = params.target
                 local splash_damage = self:GetAbility():GetSpecialValueFor("percent_cleave") / 100
                 local splash_range = FindUnitsInRadius(self:GetCaster():GetTeam(), target:GetAbsOrigin(), nil, 275, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
@@ -124,7 +124,7 @@ function modifier_item_demon_shard_2:OnAttackLanded (params)
                         damage_table.victim = v
                         ApplyDamage(damage_table)
                     end
-                end
+                end]]
             end
         end
     end 

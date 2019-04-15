@@ -34460,7 +34460,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"distance_ptc"				"4.5"
+				"distance_ptc"				"0.5 1.0 1.5 2.0"
 			}
 			"03"
 			{

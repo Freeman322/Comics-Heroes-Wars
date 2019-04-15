@@ -46,7 +46,11 @@ function modifier_item_cursed_necklace:OnTakeDamage( params )
 
 		if self:GetCaster() ~= self:GetParent() then
 			return 0
-		end
+        end
+        
+        if not params.inflictor then
+            return 0
+        end
 
 		local hAttacker = params.attacker
 		local hVictim = params.unit

@@ -7,6 +7,8 @@ LinkLuaModifier( "modifier_darkrider_alter_reverse", "abilities/darkrider_alter_
 LinkLuaModifier( "modifier_darkrider_alter_reverse_aura_debuff", "abilities/darkrider_alter_reverse.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_darkrider_alter_reverse_aura", "abilities/darkrider_alter_reverse.lua", LUA_MODIFIER_MOTION_NONE )
 
+darkrider_alter_reverse.bInterrupted = false
+
 function darkrider_alter_reverse:OnUpgrade() if IsServer() then local heroes = HeroList:GetAllHeroes() for k, hero in pairs(heroes) do if not hero:HasModifier("modifier_darkrider_alter_reverse") then hero:AddNewModifier(self:GetCaster(), self, "modifier_darkrider_alter_reverse", nil) end end end end
 function darkrider_alter_reverse:OnOwnerSpawned() if IsServer() then local heroes = HeroList:GetAllHeroes() for k, hero in pairs(heroes) do if not hero:HasModifier("modifier_darkrider_alter_reverse") then hero:AddNewModifier(self:GetCaster(), self, "modifier_darkrider_alter_reverse", nil) end end end end
 function darkrider_alter_reverse:GetConceptRecipientType() return DOTA_SPEECH_USER_ALL end
@@ -15,8 +17,10 @@ function darkrider_alter_reverse:GetChannelTime() return self:GetSpecialValueFor
 function darkrider_alter_reverse:OnSpellStart() if IsServer() then self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_darkrider_alter_reverse_aura", { duration = self:GetChannelTime() } ) end end
 
 function darkrider_alter_reverse:OnChannelFinish( bInterrupted )
-     if IsServer() and bInterrupted then
-          self:GetCaster():RemoveModifierByName( "modifier_darkrider_alter_reverse_aura" )
+     if IsServer() then
+          self.bInterrupted = bInterrupted
+
+          if bInterrupted then self:GetCaster():RemoveModifierByName( "modifier_darkrider_alter_reverse_aura" ) end 
      end 
 end
 
@@ -80,8 +84,9 @@ end
 
 function modifier_darkrider_alter_reverse_aura_debuff:OnDestroy()
      if IsServer() then
-          local damage = self:GetAbility():GetAbilityDamage()
+          if self:GetAbility().bInterrupted then return end 
 
+          local damage = self:GetAbility():GetAbilityDamage()
           local modifier = self:GetParent():FindModifierByName("modifier_darkrider_alter_reverse")
 
           if modifier then damage = damage + (modifier:GetTotalDistance() * (self:GetAbility():GetSpecialValueFor("distance_ptc") / 100)) end 
