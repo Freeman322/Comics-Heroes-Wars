@@ -18,6 +18,8 @@ end
 
 function modifier_item_aether_medallion:DeclareFunctions()
     local funcs = {
+        MODIFIER_PROPERTY_MANA_BONUS,
+        MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
@@ -34,14 +36,15 @@ function modifier_item_aether_medallion:DeclareFunctions()
 
     return funcs
 end
---[[function modifier_item_aether_medallion:GetModifierManaBonus( params )
+
+function modifier_item_aether_medallion:GetModifierManaBonus( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor( "bonus_mana" )
 end
 function modifier_item_aether_medallion:GetModifierHealthBonus( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor( "bonus_health" )
-end]]
+end
 function modifier_item_aether_medallion:GetModifierConstantHealthRegen( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor( "bonus_health_regen" )

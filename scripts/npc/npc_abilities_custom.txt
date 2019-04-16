@@ -18492,17 +18492,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strike_damage"			"55 70 85 100"
+				"strike_damage"			"35 45 55 65"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tick_damage"			"22 33 44 55"
+				"tick_damage"				"22 33 44 55"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_damage_per"		"0.75 1.0 1.25 1.5"
+				"tick_damage_per"			"0.75 1.0 1.25 1.5"
 			}
 			"05"
 			{
@@ -18512,7 +18512,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"275"
+				"radius"					"275"
 			}
 			"07"
 			{
@@ -24283,19 +24283,20 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5116"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"           	 		"ability_lua"
+		"AbilityTextureName"			"custom/spectre_2"
+		"ScriptFile"					"abilities/arrow_bash.lua"
+
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"AbilitySound"					"Hero_Slardar.Bash"
-
-		"BaseClass"						"roshan_bash"
-
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportBonus"		"25"
 
+		"AbilityCooldown"				"2"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -24303,12 +24304,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bash_chance"		"15"
+				"bash_chance"			"40"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"50"
+				"bonus_damage"			"50"
 			}
 			"03"
 			{

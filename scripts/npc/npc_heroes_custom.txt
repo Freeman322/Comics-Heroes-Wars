@@ -4783,13 +4783,13 @@
 	"npc_dota_hero_arrow"
 	{
 		"Model"							"models/heroes/hero_arrow/arrow.vmdl"
-		"DisableWearables"				"1"
+		"DisableWearables"					"1"
 
-		"CMDisabled"					"1"
-		"HeroDisabled"					"1"
+		"CMDisabled"						"1"
+		"HeroDisabled"						"1"
 
 		"override_hero"	 				"npc_dota_hero_drow_ranger"
-		"ModelScale"					"0.970000"
+		"ModelScale"						"0.970000"
 		"Ability1"						"arror_searing_arrows"
 		"Ability2"						"arrow_leap"
 		"Ability3"						"arrow_arrow"

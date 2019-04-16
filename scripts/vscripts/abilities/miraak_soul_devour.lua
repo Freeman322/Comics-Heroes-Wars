@@ -23,8 +23,12 @@ end
 
 
 function miraak_soul_devour:OnAbilityPhaseStart()
-    if IsServer() then 
-        EmitSoundOn("Miraak.SoulDevour.Cast", self:GetCaster())
+	if IsServer() then 
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "megumin") then
+			EmitSoundOn( "Megumin.CastUlti", self:GetCaster() )
+		else 
+			EmitSoundOn("Miraak.SoulDevour.Cast", self:GetCaster())
+		end
     end 
 	return true
 end
@@ -56,8 +60,6 @@ function miraak_soul_devour:OnSpellStart()
 
 		
 		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "megumin") then
-			EmitSoundOn( "Megumin.CastUlti", self:GetCaster() )
-			
 			local nFXIndex1 = ParticleManager:CreateParticle( "particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf", PATTACH_CUSTOMORIGIN, hTarget );
 			ParticleManager:SetParticleControl( nFXIndex1, 0, hTarget:GetOrigin() );
 			ParticleManager:ReleaseParticleIndex( nFXIndex1 );

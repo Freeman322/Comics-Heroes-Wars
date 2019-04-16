@@ -4,7 +4,11 @@ LinkLuaModifier( "modifier_miraak_dragon_aspect", "abilities/miraak_dragon_aspec
 
 function miraak_dragon_aspect:OnAbilityPhaseStart()
     if IsServer() then 
-        EmitSoundOn("Miraak.DragonAspect.Cast", self:GetCaster())
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "megumin") then
+            EmitSoundOn( "Megumin.Cast2", self:GetCaster() )
+        else 
+            EmitSoundOn("Miraak.DragonAspect.Cast", self:GetCaster())
+        end
     end 
 	return true
 end
@@ -13,11 +17,7 @@ function miraak_dragon_aspect:OnSpellStart()
     if IsServer() then 
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_miraak_dragon_aspect", {duration = self:GetSpecialValueFor("duration")})      
         
-        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "megumin") then
-            EmitSoundOn( "Megumin.Cast2", self:GetCaster() )
-        else 
-            EmitSoundOn( "Hero_Terrorblade.ConjureImage", self:GetCaster() )
-        end 
+        EmitSoundOn( "Hero_Terrorblade.ConjureImage", self:GetCaster() )
     end
 end
 

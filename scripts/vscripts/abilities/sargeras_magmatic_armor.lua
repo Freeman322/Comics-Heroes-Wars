@@ -1,6 +1,8 @@
 LinkLuaModifier( "modifier_sargeras_magmatic_armor", "abilities/sargeras_magmatic_armor.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_sargeras_magmatic_armor_passive", "abilities/sargeras_magmatic_armor.lua", LUA_MODIFIER_MOTION_NONE )
 
+local MAX_MODS_COUNT = 10
+
 sargeras_magmatic_armor = class({})
 
 function sargeras_magmatic_armor:GetIntrinsicModifierName() return "modifier_sargeras_magmatic_armor_passive" end
@@ -11,7 +13,11 @@ function modifier_sargeras_magmatic_armor_passive:IsHidden() return true end
 function modifier_sargeras_magmatic_armor_passive:DeclareFunctions() return { MODIFIER_EVENT_ON_TAKEDAMAGE } end
 function modifier_sargeras_magmatic_armor_passive:OnTakeDamage(params)
 	if self:GetParent() == params.unit then
-		params.attacker:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_sargeras_magmatic_armor", {duration = self:GetAbility():GetSpecialValueFor("duration_tooltip")})
+		local count = #(params.attacker:FindAllModifiersByName("modifier_sargeras_magmatic_armor"))
+
+		if count < MAX_MODS_COUNT then
+			params.attacker:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_sargeras_magmatic_armor", {duration = self:GetAbility():GetSpecialValueFor("duration_tooltip")})
+		end
 	end
 end
 
@@ -32,7 +38,7 @@ function modifier_sargeras_magmatic_armor:OnIntervalThink()
 		local iDamage = hAbility:GetSpecialValueFor( "damage_interval" )
 
 		if self:GetCaster():HasTalent("special_bonus_unique_sargeras") then
-	     iDamage = self:GetCaster():FindTalentValue("special_bonus_unique_sargeras") + hAbility:GetSpecialValueFor( "damage_interval" )
+	     	iDamage = self:GetCaster():FindTalentValue("special_bonus_unique_sargeras") + hAbility:GetSpecialValueFor( "damage_interval" )
 		end
 
 		local damage = {
@@ -50,7 +56,7 @@ function modifier_sargeras_magmatic_armor:OnIntervalThink()
 end
 
 function modifier_sargeras_magmatic_armor:GetAttributes()
-	if self:GetCaster():HasTalent("special_bonus_unique_sargeras_1") then
+	if IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_sargeras_1") then
 		return MODIFIER_ATTRIBUTE_MULTIPLE
 	end
 	return

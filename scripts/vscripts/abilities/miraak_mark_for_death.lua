@@ -9,7 +9,9 @@ end
 
 function miraak_mark_for_death:OnAbilityPhaseStart()
     if IsServer() then 
-        EmitSoundOn("Miraak.MarkForDeath.Cast", self:GetCaster())
+        if not Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "megumin") then
+            EmitSoundOn("Miraak.MarkForDeath.Cast", self:GetCaster())
+        end
     end 
 	return true
 end
