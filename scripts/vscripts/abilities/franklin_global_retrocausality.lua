@@ -7,6 +7,8 @@ function franklin_global_retrocausality:IsRefreshable()
    return true
 end
 
+local CONST_COOLDOWN_NOT_REDUC = 185
+
 function franklin_global_retrocausality:OnSpellStart()
 	local duration = self:GetSpecialValueFor(  "tooltip_duration" )
 	local hTarget = self:GetCursorTarget()
@@ -25,6 +27,8 @@ function franklin_global_retrocausality:OnSpellStart()
 			EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse.Cast", self:GetCaster())
 		end 
 	end
+
+	self:EndCooldown() self:StartCooldown(CONST_COOLDOWN_NOT_REDUC)
 end
 
 if modifier_franklin_global_retrocausality_friendly == nil then modifier_franklin_global_retrocausality_friendly = class({}) end

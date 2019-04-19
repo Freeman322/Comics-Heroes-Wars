@@ -17244,17 +17244,17 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             	"ability_lua"
-		"ScriptFile"				  		"abilities/franklin_global_retrocausality.lua"
+		"BaseClass"             			"ability_lua"
+		"ScriptFile"				  	"abilities/franklin_global_retrocausality.lua"
 		"AbilityTextureName"			"custom/franklin_global_retrocausality"
-		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				    "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
-		"AbilityUnitTargetTeam"		     	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			    "DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"		    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"SpellImmunityType"			  "SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"		"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"					"2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"			     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"		    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"SpellImmunityType"			  	"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
 		"HasScepterUpgrade"				"0"
 
 		// Casting
@@ -17263,7 +17263,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"180 140 100"
+		"AbilityCooldown"				"185"
 		"AbilityDuration"				"4 5 6"
 
 
@@ -31794,7 +31794,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130.0"
+		"AbilityCooldown"				"230 200 170"
 		"AbilityDuration"				"2.5 3.25 4.0"
 
 		"HasScepterUpgrade"				"1"
