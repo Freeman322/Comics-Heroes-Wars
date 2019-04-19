@@ -92,3 +92,5 @@ function modifier_garou_will_active:CheckState()
 
 	return state
 end
+
+---

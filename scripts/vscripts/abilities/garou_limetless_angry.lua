@@ -116,3 +116,6 @@ function modifier_garou_limetless_angry_fear:CheckState()
 
 	return state
 end
+
+
+---

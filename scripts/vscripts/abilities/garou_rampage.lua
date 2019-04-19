@@ -41,3 +41,6 @@ function modifier_garou_rampage:CheckState()
 
 	return state
 end
+
+
+----

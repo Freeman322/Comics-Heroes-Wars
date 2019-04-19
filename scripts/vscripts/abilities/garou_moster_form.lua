@@ -6,10 +6,10 @@ LinkLuaModifier("modifier_garou_monster_form", "abilities/garou_monster_form.lua
 
 garou_monster_form.m_iMaxDamage = 0
 garou_monster_form.m_flCurrentDamage = 0
-garou_monster_form.m_dSpeedSizeModCoff = 0.2
+garou_monster_form.m_dSpeedSizeModCoff = 0.2 
 
 local CONST_DEF_SIZE = 50
----
+----
 
 function garou_monster_form:OnSpellStart()
     if IsServer() then 
