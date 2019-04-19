@@ -3,7 +3,7 @@ LinkLuaModifier( "modifier_strange_obliteration_of_eternity_aura", "abilities/st
 
 strange_obliteration_of_eternity = class({})
 
-function strange_obliteration_of_eternity:IsRefreshable() return false end
+function strange_obliteration_of_eternity:IsStealable() return false end 
 
 function strange_obliteration_of_eternity:OnSpellStart(  )
     if IsServer() then

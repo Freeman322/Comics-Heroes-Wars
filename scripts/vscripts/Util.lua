@@ -2423,5 +2423,3 @@ function CDOTA_BaseNPC:GetBasePos()
 
   return self:GetAbsOrigin()
 end
-
----
