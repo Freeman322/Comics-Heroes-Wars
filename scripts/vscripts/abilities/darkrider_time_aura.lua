@@ -32,6 +32,10 @@ function modifier_darkrider_time_aura_aura:OnCreated()
         ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() );
         ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetSpecialValueFor("radius"), 0));
         self:AddParticle( nFXIndex, false, false, -1, false, true )
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "hit") then
+            self:AddParticle( ParticleManager:CreateParticle ("particles/items4_fx/nullifier_mute_debuff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent()), false, false, -1, false, true )
+        end
     end
 end
 

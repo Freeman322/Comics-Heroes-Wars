@@ -60,7 +60,7 @@ function kratos_axe_twrow:OnProjectileHit( hTarget, vLocation )
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = self.nDamage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = DAMAGE_TYPE_PHYSICAL,
 			ability = self
 		}
 

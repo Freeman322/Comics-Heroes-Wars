@@ -5,7 +5,7 @@ LinkLuaModifier( "modifier_doomsday_speed", "abilities/doomsday_speed.lua",LUA_M
 
 function doomsday_speed:OnSpellStart()
 	local duration = self:GetSpecialValueFor( "duration" )
-
+	
 	self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_doomsday_speed", { duration = duration }  )
 
 	EmitSoundOn( "Hero_LifeStealer.Rage", self:GetCaster() )
@@ -25,7 +25,7 @@ end
 
 function modifier_doomsday_speed:CheckState()
 	local state = {
-  	[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true
+  		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true
 	}
 	return state
 end
@@ -40,12 +40,12 @@ end
 
 function modifier_doomsday_speed:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
 	}
 	return funcs
 end
 
-function modifier_doomsday_speed:GetModifierMoveSpeedBonus_Constant( params )
+function modifier_doomsday_speed:GetModifierMoveSpeed_Absolute( params )
 	return self:GetAbility():GetSpecialValueFor("speed_bonus")
 end
 

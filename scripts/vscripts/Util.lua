@@ -2414,13 +2414,3 @@ function Util:Setup()
   end]]
 end
 
-function CDOTA_BaseNPC:GetBasePos()
-  local ancients = Entities:FindAllByClassname("ent_dota_fountain")
-
-  for k, ancient in pairs(ancients) do
-    if ancient:GetTeamNumber() == self:GetTeamNumber() then return ancient:GetAbsOrigin() end 
-  end
-
-  return self:GetAbsOrigin()
-end
-

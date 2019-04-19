@@ -7992,51 +7992,50 @@
 	}
 	"doomsday_speed"
 	{
-	    // General
-	    //-------------------------------------------------------------------------------------------------------------
-	    "BaseClass"                     "ability_lua"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	    "AbilityTextureName"            "custom/doomsday_speed"
-			"ScriptFile"										"abilities/doomsday_speed.lua"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_lua"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"            "custom/doomsday_speed"
+		"ScriptFile"										"abilities/doomsday_speed.lua"
 
-	    "precache"
-	    {
-	        "soundfile"         "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
-	        "particle"          "particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf"
-	        "particle"          "particles/status_fx/status_effect_life_stealer_rage.vpcf"
-	    }
+		"precache"
+		{
+			"soundfile"         "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+			"particle"          "particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf"
+			"particle"          "particles/status_fx/status_effect_life_stealer_rage.vpcf"
+		}
 
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"              "0"
+		"AbilityCastRange"              "0"
 
-	    // Casting
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCastPoint"              "0"
-	    "AbilityCastRange"              "0"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "30 27 24 21"
 
-	    // Time
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "30 27 24 21"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "70 80 90 100"
 
-	    // Cost
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityManaCost"               "70 80 90 100"
+		"AbilityDuration"               "4 5 6 7"
 
-	    "AbilityDuration"               "4 5 6 7"
-
-	    // Special
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "speed_bonus"    		"305 320 335 350"
-	        }
-	        "02"
-	        {
-	            "var_type"              "FIELD_FLOAT"
-	            "duration"              "4 5 6 7"
-	        }
-	    }
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+	     {
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"speed_bonus"    		"625 660 680 710"
+			}
+			"02"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"duration"              "4 5 6 7"
+			}
+	     }
 	}
 	"doomsday_orb"
 	{
@@ -33705,7 +33704,7 @@
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"						"1"
 
@@ -33718,7 +33717,9 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"						"11 10 9 8"
+		"AbilityCooldown"						"26 22 18 14"
+
+		"AbilityManaCost"						"90 140 180 230"
 
 		"precache"
 		{
@@ -34447,6 +34448,9 @@
 			"particle"				"particles/econ/items/wisp/wisp_relocate_channel_ti7.vpcf"
 			"particle"				"particles/units/heroes/hero_demonartist/demonartist_engulf_disarm/items2_fx/heavens_halberd_debuff.vpcf"
 			"particle"				"particles/status_fx/status_effect_sylph_wisp_fear.vpcf"
+			"particle"				"particles/econ/items/templar_assassin/templar_assassin_butterfly/templar_assassin_meld_attack_butterfly.vpcf"
+			"model"					"models/heroes/hero_dark_rider/econs/hit/hit.vmdl"
+			"particle"				"particles/items4_fx/nullifier_mute_debuff.vpcf"
 			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
 		}
 		// Special
