@@ -3,10 +3,9 @@ if franklin_global_retrocausality == nil then franklin_global_retrocausality = c
 LinkLuaModifier( "modifier_franklin_global_retrocausality_friendly", "abilities/franklin_global_retrocausality.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_franklin_global_retrocausality_target", "abilities/franklin_global_retrocausality.lua", LUA_MODIFIER_MOTION_NONE )
 
-function franklin_global_retrocausality:IsRefreshable()
-   return true
-end
-
+function franklin_global_retrocausality:IsRefreshable() return true end
+function franklin_global_retrocausality:IsStealable() return false end
+ 
 local CONST_COOLDOWN_NOT_REDUC = 185
 
 function franklin_global_retrocausality:OnSpellStart()
@@ -27,8 +26,6 @@ function franklin_global_retrocausality:OnSpellStart()
 			EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse.Cast", self:GetCaster())
 		end 
 	end
-
-	self:EndCooldown() self:StartCooldown(CONST_COOLDOWN_NOT_REDUC)
 end
 
 if modifier_franklin_global_retrocausality_friendly == nil then modifier_franklin_global_retrocausality_friendly = class({}) end

@@ -137,9 +137,9 @@ function modifier_collector_chaos_meteor_thinker:OnIntervalThink()
       for _, enemy in pairs(enemies) do
           enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_collector_chaos_meteor_burn", {duration = self.burn_duration})
 
-          if self:GetCaster():HasTalent("special_bonus_unique_collector_1") then
+          --[[if self:GetCaster():HasTalent("special_bonus_unique_collector_1") then
               enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetCaster():FindTalentValue("special_bonus_unique_collector_1")})
-          end
+          end]]--
 
           local damageTable = {
               attacker = self:GetAbility():GetCaster(),

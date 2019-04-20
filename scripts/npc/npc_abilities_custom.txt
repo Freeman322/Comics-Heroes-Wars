@@ -17245,31 +17245,31 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             			"ability_lua"
-		"ScriptFile"				  	"abilities/franklin_global_retrocausality.lua"
-		"AbilityTextureName"			"custom/franklin_global_retrocausality"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"			     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
-		"AbilityUnitTargetTeam"		    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"		    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"SpellImmunityType"			  	"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"2"
-		"HasScepterUpgrade"				"0"
+		"ScriptFile"				  				"abilities/franklin_global_retrocausality.lua"
+		"AbilityTextureName"					"custom/franklin_global_retrocausality"
+		"AbilityType"									"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"			    		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"		    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"SpellImmunityType"			  		"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"							"2"
+		"HasScepterUpgrade"						"0"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"							"0.1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"185"
-		"AbilityDuration"				"4 5 6"
+		"AbilityCooldown"								"190 160 130"
+		"AbilityDuration"								"4 5 6"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 75 0"
+		"AbilityManaCost"				"150 320 450"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -26004,10 +26004,10 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_mult"					"10 14 18 22"
-				"LinkedSpecialBonus"			"special_bonus_unique_strange"
-				"CalculateSpellDamageTooltip"	"1"
+				"var_type"											"FIELD_FLOAT"
+				"damage_mult"										"10 14 18 22"
+				"LinkedSpecialBonus"						"special_bonus_unique_strange"
+				"CalculateSpellDamageTooltip"		"0"
 			}
 		}
 	}
@@ -29656,25 +29656,25 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"custom/strange_global_time_reverse"
-		"ScriptFile"					"abilities/strange_global_time_reverse.lua"
+		"AbilityTextureName"				"custom/strange_global_time_reverse"
+		"ScriptFile"								"abilities/strange_global_time_reverse.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
-		"MaxLevel"						"1"
-		"FightRecapLevel"				"1"
-		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
+		"MaxLevel"									"1"
+		"FightRecapLevel"						"1"
+		"IsGrantedByScepter"				"1"
+		"HasScepterUpgrade"					"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"GLOBAL"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastRange"					"GLOBAL"
+		"AbilityCastPoint"					"0.25"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"					"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
