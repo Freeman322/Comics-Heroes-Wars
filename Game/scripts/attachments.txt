@@ -1,0 +1,811 @@
+"Attachments"
+{
+	"models/heroes/legion_commander/legion_commander.vmdl"
+	{
+		"attach_eyeL"
+		{
+			"models/items/phantom_assassin/toll_of_the_fearful_aria_head/toll_of_the_fearful_aria_head.vmdl"
+			{
+				"scale"		"0.85000002384186"
+				"pitch"		"-80"
+				"roll"		"232"
+				"ZPos"		"-162"
+				"YPos"		"0"
+				"yaw"		"10"
+				"XPos"		"-5"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/axe/axe_practos_weapon/axe_practos_weapon.vmdl"
+			{
+				"scale"		"0.51999998092651"
+				"pitch"		"-95"
+				"roll"		"50"
+				"ZPos"		"-133"
+				"YPos"		"118"
+				"yaw"		"-199.60000610352"
+				"XPos"		"1.5"
+			}
+		}
+	}
+	"models/heroes/slark/slark.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/items/juggernaut/serrakura/serrakura.vmdl"
+			{
+				"scale"		"0.91000002622604"
+				"pitch"		"24"
+				"roll"		"-210"
+				"ZPos"		"-99"
+				"YPos"		"67"
+				"yaw"		"-168"
+				"XPos"		"-9"
+			}
+		}
+		"attach_jaw"
+		{
+			"models/items/phoenix/solar_forge/mesh/solar_forge_model.vmdl"
+			{
+				"scale"		"1.289999961853"
+				"pitch"		"150"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-173.60000610352"
+				"XPos"		"-1"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/juggernaut/serrakura/serrakura.vmdl"
+			{
+				"scale"		"0.81000000238419"
+				"pitch"		"25"
+				"roll"		"48"
+				"ZPos"		"-85"
+				"YPos"		"57"
+				"yaw"		"50"
+				"XPos"		"-3"
+			}
+		}
+	}
+	"Particles"
+	{
+		"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
+		{
+			"particles/econ/items/wraith_king/wraith_king_winterblight_weapon/wraith_king_winterblight_ambient.vpcf"
+			{
+				"2"		"attach_mouth"
+				"1"		"attach_eye_l"
+				"0"		"attach_eye_r"
+			}
+		}
+	}
+	"models/heroes/dragon_knight/dragon_knight.vmdl"
+	{
+		"attach_weapon"
+		{
+			"models/heroes/dragon_knight/weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-111"
+				"YPos"		"80"
+				"yaw"		"0"
+				"XPos"		"-17"
+			}
+			"models/deadpool_sword_final.vmdl"
+			{
+				"scale"		"1.1200000047684"
+				"pitch"		"-200"
+				"roll"		"-25"
+				"yaw"		"0"
+				"YPos"		"73"
+				"ZPos"		"-87"
+				"XPos"		"5"
+			}
+			"models/deadpool_head_final_2.vmdl"
+			{
+				"scale"		"1.1200000047684"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"-1"
+				"ZPos"		"-134"
+				"XPos"		"-7"
+			}
+			"models/items/sven/fiend_cleaver_axe/fiend_cleaver_axe.vmdl"
+			{
+				"scale"		"0.85000002384186"
+				"pitch"		"150"
+				"roll"		"-75"
+				"ZPos"		"-89"
+				"YPos"		"-32"
+				"yaw"		"450"
+				"XPos"		"-41"
+			}
+			"models/darkseid/darksied_head_final.vmdl"
+			{
+				"scale"		"0.85000002384186"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-165"
+				"YPos"		"-1"
+				"yaw"		"0"
+				"XPos"		"9"
+			}
+			"models/doctor_doom/doctor_doom_head.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-175"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+			"models/thor_hammer_final.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-100"
+				"YPos"		"77"
+				"yaw"		"0"
+				"XPos"		"-16"
+			}
+			"models/thor_head_final.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-175"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_head"
+		{
+			"models/cap_america_helmet.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-175"
+				"XPos"		"0"
+			}
+			"models/darkseid/darksied_head_final.vmdl"
+			{
+				"scale"		"0.85000002384186"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-165"
+				"YPos"		"-1"
+				"yaw"		"0"
+				"XPos"		"9"
+			}
+			"models/deadpool_head_final_2.vmdl"
+			{
+				"scale"		"1.1200000047684"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"-1"
+				"ZPos"		"-134"
+				"XPos"		"-7"
+			}
+			"models/vader/vader_helmet_final.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-175"
+				"XPos"		"0"
+			}
+			"models/doctor_doom/doctor_doom_head.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-175"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+			"models/thor_head_final.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"-175"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_attack2"
+		{
+			"models/cap_america_helmet.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-175"
+				"XPos"		"0"
+			}
+			"models/_america_shield.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"-95"
+				"ZPos"		"-90"
+				"XPos"		"-20"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/vader/vader_sabre.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"141"
+				"ZPos"		"-58"
+				"XPos"		"103"
+			}
+			"models/items/faceless_void/battlefury/battlefury.vmdl"
+			{
+				"scale"		"1.7999999523163"
+				"pitch"		"180"
+				"roll"		"10"
+				"yaw"		"190"
+				"YPos"		"120"
+				"ZPos"		"-90"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/heroes/doom/doom.vmdl"
+	{
+		"attach_mouth"
+		{
+			"models/galactus/galactus_head.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-5"
+				"roll"		"1"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-210"
+				"XPos"		"-20"
+			}
+		}
+	}
+	"models/heroes/hero_arrow/arrow.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/items/windrunner/rainmaker_bow/rainmaker_bow.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-14"
+				"roll"		"-25"
+				"ZPos"		"-17"
+				"YPos"		"-25"
+				"yaw"		"-264"
+				"XPos"		"-75"
+			}
+		}
+	}
+	"models/heroes/hero_pudge/butcher.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/deathstroke/weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"105"
+				"roll"		"365"
+				"ZPos"		"-100"
+				"YPos"		"175"
+				"yaw"		"0"
+				"XPos"		"105"
+			}
+		}
+	}
+	"models/heroes/hero_celebrimbor/hero_celebrimbor.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/heroes/hero_celebrimbor/bow.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-5"
+				"roll"		"-5"
+				"ZPos"		"-250"
+				"YPos"		"5"
+				"yaw"		"-35"
+				"XPos"		"20"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/heroes/hero_celebrimbor/bow.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"120"
+			}
+		}
+	}
+	"models/heroes/lanaya/lanaya.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/items/slark/hydrakan_latch/mesh/hydrkan_latch_model.vmdl"
+			{
+				"scale"		"0.68000000715256"
+				"pitch"		"-50"
+				"roll"		"-10"
+				"ZPos"		"-8"
+				"YPos"		"0"
+				"yaw"		"-180"
+				"XPos"		"-10"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/slark/hydrakan_latch/mesh/hydrkan_latch_model.vmdl"
+			{
+				"scale"		"0.70999997854233"
+				"pitch"		"-40"
+				"roll"		"0"
+				"ZPos"		"3"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-10"
+			}
+		}
+	}
+	"models/event/molagbal/molagbal.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/items/abaddon/feathers/feathers_weapon.vmdl"
+			{
+				"scale"		"0.5"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"-5"
+				"ZPos"		"0"
+				"XPos"		"6"
+			}
+		}
+	}
+	"models/heroes/hero_tzeentch/tzeentch_zeratul.vmdl"
+	{
+		"attach_crown"
+		{
+			"models/heroes/hero_tzeentch/tzeench_chaos_god_arcana/chaos_god_crown.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"50"
+				"yaw"		"-275"
+				"YPos"		"0"
+				"ZPos"		"-285"
+				"XPos"		"-10"
+			}
+		}
+	}
+	"models/heroes/el_diablo/diablo.vmdl"
+	{
+		"attach_head"
+		{
+			"models/heroes/bolvar/isecrown_helmet.vmdl"
+			{
+				"scale"		"0.40000000596046"
+				"pitch"		"0"
+				"roll"		"-260"
+				"ZPos"		"-449"
+				"YPos"		"10"
+				"yaw"		"-450"
+				"XPos"		"-145.5"
+			}
+		}
+	}
+	"models/deathstroke/deathstroke.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/deathstroke/weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"330"
+				"roll"		"340"
+				"ZPos"		"-40"
+				"YPos"		"50"
+				"yaw"		"138"
+				"XPos"		"0"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/deathstroke/weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"220"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"51"
+				"ZPos"		"-30"
+				"XPos"		"19"
+			}
+		}
+	}
+	"models/heroes/axe/axe.vmdl"
+	{
+		"attach_weapon"
+		{
+			"models/items/axe/blacksmith_weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-50"
+				"roll"		"20"
+				"ZPos"		"-92"
+				"YPos"		"117"
+				"yaw"		"-90"
+				"XPos"		"0"
+			}
+			"models/items/faceless_void/battlefury/battlefury.vmdl"
+			{
+				"scale"		"2"
+				"pitch"		"-50"
+				"roll"		"28"
+				"yaw"		"0"
+				"YPos"		"111"
+				"ZPos"		"-63"
+				"XPos"		"0"
+			}
+			"models/hulk/hulk/hulk_weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-50"
+				"roll"		"50"
+				"yaw"		"-125"
+				"YPos"		"125"
+				"ZPos"		"-80"
+				"XPos"		"-15"
+			}
+			"models/hulk/hulk/hulk_head.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-135"
+				"XPos"		"-25"
+			}
+			"models/ronan/ronan_weapon_shadowmorne.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-40"
+				"roll"		"30"
+				"ZPos"		"-80"
+				"YPos"		"110"
+				"yaw"		"180"
+				"XPos"		"0"
+			}
+			"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
+			{
+				"scale"		"2.2999999523163"
+				"YPos"		"0"
+				"pitch"		"-140"
+				"yaw"		"180"
+				"roll"		"30"
+				"ZPos"		"0"
+				"XPos"		"70"
+			}
+		}
+		"attach_mouth"
+		{
+			"models/hulk/hulk/hulk_head.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"-135"
+				"XPos"		"-25"
+			}
+		}
+		"attach_hitloc"
+		{
+			"models/props_gameplay/red_box.vmdl"
+			{
+				"scale"		"1.2999999523163"
+				"pitch"		"-70"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"yaw"		"-135"
+				"XPos"		"-13"
+			}
+			"models/heroes/tiny_04/tiny04_deathsim.vmdl"
+			{
+				"Animation"		"tiny04_deathsim_anim"
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"0"
+				"ZPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_origin"
+		{
+			"models/props_gameplay/red_box.vmdl"
+			{
+				"scale"		"2"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/heroes/antimage/antimage.vmdl"
+	{
+		"attach_h1"
+		{
+			"models/particle/snowball.vmdl"
+			{
+				"scale"		"0.30000001192093"
+				"pitch"		"-113"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"97"
+				"ZPos"		"-19"
+				"XPos"		"60"
+			}
+		}
+		"attach_attack2"
+		{
+			"models/items/antimage/pw_tustarkuri_weapon_offhand/antimage_weapon_offhand_lod0.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"25"
+				"roll"		"-11"
+				"yaw"		"-7"
+				"YPos"		"-80"
+				"ZPos"		"-10"
+				"XPos"		"-91"
+			}
+			"models/ant_man_weap_offheand.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-225"
+				"roll"		"-251"
+				"yaw"		"-57"
+				"YPos"		"-75"
+				"ZPos"		"-95"
+				"XPos"		"9"
+			}
+			"models/heroes/han/han_weapon.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"150"
+				"roll"		"75"
+				"yaw"		"92"
+				"YPos"		"75"
+				"ZPos"		"-92"
+				"XPos"		"0"
+			}
+			"models/heroes/han/han_weapon_offhand.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"150"
+				"roll"		"75"
+				"yaw"		"92"
+				"YPos"		"-75"
+				"ZPos"		"-96"
+				"XPos"		"5"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/antimage/pw_tustarkuri_weapon_offhand/antimage_weapon_offhand_lod0.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"25"
+				"roll"		"-11"
+				"yaw"		"-7"
+				"YPos"		"-80"
+				"ZPos"		"-10"
+				"XPos"		"-91"
+			}
+			"models/items/antimage/pw_tustarkuri_belt/antimage_belt_lod0.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"25"
+				"roll"		"-10"
+				"yaw"		"-7"
+				"YPos"		"0"
+				"ZPos"		"10"
+				"XPos"		"-131"
+			}
+			"models/heroes/han/han_weapon_offhand.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"150"
+				"roll"		"75"
+				"yaw"		"92"
+				"YPos"		"-75"
+				"ZPos"		"-96"
+				"XPos"		"5"
+			}
+		}
+		"attach_hitloc"
+		{
+			"models/items/antimage/mage_eraser_armor/mage_eraser_armor.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-85"
+				"roll"		"-20"
+				"yaw"		"26"
+				"YPos"		"0"
+				"ZPos"		"-130"
+				"XPos"		"0"
+			}
+			"models/particle/snowball.vmdl"
+			{
+				"scale"		"0.30000001192093"
+				"pitch"		"-113"
+				"roll"		"131"
+				"yaw"		"45"
+				"YPos"		"-27"
+				"ZPos"		"112"
+				"XPos"		"-65"
+			}
+			"models/items/antimage/tarrasque_scale_armor/tarrasque_scale_armor.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-85"
+				"roll"		"0"
+				"ZPos"		"-129"
+				"YPos"		"0"
+				"yaw"		"13"
+				"XPos"		"1"
+			}
+			"models/props_gameplay/red_box.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-70"
+				"roll"		"0"
+				"yaw"		"-135"
+				"YPos"		"-17"
+				"ZPos"		"0"
+				"XPos"		"-13"
+			}
+			"models/items/antimage/pw_tustarkuri_belt/antimage_belt_lod0.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"25"
+				"roll"		"-10"
+				"yaw"		"-7"
+				"YPos"		"0"
+				"ZPos"		"10"
+				"XPos"		"-131"
+			}
+		}
+		"attach_h2"
+		{
+			"models/particle/snowball.vmdl"
+			{
+				"scale"		"0.30000001192093"
+				"pitch"		"105"
+				"roll"		"-90"
+				"yaw"		"-90"
+				"YPos"		"-50"
+				"ZPos"		"-19"
+				"XPos"		"-80"
+			}
+		}
+	}
+	"models/heroes/silencer/silencer.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/items/antimage/mage_eraser_armor/mage_eraser_armor.vmdl"
+			{
+				"scale"		"1.0800000429153"
+				"pitch"		"-100"
+				"roll"		"0"
+				"ZPos"		"-138"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-6"
+			}
+			"models/items/antimage/pw_tustarkuri_armor/antimage_armor_lod0.vmdl"
+			{
+				"scale"		"1.2000000476837"
+				"pitch"		"0"
+				"roll"		"0"
+				"ZPos"		"2"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-137"
+			}
+			"models/strange/doctor_strange_head.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-100"
+				"roll"		"0"
+				"ZPos"		"-138"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-6"
+			}
+			"models/dcu_spectre/spectre_head_final.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-100"
+				"roll"		"0"
+				"ZPos"		"-150"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-2"
+			}
+			"models/joker_head.vmdl"
+			{
+				"scale"		"1.1000000238419"
+				"pitch"		"-100"
+				"roll"		"0"
+				"ZPos"		"-154"
+				"YPos"		"0"
+				"yaw"		"0"
+				"XPos"		"-3"
+			}
+		}
+	}
+	"models/heroes/pudge/pudge.vmdl"
+	{
+		"attach_eye_l"
+		{
+			"models/heroes/butcher/pudge_dark_apprentice_hood.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"YPos"		"7"
+				"ZPos"		"-152"
+				"XPos"		"-40"
+			}
+		}
+	}
+	"ExtraKeys"		"Can Be Added Wherever"
+}

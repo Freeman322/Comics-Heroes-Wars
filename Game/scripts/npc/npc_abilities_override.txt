@@ -1,0 +1,1123 @@
+
+// Dota Abilities Override File
+"DOTAAbilities"
+{
+  "Version"   "1"
+
+  "item_iron_talon"     "REMOVE"
+  "item_recipe_iron_talon"      "REMOVE"
+  "item_stout_shield"     "REMOVE"
+  "item_gauntlets"      "REMOVE"
+  "item_slippers"     "REMOVE"
+  "item_mantle"     "REMOVE"
+  "item_branches"     "REMOVE"
+  "item_belt_of_strength"     "REMOVE"
+  "item_boots_of_elves"     "REMOVE"
+  "item_circlet"      "REMOVE"
+  "item_midas_tube"      "REMOVE"
+  "item_recipe_midas_tube"      "REMOVE"
+  "item_recipe_ritual_rapier"      "REMOVE"
+  "item_ritual_rapier"     "REMOVE"
+  "item_absolute_staff"      "REMOVE"
+  "item_recipe_absolute_staff"     "REMOVE"
+  "item_recipe_travel_boots"      "REMOVE"
+  "item_travel_boots"     "REMOVE"
+  "item_perseus_boots"     "REMOVE"
+  "item_recipe_perseus_boots"      "REMOVE"
+  "item_recipe_travel"     "REMOVE"
+  "item_travel"      "REMOVE"
+  "item_recipe_power_treads"      "REMOVE"
+  "item_power_treads"     "REMOVE"
+  "item_recipe_intelligence_boots"     "REMOVE"
+  "item_intelligence_boots"     "REMOVE"
+  "item_recipe_strength_boots"     "REMOVE"
+  "item_strength_boots"     "REMOVE"
+  "item_recipe_agility_boots"     "REMOVE"
+  "item_agility_boots"     "REMOVE"
+  "item_effulgent_sword"      "REMOVE"
+  "item_recipe_effulgent_sword"      "REMOVE"
+  "item_angels_dagger"      "REMOVE"
+  "item_recipe_angels_dagger"      "REMOVE"
+  "item_heart_of_universe"        "REMOVE"
+  "item_recipe_heart_of_universe"      "REMOVE"
+  "item_ghost_staff"             "REMOVE"
+  "item_recipe_ghost_staff"      "REMOVE"
+  "item_recipe_oathbreaker"      "REMOVE"
+  "item_oathbreaker"             "REMOVE"
+
+	"special_bonus_strength_25"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				      "100"
+			}
+		}
+	}
+
+	"special_bonus_agility_25"
+	{
+			"AbilitySpecial"
+			{
+					"01"
+					{
+						"var_type"					"FIELD_INTEGER"
+						"value"				      "100"
+					}
+			}
+	}
+
+	"special_bonus_intelligence_25"
+	{
+			"AbilitySpecial"
+			{
+					"01"
+					{
+						"var_type"					"FIELD_INTEGER"
+						"value"			      	"100"
+					}
+			}
+	}
+
+	"special_bonus_intelligence_10"  ////50 Интелекта
+	{
+			"AbilitySpecial"
+			{
+					"01"
+					{
+						"var_type"					"FIELD_INTEGER"
+						"value"			      	"35"
+					}
+			}
+	}
+
+	"special_bonus_attack_damage_90"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"200"
+			}
+		}
+	}
+
+  "special_bonus_all_stats_20"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"70"
+			}
+		}
+	}
+    //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_exp_boost_30"  ////50 exp boost
+	{
+      "AbilitySpecial"
+      {
+          "01"
+          {
+            "var_type"					"FIELD_INTEGER"
+            "value"				"50"
+          }
+      }
+	}
+
+  "special_bonus_armor_15"  ////300 gold boost
+	{
+    "AbilitySpecial"
+    {
+        "01"
+        {
+          "var_type"					"FIELD_INTEGER"
+          "value"				"18"
+        }
+    }
+	}
+  "special_bonus_cast_range_200"  ////300 gold boost
+  {
+    "AbilitySpecial"
+    {
+        "01"
+        {
+          "var_type"					"FIELD_INTEGER"
+          "value"				"500"
+        }
+    }
+  }
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_gold_income_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"167"
+			}
+		}
+	}
+  "special_bonus_spell_amplify_15"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"50"
+			}
+		}
+	}
+  //=================================================================================================================
+  // Arc warden: Tempest Double
+  //=================================================================================================================
+  "arc_warden_tempest_double"
+  {
+
+    "AbilityTextureName"    "custom/godspeed_tempest_double"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityType"           "DOTA_ABILITY_TYPE_ULTIMATE"
+    "FightRecapLevel"       "2"
+    "AbilitySound"          "Hero_ArcWarden.TempestDouble"
+    "MaxLevel"              "1"
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastPoint"        "0.15"
+    "IsGrantedByScepter"    "1"
+    "HasScepterUpgrade"     "1"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"       "120"
+
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "duration"        "30"
+      }
+    }
+  }
+  //=================================================================================================================
+  // Ability: Special Bonus
+  //=================================================================================================================
+  "special_bonus_cast_range_400"
+  {
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "value"       "2000"
+      }
+    }
+  }
+
+	"special_bonus_attack_damage_75"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"475"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_all_stats_10"
+	{
+	  "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"25"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_spell_amplify_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"40"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_all_stats_15"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"45"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_intelligence_15"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"75"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_agility_15"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"75"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_strength_15"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"75"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_faceless_void_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dodge_chance_pct"				"30"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_lich_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				      "60"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"			  	"4"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_reincarnation_200"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"70"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_corruption_4"
+	{
+  	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"20"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_20_crit_15"
+	{
+	  "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_chance"				"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_multiplier"   "450"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_spell_block_20"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"block_cooldown"				"12"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_spell_amplify_20"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"30"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_hp_regen_12"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"150"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_mp_regen_1"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"30"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_spell_block_15"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"block_cooldown"				"3"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_lifesteal_100"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"90"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_lifesteal_10"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"60"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_hp_regen_40"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"50"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_hp_regen_50"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"100"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_armor_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"30"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_armor_7"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"45"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_mp_500"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"5000"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_mp_800"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"8000"
+			}
+		}
+	}
+	"special_bonus_hp_800"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"8000"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_magic_resistance_6"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"65"
+			}
+		}
+	}
+  //=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_agility_10"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"50"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_20_bash_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"value"				"0.6"
+			}
+		}
+	}
+
+
+	"item_vibranium_sword"     "REMOVE"
+  "item_recipe_vibranium_sword"      "REMOVE"
+
+	//=================================================================================================================
+	// Lion: Finger of Death
+	//=================================================================================================================
+	"lion_finger_of_death"
+	{
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient.vpcf"
+			"particle"			"particles/econ/items/lion/fish_stick_retro/fish_stick_spell_ambient_retro.vpcf"
+			"particle"  			"particles/econ/items/lion/lion_demon_drain/lion_demon_drain_ambient.vpcf"
+			"model" 			 "models/items/lion/fish_stick_retro/fish_stick_retro.vmdl"
+			"model"  "models/items/lion/lion_ti8_arm/lion_ti8_arm_alt.vmdl"
+			"model"  "models/items/lion/demon_drain/demon_drain.vmdl"
+			"model"  "models/items/lion/mana_drain_immortal/mesh/mana_drain_immortal_model.vmdl"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"650 850 1250"
+				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_scepter"			"800 1000 1400"
+				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_kill"			"165"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_cost_scepter"			"350 550 700"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0.20"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"35.0 35.0 35.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"splash_radius_scepter"		"425"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Shadow Demon: Shadow Demon Soul Catcher
+	//=================================================================================================================
+	"shadow_demon_soul_catcher"
+	{
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_lost"			"15 25 35 45"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"175 200 225 250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_outgoing_damage"	"-70 -55 -40 -25"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_outgoing_damage_tooltip"	"30 45 60 75"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_incoming_damage"	"100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_incoming_damage_tooltip"	"200"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Lion: Impale
+	//=================================================================================================================
+	"lion_impale"
+	{
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12.0 12.0 12.0 12.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 100 130 160"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"100 180 260 340"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"125 125 125 125"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.4 1.8 2.2 2.6"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"length_buffer"		"325"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1600 1600 1600 1600"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_gold_income_10"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5956"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"70"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Shredder: Chakram
+	//=================================================================================================================
+	"shredder_chakram"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"HasScepterUpgrade"				"0"
+		"AbilitySound"					"Hero_Shredder.Chakram.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200 1200 1200 1200"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0 8.0 8.0 8.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"900.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"200.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pass_damage"			"100 140 180 230"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"25 30 35 40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"0.2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"break_distance"		"2000.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_second"		"16 23 30 45"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pass_slow_duration"	"0.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Shredder: Chakram 2
+	//=================================================================================================================
+	"shredder_chakram_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"IsGrantedByScepter"			"0"
+		"HasScepterUpgrade"				"0"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200 1200 1200 1200"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0 8.0 8.0 8.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"900.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"200.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pass_damage"			"100 140 180 230"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"25 30 35 40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"0.2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"break_distance"		"2000.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_second"		"16 23 30 45"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pass_slow_duration"	"0.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Batrider: Sticky Napalm
+	//=================================================================================================================
+	"batrider_sticky_napalm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"3.0 3.0 3.0 3.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"20 20 20 20"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Works by boosting damage
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 65 70 95"
+				"CalculateSpellDamageTooltip"		"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"375 375 375 375"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8.0 8.0 8.0 8.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed_pct"	"-3 -5 -7 -9"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"turn_rate_pct"			"-70 -70 -70 -70"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"15"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Shredder: Whirling Death
+	//=================================================================================================================
+	"shredder_whirling_death"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"whirling_radius"			"300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"whirling_damage"			"90 120 150 180"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tree_damage_scale"			"12 18 24 30"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"whirling_tick"				"0.3"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stat_loss_pct"				"10 13 16 19"
+				"LinkedSpecialBonus"		"special_bonus_unique_timbersaw"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"14.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_timbersaw"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"21"
+			}
+		}
+	}
+}

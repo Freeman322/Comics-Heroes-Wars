@@ -1,0 +1,540 @@
+"dota_holdout"
+{
+	"1" // Kobolds
+	{
+		"round_title"				"#DOTA_Holdout_Round_Kobolds_Title"
+		"FixedXP"					"5500"
+		"MaxUnits"					"120"
+		"Wave"						"kobolds"
+		"Units"
+		{
+			"Spawn1"
+			{
+				"unit"		"npc_dota_creature_kobold_tunneler"
+				"count" 	"20"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+			}
+			"Spawn2"
+			{
+				"unit"		"npc_dota_creature_gnoll_assassin"
+				"count" 	"10"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+			}
+			"Spawn3"
+			{
+				"unit"		"npc_dota_creature_kobold_tunneler"
+				"count" 	"10"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+			}
+			"Spawn4"
+			{
+				"unit"		"npc_dota_creature_gnoll_assassin"
+				"count" 	"20"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+			}
+		}
+		"Delay"
+		{
+			"Spawn1"
+			{
+				"unit"		"npc_dota_creature_kobold_tunneler"
+				"count" 	"20"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+			}
+			"Spawn2"
+			{
+				"unit"		"npc_dota_creature_gnoll_assassin"
+				"count" 	"10"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+			}
+			"Spawn3"
+			{
+				"unit"		"npc_dota_creature_kobold_tunneler"
+				"count" 	"10"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+			}
+			"Spawn4"
+			{
+				"unit"		"npc_dota_creature_gnoll_assassin"
+				"count" 	"20"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+			}
+		}
+	}
+	
+	"2" // Corpselords, Volatile Zombies
+	{
+		"round_title"			"#DOTA_Holdout_Round_Zombies_Title"
+		"FixedXP"					"3500"
+		"MaxUnits"					"140"
+		"Wave"						"zombies"
+		"Units"
+		{
+			"Spawn1"
+			{
+				"count" 	"20"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_basic_zombie"
+			}
+			"Spawn2"
+			{
+				"count" 	"5"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_basic_zombie_exploding"
+			}
+			"Spawn3"
+			{
+				"count" 	"10"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_basic_zombie_exploding"
+			}
+			"Spawn4"
+			{
+				"count" 	"15"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_basic_zombie"
+			}
+			
+			"Spawn5"
+			{
+				"count" 	"5"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_corpselord"
+			}
+		}
+		"Delay"
+		{
+			"Spawn1"
+			{
+				"count" 	"20"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_basic_zombie"
+			}
+			"Spawn2"
+			{
+				"count" 	"5"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_basic_zombie_exploding"
+			}
+			"Spawn3"
+			{
+				"count" 	"10"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_basic_zombie_exploding"
+			}
+			"Spawn4"
+			{
+				"count" 	"35"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_basic_zombie"
+			}
+			
+			"Spawn5"
+			{
+				"count" 	"15"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_corpselord"
+			}
+		}
+	}
+	
+	"3" // Ogres
+	{
+		"round_title"				"#DOTA_Holdout_Round_Ogre_Title"
+		"FixedXP"					"4000"
+		"MaxUnits"					"100"
+		"Wave"						"ogre"
+		"Units"
+		{
+		// Stage 1 ================================================
+			"Spawn1" // Duration 20s
+			{
+				"count" 	"20"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_ogre_melee"
+			}
+			"Spawn2" // Duration 20s
+			{
+				"count" 	"10"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_ogre_tank"
+			}
+			
+			"Spawn3"
+			{
+				"count" 	"20"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_ogre_melee"
+			}
+			"Spawn4"
+			{
+				"count" 	"20"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_ogre_melee"
+			}
+		}
+		"Delay"
+		{
+			"Spawn1" // Duration 20s
+			{
+				"count" 	"10"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_ogre_tank"
+			}
+			"Spawn2" // Duration 20s
+			{
+				"count" 	"10"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_ogre_tank"
+			}
+			"Spawn3" // Duration 20s
+			{
+				"count" 	"10"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_ogre_tank"
+			}
+			"Spawn4" // Duration 20s
+			{
+				"count" 	"10"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_ogre_tank"
+			}
+		}
+	}
+	
+	"4" // Slar*
+	{
+		"round_title"				"#DOTA_Holdout_Round_Slithereen_Title"
+		"FixedXP"					"6500"
+		"MaxUnits"					"80"
+		"Wave"						"slark"
+		"Units"
+		{
+			// Stage 1 ================================================
+			"Spawn1"
+			{
+				"count" 	"20"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_lesser_nightcrawler"
+			}
+		
+			"Spawn2"
+			{
+				"count" 	"10"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_slithereen"
+			}
+
+			"Spawn3"
+			{
+				"count" 	"30"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_lesser_nightcrawler"
+			}
+			
+			"Spawn4"
+			{
+				"count" 	"10"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_slithereen"
+			}
+		}
+		"Delay"
+		{
+			"Spawn1"
+			{
+				"count" 	"10"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_slithereen"
+			}
+		}
+	}
+	
+	"5" // Trees
+	{
+		"round_title"				"#DOTA_Holdout_Round_Trees_Title"
+		"FixedXP"					"6500"
+		"MaxUnits"					"100"
+		"Wave"						"zombies"
+		"Units"
+		{
+			"Spawn1"
+			{
+				"count" 	"40"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_berserk_zombie"
+			}	
+
+			"Spawn2"
+			{
+				"count" 	"20"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_berserk_zombie"
+			}	
+			"Spawn3"
+			{
+				"count" 	"30"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_berserk_zombie"
+			}	
+			"Spawn4"
+			{
+				"count" 	"10"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_missile_launcher"
+			}	
+		}
+	}
+	
+	"6" // PARTY FOWL
+	{
+		"round_title"				"#DOTA_Holdout_Round_Broodking_Title"
+		"FixedXP"					"0"
+		"MaxUnits"					"1"
+		"Wave"						"chicken"
+		"Units"
+		{
+			// Stage 1 ================================================
+			"Spawn1"
+			{
+				"count" 	"1"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_chiken"
+			}
+		}
+	}
+	
+	"7" // Roshan, Leshrac
+	{
+		"round_title"				"#DOTA_Holdout_Round_Roshan_Title"
+		"MaxUnits"					"90"
+		"FixedXP"					"6000"
+		"Wave"						"roshan"
+		"Units"
+		{
+			"Spawn1"
+			{
+				"count" 	"30"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_mini_roshan"
+			}
+			"Spawn2"
+			{
+				"count" 	"30"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_mini_roshan"
+			}
+			"Spawn3"
+			{
+				"count" 	"15"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_tormented_soul"
+			}
+			"Spawn4"
+			{
+				"count" 	"15"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_tormented_soul"
+			}
+		}
+	}
+	
+	"8" // Splitters
+	{
+		"round_title"				"#DOTA_Holdout_Round_Pudge_Title"
+		"MaxUnits"					"81"
+		"FixedXP"					"5500"
+		"Wave"						"pudge"
+		"Units"
+		{
+			// Stage 1 ================================================
+			"Spawn1"
+			{
+				"count" 	"50"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_ogre_tank"
+			}
+			
+			// Stage 2 ================================================
+			"Spawn2"
+			{
+				"count" 	"2"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_boss_pudge"				
+			}
+			"Spawn3"
+			{
+				"count" 	"2"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_boss_pudge"	
+			}
+			"Spawn4"
+			{
+				"count" 	"2"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_boss_pudge"	
+			}
+		}
+		"Delay"
+		{
+			"Spawn1"
+			{
+				"count" 	"10"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_ogre_tank"
+			}
+			"Spawn2"
+			{
+				"count" 	"5"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_boss_pudge"				
+			}
+			"Spawn3"
+			{
+				"count" 	"5"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_boss_pudge"	
+			}
+			"Spawn4"
+			{
+				"count" 	"5"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_boss_pudge"	
+			}
+		}
+	}
+	
+	"9" // Bears
+	{
+		"round_title"				"#DOTA_Holdout_Round_BearForceOne_Title"
+		"MaxUnits"					"8"
+		"FixedXP"					"5500"
+		"Wave"						"bear"
+		"Units"
+		{
+			// Part 1
+			"Spawn1"
+			{
+				"count" 	"1"
+				"spawn"		"spawner1"
+				"waypoint"	"waypoint_1"
+				"unit"		"npc_dota_creature_bear_chieftain"	
+			}
+			"Spawn2"
+			{
+				"count" 	"2"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_creature_large_spirit_bear"	
+			}	
+			"Spawn3"
+			{
+				"count" 	"3"
+				"spawn"		"spawner3"
+				"waypoint"	"waypoint_2a"
+				"unit"		"npc_dota_creature_small_spirit_bear"	
+			}
+			"Spawn4"
+			{
+				"count" 	"2"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_creature_small_spirit_bear"	
+			}		
+		}
+	}
+	
+	"10" // Lich Kings
+	{
+		"round_title"				"#DOTA_Holdout_Round_LichKings_Title"
+		"MaxUnits"					"2"
+		"FixedXP"					"6350"
+		"Wave"						"lich"
+
+		// Stage 1 ================================================
+		"Units"
+		{
+			"Spawn1"
+			{
+				"count" 	"1"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_lich_king"	
+			}
+			"Spawn2"
+			{
+				"count" 	"1"
+				"spawn"		"spawner2"
+				"waypoint"	"waypoint_1a"
+				"unit"		"npc_dota_lich_king"	
+			}
+		}
+	}
+	"11" // SCP
+	{
+		"round_title"				"#DOTA_Holdout_Round_Revenge_Title"
+		"MaxUnits"					"1"
+		"FixedXP"					"350"
+		"Wave"						"scp"
+
+		// Stage 1 ================================================
+		"Units"
+		{
+			"Spawn1"
+			{
+				"count" 	"1"
+				"spawn"		"spawner4"
+				"waypoint"	"waypoint_3a"
+				"unit"		"npc_dota_boss_shy_guy"	
+			}
+		}
+	}
+}
