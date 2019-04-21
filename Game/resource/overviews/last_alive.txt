@@ -1,0 +1,8 @@
+last_alive
+{
+	material materials/overviews/last_alive.vmat
+	pos_x -6450
+	pos_y 7269
+	scale 12.598
+}
+

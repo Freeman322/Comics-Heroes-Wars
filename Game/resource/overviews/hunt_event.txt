@@ -1,0 +1,8 @@
+hunt_event
+{
+	material materials/overviews/hunt_event.vmat
+	pos_x -16288
+	pos_y 16267
+	scale 31.752
+}
+

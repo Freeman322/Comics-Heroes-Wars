@@ -1,0 +1,8 @@
+tdm
+{
+	material materials/overviews/tdm.vmat
+	pos_x -6496
+	pos_y 5696
+	scale 13.125
+}
+

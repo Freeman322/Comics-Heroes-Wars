@@ -1,0 +1,22 @@
+"AddonInfo"
+{
+  "TeamCount" 						  "10"
+  "maps"      						  "free_for_all dota dota_captains_mode" 
+  "IsPlayable"  					  "1"
+  "CheckAFKPlayers"     			  "1"
+  "PenaltiesEnabled"     			  "1"
+  "HeroGuidesSupported"				  "1"
+  
+  "free_for_all"
+  {
+	  "MaxPlayers"                    "10"
+  }
+  "dota"
+  {
+	  "MaxPlayers"                    "10"
+  }
+  "dota_captains_mode"
+  {
+	  "MaxPlayers"                    "10"
+  }
+}

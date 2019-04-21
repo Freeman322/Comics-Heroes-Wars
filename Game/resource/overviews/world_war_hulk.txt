@@ -1,0 +1,8 @@
+world_war_hulk
+{
+	material materials/overviews/world_war_hulk.vmat
+	pos_x -6450
+	pos_y 7269
+	scale 12.598
+}
+

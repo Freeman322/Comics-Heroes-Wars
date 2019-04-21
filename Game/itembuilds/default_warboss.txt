@@ -1,0 +1,47 @@
+"itembuilds"
+{
+	"author"		"PG Games"
+	"hero"			"npc_dota_hero_miraak"
+	"Title"			"Recommended items for Miraak"
+	
+    "Items"
+    {
+        "#DOTA_Item_Build_Starting_Items"
+        {
+            "item"        "item_poor_mans_shield"
+            "item"        "item_quelling_blade"
+            "item"        "item_coffee"
+            "item"        "item_coffee"
+            "item"        "item_enchanted_raspberries"
+            "item"        "item_enchanted_raspberries"
+        }
+
+        "#DOTA_Item_Build_Early_Game"
+        {
+            "item"        "item_hand_of_midas"
+            "item"        "item_boots_of_protection"
+        }
+
+        "#DOTA_Item_Build_Core_Items"
+        {
+            "item"        "item_bfury"
+            "item"        "item_ionic_vapor"
+            "item"        "item_echoe_sabre_marvel"
+            "item"        "item_high_frequency_blade"
+            "item"        "item_desolator_ii"
+            "item"        "item_shine_of_the_sea"
+        }
+
+        "#DOTA_Item_Build_Extension_Items"
+        {
+            "item"        "item_armlet"
+            "item"        "item_dark_sabre"
+            "item"        "item_desolator_iii"
+            "item"        "item_sunshines_aromor"
+            "item"        "item_frostmourne"
+            "item"        "item_ethereal_boots"
+        }
+
+    }
+
+}
