@@ -3301,4 +3301,129 @@
 		// Inventory
 		"HasInventory"				"1"
 	}
+	"npc_dota_hero_jetstream_sam"
+	{
+		"Model"						"models/heroes/hero_jetstream_sam/jetstream_sam.vmdl"
+		"SoundSet"					"Hero_Juggernaut"
+
+		"BaseClass"             	    		"npc_dota_hero"
+		"HeroID"                     		"216"
+		"IsCustom"                  		"1"
+		"DisableWearables"          		"1"
+		"HeroDisabled"					"1"
+
+		"Enabled"						"1"
+		"HeroPool1"					"1"
+		"HeroUnlockOrder"				"3"
+		"Role"						"Carry,Pusher,Escape"
+		"Rolelevels"					"2,1,1"
+		"Complexity"					"1"
+		"Team"						"Good"
+		"HeroID"						"8"
+		"BotImplemented"				"1"
+		"Press"						"1"
+		"ModelScale"					"1"
+		"LoadoutScale"					"1"
+		"SpectatorLoadoutScale"			 "1"
+		"HeroGlowColor"				"222 120 36"
+		"CMEnabled"					"0"
+		"workshop_guide_name"			"Sam"
+		"new_player_enable"				"1"
+		"LastHitChallengeRival"			"npc_dota_hero_skeleton_king"
+		"HeroSelectSoundEffect"			"Hero_Juggernaut.Pick"
+		"GibType"						"default"
+		
+		"Ability1"					"sam_blade_fury"
+		"Ability2"					"sam_blade_dance"
+		"Ability3"					"sam_sneaky"
+		"Ability4"					"sam_elecrtic_blow"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"sam_omnislash"
+
+		"Ability10"					"special_bonus_all_stats_5"
+		"Ability11"					"special_bonus_movement_speed_20"
+		"Ability12"					"special_bonus_unique_juggernaut_4"
+		"Ability13"					"special_bonus_attack_speed_20"
+		"Ability14"					"special_bonus_armor_10"
+		"Ability15"					"special_bonus_unique_juggernaut_3"
+		"Ability16"					"special_bonus_hp_600"
+		"Ability17"					"special_bonus_unique_juggernaut_2"
+
+	     "HealthBarOffset"           "170"
+
+		"ArmorPhysical"				"0"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"12"
+		"AttackDamageMax"				"16"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"			"1"
+
+		"AttackAcquisitionRange"			"600"
+		"AttackRange"					"150"
+		"ProjectileSpeed"				"0"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"21"
+		"AttributeStrengthGain"			"2.2000"
+		"AttributeBaseIntelligence"		"14"
+		"AttributeIntelligenceGain"		"1.400000"
+		"AttributeBaseAgility"			"36"
+		"AttributeAgilityGain"			"2.800000"
+		"StatusHealthRegen"				"0.5"
+		"MovementSpeed"				"300"
+		"MovementTurnRate"				"0.600000"
+
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		
+		"precache"
+		{
+			"model"			"models/heroes/hero_jetstream_sam/murasama_sams.vmdl"
+		}
+
+		"particle_folder"		"particles/units/heroes/hero_juggernaut"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+		"VoiceFile"			"soundevents/voscripts/game_sounds_vo_juggernaut.vsndevts"
+
+		"Enabled"					"1"
+
+		"Role"						"Support,Nuker,Disabler,Escape"
+		"Rolelevels"				"1,2,2,3"
+		"Complexity"				"3"
+		"Team"						"bad"
+
+		// Misc
+		"NameAliases"      			"cs"
+		"url"       				"San"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"300"
+		"StatusHealthRegen"			"2.0"
+		"StatusMana"				"245"
+		"StatusManaRegen"			"1.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"				"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}
 }
