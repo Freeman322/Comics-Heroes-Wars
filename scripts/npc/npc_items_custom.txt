@@ -5063,7 +5063,7 @@
 
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"88.0"
+		"AbilityCooldown"				"38.0"
 
 
 		// Item Info

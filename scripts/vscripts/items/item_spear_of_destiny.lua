@@ -43,8 +43,7 @@ local funcs = {
 end
 function modifier_item_spear_of_destiny:CheckState()
 	local state = {
-        [MODIFIER_STATE_CANNOT_MISS] = true,
-        [MODIFIER_STATE_TRUESIGHT_IMMUNE] = true
+        [MODIFIER_STATE_CANNOT_MISS] = true
 	}
 
 	return state
