@@ -1555,7 +1555,7 @@
 
 		"ItemRequirements"
 		{
-			"01"						"item_glimmer_cape;item_invis_sword;item_relic"
+			"01"						"item_glimmer_cape;item_invis_sword;item_relic;item_ultimate_orb"
 		}
 	}
 
@@ -1619,7 +1619,7 @@
 			"05"
 			{
 				"var_type"									"FIELD_INTEGER"
-				"bonus_all_stats"						    "30"
+				"bonus_all_stats"						    "40"
 			}
 			"06"
 			{
@@ -3003,7 +3003,7 @@
 		// Item Info
 
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
+		"ItemCost"						"3400"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3012,7 +3012,7 @@
 		"ItemResult"					"item_desolator_2"
 		"ItemRequirements"
 		{
-			"01"				"item_desolator;item_desolator"
+			"01"				"item_desolator;item_blight_stone"
 		}
 	}
 	//=================================================================================================================
@@ -3029,7 +3029,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"200"
+		"ItemCost"						"2800"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3038,7 +3038,7 @@
 		"ItemResult"					"item_desolator_3"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator_2;item_desolator_2;item_relic"
+			"01"						"item_desolator_2;item_desolator;item_blight_stone;item_relic"
 		}
 	}
 	//	//=================================================================================================================
@@ -3235,7 +3235,7 @@
 		"ItemResult"					"item_heart_2"
 		"ItemRequirements"
 		{
-	      		"01"						"item_bloodstone;item_heart;item_wraith_band"
+	      		"01"						"item_bloodstone;item_heart"
 		}
 	}
 	"item_recipe_heart_of_abyss"
@@ -3712,7 +3712,7 @@
 		"ItemResult"					"item_timepiece"
 		"ItemRequirements"
 		{
-			"01"						"item_relic;item_orchid;item_relic;item_relic"
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_orchid;item_relic;item_ultimate_orb;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -3806,7 +3806,7 @@
 		"ItemResult"					"item_vermilion_robe"
 		"ItemRequirements"
 		{
-			"01"						"item_crimson_guard;item_pipe"
+			"01"						"item_crimson_guard;item_pipe;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -4333,7 +4333,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"18.0"
+		"AbilityCooldown"				"28.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4505,7 +4505,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"75"
+				"bonus_all_stats"		"80"
 			}
 			"02"
 			{
@@ -4515,7 +4515,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"220"
+				"bonus_damage"			"120"
 			}
 			"04"
 			{
@@ -4792,7 +4792,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"30"
+				"bonus_all_stats"		"40"
 			}
 			"04"
 			{
@@ -5063,7 +5063,7 @@
 
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"38.0"
+		"AbilityCooldown"				"88.0"
 
 
 		// Item Info
@@ -5092,7 +5092,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"190"
+				"bonus_damage"				"140"
 			}
 			"03"
 			{
@@ -5102,12 +5102,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance"				"90"
+				"bonus_chance"				"80"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"200"
+				"bonus_chance_damage"		"150"
 			}
 			"06"
 			{
@@ -5127,7 +5127,7 @@
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"duration"						"4"
+				"duration"						"3"
 			}
 		}
 	}
@@ -6194,7 +6194,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"50"
+				"bonus_all_stats"			"60"
 			}
 			"04"
 			{
@@ -6459,17 +6459,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"120"
+				"bonus_movement_speed"	"140"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"24"
+				"bonus_damage"			"30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"15"
+				"bonus_all_stats"		"25"
 			}
 			"05"
 			{
@@ -6858,7 +6858,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"100"
+		"ItemCost"						"50"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"donkey;chicken;animal courier"
@@ -7452,7 +7452,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"50.0"
+		"AbilityCooldown"				"40.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
