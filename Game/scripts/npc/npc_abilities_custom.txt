@@ -9260,23 +9260,26 @@
 	}
 	"batman_midas_lua"
 	{
-    	// General
-    	//-------------------------------------------------------------------------------------------------------------
-    	"BaseClass"									"ability_lua"
-    	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AOE"
-    	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-    	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-    	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
-    	"AOERadius"                 "500"
-    	"AbilityTextureName"				"custom/aghanim_ability_batman"
-    	"ScriptFile"								"abilities/batman_midas_lua.lua"
-    	"HasScepterUpgrade"					"1"
-    	// Stats
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityCastRange"				"500"
-    	"AbilityCastPoint"				"0.1"
-    	"AbilityCooldown"				"230 210 190 170"
-    	"AbilityManaCost"				"125 150 175 200"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"				"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+		
+		"AOERadius"                			"350"
+
+		"AbilityTextureName"				"custom/aghanim_ability_batman"
+		"ScriptFile"						"abilities/batman_midas_lua.lua"
+
+		"HasScepterUpgrade"					"1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"					"500"
+		"AbilityCastPoint"					"0.1"
+		"AbilityCooldown"					"230 210 190 170"
+		"AbilityManaCost"					"125 150 175 200"
 
 		"precache"
 		{
@@ -9288,39 +9291,29 @@
 			"particle"					"particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf"
 		}
 
-    	"AbilitySpecial"
-    	{
-    		"01"
-    		{
-    			"var_type"				"FIELD_INTEGER"
-    			"cooldown_scepter"	    "200 180 160 140"
-    		}
-    		"02"
-    		{
-    			"var_type"				"FIELD_FLOAT"
-    			"xp_multiplier"			"1.1 1.2 1.3 1.4"
-    		}
-    		"03"
-    		{
-    			"var_type"				"FIELD_INTEGER"
-    			"bonus_gold"			"100 120 140 160"
-    		}
-    		"04"
-    		{
-    			"var_type"				"FIELD_INTEGER"
-    			"bourder"				"6 8 10 12"
-    		}
-    		"05"
-    		{
-    			"var_type"				"FIELD_INTEGER"
-    			"damage"				"130 170 210 250"
-    		}
-    		"06"
-	        {
-	        	"var_type"				"FIELD_INTEGER"
-	        	"mana_cost_scepter"	    "50"
-	        }
-	  	}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"xp_multiplier"			"1.1 1.2 1.3 1.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"				"100 120 140 160"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bourder"					"6 8 10 12"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"					"130 170 210 250"
+			}
+		}
 	}
 	//=================================================================================================================
 	// Alchemist: Goblin's Greed
@@ -34521,12 +34514,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_dance_crit_chance"		"20 25 30 35"
+				"blade_dance_crit_chance"		"25"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_dance_crit_mult"			"170 190 210 230"
+				"blade_dance_crit_mult"			"200 230 270 300"
 			}
 		}
 
@@ -34556,11 +34549,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"42 34 26 18"
+		"AbilityCooldown"				"50 45 40 35"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 110 100 90"		
+		"AbilityManaCost"				"120"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -34637,12 +34630,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"attack_rate_multiplier"			"1.8 1.7 1.6"
+				"attack_rate_multiplier"			"1.8"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"					"30 40 50"
+				"bonus_damage"					"50 100 150"
 			}
 			"03"
 			{
@@ -34742,9 +34735,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"					"16 12 8 4"
-		"AbilityManaCost"					"40"
 		"AbilityCastRange"					"175"
-		"AbilityCastPoint"					"0.0 0.0 0.0 0.0"
 
 		"precache"
 		{
@@ -34773,5 +34764,25 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	"special_bonus_unique_batman_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"60"
+			}
+		}
 	}
 }
