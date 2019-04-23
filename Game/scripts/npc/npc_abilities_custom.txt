@@ -9267,7 +9267,7 @@
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"				"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
-		
+
 		"AOERadius"                			"350"
 
 		"AbilityTextureName"				"custom/aghanim_ability_batman"
@@ -13821,7 +13821,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"45 80 115 150"
-				"LinkedSpecialBonus" "special_bonus_unique_ragnaros"
 			}
 			"04"
 			{
@@ -30617,13 +30616,13 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage"						"14 17 20 23"
+				"damage"						"20 24 28 32"
 				"LinkedSpecialBonus"			"special_bonus_unique_fate_3"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"heal_amt"						"14 17 20 23"
+				"heal_amt"						"20 24 28 32"
 				"LinkedSpecialBonus"			"special_bonus_unique_fate_3"
 			}
 		}
@@ -30634,24 +30633,21 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-		"FightRecapLevel"				"2"
-		"AbilityTextureName"			"custom/tribunal_angel"
-
 		"ScriptFile"					"abilities/tribunal_immortal_judje.lua"
-
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"			"2"
+		"AbilityTextureName"	"custom/tribunal_angel"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"32 28 24 20"
-		"AbilityCastPoint"				"0.1"
-		"MaxLevel"                      "4"
+		"AbilityCooldown"			"52 48 44 40"
+		"AbilityCastPoint"		"0.1"
+		"MaxLevel"            "4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"			"70 80 90 100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -30659,8 +30655,8 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"2.6 3.4 4.2 5.0"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.6 3.4 4.2 5.0"
 			}
 		}
 
@@ -30678,13 +30674,12 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"custom/tribunal_crit"
-		"MaxLevel"                      "4"
-
 		"ScriptFile"					"abilities/tribunal_crit.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	"custom/tribunal_crit"
+		"MaxLevel"            "4"
+
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -30715,27 +30710,27 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"								"ability_lua"
-		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
-		"FightRecapLevel"						"2"
-		"AbilityTextureName"					"custom/tribunal_ulti"
 		"ScriptFile"							"abilities/tribunal_justice_void.lua"
+		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"					"2"
+		"AbilityTextureName"			"custom/tribunal_ulti"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"					"700"
-		"AbilityCastPoint"					"0.1"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"						"120 95 70"
+		"AbilityCooldown"					"120 95 70"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"						"125 200 275"
+		"AbilityManaCost"					"125 200 275"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -30815,7 +30810,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"7"
+				"value"						"8"
 			}
 		}
 	}
@@ -34428,7 +34423,7 @@
 		"AbilityCastPoint"				"0 0 0 0"
 		"AbilityChannelTime"			"2.5 3.0 3.5 4.0"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"45"
 
@@ -34506,7 +34501,7 @@
 		"AbilityTextureName"			"custom/sam_blade_dance"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -34537,23 +34532,23 @@
 		"AbilityTextureName"			"custom/sam_blade_fury"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
-	
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0 0 0 0"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50 45 40 35"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120"		
+		"AbilityManaCost"				"120"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -34600,21 +34595,21 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"FightRecapLevel"				"2"
 
 		"HasScepterUpgrade"				"1"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"350 400 450"
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"90 70 80"
-	
+
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"125 175 225"
@@ -34678,15 +34673,15 @@
 
 		"AbilitySound"					"Hero_BountyHunter.WindWalk"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"24 23 20 17"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-		
+
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"65"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -34726,13 +34721,13 @@
 		"AbilityTextureName"			"custom/sam_elecrtic_blow"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"					"16 12 8 4"
 		"AbilityCastRange"					"175"
@@ -34764,6 +34759,69 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	"fountain_protection"
+	{
+		"BaseClass"											"ability_lua"
+		"ScriptFile"										"modifiers/fountain_protection.lua"
+
+		"AbilityTextureName"						"omniknight_guardian_angel"
+		"AbilityBehavior"								"DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitDamageType" 				"DAMAGE_TYPE_HP_REMOVAL"
+		"AbilityUnitTargetType" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+		"AbilityCastRange"							"1200"
+
+		"AbilitySpecial" // значения с _off это те которые используются после отключения защиты
+		{
+			"01"
+			{
+				"var_type"									"FIELD_FLOAT"
+				"health_regen_pct"					"25"
+			}
+			"02"
+			{
+				"var_type"									"FIELD_FLOAT"
+				"health_regen_pct_off"			"3"
+			}
+			"03"
+			{
+				"var_type"									"FIELD_FLOAT"
+				"mana_regen_pct"						"25"
+			}
+			"04"
+			{
+				"var_type"									"FIELD_FLOAT"
+				"mana_regen_pct_off"				"5"
+			}
+			"05"
+			{
+				"var_type"									"FIELD_FLOAT"
+				"outgoing_damage_reduction"	"95"
+			}
+			"06"
+			{
+				"var_type"									"FIELD_FLOAT"
+				"outgoing_damage_reduction_off"	"0"
+			}
+			"07"
+			{
+				"var_type"									"FIELD_FLOAT"
+				"incoming_damage_reduction"	"1000"
+			}
+			"08"
+			{
+				"var_type"									"FIELD_FLOAT"
+				"incoming_damage_reduction_off"	"75"
+			}
+			"09"
+			{
+				"var_type"									"FIELD_INTEGER"
+				"time_to_off"								"60"			// На какой минуте отключается защита фонтана
+			}
+		}
 	}
 
 	"special_bonus_unique_batman_3"

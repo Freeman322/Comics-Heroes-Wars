@@ -1186,7 +1186,7 @@
 	    "ArmorPhysical"					"0"
         "AttackDamageMin"  "40"
         "AttackDamageMax"  "46"
-		"AttackRate"		"1.600000"     
+		"AttackRate"		"1.600000"
 		"AttributeBaseStrength"			"20"
 		"AttributeStrengthGain"			"4.00000"
 		"AttributeBaseIntelligence"		"16"
@@ -4344,16 +4344,16 @@
 	}
 	"npc_dota_hero_tribunal"
 	{
-		"override_hero"				"npc_dota_hero_obsidian_destroyer"
-		"Model"          			"models/heroes/hero_livingtribunal/tribunal.vmdl"
-		"DisableWearables"			"1"
+		"override_hero"			"npc_dota_hero_obsidian_destroyer"
+		"Model"          		"models/heroes/hero_livingtribunal/tribunal.vmdl"
+		"DisableWearables"	"1"
 		"ModelScale"				"1.650000"
-		"Ability1"		     		"tribunal_immortal_judje"
-		"Ability2"		    		"tribunal_crit"
-		"Ability3"		    		"tribunal_blink"
+		"Ability1"		     	"tribunal_immortal_judje"
+		"Ability2"		    	"tribunal_crit"
+		"Ability3"		    	"tribunal_blink"
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
-		"Ability6"		    		"tribunal_justice_void"
+		"Ability6"		    	"tribunal_justice_void"
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_spell_block_20"
@@ -4379,7 +4379,7 @@
 		"AttributeAgilityGain"		"3.50000"
 		"AttributeBaseIntelligence"		"26"
 		"AttributeIntelligenceGain"		"2.400000"
-		"MovementSpeed"		"330"
+		"MovementSpeed"		"300"
 		"MovementTurnRate"		"0.500000"
 		"HealthBarOffset"		"350"
 		"precache"
@@ -6981,7 +6981,7 @@
 		"MovementTurnRate"				"0.600000"
 
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		
+
 		"precache"
 		{
 			"model"			"models/heroes/hero_jetstream_sam/murasama_sams.vmdl"

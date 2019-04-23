@@ -12,7 +12,7 @@ require('CaptainsMode')
 require('Stats')
 
 local vCenter = Vector( 706.149, 3112.51, 235.403 )
-local iCone = 0.08715 
+local iCone = 0.08715
 
 if GameMode == nil then
 	GameMode = class({})
@@ -116,10 +116,10 @@ function Precache( context )
 	PrecacheResource("model", "models/pets/osky/osky.vmdl", context)
 	PrecacheResource("model", "models/pets/icewrack_wolf/icewrack_wolf.vmdl", context)
 	PrecacheResource("model", "models/items/courier/onibi_lvl_21/onibi_lvl_21.vmdl", context)
-	
+
 	PrecacheResource("particle", "particles/econ/pets/pet_drodo_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/econ/courier/courier_onibi/courier_onibi_black_lvl21_ambient.vpcf", context)
-	
+
 	PrecacheResource("particle", "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_weather_underwater.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_snow.vpcf", context)
@@ -150,7 +150,7 @@ function Precache( context )
 	PrecacheResource("model", "models/items/abaddon/feathers/feathers_weapon.vmdl", context)
 	PrecacheResource("model", "models/b2/weapon/weapon.vmdl", context)
 	PrecacheResource("model", "models/items/abaddon/sword_iceshard/sword_iceshard.vmdl", context)
-	
+
 	print("PRECASHE ENDED")
 end
 
@@ -186,7 +186,7 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
 
-	GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_wisp" ) 
+	GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_wisp" )
 
 	if GetMapName() == "free_for_all" then
 		tdm:start()
@@ -235,10 +235,10 @@ function GameMode:InitGameMode()
 
 	GameRules:GetGameModeEntity():SetUseCustomHeroLevels(true)
 	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel(XP_PER_LEVEL_TABLE)
-	
+
 	Convars:SetInt("dota_wait_for_players_to_load_timeout", 260)
 	Convars:SetInt("dota_combine_models", 1 )
-	SendToServerConsole( "dota_combine_models 1" )	
+	SendToServerConsole( "dota_combine_models 1" )
 
 	-- Hook into game events allowing reload of functions at run time
 	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( GameMode, "OnNPCSpawned" ), self )
@@ -293,16 +293,16 @@ function GameMode:OnGameRulesStateChange(keys)
 	  GameMode:OnGameEnded(keys)
 	end
   end
-  
+
 function GameMode:OnGameStarted(keys)
-	stats.get_data() 
+	stats.get_data()
 	stats.get_all_inventories()
 end
 function GameMode:OnGameEnded(keys)
 	if GameRules:IsCheatMode() == false and IsInToolsMode() == false then
 		if PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) > 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) > 0 then
 			if GetMapName() ~= "free_for_all" then
-				if GameRules:IsCheatMode() == false then 
+				if GameRules:IsCheatMode() == false then
 					stats.roll()
 					stats.set_data()
 				end
@@ -327,7 +327,7 @@ end
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 
-	if npc:HasAbility("creeps_gangsta_ability") then npc:FindAbilityByName("creeps_gangsta_ability"):SetLevel(1) end 
+	if npc:HasAbility("creeps_gangsta_ability") then npc:FindAbilityByName("creeps_gangsta_ability"):SetLevel(1) end
 
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
@@ -374,12 +374,12 @@ function GameMode:DmgFilter(ftable)
 					local modifier = victim:FindModifierByName("modifier_franklin_global_retrocausality_friendly")
 					if modifier then
 						local target = EntIndexToHScript(modifier:GetTarget())
-						if target:IsAlive() then 
+						if target:IsAlive() then
 							target:ModifyHealth(target:GetHealth() - damage, modifier:GetAbility(), true, 0)
-							ApplyDamage ({victim = target, attacker = victim, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = modifier:GetAbility(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS })      
+							ApplyDamage ({victim = target, attacker = victim, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = modifier:GetAbility(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS })
 						end
 						ftable.damage = 0
-					end					
+					end
 				end
 				if attacker:HasModifier( "modifier_tzeentch_warp_connection" ) then
 					local modifier = attacker:FindModifierByName("modifier_tzeentch_warp_connection")
@@ -390,30 +390,30 @@ function GameMode:DmgFilter(ftable)
 					end
 					return true
 				end
-				if victim:HasModifier( "modifier_thanos_believer" ) and not victim:HasModifier("modifier_item_timepiece")  then 
-					if damage > victim:GetHealth() then 
+				if victim:HasModifier( "modifier_thanos_believer" ) and not victim:HasModifier("modifier_item_timepiece")  then
+					if damage > victim:GetHealth() then
 						local modifer = victim:FindModifierByName("modifier_thanos_believer")
 						if modifer and modifer:GetAbility():IsCooldownReady() then
 							modifer:GetAbility():StartCooldown(modifer:GetAbility():GetCooldown(modifer:GetAbility():GetLevel()))
 							victim:AddNewModifier( victim, modifer, "modifier_item_aeon_disk_buff", {duration = modifer:GetAbility():GetDuration()} )
-							victim:AddNewModifier( victim, modifer, "modifier_item_lotus_orb_active", {duration = modifer:GetAbility():GetDuration()} ) 
+							victim:AddNewModifier( victim, modifer, "modifier_item_lotus_orb_active", {duration = modifer:GetAbility():GetDuration()} )
 
 							ftable.damage = 0
 						end
 					end
 				end
 				if victim:HasModifier( "item_time_gem" ) then
-					if damage > victim:GetHealth() then 
+					if damage > victim:GetHealth() then
 						local modifer = victim:FindModifierByName("item_time_gem")
 						if modifer ~= nil then
-							if modifer:OnTime(attacker, victim) then 
+							if modifer:OnTime(attacker, victim) then
 								ftable.damage = 0
 								return false
-							end					
-						end 
-					end					
+							end
+						end
+					end
 				end
-			end	
+			end
 			if victim:HasModifier("modifier_ares_terrorize") then
 				local dmf = ftable.damage
 				ftable.damage = 0
@@ -453,13 +453,13 @@ function GameMode:ModifierFilter(params)
 	local modifier = params.name_const
 	local caster_entindex = params.entindex_caster_const or parent_entindex
 
-	if ability_entindex and parent_entindex then 
+	if ability_entindex and parent_entindex then
 		Util:OnModifierWasApplied( EntIndexToHScript(ability_entindex), EntIndexToHScript(parent_entindex), EntIndexToHScript(caster_entindex), modifier)
-	end 
+	end
 
-	if not ability_entindex and parent_entindex then 
+	if not ability_entindex and parent_entindex then
 		Util:OnModifierWasApplied( nil, EntIndexToHScript(parent_entindex), EntIndexToHScript(caster_entindex), modifier)
-	end 
+	end
 
 	return true
 end
@@ -468,28 +468,28 @@ function GameMode:OnAbilityLearned(params)
 end
 function GameMode:GoldFilter(ftable)
 	local reason = ftable.reason_const
-	local pid = ftable.player_id_const	
+	local pid = ftable.player_id_const
 	local gold = ftable.gold
 
 	---if reason == DOTA_ModifyGold_HeroKill then gold = RandomInt(50, 300) end
-	
+
 	return true
 end
 function GameMode:OrderFilter(params)
 	local unit = EntIndexToHScript(params.units["0"])
 
-	if unit:HasModifier("modifier_cosmos_space_warp") then 
+	if unit:HasModifier("modifier_cosmos_space_warp") then
 		if params.order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or params.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET then
 			local target = Vector(params.position_x, params.position_y, params.position_z)
-			
+
 			local movement = target - unit:GetAbsOrigin()
 			local targetPos = unit:GetAbsOrigin() - movement
 
-			
+
 			params.position_x = targetPos.x
 			params.position_y = targetPos.y
 			params.position_z = targetPos.z
-		end 
+		end
 		if params.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or params.order_type == DOTA_UNIT_ORDER_ATTACK_MOVE then
 			local target = params.entindex_target
 
@@ -497,28 +497,28 @@ function GameMode:OrderFilter(params)
 			if #units > 0 then
 				params.entindex_target = units[1]:entindex()
 			end
-		end 
+		end
 		if params.order_type == DOTA_UNIT_ORDER_CAST_POSITION then
 			local target = Vector(params.position_x, params.position_y, params.position_z)
-			
+
 			local movement = target - unit:GetAbsOrigin()
 			local targetPos = unit:GetAbsOrigin() - movement
 
-			
+
 			params.position_x = targetPos.x
 			params.position_y = targetPos.y
 			params.position_z = targetPos.z
-		end 
+		end
 	end
 
-	if unit:HasModifier("cosmos_q_continuum_modifier") then 
+	if unit:HasModifier("cosmos_q_continuum_modifier") then
 		if params.order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or params.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET then
 			local targetPos = vCenter + RandomVector(1) * RandomFloat(0, 10000)
 
 			params.position_x = targetPos.x
 			params.position_y = targetPos.y
 			params.position_z = targetPos.z
-		end 
+		end
 	end
 
 	return true

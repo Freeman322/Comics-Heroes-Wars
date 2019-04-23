@@ -5145,11 +5145,11 @@
 		// Abilities
 		//----------------------------------------------------------------
 
-		"Ability1"					"ursa_fury_swipes"			// Ability 1.
-		"Ability2"					"forged_spirit_melting_strike"			// Ability 2.
-		"Ability3"					"chaos_knight_chaos_strike"			// Ability 3.
-		"Ability4"					"fountain_pro_aura"			// Ability 4.
-		"Ability5"					"slark_essence_shift"			// Ability 5.
+		"Ability1"					"fountain_protection"			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -5161,9 +5161,9 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"500"		// Damage range min.
-		"AttackDamageMax"			"500"		// Damage range max.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.001"		// Speed of attack.
 		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
@@ -5171,22 +5171,6 @@
 		"AttackRange"				"1200"		// Range within a target can be attacked. (was 690)
 		"ProjectileModel"			"particles/base_attacks/fountain_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1400"		// Speed of projectile.
-
-		// Attributes
-		//----------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"0"			// Base strength
-		"AttributeStrengthGain"		"0"			// Strength bonus per level.
-		"AttributeBaseIntelligence"	"0"			// Base intelligence
-		"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
-		"AttributeBaseAgility"		"0"			// Base agility
-		"AttributeAgilityGain"		"0"			// Agility bonus per level.
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"0"		// Experience earn.
-		"BountyGoldMin"				"0"		// Gold earned min.
-		"BountyGoldMax"				"0"		// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------

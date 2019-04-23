@@ -12,7 +12,7 @@ function fate_lord_of_order:OnSpellStart()
 	local hCaster = self:GetCaster()
 	local hTarget = self:GetCursorTarget()
 
-	if hCaster == nil or hTarget == nil then
+	if hCaster == nil or hTarget == nil or hTarget:TriggerSpellAbsorb(self) then
 		return
 	end
 
@@ -37,19 +37,19 @@ function fate_lord_of_order:OnSpellStart()
 	if hTarget:GetTeamNumber() == hCaster:GetTeamNumber() then
 		local damage_result = hCaster:GetHealth() * (damage / 100)
 
-		hTarget:Heal(damage_result, self) hCaster:ModifyHealth(hCaster:GetHealth() - damage_result, self, true, 0)
+		hCaster:ModifyHealth(hCaster:GetHealth() - damage_result, self, true, 0)
+		hTarget:Heal(damage_result, self)
 	else
 		local damage_result = hTarget:GetHealth() * (damage / 100)
 
-		local damage_tbl = {
+		ApplyDamage({
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = damage_result,
 			damage_type = DAMAGE_TYPE_PURE,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			ability = self
-		}
-
-		ApplyDamage( damage_tbl )
+		})
 
 		self:GetCaster():Heal(damage_result, self)
 	end
