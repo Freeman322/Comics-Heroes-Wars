@@ -28,7 +28,6 @@ function modifier_fountain_protection:OnIntervalThink()
       target:EmitSound("Hero_Lina.LagunaBlade.Immortal")
       if not time_to_off then
         target:ForceKill(false)
-        target:Destroy()
       else
         target:SetHealth(target:GetHealth() - target:GetMaxHealth() * 0.02)
         if target:GetHealth() < 1 then
