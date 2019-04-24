@@ -34779,27 +34779,27 @@
 			"01"
 			{
 				"var_type"									"FIELD_FLOAT"
-				"health_regen_pct"					"25"
+				"health_regen_pct"					"5"
 			}
 			"02"
 			{
 				"var_type"									"FIELD_FLOAT"
-				"health_regen_pct_off"			"3"
+				"health_regen_pct_off"			"4"
 			}
 			"03"
 			{
 				"var_type"									"FIELD_FLOAT"
-				"mana_regen_pct"						"25"
+				"mana_regen_pct"						"5"
 			}
 			"04"
 			{
 				"var_type"									"FIELD_FLOAT"
-				"mana_regen_pct_off"				"5"
+				"mana_regen_pct_off"				"3"
 			}
 			"05"
 			{
 				"var_type"									"FIELD_FLOAT"
-				"outgoing_damage_reduction"	"95"
+				"outgoing_damage_reduction"	"50"
 			}
 			"06"
 			{
@@ -34819,7 +34819,7 @@
 			"09"
 			{
 				"var_type"									"FIELD_INTEGER"
-				"time_to_off"								"60"			// На какой минуте отключается защита фонтана
+				"time_to_off"								"40"			// На какой минуте отключается защита фонтана
 			}
 		}
 	}
