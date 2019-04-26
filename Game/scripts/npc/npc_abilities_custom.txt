@@ -34764,65 +34764,16 @@
 
 	"fountain_protection"
 	{
-		"BaseClass"											"ability_lua"
-		"ScriptFile"										"modifiers/fountain_protection.lua"
+		"BaseClass"									"ability_lua"
+		"ScriptFile"									"abilities/fountain_protection.lua"
 
-		"AbilityTextureName"						"omniknight_guardian_angel"
+		"AbilityTextureName"							"omniknight_guardian_angel"
 		"AbilityBehavior"								"DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitDamageType" 				"DAMAGE_TYPE_HP_REMOVAL"
-		"AbilityUnitTargetType" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitDamageType" 							"DAMAGE_TYPE_HP_REMOVAL"
+		"AbilityUnitTargetType" 							"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"							"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 
-		"AbilityCastRange"							"1200"
-
-		"AbilitySpecial" // значения с _off это те которые используются после отключения защиты
-		{
-			"01"
-			{
-				"var_type"									"FIELD_FLOAT"
-				"health_regen_pct"					"5"
-			}
-			"02"
-			{
-				"var_type"									"FIELD_FLOAT"
-				"health_regen_pct_off"			"4"
-			}
-			"03"
-			{
-				"var_type"									"FIELD_FLOAT"
-				"mana_regen_pct"						"5"
-			}
-			"04"
-			{
-				"var_type"									"FIELD_FLOAT"
-				"mana_regen_pct_off"				"3"
-			}
-			"05"
-			{
-				"var_type"									"FIELD_FLOAT"
-				"outgoing_damage_reduction"	"50"
-			}
-			"06"
-			{
-				"var_type"									"FIELD_FLOAT"
-				"outgoing_damage_reduction_off"	"0"
-			}
-			"07"
-			{
-				"var_type"									"FIELD_FLOAT"
-				"incoming_damage_reduction"	"1000"
-			}
-			"08"
-			{
-				"var_type"									"FIELD_FLOAT"
-				"incoming_damage_reduction_off"	"75"
-			}
-			"09"
-			{
-				"var_type"									"FIELD_INTEGER"
-				"time_to_off"								"40"			// На какой минуте отключается защита фонтана
-			}
-		}
+		"AbilityCastRange"								"1200"
 	}
 
 	"special_bonus_unique_batman_3"

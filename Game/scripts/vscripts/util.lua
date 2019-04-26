@@ -2430,3 +2430,7 @@ function CDOTA_BaseNPC:GetBasePos()
 
   return self:GetAbsOrigin()
 end
+
+function CDOTA_BaseNPC:IsFriendly(target)
+  return target:GetTeamNumber() == self:GetTeamNumber()
+end

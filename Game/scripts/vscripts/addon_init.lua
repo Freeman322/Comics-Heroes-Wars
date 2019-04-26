@@ -5,3 +5,4 @@ function IsHasTalent( pID, talent )
     end 
     return nil
 end
+

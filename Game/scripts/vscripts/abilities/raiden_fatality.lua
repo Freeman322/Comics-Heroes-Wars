@@ -75,6 +75,8 @@ function modifier_raiden_fatality:OnIntervalThink()
 
 		ApplyDamage( damage )
 		
+		self:GetCaster():PerformAttack(self:GetParent(), false, false, true, true, false, true, true)
+
 		EmitSoundOn("Hero_Zuus.LightningBolt.Cloud", self:GetParent())
 
 	   	local nTargetFX = ParticleManager:CreateParticle( "particles/econ/items/storm_spirit/strom_spirit_ti8/gold_storm_spirit_ti8_overload_active_h.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
