@@ -3426,4 +3426,111 @@
 		// Inventory
 		"HasInventory"				"1"
 	}
+	"npc_dota_hero_raiden"
+	{
+		"BaseClass"             	    	"npc_dota_hero"
+		"IsCustom"                  	"1"
+		"DisableWearables"          	"1"
+
+
+		"Model"					"models/heroes/hero_raiden/raiden.vmdl"
+		
+		"IdleExpression"			"scenes/stormspirit/stormspirit_exp_idle_01.vcd"
+		
+		"SoundSet"				"Hero_StormSpirit"
+
+		"Enabled"					"1"
+		"HeroUnlockOrder"			"1"
+		"Role"					"Carry,Escape,Nuker,Initiator,Disabler"
+		"Rolelevels"				"2,3,2,1,1"
+		"Complexity"				"3"
+
+		"Team"					"Good"
+		"HeroID"					"217"
+		"ModelScale"				"0.8000"
+		"SpectatorLoadoutScale" 		"1"
+
+		"HeroGlowColor"			"0 250 227"
+		"CMEnabled"				"0"
+		
+		"NameAliases"				"ss;raiden"
+		"workshop_guide_name"		"Raiden"
+		
+		"LastHitChallengeRival"		"npc_dota_hero_kunkka"
+		"HeroSelectSoundEffect"		"Hero_StormSpirit.Pick"
+		
+		"GibType"					"electric"
+		"Ability1"				"raiden_lightning_transfer"
+		"Ability2"				"raiden_electro_field"
+		"Ability3"				"raiden_storm_flight"
+		"Ability4"				"raiden_fatality"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"raiden_elecro_mine"
+
+  		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_unique_raiden_1"
+		"Ability12"				"special_bonus_mp_regen_10"
+		"Ability13"				"special_bonus_intelligence_10"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_mp_regen_1"
+		"Ability16"				"special_bonus_unique_raiden_2"
+		"Ability17"				"special_bonus_all_stats_20"
+		
+		"ArmorPhysical"			"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"26"
+		"AttackDamageMax"			"36"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"				"480"
+		"ProjectileModel"			"particles/units/heroes/hero_stormspirit/stormspirit_base_attack.vpcf"
+		"ProjectileSpeed"			"1100"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.000000"
+		"AttributeBaseIntelligence"	"23"
+		"AttributeIntelligenceGain"	"3.900000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"1.500000"
+		"MovementSpeed"			"285"
+		"MovementTurnRate"			"0.800000"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+
+		"particle_folder"			"particles/units/heroes/hero_stormspirit"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_stormspirit.vsndevts"
+
+		
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"300"
+		"StatusHealthRegen"			"2.0"
+		"StatusMana"				"245"
+		"StatusManaRegen"			"1.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"				"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}
 }

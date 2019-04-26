@@ -1340,7 +1340,7 @@
 		"DOTA_Tooltip_ability_tribunal_immortal_judje_duration"	"ДЛИТЕЛЬНОСТЬ:"
 
 		"DOTA_TOOLTIP_ABILITY_tribunal_crit"                 				 "JUDGEMENT CRIT"
-		"DOTA_TOOLTIP_ABILITY_tribunal_crit_Description"                   "При атаке, есть шанс нанести критический урон. Этот урон будет стакаться с любыми критами."
+		"DOTA_TOOLTIP_ABILITY_tribunal_crit_Description"                   "При атаке у Трибунала есть шанс нанести критический урон."
 		"DOTA_Tooltip_ability_tribunal_crit_Lore"								"В одно мгновение, он может решить судьбу всей вселенной."
 		"DOTA_Tooltip_ability_tribunal_crit_crit_bonus"							    "%КРИТ:"
 		"DOTA_Tooltip_ability_tribunal_crit_crit_chance"							    "%ШАНС КРИТА:"
@@ -4808,7 +4808,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_scarlet_witch"                       "+600 к урону от Unstable Energy"
 		"DOTA_Tooltip_ability_special_bonus_unique_savitar"                         	"+0.5 к длительности Retribution"
 		"DOTA_Tooltip_ability_special_bonus_unique_sauron"                         	 	"+8 к снижению урона от Decay Aura"
-		"DOTA_Tooltip_ability_special_bonus_unique_sargeras"                         	"+%value% к урону от Magmatic Armor"
+		"DOTA_Tooltip_ability_special_bonus_unique_sargeras"                         	"+80 к урону от Magmatic Armor"
 		"DOTA_Tooltip_ability_special_bonus_unique_ragnaros"                         	"+320 к урону от Shine Soul"
 		"DOTA_Tooltip_ability_special_bonus_unique_quicksilver"                         "+50% к урону от расстояния для Relatity Shift"
 		"DOTA_Tooltip_ability_special_bonus_unique_overvoid"                         	"+0.7 к длительности Infinite"

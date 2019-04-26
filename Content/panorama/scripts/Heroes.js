@@ -534,6 +534,10 @@ Heroes.list = {
         {
             "name": "npc_dota_hero_jetstream_sam",
             "id": 216,
+        },
+        {
+            "name": "npc_dota_hero_raiden",
+            "id": 217,
         }
     ]
 }

@@ -138,6 +138,7 @@ function modifier_item_spear_of_destiny_aura:OnCreated(table)
         if self:GetParent():IsBuilding() then 
             return
         end
+        
         self:StartIntervalThink(1)
     end
 end
@@ -178,7 +179,8 @@ end
 function modifier_item_spear_of_destiny_active:DeclareFunctions()
 local funcs = {
         MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
-        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE
     }
 
     return funcs
@@ -187,7 +189,7 @@ end
 function modifier_item_spear_of_destiny_active:CheckState ()
     local state = {
         [MODIFIER_STATE_DISARMED] = true,
-        [MODIFIER_STATE_INVULNERABLE] = true
+        [MODIFIER_STATE_SILENCED] = true
     }
 
     return state
@@ -199,5 +201,9 @@ function modifier_item_spear_of_destiny_active:GetAbsoluteNoDamagePhysical( para
 end
 
 function modifier_item_spear_of_destiny_active:GetAbsoluteNoDamageMagical( params )
+    return 1
+end
+
+function modifier_item_spear_of_destiny_active:GetAbsoluteNoDamagePure( params )
     return 1
 end

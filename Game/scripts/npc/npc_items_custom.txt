@@ -5047,7 +5047,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_lua"
+		"BaseClass"					"item_lua"
 		"AbilityTextureName"			"custom/spear_of_destiny"
 		"ScriptFile"					"items/item_spear_of_destiny.lua"
 
@@ -5055,31 +5055,33 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"FightRecapLevel"				"1"
+		
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
-		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIPickupSound"				"Item.PickUpGemShop"
 		"UIDropSound"					"Item.DropGemShop"
 		"WorldDropSound"				"Item.DropGemWorld"
 
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"38.0"
-
+		"AbilityCooldown"				"40.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"15575"
+		"ItemCost"					"15575"
 		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+		
 		"precache"
 		{
-			"particle"					"particles/econ/events/ti6/radiance_owner_ti6.vpcf"
-			"particle"					"particles/items_fx/ghost.vpcf"
-			"particle"					"particles/status_fx/status_effect_ghost.vpcf"
+			"particle"				"particles/econ/events/ti6/radiance_owner_ti6.vpcf"
+			"particle"				"particles/items_fx/ghost.vpcf"
+			"particle"				"particles/status_fx/status_effect_ghost.vpcf"
 		}
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -5087,47 +5089,47 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"40"
+				"bonus_all_stats"				"40"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"140"
+				"bonus_damage"					"140"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"50"
+				"bonus_attack_speed"			"50"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance"				"80"
+				"bonus_chance"					"80"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"150"
+				"bonus_chance_damage"			"150"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_aura_damage"			"80"
+				"bonus_aura_damage"				"80"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"700"
+				"aura_radius"					"700"
 			}
 			"08"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"extra_spell_damage_percent"	"0"
+				"var_type"					"FIELD_INTEGER"
+				"extra_spell_damage_percent"		"0"
 			}
 			"09"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"duration"						"3"
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"3"
 			}
 		}
 	}

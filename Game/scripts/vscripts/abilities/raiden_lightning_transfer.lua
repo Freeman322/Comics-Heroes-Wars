@@ -22,7 +22,14 @@ end
 
 function raiden_lightning_transfer:Blink(hTarget, vPoint, nMaxBlink, nClamp)
 	local vOrigin = hTarget:GetAbsOrigin() 
-	ProjectileManager:ProjectileDodge(hTarget) 
+    ProjectileManager:ProjectileDodge(hTarget) 
+    
+    local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/zeus/arcana_chariot/zeus_arcana_blink_compression.vpcf", PATTACH_CUSTOMORIGIN, nil );
+    ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
+    ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetAbsOrigin());
+    ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+    EmitSoundOn("Hero_Zeus.BlinkDagger.Arcana", self:GetCaster())
     
     local vDiff = vPoint - vOrigin 
 	if vDiff:Length2D() > nMaxBlink then  
@@ -37,6 +44,13 @@ function raiden_lightning_transfer:Blink(hTarget, vPoint, nMaxBlink, nClamp)
     for i,unit in ipairs(units) do
         ApplyDamage({victim = unit, attacker = hTarget, ability = self, damage = self:GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS})
     end
+
+    local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/zeus/arcana_chariot/zeus_arcana_blink_compression.vpcf", PATTACH_CUSTOMORIGIN, nil );
+    ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
+    ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetAbsOrigin());
+    ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+    EmitSoundOn("Hero_Zeus.BlinkDagger.Arcana", self:GetCaster())
 end
 
 

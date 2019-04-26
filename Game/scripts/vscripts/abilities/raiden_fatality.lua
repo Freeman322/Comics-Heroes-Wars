@@ -16,17 +16,13 @@ end
 
 --------------------------------------------------------------------------------
 
-function overvoid_infinite:OnSpellStart()
+function raiden_fatality:OnSpellStart()
 	if self.hVictim == nil then
 		return
-    end
+	end
 
-    local duration = self:GetChannelTime()
+    	local duration = self:GetChannelTime()
 
-    if self:GetCaster():HasTalent("special_bonus_unique_overvoid") then
-        duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_overvoid") 
-    end
-    
 	if self.hVictim:TriggerSpellAbsorb( self ) then
 		self.hVictim = nil
 		self:GetCaster():Interrupt()
@@ -39,7 +35,7 @@ end
 
 --------------------------------------------------------------------------------
 
-function overvoid_infinite:OnChannelFinish( bInterrupted )
+function raiden_fatality:OnChannelFinish( bInterrupted )
 	if self.hVictim ~= nil then
 		self.hVictim:RemoveModifierByName( "modifier_raiden_fatality" )
 	end
@@ -68,18 +64,22 @@ end
 
 function modifier_raiden_fatality:OnIntervalThink()
 	if IsServer() then
-        self:GetCaster():PerformAttack(self:GetParent(), true, true, true, true, false, false, true)
-        
-        local damage =
-        {
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            ability = self:GetAbility(),
-            damage = self:GetAbility():GetSpecialValueFor( "magical_bonus_damage"),
-            damage_type = DAMAGE_TYPE_MAGICAL,
-        }
+		local damage =
+		{
+			victim = self:GetParent(),
+			attacker = self:GetCaster(),
+			ability = self:GetAbility(),
+			damage = self:GetAbility():GetAbilityDamage(),
+			damage_type = DAMAGE_TYPE_MAGICAL,
+		}
 
-        ApplyDamage( damage )
+		ApplyDamage( damage )
+		
+		EmitSoundOn("Hero_Zuus.LightningBolt.Cloud", self:GetParent())
+
+	   	local nTargetFX = ParticleManager:CreateParticle( "particles/econ/items/storm_spirit/strom_spirit_ti8/gold_storm_spirit_ti8_overload_active_h.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		ParticleManager:SetParticleControl( nTargetFX, 0, self:GetParent():GetOrigin() )
+		ParticleManager:ReleaseParticleIndex( nTargetFX )
 	end
 end
 

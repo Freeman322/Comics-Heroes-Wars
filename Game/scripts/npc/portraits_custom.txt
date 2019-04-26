@@ -2672,4 +2672,34 @@
 		"PortraitDesaturateParticles"		"0"
 		"PortraitDesaturateHero"		"1"
 	}
+	"models/heroes/hero_raiden/raiden.vmdl"
+	{
+		"PortraitLightPosition"		"23.79 0.43 169.18"
+		"PortraitLightAngles"		"68.66 178.14 0.00"
+		"PortraitLightFOV"		"79"
+		"PortraitLightDistance"		"98"
+		"PortraitLightColor"		"186 202 254"
+		"PortraitShadowColor"		"84 84 84"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"0 84 111"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_bluebloom.vmat"
+		"PortraitBackgroundColor3"		"0 0 0"
+		"PortraitBackgroundColor4"		"0 0 0"
+		"PortraitParticle"		"particles/units/heroes/hero_stormspirit/storm_spirit_portrait.vpcf"
+		"PortraitLightScale"		"3.450000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"32.740 34.500 29.240"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"126.51 -38.45 187.93"
+				"PortraitAngles"		"3.02 161.48 0.00"
+				"PortraitFOV"		"22"
+			}
+		}
+	}
 }

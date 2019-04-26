@@ -3,7 +3,7 @@
     <include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
   </styles>
   <Panel class="AddonLoadingRoot">
-		<Image  hittest="false" id="HeroPanelUpdateHero" src="file://{images}/backgrounds/bg.png"/>
+		<Image  hittest="false" id="HeroPanelUpdateHero" src="file://{images}/backgrounds/bg1.png"/>
     <DOTAScenePanel id="BackgroundScene_A" hittest="false" camera="camera_1" map="scenes/battlepass_winter2017_header"/>
     <DOTAScenePanel id="HeroPanelUpdateHero" camera="shot_cameraA" map="backgrounds/dashboard_parallax_ti6_initial" hittest="false" particleonly="false"/>
   </Panel>

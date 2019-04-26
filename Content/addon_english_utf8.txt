@@ -156,7 +156,7 @@
 		"DOTA_ToolTip_Damage_Physical"	"<font color=\"#4169E1\">Physical</font>"
 		"DOTA_ToolTip_Damage_Magical"   "<font color=\"#FF00FF\">Magical</font>"
 		"DOTA_ToolTip_Damage_Pure"   "<font color=\"#FF0000\">Pure</font>"
-		
+		"DOTA_Tooltip_modifier_fountain_protection_aura"		"Protected by fountain"
 		"DOTA_ToolTip_Damage_HP_Removal"   "<font color=\"#EEEE00\">Menthal</font>"
 		"DOTA_ToolTip_PiercesSpellImmunity_No"		"<font color=\"#B22222\">No</font>"
 		"hp_remove"				"<font color=\"#70EA72\">Hp Removal</font>"
@@ -178,6 +178,8 @@
 		"DOTA_TOOLTIP_ABILITY_item_shere2_bonus_mana"		"+$mana"		
 		"DOTA_TOOLTIP_ABILITY_item_shere2_active_crit"		"%CRITICAL STRIKE:"	
 		"DOTA_TOOLTIP_ABILITY_item_shere2_duration"			"ANCIENT POWER DURATION:"
+
+		"DOTA_Tooltip_Ability_fountain_protection"			"Fountain protection"
 
 		"DOTA_Tooltip_ability_item_tesseract"                                             "Tesseract"
 		"DOTA_Tooltip_ability_item_tesseract_Description"                                 "Activated: DARK RIFT - Creates a portal on both sides, through which you can freely move."
@@ -2438,8 +2440,7 @@
 		//трибунал
 
 		"DOTA_TOOLTIP_ABILITY_tribunal_justice_void"             "WORD OF JUSTICE"
-		"DOTA_TOOLTIP_ABILITY_tribunal_justice_void_Description" "Silences, disarms and slows an enemy hero. Target cannot be healed. Ability can
-		not be removed or avoided."
+		"DOTA_TOOLTIP_ABILITY_tribunal_justice_void_Description" "Living Tribunal curse selected enemy hero imposes silences, disarms, mute and slows move speed."
 		"DOTA_Tooltip_ability_tribunal_justice_void_Lore"								"He can pretty much disable almost everything."
 		"DOTA_Tooltip_ability_tribunal_justice_void_duration"							    "DURATION:"
 
@@ -2449,10 +2450,10 @@
 		"DOTA_Tooltip_ability_tribunal_immortal_judje_duration"	"DURATION:"
 
 		"DOTA_TOOLTIP_ABILITY_tribunal_crit"                 				 "JUDGEMENT CRIT"
-		"DOTA_TOOLTIP_ABILITY_tribunal_crit_Description"                   "When attacking, has a chance to deal critical damage. This damage will stack up with any other sources of critical damage."
+		"DOTA_TOOLTIP_ABILITY_tribunal_crit_Description"                   "When attacking, Tribunal has a chance to deal critical damage."
 		"DOTA_Tooltip_ability_tribunal_crit_Lore"								"In an instant, it can decide the fate of the entire universe."
-		"DOTA_Tooltip_ability_tribunal_crit_crit_bonus"							    "CRIT AMOUNT:<font color=\"#FFD700\">500%</font>"
-		"DOTA_Tooltip_ability_tribunal_crit_crit_chance"							    "CHANCE:"
+		"DOTA_Tooltip_ability_tribunal_crit_crit_bonus"							    "%CRIT DAMAGE:"
+		"DOTA_Tooltip_ability_tribunal_crit_crit_chance"							    "%CRIT CHANCE:"
 
 		"DOTA_Tooltip_ability_tribunal_blink"	"SOURCE OF TRUE"
 		"DOTA_Tooltip_ability_tribunal_blink_Description"	"Tribunal can instantly teleport to a specific a point."
@@ -5914,7 +5915,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_scarlet_witch"                       "+600 Unstable Energy damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_savitar"                         	"+0.5 Retribution duration"
 		"DOTA_Tooltip_ability_special_bonus_unique_sauron"                         	 	"+8 Decay Aura damage reduction"
-		"DOTA_Tooltip_ability_special_bonus_unique_sargeras"                         	"+%value% Magmatic Armor damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_sargeras"                         	"+80 Magmatic Armor damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_sargeras_1"							"Allow Magmatic Armor to fold multiple times."
 		"DOTA_Tooltip_ability_special_bonus_unique_ragnaros"                         	"+320 Shine Soul damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_quicksilver"                         "+50% Relatity Shift damage" 
@@ -7173,8 +7174,7 @@
 		"DOTA_Tooltip_ability_batman_midas_lua_bonus_gold"                                "BONUS GOLD:"
 		"DOTA_Tooltip_ability_batman_midas_lua_bourder"                                   "BOURDER:"
 		"DOTA_Tooltip_ability_batman_midas_lua_damage"                                    "DAMAGE:"
-		"DOTA_Tooltip_ability_batman_midas_lua_mana_cost_scepter"                         "MANA COST SCEPTER:"
-		"DOTA_Tooltip_ability_batman_midas_lua_cooldown_scepter"                          "COOLDOWN SCEPTER:"
+		"DOTA_Tooltip_ability_batman_midas_lua_aghanim_description"                       "Makes ability AOE with 350 radius"
 		
 		
 		"DOTA_Tooltip_ability_sheefu_frostmourne"                                         "Chakra Embrace"
@@ -7874,7 +7874,7 @@
 		"DOTA_Tooltip_ability_special_bonus_attack_damage_75"							  "+475 damage"			
 		
 		"DOTA_Tooltip_ability_franklin_global_retrocausality"                             "Global Retrocausality"
-		"DOTA_Tooltip_ability_franklin_global_retrocausality_Description"                 "Changing the cause-effect relationships of the universe, redirecting damage to allies, to damage to the specified enemy. Cooldown cant be reduced."
+		"DOTA_Tooltip_ability_franklin_global_retrocausality_Description"                 "Changing the cause-effect relationships of the universe, redirecting damage to allies, to damage to the specified enemy."
 		"DOTA_Tooltip_ability_franklin_global_retrocausality_tooltip_duration"            "DURATION:"
 		"DOTA_Tooltip_ability_franklin_global_retrocausality_bonus_damage_outgoing"       "%BONUS DAMAGE:"
 		
@@ -8637,7 +8637,7 @@
 		"DOTA_Tooltip_ability_ezekyle_anxiety_Description"                                "Abaddon inspires fear in all the enemy heroes on the map, forbidding them to use abilities and items, completely depriving them of their view and increasing physical damage.\n\nUpgradable by Aghanim's Scepter."
 		"DOTA_Tooltip_ability_ezekyle_anxiety_tooltip_duration"                           "DURATION:"
 		"DOTA_Tooltip_ability_ezekyle_anxiety_incomicg_damage"                            "%INCOMICG DAMAGE:"
-		"DOTA_Tooltip_ability_ezekyle_anxiety_aghanim_description"					  	  "Applies Chaos Mark for every enemy hero."
+		"DOTA_Tooltip_ability_ezekyle_anxiety_aghanim_description"					  	  "Applies Chaos Mark with 50% duration for every enemy hero."
 
 		"DOTA_Tooltip_ability_ezekyle_draknien"                                           "Drach'nyen"
 		"DOTA_Tooltip_ability_ezekyle_draknien_Description"                               "With each attack, Abaddon deals damage to the enemy from its current health, as well as imposes a curse that burns the enemy's mana from its current stock."
@@ -10711,8 +10711,8 @@
 		"DOTA_Tooltip_ability_kratos_chaos_damage_reduction"                              "%DAMAGE REDUCTION:"
 		"DOTA_Tooltip_ability_kratos_chaos_duration"                                      "DURATION:"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_kratos_1"                              "+2 sec for Chaos"
-		"DOTA_Tooltip_ability_special_bonus_unique_kratos"                                "+80 DAMAGE AMP for Axe Throw"
+		"DOTA_Tooltip_ability_special_bonus_unique_kratos_1"                              "+3 sec for Chaos"
+		"DOTA_Tooltip_ability_special_bonus_unique_kratos"                                "+40 DAMAGE AMP for Axe Throw"
 
 		"DOTA_Tooltip_ability_thanos_decimation"                                          "Decimation"
 		"DOTA_Tooltip_ability_thanos_decimation_Description"                              "Using the cosmic force, after charging the ability, the next 4 seconds Tanos will absorb all damage, which would release it later in a huge explosion."
@@ -10779,5 +10779,70 @@
 		"npc_dota_hero_jetstream_sam"											  "Jetstream Sam"
 		"npc_dota_hero_jetstream_sam_lore"										  ""
 		"npc_dota_hero_jetstream_sam_hype"									       "Sam was once greatly driven by revenge, this was what fueled him to hone his skills and become an expert swordsman. He would go on to develop a free-wheeling personality, taking out street gangs and drug cartels based on his own sense of justice."
+
+		"DOTA_Tooltip_ability_sam_blade_dance"                                            "Blade Dance"
+		"DOTA_Tooltip_ability_sam_blade_dance_Description"                                "Gives Sam a chance to deal critical damage on each attack."
+		"DOTA_Tooltip_ability_sam_blade_dance_blade_dance_crit_chance"                    "%CRIT CHANCE:"
+		"DOTA_Tooltip_ability_sam_blade_dance_blade_dance_crit_mult"                      "%CRITICAL DAMAGE:"
+
+		"DOTA_Tooltip_ability_sam_blade_fury"                                             "Blade Fury"
+		"DOTA_Tooltip_ability_sam_blade_fury_Description"                                 "Causes a bladestorm of destructive force around Sam, rendering him immune to magic and dealing damage to nearby enemy units."
+		"DOTA_Tooltip_ability_sam_blade_fury_blade_fury_radius"                           "RADIUS:"
+		"DOTA_Tooltip_ability_sam_blade_fury_blade_fury_damage"                           "DAMAGE:"
+		"DOTA_Tooltip_ability_sam_blade_fury_duration"                                    "DURATION:"
+
+		"DOTA_Tooltip_ability_sam_omnislash"                                              "Omnislash"
+		"DOTA_Tooltip_ability_sam_omnislash_Description"                                  "Sam leaps towards the target enemy unit with an attack, and then slashes other nearby enemy units at an increased attack rate. Sam is invulnerable for the duration."
+		"DOTA_Tooltip_ability_sam_omnislash_attack_rate_multiplier"                       "ATTACK RATE MULTIPLIER:"
+		"DOTA_Tooltip_ability_sam_omnislash_bonus_damage"                                 "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_sam_omnislash_duration"                                     "DURATION:"
+		"DOTA_Tooltip_ability_sam_omnislash_omni_slash_radius"                            "RADIUS:"
+		"DOTA_Tooltip_ability_sam_omnislash_duration_scepter"                             "DURATION SCEPTER:"
+		"DOTA_Tooltip_ability_sam_omnislash_cooldown_scepter"                             "COOLDOWN SCEPTER:"
+		"DOTA_Tooltip_ability_sam_omnislash_aghanim_description"					  "Increases duration and decreases cooldown."
+
+		"DOTA_Tooltip_ability_sam_sneaky"                                                 "Sneaky"
+		"DOTA_Tooltip_ability_sam_sneaky_Description"                                     "Sam becomes invisible and gains the ability to move through other units until he attacks or uses an ability. If he breaks the invisibility with an attack, that attack will slow the target's movement speed."
+		"DOTA_Tooltip_ability_sam_sneaky_duration"                                        "DURATION:"
+		"DOTA_Tooltip_ability_sam_sneaky_fade_time"                                       "FADE:"
+
+		"DOTA_Tooltip_ability_sam_elecrtic_blow"                                          "Elecrtic Blow"
+		"DOTA_Tooltip_ability_sam_elecrtic_blow_Description"                              "Sam can strike his own special blow and hit all nearby enemies near the target."
+		"DOTA_Tooltip_ability_sam_elecrtic_blow_splash_radius"                            "CLEAVE RADIUS:"
+		"DOTA_Tooltip_ability_sam_elecrtic_blow_splash_dmg_ptc"                           "%CLEAVE DAMAGE:"
+		"DOTA_Tooltip_ability_sam_elecrtic_blow_bonus_damage"                             "BONUS DAMAGE:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_batman_3"                              "60 sec cooldown for Midas"
+
+		"npc_dota_hero_raiden"												  "Raiden"
+		"npc_dota_hero_raiden_hype" 											  "Raiden is the eternal God of Thunder, protector of Earthrealm, and arguably one of the most powerful characters in all of Mortal Kombat. After the second defeat of Shinnok, he ascended to the status of Elder God. Being a god, he possesses many supernatural abilities, such as the ability to teleport, control lightning and fly. As a god, he is used to thinking in terms of eternity rather than normal human lifespans, and so he has a radically different outlook on life. This is not to say he is incapable of understanding human values and psyches."
+
+		"DOTA_Tooltip_ability_raiden_elecro_mine"                                         "Static Charged Area"
+		"DOTA_Tooltip_ability_raiden_elecro_mine_Description"                             "Creates an area with a static charge, which, after a small delay, is discharged when an enemy unit appears in it and deals damage. Additional damage based on current enemy manapool"
+		"DOTA_Tooltip_ability_raiden_elecro_mine_mine_duration"                           "DURATION:"
+		"DOTA_Tooltip_ability_raiden_elecro_mine_mine_deleay_interval"                    "DELEAY:"
+		"DOTA_Tooltip_ability_raiden_elecro_mine_mine_radius"                             "RADIUS:"
+		"DOTA_Tooltip_ability_raiden_elecro_mine_mine_damage_mana_ptc"                    "%ENEMY'S MANA DAMAGE:"
+
+		"DOTA_Tooltip_ability_raiden_electro_field"                                       "Static Field"
+		"DOTA_Tooltip_ability_raiden_electro_field_Description"                           "An aura of static electricity constantly deals damage to all enemies in a radius."
+		"DOTA_Tooltip_ability_raiden_electro_field_radius"                                "RADIUS:"
+
+		"DOTA_Tooltip_ability_raiden_lightning_transfer"                                  "Lightning Transfer"
+		"DOTA_Tooltip_ability_raiden_lightning_transfer_Description"                      "Raiden transferred to the specified point, causing damage to all enemies upon arrival within a radius."
+		"DOTA_Tooltip_ability_raiden_lightning_transfer_blink_range"                      "BLINK RANGE:"
+		"DOTA_Tooltip_ability_raiden_lightning_transfer_damage"                           "DAMAGE:"
+
+		"DOTA_Tooltip_ability_raiden_storm_flight"                                        "Storm Flight"
+		"DOTA_Tooltip_ability_raiden_storm_flight_Description"                            "Raiden aims at a certain unit, and if there is enough mana, he rushes to him with great speed, stunning and causing damage upon arrival."
+		"DOTA_Tooltip_ability_raiden_storm_flight_speed"                                  "SPEED:"
+		"DOTA_Tooltip_ability_raiden_storm_flight_stun_duration"                          "STUN DURATION:"
+		"DOTA_Tooltip_ability_raiden_storm_flight_mana_per_distance"                      "MANA PER DISTANCE UNIT:"
+		"DOTA_Tooltip_ability_raiden_storm_flight_radius"                                 "EXPLOSION RADIUS:"
+
+		"DOTA_Tooltip_ability_raiden_fatality"                                            "Fatality"
+		"DOTA_Tooltip_ability_raiden_fatality_Description"                                "Raiden inflicts swift attacks on the enemy, completely stunning the enemy."
+		"DOTA_Tooltip_ability_raiden_fatality_channel_time"                               "CHANNEL TIME:"
+		"DOTA_Tooltip_ability_raiden_fatality_strike_per_sec"                             "STRIKES PER SEC:"
 	}	
 }
