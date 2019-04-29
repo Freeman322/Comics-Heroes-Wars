@@ -69,13 +69,11 @@ function modifier_raiden_fatality:OnIntervalThink()
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
 			ability = self:GetAbility(),
-			damage = self:GetAbility():GetAbilityDamage(),
+			damage = self:GetAbility():GetAbilityDamage() * 0.25,
 			damage_type = DAMAGE_TYPE_MAGICAL,
 		}
 
 		ApplyDamage( damage )
-		
-		self:GetCaster():PerformAttack(self:GetParent(), false, false, true, true, false, true, true)
 
 		EmitSoundOn("Hero_Zuus.LightningBolt.Cloud", self:GetParent())
 

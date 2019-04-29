@@ -34715,7 +34715,17 @@
 
 		"precache"
 		{
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
+			"particle"	"particles/sam/sam_blademode_screen.vpcf"
+			"particle"	"particles/sam/sam_blademode_blink.vpcf"
+			"particle"	"particles/sam/sam_blademode.vpcf"
+			"particle"	"particles/sam/magnataur_shockwave.vpcf"
+			"particle"	"particles/sam/sam_dash.vpcf"
+			"particle"	"particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation_explosion.vpcf"
+			"particle"	"particles/sam/sam_blademode_blink.vpcf"
+			"particle"	"particles/sam/sam_blademode.vpcf"
+			"particle"	"particles/sam/sam_zandatsu.vpcf"
+			"particle"	"particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave_gods_strength_crit.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 
@@ -35492,7 +35502,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"0"
+		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
@@ -35727,7 +35737,7 @@
 		"AbilityCastRange"				"150"
 		"AbilityCastPoint"				"0.3"
 
-		"AbilityDamage"				"80 120 160 200"
+		"AbilityDamage"				"100 180 260 340"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------

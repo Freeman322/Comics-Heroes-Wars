@@ -84,7 +84,7 @@ function modifier_item_sentinels_cuirass:OnAttackLanded(params)
             local hAbility = self:GetAbility()
             local hTarget = params.target
             local chance = hAbility:GetSpecialValueFor ("strike_chance")
-            if RollPercentage(chance) and hTarget:IsBuilding() == false and hTarget:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
+            if self:GetParent():IsRealHero() and RollPercentage(chance) and hTarget:IsBuilding() == false and hTarget:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
                 local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf", PATTACH_CUSTOMORIGIN, nil );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );
@@ -118,7 +118,7 @@ function modifier_item_sentinels_cuirass:OnTakeDamage(params)
             local hAbility = self:GetAbility ()
             local hTarget = params.attacker
             local chance = hAbility:GetSpecialValueFor ("strike_chance")
-            if RollPercentage(chance) and hTarget:IsBuilding() == false and hTarget:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
+            if self:GetParent():IsRealHero() and RollPercentage(chance) and hTarget:IsBuilding() == false and hTarget:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
                 if not self:GetParent():IsRealHero() then 
                     return
                 end
