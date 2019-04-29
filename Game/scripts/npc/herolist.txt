@@ -115,4 +115,5 @@
   "npc_dota_hero_kratos" "1"
   "npc_dota_hero_warboss" "1"
   "npc_dota_hero_cosmos" "1"
+  "npc_dota_hero_jetstream_sam" "1"
 }

@@ -6,6 +6,7 @@ function zoom_damage_speed:OnSpellStart()
 	local hCaster = self:GetCaster()
 	local hTarget = self:GetCursorTarget()
 
+	if hTarget:TriggerSpellAbsorb(self) then return end
 	local nCasterFX = ParticleManager:CreateParticle( "particles/units/heroes/hero_vengeful/vengeful_nether_swap.vpcf", PATTACH_ABSORIGIN_FOLLOW, hCaster )
 	ParticleManager:SetParticleControlEnt( nCasterFX, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, nil, hTarget:GetOrigin(), false )
 	ParticleManager:ReleaseParticleIndex( nCasterFX )
@@ -21,7 +22,7 @@ function zoom_damage_speed:OnSpellStart()
 	if caster_ms > 1000 then
 		caster_ms = 1000
 	end
-print (caster_ms)
+
 	local damage = caster_ms * self:GetSpecialValueFor("damage") / 100
 
 	hTarget:AddNewModifier(hCaster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
@@ -35,11 +36,9 @@ print (caster_ms)
 	})
 
 
-	if hTarget:IsRealHero() then
-		if hTarget:GetHealth() <= 0 then
-			hCaster:SetBaseMoveSpeed(hCaster:GetBaseMoveSpeed() + self:GetSpecialValueFor("speed_steal"))
-			hTarget:SetBaseMoveSpeed(hTarget:GetBaseMoveSpeed() - self:GetSpecialValueFor("speed_steal"))
-		end
+	if hTarget:IsRealHero() and hTarget:GetHealth() <= 0 then
+		hCaster:SetBaseMoveSpeed(hCaster:GetBaseMoveSpeed() + self:GetSpecialValueFor("speed_steal"))
+		hTarget:SetBaseMoveSpeed(hTarget:GetBaseMoveSpeed() - self:GetSpecialValueFor("speed_steal"))
 	end
 
 end

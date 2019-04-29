@@ -3319,7 +3319,6 @@
 		"Rolelevels"					"2,1,1"
 		"Complexity"					"1"
 		"Team"						"Good"
-		"HeroID"						"8"
 		"BotImplemented"				"1"
 		"Press"						"1"
 		"ModelScale"					"1"
@@ -3332,22 +3331,22 @@
 		"LastHitChallengeRival"			"npc_dota_hero_skeleton_king"
 		"HeroSelectSoundEffect"			"Hero_Juggernaut.Pick"
 		"GibType"						"default"
-		
-		"Ability1"					"sam_blade_fury"
-		"Ability2"					"sam_blade_dance"
-		"Ability3"					"sam_sneaky"
-		"Ability4"					"sam_elecrtic_blow"
+
+		"Ability1"					"sam_charged_strike"
+		"Ability2"					"sam_dash"
+		"Ability3"					"sam_murasama"
+		"Ability4"					"sam_zandatsu"
 		"Ability5"					"generic_hidden"
-		"Ability6"					"sam_omnislash"
+		"Ability6"					"sam_blademode"
 
 		"Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_all_stats_12"
-		"Ability12"					"special_bonus_unique_juggernaut_4"
-		"Ability13"					"special_bonus_spell_block_20"
+		"Ability11"					"special_bonus_unique_sam_dash_projectile"
+		"Ability12"					"special_bonus_unique_sam_blademode_bonus_proc_damage"
+		"Ability13"					"special_bonus_cleave_40"
 		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_unique_juggernaut_3"
+		"Ability15"					"special_bonus_unique_sam_murasama_bonus_ignor"
 		"Ability16"					"special_bonus_agility_25"
-		"Ability17"					"special_bonus_unique_juggernaut_2"
+		"Ability17"					"special_bonus_unique_sam_charged_strike_bonus_attack"
 
 	     "HealthBarOffset"           "170"
 
@@ -3373,13 +3372,13 @@
 		"MovementTurnRate"				"0.600000"
 
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		
+
 		"precache"
 		{
 			"model"			"models/heroes/hero_jetstream_sam/murasama_sams.vmdl"
 		}
 
-		"particle_folder"		"particles/units/heroes/hero_juggernaut"
+		"particle_folder"		"particles/sam"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
 		"VoiceFile"			"soundevents/voscripts/game_sounds_vo_juggernaut.vsndevts"
 
@@ -3434,9 +3433,9 @@
 
 
 		"Model"					"models/heroes/hero_raiden/raiden.vmdl"
-		
+
 		"IdleExpression"			"scenes/stormspirit/stormspirit_exp_idle_01.vcd"
-		
+
 		"SoundSet"				"Hero_StormSpirit"
 
 		"Enabled"					"1"
@@ -3452,13 +3451,13 @@
 
 		"HeroGlowColor"			"0 250 227"
 		"CMEnabled"				"0"
-		
+
 		"NameAliases"				"ss;raiden"
 		"workshop_guide_name"		"Raiden"
-		
+
 		"LastHitChallengeRival"		"npc_dota_hero_kunkka"
 		"HeroSelectSoundEffect"		"Hero_StormSpirit.Pick"
-		
+
 		"GibType"					"electric"
 		"Ability1"				"raiden_lightning_transfer"
 		"Ability2"				"raiden_electro_field"
@@ -3475,7 +3474,7 @@
 		"Ability15"				"special_bonus_mp_regen_1"
 		"Ability16"				"special_bonus_unique_raiden_2"
 		"Ability17"				"special_bonus_all_stats_20"
-		
+
 		"ArmorPhysical"			"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"26"
@@ -3501,7 +3500,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
 		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_stormspirit.vsndevts"
 
-		
+
 		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
