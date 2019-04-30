@@ -23,7 +23,8 @@ function modifier_raiden_electro_field:GetAuraSearchFlags()	return 0 end
 function modifier_raiden_electro_field:GetModifierAura() return "modifier_raiden_electro_field_passive" end
 
 function modifier_raiden_electro_field:OnCreated(params) 
-    if IsServer() then 
+    if IsServer() then
+        if not self:GetParent():IsRealHero() then self:Destroy() end 
         self:StartIntervalThink(0.3)
     end 
 end 

@@ -34733,33 +34733,33 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"duration"						"8 9 10"
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"4.5 5.0 5.5"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"attack_speed_bonus" 	"200 350 500"
+				"attack_speed_bonus" 				"200 350 500"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"turn_rate_slow_pct"	"30 50 70"
+				"turn_rate_slow_pct"				"30 50 70"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_proc_damage" 	"150 200 250"
+				"bonus_proc_damage" 				"150 200 250"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"debuff_radius"				"700"
+				"debuff_radius"					"700"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movespeed_slow_pct"	"40 60 80"
+				"movespeed_slow_pct"				"40 60 80"
 			}
 			"07"
 			{
@@ -34769,12 +34769,12 @@
 			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"cooldown_scepter"		"80 70 60"
+				"cooldown_scepter"					"80 70 60"
 			}
 			"09"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration_scepter"		"12 13.5 15"
+				"duration_scepter"					"5.5 6.0 6.5"
 			}
 		}
 	}
