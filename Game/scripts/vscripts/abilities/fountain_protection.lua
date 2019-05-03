@@ -26,15 +26,15 @@ function modifier_fountain_protection_aura:GetEffectName() return "particles/eco
 function modifier_fountain_protection_aura:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_fountain_protection_aura:GetModifierTotalDamageOutgoing_Percentage() return CONST_DAMAGE_OUTGOING_PTC end
 
-function modifier_fountain_protection_aura:ChechForTarget() 
+function modifier_fountain_protection_aura:ChechForTarget()
   if IsServer() then
     if not self:GetParent():IsFriendly(self:GetCaster()) then
-      self:GetParent():ForceKill(false) self:Destroy() return
-    end 
-  end 
+      self:GetParent():ForceKill(true) self:Destroy() return
+    end
+  end
 end
 
 function modifier_fountain_protection_aura:CheckState()
   if self:GetParent():GetTeamNumber() == self:GetCaster():GetTeamNumber() then return {[MODIFIER_STATE_INVULNERABLE] = true} end
-	return 
+	return
 end

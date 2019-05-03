@@ -1,5 +1,99 @@
 "DOTAAbilities"
 {
+	"item_chronograph"
+	{
+		"BaseClass"					"item_lua"
+		"ScriptFile"				"items/item_chronograph.lua"
+
+		"AbilityTextureName"	"custom/chronograph"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+
+		"AbilityCooldown"		"45"
+		"AbilityCastRange"	"900"
+		"AbilityManaCost"		"150"
+
+		//"ItemCost"					""
+		"ItemShopTags"			"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"				"epic"
+
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_int"	"45"
+			}
+
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mana_regen"	"5"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"	"180"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor"	"10"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_hp_reg"	"15"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_burn"			"100"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"debuff_duration"	"8"
+			}
+			"12"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health_reduce"	"50"
+			}
+			"13"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_chance"		"20"
+			}
+			"14"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_damage"		"200"
+			}
+		}
+	}
+
+	"item_recipe_chronograph"
+	{
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"	"recipe"
+		"ItemCost"	"1200"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_chronograph"
+		"ItemRequirements"
+		{
+			"01"	"item_bloodthorn;item_ultimate_nullifier"
+		}
+	}
+
 	"item_overpower_bow"
 	{
 		"BaseClass"					"item_lua"
@@ -1470,64 +1564,44 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-35"
+				"cold_movement_speed"	"35"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-55"
+				"cold_attack_speed"		"55"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cold_duration_melee"	"5.0"
+				"bonus_damage"			"20"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_duration"		"6.5"
+				"cold_attack_damage"	"100"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_damage"			"20"
+				"soul_stole_stack_damage" "10"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cold_attack_damage"	"100"
+				"soul_stole_range"		"900"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"soul_stole_stack_damage" "10"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"soul_stole_range"		"900"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"reincarnate_time"		"3.0"
 			}
-			"13"
+			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"slow_radius"			"900"
 			}
-			"14"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movespeed"				"-35"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attackslow_tooltip"	"-55"
-			}
-			"16"
+			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"5.0"
@@ -5055,7 +5129,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"FightRecapLevel"				"1"
-		
+
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
 		"UIPickupSound"				"Item.PickUpGemShop"
@@ -5074,14 +5148,14 @@
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
+
 		"precache"
 		{
 			"particle"				"particles/econ/events/ti6/radiance_owner_ti6.vpcf"
 			"particle"				"particles/items_fx/ghost.vpcf"
 			"particle"				"particles/status_fx/status_effect_ghost.vpcf"
 		}
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"

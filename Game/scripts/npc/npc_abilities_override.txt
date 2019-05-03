@@ -44,6 +44,8 @@
   "item_recipe_ghost_staff"      "REMOVE"
   "item_recipe_oathbreaker"      "REMOVE"
   "item_oathbreaker"             "REMOVE"
+  "item_azuras_staff"            "REMOVE"
+  "item_recipe_azuras_staff"     "REMOVE"
 
 	"special_bonus_strength_25"
 	{

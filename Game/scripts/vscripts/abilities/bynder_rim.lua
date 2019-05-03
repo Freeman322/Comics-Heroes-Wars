@@ -33,7 +33,7 @@ end
 
 function modifier_bynder_rim:OnTakeDamage( params )
   if self:GetParent () == params.unit then
-    if not params.attacker:IsBuilding() then
+    if params.attacker:IsBuilding() == false and not params.attacker:GetUnitName() == "npc_dota_creature_yaz" then
         self:SetStackCount(self:GetStackCount() + params.original_damage)
     end
 
