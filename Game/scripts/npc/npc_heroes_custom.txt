@@ -2602,10 +2602,9 @@
 		"Ability1"					"medivh_energy_void"
 		"Ability2"					"medivh_deafening_blast"
 		"Ability3"					"medivh_fade_aura"
-		"Ability4"					"generic_hidden"
+		"Ability4"					"medivh_ancient_force"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"medivh_dark_rift"
-	    "Ability7"					""
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_movement_speed_60"
@@ -3434,7 +3433,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"4"
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"		"rulk_scorched_earth"
+		"Ability1"		"rulk_thermal_radiation"
 		"Ability2"		"rulk_charge_of_darkness"
 		"Ability3"		"rulk_beast"
 		"Ability4"		"generic_hidden"

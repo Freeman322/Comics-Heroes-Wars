@@ -53,12 +53,18 @@ if IsServer() then
     if self.target:IsAlive() == false then
       self:Destroy()
     end
-    self:GetParent():SetAbsOrigin(self.target:GetAbsOrigin())
+    self:GetParent():SetAbsOrigin(Vector(self.target:GetAbsOrigin().x, self.target:GetAbsOrigin().y, self.target:GetAbsOrigin().z + 128))
+    if self:GetCaster():HasModifier("modifier_venom_infest_venom") then
+      self:GetCaster():FindAbilityByName("venom_out"):SetActivated(true)
+    else
+      self:GetCaster():FindAbilityByName("venom_out"):SetActivated(false)
+    end
   end
 
   function modifier_venom_infest_venom:OnDestroy()
     self:GetParent():RemoveNoDraw()
     self:GetAbility():SetActivated(true)
+    self:GetCaster():FindAbilityByName("venom_out"):SetActivated(false)
     self.target:RemoveModifierByName("modifier_venom_infest_buff")
     self.target = nil
   end
@@ -93,38 +99,31 @@ end
 
 function modifier_venom_infest_buff:GetModifierBonusStats_Strength()
   local mult = self:GetAbility():GetSpecialValueFor("stats") / 100
-  if self:GetCaster():IsHasSuperStatus() then mult = mult + 0.5 end
+  if self:GetCaster():IsHasSuperStatus() then mult = mult + mult end
   return self:GetCaster():GetStrength() * mult
 end
 function modifier_venom_infest_buff:GetModifierBonusStats_Agility()
   local mult = self:GetAbility():GetSpecialValueFor("stats") / 100
-  if self:GetCaster():IsHasSuperStatus() then mult = mult + 0.5 end
+  if self:GetCaster():IsHasSuperStatus() then mult = mult + mult end
   return self:GetCaster():GetAgility() * mult
 end
 function modifier_venom_infest_buff:GetModifierBonusStats_Intellect()
   local mult = self:GetAbility():GetSpecialValueFor("stats") / 100
-  if self:GetCaster():IsHasSuperStatus() then mult = mult + 0.5 end
+  if self:GetCaster():IsHasSuperStatus() then mult = mult + mult end
   return self:GetCaster():GetIntellect() * mult
 end
 
+function modifier_venom_infest_buff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 
 
 
 venom_out = class({})
 
 function venom_out:IsStealable() return false end
-
 function venom_out:GetBehavior() return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE end
-
-function venom_out:OnInventoryContentsChanged()
-    self:SetHidden(not self:GetCaster():HasScepter())
-    self:SetLevel(1)
-end
+function venom_out:OnInventoryContentsChanged() self:SetHidden(not self:GetCaster():HasScepter()) self:SetLevel(1) end
 
 function venom_out:OnSpellStart()
-  if self:GetCaster():FindAbilityByName("venom_infest"):SetActivated(true) then
-    self:SetActivated(false)
-  end
   self:GetCaster():RemoveModifierByName("modifier_venom_infest_venom")
   EmitSoundOn("Hero_LifeStealer.Consume", self:GetCaster())
 end

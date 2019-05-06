@@ -11,7 +11,7 @@ if IsServer() then
     if not self:GetCaster():IsFriendly(self:GetCursorTarget()) and not self:GetCursorTarget():TriggerSpellAbsorb(self) then
       self:GetCursorTarget():Purge(true, false, false, false, false)
       for _, mod in pairs (self:GetCursorTarget():FindAllModifiers()) do
-        if mod:GetDuration() > 0 and mod:GetAbility():GetCaster():GetTeam() ~= self:GetCaster():GetTeam() and mod:IsAura() == false then--На врага
+        if mod:GetDuration() > 0 and mod:GetAbility():GetCaster():GetTeam() ~= self:GetCaster():GetTeam() and mod:IsPermanent() == false then--На врага
           mod:Destroy()
         end
       end
@@ -64,22 +64,18 @@ function modifier_item_chronograph:OnAttackLanded(params)
       params.target:SpendMana(mana_damage, self:GetAbility())
       ApplyDamage({victim = params.target, attacker = params.attacker, damage = mana_damage, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
 
-    else
+    elseif params.attacker:IsIllusion() then
       params.target:SpendMana(mana_damage / 10, self:GetAbility())
       ApplyDamage({victim = params.target, attacker = params.attacker, damage = mana_damage / 10, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
 
     end
 
-    ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.target))
+    ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/items/antimage/antimage_weapon_basher_ti5_gold/am_manaburn_basher_ti_5_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.target))
     EmitSoundOn("Hero_Antimage.ManaBreak", params.target)
   end
 end
 
-function modifier_item_chronograph:GetModifierPreAttack_CriticalStrike()
-  if RollPercentage(self:GetAbility():GetSpecialValueFor("crit_chance")) then
-    return self:GetAbility():GetSpecialValueFor("crit_damage")
-  end
-end
+function modifier_item_chronograph:GetModifierPreAttack_CriticalStrike() if RollPercentage(self:GetAbility():GetSpecialValueFor("crit_chance")) then return self:GetAbility():GetSpecialValueFor("crit_damage") end end
 
 modifier_item_chronograph_active = class({})
 
@@ -102,13 +98,7 @@ if IsServer() then
   end
 end
 
-function modifier_item_chronograph_active:DeclareFunctions()
-  return {
-    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-    MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
-  }
-end
-
+function modifier_item_chronograph_active:DeclareFunctions() return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS} end
 function modifier_item_chronograph_active:GetModifierPhysicalArmorBonus() return self.armor end
 function modifier_item_chronograph_active:GetModifierMagicalResistanceBonus() return self.mag_res end
 

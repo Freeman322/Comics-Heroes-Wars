@@ -11,7 +11,7 @@ function sam_blademode:OnSpellStart()
   EmitSoundOn("Hero_Zeus.BlinkDagger.Arcana", self:GetCaster())
   local duration = self:GetCaster():HasScepter() and self:GetSpecialValueFor("duration_scepter") or self:GetSpecialValueFor("duration")
   self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_sam_bladerun_buff", {duration = duration})
-  ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/sam/sam_blademode_screen.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster()))
+  ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticleForPlayer("particles/sam/sam_blademode_screen.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster(), self:GetCaster():GetOwner()))
 end
 
 modifier_sam_bladerun_buff = class({})
@@ -52,7 +52,7 @@ function modifier_sam_bladerun_buff:GetModifierMoveSpeed_Absolute() return self:
 function modifier_sam_bladerun_buff:OnCreated()
   EmitSoundOn( "Ability.static.loop",self:GetCaster())
   self.radius = self:GetAbility():GetSpecialValueFor("debuff_radius")
-  local particle = ParticleManager:CreateParticle("particles/sam/sam_blademode.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+  local particle = ParticleManager:CreateParticle("particles/sam/sam_blademode_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
   ParticleManager:SetParticleControl(particle, 0, self:GetCaster():GetAbsOrigin())
   self:AddParticle(particle, false, false, -1, false, false)
 end
