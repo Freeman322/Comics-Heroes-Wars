@@ -2331,6 +2331,10 @@ function CDOTA_Buff:IsDebuff()
   return string.find(self:GetClass(), "debuff") ~= nil or string.find(self:GetClass(), "stun") ~= nil
 end
 
+function CDOTA_Buff:IsPermanent()
+  return self:GetDuration() <= 0
+end
+
 function Util:OnAbilityWasUpgraded( ability, unit ) end
 
 function Util:OnModifierWasApplied( ability, unit, caster, modifier )

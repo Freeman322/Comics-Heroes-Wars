@@ -5,31 +5,36 @@ item_chronograph = class({})
 
 function item_chronograph:GetIntrinsicModifierName() return "modifier_item_chronograph" end
 
-if IsServer() then
-  function item_chronograph:OnSpellStart()
-    if self:GetCursorTarget():IsIllusion() then self:GetCursorTarget():Kill(self, self:GetCaster()) end
-    if not self:GetCaster():IsFriendly(self:GetCursorTarget()) and not self:GetCursorTarget():TriggerSpellAbsorb(self) then
-      self:GetCursorTarget():Purge(true, false, false, false, false)
-      for _, mod in pairs (self:GetCursorTarget():FindAllModifiers()) do
-        if mod:GetDuration() > 0 and mod:GetAbility():GetCaster():GetTeam() ~= self:GetCaster():GetTeam() and mod:IsPermanent() == false then--На врага
-          mod:Destroy()
+
+function item_chronograph:OnSpellStart()
+  if IsServer() then
+    local hTarget = self:GetCursorTarget()
+
+    if hTarget:IsIllusion() then hTarget:Kill(self, self:GetCaster()) end
+
+    if not self:GetCaster():IsFriendly(hTarget) and not hTarget:TriggerSpellAbsorb(self) then
+      hTarget:Purge(true, false, false, false, false)
+      local mods = hTarget:FindAllModifiers()
+
+      for _, mod in pairs (mods) do
+        if mod and mod:GetDuration() > 0 and mod:GetAbility() and mod:GetAbility():GetCaster() and mod:GetAbility():GetCaster():GetTeam() ~= self:GetCaster():GetTeam() and mod:IsPermanent() == false then--На врага
+            mod:Destroy()
         end
       end
-      self:GetCursorTarget():AddNewModifier(self:GetCaster(), self, "modifier_item_chronograph_active", {duration = self:GetSpecialValueFor("debuff_duration")})
-
+      hTarget:AddNewModifier(self:GetCaster(), self, "modifier_item_chronograph_active", {duration = self:GetSpecialValueFor("debuff_duration")})
     else --На союзника
-      self:GetCursorTarget():Purge(false, true, false, true, true)
-      for _,mod in pairs(self:GetCursorTarget():FindAllModifiers()) do
-        if mod:IsDebuff() == true or mod:IsStunDebuff() == true or mod:GetAbility():GetCaster():GetTeam() ~= self:GetCaster():GetTeam() then
-          mod:Destroy()
+      hTarget:Purge(false, true, false, true, true)
+      for _,mod in pairs(hTarget:FindAllModifiers()) do
+        if mod:IsDebuff() == true or mod:IsStunDebuff() == true then
+            mod:Destroy()
         end
       end
-
     end
-    EmitSoundOn("Hero_FacelessVoid.TimeDilation.Target", self:GetCursorTarget())
+    EmitSoundOn("Hero_FacelessVoid.TimeDilation.Target", hTarget)
     ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/items/faceless_void/faceless_void_bracers_of_aeons/fv_bracers_of_aeons_red_timedialate.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCursorTarget()))
   end
 end
+
 
 modifier_item_chronograph = class({})
 
@@ -67,7 +72,6 @@ function modifier_item_chronograph:OnAttackLanded(params)
     elseif params.attacker:IsIllusion() then
       params.target:SpendMana(mana_damage / 10, self:GetAbility())
       ApplyDamage({victim = params.target, attacker = params.attacker, damage = mana_damage / 10, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
-
     end
 
     ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/items/antimage/antimage_weapon_basher_ti5_gold/am_manaburn_basher_ti_5_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.target))
@@ -92,7 +96,9 @@ if IsServer() then
   function modifier_item_chronograph_active:OnIntervalThink()
     local health_reduce = (100 - self:GetAbility():GetSpecialValueFor("health_reduce")) / 100
     if self:GetParent():GetHealth() / self:GetParent():GetMaxHealth() > health_reduce then
-      self:GetParent():SetHealth(self:GetParent():GetMaxHealth() * health_reduce)
+      --self:GetParent():SetHealth(self:GetParent():GetMaxHealth() * health_reduce) ОПАСНО!
+
+      self:GetParent():ModifyHealth(self:GetParent():GetMaxHealth() * health_reduce, self:GetAbility(), false, 0) --- SOFT CHANGE
     end
     self:GetParent():CalculateStatBonus()
   end

@@ -3,21 +3,21 @@
 	"item_chronograph"
 	{
 		"BaseClass"					"item_lua"
-		"ScriptFile"				"items/item_chronograph.lua"
+		"ScriptFile"					"items/item_chronograph.lua"
 
-		"AbilityTextureName"	"custom/chronograph"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_PHYSICAL"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityTextureName"			"custom/chronograph"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 
-		"AbilityCooldown"		"45"
-		"AbilityCastRange"	"900"
-		"AbilityManaCost"		"150"
+		"AbilityCooldown"				"45"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"150"
 
 		//"ItemCost"					""
-		"ItemShopTags"			"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
-		"ItemQuality"				"epic"
+		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"epic"
 
 		"precache"
 		{
@@ -26,32 +26,30 @@
 
 		"AbilitySpecial"
 		{
-
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_int"	"45"
+				"bonus_int"			"45"
 			}
-
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_mana_regen"	"5"
+				"bonus_mana_regen"		"5"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"	"180"
+				"bonus_damage"			"180"
 			}
 			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"	"10"
+				"bonus_armor"			"10"
 			}
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_hp_reg"	"15"
+				"bonus_hp_reg"			"15"
 			}
 			"10"
 			{
@@ -61,22 +59,22 @@
 			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"debuff_duration"	"8"
+				"debuff_duration"		"8"
 			}
 			"12"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"health_reduce"	"50"
+				"health_reduce"		"50"
 			}
 			"13"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance"		"20"
+				"crit_chance"			"20"
 			}
 			"14"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_damage"		"200"
+				"crit_damage"			"200"
 			}
 		}
 	}
@@ -84,13 +82,14 @@
 	"item_recipe_chronograph"
 	{
 		"BaseClass"					"item_datadriven"
-		"AbilityTextureName"	"recipe"
-		"ItemCost"	"1200"
-		"ItemRecipe"	"1"
-		"ItemResult"	"item_chronograph"
+		"AbilityTextureName"			"recipe"
+		"ItemCost"					"1200"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chronograph"
+		
 		"ItemRequirements"
 		{
-			"01"	"item_bloodthorn;item_ultimate_nullifier"
+			"01"						"item_bloodthorn;item_ultimate_nullifier"
 		}
 	}
 
