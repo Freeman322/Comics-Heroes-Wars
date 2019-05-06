@@ -16,7 +16,7 @@ end
 --------------------------------------------------------------------------------
 
 function pudge_dismember_lua:GetChannelTime()
-	return 4
+	return self:GetSpecialValueFor("channel_time")
 end
 
 --------------------------------------------------------------------------------
@@ -81,7 +81,7 @@ function modifier_pudge_dismember_lua:OnCreated( kv )
 		if self:GetCaster():HasTalent("special_bonus_unique_pudge") then self.health_damage = self.health_damage + self:GetCaster():FindTalentValue("special_bonus_unique_pudge") end
 
 		self.damage = self.damage + (self:GetCaster():GetHealth() * (self.health_damage / 100))
-		
+
 		self:OnIntervalThink()
 		self:StartIntervalThink( self.tick_rate )
 
@@ -103,7 +103,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_pudge_dismember_lua:OnIntervalThink()
-	if IsServer() then		
+	if IsServer() then
 		self:GetCaster():Heal( self.damage, self:GetAbility() )
 
 		local damage = {
@@ -148,5 +148,4 @@ function modifier_pudge_dismember_lua:GetOverrideAnimation( params )
 	return ACT_DOTA_DISABLED
 end
 
-function pudge_dismember_lua:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function pudge_dismember_lua:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

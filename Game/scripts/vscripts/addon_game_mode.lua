@@ -370,7 +370,7 @@ function GameMode:DmgFilter(ftable)
 		local damage = ftable.damage
 
 			if attacker ~= nil then
-				if victim:HasModifier("modifier_franklin_global_retrocausality_friendly") then
+				if victim:HasModifier("modifier_franklin_global_retrocausality_friendly") and victim:HasModifier("modifier_thanos_decimation") == false then
 					local modifier = victim:FindModifierByName("modifier_franklin_global_retrocausality_friendly")
 					if modifier then
 						local target = EntIndexToHScript(modifier:GetTarget())

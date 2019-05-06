@@ -3623,6 +3623,46 @@
 			}
 		}
 	}
+
+	"rulk_thermal_radiation"
+	{
+		"BaseClass"											"ability_lua"
+		"ScriptFile"										"abilities/rulk_thermal_radiation.lua"
+		"AbilityTextureName"						"custom/rulk_exile"
+		"AbilityBehavior"								"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"							"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"								"1"
+
+		"AbilityCastRange"							"450 500 550 600"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"									"FIELD_FLOAT"//INTEGER"
+				"base_damage"								"35 50 65 80"
+			}
+			"02"
+			{
+				"var_type"									"FIELD_INTEGER"
+				"damage_per_stack"					"2 3 4 5"
+			}
+			"03"
+			{
+				"var_type"									"FIELD_INTEGER"
+				"radius"										"450 500 550 600"
+			}
+			"04"
+			{
+				"var_type"									"FIELD_INTEGER"
+				"stack_duration"						"8"
+			}
+		}
+	}
+
 	"rulk_charge_of_darkness"
 	{
 		// General
@@ -3706,7 +3746,7 @@
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"chance_per_str"					"0.01"
+				"chance_per_str"					"0.02"
 			}
 			"03"
 			{
@@ -3716,7 +3756,7 @@
 			"04"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bash_duration"						"1.0 1.3 1.6 2.0"
+				"bash_duration"						"1.0 1.1 1.2 1.3"
 			}
 		}
 	}
@@ -3747,7 +3787,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"						"70 60 55 "
+		"AbilityCooldown"						"70 65 60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -3825,12 +3865,12 @@
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter"		"950 950 950"
+				"cast_range_scepter"		"700 800 900"
 			}
 			"11"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"40"
+				"cooldown_scepter"			"50 45 40"
 			}
 		}
 	}
@@ -5742,7 +5782,6 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"					"4.0"
 		"AbilityCooldown"						"30"
 
 		// Cost
@@ -5775,6 +5814,11 @@
 				"var_type"								"FIELD_FLOAT"
 				"health_damage"						"3.75 4.25 5.85"
 				"LinkedSpecialBonus"			"special_bonus_unique_pudge"
+			}
+			"03"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"channel_time"						"2.0 2.5 3.0"
 			}
 		}
 	}
@@ -5908,7 +5952,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"talent_stun_duration" "0.4"
+				"talent_stun_duration" "0.2"
 			}
 		}
 	}
@@ -8096,6 +8140,11 @@
 				"var_type"						"FIELD_FLOAT"
 				"duration_scepter"		"5 6 7"
 			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"scepter_cooldown"		"80"
+			}
 		}
 	}
 	"darkseid_astral"
@@ -9813,7 +9862,7 @@
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"HasScepterUpgrade"				"0"
+		"HasScepterUpgrade"				"1"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -9825,6 +9874,24 @@
 			}
 		}
 	}
+
+	"venom_out"
+	{
+		"BaseClass"								"ability_lua"
+		"ScriptFile"							"abilities/venom_infest.lua"
+
+		"AbilityTextureName"			"custom/venom_out"
+		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+		"MaxLevel"						"1"
+		"FightRecapLevel"				"1"
+		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"			"1"
+	}
+
+
 	"ronan_passive"
 	{
 		// General
@@ -13439,7 +13506,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/medivh_ancient_force.lua"
 		"AbilityTextureName"			"custom/medivh_ancient_force"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
@@ -15457,36 +15524,16 @@
 	//=================================================================================================================
 	"tracer_blink"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"7577"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/tracer_blink.lua"
 		"AbilityTextureName"			"custom/tracer_blink"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.1"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"9 7 5 3"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"35 40 45 50"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blink_range"			"450 500 550 600"
-			}
-		}
+		"AbilityCastRange"			"450 500 550 600"
 	}
 	//=================================================================================================================
 	// Diablo Elder Demon Form
@@ -25416,62 +25463,6 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// golden_god_penitence
-	//=================================================================================================================
-	"golden_god_penitence"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"chen_penitence"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilitySound"					"Hero_Chen.PenitenceCast"
-		"AbilityTextureName"			"custom/golden_god_passive"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.1"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCooldown"				"36 32 28 24"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"55 70 85 100"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.5 7.0 7.5 8.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"2000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"-18 -24 -30 -36"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_taken"	"18 24 30 36"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
 	"po_smoke_strike"
 	{
 		// General
@@ -34731,7 +34722,7 @@
 
 		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetType" 	"DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType" 	"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType" 	"DAMAGE_TYPE_PURE"
 
@@ -34779,6 +34770,7 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"bonus_proc_damage" 				"150 200 250"
+				"LinkedSpecialBonus"		"special_bonus_unique_sam_blademode_bonus_proc_damage"
 			}
 			"05"
 			{
@@ -35537,13 +35529,13 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 50 40"
+		"AbilityCooldown"				"70 60 50"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"275"
+		"AbilityManaCost"				"280 400 520"
 
-		"AbilityDamage"				"375 650 895"
+		"AbilityDamage"				"375 750 1125"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -35562,7 +35554,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"mine_duration"		"25 45 65"
+				"mine_duration"		"30 50 70"
 			}
 			"02"
 			{
@@ -35572,7 +35564,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mine_radius"			"450"
+				"mine_radius"			"400 450 500"
 			}
 			"04"
 			{
@@ -35597,7 +35589,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
-		"AbilityDamage"				"35 65 85 105"
+		"AbilityDamage"				"30 55 80 105"
 
 		"AbilitySound"					"Hero_Zuus.StaticField"
 
@@ -35640,11 +35632,11 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"20 18 16 14"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60 60 60 60"
+		"AbilityManaCost"				"120 100 80 60"
 
 		"precache"
 		{
@@ -35657,7 +35649,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blink_range"				"1300"
+				"blink_range"				"1000 1100 1200 1300"
 			}
 
 			"02"
@@ -35694,13 +35686,13 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"		   		"42 40 38 36"
+		"AbilityCooldown"		   		"52 46 40 34"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"			  	"50"
 
-		"AbilityDamage"				"250 300 350 400"
+		"AbilityDamage"				"200 280 360 420"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -35718,17 +35710,17 @@
 	       	"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"4000 4500 5000 5500"
+				"speed"					"3000 4000 5000 6000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.3 0.6 1.0 1.3"
+				"stun_duration"			"0.6 0.9 1.2 1.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_per_distance"			"0.7 0.5 0.2 0.08"
+				"mana_per_distance"			"1.1 0.9 0.7 0.5"
 			}
 			"04"
 			{
@@ -35766,16 +35758,16 @@
 		"AbilityCastRange"				"150"
 		"AbilityCastPoint"				"0.3"
 
-		"AbilityDamage"				"100 180 260 340"
+		"AbilityDamage"				"70 140 210 280"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"1.0 1.5 2.0 2.5"
-		"AbilityCooldown"				"20 18 16 14"
+		"AbilityCooldown"				"32 28 24 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"180 240 320 400"
+		"AbilityManaCost"				"40 80 120 160"
 
 		"precache"
 		{
@@ -35792,7 +35784,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"strike_per_sec"		"5"
+				"strike_per_sec"		"4 5 6 7"
 			}
 		}
 	}
@@ -35826,7 +35818,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"300"
+				"value"					"1125"
 			}
 		}
 	}

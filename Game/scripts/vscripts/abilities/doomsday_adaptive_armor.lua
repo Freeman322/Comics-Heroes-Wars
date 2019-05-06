@@ -5,18 +5,11 @@ LinkLuaModifier( "modifier_doomsday_adaptive_armor_active", "abilities/doomsday_
 
 --------------------------------------------------------------------------------
 function doomsday_adaptive_armor:GetCooldown( nLevel )
-    if self:GetCaster():HasScepter() then
-        return 80
-    end
-
-    return 0
+  return self:GetCaster():HasScepter() and self:GetSpecialValueFor("scepter_cooldown") or 0
 end
 
 function doomsday_adaptive_armor:GetBehavior()
-    if 	self:GetCaster():HasScepter() then
-        return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK
-    end
-    return DOTA_ABILITY_BEHAVIOR_PASSIVE
+    return self:GetCaster():HasScepter() and DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK or DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
 
 function doomsday_adaptive_armor:GetIntrinsicModifierName()

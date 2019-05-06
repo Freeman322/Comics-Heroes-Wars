@@ -10,7 +10,7 @@ end
 if modifier_item_heart_2 == nil then
     modifier_item_heart_2 = class ( {})
 end
-
+function modifier_item_heart_2:IsPurgable() return false end
 function modifier_item_heart_2:IsHidden ()
     return true --we want item's passive abilities to be hidden most of the times
 end
@@ -34,18 +34,18 @@ end
 
 function modifier_item_heart_2:OnCreated(params)
     if IsServer() then
-        self:StartIntervalThink(0.1) 
-    end 
+        self:StartIntervalThink(0.1)
+    end
 end
 
 function modifier_item_heart_2:OnIntervalThink()
     if IsServer() then
-        if self:GetAbility():IsCooldownReady() then 
+        if self:GetAbility():IsCooldownReady() then
             self:SetStackCount(1)
         else
-            self:SetStackCount(0) 
-        end 
-    end 
+            self:SetStackCount(0)
+        end
+    end
 end
 
 function modifier_item_heart_2:GetModifierBonusStats_Intellect (params)
@@ -56,10 +56,10 @@ function modifier_item_heart_2:GetModifierBonusStats_Agility (params)
 end
 
 function modifier_item_heart_2:GetModifierHealthRegenPercentage (params)
-    if self:GetStackCount() == 1 then 
+    if self:GetStackCount() == 1 then
         return self:GetAbility():GetSpecialValueFor ("health_regen_percent_per_second")
-    end 
-    return 
+    end
+    return
 end
 
 function modifier_item_heart_2:GetModifierTotalPercentageManaRegen (params)
@@ -80,5 +80,4 @@ function modifier_item_heart_2:GetAttributes ()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
 
-function item_heart_2:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function item_heart_2:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
