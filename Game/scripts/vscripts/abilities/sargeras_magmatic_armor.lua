@@ -49,7 +49,7 @@ function modifier_sargeras_magmatic_armor:OnIntervalThink()
 			ability = hAbility
 		}
 
-		if not self:GetParent():IsBuilding() and not self:GetParent():IsMagicImmune() then
+		if not self:GetParent():IsBuilding() and self:GetParent():IsMagicImmune() == false then
 			ApplyDamage( damage )
 		end
 	end

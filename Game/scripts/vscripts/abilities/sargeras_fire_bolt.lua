@@ -67,6 +67,8 @@ function modifier_sargeras_fire_bolt:OnIntervalThink()
 			ability = hAbility
 		}
 		ApplyDamage( damage )
+
+		if self:GetParent():IsMagicImmune() then self:Destroy() end 
 	end
 end
 

@@ -2399,24 +2399,24 @@
 			"particle"  "particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
 			"model"		"models/items/sven/fiend_cleaver_axe/fiend_cleaver_axe.vmdl"
 			"particle"  "particles/econ/items/luna/luna_lucent_ti5_gold/luna_eclipse_cast_moonfall_gold.vpcf"
-			 "particle"  "particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf"
-			 "particle"  "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
-			 "particle"  "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
-			 "particle"  "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_arcana_body_ambient.vpcf"
-			 "particle"  "particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf"
-			 "soundfile" "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
-			 "soundfile" "soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
-			 "soundfile" "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
-			 "soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
-			 "particle"  "particles/status_fx/status_effect_doom.vpcf"
-			 "particle"  "particles/econ/courier/courier_oculopus/courier_oculopus_ambient.vpcf"
-			 "particle"	 "particles/econ/events/ti7/radiance_ti7.vpcf"
-			 "particle"	 "particles/items2_fx/radiance.vpcf"
-			 "particle"	 "particles/econ/items/ursa/ursa_razorwyrm/ursa_razorwyrm_ambient_v2_eyes.vpcf"
-			 "model"	"models/heroes/hero_thanos_arcana/thanos_helmet.vmdl"
-			 "particle"  "particles/thanos/thanos_crystal_weapon_supernova.vpcf"
-			 "model"	"models/thanos/thanos_crystal_of_foundation.vmdl"
-			 "particle"	"particles/thanos/thanos_crystal_weapon_ambient.vpcf"
+			"particle"  "particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf"
+			"particle"  "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"particle"  "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
+			"particle"  "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_arcana_body_ambient.vpcf"
+			"particle"  "particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"particle"  "particles/status_fx/status_effect_doom.vpcf"
+			"particle"  "particles/econ/courier/courier_oculopus/courier_oculopus_ambient.vpcf"
+			"particle"	 "particles/econ/events/ti7/radiance_ti7.vpcf"
+			"particle"	 "particles/items2_fx/radiance.vpcf"
+			"particle"	 "particles/econ/items/ursa/ursa_razorwyrm/ursa_razorwyrm_ambient_v2_eyes.vpcf"
+			"model"	"models/heroes/hero_thanos_arcana/thanos_helmet.vmdl"
+			"particle"  "particles/thanos/thanos_crystal_weapon_supernova.vpcf"
+			"model"	"models/thanos/thanos_crystal_of_foundation.vmdl"
+			"particle"	"particles/thanos/thanos_crystal_weapon_ambient.vpcf"
 	    }
 		"AbilitySpecial"
 		{
@@ -8305,9 +8305,9 @@
 
 		"precache"
 		{
-			"model"  "models/heroes/hero_drstrange/bracers_of_eternity/bracers_of_eternity.vmdl"
-			"particle"  "particles/econ/courier/courier_hermit_crab/hermit_crab_octarine_ambient.vpcf"
-			"particle"  "particles/econ/courier/courier_hermit_crab/hermit_crab_octarine_ambient.vpcf"
+			"model"  		"models/heroes/hero_drstrange/bracers_of_eternity/bracers_of_eternity.vmdl"
+			"model"		"models/heroes/hero_drstrange/cape.vmdl"
+			"particle"  	"particles/econ/courier/courier_hermit_crab/hermit_crab_octarine_ambient.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -14785,26 +14785,25 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"											"7562"
-		"BaseClass"								"ability_lua"
-		"ScriptFile"							"abilities/sargeras_fissure.lua"
-		"AbilityTextureName"			"custom/sargeras_fissure"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"						"abilities/sargeras_fissure.lua"
+		"AbilityTextureName"				"custom/sargeras_fissure"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"					"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1400"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"					"1400"
+		"AbilityCastPoint"					"0.2"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
-		"AbilityDuration"				"1.25 1.5 1.75 2.0"
+		"AbilityCooldown"					"18 16 14 12"
+		"AbilityDuration"					"1.25 1.5 1.75 2.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -14812,7 +14811,8 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 120 140 160"
+		"AbilityManaCost"					"100 120 140 160"
+		
 		"precache"
 		{
 			"particle"  "particles/hero_sargeras/modifier_sargeras_effect.vpcf"
@@ -14842,7 +14842,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.25 1.5 1.75 2.0"
+				"stun_duration"				"0.75 1.0 1.25 1.5"
 			}
 			"05"
 			{
@@ -14928,15 +14928,14 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"											"7564"
-		"BaseClass"						  	"ability_lua"
-		"ScriptFile"							"abilities/sargeras_fire_bolt.lua"
-		"AbilityTextureName"			"custom/sargeras_fire_bolt"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"						"abilities/sargeras_fire_bolt.lua"
+		"AbilityTextureName"				"custom/sargeras_fire_bolt"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"					"1"
 
 		// Casting
@@ -15011,8 +15010,8 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_interval"		"60 80 100 120"
-				"LinkedSpecialBonus" "special_bonus_unique_sargeras"
+				"damage_interval"			"60 80 100 120"
+				"LinkedSpecialBonus" 		"special_bonus_unique_sargeras"
 			}
 			//"02"
 			//{
@@ -15022,7 +15021,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_tooltip"		"4"
+				"duration_tooltip"			"4"
 			}
 		}
 	}
@@ -30633,18 +30632,18 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/tribunal_immortal_judje.lua"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"FightRecapLevel"			"2"
-		"AbilityTextureName"	"custom/tribunal_angel"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"custom/tribunal_angel"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"			"52 48 44 40"
-		"AbilityCastPoint"		"0.1"
-		"MaxLevel"            "4"
+		"AbilityCooldown"			"36"
+		"AbilityCastPoint"			"0.1"
+		"MaxLevel"          	  	"4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -30657,7 +30656,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.6 3.4 4.2 5.0"
+				"duration"				"2.0 2.5 3.0 3.5"
 			}
 		}
 
@@ -30674,12 +30673,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/tribunal_crit.lua"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"	"custom/tribunal_crit"
-		"MaxLevel"            "4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/tribunal_crit"
+		"MaxLevel"            			"4"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -30696,13 +30695,13 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"crit_bonus"				"150 200 250 300"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"20"
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"				"10"
 			}
 		}
 	}
@@ -33974,9 +33973,39 @@
 
 		"precache"
 		{
-			"particle"  "particles/hero_thanos/thanos_decimation.vpcf"
-			"particle"  "particles/hero_doctor_fate/fatebind_buff_f.vpcf"
-			"particle"  "particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_buff.vpcf"
+			"particle"  	"particles/hero_thanos/thanos_decimation.vpcf"
+			"particle"  	"particles/hero_doctor_fate/fatebind_buff_f.vpcf"
+			"particle"  	"particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_buff.vpcf"
+
+			"model"		 "models/heroes/hero_thanos/weap/weapon.vmdl"
+			"model"		 "models/heroes/hero_thanos/econs/thanos_crystals_of_foundation.vmdl"
+			"model"		 "models/heroes/hero_thanos/econs/thanos_timebreaker.vmdl"
+			"model"		 "models/heroes/hero_thanos/econs/king_thanos.vmdl"
+			"model"		"models/heroes/hero_thanos_arcana/thanos.vmdl"
+			"particle"  	"particles/thanos/thanos_supernova.vpcf"
+			"particle"  	"particles/thanos/thanos_supernova_explode_a.vpcf"
+			"particle"  	"particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"particle"  	"particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
+			"model"		"models/items/sven/fiend_cleaver_axe/fiend_cleaver_axe.vmdl"
+			"particle"  	"particles/econ/items/luna/luna_lucent_ti5_gold/luna_eclipse_cast_moonfall_gold.vpcf"
+			"particle"  	"particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf"
+			"particle"  	"particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"particle"  	"particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
+			"particle"  	"particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_arcana_body_ambient.vpcf"
+			"particle"  	"particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"particle"  	"particles/status_fx/status_effect_doom.vpcf"
+			"particle"  	"particles/econ/courier/courier_oculopus/courier_oculopus_ambient.vpcf"
+			"particle"	 "particles/econ/events/ti7/radiance_ti7.vpcf"
+			"particle"	 "particles/items2_fx/radiance.vpcf"
+			"particle"	 "particles/econ/items/ursa/ursa_razorwyrm/ursa_razorwyrm_ambient_v2_eyes.vpcf"
+			"model"		"models/heroes/hero_thanos_arcana/thanos_helmet.vmdl"
+			"particle" 	 "particles/thanos/thanos_crystal_weapon_supernova.vpcf"
+			"model"		"models/thanos/thanos_crystal_of_foundation.vmdl"
+			"particle"	"particles/thanos/thanos_crystal_weapon_ambient.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

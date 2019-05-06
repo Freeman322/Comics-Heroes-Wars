@@ -43,31 +43,9 @@ function sargeras_annihilation:OnSpellStart()
 		else
 			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 1, 1 ) )
 		end
+		
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
 		EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_EarthShaker.EchoSlam", self:GetCaster() )
-		local player_id = self:GetCaster():GetPlayerOwnerID()
-	    local htable = CustomNetTables:GetTableValue("rating", "rating_pre_game")
-	    if htable[tostring(player_id)] and htable[tostring(player_id)].veteran == "2" then
-	    	EmitSoundOn("PudgeWarsClassic.echo_slam", self:GetCaster())
-	    	EmitSoundOn("PudgeWarsClassic.echo_slam", self:GetCaster())
-	    	EmitSoundOn("PudgeWarsClassic.echo_slam", self:GetCaster())
-
-
-				local explosion5 = ParticleManager:CreateParticle("particles/hero_sargeras/sargeras_annihilation_arcana.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
-				ParticleManager:SetParticleControl(explosion5, 0, self:GetCaster():GetAbsOrigin())
-				ParticleManager:SetParticleControl(explosion5, 1, Vector (500, 500, 0))
-        ParticleManager:SetParticleControl(explosion5, 2, Vector (255, 255, 0))
-				ParticleManager:SetParticleControl(explosion5, 3, self:GetCaster():GetAbsOrigin())
-				ParticleManager:SetParticleControl(explosion5, 4, self:GetCaster():GetAbsOrigin())
-				ParticleManager:SetParticleControl(explosion5, 5, self:GetCaster():GetAbsOrigin())
-				ParticleManager:SetParticleControl(explosion5, 11, self:GetCaster():GetAbsOrigin())
-				ParticleManager:SetParticleControl(explosion5, 12, self:GetCaster():GetAbsOrigin())
-		    else
-				local explosion = ParticleManager:CreateParticle("particles/hero_sargeras/sargeras_annihilation.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
-				ParticleManager:SetParticleControl(explosion, 0, self:GetCaster():GetAbsOrigin())
-				ParticleManager:SetParticleControl(explosion, 1, Vector(600, 600, 1))
-				ParticleManager:ReleaseParticleIndex( explosion )
-		end
 	end
 end
 

@@ -33,7 +33,7 @@ end
 
 function modifier_bynder_rim:OnTakeDamage( params )
   if self:GetParent () == params.unit then
-    if not params.attacker:IsBuilding() then
+    if not params.attacker:IsBuilding() and not params.attacker:IsAncient() then
         self:SetStackCount(self:GetStackCount() + params.original_damage)
     end
 

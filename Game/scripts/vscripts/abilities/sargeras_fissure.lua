@@ -87,7 +87,9 @@ function sargeras_fissure_thinker:OnIntervalThink()
 		local units = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, 124, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for i = 1, #units do
 			local unit = units[i]
-			ApplyDamage({victim = unit, attacker = self:GetAbility():GetCaster(), damage = (self:GetAbility():GetSpecialValueFor("damage_per_sec")/10), damage_type = self:GetAbility():GetAbilityDamageType()})
+			if not unit:IsMagicImmune() then
+				ApplyDamage({victim = unit, attacker = self:GetAbility():GetCaster(), damage = (self:GetAbility():GetSpecialValueFor("damage_per_sec")/10), damage_type = self:GetAbility():GetAbilityDamageType()})
+			end
 		end
 
 		AddFOWViewer(2, self:GetCaster():GetAbsOrigin(), 10, 0.15, false) AddFOWViewer(3, self:GetCaster():GetAbsOrigin(), 10, 0.15, false)
