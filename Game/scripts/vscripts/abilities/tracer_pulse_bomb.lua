@@ -116,6 +116,5 @@ function modifier_tracer_pulse_bomb_enemy:OnDestroy()
       end
     end
     EmitSoundOn("Hero_Techies.Suicide", self:GetParent())
-    ParticleManager:ReleaseParticleIndex(ParticleManager:SetParticleControl(ParticleManager:CreateParticle("particles/econ/courier/courier_cluckles/courier_cluckles_ambient_rocket_explosion.vpcf", PATTACH_WORLDORIGIN, self:GetParent()), 3, self:GetParent():GetAbsOrigin()))
   end
 end
