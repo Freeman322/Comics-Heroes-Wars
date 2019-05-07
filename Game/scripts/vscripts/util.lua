@@ -496,6 +496,9 @@ function Util:OnHeroInGame(hero)
     if hero:GetUnitName() == "npc_dota_hero_jetstream_sam" then
       hero:FindAbilityByName("sam_zandatsu"):SetLevel(1)
     end
+    if hero:GetUnitName() == "npc_dota_hero_enchantress" then
+      hero:FindAbilityByName("tracer_pulse_bomb"):SetLevel(1)
+    end
     if hero:GetUnitName() == "dota_fountain" then
       hero:FindAbilityByName("fountain_protection"):SetLevel(1)
     end

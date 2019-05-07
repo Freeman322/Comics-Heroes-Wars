@@ -64,5 +64,3 @@ end
 
 function modifier_sargeras_magmatic_armor:GetEffectName()	return "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf" end
 function modifier_sargeras_magmatic_armor:GetEffectAttachType()	return PATTACH_CUSTOMORIGIN_FOLLOW end
-function modifier_sargeras_magmatic_armor:DeclareFunctions() return { MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS } end
---function modifier_sargeras_magmatic_armor:GetModifierMagicalResistanceBonus() return self:GetAbility():GetSpecialValueFor("magic_res_bonus") * -1 end

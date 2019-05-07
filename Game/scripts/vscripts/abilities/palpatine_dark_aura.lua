@@ -4,12 +4,12 @@ LinkLuaModifier( "modifier_palpatine_dark_aura_aura", "abilities/palpatine_dark_
 palpatine_dark_aura = class({})
 
 function palpatine_dark_aura:OnSpellStart(  )
-    if IsServer() then 
-        local duration = self:GetSpecialValueFor("duration") 
-        if self:GetCaster():HasTalent("special_bonus_unique_palpatine_4") then duration = duration + (self:GetCaster():FindTalentValue("special_bonus_unique_palpatine_4") or 0) end 
-        
+    if IsServer() then
+        local duration = self:GetSpecialValueFor("duration")
+        if self:GetCaster():HasTalent("special_bonus_unique_palpatine_4") then duration = duration + (self:GetCaster():FindTalentValue("special_bonus_unique_palpatine_4") or 0) end
+
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_palpatine_dark_aura_aura", {duration = duration})
-        
+
         EmitSoundOn("Hero_Necrolyte.SpiritForm.Cast", self:GetCaster())
     end
 end
@@ -50,16 +50,16 @@ function modifier_palpatine_dark_aura:StatusEffectPriority() return 1000 end
 
 function modifier_palpatine_dark_aura:OnCreated(params)
     if IsServer() then
-        if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then 
+        if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
             self:StartIntervalThink(FrameTime())
-        end 
+        end
 	end
 end
 
 function modifier_palpatine_dark_aura:OnIntervalThink()
     if IsServer() then
         local damage = self:GetParent():GetMaxHealth() * (self:GetAbility():GetSpecialValueFor("damage_enemy") / 100)
-        if self:GetCaster():HasTalent("special_bonus_unique_palpatine_3") then damage = damage + (self:GetCaster():FindTalentValue("special_bonus_unique_palpatine_3") or 0) end 
+        if self:GetCaster():HasTalent("special_bonus_unique_palpatine_3") then damage = damage + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_palpatine_3") or 0) end 
 
         ApplyDamage({attacker = self:GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = damage * FrameTime(), damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_DONT_DISPLAY_DAMAGE_IF_SOURCE_HIDDEN})
 	end
@@ -75,8 +75,8 @@ function modifier_palpatine_dark_aura:DeclareFunctions()
 end
 
 function modifier_palpatine_dark_aura:GetModifierMoveSpeedBonus_Percentage( params )
-    if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then 
+    if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
         return self:GetAbility():GetSpecialValueFor("movement_speed_reduction") * (-1)
-    end 
-    return 
+    end
+    return
 end

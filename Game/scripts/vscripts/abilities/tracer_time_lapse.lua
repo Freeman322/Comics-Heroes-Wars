@@ -4,28 +4,11 @@ local IsFirstTimeUpgrade = true
 
 local tUnits = {}
 
-function tracer_time_lapse:IsRefreshable()
-    return false
-end
+function tracer_time_lapse:IsRefreshable() return false end
+function tracer_time_lapse:IsStealable() return false end
 
-function tracer_time_lapse:GetManaCost( hTarget )
-	if self:GetCaster():HasScepter() then
-    	return (self:GetCaster():GetMaxMana()*0.35)
-    end
-    return self.BaseClass.GetManaCost( self, hTarget )
-end
-
-function tracer_time_lapse:GetCooldown( nLevel )
-	if self:GetCaster():HasScepter() then
-		return self:GetSpecialValueFor( "time_jump_cooldown_scepter" )
-	end
-
-	return self.BaseClass.GetCooldown( self, nLevel )
-end
-
-function tracer_time_lapse:IsStealable()
-    return false
-end
+function tracer_time_lapse:GetManaCost(hTarget) return self:GetCaster():HasScepter() and self:GetCaster():GetMaxMana() / 100 * self:GetSpecialValueFor("manacost_scepter") or self.BaseClass.GetManaCost(self, hTarget) end
+function tracer_time_lapse:GetCooldown(nLevel) return self:GetCaster():HasScepter() and self:GetSpecialValueFor("time_jump_cooldown_scepter") or self.BaseClass.GetCooldown(self, nLevel) end
 
 function tracer_time_lapse:OnUpgrade( params )
     if IsFirstTimeUpgrade then
@@ -43,9 +26,9 @@ function tracer_time_lapse:_init()
     for _, hUnit in pairs(tUnits) do
         tStates[hUnit] 				= tStates[hUnit] 			or {}
 	    tStates[hUnit][0] 			= tStates[hUnit][0] 		or {}
-	    tStates[hUnit][0].pos 		= tStates[hUnit][0].pos 	or hUnit:GetAbsOrigin() 
-	    tStates[hUnit][0].health 	= tStates[hUnit][0].health 	or hUnit:GetHealth() 
-	    tStates[hUnit][0].mana		= tStates[hUnit][0].mana 	or hUnit:GetMana() 
+	    tStates[hUnit][0].pos 		= tStates[hUnit][0].pos 	or hUnit:GetAbsOrigin()
+	    tStates[hUnit][0].health 	= tStates[hUnit][0].health 	or hUnit:GetHealth()
+	    tStates[hUnit][0].mana		= tStates[hUnit][0].mana 	or hUnit:GetMana()
 	    tStates[hUnit][0].abil1 	= tStates[hUnit][0].abil1 	or hUnit:GetAbilityByIndex(0):GetCooldownTimeRemaining()
 	    tStates[hUnit][0].abil2 	= tStates[hUnit][0].abil2 	or hUnit:GetAbilityByIndex(1):GetCooldownTimeRemaining()
 	    tStates[hUnit][0].abil3		= tStates[hUnit][0].abil3 	or hUnit:GetAbilityByIndex(2):GetCooldownTimeRemaining()
@@ -64,9 +47,9 @@ function tracer_time_lapse:OnTimerThink()
         if need_time > 5 then need_time = 5 end
 
         tStates[hUnit][need_time] 			= {}
-	    tStates[hUnit][need_time].pos 		= hUnit:GetAbsOrigin() 
-	    tStates[hUnit][need_time].health 	= hUnit:GetHealth() 
-	    tStates[hUnit][need_time].mana 		= hUnit:GetMana() 
+	    tStates[hUnit][need_time].pos 		= hUnit:GetAbsOrigin()
+	    tStates[hUnit][need_time].health 	= hUnit:GetHealth()
+	    tStates[hUnit][need_time].mana 		= hUnit:GetMana()
 	    tStates[hUnit][need_time].abil1 	= hUnit:GetAbilityByIndex(0):GetCooldownTimeRemaining()
 	    tStates[hUnit][need_time].abil2 	= hUnit:GetAbilityByIndex(1):GetCooldownTimeRemaining()
 	    tStates[hUnit][need_time].abil3		= hUnit:GetAbilityByIndex(2):GetCooldownTimeRemaining()
@@ -83,15 +66,15 @@ function tracer_time_lapse:OnSpellStart(  )
             hUnit:SetHealth(1)
          end
          hUnit:SetMana( data[0].mana )
- 		 hUnit:GetAbilityByIndex(0):EndCooldown()
- 		 hUnit:GetAbilityByIndex(0):StartCooldown(data[0].abil1)
+ 		 --hUnit:GetAbilityByIndex(0):EndCooldown()
+ 		 --hUnit:GetAbilityByIndex(0):StartCooldown(data[0].abil1)
 
- 		 hUnit:GetAbilityByIndex(1):EndCooldown()
- 		 hUnit:GetAbilityByIndex(1):StartCooldown(data[0].abil2)
+ 		 --hUnit:GetAbilityByIndex(1):EndCooldown()
+ 		 --hUnit:GetAbilityByIndex(1):StartCooldown(data[0].abil2)
 
- 		 hUnit:GetAbilityByIndex(2):EndCooldown()
- 		 hUnit:GetAbilityByIndex(2):StartCooldown(data[0].abil3)
-     
+ 		 --hUnit:GetAbilityByIndex(2):EndCooldown()
+ 		 --hUnit:GetAbilityByIndex(2):StartCooldown(data[0].abil3)
+
 
         local nFXIndex = ParticleManager:CreateParticle( "particles/effects/time_lapse_2.vpcf", PATTACH_ABSORIGIN_FOLLOW, hUnit )
         ParticleManager:SetParticleControl( nFXIndex, 0, hUnit:GetOrigin())
@@ -106,6 +89,5 @@ function tracer_time_lapse:OnSpellStart(  )
 
         EmitSoundOn( "Hero_Weaver.TimeLapse", hUnit )
     end
+    self:UseResources(true, false, false)
 end
-function tracer_time_lapse:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-

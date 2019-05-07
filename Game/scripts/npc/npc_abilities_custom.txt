@@ -14879,7 +14879,7 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"					"100 120 140 160"
-		
+
 		"precache"
 		{
 			"particle"  "particles/hero_sargeras/modifier_sargeras_effect.vpcf"
@@ -15432,6 +15432,54 @@
 			}
 		}
 	}
+
+	"tracer_pulse_bomb"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/tracer_pulse_bomb.lua"
+
+		"AbilityTextureName"	"custom/tracer_energy_blast"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						"1"
+
+		"AbilityCastRange"		"600"
+		"AbilityCastPoint"		"0.1"
+		"AbilityManaCost"			"250"
+
+		"precache"
+		{
+			"soundfile"									"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_level"	"65"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_radius"	"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bind_radius"			"125"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"explosion_delay"	"1.5"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Tarcer Overload
 	//=================================================================================================================
@@ -15490,7 +15538,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/tracer_time_lapse.lua"
 		"AbilityTextureName"			"custom/tracer_time_lapse"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 
 		"FightRecapLevel"				"2"
@@ -15498,7 +15546,7 @@
 		"HasScepterUpgrade"				"1"
 
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"33 22 11"
+		"AbilityCooldown"				"35 30 25 20"
 		"AbilityManaCost"					"100"
 		"precache"
 		{
@@ -15510,12 +15558,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"time_jump_cooldown_scepter"	"3 2 1"
+				"time_jump_cooldown_scepter"	"20 15 10 5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"manacost_scepter"		"10 5 0"
+				"manacost_scepter"		"15 10 5 0"
 			}
 		}
 	}
@@ -15530,10 +15578,28 @@
 		"AbilityTextureName"			"custom/tracer_blink"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 
-		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"9 7 5 3"
-		"AbilityManaCost"				"35 40 45 50"
+		"AbilityCastPoint"			"0.1"
+		"AbilityManaCost"				"35"
 		"AbilityCastRange"			"450 500 550 600"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_charges"				"2 2 3 4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"recharge_time"			"9 7 5 3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range"				"450 500 550 600"
+			}
+		}
 	}
 	//=================================================================================================================
 	// Diablo Elder Demon Form
@@ -32294,7 +32360,6 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"12 10 8 6"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"40 50 60 70"
@@ -32315,12 +32380,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charges"				"3"
+				"max_charges"				"3 4 5 10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_cooldown"		"16 14 12 10"
+				"recharge_time"		"16 14 12 10"
 			}
 		}
 	}
@@ -34593,7 +34658,6 @@
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 
 		"AbilityCastPoint"       "0"
-		"AbilityCooldown"       "9 8 7 6"
 		"AbilityManaCost"       "50"
 
 		"AbilitySpecial"
@@ -34611,12 +34675,17 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"charges"				"4"
+				"max_charges"		"4"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"tree_radius"		"175"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"recharge_time"	"9 8 7 6"
 			}
 		}
 	}
@@ -35656,6 +35725,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage"					"130 190 240 300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_range"		"300"
 			}
 		}
 	}

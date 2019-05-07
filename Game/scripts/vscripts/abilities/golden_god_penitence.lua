@@ -38,5 +38,5 @@ end
 
 function modifier_golden_god_penitence:GetModifierMoveSpeedBonus_Percentage() return self:GetAbility():GetSpecialValueFor("bonus_movement_speed") * -1 end
 function modifier_golden_god_penitence:GetModifierIncomingDamage_Percentage() return self:GetAbility():GetSpecialValueFor("bonus_damage_taken") end
-function modifier_golden_god_penitence:GetEffectName() return "particles/units/heroes/hero_chen/chen_penitence_debuff.vpcf" end--"particles/goldengod/goldengod_penitence_debuff.vpcf" end
+function modifier_golden_god_penitence:GetEffectName() return "particles/goldengod/goldengod_penitence_debuff.vpcf" end
 function modifier_golden_god_penitence:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end

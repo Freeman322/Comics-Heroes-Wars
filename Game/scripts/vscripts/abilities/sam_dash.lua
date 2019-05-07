@@ -1,13 +1,13 @@
 LinkLuaModifier("modifier_sam_dash", "abilities/sam_dash.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_palpatine_force", "abilities/palpatine_force.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_charges", "modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_sam_dash_dash", "abilities/sam_dash.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 sam_dash = class({})
 
 if IsServer() then
   function sam_dash:OnUpgrade()
-    if not self:GetCaster():HasModifier("modifier_palpatine_force") then
-      self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_palpatine_force", nil):SetStackCount(self:GetSpecialValueFor("charges"))
+    if not self:GetCaster():HasModifier("modifier_charges") then
+      self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_charges", nil)
     end
   end
 

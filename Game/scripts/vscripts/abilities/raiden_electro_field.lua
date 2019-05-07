@@ -22,37 +22,37 @@ function modifier_raiden_electro_field:GetAuraSearchType() return DOTA_UNIT_TARG
 function modifier_raiden_electro_field:GetAuraSearchFlags()	return 0 end
 function modifier_raiden_electro_field:GetModifierAura() return "modifier_raiden_electro_field_passive" end
 
-function modifier_raiden_electro_field:OnCreated(params) 
+function modifier_raiden_electro_field:OnCreated(params)
     if IsServer() then
-        if not self:GetParent():IsRealHero() then self:Destroy() end 
+        if not self:GetParent():IsRealHero() then self:Destroy() end
         self:StartIntervalThink(0.3)
-    end 
-end 
+    end
+end
 
 function modifier_raiden_electro_field:OnIntervalThink()
-    if IsServer() then 
+    if IsServer() then
         self.m_iParticle = ParticleManager:CreateParticle( CONST_AURA_FIELD_PARTICLE, PATTACH_CUSTOMORIGIN, nil );
         ParticleManager:SetParticleControl( self.m_iParticle, 0, self:GetParent():GetAbsOrigin());
-    end 
+    end
 end
 
 modifier_raiden_electro_field_passive = class({})
 
 function modifier_raiden_electro_field_passive:IsPurgable() return false end
-
+function modifier_raiden_electro_field_passive:IsHidden() return true end
 function modifier_raiden_electro_field_passive:OnCreated(params)
     if IsServer() then
         self:StartIntervalThink(CONST_DAMAGE_INTERVAL)
-    end 
+    end
 end
 
 function modifier_raiden_electro_field_passive:OnIntervalThink()
-    if IsServer() then 
+    if IsServer() then
         local damage = self:GetAbility():GetAbilityDamage()
 
         if self:GetCaster():HasTalent("special_bonus_unique_raiden_1") then
             damage = damage + self:GetAbility():GetCaster():FindTalentValue("special_bonus_unique_raiden_1")
-        end 
+        end
 
         ApplyDamage({
             attacker = self:GetCaster(),
@@ -68,5 +68,5 @@ function modifier_raiden_electro_field_passive:OnIntervalThink()
 		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin(), true );
 		ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetOrigin(), true );
 		ParticleManager:ReleaseParticleIndex( nFXIndex );
-    end 
-end 
+    end
+end
