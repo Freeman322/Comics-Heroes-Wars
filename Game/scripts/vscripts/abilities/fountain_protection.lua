@@ -13,7 +13,7 @@ modifier_fountain_protection = class({})
 function modifier_fountain_protection:IsHidden() return true end
 function modifier_fountain_protection:IsAura() return true end
 function modifier_fountain_protection:IsPurgable() return false end
-function modifier_fountain_protection:GetAuraRadius()	return if self:GetParent():GetTeam() == DOTA_TEAM_BADGUYS then return 1400 else 1200 end end
+function modifier_fountain_protection:GetAuraRadius()	if self:GetParent():GetTeam() == DOTA_TEAM_BADGUYS then return 1400 end return 1200 end
 function modifier_fountain_protection:GetAuraSearchTeam()	return DOTA_UNIT_TARGET_TEAM_BOTH end
 function modifier_fountain_protection:GetAuraSearchType()	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_fountain_protection:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD end

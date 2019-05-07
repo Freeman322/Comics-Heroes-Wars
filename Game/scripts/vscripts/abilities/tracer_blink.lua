@@ -11,12 +11,13 @@ end
 function tracer_blink:OnSpellStart()
 	ParticleManager:CreateParticle("particles/econ/events/nexon_hero_compendium_2014/blink_dagger_start_sparkles_nexon_hero_cp_2014.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
 	EmitSoundOn("Hero_Tinker.Laser", self:GetCaster())
-
 	local hTarget = self:GetCursorPosition()
 
 	if (self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()):Length2D() > self:GetSpecialValueFor("cast_range") then
-		hTarget = self:GetCaster():GetAbsOrigin() + (self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()):Normalized() * self:GetSpecialValueFor("cast_range")
+			hTarget = self:GetCaster():GetAbsOrigin() + (self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()):Normalized() * self:GetSpecialValueFor("cast_range")
 	end
+
+	ParticleManager:CreateParticle("particles/econ/events/fall_major_2016/blink_dagger_start_fm06.vpcf", PATTACH_ABSORIGIN, hCaster)
 
 	self:GetCaster():SetAbsOrigin(hTarget)
 	FindClearSpaceForUnit(self:GetCaster(), hTarget, false)

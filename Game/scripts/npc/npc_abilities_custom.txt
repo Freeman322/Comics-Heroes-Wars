@@ -15580,7 +15580,6 @@
 
 		"AbilityCastPoint"			"0.1"
 		"AbilityManaCost"				"35"
-		"AbilityCastRange"			"450 500 550 600"
 
 		"AbilitySpecial"
 		{
