@@ -8,7 +8,6 @@ function tracer_pulse_bomb:GetIntrinsicModifierName() return "modifier_tracer_pu
 
 function tracer_pulse_bomb:GetAOERadius() return self:GetSpecialValueFor("explosion_radius") end
 function tracer_pulse_bomb:OnSpellStart()
-
   self.proj = ProjectileManager:CreateLinearProjectile({
     EffectName = "particles/units/heroes/hero_batrider/batrider_flamebreak.vpcf",
     Ability = self,

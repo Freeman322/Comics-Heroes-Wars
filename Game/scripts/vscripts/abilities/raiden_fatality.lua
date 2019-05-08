@@ -23,13 +23,8 @@ function raiden_fatality:OnSpellStart()
 
     	local duration = self:GetChannelTime()
 
-	if self.hVictim:TriggerSpellAbsorb( self ) then
-		self.hVictim = nil
-		self:GetCaster():Interrupt()
-	else
-		self.hVictim:AddNewModifier( self:GetCaster(), self, "modifier_raiden_fatality", { duration = duration } )
-		self.hVictim:Interrupt()
-	end
+	self.hVictim:AddNewModifier( self:GetCaster(), self, "modifier_raiden_fatality", { duration = duration } )
+	self.hVictim:Interrupt()
 end
 
 

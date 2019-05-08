@@ -77,9 +77,11 @@ function modifier_raiden_elecro_mine_thinker:OnExplosion(iDamage, vLoc)
         if units ~= nil then
             if #units > 0 then
                 for _, unit in pairs(units) do
-                    unit:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
-                                             
-                    ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = unit, ability = self:GetAbility(), damage = iDamage, damage_type = DAMAGE_TYPE_MAGICAL})
+                    if not unit:IsIllusion() then
+                        unit:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
+                                                
+                        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = unit, ability = self:GetAbility(), damage = iDamage, damage_type = DAMAGE_TYPE_MAGICAL})
+                    end
                 end
             end
         end

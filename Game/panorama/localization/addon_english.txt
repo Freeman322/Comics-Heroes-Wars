@@ -2753,6 +2753,9 @@ Rage, rage against the dying of the light."
 		
 		"hit"							"Hit"
 		"hit_lore"						""
+		
+		"psyloc"							"Psylocke"
+		"psyloc_lore"						""
 }
 
 

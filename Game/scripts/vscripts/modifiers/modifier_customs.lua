@@ -99,3 +99,7 @@ function modifier_neo_noir_khan:GetModifierModelScale( params )
     return 100
 end
 
+if modifier_custom_unique == nil then modifier_custom_unique = class({}) end 
+function modifier_custom_unique:IsHidden() return true end
+function modifier_custom_unique:IsPurgable() return false end
+function modifier_custom_unique:RemoveOnDeath() return false end
