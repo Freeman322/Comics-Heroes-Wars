@@ -2352,20 +2352,18 @@ function CDOTA_BaseNPC:IsFriendly(target)
 end
 
 function CDOTA_BaseNPC:GetCooldownTimeAfterReduction(cooldown)
-  local m_reduction = 1
+  local cooldown_reduction = 1
 
-  local modifiers = self:FindAllModifiers()
-
-  for _, mod in pairs(modifiers) do
+  for _, mod in pairs(self:FindAllModifiers()) do
     pcall(function()
       if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE) then
-        m_reduction = m_reduction * (mod:GetModifierPercentageCooldown() / 100)
-      end 
+        cooldown_reduction = cooldown_reduction * (1 - mod:GetModifierPercentageCooldown() / 100)
+      end
       if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING) then
-        m_reduction = m_reduction * (mod:GetModifierPercentageCooldownStacking() / 100)
+        cooldown_reduction = cooldown_reduction * (1 - mod:GetModifierPercentageCooldownStacking() / 100)
       end
     end)
-  end 
+  end
 
-  return m_reduction * cooldown
+  return cooldown_reduction * cooldown
 end

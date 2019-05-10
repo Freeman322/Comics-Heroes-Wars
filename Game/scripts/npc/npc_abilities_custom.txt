@@ -3465,6 +3465,8 @@
 			{
 				"var_type"							"FIELD_FLOAT"
 				"strength_buff_amount"	"1.1 1.4 1.7 2.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_draks_flesh_heap"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"02"
 			{
@@ -3475,6 +3477,24 @@
 			{
 				"var_type"							"FIELD_FLOAT"
 				"health_regen"					"0.4 0.6 0.8 1.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_draks_flesh_heap"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+		}
+	}
+
+	"special_bonus_unique_draks_flesh_heap"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"						"2"
 			}
 		}
 	}
@@ -3941,12 +3961,12 @@
 			"03"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"cast_range_scepter"					"4000"
+				"cast_range_scepter"					"99999"
 			}
 			"04"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"cooldown_scepter"						"5"
+				"cooldown_scepter"						"0"
 			}
 		}
 	}
@@ -11189,7 +11209,6 @@
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"						"1"
@@ -11218,12 +11237,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.8 2.2 2.6 3.0"
+				"duration"				"1.5 2.0 2.5 3.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"125 190 255 320"
+				"total_damage"				"150 220 300 390"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_interval"		"0.5"
 			}
 		}
 	}
@@ -11254,11 +11278,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"7129"
 		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ds_sniper_shot.lua"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"FightRecapLevel"				"2"
 		"AbilityTextureName"		   	"custom/deathstroke_ulti"
-		"ScriptFile"					"abilities/ds_sniper_shot.lua"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15588,6 +15612,7 @@
 
 		"AbilityCastPoint"			"0.1"
 		"AbilityManaCost"				"35"
+		"AbilityCooldown"				"9 7 5 3"
 
 		"AbilitySpecial"
 		{
@@ -18734,8 +18759,12 @@
 		"ScriptFile"							"abilities/nurgle_plague_lord.lua"
 		"AbilityTextureName"			"custom/nurgle_plague_lord"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -34595,7 +34624,7 @@
 		"AbilityUnitDamageType" "DAMAGE_TYPE_PHYSICAL"
 
 		"AbilityCastRange"		"700 800 900 1000"
-		"AbilityCastPoint"		"0 0 0 0.2"
+		"AbilityCastPoint"		"0 0 0 0.1"
 		"AbilityCooldown"			"24 22 20 18"
 		"AbilityManaCost"			"80 90 100 110"
 
@@ -34634,8 +34663,8 @@
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"channel_time"		"0.9 0.6 0.3 0"
+				"var_type"				"FIELD_FLOAT"
+				"channel_time"		"1.1 0.8 0.5 0"
 			}
 		}
 	}
@@ -34651,7 +34680,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"							"1"
+				"value"							"2"
 			}
 		}
 	}
@@ -34691,7 +34720,7 @@
 			}
 			"05"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"			"FIELD_FLOAT"
 				"recharge_time"	"10 8.5 7 5.5"
 			}
 		}
