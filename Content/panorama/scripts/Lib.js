@@ -4475,6 +4475,34 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "335": {
+        "item": "penetrator",
+        "rarity": "11",
+        "quality": "10",
+        "dropable": "false",
+        "slot": "weapon",
+        "hero": "npc_dota_hero_antimage",
+        "universal": "false",
+        "def_id": "335",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "336": {
+        "item": "ciri",
+        "rarity": "11",
+        "quality": "10",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_abyssal_underlord",
+        "universal": "false",
+        "def_id": "336",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
 };
 

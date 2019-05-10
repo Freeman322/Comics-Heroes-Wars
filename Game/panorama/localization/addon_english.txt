@@ -2756,6 +2756,12 @@ Rage, rage against the dying of the light."
 		
 		"psyloc"							"Psylocke"
 		"psyloc_lore"						""
+		
+		"penetrator"						"Penetrator"
+		"penetrator_lore"					"In the end... Daredevil has chosen new powerful weapon."
+		
+		"ciri"								"Ciri"
+		"ciri_lore"							""
 }
 
 

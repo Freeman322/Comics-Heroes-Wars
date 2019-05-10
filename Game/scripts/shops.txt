@@ -153,7 +153,7 @@
 		"item"		"item_heart"	
 		"item"		"item_crimson_guard"		
 		"item"		"item_lotus_orb"
-		"item"		"item_azuras_staff"	
+		"item"		"item_chronograph"	
 		"item"		"item_orb_of_osuvox"	
 	}
 			

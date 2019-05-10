@@ -104,12 +104,14 @@
 		{
 			"particle"  "particles/hero_daredevil/jade_ambient_weapon_color.vpcf"
 			"particle"  "particles/hero_daredevil/jade_strike.vpcf"
+			"particle"	"particles/hero_daredevil/jade_strike_penetrator.vpcf"
 			"particle"  "particles/hero_daredevil/jade_ambient_weapon_base.vpcf"
 			"particle"  "particles/econ/items/earthshaker/earthshaker_totem_ti6/earthshaker_totem_ti6_cast.vpcf"
 			"particle"  "particles/econ/items/undying/undying_manyone/undying_pale_tombstone_ambient_eyes.vpcf"
 			"model"		"models/heroes/hero_daredevil/daredevil_jade_monk_arcana.vmdl"
 			"model"		"models/heroes/hero_daredevil/daredevil_jade_monk_base.vmdl"
 			"model"		"models/heroes/hero_daredevil/daredevil_jade_monk_head.vmdl"
+			"model"		"models/heroes/hero_daredevil/econs/penetrator/penetrator.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -15176,18 +15178,19 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"7570"
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/overvoid_infinite.lua"
 		"AbilityTextureName"			"custom/overvoid_infinite"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"FightRecapLevel"				"2"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_2"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -15199,6 +15202,11 @@
 		"AbilityChannelTime"			"1.0 1.5 2.0 2.5"
 		"AbilityCooldown"				"20 18 16 14"
 
+		"precache"
+		{
+			"model"					"models/heroes/overvoid/ciri/ciri.vmdl"
+			"model"					"models/heroes/overvoid/ciri/sword.vmdl"
+		}
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"80 100 120 140"
@@ -15207,12 +15215,12 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"			"FIELD_FLOAT"
 				"channel_time"			"1.0 1.5 2.0 2.5"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"			"FIELD_FLOAT"
 				"strike_per_sec"		"3 4 4 5"
 			}
 		}

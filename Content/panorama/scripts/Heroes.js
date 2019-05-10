@@ -538,6 +538,14 @@ Heroes.list = {
         {
             "name": "npc_dota_hero_raiden",
             "id": 217,
+        },
+        {
+            "name": "npc_dota_hero_misterio",
+            "id": 218,
+        },
+        {
+            "name": "npc_dota_hero_shazam",
+            "id": 219,
         }
     ]
 }

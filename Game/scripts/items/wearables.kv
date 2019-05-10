@@ -5523,7 +5523,53 @@
             } 
         }
     }
-     "npc_dota_hero_obsidian_destroyer"
+    "npc_dota_hero_misterio"
+    {
+        "__default"
+        {
+            "__default"
+            {
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/misterio/misterio_ambient.vpcf"
+                    }
+                    "2"
+                    {
+                        "particle"      "particles/misterio/misterio_ambient_eyes.vpcf"
+                        "ControlPoints"
+                        {
+                            "11"
+                            {
+                                "attach_point"      "attach_eye_l"
+                            }     
+                            "12"
+                            {
+                                "attach_point"      "attach_eye_r"
+                            }             
+                        }
+                    }
+                    "3"
+                    {
+                        "particle"      "particles/misterio/misterio_ambient_hand.vpcf"
+                        "ControlPoints"
+                        {
+                            "0"
+                            {
+                                "attach_point"      "attach_eye_l"
+                            }     
+                            "1"
+                            {
+                                "attach_point"      "attach_eye_r"
+                            }             
+                        }
+                    }
+                }
+            } 
+        }
+    }
+    "npc_dota_hero_obsidian_destroyer"
     {
         "weapon"
         {
@@ -5677,5 +5723,263 @@
                 }
             } 
         }
+    }
+    "npc_dota_hero_abyssal_underlord"
+    {
+        "skin"
+        {
+            "__default"
+            {
+               
+            } 
+            "ciri"
+            {
+                "model"                "models/heroes/overvoid/ciri/ciri.vmdl"
+                "models"
+                {
+                    "0"
+                    {
+                        "model"          "models/heroes/overvoid/ciri/sword.vmdl"
+                    }
+                }
+
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_custom_unique"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+            } 
+        }
+    }
+    "npc_dota_hero_antimage"
+    {   
+        "weapon"
+        {
+            "__default"
+            {
+                "models"
+                {
+                    "0"
+                    {
+                        "model"          "models/heroes/hero_daredevil/econs/weapon_left.vmdl"
+                        "particles"
+                        {
+                            "0"
+                            {
+                                "particle"       "particles/hero_daredevil/daredevil_staff.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_weapon"
+                                    "2"         "attach_corner"
+                                    "3"         "attach_weapon"
+                                    "4"         "attach_weapon"
+                                }
+                            }
+                            "1"
+                            {
+                                "particle"       "particles/hero_daredevil/daredevil_staff.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_corner"
+                                    "2"         "attach_weapon"
+                                    "3"         "attach_weapon"
+                                    "4"         "attach_weapon"
+                                }
+                            }
+                        }
+                    }
+                    "1"
+                    {
+                        "model"          "models/heroes/hero_daredevil/econs/weapon_right.vmdl"
+                        "particles"
+                        {
+                            "0"
+                            {
+                                "particle"       "particles/hero_daredevil/daredevil_staff.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_weapon"
+                                    "2"         "attach_corner"
+                                    "3"         "attach_weapon"
+                                    "4"         "attach_weapon"
+                                }
+                            }
+                            "1"
+                            {
+                                "particle"       "particles/hero_daredevil/daredevil_staff.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_corner"
+                                    "2"         "attach_weapon"
+                                    "3"         "attach_weapon"
+                                    "4"         "attach_weapon"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            "penetrator"
+            {
+                "models"
+                {
+                    "0"
+                    {
+                        "model"          "models/heroes/hero_daredevil/econs/penetrator/penetrator.vmdl"
+                    }
+                }
+            }
+            "daredevil_avernus_staff"
+            {
+                "models"
+                {
+                    "0"
+                    {
+                        "model"          "models/heroes/hero_daredevil/econs/daredevil_jewel_of_monks.vmdl"
+                        "particles"
+                        {
+                            "0"
+                            {
+                                "particle"       "particles/hero_daredevil/avernus_staff/avernus_staff_core.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_corner"
+                                    "1"         "attach_corner"
+                                    "3"         "attach_corner"
+                                    "4"         "attach_corner"
+                                    "5"         "attach_corner"
+                                    "6"         "attach_corner"
+                                }
+                            }
+                            "1"
+                            {
+                                "particle"       "particles/hero_daredevil/avernus_staff/avernus_staff.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_weapon"
+                                    "2"         "attach_corner"
+                                    "3"         "attach_weapon"
+                                    "4"         "attach_weapon"
+                                }
+                            }
+                            "2"
+                            {
+                                "particle"       "particles/hero_daredevil/avernus_staff/avernus_staff.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_corner"
+                                    "2"         "attach_weapon"
+                                    "3"         "attach_weapon"
+                                    "4"         "attach_weapon"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            "daredevil_arcana"
+            {
+                "material"      "arcana" 
+                "models"
+                {
+                    "0"
+                    {
+                        "model"          "models/heroes/hero_daredevil/arcana/daredevil_jade_weapon.vmdl"
+                        "particles"
+                        {
+                            "0"
+                            {
+                                "particle"       "particles/hero_daredevil/daredevil_staff.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_left"
+                                    "2"         "attach_right"
+                                    "3"         "attach_left"
+                                    "4"         "attach_left"
+                                }
+                            }
+                            "1"
+                            {
+                                "particle"       "particles/hero_daredevil/daredevil_staff.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"         "attach_right"
+                                    "2"         "attach_left"
+                                    "3"         "attach_right"
+                                    "4"         "attach_right"
+                                }
+                            }
+                        }
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8.vpcf"
+                    }
+                }
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_daredevil_arcana"
+                        "modifier_path"     "modifiers/modifier_daredevil_arcana.lua"
+                    }
+                }
+            }
+        }   
+        "bracers"
+        {
+            "monks_bracers"
+            {
+                "models"
+                {
+                    "0"
+                    {
+                        "model"         "models/heroes/hero_daredevil/econs/bracer/bracer.vmdl"
+                    }
+                }
+            }
+        } 
+        "bracers"
+        {
+            "monks_cape"
+            {
+                "models"
+                {
+                    "0"
+                    {
+                        "model"         "models/heroes/hero_daredevil/econs/armor/daredevil_cape.vmdl"
+                    }
+                }
+            }
+        } 
+        "head"
+        {
+            "daredevil_elv_helmet"
+            {
+                "models"
+                {
+                    "0"
+                    {
+                        "model"         "models/heroes/hero_daredevil/econs/helmet/helmet.vmdl"
+                    }
+                }
+            }
+            "daredevil_arcana"
+            {
+                "models"
+                {
+                    "0"
+                    {
+                        "model"         "models/heroes/hero_daredevil/arcana/daredevil_arcana_head.vmdl"
+                    }
+                }
+            }
+        }   
     }
 }

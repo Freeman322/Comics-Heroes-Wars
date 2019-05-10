@@ -3532,4 +3532,229 @@
 		// Inventory
 		"HasInventory"				"1"
 	}
+	//=================================================================================================================
+	// HERO: Misterio
+	//=================================================================================================================
+	"npc_dota_hero_misterio"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             	    	"npc_dota_hero"
+		"IsCustom"                  	"1"
+		"DisableWearables"          	"1"
+
+		"Model"					"models/heroes/hero_misterio/misterio.vmdl"
+		"SoundSet"				"Hero_ArcWarden"
+
+		"HeroID"					"218"
+		"Enabled"					"1"
+
+		"HeroUnlockOrder"			"1"
+		"Role"					"Carry,Escape,Nuker"
+		"Rolelevels"				"3,3,1"
+		"Complexity"				"3"
+		"Team"					"Bad"
+		"ModelScale"				"0.9"
+		"VersusScale"				"0.950000"
+		"HeroGlowColor"			"120 64 148"
+		"NameAliases"				"zet"
+		"workshop_guide_name"		"Misterio"
+		"HeroSelectSoundEffect"		"Hero_ArcWarden.Pick"
+		"GibType"					"ethereal"
+		"GibTintColor"				"108 209 210 255"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"		"arc_warden_flux"
+		"Ability2"		"arc_warden_magnetic_field"
+		"Ability3"		"arc_warden_spark_wraith"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"arc_warden_tempest_double"
+		"Ability10"		"special_bonus_cooldown_reduction_8"
+		"Ability11"		"special_bonus_attack_speed_30"
+		"Ability12"		"special_bonus_hp_300"
+		"Ability13"		"special_bonus_unique_arc_warden_5"
+		"Ability14"		"special_bonus_unique_arc_warden_3"
+		"Ability15"		"special_bonus_attack_range_125"
+		"Ability16"		"special_bonus_lifesteal_30"
+		"Ability17"		"special_bonus_unique_arc_warden"
+
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"			"-2"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"31"
+		"AttackDamageMax"			"41"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.3"
+
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"				"625"
+		"ProjectileModel"			"particles/units/heroes/hero_arc_warden/arc_warden_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"3.0"
+		"AttributeBaseIntelligence"	"24"
+		"AttributeIntelligenceGain"	"2.6"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"2.4"
+		"StatusHealthRegen"			"0.25"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"		"280"
+		"MovementTurnRate"		"0.6"
+
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_arc_warden"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+		"VoiceFile"			"soundevents/voscripts/game_sounds_vo_arc_warden.vsndevts"
+		
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		"HealthBarOffset"       		"190"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"200"
+		"StatusHealthRegen"			"2.0"
+		"StatusMana"				"245"
+		"StatusManaRegen"			"1.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"				"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+	}
+	"npc_dota_hero_shazam"
+	{
+		"BaseClass"             	    		"npc_dota_hero"
+		"IsCustom"                  		"1"
+		"DisableWearables"          		"1"
+
+		"Model"						"models/heroes/hero_shazam/billy/billy.vmdl"
+		"SoundSet"					"Hero_Lich"
+		"IdleSoundLoop"				"Hero_Lich.IdleLoop"
+		
+		"HeroID"						"219"
+		"Enabled"						"1"
+
+		"HeroUnlockOrder"				"0"
+		"Role"						"Support,Nuker,Carry"
+		"Rolelevels"					"3,2,3"
+		"Complexity"					"1"
+		"Team"						"Bad"
+		"ModelScale"					"1.0000"
+		"VersusScale"					"1.0000"
+		"SpectatorLoadoutScale"			 "0.84"
+		"HeroGlowColor"				"40 160 255"
+		"PickSound"					"lich_lich_spawn_01"
+		"BanSound"					"lich_lich_anger_03"
+
+		"CMEnabled"					"1"
+		"workshop_guide_name"			"Shazam"
+		
+		"LastHitChallengeRival"			"npc_dota_hero_crystal_maiden"
+		"HeroSelectSoundEffect"			"Hero_Lich.Pick"
+		"HealthBarOffset"				"255"
+		"GibType"						"ice"
+
+		"Ability1"					"lich_frost_nova"
+		"Ability2"					"lich_frost_shield"
+		"Ability3"					"lich_sinister_gaze"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"lich_chain_frost"
+		"Ability10"					"special_bonus_hp_200"
+		"Ability11"					"special_bonus_movement_speed_20"
+		"Ability12"					"special_bonus_attack_damage_120"
+		"Ability13"					"special_bonus_unique_lich_3"
+		"Ability14"					"special_bonus_cast_range_150"
+		"Ability15"					"special_bonus_unique_lich_4"
+		"Ability16"					"special_bonus_unique_lich_1"
+		"Ability17"					"special_bonus_unique_lich_2"
+
+		"ArmorPhysical"				"-1"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"26"
+		"AttackDamageMax"				"35"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"			"0.460000"
+		"AttackAcquisitionRange"			"800"
+		"AttackRange"					"550"
+		"ProjectileModel"				"particles/econ/events/snowball/snowball_projectile.vpcf"
+		"ProjectileSpeed"				"900"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"20"
+		"AttributeStrengthGain"			"2.10000"
+		"AttributeBaseIntelligence"		"10"
+		"AttributeIntelligenceGain"		"4.10000"
+		"AttributeBaseAgility"			"12"
+		"AttributeAgilityGain"			"2.0"
+		"MovementSpeed"				"295"
+		"MovementTurnRate"				"0.500000"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_lich.vsndevts"
+		"particle_folder"				"particles/units/heroes/hero_lich"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		"RingRadius"					"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		"HealthBarOffset"       			"190"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"					"200"
+		"StatusHealthRegen"				"2.0"
+		"StatusMana"					"245"
+		"StatusManaRegen"				"1.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"			"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"					"1"
+	}
 }

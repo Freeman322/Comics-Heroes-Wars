@@ -13,7 +13,7 @@ Util.heroes_ids = nil
 function Util:OnInit(args)
     CustomNetTables:SetTableValue( "heroes", "heroes", Util:GetHeroList())
 
-    local f = "[{\n\"name\":\"npc_dota_hero_antimage\",\n\"id\":1\n},\n{\n\"name\":\"npc_dota_hero_axe\",\n\"id\":2\n},\n{\n\"name\":\"npc_dota_hero_bane\",\n\"id\":3\n},\n{\n\"name\":\"npc_dota_hero_bloodseeker\",\n\"id\":4\n},\n{\n\"name\":\"npc_dota_hero_crystal_maiden\",\n\"id\":5\n},\n{\n\"name\":\"npc_dota_hero_drow_ranger\",\n\"id\":6\n},\n{\n\"name\":\"npc_dota_hero_earthshaker\",\n\"id\":7\n},\n{\n\"name\":\"npc_dota_hero_juggernaut\",\n\"id\":8\n},\n{\n\"name\":\"npc_dota_hero_mirana\",\n\"id\":9\n},\n{\n\"name\":\"npc_dota_hero_nevermore\",\n\"id\":11\n},\n{\n\"name\":\"npc_dota_hero_morphling\",\n\"id\":10\n},\n{\n\"name\":\"npc_dota_hero_phantom_lancer\",\n\"id\":12\n},\n{\n\"name\":\"npc_dota_hero_puck\",\n\"id\":13\n},\n{\n\"name\":\"npc_dota_hero_pudge\",\n\"id\":14\n},\n{\n\"name\":\"npc_dota_hero_razor\",\n\"id\":15\n},\n{\n\"name\":\"npc_dota_hero_sand_king\",\n\"id\":16\n},\n{\n\"name\":\"npc_dota_hero_storm_spirit\",\n\"id\":17\n},\n{\n\"name\":\"npc_dota_hero_sven\",\n\"id\":18\n},\n{\n\"name\":\"npc_dota_hero_tiny\",\n\"id\":19\n},\n{\n\"name\":\"npc_dota_hero_vengefulspirit\",\n\"id\":20\n},\n{\n\"name\":\"npc_dota_hero_windrunner\",\n\"id\":21\n},\n{\n\"name\":\"npc_dota_hero_zuus\",\n\"id\":22\n},\n{\n\"name\":\"npc_dota_hero_kunkka\",\n\"id\":23\n},\n{\n\"name\":\"npc_dota_hero_lina\",\n\"id\":25\n},\n{\n\"name\":\"npc_dota_hero_lich\",\n\"id\":31\n},\n{\n\"name\":\"npc_dota_hero_lion\",\n\"id\":26\n},\n{\n\"name\":\"npc_dota_hero_shadow_shaman\",\n\"id\":27\n},\n{\n\"name\":\"npc_dota_hero_slardar\",\n\"id\":28\n},\n{\n\"name\":\"npc_dota_hero_tidehunter\",\n\"id\":29\n},\n{\n\"name\":\"npc_dota_hero_witch_doctor\",\n\"id\":30\n},\n{\n\"name\":\"npc_dota_hero_riki\",\n\"id\":32\n},\n{\n\"name\":\"npc_dota_hero_enigma\",\n\"id\":33\n},\n{\n\"name\":\"npc_dota_hero_tinker\",\n\"id\":34\n},\n{\n\"name\":\"npc_dota_hero_sniper\",\n\"id\":35\n},\n{\n\"name\":\"npc_dota_hero_necrolyte\",\n\"id\":36\n},\n{\n\"name\":\"npc_dota_hero_warlock\",\n\"id\":37\n},\n{\n\"name\":\"npc_dota_hero_beastmaster\",\n\"id\":38\n},\n{\n\"name\":\"npc_dota_hero_queenofpain\",\n\"id\":39\n},\n{\n\"name\":\"npc_dota_hero_venomancer\",\n\"id\":40\n},\n{\n\"name\":\"npc_dota_hero_faceless_void\",\n\"id\":41\n},\n{\n\"name\":\"npc_dota_hero_skeleton_king\",\n\"id\":42\n},\n{\n\"name\":\"npc_dota_hero_death_prophet\",\n\"id\":43\n},\n{\n\"name\":\"npc_dota_hero_phantom_assassin\",\n\"id\":44\n},\n{\n\"name\":\"npc_dota_hero_pugna\",\n\"id\":45\n},\n{\n\"name\":\"npc_dota_hero_templar_assassin\",\n\"id\":46\n},\n{\n\"name\":\"npc_dota_hero_viper\",\n\"id\":47\n},\n{\n\"name\":\"npc_dota_hero_luna\",\n\"id\":48\n},\n{\n\"name\":\"npc_dota_hero_dragon_knight\",\n\"id\":49\n},\n{\n\"name\":\"npc_dota_hero_dazzle\",\n\"id\":50\n},\n{\n\"name\":\"npc_dota_hero_rattletrap\",\n\"id\":51\n},\n{\n\"name\":\"npc_dota_hero_leshrac\",\n\"id\":52\n},\n{\n\"name\":\"npc_dota_hero_furion\",\n\"id\":53\n},\n{\n\"name\":\"npc_dota_hero_life_stealer\",\n\"id\":54\n},\n{\n\"name\":\"npc_dota_hero_dark_seer\",\n\"id\":55\n},\n{\n\"name\":\"npc_dota_hero_clinkz\",\n\"id\":56\n},\n{\n\"name\":\"npc_dota_hero_omniknight\",\n\"id\":57\n},\n{\n\"name\":\"npc_dota_hero_enchantress\",\n\"id\":58\n},\n{\n\"name\":\"npc_dota_hero_huskar\",\n\"id\":59\n},\n{\n\"name\":\"npc_dota_hero_night_stalker\",\n\"id\":60\n},\n{\n\"name\":\"npc_dota_hero_broodmother\",\n\"id\":61\n},\n{\n\"name\":\"npc_dota_hero_bounty_hunter\",\n\"id\":62\n},\n{\n\"name\":\"npc_dota_hero_weaver\",\n\"id\":63\n},\n{\n\"name\":\"npc_dota_hero_jakiro\",\n\"id\":64\n},\n{\n\"name\":\"npc_dota_hero_batrider\",\n\"id\":65\n},\n{\n\"name\":\"npc_dota_hero_chen\",\n\"id\":66\n},\n{\n\"name\":\"npc_dota_hero_spectre\",\n\"id\":67\n},\n{\n\"name\":\"npc_dota_hero_doom_bringer\",\n\"id\":69\n},\n{\n\"name\":\"npc_dota_hero_ancient_apparition\",\n\"id\":68\n},\n{\n\"name\":\"npc_dota_hero_ursa\",\n\"id\":70\n},\n{\n\"name\":\"npc_dota_hero_spirit_breaker\",\n\"id\":71\n},\n{\n\"name\":\"npc_dota_hero_gyrocopter\",\n\"id\":72\n},\n{\n\"name\":\"npc_dota_hero_alchemist\",\n\"id\":73\n},\n{\n\"name\":\"npc_dota_hero_invoker\",\n\"id\":74\n},\n{\n\"name\":\"npc_dota_hero_silencer\",\n\"id\":75\n},\n{\n\"name\":\"npc_dota_hero_obsidian_destroyer\",\n\"id\":76\n},\n{\n\"name\":\"npc_dota_hero_lycan\",\n\"id\":77\n},\n{\n\"name\":\"npc_dota_hero_brewmaster\",\n\"id\":78\n},\n{\n\"name\":\"npc_dota_hero_shadow_demon\",\n\"id\":79\n},\n{\n\"name\":\"npc_dota_hero_lone_druid\",\n\"id\":80\n},\n{\n\"name\":\"npc_dota_hero_chaos_knight\",\n\"id\":81\n},\n{\n\"name\":\"npc_dota_hero_meepo\",\n\"id\":82\n},\n{\n\"name\":\"npc_dota_hero_treant\",\n\"id\":83\n},\n{\n\"name\":\"npc_dota_hero_ogre_magi\",\n\"id\":84\n},\n{\n\"name\":\"npc_dota_hero_undying\",\n\"id\":85\n},\n{\n\"name\":\"npc_dota_hero_rubick\",\n\"id\":86\n},\n{\n\"name\":\"npc_dota_hero_disruptor\",\n\"id\":87\n},\n{\n\"name\":\"npc_dota_hero_nyx_assassin\",\n\"id\":88\n},\n{\n\"name\":\"npc_dota_hero_naga_siren\",\n\"id\":89\n},\n{\n\"name\":\"npc_dota_hero_keeper_of_the_light\",\n\"id\":90\n},\n{\n\"name\":\"npc_dota_hero_wisp\",\n\"id\":91\n},\n{\n\"name\":\"npc_dota_hero_visage\",\n\"id\":92\n},\n{\n\"name\":\"npc_dota_hero_slark\",\n\"id\":93\n},\n{\n\"name\":\"npc_dota_hero_medusa\",\n\"id\":94\n},\n{\n\"name\":\"npc_dota_hero_troll_warlord\",\n\"id\":95\n},\n{\n\"name\":\"npc_dota_hero_centaur\",\n\"id\":96\n},\n{\n\"name\":\"npc_dota_hero_magnataur\",\n\"id\":97\n},\n{\n\"name\":\"npc_dota_hero_shredder\",\n\"id\":98\n},\n{\n\"name\":\"npc_dota_hero_bristleback\",\n\"id\":99\n},\n{\n\"name\":\"npc_dota_hero_tusk\",\n\"id\":100\n},\n{\n\"name\":\"npc_dota_hero_skywrath_mage\",\n\"id\":101\n},\n{\n\"name\":\"npc_dota_hero_abaddon\",\n\"id\":102\n},\n{\n\"name\":\"npc_dota_hero_elder_titan\",\n\"id\":103\n},\n{\n\"name\":\"npc_dota_hero_legion_commander\",\n\"id\":104\n},\n{\n\"name\":\"npc_dota_hero_ember_spirit\",\n\"id\":106\n},\n{\n\"name\":\"npc_dota_hero_earth_spirit\",\n\"id\":107\n},\n{\n\"name\":\"npc_dota_hero_abyssal_underlord\",\n\"id\":108\n},\n{\n\"name\":\"npc_dota_hero_terrorblade\",\n\"id\":109\n},\n{\n\"name\":\"npc_dota_hero_phoenix\",\n\"id\":110\n},\n{\n\"name\":\"npc_dota_hero_techies\",\n\"id\":105\n},\n{\n\"name\":\"npc_dota_hero_oracle\",\n\"id\":111\n},\n{\n\"name\":\"npc_dota_hero_winter_wyvern\",\n\"id\":112\n},\n{\n\"name\":\"npc_dota_hero_arc_warden\",\n\"id\":113\n},\n{\n\"name\":\"npc_dota_hero_monkey_king\",\n\"id\":114\n},\n{\n\"name\":\"npc_dota_hero_pangolier\",\n\"id\":120\n},\n{\n\"name\":\"npc_dota_hero_dark_willow\",\n\"id\":119\n},\n{\n\"name\":\"npc_dota_hero_grimstroke\",\n\"id\":121\n},\n{\n\"name\":\"npc_dota_hero_miraak\",\n\"id\":200\n},\n{\n\"name\":\"npc_dota_hero_godspeed\",\n\"id\":202\n},\n{\n\"name\":\"npc_dota_hero_savitar\",\n\"id\":203\n},\n{\n\"name\":\"npc_dota_hero_ghost\",\n\"id\":201\n},\n{\n\"name\":\"npc_dota_hero_superman\",\n\"id\":204\n},\n{\n\"name\":\"npc_dota_hero_molag_bal\",\n\"id\":205\n},\n{\n\"name\":\"npc_dota_hero_doctor_fate\",\n\"id\":206\n},\n{\n\"name\":\"npc_dota_hero_mercer\",\n\"id\":207\n},\n{\n\"name\":\"npc_dota_hero_ezekyle\",\n\"id\":208\n},\n{\n\"name\":\"npc_dota_hero_kyloren\",\n\"id\":209\n},\n{\n\"name\":\"npc_dota_hero_mercy\",\n\"id\":210\n},\n{\n\"name\":\"npc_dota_hero_dark_rider\",\n\"id\":211\n},\n{\n\"name\":\"npc_dota_hero_grimskull\",\n\"id\":212\n},\n{\n\"name\":\"npc_dota_hero_kratos\",\n\"id\":213\n},\n{\n\"name\":\"npc_dota_hero_warboss\",\n\"id\":214\n},\n{\n\"name\":\"npc_dota_hero_cosmos\",\n\"id\":215\n},\n{\n\"name\":\"npc_dota_hero_jetstream_sam\",\n\"id\":216\n},\n{\n\"name\":\"npc_dota_hero_raiden\",\n\"id\":217\n}\n]\n"
+    local f = "[{\n\"name\":\"npc_dota_hero_antimage\",\n\"id\":1\n},\n{\n\"name\":\"npc_dota_hero_axe\",\n\"id\":2\n},\n{\n\"name\":\"npc_dota_hero_bane\",\n\"id\":3\n},\n{\n\"name\":\"npc_dota_hero_bloodseeker\",\n\"id\":4\n},\n{\n\"name\":\"npc_dota_hero_crystal_maiden\",\n\"id\":5\n},\n{\n\"name\":\"npc_dota_hero_drow_ranger\",\n\"id\":6\n},\n{\n\"name\":\"npc_dota_hero_earthshaker\",\n\"id\":7\n},\n{\n\"name\":\"npc_dota_hero_juggernaut\",\n\"id\":8\n},\n{\n\"name\":\"npc_dota_hero_mirana\",\n\"id\":9\n},\n{\n\"name\":\"npc_dota_hero_nevermore\",\n\"id\":11\n},\n{\n\"name\":\"npc_dota_hero_morphling\",\n\"id\":10\n},\n{\n\"name\":\"npc_dota_hero_phantom_lancer\",\n\"id\":12\n},\n{\n\"name\":\"npc_dota_hero_puck\",\n\"id\":13\n},\n{\n\"name\":\"npc_dota_hero_pudge\",\n\"id\":14\n},\n{\n\"name\":\"npc_dota_hero_razor\",\n\"id\":15\n},\n{\n\"name\":\"npc_dota_hero_sand_king\",\n\"id\":16\n},\n{\n\"name\":\"npc_dota_hero_storm_spirit\",\n\"id\":17\n},\n{\n\"name\":\"npc_dota_hero_sven\",\n\"id\":18\n},\n{\n\"name\":\"npc_dota_hero_tiny\",\n\"id\":19\n},\n{\n\"name\":\"npc_dota_hero_vengefulspirit\",\n\"id\":20\n},\n{\n\"name\":\"npc_dota_hero_windrunner\",\n\"id\":21\n},\n{\n\"name\":\"npc_dota_hero_zuus\",\n\"id\":22\n},\n{\n\"name\":\"npc_dota_hero_kunkka\",\n\"id\":23\n},\n{\n\"name\":\"npc_dota_hero_lina\",\n\"id\":25\n},\n{\n\"name\":\"npc_dota_hero_lich\",\n\"id\":31\n},\n{\n\"name\":\"npc_dota_hero_lion\",\n\"id\":26\n},\n{\n\"name\":\"npc_dota_hero_shadow_shaman\",\n\"id\":27\n},\n{\n\"name\":\"npc_dota_hero_slardar\",\n\"id\":28\n},\n{\n\"name\":\"npc_dota_hero_tidehunter\",\n\"id\":29\n},\n{\n\"name\":\"npc_dota_hero_witch_doctor\",\n\"id\":30\n},\n{\n\"name\":\"npc_dota_hero_riki\",\n\"id\":32\n},\n{\n\"name\":\"npc_dota_hero_enigma\",\n\"id\":33\n},\n{\n\"name\":\"npc_dota_hero_tinker\",\n\"id\":34\n},\n{\n\"name\":\"npc_dota_hero_sniper\",\n\"id\":35\n},\n{\n\"name\":\"npc_dota_hero_necrolyte\",\n\"id\":36\n},\n{\n\"name\":\"npc_dota_hero_warlock\",\n\"id\":37\n},\n{\n\"name\":\"npc_dota_hero_beastmaster\",\n\"id\":38\n},\n{\n\"name\":\"npc_dota_hero_queenofpain\",\n\"id\":39\n},\n{\n\"name\":\"npc_dota_hero_venomancer\",\n\"id\":40\n},\n{\n\"name\":\"npc_dota_hero_faceless_void\",\n\"id\":41\n},\n{\n\"name\":\"npc_dota_hero_skeleton_king\",\n\"id\":42\n},\n{\n\"name\":\"npc_dota_hero_death_prophet\",\n\"id\":43\n},\n{\n\"name\":\"npc_dota_hero_phantom_assassin\",\n\"id\":44\n},\n{\n\"name\":\"npc_dota_hero_pugna\",\n\"id\":45\n},\n{\n\"name\":\"npc_dota_hero_templar_assassin\",\n\"id\":46\n},\n{\n\"name\":\"npc_dota_hero_viper\",\n\"id\":47\n},\n{\n\"name\":\"npc_dota_hero_luna\",\n\"id\":48\n},\n{\n\"name\":\"npc_dota_hero_dragon_knight\",\n\"id\":49\n},\n{\n\"name\":\"npc_dota_hero_dazzle\",\n\"id\":50\n},\n{\n\"name\":\"npc_dota_hero_rattletrap\",\n\"id\":51\n},\n{\n\"name\":\"npc_dota_hero_leshrac\",\n\"id\":52\n},\n{\n\"name\":\"npc_dota_hero_furion\",\n\"id\":53\n},\n{\n\"name\":\"npc_dota_hero_life_stealer\",\n\"id\":54\n},\n{\n\"name\":\"npc_dota_hero_dark_seer\",\n\"id\":55\n},\n{\n\"name\":\"npc_dota_hero_clinkz\",\n\"id\":56\n},\n{\n\"name\":\"npc_dota_hero_omniknight\",\n\"id\":57\n},\n{\n\"name\":\"npc_dota_hero_enchantress\",\n\"id\":58\n},\n{\n\"name\":\"npc_dota_hero_huskar\",\n\"id\":59\n},\n{\n\"name\":\"npc_dota_hero_night_stalker\",\n\"id\":60\n},\n{\n\"name\":\"npc_dota_hero_broodmother\",\n\"id\":61\n},\n{\n\"name\":\"npc_dota_hero_bounty_hunter\",\n\"id\":62\n},\n{\n\"name\":\"npc_dota_hero_weaver\",\n\"id\":63\n},\n{\n\"name\":\"npc_dota_hero_jakiro\",\n\"id\":64\n},\n{\n\"name\":\"npc_dota_hero_batrider\",\n\"id\":65\n},\n{\n\"name\":\"npc_dota_hero_chen\",\n\"id\":66\n},\n{\n\"name\":\"npc_dota_hero_spectre\",\n\"id\":67\n},\n{\n\"name\":\"npc_dota_hero_doom_bringer\",\n\"id\":69\n},\n{\n\"name\":\"npc_dota_hero_ancient_apparition\",\n\"id\":68\n},\n{\n\"name\":\"npc_dota_hero_ursa\",\n\"id\":70\n},\n{\n\"name\":\"npc_dota_hero_spirit_breaker\",\n\"id\":71\n},\n{\n\"name\":\"npc_dota_hero_gyrocopter\",\n\"id\":72\n},\n{\n\"name\":\"npc_dota_hero_alchemist\",\n\"id\":73\n},\n{\n\"name\":\"npc_dota_hero_invoker\",\n\"id\":74\n},\n{\n\"name\":\"npc_dota_hero_silencer\",\n\"id\":75\n},\n{\n\"name\":\"npc_dota_hero_obsidian_destroyer\",\n\"id\":76\n},\n{\n\"name\":\"npc_dota_hero_lycan\",\n\"id\":77\n},\n{\n\"name\":\"npc_dota_hero_brewmaster\",\n\"id\":78\n},\n{\n\"name\":\"npc_dota_hero_shadow_demon\",\n\"id\":79\n},\n{\n\"name\":\"npc_dota_hero_lone_druid\",\n\"id\":80\n},\n{\n\"name\":\"npc_dota_hero_chaos_knight\",\n\"id\":81\n},\n{\n\"name\":\"npc_dota_hero_meepo\",\n\"id\":82\n},\n{\n\"name\":\"npc_dota_hero_treant\",\n\"id\":83\n},\n{\n\"name\":\"npc_dota_hero_ogre_magi\",\n\"id\":84\n},\n{\n\"name\":\"npc_dota_hero_undying\",\n\"id\":85\n},\n{\n\"name\":\"npc_dota_hero_rubick\",\n\"id\":86\n},\n{\n\"name\":\"npc_dota_hero_disruptor\",\n\"id\":87\n},\n{\n\"name\":\"npc_dota_hero_nyx_assassin\",\n\"id\":88\n},\n{\n\"name\":\"npc_dota_hero_naga_siren\",\n\"id\":89\n},\n{\n\"name\":\"npc_dota_hero_keeper_of_the_light\",\n\"id\":90\n},\n{\n\"name\":\"npc_dota_hero_wisp\",\n\"id\":91\n},\n{\n\"name\":\"npc_dota_hero_visage\",\n\"id\":92\n},\n{\n\"name\":\"npc_dota_hero_slark\",\n\"id\":93\n},\n{\n\"name\":\"npc_dota_hero_medusa\",\n\"id\":94\n},\n{\n\"name\":\"npc_dota_hero_troll_warlord\",\n\"id\":95\n},\n{\n\"name\":\"npc_dota_hero_centaur\",\n\"id\":96\n},\n{\n\"name\":\"npc_dota_hero_magnataur\",\n\"id\":97\n},\n{\n\"name\":\"npc_dota_hero_shredder\",\n\"id\":98\n},\n{\n\"name\":\"npc_dota_hero_bristleback\",\n\"id\":99\n},\n{\n\"name\":\"npc_dota_hero_tusk\",\n\"id\":100\n},\n{\n\"name\":\"npc_dota_hero_skywrath_mage\",\n\"id\":101\n},\n{\n\"name\":\"npc_dota_hero_abaddon\",\n\"id\":102\n},\n{\n\"name\":\"npc_dota_hero_elder_titan\",\n\"id\":103\n},\n{\n\"name\":\"npc_dota_hero_legion_commander\",\n\"id\":104\n},\n{\n\"name\":\"npc_dota_hero_ember_spirit\",\n\"id\":106\n},\n{\n\"name\":\"npc_dota_hero_earth_spirit\",\n\"id\":107\n},\n{\n\"name\":\"npc_dota_hero_abyssal_underlord\",\n\"id\":108\n},\n{\n\"name\":\"npc_dota_hero_terrorblade\",\n\"id\":109\n},\n{\n\"name\":\"npc_dota_hero_phoenix\",\n\"id\":110\n},\n{\n\"name\":\"npc_dota_hero_techies\",\n\"id\":105\n},\n{\n\"name\":\"npc_dota_hero_oracle\",\n\"id\":111\n},\n{\n\"name\":\"npc_dota_hero_winter_wyvern\",\n\"id\":112\n},\n{\n\"name\":\"npc_dota_hero_arc_warden\",\n\"id\":113\n},\n{\n\"name\":\"npc_dota_hero_monkey_king\",\n\"id\":114\n},\n{\n\"name\":\"npc_dota_hero_pangolier\",\n\"id\":120\n},\n{\n\"name\":\"npc_dota_hero_dark_willow\",\n\"id\":119\n},\n{\n\"name\":\"npc_dota_hero_grimstroke\",\n\"id\":121\n},\n{\n\"name\":\"npc_dota_hero_miraak\",\n\"id\":200\n},\n{\n\"name\":\"npc_dota_hero_godspeed\",\n\"id\":202\n},\n{\n\"name\":\"npc_dota_hero_savitar\",\n\"id\":203\n},\n{\n\"name\":\"npc_dota_hero_ghost\",\n\"id\":201\n},\n{\n\"name\":\"npc_dota_hero_superman\",\n\"id\":204\n},\n{\n\"name\":\"npc_dota_hero_molag_bal\",\n\"id\":205\n},\n{\n\"name\":\"npc_dota_hero_doctor_fate\",\n\"id\":206\n},\n{\n\"name\":\"npc_dota_hero_mercer\",\n\"id\":207\n},\n{\n\"name\":\"npc_dota_hero_ezekyle\",\n\"id\":208\n},\n{\n\"name\":\"npc_dota_hero_kyloren\",\n\"id\":209\n},\n{\n\"name\":\"npc_dota_hero_mercy\",\n\"id\":210\n},\n{\n\"name\":\"npc_dota_hero_dark_rider\",\n\"id\":211\n},\n{\n\"name\":\"npc_dota_hero_grimskull\",\n\"id\":212\n},\n{\n\"name\":\"npc_dota_hero_kratos\",\n\"id\":213\n},\n{\n\"name\":\"npc_dota_hero_warboss\",\n\"id\":214\n},\n{\n\"name\":\"npc_dota_hero_cosmos\",\n\"id\":215\n},\n{\n\"name\":\"npc_dota_hero_jetstream_sam\",\n\"id\":216\n},\n{\n\"name\":\"npc_dota_hero_raiden\",\n\"id\":217\n},\n{\n\"name\":\"npc_dota_hero_misterio\",\n\"id\":218\n},\n{\n\"name\":\"npc_dota_hero_shazam\",\n\"id\":219\n}\n]\n"
     local tojson = json.decode(f)
     Util.heroes_ids = tojson
 
@@ -561,106 +561,6 @@ function Util:OnHeroInGame(hero)
       LinkLuaModifier("modifier_daredevil", "modifiers/modifier_daredevil.lua", LUA_MODIFIER_MOTION_NONE)
 
       hero:AddNewModifier(hero, nil, "modifier_daredevil", nil)
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "daredevil_arcana") == true then
-        LinkLuaModifier("modifier_daredevil_arcana", "modifiers/modifier_daredevil_arcana.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:AddNewModifier(hero, nil, "modifier_daredevil_arcana", nil)
-        hero:SetMaterialGroup("arcana")
-        local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_daredevil/arcana/daredevil_arcana_head.vmdl"})
-        mask3:FollowEntity(hero, true)
-
-        ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-
-        local mask4 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_daredevil/arcana/daredevil_jade_weapon.vmdl"})
-        mask4:FollowEntity(hero, true)
-        mask4:SetRenderColor(220, 20, 60)
-
-        local wraith_donat2 = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 0, mask4, PATTACH_POINT_FOLLOW, "attach_left" , mask4:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 2, mask4, PATTACH_POINT_FOLLOW, "attach_right" , mask4:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 3, mask4, PATTACH_POINT_FOLLOW, "attach_left" , mask4:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 4, mask4, PATTACH_POINT_FOLLOW, "attach_left" , mask4:GetOrigin(), true )
-
-        local wraith_donat = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 0, mask4, PATTACH_POINT_FOLLOW, "attach_right" , mask4:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 2, mask4, PATTACH_POINT_FOLLOW, "attach_left" , mask4:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 3, mask4, PATTACH_POINT_FOLLOW, "attach_right" , mask4:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 4, mask4, PATTACH_POINT_FOLLOW, "attach_right" , mask4:GetOrigin(), true )
-        return
-      end
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "daredevil_elv_helmet") == true then
-        local head = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_daredevil/econs/helmet/helmet.vmdl"})
-        head:FollowEntity(hero, true)
-      end
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "daredevil_avernus_staff") == true then
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_daredevil/econs/daredevil_jewel_of_monks.vmdl"})
-        mask2:FollowEntity(hero, true)
-
-        local wraith_donat3 = ParticleManager:CreateParticle( "particles/hero_daredevil/avernus_staff/avernus_staff_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 0, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 1, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 3, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 4, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 5, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 6, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-
-
-        local wraith_donat2 = ParticleManager:CreateParticle( "particles/hero_daredevil/avernus_staff/avernus_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 0, mask2, PATTACH_POINT_FOLLOW, "attach_weapon" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 2, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 3, mask2, PATTACH_POINT_FOLLOW, "attach_weapon" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 4, mask2, PATTACH_POINT_FOLLOW, "attach_weapon" , mask2:GetOrigin(), true )
-
-        local wraith_donat = ParticleManager:CreateParticle( "particles/hero_daredevil/avernus_staff/avernus_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 0, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 2, mask2, PATTACH_POINT_FOLLOW, "attach_weapon" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 3, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 4, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-      else
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "monks_bracers") == true then
-          SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_daredevil/econs/bracer/bracer.vmdl"}):FollowEntity(hero, true)
-        end
-
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "monks_cape") == true then
-          local belt = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_daredevil/econs/armor/daredevil_cape.vmdl"})
-          belt:FollowEntity(hero, true)
-          belt:SetRenderColor(220, 20, 60)
-        else
-          local belt = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/antimage/pw_tustarkuri_belt/antimage_belt_lod0.vmdl"})
-          belt:FollowEntity(hero, true)
-          belt:SetRenderColor(220, 20, 60)
-        end
-
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_daredevil/econs/weapon_left.vmdl"})
-        mask2:FollowEntity(hero, true)
-
-        local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_daredevil/econs/weapon_right.vmdl"})
-        mask3:FollowEntity(hero, true)
-
-        local wraith_donat2 = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 0, mask2, PATTACH_POINT_FOLLOW, "attach_weapon" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 2, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 3, mask2, PATTACH_POINT_FOLLOW, "attach_weapon" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 4, mask2, PATTACH_POINT_FOLLOW, "attach_weapon" , mask2:GetOrigin(), true )
-
-        local wraith_donat = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 0, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 2, mask2, PATTACH_POINT_FOLLOW, "attach_weapon" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 3, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 4, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-
-        local wraith_donat3 = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 0, mask3, PATTACH_POINT_FOLLOW, "attach_weapon" , mask3:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 2, mask3, PATTACH_POINT_FOLLOW, "attach_corner" , mask3:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 3, mask3, PATTACH_POINT_FOLLOW, "attach_weapon" , mask3:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat3, 4, mask3, PATTACH_POINT_FOLLOW, "attach_weapon" , mask3:GetOrigin(), true )
-
-        local wraith_donat4 = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( wraith_donat4, 0, mask3, PATTACH_POINT_FOLLOW, "attach_corner" , mask3:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat4, 2, mask3, PATTACH_POINT_FOLLOW, "attach_weapon" , mask3:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat4, 3, mask3, PATTACH_POINT_FOLLOW, "attach_corner" , mask3:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat4, 4, mask3, PATTACH_POINT_FOLLOW, "attach_corner" , mask3:GetOrigin(), true )
-      end
     end
     if hero:GetUnitName() == "npc_dota_hero_night_stalker" then
       local hasItem = false
@@ -2449,4 +2349,23 @@ end
 
 function CDOTA_BaseNPC:IsFriendly(target)
   return target:GetTeamNumber() == self:GetTeamNumber()
+end
+
+function CDOTA_BaseNPC:GetCooldownTimeAfterReduction(cooldown)
+  local m_reduction = 1
+
+  local modifiers = self:FindAllModifiers()
+
+  for _, mod in pairs(modifiers) do
+    pcall(function()
+      if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE) then
+        m_reduction = m_reduction * (mod:GetModifierPercentageCooldown() / 100)
+      end 
+      if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING) then
+        m_reduction = m_reduction * (mod:GetModifierPercentageCooldownStacking() / 100)
+      end
+    end)
+  end 
+
+  return m_reduction * cooldown
 end

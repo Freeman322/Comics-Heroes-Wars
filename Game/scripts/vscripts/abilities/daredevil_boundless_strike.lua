@@ -6,6 +6,19 @@ function daredevil_boundless_strike:GetConceptRecipientType()
 	return DOTA_SPEECH_USER_ALL
 end
 
+function daredevil_boundless_strike:GetEffectName()
+	if IsServer() then 
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "penetrator") then
+			return "particles/hero_daredevil/jade_strike_penetrator.vpcf"
+		end
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "daredevil_arcana") then
+			return "particles/hero_daredevil/jade_strike.vpcf"
+		end
+	end 
+
+	return "particles/hero_daredevil/daredevil_slash_strike_ground.vpcf"
+end
+
 function daredevil_boundless_strike:SpeakTrigger()
 	return DOTA_ABILITY_SPEAK_CAST
 end
@@ -54,7 +67,7 @@ function daredevil_boundless_strike:OnSpellStart()
 
 	hCaster:AddNewModifier(hCaster, self, "modifier_daredevil_boundless_strike_self", {duration = 0.3})
 
-	local nFXIndex = ParticleManager:CreateParticle( "particles/hero_daredevil/daredevil_slash_strike_ground.vpcf", PATTACH_CUSTOMORIGIN, nil );
+	local nFXIndex = ParticleManager:CreateParticle( self:GetEffectName(), PATTACH_CUSTOMORIGIN, nil );
 	ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetAbsOrigin());
 	ParticleManager:SetParticleControlOrientation(nFXIndex,0,vForward,Vector(0, 0, 0),Vector(0, 0, 0))
 	ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos );
