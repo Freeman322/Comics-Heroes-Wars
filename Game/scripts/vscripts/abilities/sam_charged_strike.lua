@@ -23,9 +23,9 @@ function sam_charged_strike:OnSpellStart()
       vVelocity = vDirection * self:GetSpecialValueFor("wave_speed"),
       fDistance = self:GetCastRange(self:GetCaster():GetOrigin(), self:GetCaster()),
       Source = self:GetCaster(),
-      iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-      iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-      iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
+      iUnitTargetTeam = self:GetAbilityTargetTeam(),
+      iUnitTargetType = self:GetAbilityTargetType(),
+      iUnitTargetFlags = self:GetAbilityTargetFlags(),
       bProvidesVision = true,
       iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
       iVisionRadius = self:GetSpecialValueFor("wave_width"),
@@ -70,7 +70,7 @@ function sam_charged_strike:OnProjectileHit( hTarget, vLocation )
     local ult = false;  if self:GetCaster():HasModifier("modifier_sam_bladerun_buff") then ult = true end
     local attack_count = self:GetSpecialValueFor("attack_count") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_sam_charged_strike_bonus_attack") or 0)
     for attack = 1, attack_count do
-      self:GetCaster():PerformAttack(hTarget, ult, true, true, true, false, false, true)
+      self:GetCaster():PerformAttack(hTarget, ult, true, false, true, false, false, true)
     end
     ApplyDamage({victim = hTarget, attacker = self:GetCaster(), damage = self:GetSpecialValueFor("damage"), damage_type = self:GetAbilityDamageType(), ability = self})
     hTarget:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})

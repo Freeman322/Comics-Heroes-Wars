@@ -2,9 +2,8 @@ modifier_charges = class({})
 
 if IsServer() then
   function modifier_charges:Update()
-    if self:GetDuration() == -1 then     
-      local cooldown = self:GetAbility():GetCooldownTime() ---self:GetAbility().BaseClass.GetCooldown( self:GetAbility(), self:GetAbility():GetLevel() )
-      
+    if self:GetDuration() == -1 then
+      local cooldown = self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time"))
       self:SetDuration(cooldown, true)
       self:StartIntervalThink(cooldown)
     end
@@ -13,8 +12,8 @@ if IsServer() then
 	    elseif self:GetStackCount() > self:GetAbility():GetSpecialValueFor("max_charges") then self:SetDuration(-1, true)  self:SetStackCount(self:GetAbility():GetSpecialValueFor("max_charges"))
 	  end
 
-    if self:GetStackCount() == 0 then self:GetAbility():StartCooldown(self:GetRemainingTime()) end 
-    
+    if self:GetStackCount() == 0 then self:GetAbility():StartCooldown(self:GetRemainingTime()) end
+
     self:GetParent():CalculateStatBonus()
   end
 
@@ -43,7 +42,7 @@ if IsServer() then
 
   function modifier_charges:OnIntervalThink()
     if self:GetStackCount() < self:GetAbility():GetSpecialValueFor("max_charges") then
-      self:SetDuration(self:GetAbility():GetCooldownTime(), true)
+      self:SetDuration( self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time")), true)
       self:IncrementStackCount()
 
       if self:GetStackCount() == self:GetAbility():GetSpecialValueFor("max_charges") then

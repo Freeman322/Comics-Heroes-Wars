@@ -2450,3 +2450,20 @@ end
 function CDOTA_BaseNPC:IsFriendly(target)
   return target:GetTeamNumber() == self:GetTeamNumber()
 end
+
+function CDOTA_BaseNPC:GetCooldownTimeAfterReduction(cooldown)
+  local cooldown_reduction = 1
+
+  for _, mod in pairs(self:FindAllModifiers()) do
+    pcall(function()
+      if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE) then
+        cooldown_reduction = cooldown_reduction * (1 - mod:GetModifierPercentageCooldown() / 100)
+      end
+      if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING) then
+        cooldown_reduction = cooldown_reduction * (1 - mod:GetModifierPercentageCooldownStacking() / 100)
+      end
+    end)
+  end
+
+  return cooldown_reduction * cooldown
+end

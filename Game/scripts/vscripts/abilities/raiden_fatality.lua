@@ -21,10 +21,13 @@ function raiden_fatality:OnSpellStart()
 		return
 	end
 
-    	local duration = self:GetChannelTime()
-
-	self.hVictim:AddNewModifier( self:GetCaster(), self, "modifier_raiden_fatality", { duration = duration } )
-	self.hVictim:Interrupt()
+	if self.hVictim:TriggerSpellAbsorb( self ) then
+		self.hVictim = nil
+		self:GetCaster():Interrupt()
+	else
+		self.hVictim:AddNewModifier( self:GetCaster(), self, "modifier_raiden_fatality", { duration = self:GetChannelTime() } )
+		self.hVictim:Interrupt()
+	end
 end
 
 
@@ -45,7 +48,7 @@ function modifier_raiden_fatality:IsPurgable() return false end
 function modifier_raiden_fatality:OnCreated( kv )
 	if IsServer() then
         self:GetParent():InterruptChannel()
-        
+
 		self:OnIntervalThink()
 		self:StartIntervalThink( 0.25 )
 	end
@@ -103,5 +106,4 @@ function modifier_raiden_fatality:GetOverrideAnimation( params )
 	return ACT_DOTA_DISABLED
 end
 
-function modifier_raiden_fatality:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function modifier_raiden_fatality:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

@@ -86,7 +86,7 @@
 		"ItemCost"					"1200"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_chronograph"
-		
+
 		"ItemRequirements"
 		{
 			"01"						"item_bloodthorn;item_ultimate_nullifier"
@@ -571,7 +571,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_lua"
+		"BaseClass"						"item_blink"
 		"ID"							"9005"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"Model"							"models/props_gameplay/red_box.vmdl"
@@ -579,7 +579,6 @@
 		"AbilityTextureName"            "custom/blink_2"
 		"FightRecapLevel"				"1"
 		"ItemCost"						"4500"
-		"ScriptFile"					"items/item_blink_2.lua"
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -617,7 +616,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"min_blink_range"		"1500"
+				"blink_range_clamp"		"1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_damage_cooldown"	"0"
 			}
 		}
 
