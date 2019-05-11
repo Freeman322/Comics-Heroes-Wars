@@ -3542,6 +3542,7 @@
 		"BaseClass"             	    	"npc_dota_hero"
 		"IsCustom"                  	"1"
 		"DisableWearables"          	"1"
+		"HeroDisabled"								"1"
 
 		"Model"					"models/heroes/hero_misterio/misterio.vmdl"
 		"SoundSet"				"Hero_ArcWarden"
@@ -3617,7 +3618,7 @@
 		"particle_folder"		"particles/units/heroes/hero_arc_warden"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
 		"VoiceFile"			"soundevents/voscripts/game_sounds_vo_arc_warden.vsndevts"
-		
+
 		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
@@ -3656,11 +3657,12 @@
 		"BaseClass"             	    		"npc_dota_hero"
 		"IsCustom"                  		"1"
 		"DisableWearables"          		"1"
+		"HeroDisabled"							"1"
 
 		"Model"						"models/heroes/hero_shazam/billy/billy.vmdl"
 		"SoundSet"					"Hero_Lich"
 		"IdleSoundLoop"				"Hero_Lich.IdleLoop"
-		
+
 		"HeroID"						"219"
 		"Enabled"						"1"
 
@@ -3678,7 +3680,7 @@
 
 		"CMEnabled"					"1"
 		"workshop_guide_name"			"Shazam"
-		
+
 		"LastHitChallengeRival"			"npc_dota_hero_crystal_maiden"
 		"HeroSelectSoundEffect"			"Hero_Lich.Pick"
 		"HealthBarOffset"				"255"
@@ -3719,7 +3721,7 @@
 		"MovementSpeed"				"295"
 		"MovementTurnRate"				"0.500000"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
-		
+
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_lich.vsndevts"
 		"particle_folder"				"particles/units/heroes/hero_lich"
 		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
