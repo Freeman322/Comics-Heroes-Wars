@@ -80,18 +80,10 @@ end
 function modifier_misterio_mystic_arena_debuff:GetModifierMoveSpeed_Absolute(params)
     if IsServer() then 
         if self.GetAbility().m_vCenter then 
-            local distToUnit = (self:GetParent():GetAbsOrigin() - self.GetAbility().m_vCenter):Normalized()
-            local unit_dir = self:GetParent():GetAbsOrigin() - self.GetAbility().m_vCenter
+            local distToUnit = (self:GetParent():GetAbsOrigin() - self.GetAbility().m_vCenter):Length2D()
             local circleRadius = self:GetAbility():GetSpecialValueFor("radius") 
 
-            if (self:GetParent():GetAbsOrigin() - self.GetAbility().m_vCenter):Length2D() >= (circleRadius / 2)then
-                local posOnCircle = unit_dir:Normalized() * circleRadius
-                local vectorToCircleCenter = - unit_dir:Normalized()
-                local posOnCircle = self.GetAbility().m_vCenter + unit_dir:Normalized() * circleRadius 
-
-                self:GetParent():SetAbsOrigin(posOnCircle)
-                self:SetForwardVector(vectorToCircleCenter)
-            end
+            if distToUnit >= (circleRadius / 2) and self:GetParent():GetForwardVector():Dot((self:GetParent():GetAbsOrigin() - self.GetAbility().m_vCenter):Length()) > 0 then return 0 end
         end 
     end 
 
