@@ -1901,7 +1901,7 @@
         // Attribute Stats
         "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
         "AttributeBaseStrength"     "28"
-        "AttributeStrengthGain"     "1.700000"
+        "AttributeStrengthGain"     "3.000000"
         "AttributeBaseIntelligence" "21"
         "AttributeIntelligenceGain" "1.900000"
         "AttributeBaseAgility"      "22"
@@ -1930,9 +1930,9 @@
 		"Ability6"					"superman_kryptonian"
 
 
-		"Ability10"					"special_bonus_unique_superman_4"
+		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_unique_superman_5"
-		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability12"					"special_bonus_unique_superman_4"
 		"Ability13"					"special_bonus_unique_superman_3"
 		"Ability14"					"special_bonus_unique_superman_1"
 		"Ability15"					"special_bonus_unique_superman_2"
@@ -3010,7 +3010,7 @@
         "AttackDamageMin"           "25"
         "AttackDamageMax"           "32"
 
-        "AttackRate"				"1.700000"
+        "AttackRate"				"1.600000"
        	"AttackAcquisitionRange"	"800"
 		"AttackRange"				"150"
 		"ProjectileSpeed"			"0"
@@ -3097,7 +3097,7 @@
         "HealthBarOffset"           "240"
 
         // Sound info
-		"SoundSet"					"Hero_Alchemist"
+		"SoundSet"					"Hero_Shredder"
 		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
 
 	 	"particle_folder"			"particles/units/heroes/hero_alchemist"
@@ -3118,11 +3118,12 @@
         "MagicalResistance"			"24"
 
 
-        "AttackDamageMin"           "25"
-        "AttackDamageMax"           "32"
-
-       	"AttackAcquisitionRange"	"800"
-		"AttackRange"				"150"
+ 		"AttackDamageMin"           "25"
+		"AttackDamageMax"           "32"
+ 		"AttackRate"		 "1.700000"
+		"AttackAnimationPoint"		"0.360000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
 		"ProjectileSpeed"			"0"
 		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
 
