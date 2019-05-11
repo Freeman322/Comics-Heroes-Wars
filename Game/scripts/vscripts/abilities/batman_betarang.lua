@@ -1,5 +1,7 @@
 batman_betarang = class({})
 
+batman_betarang.m_vLastOrigin = nil
+
 function batman_betarang:OnSpellStart()
 	local info = {
 			EffectName = "particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf",
@@ -30,10 +32,15 @@ end
 function batman_betarang:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
 		EmitSoundOn( "Hero_BountyHunter.Shuriken.Impact", hTarget )
+
 		local dmg = self:GetAbilityDamage()
+
 		if self:GetCaster():HasScepter() then
 			dmg = dmg + self:GetCaster():GetStrength()
 		end
+
+		self.m_vLastOrigin = hTarget:GetAbsOrigin()
+
 		ApplyDamage({
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -42,8 +49,7 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		})
 
-
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
+		AddNewModifier_pcall(hTarget, self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
 
 		if self.max_bounces == 0 then
 			return nil
@@ -51,7 +57,7 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 
 		local next_target = self:GetCaster()
 
-		local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), hTarget:GetAbsOrigin(), nil, self:GetSpecialValueFor("bounce_range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+		local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), (self.m_vLastOrigin or self:GetCaster():GetAbsOrigin()), nil, self:GetSpecialValueFor("bounce_range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 		if #units > 0 then
 			for _,target in pairs(units) do
 				if target ~= nil and (not target:IsMagicImmune()) and (not target:IsInvulnerable()) and target ~= hTarget then
@@ -63,7 +69,11 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 						Target = target,
 						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
 					}
+
+					if info.Source:IsNull() or not info.Source then info.Source = self:GetCaster() end 
+
 					self.max_bounces = self.max_bounces - 1
+					
 					ProjectileManager:CreateTrackingProjectile( info )
 
 					next_target = target
@@ -72,7 +82,7 @@ function batman_betarang:OnProjectileHit( hTarget, vLocation )
 			end
 		end
 
-		if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") then
+		if self:GetCaster():HasModifier("modifier_batman_infinity_gauntlet") and not hTarget:IsNull() and hTarget then
 	        local particle = ParticleManager:CreateParticle ("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget)
 	        ParticleManager:SetParticleControlEnt (particle, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetAbsOrigin (), false)
 	        ParticleManager:ReleaseParticleIndex(particle)

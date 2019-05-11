@@ -37,6 +37,8 @@ function black_panther_absorb:OnSpellStart()
         local unit = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
         if #unit > 0 then
             for _, target in pairs(unit) do
+                target:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
+                
                 local DamageTable = {
                     attacker = self:GetCaster(),
                     victim = target,
@@ -45,8 +47,6 @@ function black_panther_absorb:OnSpellStart()
                     damage_type = DAMAGE_TYPE_MAGICAL
                 }
                 ApplyDamage(DamageTable)
-
-                target:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
             end
         end
 

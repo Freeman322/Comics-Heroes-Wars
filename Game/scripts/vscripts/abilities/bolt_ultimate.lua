@@ -89,40 +89,42 @@ end
 
 function bolt_ultimate:OnProjectileHit( hTarget, vLocation )
   if hTarget ~= nil then
-    EmitSoundOn( "chw.bolt_ulti" , hTarget )
-    local k = 1 - (((hTarget:GetAbsOrigin() - self.caster_pos):Length2D())/2000)
-    self.damage = (2000*k) * self:GetSpecialValueFor( "damage_mult" )
+      EmitSoundOn( "chw.bolt_ulti" , hTarget )
+      local k = 1 - (((hTarget:GetAbsOrigin() - self.caster_pos):Length2D())/2000)
+      self.damage = (2000*k) * self:GetSpecialValueFor( "damage_mult" )
 
-    if self:GetCaster():HasTalent("special_bonus_unique_black_bolt") then
-      self.damage = self.damage * 2.5
-    end
+      if self:GetCaster():HasTalent("special_bonus_unique_black_bolt") then
+          self.damage = self.damage * 2.5
+      end
 
-    local damage = {
-      victim = hTarget,
-      attacker = self:GetCaster(),
-      damage = self.damage,
-      damage_type = DAMAGE_TYPE_MAGICAL,
-      ability = self,
-    }
+      local damage = {
+          victim = hTarget,
+          attacker = self:GetCaster(),
+          damage = self.damage,
+          damage_type = DAMAGE_TYPE_MAGICAL,
+          ability = self,
+      }
 
-    ApplyDamage( damage )
-    local knockbackProperties =
-    {
-      center_x = self:GetCaster():GetAbsOrigin().x,
-      center_y = self:GetCaster():GetAbsOrigin().y,
-      center_z = self:GetCaster():GetAbsOrigin().z,
-      duration = 2,
-      knockback_duration = 2,
-      knockback_distance = 380,
-      knockback_height = 0
-    }
+      local knockbackProperties =
+      {
+          center_x = self:GetCaster():GetAbsOrigin().x,
+          center_y = self:GetCaster():GetAbsOrigin().y,
+          center_z = self:GetCaster():GetAbsOrigin().z,
+          duration = 2,
+          knockback_duration = 2,
+          knockback_distance = 380,
+          knockback_height = 0
+      }
 
-    hTarget:AddNewModifier( self:GetCaster(), self, "modifier_knockback", knockbackProperties )
-    hTarget:AddNewModifier( self:GetCaster(), self, "modifier_bolt_ultimate", { duration = 3 } )
+      hTarget:AddNewModifier( self:GetCaster(), self, "modifier_knockback", knockbackProperties )
+      hTarget:AddNewModifier( self:GetCaster(), self, "modifier_bolt_ultimate", { duration = 3 } )
+
+      ApplyDamage( damage )
   end
 
   return false
 end
+
 
 modifier_bolt_ultimate = class({})
 

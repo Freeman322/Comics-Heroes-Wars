@@ -77,7 +77,17 @@ function modifier_carnage_heartpiercer_debuff:OnCreated( kv )
         local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("damage_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 		if #units > 0 then
 			for _,unit in pairs(units) do
+				
+				local nCasterFX = ParticleManager:CreateParticle( "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
+				ParticleManager:SetParticleControlEnt( nCasterFX, 0, unit, PATTACH_ABSORIGIN_FOLLOW, nil, unit:GetOrigin(), false )
+				ParticleManager:ReleaseParticleIndex( nCasterFX )
+
+				EmitSoundOn("Hero_Pangolier.HeartPiercer.Creep", self:GetParent())
+				EmitSoundOn("Hero_Pangolier.HeartPiercer.Proc", self:GetParent())
+				EmitSoundOn("Hero_Pangolier.HeartPiercer.Proc.Creep", self:GetParent())
+				
 				unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_stunned", { duration = 0.1 } )
+				
 				local damage = {
 					victim = unit,
 					attacker = self:GetCaster(),
@@ -87,14 +97,6 @@ function modifier_carnage_heartpiercer_debuff:OnCreated( kv )
 				}
 
 				ApplyDamage( damage )
-
-				local nCasterFX = ParticleManager:CreateParticle( "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
-				ParticleManager:SetParticleControlEnt( nCasterFX, 0, unit, PATTACH_ABSORIGIN_FOLLOW, nil, unit:GetOrigin(), false )
-				ParticleManager:ReleaseParticleIndex( nCasterFX )
-
-				EmitSoundOn("Hero_Pangolier.HeartPiercer.Creep", self:GetParent())
-				EmitSoundOn("Hero_Pangolier.HeartPiercer.Proc", self:GetParent())
-				EmitSoundOn("Hero_Pangolier.HeartPiercer.Proc.Creep", self:GetParent())
 			end
 		end
     end

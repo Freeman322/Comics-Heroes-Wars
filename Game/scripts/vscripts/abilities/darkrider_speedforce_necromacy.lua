@@ -74,8 +74,8 @@ function modifier_darkrider_speedforce_necromacy_target:OnStackCountChanged(iSta
 
             EmitSoundOn( "Hero_Grimstroke.InkCreature.Returned", self:GetCaster() )
 
-            self:Destroy()
             self:GetAbility():UseResources(false, false, true)
+            self:Destroy()
         end
     end
 end

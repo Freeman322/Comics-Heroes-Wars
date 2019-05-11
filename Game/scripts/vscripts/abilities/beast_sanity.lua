@@ -31,7 +31,7 @@ function beast_sanity:OnSpellStart()
 	if #units > 0 then
 		for _,target in pairs(units) do
 			target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = 2 } )
-			ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetSpecialValueFor("damage_multiplier") * #units, ability = self, damage_type = DAMAGE_TYPE_PURE})
+
 			if self:GetCaster():HasModifier("modifier_beast_arcana") then
 				local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_prison_end.vpcf", PATTACH_CUSTOMORIGIN, target );
 				ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
@@ -39,6 +39,8 @@ function beast_sanity:OnSpellStart()
 
 				EmitSoundOn( "Hero_ObsidianDestroyer.AstralImprisonment.End", target)
 			end
+			
+			ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetSpecialValueFor("damage_multiplier") * #units, ability = self, damage_type = DAMAGE_TYPE_PURE})
 		end
 	end
 end

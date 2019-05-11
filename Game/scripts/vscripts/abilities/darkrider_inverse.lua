@@ -36,7 +36,9 @@ function modifier_darkrider_inverse:OnDestroy()
                 if target ~= self:GetParent() then 
                     damage = damage * (share_ptc / 100)
                 end 
-
+                
+                target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 1.75})
+                
                 local damage = {
                     victim = target,
                     attacker = self:GetCaster(),
@@ -46,8 +48,6 @@ function modifier_darkrider_inverse:OnDestroy()
                 }
         
                 ApplyDamage (damage)
-
-                target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 1.75})
             end
         end
 

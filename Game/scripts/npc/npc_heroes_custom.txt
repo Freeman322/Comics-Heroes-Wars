@@ -6428,56 +6428,56 @@
 	}
 	"npc_dota_hero_dark_rider"
 	{
-		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "211"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
-        ///"HeroDisabled"				"1"
+		"BaseClass"             			"npc_dota_hero"
+		"HeroID"                   		 "211"
+		"IsCustom"                  		"1"
+		"DisableWearables"         	 	"1"
+		///"HeroDisabled"				"1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_dark_rider/black_rider.vmdl"
+		// Model info
+		"Model"                     		"models/heroes/hero_dark_rider/black_rider.vmdl"
 
-        "ModelScale"                "2.0"
-        "LoadoutScale"              "1.1"
+		"ModelScale"                		"2.0"
+		"LoadoutScale"              		"1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "240"
+		"HeroGlowColor"            		"200 200 200"
+		"HealthBarOffset"           		"240"
 
-        // Sound info
+		// Sound info
 		"SoundSet"					"Hero_Undying"
 		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
 
-	 	"particle_folder"			"particles/units/heroes/hero_grimstroke"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_grimstroke.vsndevts"
+		"particle_folder"				"particles/units/heroes/hero_grimstroke"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_grimstroke.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_grimstroke.vsndevts"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"     "20"
-        "AttributeStrengthGain"     "1.100000"
-        "AttributeBaseIntelligence" "20"
-        "AttributeIntelligenceGain" "1.100000"
-        "AttributeBaseAgility"      "24"
-        "AttributeAgilityGain"      "3.200000"
+		// Attribute Stats
+		"AttributePrimary"         		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"    		"20"
+		"AttributeStrengthGain"     		"1.100000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain" 		"1.100000"
+		"AttributeBaseAgility"     		"24"
+		"AttributeAgilityGain"     		"3.200000"
 
-        // Misc stats
-        "ArmorPhysical"             "2"
-        "MagicalResistance"			"24"
+		// Misc stats
+		"ArmorPhysical"             		"2"
+		"MagicalResistance"				"24"
 
 
-        "AttackDamageMin"           "26"
-        "AttackDamageMax"           "32"
-        "AttackRate"                "1.450000"
-       	"AttackAcquisitionRange"	"800"
-		"AttackRange"				"600"
-		"ProjectileModel"			"particles/units/heroes/hero_grimstroke/grimstroke_base_attack.vpcf"
-		"ProjectileSpeed"			"1000"
-		"AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"          	 	"26"
+		"AttackDamageMax"           		"32"
+		"AttackRate"               		"1.450000"
+		"AttackAcquisitionRange"			"800"
+		"AttackRange"					"600"
+		"ProjectileModel"				"particles/units/heroes/hero_grimstroke/grimstroke_base_attack.vpcf"
+		"ProjectileSpeed"				"1000"
+		"AttackCapabilities"        		"DOTA_UNIT_CAP_RANGED_ATTACK"
 
-        "MovementSpeed"             "310"
-        "MovementTurnRate"          "0.600000"
+		"MovementSpeed"             		"310"
+		"MovementTurnRate"          		"0.600000"
 
-        // Abilities
+		// Abilities
 		"Ability1"					"darkrider_speedforce_necromacy"
 		"Ability2"					"darkrider_heartbeat"
 		"Ability3"					"darkrider_inverse"

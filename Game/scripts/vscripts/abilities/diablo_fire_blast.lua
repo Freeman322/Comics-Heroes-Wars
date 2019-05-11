@@ -30,6 +30,14 @@ function diablo_fire_blast:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
 		EmitSoundOn( "Hero_ChaosKnight.ChaosBolt.Impact", hTarget )
 
+		local duration = self:GetSpecialValueFor("blast_stun_duration")
+		
+		if self:GetCaster():HasTalent("special_bonus_unique_diablo_2") then
+			duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_diablo_2") 
+		end
+		
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = duration} )
+		
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -39,13 +47,6 @@ function diablo_fire_blast:OnProjectileHit( hTarget, vLocation )
 		}
 
 		ApplyDamage( damage )
-		
-		local duration = self:GetSpecialValueFor("blast_stun_duration")
-		if self:GetCaster():HasTalent("special_bonus_unique_diablo_2") then
-			duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_diablo_2") 
-		end
-		
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = duration} )
 	end
 
 	return true

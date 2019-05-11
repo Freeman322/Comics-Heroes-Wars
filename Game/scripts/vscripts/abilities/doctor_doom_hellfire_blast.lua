@@ -36,9 +36,10 @@ function doctor_doom_hellfire_blast:OnProjectileHit (hTarget, vLocation)
             ability = self
         }
 
-        ApplyDamage (damage)
         hTarget:AddNewModifier (self:GetCaster (), self, "modifier_doctor_doom_hellfire_blast", { duration = disarm_duration } )
         hTarget:AddNewModifier (self:GetCaster (), self, "modifier_stunned", { duration = 0.1 } )
+        
+        ApplyDamage (damage)
     end
 
     return true

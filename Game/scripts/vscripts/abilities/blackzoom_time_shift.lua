@@ -28,11 +28,11 @@ function blackzoom_time_shift:OnSpellStart()
     if hTarget ~= nil then
         local duration = self:GetSpecialValueFor("duration")
         if ( not hTarget:TriggerSpellAbsorb( self ) ) then
-            hTarget:AddNewModifier( self:GetCaster(), self, "modifier_blackzoom_time_shift", { duration = duration } )
             local nFXIndex = ParticleManager:CreateParticle( "particles/hero_zoom/blackzoom_time_shift.vpcf", PATTACH_CUSTOMORIGIN, nil );
             ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin(), true );
             ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );
             ParticleManager:ReleaseParticleIndex( nFXIndex );
+
             if self:GetCaster():GetModelName() == "models/heroes/hero_zoom/speed_wraith/blackflash.vmdl" then
                 EmitSoundOn( "Hero_Spectre.Haun", hTarget )
                 EmitSoundOn( "Hero_Nevermore.ROS_Cast_Flames", hTarget )
@@ -42,6 +42,8 @@ function blackzoom_time_shift:OnSpellStart()
                 EmitSoundOn( "Hero_Winter_Wyvern.WintersCurse.Cast", hTarget)
                 EmitSoundOn( "Hero_Clinkz.DeathPact.Cast", hTarget )
             end
+
+            AddNewModifier_pcall(hTarget, self:GetCaster(), self, "modifier_blackzoom_time_shift", { duration = duration })
         end
     end
 end
@@ -69,7 +71,7 @@ function modifier_blackzoom_time_shift:OnCreated(htable)
         ApplyDamage({attacker = self:GetCaster(), victim = self:GetParent(), damage = self:GetParent():GetMaxHealth() * (self:GetAbility():GetSpecialValueFor("damage")/100), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
 
         if self:GetCaster():HasScepter() then
-            local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("aoe_radius_scepter"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false )
+            local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("aoe_radius_scepter"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, 0, false )
             if #units > 0 then
                 for _,target in pairs(units) do
                     EmitSoundOn( "Hero_Winter_Wyvern.WintersCurse.Cast", target)
@@ -79,7 +81,7 @@ function modifier_blackzoom_time_shift:OnCreated(htable)
                     ParticleManager:SetParticleControlEnt( nFXIndex, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
                     ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-                    target:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_blackzoom_time_shift", { duration = self:GetAbility():GetSpecialValueFor("duration") } )
+                    AddNewModifier_pcall( target, self:GetCaster(), self:GetAbility(), "modifier_blackzoom_time_shift", { duration = self:GetAbility():GetSpecialValueFor("duration") } )
                 end
             end
         end

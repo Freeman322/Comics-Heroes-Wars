@@ -57,6 +57,8 @@ function cap_sheild_blast:OnProjectileHit( hTarget, vLocation )
         
         if self:GetCaster():HasScepter() then bonus = self:GetSpecialValueFor("bonus_damage_scepter") end
         
+        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = stun_duration } )
+        
         local damage = {
             victim = hTarget,
             attacker = self:GetCaster(),
@@ -66,8 +68,6 @@ function cap_sheild_blast:OnProjectileHit( hTarget, vLocation )
         }
 
         ApplyDamage( damage )
-        
-        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = stun_duration } )
         
         local caster = self:GetCaster()
         local target = hTarget
@@ -97,53 +97,57 @@ function cap_sheild_blast:OnProjectileHit( hTarget, vLocation )
 
         -- Apply the stun to the current target
         if target:IsHero() then
-            target:AddNewModifier(target, ability, "modifier_stunned", {Duration = hero_duration})
+            target:AddNewModifier(target, ability, "modifier_stunned", {duration = hero_duration})
+
             ApplyDamage({victim = target, attacker = caster, damage = hero_damage, damage_type = ability:GetAbilityDamageType()})
         else
-            target:AddNewModifier(target, ability, "modifier_stunned", {Duration = creep_duration})
+            target:AddNewModifier(target, ability, "modifier_stunned", {duration = creep_duration})
+
             ApplyDamage({victim = target, attacker = caster, damage = creep_damage, damage_type = ability:GetAbilityDamageType()})
         end
 
+        if not target:IsNull() and target then
         -- If the cask has bounces left, it finds a new target to bounce to
-        if ability.bounces_left > 0 then
-            -- We wait on the delay
-            Timers:CreateTimer(bounce_delay,
-                function()
-                    -- Finds all units in the area
-                    local units = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, bounce_range, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), 0, 0, false)
-                    -- Go through the target_enties table, checking for the first one that isn't the same as the target
-                    local target_to_jump = nil
-                    for _,unit in pairs(units) do
-                        if unit ~= target and not target_to_jump then
-                            target_to_jump = unit
+            if ability.bounces_left > 0 then
+                -- We wait on the delay
+                Timers:CreateTimer(bounce_delay,
+                    function()
+                        -- Finds all units in the area
+                        local units = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, bounce_range, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), 0, 0, false)
+                        -- Go through the target_enties table, checking for the first one that isn't the same as the target
+                        local target_to_jump = nil
+                        for _,unit in pairs(units) do
+                            if unit ~= target and not target_to_jump then
+                                target_to_jump = unit
+                            end
                         end
-                    end
-                    -- If there is a new target to bounce to, we create the a projectile
-                    if target_to_jump then
-                        -- Create the next projectile
-                        local pfx = "particles/cap_magic_missle.vpcf"
+                        -- If there is a new target to bounce to, we create the a projectile
+                        if target_to_jump then
+                            -- Create the next projectile
+                            local pfx = "particles/cap_magic_missle.vpcf"
 
-                        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then
-                            pfx = "particles/alisa/alisa_punch.vpcf"
-                        end 
+                            if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then
+                                pfx = "particles/alisa/alisa_punch.vpcf"
+                            end 
 
-                        local info = {
-                            Target = target_to_jump,
-                            Source = target,
-                            Ability = ability,
-                            EffectName = pfx,
-                            bDodgeable = true,
-                            bProvidesVision = false,
-                            iMoveSpeed = speed,
-                            iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
-                        }
-                        ProjectileManager:CreateTrackingProjectile( info )
-                    else
-                        ability.bounces_left = nil
-                    end
-                end)
-        else
-            ability.bounces_left = nil
+                            local info = {
+                                Target = target_to_jump,
+                                Source = target,
+                                Ability = ability,
+                                EffectName = pfx,
+                                bDodgeable = true,
+                                bProvidesVision = false,
+                                iMoveSpeed = speed,
+                                iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+                            }
+                            ProjectileManager:CreateTrackingProjectile( info )
+                        else
+                            ability.bounces_left = nil
+                        end
+                    end)
+            else
+                ability.bounces_left = nil
+            end
         end
     end
     return true
