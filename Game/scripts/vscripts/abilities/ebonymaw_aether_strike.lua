@@ -40,8 +40,7 @@ function ebonymaw_aether_strike:OnProjectileHit( hTarget, vLocation )
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self
 		}
-		ApplyDamage( damage )
-
+		
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_silence", { duration = self:GetSpecialValueFor( "silence_duration" ) } )
 
 		local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_stifling_dagger_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
@@ -49,6 +48,7 @@ function ebonymaw_aether_strike:OnProjectileHit( hTarget, vLocation )
 		ParticleManager:SetParticleControlEnt( nFXIndex, 3, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
 
+		ApplyDamage( damage )
 	end
 
 	return true

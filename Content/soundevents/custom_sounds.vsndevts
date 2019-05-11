@@ -4050,7 +4050,7 @@
         }
     }
 }
-"Megumin.CastUlti"
+"Hero_DrowRanger.Footsteps"
 {
     "operator_stacks"
     {
@@ -4066,7 +4066,12 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/econs/miraak/megumin/skill-ultimate.vsnd"
+                            "value0"        "sounds/physics/footsteps/hero/shared/general01.vsnd"
+							"value1"        "sounds/physics/footsteps/hero/shared/general02.vsnd"
+							"value2"        "sounds/physics/footsteps/hero/shared/general03.vsnd"
+							"value3"        "sounds/physics/footsteps/hero/shared/general04.vsnd"
+							"value4"        "sounds/physics/footsteps/hero/shared/general05.vsnd"
+							"value5"        "sounds/physics/footsteps/hero/shared/general06.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }

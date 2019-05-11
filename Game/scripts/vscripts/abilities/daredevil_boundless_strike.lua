@@ -79,6 +79,9 @@ function daredevil_boundless_strike:OnSpellStart()
 	for _, unit in pairs(units) do
 		EmitSoundOn("Hero_MonkeyKing.Spring.Target", hCaster)
 		unit:AddNewModifier(hCaster, self, "modifier_stunned", {duration = nStun})
+		
+		hCaster:PerformAttack(unit, true, true, true, true, true, false, true)
+
 		local damage = {
 			victim = unit,
 			attacker = hCaster,
@@ -88,7 +91,6 @@ function daredevil_boundless_strike:OnSpellStart()
 		}
 
 		ApplyDamage( damage )
-		hCaster:PerformAttack(unit, true, true, true, true, true, false, true)
 	end
 end
 

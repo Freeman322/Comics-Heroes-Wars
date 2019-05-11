@@ -32,15 +32,7 @@ function modifier_beast_jinada:OnAttackLanded(params)
           flDamage = flDamage + ((self:GetAbility():GetSpecialValueFor("creeps_per_damage_scepter")/100)*params.target:GetMaxHealth())
         end
 
-        if params.target:IsRealHero() then
-          flDamage = self:GetParent():GetLastHits() / 2
-        else
-          if params.target:IsConsideredHero() or params.target:IsBuilding() then
-            flDamage = 0
-          else
-            flDamage = flDamage
-          end
-        end
+        if params.target:IsRealHero() then flDamage = self:GetParent():GetLastHits() / 2 else if params.target:IsConsideredHero() or params.target:IsBuilding() then flDamage = 0 else flDamage = flDamage end end
 
         ApplyDamage ({attacker = self:GetParent(), victim = params.target, ability = self:GetAbility(), damage = flDamage, damage_type = DAMAGE_TYPE_PHYSICAL })
 

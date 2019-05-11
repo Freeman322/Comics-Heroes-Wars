@@ -91,17 +91,6 @@ function modifier_darkrider_alter_reverse_aura_debuff:OnDestroy()
 
           if modifier then damage = damage + (modifier:GetTotalDistance() * (self:GetAbility():GetSpecialValueFor("distance_ptc") / 100)) end 
          
-          local damageInfo =
-          {
-               victim = self:GetParent(),
-               attacker = self:GetCaster(),
-               damage = damage,
-               damage_type = DAMAGE_TYPE_MAGICAL,
-               ability = self:GetAbility(),
-          }
-
-          ApplyDamage( damageInfo )
-
           local kv =
           {
                center_x = self._vLoc.x,
@@ -115,6 +104,17 @@ function modifier_darkrider_alter_reverse_aura_debuff:OnDestroy()
           }
 
           self:GetParent():AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_knockback", kv )
+          
+          local damageInfo =
+          {
+               victim = self:GetParent(),
+               attacker = self:GetCaster(),
+               damage = damage,
+               damage_type = DAMAGE_TYPE_MAGICAL,
+               ability = self:GetAbility(),
+          }
+
+          ApplyDamage( damageInfo )
 	end
 end
 

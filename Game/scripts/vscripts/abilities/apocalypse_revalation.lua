@@ -25,10 +25,15 @@ function apocalypse_revalation:OnProjectileHit( hTarget, vLocation )
 		EmitSoundOn( "Hero_Oracle.FatesEdict", hTarget )
 		local dur = self:GetSpecialValueFor("intelligence_stole_dur")
 		local bonus = 0
+
 		if self:GetCaster():HasModifier("modifier_apocalypse_essence_shift_caster") then
 			local buff = self:GetCaster():FindModifierByName("modifier_apocalypse_essence_shift_caster")
 			bonus = buff:GetStackCount()
 		end
+
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_apocalypse_revalation_target", { duration = dur } )
+		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_apocalypse_revalation", { duration = dur } )
+		
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -38,8 +43,6 @@ function apocalypse_revalation:OnProjectileHit( hTarget, vLocation )
 		}
 
 		ApplyDamage( damage )
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_apocalypse_revalation_target", { duration = dur } )
-		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_apocalypse_revalation", { duration = dur } )
 	end
 
 	return true

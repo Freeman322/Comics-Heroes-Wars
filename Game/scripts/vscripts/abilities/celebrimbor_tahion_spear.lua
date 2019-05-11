@@ -116,6 +116,9 @@ function celebrimbor_tahion_spear:OnProjectileHit_ExtraData( hTarget, vLocation,
 
         for i, target in ipairs(units) do 
             target:EmitSound("Hero_ObsidianDestroyer.EssenceAura")
+            
+            target:AddNewModifier (caster, self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") })
+
             local damage = {
                 victim = target,
                 attacker = hCaster,
@@ -125,8 +128,6 @@ function celebrimbor_tahion_spear:OnProjectileHit_ExtraData( hTarget, vLocation,
             }
 
             ApplyDamage( damage )
-
-            target:AddNewModifier (caster, self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") })
         end
         AddFOWViewer(self:GetCaster():GetTeamNumber(), vLocation, 400, 5, true)
         return nil

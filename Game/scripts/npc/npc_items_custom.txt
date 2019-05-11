@@ -2729,18 +2729,18 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_lua"
+		"BaseClass"					"item_lua"
 		"ID"							"9019"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"							"models/items/abaddon/sword_iceshard/sword_iceshard.vmdl"
+		"Model"						"models/items/abaddon/sword_iceshard/sword_iceshard.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"            "custom/rapier_ethereal"
+		"AbilityTextureName"            	"custom/rapier_ethereal"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
 		"ItemPurchasable"				"1"
-		"ItemDroppable"					"1"
+		"ItemDroppable"				"1"
 		"DropOnDeath"					"1"
-		"ItemQuality"                   "epic"
+		"ItemQuality"                   	"epic"
 		"ScriptFile"					"items/item_rapier_ethereal.lua"
 
 		// Item Info

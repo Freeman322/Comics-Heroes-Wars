@@ -2367,3 +2367,9 @@ function CDOTA_BaseNPC:GetCooldownTimeAfterReduction(cooldown)
 
   return cooldown_reduction * cooldown
 end
+
+function AddNewModifier_pcall(target, caster, ability, modifierName, properties)
+  if target:IsNull() or not target then Warning("[AddNewModifier_pcall] utils.lua - target nullptr exeption") return end 
+
+  return target:AddNewModifier(caster, ability, modifierName, properties)
+end

@@ -20,7 +20,7 @@ function collector_ice_blast:OnSpellStart()
         local damage = self:GetOrbSpecialValueFor("damage","e")
         local radius = self:GetOrbSpecialValueFor("radius","q")
 
-        local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetCursorPosition(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+        local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetCursorPosition(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, 0, 0, false )
         if #targets > 0 then
             for _,target in pairs(targets) do
                 target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = duration } )

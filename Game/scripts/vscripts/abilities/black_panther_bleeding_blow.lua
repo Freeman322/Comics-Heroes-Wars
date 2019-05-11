@@ -45,11 +45,13 @@ end
 function modifier_black_panther_bleeding_blow_target:OnIntervalThink()
     if IsServer() then
         local damage = self:GetAbility ():GetSpecialValueFor ("damage_perc") / 100 * self:GetParent():GetMaxHealth()
+        
         if self:GetParent():IsBuilding() then
              damage =  damage / 4
         else
              damage = damage
         end
+
         ApplyDamage ({ attacker = self:GetCaster(), victim = self:GetParent(), ability = self:GetAbility (), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
     end
 end

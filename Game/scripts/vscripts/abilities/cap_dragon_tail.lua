@@ -33,6 +33,8 @@ function cap_dragon_tail:OnProjectileHit (hTarget, vLocation)
             EmitSoundOn ("Hero_DragonKnight.DragonTail.Target", hTarget)
         end 
 
+        hTarget:AddNewModifier (self:GetCaster (), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
+
         local damage = {
             victim = hTarget,
             attacker = self:GetCaster (),
@@ -42,7 +44,6 @@ function cap_dragon_tail:OnProjectileHit (hTarget, vLocation)
         }
 
         ApplyDamage (damage)
-        hTarget:AddNewModifier (self:GetCaster (), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
     end
 
     return true

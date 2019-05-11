@@ -49,9 +49,23 @@ function darkseid_omega_ray:OnProjectileHit (hTarget, vLocation)
         EmitSoundOn ("Hero_VengefulSpirit.MagicMissileImpact", hTarget)
         local stun = self:GetSpecialValueFor ("stun")
         local damage = self:GetSpecialValueFor ("damage")
+
         if self:GetCaster():HasScepter() then
             damage = (hTarget:GetMaxHealth () * (self:GetSpecialValueFor ("damage_scepter")/100) + self:GetSpecialValueFor ("damage"))
         end
+        
+        if self:GetCaster():HasModifier("modifier_arcana") then
+            EmitSoundOn ("Hero_ObsidianDestroyer.SanityEclipse", hTarget)
+            EmitSoundOn ("Hero_ObsidianDestroyer.SanityEclipse", hTarget)
+    
+            local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/monkey_king/arcana/death/mk_arcana_spring_cast_outer_death_pnt.vpcf", PATTACH_CUSTOMORIGIN, nil );
+            ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetAbsOrigin())
+            ParticleManager:SetParticleControl( nFXIndex, 4, hTarget:GetAbsOrigin())
+            ParticleManager:ReleaseParticleIndex( nFXIndex );
+        end
+        
+        hTarget:AddNewModifier (self:GetCaster (), self, "modifier_stunned", { duration = stun} )
+
         local damage_table = {
             victim = hTarget,
             attacker = self:GetCaster (),
@@ -61,16 +75,6 @@ function darkseid_omega_ray:OnProjectileHit (hTarget, vLocation)
         }
 
         ApplyDamage (damage_table)
-        hTarget:AddNewModifier (self:GetCaster (), self, "modifier_stunned", { duration = stun} )
-    end
-    if self:GetCaster():HasModifier("modifier_arcana") then
-      EmitSoundOn ("Hero_ObsidianDestroyer.SanityEclipse", hTarget)
-      EmitSoundOn ("Hero_ObsidianDestroyer.SanityEclipse", hTarget)
-
-      local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/monkey_king/arcana/death/mk_arcana_spring_cast_outer_death_pnt.vpcf", PATTACH_CUSTOMORIGIN, nil );
-  		ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetAbsOrigin())
-      ParticleManager:SetParticleControl( nFXIndex, 4, hTarget:GetAbsOrigin())
-  		ParticleManager:ReleaseParticleIndex( nFXIndex );
     end
     return true
 end

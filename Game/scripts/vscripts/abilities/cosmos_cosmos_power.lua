@@ -49,9 +49,10 @@ function cosmos_cosmos_power:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 
+          hTarget:AddNewModifier( self:GetCaster(), self, "modifier_cosmos_cosmos_power_target", { duration = debuff_dur } )
+          
           ApplyDamage( damage )
 
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_cosmos_cosmos_power_target", { duration = debuff_dur } )
 	end
 
 	return true

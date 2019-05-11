@@ -89,6 +89,8 @@ end
 function collector_tornado:OnProjectileHit( hTarget, vLocation )
     if IsServer() then 
         if hTarget ~= nil then
+            if hTarget:IsIllusion() then hTarget:ForceKill(false) return end
+            
             local damage = {
                 victim = hTarget,
                 attacker = self:GetCaster(),

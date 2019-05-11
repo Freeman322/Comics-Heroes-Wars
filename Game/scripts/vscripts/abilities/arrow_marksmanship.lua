@@ -35,12 +35,15 @@ function arrow_marksmanship:OnProjectileHit( hTarget, vLocation )
                 }
     
                 ApplyDamage( damage )
-                unit:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
 
-                local pop_pfx = ParticleManager:CreateParticle("particles/econ/courier/courier_cluckles/courier_cluckles_ambient_rocket_explosion.vpcf", PATTACH_OVERHEAD_FOLLOW, unit)
-                ParticleManager:SetParticleControl(pop_pfx, 0, unit:GetAbsOrigin())
-                ParticleManager:SetParticleControl(pop_pfx, 3, unit:GetAbsOrigin())
-                ParticleManager:ReleaseParticleIndex(pop_pfx)
+                AddNewModifier_pcall( unit, self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
+
+                if not unit:IsNull() and unit then
+                    local pop_pfx = ParticleManager:CreateParticle("particles/econ/courier/courier_cluckles/courier_cluckles_ambient_rocket_explosion.vpcf", PATTACH_OVERHEAD_FOLLOW, unit)
+                    ParticleManager:SetParticleControl(pop_pfx, 0, unit:GetAbsOrigin())
+                    ParticleManager:SetParticleControl(pop_pfx, 3, unit:GetAbsOrigin())
+                    ParticleManager:ReleaseParticleIndex(pop_pfx)
+                end
             end
         end
     end
