@@ -30,13 +30,24 @@ function modifier_sargeras_magmatic_armor:IsPurgable() return true end
 
 function modifier_sargeras_magmatic_armor:OnIntervalThink()
 	if IsServer() then
+		local hAbility = self:GetAbility()
+		local iDamage = hAbility:GetSpecialValueFor( "damage_interval" )
+
+		if self:GetCaster():HasTalent("special_bonus_unique_sargeras") then
+	     	iDamage = self:GetCaster():FindTalentValue("special_bonus_unique_sargeras") + hAbility:GetSpecialValueFor( "damage_interval" )
+		end
+
 		ApplyDamage({
 			victim = self:GetParent(),
-			attacker = self:GetCaster(),
-			damage = (self:GetAbility():GetSpecialValueFor("damage_interval") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_sargeras") or 0)) / 10,
-			damage_type = self:GetAbility():GetAbilityDamageType(),
-			ability = self:GetAbility()
+			attacker = hAbility:GetCaster(),
+			damage = iDamage/10,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = hAbility
 		})
+
+		if not self:GetParent():IsBuilding() and self:GetParent():IsMagicImmune() == false then
+			ApplyDamage( damage )
+		end
 	end
 end
 
