@@ -14,10 +14,9 @@ function modifier_samurai_ecliptic_strike:OnAttackLanded( params )
   if IsServer() then
     if params.attacker == self:GetParent() and params.attacker:IsRealHero() and self:GetAbility():IsCooldownReady() and params.target:IsBuilding() == false and params.target:GetUnitName() ~= "npc_dota_creature_yaz" then
       if self:GetParent():PassivesDisabled() then return 0 end
-        ApplyDamage( {attacker = self:GetParent(), victim = params.target, ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("crit_mult") * params.target:GetMaxHealth()) / 100, damage_type = DAMAGE_TYPE_PHYSICAL} )
-        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
-      end
+      ApplyDamage( {attacker = self:GetParent(), victim = params.target, ability = self:GetAbility(), damage = (self:GetAbility():GetSpecialValueFor("crit_mult") * params.target:GetMaxHealth()) / 100, damage_type = DAMAGE_TYPE_PHYSICAL} )
+      self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
     end
   end
-  return 0
 end
+

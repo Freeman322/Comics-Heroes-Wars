@@ -2373,3 +2373,7 @@ function AddNewModifier_pcall(target, caster, ability, modifierName, properties)
 
   return target:AddNewModifier(caster, ability, modifierName, properties)
 end
+
+function WaitForNextFrame(fnc)
+    Timers:CreateTimer(0, fnc)
+end
