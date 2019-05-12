@@ -528,16 +528,16 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"									"ability_lua"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"						"2"
-		"AbilityTextureName"				"custom/thor_stun"
-		"AOERadius"									"%bolt_aoe"
-		"ScriptFile"								"abilities/thor_storm_bolt.lua"
+		"BaseClass"				"ability_lua"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"			"2"
+		"AbilityTextureName"		"custom/thor_stun"
+		"AOERadius"				"%bolt_aoe"
+		"ScriptFile"				"abilities/thor_storm_bolt.lua"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -547,13 +547,13 @@
 			"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
 			"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 			"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
-			"particle"  		"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
-			"model"  			"models/heroes/hero_thor/sulfuras/thor_sulfuras.vmdl"
-			"particle"  		"particles/econ/items/wraith_king/wraith_king_ti6_bracer/wraith_king_ti6_hellfireblast.vpcf"
+			"particle"  			"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
+			"model"  				"models/heroes/hero_thor/sulfuras/thor_sulfuras.vmdl"
+			"particle"  			"particles/econ/items/wraith_king/wraith_king_ti6_bracer/wraith_king_ti6_hellfireblast.vpcf"
 			"model"				"models/heroes/hero_thor/thor_weapon.vmdl"
 			"model"				"models/heroes/hero_thor/econs/source/thor_mjollnir.vmdl"
 			"model"				"models/heroes/hero_thor/econs/source/thor_dawnbreaker.vmdl"
-			"particle"  		"particles/econ/dawnbreaker.vpcf"
+			"particle"  			"particles/econ/dawnbreaker.vpcf"
 			"particle"			"models/heroes/hero_thor/econs/source/thor_helmet.vmdl"
 		}
 
