@@ -7074,7 +7074,6 @@
 		"BaseClass"             	    	"npc_dota_hero"
 		"IsCustom"                  	"1"
 		"DisableWearables"          	"1"
-		"HeroDisabled"								"1"
 
 		"Model"					"models/heroes/hero_misterio/misterio.vmdl"
 		"SoundSet"				"Hero_ArcWarden"
@@ -7098,12 +7097,12 @@
 
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"		"arc_warden_flux"
-		"Ability2"		"arc_warden_magnetic_field"
-		"Ability3"		"arc_warden_spark_wraith"
+		"Ability1"		"misterio_mirror_remnant"
+		"Ability2"		"misterio_telekinetic_force"
+		"Ability3"		"misterio_virtual_shield"
 		"Ability4"		"generic_hidden"
 		"Ability5"		"generic_hidden"
-		"Ability6"		"arc_warden_tempest_double"
+		"Ability6"		"misterio_mystic_arena"
 		"Ability10"		"special_bonus_cooldown_reduction_8"
 		"Ability11"		"special_bonus_attack_speed_30"
 		"Ability12"		"special_bonus_hp_300"
@@ -7158,7 +7157,6 @@
 		"BaseClass"             	    		"npc_dota_hero"
 		"IsCustom"                  		"1"
 		"DisableWearables"          		"1"
-		"HeroDisabled"									"1"
 
 		"Model"						"models/heroes/hero_shazam/billy/billy.vmdl"
 		"SoundSet"					"Hero_Lich"
@@ -7187,12 +7185,12 @@
 		"HealthBarOffset"				"255"
 		"GibType"						"ice"
 
-		"Ability1"					"lich_frost_nova"
+		"Ability1"					"shazam_all_gods_powers"
 		"Ability2"					"lich_frost_shield"
 		"Ability3"					"lich_sinister_gaze"
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
-		"Ability6"					"lich_chain_frost"
+		"Ability6"					"shazam_shazam"
 		"Ability10"					"special_bonus_hp_200"
 		"Ability11"					"special_bonus_movement_speed_20"
 		"Ability12"					"special_bonus_attack_damage_120"

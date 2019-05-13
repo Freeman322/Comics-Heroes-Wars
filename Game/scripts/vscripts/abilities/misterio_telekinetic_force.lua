@@ -1,6 +1,6 @@
 ---@class misterio_telekinetic_force
 LinkLuaModifier( "modifier_misterio_telekinetic_force", "abilities/misterio_telekinetic_force.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_misterio_telekinetic_force_push", "abilities/misterio_telekinetic_force.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_misterio_telekinetic_force_push", "abilities/misterio_telekinetic_force.lua", LUA_MODIFIER_MOTION_BOTH )
 
 ---DONT USE ON Illusions!
 
@@ -17,16 +17,24 @@ function misterio_telekinetic_force:OnSpellStart()
         if hTarget ~= nil then
             self.m_iRadius = self:GetSpecialValueFor("radius")
 
-            local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), nil, self.m_iRadius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
+            local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), nil, self.m_iRadius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
             if units ~= nil then
                 if #units > 0 then
                     for _, unit in pairs(units) do
-                        unit:AddNewModifier(self:GetCaster(), self, "modifier_misterio_telekinetic_force", {duration = self:GetSpecialValueFor("lift_duration"),
+                        unit:AddNewModifier(self:GetCaster(), self, "modifier_misterio_telekinetic_force", {duration = self:GetSpecialValueFor("duration"),
                         target = hTarget:entindex()})
                     end
                 end
             end
-        end
+		end
+		
+		local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/monkey_king/arcana/death/monkey_king_spring_death_base.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+		ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self.m_iRadius, self.m_iRadius, 0) )
+		ParticleManager:SetParticleControl( nFXIndex, 3, self:GetCaster():GetOrigin() )
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+		EmitSoundOn( "Hero_Rubick.SpellSteal.Cast.Arcana", self:GetCaster() )
 
         self.m_hTarget = hTarget
     end 
@@ -34,32 +42,46 @@ end
 
 function misterio_telekinetic_force:OnTargetLanded(unit, pos)
     if IsServer() and self.m_hTarget then
-        local damage_per_target = self:GetSpecialValueFor("damage")
-        local stun_dur = self:GetSpecialValueFor("stun")
+	  	local damage_per_target = self:GetSpecialValueFor("bonus_damage")
 
-        FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), false)
+		if self:GetCaster():HasTalent("special_bonus_unique_misterio_4") then 
+			damage_per_target = damage_per_target + self:GetCaster():FindTalentValue("special_bonus_unique_misterio_4")
+		end 
 
-        ApplyDamage({
-            attaker = self:GetCaster(),
-            victim = self.m_hTarget,
-            ability = self,
-            damage_type = self:GetAbilityDamageType(),
-            damage = damage_per_target
-        })
+        	local stun_dur = self:GetSpecialValueFor("stun")
 
-        self.m_hTarget:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun_dur})
+       	FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), false)
+		
+		print(damage_per_target)
 
-        if not unit:IsFriendly(self:GetCaster()) then
-            unit:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun_dur})
-            
-            ApplyDamage({
-                attaker = self:GetCaster(),
-                victim = unit,
-                ability = self,
-                damage_type = self:GetAbilityDamageType(),
-                damage = damage_per_target
-            })
-        end
+       	ApplyDamage({
+			attacker = self:GetCaster(),
+			victim = self.m_hTarget,
+			ability = self,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage = damage_per_target
+		})
+		
+
+		self.m_hTarget:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun_dur})
+
+		if not unit:IsFriendly(self:GetCaster()) then
+			unit:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun_dur})
+
+			ApplyDamage({
+				attacker = self:GetCaster(),
+				victim = unit,
+				ability = self,
+				damage_type = self:GetAbilityDamageType(),
+				damage = damage_per_target
+			})
+		end
+
+		local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/rubick/rubick_force_ambient/rubick_telekinesis_land_force.vpcf", PATTACH_CUSTOMORIGIN, self.m_hTarget )
+		ParticleManager:SetParticleControl( nFXIndex, 0, self.m_hTarget:GetOrigin())
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+		EmitSoundOn( "Hero_Rubick.Telekinesis.Target.Land", self.m_hTarget )
 	end
 end
 
@@ -80,7 +102,9 @@ function modifier_misterio_telekinetic_force:IsStunDebuff() return true end
 
 function modifier_misterio_telekinetic_force:OnCreated(params)
     if IsServer() then
-        self.m_hTarget = params.target
+		self.m_hTarget = params.target
+		
+		EmitSoundOn("Hero_Rubick.Telekinesis.Target", self:GetParent())
     end 
 end
 
@@ -88,16 +112,18 @@ function modifier_misterio_telekinetic_force:OnDestroy()
     if IsServer() then
         self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_misterio_telekinetic_force_push", {
             target = self.m_hTarget
-        })
+		})
+		
+		EmitSoundOn("Hero_Rubick.Telekinesis.Cast", self:GetParent())
     end 
 end
 
 function modifier_misterio_telekinetic_force:GetEffectName()
-	return "particles/generic_gameplay/generic_stunned.vpcf"
+	return "particles/misterio/telekinesis_puppet.vpcf"
 end
 
 function modifier_misterio_telekinetic_force:GetEffectAttachType()
-	return PATTACH_OVERHEAD_FOLLOW
+	return PATTACH_ABSORIGIN_FOLLOW
 end
 
 function modifier_misterio_telekinetic_force:DeclareFunctions()
@@ -179,10 +205,6 @@ function modifier_misterio_telekinetic_force_push:OnCreated( kv )
 
 		self.vHorizontalVelocity = ( self.vLastKnownTargetPos - self.vStartPosition ) / self.flPredictedTotalTime
 		self.vHorizontalVelocity.z = 0.0
-
-		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_techies/blast_off_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-		ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetOrigin(), true )
-		self:AddParticle( nFXIndex, false, false, -1, false, false )
 	end
 end
 

@@ -3567,12 +3567,12 @@
 
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"		"arc_warden_flux"
-		"Ability2"		"arc_warden_magnetic_field"
-		"Ability3"		"arc_warden_spark_wraith"
+		"Ability1"		"misterio_mirror_remnant"
+		"Ability2"		"misterio_telekinetic_force"
+		"Ability3"		"misterio_virtual_shield"
 		"Ability4"		"generic_hidden"
 		"Ability5"		"generic_hidden"
-		"Ability6"		"arc_warden_tempest_double"
+		"Ability6"		"misterio_mystic_arena"
 		"Ability10"		"special_bonus_cooldown_reduction_8"
 		"Ability11"		"special_bonus_attack_speed_30"
 		"Ability12"		"special_bonus_hp_300"
@@ -3687,12 +3687,12 @@
 		"HealthBarOffset"				"255"
 		"GibType"						"ice"
 
-		"Ability1"					"lich_frost_nova"
+		"Ability1"					"shazam_all_gods_powers"
 		"Ability2"					"lich_frost_shield"
 		"Ability3"					"lich_sinister_gaze"
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
-		"Ability6"					"lich_chain_frost"
+		"Ability6"					"shazam_shazam"
 		"Ability10"					"special_bonus_hp_200"
 		"Ability11"					"special_bonus_movement_speed_20"
 		"Ability12"					"special_bonus_attack_damage_120"
@@ -3759,5 +3759,75 @@
 
 		// Inventory
 		"HasInventory"					"1"
+	}
+	"npc_dota_unit_misterio_remnant"
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"					  	"models/heroes/hero_misterio/misterio.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep"
+
+		"SoundSet"					"0"			// Name of sound set.
+		"Level"						"1"
+		"ModelScale"					"0.9"
+		"ConsideredHero"        			"1"
+		"IsSummoned"                		"1"
+		"CanBeDominated"           		"0"
+
+		"StatusHealth"                	"150"       // Base health.
+		"StatusHealthRegen"           	"2.4"         // Health regeneration rate.
+		"StatusMana"                  	"300"         // Base mana.
+		"StatusManaRegen"             	"3"         // Mana regeneration rate.
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"31"
+		"AttackDamageMax"				"41"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"			"0.3"
+
+		"AttackAcquisitionRange"			"800"
+		"AttackRange"					"625"
+		"ProjectileModel"				"particles/units/heroes/hero_arc_warden/arc_warden_base_attack.vpcf"
+		"ProjectileSpeed"				"900"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"           	 	"DOTA_HULL_SIZE_HERO"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"280"			// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				  	"100"		// Base health.
+		"StatusHealthRegen"				"0.0"		// Health regeneration rate.
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"			"0"		// Range of vision during day light.
+		"VisionNighttimeRange"			"0"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	}
 }

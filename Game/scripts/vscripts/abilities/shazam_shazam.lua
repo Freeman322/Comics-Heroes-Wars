@@ -18,20 +18,34 @@ function shazam_shazam:OnAbilityPhaseStart() return true end
 
 function shazam_shazam:OnSpellStart()
     if IsServer() then
-        EmitSoundOn("Shazam.Shazam!", self:GetCaster())
+        EmitSoundOn("chw.shazam", self:GetCaster())
 
         self:EndCooldown() self:RefundManaCost()
+
+        local nFXIndex = ParticleManager:CreateParticle( "particles/shazam/shazam_compression.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+        ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+        ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin() )
+        ParticleManager:SetParticleControl( nFXIndex, 2, Vector(200, 200, 0) )
+        ParticleManager:SetParticleControl( nFXIndex, 6, self:GetCaster():GetOrigin() )
+        ParticleManager:ReleaseParticleIndex( nFXIndex )
     end 
 end
 
 function shazam_shazam:OnChannelFinish( bInterrupted )
     if not bInterrupted then
-        if self.m_hBuff then m_hBuff:Destroy() self:GetCooldownBuff():OnShazam(false) return nil end 
+        if self.m_hBuff and not self.m_hBuff:IsNull() then self.m_hBuff:Destroy() self:GetCooldownBuff():OnShazam(false) return nil end 
         
         self.m_hBuff = self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_shazam_shazam", {
             duration = self:GetShazamDuration()
         })
 
+        local nFXIndex = ParticleManager:CreateParticle( "particles/shazam/shazam_compression.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+        ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+        ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin() )
+        ParticleManager:SetParticleControl( nFXIndex, 2, Vector(200, 200, 0) )
+        ParticleManager:SetParticleControl( nFXIndex, 6, self:GetCaster():GetOrigin() )
+        ParticleManager:ReleaseParticleIndex( nFXIndex )
+        
         self:GetCooldownBuff():OnShazam(true) 
 	end
 end
@@ -43,7 +57,7 @@ modifier_shazam_shazam_cooldown = class({})
 
 modifier_shazam_shazam_cooldown.m_iCooldown = 0
 modifier_shazam_shazam_cooldown.m_bOnCooldown = false
-modifier_shazam_shazam_cooldown.m_iDurationTime = 0
+modifier_shazam_shazam_cooldown.m_iDurationTime = 18
 modifier_shazam_shazam_cooldown.m_iMaxDurationTime = 18
 
 local INTERVAL_THINK = 0.1
@@ -55,6 +69,10 @@ function modifier_shazam_shazam_cooldown:DestroyOnExpire() return false end
 
 function modifier_shazam_shazam_cooldown:OnCreated(params)
     if IsServer() then
+        self.m_iMaxDurationTime = self:GetAbility():GetSpecialValueFor("max_duration")
+        self.m_iDurationTime = self.m_iMaxDurationTime
+        self.m_iCooldown = self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
+
         self:StartIntervalThink(INTERVAL_THINK)
     end 
 end
@@ -62,7 +80,8 @@ end
 function modifier_shazam_shazam_cooldown:OnIntervalThink()
     if IsServer() then 
         self:GetAbility():SetActivated(self.m_iDurationTime > 0)
-        if not self.m_bOnCooldown and not self:GetParent():HasModifier("modifier_shazam_shazam") and self.m_iDurationTime < self.m_iMaxDurationTime then
+        
+        if not self.m_bOnCooldown and not self:GetParent():HasModifier("modifier_shazam_shazam") and self.m_iDurationTime <= self.m_iMaxDurationTime then
             self.m_iDurationTime = self.m_iDurationTime + INTERVAL_THINK
         end 
 
@@ -73,7 +92,7 @@ function modifier_shazam_shazam_cooldown:OnIntervalThink()
                 self:GetParent():RemoveModifierByName("modifier_shazam_shazam")
 
                 self:GetAbility():UseResources(true, false, true)
-                self:SetDuration(self:GetAbility():GetCooldownTimeAfterReduction(self:GetAbility():GetCooldown(self:GetAbility():GetLevel())), true)
+                self:SetDuration(self.m_iCooldown, true)
                 self.m_bOnCooldown = true
             end 
         end 
@@ -141,7 +160,7 @@ function modifier_shazam_shazam:DeclareFunctions ()
 end
 
 function modifier_shazam_shazam:GetModifierModelChange(params)
-    return ""
+    return "models/heroes/hero_shazam/shazam/shazam.vmdl"
 end
 
 function modifier_shazam_shazam:GetModifierHealthBonus(params) return self:GetAbility():GetSpecialValueFor("health") end

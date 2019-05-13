@@ -10,6 +10,8 @@ if modifier_ebonymaw_nether_shield == nil then
     modifier_ebonymaw_nether_shield = class({})
 end
 
+modifier_ebonymaw_nether_shield.m_hLastAbility = nil
+
 function modifier_ebonymaw_nether_shield:IsPurgable()
     return false
 end
@@ -36,10 +38,6 @@ end
 
 function modifier_ebonymaw_nether_shield:GetReflectSpell(keys)
     if self:GetAbility():IsCooldownReady() then 
-        if self.stored ~= nil then
-            self.stored:RemoveSelf() --we make sure to remove previous spell.
-        end
-
         local hCaster = self:GetParent()
 
         EmitSoundOn( "Hero_AbyssalUnderlord.Firestorm.Target", self:GetParent( ))
@@ -47,26 +45,34 @@ function modifier_ebonymaw_nether_shield:GetReflectSpell(keys)
         EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Start", self:GetParent())
         EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Cast", self:GetParent())
 
-        if keys.ability:GetAbilityName() == "loki_spell_steal" then
+        if keys.ability:GetAbilityName() == "loki_spell_steal" or not keys.ability:IsStealable() then
             return nil
         end
 
-        local hAbility = hCaster:AddAbility(keys.ability:GetAbilityName())
+        if self.m_hLastAbility and not self.m_hLastAbility:IsNull() then self.m_hLastAbility:RemoveSelf() end 
 
-        hAbility:SetStolen(true) --just to be safe with some interactions.
-        hAbility:SetHidden(true) --hide the ability.
-        hAbility:SetLevel(keys.ability:GetLevel()) --same level of ability as the origin.
-        hCaster:SetCursorCastTarget(keys.ability:GetCaster()) --lets send this spell back.
-        hAbility:OnSpellStart() --cast the spell.
-        self.stored = hAbility --store the spell reference for future use.
+        pcall(function()
+            self.m_hLastAbility = hCaster:AddAbility(keys.ability:GetAbilityName())
 
-        ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
-        ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
-        
-        Timers:CreateTimer(0.10, function()
-            self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
+            if not self.m_hLastAbility:IsNull() and self.m_hLastAbility then
+                self.m_hLastAbility:SetStolen(true) --just to be safe with some interactions.
+                self.m_hLastAbility:SetHidden(true) --hide the ability.
+                self.m_hLastAbility:SetLevel(keys.ability:GetLevel()) --same level of ability as the origin.
+                
+                hCaster:SetCursorCastTarget(keys.ability:GetCaster()) --lets send this spell back.
+                
+                self.m_hLastAbility:OnSpellStart() --cast the spell.
+    
+                ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
+                ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
+                
+                Timers:CreateTimer(0.10, function()
+                    self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
+                end)
+
+                return 1
+            end
         end)
-        return 1
     end
     return false
 end

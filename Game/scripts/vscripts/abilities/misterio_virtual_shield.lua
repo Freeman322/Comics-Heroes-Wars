@@ -8,8 +8,10 @@ function misterio_virtual_shield:OnSpellStart()
         local hTarget = self:GetCursorTarget()
         if hTarget ~= nil then
             hTarget:AddNewModifier(self:GetCaster(), self, "modifier_misterio_virtual_shield", {
-                duration = self:GetAbility():GetSpecialValueFor("duration")
+                duration = self:GetSpecialValueFor("duration")
             })
+
+            EmitSoundOn("Hero_Rubick.SpellSteal.Complete", self:GetCaster())
         end
     end 
 end
@@ -18,6 +20,7 @@ end
 ---@class modifier_misterio_virtual_shield
 modifier_misterio_virtual_shield = class({})
 
+modifier_misterio_virtual_shield.m_hLastAbility = nil
 
 function modifier_misterio_virtual_shield:IsPurgable() return false end
 function modifier_misterio_virtual_shield:IsHidden() return true end
@@ -26,25 +29,33 @@ function modifier_misterio_virtual_shield:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_ABSORB_SPELL,
         MODIFIER_PROPERTY_REFLECT_SPELL,
-        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_UNIQUE
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
     }
 
     return funcs
 end
 
-function misterio_virtual_shield:GetModifierSpellAmplify_Percentage()
-    return self:GetAbility():GetSpecialValueFor("spell_amplify")
+function modifier_misterio_virtual_shield:GetEffectName()
+	return "particles/misterio/misterio_shield.vpcf"
 end
 
-function misterio_virtual_shield:GetAbsorbSpell(keys)
+function modifier_misterio_virtual_shield:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
+end
+
+function modifier_misterio_virtual_shield:GetModifierSpellAmplify_Percentage()
+    if IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_misterio_5") then
+        return self:GetAbility():GetSpecialValueFor("spell_amp") + IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_misterio_5")
+    end 
+
+    return self:GetAbility():GetSpecialValueFor("spell_amp")
+end
+
+function modifier_misterio_virtual_shield:GetAbsorbSpell(keys)
 	return 1
 end
 
-function misterio_virtual_shield:GetReflectSpell(keys)
-    if self.stored ~= nil then
-        self.stored:RemoveSelf() 
-    end
-
+function modifier_misterio_virtual_shield:GetReflectSpell(keys)
     local hCaster = self:GetParent()
 
     EmitSoundOn( "Hero_AbyssalUnderlord.Firestorm.Target", self:GetParent( ))
@@ -56,18 +67,24 @@ function misterio_virtual_shield:GetReflectSpell(keys)
         return nil
     end
 
-    local hAbility = hCaster:AddAbility(keys.ability:GetAbilityName())
+    if self.m_hLastAbility and not self.m_hLastAbility:IsNull() then self.m_hLastAbility:RemoveSelf() end 
 
-    hAbility:SetStolen(true) 
-    hAbility:SetHidden(true) 
-    hAbility:SetLevel(keys.ability:GetLevel()) 
-    hCaster:SetCursorCastTarget(keys.ability:GetCaster()) 
-    hAbility:OnSpellStart() 
+    pcall(function()
+        self.m_hLastAbility = hCaster:AddAbility(keys.ability:GetAbilityName())
 
-    self.stored = hAbility 
+        if not self.m_hLastAbility:IsNull() and self.m_hLastAbility then
+            self.m_hLastAbility:SetStolen(true) --just to be safe with some interactions.
+            self.m_hLastAbility:SetHidden(true) --hide the ability.
+            self.m_hLastAbility:SetLevel(keys.ability:GetLevel()) --same level of ability as the origin.
+            
+            hCaster:SetCursorCastTarget(keys.ability:GetCaster()) --lets send this spell back.
+            
+            self.m_hLastAbility:OnSpellStart() --cast the spell.
 
-    ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
-    ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
-   
+            ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
+            ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
+        end
+    end)
+
     return 1
 end
