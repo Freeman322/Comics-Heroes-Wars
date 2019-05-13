@@ -248,8 +248,7 @@
 
 
 		"DOTA_TOOLTIP_ABILITY_item_blink_2" "Blink Dagger II"
-		"DOTA_TOOLTIP_ABILITY_item_blink_2_Description" "Телепортирует к указанной точке на расстояние до 1450 единиц."
-		"DOTA_Tooltip_ability_item_blink_2_all"							"Бонус ко всем атрибутам:"
+		"DOTA_TOOLTIP_ABILITY_item_blink_2_Description" "<h1>Активируемая: Blink</h1>Мгновенно перемещает к указанной точке на расстоянии до %blink_range%."
 
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2" 				 "Blade of Darkness"
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_Description"    "<h1>Пассивная: Critical Strike</h1> Каждая атака может с вероятностью в %crit_chance%%% нанести %crit_multiplier%%% урона. \n<h1>Пассивная: Post Attack Damage</h1> Каждая атака наносит любому врагу дополнительный чистый урон в размере %bonus_damage_post_attack%."
@@ -905,16 +904,13 @@
 
 		///drax
 
-		"DOTA_Tooltip_ability_draks_flesh_heap"							"Flesh Heap"
-		"DOTA_Tooltip_ability_draks_flesh_heap_Description"				"За каждого убитого врага Дракс получает прибавку к силе."
-		"DOTA_Tooltip_ability_draks_flesh_heap_strength_buff_amount"	"СИЛЫ ЗА СТАК:"
-		"DOTA_Tooltip_ability_draks_flesh_heap_range"					"РАДИУС: GLOBAL"
-
 		"DOTA_Tooltip_ability_draks_shadow_strike"						"SHADOW STRIKE"
 		"DOTA_Tooltip_ability_draks_shadow_strike_Description"			"Дракс в ярости кидает свой нож во врага, нанося урон и отравляя его. Будет применена текущая способность Posion Touch."
 		"DOTA_Tooltip_ability_draks_shadow_strike_strike_damage"		"УРОН ОТ УДАРА:"
 		"DOTA_Tooltip_ability_draks_shadow_strike_duration_damage"		"УРОН В СЕК.:"
 		"DOTA_Tooltip_ability_draks_shadow_strike_duration"				"ДЛИТЕЛЬНОСТЬ:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_draks_flesh_heap"	"x2 health and regen for FLESH HEAP"
 
 		///rulk
 
@@ -2023,13 +2019,8 @@
 		///шазам
 
 		"DOTA_Tooltip_ability_shazam_shazam"								"SHAZAM!"
-		"DOTA_Tooltip_ability_shazam_shazam_Description"  				    "Шазам трансформируется из своей смертной оболочки в оболочку Истинного Бога, которая дает ему дополнительные силы.\n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_shazam_shazam_Description"  				    "Шазам трансформируется из своей смертной оболочки в оболочку Истинного Бога, которая дает ему дополнительные силы."
 		"DOTA_Tooltip_ability_shazam_shazam_Lore"							"Только слыша это слово, враги впадают в ужас."
-		"DOTA_Tooltip_ability_shazam_shazam_bonus_damage"					"ДОП.УРОН:"
-		"DOTA_Tooltip_ability_shazam_shazam_duration"						"ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_shazam_shazam_base_attack_time"				"ДОП.ЗАДЕРЖКА АТАКИ:"
-		"DOTA_Tooltip_ability_shazam_shazam_all"							"ДОП.АТРИБУТЫ:"
-		"DOTA_Tooltip_ability_shazam_shazam_aghanim_description"			"Делает способность пассивной."
 
 
 		"DOTA_Tooltip_ABILITY_shazam_bolt"							"LIGHTNING BOLT"
@@ -2115,9 +2106,9 @@
 		"DOTA_Tooltip_ABILITY_venom_venomous_gale_tick_damage"					"ПЕРИОДИЧЕСКИЙ УРОН:"
 
 		"DOTA_Tooltip_ability_venom_infest"									"Parasitism"
-		"DOTA_Tooltip_ability_venom_infest_Description"  				    "Веном паразитирует на союзном герое, передавая ему свои атрибуты. Веном освободится только после смерти носителя."
+		"DOTA_Tooltip_ability_venom_infest_Description"  				    "Веном паразитирует на союзном герое, передавая ему свои атрибуты."
 		"DOTA_Tooltip_ability_venom_infest_stats"							"%ПЕРЕДАЕТ АТРИБУТОВ:"
-		"DOTA_Tooltip_ability_venom_infest_aghanim_description"				"Дарует способность Assimilate."
+		"DOTA_Tooltip_ability_venom_infest_aghanim_description"				"Дарует способность Consume"
 
 		"DOTA_Tooltip_ability_venom_out"						"CONSUME"
 		"DOTA_Tooltip_ability_venom_out_Description"  		"Веном покидает своего носителя."
@@ -2528,9 +2519,10 @@
 		"DOTA_Tooltip_ABILITY_ds_doomslash_duration"						"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
 
 		"DOTA_Tooltip_ABILITY_ds_searing_chains"							"Flame chains"
-		"DOTA_Tooltip_ABILITY_ds_searing_chains_Description"  				"Активируемая - Связывает противника горящими цепями, оглушая его и нанося урон. "
-		"DOTA_Tooltip_ABILITY_ds_searing_chains_duration"					"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
-		"DOTA_Tooltip_ABILITY_ds_searing_chains_damage"						"УРОН ОТ ГОРЕНИЯ:"
+		"DOTA_Tooltip_ABILITY_ds_searing_chains_Description"  				"Активируемая - Связывает противника горящими цепями, оцепеняя его и нанося урон. "
+		"DOTA_Tooltip_ABILITY_ds_searing_chains_duration"					"ДЛИТЕЛЬНОСТЬ ОЦЕПЕНЕНИЯ:"
+		"DOTA_Tooltip_ABILITY_ds_searing_total_damage"						"ВСЕГО УРОНА:"
+		"DOTA_Tooltip_ABILITY_ds_searing_duration"							"ДЛИТЕЛЬНОСТЬ:"
 
 		"DOTA_Tooltip_ABILITY_ds_extra_life"								"EXTRA CHANCE"
 		"DOTA_Tooltip_ABILITY_ds_extra_life_Description"  					"Пассивная - Увеличивает скорость атаки Дефстроука, сочетается с модификаторами, увеличивающие скорость атаки в процентах."
@@ -4037,11 +4029,11 @@
 		"DOTA_Tooltip_ability_tracer_overload_attack_count"                               "МАКС.АТАК:"
 		"DOTA_Tooltip_ability_tracer_overload_crit"   									  "%КРИТИЧЕСКИЙ УРОН:"
 
-		"DOTA_Tooltip_ability_tracer_time_lapse"                                          "Time Lapse"
-		"DOTA_Tooltip_ability_tracer_time_lapse_Description"                              "Активируемая: Трейсер возвращается в прошлое на пять секунд назад, восстанавливая кулдауны, уровень здоровья и маны на былой уровень.\n\nУлучшается с Aghanim's Scepter"
+		"DOTA_Tooltip_ability_tracer_time_lapse"                                          "Recall"
+		"DOTA_Tooltip_ability_tracer_time_lapse_Description"                              "Активируемая: Трейсер возвращается на пять секунд в прошлое, восстанавливая уровень здоровья и маны на былой уровень.\n\nУлучшается с Aghanim's Scepter"
 		"DOTA_Tooltip_ability_tracer_time_lapse_time_jump_cooldown_scepter"               "ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:"
 		"DOTA_Tooltip_ability_tracer_time_lapse_manacost_scepter"                         "%МАНАКОСТ СО СКИПЕТРОМ:"
-		"DOTA_Tooltip_ability_tracer_time_lapse_aghanim_description"                      "Уменьшает кулдаун до двух секунд, но увеличивает манакост."
+		"DOTA_Tooltip_ability_tracer_time_lapse_aghanim_description"                      "Уменьшает кулдаун и манакост."
 
 		"DOTA_Tooltip_ability_tracer_blink"                                               "Blink"
 		"DOTA_Tooltip_ability_tracer_blink_Description"                                   "Активируемая: Телепортация на короткую дистанцию, позволяющая Трейсер врываться в схватку и быстро возвращаться назад."
@@ -4210,7 +4202,7 @@
 		"DOTA_Tooltip_modifier_khorn_life_decay_Description"							  "Ослаблен Богом Хаоса"
 
 		"DOTA_Tooltip_ability_item_force_boots"                                           "Force Boots"
-		"DOTA_Tooltip_ability_item_force_boots_Description"                               "<h1>Активируемая: PUSH</h1>Толкает героя на расстояние %push_length% в направлении его взгляда.\nСнимает ограничение скорости передвижения."
+		"DOTA_Tooltip_ability_item_force_boots_Description"                               "<h1>Активируемая: PUSH</h1>Толкает героя на расстояние %push_length% в направлении его взгляда."
 		"DOTA_Tooltip_ability_item_force_boots_bonus_movement_speed"                      "+$move_speed"
 		"DOTA_Tooltip_ability_item_force_boots_bonus_damage"                              "+$damage"
 		"DOTA_Tooltip_ability_item_force_boots_bonus_intellect"                           "+$int"
@@ -4585,7 +4577,7 @@
 		"DOTA_Tooltip_modifier_pudge_dismember_lua_Description"	"Расчленяется Pudge."
 
 		"DOTA_Tooltip_ability_pudge_dismember_lua"							"Dismember"
-		"DOTA_Tooltip_ability_pudge_dismember_lua_Description"				"ПРЕРЫВАЕМАЯ — Butcher начинает заживо пожирать вражеского юнита, обездвиживая его и нанося периодический урон.  Длится 4 секунды.\n\nУлучшается с Aghanim's Scepter"
+		"DOTA_Tooltip_ability_pudge_dismember_lua_Description"				"ПРЕРЫВАЕМАЯ — Butcher начинает заживо пожирать вражеского юнита, обездвиживая его и нанося периодический урон.  Длится %channel_time% секунды."
 		"DOTA_Tooltip_ability_pudge_dismember_lua_Lore"						"«Когда я покончу с этими паразитами, из них получится неплохой пирог!»"
 		"DOTA_Tooltip_ability_pudge_dismember_lua_dismember_damage"			"УРОН В СЕКУНДУ:"
 		"DOTA_Tooltip_ability_pudge_dismember_lua_strength_damage_scepter"	"МНОЖИТЕЛЬ СИЛЫ СО СКИПЕТРОМ:"
@@ -4639,9 +4631,8 @@
 		"DOTA_Tooltip_ability_ursa_warrior_kill_state_transformation_time"                "TRANSFORMATION TIME:"
 
 		"DOTA_Tooltip_ability_medivh_ancient_force"                                       "Ancient Force"
-		"DOTA_Tooltip_ability_medivh_ancient_force_Description"                           "Аура: У союзных героев увеличивает урон от способностей на %spell_amp%%. У крипов в радиусе 900 увеличивает броню и скорость атаки."
+		"DOTA_Tooltip_ability_medivh_ancient_force_Description"                           "Аура: У союзных героев увеличивает урон от способностей на %spell_amp%%. У крипов в радиусе %creep_radius% увеличивает броню и скорость атаки."
 		"DOTA_Tooltip_ability_medivh_ancient_force_spell_amp"                             "%УРОН СПОСОБНОСТЕЙ:"
-		"DOTA_Tooltip_ability_medivh_ancient_force_creep_radius"                          "РАДИУС ДЛЯ КРИПОВ:"
 		"DOTA_Tooltip_ability_medivh_ancient_force_creep_armor"                           "БРОНЯ КРИПОВ:"
 		"DOTA_Tooltip_ability_medivh_ancient_force_creep_attack_speed"                    "CКОРОСТЬ АТАКИ КРИПОВ:"
 
@@ -4811,7 +4802,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_sargeras"                         	"+80 к урону от Magmatic Armor"
 		"DOTA_Tooltip_ability_special_bonus_unique_ragnaros"                         	"+320 к урону от Shine Soul"
 		"DOTA_Tooltip_ability_special_bonus_unique_quicksilver"                         "+50% к урону от расстояния для Relatity Shift"
-		"DOTA_Tooltip_ability_special_bonus_unique_overvoid"                         	"+0.7 к длительности Infinite"
+		"DOTA_Tooltip_ability_special_bonus_unique_overvoid"                         	"+1.5 к длительности Infinite"
 		"DOTA_Tooltip_ability_special_bonus_unique_outsider"                         	"+0.5 к урону от здоровья для Mark"
 		"DOTA_Tooltip_ability_special_bonus_unique_saitama"                         	"Перезарядка Relativistic Punch 70 секунд"
 		"DOTA_Tooltip_ability_special_bonus_unique_odin"                         	    "+18% к передаче атрибутов для God's Mark"

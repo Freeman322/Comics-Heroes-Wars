@@ -1928,16 +1928,25 @@
 
 
 		"DOTA_Tooltip_ability_ralk_primal_roar"	"PRIMAL ROAR"
-		"DOTA_Tooltip_ability_ralk_primal_roar_Description"	"Thaddeus yells at his enemy, stunning him and dealing damage. After a delay of 0.5 seconds, Rulk blinks behind the target."
+		"DOTA_Tooltip_ability_ralk_primal_roar_Description"	"Thaddeus yells at his enemy, stunning him and dealing damage. After a delay of 0.5 seconds, Rulk blinks behind the target.\n\nUpgradable by Aghanim's Scepter."
 		"DOTA_Tooltip_ability_ralk_primal_roar_damage"	"DAMAGE:"
 		"DOTA_Tooltip_ability_ralk_primal_roar_duration"	"STUN DURATION:"
 		"DOTA_Tooltip_ability_ralk_primal_roar_cast_range"	"CAST RANGE:"
+		"DOTA_Tooltip_ability_ralk_primal_roar_aghanim_description"	"Reduces cooldown and increases cast range."
+		"DOTA_Tooltip_ability_ralk_primal_roar_cast_range_scepter"  "CAST RANGE WITH SCEPTER:"
+		"DOTA_Tooltip_ability_ralk_primal_roar_cooldown_scepter"    "COOLDOWN WITH SCEPTER:"
 
 		"DOTA_Tooltip_ability_rulk_scorched_earth"	"BURNING GROUND"
 		"DOTA_Tooltip_ability_rulk_scorched_earth_Description"	"Covers the nearby earth in flames which damages enemies, while also granting him increased movement speed."
 		"DOTA_Tooltip_ability_rulk_scorched_earth_damage_per_second"	"DAMAGE:"
 		"DOTA_Tooltip_ability_rulk_scorched_earth_radius"	"RADIUS:"
 		"DOTA_Tooltip_ability_rulk_scorched_earth_duration"	"Duration:"
+		
+		"DOTA_Tooltip_ability_rulk_thermal_radiation"	"Thermal Radiation"
+		"DOTA_Tooltip_ability_rulk_thermal_radiation_Description"	"Flames emanating from Rulk burn all enemies within a radius of %radius%, upon receiving damage, it is increased by %damage_per_stack% damage for %stack_duration% seconds."
+		"DOTA_Tooltip_ability_rulk_thermal_radiation_base_damage"	"DAMAGE PER SEC:"
+		
+		"DOTA_Tooltip_modifier_rulk_thermal_radiation_stacks" "Every stack increase damage"
 
 		"DOTA_Tooltip_ability_rulk_charge_of_darkness"	"PROMISED RAGE"
 		"DOTA_Tooltip_ability_rulk_charge_of_darkness_Description"	"Rulk fixes his sight on an enemy unit and starts charging through all objects."
@@ -2227,6 +2236,8 @@
 		"DOTA_Tooltip_ability_pudge_dismember_lua_Note0"									"Dismember will disable Spell Immune units, but not damage them."
 		"DOTA_Tooltip_ability_pudge_dismember_lua_Note1"									"If a unit becomes invisible while Dismembered, it will still be under the effects of Dismember."
 		"DOTA_Tooltip_ability_pudge_dismember_lua_dismember_damage"							"DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_pudge_dismember_lua_health_damage"							"%CURRENT PUDGE HEALTH TO DAMAGE:"
+		"DOTA_Tooltip_ability_pudge_dismember_lua_channel_time"				"DURATION:"
 		"DOTA_Tooltip_ability_pudge_dismember_lua_stats_damage"	"%ATTRIBUTES TO DAMAGE:"
 		"DOTA_Tooltip_ability_pudge_dismember_lua_cooldown_scepter"	"SCEPTER COOLDOWN:"
 		"DOTA_Tooltip_ability_pudge_dismember_lua_stats_damage_scepter"	"%ATTRIBUTES TO DAMAGE SCEPTER:"
@@ -3176,13 +3187,8 @@
 		///шазам
 
 		"DOTA_Tooltip_ability_shazam_shazam"									"SHAZAM!"
-		"DOTA_Tooltip_ability_shazam_shazam_Description"  				    "Shazam is transformed from its mortal shell in the shell of the True God, who gives him extra strength.\n\nUpgradable by Aghanim's Scepter."
+		"DOTA_Tooltip_ability_shazam_shazam_Description"  				    "Shazam is transformed from its mortal shell in the shell of the True God, who gives him extra strength."
 		"DOTA_Tooltip_ability_shazam_shazam_Lore"								"Just hearing the word, enemies fall into the horror."
-		"DOTA_Tooltip_ability_shazam_shazam_bonus_damage"							"BONUS DAMAGE:"
-		"DOTA_Tooltip_ability_shazam_shazam_duration"							"DURATION:"
-		"DOTA_Tooltip_ability_shazam_shazam_base_attack_time"						"ATTACK DELAY:"
-		"DOTA_Tooltip_ability_shazam_shazam_all"							"BONUS STATS:"
-		"DOTA_Tooltip_ability_shazam_shazam_aghanim_description"			"Does the ability passive."
 
 		"DOTA_Tooltip_ABILITY_shazam_bolt"							"LIGHTNING BOLT"
 		"DOTA_Tooltip_ABILITY_shazam_bolt_Description"				"Shazam invokes the power of Zeus, and deals a blow to the enemy chain lightning."
@@ -3253,13 +3259,13 @@
 		"DOTA_Tooltip_ability_venom_infest"									"PARASITISM"
 		"DOTA_Tooltip_ability_venom_infest_Description"  				    "Venom parasites an allied hero, giving it his own attributes."
 		"DOTA_Tooltip_ability_venom_infest_stats"							"%STATS TRANSFER:"
-		"DOTA_Tooltip_ability_venom_infest_aghanim_description"				"Grants ability Assimilate."
+		"DOTA_Tooltip_ability_venom_infest_aghanim_description"				"Grants ability Consume."
 
 		"DOTA_Tooltip_ability_venom_out"						"CONSUME"
-		"DOTA_Tooltip_ability_venom_out_Description"  		"Venom leaves his victim."
+		"DOTA_Tooltip_ability_venom_out_Description"  			"Venom leaves his victim."
 
-		"DOTA_Tooltip_modifier_infest_buff"                  					   "PARASITISM"
-		"DOTA_Tooltip_modifier_infest_buff_Description"                 		    "You undo venom."
+		"DOTA_Tooltip_modifier_venom_infest_buff"                  					   "PARASITISM"
+		"DOTA_Tooltip_modifier_venom_infest_buff_Description"                 		    "WE ARE VENOM"
 		///ronan
 		"DOTA_Tooltip_ability_ronan_strike_of_ethernity"									"STRIKE OF ETERNITY"
 		"DOTA_Tooltip_ability_ronan_strike_of_ethernity_Description"  				 	    "Ronan, summons the power of the Universal Weapon and deals a devastating blow to the enemy. The damage from this ability can not be blocked. Damage depends on all Ronans attributes. If the enemy has less than 15% health, the enemy will die, and the ability will not go on cooldown."
@@ -5173,15 +5179,24 @@
 		"DOTA_Tooltip_ability_tracer_overload_attack_count"                               "ATTACK COUNT:"
 		"DOTA_Tooltip_ability_tracer_overload_crit"   									  "%CRITICAL DAMAGE:"
 
-		"DOTA_Tooltip_ability_tracer_time_lapse"                                          "Time Lapse"
+		"DOTA_Tooltip_ability_tracer_time_lapse"                                          "Recall"
 		"DOTA_Tooltip_ability_tracer_time_lapse_Description"                              "Activated: Tracer warps backward to whatever position she was in five seconds earlier regaining the HP and mana from that time. \n\nUpgradable by Aghanim's Scepter"
 		"DOTA_Tooltip_ability_tracer_time_lapse_time_jump_cooldown_scepter"               "COOLDOWN SCEPTER:"
 		"DOTA_Tooltip_ability_tracer_time_lapse_manacost_scepter"                         "%MANACOST SCEPTER:"
-		"DOTA_Tooltip_ability_tracer_time_lapse_aghanim_description"                      "Reduces cooldown of up to two seconds, but increases the mana cost."
+		"DOTA_Tooltip_ability_tracer_time_lapse_aghanim_description"                      "Reduces cooldown and mana cost."
+		
+		"DOTA_Tooltip_ability_tracer_pulse_bomb"										  "Pulse Bomb"
+		"DOTA_Tooltip_ability_tracer_pulse_bomb_Description"							  "Tracer throws a bomb exploding after %explosion_delay% seconds. When sticking to the enemy deals 50% more damage to the main target.\n <font color=\"#00ffff\">Ability is charged by hitting heroes. </font>" //creeps and heroes.</font>"
+		"DOTA_Tooltip_ability_tracer_pulse_bomb_damage_per_level"						  "DAMAGE PER TRACER LEVEL:"
+		"DOTA_Tooltip_ability_tracer_pulse_bomb_explosion_radius"						  "EXPLOSION RADIUS:"
+		"DOTA_Tooltip_ability_tracer_pulse_bomb_bind_radius"							  "STICKING RADIUS:"
+		"DOTA_Tooltip_modifier_tracer_pulse_bomb"										  "Ability charge percentage"
 
 		"DOTA_Tooltip_ability_tracer_blink"                                               "Blink"
 		"DOTA_Tooltip_ability_tracer_blink_Description"                                   "Activated: Teleports a short distance."
-		"DOTA_Tooltip_ability_tracer_blink_blink_range"                                   "BLINK RANGE:"
+		"DOTA_Tooltip_ability_tracer_blink_max_charges"									  "MAX CHARGES:"
+		"DOTA_Tooltip_ability_tracer_blink_recharge_time"								  "RECHARGE TIME:"
+		"DOTA_Tooltip_ability_tracer_blink_cast_range"                                   "BLINK RANGE:"
 
 		"DOTA_Tooltip_modifier_tracer_overload" 										  "Overload"
 
@@ -5365,7 +5380,7 @@
 		"DOTA_Tooltip_modifier_khorn_life_decay_Description"							  "Cursed by the Chaos God"
 
 		"DOTA_Tooltip_ability_item_force_boots"                                           "Force Boots"
-		"DOTA_Tooltip_ability_item_force_boots_Description"                               "<h1>Activated: PUSH</h1>Pushes a hero to a distance of %push_length% in the direction of his gaze.\nRemoves movement speed limit."
+		"DOTA_Tooltip_ability_item_force_boots_Description"                               "<h1>Activated: PUSH</h1>Pushes a hero to a distance of %push_length% in the direction of his gaze."
 		"DOTA_Tooltip_ability_item_force_boots_bonus_movement_speed"                      "+$move_speed"
 		"DOTA_Tooltip_ability_item_force_boots_bonus_damage"                              "+$damage"
 		"DOTA_Tooltip_ability_item_force_boots_bonus_intellect"                           "+$int"
@@ -5737,11 +5752,12 @@
 		"DOTA_Tooltip_modifier_silencer_int_steal_Description"							"Hero will permanently steal 2 Intelligence from any enemy hero he kills, and any enemy hero that dies within 925 range."
 
 		"DOTA_Tooltip_ability_medivh_ancient_force"                                       "Ancient Force"
-		"DOTA_Tooltip_ability_medivh_ancient_force_Description"                           "Aura: All Allied heroes get an increase to spell damage by %spell_amp%%. Creeps get, within a radius of 900, increased armor and attack speed."
+		"DOTA_Tooltip_ability_medivh_ancient_force_Description"                           "Aura: All Allied heroes get an increase to spell damage by %spell_amp%%. Creeps get, within a radius of %creep_radius%, increased armor and attack speed."
 		"DOTA_Tooltip_ability_medivh_ancient_force_spell_amp"                             "%SPELL AMPLIFY:"
-		"DOTA_Tooltip_ability_medivh_ancient_force_creep_radius"                          "CREEP RADIUS:"
 		"DOTA_Tooltip_ability_medivh_ancient_force_creep_armor"                           "CREEP BONUS ARMOR:"
 		"DOTA_Tooltip_ability_medivh_ancient_force_creep_attack_speed"                    "CREEP BONUS ATTACK SPEED:"
+		
+		"DOTA_Tooltip_modifier_charges"	"Charge of ability"
 
 		"DOTA_Tooltip_ability_tanos_dragon_blood_bonus_health_regen_per_min_scepter"              "BONUS HEALTH REGEN PER MIN:"
 
@@ -5919,7 +5935,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_sargeras_1"							"Allow Magmatic Armor to fold multiple times."
 		"DOTA_Tooltip_ability_special_bonus_unique_ragnaros"                         	"+320 Shine Soul damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_quicksilver"                         "+50% Relatity Shift damage" 
-		"DOTA_Tooltip_ability_special_bonus_unique_overvoid"                         	"+0.7 Infinite duration"
+		"DOTA_Tooltip_ability_special_bonus_unique_overvoid"                         	"+1.5 Infinite duration"
 		"DOTA_Tooltip_ability_special_bonus_unique_outsider"                         	"+0.5% Mark damage / second"
 		"DOTA_Tooltip_ability_special_bonus_unique_saitama"                         	"Relativistic Punch cooldown 70 seconds"
 		"DOTA_Tooltip_ability_special_bonus_unique_odin"                         	    "+18% bonus attributes for God's Mark"
@@ -6264,7 +6280,7 @@
 		"DOTA_Tooltip_ability_item_ethernal_blink_blink_damage_cooldown"                  "DAMAGE COOLDOWN:"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_jaina"                                 "+1000 to shield absorb"
-		"DOTA_Tooltip_ability_special_bonus_unique_iron_man"                              "+0.4 sec stun for THERMAL MISSLES"
+		"DOTA_Tooltip_ability_special_bonus_unique_iron_man"                              "+0.2 sec stun for THERMAL MISSLES"
 		"DOTA_Tooltip_modifier_dismember"                                                 "Dismember"
 
 		"DOTA_Tooltip_ability_falash_void_backtrack"                                    "Backtrack"
@@ -7554,7 +7570,7 @@
 		
 		"DOTA_Tooltip_modifier_item_anti_life_equation_active"                            "Muted"
 		"DOTA_Tooltip_ability_special_bonus_cast_range_400"								  "+2000 cast range"
-		"DOTA_Tooltip_ability_special_bonus_unique_ursa_warrior_3"						  "-0.2 Attack Point Animation"
+		"DOTA_Tooltip_ability_special_bonus_unique_ursa_warrior_3"						  "-0.2 BAT for Berserkers blood"
 		"DOTA_Tooltip_ability_special_bonus_unique_ursa_warrior_2"						  "-8% incoming damage for Will"
 		"DOTA_Tooltip_ability_special_bonus_unique_ursa_warrior"					 	  "+2 second duration for Inner Beat"
 		"DOTA_Tooltip_ability_special_bonus_unique_ursa_warrior_1"						  "+20% damage reduction for Inner Beat"
@@ -8707,9 +8723,9 @@
 		"DOTA_Tooltip_ability_palpatine_refraction_bonus_outgoing_damage"                 "%BONUS OUTGOING DAMAGE:"
 		"DOTA_Tooltip_ability_palpatine_refraction_duration"                              "DURATION:"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_palpatine_1"                           "+150 Chain Lightning damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_palpatine_1"                           "+130 Chain Lightning damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_palpatine_2"                           "+15 Chain Lightning jumps"
-		"DOTA_Tooltip_ability_special_bonus_unique_palpatine_3"                           "+1.75% Dark Aura damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_palpatine_3"                           "+4% Dark Aura damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_palpatine_4"                           "+2.5 Dark Aura duration"
 		"DOTA_Tooltip_ability_special_bonus_unique_palpatine_5"                           "+12 Refraction Instances"
 
@@ -10779,70 +10795,190 @@
 		"npc_dota_hero_jetstream_sam"											  "Jetstream Sam"
 		"npc_dota_hero_jetstream_sam_lore"										  ""
 		"npc_dota_hero_jetstream_sam_hype"									       "Sam was once greatly driven by revenge, this was what fueled him to hone his skills and become an expert swordsman. He would go on to develop a free-wheeling personality, taking out street gangs and drug cartels based on his own sense of justice."
+		
+	
+		"npc_dota_hero_misterio"											 	 "Misterio"
+		"npc_dota_hero_misterio_lore"										 	 ""
+		"npc_dota_hero_misterio_hype"									      	 "Quentin Beck does not possess superhuman abilities but he is an expert designer of special effects devices and stage illusions, a master hypnotist and magician and an amateur chemist and roboticist. He has extensive knowledge of hand-to-hand combat techniques learned as a stuntman, allowing him to engage in combat with Spider-Man despite his foe's superior physical abilities and using his skills at misdirection as a further method of self-defense."
+		
+		"npc_dota_hero_shazam"												"Shazam!"
+		"npc_dota_hero_shazam_lore"											""
+		"npc_dota_hero_shazam_hype"											"Captain Marvel/Shazam is not completely invulnerable. In several stories, he is shown to be susceptible to high-powered magic, which can weaken or de-power him, and, in some older stories, to significantly high voltages of lightning or electricity, which would make him revert to Billy Batson form. Despite possessing the courage of Achilles, the Fawcett Captain Marvel (though not Billy Batson) was extremely bashful and shy around attractive women, a weakness some villains came to exploit. Most depictions following the Crisis on Infinite Earths also show his childlike innocence and immaturity to be a significant weakness."
 
-		"DOTA_Tooltip_ability_sam_blade_dance"                                            "Blade Dance"
-		"DOTA_Tooltip_ability_sam_blade_dance_Description"                                "Gives Sam a chance to deal critical damage on each attack."
-		"DOTA_Tooltip_ability_sam_blade_dance_blade_dance_crit_chance"                    "%CRIT CHANCE:"
-		"DOTA_Tooltip_ability_sam_blade_dance_blade_dance_crit_mult"                      "%CRITICAL DAMAGE:"
+		"DOTA_Tooltip_ability_sam_charged_strike"                                            "Charged Strike"
+		"DOTA_Tooltip_ability_sam_charged_strike_Description"                                "After a short delay, sam sends a wave of his sword’s energy, causing %attack_count% strokes, as well as %damage% damage.\n <font color=\"#f80000\">Improved in BladeMode.</font>"
+		"DOTA_Tooltip_ability_sam_charged_strike_damage"                   			 "DAMAGE:"
+		"DOTA_Tooltip_ability_sam_charged_strike_attack_count"                       "ATTACK COUNT:"
+		"DOTA_Tooltip_ability_sam_charged_strike_stun_duration"						 "STUN DURATION:"
+		"DOTA_Tooltip_ability_sam_charged_strike_Note0"									"In BladeMode caused attack can proc modifier."
+		"DOTA_Tooltip_ability_sam_charged_strike_Note1"								"At level 4 ability, there is no delay."
+		"DOTA_Tooltip_ability_special_bonus_unique_sam_charged_strike_bonus_attack"	"+2 attack count for Charged Strike"
 
-		"DOTA_Tooltip_ability_sam_blade_fury"                                             "Blade Fury"
-		"DOTA_Tooltip_ability_sam_blade_fury_Description"                                 "Causes a bladestorm of destructive force around Sam, rendering him immune to magic and dealing damage to nearby enemy units."
-		"DOTA_Tooltip_ability_sam_blade_fury_blade_fury_radius"                           "RADIUS:"
-		"DOTA_Tooltip_ability_sam_blade_fury_blade_fury_damage"                           "DAMAGE:"
-		"DOTA_Tooltip_ability_sam_blade_fury_duration"                                    "DURATION:"
+		"DOTA_Tooltip_ability_sam_dash"                                             "Dash"
+		"DOTA_Tooltip_ability_sam_dash_Description"                                 "Sam makes a dash allowing you to dodge an attack or catch up with the enemy."
+		"DOTA_Tooltip_ability_sam_dash_dash_distance"                           	"DASH DISTANCE:"
+		"DOta_tooltip_ability_special_bonus_unique_sam_dash_projectile"				"Allow Dash dodge projectiles"
 
-		"DOTA_Tooltip_ability_sam_omnislash"                                              "Omnislash"
-		"DOTA_Tooltip_ability_sam_omnislash_Description"                                  "Sam leaps towards the target enemy unit with an attack, and then slashes other nearby enemy units at an increased attack rate. Sam is invulnerable for the duration."
-		"DOTA_Tooltip_ability_sam_omnislash_attack_rate_multiplier"                       "ATTACK RATE MULTIPLIER:"
-		"DOTA_Tooltip_ability_sam_omnislash_bonus_damage"                                 "BONUS DAMAGE:"
-		"DOTA_Tooltip_ability_sam_omnislash_duration"                                     "DURATION:"
-		"DOTA_Tooltip_ability_sam_omnislash_omni_slash_radius"                            "RADIUS:"
-		"DOTA_Tooltip_ability_sam_omnislash_duration_scepter"                             "DURATION SCEPTER:"
-		"DOTA_Tooltip_ability_sam_omnislash_cooldown_scepter"                             "COOLDOWN SCEPTER:"
-		"DOTA_Tooltip_ability_sam_omnislash_aghanim_description"					  "Increases duration and decreases cooldown."
+		"DOTA_Tooltip_ability_sam_murasama"                                              "Murasama"
+		"DOTA_Tooltip_ability_sam_murasama_Description"                                  "Murasama Sam allows him to ignore part of the enemy's armor."
+		"DOTA_Tooltip_ability_sam_murasama_armor_ignor_pct"								"%ARMOR IGNORE:"
+		"DOTA_Tooltip_ability_special_bonus_unique_sam_murasama_bonus_ignor"			"+20% armor ignore for Murasama"
 
-		"DOTA_Tooltip_ability_sam_sneaky"                                                 "Sneaky"
-		"DOTA_Tooltip_ability_sam_sneaky_Description"                                     "Sam becomes invisible and gains the ability to move through other units until he attacks or uses an ability. If he breaks the invisibility with an attack, that attack will slow the target's movement speed."
-		"DOTA_Tooltip_ability_sam_sneaky_duration"                                        "DURATION:"
-		"DOTA_Tooltip_ability_sam_sneaky_fade_time"                                       "FADE:"
 
-		"DOTA_Tooltip_ability_sam_elecrtic_blow"                                          "Elecrtic Blow"
-		"DOTA_Tooltip_ability_sam_elecrtic_blow_Description"                              "Sam can strike his own special blow and hit all nearby enemies near the target."
-		"DOTA_Tooltip_ability_sam_elecrtic_blow_splash_radius"                            "CLEAVE RADIUS:"
-		"DOTA_Tooltip_ability_sam_elecrtic_blow_splash_dmg_ptc"                           "%CLEAVE DAMAGE:"
-		"DOTA_Tooltip_ability_sam_elecrtic_blow_bonus_damage"                             "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_sam_zandatsu"                                               "Zandatsu"
+		"DOTA_Tooltip_ability_sam_zandatsu_Description"                                   "By killing a creep or hero, Sam recovers mana and health from their maximum value."
+		"DOTA_Tooltip_ability_sam_zandatsu_hero_heal"									  "%HERO RESTORE:"
+		"DOTA_Tooltip_ability_sam_zandatsu_creep_heal"									  "%CREEP RESTORE:"
+
+		"DOTA_Tooltip_ability_sam_blademode"                                          "BladeMode"
+		"DOTA_Tooltip_ability_sam_blademode_Description"                              "When activated, Sam goes into BladeMode, in this mode, he increases the speed of movement and attack, and he also causes pure damage when attacking. Creates aura in radius %debuff_radius% whose slows enemies.\nUpgradable by Aghanim's Scepter."
+		"DOTA_Tooltip_ability_sam_blademode_aghanim_description"					  "Increase duration and reduces cooldown."
+		"DOTA_Tooltip_ability_sam_blademode_duration"                            	  "DURATION:"
+		"DOTA_Tooltip_ability_sam_blademode_duration_scepter"                         "DURATION SCEPTER:"
+		"DOTA_Tooltip_ability_sam_blademode_cooldown_scepter"                         "COOLDOWN SCEPTER:"
+		"DOTA_Tooltip_ability_sam_blademode_turn_rate_slow_pct"                       "%TURN RATE SLOW:"
+		"DOTA_Tooltip_ability_sam_blademode_movespeed_slow_pct"                       "%MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_sam_blademode_movespeed"                         		  "SAM MOVESPEED:"
+		"DOTA_Tooltip_ability_sam_blademode_bonus_proc_damage"                         "BONUS PURE DAMAGE:"
+		"DOTA_Tooltip_ability_sam_blademode_attack_speed_bonus"                         "ATTACK SPEED BONUS:"
+		"DOTA_Tooltip_ability_special_bonus_unique_sam_blademode_bonus_proc_damage"		"+125 damage for BladeMode"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_batman_3"                              "60 sec cooldown for Midas"
 
 		"npc_dota_hero_raiden"												  "Raiden"
 		"npc_dota_hero_raiden_hype" 											  "Raiden is the eternal God of Thunder, protector of Earthrealm, and arguably one of the most powerful characters in all of Mortal Kombat. After the second defeat of Shinnok, he ascended to the status of Elder God. Being a god, he possesses many supernatural abilities, such as the ability to teleport, control lightning and fly. As a god, he is used to thinking in terms of eternity rather than normal human lifespans, and so he has a radically different outlook on life. This is not to say he is incapable of understanding human values and psyches."
-
+    
 		"DOTA_Tooltip_ability_raiden_elecro_mine"                                         "Static Charged Area"
-		"DOTA_Tooltip_ability_raiden_elecro_mine_Description"                             "Creates an area with a static charge, which, after a small delay, is discharged when an enemy unit appears in it and deals damage. Additional damage based on current enemy manapool"
+		"DOTA_Tooltip_ability_raiden_elecro_mine_Description"                             "Creates an area with a static charge, which, after a small delay, is discharged when an enemy unit appears in it and deals damage. Additional damage based on current enemy manapool. \n\nUpgradable by Aghanim's Scepter."
 		"DOTA_Tooltip_ability_raiden_elecro_mine_mine_duration"                           "DURATION:"
 		"DOTA_Tooltip_ability_raiden_elecro_mine_mine_deleay_interval"                    "DELEAY:"
 		"DOTA_Tooltip_ability_raiden_elecro_mine_mine_radius"                             "RADIUS:"
 		"DOTA_Tooltip_ability_raiden_elecro_mine_mine_damage_mana_ptc"                    "%ENEMY'S MANA DAMAGE:"
-
+		"DOTA_Tooltip_ability_raiden_elecro_mine_aghanim_description"               	 "Makes cast range infinite."
+    
 		"DOTA_Tooltip_ability_raiden_electro_field"                                       "Static Field"
 		"DOTA_Tooltip_ability_raiden_electro_field_Description"                           "An aura of static electricity constantly deals damage to all enemies in a radius."
 		"DOTA_Tooltip_ability_raiden_electro_field_radius"                                "RADIUS:"
-
+    
 		"DOTA_Tooltip_ability_raiden_lightning_transfer"                                  "Lightning Transfer"
 		"DOTA_Tooltip_ability_raiden_lightning_transfer_Description"                      "Raiden transferred to the specified point, causing damage to all enemies upon arrival within a radius."
 		"DOTA_Tooltip_ability_raiden_lightning_transfer_blink_range"                      "BLINK RANGE:"
 		"DOTA_Tooltip_ability_raiden_lightning_transfer_damage"                           "DAMAGE:"
-
+    
 		"DOTA_Tooltip_ability_raiden_storm_flight"                                        "Storm Flight"
 		"DOTA_Tooltip_ability_raiden_storm_flight_Description"                            "Raiden aims at a certain unit, and if there is enough mana, he rushes to him with great speed, stunning and causing damage upon arrival."
 		"DOTA_Tooltip_ability_raiden_storm_flight_speed"                                  "SPEED:"
 		"DOTA_Tooltip_ability_raiden_storm_flight_stun_duration"                          "STUN DURATION:"
 		"DOTA_Tooltip_ability_raiden_storm_flight_mana_per_distance"                      "MANA PER DISTANCE UNIT:"
 		"DOTA_Tooltip_ability_raiden_storm_flight_radius"                                 "EXPLOSION RADIUS:"
-
+    
 		"DOTA_Tooltip_ability_raiden_fatality"                                            "Fatality"
 		"DOTA_Tooltip_ability_raiden_fatality_Description"                                "Raiden inflicts swift attacks on the enemy, completely stunning the enemy."
 		"DOTA_Tooltip_ability_raiden_fatality_channel_time"                               "CHANNEL TIME:"
 		"DOTA_Tooltip_ability_raiden_fatality_strike_per_sec"                             "STRIKES PER SEC:"
+    
+		"DOTA_Tooltip_ability_special_bonus_unique_raiden_1"                              "+50 damage per second for Static Field"
+		"DOTA_Tooltip_ability_special_bonus_unique_raiden_2"                              "+1125 damage for Static Charged Area"
+
+		
+		"npc_dota_hero_misterio"											 	 "Misterio"
+		"npc_dota_hero_misterio_lore"										 	 ""
+		"npc_dota_hero_misterio_hype"									      	 "Quentin Beck does not possess superhuman abilities but he is an expert designer of special effects devices and stage illusions, a master hypnotist and magician and an amateur chemist and roboticist. He has extensive knowledge of hand-to-hand combat techniques learned as a stuntman, allowing him to engage in combat with Spider-Man despite his foe's superior physical abilities and using his skills at misdirection as a further method of self-defense."
+		
+		"npc_dota_hero_shazam"												"Shazam!"
+		"npc_dota_hero_shazam_lore"											""
+		"npc_dota_hero_shazam_hype"											"Captain Marvel/Shazam is not completely invulnerable. In several stories, he is shown to be susceptible to high-powered magic, which can weaken or de-power him, and, in some older stories, to significantly high voltages of lightning or electricity, which would make him revert to Billy Batson form. Despite possessing the courage of Achilles, the Fawcett Captain Marvel (though not Billy Batson) was extremely bashful and shy around attractive women, a weakness some villains came to exploit. Most depictions following the Crisis on Infinite Earths also show his childlike innocence and immaturity to be a significant weakness."
+
+
+		"DOTA_Tooltip_ability_misterio_mirror_remnant"                                    "Mirror Remnant"
+		"DOTA_Tooltip_ability_misterio_mirror_remnant_Description"                        "Misterio creates next to him a ghost that rushes in an arbitrary direction, when Misterio himself becomes invisible and hidden from the eyes of the enemy. When kill a copy the enemy will being caused damage proportional to the maximum health of the Misterio."
+		"DOTA_Tooltip_ability_misterio_mirror_remnant_damage_ptc"                         "%DAMAGE:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_misterio_1"                            "+10% damage for Mirror Remnant"
+
+		"DOTA_Tooltip_ability_misterio_mystic_arena"                                      "Mystic Arena"
+		"DOTA_Tooltip_ability_misterio_mystic_arena_Description"                          "Misterio creates a magic dome, which does not allow trapped enemies inside to leave it, greatly increasing the incoming magic damage with any bastard. Enemies inside cannot inflict physical damage."
+		"DOTA_Tooltip_ability_misterio_mystic_arena_radius"                               "RADIUS:"
+		"DOTA_Tooltip_ability_misterio_mystic_arena_duration"                             "DURATION:"
+		"DOTA_Tooltip_ability_misterio_mystic_arena_damage_per_second"                    "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_misterio_mystic_arena_damage_increase"                      "%DAMAGE INCREASE:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_misterio_2"                            "+100 radius for Mystic Arena"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_misterio_3"                            "Enemies inside of Mystic Arena can be attacked"
+
+		"DOTA_Tooltip_ability_misterio_telekinetic_force"                                 "Telekinetic Force"
+		"DOTA_Tooltip_ability_misterio_telekinetic_force_Description"                     "Misterio raises all enemies in the area next to him and throws them at the chosen target."
+		"DOTA_Tooltip_ability_misterio_telekinetic_force_duration"                        "DURATION:"
+		"DOTA_Tooltip_ability_misterio_telekinetic_force_radius"                          "RADIUS:"
+		"DOTA_Tooltip_ability_misterio_telekinetic_force_bonus_damage"                    "BONUS DAMAGE PER UNIT:"
+		"DOTA_Tooltip_ability_misterio_telekinetic_force_stun"                            "STUN DURATION:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_misterio_4"                            "+150 damage per unit for Telekinetic Force"
+
+		"DOTA_Tooltip_ability_misterio_virtual_shield"                                    "Virtual Shield"
+		"DOTA_Tooltip_ability_misterio_virtual_shield_Description"                        "Creates a magic shield around the target, granting invulnerability to directional spells and increasing magic damage."
+		"DOTA_Tooltip_ability_misterio_virtual_shield_duration"                           "DURATION:"
+		"DOTA_Tooltip_ability_misterio_virtual_shield_spell_amp"                          "%SPELL AMP:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_misterio_5"                            "+10 spell amplify for Virtual Shield"
+
+		"DOTA_Tooltip_ability_shazam_shazam_fade_time"                                    "FADE TIME:"
+		"DOTA_Tooltip_ability_shazam_shazam_health"                                       "HEALTH:"
+		"DOTA_Tooltip_ability_shazam_shazam_armor"                                        "ARMOR:"
+		"DOTA_Tooltip_ability_shazam_shazam_magical_resistance"                           "%MAGICAL RESISTANCE:"
+		"DOTA_Tooltip_ability_shazam_shazam_spell_damage"                                 "%SPELL DAMAGE:"
+		"DOTA_Tooltip_ability_shazam_shazam_damage"                                       "DAMAGE:"
+		"DOTA_Tooltip_ability_shazam_shazam_fixed_attack_speed"                           "FIXED ATTACK SPEED:"
+		"DOTA_Tooltip_ability_shazam_shazam_move_speed"                                   "MOVE SPEED:"
+		"DOTA_Tooltip_ability_shazam_shazam_max_duration"                                 "MAX DURATION:"
+
+		"DOTA_Tooltip_ability_shazam_all_gods_powers"                                     "Gods Powers"
+		"DOTA_Tooltip_ability_shazam_all_gods_powers_Description"                         "Envelops the allies with the energy of the Old Gods, granting additional strength and damage."
+		"DOTA_Tooltip_ability_shazam_all_gods_powers_bonus_damage_ptc"                    "%BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_shazam_all_gods_powers_bonus_attack_speed"                  "%BONUS ATTACK SPEED:"
+		"DOTA_Tooltip_ability_shazam_all_gods_powers_strength_multiplier"                 "STRENGTH MULTIPLIER:"
+		"DOTA_Tooltip_ability_shazam_all_gods_powers_radius"                              "RADIUS:"
+		"DOTA_Tooltip_ability_shazam_all_gods_powers_duration"                            "DURATION:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_shazam_1"                              "+4 sec duration for Gods Powers"
+
+		"DOTA_Tooltip_ability_shazam_lightning_charge"                                    "Lightning Charge"
+		"DOTA_Tooltip_ability_shazam_lightning_charge_Description"                        "Casting a powerful lightning, the damage of which will depend on the charging time. Lightning will stun and damage all enemies within a radius."
+		"DOTA_Tooltip_ability_shazam_lightning_charge_damage"                             "DAMAGE:"
+		"DOTA_Tooltip_ability_shazam_lightning_charge_damage_mult_max"                    "DAMAGE MULT MAX:"
+		"DOTA_Tooltip_ability_shazam_lightning_charge_radius_bounce"                      "RADIUS BOUNCE:"
+		"DOTA_Tooltip_ability_shazam_lightning_charge_stun_dur"                           "STUN DURATION:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_shazam_2"                              "+175 radius for Lightning Charge"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_shazam_3"                              "+0.75 stun duration for Lightning Charge"
+
+		"DOTA_Tooltip_ability_shazam_last_wizard"                                         "Last Wizard"
+		"DOTA_Tooltip_ability_shazam_last_wizard_Description"                             "Stealing in the radius of visible enemies of their magical power, appropriating it for a while."
+		"DOTA_Tooltip_ability_shazam_last_wizard_spell_amp_steal"                         "%SPELL AMP STEAL PER HERO:"
+		"DOTA_Tooltip_ability_shazam_last_wizard_range"                                   "RANGE:"
+
+
+		// ******************** ITEMS ********************
+		"DOTA_Tooltip_ability_item_chronograph"                                           "Chronograph"
+		"DOTA_Tooltip_ability_item_chronograph_Description"                               "<h1>Active: Chrono-Vault</h1> Total dispels the target and lock half of the enemy soul in Phase, reducing health twise.\n <h1>Passive: Manabreak</h1> Each attack burns 64 mana from the target, and deals magical damage per burned mana.\n <h1>Passive: Critical Strike</h1>Grants each attack a %crit_chance%%% chance to deal %crit_bonus%%% damage."
+		"DOTA_Tooltip_ability_item_chronograph_Lore"                              	 	  "The Chronograph was created by Doctor Viktor Barisov. The Chronograph was hidden inside a vault in Barisov's underground laboratory. Barisov hid the Chronograph in this vault so Nikolai Demichev would not find it. The cavern which the vault is located in is also full of E-99 so the radiation from that would cover up the signature of the Chronograph. The second prototype that is the hand device is eventually grafted onto the hand of the Choosen One. The first prototype is a cumbersome device with a backpack powersource that is only seen in schematics, experimental footage, and once or twice on desks. Schematics also reveal that the Vault that secured the device and the device itself was designed especially for Renko by Dr. Barisov even though Renko aquires it before meeting Barisov. This bizzare turn of events is caused by the repeated incursions in time and alterations in the timeline."
+		"DOTA_Tooltip_ability_item_chronograph_bonus_int"                                 "+$int"
+		"DOTA_Tooltip_ability_item_chronograph_bonus_mana_regen"                          "+$mana_regen"
+		"DOTA_Tooltip_ability_item_chronograph_bonus_damage"                              "+$damage"
+		"DOTA_Tooltip_ability_item_chronograph_bonus_armor"                               "+$armor"
+		"DOTA_Tooltip_ability_item_chronograph_bonus_hp_reg"                              "+$hp_regen"
+
+		"DOTA_Tooltip_ability_item_chronograph_mana_burn"                                 "MANA BURN:"
+
+		"DOTA_Tooltip_ability_item_chronograph_debuff_duration"                           "DEBUFF DURATION:"
+
+		"DOTA_Tooltip_ability_item_chronograph_health_reduce"                             "%HEALTH REDUCTION:"
+
+		"DOTA_Tooltip_ability_item_chronograph_crit_chance"                               "%CRITICAL STRIKE CHANCE:"
+		"DOTA_Tooltip_ability_item_chronograph_crit_damage"                               "%CRITICAL DAMAGE:"
+
+		"npc_dota_unit_misterio_remnant"											"Misterio"
 	}	
 }

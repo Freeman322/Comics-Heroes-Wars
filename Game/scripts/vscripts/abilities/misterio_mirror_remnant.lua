@@ -26,7 +26,8 @@ function misterio_mirror_remnant:OnSpellStart()
             self.m_hUnit:SetPhysicalArmorBaseValue(self:GetCaster():GetPhysicalArmorValue())
 
             self.m_hUnit:AddNewModifier(self:GetCaster(), self, "modifier_misterio_mirror_remnant", nil)      
-            
+            self.m_hUnit:AddNewModifier(self:GetCaster(), self, "modifier_kill", {["duration"] = self.m_duration})
+
             self.m_hUnit:SetAttackCapability(self:GetCaster():GetAttackCapability())
             self.m_hUnit:SetRangedProjectileName(self:GetCaster():GetRangedProjectileName())
             

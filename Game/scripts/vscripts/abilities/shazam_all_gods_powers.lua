@@ -11,7 +11,7 @@ function shazam_all_gods_powers:OnSpellStart()
                duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_shazam_1")
            end 
 
-          local allies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+          local allies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
           if #allies > 0 then
                for _,ally in pairs(allies) do
                     ally:AddNewModifier( self:GetCaster(), self, "modifier_shazam_all_gods_powers", { duration = duration } )

@@ -45,19 +45,20 @@ function modifier_kyloren_force:OnAttackLanded (params)
     if IsServer () then
         if params.attacker == self:GetParent() then
             local hAbility = self:GetAbility()
-            
-            self._flDamage = self._flDamage + (params.damage * self:GetAbility():GetSpecialValueFor("outgoing_damage_mult"))
+            if not params.target:IsBuilding() then
+                self._flDamage = self._flDamage + (params.damage * self:GetAbility():GetSpecialValueFor("outgoing_damage_mult"))
 
-            ApplyDamage ( {
-                victim = params.target,
-                attacker = self:GetParent(),
-                damage = self._flDamage,
-                damage_type = DAMAGE_TYPE_PHYSICAL,
-                ability = self:GetAbility(),
-                damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_HPLOSS,
-            })
+                ApplyDamage ( {
+                    victim = params.target,
+                    attacker = self:GetParent(),
+                    damage = self._flDamage,
+                    damage_type = DAMAGE_TYPE_PHYSICAL,
+                    ability = self:GetAbility(),
+                    damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_HPLOSS,
+                })
 
-            EmitSoundOn("Kyloren.Force_Attack", self:GetParent())
+                EmitSoundOn("Kyloren.Force_Attack", self:GetParent())
+            end
         end
     end
 

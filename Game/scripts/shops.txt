@@ -94,7 +94,7 @@
 		"item"		"item_mjollnir"
  		"item"		"item_skadi" 
  		"item"		"item_satanic"		
-		"item"		"item_boots_of_merlin"		
+		"item"		"item_jarnbjorn"		
 	}
 
 	// Level 2 - Blue Recipes
@@ -108,7 +108,7 @@
 		"item"		"item_tranquil_boots"
 		"item"		"item_guardian_greaves"
 		"item"		"item_medallion_of_courage"
-		"item"		"item_arcane_boots"
+		"item"		"item_majestic_boots"
 		"item"		"item_ancient_janggo"
 		"item"		"item_vladmir"	
 		"item"		"item_cursed_helmet"					
