@@ -98,12 +98,14 @@ function modifier_misterio_mystic_arena_debuff:OnCreated(params)
 
         -- check inside/outside
         self.inside = (self.parent:GetOrigin()-self.aura_origin):Length2D() < self.radius
+        
+        self:OnIntervalThink()
     end 
 end
 
 function modifier_misterio_mystic_arena_debuff:OnIntervalThink()
     if IsServer() then
-
+        ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), damage = self:GetAbility():GetSpecialValueFor("damage_second"), damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
     end 
 end
 
@@ -187,4 +189,12 @@ function modifier_misterio_mystic_arena_debuff:GetAbsoluteNoDamagePhysical()
     end
 
     return 0
+end
+
+function modifier_misterio_mystic_arena_debuff:GetEffectName()
+    return "particles/units/heroes/hero_abaddon/abaddon_curse_frostmourne_debuff.vpcf"
+end
+
+function modifier_misterio_mystic_arena_debuff:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
 end

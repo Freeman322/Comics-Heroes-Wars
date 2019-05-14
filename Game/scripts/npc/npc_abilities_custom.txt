@@ -35345,6 +35345,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 
 		"AbilitySound"					"Hero_FacelessVoid.Chronosphere"
@@ -35369,6 +35370,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportBonus"		"50"
 
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_abaddon/abaddon_curse_frostmourne_debuff.vpcf"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -35386,8 +35391,8 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_second"			"4.0 4.5 5.0"
+				"var_type"				"FIELD_INTEGER"
+				"damage_second"			"150 200 250"
 			}
 			"04"
 			{
@@ -35634,6 +35639,9 @@
 		"precache"
 		{
 			"particle"				"particles/shazam/shazam_compression.vpcf"
+			"model"					"models/heroes/hero_shazam/shazam/shazam.vmdl"
+			"particle"				"particles/shazam/snow/snow_indicator.vpcf"
+			"particle"				"particles/econ/items/drow/drow_ti9_immortal/drow_ti9_frost_arrow_debuff.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
