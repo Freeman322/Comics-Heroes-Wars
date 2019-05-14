@@ -6377,7 +6377,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"950"
+		"AbilityCastRange"				"100"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6434,7 +6434,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0"
+				"duration"				"5.0"
 			}
 			"07"
 			{
@@ -7777,7 +7777,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"950"
+		"AbilityCastRange"				"1000"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7805,7 +7805,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"			"35"
+				"bonus_movement"			"150"
 			}
 			"02"
 			{
@@ -7815,7 +7815,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"			"20"
+				"bonus_all_stats"			"25"
 			}
 			"04"
 			{
@@ -7855,32 +7855,32 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0"
+				"duration"				"7.0"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"status_resistance"			"35"
+				"status_resistance"			"40"
 			}
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hp_regen_reduction_enemy"		"-75"
+				"hp_regen_reduction_enemy"		"-90"
 			}
 			"14"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hp_regen_increase_allies"		"75"
+				"hp_regen_increase_allies"		"90"
 			}
 			"15"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"enemy_hp_drain"				"4.5"
+				"enemy_hp_drain"				"6.0"
 			}
 			"16"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"ally_hp_gain"					"2.5"
+				"ally_hp_gain"					"4.0"
 			}
 			"17"
 			{

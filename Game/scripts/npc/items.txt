@@ -1866,13 +1866,13 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1500"
+		"ItemCost"						"1950"
 		"ItemShopTags"					""
 
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_travel_boots_2"
+		"ItemResult"					"item_travel_boots_2;item_tpscroll"
 		"ItemRequirements"
 		{
 			"01"						"item_boots"
@@ -1891,7 +1891,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"400"
+		"ItemCost"						"500"
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"component"
 		"ItemAliases"					"boots of speed"
@@ -1907,7 +1907,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"20"
+				"bonus_movement_speed"	"10"
 			}
 		}
 	}
@@ -1952,7 +1952,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"		"50"
+				"bonus_movement_speed"		"30"
 			}
 		}
 	}
@@ -2044,7 +2044,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"25"
+				"bonus_movement_speed"	"17"
 			}
 			"02"
 			{
@@ -8397,7 +8397,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"50"
+				"bonus_movement"		"15"
 			}
 			"02"
 			{
@@ -9178,7 +9178,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"55"
+				"bonus_movement"		"20"
 			}
 			"02"
 			{
@@ -9697,7 +9697,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"18"
+				"bonus_movement_speed"	"26"
 			}
 			"02"
 			{

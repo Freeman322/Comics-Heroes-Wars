@@ -117,4 +117,6 @@
   "npc_dota_hero_cosmos" "1"
   "npc_dota_hero_jetstream_sam" "1"
   "npc_dota_hero_raiden"  "1"
+  "npc_dota_hero_shazam"  "1"
+  "npc_dota_hero_misterio"  "1"
 }
