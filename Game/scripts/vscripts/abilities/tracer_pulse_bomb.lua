@@ -45,7 +45,7 @@ function modifier_tracer_pulse_bomb:GetModifierIgnoreCastAngle() return 1 end
 function modifier_tracer_pulse_bomb:OnAttackLanded(params)
   if params.attacker == self:GetParent() and self:GetStackCount() < 100 and params.attacker:IsRealHero() then
     if params.target:IsRealHero() then
-      self:SetStackCount(self:GetStackCount() + math.random(1, 3))
+      self:SetStackCount(self:GetStackCount() + math.random(3, 4))
     --else
     --  self:IncrementStackCount()
     end

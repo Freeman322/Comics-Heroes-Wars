@@ -1866,13 +1866,13 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1950"
+		"ItemCost"						"2000"
 		"ItemShopTags"					""
 
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_travel_boots_2;item_tpscroll"
+		"ItemResult"					"item_travel_boots_2"
 		"ItemRequirements"
 		{
 			"01"						"item_boots"
@@ -1952,7 +1952,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"		"30"
+				"bonus_movement_speed"		"28"
 			}
 		}
 	}
@@ -1994,7 +1994,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"50"
+				"bonus_movement_speed"	"28"
 			}
 			"02"
 			{
