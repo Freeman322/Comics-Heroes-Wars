@@ -2762,6 +2762,9 @@ Rage, rage against the dying of the light."
 		
 		"ciri"								"Ciri"
 		"ciri_lore"							""
+		
+		"plague_doctor"								"Plague Doctor"
+		"plague_doctor_lore"							""
 }
 
 

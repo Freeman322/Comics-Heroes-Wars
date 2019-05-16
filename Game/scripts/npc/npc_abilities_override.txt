@@ -1334,7 +1334,7 @@
 			}
 		}
 	}	
-  "shadow_shaman_ether_shock"
+  	"shadow_shaman_ether_shock"
 	{
 												
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -1358,7 +1358,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"130"
 
-		// Special
+		"precache"
+		{
+			"model"					"models/items/ogre_magi/auspice_of_the_whyrlegyge/mesh/auspice_of_the_whyrlegyge_model.vmdl"
+			"model"					"models/heroes/ogre_magi/ogre_magi_belt.vmdl"
+			"model"					"models/items/ogre_magi/ogre_ti8_immortal_weapon/ogre_ti8_immortal_weapon.vmdl"
+			"model"					"models/heroes/ogre_magi/ogre_magi_hats.vmdl"
+			"model"					"models/heroes/ogre_magi/ogre_magi_bracers.vmdl"
+			"particle"				"particles/econ/items/ogre_magi/ogre_ti8_immortal_weapon/ogre_ti8_immortal_weapon_ambient.vpcf"
+		}
+		// Specia	l
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{

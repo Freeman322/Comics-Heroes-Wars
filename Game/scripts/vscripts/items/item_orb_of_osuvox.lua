@@ -1,58 +1,46 @@
+---@class item_orb_of_osuvox 
+
 item_orb_of_osuvox = class({})
+
 LinkLuaModifier( "modifier_item_orb_of_osuvox_active", "items/item_orb_of_osuvox.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_item_orb_of_osuvox_active_aura", "items/item_orb_of_osuvox.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_item_orb_of_osuvox", "items/item_orb_of_osuvox.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_item_orb_of_osuvox_cooldown", "items/item_orb_of_osuvox.lua", LUA_MODIFIER_MOTION_NONE )
 
-function item_orb_of_osuvox:GetChannelTime()
-	return self:GetSpecialValueFor("active_duration")
-end
+function item_orb_of_osuvox:GetChannelTime() return self:GetSpecialValueFor("active_duration") end
+function item_orb_of_osuvox:GetIntrinsicModifierName() return "modifier_item_orb_of_osuvox" end
 
-function item_orb_of_osuvox:GetIntrinsicModifierName()
-	return "modifier_item_orb_of_osuvox"
-end
+item_orb_of_osuvox.m_vCenter = nil
+item_orb_of_osuvox.m_hThinkerAura = nil
+
+function item_orb_of_osuvox:GetAOERadius() return self:GetSpecialValueFor("active_radius") end
+function item_orb_of_osuvox:IsStealable() return false end
 
 function item_orb_of_osuvox:OnSpellStart()
-	if IsServer() then
-		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_item_orb_of_osuvox_active", { duration = self:GetChannelTime() } ) 
-	end
+    if IsServer() then
+        self.m_vCenter = self:GetCursorPosition()
+
+        self.m_hThinkerAura = CreateModifierThinker(self:GetCaster(), self, "modifier_item_orb_of_osuvox_active", {duration = self:GetChannelTime()}, self.m_vCenter, self:GetCaster():GetTeamNumber(), false)
+    end 
 end
 
 function item_orb_of_osuvox:OnChannelFinish( bInterrupted )
-	if IsServer() then 
-		self:GetCaster():RemoveModifierByName( "modifier_item_orb_of_osuvox_active" )
+    if IsServer() then 
+        if self.m_hThinkerAura and not self.m_hThinkerAura:IsNull() then
+            UTIL_Remove(self.m_hThinkerAura)
+        end 
 	end
 end
 
 if modifier_item_orb_of_osuvox_active == nil then modifier_item_orb_of_osuvox_active = class({}) end 
 
-function modifier_item_orb_of_osuvox_active:IsAura()
-	return true
-end
-
-function modifier_item_orb_of_osuvox_active:IsHidden()
-	return true
-end
-
-function modifier_item_orb_of_osuvox_active:IsPurgable()
-	return false
-end
-
-function modifier_item_orb_of_osuvox_active:GetAuraRadius()
-	return self:GetAbility():GetSpecialValueFor("active_radius")
-end
-
-function modifier_item_orb_of_osuvox_active:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_BOTH
-end
-
-function modifier_item_orb_of_osuvox_active:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-end 
-
-function modifier_item_orb_of_osuvox_active:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
-end
+function modifier_item_orb_of_osuvox_active:IsAura() return true end
+function modifier_item_orb_of_osuvox_active:IsHidden() return true end
+function modifier_item_orb_of_osuvox_active:IsPurgable() return false end
+function modifier_item_orb_of_osuvox_active:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("active_radius") end
+function modifier_item_orb_of_osuvox_active:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_BOTH end
+function modifier_item_orb_of_osuvox_active:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end 
+function modifier_item_orb_of_osuvox_active:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES end
 
 function modifier_item_orb_of_osuvox_active:GetModifierAura()
 	return "modifier_item_orb_of_osuvox_active_aura"
@@ -60,15 +48,11 @@ end
 
 function modifier_item_orb_of_osuvox_active:OnCreated( kv )
 	if IsServer() then
-        local bhParticle1 = ParticleManager:CreateParticle ("particles/eternity/chronosphere.vpcf", PATTACH_WORLDORIGIN, self:GetParent())
-        ParticleManager:SetParticleControl(bhParticle1, 0, self:GetParent():GetAbsOrigin())
+        local bhParticle1 = ParticleManager:CreateParticle ("particles/oszuvox/oszuvox.vpcf", PATTACH_WORLDORIGIN, self:GetParent())
+        ParticleManager:SetParticleControl(bhParticle1, 0, self:GetAbility().m_vCenter)
         ParticleManager:SetParticleControl(bhParticle1, 1, Vector (self:GetAbility():GetSpecialValueFor("active_radius"), self:GetAbility():GetSpecialValueFor("active_radius"), 0))
-        ParticleManager:SetParticleControl(bhParticle1, 4, self:GetParent():GetAbsOrigin())
-        ParticleManager:SetParticleControl(bhParticle1, 6, self:GetParent():GetAbsOrigin())
-        ParticleManager:SetParticleControl(bhParticle1, 10, self:GetParent():GetAbsOrigin())
         self:AddParticle(bhParticle1, false, false, -1, false, false)
 
-        EmitSoundOn("Hero_FacelessVoid.Chronosphere.MaceOfAeons", self:GetParent())
         EmitSoundOn("Hero_ArcWarden.MagneticField.Cast", self:GetParent())
 	end
 end
@@ -84,51 +68,45 @@ end
 
 if modifier_item_orb_of_osuvox_active_aura == nil then modifier_item_orb_of_osuvox_active_aura = class({}) end
 
-function modifier_item_orb_of_osuvox_active_aura:IsDebuff()
-	return false
-end
+modifier_item_orb_of_osuvox_active_aura._bEnemy = false
+modifier_item_orb_of_osuvox_active_aura._iIntervalThink = 0.1
+modifier_item_orb_of_osuvox_active_aura._flDamage = 3.75
 
-function modifier_item_orb_of_osuvox_active_aura:IsHidden()
-	return false
-end
-
-function modifier_item_orb_of_osuvox_active_aura:IsPurgable()
-	return false
-end
+function modifier_item_orb_of_osuvox_active_aura:IsDebuff() return self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() end
+function modifier_item_orb_of_osuvox_active_aura:IsHidden() return false end
+function modifier_item_orb_of_osuvox_active_aura:IsPurgable() return false end
 
 function modifier_item_orb_of_osuvox_active_aura:OnCreated(htable)
     if IsServer() then
-    	self.enemy = false
-    	if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then 
-    		self.enemy = true
-    	end
-        --[[if self.enemy then 
-            local center_Pos = self:GetCaster():GetAbsOrigin()
-            local radius = self:GetAbility():GetSpecialValueFor("active_radius")
-            local corner_pos = center_Pos + self:GetCaster():GetForwardVector() * (radius)
+        self._flDamage = (self:GetAbility():GetSpecialValueFor("damage_interval") * self._iIntervalThink) / 100
 
-            self:GetParent():SetAbsOrigin(corner_pos)
-            FindClearSpaceForUnit(self:GetParent(), corner_pos, false)
-        end]]
+    	if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then 
+            self._bEnemy = true
+            
+            self:StartIntervalThink(self._iIntervalThink)
+    	end
 	end
 end
 
 function modifier_item_orb_of_osuvox_active_aura:CheckState()
-	local state = {
-		[MODIFIER_STATE_INVULNERABLE] = true,
-		[MODIFIER_STATE_MAGIC_IMMUNE] = true,
-		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
-	}
-	if self.enemy then 
+	if not self._bEnemy then 
 		return {
             [MODIFIER_STATE_INVULNERABLE] = true,
             [MODIFIER_STATE_MAGIC_IMMUNE] = true,
             [MODIFIER_STATE_ATTACK_IMMUNE] = true,
-            [MODIFIER_STATE_FROZEN] = true,
-            [MODIFIER_STATE_STUNNED] = true,
+            [MODIFIER_STATE_DISARMED] = true
         }
 	end	
-	return state
+	return {
+        [MODIFIER_STATE_INVISIBLE] = false
+    }
+end
+
+function modifier_item_orb_of_osuvox_active_aura:OnIntervalThink()
+    if IsServer() then 
+        print(self._flDamage)
+        self:GetParent():ModifyHealth(self:GetParent():GetHealth() - (self:GetParent():GetHealth() * self._flDamage), self:GetAbility(), false, 0)
+    end 
 end
 
 --[[function modifier_item_orb_of_osuvox_active_aura:DeclareFunctions ()

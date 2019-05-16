@@ -106,8 +106,8 @@ end
 function modifier_eternity_ult:CheckState()
   if self:GetCaster():HasScepter() then
     return {
-	  	[MODIFIER_STATE_SILENCED] = true,
-	    [MODIFIER_STATE_DISARMED] = true
+		[MODIFIER_STATE_SILENCED] = true,
+		[MODIFIER_STATE_DISARMED] = true
   	}
   end
 	return {

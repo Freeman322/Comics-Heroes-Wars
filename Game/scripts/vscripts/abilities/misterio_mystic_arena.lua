@@ -8,7 +8,7 @@ misterio_mystic_arena = class({})
 misterio_mystic_arena.m_vCenter = nil
 
 function misterio_mystic_arena:GetAOERadius()
-    return self:GetSpecialValueFor("duration")
+    return self:GetSpecialValueFor("radius")
 end
 
 function misterio_mystic_arena:IsStealable() return false end

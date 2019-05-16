@@ -3830,4 +3830,110 @@
 		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	}
+     "npc_dota_hero_ogre"
+	{
+	    	"BaseClass"    				"npc_dota_hero"
+        	"IsCustom"                  		"1"
+		"DisableWearables"          		"1"
+
+		"Model"						"models/heroes/ogre_magi/ogre_magi.vmdl"
+		"Soundset"   					"Hero_OgreMagi"
+		 
+		"HeroID" "220"
+		"Enabled" "1"
+
+		"HeroUnlockOrder"				"1"
+		"Role"						"Support,Nuker,Disabler,Durable,Initiator"
+		"Rolelevels"					"2,2,2,1,1"
+		"Complexity"					"1"
+		"Team"						"Good"
+		"ModelScale"					"0.930000"
+		"VersusScale"					"0.840000"
+		"LoadoutScale"					"0.870000"
+      	"SpectatorLoadoutScale" 			"0.88"
+		"HeroGlowColor"   				"200 200 200"
+       	"PickSound"					"ogre_magi_ogmag_spawn_01"
+		"BanSound"					"ogre_magi_ogmag_anger_04"
+
+		"CMEnabled"  "0"	
+		"workshop_guide_name"			"Ogre Magi"
+
+		"LastHitChallengeRival"      		"npc_dota_hero_dragon_knight"
+		"HeroSelectSoundEffect"      		"Hero_OgreMagi.Pick"
+		"GibType"     			 		"default"
+
+		"Ability1"		"ogre_magi_fireblast"
+		"Ability2"		"ogre_magi_ignite"
+		"Ability3"		"shadow_shaman_ether_shock"
+		"Ability4"		"ogre_magi_unrefined_fireblast"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"ogre_magi_multicast"
+	
+		"Ability10"		"special_bonus_exp_boost_30"
+		"Ability11"		"special_bonus_all_stats_12"
+		"Ability12"		"special_bonus_movement_speed_60"
+		"Ability13"		"special_bonus_spell_amplify_20"
+		"Ability14"		"special_bonus_cooldown_reduction_25"
+		"Ability15"		"special_bonus_cast_range_400"
+		"Ability16"		"special_bonus_spell_amplify_15"
+		"Ability17"		"special_bonus_all_stats_20"
+
+
+		"ArmorPhysical"			"6.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"43"
+		"AttackDamageMax"			"49"
+		"AttackRate"				"1.70000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"				"150"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"3.500000"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"1.60000"
+		"AttributeBaseIntelligence"	"15"
+		"AttributeIntelligenceGain"	"2.300000"
+		"StatusHealthRegen"			"3.25"
+		"MovementSpeed"			"290"
+		"MovementTurnRate"			"0.600000"
+		"BoundsHullName"   			 "DOTA_HULL_SIZE_HERO"
+		
+		"particle_folder"			"particles/units/heroes/hero_ogre_magi"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_ogre_magi.vsndevts"
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		"RingRadius"					"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		"HealthBarOffset"       			"190"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"					"200"
+		"StatusHealthRegen"				"1.0"
+		"StatusMana"					"245"
+		"StatusManaRegen"				"0.4"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"			"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"					"1"
+	}
 }

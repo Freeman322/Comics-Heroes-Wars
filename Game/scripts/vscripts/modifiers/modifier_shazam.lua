@@ -13,7 +13,7 @@ STATE.CLEAR = 0
 
 local PEROPERTIES = {}
 PEROPERTIES.DAMAGE = -99
-PEROPERTIES.HEALTH = -0.9888
+PEROPERTIES.HEALTH = -0.99
 PEROPERTIES.SLOWING = -25
 
 modifier_shazam.m_arrayAbils = {}
@@ -54,7 +54,7 @@ end
 
 function modifier_shazam:OnEntityThink()
      if IsServer() then
-          local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, RADIUS, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+          local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, RADIUS, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
           if #units > 0 then
                self:SetStackCount(STATE.HAS_ENEMIES) return UPDATE_TIME_SEARCH
           end

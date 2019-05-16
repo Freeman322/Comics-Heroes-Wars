@@ -2563,11 +2563,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"item_lua"
+		"BaseClass"             			"item_lua"
 		"AbilityTextureName"			"custom/orb_of_osuvox"
 		"ScriptFile"					"items/item_orb_of_osuvox.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE"
 
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
@@ -2582,7 +2582,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"9000"
+		"ItemCost"					"9000"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"orb;osuvox"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -2591,6 +2591,7 @@
 		"precache"
 		{
 			"particle"  				"particles/eternity/chronosphere.vpcf"
+			"particle"				"particles/oszuvox/oszuvox.vpcf"
 			"particle"  				"particles/items4_fx/combo_breaker_buff.vpcf"
 			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
 		}
@@ -2601,27 +2602,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"35"
+				"bonus_all_stats"			"35"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"20"
+				"bonus_health_regen"		"20"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"10"
+				"bonus_mana_regen"			"10"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_cooldown"		"12"
+				"block_cooldown"			"12"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_duration"		"6.0"
+				"active_duration"			"6.0"
 			}
 			"06"
 			{
@@ -2631,7 +2632,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"shield_cooldown"		"12"
+				"shield_cooldown"			"12"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"			"6.75"
 			}
 		}
 	}

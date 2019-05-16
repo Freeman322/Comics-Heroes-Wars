@@ -17936,9 +17936,10 @@
 		"AbilityManaCost"				"90 120 150 180"
 		"precache"
 		{
-			"particle"  "particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+			"particle"  	"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
 			"model"		"models/heroes/plus_skins/pugalo_skin/pugalo.vmdl"
+			"model"		"models/heroes/hero_nurgle/econs/scp049_skin/doctor.vmdl"
 			"particle"	"particles/plus/pugalo_ambient.vpcf"
 		}
 		// Special
@@ -33392,7 +33393,7 @@
 			"particle"  	"particles/hero_thanos/thanos_decimation.vpcf"
 			"particle"  	"particles/hero_doctor_fate/fatebind_buff_f.vpcf"
 			"particle"  	"particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_buff.vpcf"
-
+			"model"		"models/heroes/hero_thanos_eg/thanos_sword.vmdl"
 			"model"		 "models/heroes/hero_thanos/weap/weapon.vmdl"
 			"model"		 "models/heroes/hero_thanos/econs/thanos_crystals_of_foundation.vmdl"
 			"model"		 "models/heroes/hero_thanos/econs/thanos_timebreaker.vmdl"
@@ -34988,7 +34989,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"mine_deleay_interval"	"1.35 1.0 0.65"
+				"mine_deleay_interval"	"1.35 1.15 0.9"
 			}
 			"03"
 			{
@@ -35680,7 +35681,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fixed_attack_speed"		"500"
+				"fixed_attack_speed"		"5"
 			}
 			"08"
 			{
