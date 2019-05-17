@@ -35912,4 +35912,137 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+	//=================================================================================================================
+	//=================================================================================================================
+	"thanos_shattered_earth"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/thanos_shattered_earth.lua"
+		"AbilityTextureName"			"custom/thanos_shattered_earth"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Ability.SandKing_Epicenter"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120 110 100"
+		"AbilityChannelTime"			"1.0"
+		"AbilityCastPoint"				"0"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 225 300"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.2"	// Damage is the main component of spell
+
+		"precache"
+		{
+			"particle"  		"particles/hero_thanos/thanos_decimation.vpcf"
+			"particle"  		"particles/hero_doctor_fate/fatebind_buff_f.vpcf"
+			"particle"  		"particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_buff.vpcf"
+			"model"			"models/heroes/hero_thanos_eg/thanos_sword.vmdl"
+			"model"		 	"models/heroes/hero_thanos/weap/weapon.vmdl"
+			"model"		 	"models/heroes/hero_thanos/econs/thanos_crystals_of_foundation.vmdl"
+			"model"		 	"models/heroes/hero_thanos/econs/thanos_timebreaker.vmdl"
+			"model"			"models/heroes/hero_thanos/econs/king_thanos.vmdl"
+			"model"			"models/heroes/hero_thanos_arcana/thanos.vmdl"
+			"particle"  		"particles/thanos/thanos_supernova.vpcf"
+			"particle"  		"particles/thanos/thanos_supernova_explode_a.vpcf"
+			"particle"  		"particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"particle"  		"particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
+			"model"			"models/items/sven/fiend_cleaver_axe/fiend_cleaver_axe.vmdl"
+			"particle"  		"particles/econ/items/luna/luna_lucent_ti5_gold/luna_eclipse_cast_moonfall_gold.vpcf"
+			"particle"  		"particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf"
+			"particle"  		"particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"particle"  		"particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
+			"particle"  		"particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_arcana_body_ambient.vpcf"
+			"particle"  		"particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf"
+			"soundfile" 		"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"soundfile" 		"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"soundfile" 		"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+			"soundfile" 		"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"particle"  		"particles/status_fx/status_effect_doom.vpcf"
+			"particle"  		"particles/econ/courier/courier_oculopus/courier_oculopus_ambient.vpcf"
+			"particle"		"particles/econ/events/ti7/radiance_ti7.vpcf"
+			"particle"	 	"particles/items2_fx/radiance.vpcf"
+			"particle"	 	"particles/econ/items/ursa/ursa_razorwyrm/ursa_razorwyrm_ambient_v2_eyes.vpcf"
+			"model"			"models/heroes/hero_thanos_arcana/thanos_helmet.vmdl"
+			"particle" 	 	"particles/thanos/thanos_crystal_weapon_supernova.vpcf"
+			"model"			"models/thanos/thanos_crystal_of_foundation.vmdl"
+			"particle"		"particles/thanos/thanos_crystal_weapon_ambient.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"epicenter_radius"		"375 475 575"
+				"LinkedSpecialBonus"	"special_bonus_unique_thanos_1"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"fade_duration"		"1.75"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_unit"		"70 140 210"
+				"LinkedSpecialBonus"	"special_bonus_unique_thanos_2"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.5 2.0 2.5"
+			}
+		}
+	}
+	"special_bonus_unique_thanos_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"120"
+			}
+		}
+	}
+	"special_bonus_unique_thanos_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"90"
+			}
+		}
+	}
 }
