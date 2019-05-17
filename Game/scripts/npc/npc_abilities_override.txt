@@ -1140,8 +1140,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"475"
 		"AbilityCastPoint"				"0.45"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"9"
 
@@ -1149,7 +1149,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"90"
 
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -1172,7 +1172,7 @@
 				"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi_2"
 			}
 		}
-	}	
+	}
 	"ogre_magi_unrefined_fireblast"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -1192,16 +1192,16 @@
 		"AbilityCastRange"				"475"
 		"AbilityCastPoint"				"0.45"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
-		
-		
+
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -1229,12 +1229,12 @@
 				"fireblast_damage"		"320"
 			}
 		}
-	}	
+	}
 	"ogre_magi_multicast"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityCastAnimation"			"ACT_INVALID"	
+		"AbilityCastAnimation"			"ACT_INVALID"
 
 		"AbilitySpecial"
 		{
@@ -1291,15 +1291,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.45"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"15"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"120"
-				
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -1314,7 +1314,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"burn_damage"		"30 45 60 75"
-			}		
+			}
 
 			"03"
 			{
@@ -1326,31 +1326,31 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"projectile_speed"		"1000"
-			}	
+			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"multicast_delay"	"0.5"
 			}
 		}
-	}	
+	}
   	"shadow_shaman_ether_shock"
 	{
-												
+
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_ShadowShaman.EtherShock"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"10"
 
@@ -1360,6 +1360,8 @@
 
 		"precache"
 		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+
 			"model"					"models/items/ogre_magi/auspice_of_the_whyrlegyge/mesh/auspice_of_the_whyrlegyge_model.vmdl"
 			"model"					"models/heroes/ogre_magi/ogre_magi_belt.vmdl"
 			"model"					"models/items/ogre_magi/ogre_ti8_immortal_weapon/ogre_ti8_immortal_weapon.vmdl"
@@ -1395,7 +1397,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage"					"140 200 260 320"
-				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_3"  
+				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_3"
 			}
 		}
 	}

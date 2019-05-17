@@ -7260,9 +7260,9 @@
 		"Ability2"				"ogre_magi_ignite"
 		"Ability3"				"shadow_shaman_ether_shock"
 		"Ability4"				"ogre_magi_unrefined_fireblast"
-		"Ability5"				"generic_hidden"
+		"Ability5"				"ogre_mage_passive"
 		"Ability6"				"ogre_magi_multicast"
-	
+
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_all_stats_12"
 		"Ability12"				"special_bonus_hp_regen_40"
@@ -7291,7 +7291,7 @@
 		"MovementSpeed"			"295"
 		"MovementTurnRate"			"0.600000"
 		"BoundsHullName"  			"DOTA_HULL_SIZE_HERO"
-		
+
 		"particle_folder"			"particles/units/heroes/hero_ogre_magi"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_ogre_magi.vsndevts"
