@@ -4126,10 +4126,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"				"thanos_first_blood"
 		"Ability2"				"tanos_dispersion"
-		"Ability3"				"tanos_dragon_blood"
+		"Ability3"				"thanos_titans_sword"
 		"Ability4"				"thanos_believer"
 		"Ability5"				"generic_hidden"
-		"Ability6"				"thanos_decimation"
+		"Ability6"				"thanos_shattered_earth"
 		"Ability7"				""
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_all_stats_12"

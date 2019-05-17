@@ -35982,6 +35982,11 @@
 			"particle" 	 	"particles/thanos/thanos_crystal_weapon_supernova.vpcf"
 			"model"			"models/thanos/thanos_crystal_of_foundation.vmdl"
 			"particle"		"particles/thanos/thanos_crystal_weapon_ambient.vpcf"
+
+			"particle"		"particles/econ/items/elder_titan/elder_titan_ti7/elder_titan_echo_stomp_ti7.vpcf"
+			"particle"		"particles/econ/items/elder_titan/elder_titan_ti7/elder_titan_echo_stomp_ti7_magical.vpcf"
+			"particles"		"particles/units/heroes/hero_rubick/rubick_telekinesis.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -36042,6 +36047,70 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"value"					"90"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	//=================================================================================================================
+	"thanos_titans_sword"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/thanos_titans_sword.lua"
+		"AbilityTextureName"			"custom/thanos_titans_sword"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilitySound"					"Hero_DoomBringer.InfernalBlade.Target"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14 12 10 8"
+		"AbilityManaCost"				"40"
+
+		"AbilityCastRange"				"175"
+		
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"					"230 250 270 300"
+				"LinkedSpecialBonus"		"special_bonus_unique_thanos_3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ministun_duration"			"0.6"
+			}
+		}
+	}
+	"special_bonus_unique_thanos_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"100"
 			}
 		}
 	}

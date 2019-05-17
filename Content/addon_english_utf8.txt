@@ -4625,19 +4625,6 @@
 		the ability will be stunned and receive damage. Deals attack damage times two."
 		"DOTA_Tooltip_ability_samurai_earth_shake_stun_duration"                          "STUN DURATION:"
 
-		"DOTA_Tooltip_ability_item_jarnbjorn"                                             "Jarnbjorn"
-		"DOTA_Tooltip_ability_item_jarnbjorn_Description"                                 "Activated: Overwhelm - Stuns a target enemy unit for 2 seconds. Pierces Spell Immunity."
-		"DOTA_Tooltip_ability_item_jarnbjorn_Lore"                               		  "Ancient, cursed Axe."
-		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_health"                                "+$health"
-		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_health_regen"                          "+$hp_regen"
-		"DOTA_Tooltip_ability_item_jarnbjorn_block_damage"                                "BLOCK DAMAGE:"
-		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_damage"                                "+$damage"
-		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_strength"                              "+$str"
-		"DOTA_Tooltip_ability_item_jarnbjorn_bash_chance"                                 "%BASH CHANCE:"
-		"DOTA_Tooltip_ability_item_jarnbjorn_bash_duration"                               "BASH DURATION:"
-		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_damage"                                "BASH DAMAGE:"
-		"DOTA_Tooltip_ability_item_jarnbjorn_stun_duration"                               "STUN DURATION:"
-		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_attack_speed"                          "+$attack"
 
 
 		"DOTA_Tooltip_ability_pudge_revenge"                                              "Revenge"
@@ -7401,13 +7388,14 @@
 		"DOTA_Tooltip_ability_item_recipe_orb_of_osuvox_Description"                      ""
 
 		"DOTA_Tooltip_ability_item_orb_of_osuvox"                                         "Orb Of Osuvox"
-		"DOTA_Tooltip_ability_item_orb_of_osuvox_Description"                             "<h1>Active: Osuvox Shield</h1> Creates a magic shield around the hero, which gives complete invulnerability to all heroes within the sphere and prevents enemies from moving around in it. \n<h1>Passive: Spellblock</h1> Blocks most targeted spells once every 12 seconds."
+		"DOTA_Tooltip_ability_item_orb_of_osuvox_Description"                             "<h1>Active: Osuvox Shield</h1> Creates a magic shield in specific point, which gives complete invulnerability to friendly units within the sphere, deal HP-Removal damage and prevents enemies attacks. \n<h1>Passive: Spellblock</h1> Blocks most targeted spells once every 12 seconds."
 		"DOTA_Tooltip_ability_item_orb_of_osuvox_bonus_all_stats"                         "+$all"
 		"DOTA_Tooltip_ability_item_orb_of_osuvox_bonus_health_regen"                      "+$hp_regen"
 		"DOTA_Tooltip_ability_item_orb_of_osuvox_bonus_mana_regen"                        "+$mana_regen"
 		"DOTA_Tooltip_ability_item_orb_of_osuvox_block_cooldown"                          "BLOCK COOLDOWN:"
 		"DOTA_Tooltip_ability_item_orb_of_osuvox_active_duration"                         "Osuvox Shield DURATION:"
 		"DOTA_Tooltip_ability_item_orb_of_osuvox_active_radius"                           "Osuvox Shield RADIUS:"
+		"DOTA_Tooltip_ability_item_orb_of_osuvox_damage_interval"					  "%CURRENT HEALTH DAMAGE:"
 
 		"DOTA_Tooltip_ability_item_recipe_hells_glare"                                    "Hells Glare"
 		"DOTA_Tooltip_ability_item_recipe_hells_glare_Description"                        ""
@@ -10894,7 +10882,7 @@
 		"DOTA_Tooltip_ability_misterio_mirror_remnant_Description"                        "Misterio creates next to him a ghost that rushes in an arbitrary direction, when Misterio himself becomes invisible and hidden from the eyes of the enemy. When kill a copy the enemy will being caused damage proportional to the maximum health of the Misterio."
 		"DOTA_Tooltip_ability_misterio_mirror_remnant_damage_ptc"                         "%DAMAGE:"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_misterio_1"                            "+10% damage for Mirror Remnant"
+		"DOTA_Tooltip_ability_special_bonus_unique_misterio_1"                            "+25% damage for Mirror Remnant"
 
 		"DOTA_Tooltip_ability_misterio_mystic_arena"                                      "Mystic Arena"
 		"DOTA_Tooltip_ability_misterio_mystic_arena_Description"                          "Misterio creates a magic dome, which does not allow trapped enemies inside to leave it, greatly increasing the incoming magic damage with any bastard. Enemies inside cannot inflict physical damage."
@@ -10980,5 +10968,64 @@
 		"DOTA_Tooltip_ability_item_chronograph_crit_damage"                               "%CRITICAL DAMAGE:"
 
 		"npc_dota_unit_misterio_remnant"											"Misterio"
+
+		"DOTA_Tooltip_ability_item_recipe_jarnbjorn"                                      "Jarnbjorn"
+		"DOTA_Tooltip_ability_item_recipe_jarnbjorn_Description"                          ""
+
+		"DOTA_Tooltip_ability_item_jarnbjorn"                                             "Jarnbjorn"
+		"DOTA_Tooltip_ability_item_jarnbjorn_Description"                                 "<h1>Active: Static Charge</h1>Places a charged shield on a target unit for %static_duration% seconds which has a %static_chance%%% chance to release a %static_damage% magical damage shocking bolt at a nearby attacker and %static_strikes% additional enemies.<br><br>Range: %tooltip_range%\n<h1>Passive: Chain Lightning</h1>Grants a %chain_chance%%% chance on attack to release a bolt of electricity that leaps between %chain_strikes% targets within a %chain_radius% radius, dealing %chain_damage% magical damage to each. Lightning proc pierces evasion.<h1>Passive: Bash</h1> Grants melee heroes a %bash_chance_melee%%% chance on hit to stun the target for %bash_duration% seconds and deal %bonus_chance_damage% bonus magical damage.  Bash chance for ranged heroes is %bash_chance_ranged%%%. Always bashes first new target."
+		"DOTA_Tooltip_ability_item_jarnbjorn_Lore"                               		  "Jarnbjorn was the Dwarven-forged battle axe wielded by Thor long before he obtained Mjolnir. In the 9th Century, unable to lift Mjolnir despite many attempts, Thor used Jarnbjorn as his regular weapon. With it he fought many foes on Earth, including frost giants, trolls and dragons."
+		
+		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_health"                                "+$health"
+		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_health_regen"                          "+$hp_regen"
+		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_damage"                                "+$damage"
+		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_attack_speed"                          "+$attack"
+		"DOTA_Tooltip_ability_item_jarnbjorn_bonus_all_stats"                             "+$all"
+
+		"DOTA_Tooltip_ability_item_jarnbjorn_static_duration"                             "STATIC SHIELD DURATION:"
+		"DOTA_Tooltip_ability_item_jarnbjorn_static_chance"                               "%STATIC SHIELD CHANCE:"
+		"DOTA_Tooltip_ability_item_jarnbjorn_static_radius"                               "STATIC SHIELD RADIUS:"
+
+		"DOTA_Tooltip_ability_item_jarnbjorn_chain_chance"                                "%CHAIN CHANCE:"
+		"DOTA_Tooltip_ability_item_jarnbjorn_chain_damage"                                "CHAIN DAMAGE:"
+		"DOTA_Tooltip_ability_item_jarnbjorn_chain_strikes"                               "CHAIN STRIKES:"
+		"DOTA_Tooltip_ability_item_jarnbjorn_chain_radius"                                "CHAIN RADIUS:"
+
+		"DOTA_Tooltip_ability_item_jarnbjorn_bash_cooldown"                               "BASH COOLDOWN:"
+		"DOTA_Tooltip_ability_item_jarnbjorn_bash_duration"                               "BASH DURATION:"
+		"DOTA_Tooltip_ability_item_jarnbjorn_bash_chance_melee"                           "%BASH CHANCE:"
+
+		"DOTA_Tooltip_ability_item_recipe_majestic_boots"                                 "Majestic Boots"
+		"DOTA_Tooltip_ability_item_recipe_majestic_boots_Description"                     ""
+
+		"DOTA_Tooltip_ability_item_majestic_boots"                                        "Majestic Boots"
+		"DOTA_Tooltip_ability_item_majestic_boots_Description"                            "<h1>Active: Majestic</h1> When used against enemies, it reduces health by %enemy_hp_drain%%% of current health per second, and reduces HP regeneration and healing by %hp_regen_reduction_enemy%%%.<br><br>When used on allies, it increases health by %ally_hp_gain%%% of current health per second, and increases HP regeneration and healing by %hp_regen_increase_allies%%%.<br><br>Lasts %duration% seconds.\n<h1>Passive: Guardian Aura</h1> Provides nearby allies with %aura_health_regen% health regeneration and %aura_armor% bonus armor. If an allied hero's health falls below %aura_bonus_threshold%%%, they receive %aura_health_regen_bonus% health regeneration and %aura_armor_bonus% armor.\nMovement speed bonuses from multiple pairs of boots do not stack."
+
+		"DOTA_Tooltip_ability_item_majestic_boots_bonus_movement"                         "+$move_speed"
+		"DOTA_Tooltip_ability_item_majestic_boots_bonus_mana"                             "+$mana"
+		"DOTA_Tooltip_ability_item_majestic_boots_bonus_all_stats"                        "+$all"
+		"DOTA_Tooltip_ability_item_majestic_boots_bonus_armor"                            "+$armor"
+		"DOTA_Tooltip_ability_item_majestic_boots_aura_health_regen"                      "AURA HEALTH REGEN:"
+		"DOTA_Tooltip_ability_item_majestic_boots_aura_armor"                             "AURA ARMOR:"
+		"DOTA_Tooltip_ability_item_majestic_boots_aura_health_regen_bonus"                "AURA HEALTH REGEN BONUS:"
+		"DOTA_Tooltip_ability_item_majestic_boots_aura_armor_bonus"                       "AURA ARMOR BONUS:"
+		"DOTA_Tooltip_ability_item_majestic_boots_aura_bonus_threshold"                   "AURA BONUS THRESHOLD:"
+		"DOTA_Tooltip_ability_item_majestic_boots_aura_radius"                            "AURA RADIUS:"
+
+		"DOTA_Tooltip_ability_item_majestic_boots_duration"                               "DURATION:"
+
+		"DOTA_Tooltip_ability_item_majestic_boots_status_resistance"                      "%STATUS RESISTANCE:"
+
+		"DOTA_Tooltip_ability_item_majestic_boots_hp_regen_reduction_enemy"               "%HP REGEN REDUCTION ENEMY:"
+		"DOTA_Tooltip_ability_item_majestic_boots_hp_regen_increase_allies"               "%HP REGEN INCREASE ALLIES:"
+
+		"DOTA_Tooltip_ability_item_majestic_boots_enemy_hp_drain"                         "ENEMY HEALTH DRAIN:"
+		"DOTA_Tooltip_ability_item_majestic_boots_ally_hp_gain"                           "ALLY HEALTH GAIN:"
+
+		"DOTA_Tooltip_ability_item_majestic_boots_active_radius"                          "ACTIVE RADIUS:"
+
+		"npc_dota_hero_ogre"												  "Orge"
+		"npc_dota_hero_ogre_lore"											  "The ordinary ogre is the creature for whom the phrase 'As dumb as a bag of rock hammers' was coined. In his natural state, an ogre is supremely incapable of doing or deciding anything. Clothed in dirt, he sometimes finds himself accidentally draped in animal skins after eating lanekill. Not an especially social creature, he is most often found affectionately consorting with the boulders or tree-stumps he has mistaken for kin (a factor that may explain the ogre's low rate of reproduction). However, once every generation or so, the ogre race is blessed with the birth of a two-headed Ogre Magi, who is immediately given the traditional name of Aggron Stonebreak, the name of the first and perhaps only wise ogre in their line's history. With two heads, Ogre Magi finds it possible to function at a level most other creatures manage with one. And while the Ogre Magi will win no debates (even with itself), it is graced with a divine quality known as Dumb Luck--a propensity for serendipitous strokes of fortune which have allowed the ogre race to flourish in spite of enemies, harsh weather, and an inability to feed itself. It's as if the Goddess of Luck, filled with pity for the sadly inept species, has taken Ogre Magi under her wing. And who could blame her? Poor things."
+		"npc_dota_hero_ogre_hype"											  "The ordinary ogre is the creature for whom the phrase 'As dumb as a bag of rock hammers' was coined. In his natural state, an ogre is supremely incapable of doing or deciding anything. Clothed in dirt, he sometimes finds himself accidentally draped in animal skins after eating lanekill. Not an especially social creature, he is most often found affectionately consorting with the boulders or tree-stumps he has mistaken for kin (a factor that may explain the ogre's low rate of reproduction). However, once every generation or so, the ogre race is blessed with the birth of a two-headed Ogre Magi, who is immediately given the traditional name of Aggron Stonebreak, the name of the first and perhaps only wise ogre in their line's history. With two heads, Ogre Magi finds it possible to function at a level most other creatures manage with one. And while the Ogre Magi will win no debates (even with itself), it is graced with a divine quality known as Dumb Luck--a propensity for serendipitous strokes of fortune which have allowed the ogre race to flourish in spite of enemies, harsh weather, and an inability to feed itself. It's as if the Goddess of Luck, filled with pity for the sadly inept species, has taken Ogre Magi under her wing. And who could blame her? Poor things."
 	}	
 }
