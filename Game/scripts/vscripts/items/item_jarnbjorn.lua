@@ -128,7 +128,7 @@ function modifier_item_jarnbjorn:Chain(target)
 
                               EmitSoundOn("Item.Maelstrom.Chain_Lightning", unit)
 
-                              if not next_unit:IsNull() and next_unit then
+                              if next_unit and not next_unit:IsNull() then
                                    local nFXIndex = ParticleManager:CreateParticle( "particles/econ/events/ti7/maelstorm_ti7.vpcf", PATTACH_CUSTOMORIGIN, nil );
                                    ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
                                    ParticleManager:SetParticleControlEnt( nFXIndex, 1, next_unit, PATTACH_POINT_FOLLOW, "attach_hitloc", next_unit:GetOrigin(), true );
