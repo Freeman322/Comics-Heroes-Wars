@@ -153,7 +153,7 @@ function modifier_shazam_shazam:DeclareFunctions ()
         MODIFIER_PROPERTY_MOVESPEED_LIMIT,
         MODIFIER_PROPERTY_MOVESPEED_MAX,
 
-        MODIFIER_PROPERTY_MAX_ATTACK_RANGE
+        MODIFIER_PROPERTY_ATTACK_RANGE_BONUS
     }
 
     return funcs
@@ -172,4 +172,4 @@ function modifier_shazam_shazam:GetModifierAttackSpeedBaseOverride(params) retur
 function modifier_shazam_shazam:GetModifierMoveSpeed_Absolute(params) return self:GetAbility():GetSpecialValueFor("move_speed") end
 function modifier_shazam_shazam:GetModifierMoveSpeed_Limit(params) return self:GetAbility():GetSpecialValueFor("move_speed") end
 function modifier_shazam_shazam:GetModifierMoveSpeed_Max(params) return self:GetAbility():GetSpecialValueFor("move_speed") end
-function modifier_shazam_shazam:GetModifierMaxAttackRange(params) return 128 end
+function modifier_shazam_shazam:GetModifierAttackRangeBonus(params) return -422 end

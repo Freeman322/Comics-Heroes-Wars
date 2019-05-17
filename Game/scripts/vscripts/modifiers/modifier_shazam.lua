@@ -17,6 +17,7 @@ PEROPERTIES.HEALTH = -0.99
 PEROPERTIES.SLOWING = -25
 
 modifier_shazam.m_arrayAbils = {}
+modifier_shazam.m_hMainAbility = nil 
 
 function modifier_shazam:RemoveOnDeath() return false end
 function modifier_shazam:IsPurgable() return false end
@@ -27,6 +28,8 @@ function modifier_shazam:OnCreated(params)
           for i = 0, 2 do
                table.insert( self.m_arrayAbils, self:GetParent():GetAbilityByIndex(i) )
           end
+
+          self.m_hMainAbility = self:GetParent():FindAbilityByName("shazam_shazam")
 
           self:StartIntervalThink(UPDATE_TIME)
 
@@ -55,7 +58,7 @@ end
 function modifier_shazam:OnEntityThink()
      if IsServer() then
           local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, RADIUS, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
-          if #units > 0 then
+          if #units > 0 and not self.m_hMainAbility:IsInAbilityPhase() then
                self:SetStackCount(STATE.HAS_ENEMIES) return UPDATE_TIME_SEARCH
           end
 
@@ -93,8 +96,8 @@ function modifier_shazam:CheckState()
 	return 
 end
 
-function modifier_shazam:GetModifierExtraHealthPercentage(params) if self:IsInFear() and not self:IsInShazamForm() then return PEROPERTIES.HEALTH end return end
-function modifier_shazam:GetModifierTotalDamageOutgoing_Percentage(params) if self:IsInFear() and not self:IsInShazamForm() then return PEROPERTIES.DAMAGE end return end
+function modifier_shazam:GetModifierExtraHealthPercentage(params) if not self:IsInShazamForm() then return PEROPERTIES.HEALTH end return end
+function modifier_shazam:GetModifierTotalDamageOutgoing_Percentage(params) if not self:IsInShazamForm() then return PEROPERTIES.DAMAGE end return end
 
 
 modifier_shazam_debuff = class({}) 
