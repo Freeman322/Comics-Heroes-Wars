@@ -3838,7 +3838,7 @@
 
 		"Model"						"models/heroes/ogre_magi/ogre_magi.vmdl"
 		"Soundset"   					"Hero_OgreMagi"
-		 
+
 		"HeroID" "220"
 		"Enabled" "1"
 
@@ -3855,7 +3855,7 @@
        	"PickSound"					"ogre_magi_ogmag_spawn_01"
 		"BanSound"					"ogre_magi_ogmag_anger_04"
 
-		"CMEnabled"  "0"	
+		"CMEnabled"  "0"
 		"workshop_guide_name"			"Ogre Magi"
 
 		"LastHitChallengeRival"      		"npc_dota_hero_dragon_knight"
@@ -3866,9 +3866,9 @@
 		"Ability2"		"ogre_magi_ignite"
 		"Ability3"		"shadow_shaman_ether_shock"
 		"Ability4"		"ogre_magi_unrefined_fireblast"
-		"Ability5"		"generic_hidden"
+		"Ability5"		"ogre_mage_passive"
 		"Ability6"		"ogre_magi_multicast"
-	
+
 		"Ability10"		"special_bonus_exp_boost_30"
 		"Ability11"		"special_bonus_all_stats_12"
 		"Ability12"		"special_bonus_movement_speed_60"
@@ -3898,7 +3898,7 @@
 		"MovementSpeed"			"295"
 		"MovementTurnRate"			"0.600000"
 		"BoundsHullName"   			 "DOTA_HULL_SIZE_HERO"
-		
+
 		"particle_folder"			"particles/units/heroes/hero_ogre_magi"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_ogre_magi.vsndevts"

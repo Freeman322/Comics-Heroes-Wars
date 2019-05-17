@@ -35269,7 +35269,7 @@
 		"AbilityTextureName"			"custom/misterio_mirror_remnant"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 
@@ -35279,7 +35279,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0 0"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"28 26 24 22"
 		"AbilityDuration"				"12.0 12.0 12.0 12.0"
@@ -35309,7 +35309,7 @@
 				"CalculateSpellDamageTooltip"		"1"
 			}
 		}
-		
+
 		"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_1"
 	}
 
@@ -35346,20 +35346,20 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"2"
 
 		"AbilitySound"					"Hero_FacelessVoid.Chronosphere"
 
 		"HasScepterUpgrade"				"1"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.35 0.35 0.35"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"140.0 130.0 120.0"
 
@@ -35457,13 +35457,13 @@
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1300"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"27 25 23 21"
 
@@ -35551,15 +35551,15 @@
 		"AbilityCastRange"				"360"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30 29 28 27"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		
+
 		"precache"
 		{
 			"particle"				"particles/misterio/misterio_shield.vpcf"
@@ -35617,7 +35617,7 @@
 
 		"AbilitySound"					"chw.shazam"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"70 65 60"
 		"AbilityDuration"				"14.0"
@@ -35636,7 +35636,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.2"	// Damage is the main component of spell
-		
+
 		"precache"
 		{
 			"particle"				"particles/shazam/shazam_compression.vpcf"
@@ -35695,7 +35695,7 @@
 			}
 		}
 	}
-	
+
 	//=================================================================================================================
 	// Ability: Warcry
 	//=================================================================================================================
@@ -35716,10 +35716,10 @@
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50 45 40 35"
-	
+
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200 190 180 170"
@@ -35741,12 +35741,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed"	"60 90 120 150"		
+				"bonus_attack_speed"	"60 90 120 150"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"strength_multiplier"	"2 2.2 2.6 3.0"		
+				"strength_multiplier"	"2 2.2 2.6 3.0"
 			}
 			"04"
 			{
@@ -35788,7 +35788,7 @@
 		"ScriptFile"					"abilities/shazam_lightning_charge.lua"
 		"AbilityTextureName"			"custom/shazam_lightning_charge"
 
-		
+
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -35796,10 +35796,10 @@
 
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
 		"FightRecapLevel"				"2"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
@@ -35807,7 +35807,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_3"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"2.0 2.0 2.0 2.0"
 
@@ -35816,7 +35816,7 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100 140 180 220"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -35893,7 +35893,7 @@
 		"AbilityTextureName"			"custom/shazam_last_wizard"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -35924,13 +35924,13 @@
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Ability.SandKing_Epicenter"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"120 110 100"
 		"AbilityChannelTime"			"1.0"
@@ -36003,7 +36003,7 @@
 				"var_type"			"FIELD_INTEGER"
 				"damage_per_unit"		"70 140 210"
 				"LinkedSpecialBonus"	"special_bonus_unique_thanos_2"
-			}	
+			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
@@ -36042,6 +36042,34 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"value"					"90"
+			}
+		}
+	}
+	"ogre_mage_passive"
+	{
+		"BaseClass"                   "ability_lua"
+		"ScriptFile"                  "abilities/ogre_mage_passive.lua"
+
+		"AbilityTextureName"		  "jakiro_liquid_fire"
+		"AbilityBehavior"             "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"       "DAMAGE_TYPE_PURE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"            "FIELD_INTEGER"
+				"duration"            "3 4 5 6"
+			}
+			"02"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"tick_interval"        "0.1"
+			}
+			"03"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"damage_per_second"   "1.25 1.5 1.75 2.0"
 			}
 		}
 	}
