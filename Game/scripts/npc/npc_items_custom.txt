@@ -7730,7 +7730,7 @@
 			"17"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"1.4"
+				"bash_duration"			"1.0"
 			}
 			"18"
 			{
