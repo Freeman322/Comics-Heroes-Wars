@@ -2237,7 +2237,8 @@
 		{
 			"particle"  				"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf"
 			"particle"  				"particles/status_fx/status_effect_frost.vpcf"
-			"particle"					"particles/ice_pearl/ice_pearl_active.vpcf"
+			"particle"				"particles/econ/items/nyx_assassin/nyx_ti9_immortal/nyx_ti9_carapace.vpcf"
+			"particle"				"particles/ice_pearl/ice_pearl_active.vpcf"
 			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
 		}
 		// Special
@@ -7705,7 +7706,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chain_damage"				"170"
+				"chain_damage"				"260"
 			}
 			"13"
 			{

@@ -55,11 +55,11 @@ function modifier_item_jarnbjorn:DeclareFunctions() --we want to use these funct
      return funcs
 end
 
-function modifier_item_jarnbjorn:GetModifierBonusStats_Strength( params ) return self:GetAbility():GetSpecialValueFor( "bonus_strength" ) end
-function modifier_item_jarnbjorn:GetModifierBonusStats_Intellect( params ) return self:GetAbility():GetSpecialValueFor( "bonus_intellect" ) end
-function modifier_item_jarnbjorn:GetModifierBonusStats_Agility( params ) return self:GetAbility():GetSpecialValueFor( "bonus_agility" ) end
+function modifier_item_jarnbjorn:GetModifierBonusStats_Strength( params ) return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" ) end
+function modifier_item_jarnbjorn:GetModifierBonusStats_Intellect( params ) return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" ) end
+function modifier_item_jarnbjorn:GetModifierBonusStats_Agility( params ) return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" ) end
 function modifier_item_jarnbjorn:GetModifierPreAttack_BonusDamage( params ) return self:GetAbility():GetSpecialValueFor( "bonus_damage" ) end
-function modifier_item_jarnbjorn:GetModifierAttackSpeedBonus_Constant( params ) return self:GetAbility():GetSpecialValueFor( "bonus_evasion" ) end
+function modifier_item_jarnbjorn:GetModifierAttackSpeedBonus_Constant( params ) return self:GetAbility():GetSpecialValueFor( "bonus_attack_speed" ) end
 
 function modifier_item_jarnbjorn:OnAttackLanded( params )
      if IsServer() then

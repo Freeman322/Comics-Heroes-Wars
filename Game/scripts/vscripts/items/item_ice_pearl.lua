@@ -68,7 +68,7 @@ function modifier_item_ice_pearl_reduction:GetModifierMoveSpeedBonus_Constant() 
 modifier_item_ice_pearl_active = class({})
 
 function modifier_item_ice_pearl_active:IsPurgable() return false end
-function modifier_item_ice_pearl_active:GetEffectName() return "particles/ice_pearl/ice_pearl_active.vpcf" end
+function modifier_item_ice_pearl_active:GetEffectName() return "particles/econ/items/nyx_assassin/nyx_ti9_immortal/nyx_ti9_carapace.vpcf" end
 function modifier_item_ice_pearl_active:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_item_ice_pearl_active:GetStatusEffectName() return "particles/status_fx/status_effect_frost_armor.vpcf" end
 function modifier_item_ice_pearl_active:StatusEffectPriority() return 1000 end

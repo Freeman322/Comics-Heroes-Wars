@@ -32,10 +32,6 @@ function modifier_shazam:OnCreated(params)
           self.m_hMainAbility = self:GetParent():FindAbilityByName("shazam_shazam")
 
           self:StartIntervalThink(UPDATE_TIME)
-
-          self:GetParent():SetContextThink("Update", function()
-               return self:OnEntityThink()
-          end, UPDATE_TIME_SEARCH)
      end 
 end
 
@@ -55,24 +51,12 @@ function modifier_shazam:OnIntervalThink()
      end 
 end
 
-function modifier_shazam:OnEntityThink()
-     if IsServer() then
-          local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, RADIUS, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
-          if #units > 0 and not self.m_hMainAbility:IsInAbilityPhase() then
-               self:SetStackCount(STATE.HAS_ENEMIES) return UPDATE_TIME_SEARCH
-          end
-
-          self:SetStackCount(STATE.CLEAR)
-     end 
-
-     return UPDATE_TIME_SEARCH
-end
-
 function modifier_shazam:DeclareFunctions ()
      local funcs = {
          MODIFIER_EVENT_ON_ATTACK_LANDED,
          MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
-         MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE
+         MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
+         MODIFIER_PROPERTY_MIN_HEALTH
      }
  
      return funcs
@@ -90,12 +74,13 @@ end
 
 function modifier_shazam:CheckState()
      if not self:IsInShazamForm() then
-	     return {[MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_NO_HEALTH_BAR] = true, [MODIFIER_STATE_OUT_OF_GAME] = true}
+	     return {[MODIFIER_STATE_PASSIVES_DISABLED] = true}
      end 
 
 	return 
 end
 
+function modifier_shazam:GetMinHealth(params) if not self:IsInShazamForm() then return self:GetParent():GetHealth() end return end
 function modifier_shazam:GetModifierExtraHealthPercentage(params) if not self:IsInShazamForm() then return PEROPERTIES.HEALTH end return end
 function modifier_shazam:GetModifierTotalDamageOutgoing_Percentage(params) if not self:IsInShazamForm() then return PEROPERTIES.DAMAGE end return end
 

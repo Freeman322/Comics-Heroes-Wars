@@ -52,7 +52,9 @@ function modifier_shazam_shazam:OnCreated(params)
         self:GetParent():SetAttackCapability(DOTA_UNIT_CAP_MELEE_ATTACK)
         
         Timers:CreateTimer(0.15, function()
-            self:GetParent():Heal(self:GetParent():GetMaxHealth(), self:GetAbility())
+            if self and not self:IsNull() then
+                self:GetParent():Heal(self:GetParent():GetMaxHealth(), self:GetAbility())
+            end
         end)
     end 
 end
