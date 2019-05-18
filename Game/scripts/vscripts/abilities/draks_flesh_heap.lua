@@ -20,5 +20,9 @@ end
 
 function modifier_draks_flesh_heap:GetModifierBonusStats_Strength()	return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("strength_buff_amount") * (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_draks_flesh_heap") or 1)) end
 function modifier_draks_flesh_heap:GetModifierConstantHealthRegen()	return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("health_regen") * (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_draks_flesh_heap") or 1)) end
-function modifier_draks_flesh_heap:OnHeroKilled(params)	if params.target:IsFriendly(params.target) then	self:SetStackCount(self:GetStackCount() + 1) end end
 function draks_flesh_heap:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
+function modifier_draks_flesh_heap:OnHeroKilled(params) 
+	if IsServer() then
+		if not params.target:IsFriendly(params.attacker) and params.attacker == self:GetParent() then self:SetStackCount(self:GetStackCount() + 1) end 
+	end 
+end

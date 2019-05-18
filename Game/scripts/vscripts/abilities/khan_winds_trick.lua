@@ -125,10 +125,12 @@ end
 
 function modifier_khan_winds_trick_aura:OnTakeDamage( params )
     if params.unit == self:GetParent() then
-    	if params.attacker:HasModifier("modifier_khan_winds_trick_dummy") == false then
-    		params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned",{duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
-    		self:GetParent():Heal(params.damage, self:GetAbility())
-            params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_khan_winds_trick_dummy",{duration = self:GetAbility():GetSpecialValueFor("duration")})
+        if params.attacker:HasModifier("modifier_khan_winds_trick_dummy") == false then
+            pcall(function()
+                params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned",{duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
+                self:GetParent():Heal(params.damage, self:GetAbility())
+                params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_khan_winds_trick_dummy",{duration = self:GetAbility():GetSpecialValueFor("duration")})
+            end)
     	end
     end
 end

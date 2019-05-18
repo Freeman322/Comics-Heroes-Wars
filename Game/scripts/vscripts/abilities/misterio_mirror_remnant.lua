@@ -109,7 +109,7 @@ end
 
 modifier_misterio_mirror_remnant_invis = class({})
 
-local MOVESPEED = 525
+local MOVESPEED = 600
 local INVISIBILITY_LEVEL = 1
 local CHECK_TIME = 0.1
 
@@ -153,9 +153,7 @@ end
 
 function modifier_misterio_mirror_remnant_invis:CheckState()
 	local state = {
-        [MODIFIER_STATE_DISARMED] = true,
-        [MODIFIER_STATE_INVISIBLE] = true,
-        [MODIFIER_STATE_TRUESIGHT_IMMUNE] = true,
+        [MODIFIER_STATE_INVISIBLE] = true
 	}
 
 	return state

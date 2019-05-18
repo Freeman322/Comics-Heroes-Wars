@@ -7735,7 +7735,7 @@
 			"18"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_cooldown"			"5.0"
+				"bash_cooldown"			"2.0"
 			}
 		}
 	}

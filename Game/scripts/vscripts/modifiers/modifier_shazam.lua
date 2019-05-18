@@ -89,8 +89,8 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_shazam:CheckState()
-     if self:IsInFear() and not self:IsInShazamForm() then
-	     return {[MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_NO_HEALTH_BAR] = true, [MODIFIER_STATE_STUNNED] = true, [MODIFIER_STATE_UNSELECTABLE] = true, [MODIFIER_STATE_OUT_OF_GAME] = true}
+     if not self:IsInShazamForm() then
+	     return {[MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_NO_HEALTH_BAR] = true, [MODIFIER_STATE_OUT_OF_GAME] = true}
      end 
 
 	return 

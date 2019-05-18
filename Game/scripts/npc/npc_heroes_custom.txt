@@ -1751,32 +1751,32 @@
 	    "Ability16"					"special_bonus_spell_block_15"
 	    "Ability17"					"special_bonus_all_stats_20"
 
-			"ArmorPhysical"					"0"
-	    "AttackDamageMin"				"23"
-	    "AttackDamageMax"				"33"
-			"AttackRate"					"1.600000"
-			"AttackAnimationPoint"			"0.400000"
-			"AttackAcquisitionRange"		"900"
-			"AttackRange"					"600"
-			"ProjectileSpeed"				"1300"
-	    "AttributeBaseStrength"			"21"
-	    "AttributeStrengthGain"			"2.000000"
-	    "AttributeBaseAgility"			"19"
-	    "AttributeAgilityGain"			"2.300000"
-	    "AttributeBaseIntelligence"		"28"
-	    "AttributeIntelligenceGain"		"3.200000"
-	    "AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
-			"MovementSpeed"		        	"310"
+		"ArmorPhysical"					"0"
+		"AttackDamageMin"				"23"
+		"AttackDamageMax"				"33"
+		"AttackRate"					"1.600000"
+		"AttackAnimationPoint"			"0.400000"
+		"AttackAcquisitionRange"		"900"
+		"AttackRange"					"600"
+		"ProjectileSpeed"				"1300"
+		"AttributeBaseStrength"			"21"
+		"AttributeStrengthGain"			"2.000000"
+		"AttributeBaseAgility"			"19"
+		"AttributeAgilityGain"			"2.300000"
+		"AttributeBaseIntelligence"		"28"
+		"AttributeIntelligenceGain"		"3.200000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"MovementSpeed"		        	"310"
 	}
 	"npc_dota_hero_han"
 	{
 		"override_hero"			"npc_dota_hero_shredder"
 		"Model"					"models/heroes/antimage/antimage.vmdl" //модель
 
-		"SoundSet"		"Hero_Windrunner"
+		"SoundSet"				"Hero_Windrunner"
 		"HeroSelectSoundEffect"		"Hero_Antimage.Pick"
 
-		"DisableWearables"		"1"
+		"DisableWearables"			"1"
 		"Ability1"				"khan_sonic_boom"
 		"Ability2"				"khan_winds_trick"
 		"Ability3"				"khan_windrun"
@@ -1867,87 +1867,87 @@
 	}
 	"npc_dota_hero_hulk" //имя юнита
 	{
-			// General
-			//----------------------------------------------------------------
-			"override_hero"			"npc_dota_hero_tidehunter"
-			"Model"					"models/heroes/hero_hulk/hulk.vmdl"
-			"DisableWearables"		"1"
-			"ModelScale"            "5.0" //размер модели
-			"HealthBarOffset"       "140" //насколько высоко будет хп бар
+		// General
+		//----------------------------------------------------------------
+		"override_hero"			"npc_dota_hero_tidehunter"
+		"Model"					"models/heroes/hero_hulk/hulk.vmdl"
+		"DisableWearables"		"1"
+		"ModelScale"            "5.0" //размер модели
+		"HealthBarOffset"       "140" //насколько высоко будет хп бар
 
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityLayout"				"4"
-			//-------------------------------------------------------------------------------------------------------------
-			"Ability1"				"hulk_passive"							// Ability 1
-			"Ability2"				"hulk_ult"									// Ability 2
-			"Ability3"				"hulk_blood"							// Ability 3
-			"Ability4"				"generic_hidden"							     // Ability 4
-			"Ability5"			    "generic_hidden"
-			"Ability6"			    "hulk_devour"
-			"Ability7"			    ""
-			"Ability10"				"special_bonus_exp_boost_30"
-			"Ability11"				"special_bonus_all_stats_12"
-			"Ability12"				"special_bonus_attack_speed_100"
-			"Ability13"				"special_bonus_armor_15"
-			"Ability14"				"special_bonus_all_stats_15"
-			"Ability15"				"special_bonus_hp_regen_50"
-			"Ability16"				"special_bonus_attack_damage_75"
-			"Ability17"				"special_bonus_strength_25"
-			"Ability20"				""
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"				"hulk_passive"							// Ability 1
+		"Ability2"				"hulk_ult"									// Ability 2
+		"Ability3"				"hulk_blood"							// Ability 3
+		"Ability4"				"generic_hidden"							     // Ability 4
+		"Ability5"			    "generic_hidden"
+		"Ability6"			    "hulk_devour"
+		"Ability7"			    ""
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_attack_speed_100"
+		"Ability13"				"special_bonus_armor_15"
+		"Ability14"				"special_bonus_all_stats_15"
+		"Ability15"				"special_bonus_hp_regen_50"
+		"Ability16"				"special_bonus_attack_damage_75"
+		"Ability17"				"special_bonus_strength_25"
+		"Ability20"				""
 
 
-			// Armor
-			//----------------------------------------------------------------
-			"ArmorPhysical"         "0"
-			"MagicalResistance"     "24"
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"         "0"
+		"MagicalResistance"     "24"
 
-			// Attack
-			//----------------------------------------------------------------
-			"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-			"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-			"AttackDamageMin"       "26.0"
-			"AttackDamageMax"       "38.0"
-			"AttackRate"            "1.6"
-			"AttackAnimationPoint"  "0.5"
-			"AttackAcquisitionRange" "500"
-			"AttackRange"           "150"
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+		"AttackDamageMin"       "26.0"
+		"AttackDamageMax"       "38.0"
+		"AttackRate"            "1.6"
+		"AttackAnimationPoint"  "0.5"
+		"AttackAcquisitionRange" "500"
+		"AttackRange"           "150"
 
-			// Bounds
-			//----------------------------------------------------------------
-			"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-			"RingRadius"            "70"
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+		"RingRadius"            "70"
 
-			// Movement
-			//----------------------------------------------------------------
-			"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-			"MovementSpeed"         "310"
-			"MovementTurnRate"      "0.6"
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"         "310"
+		"MovementTurnRate"      "0.6"
 
-			// Status
-			//----------------------------------------------------------------
-			"StatusHealth"          "400"
-			"StatusHealthRegen"     "6.0"
-			"StatusMana"            "400"
-			"StatusManaRegen"       "1"
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"          "400"
+		"StatusHealthRegen"     "6.0"
+		"StatusMana"            "400"
+		"StatusManaRegen"       "1"
 
-			// Vision
-			//----------------------------------------------------------------
-			"VisionDaytimeRange"    "1400"
-			"VisionNighttimeRange"  "800"
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"    "1400"
+		"VisionNighttimeRange"  "800"
 
-			"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
-			"AttributeBaseStrength"   "28"                   // Base strength
-			"AttributeStrengthGain"   "3.4"                   // Strength bonus per level.
-			"AttributeBaseIntelligence" "12"                   // Base intelligence
-			"AttributeIntelligenceGain" "1.0"                   // Intelligence bonus per level.
-			"AttributeBaseAgility"    "18"                   // Base agility
-			"AttributeAgilityGain"    "1.9"                   // Agility bonus per level.
-			"precache"
-			{
-					"model"		"models/heroes/axe/axe.vmdl"
-					"model"		"models/hulk/hulk/hulk_weapon.vmdl"
-					"model"		"models/hulk/hulk/hulk_head.vmdl"
-			}
+		"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"   "28"                   // Base strength
+		"AttributeStrengthGain"   "3.4"                   // Strength bonus per level.
+		"AttributeBaseIntelligence" "12"                   // Base intelligence
+		"AttributeIntelligenceGain" "1.0"                   // Intelligence bonus per level.
+		"AttributeBaseAgility"    "18"                   // Base agility
+		"AttributeAgilityGain"    "1.9"                   // Agility bonus per level.
+		"precache"
+		{
+				"model"		"models/heroes/axe/axe.vmdl"
+				"model"		"models/hulk/hulk/hulk_weapon.vmdl"
+				"model"		"models/hulk/hulk/hulk_head.vmdl"
+		}
 	  }
 	"npc_dota_hero_huskar"
 	{
@@ -2046,46 +2046,46 @@
 	}
 	"npc_dota_hero_iron_man"
 	{
-	      "override_hero"		"npc_dota_hero_rattletrap"
-	      "Model"				"models/heroes/hero_ironman/ironman.vmdl"
-	      "DisableWearables"  	"1"
-	      "ModelScale"			"1.800"
-	      "AbilityLayout"     	"5"
-	      "Ability1"		    "iron_laser"
-	      "Ability2"		    "iron_heat_missile"
-	      "Ability3"		    "iron_ower"
-	      "Ability4"		    "iron_rocket"
-	      "Ability5"		    "iron_rearm"
-	      "Ability6"		    "iron_heat_strike"
-	      "Ability7"		    ""
-	      "Ability10"				"special_bonus_exp_boost_30"
-	      "Ability11"				"special_bonus_all_stats_12"
-	      "Ability12"				"special_bonus_hp_regen_40"
-	      "Ability13"				"special_bonus_unique_iron_man"
-	      "Ability14"				"special_bonus_cooldown_reduction_25"
-	      "Ability15"				"special_bonus_spell_amplify_3"
-	      "Ability16"				"special_bonus_spell_block_15"
-	      "Ability17"				"special_bonus_all_stats_20"
-	      "ArmorPhysical"				"5"
-	      "AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
-	  	  "ProjectileModel"				"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
-		  "ProjectileSpeed"				"3750"
-		  "AttackRange"					"600"
-	      "AttackDamageMin"				"31"
-	      "AttackDamageMax"				"33"
-	      "AttackRate"					"1.700000"
-	      "AttackAnimationPoint"		"0.330000"
-	      "AttackAcquisitionRange"		"600"
-	      "AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-	      "AttributeBaseStrength"		"22"
-	      "AttributeStrengthGain"		"2.000000"
-	      "AttributeBaseAgility"		"18"
-	      "AttributeAgilityGain"		"1.700000"
-	      "AttributeBaseIntelligence"	"28"
-	      "AttributeIntelligenceGain"	"3.200000"
-	      "MovementSpeed"				"315"
-	      "MovementTurnRate"			"0.600000"
-	  }
+		"override_hero"		"npc_dota_hero_rattletrap"
+		"Model"				"models/heroes/hero_ironman/ironman.vmdl"
+		"DisableWearables"  	"1"
+		"ModelScale"			"1.800"
+		"AbilityLayout"     	"5"
+		"Ability1"		    "iron_laser"
+		"Ability2"		    "iron_heat_missile"
+		"Ability3"		    "iron_ower"
+		"Ability4"		    "iron_rocket"
+		"Ability5"		    "iron_rearm"
+		"Ability6"		    "iron_heat_strike"
+		"Ability7"		    ""
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_hp_regen_40"
+		"Ability13"				"special_bonus_unique_iron_man"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_spell_amplify_3"
+		"Ability16"				"special_bonus_spell_block_15"
+		"Ability17"				"special_bonus_all_stats_20"
+		"ArmorPhysical"				"5"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"				"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+		"ProjectileSpeed"				"3750"
+		"AttackRange"					"600"
+		"AttackDamageMin"				"31"
+		"AttackDamageMax"				"33"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"		"0.330000"
+		"AttackAcquisitionRange"		"600"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.000000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.700000"
+		"AttributeBaseIntelligence"	"28"
+		"AttributeIntelligenceGain"	"3.200000"
+		"MovementSpeed"				"315"
+		"MovementTurnRate"			"0.600000"
+	}
 	"npc_dota_hero_joker"
 	{
 	    "override_hero"					"npc_dota_hero_dazzle"

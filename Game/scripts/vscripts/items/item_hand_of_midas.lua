@@ -19,18 +19,11 @@ function item_hand_of_midas:CastFilterResultTarget (hTarget)
     return UF_SUCCESS
 end
 
-
 function item_hand_of_midas:GetAOERadius ()
-    if self:GetCaster ():HasScepter () and self:GetCaster ():GetUnitName () == "npc_dota_hero_alchemist" then
-        return 300
-    end
     return 0
 end
 
 function item_hand_of_midas:GetBehavior ()
-    if self:GetCaster ():HasScepter () and self:GetCaster ():GetUnitName () == "npc_dota_hero_alchemist" then
-        return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK + DOTA_ABILITY_BEHAVIOR_AOE
-    end
     return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK
 end
 --------------------------------------------------------------------------------

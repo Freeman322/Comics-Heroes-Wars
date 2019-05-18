@@ -54,6 +54,14 @@ end
 
 function superman_ice_wave:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil then
+		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_crystalmaiden/maiden_frostbite.vpcf", PATTACH_ABSORIGIN_FOLLOW, nil )
+		ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetOrigin() + Vector(0, 96, 0) )
+        ParticleManager:ReleaseParticleIndex(nFXIndex)
+
+        EmitSoundOn("hero_Crystal.frostbite", hTarget)
+        
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_superman_ice_wave", { duration = self:GetSpecialValueFor("duration") } )
+
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -63,14 +71,6 @@ function superman_ice_wave:OnProjectileHit( hTarget, vLocation )
 		}
 
         ApplyDamage( damage )
-
-        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_crystalmaiden/maiden_frostbite.vpcf", PATTACH_ABSORIGIN_FOLLOW, nil )
-		ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetOrigin() + Vector(0, 96, 0) )
-        ParticleManager:ReleaseParticleIndex(nFXIndex)
-
-        EmitSoundOn("hero_Crystal.frostbite", hTarget)
-        
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_superman_ice_wave", { duration = self:GetSpecialValueFor("duration") } )
 	end
 
 	return false

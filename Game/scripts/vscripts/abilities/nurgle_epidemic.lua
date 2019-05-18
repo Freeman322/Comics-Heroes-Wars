@@ -32,7 +32,9 @@ end
 
 function nurgle_epidemic:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil then
-        EmitSoundOn( "Hero_Venomancer.VenomousGaleImpact" , self:GetCaster() )
+		EmitSoundOn( "Hero_Venomancer.VenomousGaleImpact" , self:GetCaster() )
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_nurgle_epidemic", { duration = self:GetSpecialValueFor("duration") } )
+		
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -42,7 +44,6 @@ function nurgle_epidemic:OnProjectileHit( hTarget, vLocation )
 		}
 
 		ApplyDamage( damage )
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_nurgle_epidemic", { duration = self:GetSpecialValueFor("duration") } )
 	end
 
 	return false

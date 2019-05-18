@@ -63,13 +63,13 @@ function modifier_item_jarnbjorn:GetModifierAttackSpeedBonus_Constant( params ) 
 
 function modifier_item_jarnbjorn:OnAttackLanded( params )
      if IsServer() then
-          if params.target and params.attacker == self:GetParent() then
+          if params.target and params.attacker == self:GetParent() and not self:GetParent():IsIllusion() then
                ---BASH
                if self.m_hCashedUnit ~= params.target and not self:HasCooldown() then
                     self:Bash(params.target)
                end 
 
-               if RollPercentage(self:GetAbility():GetSpecialValueFor("bash_chance_melee")) then
+               if RollPercentage(self:GetAbility():GetSpecialValueFor("bash_chance_melee")) and not self:HasCooldown() then
                     self:Bash(params.target)
                end 
 

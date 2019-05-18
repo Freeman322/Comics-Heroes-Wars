@@ -1190,7 +1190,7 @@ function Util:OnHeroInGame(hero)
       hero:FindAbilityByName("thanos_believer"):SetLevel(1)
 
       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "titans_armor") then
-        hero:SetOriginalModel("models/heroes/hero_thanos_arcana/thanos.vmdl")
+        hero:SetOriginalModel("models/heroes/hero_thanos/thanos.vmdl")
 
         SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos_arcana/thanos_helmet.vmdl"}):FollowEntity(hero, true)
 

@@ -59,15 +59,19 @@ function item_soul_urn_modifier:OnTakeDamageKillCredit( params )
 
                 if params.target == self:GetParent() then return end 
                 
-                ApplyDamage ( {
-                    victim = params.target,
-                    attacker = self:GetParent(),
-                    damage = damage,
-                    damage_type = params.damage_type,
-                    damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
-                })
+                pcall(function()
+                    if params.target and not params.target:IsNull() then
+                        SendOverheadEventMessage( params.target, OVERHEAD_ALERT_BONUS_POISON_DAMAGE , params.target, math.floor( damage ), nil )
 
-                SendOverheadEventMessage( params.target, OVERHEAD_ALERT_BONUS_POISON_DAMAGE , params.target, math.floor( damage ), nil )
+                        ApplyDamage ( {
+                            victim = params.target,
+                            attacker = self:GetParent(),
+                            damage = damage,
+                            damage_type = params.damage_type,
+                            damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
+                        })
+                    end
+                end)
             end 
         end 
     end 

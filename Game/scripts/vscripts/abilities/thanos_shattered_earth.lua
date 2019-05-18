@@ -17,10 +17,10 @@ function thanos_shattered_earth:OnChannelFinish( bInterrupted )
           self:GetCaster():StartGesture(ACT_DOTA_CAST_ABILITY_4)
 
           local radius = self:GetSpecialValueFor("epicenter_radius")
-          local damage_per_unit = self:GetSpecialValueFor("damage_per_unit")
+          local damage = self:GetSpecialValueFor("damage")
 
           if self:GetCaster():HasTalent("special_bonus_unique_thanos_1") then radius = radius + self:GetCaster():FindTalentValue("special_bonus_unique_thanos_1") end 
-          if self:GetCaster():HasTalent("special_bonus_unique_thanos_2") then damage_per_unit = damage_per_unit + self:GetCaster():FindTalentValue("special_bonus_unique_thanos_2") end 
+          if self:GetCaster():HasTalent("special_bonus_unique_thanos_2") then damage = damage + self:GetCaster():FindTalentValue("special_bonus_unique_thanos_2") end 
 
 		local punch_particle = ParticleManager:CreateParticle("particles/econ/items/elder_titan/elder_titan_ti7/elder_titan_echo_stomp_ti7_magical.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
 		ParticleManager:SetParticleControl(punch_particle, 0, self:GetCaster():GetAbsOrigin())
@@ -31,11 +31,10 @@ function thanos_shattered_earth:OnChannelFinish( bInterrupted )
           
 		local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false )
           if #enemies > 0 then       
-               damage_per_unit = damage_per_unit * #enemies
 
 			for _,enemy in pairs(enemies) do
 				if enemy ~= nil and ( not enemy:IsMagicImmune() ) and ( not enemy:IsInvulnerable() ) then
-                         enemy:AddNewModifier(self:GetCaster(), self, "modifier_thanos_shattered_earth", {damage = damage_per_unit, duration = self:GetSpecialValueFor("fade_duration")})
+                         enemy:AddNewModifier(self:GetCaster(), self, "modifier_thanos_shattered_earth", {damage = damage, duration = self:GetSpecialValueFor("fade_duration")})
 				end
 			end
           end
@@ -103,7 +102,7 @@ function modifier_thanos_shattered_earth:OnDestroy()
                victim = self:GetParent(),
                attacker = self:GetCaster(),
                ability = self:GetAbility(),
-               damage = self.m_iDamage,
+               damage = (self.m_iDamage / 100) * self:GetParent():GetMaxHealth(),
                damage_type = DAMAGE_TYPE_MAGICAL,
           }
 

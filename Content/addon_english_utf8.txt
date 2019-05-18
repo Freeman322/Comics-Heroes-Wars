@@ -10950,7 +10950,7 @@
 
 		// ******************** ITEMS ********************
 		"DOTA_Tooltip_ability_item_chronograph"                                           "Chronograph"
-		"DOTA_Tooltip_ability_item_chronograph_Description"                               "<h1>Active: Chrono-Vault</h1> Total dispels the target and lock half of the enemy soul in Phase, reducing health twise.\n <h1>Passive: Manabreak</h1> Each attack burns 64 mana from the target, and deals magical damage per burned mana.\n <h1>Passive: Critical Strike</h1>Grants each attack a %crit_chance%%% chance to deal %crit_bonus%%% damage."
+		"DOTA_Tooltip_ability_item_chronograph_Description"                               "<h1>Active: Chrono-Vault</h1> Total dispels the target and lock half of the enemy soul in Phase, reducing health by %health_reduce%%.\n <h1>Passive: Manabreak</h1> Each attack burns %mana_burn% mana from the target, and deals magical damage per burned mana.\n <h1>Passive: Critical Strike</h1>Grants each attack a %crit_chance%%% chance to deal %crit_damage%%% damage."
 		"DOTA_Tooltip_ability_item_chronograph_Lore"                              	 	  "The Chronograph was created by Doctor Viktor Barisov. The Chronograph was hidden inside a vault in Barisov's underground laboratory. Barisov hid the Chronograph in this vault so Nikolai Demichev would not find it. The cavern which the vault is located in is also full of E-99 so the radiation from that would cover up the signature of the Chronograph. The second prototype that is the hand device is eventually grafted onto the hand of the Choosen One. The first prototype is a cumbersome device with a backpack powersource that is only seen in schematics, experimental footage, and once or twice on desks. Schematics also reveal that the Vault that secured the device and the device itself was designed especially for Renko by Dr. Barisov even though Renko aquires it before meeting Barisov. This bizzare turn of events is caused by the repeated incursions in time and alterations in the timeline."
 		"DOTA_Tooltip_ability_item_chronograph_bonus_int"                                 "+$int"
 		"DOTA_Tooltip_ability_item_chronograph_bonus_mana_regen"                          "+$mana_regen"
@@ -11024,8 +11024,30 @@
 
 		"DOTA_Tooltip_ability_item_majestic_boots_active_radius"                          "ACTIVE RADIUS:"
 
-		"npc_dota_hero_ogre"												  "Orge"
+		"npc_dota_hero_ogre"												  "Ogre"
 		"npc_dota_hero_ogre_lore"											  "The ordinary ogre is the creature for whom the phrase 'As dumb as a bag of rock hammers' was coined. In his natural state, an ogre is supremely incapable of doing or deciding anything. Clothed in dirt, he sometimes finds himself accidentally draped in animal skins after eating lanekill. Not an especially social creature, he is most often found affectionately consorting with the boulders or tree-stumps he has mistaken for kin (a factor that may explain the ogre's low rate of reproduction). However, once every generation or so, the ogre race is blessed with the birth of a two-headed Ogre Magi, who is immediately given the traditional name of Aggron Stonebreak, the name of the first and perhaps only wise ogre in their line's history. With two heads, Ogre Magi finds it possible to function at a level most other creatures manage with one. And while the Ogre Magi will win no debates (even with itself), it is graced with a divine quality known as Dumb Luck--a propensity for serendipitous strokes of fortune which have allowed the ogre race to flourish in spite of enemies, harsh weather, and an inability to feed itself. It's as if the Goddess of Luck, filled with pity for the sadly inept species, has taken Ogre Magi under her wing. And who could blame her? Poor things."
 		"npc_dota_hero_ogre_hype"											  "The ordinary ogre is the creature for whom the phrase 'As dumb as a bag of rock hammers' was coined. In his natural state, an ogre is supremely incapable of doing or deciding anything. Clothed in dirt, he sometimes finds himself accidentally draped in animal skins after eating lanekill. Not an especially social creature, he is most often found affectionately consorting with the boulders or tree-stumps he has mistaken for kin (a factor that may explain the ogre's low rate of reproduction). However, once every generation or so, the ogre race is blessed with the birth of a two-headed Ogre Magi, who is immediately given the traditional name of Aggron Stonebreak, the name of the first and perhaps only wise ogre in their line's history. With two heads, Ogre Magi finds it possible to function at a level most other creatures manage with one. And while the Ogre Magi will win no debates (even with itself), it is graced with a divine quality known as Dumb Luck--a propensity for serendipitous strokes of fortune which have allowed the ogre race to flourish in spite of enemies, harsh weather, and an inability to feed itself. It's as if the Goddess of Luck, filled with pity for the sadly inept species, has taken Ogre Magi under her wing. And who could blame her? Poor things."
+	
+		"DOTA_Tooltip_ability_ogre_mage_passive"							"Fire spells"
+		"DOTA_Tooltip_ability_ogre_mage_passive_description"				"When inflicting damage with an Ogre ability, it ignites its enemy for %duration% seconds, dealing %damage_per_second%%% damage from the maximum health of the enemy."
+		"DOTA_Tooltip_modifier_ogre_mage_passive_debuff"			"<font color=\"#ff3030\">You are burning!</font>"
+
+
+		"DOTA_Tooltip_ability_thanos_shattered_earth"                                     "Shattered Earth"
+		"DOTA_Tooltip_ability_thanos_shattered_earth_Description"                         "Calling for cosmic power, Thanos destroys the earth underfoot, raising enemies into the air, inflicting damage and bringing them back after a short delay. Damage depends on the number of enemies affected by the ability."
+		"DOTA_Tooltip_ability_thanos_shattered_earth_epicenter_radius"                    "RADIUS:"
+		"DOTA_Tooltip_ability_thanos_shattered_earth_fade_duration"                       "DURATION:"
+		"DOTA_Tooltip_ability_thanos_shattered_earth_damage_per_unit"                     "DAMAGE PER UNIT:"
+		"DOTA_Tooltip_ability_thanos_shattered_earth_stun_duration"                       "STUN DURATION:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_thanos_1"                              "+120 Shattered Earth radius"
+		"DOTA_Tooltip_ability_special_bonus_unique_thanos_2"                              "+90 Shattered Earth damage per unit"
+
+		"DOTA_Tooltip_ability_thanos_titans_sword"                                        "Titan's Sword"
+		"DOTA_Tooltip_ability_thanos_titans_sword_Description"                            "Using his blade, Thanos hits a greater number of enemies, attacking everyone in the radius."
+		"DOTA_Tooltip_ability_thanos_titans_sword_radius"                                 "RADIUS:"
+		"DOTA_Tooltip_ability_thanos_titans_sword_ministun_duration"                      "MINISTUN DURATION:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_thanos_3"                              "+100 for Titan's Sword radius"
 	}	
 }

@@ -61,17 +61,18 @@ function modifier_item_cursed_necklace:OnTakeDamage( params )
                 local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), hVictim:GetOrigin(), hVictim, self:GetAbility():GetSpecialValueFor("splash_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
                 if #units > 0 then
                     for _,unit in pairs(units) do
-                        ApplyDamage ( {
-                            victim = unit,
-                            attacker = self:GetParent(),
-                            damage = fDamage * (self:GetAbility():GetSpecialValueFor("magical_splash") / 100),
-                            damage_type = DAMAGE_TYPE_PURE,
-                            ability = self:GetAbility(),
-                            damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
-                        })
+                        pcall(function()
+                            ParticleManager:CreateParticle("particles/items2_fx/mekanism_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
 
-                        EmitSoundOn( "Hero_Oracle.FalsePromise.Healed", units )
-                        ParticleManager:CreateParticle("particles/items2_fx/mekanism_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, units)
+                            ApplyDamage ( {
+                                victim = unit,
+                                attacker = self:GetParent(),
+                                damage = fDamage * (self:GetAbility():GetSpecialValueFor("magical_splash") / 100),
+                                damage_type = DAMAGE_TYPE_PURE,
+                                ability = self:GetAbility(),
+                                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
+                            })
+                        end)
                     end
                 end				
 			end

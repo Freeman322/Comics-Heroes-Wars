@@ -57,6 +57,12 @@ function thinker_nurgle_acid_puddle:OnIntervalThink()
     local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetParent(), self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, 0, false )
     if #units > 0 then
         for _,unit in pairs(units) do
+            if not unit:IsMagicImmune() then
+                ApplyDamage( damage )
+                EmitSoundOn("Hero_Alchemist.AcidSpray.Damage", unit)
+                unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_nurgle_acid_puddle", { duration = 10 } )
+            end
+
             local damage = {
                 victim = unit,
                 attacker = self:GetCaster(),
@@ -64,11 +70,6 @@ function thinker_nurgle_acid_puddle:OnIntervalThink()
                 damage_type = DAMAGE_TYPE_PURE,
                 ability = self:GetAbility()
             }
-            if not unit:IsMagicImmune() then
-              ApplyDamage( damage )
-              EmitSoundOn("Hero_Alchemist.AcidSpray.Damage", unit)
-              unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_nurgle_acid_puddle", { duration = 10 } )
-            end
         end
      end
   end

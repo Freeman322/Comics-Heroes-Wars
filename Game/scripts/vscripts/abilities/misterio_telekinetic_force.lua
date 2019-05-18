@@ -8,6 +8,7 @@ misterio_telekinetic_force = class({})
 
 misterio_telekinetic_force.m_iRadius = 0
 misterio_telekinetic_force.m_hTarget = nil
+misterio_telekinetic_force.m_iCount = 1
 
 function misterio_telekinetic_force:IsRefreshable() return false end 
 
@@ -19,10 +20,15 @@ function misterio_telekinetic_force:OnSpellStart()
 
             local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), self:GetCaster(), self.m_iRadius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
             if units ~= nil then
-                if #units > 0 then
-                    for _, unit in pairs(units) do
-                        unit:AddNewModifier(self:GetCaster(), self, "modifier_misterio_telekinetic_force", {duration = self:GetSpecialValueFor("duration"),
-                        target = hTarget:entindex()})
+			 if #units > 0 then
+				self.m_iCount = #units
+
+				for _, unit in pairs(units) do
+					if unit ~= self:GetCaster() then
+						unit:AddNewModifier(self:GetCaster(), self, "modifier_misterio_telekinetic_force", {duration = self:GetSpecialValueFor("duration"),
+						target = hTarget:entindex(),
+						count = #units})
+					end
                     end
                 end
             end
@@ -73,7 +79,7 @@ function misterio_telekinetic_force:OnTargetLanded(unit, pos)
 				victim = unit,
 				ability = self,
 				damage_type = self:GetAbilityDamageType(),
-				damage = damage_per_target
+				damage = damage_per_target * self.m_iCount
 			})
 		end
 

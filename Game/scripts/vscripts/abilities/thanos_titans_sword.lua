@@ -49,19 +49,19 @@ function modifier_thanos_titans_sword:OnAttackLanded (params)
                          local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), params.target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
                          if #units > 0 then
                               for _,unit in pairs(units) do
-                                   if unit ~= params.target then
-                                        unit:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("ministun_duration")})
-                              
-                                        EmitSoundOn("Hero_DoomBringer.Attack.Impact", unit)
+                                   unit:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("ministun_duration")})
+                         
+                                   EmitSoundOn("Hero_DoomBringer.Attack.Impact", unit)
 
-                                        ApplyDamage({
-                                             attacker = self:GetParent(),
-                                             victim = unit,
-                                             damage = params.original_damage,
-                                             damage_type = DAMAGE_TYPE_PURE,
-                                             ability = self:GetAbility()
-                                        })
-                                   end
+                                   local bonus = (self:GetAbility():GetSpecialValueFor("bonus_damage") / 100) * unit:GetMaxHealth()
+
+                                   ApplyDamage({
+                                        attacker = self:GetParent(),
+                                        victim = unit,
+                                        damage = params.original_damage + bonus,
+                                        damage_type = DAMAGE_TYPE_PURE,
+                                        ability = self:GetAbility()
+                                   })                         
                               end
                          end
 

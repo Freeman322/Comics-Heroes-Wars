@@ -3417,12 +3417,12 @@
 			"01"
 			{
 				"var_type"									"FIELD_FLOAT"//INTEGER"
-				"base_damage"								"35 50 65 80"
+				"base_damage"									"35 50 65 80"
 			}
 			"02"
 			{
-				"var_type"									"FIELD_INTEGER"
-				"damage_per_stack"					"2 3 4 5"
+				"var_type"									"FIELD_FLOAT"
+				"damage_per_stack"								"0.5 1.0 1.5 2.0"
 			}
 			"03"
 			{
@@ -3432,7 +3432,7 @@
 			"04"
 			{
 				"var_type"									"FIELD_INTEGER"
-				"stack_duration"						"8"
+				"stack_duration"								"8"
 			}
 		}
 	}
@@ -35932,7 +35932,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 110 100"
+		"AbilityCooldown"				"80"
 		"AbilityChannelTime"			"1.0"
 		"AbilityCastPoint"				"0"
 
@@ -36000,14 +36000,15 @@
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_per_unit"		"70 140 210"
-				"LinkedSpecialBonus"	"special_bonus_unique_thanos_2"
+				"var_type"						"FIELD_INTEGER"
+				"damage"							"18 24 36"
+				"CalculateSpellDamageTooltip"			"0"
+				"LinkedSpecialBonus"				"special_bonus_unique_thanos_2"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.5 2.0 2.5"
+				"stun_duration"		"2.5"
 			}
 		}
 	}
@@ -36041,7 +36042,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"90"
+				"value"					"14"
 			}
 		}
 	}
@@ -36102,6 +36103,10 @@
 		
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
+		"precache"
+		{
+			"model"					"models/heroes/hero_thanos/thanos.vmdl"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -36116,6 +36121,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"ministun_duration"			"0.6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_damage"				"3.0 3.75 4.25 5.0"
 			}
 		}
 	}
