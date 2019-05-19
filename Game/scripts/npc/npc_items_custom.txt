@@ -7619,7 +7619,7 @@
 		"AbilityTextureName"        		"custom/jarnbjorn"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
@@ -7627,7 +7627,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"45.0"
+		"AbilityCooldown"				"30.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -7643,6 +7643,8 @@
 		"precache"
 		{
 			"particle"				"particles/econ/events/ti7/maelstorm_ti7.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"particle"				"particles/econ/items/abaddon/abaddon_alliance/abaddon_aphotic_shield_alliance_explosion.vpcf"
 		}
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -7738,6 +7740,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"bash_cooldown"			"2.0"
 			}
+			"19"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"					"375"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -7804,7 +7811,7 @@
 		"ItemAliases"					"sv;spirit vessel"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-
+		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"

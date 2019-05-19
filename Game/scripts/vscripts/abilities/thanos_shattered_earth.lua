@@ -102,8 +102,8 @@ function modifier_thanos_shattered_earth:OnDestroy()
                victim = self:GetParent(),
                attacker = self:GetCaster(),
                ability = self:GetAbility(),
-               damage = (self.m_iDamage / 100) * self:GetParent():GetMaxHealth(),
-               damage_type = DAMAGE_TYPE_MAGICAL,
+               damage = ((self.m_iDamage / 100) * self:GetParent():GetMaxHealth()) + self:GetAbility():GetAbilityDamage(),
+               damage_type = DAMAGE_TYPE_PURE,
           }
 
           ApplyDamage( DamageInfo )

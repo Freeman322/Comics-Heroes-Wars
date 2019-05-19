@@ -4117,7 +4117,7 @@
 		"override_hero"			"npc_dota_hero_elder_titan"
 		"Model"					"models/heroes/hero_thanos_eg/thanos.vmdl"			// Model.
 		"DisableWearables"			"1"
-		"ModelScale"  			"2.2"
+		"ModelScale"  				"2.2"
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"			"4"
 
@@ -4140,53 +4140,55 @@
 		"Ability16"				"special_bonus_strength_25"
 		"Ability17"				"special_bonus_all_stats_20"
 
-		"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
-		"ArmorPhysical"		"1.000000"
+		"AttributePrimary"      		"DOTA_ATTRIBUTE_STRENGTH"
+		"ArmorPhysical"			"1.000000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"26"
-		"AttackDamageMax"		"36"
-		"AttackRate"		"1.700000"
+		"AttackDamageMin"			"26"
+		"AttackDamageMax"			"36"
+		"AttackRate"				"1.700000"
 		"AttackAnimationPoint"		"0.350000"
 		"AttackAcquisitionRange"		"600"
-		"AttackRange"		"150"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttackRange"				"150"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"24"
 		"AttributeStrengthGain"		"2.600000"
 		"AttributeBaseAgility"		"18"
 		"AttributeAgilityGain"		"2.100000"
 		"AttributeBaseIntelligence"		"21"
 		"AttributeIntelligenceGain"		"1.800000"
-		"MovementSpeed"		"300"
-		"MovementTurnRate"		"0.400000"
-		"HealthBarOffset"		"200"
+		"MovementSpeed"			"300"
+		"MovementTurnRate"			"0.400000"
+		"HealthBarOffset"			"200"
+
+		"StatusHealthRegen"				"11.0"
 	  }
 	"npc_dota_hero_thor" //имя юнита
 	{
 	      // General
 	      //----------------------------------------------------------------
-			"override_hero"			"npc_dota_hero_omniknight"
-	 	    "HealthBarOffset"       "140" //насколько высоко будет хп бар
-	  		"Model"               	"models/heroes/hero_thor/thor.vmdl"
-			"DisableWearables"		"1"
-	      //-------------------------------------------------------------------------------------------------------------
-			"AbilityLayout"				"4"
-			//-------------------------------------------------------------------------------------------------------------
-			"Ability1"				"thor_lighning_shield"							// Ability 1
-			"Ability2"				"thor_battle_unite"									// Ability 2
-			"Ability3"				"thor_empower"							// Ability 3
-			"Ability4"				"generic_hidden"							     // Ability 4
-			"Ability5"			    "generic_hidden"
-			"Ability6"			    "thor_ravage"
-			"Ability7"			    ""
-			"Ability10"				"special_bonus_exp_boost_30"
-			"Ability11"				"special_bonus_all_stats_12"
-			"Ability12"				"special_bonus_unique_thor"
-			"Ability13"				"special_bonus_unique_thor_1"
-			"Ability14"				"special_bonus_unique_thor_2"
-			"Ability15"				"special_bonus_unique_thor_3"
-			"Ability16"				"special_bonus_unique_thor_4"
-			"Ability17"				"special_bonus_strength_25"
-			"Ability20"				""
+		"override_hero"			"npc_dota_hero_omniknight"
+		"HealthBarOffset"       "140" //насколько высоко будет хп бар
+		"Model"               	"models/heroes/hero_thor/thor.vmdl"
+		"DisableWearables"		"1"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"				"thor_lighning_shield"							// Ability 1
+		"Ability2"				"thor_battle_unite"									// Ability 2
+		"Ability3"				"thor_empower"							// Ability 3
+		"Ability4"				"generic_hidden"							     // Ability 4
+		"Ability5"			    "generic_hidden"
+		"Ability6"			    "thor_ravage"
+		"Ability7"			    ""
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_unique_thor"
+		"Ability13"				"special_bonus_unique_thor_1"
+		"Ability14"				"special_bonus_unique_thor_2"
+		"Ability15"				"special_bonus_unique_thor_3"
+		"Ability16"				"special_bonus_unique_thor_4"
+		"Ability17"				"special_bonus_strength_25"
+		"Ability20"				""
 
 
 	      // Armor

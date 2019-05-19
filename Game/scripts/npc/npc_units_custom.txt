@@ -3740,8 +3740,8 @@
 
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"					"200"
-		"StatusHealthRegen"				"2.0"
+		"StatusHealth"					"10"
+		"StatusHealthRegen"				"5.0"
 		"StatusMana"					"245"
 		"StatusManaRegen"				"1.0"
 

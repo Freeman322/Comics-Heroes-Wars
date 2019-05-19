@@ -50,7 +50,7 @@ function modifier_shazam:OnIntervalThink()
           end
      end 
 end
-
+--[[
 function modifier_shazam:DeclareFunctions ()
      local funcs = {
          MODIFIER_EVENT_ON_ATTACK_LANDED,
@@ -83,7 +83,7 @@ end
 function modifier_shazam:GetMinHealth(params) if not self:IsInShazamForm() then return self:GetParent():GetHealth() end return end
 function modifier_shazam:GetModifierExtraHealthPercentage(params) if not self:IsInShazamForm() then return PEROPERTIES.HEALTH end return end
 function modifier_shazam:GetModifierTotalDamageOutgoing_Percentage(params) if not self:IsInShazamForm() then return PEROPERTIES.DAMAGE end return end
-
+--]]
 
 modifier_shazam_debuff = class({}) 
 

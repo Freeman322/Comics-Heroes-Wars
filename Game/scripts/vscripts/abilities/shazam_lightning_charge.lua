@@ -50,14 +50,16 @@ end
 
 function shazam_lightning_charge:OnChannelFinish( bInterrupted )
      if IsServer() then
-          self.hVictim:AddNewModifier( self:GetCaster(), self, "modifier_shazam_lightning_charge", { duration = FADE_TIME, damage = self:GetElapsedTime()} )	
-          
-          local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_CUSTOMORIGIN, nil );
-		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
-		ParticleManager:SetParticleControlEnt( nFXIndex, 1, self.hVictim, PATTACH_POINT_FOLLOW, "attach_hitloc", self.hVictim:GetOrigin(), true );
-		ParticleManager:ReleaseParticleIndex( nFXIndex );
+          if self.hVictim then
+               self.hVictim:AddNewModifier( self:GetCaster(), self, "modifier_shazam_lightning_charge", { duration = FADE_TIME, damage = self:GetElapsedTime()} )	
+               
+               local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_CUSTOMORIGIN, nil );
+               ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
+               ParticleManager:SetParticleControlEnt( nFXIndex, 1, self.hVictim, PATTACH_POINT_FOLLOW, "attach_hitloc", self.hVictim:GetOrigin(), true );
+               ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-		EmitSoundOn( "Ability.LagunaBladeImpact", self:GetCaster() )
+               EmitSoundOn( "Ability.LagunaBladeImpact", self:GetCaster() )
+          end
      end 
 
      self.m_flElapsedTime = 0

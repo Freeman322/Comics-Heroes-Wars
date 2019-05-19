@@ -4,13 +4,14 @@ LinkLuaModifier( "modifier_item_jarnbjorn_cooldown", "items/item_jarnbjorn.lua",
 item_jarnbjorn = class({})
 
 local INDEX_FADE_TIME = 0.15
+local ACTIVE_STUN_DURATION = 1.75
 
 function item_jarnbjorn:GetIntrinsicModifierName()
 	return "modifier_item_jarnbjorn"
 end
 
 function item_jarnbjorn:CastFilterResultTarget( hTarget )
-	local nResult = UnitFilter( hTarget, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, self:GetCaster():GetTeamNumber() )
+	local nResult = UnitFilter( hTarget, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, self:GetCaster():GetTeamNumber() )
 	if nResult ~= UF_SUCCESS then
 		return nResult
 	end
@@ -28,7 +29,18 @@ function item_jarnbjorn:OnSpellStart()
           local hCaster = self:GetCaster()
 
           if hTarget ~= nil then
-               hTarget:AddNewModifier( hCaster, self, "modifier_item_mjollnir_static", {duration = self:GetSpecialValueFor("static_duration")} )
+               local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES, FIND_CLOSEST, false )
+               if #units > 0 then
+                    for _,unit in pairs(units) do
+                         unit:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = ACTIVE_STUN_DURATION } )
+                    end
+               end
+
+               local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/abaddon/abaddon_alliance/abaddon_aphotic_shield_alliance_explosion.vpcf", PATTACH_ABSORIGIN, hTarget )
+               ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetOrigin() )
+               ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+               EmitSoundOn( "Hero_Abaddon.AphoticShield.Destroy", hTarget )
           end
      end
 end
