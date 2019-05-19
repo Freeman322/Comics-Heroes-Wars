@@ -37,16 +37,14 @@ function modifier_sargeras_magmatic_armor:OnIntervalThink()
 	     	iDamage = self:GetCaster():FindTalentValue("special_bonus_unique_sargeras") + hAbility:GetSpecialValueFor( "damage_interval" )
 		end
 
-		ApplyDamage({
-			victim = self:GetParent(),
-			attacker = hAbility:GetCaster(),
-			damage = iDamage/10,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = hAbility
-		})
-
 		if not self:GetParent():IsBuilding() and self:GetParent():IsMagicImmune() == false then
-			ApplyDamage( damage )
+			ApplyDamage({
+				victim = self:GetParent(),
+				attacker = hAbility:GetCaster(),
+				damage = iDamage/10,
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				ability = hAbility
+			})
 		end
 	end
 end
