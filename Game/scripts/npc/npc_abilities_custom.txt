@@ -2915,6 +2915,156 @@
 		}
 	}
 
+	"flash_speedforce_lightning"
+	{
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/flash/flash_speedforce_lightning.lua"
+
+		"AbilityTextureName"				"custom/great_crit"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityManaCost"					"100 150 200 250"
+		"AbilityCooldown"					"40 35 30 25"
+		"AbilityCastPoint"					"0.1"
+		"AbilityCastRange"					"600 650 700 750"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"400 600 800 1000"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.4 1.6 1.8 2.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"distance_to_activate"		"9000 8500 8000 7500"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_move_range"			"300"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_to_damage_pct"		"10 15 20 25"
+			}
+		}
+	}
+
+	"flash_speedforce_regeneration"
+	{
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/flash/flash_speedforce_regeneration.lua"
+
+		"AbilityTextureName"				"custom/stamp"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityCooldown"					"45 40 35 30"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_health_pct"			"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"5"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"health_regen"				"70 80 90 100"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"health_regen_pct"			"4 5 6 7"
+			}
+		}
+	}
+
+	"flash_backtrack"
+	{
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/flash/flash_backtrack.lua"
+
+		"AbilityTextureName"				"custom/flash_passice"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"dodge_chance_pct"	"10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"double_attack_chance"	"14 16 18 20"
+			}
+		}
+	}
+
+	"flash_speedforce_power"
+	{
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/flash/flash_speedforce_power.lua"
+
+		"AbilityTextureName"				"custom/void"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"6 7 8"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"500 600 700"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_to_damage_pct"		"25 30 35"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_to_attack_speed_pct"	"30 40 50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"movespeed_steal_interval"	"0.1" //Лучше ставить 1/0.5/0.2/0.1, чтобы кража была более "равномерной"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movespeed_steal"			"2 3 4"
+			}
+		}
+	}
+
 	"flash_stampede"
 	{
 		// General
@@ -14193,7 +14343,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1 1.5 2 3"
+				"stun_duration"			"1 1.5 2 2.5"
 			}
 		}
 	}
@@ -18086,7 +18236,6 @@
 		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NONE"
 		"AbilityUnitDamageType"		"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
@@ -36087,7 +36236,7 @@
 		"AbilityTextureName"			"custom/thanos_titans_sword"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -36096,13 +36245,13 @@
 
 		"AbilitySound"					"Hero_DoomBringer.InfernalBlade.Target"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"14 12 10 8"
 		"AbilityManaCost"				"40"
 
 		"AbilityCastRange"				"175"
-		
+
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 		"precache"

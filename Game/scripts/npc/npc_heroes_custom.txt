@@ -1422,12 +1422,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"4"
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"	     	"flash_stampede"
-		"Ability2"		    "flash_void"
-		"Ability3"		    "falash_void_backtrack"
-		"Ability4"		    "generic_hidden"
-		"Ability5"		    "generic_hidden"
-		"Ability6"		    "flash_crit"
+		"Ability1"	     		"flash_speedforce_lightning"
+		"Ability2"		   		"flash_speedforce_regeneration"
+		"Ability3"		   		"flash_backtrack"
+		"Ability4"		 	  	"generic_hidden"
+		"Ability5"		 		"generic_hidden"
+		"Ability6"		  	 	"flash_speedforce_power"
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_all_stats_12"
 		"Ability12"				"special_bonus_agility_10"
