@@ -11,7 +11,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 
-		"AbilityCooldown"				"45"
+		"AbilityCooldown"				"40"
 		"AbilityCastRange"				"900"
 		"AbilityManaCost"				"150"
 
@@ -29,7 +29,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_int"			"45"
+				"bonus_int"			"60"
 			}
 			"05"
 			{
@@ -39,7 +39,7 @@
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"			"180"
+				"bonus_damage"			"200"
 			}
 			"08"
 			{
@@ -54,7 +54,7 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mana_burn"			"100"
+				"mana_burn"			"120"
 			}
 			"11"
 			{
@@ -69,12 +69,12 @@
 			"13"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance"			"20"
+				"crit_chance"			"25"
 			}
 			"14"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_damage"			"200"
+				"crit_damage"			"240"
 			}
 		}
 	}
@@ -616,7 +616,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blink_range_clamp"		"1500"
+				"blink_range_clamp"		"99999"
 			}
 			"03"
 			{
@@ -7604,7 +7604,7 @@
 		"ItemResult"						"item_jarnbjorn"
 		"ItemRequirements"
 		{
-			"01"							"item_mjollnir;item_monkey_king_bar;item_basher"
+			"01"							"item_mjollnir;item_monkey_king_bar;item_basher;item_ultimate_orb"
 		}
 	}
 	
@@ -7653,17 +7653,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"100"
+				"bonus_damage"				"150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"		"100"
+				"bonus_attack_speed"		"140"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"			"20"
+				"bonus_all_stats"			"35"
 			}
 			"04"
 			{
@@ -7703,7 +7703,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chain_chance"				"25"
+				"chain_chance"				"45"
 			}
 			"12"
 			{
