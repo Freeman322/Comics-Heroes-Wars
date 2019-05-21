@@ -3030,6 +3030,9 @@
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
+		"AbilityCooldown"					"60 50 40"
+		"AbilityManaCost"					"200"
+
 		"AbilitySpecial"
 		{
 			"01"
