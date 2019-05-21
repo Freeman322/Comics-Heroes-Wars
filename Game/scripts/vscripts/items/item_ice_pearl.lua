@@ -46,7 +46,7 @@ function modifier_item_ice_pearl:OnTakeDamage(params)
           damage = params.damage * self:GetAbility():GetSpecialValueFor("damage_return") / 100,
           damage_type = params.damage_type,
           ability = self:GetAbility(),
-          damage_flags = params.damage_flags
+          damage_flags = params.damage_flags + DOTA_DAMAGE_FLAG_REFLECTION
       })
 
       self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_item_ice_pearl_cooldown", {duration = self:GetAbility():GetCooldown(self:GetAbility():GetLevel())})
@@ -68,7 +68,7 @@ function modifier_item_ice_pearl_reduction:GetModifierMoveSpeedBonus_Constant() 
 modifier_item_ice_pearl_active = class({})
 
 function modifier_item_ice_pearl_active:IsPurgable() return false end
-function modifier_item_ice_pearl_active:GetEffectName() return "particles/econ/items/nyx_assassin/nyx_ti9_immortal/nyx_ti9_carapace.vpcf" end
+function modifier_item_ice_pearl_active:GetEffectName() return "particles/ice_pearl/ice_pearl_active.vpcf" end
 function modifier_item_ice_pearl_active:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_item_ice_pearl_active:GetStatusEffectName() return "particles/status_fx/status_effect_frost_armor.vpcf" end
 function modifier_item_ice_pearl_active:StatusEffectPriority() return 1000 end
@@ -76,7 +76,7 @@ function modifier_item_ice_pearl_active:DeclareFunctions() return {MODIFIER_EVEN
 
 function modifier_item_ice_pearl_active:OnTakeDamage(params)
     if IsServer() then
-        if params.unit == self:GetParent() and params.attacker ~= self:GetParent() and params.attacker:GetClassname() ~= "ent_dota_fountain" then
+        if params.unit == self:GetParent() and params.attacker ~= self:GetParent() and params.attacker:GetClassname() ~= "ent_dota_fountain" and params.attacker:HasModifier("modifier_item_ice_pearl_active") == false then
 
             ApplyDamage ({
                 victim = params.attacker,
@@ -84,7 +84,7 @@ function modifier_item_ice_pearl_active:OnTakeDamage(params)
                 damage = params.damage,
                 damage_type = DAMAGE_TYPE_PURE,
                 ability = self:GetAbility(),
-                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS
+                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
             })
             EmitSoundOn("DOTA_Item.BladeMail.Damage", params.attacker)
         end
