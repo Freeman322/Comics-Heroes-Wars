@@ -1,5 +1,5 @@
-LinkLuaModifier("modifier_flash_speedforce_power", "abilities/flash/flash_speedforce_power.lua", 0)
-LinkLuaModifier("modifier_flash_speedforce_power_debuff", "abilities/flash/flash_speedforce_power.lua", 0)
+LinkLuaModifier("modifier_flash_speedforce_power", "abilities/flash_speedforce_power.lua", 0)
+LinkLuaModifier("modifier_flash_speedforce_power_debuff", "abilities/flash_speedforce_power.lua", 0)
 
 flash_speedforce_power = class({
     GetIntrinsicModifierName = function() return "modifier_dark_seer_surge" end

@@ -5,7 +5,7 @@ khorn_currupted_attack = class({
 })
 
 modifier_khorn_currupted_attack = class({
-    IsHidden = function() return true end
+    IsHidden = function() return true end,
     DeclareFunctions = function() return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE} end
 })
 

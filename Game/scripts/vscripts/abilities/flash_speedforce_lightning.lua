@@ -1,4 +1,4 @@
-LinkLuaModifier("modifier_flash_speedforce_lightning", "abilities/flash/flash_speedforce_lightning.lua", 0)
+LinkLuaModifier("modifier_flash_speedforce_lightning", "abilities/flash_speedforce_lightning.lua", 0)
 
 flash_speedforce_lightning = class({
     GetIntrinsicModifierName = function() return "modifier_flash_speedforce_lightning" end

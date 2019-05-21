@@ -1,5 +1,5 @@
-LinkLuaModifier("modifier_flash_backtrack", "abilities/flash/flash_backtrack.lua", 0)
-LinkLuaModifier("modifier_flash_double_attack", "abilities/flash/flash_backtrack.lua", 0)
+LinkLuaModifier("modifier_flash_backtrack", "abilities/flash_backtrack.lua", 0)
+LinkLuaModifier("modifier_flash_double_attack", "abilities/flash_backtrack.lua", 0)
 
 flash_backtrack = class({
     GetIntrinsicModifierName = function() return "modifier_flash_backtrack" end

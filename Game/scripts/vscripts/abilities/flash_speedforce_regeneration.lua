@@ -1,5 +1,5 @@
-LinkLuaModifier("modifier_flash_speedforce_regeneration", "abilities/flash/flash_speedforce_regeneration.lua", 0)
-LinkLuaModifier("modifier_flash_speedforce_regeneration_regen", "abilities/flash/flash_speedforce_regeneration.lua", 0)
+LinkLuaModifier("modifier_flash_speedforce_regeneration", "abilities/flash_speedforce_regeneration.lua", 0)
+LinkLuaModifier("modifier_flash_speedforce_regeneration_regen", "abilities/flash_speedforce_regeneration.lua", 0)
 
 flash_speedforce_regeneration = class({
     GetIntrinsicModifierName = function() return "modifier_flash_speedforce_regeneration" end
