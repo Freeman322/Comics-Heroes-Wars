@@ -104,6 +104,7 @@ function modifier_thanos_shattered_earth:OnDestroy()
                ability = self:GetAbility(),
                damage = ((self.m_iDamage / 100) * self:GetParent():GetMaxHealth()) + self:GetAbility():GetAbilityDamage(),
                damage_type = DAMAGE_TYPE_PURE,
+               damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS 
           }
 
           ApplyDamage( DamageInfo )

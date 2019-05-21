@@ -71,7 +71,8 @@ function scarlet_witch_scarlet_magic:OnProjectileHit (hTarget, vLocation)
             local bourder_dmg = scarlet_m:GetLevelSpecialValueFor("damage", scarlet_m:GetLevel() - 1)
 
             ApplyDamage ( { attacker = self:GetCaster(), victim = hTarget, ability = hAbility, damage = bourder_dmg, damage_type = self:GetAbilityDamageType()})
-            if hTarget:GetHealthPercent() <= bourder then
+           
+            if hTarget and not hTarget:IsNull() and hTarget:GetHealthPercent() <= bourder then
                 hTarget:Kill(self, self:GetCaster())
             end
         end)

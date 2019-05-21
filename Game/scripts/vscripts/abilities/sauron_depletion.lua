@@ -24,13 +24,18 @@ function sauron_depletion:OnSpellStart ()
             local damage_mult = self:GetSpecialValueFor ("damage_per_health")
             local damage = damage_mult * hTarget:GetHealthDeficit ()
             local bourder = self:GetSpecialValueFor ("hit_point_minimum_pct")
+            
             if bourder >= hTarget:GetHealthPercent() then
                 hTarget:Kill(self, self:GetCaster())
             end
+            
             ApplyDamage ( { attacker = self:GetCaster (), victim = hTarget, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = self})
-            self:GetCaster ():Heal (damage * (self:GetSpecialValueFor ("heal_pct")/100), self:GetCaster ())
-            hTarget:AddNewModifier (self:GetCaster (), self, "modifier_stunned", { duration = 1.0 } )
-            EmitSoundOn ("Hero_Lina.LagunaBlade.Immortal", hTarget)
+           
+            if hTarget and not hTarget:IsNull() then
+                self:GetCaster ():Heal (damage * (self:GetSpecialValueFor ("heal_pct")/100), self:GetCaster ())
+                hTarget:AddNewModifier (self:GetCaster (), self, "modifier_stunned", { duration = 1.0 } )
+                EmitSoundOn ("Hero_Lina.LagunaBlade.Immortal", hTarget)
+            end
         end
 
         local nFXIndex = ParticleManager:CreateParticle ("particles/sauron/diplation.vpcf", PATTACH_CUSTOMORIGIN, nil);

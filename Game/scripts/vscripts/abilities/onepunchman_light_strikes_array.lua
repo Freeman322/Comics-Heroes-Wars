@@ -67,12 +67,14 @@ function modifier_onepunchman_light_strikes_array_thinker:OnIntervalThink()
 					damage_type = DAMAGE_TYPE_PHYSICAL,
 					ability = self:GetAbility()
 				}
-				ApplyDamage(damage)
+				
 			    local nFXIndex = ParticleManager:CreateParticle ("particles/units/heroes/hero_doom_bringer/doom_infernal_blade_impact.vpcf", PATTACH_CUSTOMORIGIN, unit);
 			    ParticleManager:SetParticleControlEnt (nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin (), true);
 			    ParticleManager:ReleaseParticleIndex (nFXIndex);
 
-			    unit:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_onepunchman_light_strikes_array", {duration = self:GetAbility():GetSpecialValueFor("duration_slowing")})
+				unit:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_onepunchman_light_strikes_array", {duration = self:GetAbility():GetSpecialValueFor("duration_slowing")})
+				
+				ApplyDamage(damage)
 		    end
 	    end
 

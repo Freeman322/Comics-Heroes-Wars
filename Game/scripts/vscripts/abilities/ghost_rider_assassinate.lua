@@ -29,6 +29,7 @@ function ghost_rider_assassinate:OnProjectileHit( hTarget, vLocation )
 
         self:GetCaster():PerformAttack(hTarget, true, false, true, true, false, false, true)
         
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = 0.05 } )
 
 		local damage = {
 			victim = hTarget,
@@ -41,8 +42,6 @@ function ghost_rider_assassinate:OnProjectileHit( hTarget, vLocation )
         ApplyDamage( damage )
         
         dmg_mod:Destroy()
-
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = 0.05 } )
 	end
 
 	return true

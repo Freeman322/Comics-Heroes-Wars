@@ -65,7 +65,6 @@ function strange_future_past:OnSpellStart(  )
                 damage_type = DAMAGE_TYPE_PURE,
                 ability = self
             }
-            ApplyDamage( damage_table )
 
             local nFXIndex = ParticleManager:CreateParticle( "particles/econ/events/winter_major_2017/dagon_wm07.vpcf", PATTACH_CUSTOMORIGIN, nil );
             ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
@@ -78,6 +77,8 @@ function strange_future_past:OnSpellStart(  )
 
             EmitSoundOn( "Hero_Invoker.Tornado.Cast.Immortal", self:GetCaster() )
             EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal", hTarget )
+
+            ApplyDamage( damage_table )
         end
     end
 end

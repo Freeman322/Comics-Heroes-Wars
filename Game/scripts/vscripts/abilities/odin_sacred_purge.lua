@@ -13,6 +13,7 @@ function odin_sacred_purge:OnSpellStart( )
 
     for i, target in ipairs(nearby_units) do
         EmitSoundOn( "Hero_Omniknight.Purification.Wingfall", target )
+        
         local nFXIndex = ParticleManager:CreateParticle( "particles/odin/sacred_purge.vpcf", PATTACH_WORLDORIGIN, target )
         ParticleManager:SetParticleControl( nFXIndex, 0, target:GetAbsOrigin() )
         ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 100, 1, 1 ) )
@@ -21,11 +22,13 @@ function odin_sacred_purge:OnSpellStart( )
         ParticleManager:SetParticleControl( nFXIndex, 4, target:GetAbsOrigin() )
         ParticleManager:SetParticleControl( nFXIndex, 5, target:GetAbsOrigin() )
         ParticleManager:ReleaseParticleIndex( nFXIndex )
+
         -- Play named sound on Entity
         target:Purge( false, true, false, true, false )
+        
         if target:GetTeamNumber(  ) ~= caster:GetTeamNumber() then
-            ApplyDamage({victim = target, attacker = caster, ability = self, damage = self:GetAbilityDamage(), damage_type = DAMAGE_TYPE_PURE})
             target:AddNewModifier(caster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
+            ApplyDamage({victim = target, attacker = caster, ability = self, damage = self:GetAbilityDamage(), damage_type = DAMAGE_TYPE_PURE})
         else
             target:Heal( self:GetAbilityDamage(), caster )
             target:AddNewModifier(caster, self, "modifier_odin_sacred_purge", {duration = self:GetSpecialValueFor("stun_duration")})

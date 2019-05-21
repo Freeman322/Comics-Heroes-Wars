@@ -50,7 +50,9 @@ function modifier_shazam_shazam:IsPurgable() return false end
 function modifier_shazam_shazam:OnCreated(params) 
     if IsServer() then
         self:GetParent():SetAttackCapability(DOTA_UNIT_CAP_MELEE_ATTACK)
-        
+
+        self:StartIntervalThink(0.1) 
+
         Timers:CreateTimer(0.15, function()
             if self and not self:IsNull() then
                 self:GetParent():Heal(self:GetParent():GetMaxHealth(), self:GetAbility())
@@ -58,6 +60,13 @@ function modifier_shazam_shazam:OnCreated(params)
         end)
     end 
 end
+
+function modifier_shazam_shazam:OnIntervalThink()
+    if IsServer() then 
+        self:GetParent():Purge(false, true, false, true, true)
+    end 
+end
+
 
 function modifier_shazam_shazam:OnDestroy() 
     if IsServer() then

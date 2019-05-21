@@ -58,6 +58,8 @@ function gambit_split:OnProjectileHit( hTarget, vLocation )
 		EmitSoundOn( "Hero_StormSpirit.Overload", hTarget )
 		EmitSoundOn( "Hero_StormSpirit.Overload", hTarget )
 
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor( "stun_duration" ) } )
+
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -66,8 +68,6 @@ function gambit_split:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 		ApplyDamage(damage)
-
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor( "stun_duration" ) } )
 	end
 
 	return true

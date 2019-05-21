@@ -106,7 +106,7 @@ function modifier_monkey_king_the_shattered_dreams:DoWidghAttack(caster, target,
 
     ApplyDamage( {attacker = caster, victim = unit, ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_PHYSICAL} )
 
-    if next_target then
+    if next_target and unit and not unit:IsNull() and not next_target:IsNull() then
       local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_CUSTOMORIGIN, nil );
   		ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
   		ParticleManager:SetParticleControlEnt( nFXIndex, 1, next_target, PATTACH_POINT_FOLLOW, "attach_hitloc", next_target:GetOrigin(), true );

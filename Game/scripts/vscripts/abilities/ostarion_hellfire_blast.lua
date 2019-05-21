@@ -68,10 +68,10 @@ function ostarion_hellfire_blast:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 
-		ApplyDamage( damage )
-
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = stun } )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_ostarion_hellfire_blast", { duration = self:GetSpecialValueFor("blast_dot_duration") } )
+
+		ApplyDamage( damage )
 	end
 
 	return true

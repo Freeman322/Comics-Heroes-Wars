@@ -29,16 +29,17 @@ function modifier_marvel_crit:OnAttackLanded (params)
         if params.attacker == self:GetParent () then
             local target = params.target
             if not target:IsBuilding() then
-							if target:GetUnitName() == "npc_dota_warlock_golem_1" then
-								return nil
-							end
-							if target:GetUnitName() == "npc_dota_boss_thanos" then
-								return nil
-							end
+				if target:GetUnitName() == "npc_dota_warlock_golem_1" then
+					return nil
+				end
+				if target:GetUnitName() == "npc_dota_boss_thanos" then
+					return nil
+				end
              	if RollPercentage(self:GetAbility():GetSpecialValueFor("crit_chance")) then
-             		 ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_dmg.vpcf", PATTACH_POINT_FOLLOW, victim)
-		             EmitSoundOn( "Hero_Oracle.FalsePromise.Damaged", victim )
-		             ApplyDamage({attacker = params.attacker, victim = target, ability = self:GetAbility(), damage = target:GetHealth()*(self:GetAbility():GetSpecialValueFor("crit_bonus")/100), damage_type = DAMAGE_TYPE_PURE})
+					ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_dmg.vpcf", PATTACH_POINT_FOLLOW, victim)
+					EmitSoundOn( "Hero_Oracle.FalsePromise.Damaged", victim )
+					
+					ApplyDamage({attacker = params.attacker, victim = target, ability = self:GetAbility(), damage = target:GetHealth()*(self:GetAbility():GetSpecialValueFor("crit_bonus")/100), damage_type = DAMAGE_TYPE_PURE})
              	end
             end
         end

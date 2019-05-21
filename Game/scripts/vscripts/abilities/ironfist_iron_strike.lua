@@ -115,7 +115,6 @@ function modifier_ironfist_iron_strike:OnAttackLanded (params)
                     ability = self:GetAbility(),
                 }
 
-                ApplyDamage( damage )
                 local knockbackProperties =
                 {
                     center_x = unit:GetAbsOrigin().x,
@@ -123,10 +122,12 @@ function modifier_ironfist_iron_strike:OnAttackLanded (params)
                     center_z = unit:GetAbsOrigin().z,
                     duration = self:GetAbility():GetSpecialValueFor("stun_duration"),
                     knockback_duration = self:GetAbility():GetSpecialValueFor("stun_duration"),
-                    knockback_distance = 200,
+                    knockback_distance = 500,
                     knockback_height = 0
                 }
                 unit:AddNewModifier( self:GetCaster(), self, "modifier_knockback", knockbackProperties )
+
+                ApplyDamage( damage )
             end
 
             self:Destroy()

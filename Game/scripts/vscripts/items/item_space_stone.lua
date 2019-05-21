@@ -4,6 +4,23 @@ LinkLuaModifier ("modifier_item_space_stone", "items/item_space_stone.lua", LUA_
 LinkLuaModifier ("modifier_item_space_stone_delay", "items/item_space_stone.lua", LUA_MODIFIER_MOTION_NONE)
 --------------------------------------------------------------------------------
 
+item_space_stone.m_hAncients = {
+	Vector(6880, 6368, 384),
+	Vector(-7168, -6656, 384)
+}
+
+local MAX_DIST = 1100
+
+function item_space_stone:CastFilterResultLocation( vLocation )
+	for _,vector in pairs(self.m_hAncients) do
+		if (vLocation - vector):Length2D() <= MAX_DIST then
+			return UF_FAIL_OBSTRUCTED
+		end
+	end
+
+	return UF_SUCCESS
+end
+
 function item_space_stone:OnSpellStart()
 	if IsServer() then 
 		local target = self:GetCursorPosition()

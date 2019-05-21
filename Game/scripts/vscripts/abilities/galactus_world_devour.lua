@@ -21,8 +21,9 @@ function galactus_world_devour:OnSpellStart()
     if #units > 0 then
       for _,target in pairs(units) do
         target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("duration") } )
+       
         local dmg = self:GetAbilityDamage() + (target:GetMaxHealth() * (self:GetSpecialValueFor("damage") / 100))
-        ApplyDamage({victim = target, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+
         self:GetCaster():Heal(dmg, target)
         local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_devour.vpcf", PATTACH_CUSTOMORIGIN, nil );
         ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
@@ -30,6 +31,8 @@ function galactus_world_devour:OnSpellStart()
         ParticleManager:ReleaseParticleIndex( nFXIndex );
 
         FindClearSpaceForUnit(target, self:GetCaster():GetAbsOrigin(), true)
+
+        ApplyDamage({victim = target, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
       end
     end
 

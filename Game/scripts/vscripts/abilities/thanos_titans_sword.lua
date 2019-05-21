@@ -60,7 +60,8 @@ function modifier_thanos_titans_sword:OnAttackLanded (params)
                                         victim = unit,
                                         damage = params.original_damage + bonus,
                                         damage_type = DAMAGE_TYPE_PURE,
-                                        ability = self:GetAbility()
+                                        ability = self:GetAbility(),
+                                        damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS 
                                    })                         
                               end
                          end

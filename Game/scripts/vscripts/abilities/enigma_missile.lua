@@ -28,6 +28,8 @@ function enigma_missile:OnProjectileHit( hTarget, vLocation )
         
         EmitSoundOn( "Hero_VengefulSpirit.MagicMissileImpact", hTarget )
         
+        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("magic_missile_stun") } )
+        
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -37,8 +39,6 @@ function enigma_missile:OnProjectileHit( hTarget, vLocation )
 		}
 
         ApplyDamage( damage )
-        
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("magic_missile_stun") } )
 	end
 
 	return true

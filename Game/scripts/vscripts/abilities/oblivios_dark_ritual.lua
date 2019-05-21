@@ -98,8 +98,6 @@ function modifier_oblivios_dark_ritual:OnDestroy()
         EmitSoundOn ("Hero_ArcWarden.SparkWraith.Activate", self:GetAbility():GetCaster())
         EmitSoundOn ("Hero_ArcWarden.SparkWraith.Damage", self:GetAbility():GetCaster())
 
-        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = hTarget, ability = self:GetAbility(), damage = self.bonus_damage*0.3, damage_type = DAMAGE_TYPE_MAGICAL})
-
         local pop_pfx = ParticleManager:CreateParticle("particles/items2_fx/orchid_pop.vpcf", PATTACH_OVERHEAD_FOLLOW, hTarget)
         ParticleManager:SetParticleControl(pop_pfx, 0, hTarget:GetAbsOrigin())
         ParticleManager:SetParticleControl(pop_pfx, 1, Vector(100, 0, 0))
@@ -108,6 +106,8 @@ function modifier_oblivios_dark_ritual:OnDestroy()
         self:GetCaster():Heal(self.bonus_damage * self:GetAbility():GetSpecialValueFor("health_conversion"), self:GetAbility())
 
         self.bonus_damage = 0
+
+        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = hTarget, ability = self:GetAbility(), damage = self.bonus_damage*0.3, damage_type = DAMAGE_TYPE_MAGICAL})
 	end
 end
 

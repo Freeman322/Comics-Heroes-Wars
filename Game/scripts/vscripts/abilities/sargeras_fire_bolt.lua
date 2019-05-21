@@ -31,8 +31,9 @@ function sargeras_fire_bolt:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 
-		ApplyDamage( damage )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_sargeras_fire_bolt", { duration = self:GetSpecialValueFor("duration_tooltip") } )
+
+		ApplyDamage( damage )
 	end
 
 	return true

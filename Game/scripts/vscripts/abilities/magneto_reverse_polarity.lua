@@ -36,17 +36,22 @@ function magneto_reverse_polarity:OnSpellStart()
     local rp = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
     for i = 1, #rp do
         local target = rp[i]
+      
         EmitSoundOn( "Hero_Magnataur.ReversePolarity.Stun", target )
+       
         target:SetAbsOrigin(self:GetCaster():GetAbsOrigin() + Vector(150, 50, 0))
+       
         FindClearSpaceForUnit(target, self.hTarget, true)
         FindClearSpaceForUnit(self:GetCaster(), self.hTarget, true)
+             
+        if target:IsRealHero() then
+            target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = hero_stun_duration } )
+        else
+            target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = creep_stun_duration } )
+        end
+        
         ApplyDamage({victim = target, attacker = self:GetCaster(), damage = damage, damage_type = DAMAGE_TYPE_PURE})
-            if target:IsRealHero() then
-                target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = hero_stun_duration } )
-            else
-                target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = creep_stun_duration } )
-            end
-       end
+    end
 end
 
 function magneto_reverse_polarity:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

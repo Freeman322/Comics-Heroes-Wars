@@ -54,6 +54,14 @@ function modifier_raiden_electro_field_passive:OnIntervalThink()
             damage = damage + self:GetAbility():GetCaster():FindTalentValue("special_bonus_unique_raiden_1")
         end
 
+        EmitSoundOn("Hero_Zuus.StaticField", self:GetParent())
+
+        local nFXIndex = ParticleManager:CreateParticle( COBST_DAMAGE_PARTICLE, PATTACH_CUSTOMORIGIN, nil );
+		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin(), true );
+		ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetOrigin(), true );
+        ParticleManager:ReleaseParticleIndex( nFXIndex );
+        
+        
         ApplyDamage({
             attacker = self:GetCaster(),
             victim = self:GetParent(),
@@ -61,12 +69,5 @@ function modifier_raiden_electro_field_passive:OnIntervalThink()
             ability = self:GetAbility(),
             damage = damage
         })
-
-        EmitSoundOn("Hero_Zuus.StaticField", self:GetParent())
-
-        local nFXIndex = ParticleManager:CreateParticle( COBST_DAMAGE_PARTICLE, PATTACH_CUSTOMORIGIN, nil );
-		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin(), true );
-		ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetOrigin(), true );
-		ParticleManager:ReleaseParticleIndex( nFXIndex );
     end
 end

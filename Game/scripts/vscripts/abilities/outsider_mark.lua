@@ -114,10 +114,13 @@ function modifier_outsider_mark_enemy:OnIntervalThink()
 		local target = self:GetParent()
 		local hp = target:GetMaxHealth()
 		local damage = hp*self.damage
+		
 		if self:GetCaster():HasTalent("special_bonus_unique_outsider") then
 	        damage = ((self:GetCaster():FindTalentValue("special_bonus_unique_outsider")/100)*hp) + (hp*self.damage)
 		end
+		
 		local htable = {attacker = self:GetCaster(), victim = target, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE}
+		
 		ApplyDamage(htable)
 	end
 end

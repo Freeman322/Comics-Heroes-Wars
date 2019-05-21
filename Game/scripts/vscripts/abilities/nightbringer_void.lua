@@ -5,27 +5,27 @@ nightbringer_void = class({})
 function nightbringer_void:OnSpellStart()
 	local hCaster = self:GetCaster()
 	local hTarget = self:GetCursorTarget()
-  if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
+	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
 		EmitSoundOn( "Hero_VengefulSpirit.MagicMissileImpact", hTarget )
 
 		local movespeed_slow = self:GetSpecialValueFor( "movespeed_slow" )
 		local attackspeed_slow = self:GetSpecialValueFor( "attackspeed_slow" )
-    local duration = self:GetSpecialValueFor( "duration" )
-    local damage = self:GetSpecialValueFor( "damage" )
+		local duration = self:GetSpecialValueFor( "duration" )
+		local damage = self:GetSpecialValueFor( "damage" )
 
-    local vPos2 = hTarget:GetOrigin()
-  	GridNav:DestroyTreesAroundPoint( vPos2, 300, false)
+		local vPos2 = hTarget:GetOrigin()
+		GridNav:DestroyTreesAroundPoint( vPos2, 300, false)
 
-  	local nCasterFX = ParticleManager:CreateParticle( "particles/units/heroes/hero_vengeful/vengeful_nether_swap.vpcf", PATTACH_ABSORIGIN_FOLLOW, hCaster )
-  	ParticleManager:SetParticleControlEnt( nCasterFX, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, nil, hTarget:GetOrigin(), false )
-  	ParticleManager:ReleaseParticleIndex( nCasterFX )
+		local nCasterFX = ParticleManager:CreateParticle( "particles/units/heroes/hero_vengeful/vengeful_nether_swap.vpcf", PATTACH_ABSORIGIN_FOLLOW, hCaster )
+		ParticleManager:SetParticleControlEnt( nCasterFX, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, nil, hTarget:GetOrigin(), false )
+		ParticleManager:ReleaseParticleIndex( nCasterFX )
 
-  	local nTargetFX = ParticleManager:CreateParticle( "particles/units/heroes/hero_vengeful/vengeful_nether_swap_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
-  	ParticleManager:SetParticleControlEnt( nTargetFX, 1, hCaster, PATTACH_ABSORIGIN_FOLLOW, nil, hCaster:GetOrigin(), false )
-  	ParticleManager:ReleaseParticleIndex( nTargetFX )
+		local nTargetFX = ParticleManager:CreateParticle( "particles/units/heroes/hero_vengeful/vengeful_nether_swap_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+		ParticleManager:SetParticleControlEnt( nTargetFX, 1, hCaster, PATTACH_ABSORIGIN_FOLLOW, nil, hCaster:GetOrigin(), false )
+		ParticleManager:ReleaseParticleIndex( nTargetFX )
 
-  	EmitSoundOn( "Hero_VengefulSpirit.NetherSwap", hCaster )
-  	EmitSoundOn( "Hero_Nightstalker.Void.Nihility", hTarget )
+		EmitSoundOn( "Hero_VengefulSpirit.NetherSwap", hCaster )
+		EmitSoundOn( "Hero_Nightstalker.Void.Nihility", hTarget )
 
 		local damage = {
 			victim = hTarget,
@@ -35,8 +35,10 @@ function nightbringer_void:OnSpellStart()
 			ability = self
 		}
 
-		ApplyDamage( damage )
+
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_nightbringer_void", { duration = duration } )
+		
+		ApplyDamage( damage )
 	end
 end
 

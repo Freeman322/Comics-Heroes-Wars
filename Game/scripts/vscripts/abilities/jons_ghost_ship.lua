@@ -66,7 +66,6 @@ function jons_ghost_ship:OnProjectileHit( hTarget, vLocation )
             ability = self,
         }
 
-        ApplyDamage( damage )
         local knockbackProperties =
         {
             center_x = vLocation.x,
@@ -77,7 +76,10 @@ function jons_ghost_ship:OnProjectileHit( hTarget, vLocation )
             knockback_distance = 380,
             knockback_height = 0
         }
+        
         target:AddNewModifier( self:GetCaster(), self, "modifier_knockback", knockbackProperties )
+
+        ApplyDamage( damage )
     end
     AddFOWViewer(self:GetCaster():GetTeamNumber(), vLocation, 400, 5, true)
   end

@@ -22,7 +22,8 @@ function modifier_rulk_beast:OnAttackLanded(params)
       if RollPercentage(self:GetAbility():GetSpecialValueFor("base_chance") + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("chance_per_str")) then
         params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("bash_duration")})
         ApplyDamage({victim = params.target, attacker = self:GetParent(), damage = self:GetAbility():GetSpecialValueFor("bash_damage"), damage_type = DAMAGE_TYPE_PURE, ability = self:GetAbility()})
-        if params.target:IsRealHero() then
+        
+        if params.target and not params.target:IsNull() and params.target:IsRealHero() then
           params.attacker:ModifyStrength(1)
           params.target:ModifyStrength(-1)
         end

@@ -86,13 +86,16 @@ function modifier_misterio_mirror_remnant:OnCreated(params)
 end
 
 function modifier_misterio_mirror_remnant:DeclareFunctions ()
-    return { MODIFIER_EVENT_ON_HERO_KILLED }
+    return { MODIFIER_EVENT_ON_TAKEDAMAGE }
 end
 
-function modifier_misterio_mirror_remnant:OnHeroKilled(params)
+function modifier_misterio_mirror_remnant:OnTakeDamage(params)
     if IsServer() then
-        if params.target == self:GetParent() then
-            local target = prams.attacker
+        for key, value in pairs(params) do
+            print(key, value)
+        end
+        if params.unit == self:GetParent() and self:GetParent():GetHealth() <= params.original_damage then
+            local target = params.attacker
             
             ApplyDamage({
                 attacker = self:GetCaster(),

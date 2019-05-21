@@ -72,6 +72,15 @@ function modifier_fate_phase_mirror:OnDestroy( params )
         for i, unit in ipairs(nearby_units) do  --Restore health and play a particle effect for every found ally.             	
             EmitSoundOn("Fate.Phasemirror.Target", unit)
 
+            local nFXIndex = ParticleManager:CreateParticle( "particles/hero_doctor_fate/phase_mirror_damage.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+            ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetOrigin(), true )
+            ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetSpecialValueFor("radius"), 1))
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+    
+            self:GetParent():Heal(self._iDamage, self:GetAbility())
+
+            unit:AddNewModifier (self:GetParent(), self, "modifier_stunned", { duration = 0.5 })
+            
             local damage = {
                 victim = unit,
                 attacker = self:GetParent(),
@@ -81,16 +90,7 @@ function modifier_fate_phase_mirror:OnDestroy( params )
             }
 
             ApplyDamage( damage )
-
-            unit:AddNewModifier (self:GetParent(), self, "modifier_stunned", { duration = 0.5 })
         end
-
-        local nFXIndex = ParticleManager:CreateParticle( "particles/hero_doctor_fate/phase_mirror_damage.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-        ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetOrigin(), true )
-        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetSpecialValueFor("radius"), 1))
-        ParticleManager:ReleaseParticleIndex(nFXIndex)
-
-        self:GetParent():Heal(self._iDamage, self:GetAbility())
     end
 end
 

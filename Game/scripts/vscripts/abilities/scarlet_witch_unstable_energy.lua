@@ -67,22 +67,23 @@ end
 
 function modifier_scarlet_witch_unstable_energy:OnDestroy()
 	if IsServer() then
-    local hTarget = self:GetParent()
-    EmitSoundOn ("Hero_ArcWarden.SparkWraith.Activate", hTarget)
-    EmitSoundOn ("Hero_ArcWarden.SparkWraith.Damage", hTarget)
+        local hTarget = self:GetParent()
+        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Activate", hTarget)
+        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Damage", hTarget)
 
-    EmitSoundOn ("Hero_ArcWarden.SparkWraith.Activate", self:GetAbility():GetCaster())
-    EmitSoundOn ("Hero_ArcWarden.SparkWraith.Damage", self:GetAbility():GetCaster())
+        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Activate", self:GetAbility():GetCaster())
+        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Damage", self:GetAbility():GetCaster())
 
-    ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = hTarget, ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_MAGICAL})
+        if self:GetParent():GetHealthPercent() <= self:GetAbility():GetSpecialValueFor("damage_on_destroy") then
+            self:GetParent():Kill(self:GetAbility(), self:GetCaster())
+        end
+        
+        local pop_pfx = ParticleManager:CreateParticle("particles/items2_fx/orchid_pop.vpcf", PATTACH_OVERHEAD_FOLLOW, hTarget)
+        ParticleManager:SetParticleControl(pop_pfx, 0, hTarget:GetAbsOrigin())
+        ParticleManager:SetParticleControl(pop_pfx, 1, Vector(100, 0, 0))
+        ParticleManager:ReleaseParticleIndex(pop_pfx)
 
-    if self:GetParent():GetHealthPercent() <= self:GetAbility():GetSpecialValueFor("damage_on_destroy") then
-      self:GetParent():Kill(self:GetAbility(), self:GetCaster())
-    end
-    local pop_pfx = ParticleManager:CreateParticle("particles/items2_fx/orchid_pop.vpcf", PATTACH_OVERHEAD_FOLLOW, hTarget)
-    ParticleManager:SetParticleControl(pop_pfx, 0, hTarget:GetAbsOrigin())
-    ParticleManager:SetParticleControl(pop_pfx, 1, Vector(100, 0, 0))
-    ParticleManager:ReleaseParticleIndex(pop_pfx)
+        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = hTarget, ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_MAGICAL})
 	end
 end
 

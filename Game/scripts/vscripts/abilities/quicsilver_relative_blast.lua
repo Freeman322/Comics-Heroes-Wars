@@ -55,8 +55,6 @@ function quicsilver_relative_blast:OnProjectileHit( hTarget, vLocation )
 			ability = this,
 		}
 
-		ApplyDamage( damage )
-
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("blast_stun_duration") } )
 
 		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "void_of_darkness") == true then
@@ -72,6 +70,8 @@ function quicsilver_relative_blast:OnProjectileHit( hTarget, vLocation )
 
 			EmitSoundOn("Quicksilver.CustomItem.Cast", hTarget)
 		end
+
+		ApplyDamage( damage )
 	end
 
 	return false

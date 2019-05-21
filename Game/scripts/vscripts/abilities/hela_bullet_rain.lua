@@ -61,13 +61,14 @@ function hela_bullet_rain:OnProjectileHit( hTarget, vLocation )
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self
 		}
-		ApplyDamage(damage)
-
+		
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, true, false, true)
 
 		if self:GetCaster():HasScepter() then 
 			self:GetCaster():PerformAttack(hTarget, true, true, true, true, true, false, true)
 		end
+
+		ApplyDamage(damage)
 	end
 
 	return true

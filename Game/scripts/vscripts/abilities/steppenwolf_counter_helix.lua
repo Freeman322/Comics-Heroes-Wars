@@ -77,15 +77,15 @@ function modifier_steppenwolf_counter_helix:OnTakeDamage(params)
 							ability = self:GetAbility()
 						}
 
-						self:GetParent():PerformAttack(unit, true, true, true, true, false, false, false)
-
-						ApplyDamage( damage )
-
 						EmitSoundOn("Hero_Axe.CounterHelix_Blood_Chaser", unit)
 
 						local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_axe/axe_culling_blade.vpcf", PATTACH_CUSTOMORIGIN, unit );
 						ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
-						ParticleManager:ReleaseParticleIndex( nFXIndex );
+						ParticleManager:ReleaseParticleIndex( nFXIndex );						
+						
+						self:GetParent():PerformAttack(unit, true, true, true, true, false, false, false)
+						
+						ApplyDamage( damage )
 					end
 				end
 

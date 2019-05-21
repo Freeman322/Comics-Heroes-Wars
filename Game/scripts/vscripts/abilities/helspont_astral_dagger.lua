@@ -44,8 +44,9 @@ end
 
 function helspont_astral_dagger:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) then
-    ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = (self:GetSpecialValueFor("dmg_pct_fake")/100)*hTarget:GetHealth(), ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
 		EmitSoundOn( "Hero_PhantomAssassin.Dagger.Target", hTarget )
+		
+    		ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = (self:GetSpecialValueFor("dmg_pct_fake")/100)*hTarget:GetHealth(), ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
 	end
 
 	return true

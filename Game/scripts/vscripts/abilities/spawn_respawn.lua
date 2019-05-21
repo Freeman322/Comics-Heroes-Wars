@@ -93,21 +93,21 @@ function modifier_spawn_respawn_astral:OnDestroy()
             local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("radius_scepter"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
             if #units > 0 then
                 for _,target in pairs(units) do
-    
-                local damage = {
-                          victim = target,
-                          attacker = self:GetCaster(),
-                          damage = self:GetAbility():GetSpecialValueFor("damage_scepter"),
-                          damage_type = DAMAGE_TYPE_MAGICAL,
-                          ability = self:GetAbility()
-                }
-    
-                ApplyDamage( damage )
-    
-                local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_prison_end.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
-                ParticleManager:ReleaseParticleIndex(nFXIndex)
-    
-                EmitSoundOn("Hero_ObsidianDestroyer.AstralImprisonment.End", target)
+                    local damage = {
+                        victim = target,
+                        attacker = self:GetCaster(),
+                        damage = self:GetAbility():GetSpecialValueFor("damage_scepter"),
+                        damage_type = DAMAGE_TYPE_MAGICAL,
+                        ability = self:GetAbility()
+                    }
+        
+        
+                    local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_prison_end.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
+                    ParticleManager:ReleaseParticleIndex(nFXIndex)
+        
+                    EmitSoundOn("Hero_ObsidianDestroyer.AstralImprisonment.End", target)
+
+                    ApplyDamage( damage )
                 end
             end
 

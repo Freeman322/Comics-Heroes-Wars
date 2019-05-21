@@ -49,15 +49,17 @@ function modifier_odin_gods_wraith_timer:OnDestroy()
 			ability = self:GetAbility()
 		}
 
-		ApplyDamage( damage )
-        local nFXIndex = ParticleManager:CreateParticle( "particles/odin/gods_wraith.vpcf", PATTACH_WORLDORIGIN, nil )
+		local nFXIndex = ParticleManager:CreateParticle( "particles/odin/gods_wraith.vpcf", PATTACH_WORLDORIGIN, nil )
 		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin() )
 		ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 1, 1 ) )
 		ParticleManager:SetParticleControl( nFXIndex, 2, self:GetParent():GetOrigin() )
-        ParticleManager:ReleaseParticleIndex( nFXIndex )
-        EmitSoundOn("PudgeWarsClassic.echo_slam", self:GetParent() )
-        -- Play named sound on Entity
-        self:GetParent():AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetAbility():GetSpecialValueFor( "duration" )} )
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
+		EmitSoundOn("PudgeWarsClassic.echo_slam", self:GetParent() )
+		
+		-- Play named sound on Entity
+		self:GetParent():AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetAbility():GetSpecialValueFor( "duration" )} )
+
+		ApplyDamage( damage )
 	end
 end
 

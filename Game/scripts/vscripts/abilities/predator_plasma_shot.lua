@@ -71,17 +71,22 @@ end
 function predator_plasma_shot:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil then
 		EmitSoundOn( "Hero_Invoker.EMP.Discharge", hTarget )
-	    EmitSoundOn( "Hero_Lina.LagunaBladeImpact.Immortal", hTarget )
+		EmitSoundOn( "Hero_Lina.LagunaBladeImpact.Immortal", hTarget )
 
 		self.damage = self:GetAbilityDamage() + (hTarget:GetMaxHealth() * (self:GetSpecialValueFor("bonus_damage")/100))
-	    if self:GetCaster():HasModifier("modifier_predator_plasma_shot_mode") then
-	        self.damage = self.damage + (hTarget:GetMaxHealth() * 0.33)
-	    end
-	    self.bonus = 0
-	    if self:GetCaster():HasTalent("special_bonus_unique_predator") then
-		     self.bonus = self:GetCaster():FindTalentValue("special_bonus_unique_predator")	
-	    end	
-	    self.damage = self.damage + self.bonus
+		
+		if self:GetCaster():HasModifier("modifier_predator_plasma_shot_mode") then
+			self.damage = self.damage + (hTarget:GetMaxHealth() * 0.33)
+		end
+		
+		self.bonus = 0
+		
+		if self:GetCaster():HasTalent("special_bonus_unique_predator") then
+			self.bonus = self:GetCaster():FindTalentValue("special_bonus_unique_predator")	
+		end	
+		
+		self.damage = self.damage + self.bonus
+		
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -90,27 +95,27 @@ function predator_plasma_shot:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 
-		ApplyDamage( damage )
-
-	    local nFXIndex = ParticleManager:CreateParticle( "particles/hero_predator/predator_plasma_shot_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
-	  	ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
-	    ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
-	    ParticleManager:SetParticleControlEnt( nFXIndex, 3, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
-	  	ParticleManager:ReleaseParticleIndex( nFXIndex )
+		local nFXIndex = ParticleManager:CreateParticle( "particles/hero_predator/predator_plasma_shot_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+		ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+		ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+		ParticleManager:SetParticleControlEnt( nFXIndex, 3, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = 0.50 } )
 
 		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "beerus") then
 			local nFXIndex = ParticleManager:CreateParticle( "particles/galactus/galactus_seed_of_ambition_eternal_item.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
-		    ParticleManager:SetParticleControl(nFXIndex, 0, hTarget:GetAbsOrigin())
-		    ParticleManager:SetParticleControl(nFXIndex, 2, hTarget:GetAbsOrigin())
-		    ParticleManager:SetParticleControl(nFXIndex, 3, hTarget:GetAbsOrigin())
-		    ParticleManager:SetParticleControl(nFXIndex, 6, hTarget:GetAbsOrigin())
-		    ParticleManager:SetParticleControl (nFXIndex, 1, Vector (750, 750, 0))
-		    ParticleManager:ReleaseParticleIndex( nFXIndex )
+			ParticleManager:SetParticleControl(nFXIndex, 0, hTarget:GetAbsOrigin())
+			ParticleManager:SetParticleControl(nFXIndex, 2, hTarget:GetAbsOrigin())
+			ParticleManager:SetParticleControl(nFXIndex, 3, hTarget:GetAbsOrigin())
+			ParticleManager:SetParticleControl(nFXIndex, 6, hTarget:GetAbsOrigin())
+			ParticleManager:SetParticleControl (nFXIndex, 1, Vector (750, 750, 0))
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-		    EmitSoundOn( "Hero_ObsidianDestroyer.SanityEclipse.TI8", self:GetCaster() )
+			EmitSoundOn( "Hero_ObsidianDestroyer.SanityEclipse.TI8", self:GetCaster() )
 		end
+
+		ApplyDamage( damage )
 	end
 
 	return true

@@ -59,14 +59,14 @@ function godspeed_speed_void:OnSpellStart()
                         damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
                         ability = self
                     }
-                    ApplyDamage( damage_tbl )
-
 
                     if self:GetCaster():HasScepter() then
                         local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), hTarget, self:GetSpecialValueFor("radius_scepter"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
                         if #units > 0 then
                             for _,  unit in pairs(units) do
                                 unit:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = self:GetSpecialValueFor("ministun")})
+                                
+                                EmitSoundOn("Godspeed.SpeedVoid.Cast", unit)
 
                                 local damage_tbl = {
                                     victim = unit,
@@ -77,11 +77,11 @@ function godspeed_speed_void:OnSpellStart()
                                     ability = self
                                 }
                                 ApplyDamage( damage_tbl )
-
-                                EmitSoundOn("Godspeed.SpeedVoid.Cast", unit)
                             end
                         end 
                     end
+
+                    ApplyDamage( damage_tbl )
                 end)
             end
         end

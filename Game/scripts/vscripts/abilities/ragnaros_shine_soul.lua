@@ -19,31 +19,34 @@ function modifier_ragnaros_shine_soul:GetModifierAura() return "modifier_ragnaro
 modifier_ragnaros_shine_soul_passive = class({})
 
 function modifier_ragnaros_shine_soul_passive:OnCreated()
-    if IsServer() then
+    if IsServer() and self:GetParent():IsRealHero() then
         self:StartIntervalThink(1)
+        self:OnIntervalThink()
     end
 end
 
 function modifier_ragnaros_shine_soul_passive:OnIntervalThink()
-    local damage = self:GetAbility():GetSpecialValueFor("aura_damage")
+    if self:GetAbility() then
+        local damage = self:GetAbility():GetSpecialValueFor("aura_damage")
 
-    if self:GetCaster():HasTalent("special_bonus_unique_ragnaros") then
-        damage = self:GetCaster():FindTalentValue("special_bonus_unique_ragnaros") + damage
+        if self:GetCaster():HasTalent("special_bonus_unique_ragnaros") then
+            damage = self:GetCaster():FindTalentValue("special_bonus_unique_ragnaros") + damage
+        end
+
+        self:GetCaster():Heal(damage * (self:GetAbility():GetSpecialValueFor("bonus_vampirism") / 100), self:GetAbility())
+
+        local lifesteal_fx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+        ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetCaster():GetAbsOrigin())
+        ParticleManager:ReleaseParticleIndex(lifesteal_fx)
+
+        ApplyDamage({
+            victim = self:GetParent(),
+            attacker = self:GetCaster(),
+            damage = damage,
+            damage_type = DAMAGE_TYPE_MAGICAL,
+            ability = self:GetAbility()
+        })
     end
-
-    ApplyDamage({
-        victim = self:GetParent(),
-        attacker = self:GetCaster(),
-        damage = damage,
-        damage_type = DAMAGE_TYPE_MAGICAL,
-        ability = self:GetAbility()
-    })
-
-    self:GetCaster():Heal(damage * (self:GetAbility():GetSpecialValueFor("bonus_vampirism") / 100), self:GetAbility())
-
-    local lifesteal_fx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
-    ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetCaster():GetAbsOrigin())
-    ParticleManager:ReleaseParticleIndex(lifesteal_fx)
 end
 
 function modifier_ragnaros_shine_soul_passive:IsPurgable() return false end
@@ -52,6 +55,13 @@ function modifier_ragnaros_shine_soul_passive:DeclareFunctions()
     return { MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE }
 end
 
-function modifier_ragnaros_shine_soul_passive:GetModifierMoveSpeedBonus_Percentage() return self:GetAbility():GetSpecialValueFor("aura_slowing") end
+function modifier_ragnaros_shine_soul_passive:GetModifierMoveSpeedBonus_Percentage() 
+    local ability = self:GetAbility()
+    if ability then
+        return ability:GetSpecialValueFor("aura_slowing") 
+    end
+
+    return 0
+end
 function modifier_ragnaros_shine_soul_passive:GetEffectName() return "particles/items2_fx/radiance.vpcf" end
 function modifier_ragnaros_shine_soul_passive:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end

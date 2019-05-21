@@ -70,9 +70,10 @@ function thor_storm_bolt:OnProjectileHit( hTarget, vLocation )
 						damage = bolt_damage,
 						damage_type = DAMAGE_TYPE_MAGICAL,
 					}
+					
+					enemy:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = bolt_stun_duration } )
 
 					ApplyDamage( damage )
-					enemy:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = bolt_stun_duration } )
 				end
 			end
 		end

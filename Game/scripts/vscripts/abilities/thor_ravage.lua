@@ -40,8 +40,6 @@ function thor_ravage:OnSpellStart()
           damage_type = self:GetAbilityDamageType(),
         }
 
-        ApplyDamage( damage )
-
         target:AddNewModifier(self:GetCaster(), self, "modifier_thor_ravage_stun", {duration = self:GetSpecialValueFor("duration")})
 
         if self:GetCaster():HasScepter() then
@@ -54,8 +52,11 @@ function thor_ravage:OnSpellStart()
         ParticleManager:SetParticleControl(particle, 0, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,1000 ))
         ParticleManager:SetParticleControl(particle, 1, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
         ParticleManager:SetParticleControl(particle, 2, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
+       
         EmitSoundOn("Hero_Zeus.BlinkDagger.Arcana", target)
         EmitSoundOn("Hero_Zuus.LightningBolt.Cast.Righteous", target)
+
+        ApplyDamage( damage )
       end
     end
   end

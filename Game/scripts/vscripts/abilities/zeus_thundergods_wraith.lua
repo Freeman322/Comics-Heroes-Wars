@@ -67,9 +67,6 @@ function zeus_thundergods_wraith:OnSpellStart()
           self.damage_pers = self:GetSpecialValueFor( "damage_pers_scepter" )/100
       end
 
-      ApplyDamage ( {victim = target,attacker = self:GetCaster(),damage = target:GetMaxHealth() * self.damage_pers,damage_type = self:GetAbilityDamageType(),ability = self, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS })      
-      ApplyDamage ( {victim = target,attacker = self:GetCaster(),damage = self:GetAbilityDamage(), damage_type = DAMAGE_TYPE_MAGICAL,ability = self})
-
       if self:GetCaster():HasModifier("modifier_zuus_immortal") then
         local particle = ParticleManager:CreateParticle("particles/hero_zuus/zeus_immortal_thundergod.vpcf", PATTACH_WORLDORIGIN, target)
         ParticleManager:SetParticleControl(particle, 0, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,1000 ))
@@ -83,6 +80,9 @@ function zeus_thundergods_wraith:OnSpellStart()
       	ParticleManager:SetParticleControl(particle, 1, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,1000 ))
       	ParticleManager:SetParticleControl(particle, 2, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
       end
+      
+      ApplyDamage ( {victim = target,attacker = self:GetCaster(),damage = target:GetMaxHealth() * self.damage_pers,damage_type = self:GetAbilityDamageType(),ability = self, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS })      
+      ApplyDamage ( {victim = target,attacker = self:GetCaster(),damage = self:GetAbilityDamage(), damage_type = DAMAGE_TYPE_MAGICAL,ability = self})
     end
   end
 end

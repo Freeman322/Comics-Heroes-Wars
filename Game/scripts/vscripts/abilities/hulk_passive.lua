@@ -36,14 +36,13 @@ function modifier_hulk_passive:OnAttackLanded (params)
               ParticleManager:ReleaseParticleIndex( nFXIndex );
 
               local damage = {
-                victim = hTarget,
-                attacker = self:GetParent(),
-                damage = self:GetAbility():GetSpecialValueFor("bonus_damage"),
-                damage_type = DAMAGE_TYPE_PHYSICAL,
-                ability = self:GetAbility(),
+                  victim = hTarget,
+                  attacker = self:GetParent(),
+                  damage = self:GetAbility():GetSpecialValueFor("bonus_damage"),
+                  damage_type = DAMAGE_TYPE_PHYSICAL,
+                  ability = self:GetAbility(),
               }
-              ApplyDamage( damage )
-
+            
               local knockbackProperties =
               {
                   center_x = hTarget:GetAbsOrigin().x,
@@ -54,8 +53,11 @@ function modifier_hulk_passive:OnAttackLanded (params)
                   knockback_distance = 300,
                   knockback_height = 200
               }
+
               hTarget:AddNewModifier( self:GetCaster(), self, "modifier_knockback", knockbackProperties )
 
+              ApplyDamage( damage )
+              
               self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
             end
         end

@@ -69,10 +69,11 @@ function samurai_earth_shake:OnProjectileHit( hTarget, vLocation )
 			damage = self:GetAbilityDamage(),
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self,
-		}
-
-		ApplyDamage( damage )
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor( "stun_duration" )} )
+        }
+        		
+        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor( "stun_duration" )} )
+        
+        ApplyDamage( damage )
 	end
 
 	return false

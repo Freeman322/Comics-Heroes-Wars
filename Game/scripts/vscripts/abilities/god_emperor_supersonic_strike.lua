@@ -21,10 +21,13 @@ end
 function god_emperor_supersonic_strike:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
 		EmitSoundOn( "Hero_Oracle.FalsePromise.Damaged", hTarget )
+		
 		local iDamage = self:GetAbilityDamage()
+
 		if self:GetCaster():HasTalent("special_bonus_unique_god_emperor") then
 	        iDamage = self:GetCaster():FindTalentValue("special_bonus_unique_god_emperor") + self:GetAbilityDamage()
 		end
+
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -33,8 +36,9 @@ function god_emperor_supersonic_strike:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 
-		ApplyDamage( damage )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("magic_missile_stun") } )
+
+		ApplyDamage( damage )
 	end
 
 	return true

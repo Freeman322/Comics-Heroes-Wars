@@ -13,25 +13,25 @@ misterio_telekinetic_force.m_iCount = 1
 function misterio_telekinetic_force:IsRefreshable() return false end 
 
 function misterio_telekinetic_force:OnSpellStart() 
-    if IsServer() then
-        local hTarget = self:GetCursorTarget()
-        if hTarget ~= nil then
-            self.m_iRadius = self:GetSpecialValueFor("radius")
+    	if IsServer() then
+		local hTarget = self:GetCursorTarget()
+		if hTarget ~= nil then
+            	self.m_iRadius = self:GetSpecialValueFor("radius")
 
-            local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), self:GetCaster(), self.m_iRadius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
-            if units ~= nil then
-			 if #units > 0 then
-				self.m_iCount = #units
+			local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), self:GetCaster(), self.m_iRadius, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS, FIND_CLOSEST, false)
+			if units ~= nil then
+				if #units > 0 then
+					self.m_iCount = #units
 
-				for _, unit in pairs(units) do
-					if unit ~= self:GetCaster() then
-						unit:AddNewModifier(self:GetCaster(), self, "modifier_misterio_telekinetic_force", {duration = self:GetSpecialValueFor("duration"),
-						target = hTarget:entindex(),
-						count = #units})
+					for _, unit in pairs(units) do
+						if unit ~= self:GetCaster() then
+							unit:AddNewModifier(self:GetCaster(), self, "modifier_misterio_telekinetic_force", {duration = self:GetSpecialValueFor("duration"),
+							target = hTarget:entindex(),
+							count = #units})
+						end
 					end
-                    end
-                end
-            end
+				end
+			end
 		end
 		
 		local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/monkey_king/arcana/death/monkey_king_spring_death_base.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
@@ -42,8 +42,8 @@ function misterio_telekinetic_force:OnSpellStart()
 
 		EmitSoundOn( "Hero_Rubick.SpellSteal.Cast.Arcana", self:GetCaster() )
 
-        self.m_hTarget = hTarget
-    end 
+        	self.m_hTarget = hTarget
+    	end 
 end 
 
 function misterio_telekinetic_force:OnTargetLanded(unit, pos)
@@ -58,8 +58,6 @@ function misterio_telekinetic_force:OnTargetLanded(unit, pos)
 
        	FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), false)
 		
-		print(damage_per_target)
-
        	ApplyDamage({
 			attacker = self:GetCaster(),
 			victim = self.m_hTarget,
@@ -68,7 +66,6 @@ function misterio_telekinetic_force:OnTargetLanded(unit, pos)
 			damage = damage_per_target
 		})
 		
-
 		self.m_hTarget:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun_dur})
 
 		if not unit:IsFriendly(self:GetCaster()) then

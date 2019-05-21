@@ -45,12 +45,17 @@ function modifier_sauron_decay:DeclareFunctions()
 end
 
 function modifier_sauron_decay:GetModifierDamageOutgoing_Percentage()
-	if IsServer() then
-		if self:GetParent():HasTalent("special_bonus_unique_sauron") then
-	      return self:GetParent():FindTalentValue("special_bonus_unique_sauron") + self:GetAbility():GetSpecialValueFor("damage_reduction_pct")
+	local ability = self:GetAbility()
+	if ability then
+		if IsServer() then
+			if self:GetParent():HasTalent("special_bonus_unique_sauron") then
+				return self:GetParent():FindTalentValue("special_bonus_unique_sauron") + self:GetAbility():GetSpecialValueFor("damage_reduction_pct")
+			end
 		end
+		
+		return self:GetAbility():GetSpecialValueFor("damage_reduction_pct")
 	end
-	return self:GetAbility():GetSpecialValueFor("damage_reduction_pct")
+	return 
 end
 
 function sauron_decay_aura:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

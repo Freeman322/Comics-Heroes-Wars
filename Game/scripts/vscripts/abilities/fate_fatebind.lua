@@ -144,6 +144,13 @@ function modifier_fate_fatebind:OnTakeDamage( params )
             local victim = params.unit
 
             if self._hUnit then 
+                EmitSoundOn("Hero_Pugna.NetherWard.Target", target)
+
+                local nFXIndex = ParticleManager:CreateParticle( "particles/hero_doctor_fate/fatebind_damage.vpcf", PATTACH_CUSTOMORIGIN, nil );
+                ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true );
+                ParticleManager:SetParticleControlEnt( nFXIndex, 1, self._hUnit, PATTACH_POINT_FOLLOW, "attach_hitloc", self._hUnit:GetOrigin(), true );
+                ParticleManager:ReleaseParticleIndex( nFXIndex );
+
                 ApplyDamage ( {
                     victim = self._hUnit,
                     attacker = target,
@@ -152,12 +159,6 @@ function modifier_fate_fatebind:OnTakeDamage( params )
                     ability = self:GetAbility(),
                     damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
                 })
-                EmitSoundOn("Hero_Pugna.NetherWard.Target", target)
-
-                local nFXIndex = ParticleManager:CreateParticle( "particles/hero_doctor_fate/fatebind_damage.vpcf", PATTACH_CUSTOMORIGIN, nil );
-                ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true );
-                ParticleManager:SetParticleControlEnt( nFXIndex, 1, self._hUnit, PATTACH_POINT_FOLLOW, "attach_hitloc", self._hUnit:GetOrigin(), true );
-                ParticleManager:ReleaseParticleIndex( nFXIndex );
             end 
         end
     end

@@ -2918,7 +2918,7 @@
 	"flash_speedforce_lightning"
 	{
 		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/flash/flash_speedforce_lightning.lua"
+		"ScriptFile"						"abilities/flash_speedforce_lightning.lua"
 
 		"AbilityTextureName"				"custom/great_crit"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -2964,7 +2964,7 @@
 	"flash_speedforce_regeneration"
 	{
 		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/flash/flash_speedforce_regeneration.lua"
+		"ScriptFile"						"abilities/flash_speedforce_regeneration.lua"
 
 		"AbilityTextureName"				"custom/stamp"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2999,7 +2999,7 @@
 	"flash_backtrack"
 	{
 		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/flash/flash_backtrack.lua"
+		"ScriptFile"						"abilities/flash_backtrack.lua"
 
 		"AbilityTextureName"				"custom/flash_passice"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3022,7 +3022,7 @@
 	"flash_speedforce_power"
 	{
 		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/flash/flash_speedforce_power.lua"
+		"ScriptFile"						"abilities/flash_speedforce_power.lua"
 
 		"AbilityTextureName"				"custom/void"
 		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"

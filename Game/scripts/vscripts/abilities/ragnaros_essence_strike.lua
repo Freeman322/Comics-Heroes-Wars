@@ -67,12 +67,15 @@ function modifier_ragnaros_essence_strike_target:OnCreated(event)
         local damage_perc = self:GetAbility ():GetSpecialValueFor ("burn_damage_pct")/100
         local damage = (damage_perc * thinker:GetMaxHealth ()) + self:GetAbility ():GetSpecialValueFor ("burn_damage")
         
-        ApplyDamage ( { attacker = self:GetAbility():GetCaster(), victim = thinker, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
         EmitSoundOn( "Hero_DoomBringer.InfernalBlade.Target", thinker )
+       
         -- Play named sound on Entity
         self:StartIntervalThink(1)
         self:OnIntervalThink()
+        
         thinker:AddNewModifier(thinker, self:GetAbility(), "modifier_stunned", {duration = 0.3})
+
+        ApplyDamage ( { attacker = self:GetAbility():GetCaster(), victim = thinker, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
     end
 end
 

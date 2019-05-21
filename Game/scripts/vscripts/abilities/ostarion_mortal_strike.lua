@@ -50,15 +50,6 @@ function modifier_ostarion_mortal_strike:OnAttackLanded (params)
 
                     local flDamage = params.target:GetMaxHealth() * (self:GetAbility():GetSpecialValueFor("heal_drain_ptc") / 100)
 
-                    ApplyDamage ( {
-                        victim = params.target,
-                        attacker = self:GetCaster(),
-                        damage = flDamage,
-                        damage_type = self:GetAbility():GetAbilityDamageType(),
-                        ability = self:GetAbility(),
-                        damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-                    })
-
                     self:GetCaster():Heal(flDamage, self:GetAbility())
                     
                     local nFXIndex = ParticleManager:CreateParticle( "particles/generic_gameplay/generic_lifesteal_old.vpcf", PATTACH_CUSTOMORIGIN, nil );
@@ -67,6 +58,15 @@ function modifier_ostarion_mortal_strike:OnAttackLanded (params)
                     ParticleManager:ReleaseParticleIndex( nFXIndex );
 
                     EmitSoundOn("Hero_LifeStealer.Assimilate.Destroy", params.target)
+
+                    ApplyDamage ( {
+                        victim = params.target,
+                        attacker = self:GetCaster(),
+                        damage = flDamage,
+                        damage_type = self:GetAbility():GetAbilityDamageType(),
+                        ability = self:GetAbility(),
+                        damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+                    })
                 end
             end
         end

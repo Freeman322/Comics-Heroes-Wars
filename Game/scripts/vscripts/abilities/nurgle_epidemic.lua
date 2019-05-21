@@ -109,24 +109,25 @@ end
 
 function modifier_nurgle_epidemic:OnIntervalThink()
 	if IsServer() then
-	  local flDamagePerTick = self.tick * self.damage
-	  local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetParent(), self.radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-	  if #units > 0 then
-		for _,unit in pairs(units) do
-		  local damage = {
-			victim = self:GetParent(),
-			attacker = self:GetCaster(),
-			damage = flDamagePerTick,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self:GetAbility()
-		  }
-  
-		  ApplyDamage( damage )
-		  if not unit == self:GetParent() then
-			unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_nurgle_epidemic", { duration = self:GetAbility():GetSpecialValueFor( "duration" ) } )
-		  end
-		end
-	  end
+		local flDamagePerTick = self.tick * self.damage
+		local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetParent(), self.radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+		if #units > 0 then
+			for _,unit in pairs(units) do
+				local damage = {
+					victim = self:GetParent(),
+					attacker = self:GetCaster(),
+					damage = flDamagePerTick,
+					damage_type = DAMAGE_TYPE_MAGICAL,
+					ability = self:GetAbility()
+				}
+		
+				if not unit == self:GetParent() then
+					unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_nurgle_epidemic", { duration = self:GetAbility():GetSpecialValueFor( "duration" ) } )
+				end
+				
+				ApplyDamage( damage )
+			end
+	  	end
 	end	
 end
 

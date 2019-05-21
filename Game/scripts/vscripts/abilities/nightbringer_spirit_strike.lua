@@ -33,8 +33,9 @@ function nightbringer_spirit_strike:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 
-		ApplyDamage( damage )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_nightbringer_spirit_strike", { duration = slow_durtion_tooltip } )
+
+		ApplyDamage( damage )
 	end
 
 	return true

@@ -76,30 +76,32 @@ function modifier_joker_nuclear_mine:OnIntervalThink()
 end
 
 function modifier_joker_nuclear_mine:StartParcticles(unit, ability, caster)
-    EmitSoundOn( "Hero_EarthShaker.EchoSlam", unit )
-    EmitSoundOn( "Hero_EarthShaker.EchoSlamEcho", unit )
-    EmitSoundOn( "Hero_EarthShaker.EchoSlamSmall", unit )
-    EmitSoundOn( "PudgeWarsClassic.echo_slam", unit )
-    local explosion1 = ParticleManager:CreateParticle("particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_call_down_explosion_impact_a.vpcf", PATTACH_WORLDORIGIN, unit)
-    ParticleManager:SetParticleControl(explosion1, 0, unit:GetAbsOrigin() + Vector(0, 0, 1))
-    ParticleManager:SetParticleControl(explosion1, 1, unit:GetAbsOrigin() + Vector(0, 0, 1))
-    ParticleManager:SetParticleControl(explosion1, 2, unit:GetAbsOrigin() + Vector(0, 0, 1))
-    ParticleManager:SetParticleControl(explosion1, 3, Vector(300, 300, 1))
-    local explosion2 = ParticleManager:CreateParticle("particles/units/heroes/hero_gyrocopter/gyro_calldown_explosion.vpcf", PATTACH_WORLDORIGIN, unit)
-    ParticleManager:SetParticleControl(explosion2, 0, unit:GetAbsOrigin() + Vector(0, 0, 1))
-    ParticleManager:SetParticleControl(explosion2, 3, unit:GetAbsOrigin() + Vector(0, 0, 1))
-    ParticleManager:SetParticleControl(explosion2, 5, Vector(600, 600, 1))
-    GridNav:DestroyTreesAroundPoint( unit:GetAbsOrigin(), 600, false)
-    local radius = 700
+	EmitSoundOn( "Hero_EarthShaker.EchoSlam", unit )
+	EmitSoundOn( "Hero_EarthShaker.EchoSlamEcho", unit )
+	EmitSoundOn( "Hero_EarthShaker.EchoSlamSmall", unit )
+	EmitSoundOn( "PudgeWarsClassic.echo_slam", unit )
+	local explosion1 = ParticleManager:CreateParticle("particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_call_down_explosion_impact_a.vpcf", PATTACH_WORLDORIGIN, unit)
+	ParticleManager:SetParticleControl(explosion1, 0, unit:GetAbsOrigin() + Vector(0, 0, 1))
+	ParticleManager:SetParticleControl(explosion1, 1, unit:GetAbsOrigin() + Vector(0, 0, 1))
+	ParticleManager:SetParticleControl(explosion1, 2, unit:GetAbsOrigin() + Vector(0, 0, 1))
+	ParticleManager:SetParticleControl(explosion1, 3, Vector(300, 300, 1))
+	local explosion2 = ParticleManager:CreateParticle("particles/units/heroes/hero_gyrocopter/gyro_calldown_explosion.vpcf", PATTACH_WORLDORIGIN, unit)
+	ParticleManager:SetParticleControl(explosion2, 0, unit:GetAbsOrigin() + Vector(0, 0, 1))
+	ParticleManager:SetParticleControl(explosion2, 3, unit:GetAbsOrigin() + Vector(0, 0, 1))
+	ParticleManager:SetParticleControl(explosion2, 5, Vector(600, 600, 1))
+	GridNav:DestroyTreesAroundPoint( unit:GetAbsOrigin(), 600, false)
+	local radius = 700
 		-- Targeting variables
 	local target_teams = DOTA_UNIT_TARGET_TEAM_ENEMY
 	local target_types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
 	local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
-    local units = FindUnitsInRadius(caster:GetTeamNumber(), unit:GetAbsOrigin(), nil, radius, target_teams, target_types, 0, 0, false)
+	local units = FindUnitsInRadius(caster:GetTeamNumber(), unit:GetAbsOrigin(), nil, radius, target_teams, target_types, 0, 0, false)
 	for i,unit in ipairs(units) do
 		local damage_table = {attacker = caster, victim = unit, ability = ability, damage = unit:GetMaxHealth()*self.damage, damage_type = DAMAGE_TYPE_MAGICAL}
-		ApplyDamage(damage_table)
+		
 		unit:AddNewModifier(caster, ability, "modifier_stunned", {duration = 1})
 		FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
+
+		ApplyDamage(damage_table)
 	end
 end

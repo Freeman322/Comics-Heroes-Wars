@@ -56,8 +56,9 @@ function manhattan_elemental_fragmintation_modifier:OnDestroy(event)
         local target_health = target:GetHealth()
         local kill_bourder = ability:GetSpecialValueFor ("kill_bourder")
         local damage = target_mana * damage_percent
-        ApplyDamage ( { attacker = ability:GetCaster (), victim = target, ability = ability, damage = damage, damage_type = DAMAGE_TYPE_PURE })
+       
         EmitSoundOn ("Manhattan.Elemental_Fragmentation.Damage", target)
+       
         local nFXIndex = ParticleManager:CreateParticle( "particles/dr_manhattan/elemental_fragmentation_damage.vpcf", PATTACH_CUSTOMORIGIN, nil );
         ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin() + Vector( 0, 0, 0 ), true );
         ParticleManager:SetParticleControl( nFXIndex, 1, ability:GetCaster():GetOrigin());
@@ -66,11 +67,16 @@ function manhattan_elemental_fragmintation_modifier:OnDestroy(event)
         ParticleManager:SetParticleControl( nFXIndex, 4, ability:GetCaster():GetOrigin());
         ParticleManager:SetParticleControl( nFXIndex, 5, ability:GetCaster():GetOrigin());
         ParticleManager:ReleaseParticleIndex( nFXIndex );
-        local units = FindUnitsInRadius (target:GetTeam (), target:GetAbsOrigin (), nil, 600, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
-        for i = 1, #units do
-            local targets = units[i]
-            ApplyDamage ( { attacker = ability:GetCaster (), victim = targets, ability = ability, damage = damage/#units, damage_type = DAMAGE_TYPE_MAGICAL })
+        ApplyDamage ( { attacker = ability:GetCaster (), victim = target, ability = ability, damage = damage, damage_type = DAMAGE_TYPE_PURE })
+      
+        if target and not target:IsNull() then
+            local units = FindUnitsInRadius (target:GetTeam (), target:GetAbsOrigin (), nil, 600, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+
+            for i = 1, #units do
+                local targets = units[i]
+                ApplyDamage ( { attacker = ability:GetCaster (), victim = targets, ability = ability, damage = damage/#units, damage_type = DAMAGE_TYPE_MAGICAL })
+            end
         end
     end
 end

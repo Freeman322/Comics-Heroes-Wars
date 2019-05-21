@@ -8,26 +8,28 @@ function king_lich_frost_nova:OnSpellStart()
     local duration = self:GetSpecialValueFor(  "duration" )
     local target = self:GetCursorTarget()
 
-	local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-	if #units > 0 then
+    local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+    if #units > 0 then
         for _,unit in pairs(units) do
             unit:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("duration") } )
             unit:AddNewModifier( self:GetCaster(), self, "modifier_king_lich_frost_nova", { duration = self:GetDuration() } )
             
             ApplyDamage({attacker = self:GetCaster(), victim = unit, damage = self:GetSpecialValueFor("aoe_damage"), damage_type = self:GetAbilityDamageType(), ability = self})
-		end
-	end
+        end
+    end
 
-    ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetAbilityDamage(), damage_type = self:GetAbilityDamageType(), ability = self})
+    if target and not target:IsNull() then
+        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lich/lich_frost_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
+        ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_ABSORIGIN, "attach_hitloc", target:GetOrigin(), true )
+        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(radius, radius, 1) )
+        ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-	local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lich/lich_frost_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
-    ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_ABSORIGIN, "attach_hitloc", target:GetOrigin(), true )
-    ParticleManager:SetParticleControl( nFXIndex, 1, Vector(radius, radius, 1) )
-	ParticleManager:ReleaseParticleIndex( nFXIndex )
+        EmitSoundOn( "Ability.FrostNova", self:GetCaster() )
 
-	EmitSoundOn( "Ability.FrostNova", self:GetCaster() )
-
-	self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_3 );
+        self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_3 );
+        
+        ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetAbilityDamage(), damage_type = self:GetAbilityDamageType(), ability = self})
+    end
 end
 
 if not modifier_king_lich_frost_nova then modifier_king_lich_frost_nova = class({}) end 

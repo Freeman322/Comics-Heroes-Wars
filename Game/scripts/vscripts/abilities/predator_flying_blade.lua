@@ -45,13 +45,14 @@ function predator_flying_blade:OnProjectileHit( hTarget, vLocation )
 			ability = self,
 		}
 
-		ApplyDamage( damage )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("stun_duration") } )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_predator_flying_blade", { duration = self:GetSpecialValueFor("rapture_duration") } )
-	end
 
-	EmitSoundOn("Hero_BountyHunter.Shuriken", hTarget)
-	EmitSoundOn("Hero_BountyHunter.Jinada", hTarget)
+		EmitSoundOn("Hero_BountyHunter.Shuriken", hTarget)
+		EmitSoundOn("Hero_BountyHunter.Jinada", hTarget)
+
+		ApplyDamage( damage )
+	end
 
 	return false
 end

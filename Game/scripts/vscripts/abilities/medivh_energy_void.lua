@@ -50,10 +50,13 @@ function medivh_energy_void_thinker:OnDestroy()
 
         for i, target in ipairs(nearby_targets) do
         	EmitSoundOn( "Hero_AbyssalUnderlord.Pit.Target", target )
+           
             local damage = target:GetMaxMana()*(self:GetAbility():GetSpecialValueFor("mana_burned")/100)
-            ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage + 300, damage_type = DAMAGE_TYPE_MAGICAL})
+           
             target:SetMana(target:GetMana() - damage)
             target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_item_diffusal_blade_slow", {duration = 2.5})
+
+            ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage + 300, damage_type = DAMAGE_TYPE_MAGICAL})
         end
     end
 end

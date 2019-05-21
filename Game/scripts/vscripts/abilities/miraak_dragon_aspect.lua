@@ -36,21 +36,23 @@ function modifier_miraak_dragon_aspect:OnTakeDamage( params )
 
             local units = FindUnitsInRadius(self:GetParent():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
             for i, unit in pairs(units) do
-                local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/shadow_shaman/shadow_shaman_ti8/shadow_shaman_ti8_ether_shock.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() );
-                ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true );
-                ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
-                ParticleManager:ReleaseParticleIndex( nFXIndex );
+                if unit and not unit:IsNull() then
+                    local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/shadow_shaman/shadow_shaman_ti8/shadow_shaman_ti8_ether_shock.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() );
+                    ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true );
+                    ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
+                    ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-                EmitSoundOn("Hero_Pugna.NetherWard.Target", unit)
+                    EmitSoundOn("Hero_Pugna.NetherWard.Target", unit)
 
-                ApplyDamage({
-                    victim = unit,
-                    attacker = self:GetCaster(),
-                    damage = damage * (self:GetAbility():GetSpecialValueFor("damage_return") / 100),
-                    damage_type = self:GetAbility():GetAbilityDamageType(),
-                    ability = self:GetAbility()
-                })
-
+                    ApplyDamage({
+                        victim = unit,
+                        attacker = self:GetCaster(),
+                        damage = damage * (self:GetAbility():GetSpecialValueFor("damage_return") / 100),
+                        damage_type = self:GetAbility():GetAbilityDamageType(),
+                        ability = self:GetAbility(),
+                        damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS 
+                    })
+                end
             end
 
             if IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_miraak_3") then self:GetCaster():Heal(damage, self:GetAbility()) end

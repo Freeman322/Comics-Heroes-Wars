@@ -31,9 +31,10 @@ function rough_aoe_debuff:OnSpellStart()
                     damage_type = DAMAGE_TYPE_MAGICAL,
                     ability = self
                 }
-                ApplyDamage( damage )
-
+               
                 unit:AddNewModifier( caster, self, "modifier_silence", { duration = self:GetSpecialValueFor("tooltip_duration") } )
+
+                ApplyDamage( damage )
             end
         end
     end

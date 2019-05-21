@@ -60,8 +60,6 @@ function ragnaros_fade:OnSpellStart()
     ParticleManager:SetParticleControl( nFXIndex, 4, hTarget:GetOrigin());
     ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-    ApplyDamage ( { attacker = hCaster, victim = hTarget, ability = self, damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
-
     hCaster:GiveMana(mana)
 
     local player_id = hCaster:GetPlayerID()
@@ -77,6 +75,8 @@ function ragnaros_fade:OnSpellStart()
     if not hTarget:IsAlive() then
         hCaster:FindModifierByName(self:GetIntrinsicModifierName()):IncrementStackCount()
     end
+
+    ApplyDamage ( { attacker = hCaster, victim = hTarget, ability = self, damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
 end
 
 modifier_ragnaros_fade_bonus = class({})

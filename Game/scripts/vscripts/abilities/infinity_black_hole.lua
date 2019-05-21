@@ -100,62 +100,67 @@ function modifier_infinity_black_hole_thinker:OnCreated(event)
 end
 
 function modifier_infinity_black_hole_thinker:OnIntervalThink()
-    local caster = self:GetAbility():GetCaster()
-    local target_location = self.target
-    local ability = self:GetAbility()
+    if IsServer() then
+        local caster = self:GetAbility():GetCaster()
+        local target_location = self.target
+        local ability = self:GetAbility()
 
-    local speed = ability:GetSpecialValueFor("pull_speed")/10
-    local radius = ability:GetSpecialValueFor("far_radius")
-    local target_teams = ability:GetAbilityTargetTeam()
-    local target_types = ability:GetAbilityTargetType()
-    local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE
+        local speed = ability:GetSpecialValueFor("pull_speed")/10
+        local radius = ability:GetSpecialValueFor("far_radius")
+        local target_teams = ability:GetAbilityTargetTeam()
+        local target_types = ability:GetAbilityTargetType()
+        local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE
 
-    local units = FindUnitsInRadius(caster:GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, radius, target_teams, target_types, target_flags, 0, false)
+        local units = FindUnitsInRadius(caster:GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, radius, target_teams, target_types, target_flags, 0, false)
 
-    -- Calculate the position of each found unit in relation to the center
-    for _,unit in ipairs(units) do
-        local kv =
-        {
-            duration = ability:GetSpecialValueFor("duration"),
-            dir_x = self:GetParent():GetAbsOrigin().x,
-            dir_y = self:GetParent():GetAbsOrigin().y,
-            dir_z = self:GetParent():GetAbsOrigin().z,
-        }
-
-        unit:AddNewModifier(caster, ability, "modifier_infinity_black_hole", kv)
-        --[[local unit_location = unit:GetAbsOrigin()
-        local vector_distance = target_location - unit_location
-        local distance = (vector_distance):Length2D()
-        local direction = (vector_distance):Normalized()
-
-        local vPos = unit:GetAbsOrigin();
-
-        local radius = (vPos - self:GetParent():GetAbsOrigin()):Length2D()
-        print(i)
-
-        local vNewPos = Vector( self:GetParent():GetAbsOrigin().x - radius * math.cos(i), self:GetParent():GetAbsOrigin().y - radius * math.sin(i), vPos.z);
-        unit:SetAbsOrigin(vNewPos);
-
-        ---unit:SetAbsOrigin(unit:GetAbsOrigin() + direction * 5);
-
-
-        local primary_damage = ability:GetSpecialValueFor("damage")
-        local damage_percent = ability:GetSpecialValueFor("damage_perc")/100
-        local damage = ((unit:GetMaxHealth()*damage_percent) + primary_damage)/10
-        if caster:HasScepter() and caster:HasAbility("enigma_midnight_pulse_new") then
-            damage = ((unit:GetMaxHealth()*damage_percent) + primary_damage + (unit:GetMaxHealth()*midnightpulse_damage))/10
-        end
-
-        ApplyDamage({victim = unit, attacker = caster, ability = ability, damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS})]]
-    end
-    if not self:GetAbility():IsChanneling() then
-        StopSoundEvent(self.soundName, caster)
-        EmitSoundOn("Hero_Enigma.Black_Hole.Stop", self:GetAbility():GetCaster())
-        StopSoundOn("Hero_Enigma.BlackHole.Cast.Chasm", self:GetParent())
+        -- Calculate the position of each found unit in relation to the center
         for _,unit in ipairs(units) do
-            FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), false)
+            local kv =
+            {
+                duration = ability:GetSpecialValueFor("duration"),
+                dir_x = self:GetParent():GetAbsOrigin().x,
+                dir_y = self:GetParent():GetAbsOrigin().y,
+                dir_z = self:GetParent():GetAbsOrigin().z,
+            }
+
+            unit:AddNewModifier(caster, ability, "modifier_infinity_black_hole", kv)
+            --[[local unit_location = unit:GetAbsOrigin()
+            local vector_distance = target_location - unit_location
+            local distance = (vector_distance):Length2D()
+            local direction = (vector_distance):Normalized()
+
+            local vPos = unit:GetAbsOrigin();
+
+            local radius = (vPos - self:GetParent():GetAbsOrigin()):Length2D()
+            print(i)
+
+            local vNewPos = Vector( self:GetParent():GetAbsOrigin().x - radius * math.cos(i), self:GetParent():GetAbsOrigin().y - radius * math.sin(i), vPos.z);
+            unit:SetAbsOrigin(vNewPos);
+
+            ---unit:SetAbsOrigin(unit:GetAbsOrigin() + direction * 5);
+
+
+            local primary_damage = ability:GetSpecialValueFor("damage")
+            local damage_percent = ability:GetSpecialValueFor("damage_perc")/100
+            local damage = ((unit:GetMaxHealth()*damage_percent) + primary_damage)/10
+            if caster:HasScepter() and caster:HasAbility("enigma_midnight_pulse_new") then
+                damage = ((unit:GetMaxHealth()*damage_percent) + primary_damage + (unit:GetMaxHealth()*midnightpulse_damage))/10
+            end
+
+            ApplyDamage({victim = unit, attacker = caster, ability = ability, damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS})]]
         end
-        self:Destroy()
+        if not self:GetAbility():IsChanneling() then
+            StopSoundEvent(self.soundName, caster)
+
+            EmitSoundOn("Hero_Enigma.Black_Hole.Stop", self:GetAbility():GetCaster())
+            StopSoundOn("Hero_Enigma.BlackHole.Cast.Chasm", self:GetParent())
+
+            for _,unit in ipairs(units) do
+                FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), false)
+            end
+            
+            self:Destroy()
+        end
     end
 end
 

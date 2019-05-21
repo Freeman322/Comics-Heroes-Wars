@@ -39,7 +39,7 @@ end
 function scarlet_witch_scream:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
 		EmitSoundOn( "Hero_ArcWarden.Flux.Target", hTarget )
-   	    ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = self:GetSpecialValueFor("damage_per_unit")*self.targets + (self:GetAbilityDamage()), ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
+   	   	ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = self:GetSpecialValueFor("damage_per_unit")*self.targets + (self:GetAbilityDamage()), ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
 	end
 
 	return true

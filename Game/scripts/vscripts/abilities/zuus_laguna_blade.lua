@@ -24,11 +24,11 @@ function zuus_laguna_blade:OnSpellStart()
         if #units > 0 then
             for _,target in pairs(units) do
                 local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf", PATTACH_CUSTOMORIGIN, nil );
-            		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
-            		ParticleManager:SetParticleControlEnt( nFXIndex, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
-            		ParticleManager:ReleaseParticleIndex( nFXIndex );
+                ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
+                ParticleManager:SetParticleControlEnt( nFXIndex, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
+                ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-            		EmitSoundOn( "Ability.LagunaBladeImpact", self:GetCaster() )
+                EmitSoundOn( "Ability.LagunaBladeImpact", self:GetCaster() )
 
                 ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetSpecialValueFor("damage") + self:GetSpecialValueFor("damage_side"), ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
             end

@@ -169,6 +169,7 @@ function modifier_phoenix_rage:OnIntervalThink ()
         local caster = self:GetAbility ():GetCaster ()
         local hp_cost = self:GetAbility():GetSpecialValueFor("hp_cost_perc_per_second")/100
         local damage = (caster:GetMaxHealth()*hp_cost)/10
+       
         ApplyDamage({attacker = caster, victim = target, ability = self:GetAbility(), damage = damage , damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS})
 
         local side_units = FindUnitsInLine(caster:GetTeam (), caster:GetAbsOrigin(), target:GetAbsOrigin(), nil, 120, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,  DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)

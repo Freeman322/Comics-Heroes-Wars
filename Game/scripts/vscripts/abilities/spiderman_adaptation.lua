@@ -106,17 +106,18 @@ function modifier_spiderman_adaptation:OnHorizontalMotionInterrupted ()
             local duration = self:GetAbility ():GetSpecialValueFor ("duration")
             local damage = self:GetAbility ():GetAbilityDamage ()
             if self:GetCaster():HasTalent("special_bonus_unique_spiderman_3") then damage = damage + self:GetCaster():FindTalentValue("special_bonus_unique_spiderman_3") end
-
-
+            
             taget:AddNewModifier (self:GetCaster (), self:GetAbility (), "modifier_spiderman_adaptation_slowing", { duration = duration })
+            
             ApplyDamage ( { attacker = self:GetAbility ():GetCaster (), victim = taget, ability = self:GetAbility (), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
         end
+
         local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_earthshaker/earthshaker_aftershock.vpcf", PATTACH_WORLDORIGIN, nil )
         ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin() )
-        --ParticleManager:SetParticleControl( nFXIndex, 1, Vector( hAbility:GetSpecialValueFor( "aftershock_range" ), 1, 1 ) )
         ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 275, 1, 1 ) )
         ParticleManager:ReleaseParticleIndex( nFXIndex )
         EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_EarthShaker.Totem", self:GetCaster() )
+        
         self:Destroy ()
     end
 end

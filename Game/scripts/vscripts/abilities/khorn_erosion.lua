@@ -64,11 +64,14 @@ function modifier_khorn_erosion:OnIntervalThink()
     if target:GetAbsOrigin() ~= self.ElapsedDistance then
         local targetDistance = (target:GetAbsOrigin() - self.ElapsedDistance):Length2D()
         local damage = targetDistance*dmg_pers
+       
         if self:GetCaster():HasTalent("special_bonus_unique_khorne") then
             damage = (self:GetCaster():FindTalentValue("special_bonus_unique_khorne")*dmg_pers) + damage
         end
-        ApplyDamage({attacker = self:GetCaster(), victim = target, damage = damage, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
+       
         self.ElapsedDistance = target:GetAbsOrigin()
+        
+        ApplyDamage({attacker = self:GetCaster(), victim = target, damage = damage, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
     end
 end
 

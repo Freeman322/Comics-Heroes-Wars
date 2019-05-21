@@ -44,7 +44,6 @@ function sauron_apocalypse_thinker:OnIntervalThink ()
         if #enemies > 0 then
             for _, enemy in pairs (enemies) do
                 if enemy ~= nil and ( not enemy:IsMagicImmune () ) and ( not enemy:IsInvulnerable () ) then
-
                     local damage = {
                         victim = enemy,
                         attacker = self:GetCaster (),
@@ -52,9 +51,12 @@ function sauron_apocalypse_thinker:OnIntervalThink ()
                         damage_type = DAMAGE_TYPE_MAGICAL,
                         ability = self:GetAbility ()
                     }
+                    
                     EmitSoundOn ("Hero_Silencer.Curse.Impact", enemy)
-                    ApplyDamage (damage)
+                   
                     enemy:AddNewModifier (self:GetCaster (), self:GetAbility (), "modifier_stunned", { duration = 0.1 } )
+
+                    ApplyDamage (damage)
                 end
             end
         end

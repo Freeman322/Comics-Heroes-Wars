@@ -46,10 +46,11 @@ function iron_heat_missile:OnProjectileHit( hTarget, vLocation )
 			ability = self
 		}
 
-		ApplyDamage( damage )
 		if self:GetCaster():HasTalent("special_bonus_unique_iron_man") then
 			hTarget:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = self:GetSpecialValueFor("talent_stun_duration")})
 		end
+
+		ApplyDamage( damage )
 	end
 
 	return true

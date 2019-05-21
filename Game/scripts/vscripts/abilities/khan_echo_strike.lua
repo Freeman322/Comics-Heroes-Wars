@@ -67,38 +67,43 @@ function khan_echo_strike:OnProjectileHit( hTarget, vLocation )
 			damage_type = DAMAGE_TYPE_PHYSICAL,
 			ability = self,
 		}
-
-		ApplyDamage( damage )
+	
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_khan_echo_strike_armor", { duration = self:GetSpecialValueFor("reduction_duration") } )
+		
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
-		EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
-		EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)
+		
+		if hTarget and not hTarget:IsNull() then
+			EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)
+			EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)
+			
+			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+			ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+			ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
 
-		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
-		ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
-		ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+			local particle = "particles/hero_khan/khan_echo_strike_jump.vpcf"
 
-		local particle = "particles/hero_khan/khan_echo_strike_jump.vpcf"
+			if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "khan_manifold_paradox") then
+				particle = "particles/econ/items/spectre/spectre_transversant_soul/spectre_transversant_spectral_dagger_path_owner_impact.vpcf"
+				EmitSoundOn( "Khan.Paradox.Damage" , hTarget )
+			elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "nemesis_custom") then
+				EmitSoundOn( "Khan.Nemesis.Target" , self:GetCaster() )
+				particle = "particles/hero_khan/khan_nemesis_target.vpcf"
+			else 
+				EmitSoundOn( "Hero_PhantomAssassin.CoupDeGrace" , hTarget )
+				EmitSoundOn( "Hero_Juggernaut.OmniSlash.Damage" , hTarget )	
+			end 
 
-		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "khan_manifold_paradox") then
-			particle = "particles/econ/items/spectre/spectre_transversant_soul/spectre_transversant_spectral_dagger_path_owner_impact.vpcf"
-			EmitSoundOn( "Khan.Paradox.Damage" , hTarget )
-		elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "nemesis_custom") then
-			EmitSoundOn( "Khan.Nemesis.Target" , self:GetCaster() )
-			particle = "particles/hero_khan/khan_nemesis_target.vpcf"
-		else 
-			EmitSoundOn( "Hero_PhantomAssassin.CoupDeGrace" , hTarget )
-			EmitSoundOn( "Hero_Juggernaut.OmniSlash.Damage" , hTarget )	
-		end 
+			local nFXIndex1 = ParticleManager:CreateParticle( particle, PATTACH_ABSORIGIN_FOLLOW, hTarget )
+			ParticleManager:SetParticleControl( nFXIndex1, 0, hTarget:GetOrigin())
+			ParticleManager:SetParticleControl( nFXIndex1, 1, hTarget:GetOrigin())
+			ParticleManager:SetParticleControl( nFXIndex1, 3, hTarget:GetOrigin())
 
-		local nFXIndex1 = ParticleManager:CreateParticle( particle, PATTACH_ABSORIGIN_FOLLOW, hTarget )
-		ParticleManager:SetParticleControl( nFXIndex1, 0, hTarget:GetOrigin())
-		ParticleManager:SetParticleControl( nFXIndex1, 1, hTarget:GetOrigin())
-		ParticleManager:SetParticleControl( nFXIndex1, 3, hTarget:GetOrigin())
+			ScreenShake(hTarget:GetAbsOrigin(), 500, 500, 0.25, 2000, 0, true)
 
-		ScreenShake(hTarget:GetAbsOrigin(), 500, 500, 0.25, 2000, 0, true)
+			ApplyDamage( damage )
+		end
 	end
 
 	return false

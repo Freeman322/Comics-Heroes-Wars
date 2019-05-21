@@ -129,32 +129,35 @@ function modifier_galactus_echo_jump:OnHorizontalMotionInterrupted()
             if #enemies > 0 then
                 EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_EarthShaker.EchoSlam", self:GetCaster() )
                 ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 2*#enemies, 1, 1 ) )
-                    for _,hTarget in pairs(enemies) do
-                        if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
-                            hTarget:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
-                            local damage = {
-                                victim = hTarget,
-                                attacker = self:GetCaster(),
-                                damage = self:GetAbility():GetAbilityDamage() + (#enemies*self:GetAbility():GetSpecialValueFor("damage_per_unit_scepter")),
-                                damage_type = self:GetAbility():GetAbilityDamageType(),
-                                ability = self
-                            }
-                            ApplyDamage( damage )
-                        end
+                for _,hTarget in pairs(enemies) do
+                    if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
+                        hTarget:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
+                       
+                        local damage = {
+                            victim = hTarget,
+                            attacker = self:GetCaster(),
+                            damage = self:GetAbility():GetAbilityDamage() + (#enemies*self:GetAbility():GetSpecialValueFor("damage_per_unit_scepter")),
+                            damage_type = self:GetAbility():GetAbilityDamageType(),
+                            ability = self
+                        }
+                        ApplyDamage( damage )
                     end
-                else
-                   EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_EarthShaker.EchoSlamSmall", self:GetCaster() )
-                   ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 1, 1 ) )
+                end
+            else
+                EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_EarthShaker.EchoSlamSmall", self:GetCaster() )
+                ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 1, 1 ) )
             end
-          ParticleManager:ReleaseParticleIndex( nFXIndex )
+            ParticleManager:ReleaseParticleIndex( nFXIndex )
         else
             local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start.vpcf", PATTACH_WORLDORIGIN, nil )
             local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("aoe_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
             EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_EarthShaker.EchoSlam", self:GetCaster() )
             ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 2*#enemies, 1, 1 ) )
+            
             for _,hTarget in pairs(enemies) do
                 if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
                     hTarget:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
+                    
                     ApplyDamage( damage )
                 end
             end
@@ -162,6 +165,7 @@ function modifier_galactus_echo_jump:OnHorizontalMotionInterrupted()
         self:Destroy()
     end
 end
+
 
 function galactus_echo_jump:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

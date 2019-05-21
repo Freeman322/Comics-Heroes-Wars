@@ -49,15 +49,16 @@ function modifier_strange_test_of_faith:OnDestroy()
                 unit:Heal(self:GetAbility():GetSpecialValueFor("heal_expier"), self:GetAbility())
             else
                 EmitSoundOn("Hero_Abaddon.DeathCoil.Target", unit)
+                
+                unit:AddNewModifier (self:GetParent(), self, "modifier_stunned", { duration = 0.5 })
+                
                 ApplyDamage({
                    victim = unit,
                    attacker = self:GetParent(),
                    damage = self:GetAbility():GetSpecialValueFor("damage_expire"),
                    damage_type = DAMAGE_TYPE_PURE,
                    ability = self,
-               })
-
-                unit:AddNewModifier (self:GetParent(), self, "modifier_stunned", { duration = 0.5 })
+               })             
             end
         end
     end

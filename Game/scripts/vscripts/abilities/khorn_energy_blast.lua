@@ -16,7 +16,9 @@ function khorn_energy_blast:OnSpellStart()
 			ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self:GetAbilityDamage(), ability = self, damage_type = DAMAGE_TYPE_MAGICAL})
 		end
 	end
+
 	EmitSoundOn("Hero_Invoker.SunStrike.Ignite", self:GetCaster())
+	
 	local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pugna/pugna_netherblast.vpcf", PATTACH_WORLDORIGIN, self:GetCaster() )
 	ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetCursorPosition() )
 	ParticleManager:SetParticleControl( nFXIndex, 1, Vector(400, 400, 0) )

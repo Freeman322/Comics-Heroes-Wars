@@ -62,6 +62,8 @@ function gostrider_punishing_gaze:OnSpellStart()
 
     local damage = self:GetModifier()._hUnits[hTarget] or 0 
 
+    hTarget:AddNewModifier(hCaster, self, "modifier_gostrider_punishing_gaze_death_lable", {duration = 2})
+    
     ApplyDamage ({
         victim = hTarget,
         attacker = hCaster,
@@ -70,8 +72,6 @@ function gostrider_punishing_gaze:OnSpellStart()
         ability = self,
         damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
     })
-
-    hTarget:AddNewModifier(hCaster, self, "modifier_gostrider_punishing_gaze_death_lable", {duration = 2})
 end
 
 

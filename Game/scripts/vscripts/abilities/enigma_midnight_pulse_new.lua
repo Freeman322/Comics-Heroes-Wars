@@ -61,7 +61,7 @@ function enigma_midnight_pulse_new_thinker:OnIntervalThink()
         if self:GetCaster():HasTalent("special_bonus_unique_infinity") then
             target:ModifyHealth(target:GetHealth() - damage, self:GetAbility(), true, 0)
         else
-            if not target:GetUnitName() ~= "npc_mega_greevil" and target:GetUnitName() ~= "npc_dota_warlock_golem_1" then
+            if not target:IsAncient() then
                 ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE})
             end
         end

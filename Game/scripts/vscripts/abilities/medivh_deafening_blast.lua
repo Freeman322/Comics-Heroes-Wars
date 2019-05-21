@@ -194,11 +194,14 @@ end
 
 function medivh_deafening_blast:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil and hTarget:HasModifier("modifier_medivh_dummy") == false then 
-        EmitSoundOn( "DOTA_Item.SkullBasher" , self:GetCaster() )
-        local iDamage = self:GetSpecialValueFor( "damage" ) + self:GetCaster():GetIntellect()
-        if self:GetCaster():HasTalent("special_bonus_unique_medivh") then
+		EmitSoundOn( "DOTA_Item.SkullBasher" , self:GetCaster() )
+		
+		local iDamage = self:GetSpecialValueFor( "damage" ) + self:GetCaster():GetIntellect()
+		
+		if self:GetCaster():HasTalent("special_bonus_unique_medivh") then
 	        iDamage = iDamage + self:GetCaster():FindTalentValue("special_bonus_unique_medivh")
 		end
+
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -206,19 +209,21 @@ function medivh_deafening_blast:OnProjectileHit( hTarget, vLocation )
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self,
 		}
-		ApplyDamage( damage )
+		
 		local knockbackProperties =
-        {
-            center_x = self.origin.x,
-            center_y = self.origin.y,
-            center_z = self.origin.z,
-            duration = self:GetSpecialValueFor( "knockback_duration" ),
-            knockback_duration = self:GetSpecialValueFor( "knockback_duration" ),
-            knockback_distance = 350,
-            knockback_height = 0
-        }
-        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_knockback", knockbackProperties )
-        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_medivh_dummy", {duration = 0.5} )
+		{
+			center_x = self.origin.x,
+			center_y = self.origin.y,
+			center_z = self.origin.z,
+			duration = self:GetSpecialValueFor( "knockback_duration" ),
+			knockback_duration = self:GetSpecialValueFor( "knockback_duration" ),
+			knockback_distance = 350,
+			knockback_height = 0
+		}
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_knockback", knockbackProperties )
+		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_medivh_dummy", {duration = 0.5} )
+
+		ApplyDamage( damage )
 	end
 
 	return false

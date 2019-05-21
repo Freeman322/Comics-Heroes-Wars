@@ -114,10 +114,10 @@ function modifier_pudge_dismember_lua:OnIntervalThink()
 			ability = self:GetAbility()
 		}
 
-		ApplyDamage( damage )
-
 		EmitSoundOn( "Hero_Pudge.Dismember", self:GetParent() )
 		EmitSoundOn( "Hero_Pudge.DismemberSwings", self:GetParent() )
+		
+		ApplyDamage( damage )
 	end
 end
 

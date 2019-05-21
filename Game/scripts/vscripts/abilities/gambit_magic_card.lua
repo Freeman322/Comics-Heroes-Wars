@@ -25,6 +25,19 @@ function gambit_magic_card:OnProjectileHit( hTarget, vLocation )
 		EmitSoundOn( "Hero_StormSpirit.Overload", hTarget )
 		EmitSoundOn( "Hero_StormSpirit.Overload", hTarget )
 
+		
+		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_sven/sven_spell_warcry.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+		ParticleManager:SetParticleControlEnt( nFXIndex, 2, hTarget, PATTACH_POINT_FOLLOW, "attach_head", hTarget:GetOrigin(), true )
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+		local enemy = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), hTarget:GetAbsOrigin(), self:GetCaster(), self:GetSpecialValueFor("bolt_aoe"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+		if #enemy > 0 then
+			for _,target in pairs(enemy) do
+				target:AddNewModifier( self:GetCaster(), self, "modifier_gambit_magic_card", { duration = self:GetSpecialValueFor( "slow_duration" ) } )
+				target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor( "stun_duration" ) } )
+			end
+		end
+		
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
@@ -34,18 +47,6 @@ function gambit_magic_card:OnProjectileHit( hTarget, vLocation )
 		}
 
 		ApplyDamage( damage )
-		local enemy = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), hTarget:GetAbsOrigin(), self:GetCaster(), self:GetSpecialValueFor("bolt_aoe"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-		if #enemy > 0 then
-			for _,target in pairs(enemy) do
-				target:AddNewModifier( self:GetCaster(), self, "modifier_gambit_magic_card", { duration = self:GetSpecialValueFor( "slow_duration" ) } )
-				target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor( "stun_duration" ) } )
-			end
-		end
-
-		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_sven/sven_spell_warcry.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
-		ParticleManager:SetParticleControlEnt( nFXIndex, 2, hTarget, PATTACH_POINT_FOLLOW, "attach_head", hTarget:GetOrigin(), true )
-		ParticleManager:ReleaseParticleIndex( nFXIndex )
-
 	end
 
 	return true

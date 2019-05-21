@@ -29,7 +29,7 @@ function modifier_palpatine_chain_lighning:OnAttackLanded (params)
                 for i, target in pairs(units) do
                     ApplyDamage({victim = target, attacker = self:GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
                     
-                    if target and units[i + 1] then 
+                    if target and not target:IsNull() and units[i + 1] then 
                         local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/zeus/zeus_ti8_immortal_arms/zeus_ti8_immortal_arc.vpcf", PATTACH_CUSTOMORIGIN, target );
                         ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
                         ParticleManager:SetParticleControlEnt( nFXIndex, 1, units[i + 1], PATTACH_POINT_FOLLOW, "attach_hitloc", units[i + 1]:GetOrigin(), true );
