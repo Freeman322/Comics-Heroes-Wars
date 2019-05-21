@@ -12,9 +12,9 @@ modifier_flash_speedforce_regeneration = class({
     RemoveOnDeath = function() return false end
 })
 
-if IsServer() then
-    function modifier_flash_speedforce_regeneration:OnCreated() self:StartIntervalThink(FrameTime()) end
-    function modifier_flash_speedforce_regeneration:OnIntervalThink()
+function modifier_flash_speedforce_regeneration:OnCreated() self:StartIntervalThink(FrameTime()) end
+function modifier_flash_speedforce_regeneration:OnIntervalThink()
+    if IsServer() then
         if self:GetAbility():IsCooldownReady() and self:GetCaster():GetHealthPercent() < self:GetAbility():GetSpecialValueFor("min_health_pct") and self:GetCaster():PassivesDisabled() == false and self:GetParent():IsRealHero() then
             self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_flash_speedforce_regeneration_regen", {duration = self:GetAbility():GetSpecialValueFor("duration")})
             self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))

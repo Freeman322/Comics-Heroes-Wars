@@ -1,56 +1,46 @@
-LinkLuaModifier( "khorn_erosion_aura", 			"abilities/khorn_erosion.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_khorn_erosion",  "abilities/khorn_erosion.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("khorn_erosion_aura", "abilities/khorn_erosion.lua", 0)
+LinkLuaModifier("modifier_khorn_erosion",  "abilities/khorn_erosion.lua", 0)
 
-khorn_erosion = class({})
+khorn_erosion = class({
+	GetIntrinsicModifierName = function() return "khorn_erosion_aura" end
+})
 
-function khorn_erosion:GetIntrinsicModifierName()
-	return "khorn_erosion_aura"
+
+khorn_erosion_aura = class({
+	IsAura = function() return true end,
+	IsHidden = function() return true end,
+	IsPurgable = function() return false end,
+	GetModifierAura = function() return "modifier_khorn_erosion" end
+})
+function khorn_erosion_aura:GetAuraRadius()	return self:GetAbility():GetSpecialValueFor("aura_radius") end
+function khorn_erosion_aura:GetAuraSearchTeam()	return self:GetAbility():GetAbilityTargetTeam() end
+function khorn_erosion_aura:GetAuraSearchType()	return self:GetAbility():GetAbilityTargetType() end
+function khorn_erosion_aura:GetAuraSearchFlags() return self:GetAbility():GetAbilityTargetFlags() end
+
+
+modifier_khorn_erosion = class({
+	IsDebuff = function() return false end,
+	IsPurgable = function() return false end,
+	DeclareFunctions = function() return {MODIFIER_EVENT_ON_UNIT_MOVED} end
+})
+function modifier_khorn_erosion:OnUnitMoved()
+	if IsServer() then
+		if self.position then
+			local range = (self.position - self:GetParent():GetAbsOrigin()):Length2D()
+			if range > 0 and range <= self:GetAbility():GetSpecialValueFor("max_move_range") then
+				ApplyDamage({
+					victim = self:GetParent(),
+					attacker = self:GetCaster(),
+					damage = range * self:GetAbility():GetSpecialValueFor("aura_damage") / 100,
+					damage_type = self:GetAbility():GetAbilityDamageType(),
+					ability = self:GetAbility()
+				})
+			end
+		end
+		self.position = self:GetParent():GetAbsOrigin()
+	end
 end
-
-khorn_erosion_aura = class({})
-
-function khorn_erosion_aura:IsAura()
-	return true
-end
-
-function khorn_erosion_aura:IsHidden()
-	return true
-end
-
-function khorn_erosion_aura:IsPurgable()
-	return false
-end
-
-function khorn_erosion_aura:GetAuraRadius()
-	return self:GetAbility():GetSpecialValueFor("aura_radius")
-end
-
-function khorn_erosion_aura:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_ENEMY
-end
-
-function khorn_erosion_aura:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
-end
-
-function khorn_erosion_aura:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
-end
-
-function khorn_erosion_aura:GetModifierAura()
-	return "modifier_khorn_erosion"
-end
-
-modifier_khorn_erosion = class({})
-
-function modifier_khorn_erosion:IsBuff()
-	return false
-end
-
-function modifier_khorn_erosion:IsPurgable()
-	return false
-end
-
+--[[
 function modifier_khorn_erosion:OnCreated(event)
     if IsServer() then
         self.ElapsedDistance = self:GetParent():GetAbsOrigin()
@@ -78,14 +68,6 @@ end
 function modifier_khorn_erosion:OnDestroy()
     self.ElapsedDistance = nil
 end
-
-function modifier_khorn_erosion:GetEffectName()
-    return "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
-end
-
-function modifier_khorn_erosion:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
-end
-
-function khorn_erosion:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+]]
+function modifier_khorn_erosion:GetEffectName() return "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf" end
+function modifier_khorn_erosion:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end

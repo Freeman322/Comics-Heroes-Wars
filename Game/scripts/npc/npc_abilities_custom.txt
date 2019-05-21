@@ -2951,7 +2951,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_move_range"			"300"
+				"max_move_range"			"100"
 			}
 			"05"
 			{
@@ -3008,13 +3008,13 @@
 		{
 			"01"
 			{
-				"var_type"		"FIELD_INTEGER"
-				"dodge_chance_pct"	"10 15 20 25"
+				"var_type"					"FIELD_INTEGER"
+				"dodge_chance_pct"			"10 15 20 25"
 			}
 			"02"
 			{
-				"var_type"		"FIELD_INTEGER"
-				"double_attack_chance"	"14 16 18 20"
+				"var_type"					"FIELD_INTEGER"
+				"double_attack_chance"		"14 16 18 20"
 			}
 		}
 	}
@@ -3035,17 +3035,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"duration"					"6 7 8"
+				"duration"					"8 9 10"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"500 600 700"
+				"radius"					"700 800 900"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"speed_to_damage_pct"		"25 30 35"
+				"speed_to_damage_pct"		"15 20 25"
 			}
 			"04"
 			{
@@ -3061,6 +3061,11 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"movespeed_steal"			"2 3 4"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ultimate_bonus_pct"		"10" //Бонус к пассивке в %
 			}
 		}
 	}
@@ -15386,6 +15391,8 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
@@ -15421,6 +15428,11 @@
 				"var_type"			"FIELD_FLOAT"
 				"aura_damage"		"18 24 36"
 			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_move_range"	"100"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -15455,11 +15467,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"160 190 220 250"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_magical_damage"	"0"
 			}
 		}
 	}
@@ -30707,7 +30714,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"100 300 500 700"
+				"bonus_hp"				"0 200 400 600"
 			}
 			"02"
 			{
@@ -34390,7 +34397,30 @@
 		"AbilityUnitTargetType" 							"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"							"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 
-		"AbilityCastRange"								"1200"
+		"precache"
+		{
+			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+
+			"particle"						"particles/domino/domino_luck_attention_of_death.vpcf"
+			"particle"						"particles/domino/necro_sullen_harvest_scythe_model_glow_trail.vpcf"
+			"particle"						"particles/domino/necro_ti7_immortal_scythe_impact_embers.vpcf"
+			"particle"						"particles/domino/necro_ti7_immortal_scythe_impact_embers_child.vpcf"
+			"particle"						"particles/domino/necro_ti7_immortal_scythe_impact_slash.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_outgoing_pct"		"-100"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"death_delay"				"3"
+			}
+		}
 	}
 
 	"special_bonus_unique_batman_3"
@@ -35336,6 +35366,8 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
 
 		"FightRecapLevel"				"2"
+
+		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------

@@ -62,14 +62,17 @@ end
 
 function modifier_raiden_fatality:OnIntervalThink()
 	if IsServer() then
-		local damage =
-		{
+		ApplyDamage({
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
 			ability = self:GetAbility(),
 			damage = self:GetAbility():GetAbilityDamage() * 0.25,
 			damage_type = DAMAGE_TYPE_MAGICAL,
-		}		
+		})
+		
+		if self:GetCaster():HasScepter() then
+			self:GetCaster():PerformAttack(self:GetParent(), true, false, false, false, false, false, false)
+		end
 
 		EmitSoundOn("Hero_Zuus.LightningBolt.Cloud", self:GetParent())
 
