@@ -23,7 +23,7 @@ modifier_fountain_protection = class({
 function modifier_fountain_protection:GetAuraRadius() if self:GetParent():GetTeam() == DOTA_TEAM_BADGUYS then return 1350 end return 1200 end
 
 modifier_fountain_protection_aura = class({
-    DeclareFunctions = function() return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE} end,
+    DeclareFunctions = function() return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE} end,
     GetEffectName = function() return "particles/econ/events/ti5/radiant_fountain_regen_lvl2_ti5.vpcf" end,
     GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end
 })
@@ -34,8 +34,7 @@ function modifier_fountain_protection_aura:OnCreated()
     end 
 end
 
-function modifier_fountain_protection_aura:GetModifierIncomingDamage_Percentage() return CONST_DAMAGE_OUTGOING_PTC end
-function modifier_fountain_protection_aura:GetModifierTotalDamageOutgoing_Percentage() return CONST_DAMAGE_OUTGOING_PTC end
+function modifier_fountain_protection_aura:GetModifierTotalDamageOutgoing_Percentage() return self:GetAbility():GetSpecialValueFor("damage_outgoing_pct") end
 
 function modifier_fountain_protection_aura:OnIntervalThink() 
     if IsServer() then
