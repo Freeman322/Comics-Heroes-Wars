@@ -9,16 +9,9 @@
 	</scripts>
 
 	<Panel class="BanRow">
-		  <DOTAScenePanel id="BanScreen" camera="shot_cameraA" map="backgrounds/pregame_phase" hittest="true" particleonly="false">
-        <Panel id="DOTAPageWebBrowser" tabindex="auto" hittest="true">
-          <HTML id="Browser_1" hittest="true" url="https://vk.com/dota2chw">
-
-  				</HTML>
-        </Panel>
-        <Panel id="DOTAPageBanned" tabindex="auto" hittest="true">
-          <Label id="Ban" class="PrimaryBanText" text="#BAN" hittest="false" />
-          <Label id="BanText" class="BanText" text="#BAN_TEXT" hittest="false" />
-        </Panel>
-      </DOTAScenePanel>
+		<DOTAScenePanel id="BanScreen" camera="shot_cameraA" map="backgrounds/pregame_phase" hittest="true" particleonly="false"/>
+		<Panel id="TopPanel" class="Hidden">
+			<Label id="BanText" text="" onmouseover="DOTAShowTextTooltip(#GameUI_ServerRejectBanned)" onmouseout="DOTAHideTextTooltip()"/>
+		</Panel>
 	</Panel>
 </root>

@@ -244,12 +244,25 @@
 	vertical-align: top;
 	width: 18px;
 	height: 18px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-image: url( "file://{images}/custom_game/button_audio_on.psd" );
-	visibility: collapse;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-image: url( "file://{images}/custom_game/button_audio_on.psd" );
 	opacity: 0.8;
+	visibility: collapse;
+}
+
+#ReportButton{
+	margin-right: 18px;
+	margin-top: 0px;
+	horizontal-align: right;
+	vertical-align: top;
+	width: 18px;
+	height: 18px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-image: url( "file://{images}/guide_panel_i45.png" );
 }
 
 .local_player_teammate #MuteButton

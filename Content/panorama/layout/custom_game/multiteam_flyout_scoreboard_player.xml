@@ -16,6 +16,20 @@
 			}
 		}
 
+		function Report()
+		{
+			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
+			if ( playerId !== -1 )
+			{
+				var data = {
+					playerID: Game.GetLocalPlayerID(),
+					reportedPlayerID: playerId
+				}
+
+				GameEvents.SendCustomGameEventToServer("player_reported", data);
+			}
+		}
+
 		(function()
 		{
 			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
@@ -34,6 +48,7 @@
 				</Panel>
 				<Label id="TeammateGoldAmount" text="999" />
 				<Button id="MuteButton" onactivate="ToggleMute();" />
+				<Button id="ReportButton" onactivate="Report();" />
 			</Panel>
 			<Panel id="TeamScoreSpace" class="ScoreCol_TeamScore ScoreboardPanel" />
 			<Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">

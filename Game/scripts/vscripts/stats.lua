@@ -12,6 +12,7 @@ stats.ITEM = 6;
 stats.DELETE_ITEM = 7;
 stats.AUTH = 8;
 stats.PLUS_STATS = 9;
+stats.REPORT = 10
 
 stats.data = {}
 
@@ -756,4 +757,65 @@ function stats.roll()
     DeepPrintTable(items)
 
     CustomNetTables:SetTableValue("players", "drop", items)
+end
+
+
+function stats.send_report(steam_id)
+    local data = {}
+    data.user = steam_id
+
+    local connection = CreateHTTPRequestScriptVM('POST', stats.config.server)
+    
+    local encoded_data = json.encode({
+        type = stats.REPORT,
+        key = GetDedicatedServerKeyV2("8.3"),
+        time = {
+            frames = tonumber(GetFrameCount()),
+            server_time = tonumber(Time()),
+            dota_time = tonumber(GameRules:GetDOTATime(true, true)),
+            game_time = tonumber(GameRules:GetGameTime()),
+            server_system_date_time = tostring(GetSystemDate()) .. " " .. tostring(GetSystemTime()),
+        },
+        data = data
+    })
+
+	print("Performing request to " .. stats.config.server)
+    print("Method: " .. 'POST')
+    if payload ~= nil then
+		print("Payload: " .. encoded_data:sub(1, 20))
+    end
+    
+    connection:SetHTTPRequestGetOrPostParameter('payload', encoded_data)
+    connection:SetHTTPRequestAbsoluteTimeoutMS(stats.config.timeout)
+
+    connection:Send (function(result_keys)
+        local result = {
+			code = result_keys.StatusCode,
+			body = result_keys.Body,
+		}
+
+		if result.code == 0 then
+			print("Request timed out")
+			return
+        end
+
+        print(result_keys.Body)
+        
+		if result.body ~= nil then
+			local decoded = json.decode(result.body)
+			if result.code == 503 then
+				print("Server unavailable")
+			elseif result.code == 500 then
+				if result.message ~= nil then print("Internal Server Error: " .. tostring(result.message)) else print("Internal Server Error") end
+			elseif result.code == 405 then
+				print("Used invalid method on endpoint" .. endpoint)
+			elseif result.code == 404 then
+				print("Tried to access unknown endpoint " .. endpoint)
+			elseif result.code ~= 200 then
+				print("Unknown Error: " .. tostring(result.code))
+            end
+		else
+			print("Warning: Recieved response for request " .. endpoint .. " without body!")
+		end
+    end)
 end
