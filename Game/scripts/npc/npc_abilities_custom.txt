@@ -2936,7 +2936,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"400 600 800 1000"
+				"damage"					"150 250 350 450"
 			}
 			"02"
 			{
@@ -2971,26 +2971,38 @@
 
 		"AbilityCooldown"					"45 40 35 30"
 
+		"precache"
+		{
+			"model"						"models/heroes/hero_flash/flash_custom/flash.vmdl"
+			"particle"					"particles/hero_flash/flash_custom_ambient.vpcf"
+			"particle"					"particles/units/heroes/hero_sven/sven_warcry_buff.vpcf"
+			"particle"					"particles/units/heroes/hero_lion/lion_spell_finger_of_death.vpcf"
+			"particle"					"particles/units/heroes/hero_faceless_void/faceless_void_timedialate.vpcf"
+
+			"soundfile" 					"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+			"soundfile" 					"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"min_health_pct"			"10"
+				"var_type"				"FIELD_INTEGER"
+				"min_health_pct"			"4 6 8 10"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"duration"					"5"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.5 2.0 2.5 3.0"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"health_regen"				"70 80 90 100"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"health_regen_pct"			"4 5 6 7"
 			}
 		}
@@ -3008,13 +3020,13 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"dodge_chance_pct"			"10 15 20 25"
+				"var_type"				"FIELD_INTEGER"
+				"dodge_chance_pct"			"10 14 18 22"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"double_attack_chance"		"14 16 18 20"
+				"var_type"				"FIELD_INTEGER"
+				"double_attack_chance"		"10 12 14 16"
 			}
 		}
 	}
@@ -3022,16 +3034,15 @@
 	"flash_speedforce_power"
 	{
 		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/flash_speedforce_power.lua"
+		"ScriptFile"							"abilities/flash_speedforce_power.lua"
 
-		"AbilityTextureName"				"custom/void"
-		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"					"custom/void"
+		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
-		"AbilityCooldown"					"60 50 40"
-		"AbilityManaCost"					"200"
+		"AbilityCooldown"						"100 90 80"
 
 		"AbilitySpecial"
 		{
@@ -3043,32 +3054,32 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"700 800 900"
+				"radius"						"700 800 900"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"speed_to_damage_pct"		"15 20 25"
+				"speed_to_damage_pct"			"15 20 25"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"speed_to_attack_speed_pct"	"30 40 50"
+				"speed_to_attack_speed_pct"		"30 40 50"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"movespeed_steal_interval"	"0.1" //Лучше ставить 1/0.5/0.2/0.1, чтобы кража была более "равномерной"
+				"movespeed_steal_interval"		"0.1" //Лучше ставить 1/0.5/0.2/0.1, чтобы кража была более "равномерной"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movespeed_steal"			"2 3 4"
+				"movespeed_steal"				"2 3 4"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"ultimate_bonus_pct"		"10" //Бонус к пассивке в %
+				"ultimate_bonus_pct"			"10" //Бонус к пассивке в %
 			}
 		}
 	}
