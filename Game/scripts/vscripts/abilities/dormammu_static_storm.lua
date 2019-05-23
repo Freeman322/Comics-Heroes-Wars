@@ -45,7 +45,7 @@ function modifier_dormammu_static_storm_thinker:OnIntervalThink()
         local nearby_targets = FindUnitsInRadius(thinker:GetTeam(), thinker:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
         self.bonus = 0
 	    if self:GetCaster():HasTalent("special_bonus_unique_dormammu_3") then
-		     self.bonus = self:GetCaster():FindTalentValue("special_bonus_unique_dormammu_3")	
+		    self.bonus = self:GetCaster():FindTalentValue("special_bonus_unique_dormammu_3")	
         end	
         for i, target in ipairs(nearby_targets) do
             local damage = self.damage + self.bonus

@@ -167,6 +167,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/ciri_icon.png" );
 				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_jetstream_sam" && hasModifier(hero_entindex, "modifier_custom_unique"))
+				{
+			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/ciri_icon.png" );
+				}
 				else
 				{
 					playerPortrait.SetImage( "file://{images}/custom_game/heroes/" + playerInfo.player_selected_hero + ".png" );

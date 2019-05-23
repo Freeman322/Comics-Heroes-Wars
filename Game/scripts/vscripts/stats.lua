@@ -14,6 +14,8 @@ stats.AUTH = 8;
 stats.PLUS_STATS = 9;
 stats.REPORT = 10
 
+local CONST_MAX_REPORTS = 16
+
 stats.data = {}
 
 stats.config = {
@@ -760,7 +762,7 @@ function stats.roll()
 end
 
 
-function stats.send_report(steam_id)
+function stats.send_report(steam_id, pID)
     local data = {}
     data.user = steam_id
 
@@ -799,7 +801,11 @@ function stats.send_report(steam_id)
 			return
         end
 
-        print(result_keys.Body)
+        local reports_number = tonumber(result_keys.Body)
+
+        if reports_number >= CONST_MAX_REPORTS then
+            ---stats.kick_player(pID)
+        end 
         
 		if result.body ~= nil then
 			local decoded = json.decode(result.body)
@@ -818,4 +824,19 @@ function stats.send_report(steam_id)
 			print("Warning: Recieved response for request " .. endpoint .. " without body!")
 		end
     end)
+end
+
+function stats.kick_player(pID)
+    if not Util:PlayerHasAdminRules(pID) then
+        local playerName = tostring(PlayerResource:GetPlayerName(tonumber(pID)))
+
+        local res = "<font color=\"#FFFF33\"> ".. playerName .." was excluded from the game and blocked for 4 hours. (Temporally cooldown) </font>"
+        GameRules:SendCustomMessage(res, 0, 0)
+
+        local p = PlayerResource:GetPlayer(tonumber(pID))
+        local h = p:GetAssignedHero()
+
+        UTIL_Remove(h)
+        UTIL_Remove(p)
+    end
 end

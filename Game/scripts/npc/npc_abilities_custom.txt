@@ -5227,24 +5227,25 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"									"ability_lua"
-		"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
+		"BaseClass"							"ability_lua"
+		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+
 		"FightRecapLevel"						"2"
-		"AbilityTextureName"				"custom/eternity_2"
-		"HasScepterUpgrade"					"1"
-		"ScriptFile"								"abilities/eternity_ult.lua"
+		"AbilityTextureName"					"custom/eternity_2"
+		"HasScepterUpgrade"						"1"
+		"ScriptFile"							"abilities/eternity_ult.lua"
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
-			"particle"  			"particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf"
-			"particle" 	 			"particles/econ/items/zeus/arcana_chariot/zeus_arcana_thundergods_wrath_start.vpcf"
-			"particle"  			"particles/hero_zuus/zeus_immortal_thundergod.vpcf"
-			"particle"				"particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+			"particle"  					"particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf"
+			"particle" 	 				"particles/econ/items/zeus/arcana_chariot/zeus_arcana_thundergods_wrath_start.vpcf"
+			"particle"  					"particles/hero_zuus/zeus_immortal_thundergod.vpcf"
+			"particle"					"particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
 		}
 
 		// Casting
@@ -5256,7 +5257,7 @@
 		"AbilityCooldown"				"170 140 110"
 		"AbilityDuration"				"4.5 5.0 5.5"
 
-
+		"AbilityDamage"				"100 200 300"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200 300 400"
@@ -14352,17 +14353,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius"				"300 325 350 375"
+				"radius"					"300 325 350 375"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chance"				"100"
+				"chance"					"100"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1 1.5 2 2.5"
+				"stun_duration"			"0.75 1.0 1.25 1.5"
 			}
 		}
 	}
@@ -21963,13 +21964,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_lua"
+		"BaseClass"             			"ability_lua"
 		"AbilityTextureName"			"custom/dormammu_static_storm"
 		"ScriptFile"					"abilities/dormammu_static_storm.lua"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
@@ -21982,7 +21983,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"24"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -21991,10 +21992,11 @@
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
+
 		"precache"
 		{
-			"particle"  "particles/units/heroes/hero_disruptor/disruptor_static_storm.vpcf"
-			"particle"  "particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_fear_debuff.vpcf"
+			"particle"  				"particles/units/heroes/hero_disruptor/disruptor_static_storm.vpcf"
+			"particle"  				"particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_fear_debuff.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -22647,9 +22649,9 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"								"7516"
-		"BaseClass"							"ability_lua"
+		"BaseClass"						"ability_lua"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"				"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"					"1"
 		"AbilityTextureName"				"custom/pudge_decay"

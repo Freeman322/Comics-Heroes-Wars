@@ -301,6 +301,9 @@ function Util:EquipItemData(hero, item_data, slot)
   if econ_params["model"] then
     hero:SetOriginalModel(econ_params["model"])
   end
+  if econ_params["model_scale"] then
+    hero:SetModelScale(tonumber(econ_params["model_scale"]))
+  end
   if econ_params["models"] ~= nil then
     for _, model in pairs(econ_params["models"]) do
       local _econ = SpawnEntityFromTableSynchronous("prop_dynamic", {model = model["model"]})
@@ -308,6 +311,9 @@ function Util:EquipItemData(hero, item_data, slot)
       hero.wearables[slot] = _econ
       if model["material"] then
         _econ:SetMaterialGroup(tostring(model["material"]))
+      end
+      if model["model_scale"] then
+        _econ:SetModelScale(tonumber(model["model_scale"]))
       end
       if model["particles"] ~= nil then
         for __index, particle in pairs(model["particles"]) do

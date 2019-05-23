@@ -56,13 +56,8 @@ end
 
 if modifier_eternity_ult == nil then modifier_eternity_ult = class({}) end
 
-function modifier_eternity_ult:IsDebuff()
-	return true
-end
-
-function modifier_eternity_ult:IsPurgable()
-	return false
-end
+function modifier_eternity_ult:IsDebuff() return true end
+function modifier_eternity_ult:IsPurgable() return true end
 
 function modifier_eternity_ult:OnCreated(ht)
 	if IsServer() then 
@@ -80,6 +75,9 @@ function modifier_eternity_ult:OnCreated(ht)
 			ParticleManager:SetParticleControl(particle, 1, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
 			ParticleManager:SetParticleControl(particle, 2, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
 		end 
+
+		self:StartIntervalThink(1)
+		self:OnIntervalThink()
 	end
 end
 
@@ -93,6 +91,20 @@ function modifier_eternity_ult:DeclareFunctions()
     }
 
     return funcs
+end
+
+function modifier_eternity_ult:OnIntervalThink()
+	if IsServer() then
+		local damage = {
+			victim = self:GetParent(),
+			attacker = self:GetCaster(),
+			damage = self:GetAbility():GetAbilityDamage(),
+			damage_type = self:GetAbility():GetAbilityDamageType(),
+			ability = self:GetAbility(),
+		 }
+
+		 ApplyDamage( damage )
+	end 
 end
 
 function modifier_eternity_ult:GetModifierMagicalResistanceBonus( params )
