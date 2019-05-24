@@ -2,14 +2,14 @@ LinkLuaModifier("modifier_tracer_pulse_bomb", "abilities/tracer_pulse_bomb.lua",
 LinkLuaModifier("modifier_tracer_pulse_bomb_thinker", "abilities/tracer_pulse_bomb.lua", 0)
 LinkLuaModifier("modifier_tracer_pulse_bomb_enemy", "abilities/tracer_pulse_bomb.lua", 0)
 
-tracer_pulse_bomb = class({})
-
-function tracer_pulse_bomb:GetIntrinsicModifierName() return "modifier_tracer_pulse_bomb" end
+tracer_pulse_bomb = class({
+    GetIntrinsicModifierName = function() return "modifier_tracer_pulse_bomb" end
+})
 
 function tracer_pulse_bomb:GetAOERadius() return self:GetSpecialValueFor("explosion_radius") end
 function tracer_pulse_bomb:OnSpellStart()
   self.proj = ProjectileManager:CreateLinearProjectile({
-    EffectName = "particles/units/heroes/hero_batrider/batrider_flamebreak.vpcf",
+    EffectName = "particles/econ/items/puck/puck_alliance_set/puck_illusory_orb_aproset.vpcf",
     Ability = self,
     vSpawnOrigin = self:GetCaster():GetAbsOrigin(),
     fStartRadius = self:GetSpecialValueFor("bind_radius"),
@@ -22,7 +22,7 @@ function tracer_pulse_bomb:OnSpellStart()
     iUnitTargetFlags = self:GetAbilityTargetFlags(),
     bProvidesVision = true,
     iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
-    iVisionRadius = self:GetSpecialValueFor("bind_radius"),
+    iVisionRadius = self:GetSpecialValueFor("bind_radius") * 2,
   })
   self:GetCaster():FindModifierByName("modifier_tracer_pulse_bomb"):SetStackCount(0)
 end
@@ -35,19 +35,17 @@ function tracer_pulse_bomb:OnProjectileHit(hTarget, vLocation)
     CreateModifierThinker(self:GetCaster(), self, "modifier_tracer_pulse_bomb_thinker", {duration = self:GetSpecialValueFor("explosion_delay")}, vLocation, self:GetCaster():GetTeam(), false)
   end
 end
-modifier_tracer_pulse_bomb = class({})
-
-function modifier_tracer_pulse_bomb:IsHidden() return false end
-function modifier_tracer_pulse_bomb:IsPurgable() return false end
-function modifier_tracer_pulse_bomb:DeclareFunctions() return {MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_PROPERTY_IGNORE_CAST_ANGLE} end
-function modifier_tracer_pulse_bomb:GetModifierIgnoreCastAngle() return 1 end
+modifier_tracer_pulse_bomb = class({
+    IsHidden = function() return false end,
+    IsPurgable = function() return false end,
+    DeclareFunctions = function() return {MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_PROPERTY_IGNORE_CAST_ANGLE} end,
+    GetModifierIgnoreCastAngle = function() return 1 end
+})
 
 function modifier_tracer_pulse_bomb:OnAttackLanded(params)
   if params.attacker == self:GetParent() and self:GetStackCount() < 100 and params.attacker:IsRealHero() then
     if params.target:IsRealHero() then
       self:SetStackCount(self:GetStackCount() + math.random(3, 4))
-    --else
-    --  self:IncrementStackCount()
     end
   end
 end
@@ -65,17 +63,10 @@ function modifier_tracer_pulse_bomb:OnIntervalThink()
   end
 end
 
-modifier_tracer_pulse_bomb_thinker = class({})
+modifier_tracer_pulse_bomb_thinker = class({
+    IsHidden = function() return true end
+})
 
-function modifier_tracer_pulse_bomb_thinker:OnCreated()
-  local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_arc_warden/arc_warden_wraith_ring.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent())
-  ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
-  ParticleManager:SetParticleControl(particle, 1, Vector(self:GetAbility():GetSpecialValueFor("explosion_radius"), self:GetAbility():GetSpecialValueFor("explosion_radius"),
-  f))
-  ParticleManager:SetParticleControl(particle, 3, self:GetParent():GetAbsOrigin())
-  self:AddParticle(particle, false, false, -1, false, false)
-end
-function modifier_tracer_pulse_bomb_thinker:IsHidden() return true end
 function modifier_tracer_pulse_bomb_thinker:OnDestroy()
   if IsServer() then
     local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("explosion_radius"), self:GetAbility():GetAbilityTargetTeam(), self:GetAbility():GetAbilityTargetType(), self:GetAbility():GetAbilityTargetFlags(), 0, false)
@@ -87,23 +78,18 @@ function modifier_tracer_pulse_bomb_thinker:OnDestroy()
       EmitSoundOn("Hero_Techies.Suicide", self:GetParent())
 
     end
-    local particle = ParticleManager:CreateParticle("particles/econ/courier/courier_cluckles/courier_cluckles_ambient_rocket_explosion.vpcf", PATTACH_WORLDORIGIN, self:GetParent())
-    ParticleManager:SetParticleControl(particle, 3, self:GetParent():GetAbsOrigin())
+    local particle = ParticleManager:CreateParticle("particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_aftershock_v2.vpcf", PATTACH_WORLDORIGIN, nil)
+    ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
+    ParticleManager:SetParticleControl(particle, 3, Vector(self:GetAbility():GetSpecialValueFor("explosion_radius"), self:GetAbility():GetSpecialValueFor("explosion_radius"), 0))
     ParticleManager:ReleaseParticleIndex(particle)
   end
 end
 
-modifier_tracer_pulse_bomb_enemy = class({})
+modifier_tracer_pulse_bomb_enemy = class({
+    IsHidden = function() return true end,
+    IsPurgable = function() return false end
+})
 
-function modifier_tracer_pulse_bomb_enemy:OnCreated()
-  local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_arc_warden/arc_warden_wraith_ring.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent())
-  ParticleManager:SetParticleControlEnt(particle, 0, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, nil,  self:GetParent():GetAbsOrigin(), true)
-  ParticleManager:SetParticleControl(particle, 1, Vector(self:GetAbility():GetSpecialValueFor("explosion_radius"), self:GetAbility():GetSpecialValueFor("explosion_radius"), 0))
-  ParticleManager:SetParticleControl(particle, 3, self:GetParent():GetAbsOrigin())
-  self:AddParticle(particle, false, false, -1, false, false)
-end
-function modifier_tracer_pulse_bomb_enemy:IsHidden() return false end
-function modifier_tracer_pulse_bomb_enemy:IsPurgable() return false end
 function modifier_tracer_pulse_bomb_enemy:OnDestroy()
   if IsServer() then
     local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("explosion_radius"), self:GetAbility():GetAbilityTargetTeam(), self:GetAbility():GetAbilityTargetType(), self:GetAbility():GetAbilityTargetFlags(), 0, false)
@@ -116,8 +102,9 @@ function modifier_tracer_pulse_bomb_enemy:OnDestroy()
       end
     end
     EmitSoundOn("Hero_Techies.Suicide", self:GetParent())
-    local particle = ParticleManager:CreateParticle("particles/econ/courier/courier_cluckles/courier_cluckles_ambient_rocket_explosion.vpcf", PATTACH_WORLDORIGIN, self:GetParent())
-    ParticleManager:SetParticleControl(particle, 3, self:GetParent():GetAbsOrigin())
+    local particle = ParticleManager:CreateParticle("particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_aftershock_v2.vpcf", PATTACH_WORLDORIGIN, nil)
+    ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
+    ParticleManager:SetParticleControl(particle, 3, Vector(self:GetAbility():GetSpecialValueFor("explosion_radius"), self:GetAbility():GetSpecialValueFor("explosion_radius"), 0))
     ParticleManager:ReleaseParticleIndex(particle)
   end
 end
