@@ -17,8 +17,6 @@ function tracer_blink:OnSpellStart()
 			hTarget = self:GetCaster():GetAbsOrigin() + (self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()):Normalized() * self:GetSpecialValueFor("cast_range")
 	end
 
-	ParticleManager:CreateParticle("particles/econ/events/fall_major_2016/blink_dagger_start_fm06.vpcf", PATTACH_ABSORIGIN, hCaster)
-
 	self:GetCaster():SetAbsOrigin(hTarget)
 	FindClearSpaceForUnit(self:GetCaster(), hTarget, false)
 	ProjectileManager:ProjectileDodge(self:GetCaster())

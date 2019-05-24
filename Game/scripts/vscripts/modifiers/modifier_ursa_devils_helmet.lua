@@ -1,7 +1,7 @@
 if modifier_ursa_devils_helmet == nil then modifier_ursa_devils_helmet = class({}) end
 
 function modifier_ursa_devils_helmet:IsHidden()
-	return false
+	return true
 end
 
 function modifier_ursa_devils_helmet:IsPurgable()

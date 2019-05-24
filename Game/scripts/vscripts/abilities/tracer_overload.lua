@@ -1,72 +1,35 @@
-if tracer_overload == nil then tracer_overload = class({}) end
-LinkLuaModifier ("modifier_tracer_overload", "abilities/tracer_overload.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tracer_overload", "abilities/tracer_overload.lua", 0)
 
-if tracer_overload == nil then
-    tracer_overload = class ( {})
+tracer_overload = class ({})
+
+function tracer_overload:OnSpellStart() if IsServer() then self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_tracer_overload", nil) end end
+
+modifier_tracer_overload = class({
+    IsHidden = function() return false end,
+    IsPurgable = function() return true end,
+    IsDebuff = function() return false end,
+    RemoveOnDeath = function() return true end,
+    DeclareFunctions = function() return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND, MODIFIER_EVENT_ON_ATTACK_LANDED} end
+})
+
+function modifier_tracer_overload:OnCreated()
+    if IsServer() then
+        self:SetStackCount(self:GetAbility():GetSpecialValueFor("attack_count"))
+        EmitSoundOn("Hero_FacelessVoid.TimeWalk.Aeons", self:GetParent())
+    end
 end
 
-function tracer_overload:OnSpellStart ()
-    local caster = self:GetCaster ()
+function modifier_tracer_overload:GetModifierPreAttack_CriticalStrike(params) if params.target:IsCreep() == false then return self:GetAbility():GetSpecialValueFor("crit") end end
+function modifier_tracer_overload:GetAttackSound() return "Hero_Tinker.Attack" end
 
-    caster:AddNewModifier(caster, self, "modifier_tracer_overload", {duration = 30})
-end
-
-
-if modifier_tracer_overload == nil then
-    modifier_tracer_overload = class({})
+function modifier_tracer_overload:OnAttackLanded(params)
+    if params.attacker == self:GetParent() then
+        self:DecrementStackCount()
+        if self:GetStackCount() == 0 then self:Destroy() end
+    end
 end
 
 function modifier_tracer_overload:GetEffectName()
-    if self:GetCaster():HasModifier("modifier_arcana") then return "particles/reverse_flash/reverse_flash_debuff.vpcf" end 
+    if self:GetCaster():HasModifier("modifier_arcana") then return "particles/reverse_flash/reverse_flash_debuff.vpcf" end
     return "particles/hero_tracer/tracer_overload.vpcf"
 end
-
-function modifier_tracer_overload:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
-end
-
-function modifier_tracer_overload:IsPurgable()
-    return false
-end
-
-function modifier_tracer_overload:OnCreated( params )
-    if IsServer() then
-        EmitSoundOn ("Hero_FacelessVoid.TimeWalk.Aeons", self:GetParent())
-        self.attacks = self:GetAbility():GetSpecialValueFor("attack_count")
-    end
-end
-
-
-function modifier_tracer_overload:DeclareFunctions()
-    local funcs = {
-        MODIFIER_EVENT_ON_ATTACK_START,
-        MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
-    }
-
-    return funcs
-end
-
-function modifier_tracer_overload:GetAttackSound()
-    return "Hero_Tinker.Attack"
-end
-
-function modifier_tracer_overload:GetModifierPreAttack_CriticalStrike()
-    return self:GetAbility():GetSpecialValueFor("crit")
-end
-
-function modifier_tracer_overload:OnAttackStart( params )
-    if IsServer() then
-        if params.attacker == self:GetParent() then
-            local target = params.attacker
-            local damage = params.damage
-            self.attacks = self.attacks - 1
-            if self.attacks <= 1 then
-            	self:Destroy()
-            end
-        end
-    end
-end
-
-function tracer_overload:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
