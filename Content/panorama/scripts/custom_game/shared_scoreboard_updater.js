@@ -97,79 +97,83 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				var hero_entindex = Players.GetPlayerHeroEntityIndex( playerId )
 				if (playerInfo.player_selected_hero == "npc_dota_hero_templar_assassin" && hasModifier(hero_entindex, "modifier_neo_noir"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/neo_noir.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/neo_noir.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_nyx_assassin" && hasModifier(hero_entindex, "modifier_the_firs_hunter"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/the_first_hunter.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/the_first_hunter.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_nevermore" && hasModifier(hero_entindex, "modifier_dante"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/dante.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/dante.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_weaver" && hasModifier(hero_entindex, "modifier_doomsday_clock"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/reverse_flash_custommade.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/reverse_flash_custommade.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_razor" && hasModifier(hero_entindex, "modifier_zoom_kalyaska_gold"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/golden_wheelchair.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/golden_wheelchair.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_enchantress" && hasModifier(hero_entindex, "modifier_arcana"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/sombra.png" );
+			   	 	playerPortrait.SetImage( "file://{images}/custom_game/heroes/sombra.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_dark_rider" && hasModifier(hero_entindex, "modifier_arcana"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/hit.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/hit.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_miraak" && hasModifier(hero_entindex, "modifier_arcana"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/megumin.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/megumin.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_invoker" && hasModifier(hero_entindex, "modifier_alma"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/alma_collector.png" );
+			   	 	playerPortrait.SetImage( "file://{images}/custom_game/heroes/alma_collector.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_bloodseeker" && hasModifier(hero_entindex, "modifier_flash_custom"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/flash_custom.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/flash_custom.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_shredder" && hasModifier(hero_entindex, "modifier_nemesis"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/nemesis_custom.png" );
+			   	 	playerPortrait.SetImage( "file://{images}/custom_game/heroes/nemesis_custom.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_dazzle" && hasModifier(hero_entindex, "modifier_joker_custom"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/joker_custom.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/joker_custom.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_queenofpain" && hasModifier(hero_entindex, "modifier_voland_custom"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/voland_arcana.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/voland_arcana.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_rattletrap" && hasModifier(hero_entindex, "modifier_jeannie_arcana"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/jeanne_custom.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/jeanne_custom.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_disruptor" && hasModifier(hero_entindex, "modifier_pugalo"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/pugalo.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/pugalo.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_spirit_breaker" && hasModifier(hero_entindex, "modifier_deadshot"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/deadshot.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/deadshot.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_grimskull" && hasModifier(hero_entindex, "modifier_custom_unique"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/psyloc_icon.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/psyloc_icon.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_abyssal_underlord" && hasModifier(hero_entindex, "modifier_custom_unique"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/ciri_icon.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/ciri_icon.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_jetstream_sam" && hasModifier(hero_entindex, "modifier_custom_unique"))
 				{
-			    	playerPortrait.SetImage( "file://{images}/custom_game/heroes/ciri_icon.png" );
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/ciri_icon.png" );
+				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_shadow_demon" && hasModifier(hero_entindex, "modifier_sargeras_s7_custom"))
+				{
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/sargeras_devourer_of_words_icon.png" );
 				}
 				else
 				{

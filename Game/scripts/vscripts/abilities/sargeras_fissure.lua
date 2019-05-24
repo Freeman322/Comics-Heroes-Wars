@@ -20,9 +20,19 @@ function sargeras_fissure:OnSpellStart()
 	local vStartPos = hCaster:GetAbsOrigin()
 	local vEndPos = vStartPos + vForward * nLenght
 	vStartPos = vStartPos + vForward * 64
-	EmitSoundOnLocationWithCaster(vEndPos, "Hero_EarthShaker.Fissure.Cast", hCaster )
-	local particleName = "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_fissure_egset.vpcf"
-	local nFXIndex = ParticleManager:CreateParticle( particleName, PATTACH_ABSORIGIN, hCaster )
+
+	local particle = "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_fissure_egset.vpcf"
+	local sound = "Hero_EarthShaker.Fissure.Cast"
+
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sargeras_devourer_of_words") then
+		particle = "particles/econ/items/earthshaker/earthshaker_ti9/earthshaker_fissure_ti9.vpcf"
+		sound = "Sargeras.WD.Fissure"
+	end
+
+	EmitSoundOnLocationWithCaster(vEndPos, sound, hCaster )
+	EmitSoundOnLocationWithCaster(vStartPos, sound, hCaster )
+
+	local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_ABSORIGIN, hCaster )
 	ParticleManager:SetParticleControl( nFXIndex, 0, vStartPos )
 	ParticleManager:SetParticleControl( nFXIndex, 0, vStartPos )
 	ParticleManager:SetParticleControl( nFXIndex, 1, vEndPos )
@@ -116,5 +126,5 @@ function sargeras_fissure_thinker:AllowIllusionDuplicate()
 	return false
 end
 
-function sargeras_fissure:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function sargeras_fissure:GetAbilityTextureName() if self:GetCaster():HasModifier("modifier_sargeras_s7_custom") then return "custom/sargeras_fissure_custom" end return self.BaseClass.GetAbilityTextureName(self)  end 
 

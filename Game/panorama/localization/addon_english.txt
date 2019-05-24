@@ -2765,6 +2765,18 @@ Rage, rage against the dying of the light."
 		
 		"plague_doctor"								"Plague Doctor"
 		"plague_doctor_lore"							""
+		
+		"chw_s7_quarterfinalist"						"CHW WORLD CUP 7 QUARTERFINALIST"
+		"chw_s7_quarterfinalist_lore"					"In the end... Its doesnt even matter."
+		
+		"chw_s7_champion"						"CHW WORLD CUP 7 CHAMPION"
+		"chw_s7_champion_lore"					"In the end... Its doesnt even matter."
+		
+		"chw_s7_predictor"						"CHW WORLD CUP 7 PREDICTOR"
+		"chw_s7_predictor_lore"					"In the end... Its doesnt even matter."
+		
+		"sargeras_devourer_of_words"			"The World Devourer"
+		"sargeras_devourer_of_words_lore"		"Sargeras, dark god of chaotic magic, is a demonic titan who created the Burning Legion. Sargeras created this vast demonic army to scour all creation. The Burning Legion moves from world to world, annihilating everything in its path with devastating fel magic. No one knows exactly how many worlds and mortal civilizations the demons have annihilated in their unholy Burning Crusade."
 }
 
 

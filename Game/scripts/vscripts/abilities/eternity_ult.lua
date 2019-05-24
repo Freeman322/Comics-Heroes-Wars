@@ -95,15 +95,7 @@ end
 
 function modifier_eternity_ult:OnIntervalThink()
 	if IsServer() then
-		local damage = {
-			victim = self:GetParent(),
-			attacker = self:GetCaster(),
-			damage = self:GetAbility():GetAbilityDamage(),
-			damage_type = self:GetAbility():GetAbilityDamageType(),
-			ability = self:GetAbility(),
-		 }
 
-		 ApplyDamage( damage )
 	end 
 end
 

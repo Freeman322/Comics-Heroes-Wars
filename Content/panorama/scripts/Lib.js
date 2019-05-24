@@ -4531,6 +4531,62 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "339": {
+        "item": "chw_s7_quarterfinalist",
+        "rarity": "10",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "medal",
+        "hero": "",
+        "universal": "true",
+        "def_id": "339",
+        "is_treasure": "0",
+        "is_medal": "1",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "340": {
+        "item": "chw_s7_champion",
+        "rarity": "10",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "medal",
+        "hero": "",
+        "universal": "true",
+        "def_id": "340",
+        "is_treasure": "0",
+        "is_medal": "1",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "341": {
+        "item": "chw_s7_predictor",
+        "rarity": "10",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "medal",
+        "hero": "",
+        "universal": "true",
+        "def_id": "341",
+        "is_treasure": "0",
+        "is_medal": "1",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "342": {
+        "item": "sargeras_devourer_of_words",
+        "rarity": "11",
+        "quality": "8",
+        "slot": "global",
+        "dropable": "false",
+        "hero": "npc_dota_hero_shadow_demon",
+        "universal": "true",
+        "def_id": "342",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
 };
 

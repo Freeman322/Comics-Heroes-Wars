@@ -17,8 +17,16 @@ end
 function sargeras_annihilation:OnSpellStart()
 	if IsServer() then
 		local iAoE = self:GetSpecialValueFor( "range_tooltip" )
-		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start.vpcf", PATTACH_WORLDORIGIN, nil )
+		
+		local particle = "particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start.vpcf"
+
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sargeras_devourer_of_words") then
+			particle = "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_spawn.vpcf"
+		end
+
+		local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, nil )
 		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+		
 		local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), iAoE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 		if #enemies > 0 then
 			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 2*#enemies, 1, 1 ) )
@@ -46,6 +54,19 @@ function sargeras_annihilation:OnSpellStart()
 		
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
 		EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_EarthShaker.EchoSlam", self:GetCaster() )
+
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sargeras_devourer_of_words") then
+			local nFXIndex = ParticleManager:CreateParticle( "particles/hero_sargeras/sargeras_arcana_cast.vpcf", PATTACH_WORLDORIGIN, nil )
+			ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( iAoE, 1, 1 ) )
+			ParticleManager:SetParticleControl( nFXIndex, 10, Vector( 10, 1, 1 ) )
+			ParticleManager:SetParticleControl( nFXIndex, 11, Vector( 4, 1, 1 ) )
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+			EmitSoundOn("Sargeras.WD.Layer", self:GetCaster())
+			EmitSoundOn("Sargeras.WD.CastUlti", self:GetCaster())
+			EmitSoundOn("Sargeras.WD.CastUlti_Layer", self:GetCaster())
+		end
 	end
 end
 
@@ -58,7 +79,14 @@ function modifier_sargeras_annihilation:OnCreated( kv )
 		local hAbility = self:GetAbility()
 		local iAoE = hAbility:GetSpecialValueFor( "echo_slam_echo_range" )
 		local iDamage = hAbility:GetSpecialValueFor( "echo_slam_echo_damage" )
-		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start.vpcf", PATTACH_WORLDORIGIN, nil )
+
+		local particle = "particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start.vpcf"
+		
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sargeras_devourer_of_words") then
+			particle = "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_spawn.vpcf"
+		end
+
+		local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, nil )
 		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin() )
 		ParticleManager:SetParticleControl( nFXIndex, 1, Vector( iAoE, 1, 1 ) )
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
@@ -92,6 +120,8 @@ function modifier_sargeras_annihilation:OnIntervalThink()
 end
 
 function modifier_sargeras_annihilation:GetEffectName()
+	if self:GetCaster():HasModifier("modifier_sargeras_s7_custom") then return "particles/hero_sargeras/sargeras_arcana_target.vpcf" end 
+
 	return "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
 end
 
@@ -99,5 +129,5 @@ function modifier_sargeras_annihilation:GetEffectAttachType()
 	return PATTACH_CUSTOMORIGIN_FOLLOW
 end
 
-function sargeras_annihilation:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function sargeras_annihilation:GetAbilityTextureName() if self:GetCaster():HasModifier("modifier_sargeras_s7_custom") then return "custom/sargeras_annihilation_custom" end return self.BaseClass.GetAbilityTextureName(self)  end 
 

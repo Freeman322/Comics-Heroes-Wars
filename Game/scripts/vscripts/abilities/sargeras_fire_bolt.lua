@@ -4,24 +4,40 @@ LinkLuaModifier( "modifier_sargeras_fire_bolt", "abilities/sargeras_fire_bolt.lu
 --------------------------------------------------------------------------------
 
 function sargeras_fire_bolt:OnSpellStart()
-	local info = {
-			EffectName = "particles/units/heroes/hero_tidehunter/tidehunter_gush.vpcf",
-			Ability = self,
-			iMoveSpeed = 4000,
-			Source = self:GetCaster(),
-			Target = self:GetCursorTarget(),
-			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
-		}
+	if IsServer() then
+		local particle = "particles/units/heroes/hero_tidehunter/tidehunter_gush.vpcf"
+		local sound = "Ability.GushCast"
 
-	ProjectileManager:CreateTrackingProjectile( info )
-	EmitSoundOn( "Ability.GushCast", self:GetCaster() )
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sargeras_devourer_of_words") then
+			particle = "particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf"
+			sound = "Sargeras.WD.CastGush"
+		end
+
+		local info = {
+				EffectName = particle,
+				Ability = self,
+				iMoveSpeed = 4000,
+				Source = self:GetCaster(),
+				Target = self:GetCursorTarget(),
+				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
+			}
+
+		ProjectileManager:CreateTrackingProjectile( info )
+		EmitSoundOn( sound, self:GetCaster() )
+	end
 end
 
 --------------------------------------------------------------------------------
 
 function sargeras_fire_bolt:OnProjectileHit( hTarget, vLocation )
 	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
-		EmitSoundOn( "Ability.GushImpact", hTarget )
+		local sound = "Ability.GushImpact"
+
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sargeras_devourer_of_words") then
+			sound = "Sargeras.WD.CastGush"
+		end
+
+		EmitSoundOn( sound, hTarget )
 
 		local damage = {
 			victim = hTarget,
@@ -73,7 +89,8 @@ function modifier_sargeras_fire_bolt:OnIntervalThink()
 	end
 end
 
-function modifier_sargeras_fire_bolt:GetEffectName()
+function modifier_sargeras_fire_bolt:GetEffectName()	
+	if self:GetCaster():HasModifier("modifier_sargeras_s7_custom") then return "particles/hero_sargeras/sargeras_arcana_target.vpcf" end 
 	return "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
 end
 
@@ -98,5 +115,5 @@ function modifier_sargeras_fire_bolt:GetModifierMoveSpeedBonus_Percentage( param
 	return self:GetAbility():GetSpecialValueFor("movement_speed")
 end
 
-function sargeras_fire_bolt:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function sargeras_fire_bolt:GetAbilityTextureName() if self:GetCaster():HasModifier("modifier_sargeras_s7_custom") then return "custom/sargeras_fire_bolt_custom" end return self.BaseClass.GetAbilityTextureName(self)  end 
 

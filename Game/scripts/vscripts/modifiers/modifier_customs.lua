@@ -103,3 +103,21 @@ if modifier_custom_unique == nil then modifier_custom_unique = class({}) end
 function modifier_custom_unique:IsHidden() return true end
 function modifier_custom_unique:IsPurgable() return false end
 function modifier_custom_unique:RemoveOnDeath() return false end
+
+
+if modifier_sargeras_s7_custom == nil then modifier_sargeras_s7_custom = class({}) end
+
+function modifier_sargeras_s7_custom:IsHidden() return true end
+function modifier_sargeras_s7_custom:IsPurgable() return false end
+function modifier_sargeras_s7_custom:RemoveOnDeath() return false end
+function modifier_sargeras_s7_custom:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
+    }
+
+    return funcs
+end
+
+function modifier_sargeras_s7_custom:GetAttackSound( params )
+    return "Sargeras.WD.Attack"
+end

@@ -24,7 +24,18 @@ end
 
 modifier_sargeras_magmatic_armor = class({})
 
-function modifier_sargeras_magmatic_armor:OnCreated() if IsServer() then self:StartIntervalThink(0.1) end end
+function modifier_sargeras_magmatic_armor:OnCreated() 
+	if IsServer() then 
+		self:StartIntervalThink(0.1) 
+
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sargeras_devourer_of_words") then
+			local particle = "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_spawn.vpcf"
+
+			local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, nil )
+			ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin() )
+		end
+	end 
+end
 function modifier_sargeras_magmatic_armor:IsHidden() return false end
 function modifier_sargeras_magmatic_armor:IsPurgable() return true end
 
@@ -50,5 +61,12 @@ function modifier_sargeras_magmatic_armor:OnIntervalThink()
 end
 
 function modifier_sargeras_magmatic_armor:GetAttributes()	if IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_sargeras_1") then	return MODIFIER_ATTRIBUTE_MULTIPLE end end
-function modifier_sargeras_magmatic_armor:GetEffectName()	return "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf" end
+function modifier_sargeras_magmatic_armor:GetEffectName()	
+	if self:GetCaster():HasModifier("modifier_sargeras_s7_custom") then return "particles/hero_sargeras/sargeras_arcana_target.vpcf" end 
+	return "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+end
 function modifier_sargeras_magmatic_armor:GetEffectAttachType()	return PATTACH_ABSORIGIN_FOLLOW end
+
+
+function sargeras_magmatic_armor:GetAbilityTextureName() if self:GetCaster():HasModifier("modifier_sargeras_s7_custom") then return "custom/sargeras_magmatic_armor_custom" end return self.BaseClass.GetAbilityTextureName(self)  end 
+
