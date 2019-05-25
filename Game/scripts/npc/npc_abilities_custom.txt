@@ -5055,13 +5055,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"							"ability_datadriven"
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/oblivios_astral.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"		"custom/eternity_3"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"			"0.5 0.4 0.3 0.2"
 		"AbilityCooldown"        "28 25 22 19"
 		"precache"
 		{
@@ -5081,58 +5081,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cast_point"		"0.5 0.4 0.3 0.2"
+				"cast_point"			"0.5 0.4 0.3 0.2"
 			}
-		}
-		"OnSpellStart"
-		{
-			"ApplyModifier"
+			"02"
 			{
-				"Target"			"CASTER"
-				"ModifierName"		"modifier_item_ghost_datadriven_active_ob"
-			}
-
-			"FireSound"
-			{
-				"EffectName"		"DOTA_Item.GhostScepter.Activate"
-				"Target"			"CASTER"
-			}
-
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_medusa/medusa_mana_shield_cast.vpcf"
-				"EffectAttachType"  "follow_origin"
-				"Target"            "CASTER"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_item_ghost_datadriven_active_ob"
-			{
-				"Passive"					"0"
-				"Duration"                  "6"
-				"IsHidden"					"1"
-				"IsBuff"					"1"
-				"IsDebuff"					"0"
-				"IsPurgable"				"0"
-				"StatusEffectName" 			"particles/status_fx/status_effect_ghost.vpcf"
-				"StatusEffectPriority" 		"1"
-				"EffectName"            	"particles/items_fx/ghost.vpcf"
-				"EffectAttachType"      	"PATTACH_ABSORIGIN"
-
-				"Properties"
-				{
-						"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"		"1"
-						"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"      "1"
-						"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"  "1"
-				}
-
-				"States"
-				{
-						"MODIFIER_STATE_ATTACK_IMMUNE" 			"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_SILENCED"  "MODIFIER_STATE_VALUE_ENABLED"
-				}
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6"
 			}
 		}
 	}
