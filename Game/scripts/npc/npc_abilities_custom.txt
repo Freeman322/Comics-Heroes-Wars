@@ -14465,15 +14465,25 @@
 		"AbilityManaCost"				"150 200 250"
 		"precache"
 		{
-			"model"  "models/items/elder_titan/harness_of_the_soulforged_arms/harness_of_the_soulforged_arms.vmdl"
-			"model"  "models/items/elder_titan/warden_of_the_gong_head/warden_of_the_gong_head.vmdl"
-			"model"  "models/items/elder_titan/world_splitter_shoulder/world_splitter_shoulder.vmdl"
-			"model"  "models/heroes/sargeras/sargeras_burning_god/sargeras_gorshalach.vmdl"
-			"particle"  "particles/econ/items/doom/doom_weapon_hellthorns_sword/doom_hellthorns_sword.vpcf"
-			"particle"  "particles/econ/items/elder_titan/elder_titan_fissured_soul/elder_titan_fissured_soul_weapon.vpcf"
-			"particle"  "particles/econ/items/doom/doom_baphomet_set/doom_skulleye.vpcf"
-			"particle"  "particles/econ/items/monkey_king/arcana/monkey_king_arcana_fire.vpcf"
-			"particle"  "particles/econ/courier/courier_golden_doomling/courier_golden_doomling_ambient.vpcf"
+			"model"  				"models/items/elder_titan/harness_of_the_soulforged_arms/harness_of_the_soulforged_arms.vmdl"
+			"model"  				"models/items/elder_titan/warden_of_the_gong_head/warden_of_the_gong_head.vmdl"
+			"model" 				"models/items/elder_titan/world_splitter_shoulder/world_splitter_shoulder.vmdl"
+			"model"  				"models/heroes/sargeras/sargeras_burning_god/sargeras_gorshalach.vmdl"
+
+			"particle" 	 		"particles/econ/items/doom/doom_weapon_hellthorns_sword/doom_hellthorns_sword.vpcf"
+			"particle"  			"particles/econ/items/elder_titan/elder_titan_fissured_soul/elder_titan_fissured_soul_weapon.vpcf"
+			"particle" 			"particles/econ/items/doom/doom_baphomet_set/doom_skulleye.vpcf"
+			"particle"  			"particles/econ/items/monkey_king/arcana/monkey_king_arcana_fire.vpcf"
+			"particle"  			"particles/econ/courier/courier_golden_doomling/courier_golden_doomling_ambient.vpcf"
+
+			"model"				"models/items/terrorblade/endless_purgatory_demon/endless_purgatory_demon.vmdl"
+			"particle"			"particles/items4_fx/meteor_hammer_spell_debuff.vpcf"
+			"particle"			"particles/econ/items/earthshaker/earthshaker_ti9/earthshaker_fissure_ti9.vpcf"
+			"particle"			"particles/hero_sargeras/sargeras_arcana_target.vpcf"
+			"particle"			"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_spawn.vpcf"
+			"particle"			"particles/hero_sargeras/sargeras_arcana_cast.vpcf"
+			"particle"			"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_spawn.vpcf"
+			"particle"			"particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
