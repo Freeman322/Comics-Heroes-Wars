@@ -23,7 +23,7 @@ function modifier_tracer_overload:GetModifierPreAttack_CriticalStrike(params) if
 function modifier_tracer_overload:GetAttackSound() return "Hero_Tinker.Attack" end
 
 function modifier_tracer_overload:OnAttackLanded(params)
-    if params.attacker == self:GetParent() then
+    if params.attacker == self:GetParent() and params.target:IsCreep() == false then
         self:DecrementStackCount()
         if self:GetStackCount() == 0 then self:Destroy() end
     end
