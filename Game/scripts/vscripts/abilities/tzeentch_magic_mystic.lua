@@ -88,7 +88,7 @@ end
 function modifier_tzeentch_magic_mystic:OnCreated()
     if IsServer() then
         self:StartIntervalThink(1)
-        self.armor_red = self:GetParent():GetPhysicalArmorValue() * (self:GetAbility():GetSpecialValueFor("armor_reduction_pct")/100)
+        self.armor_red = self:GetParent():GetPhysicalArmorValue( false ) * (self:GetAbility():GetSpecialValueFor("armor_reduction_pct")/100)
         self.mag_red = self:GetParent():GetMagicalArmorValue() * (self:GetAbility():GetSpecialValueFor("magical_armor_reduction")/100)
         self:OnIntervalThink()
         local pert = "particles/units/heroes/hero_necrolyte/necrolyte_spirit.vpcf"

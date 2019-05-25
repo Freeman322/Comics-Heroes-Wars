@@ -12,7 +12,7 @@ function item_chronograph:OnSpellStart()
 
     if hTarget:IsIllusion() then hTarget:Kill(self, self:GetCaster()) end
 
-    if not self:GetCaster():IsFriendly(hTarget) and not hTarget:TriggerSpellAbsorb(self) then
+    if not self:GetCaster():IsFriendly(hTarget) then
       hTarget:Purge(true, false, false, false, false)
       local mods = hTarget:FindAllModifiers()
 
@@ -89,7 +89,7 @@ function modifier_item_chronograph_active:IsHidden() return false end
 
 if IsServer() then
   function modifier_item_chronograph_active:OnCreated()
-      self.armor = self:GetParent():GetPhysicalArmorValue() * -1
+      self.armor = self:GetParent():GetPhysicalArmorValue( false ) * -1
       self.mag_res = (self:GetParent():GetMagicalArmorValue() + self:GetParent():GetBaseMagicalResistanceValue()) * -1
       self:StartIntervalThink(FrameTime())
   end

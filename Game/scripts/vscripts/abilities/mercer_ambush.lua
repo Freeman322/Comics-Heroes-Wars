@@ -36,7 +36,7 @@ function modifier_mercer_ambush:OnCreated(params)
 
         self.hp = self.target:GetHealth()
         self.damage = self.target:GetAverageTrueAttackDamage(self:GetParent())
-        self.armor = self.target:GetPhysicalArmorValue()
+        self.armor = self.target:GetPhysicalArmorValue( false )
 
         self.target:Kill(self:GetAbility(), self:GetParent())
     end

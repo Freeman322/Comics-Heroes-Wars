@@ -440,7 +440,7 @@ end
 function GameMode:GetCompositeDamage(damage, target)
     local magical_damage = damage/2
     local physical_damage = damage/2
-    local armor = target:GetPhysicalArmorValue()
+    local armor = target:GetPhysicalArmorValue( false )
     local magical_armor = target:GetMagicalArmorValue()/100
 
     local mult = (1 - (0.06 * armor)) / (1 + (0.06 * armor))

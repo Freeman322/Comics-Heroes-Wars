@@ -23,7 +23,7 @@ function misterio_mirror_remnant:OnSpellStart()
             self.m_hUnit:SetMaxHealth(self:GetCaster():GetMaxHealth()) self.m_hUnit:Heal(self:GetCaster():GetMaxHealth(), self)
             self.m_hUnit:SetBaseDamageMin(self:GetCaster():GetAverageTrueAttackDamage(self.m_hUnit)) self.m_hUnit:SetBaseDamageMax(self:GetCaster():GetAverageTrueAttackDamage(self.m_hUnit))
             
-            self.m_hUnit:SetPhysicalArmorBaseValue(self:GetCaster():GetPhysicalArmorValue())
+            self.m_hUnit:SetPhysicalArmorBaseValue(self:GetCaster():GetPhysicalArmorValue( false ))
 
             self.m_hUnit:AddNewModifier(self:GetCaster(), self, "modifier_misterio_mirror_remnant", nil)      
             self.m_hUnit:AddNewModifier(self:GetCaster(), self, "modifier_kill", {["duration"] = self.m_duration})
@@ -137,9 +137,19 @@ function modifier_misterio_mirror_remnant_invis:DeclareFunctions()
         MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY,
         MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
         MODIFIER_PROPERTY_INVISIBILITY_LEVEL,
+        MODIFIER_EVENT_ON_ATTACK
     }
 
     return funcs
+end
+
+
+function modifier_misterio_mirror_remnant_invis:OnAttack(params)
+    if IsServer() then
+        if params.attacker == self:GetParent() then
+            self:Destroy()
+		end
+    end 
 end
 
 function modifier_misterio_mirror_remnant_invis:GetModifierPersistentInvisibility(args)

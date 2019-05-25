@@ -26,8 +26,8 @@ function modifier_sam_murasama_armor:IsHidden() return true end
 function modifier_sam_murasama_armor:DeclareFunctions() return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS} end
 
 function modifier_sam_murasama_armor:OnCreated()
-  if self:GetParent():GetPhysicalArmorValue() > 0 then
-    self.armor_red = self:GetParent():GetPhysicalArmorValue() * (self:GetAbility():GetSpecialValueFor("armor_ignor_pct") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_sam_murasama_bonus_ignor") or 0)) / 100 * -1
+  if self:GetParent():GetPhysicalArmorValue( false ) > 0 then
+    self.armor_red = self:GetParent():GetPhysicalArmorValue( false ) * (self:GetAbility():GetSpecialValueFor("armor_ignor_pct") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_sam_murasama_bonus_ignor") or 0)) / 100 * -1
   end
 end
 

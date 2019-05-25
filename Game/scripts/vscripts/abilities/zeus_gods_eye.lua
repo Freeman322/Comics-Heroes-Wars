@@ -74,7 +74,7 @@ function modifier_zeus_gods_eye:OnAbilityExecuted(params)
       if #enemies > 0 then
         for _,enemy in pairs(enemies) do
           if enemy ~= nil and ( not enemy:IsMagicImmune() ) and ( not enemy:IsInvulnerable() ) then
-            local armor = enemy:GetPhysicalArmorValue()
+            local armor = enemy:GetPhysicalArmorValue( false )
             if armor < 1 then armor = 1 end
             local damage = {
               victim = enemy,

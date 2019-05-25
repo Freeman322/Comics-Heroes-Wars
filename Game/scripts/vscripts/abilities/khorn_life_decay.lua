@@ -53,7 +53,7 @@ end
 
 function modifier_khorn_life_decay:OnCreated(htable)
     if IsServer() then
-		local armor = self:GetParent():GetPhysicalArmorValue()
+		local armor = self:GetParent():GetPhysicalArmorValue( false )
 		self.armor = math.floor( (GameRules:GetGameTime()/60) ) * (-1)
 		if self:GetParent():IsBuilding() then
 			self.armor = self.armor / 4

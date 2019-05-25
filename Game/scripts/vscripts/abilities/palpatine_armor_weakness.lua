@@ -33,7 +33,7 @@ function modifier_palpatine_armor_weakness:OnAttackStart (params)
     if IsServer () then
         if params.attacker == self:GetParent () then
             local target = params.target
-            self.bonus_damage = target:GetPhysicalArmorValue() * self:GetAbility():GetSpecialValueFor("damage_mult")
+            self.bonus_damage = target:GetPhysicalArmorValue( false ) * self:GetAbility():GetSpecialValueFor("damage_mult")
         end
     end
 

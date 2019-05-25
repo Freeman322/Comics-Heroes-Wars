@@ -209,11 +209,11 @@
 		//----------------------------------------------------------------
 		"Model"						    "models/items/courier/atrophic_skitterwing/atrophic_skitterwing.vmdl"	// Model.
 		"BaseClass"					  "npc_dota_creature"
-		"SoundSet"					  "Hero_Venomancer"
-		"Level"						    "100"
-		"ModelScale" 				  "3"
-		"ConsideredHero"			"1"
-		"UnitLabel"			      "kracken"
+		"SoundSet"					"Hero_Venomancer"
+		"Level"						"100"
+		"ModelScale" 				  	"3"
+		"ConsideredHero"				"1"
+		"UnitLabel"			      	"kracken"
 
 		// Abilities
 		//----------------------------------------------------------------
