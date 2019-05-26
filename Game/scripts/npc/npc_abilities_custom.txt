@@ -5065,12 +5065,12 @@
 		"AbilityCooldown"        "28 25 22 19"
 		"precache"
 		{
-			"model"   	"models/heroes/hero_oblivion/anubis_jujment/anubis_jugment.vmdl"
-			"particle"  "particles/econ/courier/courier_roshan_desert_sands/courier_roshan_desert_sands_eyes.vpcf"
-			"particle"  "particles/units/heroes/hero_bane/bane_nightmare_inkblots.vpcf"
-			"particle"  "particles/units/heroes/hero_bane/bane_nightmare_inkblots_thick.vpcf"
-			"particle"  "particles/units/heroes/hero_bane/bane_nightmare_worms.vpcf"
-			"particle"  "particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_ambient.vpcf"
+			"model"   		"models/heroes/hero_oblivion/anubis_jujment/anubis_jugment.vmdl"
+			"particle"  		"particles/econ/courier/courier_roshan_desert_sands/courier_roshan_desert_sands_eyes.vpcf"
+			"particle"  		"particles/units/heroes/hero_bane/bane_nightmare_inkblots.vpcf"
+			"particle"  		"particles/units/heroes/hero_bane/bane_nightmare_inkblots_thick.vpcf"
+			"particle" 		"particles/units/heroes/hero_bane/bane_nightmare_worms.vpcf"
+			"particle"  		"particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_ambient.vpcf"
 			"model"			"models/items/oracle/ti7_immortal_weapon/oracle_ti7_immortal_weapon.vmdl"
 		}
 
@@ -5168,11 +5168,11 @@
 		{
 			"SpawnUnit"
 			{
-					"UnitName"	"npc_dota_warlock_golem_2"
-					"Target"         "POINT"
-					"UnitCount"		"%count"
-					"UnitLimit"             "%count"
-					"Duration"             "60"
+				"UnitName"		"npc_dota_warlock_golem_2"
+				"Target"         	"POINT"
+				"UnitCount"		"%count"
+				"UnitLimit"         "%count"
+				"Duration"          "60"
 			}
 			"FireSound"
 			{

@@ -31,9 +31,11 @@ function groot_treants:OnSpellStart()
 		return
 	end
 
+	local unit = "npc_dota_furion_treant_" .. self:GetLevel()
+
 	local nTreantsToSpawn = math.min( self.max_treants, nTreeCount )
 	while nTreantsToSpawn > 0 do
-		local hTreant = CreateUnitByName( "npc_dota_furion_treant", vTargetPosition, true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber() )
+		local hTreant = CreateUnitByName( unit, vTargetPosition, true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber() )
 		if hTreant ~= nil then
 			hTreant:SetControllableByPlayer( self:GetCaster():GetPlayerID(), false )
 			hTreant:SetOwner( self:GetCaster() )
@@ -41,9 +43,11 @@ function groot_treants:OnSpellStart()
 			local kv = {
 				duration = self.duration
 			}
-      hTreant:AddNewModifier(self:GetCaster(), self, "modifier_kill", {duration = self.duration})
+			
+			hTreant:AddNewModifier(self:GetCaster(), self, "modifier_kill", {duration = self.duration})
 			hTreant:AddNewModifier(self:GetCaster(), self, "modifier_groot_treants", {duration = self.duration})
-      FindClearSpaceForUnit(hTreant, hTreant:GetAbsOrigin(), true)
+			
+			FindClearSpaceForUnit(hTreant, hTreant:GetAbsOrigin(), true)
 		end
 
 		nTreantsToSpawn = nTreantsToSpawn - 1
