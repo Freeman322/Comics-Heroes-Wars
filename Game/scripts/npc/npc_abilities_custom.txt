@@ -5051,18 +5051,15 @@
 			}
 		}
 	}
-	"oblivios_astral"
+	"oblivion_astral"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/oblivios_astral.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"		"custom/eternity_3"
+		"ScriptFile"						"abilities/oblivion_astral.lua"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"				"custom/eternity_3"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"        "28 25 22 19"
+		"AbilityCooldown"       			"28 25 22 19"
+
 		"precache"
 		{
 			"model"   	"models/heroes/hero_oblivion/anubis_jujment/anubis_jugment.vmdl"
@@ -5074,28 +5071,27 @@
 			"model"			"models/items/oracle/ti7_immortal_weapon/oracle_ti7_immortal_weapon.vmdl"
 		}
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_point"			"0.5 0.4 0.3 0.2"
+				"var_type"					"FIELD_FLOAT"
+				"cast_point"				"0.5 0.4 0.3 0.2"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"6"
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"6"
 			}
 		}
 	}
-	"eternity_plet"
+	"oblivion_creatures"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"					"abilities/oblivion_creatures.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
 		"AbilityTextureName"            "custom/eternity_1"
 		"AbilityCastRange"				"600" // дальность скилла
 		"MaxLevel"						"4"
@@ -5110,6 +5106,12 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"               "110 140 170 200"
+
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5117,25 +5119,14 @@
 				"var_type"						"FIELD_INTEGER"
 				"count"		                     "1 2 3 4"
 			}
-		}
-		"OnSpellStart" // когда спел активируется
-		{
-			"SpawnUnit"
+			"02"
 			{
-					"UnitName"	"npc_dota_warlock_golem_2"
-					"Target"         "POINT"
-					"UnitCount"		"%count"
-					"UnitLimit"             "%count"
-					"Duration"             "60"
-			}
-			"FireSound"
-			{
-				"EffectName"		"Hero_Enigma.Malefice"
-				"Target"			  "CASTER"
+				"var_type"						"FIELD_INTEGER"
+				"duration"						"60"
 			}
 		}
 	}
-	"oblivios_dark_ritual"
+	"oblivion_dark_ritual"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -5146,7 +5137,7 @@
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType" 		"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"				"custom/eternity_4"
-		"ScriptFile"								"abilities/oblivios_dark_ritual.lua"
+		"ScriptFile"								"abilities/oblivion_dark_ritual.lua"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -5177,20 +5168,23 @@
 			}
 		}
 	}
-	"eternity_ult"
+	"oblivion_ult"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"ability_lua"
-		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
+		"ScriptFile"							"abilities/oblivion_ult.lua"
+		"AbilityTextureName"					"custom/eternity_2"
+
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
 
 		"FightRecapLevel"						"2"
-		"AbilityTextureName"					"custom/eternity_2"
 		"HasScepterUpgrade"						"1"
-		"ScriptFile"							"abilities/eternity_ult.lua"
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -5232,7 +5226,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magical_armor_bonus"		"-16 -24 -36"
+				"magical_armor_bonus"	"16 24 36"
 			}
 			"03"
 			{
