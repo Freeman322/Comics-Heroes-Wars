@@ -4,7 +4,7 @@ function oblivion_creatures:OnSpellStart()
     for count = 1, self:GetSpecialValueFor("count") do
         local unit = CreateUnitByName("npc_dota_warlock_golem_2", self:GetCursorPosition(), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeam())
         unit:SetControllableByPlayer(self:GetCaster():GetPlayerID(), true)
-        unit:AddNewModifier(self:GetCaster(), self, "modifier_kill", {duration = self:GetSpecialValueFor("duration")})
+        unit:AddNewModifier(self:GetCaster(), self, "modifier_kill", {duration = 30})
         FindClearSpaceForUnit(unit, self:GetCursorPosition(), true)
 
         for ability_id = 0, 15 do
