@@ -14,7 +14,7 @@ function modifier_darkseid_presence:IsHidden() return true end
 function modifier_darkseid_presence:IsPurgable() return false end
 function modifier_darkseid_presence:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("presence_radius") end
 function modifier_darkseid_presence:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
-function modifier_darkseid_presence:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO end
+function modifier_darkseid_presence:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_darkseid_presence:GetAuraSearchFlags() return 0 end
 
 function modifier_darkseid_presence:GetModifierAura() return "modifier_darkseid_presence_aura" end

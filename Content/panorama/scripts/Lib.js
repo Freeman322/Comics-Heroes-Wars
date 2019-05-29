@@ -4587,6 +4587,34 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "343": {
+        "item": "ultron",
+        "rarity": "11",
+        "quality": "12",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_raiden",
+        "universal": "false",
+        "def_id": "343",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "344": {
+        "item": "nike",
+        "rarity": "11",
+        "quality": "12",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_magnataur",
+        "universal": "false",
+        "def_id": "344",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
 };
 

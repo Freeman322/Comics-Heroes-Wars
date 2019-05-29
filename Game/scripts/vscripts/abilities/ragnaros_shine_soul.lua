@@ -13,13 +13,13 @@ function modifier_ragnaros_shine_soul:IsPurgable() return false end
 function modifier_ragnaros_shine_soul:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("aura_radius") end
 function modifier_ragnaros_shine_soul:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
 function modifier_ragnaros_shine_soul:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
-function modifier_ragnaros_shine_soul:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_NONE end
+function modifier_ragnaros_shine_soul:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS end
 function modifier_ragnaros_shine_soul:GetModifierAura() return "modifier_ragnaros_shine_soul_passive" end
 
 modifier_ragnaros_shine_soul_passive = class({})
 
 function modifier_ragnaros_shine_soul_passive:OnCreated()
-    if IsServer() and self:GetParent():IsRealHero() then
+    if IsServer() then
         self:StartIntervalThink(1)
         self:OnIntervalThink()
     end

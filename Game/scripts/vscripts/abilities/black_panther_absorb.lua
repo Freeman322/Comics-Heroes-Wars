@@ -50,13 +50,26 @@ function black_panther_absorb:OnSpellStart()
             end
         end
 
-        local nFXIndex = ParticleManager:CreateParticle( "particles/hero_panther/panther_absorb_explosion.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
-        ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
-        ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin() )
-        ParticleManager:SetParticleControl( nFXIndex, 5, self:GetCaster():GetOrigin() )
-        ParticleManager:ReleaseParticleIndex( nFXIndex )
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "nike") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
+            ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+            ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetSpecialValueFor("radius"), self:GetSpecialValueFor("radius"), 0) )
+            ParticleManager:SetParticleControl( nFXIndex, 3, self:GetCaster():GetOrigin() )
+            ParticleManager:SetParticleControl( nFXIndex, 10, Vector(5, 0, 0) )
+            ParticleManager:SetParticleControl( nFXIndex, 11, Vector(self:GetSpecialValueFor("radius"), self:GetSpecialValueFor("radius"), 0) )
+            ParticleManager:ReleaseParticleIndex( nFXIndex )
+    
+            EmitSoundOn( "Hero_Abaddon.AphoticShield.Destroy", self:GetCaster() )
+        else 
+            local nFXIndex = ParticleManager:CreateParticle( "particles/hero_panther/panther_absorb_explosion.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
+            ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+            ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin() )
+            ParticleManager:SetParticleControl( nFXIndex, 5, self:GetCaster():GetOrigin() )
+            ParticleManager:ReleaseParticleIndex( nFXIndex )
+    
+            EmitSoundOn( "Hero_Abaddon.AphoticShield.Destroy", self:GetCaster() )
+        end 
 
-        EmitSoundOn( "Hero_Abaddon.AphoticShield.Destroy", self:GetCaster() )
 
         self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_3 );
 

@@ -51,6 +51,15 @@ function modifier_black_panther_cat_leap:RemoveOnDeath ()
     return false
 end
 
+function modifier_black_panther_cat_leap:GetEffectName()
+    if self:GetParent():HasModifier("modifier_nike") then   return "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_totem_leap.vpcf" end 
+    return 
+end
+
+function modifier_black_panther_cat_leap:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
 function modifier_black_panther_cat_leap:IsHidden()
     return false
 end

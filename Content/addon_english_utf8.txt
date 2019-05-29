@@ -1594,13 +1594,13 @@
 
 
 
-		"DOTA_Tooltip_ability_eternity_ult"	"OBLIVIOUSNESS"
-		"DOTA_Tooltip_ability_eternity_ult_Description"	"Oblivion makes enemies forget their skills, they can not cast spells. \n\nUpgradable by Aghanim's Scepter."
-		"DOTA_Tooltip_ability_eternity_ult_Lore"	"All that can be learned - can also be forgotten."
-		"DOTA_Tooltip_ability_eternity_ult_duration"	"DURATION:"
-		"DOTA_Tooltip_ability_eternity_ult_cooldown_scepter"	"COOLDOWN SCEPTER:"
-		"DOTA_Tooltip_ability_eternity_ult_magical_armor_bonus"	"%MAGICAL RESISTANCE REDUCTION:"
-		"DOTA_Tooltip_ability_eternity_ult_aghanim_description"	"Targets are now also disarmed during the duration of ability."
+		"DOTA_Tooltip_ability_oblivion_ult"	"OBLIVIOUSNESS"
+		"DOTA_Tooltip_ability_oblivion_ult_Description"	"Oblivion makes enemies forget their skills, they can not cast spells. \n\nUpgradable by Aghanim's Scepter."
+		"DOTA_Tooltip_ability_oblivion_ult_Lore"	"All that can be learned - can also be forgotten."
+		"DOTA_Tooltip_ability_oblivion_ult_duration"	"DURATION:"
+		"DOTA_Tooltip_ability_oblivion_ult_cooldown_scepter"	"COOLDOWN SCEPTER:"
+		"DOTA_Tooltip_ability_oblivion_ult_magical_armor_bonus"	"%MAGICAL RESISTANCE REDUCTION:"
+		"DOTA_Tooltip_ability_oblivion_ult_aghanim_description"	"Targets are now also disarmed during the duration of ability."
 
 
 		"DOTA_TOOLTIP_ABILITY_earthshaker_echo_slam_lua"										"DEVASTATION"
@@ -1896,18 +1896,49 @@
 		"DOTA_TOOLTIP_modifier_flash_stampede"					"Absolute Exist"
 		"DOTA_TOOLTIP_modifier_flash_stampede_Description"		"Haste"
 
+		"DOTA_Tooltip_ability_flash_speedforce_lightning"		"SPEEDFORCE LIGHTNING"
+		"DOTA_Tooltip_ability_flash_speedforce_lightning_Description" "After a short run, Flash releases lightning to the enemy."
+		"DOTA_Tooltip_ability_flash_speedforce_lightning_damage" 		"DAMAGE:"
+		"DOTA_Tooltip_ability_flash_speedforce_lightning_stun_duration"	"STUN DURATION:"
+		"DOTA_Tooltip_ability_flash_speedforce_lightning_distance_to_activate"	"DISTANCE FOR ACTIVATE:"
+		"DOTA_Tooltip_ability_flash_speedforce_lightning_speed_to_damage_pct"	"%SPEED TO DAMAGE:"
+		
+		"DOTA_Tooltip_modifier_flash_speedforce_lightning"		"ABILITY CHARGE PERCENTAGE"
+		
+		"DOTA_Tooltip_ability_flash_speedforce_regeneration"	"SPEEDFORCE REGENERATION"
+		"DOTA_Tooltip_ability_flash_speedforce_regeneration_Description"	"When Flash's health drops below %min_health_pct%%%, it gets accelerated regeneration for %duration% seconds."
+		"DOTA_Tooltip_ability_flash_speedforce_regeneration_health_regen"	"CONSTANT HEALTH REGEN:"
+		"DOTA_Tooltip_ability_flash_speedforce_regeneration_health_regen_pct"	"%REGENERATION FROM MAXIMUM HEALTH:"
+		
+		"DOTA_Tooltip_modifier_flash_speedforce_regeneration_regen"		"SPEEDFORCE REGENERATION"
+		
+		"DOTA_Tooltip_ability_flash_backtrack"										"BACKTRACK"
+		"DOTA_Tooltip_ability_flash_backtrack_Description"							"Flash has a chance to make a double attack or dodge any damage.\n<font color=\"#fa0a0a\">+ 10% in Speedforce Power.</font>"
+		"DOTA_Tooltip_ability_flash_backtrack_dodge_chance_pct" 					"%DODGE CHANCE:"
+		"DOTA_Tooltip_ability_flash_backtrack_double_attack_chance"					"%DOUBLE ATTACK CHANCE:"
+		
+		"DOTA_Tooltip_ability_flash_speedforce_power"								"SPEEDFORCE POWER"
+		"DOTA_Tooltip_ability_flash_speedforce_power_Description"					"When activated, Flash begins to steal the movement speed of all enemies within a radius of %radius%, receiving bonus damage and attack speed."
+		"DOTA_Tooltip_ability_flash_speedforce_power_duration"						"DURATION:"
+		"DOTA_Tooltip_ability_flash_speedforce_power_speed_to_damage_pct"			"%MOVE SPEED TO DAMAGE:"
+		"DOTA_Tooltip_ability_flash_speedforce_power_speed_to_attack_speed_pct"		"%MOVE SPEED TO ATTACK SPEED:"
+		"DOTA_Tooltip_ability_flash_speedforce_power_movespeed_steal_interval"		"THEFT INTERVAL:"
+		"DOTA_Tooltip_ability_flash_speedforce_power_movespeed_steal"				"MOVE SPEED STEAL:"
+		
+		"DOTA_Tooltip_modifier_flash_speedforce_power"								"SPEEDFORCE POWER"
 
 		///drax
 
 		"DOTA_Tooltip_ability_draks_double_edge"	"Giant Blow"
-		"DOTA_Tooltip_ability_draks_double_edge_Description"	"Drax strikes a mighty blow at melee range, dealing damage to his enemy and a small area around them. Deals additional damage to non primary target."
+		"DOTA_Tooltip_ability_draks_double_edge_Description"	"Drax strikes a mighty blow at melee range, dealing damage to his enemy and a small area around them. Deals additional 25% damage to non primary target."
 		"DOTA_Tooltip_ability_draks_double_edge_edge_damage"	"DAMAGE:"
 		"DOTA_Tooltip_ability_draks_double_edge_radius"	"RADIUS:"
-		"DOTA_Tooltip_ability_draks_double_edge_damage_per_strngth"	"STRENGTH MULT:"
+		"DOTA_Tooltip_ability_draks_double_edge_damage_per_strength"	"STRENGTH MULT:"
 
 		"DOTA_Tooltip_ability_draks_flesh_heap"							"Flesh Heap"
 		"DOTA_Tooltip_ability_draks_flesh_heap_Description"				"For each killed enemy Drax gets a boost to health and damage."
 		"DOTA_Tooltip_ability_draks_flesh_heap_strength_buff_amount"	"STRENGTH PER STACK:"
+		"DOTA_Tooltip_ability_draks_flesh_heap_health_regen"			"HEALTH REGEN PER STACK:"
 		"DOTA_Tooltip_ability_draks_flesh_heap_range"					"RADIUS: GLOBAL"
 
 
@@ -2131,22 +2162,25 @@
 		"DOTA_Tooltip_modifier_lich_king_reincarnation_Description"	"The next time the Lich King dies, he will be reborn."
 		///забвение
 
-		"DOTA_TOOLTIP_ABILITY_oblivios_dark_ritual"                                     "DARK REALITY"
-		"DOTA_TOOLTIP_ABILITY_oblivios_dark_ritual_Description"                         "Oblivion silences target and amplifies the damage it takes. The damage is applied as soon as the debuff expires."
-		"DOTA_Tooltip_ability_oblivios_dark_ritual_Lore"								"No one can hide from the forces of oblivion."
-		"DOTA_Tooltip_ability_oblivios_dark_ritual_health_conversion"					"DAMAGE PERS:"
-		"DOTA_Tooltip_ability_oblivios_dark_ritual_duration"							"DURATION:"
-		"DOTA_Tooltip_ability_oblivios_dark_ritual_Note0"							    "Damage will be returned in the form of magic damage but can go through BKB."	
+		"DOTA_TOOLTIP_ABILITY_oblivion_dark_ritual"                                     "DARK RITUAL"
+		"DOTA_TOOLTIP_ABILITY_oblivion_dark_ritual_Description"                         "Oblivion silences target and amplifies the damage it takes. The damage is applied as soon as the debuff expires."
+		"DOTA_Tooltip_ability_oblivion_dark_ritual_Lore"								"No one can hide from the forces of oblivion."
+		"DOTA_Tooltip_ability_oblivion_dark_ritual_health_conversion"					"DAMAGE PERS:"
+		"DOTA_Tooltip_ability_oblivion_dark_ritual_duration"							"DURATION:"
+		"DOTA_Tooltip_ability_oblivion_dark_ritual_Note0"							    "Damage will be returned in the form of magic damage but can go through BKB."	
 
-		"DOTA_TOOLTIP_ABILITY_eternity_plet"                                     "REALITY RIFT"
-		"DOTA_TOOLTIP_ABILITY_eternity_plet_Description"                         "Oblivion summons minions of the Abyss. They will attack anyone nearby."
-		"DOTA_Tooltip_ability_eternity_plet_count"					            "UNITS COUNT:"
-		"DOTA_Tooltip_ability_eternity_plet_Note1"							    "Refresher does not add more units, they are updated instead."		
+		"DOTA_TOOLTIP_ABILITY_oblivion_creatures"                                     "OBLIVION CREATURES"
+		"DOTA_TOOLTIP_ABILITY_oblivion_creatures_Description"                         "Oblivion summons minions of the Abyss. They will attack anyone nearby."
+		"DOTA_Tooltip_ability_oblivion_creatures_count"					            "UNITS COUNT:"
+		"DOTA_Tooltip_ability_oblivion_creatures_Note1"							    "Refresher does not add more units, they are updated instead."		
 
 
-		"DOTA_TOOLTIP_ABILITY_oblivios_astral"                                     "ASTRAL RIFT"
-		"DOTA_TOOLTIP_ABILITY_oblivios_astral_Description"                         "Oblivion jumps into a different reality. During that time he can only receive magical and pure types of damage."
-		"DOTA_Tooltip_ability_oblivios_astral_cast_point"					            "DELAY:"		
+		"DOTA_TOOLTIP_ABILITY_oblivion_astral"                                     "ASTRAL RIFT"
+		"DOTA_TOOLTIP_ABILITY_oblivion_astral_Description"                         "Oblivion jumps into a different reality. During that time he becomes invulnerable."
+		"DOTA_Tooltip_ability_oblivion_astral_cast_point"					       "DELAY:"		
+		"DOTA_Tooltip_ability_oblivion_astral_duration"							   "DURATION:"
+		
+		"DOTA_Tooltip_modifier_oblivion_astral"										"ASTRAL"
 
 
 		//дэдпул
@@ -6417,6 +6451,7 @@
 		"DOTA_Tooltip_ability_draks_unholy_strength"                                      "Unholy Strength"
 		"DOTA_Tooltip_ability_draks_unholy_strength_Description"                          "Pascivnaya: Drax hones his skills, receiving an increase in his strength and healths regeneration.\n\nUpgradable by Aghanim's Scepter."
 		"DOTA_Tooltip_ability_draks_unholy_strength_bonus_health_regen"                   "BONUS HEALTH REGEN:"
+		"DOTA_Tooltip_ability_draks_unholy_strength_bonus_strength"						  "BONUS STRENGTH:"
 		"DOTA_Tooltip_ability_draks_unholy_strength_aghanim_description"                  "Gets additional regeneration for every minute of the game."
 
 		"DOTA_Tooltip_ability_black_flash_tahion_field"                                   "Tahion Field"
@@ -8626,7 +8661,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_4"                            "+ 9% dodge chance for Recoil"
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_5"                            "+ 8 stack mult for Kryptonian"
 		"DOTA_Tooltip_ability_special_bonus_unique_mercer_1"                              "+ 21% heal for Bloodrage"
-		"DOTA_Tooltip_ability_special_bonus_unique_mercer_2"                              "+ 16% slpash for Blades Weapon"
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_2"                              "+ 30% cleave for Blades Weapon"
 		"DOTA_Tooltip_ability_special_bonus_unique_mercer_3"                              "+ 0.45 stun duration"
 		"DOTA_Tooltip_ability_special_bonus_unique_mercer_4"                              "+ 100 damage for Ravage"
 		"DOTA_TOOLTIP_ABILITY_special_bonus_unique_superman_6"							  "Kryptonian ignores night"
@@ -10794,7 +10829,7 @@
 		"npc_dota_hero_shazam_hype"											"Captain Marvel/Shazam is not completely invulnerable. In several stories, he is shown to be susceptible to high-powered magic, which can weaken or de-power him, and, in some older stories, to significantly high voltages of lightning or electricity, which would make him revert to Billy Batson form. Despite possessing the courage of Achilles, the Fawcett Captain Marvel (though not Billy Batson) was extremely bashful and shy around attractive women, a weakness some villains came to exploit. Most depictions following the Crisis on Infinite Earths also show his childlike innocence and immaturity to be a significant weakness."
 
 		"DOTA_Tooltip_ability_sam_charged_strike"                                            "Charged Strike"
-		"DOTA_Tooltip_ability_sam_charged_strike_Description"                                "After a short delay, sam sends a wave of his sword’s energy, causing %attack_count% strokes, as well as %damage% damage.\n <font color=\"#f80000\">Improved in BladeMode.</font>"
+		"DOTA_Tooltip_ability_sam_charged_strike_Description"                                "After a short delay, sam sends a wave of his sword’s energy, causing %attack_count% strokes, as well as %damage% damage.\n <font color=\"#fa0a0a\">Improved in BladeMode.</font>"
 		"DOTA_Tooltip_ability_sam_charged_strike_damage"                   			 "DAMAGE:"
 		"DOTA_Tooltip_ability_sam_charged_strike_attack_count"                       "ATTACK COUNT:"
 		"DOTA_Tooltip_ability_sam_charged_strike_stun_duration"						 "STUN DURATION:"
@@ -10862,6 +10897,7 @@
     
 		"DOTA_Tooltip_ability_raiden_fatality"                                            "Fatality"
 		"DOTA_Tooltip_ability_raiden_fatality_Description"                                "Raiden inflicts swift attacks on the enemy, completely stunning the enemy."
+		"DOTA_Tooltip_ability_raiden_fatality_aghanim_description"						  "Adds Raiden attack to damage."
 		"DOTA_Tooltip_ability_raiden_fatality_channel_time"                               "CHANNEL TIME:"
 		"DOTA_Tooltip_ability_raiden_fatality_strike_per_sec"                             "STRIKES PER SEC:"
     
@@ -11028,20 +11064,20 @@
 		"npc_dota_hero_ogre_lore"											  "The ordinary ogre is the creature for whom the phrase 'As dumb as a bag of rock hammers' was coined. In his natural state, an ogre is supremely incapable of doing or deciding anything. Clothed in dirt, he sometimes finds himself accidentally draped in animal skins after eating lanekill. Not an especially social creature, he is most often found affectionately consorting with the boulders or tree-stumps he has mistaken for kin (a factor that may explain the ogre's low rate of reproduction). However, once every generation or so, the ogre race is blessed with the birth of a two-headed Ogre Magi, who is immediately given the traditional name of Aggron Stonebreak, the name of the first and perhaps only wise ogre in their line's history. With two heads, Ogre Magi finds it possible to function at a level most other creatures manage with one. And while the Ogre Magi will win no debates (even with itself), it is graced with a divine quality known as Dumb Luck--a propensity for serendipitous strokes of fortune which have allowed the ogre race to flourish in spite of enemies, harsh weather, and an inability to feed itself. It's as if the Goddess of Luck, filled with pity for the sadly inept species, has taken Ogre Magi under her wing. And who could blame her? Poor things."
 		"npc_dota_hero_ogre_hype"											  "The ordinary ogre is the creature for whom the phrase 'As dumb as a bag of rock hammers' was coined. In his natural state, an ogre is supremely incapable of doing or deciding anything. Clothed in dirt, he sometimes finds himself accidentally draped in animal skins after eating lanekill. Not an especially social creature, he is most often found affectionately consorting with the boulders or tree-stumps he has mistaken for kin (a factor that may explain the ogre's low rate of reproduction). However, once every generation or so, the ogre race is blessed with the birth of a two-headed Ogre Magi, who is immediately given the traditional name of Aggron Stonebreak, the name of the first and perhaps only wise ogre in their line's history. With two heads, Ogre Magi finds it possible to function at a level most other creatures manage with one. And while the Ogre Magi will win no debates (even with itself), it is graced with a divine quality known as Dumb Luck--a propensity for serendipitous strokes of fortune which have allowed the ogre race to flourish in spite of enemies, harsh weather, and an inability to feed itself. It's as if the Goddess of Luck, filled with pity for the sadly inept species, has taken Ogre Magi under her wing. And who could blame her? Poor things."
 	
-		"DOTA_Tooltip_ability_ogre_mage_passive"							"Fire spells"
-		"DOTA_Tooltip_ability_ogre_mage_passive_description"				"When inflicting damage with an Ogre ability, it ignites its enemy for %duration% seconds, dealing %damage_per_second%%% damage from the maximum health of the enemy."
-		"DOTA_Tooltip_modifier_ogre_mage_passive_debuff"			"<font color=\"#ff3030\">You are burning!</font>"
+		"DOTA_Tooltip_ability_ogre_mage_passive"									"Fire spells"
+		"DOTA_Tooltip_ability_ogre_mage_passive_description"							"When inflicting damage with an Ogre ability, it ignites its enemy for %duration% seconds, dealing %damage_per_second%%% damage from the maximum health of the enemy."
+		"DOTA_Tooltip_modifier_ogre_mage_passive_debuff"								"<font color=\"#ff3030\">You are burning!</font>"
 
 
 		"DOTA_Tooltip_ability_thanos_shattered_earth"                                     "Shattered Earth"
 		"DOTA_Tooltip_ability_thanos_shattered_earth_Description"                         "Calling for cosmic power, Thanos destroys the earth underfoot, raising enemies into the air, inflicting damage and bringing them back after a short delay. Damage depends on the number of enemies affected by the ability."
 		"DOTA_Tooltip_ability_thanos_shattered_earth_epicenter_radius"                    "RADIUS:"
 		"DOTA_Tooltip_ability_thanos_shattered_earth_fade_duration"                       "DURATION:"
-		"DOTA_Tooltip_ability_thanos_shattered_earth_damage_per_unit"                     "DAMAGE PER UNIT:"
+		"DOTA_Tooltip_ability_thanos_shattered_earth_damage_per_unit"                     "%DAMAGE:"
 		"DOTA_Tooltip_ability_thanos_shattered_earth_stun_duration"                       "STUN DURATION:"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_thanos_1"                              "+120 Shattered Earth radius"
-		"DOTA_Tooltip_ability_special_bonus_unique_thanos_2"                              "+90 Shattered Earth damage per unit"
+		"DOTA_Tooltip_ability_special_bonus_unique_thanos_2"                              "+14% Shattered Earth damage"
 
 		"DOTA_Tooltip_ability_thanos_titans_sword"                                        "Titan's Sword"
 		"DOTA_Tooltip_ability_thanos_titans_sword_Description"                            "Using his blade, Thanos hits a greater number of enemies, attacking everyone in the radius."
@@ -11049,5 +11085,12 @@
 		"DOTA_Tooltip_ability_thanos_titans_sword_ministun_duration"                      "MINISTUN DURATION:"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_thanos_3"                              "+100 for Titan's Sword radius"
+
+		"DOTA_Tooltip_ability_thanos_titans_sword_bonus_damage"                           "%BONUS DAMAGE:"
+		
+		"nike"			"Nike"
+		"nike_lore"		""
+
+		
 	}	
 }

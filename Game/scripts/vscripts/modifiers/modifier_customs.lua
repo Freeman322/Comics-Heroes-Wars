@@ -121,3 +121,13 @@ end
 function modifier_sargeras_s7_custom:GetAttackSound( params )
     return "Sargeras.WD.Attack"
 end
+
+if modifier_raiden_skin == nil then modifier_raiden_skin = class({}) end
+function modifier_raiden_skin:IsHidden() return true end
+function modifier_raiden_skin:IsPurgable() return false end
+function modifier_raiden_skin:RemoveOnDeath() return false end
+
+if modifier_nike == nil then modifier_nike = class({}) end
+function modifier_nike:IsHidden() return true end
+function modifier_nike:IsPurgable() return false end
+function modifier_nike:RemoveOnDeath() return false end

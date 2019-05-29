@@ -12095,9 +12095,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"model"		 "models/black_panther/black_panther_head_final.vmdl"
-			"model"		 "models/black_panther/black_panther_weapon.vmdl"
-			"model"		 "models/black_panther/black_panther_weapon_offhand.vmdl"
+			"model"		"models/black_panther/black_panther_head_final.vmdl"
+			"model"		"models/black_panther/black_panther_weapon.vmdl"
+			"model"		"models/heroes/hero_black_panther/spangled_skin/nike.vmdl"
+			"model"		"models/heroes/hero_black_panther/spangled_skin/nike_weapon.vmdl"
+			"particle"	"particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
+			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_totem_leap.vpcf"
+			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start.vpcf"
+			"model"		"models/black_panther/black_panther_weapon_offhand.vmdl"
 		}
 		"AbilitySpecial"
 		{
@@ -35122,6 +35127,9 @@
 		{
 			"particle"				"particles/econ/items/storm_spirit/strom_spirit_ti8/gold_storm_spirit_ti8_overload_active.vpcf"
 			"particle"				"particles/units/heroes/hero_zeus/zeus_cloud.vpcf"
+			"particle"				"particles/raiden/raiden_ultron.vpcf"
+			"model"					"models/heroes/hero_ultron/ultron.vmdl"
+			"particle"				"particles/items_fx/dagon.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 		// Special

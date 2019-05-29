@@ -938,7 +938,7 @@
 		"DOTA_Tooltip_ability_loki_spell_steal_Lore"	"Локи в совершенстве овладел кражей нематериальных предметов."
 		"DOTA_Tooltip_ability_loki_spell_steal_duration"	"ДЛИТЕЛЬНОСТЬ КРАЖИ:"
 		"DOTA_Tooltip_ability_loki_spell_steal_cast_range_scepter"	"ДАЛЬНОСТЬ СО СКИПЕТРОМ:"
-		"DOTA_Tooltip_ability_loki_spell_steal_cooldown_scepter"	"КД СПОСОБНОСТИ СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_loki_spell_steal_cooldown_scepter"	"ПЕРЕЗАРЯДКА СПОСОБНОСТИ СО СКИПЕТРОМ:"
 		"DOTA_Tooltip_ability_loki_spell_steal_aghanim_description"	"Делает дальность применения способности глобальной и убирает перезарядку."
 
 
@@ -1086,29 +1086,28 @@
 		"DOTA_Tooltip_modifier_creeps_Description"									"Крипы рили гэнгста, и становятся сильнее с каждой минутой"
 		///забвение
 
-		"DOTA_TOOLTIP_ABILITY_oblivios_dark_ritual"                                     "DARK CURSE"
-		"DOTA_TOOLTIP_ABILITY_oblivios_dark_ritual_Description"                         "Забвение, проклинает выбранную цель. Цель под действием данного проклятия будет запоминать часть урона и по окончании нанесет его как дополнительный."
-		"DOTA_Tooltip_ability_oblivios_dark_ritual_Lore"								"Никому не укрыться от силы забвения."
-		"DOTA_Tooltip_ability_oblivios_dark_ritual_health_conversion"					"ПРОЦЕНТОВ В УРОН:"
-		"DOTA_Tooltip_ability_oblivios_dark_ritual_duration"							"ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_oblivios_dark_ritual_Note0"							    "Урон будет возвращен в виде понижения здоровья, но может пробить бкб, так как по окончанию способности все положительные дебаффы спадут."
+		"DOTA_TOOLTIP_ABILITY_oblivion_dark_ritual"                                     "DARK RITUAL"
+		"DOTA_TOOLTIP_ABILITY_oblivion_dark_ritual_Description"                         "Забвение, проклинает выбранную цель. Цель под действием данного проклятия будет запоминать часть урона и по окончании нанесет его как дополнительный."
+		"DOTA_Tooltip_ability_oblivion_dark_ritual_Lore"								"Никому не укрыться от силы забвения."
+		"DOTA_Tooltip_ability_oblivion_dark_ritual_health_conversion"					"ПРОЦЕНТОВ В УРОН:"
+		"DOTA_Tooltip_ability_oblivion_dark_ritual_duration"							"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_oblivion_dark_ritual_Note0"							    "Урон будет возвращен в виде понижения здоровья, но может пробить бкб, так как по окончанию способности все положительные дебаффы спадут."
 
-		"DOTA_TOOLTIP_ABILITY_eternity_plet"                                     "REALITY RIFT"
-		"DOTA_TOOLTIP_ABILITY_eternity_plet_Description"                         "Забвение призывает служителей Обливиона."
-		"DOTA_Tooltip_ability_eternity_plet_count"					            "КОЛЛИЧЕСТВО ЮНИТОВ:"
-		"DOTA_Tooltip_ability_eternity_plet_Note1"							    "Рефрешер не добавит еще юнитов, они обновятся."
+		"DOTA_TOOLTIP_ABILITY_oblivion_creatures"                                     "OBLIVION CREATURES"
+		"DOTA_TOOLTIP_ABILITY_oblivion_creatures_Description"                         "Забвение призывает существ из Обливиона."
+		"DOTA_Tooltip_ability_oblivion_creatures_count"					            "КОЛЛИЧЕСТВО:"
 
 
-		"DOTA_TOOLTIP_ABILITY_oblivios_astral"                                     "ASTRAL RIFT"
-		"DOTA_TOOLTIP_ABILITY_oblivios_astral_Description"                         "Забвение отделяется от своей физической оболочки. Он полностью неуязвим в этой форме. Длительность всегда 6 секунд."
-		"DOTA_Tooltip_ability_oblivios_astral_cast_point"					            "ЗАДЕРЖКА:"
+		"DOTA_TOOLTIP_ABILITY_oblivion_astral"                                     "ASTRAL RIFT"
+		"DOTA_TOOLTIP_ABILITY_oblivion_astral_Description"                         "Забвение отделяется от своей физической оболочки. Он полностью неуязвим в этой форме. Длительность всегда %duration% секунд."
+		"DOTA_Tooltip_ability_oblivion_astral_cast_point"					            "ЗАДЕРЖКА:"
 
-		"DOTA_Tooltip_ability_eternity_ult"  	"OBLIVIOUSNESS"
-		"DOTA_Tooltip_ability_eternity_ult_Description"	"Обливион заставляет врага забыть свои навыки, тот не сможет произносить заклинания и использовать предметы. Действует на всех врагов на карте. \n\nУлучшается с Aghanim's Scepter."
-		"DOTA_Tooltip_ability_eternity_ult_Lore"	"Все что может быть изучено - может быть и забыто."
-		"DOTA_Tooltip_ability_eternity_ult_tooltip_duration"	"ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_eternity_ult_damage"	"УРОН:"
-		"DOTA_Tooltip_ability_eternity_ult_aghanim_description"	"Добовляет обезоруживание к эффекту способности."
+		"DOTA_Tooltip_ability_oblivion_ult"  	"OBLIVIOUSNESS"
+		"DOTA_Tooltip_ability_oblivion_ult_Description"	"Обливион заставляет врага забыть свои навыки, тот не сможет произносить заклинания. Действует на всех врагов на карте. \n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_oblivion_ult_Lore"	"Все что можно изучить, также можно и забыть."
+		"DOTA_Tooltip_ability_oblivion_ult_tooltip_duration"	"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_oblivion_ult_damage"	"УРОН:"
+		"DOTA_Tooltip_ability_oblivion_ult_aghanim_description"	"Добавляет обезоруживание к эффекту способности."
 
 		//дэдпул
 
@@ -5290,7 +5289,7 @@
 
 		"DOTA_Tooltip_ability_draks_unholy_strength"                                      "Unholy Strength"
 		"DOTA_Tooltip_ability_draks_unholy_strength_Description"                          "Пасcивная: Дракс оттачивает свои навыки, получая прибавку к силе и регенерации здоровья.\n\nУлучшается с Aghanim's Scepter."
-		"DOTA_Tooltip_ability_draks_unholy_strength_bonus_health_regen"                   "ЛЕЧЕНИЕ:"
+		"DOTA_Tooltip_ability_draks_unholy_strength_bonus_health_regen"                   "ДОП. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:"
 		"DOTA_Tooltip_ability_draks_unholy_strength_aghanim_description"                  "Получает дополнительную регенерацию за каждую минуту игры."
 
 		"DOTA_Tooltip_ability_black_flash_tahion_field"                                   "Tahion Field"

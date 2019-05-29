@@ -25,6 +25,12 @@ function modifier_raiden_electro_field:GetModifierAura() return "modifier_raiden
 function modifier_raiden_electro_field:OnCreated(params)
     if IsServer() then
         if not self:GetParent():IsRealHero() then self:Destroy() end
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "ultron") then
+            CONST_AURA_FIELD_PARTICLE = "particles/raiden/raiden_ultron.vpcf"
+            COBST_DAMAGE_PARTICLE = "particles/items_fx/dagon.vpcf"
+		end
+
         self:StartIntervalThink(0.3)
     end
 end

@@ -12,6 +12,6 @@ function modifier_doomsday_orb:DeclareFunctions() return {MODIFIER_PROPERTY_PROC
 
 function modifier_doomsday_orb:GetModifierProcAttack_BonusDamage_Pure(params)
 	if params.attacker == self:GetParent() and params.attacker:IsRealHero() and params.target:IsBuilding() == false then
-		return params.target:GetHealth() * self:GetAbility():GetSpecialValueFor("damage_pct_fake") / 100
+		return params.attacker:GetHealth() * self:GetAbility():GetSpecialValueFor("damage_pct_fake") / 100
 	end
 end

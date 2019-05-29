@@ -3734,6 +3734,32 @@
             {
                 "material"      "white"
             }
+            "nike"
+            {
+                "model"                     "models/heroes/hero_black_panther/spangled_skin/nike.vmdl"    
+                "models"
+                {
+                    "1"
+                    {
+                        "model"             "models/heroes/hero_black_panther/spangled_skin/nike_weapon.vmdl"            
+                    }
+                }
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
+                    } 
+                }    
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_nike"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+            }
         }      
     }
     "npc_dota_hero_shredder"
@@ -6053,6 +6079,35 @@
                     }
                 }
             } 
+        }
+    }
+    "npc_dota_hero_raiden"
+    {
+        "__default"
+        {
+            "ultron"
+            {
+                "model"                     "models/heroes/hero_ultron/ultron.vmdl"
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_raiden_skin"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+                "projectile"
+                {
+                    "particle"              "particles/items_fx/dagon.vpcf"
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"       "particles/reverse_flash/reverse_flash_debuff_a.vpcf"
+                    }
+                }
+            }
         }
     }
     "npc_dota_hero_shadow_demon"

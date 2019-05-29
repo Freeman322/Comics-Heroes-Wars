@@ -2216,32 +2216,36 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_lua"
+		"BaseClass"					"item_lua"
 		"ScriptFile"					"items/item_ice_pearl.lua"
-		"AbilityTextureName"    		"custom/ice_pearl"
+		"AbilityTextureName"    			"custom/ice_pearl"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"FightRecapLevel"				"1"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13"
+		"AbilityCooldown"				"42"
 		"AbilityCastRange"				"128"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
-		"ItemCost"						"8000"
+		"ItemCost"					"8000"
+
 		"ItemShopTags"					"int;armor;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"shiva's guard;shivas"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
 		"precache"
 		{
 			"particle"  				"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf"
 			"particle"  				"particles/status_fx/status_effect_frost.vpcf"
 			"particle"				"particles/econ/items/nyx_assassin/nyx_ti9_immortal/nyx_ti9_carapace.vpcf"
 			"particle"				"particles/ice_pearl/ice_pearl_active.vpcf"
+			"particle"				"particles/econ/events/ti7/shivas_guard_active_ti7.vpcf"
 			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
 		}
 		// Special
@@ -2251,42 +2255,97 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"50"
+				"bonus_intellect"			"85"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"35"
+				"bonus_strength"			"80"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"18"
+				"bonus_health"				"700"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_return"			"300"
+				"bonus_damage"				"35"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed_reduction"	"-65"
+				"bonus_armor"				"35"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_speed_reduction"	"-100"
+				"damage_return"			"175"
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"		"5.0"
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_reduction"		"-65"
 			}
 			"08"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"move_speed_reduction"		"-100"
+			}
+			"09"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"active_duration"		"5.0"
+				"debuff_duration"			"5.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"active_duration"			"8.0"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_restore"				"1000"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"restore_pct"				"25"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_damage"				"200"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_movement_speed"		"-40"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_debuff_duration"		"1.25"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_trigger_damage"		"1000"
+			}
+			"17"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"total_health_regen_pct" 	"1.5"
+			}
+			"18"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_attack_speed" 		"-60"
+			}
+			"19"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pearl_shield_cooldown" 		"18"
 			}
 		}
 	}
@@ -3398,13 +3457,13 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"9050"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_datadriven"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+		"BaseClass"					"item_datadriven"
 		"AbilityTextureName"			"recipe"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1100"
+		"ItemCost"					"1200"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3413,7 +3472,7 @@
 		"ItemResult"					"item_ice_pearl"
 		"ItemRequirements"
 		{
-			"01"						"item_shivas_guard;item_blade_mail"
+			"01"						"item_shine_of_sea;item_blade_mail"
 		}
 	}
 	//=================================================================================================================
@@ -4131,8 +4190,8 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"9286"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"             		"item_lua"
-		"AbilityTextureName"            "custom/shine_of_sea"
+		"BaseClass"             			"item_lua"
+		"AbilityTextureName"            	"custom/shine_of_sea"
 		"ScriptFile"					"items/item_shine_of_sea.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"FightRecapLevel"				"1"
