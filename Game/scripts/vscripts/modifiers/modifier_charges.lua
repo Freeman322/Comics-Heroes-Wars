@@ -3,9 +3,8 @@ modifier_charges = class({})
 if IsServer() then
   function modifier_charges:Update()
     if self:GetDuration() == -1 then
-      local cooldown = self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time"))
-      self:SetDuration(cooldown, true)
-      self:StartIntervalThink(cooldown)
+      self:SetDuration(self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time")), true)
+      self:StartIntervalThink(self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time")))
     end
 
 	  if self:GetStackCount() == self:GetAbility():GetSpecialValueFor("max_charges") then self:SetDuration(-1, true)

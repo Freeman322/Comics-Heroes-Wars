@@ -505,7 +505,7 @@
 	{
 	    // General
 	    //
-	    "BaseClass"         "npc_dota_base_additive"  // Class of entity of link to.
+	    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
 	    "Model"           "models/heroes/hero_zoom/zoom.vmdl"  // Model.
 	    "SoundSet"          "Creep_Good_Range"          // Name of sound set.
 	    "Level"           "0"
@@ -563,7 +563,7 @@
 
 	    // Movement
 	    //----------------------------------------------------------------
-	    "MovementCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"     // Type of locomotion - ground, air
+	    "MovementCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of locomotion - ground, air
 	    "MovementSpeed"       "450"   // Speed
 	    "MovementTurnRate"      "1.0"   // Turning rate.
 	    "FollowRange"       "250"   // Distance to keep when following
@@ -571,9 +571,9 @@
 	    // Status
 	    //----------------------------------------------------------------
 	    "StatusHealth"        "9999999"     // Base health.
-	    "StatusHealthRegen"     "9999"     // Health regeneration rate.
-	    "StatusMana"        "0"     // Base mana.
-	    "StatusManaRegen"     "0"     // Mana regeneration rate.
+	    "StatusHealthRegen"     "0"     // Health regeneration rate.
+	    "StatusMana"        "5000"     // Base mana.
+	    "StatusManaRegen"     "100"     // Mana regeneration rate.
 
 	    // Team
 	    //----------------------------------------------------------------
@@ -2816,7 +2816,7 @@
 		"AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 
 		"BaseAttackSpeed"		"100"
-		
+
 		"MovementSpeed"             "310"
 		"MovementTurnRate"          "0.600000"
 
@@ -3618,8 +3618,8 @@
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"32"
-		"AttackDamageMax"			"46"
+		"AttackDamageMin"			"31"
+		"AttackDamageMax"			"41"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.700000"
 		"AttackAnimationPoint"		"0.3"
@@ -3633,9 +3633,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"25"
-		"AttributeStrengthGain"		"2.6"
+		"AttributeStrengthGain"		"3.0"
 		"AttributeBaseIntelligence"	"24"
-		"AttributeIntelligenceGain"	"3.4"
+		"AttributeIntelligenceGain"	"2.6"
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.4"
 		"StatusHealthRegen"			"0.25"

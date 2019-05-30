@@ -505,6 +505,9 @@ function Util:OnHeroInGame(hero)
     if hero:GetUnitName() == "npc_dota_hero_cosmos" then
       hero:FindAbilityByName("cosmos_jumper"):SetLevel(1)
     end
+    if hero:GetUnitName() == "npc_dota_hero_undying" then
+        hero:FindAbilityByName("manhattan_equilibrium"):SetLevel(1)
+    end
     if hero:GetUnitName() == "npc_dota_hero_jetstream_sam" then
       hero:FindAbilityByName("sam_zandatsu"):SetLevel(1)
     end
@@ -2295,7 +2298,7 @@ function CDOTA_BaseNPC:GetCooldownTimeAfterReduction(cooldown)
 end
 
 function AddNewModifier_pcall(target, caster, ability, modifierName, properties)
-  if target:IsNull() or not target then Warning("[AddNewModifier_pcall] utils.lua - target nullptr exeption") return end 
+  if target:IsNull() or not target then Warning("[AddNewModifier_pcall] utils.lua - target nullptr exeption") return end
 
   return target:AddNewModifier(caster, ability, modifierName, properties)
 end

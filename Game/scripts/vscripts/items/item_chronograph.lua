@@ -97,8 +97,6 @@ if IsServer() then
   function modifier_item_chronograph_active:OnIntervalThink()
       local health_reduce = (100 - self:GetAbility():GetSpecialValueFor("health_reduce")) / 100
       if self:GetParent():GetHealth() / self:GetParent():GetMaxHealth() > health_reduce then
-          --self:GetParent():SetHealth(self:GetParent():GetMaxHealth() * health_reduce) ОПАСНО!
-
           self:GetParent():ModifyHealth(self:GetParent():GetMaxHealth() * health_reduce, self:GetAbility(), false, 0) --- SOFT CHANGE
       end
       self:GetParent():CalculateStatBonus()

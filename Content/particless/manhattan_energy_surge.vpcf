@@ -1,0 +1,264 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf19:version{aafc65d8-7a5a-4e01-bd8d-3ac118422503} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 16
+	m_BoundingBoxMin = [ -500.0, -500.0, 0.0 ]
+	m_BoundingBoxMax = [ 500.0, 500.0, 1810.0 ]
+	m_flConstantRadius = 32.0
+	m_ConstantColor = [ 255, 151, 53, 255 ]
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_bAdditive = true
+			m_hTexture = resource:"materials/particle/particle_heroring_bad.vtex"
+			m_nOrientationType = 2
+		},
+		{
+			_class = "C_OP_RenderScreenShake"
+			m_nAmplitudeField = "18"
+			m_flRadiusScale = 0.5
+			m_flFrequencyScale = 50.0
+			m_flAmplitudeScale = 10.0
+			m_nFilterCP = -1
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+			m_flOpEndFadeInTime = 1.0
+			m_flOpStartFadeInTime = 1.0
+			m_nOpEndCapState = 0
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_nOpEndCapState = 0
+			m_fDrag = 0.05
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_nOpEndCapState = 0
+			m_flFadeOutTime = 0.75
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 64
+			m_fSpinRateStopTime = 0.9
+		},
+		{
+			_class = "C_OP_OscillateScalarSimple"
+			m_Frequency = 3.0
+			m_Rate = -30.0
+			m_nField = "3"
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_flEndTime = 99999.0
+			m_Rate = -5.0
+			m_nField = "16"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_AlphaDecay"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_RampScalarSplineSimple"
+			m_bEaseOut = true
+			m_Rate = 300.0
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flBias = 0.95
+			m_flStartScale = 0.0
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 119, 47, 0, 255 ]
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = 10.0
+			m_fRadiusMax = 10.0
+			m_vecDistanceBias = [ 0.0, 0.0, 1.0 ]
+			m_vecDistanceBiasAbs = [ 0.0, 0.0, 1.0 ]
+			m_LocalCoordinateSystemSpeedMin = [ 0.0, 0.0, 10.0 ]
+			m_LocalCoordinateSystemSpeedMax = [ 0.0, 0.0, 10.0 ]
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 92.0
+			m_flRadiusMin = 92.0
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.5
+			m_fLifetimeMax = 0.5
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_bScaleInitialRange = true
+			m_flOutputMax = 8.0
+			m_flOutputMin = 1.0
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMax = [ 0.0, 0.0, 150.0 ]
+			m_flNoiseScaleLoc = 0.0
+			m_flNoiseScale = 500.0
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nFieldOutput = "4"
+			m_flOutputMax = 180.0
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_flOutputMax = 5.0
+			m_flOutputMin = 1.0
+			m_nFieldOutput = "18"
+			m_flInputMax = 30.0
+			m_flInputMin = 1.0
+			m_nCPInput = 1
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_bScaleInitialRange = true
+			m_flOutputMax = 2.0
+			m_flOutputMin = 0.5
+			m_nFieldOutput = "1"
+			m_flInputMax = 60.0
+			m_flInputMin = 1.0
+			m_nCPInput = 1
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_bScaleInitialRange = true
+			m_flOutputMax = 1.25
+			m_flOutputMin = 1.0
+			m_flInputMax = 30.0
+			m_flInputMin = 1.0
+			m_nCPInput = 1
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_flOutputMax = 8.0
+			m_flOutputMin = 1.0
+			m_nFieldOutput = "16"
+			m_flInputMax = 30.0
+			m_flInputMin = 1.0
+			m_nCPInput = 1
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_nMapType = "PF_MAP_TYPE_DIRECT"
+				m_flLiteralValue = 0.15
+				m_nControlPoint = 0
+				m_nScalarAttribute = 3
+				m_nVectorAttribute = 6
+				m_nVectorComponent = 0
+				m_flRandomMin = 0.0
+				m_flRandomMax = 1.0
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+				m_flMultFactor = 1.0
+				m_flInput0 = 0.0
+				m_flInput1 = 1.0
+				m_flOutput0 = 0.0
+				m_flOutput1 = 1.0
+				m_nBiasType = "PF_BIAS_TYPE_STANDARD"
+				m_flBiasParameter = 0.0
+				m_Curve = 
+				{
+					m_spline = [  ]
+					m_tangents = [  ]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.0, 0.0 ]
+				}
+			}
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 60.0
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_warp.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_dark_body.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_stars.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_special_thick.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_special.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_special_light.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_special_flash.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_special_streak.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_special_streak_highlight.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start_v2_special_glyphs.vpcf"
+			m_flDelay = 0.75
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/earthshaker/earthshaker.vmdl"
+				m_nModSpecificData = 459
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_nBehaviorVersion = 9
+	m_nFirstMultipleOverride_BackwardCompat = 3
+}

@@ -1,37 +1,31 @@
-LinkLuaModifier( "modifier_ragnaros_shine_soul", "abilities/ragnaros_shine_soul.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier ("modifier_ragnaros_shine_soul_passive", "abilities/ragnaros_shine_soul.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier( "modifier_ragnaros_shine_soul", "abilities/ragnaros_shine_soul.lua", 0)
+LinkLuaModifier ("modifier_ragnaros_shine_soul_passive", "abilities/ragnaros_shine_soul.lua", 0)
 
-ragnaros_shine_soul = class({})
+ragnaros_shine_soul = class({GetIntrinsicModifierName = function() return "modifier_ragnaros_shine_soul" end})
 
-function ragnaros_shine_soul:GetIntrinsicModifierName() return "modifier_ragnaros_shine_soul" end
+modifier_ragnaros_shine_soul = class({
+    IsHidden = function() return true end,
+    IsAura = function() return true end,
+    IsPurgable = function() return false end,
+    GetModifierAura = function() return "modifier_ragnaros_shine_soul_passive" end
+})
 
-modifier_ragnaros_shine_soul = class({})
-
-function modifier_ragnaros_shine_soul:IsHidden() return true end
-function modifier_ragnaros_shine_soul:IsAura() return true end
-function modifier_ragnaros_shine_soul:IsPurgable() return false end
 function modifier_ragnaros_shine_soul:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("aura_radius") end
-function modifier_ragnaros_shine_soul:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
-function modifier_ragnaros_shine_soul:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
-function modifier_ragnaros_shine_soul:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS end
-function modifier_ragnaros_shine_soul:GetModifierAura() return "modifier_ragnaros_shine_soul_passive" end
+function modifier_ragnaros_shine_soul:GetAuraSearchTeam() return self:GetAbility():GetAbilityTargetTeam() end
+function modifier_ragnaros_shine_soul:GetAuraSearchType() return self:GetAbility():GetAbilityTargetType() end
+function modifier_ragnaros_shine_soul:GetAuraSearchFlags() return self:GetAbility():GetAbilityTargetFlags() end
 
-modifier_ragnaros_shine_soul_passive = class({})
+modifier_ragnaros_shine_soul_passive = class({
+    IsPurgable = function() return true end,
+    DeclareFunctions = function() return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE} end,
+    GetEffectName = function() return "particles/items2_fx/radiance.vpcf" end,
+    GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end
+})
 
-function modifier_ragnaros_shine_soul_passive:OnCreated()
-    if IsServer() then
-        self:StartIntervalThink(1)
-        self:OnIntervalThink()
-    end
-end
-
+function modifier_ragnaros_shine_soul_passive:OnCreated() if IsServer() then self:StartIntervalThink(1) end end
 function modifier_ragnaros_shine_soul_passive:OnIntervalThink()
-    if self:GetAbility() then
-        local damage = self:GetAbility():GetSpecialValueFor("aura_damage")
-
-        if self:GetCaster():HasTalent("special_bonus_unique_ragnaros") then
-            damage = self:GetCaster():FindTalentValue("special_bonus_unique_ragnaros") + damage
-        end
+    if self:GetCaster():IsRealHero() then
+        local damage = self:GetAbility():GetSpecialValueFor("aura_damage") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_ragnaros") or 0)
 
         self:GetCaster():Heal(damage * (self:GetAbility():GetSpecialValueFor("bonus_vampirism") / 100), self:GetAbility())
 
@@ -43,25 +37,10 @@ function modifier_ragnaros_shine_soul_passive:OnIntervalThink()
             victim = self:GetParent(),
             attacker = self:GetCaster(),
             damage = damage,
-            damage_type = DAMAGE_TYPE_MAGICAL,
+            damage_type = self:GetAbility():GetAbilityDamageType(),
             ability = self:GetAbility()
         })
     end
 end
 
-function modifier_ragnaros_shine_soul_passive:IsPurgable() return false end
-
-function modifier_ragnaros_shine_soul_passive:DeclareFunctions()
-    return { MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE }
-end
-
-function modifier_ragnaros_shine_soul_passive:GetModifierMoveSpeedBonus_Percentage() 
-    local ability = self:GetAbility()
-    if ability then
-        return ability:GetSpecialValueFor("aura_slowing") 
-    end
-
-    return 0
-end
-function modifier_ragnaros_shine_soul_passive:GetEffectName() return "particles/items2_fx/radiance.vpcf" end
-function modifier_ragnaros_shine_soul_passive:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_ragnaros_shine_soul_passive:GetModifierMoveSpeedBonus_Percentage() return self:GetAbility():GetSpecialValueFor("aura_slowing") end

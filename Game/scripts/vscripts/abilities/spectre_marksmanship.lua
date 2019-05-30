@@ -1,36 +1,22 @@
-if spectre_marksmanship == nil then spectre_marksmanship = class({}) end
+LinkLuaModifier("modifier_spectre_marksmanship", "abilities/spectre_marksmanship.lua", 0)
+spectre_marksmanship = class({
+    GetIntrinsicModifierName = function() return "modifier_spectre_marksmanship" end
+})
 
-LinkLuaModifier ("modifier_spectre_marksmanship", "abilities/spectre_marksmanship.lua", LUA_MODIFIER_MOTION_NONE )
+modifier_spectre_marksmanship = class({
+    IsHidden = function() return true end,
+    IsPurgable = function() return false end,
+    DeclareFunctions = function() return {MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_STATS_AGILITY_BONUS} end
+})
 
-function spectre_marksmanship:GetIntrinsicModifierName ()
-    return "modifier_spectre_marksmanship"
-end
-
-if modifier_spectre_marksmanship == nil then
-    modifier_spectre_marksmanship = class ( {})
-end
-
-function modifier_spectre_marksmanship:IsHidden ()
-    return true
-end
-
-function modifier_spectre_marksmanship:IsPurgable()
-    return false
-end
-
-function modifier_spectre_marksmanship:DeclareFunctions ()
-    local funcs = {
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS
-    }
-
-    return funcs
-end
-
-function modifier_spectre_marksmanship:GetAttributes ()
-    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-
-function modifier_spectre_marksmanship:GetModifierBonusStats_Agility(params)
-    return self:GetAbility():GetSpecialValueFor("marksmanship_agility_bonus")
+function modifier_spectre_marksmanship:OnTakeDamage(params)
+    if params.unit == self:GetParent() and self:GetParent():PassivesDisabled() == false and self:GetParent():IsRealHero() then
+        if RollPercentage(self:GetAbility():GetSpecialValueFor("dodge_chance")) then
+            if params.attacker:IsRealHero() then
+                self:GetParent():ModifyAgility(self:GetAbility():GetSpecialValueFor("bonus_agility"))
+            end
+            self:GetParent():ModifyHealth(self:GetParent():GetHealth() + params.damage, self:GetAbility(), false, 0)
+        end
+    end
+    self:GetParent():CalculateStatBonus()
 end

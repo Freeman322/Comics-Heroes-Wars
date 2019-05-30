@@ -43,24 +43,18 @@ modifier_tracer_pulse_bomb = class({
 })
 
 function modifier_tracer_pulse_bomb:OnAttackLanded(params)
-  if params.attacker == self:GetParent() and self:GetStackCount() < 100 and params.attacker:IsRealHero() then
-    if params.target:IsRealHero() then
-      self:SetStackCount(self:GetStackCount() + math.random(3, 4))
+    if params.attacker == self:GetParent() and self:GetStackCount() < 100 and params.attacker:IsRealHero() then
+        if params.target:IsRealHero() then
+            self:SetStackCount(self:GetStackCount() + math.random(self:GetAbility():GetSpecialValueFor("charge_per_attack") - 1, self:GetAbility():GetSpecialValueFor("charge_per_attack") + 1))
+        end
     end
-  end
 end
 
 function modifier_tracer_pulse_bomb:OnCreated() if IsServer() then self:SetStackCount(0) self:StartIntervalThink(FrameTime()) self:GetAbility():SetActivated(false) end end
 function modifier_tracer_pulse_bomb:OnIntervalThink()
-  if self:GetStackCount() > 100 then
-    self:SetStackCount(100)
-  end
-  if self:GetStackCount() == 100 then
-    self:GetAbility():SetActivated(true)
-  end
-  if self:GetStackCount() < 100 then
-    self:GetAbility():SetActivated(false)
-  end
+  if self:GetStackCount() > 100 then self:SetStackCount(100) end
+  if self:GetStackCount() == 100 then self:GetAbility():SetActivated(true) end
+  if self:GetStackCount() < 100 then self:GetAbility():SetActivated(false) end
 end
 
 modifier_tracer_pulse_bomb_thinker = class({
@@ -72,13 +66,13 @@ function modifier_tracer_pulse_bomb_thinker:OnDestroy()
     local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("explosion_radius"), self:GetAbility():GetAbilityTargetTeam(), self:GetAbility():GetAbilityTargetType(), self:GetAbility():GetAbilityTargetFlags(), 0, false)
     for _, target in pairs(enemies) do
       if not target:IsMagicImmune() then
-        target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_knockback", {center_x = self:GetParent():GetAbsOrigin().x, center_y = self:GetParent():GetAbsOrigin().y, center_z = self:GetParent():GetAbsOrigin().z, duration = 0.5, knockback_duration = 0.5, knockback_distance = 350, knockback_height = 200})
-        ApplyDamage({victim = target, attacker = self:GetCaster(), damage = self:GetCaster():GetLevel() * self:GetAbility():GetSpecialValueFor("damage_per_level"), damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
+        target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_knockback", {center_x = self:GetParent():GetAbsOrigin().x, center_y = self:GetParent():GetAbsOrigin().y, center_z = self:GetParent():GetAbsOrigin().z, duration = self:GetCaster():GetLevel() * 0.05, knockback_duration = self:GetCaster():GetLevel() * 0.05, knockback_distance = 350, knockback_height = 300})
+        ApplyDamage({victim = target, attacker = self:GetCaster(), damage = self:GetCaster():GetLevel() * (self:GetAbility():GetSpecialValueFor("damage_per_level") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_tracer_pulse_bomb") or 0)), damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
       end
       EmitSoundOn("Hero_Techies.Suicide", self:GetParent())
 
     end
-    local particle = ParticleManager:CreateParticle("particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_aftershock_v2.vpcf", PATTACH_WORLDORIGIN, nil)
+    local particle = ParticleManager:CreateParticle("particles/econ/items/techies/techies_arcana/techies_suicide_arcana.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
     ParticleManager:SetParticleControl(particle, 3, Vector(self:GetAbility():GetSpecialValueFor("explosion_radius"), self:GetAbility():GetSpecialValueFor("explosion_radius"), 0))
     ParticleManager:ReleaseParticleIndex(particle)
@@ -96,13 +90,13 @@ function modifier_tracer_pulse_bomb_enemy:OnDestroy()
     for _, target in pairs(enemies) do
       if not target:IsMagicImmune() then
         target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_knockback", {center_x = self:GetParent():GetAbsOrigin().x, center_y = self:GetParent():GetAbsOrigin().y, center_z = self:GetParent():GetAbsOrigin().z, duration = 0.5, knockback_duration = 0.5, knockback_distance = 350, knockback_height = 200})
-        local damage = self:GetCaster():GetLevel() * self:GetAbility():GetSpecialValueFor("damage_per_level")
+        local damage = self:GetCaster():GetLevel() * (self:GetAbility():GetSpecialValueFor("damage_per_level") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_tracer_pulse_bomb") or 0))
         if target == self:GetParent() then damage = damage * 1.5 end
-        ApplyDamage({victim = target, attacker = self:GetCaster(), damage = self:GetCaster():GetLevel() * self:GetAbility():GetSpecialValueFor("damage_per_level"), damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
+        ApplyDamage({victim = target, attacker = self:GetCaster(), damage = damage, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
       end
     end
     EmitSoundOn("Hero_Techies.Suicide", self:GetParent())
-    local particle = ParticleManager:CreateParticle("particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_aftershock_v2.vpcf", PATTACH_WORLDORIGIN, nil)
+    local particle = ParticleManager:CreateParticle("particles/econ/items/techies/techies_arcana/techies_suicide_arcana.vpcf", PATTACH_WORLDORIGIN, nil)
     ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
     ParticleManager:SetParticleControl(particle, 3, Vector(self:GetAbility():GetSpecialValueFor("explosion_radius"), self:GetAbility():GetSpecialValueFor("explosion_radius"), 0))
     ParticleManager:ReleaseParticleIndex(particle)

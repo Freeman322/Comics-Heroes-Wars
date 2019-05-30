@@ -3,7 +3,7 @@ if overvoid_infinite == nil then overvoid_infinite = class({}) end
 LinkLuaModifier( "modifier_overvoid_infinite", "abilities/overvoid_infinite.lua", LUA_MODIFIER_MOTION_NONE )
 
 function overvoid_infinite:GetChannelTime()
-	return self:GetSpecialValueFor("channel_time")
+	return self:GetSpecialValueFor("channel_time") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(),"special_bonus_unique_overvoid") or 0)
 end
 
 --------------------------------------------------------------------------------
@@ -22,15 +22,11 @@ function overvoid_infinite:OnSpellStart()
 	if self.hVictim == nil then
 		return
 	end
-	local duration = self:GetChannelTime()
-	if self:GetCaster():HasTalent("special_bonus_unique_overvoid") then
-        duration = self:GetCaster():FindTalentValue("special_bonus_unique_overvoid") + self:GetChannelTime()
-	end
 	if self.hVictim:TriggerSpellAbsorb( self ) then
 		self.hVictim = nil
 		self:GetCaster():Interrupt()
 	else
-		self.hVictim:AddNewModifier( self:GetCaster(), self, "modifier_overvoid_infinite", { duration = duration } )
+		self.hVictim:AddNewModifier( self:GetCaster(), self, "modifier_overvoid_infinite", { duration = self:GetChannelTime() } )
 		self.hVictim:Interrupt()
 	end
 end
@@ -103,5 +99,4 @@ function modifier_overvoid_infinite:GetOverrideAnimation( params )
 	return ACT_DOTA_DISABLED
 end
 
-function overvoid_infinite:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function overvoid_infinite:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

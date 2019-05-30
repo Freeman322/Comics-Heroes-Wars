@@ -2,14 +2,19 @@ LinkLuaModifier("modifier_tracer_overload", "abilities/tracer_overload.lua", 0)
 
 tracer_overload = class ({})
 
-function tracer_overload:OnSpellStart() if IsServer() then self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_tracer_overload", nil) end end
+function tracer_overload:OnSpellStart()
+    if IsServer() then
+        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_tracer_overload", nil)
+    end
+end
 
 modifier_tracer_overload = class({
     IsHidden = function() return false end,
     IsPurgable = function() return true end,
     IsDebuff = function() return false end,
     RemoveOnDeath = function() return true end,
-    DeclareFunctions = function() return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND, MODIFIER_EVENT_ON_ATTACK_LANDED} end
+    DeclareFunctions = function() return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ATTACK_LANDED} end,
+    GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end
 })
 
 function modifier_tracer_overload:OnCreated()
@@ -19,13 +24,18 @@ function modifier_tracer_overload:OnCreated()
     end
 end
 
-function modifier_tracer_overload:GetModifierPreAttack_CriticalStrike(params) if params.target:IsCreep() == false then return self:GetAbility():GetSpecialValueFor("crit") end end
-function modifier_tracer_overload:GetAttackSound() return "Hero_Tinker.Attack" end
+function modifier_tracer_overload:GetModifierPreAttack_CriticalStrike(params)
+    if params.target:IsAncient() or params.target:IsRealHero() then
+        return self:GetAbility():GetSpecialValueFor("crit")
+    end
+end
 
 function modifier_tracer_overload:OnAttackLanded(params)
-    if params.attacker == self:GetParent() and params.target:IsCreep() == false then
-        self:DecrementStackCount()
-        if self:GetStackCount() == 0 then self:Destroy() end
+    if params.attacker == self:GetParent() then
+        if params.target:IsAncient() or params.target:IsRealHero() then
+            self:DecrementStackCount()
+            if self:GetStackCount() == 0 then self:Destroy() end
+        end
     end
 end
 

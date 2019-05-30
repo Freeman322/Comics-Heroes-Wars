@@ -11,37 +11,37 @@ function green_lantern_lantern:OnSpellStart()
 	EmitSoundOn( "Hero_Sven.GodsStrength", self:GetCaster() )
 end
 
-modifier_green_lantern_lantern_aura = class({})
+modifier_green_lantern_lantern_aura = class({
+    IsPurgable = function() return false end,
+    IsAura = function() return true end,
+    GetModifierAura = function() return "modifier_green_lantern_lantern_aura_effect" end
+})
 
-function modifier_green_lantern_lantern_aura:IsHidden()	return true end
-function modifier_green_lantern_lantern_aura:IsPurgable()	return false end
-function modifier_green_lantern_lantern_aura:IsAura()	return true end
-function modifier_green_lantern_lantern_aura:GetAuraSearchTeam()	return DOTA_UNIT_TARGET_TEAM_FRIENDLY end
-function modifier_green_lantern_lantern_aura:GetAuraSearchType()	return DOTA_UNIT_TARGET_ALL end
-function modifier_green_lantern_lantern_aura:GetAuraSearchFlags()	return DOTA_UNIT_TARGET_FLAG_NONE end
-function modifier_green_lantern_lantern_aura:GetAuraRadius()	return self:GetAbility():GetSpecialValueFor("buff_radius") end
-function modifier_green_lantern_lantern_aura:GetModifierAura()	return "modifier_green_lantern_lantern_aura_effect" end
+function modifier_green_lantern_lantern_aura:IsHidden()
+    if self:GetParent():GetUnitName() == "npc_dota_gl_turret" then
+        return false
+    end
+end
 
-modifier_green_lantern_lantern_aura_effect = class({})
-function modifier_green_lantern_lantern_aura_effect:IsHidden()	return true end
-function modifier_green_lantern_lantern_aura_effect:IsPurgable()	return false end
-function modifier_green_lantern_lantern_aura_effect:DeclareFunctions ()	return { MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE , MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE } end
+function modifier_green_lantern_lantern_aura:GetAuraSearchTeam() return self:GetAbility():GetAbilityTargetTeam() end
+function modifier_green_lantern_lantern_aura:GetAuraSearchType() return self:GetAbility():GetAbilityTargetType() end
+function modifier_green_lantern_lantern_aura:GetAuraSearchFlags() return self:GetAbility():GetAbilityTargetFlags() end
+function modifier_green_lantern_lantern_aura:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("buff_radius") end
+
+modifier_green_lantern_lantern_aura_effect = class({
+    IsHidden = function() return true end,
+    IsPurgable = function() return false end,
+    DeclareFunctions = function() return {MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE , MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE} end
+})
 
 function modifier_green_lantern_lantern_aura_effect:GetModifierBaseDamageOutgoing_Percentage()
     if self:GetParent():GetUnitName() == "npc_dota_gl_turret" then
-      return self:GetAbility():GetSpecialValueFor("damage_amp_pct")
+        return self:GetAbility():GetSpecialValueFor("damage_amp_pct") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_gl_lantern") or 0)
     end
-    if IsServer() then
-      if self:GetCaster():HasTalent("special_bonus_unique_gl_lantern") then
-        return self:GetAbility():GetSpecialValueFor("damage_amp_pct") + self:GetCaster():FindTalentValue("special_bonus_unique_gl_lantern")
-      end
-    end
-    return
 end
 
 function modifier_green_lantern_lantern_aura_effect:GetModifierTotalPercentageManaRegen()
     if self:GetParent() == self:GetCaster() then
       return self:GetAbility():GetSpecialValueFor ("mana_regen_pct")
     end
-    return 0
 end

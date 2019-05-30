@@ -1,11 +1,11 @@
-if tracer_time_lapse == nil then tracer_time_lapse = class({}) end
+tracer_time_lapse = class({
+    IsRefreshable = function() return false end,
+    IsStealable = function() return false end
+})
 local tStates = {}
 local IsFirstTimeUpgrade = true
 
 local tUnits = {}
-
-function tracer_time_lapse:IsRefreshable() return false end
-function tracer_time_lapse:IsStealable() return false end
 
 function tracer_time_lapse:GetManaCost(hTarget) return self:GetCaster():HasScepter() and self:GetCaster():GetMaxMana() / 100 * self:GetSpecialValueFor("manacost_scepter") or self.BaseClass.GetManaCost(self, hTarget) end
 function tracer_time_lapse:GetCooldown(nLevel) return self:GetCaster():HasScepter() and self:GetSpecialValueFor("time_jump_cooldown_scepter") or self.BaseClass.GetCooldown(self, nLevel) end
@@ -31,7 +31,7 @@ function tracer_time_lapse:_init()
 	    tStates[hUnit][0].mana		= tStates[hUnit][0].mana 	or hUnit:GetMana()
 	    tStates[hUnit][0].abil1 	= tStates[hUnit][0].abil1 	or hUnit:GetAbilityByIndex(0):GetCooldownTimeRemaining()
 	    tStates[hUnit][0].abil2 	= tStates[hUnit][0].abil2 	or hUnit:GetAbilityByIndex(1):GetCooldownTimeRemaining()
-	    tStates[hUnit][0].abil3		= tStates[hUnit][0].abil3 	or hUnit:GetAbilityByIndex(2):GetCooldownTimeRemaining()
+	    --tStates[hUnit][0].abil3		= tStates[hUnit][0].abil3 	or hUnit:GetAbilityByIndex(2):GetCooldownTimeRemaining()
     end
 end
 function tracer_time_lapse:OnTimerThink()
@@ -52,13 +52,12 @@ function tracer_time_lapse:OnTimerThink()
 	    tStates[hUnit][need_time].mana 		= hUnit:GetMana()
 	    tStates[hUnit][need_time].abil1 	= hUnit:GetAbilityByIndex(0):GetCooldownTimeRemaining()
 	    tStates[hUnit][need_time].abil2 	= hUnit:GetAbilityByIndex(1):GetCooldownTimeRemaining()
-	    tStates[hUnit][need_time].abil3		= hUnit:GetAbilityByIndex(2):GetCooldownTimeRemaining()
+	    --tStates[hUnit][need_time].abil3		= hUnit:GetAbilityByIndex(2):GetCooldownTimeRemaining()
     end
  end
 
-function tracer_time_lapse:OnSpellStart(  )
-    local caster = self:GetCaster()
-    caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
+function tracer_time_lapse:OnSpellStart()
+    self:GetCaster():StartGesture(ACT_DOTA_CAST_ABILITY_4)
     for hUnit, data in pairs(tStates) do
          hUnit:SetAbsOrigin( data[0].pos )
          hUnit:SetHealth( data[0].health )
@@ -90,4 +89,6 @@ function tracer_time_lapse:OnSpellStart(  )
         EmitSoundOn( "Hero_Weaver.TimeLapse", hUnit )
     end
     self:UseResources(true, false, false)
+    self:GetCaster():Purge(false, true, false, false, true)
+    ProjectileManager:ProjectileDodge(self:GetCaster())
 end

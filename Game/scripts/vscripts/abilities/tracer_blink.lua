@@ -8,6 +8,10 @@ function tracer_blink:OnUpgrade()
 	end
 end
 
+function tracer_blink:GetManaCost(iLevel)
+	return IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_tracer_blink") and 0 or self.BaseClass.GetManaCost(self, iLevel)
+end
+
 function tracer_blink:OnSpellStart()
 	ParticleManager:CreateParticle("particles/econ/events/nexon_hero_compendium_2014/blink_dagger_start_sparkles_nexon_hero_cp_2014.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
 	EmitSoundOn("Hero_Tinker.Laser", self:GetCaster())

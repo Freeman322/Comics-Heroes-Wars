@@ -1759,12 +1759,12 @@
 		"AttackAcquisitionRange"		"900"
 		"AttackRange"					"600"
 		"ProjectileSpeed"				"1300"
-		"AttributeBaseStrength"			"20"
-		"AttributeStrengthGain"			"3.500000"
-		"AttributeBaseAgility"			"20"
-		"AttributeAgilityGain"			"3.500000"
-		"AttributeBaseIntelligence"		"25"
-		"AttributeIntelligenceGain"		"3.500000"
+		"AttributeBaseStrength"			"21"
+		"AttributeStrengthGain"			"2.000000"
+		"AttributeBaseAgility"			"19"
+		"AttributeAgilityGain"			"2.300000"
+		"AttributeBaseIntelligence"		"28"
+		"AttributeIntelligenceGain"		"3.200000"
 		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
 		"MovementSpeed"		        	"310"
 	}
@@ -2600,8 +2600,8 @@
 		"AbilityLayout"				"5"
 		"Ability1"					"medivh_energy_void"
 		"Ability2"					"medivh_deafening_blast"
-		"Ability3"					"medivh_fade_aura"
-		"Ability4"					"medivh_ancient_force"
+		"Ability3"					"medivh_ancient_force"
+		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"medivh_dark_rift"
 		"Ability10"					"special_bonus_exp_boost_30"
@@ -4258,14 +4258,13 @@
 		"Ability4"				"generic_hidden"
 		"Ability5"				"generic_hidden"
 		"Ability6"				"tracer_pulse_bomb"
-		"Ability7"				""
 		"Ability10"				"special_bonus_exp_boost_30"
-		"Ability11"				"special_bonus_all_stats_12"
+		"Ability11"				"special_bonus_unique_tracer_blink"
 		"Ability12"				"special_bonus_spell_block_20"
 		"Ability13"				"special_bonus_agility_10"
 		"Ability14"				"special_bonus_attack_range_400"
 		"Ability15"				"special_bonus_attack_damage_90"
-		"Ability16"				"special_bonus_unique_tracer"
+		"Ability16"				"special_bonus_unique_tracer_pulse_bomb"
 		"Ability17"				"special_bonus_all_stats_20"
 
 		"ArmorPhysical"				"0.000000"
@@ -4436,10 +4435,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"override_hero"					"npc_dota_hero_undying"
 		"DisableWearables"				"1"
-		"Model"							"models/heroes/zeus/zeus.mdl"		// Model.
+		"Model"							"models/heroes/zeus/zeus_arcana.mdl"		// Model.
+		"ProjectileModel"				"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_base_attack.vpcf"
+		"ProjectileSpeed"				"2000"
 		"Portrait"						"vgui/hud/heroportraits/portrait_undying"						// Small image for hero selection
 		"IdleExpression"				"scenes/undying/undying_exp_idle_01.vcd"
-		"SoundSet"						"Hero_Undying"													// Name of sound set.
+		"SoundSet"						"Hero_ObsidianDestroyer"													// Name of sound set.
 		"IdleSoundLoop"					"Hero_Undying.IdleLoop"
 		"Enabled"						"1"
 		"Role"							"Durable,Pusher,Disabler,Initiator"
@@ -4458,20 +4459,20 @@
 
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"						"manhattan_menthal_blow"
-		"Ability2"						"manhattan_telekinessis"
-		"Ability3"						"manhattan_mind_dilation"
-		"Ability4"						"generic_hidden"
+		"Ability1"						"manhattan_mind_explosion"
+		"Ability2"						"manhattan_energy_drain"
+		"Ability3"						"manhattan_energy_surge"
+		"Ability4"						"manhattan_equilibrium"
 		"Ability5"						"generic_hidden"
-	 	 "Ability6"					    "manhattan_elemental_fragmintation"
-		"Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_all_stats_12"
-		"Ability12"					"special_bonus_spell_block_20"
-		"Ability13"					"special_bonus_hp_regen_40"
-		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_unique_faceless_void_4"
-		"Ability16"					"special_bonus_magic_resistance_6"
-		"Ability17"					"special_bonus_all_stats_20"
+	 	"Ability6"					    "manhattan_reality_warp"
+		"Ability10"						"special_bonus_exp_boost_30"
+		"Ability11"						"special_bonus_unique_manhattan_energy_drain_1"
+		"Ability12"						"special_bonus_spell_block_20"
+		"Ability13"						"special_bonus_unique_manhattan_energy_drain"
+		"Ability14"						"special_bonus_cooldown_reduction_25"
+		"Ability15"						"special_bonus_unique_faceless_void_4"
+		"Ability16"						"special_bonus_unique_manhattan_reality_warp"
+		"Ability17"						"special_bonus_all_stats_20"
 
 
 		// Armor
@@ -4480,13 +4481,13 @@
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"				"34"									// Damage range min.
 		"AttackDamageMax"				"42"									// Damage range max.
 		"AttackRate"					"1.7"									// Speed of attack.
 		"AttackAnimationPoint"			"0.3"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"		"600"									// Range within a target can be acquired.
-		"AttackRange"					"128"									// Range within a target can be attacked.
+		"AttackAcquisitionRange"		"800"									// Range within a target can be acquired.
+		"AttackRange"					"600"									// Range within a target can be attacked.
 
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
@@ -7116,8 +7117,8 @@
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"32"
-		"AttackDamageMax"			"46"
+		"AttackDamageMin"			"31"
+		"AttackDamageMax"			"41"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.700000"
 		"AttackAnimationPoint"		"0.3"
@@ -7131,9 +7132,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"25"
-		"AttributeStrengthGain"		"2.6"
+		"AttributeStrengthGain"		"3.0"
 		"AttributeBaseIntelligence"	"24"
-		"AttributeIntelligenceGain"	"3.4"
+		"AttributeIntelligenceGain"	"2.6"
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.4"
 		"StatusHealthRegen"			"0.25"
