@@ -2344,10 +2344,10 @@
 
 		"BaseAttackSpeed"		"100"
 
-		"ArmorPhysical"					"6.000000"
+		"ArmorPhysical"					"4.000000"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"				"36"
-		"AttackDamageMax"				"44"
+		"AttackDamageMin"				"30"
+		"AttackDamageMax"				"36"
 		"AttackRate"					"1.550000"
 		"AttackAnimationPoint"			"0.300000"
 		"AttackAcquisitionRange"		"600"
@@ -2355,7 +2355,7 @@
 		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"			"12"
 		"AttributeStrengthGain"			"4.000000"
-		"AttributeBaseAgility"			"36"
+		"AttributeBaseAgility"			"30"
 		"AttributeAgilityGain"			"2.400000"
 		"AttributeBaseIntelligence"		"18"
 		"AttributeIntelligenceGain"		"2.000000"
@@ -2385,7 +2385,7 @@
 
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"300"
+		"StatusHealth"				"180"
 		"StatusHealthRegen"			"3.0000"
 		"StatusMana"				"100"
 		"StatusManaRegen"			"0.9"
@@ -3621,7 +3621,7 @@
 		"AttackDamageMin"			"31"
 		"AttackDamageMax"			"41"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.700000"
+		"AttackRate"				"1.600000"
 		"AttackAnimationPoint"		"0.3"
 
 		"AttackAcquisitionRange"		"800"
@@ -3633,11 +3633,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"25"
-		"AttributeStrengthGain"		"3.0"
-		"AttributeBaseIntelligence"	"24"
+		"AttributeStrengthGain"		"2.6"
+		"AttributeBaseIntelligence"	"25"
 		"AttributeIntelligenceGain"	"2.6"
-		"AttributeBaseAgility"		"15"
-		"AttributeAgilityGain"		"2.4"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"3.5"
 		"StatusHealthRegen"			"0.25"
 
 		// Movement

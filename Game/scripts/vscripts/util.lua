@@ -502,6 +502,9 @@ function Util:OnHeroInGame(hero)
       end
       hero:FindAbilityByName("tzeentch_warp_god"):SetLevel(1)
     end
+    if hero:GetUnitName() == "npc_dota_hero_ogre" then
+      hero:FindAbilityByName("ogre_mage_passive"):SetLevel(1)
+    end
     if hero:GetUnitName() == "npc_dota_hero_cosmos" then
       hero:FindAbilityByName("cosmos_jumper"):SetLevel(1)
     end

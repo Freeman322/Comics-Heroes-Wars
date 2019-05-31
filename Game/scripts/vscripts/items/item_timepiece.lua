@@ -171,6 +171,7 @@ function modifier_item_timepiece_stats:DeclareFunctions() --we want to use these
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
     }
 
@@ -203,6 +204,10 @@ function modifier_item_timepiece_stats:GetModifierAttackSpeedBonus_Constant (par
     return hAbility:GetSpecialValueFor ("bonus_attack_speed")
 end
 
+function modifier_item_timepiece_stats:GetModifierPhysicalArmorBonus (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_armor")
+end
 
 function modifier_item_timepiece_stats:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

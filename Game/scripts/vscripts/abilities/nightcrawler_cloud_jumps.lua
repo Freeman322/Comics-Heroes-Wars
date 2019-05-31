@@ -66,36 +66,25 @@ function modifier_nightcrawler_nightcrawler_cloud_jumps:OnCreated()
 end
 
 function modifier_nightcrawler_nightcrawler_cloud_jumps:OnIntervalThink()
-    if IsServer() then
-        local thinker = self:GetParent ()
-        local hAbility = self:GetAbility ()
-
-        local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), thinker:GetAbsOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false )
-        if #targets > 0 then
-            for _,target in pairs(targets) do
-                if target:HasModifier("modifier_nightcrawler_nightcrawler_cloud_jumps_fake") == false then
-                    target:AddNewModifier(thinker, self:GetAbility(), "modifier_nightcrawler_nightcrawler_cloud_jumps_fake", {duration = self:GetRemainingTime()})
-
+    function modifier_nightcrawler_nightcrawler_cloud_jumps:OnIntervalThink()
+        if IsServer() then
+            local thinker = self:GetParent ()
+            local hAbility = self:GetAbility ()
+     
+            local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), thinker:GetAbsOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false )
+            if #targets > 0 then
+                for _,target in pairs(targets) do
                     local nFXIndex = ParticleManager:CreateParticle ("particles/hero_nightcrawler/nightcrawler_cloud_jumps_attack.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit);
                     ParticleManager:SetParticleControlEnt (nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin (), true);
                     ParticleManager:SetParticleControlEnt (nFXIndex, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin (), true);
                     ParticleManager:ReleaseParticleIndex (nFXIndex);
-
-                    print(thinker:GetAverageTrueAttackDamage(target))
-                    local damage = thinker:GetAverageTrueAttackDamage(target) * 5
-
+     
                     EmitSoundOn("Hero_MonkeyKing.Attack", target)
                     EmitSoundOn("Hero_MonkeyKing.IronCudgel", target)
-
-                    ApplyDamage({
-                        attacker = thinker, 
-                        victim = target, 
-                        ability = self:GetAbility(), 
-                        damage = damage, 
-                        damage_type = DAMAGE_TYPE_PHYSICAL
-                    })
-
-                    break
+     
+                    self:GetCaster():PerformAttack(target, true, true, true, true, false, true, true)
+                    self:GetCaster():PerformAttack(target, true, true, true, true, false, true, true)
+                    self:GetCaster():PerformAttack(target, true, true, true, true, false, true, true)
                 end
             end
         end

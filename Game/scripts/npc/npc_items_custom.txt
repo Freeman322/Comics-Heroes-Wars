@@ -2264,12 +2264,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"80"
+				"bonus_strength"		"70"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"700"
+				"bonus_health"			"800"
 			}
 			"04"
 			{
@@ -2284,12 +2284,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_return"			"175"
+				"damage_return"			"150"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_speed_reduction"	"-65"
+				"attack_speed_reduction"	"-70"
 			}
 			"08"
 			{
@@ -2305,7 +2305,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_duration"			"8.0"
+				"active_duration"			"9.0"
 			}
 			"11"
 			{
@@ -2320,7 +2320,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_damage"				"200"
+				"blast_damage"				"300"
 			}
 			"14"
 			{
@@ -3863,7 +3863,7 @@
 		"ItemResult"					"item_timepiece"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_orchid;item_relic;item_ultimate_orb;item_ultimate_orb"
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_orchid;item_relic;item_relic;item_ultimate_orb;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -4666,19 +4666,24 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"120"
-			}
+				"bonus_damage"			"300"
+			}	
 			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"30"
+			}
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_mana_regen"		"5"
 			}
-			"05"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"time_freeze_dmg"		"30"
 			}
-			"06"
+			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"time_freeze_duration"	"5"
