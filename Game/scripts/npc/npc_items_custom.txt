@@ -9,9 +9,9 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 
-		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		"AbilityCooldown"				"40"
@@ -29,52 +29,57 @@
 
 		"AbilitySpecial"
 		{
-			"03"
+			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_int"			"60"
 			}
-			"05"
+			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_mana_regen"		"5"
 			}
-			"07"
+			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_damage"			"200"
+			}	
+			"04"
+			{
+				"var_type"	        "FIELD_INTEGER"
+				"bonus_attack_speed"    "60"
 			}
-			"08"
+			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_armor"			"10"
 			}
-			"09"
+			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_hp_reg"			"15"
 			}
-			"10"
+			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"mana_burn"			"120"
 			}
-			"11"
+			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"debuff_duration"		"8"
 			}
-			"12"
+			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"health_reduce"		"40"
 			}
-			"13"
+			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"crit_chance"			"25"
 			}
-			"14"
+			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"crit_damage"			"240"

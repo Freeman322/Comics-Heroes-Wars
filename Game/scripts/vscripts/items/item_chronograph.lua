@@ -45,6 +45,7 @@ function modifier_item_chronograph:DeclareFunctions()
     MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
     MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
     MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+    MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
     MODIFIER_PROPERTY_MANA_BONUS,
     MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
     MODIFIER_PROPERTY_CAST_RANGE_BONUS,
@@ -61,6 +62,7 @@ function modifier_item_chronograph:GetModifierConstantManaRegen() return self:Ge
 function modifier_item_chronograph:GetModifierPreAttack_BonusDamage() return self:GetAbility():GetSpecialValueFor("bonus_damage") end
 function modifier_item_chronograph:GetModifierPhysicalArmorBonus() return self:GetAbility():GetSpecialValueFor("bonus_armor") end
 function modifier_item_chronograph:GetModifierConstantHealthRegen() return self:GetAbility():GetSpecialValueFor("bonus_hp_reg") end
+function modifier_item_chronograph:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end
 
 function modifier_item_chronograph:OnAttackLanded(params)
   local mana_damage = self:GetAbility():GetSpecialValueFor("mana_burn")
