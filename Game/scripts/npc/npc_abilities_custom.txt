@@ -21142,6 +21142,9 @@
 			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start.vpcf"
 			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_totem_leap.vpcf"
 			"model"		"models/heroes/hero_steppenwolf/weapon/weapon.vmdl"
+			"model"		"models/heroes/hero_black_panther/spangled_skin/nike.vmdl"
+			"model"		"models/heroes/hero_black_panther/spangled_skin/nike_weapon.vmdl"
+			"particle"	"particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -34363,7 +34366,9 @@
 
 		"precache"
 		{
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+			"model"		"models/heroes/hero_america/econs/alisa/alisa.vmdl"
+			"particle"	"particles/hero_joker/joker_ambient.vpcf"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
 		}
 
 		"AbilitySpecial"
@@ -36601,6 +36606,11 @@
 		"AbilityCastPoint"				"0.8 0.6 0.4 0.2"
 		"AbilityManaCost"				"150 100 50 0"
 		"AbilityCastRange"				"750"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_earthshaker/earthshaker_aftershock.vpcf"
+		}
 
 		"AbilitySpecial"
 		{
