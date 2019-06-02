@@ -10,12 +10,14 @@ modifier_spectre_marksmanship = class({
 })
 
 function modifier_spectre_marksmanship:OnTakeDamage(params)
-    if params.unit == self:GetParent() and self:GetParent():PassivesDisabled() == false and self:GetParent():IsRealHero() then
+    if params.unit == self:GetParent() and self:GetParent():PassivesDisabled() == false and self:GetParent():IsRealHero() and self:GetAbility():IsCooldownReady() then
         if RollPercentage(self:GetAbility():GetSpecialValueFor("dodge_chance")) then
             if params.attacker:IsRealHero() then
                 self:GetParent():ModifyAgility(self:GetAbility():GetSpecialValueFor("bonus_agility"))
             end
             self:GetParent():ModifyHealth(self:GetParent():GetHealth() + params.damage, self:GetAbility(), false, 0)
+
+            self:GetAbility():UseResources(false, false, true)
         end
     end
     self:GetParent():CalculateStatBonus()

@@ -2875,10 +2875,9 @@
 
 		"DOTA_Tooltip_ABILITY_doomsday_adaptive_armor"								  "ADAPTIVE ARMOR"
 		"DOTA_Tooltip_ABILITY_doomsday_adaptive_armor_Description"					  "Passive - Blocks a part of incoming damage. \n\nUpgradable by Aghanim's Scepter"
-		"DOTA_Tooltip_ABILITY_doomsday_adaptive_armor_Lore"							  "He can buy any protection."
 		"DOTA_Tooltip_ABILITY_doomsday_adaptive_armor_absorb"						  "%BLOCK:"
-		"DOTA_Tooltip_ABILITY_doomsday_adaptive_armor_duration_scepter"				  "DURATION OF IMMORTALITY:"
-		"DOTA_Tooltip_ABILITY_doomsday_adaptive_armor_aghanim_description"			  "Makes ADAPTIVE ARMOR an activatable. Active effect: Immortality for %duration_scepter% seconds."
+		"DOTA_Tooltip_ABILITY_doomsday_adaptive_armor_duration_scepter"				  "DURATION OF INVULNERABLE:"
+		"DOTA_Tooltip_ABILITY_doomsday_adaptive_armor_aghanim_description"			  "Makes ADAPTIVE ARMOR an activatable. Active effect: Invulnerable for %duration_scepter% seconds."
 
 
 
@@ -3093,7 +3092,6 @@
 		"DOTA_Tooltip_ABILITY_spectre_reality_rift"							"CONTINUUM RIFT"
 		"DOTA_Tooltip_ABILITY_spectre_reality_rift_Description"				"Activated - Spectrum teleports to the chosen target, and if it is an enemy, deals damage."
 		"DOTA_Tooltip_ABILITY_spectre_reality_rift_cast_range"				"CAST RANGE:"
-		"DOTA_Tooltip_ABILITY_spectre_reality_rift_bonus_damage"			"BONUS DAMAGE:"
 
 
 
@@ -3105,8 +3103,8 @@
 
 
 		"DOTA_Tooltip_ability_spectre_marksmanship"										"AGILITY"
-		"DOTA_Tooltip_ability_spectre_marksmanship_Description"  				 	    "Gives a passive bonus to agility."
-		"DOTA_Tooltip_ability_spectre_marksmanship_marksmanship_agility_bonus"			"BONUS AGILITY:"
+		"DOTA_Tooltip_ability_spectre_marksmanship_Description"  				 	    "Spectre has a chance to dodge any damage and if attacker is real hero then receive %bonus_agility% agility forever."
+		"DOTA_Tooltip_ability_spectre_marksmanship_dodge_chance"						"%DODGE CHANCE:"
 
 
 		"dota_hud_error_cant_cast_ghost_rider"							"Cant use on Ghost Rider."
@@ -5212,12 +5210,16 @@
 		"DOTA_Tooltip_ability_tracer_pulse_bomb_explosion_radius"						  "EXPLOSION RADIUS:"
 		"DOTA_Tooltip_ability_tracer_pulse_bomb_bind_radius"							  "STICKING RADIUS:"
 		"DOTA_Tooltip_modifier_tracer_pulse_bomb"										  "Ability charge percentage"
+		
+		"DOTA_Tooltip_ability_special_bonus_unique_tracer_pulse_bomb"					  "+35 damage per level for Pulse Bomb
 
 		"DOTA_Tooltip_ability_tracer_blink"                                               "Blink"
 		"DOTA_Tooltip_ability_tracer_blink_Description"                                   "Activated: Teleports a short distance."
 		"DOTA_Tooltip_ability_tracer_blink_max_charges"									  "MAX CHARGES:"
 		"DOTA_Tooltip_ability_tracer_blink_recharge_time"								  "RECHARGE TIME:"
 		"DOTA_Tooltip_ability_tracer_blink_cast_range"                                   "BLINK RANGE:"
+		
+		"DOTA_Tooltip_ability_special_bonus_unique_tracer_blink"						  "Remove manacost for Blink"
 
 		"DOTA_Tooltip_modifier_tracer_overload" 										  "Overload"
 
@@ -6301,7 +6303,7 @@
 		"DOTA_Tooltip_ability_item_ethernal_blink_blink_damage_cooldown"                  "DAMAGE COOLDOWN:"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_jaina"                                 "+1000 to shield absorb"
-		"DOTA_Tooltip_ability_special_bonus_unique_iron_man"                              "+0.2 sec stun for THERMAL MISSLES"
+		"DOTA_Tooltip_ability_special_bonus_unique_iron_man"                              "+0.1 sec stun for THERMAL MISSLES"
 		"DOTA_Tooltip_modifier_dismember"                                                 "Dismember"
 
 		"DOTA_Tooltip_ability_falash_void_backtrack"                                    "Backtrack"
@@ -6999,6 +7001,71 @@
 		"DOTA_Tooltip_ability_manhattan_mind_dilation_duration"                           "DURATION:"
 		"DOTA_Tooltip_ability_manhattan_mind_dilation_slow"                               "%SLOW:"
 
+
+		"DOTA_Tooltip_ability_manhattan_mind_explosion"									"Mind Explosion"
+		"DOTA_Tooltip_ability_manhattan_mind_explosion_Description"						"Manhattan attacks the mind of the enemy, inflicting damage and burning mana in the amount of damage done."
+		"DOTA_Tooltip_ability_manhattan_mind_explosion_damage"							"DAMAGE:"
+		"DOTA_Tooltip_ability_manhattan_mind_explosion_mana_damage_pct"					"%MANA TO DAMAGE:"
+		
+		"DOTA_Tooltip_ability_manhattan_energy_drain"									"Energy Drain"
+		"DOTA_Tooltip_ability_manhattan_energy_drain_Description"						"Manhattan steals part of the mana of the enemy."
+		"DOTA_Tooltip_ability_manhattan_energy_drain_base_mana_steal"					"BASE MANA STEAL:"
+		"DOTA_Tooltip_ability_manhattan_energy_drain_mana_steal_pct"					"%MANA STEAL:"
+		"DOTA_Tooltip_ability_manhattan_energy_drain_steal_duration"					"STEAL DURATION:"
+		"DOTA_Tooltip_ability_special_bonus_unique_manhattan_energy_drain"				"x3 steal duration for Energy Drain"
+		"DOTA_Tooltip_ability_special_bonus_unique_manhattan_energy_drain_1"			"-4 sec cooldown Energy Drain"
+		
+		"DOTA_Tooltip_ability_manhattan_energy_surge"									"Energy Surge"
+		"DOTA_Tooltip_ability_manhattan_energy_surge_Description"						"Manhattan throws up the chosen enemy inflicting damage. Burns mana in the amount of damage dealt."
+		"DOTA_Tooltip_ability_manhattan_energy_surge_base_damage"						"BASE DAMAGE:"
+		"DOTA_Tooltip_ability_manhattan_energy_surge_mana_to_damage"					"%MANA TO DAMAGE:"
+		"DOTA_Tooltip_ability_manhattan_energy_surge_int_mult"							"INTELLECT MULTIPLIER:"
+		"DOTA_Tooltip_ability_manhattan_energy_surge_stun_duration"						"STUN DURATION:"
+		"DOTA_Tooltip_ability_manhattan_energy_surge_aghanim_description"				"Makes the ability non-directional in radius %cast_range%."
+		
+		"DOTA_Tooltip_ability_manhattan_equilibrium"									"Equilibrium"
+		"DOTA_Tooltip_ability_manhattan_equilibrium_Description"						"Than lower have Manhattan <font color=\"#ff0000\">health</font>, then more he has <font color=\"#08e8de\">mana regen</font>. Than lower have Manhattan <font color=\"#08e8de\">mana</font>, then more he has <font color=\"#ff0000\">health regen</font>.
+When activated spends mana."
+		"DOTA_Tooltip_ability_manhattan_equilibrium_mana_per_hp"						"%MANA REGEN PER LOST HEALTH PERCENT:"
+		"DOTA_Tooltip_ability_manhattan_equilibrium_hp_per_mana"						"%HEALTH REGEN PER LOST MANA PERCENT:"
+		"DOTA_Tooltip_ability_manhattan_equilibrium_mana_burn_pct"						"%MANA SPEND:"
+		
+		"DOTA_Tooltip_ability_manhattan_reality_warp"									"Reality Warp"
+		"DOTA_Tooltip_ability_manhattan_reality_warp_Description"						"Manhattan temporarily removes from current reality. At the end of the effect, it burns %%mana_spend_pct% of the mana of the enemy and sends his abilities to cooldown."
+		"DOTA_Tooltip_ability_manhattan_reality_warp_duration"							"DURATION:"
+		"DOTA_Tooltip_ability_manhattan_reality_warp_damage_per_mana"					"%MANA TO DAMAGE:"
+		"DOTA_Tooltip_ability_manhattan_reality_warp_mana_spend_pct"					"%TARGET MANA BURN:"
+		"DOTA_Tooltip_ability_special_bonus_unique_manhattan_reality_warp"				"Increased cooldown of Reality Warp works on items"
+		
+		"DOTA_Tooltip_ability_bane_feeze"												"FEEZE"
+		"DOTA_Tooltip_ability_bane_feeze_Description"									"After a short delay, Bane quickly runs up to the enemy, deals damage and stuns him."
+		"DOTA_Tooltip_ability_bane_feeze_damage"										"DAMAGE:"
+		"DOTA_Tooltip_ability_bane_feeze_stun_duration"									"STUN DURATION:"
+		
+		"DOTA_Tooltip_ability_bane_inject"												"IMPROVED INJECTION SYSTEM"
+		"DOTA_Tooltip_ability_bane_inject_Description"									"When using <font color=\"#00ff00\">VENOM</font>, Bane restores health."
+		"DOTA_Tooltip_ability_bane_inject_heal"											"%HEAL:"
+		
+		"DOTA_Tooltip_ability_bane_training"											"TRAINING"
+		"DOTA_Tooltip_ability_bane_training_Description"								"If a hero dies around Bane, then he gets a bonus to strength."
+		"DOTA_Tooltip_ability_bane_training_bonus_strength"								"BONUS STRENGTH:"
+		
+		"DOTA_Tooltip_ability_bane_venom"												"<font color=\"#00ff00\">VENOM</font>"
+		"DOTA_Tooltip_ability_bane_venom_Description"									"When applied, Bane gets a bonus attribute. Stackable."
+		"DOTA_Tooltip_ability_bane_venom_max_charges"									"MAX CHARGES:"
+		"DOTA_Tooltip_ability_bane_venom_recharge_time"                                 "RECHARGE TIME:"
+		"DOTA_Tooltip_ability_bane_venom_damage_reduction_per_stack"                    "%DAMAGE REDUCTION PER STACK:"
+		"DOTA_Tooltip_ability_bane_venom_strength_bonus_per_stack"                      "STRENGTH BONUS PER STACK:"
+		"DOTA_Tooltip_ability_bane_venom_movespeed_bonus_per_stack"                     "MOVESPEED BONUS PER STACK:"
+		"DOTA_Tooltip_ability_bane_venom_attack_speed_per_stack"                        "ATTACK SPEED BONUS PER STACK:"
+		"DOTA_Tooltip_ability_bane_venom_health_per_stack"                              "HEALTH BONUS PER STACK:"
+		"DOTA_Tooltip_ability_bane_venom_duration"                                      "DURATION:"
+		
+		"DOTA_Tooltip_ability_bane_overdose"											"OVERDOSE"
+		"DOTA_Tooltip_ability_bane_overdose_Description"								"When activated, it uses all the charges of <font color=\"#00ff00\">VENOM</font> and gives resistance to damage and increases the damage from the attack. Does not work if not the maximum number of charges <font color=\"#00ff00\">VENOM</font>"
+		"DOTA_Tooltip_ability_bane_overdose_damage_reduction"							"%DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_bane_overdose_bonus_damage"								"BONUS DAMAGE:"
+
 		"DOTA_Tooltip_ability_gl_ball_lightning_ball_lightning_initial_mana_percentage"   "INITIAL MANA PERCENTAGE:"
 		"DOTA_Tooltip_ability_gl_ball_lightning_ball_lightning_initial_mana_base"         "INITIAL MANA BASE:"
 		"DOTA_Tooltip_ability_gl_ball_lightning_ball_lightning_aoe"                       "BALL LIGHTNING AOE:"
@@ -7672,7 +7739,6 @@
 		"DOTA_Tooltip_ability_arrow_marksmanship_stun_duration"                           "STUN DURATION:"
 		
 		"DOTA_Tooltip_ability_item_ice_pearl"                                             "Ice Pearl"
-		"DOTA_Tooltip_ability_item_ice_pearl_Description"                                 "<h1>Active: Damage Return</h1> For %active_duration% seconds, duplicates any damage taken back to the unit that dealt the damage. \n <h1>Passive: Winter's Curse</h1> If the hero was attacked by another hero, he will instantly return %damage_return% of the damage dealt, and the ability will go into recharging."
 		"DOTA_Tooltip_ability_item_ice_pearl_Lore"                                	      "The famous pearl, in that its master was considered immortal, all who tried to kill the pearl owner perished from their weapons."
 		"DOTA_Tooltip_ability_item_ice_pearl_bonus_intellect"                             "+$int"
 		"DOTA_Tooltip_ability_item_ice_pearl_bonus_armor"                                 "+$armor"
@@ -7682,6 +7748,9 @@
 		"DOTA_Tooltip_ability_item_ice_pearl_move_speed_reduction"                        "%MOVE SPEED REDUCTION:"
 		"DOTA_Tooltip_ability_item_ice_pearl_debuff_duration"                             "DEBUFF DURATION:"
 		"DOTA_Tooltip_ability_item_ice_pearl_active_duration"                             "Damage Return DURATION:"
+		
+		"DOTA_Tooltip_modifier_item_ice_pearl_active"                            		  "Damage Return"
+		"DOTA_Tooltip_modifier_item_ice_pearl_cooldown"                            		  "Refraction Cooldown"
 		
 		"DOTA_Tooltip_modifier_item_ice_pearl_active"                            		  "Damage Return"
 		"DOTA_Tooltip_modifier_item_ice_pearl_cooldown"                            		  "Refraction Cooldown"
@@ -11087,10 +11156,18 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_thanos_3"                              "+100 for Titan's Sword radius"
 
 		"DOTA_Tooltip_ability_thanos_titans_sword_bonus_damage"                           "%BONUS DAMAGE:"
-		
-		"nike"			"Nike"
-		"nike_lore"		""
 
+				"DOTA_Tooltip_ability_item_ice_pearl_bonus_strength"                              "+$str"
+		"DOTA_Tooltip_ability_item_ice_pearl_bonus_health"                                "+$health"
+		"DOTA_Tooltip_ability_item_ice_pearl_hp_restore"                                  "HEALTH RESTORE:"
+		"DOTA_Tooltip_ability_item_ice_pearl_restore_pct"                                 "%RESTORE:"
+		"DOTA_Tooltip_ability_item_ice_pearl_blast_damage"                                "BLAST DAMAGE:"
+		"DOTA_Tooltip_ability_item_ice_pearl_pearl_shield_cooldown"                       "Pearl COOLDOWN:"
+
+		"DOTA_Tooltip_ability_item_ice_pearl_Description"                                 "<h1>Active: Arctic Blast</h1> Emits a three freezing waves that deals %blast_damage% magical damage to enemies and slows their movement by %blast_movement_speed%%% for %blast_debuff_duration% seconds. For %active_duration% seconds, duplicates any damage taken back to the unit that dealt the damage. \n<h1>Passive: Pearl</h1> If the hero was attacked by another hero, he will instantly return and completely block %damage_return% of the damage dealt."
 		
+		"npc_dota_hero_baane"												"Bane"
+		"npc_dota_hero_baane_hype"											""
+		"npc_dota_hero_baane_lore"											""
 	}	
 }

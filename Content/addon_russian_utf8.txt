@@ -1910,15 +1910,6 @@
 
 
 
-
-		"DOTA_Tooltip_ability_spectre_marksmanship"										"AGILITY"
-		"DOTA_Tooltip_ability_spectre_marksmanship_Description"  				 	    "Дает пассивную прибавку к ловкости."
-		"DOTA_Tooltip_ability_spectre_marksmanship_marksmanship_agility_bonus"			"ДОП.ЛОВКОСТЬ:"
-
-
-
-
-
 		///batman
 		"DOTA_Tooltip_ability_batman_darness"									"DARKNESS"
 		"DOTA_Tooltip_ability_batman_darness_Description"						"Активируемая - Бэтмэн призывает ночь, с помощью которой он ослепляет всех врагов на карте и получает прибавку к атрибутам."
