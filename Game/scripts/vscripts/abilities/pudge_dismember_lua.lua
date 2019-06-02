@@ -16,7 +16,7 @@ end
 --------------------------------------------------------------------------------
 
 function pudge_dismember_lua:GetChannelTime()
-	return self:GetSpecialValueFor("channel_time")
+	return self:GetSpecialValueFor("channel_time") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_pudge_2") or 0)
 end
 
 --------------------------------------------------------------------------------

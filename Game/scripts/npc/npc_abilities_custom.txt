@@ -5651,7 +5651,7 @@
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetFlags"					"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"					"SPELL_DISPELLABLE_YES_STRONG"
 
@@ -5705,6 +5705,7 @@
 			{
 				"var_type"								"FIELD_FLOAT"
 				"channel_time"						"2.0 2.5 3.0"
+				"LinkedSpecialBonus"			"special_bonus_unique_pudge"
 			}
 		}
 	}
@@ -22681,7 +22682,7 @@
 		"AbilityUnitDamageType"				"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"					"1"
-		"HasScepterUpgrade"					"0"
+		"HasScepterUpgrade"					"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -22763,10 +22764,20 @@
 			}
 			"06"
 			{
-				"var_type"						"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"damage"						"160 240 320 400"
-				"CalculateSpellDamageTooltip"	"1"
-				"LinkedSpecialBonus"			"special_bonus_unique_pudge_1"
+				"CalculateSpellDamageTooltip"		"1"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_scepter"			"4.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_scepter"			"400 550 700 850"
+				"CalculateSpellDamageTooltip"		"1"
 			}
 		}
 	}
@@ -22804,7 +22815,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"4"
+				"value"						"2"
 			}
 		}
 	}

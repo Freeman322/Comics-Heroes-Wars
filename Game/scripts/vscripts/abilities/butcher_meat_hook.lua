@@ -11,11 +11,20 @@ function butcher_meat_hook:OnAbilityPhaseInterrupted()
 	self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
 end
 
+function butcher_meat_hook:GetCooldown( nLevel )
+	if self:GetCaster():HasScepter() then return self:GetSpecialValueFor("cooldown_scepter") end return self.BaseClass.GetCooldown( self, nLevel )
+end
+ 
 --------------------------------------------------------------------------------
 
 function butcher_meat_hook:OnSpellStart()
 	self.bChainAttached = false
 	self.hook_damage = self:GetSpecialValueFor( "damage" )  
+
+	if self:GetCaster():HasScepter() then
+		self.hook_damage = self:GetSpecialValueFor( "damage_scepter" ) 
+	end
+
 	self.hook_speed = self:GetSpecialValueFor( "hook_speed" )
 	self.hook_width = self:GetSpecialValueFor( "hook_width" )
 	self.hook_distance = self:GetSpecialValueFor( "hook_distance" )
