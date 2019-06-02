@@ -2933,11 +2933,11 @@
 		"MovementTurnRate"          "0.600000"
 
 		// Abilities
-		"Ability1"					"grimskull_hookshot"
-		"Ability2"					"grimskull_rage"
-		"Ability3"					"grimskull_berserkers_blood"
-		"Ability4"					"grimskull_goblins_greed"
-		"Ability5"					"generic_hidden"
+		"Ability1"		            "alchemist_acid_spray"
+		"Ability2"		            "alchemist_unstable_concoction"
+		"Ability3"					"grimskull_goblins_greed"
+		"Ability4"					"alchemist_chemical_rage"
+		"Ability5"					"alchemist_unstable_concoction_throw"
 		"Ability6"					"grimskull_waagh"
 
 		"Ability10"					"special_bonus_exp_boost_30"

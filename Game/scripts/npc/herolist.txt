@@ -119,4 +119,5 @@
   "npc_dota_hero_raiden"  "1"
   "npc_dota_hero_shazam"  "1"
   "npc_dota_hero_misterio"  "1"
+  "npc_dota_hero_baane"  "1"
 }
