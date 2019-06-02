@@ -9,9 +9,9 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 
-		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		"AbilityCooldown"				"40"
@@ -29,52 +29,57 @@
 
 		"AbilitySpecial"
 		{
-			"03"
+			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_int"			"60"
 			}
-			"05"
+			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_mana_regen"		"5"
 			}
-			"07"
+			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_damage"			"200"
+			}	
+			"04"
+			{
+				"var_type"	        "FIELD_INTEGER"
+				"bonus_attack_speed"    "60"
 			}
-			"08"
+			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_armor"			"10"
 			}
-			"09"
+			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_hp_reg"			"15"
 			}
-			"10"
+			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"mana_burn"			"120"
 			}
-			"11"
+			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"debuff_duration"		"8"
 			}
-			"12"
+			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"health_reduce"		"40"
 			}
-			"13"
+			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"crit_chance"			"25"
 			}
-			"14"
+			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"crit_damage"			"240"
@@ -2264,12 +2269,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"80"
+				"bonus_strength"		"70"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"700"
+				"bonus_health"			"800"
 			}
 			"04"
 			{
@@ -2284,12 +2289,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_return"			"175"
+				"damage_return"			"150"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_speed_reduction"	"-65"
+				"attack_speed_reduction"	"-70"
 			}
 			"08"
 			{
@@ -2305,7 +2310,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_duration"			"8.0"
+				"active_duration"			"9.0"
 			}
 			"11"
 			{
@@ -2320,7 +2325,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_damage"				"200"
+				"blast_damage"				"300"
 			}
 			"14"
 			{
@@ -3863,7 +3868,7 @@
 		"ItemResult"					"item_timepiece"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_orchid;item_relic;item_ultimate_orb;item_ultimate_orb"
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_orchid;item_relic;item_relic;item_ultimate_orb;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -4666,19 +4671,24 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"120"
-			}
+				"bonus_damage"			"300"
+			}	
 			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"30"
+			}
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_mana_regen"		"5"
 			}
-			"05"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"time_freeze_dmg"		"30"
 			}
-			"06"
+			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"time_freeze_duration"	"5"
