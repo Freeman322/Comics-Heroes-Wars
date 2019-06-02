@@ -72,11 +72,11 @@ function ragnaros_fade:OnSpellStart()
 
     illusion:MakeIllusion()
 
+    ApplyDamage ( { attacker = hCaster, victim = hTarget, ability = self, damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+
     if not hTarget:IsAlive() then
         hCaster:FindModifierByName(self:GetIntrinsicModifierName()):IncrementStackCount()
     end
-
-    ApplyDamage ( { attacker = hCaster, victim = hTarget, ability = self, damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
 end
 
 modifier_ragnaros_fade_bonus = class({})

@@ -99,23 +99,23 @@ function modifier_item_ice_pearl:OnTakeDamage(params)
   if IsServer() then
     if params.unit == self:GetParent() and self:GetParent():HasModifier("modifier_item_ice_pearl_cooldown") == false and params.attacker ~= self:GetParent() and params.attacker:IsBuilding() == false and params.attacker:IsRealHero() and self:GetParent():IsRealHero() then
 
-        params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_ice_pearl_reduction", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")})
-        
-        EmitSoundOn("Hero_Winter_Wyvern.WintersCurse.Cast", params.attacker)
-        EmitSoundOn("Hero_Winter_Wyvern.ColdEmbrace.Cast", params.attacker)
+      params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_ice_pearl_reduction", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")})
+      
+      EmitSoundOn("Hero_Winter_Wyvern.WintersCurse.Cast", params.attacker)
+      EmitSoundOn("Hero_Winter_Wyvern.ColdEmbrace.Cast", params.attacker)
 
-        ApplyDamage({
-            victim = params.attacker,
-            attacker = self:GetParent(),
-            damage = params.original_damage * self:GetAbility():GetSpecialValueFor("damage_return") / 100,
-            damage_type = DAMAGE_TYPE_PURE,
-            ability = self:GetAbility(),
-            damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
-        })
+      ApplyDamage({
+          victim = params.attacker,
+          attacker = self:GetParent(),
+          damage = params.original_damage * self:GetAbility():GetSpecialValueFor("damage_return") / 100,
+          damage_type = DAMAGE_TYPE_PURE,
+          ability = self:GetAbility(),
+          damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+      })
 
-        self:GetParent():Heal(params.damage, self:GetAbility())
+        ---self:GetParent():Heal(params.damage, self:GetAbility())
 
-        self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_item_ice_pearl_cooldown", {duration = self:GetAbility():GetSpecialValueFor("pearl_shield_cooldown")})
+      self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_item_ice_pearl_cooldown", {duration = self:GetAbility():GetSpecialValueFor("pearl_shield_cooldown")})
     end
   end
 end

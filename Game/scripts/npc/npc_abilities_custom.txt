@@ -21128,10 +21128,12 @@
 		"AbilityDamage"					"50"
 		"precache"
 		{
-			"particle"  "particles/units/heroes/hero_axe/axe_culling_blade.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"particle"  	"particles/units/heroes/hero_axe/axe_culling_blade.vpcf"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start.vpcf"
+			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_totem_leap.vpcf"
 			"model"		"models/heroes/hero_steppenwolf/weapon/weapon.vmdl"
 		}
 		// Special
@@ -36566,13 +36568,11 @@
 		}
 	}
 
-
-
 	"bane_feeze"
 	{
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/bane_feeze.lua"
-		"AbilityTextureName"			"custom/"
+		"AbilityTextureName"			"custom/bane_feeze"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -36589,7 +36589,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 200 300 400"
+				"damage"					"100 200 300 400"
 			}
 			"02"
 			{
@@ -36601,9 +36601,9 @@
 
 	"bane_inject"
 	{
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/bane_inject.lua"
-		"AbilityTextureName"			"custom/"
+		"AbilityTextureName"			"custom/bane_inject"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -36619,9 +36619,9 @@
 
 	"bane_training"
 	{
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/bane_training.lua"
-		"AbilityTextureName"			"custom/"
+		"AbilityTextureName"			"custom/bane_training"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -36630,25 +36630,25 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"1 2 3 4"
+				"bonus_strength"			"1 2 3 4"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"death_radius"			"700"
+				"death_radius"				"600"
 			}
 		}
 	}
 
 	"bane_venom"
 	{
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/bane_venom.lua"
-		"AbilityTextureName"			"custom/"
+		"AbilityTextureName"			"custom/bane_venom"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
-		"MaxLevel"						"3"
+		"MaxLevel"					"3"
 
 		"LevelsBetweenUpgrades"			"7"
 
@@ -36662,32 +36662,32 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"3 4 5"
+				"max_charges"				"2 3 4"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reduction_per_stack"	"15"
+				"damage_reduction_per_stack"	"5"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strength_bonus_per_stack"	"10 25 40"
+				"strength_bonus_per_stack"	"10 15 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_per_stack"	"40 60 80"
+				"movespeed_per_stack"		"40 60 80"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed_per_stack"	"50 85 110"
+				"attack_speed_per_stack"		"50 70 90"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_per_stack"		"250 500 1000"
+				"health_per_stack"			"150 260 500"
 			}
 			"08"
 			{
@@ -36700,9 +36700,9 @@
 
 	"bane_overdose"
 	{
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/bane_overdose.lua"
-		"AbilityTextureName"			"custom/"
+		"AbilityTextureName"			"custom/bane_overdose"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -36712,15 +36712,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"10 15 20"
+				"damage_reduction"			"10 15 20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"200 350 500"
+				"bonus_damage"				"80 140 180"
 			}
 		}
 	}
-
-
 }

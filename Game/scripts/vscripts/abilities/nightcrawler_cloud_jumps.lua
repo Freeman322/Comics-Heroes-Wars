@@ -70,33 +70,18 @@ function modifier_nightcrawler_nightcrawler_cloud_jumps:OnIntervalThink()
         local thinker = self:GetParent ()
         local hAbility = self:GetAbility ()
 
-        local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), thinker:GetAbsOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false )
+        local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), thinker:GetAbsOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false )
         if #targets > 0 then
             for _,target in pairs(targets) do
-                if target:HasModifier("modifier_nightcrawler_nightcrawler_cloud_jumps_fake") == false then
-                    target:AddNewModifier(thinker, self:GetAbility(), "modifier_nightcrawler_nightcrawler_cloud_jumps_fake", {duration = self:GetRemainingTime()})
+                local nFXIndex = ParticleManager:CreateParticle ("particles/hero_nightcrawler/nightcrawler_cloud_jumps_attack.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit);
+                ParticleManager:SetParticleControlEnt (nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin (), true);
+                ParticleManager:SetParticleControlEnt (nFXIndex, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin (), true);
+                ParticleManager:ReleaseParticleIndex (nFXIndex);
 
-                    local nFXIndex = ParticleManager:CreateParticle ("particles/hero_nightcrawler/nightcrawler_cloud_jumps_attack.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit);
-                    ParticleManager:SetParticleControlEnt (nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin (), true);
-                    ParticleManager:SetParticleControlEnt (nFXIndex, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin (), true);
-                    ParticleManager:ReleaseParticleIndex (nFXIndex);
+                EmitSoundOn("Hero_MonkeyKing.Attack", target)
+                EmitSoundOn("Hero_MonkeyKing.IronCudgel", target)
 
-                    print(thinker:GetAverageTrueAttackDamage(target))
-                    local damage = thinker:GetAverageTrueAttackDamage(target) * 5
-
-                    EmitSoundOn("Hero_MonkeyKing.Attack", target)
-                    EmitSoundOn("Hero_MonkeyKing.IronCudgel", target)
-
-                    ApplyDamage({
-                        attacker = thinker, 
-                        victim = target, 
-                        ability = self:GetAbility(), 
-                        damage = damage, 
-                        damage_type = DAMAGE_TYPE_PHYSICAL
-                    })
-
-                    break
-                end
+                self:GetAbility():GetCaster():PerformAttack(target, true, true, true, true, false, false, true)   
             end
         end
     end
@@ -108,7 +93,7 @@ function modifier_nightcrawler_nightcrawler_cloud_jumps:CheckState()
         [MODIFIER_STATE_OUT_OF_GAME] = true,
         [MODIFIER_STATE_NOT_ON_MINIMAP] = true,
         [MODIFIER_STATE_INVISIBLE] = true,
-        [MODIFIER_STATE_DISARMED] = true,
+        [MODIFIER_STATE_STUNNED] = true,
         [MODIFIER_STATE_ATTACK_IMMUNE] = true,
         [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
         [MODIFIER_STATE_UNSELECTABLE] = true,

@@ -550,6 +550,10 @@ Heroes.list = {
         {
             "name": "npc_dota_hero_ogre",
             "id": 220,
+        },
+        {
+            "name": "npc_dota_hero_baane",
+            "id": 221,
         }
     ]
 }

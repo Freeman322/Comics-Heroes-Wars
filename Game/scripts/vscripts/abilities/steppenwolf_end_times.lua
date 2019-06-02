@@ -62,11 +62,21 @@ function steppenwolf_end_times:BlowUp()
 			end
 		end
 
-		local nFXIndex = ParticleManager:CreateParticle( "particles/steppenwolf/steppenwolf_end_times_explosion.vpcf", PATTACH_CUSTOMORIGIN, nil )
-		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
-		ParticleManager:SetParticleControl( nFXIndex, 1, Vector( radius, 0.0, 1.0 ) )
-		ParticleManager:SetParticleControl( nFXIndex, 5, Vector( radius, 0.0, 1.0 ) )
-		ParticleManager:ReleaseParticleIndex( nFXIndex )
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "nike") == true then
+			local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
+			ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+			ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetSpecialValueFor("radius"), self:GetSpecialValueFor("radius"), 0) )
+			ParticleManager:SetParticleControl( nFXIndex, 3, self:GetCaster():GetOrigin() )
+			ParticleManager:SetParticleControl( nFXIndex, 10, Vector(5, 0, 0) )
+			ParticleManager:SetParticleControl( nFXIndex, 11, Vector(self:GetSpecialValueFor("radius"), self:GetSpecialValueFor("radius"), 0) )
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
+		else 
+			local nFXIndex = ParticleManager:CreateParticle( "particles/steppenwolf/steppenwolf_end_times_explosion.vpcf", PATTACH_CUSTOMORIGIN, nil )
+			ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( radius, 0.0, 1.0 ) )
+			ParticleManager:SetParticleControl( nFXIndex, 5, Vector( radius, 0.0, 1.0 ) )
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
+		end 
 
 		EmitSoundOn( "Hero_Techies.Suicide", self:GetCaster() )
 		EmitSoundOn( "Hero_EarthShaker.Gravelmaw", self:GetCaster() )
@@ -267,4 +277,9 @@ function modifier_steppenwolf_end_times_leap:OnDestroy()
 	if IsServer() then 
 		self:GetParent():RemoveGesture(ACT_DOTA_CAST_ABILITY_6)
 	end	
+end
+
+function modifier_steppenwolf_end_times_leap:GetEffectName()
+	if self:GetParent():HasModifier("modifier_nike") then   return "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_totem_leap.vpcf" end 
+	return 
 end

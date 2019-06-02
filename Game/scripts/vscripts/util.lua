@@ -978,12 +978,6 @@ function Util:OnHeroInGame(hero)
       local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/galactus/galactus_head.vmdl"})
       mask:FollowEntity(hero, true)
     end
-    if hero:GetUnitName() == "npc_dota_hero_clinkz" then
-      LinkLuaModifier("modifier_steppenwolf", "modifiers/modifier_steppenwolf.lua", LUA_MODIFIER_MOTION_NONE)
-      hero:AddNewModifier(hero, nil, "modifier_steppenwolf", nil)
-      local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_steppenwolf/weapon/weapon.vmdl"})
-      mask1:FollowEntity(hero, true)
-    end
     if hero:GetUnitName() == "npc_dota_hero_bounty_hunter" then
     end
     if hero:GetUnitName() == "npc_dota_hero_ember_spirit" then

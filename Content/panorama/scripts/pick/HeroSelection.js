@@ -1,5 +1,5 @@
 var countdown = 60
-var PREMIUM = ["npc_dota_hero_drow_ranger", "npc_dota_hero_ogre_magi", "npc_dota_hero_grimskull", "npc_dota_hero_warboss", "npc_dota_hero_jetstream_sam", "npc_dota_hero_ogre"];
+var PREMIUM = ["npc_dota_hero_drow_ranger", "npc_dota_hero_ogre_magi", "npc_dota_hero_grimskull", "npc_dota_hero_warboss", "npc_dota_hero_jetstream_sam", "npc_dota_hero_ogre", "npc_dota_hero_baane"];
 
 function RebuildUI() {
     var radiant = Game.GetPlayerIDsOnTeam(DOTATeam_t.DOTA_TEAM_GOODGUYS);

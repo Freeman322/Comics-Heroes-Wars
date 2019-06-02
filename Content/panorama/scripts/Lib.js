@@ -4615,6 +4615,34 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "345": {
+        "item": "nike",
+        "rarity": "11",
+        "quality": "10",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_clinkz",
+        "universal": "false",
+        "def_id": "345",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "346": {
+        "item": "alisa",
+        "rarity": "11",
+        "quality": "10",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_jetstream_sam",
+        "universal": "false",
+        "def_id": "346",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
 };
 
