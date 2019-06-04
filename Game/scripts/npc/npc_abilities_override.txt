@@ -50,7 +50,7 @@
 	"item_boots_of_merlin"     "REMOVE"
 	"item_recipe_boots_of_merlin"     "REMOVE"
 	"item_spear_of_destiny"     "REMOVE"
-  "item_recipe_spear_of_destiny"     "REMOVE"
+  	"item_recipe_spear_of_destiny"     "REMOVE"
 
 
 	"special_bonus_strength_25"
@@ -192,33 +192,33 @@
   "arc_warden_tempest_double"
   {
 
-    "AbilityTextureName"    "custom/godspeed_tempest_double"
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-    "AbilityType"           "DOTA_ABILITY_TYPE_ULTIMATE"
-    "FightRecapLevel"       "2"
-    "AbilitySound"          "Hero_ArcWarden.TempestDouble"
-    "MaxLevel"              "1"
-    // Casting
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastPoint"        "0.15"
-    "IsGrantedByScepter"    "1"
-    "HasScepterUpgrade"     "1"
+	"AbilityTextureName"    "custom/godspeed_tempest_double"
+	"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityType"           "DOTA_ABILITY_TYPE_ULTIMATE"
+	"FightRecapLevel"       "2"
+	"AbilitySound"          "Hero_ArcWarden.TempestDouble"
+	"MaxLevel"              "1"
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"        "0.15"
+	"IsGrantedByScepter"    "1"
+	"HasScepterUpgrade"     "1"
 
-    // Time
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "120"
+	// Time
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"       "120"
 
 
-    // Special
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "duration"        "30"
-      }
-    }
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"        "FIELD_FLOAT"
+			"duration"        "30"
+		}
+	}
   }
   //=================================================================================================================
   // Ability: Special Bonus
@@ -926,7 +926,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES  | DOTA_ABILITY_BEHAVIOR_HIDDEN""
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES  | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
@@ -1401,7 +1401,7 @@
 			}
 		}
 	}
-		"alchemist_acid_spray"
+	"alchemist_acid_spray"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1456,7 +1456,7 @@
 		}
 	}
    "alchemist_chemical_rage"
-  {
+  	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"5369"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
@@ -1539,7 +1539,7 @@
 			}
 		}
 	}	
-		"alchemist_unstable_concoction"
+	"alchemist_unstable_concoction"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1606,7 +1606,7 @@
 			}
 		}
 	}
-			"alchemist_unstable_concoction_throw"
+	"alchemist_unstable_concoction_throw"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1678,7 +1678,7 @@
 			}
 		}
 	}
-		  "shredder_reactive_armor"
+     "shredder_reactive_armor"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
