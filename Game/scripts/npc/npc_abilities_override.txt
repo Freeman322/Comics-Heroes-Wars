@@ -849,7 +849,9 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
-		"HasScepterUpgrade"				"0"
+		"LevelsBetweenUpgrades"  			"5"
+		"MaxLevel"						"3"
+		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Shredder.Chakram.Cast"
 
 		// Casting
@@ -930,7 +932,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"4"
+		"MaxLevel"						"3"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"0"
 
@@ -1440,7 +1442,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 20 25 30"
+				"damage"				"5 10 15 20"
 			}
 			"04"
 			{
