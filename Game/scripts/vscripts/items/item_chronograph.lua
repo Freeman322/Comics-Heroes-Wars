@@ -17,7 +17,7 @@ function item_chronograph:OnSpellStart()
       local mods = hTarget:FindAllModifiers()
 
       for _, mod in pairs (mods) do
-        if mod and mod:GetDuration() > 0 and mod:GetAbility() and mod:GetAbility():GetCaster() and mod:GetAbility():GetCaster():GetTeam() ~= self:GetCaster():GetTeam() and mod:IsPermanent() == false then--На врага
+        if mod and mod:GetDuration() > 0 and mod:GetAbility() and mod:GetAbility():GetCaster() and mod:GetAbility():GetCaster():GetTeam() ~= self:GetCaster():GetTeam() and mod:IsPermanent() == false and mod:GetName() ~= "modifier_charges" then--На врага
             mod:Destroy()
         end
       end

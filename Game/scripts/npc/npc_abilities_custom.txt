@@ -31324,6 +31324,31 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
+	"superman_laser"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/superman_laser.lua"
+
+		"AbilityTextureName"			"custom/"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"MaxLevel"						"1"
+		"IsGrantedByScepter"			"1"
+
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Superman: Kryptonian
 	//=================================================================================================================
@@ -36640,7 +36665,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal"					"4 8 12 16"
+				"heal"					"10 15 20 25"
 			}
 		}
 	}
@@ -36663,7 +36688,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"death_radius"				"600"
+				"death_radius"				"700"
 			}
 		}
 	}
@@ -36690,17 +36715,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_charges"				"2 3 4"
+				"max_charges"				"3 4 5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reduction_per_stack"	"5"
+				"damage_reduction_per_stack"	"10"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strength_bonus_per_stack"	"15 20 25"
+				"strength_bonus_per_stack"	"25 30 35"
 			}
 			"05"
 			{
@@ -36710,12 +36735,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed_per_stack"		"40 60 80"
+				"attack_speed_per_stack"		"60 80 100"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_per_stack"			"150 400 650"
+				"health_per_stack"			"300 600 900"
 			}
 			"08"
 			{
@@ -36744,7 +36769,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"70 140 210"
+				"bonus_damage"				"100 200 300"
 			}
 		}
 	}

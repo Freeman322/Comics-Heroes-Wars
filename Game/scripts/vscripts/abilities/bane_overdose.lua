@@ -4,13 +4,13 @@ bane_overdose = class({IsStealable = function() return false end})
 
 function bane_overdose:OnSpellStart()
     if IsServer() then
-        if self:GetCaster():FindModifierByName("modifier_charges"):GetStackCount() == self:GetCaster():FindAbilityByName("bane_venom"):GetSpecialValueFor("max_charges") then
-            self:GetCaster():FindModifierByName("modifier_charges"):SetStackCount(0)
-            self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_bane_overdose", {duration = self:GetCaster():FindAbilityByName("bane_venom"):GetSpecialValueFor("duration")})
-            for charges = 1, self:GetCaster():FindAbilityByName("bane_venom"):GetSpecialValueFor("max_charges") - 1 do
+        if self:GetCaster():FindModifierByName("modifier_charges"):GetStackCount() > 1 then
+            for charges = 1, self:GetCaster():FindModifierByName("modifier_charges"):GetStackCount() - 1 do
                 self:GetCaster():FindAbilityByName("bane_venom"):OnSpellStart()
             end
             self:GetCaster():CastAbilityNoTarget(self:GetCaster():FindAbilityByName("bane_venom"), -1)
+            self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_bane_overdose", {duration = self:GetCaster():FindAbilityByName("bane_venom"):GetSpecialValueFor("duration")})
+            self:GetCaster():FindModifierByName("modifier_charges"):SetStackCount(0)
         end
     end
 end

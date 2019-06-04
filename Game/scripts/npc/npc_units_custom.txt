@@ -1935,7 +1935,7 @@
 		"Ability1"					"superman_recoil"
 		"Ability2"					"superman_punch"
 		"Ability3"					"superman_ice_wave"
-		"Ability4"					"generic_hidden"
+		"Ability4"					"superman_laser"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"superman_kryptonian"
 
@@ -3974,7 +3974,7 @@
 		"BaseClass"     			"npc_dota_hero"
 		"IsCustom"                  	"1"
 		"DisableWearables"          	"1"
-		
+
 		"HeroID" 					"221"
 
 		"CMDisabled"				"1"
@@ -3988,7 +3988,7 @@
 		"Rolelevels"				"3,2,2,2,2,1"
 		"Complexity"				"1"
 		"Team"					"Good"
-		
+
 		"BotImplemented"			"1"
 		"ModelScale"				"1.330000"
 		"VersusScale"				"1.30000"
@@ -4040,7 +4040,7 @@
 		"MovementSpeed"				"290"
 		"MovementTurnRate"				"0.500000"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
-		
+
 		"particle_folder"				"particles/units/heroes/hero_tiny"
 		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
