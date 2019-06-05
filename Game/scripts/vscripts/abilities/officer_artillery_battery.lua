@@ -87,13 +87,10 @@ function officer_artillery_battery:OnProjectileHit_ExtraData( hTarget, vLocation
 
           EmitSoundOnLocationWithCaster(vLocation, "Hero_Rattletrap.Rocket_Flare.Explode", hCaster)
         
-          local units = FindUnitsInRadius(hCaster:GetTeam(), vLocation, nil, self:GetSpecialValueFor("damage_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+          local units = FindUnitsInRadius(hCaster:GetTeam(), vLocation, nil, self:GetSpecialValueFor("damage_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
           for i, target in pairs(units) do  --Restore health and play a particle effect for every found ally.
                local dmg = self:GetAbilityDamage()
-               
-               if target:IsBuilding() then dmg = dmg * 0.25 end 
-               if dmg > 175 then dmg = 175 end 
-               
+
                local damage = {
                     victim = target,
                     attacker = hCaster,

@@ -10590,6 +10590,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"		"0.0"	// Modifier just delays damage
 
+		"precache"
+		{
+			"model"						"models/heroes/hero_goldengod/osiris_legacy/golden_god_arcana.vmdl"
+			"model"						"models/items/ember_spirit/rapier_burning_god_weapon/rapier_burning_god_weapon.vmdl"
+			"model"						"models/items/ember_spirit/rapier_burning_god_offhand/rapier_burning_god_offhand.vmdl"
+			"particle"					"particles/goldengod/goldengod_ambient.vpcf"
+			"particle"					"particles/goldengod/goldengod_ambient_hands.vpcf"
+			"particle"					"particles/goldengod/goldengod_ambient_inner.vpcf"
+			"particle"					"particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes.vpcf"
+
+			"particle"					"particles/econ/items/ember_spirit/ember_spirit_burning_god_offhand/ember_spirit_ambient_burning_god_l.vpcf"
+			"particle"					"particles/econ/items/ember_spirit/ember_spirit_burning_god_offhand/ember_spirit_ambient_burning_god_r.vpcf"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"

@@ -11,7 +11,11 @@ end
 
 function bane_venom:OnSpellStart()
     if IsServer() then
-        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_bane_venom", {duration = self:GetSpecialValueFor("duration")})
+        local count = #(self:GetCaster():FindAllModifiersByName("modifier_bane_venom"))
+        print(count)
+        if count < self:GetSpecialValueFor("max_charges") then
+            self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_bane_venom", {duration = self:GetSpecialValueFor("duration")})
+        end
     end
 end
 
