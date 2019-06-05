@@ -9,9 +9,9 @@ function superman_punch:GetIntrinsicModifierName()
 end
 
 function superman_punch:OnSpellStart()
-  if IsServer() then 
+  if IsServer() then
     self:GetCaster():MoveToTargetToAttack(self:GetCursorTarget())
-  end 
+  end
 end
 
 
@@ -30,8 +30,8 @@ function modifier_superman_punch:DeclareFunctions()
 end
 
 function modifier_superman_punch:OnAttackLanded(params)
-  if IsServer() then 
-    if self:GetAbility():IsCooldownReady() and self:GetAbility():GetAutoCastState() and params.attacker == self:GetCaster() then
+  if IsServer() then
+    if self:GetAbility():IsCooldownReady() and self:GetAbility():GetAutoCastState() and params.attacker == self:GetCaster() and self:GetParent():HasModifier("modifier_superman_laser") == false then
         local hTarget = params.target
         local damage = params.original_damage
 
@@ -39,7 +39,7 @@ function modifier_superman_punch:OnAttackLanded(params)
         if hTarget:IsBuilding() or hTarget:IsOther() then return false end
 
         local damage_mult = self:GetAbility():GetSpecialValueFor("crit_multiplier")
-        if self:GetParent():HasTalent("special_bonus_unique_superman_1") then damage_mult = damage_mult + self:GetParent():FindTalentValue("special_bonus_unique_superman_1") end 
+        if self:GetParent():HasTalent("special_bonus_unique_superman_1") then damage_mult = damage_mult + self:GetParent():FindTalentValue("special_bonus_unique_superman_1") end
 
         local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_tusk/tusk_walruspunch_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
         ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
@@ -73,8 +73,8 @@ function modifier_superman_punch:OnAttackLanded(params)
 
         self:GetAbility():UseResources(false, false, true)
     end
-  end 
-  
+  end
+
   return
 end
 
@@ -107,7 +107,7 @@ function modifier_superman_punch_flying:OnCreated(keys)
 
         self.z_vel = max_height * 4
         self.direction = Vector(0, 0, self.z_vel)
-        
+
         self:GetParent():EmitSound("Hero_Tusk.WalrusPunch.Damage")
 
         self:StartIntervalThink(FrameTime())
