@@ -36,7 +36,7 @@ function modifier_shredder_boiz:DeclareFunctions()
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE
+        MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE 
     }
 
     return funcs
@@ -46,4 +46,4 @@ function modifier_shredder_boiz:GetModifierTotalPercentageManaRegen(params) retu
 function modifier_shredder_boiz:GetModifierPhysicalArmorBonus(params) return self:GetAbility():GetSpecialValueFor ("armor") end
 function modifier_shredder_boiz:GetModifierHealthRegenPercentage(params) return self:GetAbility():GetSpecialValueFor ("hp_regen") end
 function modifier_shredder_boiz:GetModifierSpellAmplify_Percentage(params) return self:GetAbility():GetSpecialValueFor ("spell_amp") end
-function modifier_shredder_boiz:GetModifierTotalDamageOutgoing_Percentage(params) return self:GetAbility():GetSpecialValueFor ("damage") end
+function modifier_shredder_boiz:GetModifierExtraHealthPercentage(params) return self:GetAbility():GetSpecialValueFor ("bonus_hp") end

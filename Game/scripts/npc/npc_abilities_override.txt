@@ -1472,7 +1472,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCastAnimation"			"ACT_INVALID"
 
 		// Time		
@@ -1495,12 +1495,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"transformation_time"	"0.35"
+				"transformation_time"	"1.35"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"base_attack_time"		"1.2 1.1 1.0"
+				"base_attack_time"		"1.3 1.2 1.1"
 				"LinkedSpecialBonus"		"special_bonus_unique_alchemist_3"
 			}
 			"04"
