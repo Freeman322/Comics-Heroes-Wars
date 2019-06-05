@@ -1,5 +1,22 @@
 officer_base = class({})
 
+officer_base.m_hAncients = {
+	Vector(6880, 6368, 384),
+	Vector(-7168, -6656, 384)
+}
+
+local MAX_DIST = 1100
+
+function officer_base:CastFilterResultLocation( vLocation )
+	for _,vector in pairs(self.m_hAncients) do
+		if (vLocation - vector):Length2D() <= MAX_DIST then
+			return UF_FAIL_OBSTRUCTED
+		end
+	end
+
+	return UF_SUCCESS
+end
+
 function officer_base:OnSpellStart( )
      if IsServer() then
           local caster = self:GetCaster()
