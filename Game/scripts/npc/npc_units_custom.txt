@@ -4079,4 +4079,419 @@
 		// Inventory
 		"HasInventory"					"1"
 	}
+	"npc_dota_hero_officer"
+	{
+		"BaseClass"     				"npc_dota_hero"
+
+		"IsCustom"                  		"1"
+		"DisableWearables"          		"1"
+
+		"HeroID" 						"222"
+
+		"CMDisabled"					"1"
+		"HeroDisabled"					"1"
+
+		"Model"						"models/heroes/hero_officer/hero/officer.vmdl"
+		"SoundSet"					"Hero_Sniper"
+
+		"HeroUnlockOrder"				"0"
+		"Role"						"Carry,Nuker"
+		"Rolelevels"					"3,1"
+		"Complexity"					"1"
+		"Team"						"Good"
+
+		"BotImplemented"				"1"
+		"ModelScale"					"0.840000"
+		"LoadoutScale"					"1"
+		"HeroGlowColor"				"237 154 15"
+
+		"LastHitChallengeRival"			"npc_dota_hero_drow_ranger"
+		"HeroSelectSoundEffect"			"Hero_Sniper.Pick"
+		
+		"GibType"						"default"
+
+		"Ability1"					"officer_base"
+		"Ability2"					"officer_order"
+		"Ability3"					"officer_artillery_battery"
+		"Ability4"					"officer_fallback"
+		"Ability5"					"officer_move"
+		"Ability6"					"officer_base_delta_zero"
+		"Ability10"					"special_bonus_cooldown_reduction_25"
+		"Ability11"					"special_bonus_attack_damage_20"
+		"Ability12"					"special_bonus_attack_speed_40"
+		"Ability13"					"special_bonus_unique_sniper_5"
+		"Ability14"					"special_bonus_unique_sniper_3"
+		"Ability15"					"special_bonus_unique_sniper_4"
+		"Ability16"					"special_bonus_attack_range_125"
+		"Ability17"					"special_bonus_unique_sniper_2"
+
+		"ArmorPhysical"				"-1"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"15"
+		"AttackDamageMax"				"21"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"			"0.170000"
+
+		"AttackAcquisitionRange"			"950"
+		"AttackRange"					"550"
+		"ProjectileModel"				"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+		"ProjectileSpeed"				"3000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"19"
+		"AttributeStrengthGain"			"1.700000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"2.600000"
+		"AttributeBaseAgility"	"21"
+		"AttributeAgilityGain"	"3.100000"
+		"MovementSpeed"		"285"
+		"MovementTurnRate"		"0.700000"
+		"HasAggressiveStance"	"1"
+		"VisionNighttimeRange"	"1400"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+
+		"particle_folder"		"particles/units/heroes/hero_sniper"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+		"VoiceFile"			"soundevents/voscripts/game_sounds_vo_sniper.vsndevts"
+
+		"BaseAttackSpeed"		"100"
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		"RingRadius"					"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		"HealthBarOffset"       			"190"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"					"200"
+		"StatusHealthRegen"				"1.0"
+		"StatusMana"					"245"
+		"StatusManaRegen"				"0.4"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"			"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"					"1"
+	}
+	"npc_dota_unit_officer_base"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+		"Model"						"models/heroes/hero_officer/base/base.vmdl"// Model.
+		
+		"SoundSet"					"Tower.Water"					// Name of sound set.
+		"MinimapIcon"					"minimap_tower45"
+		"MinimapIconSize"				"320"
+		"Level"						"2"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"backdoor_protection"			// Ability 1.
+		"Ability2"					"officer_base_trooper"			// Ability 2.
+		"Ability3"					"officer_base_assault"			// Ability 3.
+		"Ability4"					"officer_base_asassin"			// Ability 4.
+		"Ability5"					"officer_base_round"			// Ability 5.
+		"Ability6"					"officer_base_gold"			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"15"		// Physical protection.
+		"MagicalResistance"				"0"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"		"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.
+		"ProjectileModel"			""		// Particle system model for projectile.
+		"ProjectileSpeed"			"0"		// Speed of projectile.
+
+		// Attributes
+		//----------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"			// Base strength
+		"AttributeStrengthGain"		"0"			// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"			// Base intelligence
+		"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"			// Base agility
+		"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"130"
+		"HealthBarOffset"			"260"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"1.0"			// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"600"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1900"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+	}	
+	
+	//=================================================================================
+	//=================================================================================
+	"npc_dota_officer_trooper"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/hero_officer/creep/trooper1/trooper.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"1"
+		"ModelScale" 					".9"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"creep_moment_of_courage"			// Ability 1
+		"Ability2"					"centaur_khan_war_stomp"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"1"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"40"		// Damage range min.
+		"AttackDamageMax"				"61"		// Damage range max.	
+		"AttackRate"					"1.15"		// Speed of attack.
+		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"			"500"		// Range within a target can be acquired.
+		"AttackRange"					"100"		// Range within a target can be attacked.
+		"ProjectileModel"				""			// Particle system model for projectile.
+		"ProjectileSpeed"				"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"					"40"
+		"HealthBarOffset"				"130"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"20"		// Experience earn.
+		"BountyGoldMin"				"6"			// Gold earned min.
+		"BountyGoldMax"				"8"			// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"450"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"250"			// Base mana.
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+	//=================================================================================
+	//=================================================================================
+	"npc_dota_officer_assault"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/hero_officer/creep/trooper2/clone_firearm.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"1"
+		"ModelScale" 					".9"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"kobold_taskmaster_speed_aura"			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"1"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+
+		"ProjectileModel"				"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+		"ProjectileSpeed"				"3000"
+		"AttackAcquisitionRange"			"950"
+		"AttackRange"					"550"
+		"AttackDamageMin"				"40"		// Damage range min.
+		"AttackDamageMax"				"61"		// Damage range max.	
+		"AttackRate"					"1.15"		// Speed of attack.
+		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"			"500"		// Range within a target can be acquired.
+		"AttackRange"					"100"		// Range within a target can be attacked.
+		"ProjectileModel"				""			// Particle system model for projectile.
+		"ProjectileSpeed"				"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"					"40"
+		"HealthBarOffset"				"130"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"20"		// Experience earn.
+		"BountyGoldMin"				"6"			// Gold earned min.
+		"BountyGoldMax"				"8"			// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"700"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"250"			// Base mana.
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+	//=================================================================================
+	//=================================================================================
+	"npc_dota_officer_assassin"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/hero_officer/creep/trooper3/deathtrooper.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"1"
+		"ModelScale" 					".9"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"lycan_summon_wolves_critical_strike"			// Ability 1
+		"Ability2"					"alpha_wolf_command_aura"			// Ability 2
+		"Ability3"					"trooper_wind_walk"			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"1"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"40"		// Damage range min.
+		"AttackDamageMax"				"61"		// Damage range max.	
+		"AttackRate"					"1.15"		// Speed of attack.
+		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"			"500"		// Range within a target can be acquired.
+		"AttackRange"					"100"		// Range within a target can be attacked.
+		"ProjectileModel"				""			// Particle system model for projectile.
+		"ProjectileSpeed"				"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"					"40"
+		"HealthBarOffset"				"130"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"20"		// Experience earn.
+		"BountyGoldMin"				"6"			// Gold earned min.
+		"BountyGoldMax"				"8"			// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"250"		// Base health.
+		"StatusHealthRegen"			"10"		// Health regeneration rate.
+		"StatusMana"				"250"			// Base mana.
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
 }

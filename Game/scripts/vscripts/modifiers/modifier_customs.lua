@@ -131,3 +131,20 @@ if modifier_nike == nil then modifier_nike = class({}) end
 function modifier_nike:IsHidden() return true end
 function modifier_nike:IsPurgable() return false end
 function modifier_nike:RemoveOnDeath() return false end
+
+if modifier_officer == nil then modifier_officer = class({}) end
+
+function modifier_officer:IsHidden() return true end
+function modifier_officer:IsPurgable() return false end
+function modifier_officer:RemoveOnDeath() return false end
+function modifier_officer:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
+    }
+
+    return funcs
+end
+
+function modifier_officer:GetAttackSound( params )
+    return "Hero_Tinker.Laser"
+end

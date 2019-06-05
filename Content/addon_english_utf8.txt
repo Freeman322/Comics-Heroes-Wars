@@ -6364,7 +6364,7 @@
 		"DOTA_Tooltip_ability_butcher_meat_hook_vision_duration"                          "VISION DURATION:"
 		"DOTA_Tooltip_ability_butcher_meat_hook_cooldown_scepter"                         "COOLDOWN SCEPTER:"
 		"DOTA_Tooltip_ability_butcher_meat_hook_damage_scepter"                           "DAMAGE SCEPTER:"
-		"DOTA_Tooltip_ability_butcher_meat_hook_aghanim_description"					  "Reduces the cooldown and increases the damage."
+		"DOTA_Tooltip_ability_butcher_meat_hook_aghanim_description"			      "Reduces the cooldown and increases the damage."
 
 		"DOTA_Tooltip_ability_kracken_crit"                                               "Crit"
 		"DOTA_Tooltip_ability_kracken_crit_Description"                                   "Passive: May cause devastating critical damage."
@@ -7592,7 +7592,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_onepunchman_ult_damage"							"DAMAGE: <font color=\"#FF0000\">∞</font>"
 		
 		"DOTA_Tooltip_ability_special_bonus_unique_pudge_1"						"+480 damage for Meat Hook"
-		"DOTA_Tooltip_ability_special_bonus_unique_pudge_2"						"Meat Hook cooldown 4 sec"
+		"DOTA_Tooltip_ability_special_bonus_unique_pudge_2"						"+2 sec for Dismember"
 		"DOTA_Tooltip_ability_special_bonus_unique_pudge_3"						"Jab"
 		"DOTA_Tooltip_ability_special_bonus_unique_pudge_3_Description"			"Grants ability - Jab"
 		"DOTA_Tooltip_ability_special_bonus_unique_pudge_4"						"+210 Decay damage"
@@ -8723,6 +8723,10 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_superman_kryptonian_attack_speed_per_stack"                 "ATTACK SPEED PER STACK:"
 		"DOTA_Tooltip_ability_superman_kryptonian_armor_per_stack"                        "ARMOR PER STACK:"
 		"DOTA_Tooltip_ability_superman_kryptonian_max_stacks"                             "MAX STACKS:"
+		
+		"DOTA_Tooltip_ability_superman_laser"											  "Fly"
+		"DOTA_Tooltip_ability_superman_laser_Description"								  "Superman takes off and begins to attack enemies with a laser out of his eyes."
+		"DOTA_Tooltip_ability_superman_laser_duration"									  "DURATION:"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_1"                            "+ 125% critical damage for Punch"
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_2"                            "+ 80 max stacks for Kryptonian"
@@ -11169,5 +11173,14 @@ When activated spends mana."
 		"npc_dota_hero_baane"												"Bane"
 		"npc_dota_hero_baane_hype"											""
 		"npc_dota_hero_baane_lore"											""
+
+		"DOTA_Tooltip_ability_item_chronograph_bonus_attack_speed"                       "+$attack"
+		"DOTA_Tooltip_ability_item_timepiece_bonus_armor"                        	"+$armor"
+
+		"npc_dota_hero_officer"													"Officer"
+		"npc_dota_hero_officer_hype"												""
+
+		"DOTA_Tooltip_modifier_counter"										"Counter"
+		"DOTA_Tooltip_modifier_counter_Description"									""
 	}	
 }

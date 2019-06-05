@@ -7,7 +7,7 @@ function superman_laser:OnSpellStart() if IsServer() then self:GetCaster():AddNe
 modifier_superman_laser = class({
     IsHidden = function() return false end,
     IsPurgable = function() return true end,
-    DeclareFunctions = function() return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS, MODIFIER_EVENT_ON_ATTACK, MODIFIER_EVENT_ON_ATTACK_START} end,
+    DeclareFunctions = function() return {MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE, MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS, MODIFIER_EVENT_ON_ATTACK, MODIFIER_EVENT_ON_ATTACK_START} end,
     GetModifierAttackRangeBonus = function() return 472 end,
     GetModifierProjectileSpeedBonus = function() return 3000 end,
     CheckState = function() return {[MODIFIER_STATE_FLYING] = true} end
@@ -34,3 +34,7 @@ function modifier_superman_laser:OnAttack(params)
         ParticleManager:SetParticleControl(particle, 1 , params.target:GetAbsOrigin())
     end
 end
+
+
+function modifier_superman_laser:GetAttackSound( params ) return "Hero_Tinker.Laser" end
+function modifier_superman_laser:GetModifierMoveSpeed_Absolute( params ) return 600 end

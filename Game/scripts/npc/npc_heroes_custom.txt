@@ -4006,7 +4006,7 @@
 
 	    // Attributes
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+	    "AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"			"24"									// Base strength
 	    "AttributeStrengthGain"			"2.2"									// Strength bonus per level.
 	    "AttributeBaseAgility"			"25"									// Base agility
@@ -7373,5 +7373,79 @@
 		"particle_folder"				"particles/units/heroes/hero_tiny"
 		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
+	}
+	"npc_dota_hero_officer"
+	{
+		"BaseClass"     				"npc_dota_hero"
+
+		"IsCustom"                  		"1"
+		"DisableWearables"          		"1"
+
+		"HeroID" 						"222"
+
+		"CMDisabled"					"1"
+		"HeroDisabled"					"1"
+
+		"Model"						"models/heroes/hero_bane/bane.vmdl"
+		"SoundSet"					"Hero_Sniper"
+
+		"HeroUnlockOrder"				"0"
+		"Role"						"Carry,Nuker"
+		"Rolelevels"					"3,1"
+		"Complexity"					"1"
+		"Team"						"Good"
+
+		"BotImplemented"				"1"
+		"ModelScale"					"0.840000"
+		"LoadoutScale"					"1"
+		"HeroGlowColor"				"237 154 15"
+
+		"LastHitChallengeRival"			"npc_dota_hero_drow_ranger"
+		"HeroSelectSoundEffect"			"Hero_Sniper.Pick"
+		
+		"GibType"						"default"
+
+		"Ability1"					"officer_base"
+		"Ability2"					"officer_order"
+		"Ability3"					"officer_artillery_battery"
+		"Ability4"					"officer_fallback"
+		"Ability5"					"officer_move"
+		"Ability6"					"officer_base_delta_zero"
+		"Ability10"					"special_bonus_cooldown_reduction_25"
+		"Ability11"					"special_bonus_attack_damage_20"
+		"Ability12"					"special_bonus_attack_speed_40"
+		"Ability13"					"special_bonus_unique_sniper_5"
+		"Ability14"					"special_bonus_unique_sniper_3"
+		"Ability15"					"special_bonus_unique_sniper_4"
+		"Ability16"					"special_bonus_attack_range_125"
+		"Ability17"					"special_bonus_unique_sniper_2"
+
+		"ArmorPhysical"				"-1"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"15"
+		"AttackDamageMax"				"21"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"			"0.170000"
+
+		"AttackAcquisitionRange"			"950"
+		"AttackRange"					"550"
+		"ProjectileModel"				"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+		"ProjectileSpeed"				"3000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"19"
+		"AttributeStrengthGain"			"1.700000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"2.600000"
+		"AttributeBaseAgility"	"21"
+		"AttributeAgilityGain"	"3.100000"
+		"MovementSpeed"		"285"
+		"MovementTurnRate"		"0.700000"
+		"HasAggressiveStance"	"1"
+		"VisionNighttimeRange"	"1400"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+
+		"particle_folder"		"particles/units/heroes/hero_sniper"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+		"VoiceFile"			"soundevents/voscripts/game_sounds_vo_sniper.vsndevts"
 	}
 }

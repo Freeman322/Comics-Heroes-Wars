@@ -4244,7 +4244,7 @@
 		"DOTA_Tooltip_ability_iron_heat_missile_radius"                                   "ДАЛЬНОСТЬ:"
 
 		"DOTA_Tooltip_ability_butcher_meat_hook"								"Meat Hook"
-		"DOTA_Tooltip_ability_butcher_meat_hook_Description"					"Бросает окровавленный крюк в определенную область или юнита. Крюк зацепится за первого юнита, в которого попадет, притащит его к Pudge и нанесет урон, если это враг."
+		"DOTA_Tooltip_ability_butcher_meat_hook_Description"					"Бросает окровавленный крюк в определенную область или юнита. Крюк зацепится за первого юнита, в которого попадет, притащит его к Pudge и нанесет урон, если это враг.\n\nУлучшается с Aghanim's Scepter"
 		"DOTA_Tooltip_ability_butcher_meat_hook_Lore"							"Крюк мясника является воплощением кошмара. Его изогнутое лезвие всем своим видом говорит, что хочет пролить кровь."
 		"DOTA_Tooltip_ability_butcher_meat_hook_distance"						"ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:"
 		"DOTA_Tooltip_ability_butcher_meat_hook_hook_damage"					"УРОН:"
@@ -6138,7 +6138,7 @@
 		"DOTA_Tooltip_ability_onepunchman_ult_damage"									"УРОН: <font color=\"#FF0000\">∞</font>"
 		
 		"DOTA_Tooltip_ability_special_bonus_unique_pudge_1"								"+480 урона для Meat Hook"
-		"DOTA_Tooltip_ability_special_bonus_unique_pudge_2"								"Перезарядка Meat Hook 4 секунды"
+		"DOTA_Tooltip_ability_special_bonus_unique_pudge_2"								"+2 сек для Dismember"
 		"DOTA_Tooltip_ability_special_bonus_unique_pudge_3"								"Jab"
 		"DOTA_Tooltip_ability_special_bonus_unique_pudge_3_Description"					"Дарует способность - Jab"		
 		"DOTA_Tooltip_ability_special_bonus_unique_pudge_4"								"+210 к урону для Decay"
