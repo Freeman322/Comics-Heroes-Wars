@@ -29,10 +29,16 @@ function officer_base:OnSpellStart( )
                     base:SetControllableByPlayer(self:GetCaster():GetPlayerOwnerID(), true)
                     base:SetUnitCanRespawn(false)
 
-                    base:SetBaseManaRegen(base:GetManaRegen() + self:GetSpecialValueFor("max_mana_regen"))
+                    local mana = self:GetSpecialValueFor("max_mana_regen")
+
+                    if self:GetCaster():HasTalent("special_bonus_unique_officer_2") then mana = mana + self:GetCaster():FindTalentValue("special_bonus_unique_officer_2") end 
+                   
+                    base:SetBaseManaRegen(base:GetManaRegen() + mana)
 
                     base.i_mRounds = 0
                     base.i_Hero = self:GetCaster()
+
+                    base:SetAbsOrigin(point)
                end)
           end
      end

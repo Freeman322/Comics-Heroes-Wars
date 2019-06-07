@@ -849,8 +849,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
-		"LevelsBetweenUpgrades"  			"5"
-		"MaxLevel"						"3"
+		"MaxLevel"					"3"
 		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Shredder.Chakram.Cast"
 
@@ -863,6 +862,8 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"16"
+		
+		"RequiredLevel"				"6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -932,9 +933,11 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"3"
+		"MaxLevel"					"3"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"0"
+
+		"RequiredLevel"				"6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -963,17 +966,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius"				"200.0"
+				"radius"					"200.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pass_damage"			"150 300 450"
+				"pass_damage"				"150 300 450"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"100 150 200"
+				"damage_per_second"			"100 150 200"
 			}
 			"05"
 			{
@@ -1076,6 +1079,7 @@
 	//=================================================================================================================
 	"shredder_whirling_death"
 	{
+		"AbilityCooldown"						"11 10 9 8"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -1083,17 +1087,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"whirling_radius"			"300"
+				"whirling_radius"				"300"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"whirling_damage"			"180 270 360 450"
+				"whirling_damage"				"180 270 360 450"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tree_damage_scale"			"12 18 24 30"
+				"tree_damage_scale"				"12 18 24 30"
 			}
 			"04"
 			{
@@ -1104,7 +1108,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"stat_loss_pct"				"10 13 16 19"
-				"LinkedSpecialBonus"		"special_bonus_unique_timbersaw"
+				"LinkedSpecialBonus"			"special_bonus_unique_timbersaw"
 			}
 			"06"
 			{
@@ -1696,23 +1700,23 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_armor"						"1.4 1.6 1.8 2.0"
+				"bonus_armor"							"1.4 1.6 1.8 2.0"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_hp_regen"				"1.0 1.5 2.0 2.5"
+				"bonus_hp_regen"						"1.0 1.5 2.0 2.5"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"stack_limit"						"8 14 20 26"
-				"LinkedSpecialBonus"				"special_bonus_unique_timbersaw_2"
+				"stack_limit"							"5 8 12 16"
+				"LinkedSpecialBonus"					"special_bonus_unique_timbersaw_2"
 			}
 			"04"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"stack_duration"					"10 15 20 25"
+				"stack_duration"						"10 15 20 25"
 			}
 		}
 	}

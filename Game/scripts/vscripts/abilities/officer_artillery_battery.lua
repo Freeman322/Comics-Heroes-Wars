@@ -91,6 +91,8 @@ function officer_artillery_battery:OnProjectileHit_ExtraData( hTarget, vLocation
           for i, target in pairs(units) do  --Restore health and play a particle effect for every found ally.
                local dmg = self:GetAbilityDamage()
 
+               if self:GetCaster():HasTalent("special_bonus_unique_officer_3") then dmg = dmg + self:GetCaster():FindTalentValue("special_bonus_unique_officer_3") end 
+
                local damage = {
                     victim = target,
                     attacker = hCaster,

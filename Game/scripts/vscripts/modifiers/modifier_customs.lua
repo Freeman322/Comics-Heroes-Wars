@@ -148,3 +148,51 @@ end
 function modifier_officer:GetAttackSound( params )
     return "Hero_Tinker.Laser"
 end
+
+if modifier_android == nil then modifier_android = class({}) end
+
+function modifier_android:IsHidden() return true end
+function modifier_android:IsPurgable() return false end
+function modifier_android:RemoveOnDeath() return false end
+function modifier_android:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND,
+        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS
+    }
+
+    return funcs
+end
+
+function modifier_android:GetAttackSound( params )
+    return "Hero_Juggernaut.Attack"
+end
+
+function modifier_android:OnCreated(params)
+    if IsServer() then 
+        self.sword = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_qucksilver/econs/qucksilver_skin/sword.vmdl"})
+        self.sword:FollowEntity(self:GetParent(), true)
+
+        self.umbrella = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_qucksilver/econs/qucksilver_skin/umbrella/umbrella.vmdl"})
+        self.umbrella:FollowEntity(self:GetParent(), true)
+        
+        self:OnIntervalThink()
+        self:StartIntervalThink(0.33)
+    end 
+end
+
+function modifier_android:OnIntervalThink()
+    if IsServer() then 
+        local bool = self:GetParent():HasModifier("modifier_quicsilver_abstract_run_aura")
+
+        SetObjectHidden(self.sword, bool)
+        SetObjectHidden(self.umbrella, not bool)
+    end 
+end
+
+function modifier_android:GetActivityTranslationModifiers( params )
+	if self:GetParent():HasModifier("modifier_quicsilver_abstract_run_aura") then
+		return "umbrella"
+	end
+
+	return 0
+end

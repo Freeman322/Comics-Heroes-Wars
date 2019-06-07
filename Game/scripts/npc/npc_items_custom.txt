@@ -2228,9 +2228,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_lua"
+		"BaseClass"					"item_lua"
 		"ScriptFile"					"items/item_ice_pearl.lua"
-		"AbilityTextureName"    		"custom/ice_pearl"
+		"AbilityTextureName"    			"custom/ice_pearl"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"FightRecapLevel"				"1"
 
@@ -2242,12 +2242,14 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
-		"ItemCost"						"8000"
+		"ItemCost"					"8000"
+
 		"ItemShopTags"					"int;armor;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"shiva's guard;shivas"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
 		"precache"
 		{
 			"particle"  				"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf"
@@ -2264,27 +2266,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"85"
+				"bonus_intellect"			"85"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"70"
+				"bonus_strength"			"70"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"800"
+				"bonus_health"				"800"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"35"
+				"bonus_damage"				"35"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"35"
+				"bonus_armor"				"35"
 			}
 			"06"
 			{
@@ -2294,7 +2296,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_speed_reduction"	"-70"
+				"attack_speed_reduction"		"-70"
 			}
 			"08"
 			{
@@ -2304,7 +2306,6 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_duration"		"5.0"
 				"debuff_duration"			"5.0"
 			}
 			"10"
@@ -2315,7 +2316,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"				"1000"
+				"hp_restore"				"450"
 			}
 			"12"
 			{

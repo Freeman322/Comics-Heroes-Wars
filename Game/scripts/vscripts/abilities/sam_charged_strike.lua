@@ -14,8 +14,12 @@ end
 function sam_charged_strike:OnSpellStart()
   if self:GetLevel() == 4 then
     local vDirection = (self:GetCursorPosition() - self:GetCaster():GetOrigin()):Normalized()
+
+    local particle = "particles/sam/magnataur_shockwave.vpcf"
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then particle = "particles/jetstream_alisa.vpcf" EmitSoundOn("Alisa.First.Impact", self:GetCaster()) end 
+
     ProjectileManager:CreateLinearProjectile({
-      EffectName = "particles/sam/magnataur_shockwave.vpcf",
+      EffectName = particle,
       Ability = self,
       vSpawnOrigin = self:GetCaster():GetOrigin(),
       fStartRadius = self:GetSpecialValueFor("wave_width"),
@@ -41,9 +45,13 @@ end
 function sam_charged_strike:OnChannelFinish(bInterrupted)
   if not bInterrupted then
 
+    local particle = "particles/sam/magnataur_shockwave.vpcf"
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then particle = "particles/jetstream_alisa.vpcf" end 
+
+
     local vDirection = (self:GetCursorPosition() - self:GetCaster():GetOrigin()):Normalized()
     ProjectileManager:CreateLinearProjectile({
-      EffectName = "particles/sam/magnataur_shockwave.vpcf",
+      EffectName = particle,
       Ability = self,
       vSpawnOrigin = self:GetCaster():GetOrigin(),
       fStartRadius = self:GetSpecialValueFor("wave_width"),

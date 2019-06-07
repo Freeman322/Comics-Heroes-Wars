@@ -31,6 +31,8 @@ function modifier_sam_bladerun_buff:OnAttackLanded(params)
     local damage = self:GetAbility():GetSpecialValueFor("bonus_proc_damage") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_sam_blademode_bonus_proc_damage") or 0)
     ApplyDamage({victim = params.target, attacker = self:GetParent(), damage = damage, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
     EmitSoundOn("Ability.static.start", params.target)
+  
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alisa") == true then EmitSoundOn("Alisa.Attack", params.target) end 
 
     if not params.attacker:PassivesDisabled() then
       self:GetCaster():SetAbsOrigin(Vector(params.target:GetAbsOrigin().x - 100 * math.cos(params.target:GetAnglesAsVector().y * math.pi/180), params.target:GetAbsOrigin().y - 100 * math.sin(params.target:GetAnglesAsVector().y * math.pi/180), 0))

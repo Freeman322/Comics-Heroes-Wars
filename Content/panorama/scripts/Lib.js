@@ -4643,6 +4643,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "347": {
+        "item": "android",
+        "rarity": "11",
+        "quality": "10",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_ancient_apparition",
+        "universal": "false",
+        "def_id": "347",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
 };
 

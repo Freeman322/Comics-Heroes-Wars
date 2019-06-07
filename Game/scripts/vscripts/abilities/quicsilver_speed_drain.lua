@@ -5,8 +5,12 @@ function quicsilver_speed_drain:GetCastRange( vLocation, hTarget )
 end
 
 function quicsilver_speed_drain:OnSpellStart()
-	local hTarget = self:GetCaster():GetCursorPosition()
-  local nFXIndex = ParticleManager:CreateParticle( "particles/hero_khan/khan_echo_strike_jump.vpcf", PATTACH_CUSTOMORIGIN, nil );
+  local hTarget = self:GetCaster():GetCursorPosition()
+  
+  local particle = "particles/hero_khan/khan_echo_strike_jump.vpcf"
+  if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "android") == true then particle = "particles/econ/events/fall_major_2016/blink_dagger_start_fm06.vpcf" end 
+  
+  local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_CUSTOMORIGIN, nil );
 	ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin());
   ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin());
   ParticleManager:SetParticleControl( nFXIndex, 3, self:GetCaster():GetOrigin());
@@ -17,7 +21,7 @@ function quicsilver_speed_drain:OnSpellStart()
   self:GetCaster():SetAbsOrigin(hTarget)
   FindClearSpaceForUnit(self:GetCaster(), hTarget, true)
 
-  local nFXIndex = ParticleManager:CreateParticle( "particles/hero_khan/khan_echo_strike_jump.vpcf", PATTACH_CUSTOMORIGIN, nil );
+  local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_CUSTOMORIGIN, nil );
 	ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin());
   ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin());
   ParticleManager:SetParticleControl( nFXIndex, 3, self:GetCaster():GetOrigin());

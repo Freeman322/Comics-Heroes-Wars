@@ -22,15 +22,17 @@ function officer_order:OnSpellStart()
 
 	local duration = self:GetSpecialValueFor(  "duration" )
 
+	if self:GetCaster():HasTalent("special_bonus_unique_officer_1") then duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_officer_1") end 
+
 	local allies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
 	if #allies > 0 then
           for _,ally in pairs(allies) do
                if ALLOWED_UNITS[ally:GetUnitName()] or ally:IsCreep()  then
-                    ally:AddNewModifier( self:GetCaster(), self, "modifier_officer_order", { duration = duration } )
-                    
-                    ally:SetBaseMaxHealth(ally:GetBaseMaxHealth() + PERMANENT_BONUS_HP)
+				ally:SetBaseMaxHealth(ally:GetBaseMaxHealth() + PERMANENT_BONUS_HP)
                     ally:SetBaseDamageMax(ally:GetBaseDamageMax() + PERMANENT_BONUS_DAMAGE)
-                    ally:SetBaseAttackTime(ally:GetBaseAttackTime() - PERMANENT_BONUS_ATTACK_TIME)
+				ally:SetBaseAttackTime(ally:GetBaseAttackTime() + PERMANENT_BONUS_ATTACK_TIME)
+				
+				ally:AddNewModifier( self:GetCaster(), self, "modifier_officer_order", { duration = duration } )              				
                end
 		end
 	end

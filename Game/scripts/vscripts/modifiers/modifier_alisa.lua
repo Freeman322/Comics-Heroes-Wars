@@ -18,7 +18,6 @@ function modifier_alisa:RemoveOnDeath()
 	return false
 end
 
-
 function modifier_alisa:OnCreated(params)
     if IsServer() then 
         self.item = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_america/econs/alisa/econs/alisa_econs.vmdl"})
@@ -31,7 +30,7 @@ end
 
 function modifier_alisa:OnIntervalThink()
     if IsServer() then 
-        if self:GetParent():HasModifier("modifier_cap_warcry") then 
+        if self:GetParent():HasModifier("modifier_cap_warcry") or self:GetParent():HasModifier("modifier_sam_bladerun_buff") then 
             if self.item then self.item:RemoveEffects(EF_NODRAW) end else 
             if self.item then self.item:AddEffects(EF_NODRAW) end 
         end

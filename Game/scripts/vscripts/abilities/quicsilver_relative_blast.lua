@@ -12,7 +12,8 @@ function quicsilver_relative_blast:OnSpellStart()
 	vDirection = vDirection:Normalized()
 
 	local particle = "particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf"
-	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "void_of_darkness") == true then particle = "particles/units/heroes/hero_grimstroke/grimstroke_darkartistry_proj.vpcf" EmitSoundOn("Quicksilver.CustomItem.Cast", hTarget) end 
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "void_of_darkness") == true then particle = "particles/units/heroes/hero_grimstroke/grimstroke_darkartistry_proj.vpcf" EmitSoundOn("Quicksilver.CustomItem.Cast", self:GetCaster()) end 
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "android") == true then particle = "particles/qucksilver_blast_gold.vpcf"  end 
 
 	local info = {
 		EffectName = particle,

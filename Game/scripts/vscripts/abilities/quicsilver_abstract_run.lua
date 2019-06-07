@@ -59,16 +59,20 @@ function modifier_quicsilver_abstract_run_aura:GetAuraEntityReject( hEntity )
 end
 
 function modifier_quicsilver_abstract_run_aura:CheckState()
-	if (IsServer() and PlayerResource:GetSteamAccountID(self:GetParent():GetPlayerOwnerID()) == 133180494) then return {[MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true} end
 	return 
 end
 
 function modifier_quicsilver_abstract_run_aura:OnCreated( kv )
-  	if IsServer() then
-    		local nFXIndex = ParticleManager:CreateParticle( "particles/hero_quicksilver/abstract_run_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-    		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_origin" , self:GetParent():GetOrigin(), true )
+	  if IsServer() then
+		local particle = "particles/hero_quicksilver/abstract_run_aura.vpcf"
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "android") == true then particle = "particles/hero_quicksilver/abstract_run_skin.vpcf" end 
+
+    		local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		    
+		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_origin" , self:GetParent():GetOrigin(), true )
     		self:AddParticle( nFXIndex, false, false, -1, false, true )
-        EmitSoundOn("Hero_ArcWarden.MagneticField", self:GetParent())
+		  
+		EmitSoundOn("Hero_ArcWarden.MagneticField", self:GetParent())
   	end
 end
 

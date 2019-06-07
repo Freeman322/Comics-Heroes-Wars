@@ -179,6 +179,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/nike_icon.png" );
 				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_ancient_apparition" && hasModifier(hero_entindex, "modifier_android"))
+				{
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/android_icon.png" );
+				}
 				else
 				{
 					playerPortrait.SetImage( "file://{images}/custom_game/heroes/" + playerInfo.player_selected_hero + ".png" );

@@ -2304,3 +2304,11 @@ end
 function WaitForNextFrame(fnc)
     Timers:CreateTimer(0, fnc)
 end
+
+function SetObjectHidden( ubj, hidden )
+  if hidden == true then
+    ubj:AddEffects(EF_NODRAW)
+  else 
+    ubj:RemoveEffects(EF_NODRAW)
+  end
+end
