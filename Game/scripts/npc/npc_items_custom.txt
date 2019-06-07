@@ -2264,17 +2264,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"85"
+				"bonus_intellect"		"70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"70"
+				"bonus_strength"		"50"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"800"
+				"bonus_health"			"700"
 			}
 			"04"
 			{
@@ -2315,12 +2315,12 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"				"1000"
+				"hp_restore"				"800"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"restore_pct"				"25"
+				"restore_pct"				"20"
 			}
 			"13"
 			{

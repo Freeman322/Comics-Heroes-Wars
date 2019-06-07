@@ -1088,7 +1088,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"whirling_damage"			"180 270 360 450"
+				"whirling_damage"			"180 220 260 300"
 			}
 			"03"
 			{
