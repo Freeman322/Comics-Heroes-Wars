@@ -4191,7 +4191,7 @@
 	{
 		// General
 		//
-		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
+		"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
 		"Model"						"models/heroes/hero_officer/base/base.vmdl"// Model.
 		
 		"SoundSet"					"Tower.Water"					// Name of sound set.
@@ -4202,7 +4202,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"backdoor_protection"			// Ability 1.
+		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 		"Ability2"					"officer_base_trooper"			// Ability 2.
 		"Ability3"					"officer_base_assault"			// Ability 3.
 		"Ability4"					"officer_base_asassin"			// Ability 4.

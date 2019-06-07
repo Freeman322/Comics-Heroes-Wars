@@ -23,6 +23,12 @@ function officer_base:OnSpellStart( )
           local point = self:GetCaster():GetCursorPosition()
           local bases = Entities:FindAllByModel("models/heroes/hero_officer/base/base.vmdl")
 
+          if #bases >= self:GetSpecialValueFor("max_buildings") then
+               UTIL_Remove(bases[self:GetSpecialValueFor("max_buildings")])
+
+               self:EndCooldown()
+          end
+
           if #bases < self:GetSpecialValueFor("max_buildings") then
                PrecacheUnitByNameAsync("npc_dota_unit_officer_base", function()
                     local base = CreateUnitByName("npc_dota_unit_officer_base", point, true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber())
@@ -39,6 +45,8 @@ function officer_base:OnSpellStart( )
                     base.i_Hero = self:GetCaster()
 
                     base:SetAbsOrigin(point)
+
+                    base:RemoveModifierByName("modifier_invulnerable")
                end)
           end
      end
