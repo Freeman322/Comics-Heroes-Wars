@@ -2266,7 +2266,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"			"70"
+				"bonus_intellect"			"50"
 			}
 			"02"
 			{
@@ -2276,7 +2276,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"				"700"
+				"bonus_health"				"500"
 			}
 			"04"
 			{
@@ -2286,12 +2286,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"35"
+				"bonus_armor"				"25"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_return"			"150"
+				"damage_return"			"125"
 			}
 			"07"
 			{

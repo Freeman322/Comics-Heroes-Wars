@@ -16,7 +16,7 @@ modifier_superman_laser = class({
 
 function modifier_superman_laser:OnCreated() if IsServer() then self:GetParent():SetMoveCapability(2) self:StartIntervalThink(FrameTime()) self:GetParent():SetAttackCapability(DOTA_UNIT_CAP_RANGED_ATTACK) end end
 function modifier_superman_laser:OnDestroy() if IsServer() then self:GetParent():SetMoveCapability(1) self:GetParent():SetAttackCapability(DOTA_UNIT_CAP_MELEE_ATTACK) self:GetParent():RemoveGesture(ACT_DOTA_RUN_ALT)end end
-function modifier_superman_laser:OnIntervalThink() self:GetParent():StartGesture(ACT_DOTA_RUN_ALT) end
+function modifier_superman_laser:OnIntervalThink() self:GetParent():StartGesture(ACT_DOTA_SWIM) end
 
 function modifier_superman_laser:OnAttackStart(params)
     if params.attacker == self:GetParent() then

@@ -29,15 +29,17 @@ function tracer_energy_blast:OnSpellStart()
 			if self:GetCaster():HasTalent("special_bonus_unique_tracer") then
 		        damage = self:GetCaster():FindTalentValue("special_bonus_unique_tracer") + self:GetSpecialValueFor( "damage" )
 			end
-			ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = self})
-			EmitSoundOn( "Hero_Lina.LagunaBlade.Immortal", hTarget )
-		end
+		
+			local nFXIndex = ParticleManager:CreateParticle( "particles/hero_tracer/tracer_energy_blast.vpcf", PATTACH_CUSTOMORIGIN, nil );
+			ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
+			ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );
+			ParticleManager:SetParticleControl(nFXIndex, 3, self:GetCaster():GetAbsOrigin())
+			ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-		local nFXIndex = ParticleManager:CreateParticle( "particles/hero_tracer/tracer_energy_blast.vpcf", PATTACH_CUSTOMORIGIN, nil );
-		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
-		ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );
-		ParticleManager:SetParticleControl(nFXIndex, 3, self:GetCaster():GetAbsOrigin())
-		ParticleManager:ReleaseParticleIndex( nFXIndex );
+			EmitSoundOn( "Hero_Lina.LagunaBlade.Immortal", hTarget )
+
+			ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = self})	
+		end
 
 		EmitSoundOn( "Hero_Lina.LagunaBladeImpact.Immortal", self:GetCaster() )
 	end

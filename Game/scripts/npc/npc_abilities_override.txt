@@ -52,6 +52,9 @@
 	"item_spear_of_destiny"     "REMOVE"
   	"item_recipe_spear_of_destiny"     "REMOVE"
 
+	"item_ice_pearl"            "REMOVE"
+	"item_recipe_ice_pearl"     "REMOVE"
+
 
 	"special_bonus_strength_25"
 	{

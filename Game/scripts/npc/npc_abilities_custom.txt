@@ -33513,11 +33513,14 @@
 
 		"precache"
 		{
-			"model"										"models/heroes/hero_grimskull/head_reference.vmdl"
-			"model"										"models/items/alchemist/waaagh_alchemist_armor/waaagh_alchemist_armor.vmdl"
-			"model"										"models/items/alchemist/waaagh_alchemist_arms/waaagh_alchemist_arms.vmdl"
-			"model"										"models/items/alchemist/waaagh_alchemist_shoulder/waaagh_alchemist_shoulder.vmdl"
-			"model"										"models/heroes/hero_grimskull/grimskull.vmdl"
+			"model"			"models/heroes/hero_grimskull/psylock/psylock.vmdl"
+			"model"			"models/heroes/hero_grimskull/psylock/psylock_weapon.vmdl"
+			"model"			"particles/items4_fx/nullifier_mute_debuff.vpcf"
+			"model"			"models/heroes/hero_grimskull/head_reference.vmdl"
+			"model"			"models/items/alchemist/waaagh_alchemist_armor/waaagh_alchemist_armor.vmdl"
+			"model"			"models/items/alchemist/waaagh_alchemist_arms/waaagh_alchemist_arms.vmdl"
+			"model"			"models/items/alchemist/waaagh_alchemist_shoulder/waaagh_alchemist_shoulder.vmdl"
+			"model"			"models/heroes/hero_grimskull/grimskull.vmdl"
 		}
 
 		// Special
