@@ -15,7 +15,7 @@ function lich_king_cold_reaper:OnSpellStart()
   ParticleManager:SetParticleControl(nFXIndex, 0, Vector(0, 0, 0))
   ParticleManager:SetParticleControl(nFXIndex, 1, Vector(250, 250, 250))
   EmitSoundOn( "Hero_Ancient_Apparition.IceBlast.Target", self:GetCaster() )
-  EmitSoundOn( "HHero_Crystal.CrystalNova", self:GetCaster() )
+  EmitSoundOn( "Hero_Crystal.CrystalNova", self:GetCaster() )
   EmitSoundOn( "hero_Crystal.CrystalNovaCast", self:GetCaster() )
 
   local nFXIndex = ParticleManager:CreateParticle( "particles/hero_arthas/snow_rise_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )

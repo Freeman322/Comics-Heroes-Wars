@@ -152,7 +152,7 @@ function modifier_mercer_ravage:OnCreated( kv )
 		self:OnIntervalThink()
 	end
 
-	self.m_speed = self:GetParent():GetMoveSpeedModifier(self:GetParent():GetBaseMoveSpeed())
+	self.m_speed = self:GetParent():GetMoveSpeedModifier(self:GetParent():GetBaseMoveSpeed(), false)
 end
 
 function modifier_mercer_ravage:OnIntervalThink()
