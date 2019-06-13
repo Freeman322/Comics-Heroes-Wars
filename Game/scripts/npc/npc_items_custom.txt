@@ -4402,72 +4402,72 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"80"
+				"bonus_strength"			"80"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"80"
+				"bonus_intellect"			"80"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"26"
+				"bonus_armor"				"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1400"
+				"bonus_health"				"1400"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_magical_armor"	"35"
+				"bonus_magical_armor"		"35"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"900"
+				"radius"					"900"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"			"1500"
+				"hp_restore"				"1500"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"restore_pct"			"25"
+				"restore_pct"				"25"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_damage"			"200"
+				"blast_damage"				"200"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_movement_speed"	"-40"
+				"blast_movement_speed"		"-40"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blast_debuff_duration"	"4.0"
+				"blast_debuff_duration"		"4.0"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_trigger_damage"	"1000"
+				"blast_trigger_damage"		"1000"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"total_health_regen_pct" "1.5"
+				"total_health_regen_pct" 	"1.5"
 			}
 			"15"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_attack_speed" "-60"
+				"blast_attack_speed" 		"-60"
 			}
 		}
 	}

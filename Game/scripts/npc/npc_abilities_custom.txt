@@ -22988,12 +22988,15 @@
 		"AbilityModifierSupportValue"	"0.0"	// damage only
 		"precache"
 		{
-			"particle"  "particles/status_fx/status_effect_dark_willow_shadow_realm.vpcf"
-			"particle"  "particles/units/heroes/hero_dark_willow/dark_willow_shadow_realm.vpcf"
-			"particle"  "particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
+			"particle"  	"particles/status_fx/status_effect_dark_willow_shadow_realm.vpcf"
+			"particle"  	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_realm.vpcf"
+			"particle"  	"particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
 			"model"		"models/heroes/hero_dimm/weapon.vmdl"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+			"particle"	"particles/collector/alma_sonic_boom.vpcf"
+			"particle"	"particles/econ/courier/courier_golden_roshan/golden_roshan_eyes.vpcf"
+			"model"		"models/heroes/hero_collector/collector_arcana/collector.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

@@ -956,13 +956,13 @@
 	    "ModelScale"		"0.9"
 	    // Abilities
 	    //-------------------------------------------------------------------------------------------------------------
-	    "Ability1"				"dimm_primal_fear"				// Ability 1
-	    "Ability2"				"dimm_field"		// Ability 2
-	    "Ability3"				"dimm_demons_power"	// Ability 3
-	    "Ability4"				"generic_hidden"	// Ability 4
-	    "Ability5"				"generic_hidden"
-	    "Ability6"				"dimm_ancient_contract"
-	    "Ability7"        ""
+	    "Ability1"					"dimm_primal_fear"				// Ability 1
+	    "Ability2"					"dimm_field"		// Ability 2
+	    "Ability3"					"dimm_demons_power"	// Ability 3
+	    "Ability4"					"generic_hidden"	// Ability 4
+	    "Ability5"					"generic_hidden"
+	    "Ability6"					"dimm_ancient_contract"
+	    "Ability7"       			 ""
 	    "Ability10"				"special_bonus_all_stats_12"
 	    "Ability11"				"special_bonus_unique_dimm_2"
 	    "Ability12"				"special_bonus_spell_block_20"

@@ -91,6 +91,20 @@ function modifier_dimm_ancient_contract_enemy:OnTakeDamage (params)
 			local target = params.unit
 			if target:IsAlive() == false then
 				self:GetParent():Kill(self:GetAbility(), self:GetCaster())
+
+				if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
+					local nFXIndex = ParticleManager:CreateParticle( "particles/collector/alma_sonic_boom.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent() )
+					ParticleManager:SetParticleControl(nFXIndex, 0, self:GetParent():GetAbsOrigin())
+					ParticleManager:SetParticleControl(nFXIndex, 1, Vector (450, 450, 0))
+					ParticleManager:SetParticleControl(nFXIndex, 2, Vector(255, 0, 0))
+					ParticleManager:SetParticleControl(nFXIndex, 3, self:GetParent():GetAbsOrigin())
+					ParticleManager:ReleaseParticleIndex( nFXIndex )
+			  
+					EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), "Alma.SonicBoom.Cast", self:GetParent() )
+			  
+				   	return 0
+				end
+
 				local particle_lifesteal = "particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
 				local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 				ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetParent():GetAbsOrigin())

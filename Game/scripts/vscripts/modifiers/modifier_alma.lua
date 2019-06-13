@@ -21,7 +21,9 @@ function modifier_alma:OnCreated(params)
         self:GetCaster():SetRangedProjectileName("particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf")
 
         Timers:CreateTimer(1, function()
-            self:GetParent().wearables["__head"]:RemoveSelf()
+            if self:GetParent().wearables["__head"] ~= nil then
+                self:GetParent().wearables["__head"]:RemoveSelf()
+            end
         end)
     end
 end

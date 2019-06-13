@@ -4657,6 +4657,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "348": {
+        "item": "alma",
+        "rarity": "11",
+        "quality": "10",
+        "dropable": "true",
+        "slot": "global",
+        "hero": "npc_dota_hero_furion",
+        "universal": "true",
+        "def_id": "348",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
 };
 
