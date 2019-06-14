@@ -184,11 +184,11 @@ function modifier_misterio_mystic_arena_debuff:GetModifierIncomingDamage_Percent
 end
 
 function modifier_misterio_mystic_arena_debuff:GetAbsoluteNoDamagePhysical()
-    if not self:GetCaster():HasTalent("special_bonus_unique_misterio_3") then 
-        return 1 
+    if self:GetCaster():HasTalent("special_bonus_unique_misterio_3") then 
+        return 0
     end
 
-    return 0
+    return 1
 end
 
 function modifier_misterio_mystic_arena_debuff:GetEffectName()

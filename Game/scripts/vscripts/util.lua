@@ -575,6 +575,11 @@ function Util:OnHeroInGame(hero)
 
       hero:AddNewModifier(hero, nil, "modifier_daredevil", nil)
     end
+    if hero:GetUnitName() == "npc_dota_hero_ogre_magi" then
+      LinkLuaModifier("modifier_spell_amp", "modifiers/modifier_spell_amp.lua", LUA_MODIFIER_MOTION_NONE)
+
+      hero:AddNewModifier(hero, nil, "modifier_spell_amp", nil)
+    end
     if hero:GetUnitName() == "npc_dota_hero_night_stalker" then
       local hasItem = false
 
