@@ -55,8 +55,15 @@ function modifier_nightcrawler_nightcrawler_cloud_jumps:OnCreated()
         self:StartIntervalThink(interval)
         self:OnIntervalThink()
 
-        local pert = "particles/hero_nightcrawler/nightcrawler_cloud_jumps.vpcf"
-        local nFXIndex = ParticleManager:CreateParticle( pert, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+        local particle1 = "particles/hero_nightcrawler/nightcrawler_cloud_jumps.vpcf"
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "octavia") then
+            particle1 = "particles/octavia_skin/nightcrawler_cloud_jumps.vpcf"
+
+            EmitSoundOn("OctaviaSkin.Ult", self:GetCaster())
+        end
+
+        local nFXIndex = ParticleManager:CreateParticle( particle1, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControl( nFXIndex, 0,  self:GetParent():GetAbsOrigin() )
 		ParticleManager:SetParticleControl( nFXIndex, 1,  Vector(self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetSpecialValueFor("radius"), 0) )
         ParticleManager:SetParticleControl( nFXIndex, 2,  Vector(self:GetAbility():GetSpecialValueFor("duration"), 1, 0))

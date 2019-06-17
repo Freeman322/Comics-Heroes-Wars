@@ -16593,6 +16593,18 @@
 		"AbilityManaCost"				"50 60 70 80"
 		"AbilityCastRange"				"1450 1700 1950 2200"
 
+		"precache"
+		{
+			"particle"				"particles/econ/events/ti6/blink_dagger_end_ti6_lvl2.vpcf"
+			"particle"				"particles/econ/events/ti6/blink_dagger_start_ti6_lvl2.vpcf"
+			"particle"				"particles/econ/items/monkey_king/arcana/death/mk_spring_arcana_death_souls.vpcf"
+			"particle"				"particles/octavia_skin/nightcrawler_cloud_jumps.vpcf"
+			"particle"				"particles/octavia_skin/octavia_proc_b.vpcf"
+			"model"					"models/heroes/hero_nightkrawler/octavia_skin/octavia.vmdl"
+			"particle"				"particles/octavia_skin.vpcf"
+			"model"					"models/heroes/hero_nightkrawler/octavia_skin/weap/weapon.vmdl"
+			"particle"				"particles/octavia_skin/octavia_skin.vpcf"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"

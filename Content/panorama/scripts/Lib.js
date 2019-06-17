@@ -4671,6 +4671,34 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "349": {
+        "item": "octavia",
+        "rarity": "11",
+        "quality": "10",
+        "dropable": "true",
+        "slot": "global",
+        "hero": "npc_dota_hero_gyrocopter",
+        "universal": "true",
+        "def_id": "349",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "350": {
+        "item": "celty",
+        "rarity": "11",
+        "quality": "10",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_companion",
+        "universal": "false",
+        "def_id": "350",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
 };
 

@@ -196,3 +196,22 @@ function modifier_android:GetActivityTranslationModifiers( params )
 
 	return 0
 end
+
+
+if modifier_octavia == nil then modifier_octavia = class({}) end
+
+function modifier_octavia:IsHidden() return true end
+function modifier_octavia:IsPurgable() return false end
+function modifier_octavia:RemoveOnDeath() return false end
+function modifier_octavia:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
+    }
+
+    return funcs
+end
+
+function modifier_octavia:GetAttackSound( params )
+    return "Hero_Juggernaut.Attack"
+end
+

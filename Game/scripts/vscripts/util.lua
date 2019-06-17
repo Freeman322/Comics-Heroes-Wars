@@ -441,7 +441,25 @@ function Util:OnHeroInGame(hero)
           unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/heroes/hero_elsa/elsa.vmdl"})
         end)
       end
+
+      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "celty") == true then
+        PrecacheUnitByNameAsync("npc_dota_companion", function()
+          local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+          unit:SetOwner(hero)
+          unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+          unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+          unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/celty_pet/celty.vmdl"})
+        end)
+      end
     end
+
+    --[[local model = hero:FirstMoveChild()
+    while model ~= nil do
+        if model:GetClassname() == "dota_item_wearable" then
+           
+        end
+        model = model:NextMovePeer()
+    end--]]
 
     Util:UpdateWearables(hero, hero:GetPlayerOwnerID())
 

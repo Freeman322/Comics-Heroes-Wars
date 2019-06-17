@@ -50,21 +50,29 @@ end
 
 function modifier_nightcrawler_soul_exhaustion:OnAttackLanded (params)
     if params.attacker == self:GetParent() then
-    	local hTarget = params.target
-    	local hAbility = self:GetAbility()
-    	if hAbility:IsCooldownReady() then
-    		hTarget:AddNewModifier(self:GetCaster(), hAbility, "modifier_nightcrawler_soul_exhaustion_slow", {duration = hAbility:GetSpecialValueFor("duration")})
-    		local damage = {
+		local hTarget = params.target
+		local hAbility = self:GetAbility()
+		if hAbility:IsCooldownReady() then
+			hTarget:AddNewModifier(self:GetCaster(), hAbility, "modifier_nightcrawler_soul_exhaustion_slow", {duration = hAbility:GetSpecialValueFor("duration")})
+			local damage = {
 				victim = hTarget,
 				attacker = self:GetCaster(),
 				damage = hAbility:GetAbilityDamage(),
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 				ability = hAbility
 			}
+
+			if IsServer() then
+				if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "octavia") then
+					ParticleManager:CreateParticle( "particles/octavia_skin/octavia_proc_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+				end
+			end
+			
 			ApplyDamage( damage )
-    		hAbility:PayManaCost()
-    		hAbility:StartCooldown(hAbility:GetCooldown(hAbility:GetLevel()))
-    	end
+
+			hAbility:PayManaCost()
+			hAbility:StartCooldown(hAbility:GetCooldown(hAbility:GetLevel()))
+		end
     end
 end
 

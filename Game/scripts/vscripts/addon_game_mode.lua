@@ -152,6 +152,7 @@ function Precache( context )
 	PrecacheResource("model", "models/items/abaddon/feathers/feathers_weapon.vmdl", context)
 	PrecacheResource("model", "models/b2/weapon/weapon.vmdl", context)
 	PrecacheResource("model", "models/items/abaddon/sword_iceshard/sword_iceshard.vmdl", context)
+	PrecacheResource("model", "models/pets/celty_pet/celty.vmdl", context)
 
 	print("PRECASHE ENDED")
 end
