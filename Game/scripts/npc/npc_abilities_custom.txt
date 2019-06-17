@@ -16604,6 +16604,8 @@
 			"particle"				"particles/octavia_skin.vpcf"
 			"model"					"models/heroes/hero_nightkrawler/octavia_skin/weap/weapon.vmdl"
 			"particle"				"particles/octavia_skin/octavia_skin.vpcf"
+			"model"					"models/heroes/hero_nightkrawler/octavia_skin/octavia.vmdl"
+			"model"					"models/heroes/hero_nightkrawler/octavia_skin/weap/weapon.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -33623,12 +33625,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"radius"							"175"
+				"radius"								"175"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"spread"							"450"
+				"spread"								"450"
 			}
 			"03"
 			{
@@ -33638,7 +33640,7 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"axe_damage"						"120 170 220 270"
+				"axe_damage"							"120 170 220 270"
 			}
 			"05"
 			{
@@ -33648,8 +33650,8 @@
 			"06"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"damage_amp"						"15 30 45 60"
-				"LinkedSpecialBonus"		"special_bonus_unique_kratos"
+				"damage_amp"							"15 20 25 30"
+				"LinkedSpecialBonus"					"special_bonus_unique_kratos"
 			}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"

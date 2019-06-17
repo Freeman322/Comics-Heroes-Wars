@@ -77,9 +77,9 @@ function modifier_item_jarnbjorn:OnAttackLanded( params )
      if IsServer() then
           if params.target and params.attacker == self:GetParent() and not self:GetParent():IsIllusion() then
                ---BASH
-               if self.m_hCashedUnit ~= params.target and not self:HasCooldown() then
+               --[[if self.m_hCashedUnit ~= params.target and not self:HasCooldown() then
                     self:Bash(params.target)
-               end 
+               end]]-- 
 
                if RollPercentage(self:GetAbility():GetSpecialValueFor("bash_chance_melee")) and not self:HasCooldown() then
                     self:Bash(params.target)
@@ -118,37 +118,39 @@ function modifier_item_jarnbjorn:HasCooldown()
 end
 function modifier_item_jarnbjorn:Chain(target)
      if IsServer() then
-          local radius = self:GetAbility():GetSpecialValueFor( "chain_radius" ) 
+          if target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
+               local radius = self:GetAbility():GetSpecialValueFor( "chain_radius" ) 
 
-          local units = FindUnitsInRadius( target:GetTeamNumber(), target:GetOrigin(), target, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false )
-          if #units > 0 then
-               for i = 1, #units do
-                    local unit = units[i]
-                    local next_unit = units[i + 1]
+               local units = FindUnitsInRadius( target:GetTeamNumber(), target:GetOrigin(), target, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false )
+               if #units > 0 then
+                    for i = 1, #units do
+                         local unit = units[i]
+                         local next_unit = units[i + 1]
 
-                    if not unit:IsNull() and unit then
-                         Timers:CreateTimer(INDEX_FADE_TIME * i, function()
-                              local damage = {
-                                   victim = unit,
-                                   attacker = self:GetCaster(),
-                                   damage = self:GetAbility():GetSpecialValueFor( "chain_damage" ),
-                                   damage_type = DAMAGE_TYPE_MAGICAL,
-                                   ability = self:GetAbility()
-                               }
-               
-                              ApplyDamage( damage )
+                         if not unit:IsNull() and unit then
+                              Timers:CreateTimer(INDEX_FADE_TIME * i, function()
+                                   local damage = {
+                                        victim = unit,
+                                        attacker = self:GetCaster(),
+                                        damage = self:GetAbility():GetSpecialValueFor( "chain_damage" ),
+                                        damage_type = DAMAGE_TYPE_MAGICAL,
+                                        ability = self:GetAbility()
+                                   }
+                    
+                                   ApplyDamage( damage )
 
-                              EmitSoundOn("Item.Maelstrom.Chain_Lightning", unit)
+                                   EmitSoundOn("Item.Maelstrom.Chain_Lightning", unit)
 
-                              if next_unit and not next_unit:IsNull() then
-                                   local nFXIndex = ParticleManager:CreateParticle( "particles/econ/events/ti7/maelstorm_ti7.vpcf", PATTACH_CUSTOMORIGIN, nil );
-                                   ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
-                                   ParticleManager:SetParticleControlEnt( nFXIndex, 1, next_unit, PATTACH_POINT_FOLLOW, "attach_hitloc", next_unit:GetOrigin(), true );
-                                   ParticleManager:ReleaseParticleIndex( nFXIndex );
+                                   if next_unit and not next_unit:IsNull() then
+                                        local nFXIndex = ParticleManager:CreateParticle( "particles/econ/events/ti7/maelstorm_ti7.vpcf", PATTACH_CUSTOMORIGIN, nil );
+                                        ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true );
+                                        ParticleManager:SetParticleControlEnt( nFXIndex, 1, next_unit, PATTACH_POINT_FOLLOW, "attach_hitloc", next_unit:GetOrigin(), true );
+                                        ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-                                   EmitSoundOn("Item.Maelstrom.Chain_Lightning.Jump", next_unit)
-                              end
-                         end)
+                                        EmitSoundOn("Item.Maelstrom.Chain_Lightning.Jump", next_unit)
+                                   end
+                              end)
+                         end
                     end
                end
           end

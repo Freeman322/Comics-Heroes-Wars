@@ -29,7 +29,7 @@ function kratos_axe_twrow:OnSpellStart()
 		iVisionRadius = WIDTH,
     }
 
-    ProjectileManager:CreateTrackingProjectile({
+     ProjectileManager:CreateTrackingProjectile({
         EffectName = "particles/units/heroes/hero_beastmaster/beastmaster_wildaxe_copy.vpcf",
         Ability = self,
         iMoveSpeed = SPEED,
@@ -54,19 +54,19 @@ end
 
 function kratos_axe_twrow:OnProjectileHit( hTarget, vLocation )
     if hTarget ~= nil then
-        self.nDamage = self.nDamage + self.nDamagePerHit
+		self.nDamage = self.nDamage + self.nDamagePerHit
 
-		local damage = {
-			victim = hTarget,
-			attacker = self:GetCaster(),
-			damage = self.nDamage,
-			damage_type = DAMAGE_TYPE_PHYSICAL,
-			ability = self
-		}
+			local damage = {
+				victim = hTarget,
+				attacker = self:GetCaster(),
+				damage = self.nDamage,
+				damage_type = DAMAGE_TYPE_PHYSICAL,
+				ability = self
+			}
 
-        ApplyDamage( damage )
+		ApplyDamage( damage )
 
-        EmitSoundOn("Hero_Beastmaster.Attack", hTarget)
+		EmitSoundOn("Hero_Beastmaster.Attack", hTarget)
 
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("duration") } )
 	end
