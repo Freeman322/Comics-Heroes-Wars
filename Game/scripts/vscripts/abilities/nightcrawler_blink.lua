@@ -9,12 +9,14 @@ function nightcrawler_blink:OnSpellStart()
 	local particle2 = "particles/hero_nightcrawler/nightcrawler_blink.vpcf"
 	local particle3 = "particles/hero_nightcrawler/nightcrawler_blink_self.vpcf"
 
+	local sound = "Hero_MonkeyKing.IronCudgel"
+
 	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "octavia") then
 		particle1 = "particles/econ/events/ti6/blink_dagger_start_ti6_lvl2.vpcf"
 		particle2 = "particles/econ/events/ti6/blink_dagger_end_ti6_lvl2.vpcf"
 		particle3 = "particles/econ/events/ti6/blink_dagger_end_ti6_lvl2.vpcf"
 
-		EmitSoundOn("OctaviaSkin.Blink", self:GetCaster())
+		sound = "OctaviaSkin.Blink"
 	end
 
 	local nFXIndex = ParticleManager:CreateParticle( particle1, PATTACH_WORLDORIGIN, self:GetCaster() )
@@ -53,7 +55,7 @@ function nightcrawler_blink:OnSpellStart()
 	ParticleManager:SetParticleControl( nFXIndex, 5, self:GetCaster():GetCursorPosition() )
 	ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-	EmitSoundOn( "Hero_MonkeyKing.IronCudgel", self:GetCaster() )
+	EmitSoundOn( sound, self:GetCaster() )
 end
 
 function nightcrawler_blink:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

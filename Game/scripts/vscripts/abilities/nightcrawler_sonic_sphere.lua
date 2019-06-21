@@ -25,11 +25,12 @@ function nightcrawler_sonic_sphere_thinker:OnCreated (event)
 
     if IsServer() then 
         local particle1 = "particles/hero_nightcrawler/nightcrawler_sonic_sphere.vpcf"
+        local sound = "Hero_MonkeyKing.Spring.Channel"
 
         if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "octavia") then
             particle1 = "particles/octavia_skin/octavia_skin.vpcf"
 
-            EmitSoundOn("OctaviaSkin.Sphere", self:GetCaster())
+           sound = "OctaviaSkin.Sphere"
         end
 
         local particle = ParticleManager:CreateParticle (particle1, PATTACH_WORLDORIGIN, thinker)
@@ -39,9 +40,9 @@ function nightcrawler_sonic_sphere_thinker:OnCreated (event)
         ParticleManager:SetParticleControl(particle, 4, thinker_pos)
         ParticleManager:SetParticleControl(particle, 5, thinker_pos)
         self:AddParticle( particle, false, false, -1, false, true )
-    end
-    
-    EmitSoundOn("Hero_MonkeyKing.Spring.Channel", thinker)
+
+        EmitSoundOn(sound, thinker)
+    end  
 end
 
 function nightcrawler_sonic_sphere_thinker:IsAura ()
