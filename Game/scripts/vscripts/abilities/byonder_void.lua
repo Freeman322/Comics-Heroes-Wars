@@ -11,12 +11,13 @@ function byonder_void:OnSpellStart()
         ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetSpecialValueFor( "radius" ), self:GetSpecialValueFor( "radius" ), 0) )
         ParticleManager:ReleaseParticleIndex( nFXIndex )
         local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetCursorPosition(), self:GetCaster(), self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-        if #targets > 0 then 
-      for _,target in pairs(targets) do
-          target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = duration } )
-         ApplyDamage({victim = target, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION}) end
-end
-end
+        if #targets > 0 then
+            for _,target in pairs(targets) do
+                target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = duration } )
+                ApplyDamage({victim = target, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION}) 
+			end
+        end
+    end
 end
         
 

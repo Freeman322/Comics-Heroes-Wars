@@ -75,6 +75,7 @@
 		"item"		"item_cursed_necklace"
 		"item"		"item_ionic_vapor"
 		"item"		"item_rapier_of_despair"
+		"item"		"item_aether_staff"
 	}	
 	
 	// Level 1 - Green Recipes

@@ -470,7 +470,16 @@
 			"particle"  "particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"
+			"particle"  	"particles/econ/items/lycan/blood_moon/lycan_blood_moon_weapon_ambient.vpcf"
+			"model"			"models/heroes/lycan/lycan_armor.vmdl"
+			"model"			"models/heroes/lycan/lycan_belt.vmdl"
+			"model"			"models/heroes/lycan/lycan_blades.vmdl"
+			"model"			"models/heroes/lycan/lycan_head.vmdl"
+			"model"			"models/items/lycan/blood_moon_hunter_armor/blood_moon_hunter_armor.vmdl"
+			"model"			"models/items/lycan/blood_moon_hunter_weapon/blood_moon_hunter_weapon.vmdl"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
 		}
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -497,13 +506,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/wolverine_passive_rage.lua"
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/wolverine_passive_rage.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"						"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityTextureName"    "custom/wolverine_passie_rage"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"    			"custom/wolverine_passie_rage"
 		"FightRecapLevel"				"1"
-		"MaxLevel"              "4"
+		"MaxLevel"             			 "4"
 
 		"AbilitySpecial"
 		{
@@ -515,7 +524,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"regen_per_damage"		"2 3 4 5"
+				"regen_per_damage"			"2 3 4 5"
 			}
 			"03"
 			{
@@ -6446,106 +6455,106 @@
 	//=================================================================================================================
 	"rocket_supershot"
 	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"						"ability_lua"
-			"AbilityTextureName"			"custom/roket_boom"
-			"ScriptFile"					"abilities/rocket_supershot"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/roket_boom"
+		"ScriptFile"					"abilities/rocket_supershot"
 
-			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-			"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-			"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-			"FightRecapLevel"				"2"
-			"HasScepterUpgrade"				"1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"FightRecapLevel"				"2"
+		"HasScepterUpgrade"				"1"
 
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"2200 2600 3000"
-			"AbilityCastRangeBuffer"		"600"
-			"AbilityCastPoint"				"2.0"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2200 2600 3000"
+		"AbilityCastRangeBuffer"		"600"
+		"AbilityCastPoint"				"2.0"
 
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"60 50 40"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60 50 40"
 
 
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"150 200 250"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 200 250"
 
-			// Stats
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage
-			"precache"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage
+		"precache"
+		{
+			"model"  		"models/heroes/hero_racoon/weapon/weapon.vmdl"
+			"model"			"models/heroes/hero_racoon/econs/devastator_x9000.vmdl"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
 			{
-				"model"  		"models/heroes/hero_racoon/weapon/weapon.vmdl"
-				"model"			"models/heroes/hero_racoon/econs/devastator_x9000.vmdl"
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"2500 2500 2500"
 			}
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
+			"02"
 			{
-					"01"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"projectile_speed"			"2500 2500 2500"
-					}
-					"02"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"tooltip_range"				"2200 2600 3000"
-					}
-					"03"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"total_cast_time_tooltip"	"2.0"
-					}
-					"04"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"aim_duration"				"2.0" // does this matter? cast point seems to be what's important
-					}
-					"05"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"assassinate_damage"		"500 800 1100"
-					}
-					"06"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"scatter_range"				"600 800 1000"
-					}
-					"07"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"scatter_width"				"350 400 450"
-					}
-					"08"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"scepter_radius"			"500"
-					}
-					"09"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"scepter_crit_bonus"		"300 375 450"
-					}
-					"10"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"stun_duration"				"2.0 2.5 3.0"
-					}
-					"11"
-					{
-						"var_type"					"FIELD_INTEGER"
-						"scepter_cooldown"			"30 25 20"
-					}
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_range"				"2200 2600 3000"
 			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"total_cast_time_tooltip"	"2.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"aim_duration"				"2.0" // does this matter? cast point seems to be what's important
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"assassinate_damage"		"500 800 1100"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scatter_range"				"600 800 1000"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scatter_width"				"350 400 450"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_radius"			"500"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_crit_bonus"		"300 375 450"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"2.0 2.5 3.0"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_cooldown"			"30 25 20"
+			}
+		}
 	}
 	"bonder_warriror"
 	{
@@ -6699,6 +6708,13 @@
 			"precache"
 			{
 				"model"  "models/heroes/hero_byonder/byonder_fragments/byonder_arcana.vmdl"
+				"model"  	"models/items/courier/faceless_rex/faceless_rex.vmdl"
+				"model"		"models/heroes/faceless_void/faceless_void_weapon.vmdl"
+				"model"		"models/items/faceless_void/battlefury/battlefury.vmdl"
+				"model"		"models/items/faceless_void/voidhammer/voidhammer.vmdl"
+				"model"		"models/items/faceless_void/bracers_of_aeons/bracers_of_aeons.vmdl"
+				"particle"	"particles/econ/items/faceless_void/faceless_void_bracers_of_aeons/fv_bracers_of_aeons_red_ambient.vpcf"
+				"particle"	"particles/econ/items/faceless_void/faceless_void_weapon_voidhammer/faceless_void_weapon_voidhammer.vpcf"
 			}
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
@@ -6782,7 +6798,16 @@
 				"model"			"models/heroes/faceless_void/faceless_void_taunt.vmdl"
 				"particle"  "particles/econ/items/faceless_void/faceless_void_mace_of_aeons/fv_ambient_mace_aeons.vpcf"
 				"particle"  "particles/econ/items/faceless_void/faceless_void_jewel_of_aeons/fv_core_ambient_aeons.vpcf"
+				"model"  "models/heroes/hero_byonder/byonder_fragments/byonder_arcana.vmdl"
+				"model"  	"models/items/courier/faceless_rex/faceless_rex.vmdl"
+				"model"		"models/heroes/faceless_void/faceless_void_weapon.vmdl"
+				"model"		"models/items/faceless_void/battlefury/battlefury.vmdl"
+				"model"		"models/items/faceless_void/voidhammer/voidhammer.vmdl"
+				"model"		"models/items/faceless_void/bracers_of_aeons/bracers_of_aeons.vmdl"
+				"particle"	"particles/econ/items/faceless_void/faceless_void_bracers_of_aeons/fv_bracers_of_aeons_red_ambient.vpcf"
+				"particle"	"particles/econ/items/faceless_void/faceless_void_weapon_voidhammer/faceless_void_weapon_voidhammer.vpcf"
 			}
+
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilitySpecial"
@@ -12229,26 +12254,26 @@
 
 	"manhattan_equilibrium"
 	{
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/manhattan_equilibrium.lua"
-		"AbilityTextureName"			"custom/"
+		"AbilityTextureName"			"rubick_empty1"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCooldown"				"1"
 
-		"MaxLevel"						"1"
+		"MaxLevel"					"1"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_per_hp"			"0.04"
+				"mana_per_hp"				"0.04"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_per_mana"			"0.02"
+				"hp_per_mana"				"0.02"
 			}
 			"03"
 			{
@@ -37404,13 +37429,13 @@
 	"jaina_frost_shield"
     {
 
-        "BaseClass"                     "lich_frost_shield"
-        "AbilityTextureName"            "custom/frost_shield"
+		"BaseClass"                     "lich_frost_shield"
+		"AbilityTextureName"            "custom/frost_shield"
 
-	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"		
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Lich.FrostArmor"
@@ -37462,8 +37487,8 @@
 	}
     "jaina_frost_bolt"
 	{
-		"BaseClass"                     "ancient_apparition_chilling_touch"
-		"AbilityTextureName"            "custom/franklin_spatial_gap"
+		"BaseClass"                    	 "ancient_apparition_chilling_touch"
+		"AbilityTextureName"           	 "custom/franklin_spatial_gap"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -37480,8 +37505,8 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"140 160 180 200"
-				"LinkedSpecialBonus"	"special_bonus_unique_ancient_apparition_2"
+				"damage"					"140 160 180 200"
+				"LinkedSpecialBonus"		"special_bonus_unique_ancient_apparition_2"
 			}
 			"02"
 			{
@@ -37496,19 +37521,35 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_range_bonus"	"180 220 260 300"
+				"attack_range_bonus"		"180 220 260 300"
 			}
 		}
 	}
     "wolverine_berserk"
 	{
-       "BaseClass"                      "ability_lua"
-	   "AbilityTextureName"             "custom/wolverine_ult_immortal"
-       "ScriptFile"                     "abilities/wolverine_berserk.lua"
-       "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	   "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                      "ability_lua"
+		"AbilityTextureName"             "custom/wolverine_ult_immortal"
+		"ScriptFile"                     "abilities/wolverine_berserk.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-       "AbilitySpecial"
+		"precache"
+		{
+			"particle" 		"particles/status_fx/status_effect_life_stealer_open_wounds.vpcf"
+			"particle"  		"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+			"soundfile" 		"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+			"soundfile" 		"soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"
+			"particle"  		"particles/econ/items/lycan/blood_moon/lycan_blood_moon_weapon_ambient.vpcf"
+			"model"			"models/heroes/lycan/lycan_armor.vmdl"
+			"model"			"models/heroes/lycan/lycan_belt.vmdl"
+			"model"			"models/heroes/lycan/lycan_blades.vmdl"
+			"model"			"models/heroes/lycan/lycan_head.vmdl"
+			"model"			"models/items/lycan/blood_moon_hunter_armor/blood_moon_hunter_armor.vmdl"
+			"model"			"models/items/lycan/blood_moon_hunter_weapon/blood_moon_hunter_weapon.vmdl"
+			"soundfile" 		"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+		}
+
+		"AbilitySpecial"
 		{
 			"01"
 			{
@@ -37525,15 +37566,15 @@
 				"var_type"						"FIELD_FLOAT"
 				"armor_amplify"					"0.3 0.35 0.4"
 			}
-            "04"
-		    {
-               "var_type"                       "FIELD_FLOAT"
-			   "magical_resistance_amplify"     "0.3 0.4 0.5"
+			"04"
+			{
+				"var_type"                       "FIELD_FLOAT"
+				"magical_resistance_amplify"     "0.3 0.4 0.5"
 			}
 			"05"
 			{
-               "var_type"                        "FIELD_FLOAT"
-			   "damage_amplify"                  "0.4 0.7 1.0"
+				"var_type"                        "FIELD_FLOAT"
+				"damage_amplify"                  "0.4 0.7 1.0"
 			}
 		}
 	}
@@ -37546,31 +37587,31 @@
 
 		"AbilitySpecial"
 		{
-           "01"
-		   {
-			   "var_type"            "FIELD_FLOAT"
-			   "bonus_hp_regen"      "5 8 11 14"
- 		   }
-           "02"
-		   {
-			   "var_type"            "FIELD_FLOAT"
-               "bonus_armor"           "2 4 6 8"
-		   }
-		   "03"
-		   {
-			   "var_type"            "FIELD_FLOAT"
-			   "chance"              "15 20 25 30" 
-		   }
-		   "04"
-		   {
-			   "var_type"           "FIELD_FLOAT"
-			   "bonus_damage"       "100 120 140 160"
-		   }
-		   "05"
-		   {
-			   "var_type"           "FIELD_FLOAT"
-			   "bonus_as"           "20 40 60 80"
-		   }
+			"01"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"bonus_hp_regen"      "5 8 11 14"
+			}
+			"02"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"bonus_armor"           "2 4 6 8"
+			}
+			"03"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"chance"              "15 20 25 30" 
+			}
+			"04"
+			{
+				"var_type"           "FIELD_FLOAT"
+				"bonus_damage"       "100 120 140 160"
+			}
+			"05"
+			{
+				"var_type"           "FIELD_FLOAT"
+				"bonus_as"           "20 40 60 80"
+			}
 	    }
 	}
 	"beyonder_elder"
@@ -37582,37 +37623,37 @@
 
 		"AbilitySpecial"
 		{
-           "01"
-		   {
-			   "var_type"            "FIELD_FLOAT"
-			   "bonus_int"           "15 20 25 30"
-		   }
-		   "02"
-		   {
-			   "var_type"            "FIELD_FLOAT"
-			   "bonus_mana_regen"    "4 6 8 10"
-		   }
-		   "03"
-		   {
-			   "var_type"            "FIELD_FLOAT"
-			   "bonus_cooldown"      "5 10 15 20"
-		   }			   
-		    "04"
-		   {
-			   "var_type"           "FIELD_FLOAT"
-				"radius"             "700"
-		   }	
-			"05"
-		   {
-		       "var_type"           "FIELD_FLOAT"
-				"bonus_hp_regen"     "5 10 15 20"
-		   }
-		    "06"
+			"01"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"bonus_int"           "15 20 25 30"
+			}
+			"02"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"bonus_mana_regen"    "4 6 8 10"
+			}
+			"03"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"bonus_cooldown"      "5 10 15 20"
+			}			   
+			"04"
+			{
+				"var_type"           "FIELD_FLOAT"
+					"radius"             "700"
+			}	
+				"05"
+			{
+				"var_type"           "FIELD_FLOAT"
+					"bonus_hp_regen"     "5 10 15 20"
+			}
+			"06"
 			{
 				"var_type"          "FIELD_FLOAT"
 				"bonus_hp_regen_pct" "0.20 0.30 0.40 0.50"
 			}
-		    "06"
+			"06"
 			{
 				"var_type"          "FIELD_FLOAT"
 				"bonus_movespeed"   "15 20 25 30"
@@ -37621,18 +37662,19 @@
 	}
 	"beyonder_void_blast"
 	{
-		"BaseClass"                  "satyr_hellcaller_shockwave"
-		"AbilityTextureName"         "custom/faceless_void_time_lock"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"MaxLevel"                      "4"
-		"AbilityCastRange"				"500 700 100 1400"
-		"AbilityCastPoint"				"0.35"
-		"AbilityCooldown"				"15.0 14.0 13.0 12.0"
+		"BaseClass"                  			"satyr_hellcaller_shockwave"
+		"AbilityTextureName"         			"custom/faceless_void_time_lock"
+        	"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"MaxLevel"                     		"4"
+		"AbilityCastRange"					"500 700 100 1400"
+		"AbilityCastPoint"					"0.35"
+		"AbilityCooldown"					"15.0 14.0 13.0 12.0"
 		"AbilityDamage"					"180 260 340 440"
-		"AbilityManaCost"				"200 240 280 320"
+		"AbilityManaCost"					"200 240 280 320"
 
 		"AbilitySpecial"
 		{
@@ -37645,12 +37687,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius_start"			"100 180 260 340"
+				"radius_start"				"100 180 260 340"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius_end"			"120 220 320 420"
+				"radius_end"				"120 220 320 420"
 			}
 			
 			"04"
@@ -37663,25 +37705,25 @@
 	}
 	"beyonder_void_explosion"
 	{
-		"BaseClass"                "ability_lua"
-		"AbilityTextureName"       "custom/collector_sanity_eclipse"
-		"AbilityUnitDamageType"	   "DAMAGE_TYPE_PURE"
-		"ScriptFile"               "abilities/beyonder_void_explosion.lua"
-		"AbilityBehavior"          "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"              "DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel"                 "1"
+		"BaseClass"                		"ability_lua"
+		"AbilityTextureName"       		"custom/collector_sanity_eclipse"
+		"AbilityUnitDamageType"	  		"DAMAGE_TYPE_PURE"
+		"ScriptFile"               		"abilities/beyonder_void_explosion.lua"
+		"AbilityBehavior"          		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"             		"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"                		"1"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"near_damage"			"450"
+				"near_damage"				"450"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
+				"radius"					"1000"
 			}
 		}
 	}
@@ -37691,12 +37733,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			        	"ability_lua"
 		"ScriptFile"					"abilities/byonder_void.lua"
-		"AbilityTextureName"			"custom/collector_ice_blast"
+		"AbilityTextureName"			"custom/beyonder_void"
         
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilityDamage"                 "325 650 975"
+
+		"AbilityDamage"                	 "325 650 975"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
@@ -37715,7 +37758,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"700 800 900"
+				"radius"				"700 800 900"
 			}
 			"02"
 			{
@@ -37724,16 +37767,16 @@
 			}
 			"03"
 			{
-				"var_type"          "FIELD_FLOAT"
-				"damage_mana_pct"            "10 20 30"
+				"var_type"         		 "FIELD_FLOAT"
+				"damage_mana_pct"          "10 20 30"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	}
 	"byonder_void_flux"
 	{	
-		"BaseClass"                  "arc_warden_flux"
-		"AbilityTextureName"         "custom/beyonder_void_flux"								
+		"BaseClass"                		"arc_warden_flux"
+		"AbilityTextureName"         		"custom/beyonder_void_flux"								
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -37743,6 +37786,31 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_ArcWarden.Flux.Target"
 
+		"precache"
+		{
+			"particle"  	"particles/econ/events/winter_major_2016/infuser_winter_ambient_2016.vpcf"
+			"model"		"models/items/faceless_void/elements_of_oblivion_arms/elements_of_oblivion_arms.vmdl"
+			"model"		"models/items/faceless_void/elements_of_oblivion_belt/elements_of_oblivion_belt.vmdl"
+			"model"		"models/items/faceless_void/jewel_of_aeons/jewel_of_aeons.vmdl"
+			"model"		"models/items/faceless_void/mace_of_aeons/mace_of_aeons.vmdl"
+			"model"		"models/items/faceless_void/pw_facelesshead/pw_faceless_head.vmdl"
+			"model"		"models/items/faceless_void/viridus_claw/viridus_claw.vmdl"
+			"particle"  	"particles/econ/items/faceless_void/faceless_void_mace_of_aeons/fv_ambient_mace_aeons.vpcf"
+			"model"		"models/heroes/faceless_void/faceless_void_head.vmdl"
+			"model"		"models/heroes/faceless_void/faceless_void_belt.vmdl"
+			"model"		"models/heroes/faceless_void/faceless_void_bracer.vmdl"
+			"model"		"models/heroes/faceless_void/faceless_void_taunt.vmdl"
+			"particle"  	"particles/econ/items/faceless_void/faceless_void_mace_of_aeons/fv_ambient_mace_aeons.vpcf"
+			"particle"  	"particles/econ/items/faceless_void/faceless_void_jewel_of_aeons/fv_core_ambient_aeons.vpcf"
+			"model"  		"models/heroes/hero_byonder/byonder_fragments/byonder_arcana.vmdl"
+			"model"  		"models/items/courier/faceless_rex/faceless_rex.vmdl"
+			"model"		"models/heroes/faceless_void/faceless_void_weapon.vmdl"
+			"model"		"models/items/faceless_void/battlefury/battlefury.vmdl"
+			"model"		"models/items/faceless_void/voidhammer/voidhammer.vmdl"
+			"model"		"models/items/faceless_void/bracers_of_aeons/bracers_of_aeons.vmdl"
+			"particle"	"particles/econ/items/faceless_void/faceless_void_bracers_of_aeons/fv_bracers_of_aeons_red_ambient.vpcf"
+			"particle"	"particles/econ/items/faceless_void/faceless_void_weapon_voidhammer/faceless_void_weapon_voidhammer.vpcf"
+		}
 	
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
@@ -37763,12 +37831,12 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"duration"						"3 4 5 6"
-				"LinkedSpecialBonus"		"special_bonus_unique_arc_warden_2"
+				"LinkedSpecialBonus"				"special_bonus_unique_arc_warden_2"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_second"				"15 30 45 60"
+				"damage_per_second"					"15 30 45 60"
 			}
 			"03"
 			{
@@ -37778,7 +37846,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"think_interval"				"0.1"
+				"think_interval"					"0.1"
 			}
 			"05"
 			{
@@ -37787,8 +37855,8 @@
 			}
 			"06"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_tooltip"		"600"
+				"var_type"						"FIELD_INTEGER"
+				"cast_range_tooltip"				"600"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"

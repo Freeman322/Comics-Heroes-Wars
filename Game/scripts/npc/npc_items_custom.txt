@@ -7983,8 +7983,8 @@
 	}
 	"item_aether_staff"
 	{
-		"BaseClass"						"item_lua"
-		"AbilityTextureName"			"custom/cyclone"
+		"BaseClass"					"item_lua"
+		"AbilityTextureName"			"custom/aether_staff"
 		"ScriptFile"					"items/item_aether_staff"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"	          
@@ -7995,7 +7995,8 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"	 "AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"700"	
+		"AbilityCastPoint"				"0.0"
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -8004,40 +8005,45 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"175"
-		"ItemCost"						"2750"
+		"ItemCost"					"2750"
 		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"cyclone euls;eul's scepter of divinity"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
 
+		"precache"
+		{
+			"particle"				"particles/econ/events/ti7/cyclone_ti7.vpcf"
+		}
+
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
-		    {
-			    "var_type"				"FIELD_INTEGER"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"bonus_intellect"       "30"
 			}
 			"02"
-		    {
-			    "var_type"				"FIELD_INTEGER"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"       "6"
 			}
 			"03"
-		    {
-			    "var_type"				"FIELD_INTEGER"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"bonus_agility"        "6"
 			}
 			"04"
-		    {
-			    "var_type"				"FIELD_INTEGER"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"       "6"
 			}
 			"05"
-		    {
-                "var_type"              "FIELD_INTEGER"
+			{
+				"var_type"              "FIELD_INTEGER"
 				"bonus_hp_reg"        "10"	
 			}
 			"06"
@@ -8047,7 +8053,7 @@
 			}
 			"07"
 			{
-                "var_type"                       "FIELD_FLOAT"
+				"var_type"                       "FIELD_FLOAT"
 				"bonus_magical_armor"       "25"
 			}
 			"08"

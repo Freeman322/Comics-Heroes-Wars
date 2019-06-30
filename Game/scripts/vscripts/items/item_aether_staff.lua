@@ -18,15 +18,15 @@ function modifier_item_aether_staff:GetAttributes() return MODIFIER_ATTRIBUTE_MU
 
 function modifier_item_aether_staff:DeclareFunctions()
 	local funcs = {
-					MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-					MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-					MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-					MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-					MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-					MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
-					MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-					MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
-					}
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+	}
 	return funcs
 end
 
@@ -53,24 +53,21 @@ end
 
 modifier_item_aether_staff_active = class({})
 
-local VISUAL_Z_DELTA = 350
-
 function modifier_item_aether_staff_active:IsDebuff() return false end
 function modifier_item_aether_staff_active:IsHidden() return false end
 function modifier_item_aether_staff_active:IsPurgable() return true end
 function modifier_item_aether_staff_active:IsStunDebuff() return true end
 function modifier_item_aether_staff_active:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_VISUAL_Z_DELTA
+		MODIFIER_PROPERTY_OVERRIDE_ANIMATION
 	}
 	return funcs
 end
 
 function modifier_item_aether_staff_active:OnCreated()
-	self:StartIntervalThink(FrameTime())
 	EmitSoundOn("DOTA_Item.Cyclone.Activate", self:GetParent())
+
 	if IsServer() then
-		self:GetParent():StartGesture(ACT_DOTA_FLAIL)
 		self.angle = self:GetParent():GetAngles()
 		self.abs = self:GetParent():GetAbsOrigin()
 		self.cyc_pos = self:GetParent():GetAbsOrigin()
@@ -78,10 +75,12 @@ function modifier_item_aether_staff_active:OnCreated()
 		self.pfx_name = "particles/econ/events/ti7/cyclone_ti7.vpcf"
 		self.pfx = ParticleManager:CreateParticle(self.pfx_name, PATTACH_CUSTOMORIGIN, self:GetParent())
 		ParticleManager:SetParticleControl(self.pfx, 0, self.abs)		
+
+		self:StartIntervalThink(FrameTime())
 	end
 end
 
-function modifier_item_aether_staff_active:HorizontalMotion(unit, time)
+function modifier_item_aether_staff_active:OnIntervalThink()
 	if not IsServer() then return end
 	local angle = self:GetParent():GetAngles()
 	local new_angle = RotateOrientation(angle, QAngle(0,20,0))
@@ -93,15 +92,8 @@ function modifier_item_aether_staff_active:HorizontalMotion(unit, time)
 		self.step = self.step or (self.cyc_pos.z - self.abs.z) / ((self:GetDuration() - self:GetElapsedTime()) / FrameTime())
 		self.cyc_pos.z = self.cyc_pos.z - self.step
 		self:GetParent():SetAbsOrigin(self.cyc_pos)
-	else 
-		local pos = GetRandomPosition2D(self:GetParent():GetAbsOrigin(),5)
-		while ((pos - self.abs):Length2D() > 50) do
-			pos = GetRandomPosition2D(self:GetParent():GetAbsOrigin(),5)
-		end
-		self:GetParent():SetAbsOrigin(pos)
 	end
 end
-
 
 function modifier_item_aether_staff_active:OnDestroy()
 	StopSoundOn("DOTA_Item.Cyclone.Activate", self:GetParent())
@@ -115,37 +107,34 @@ function modifier_item_aether_staff_active:OnDestroy()
 	self:GetParent():SetAngles(self.angle[1], self.angle[2], self.angle[3])
 end
 
-function modifier_item_aether_staff_active:GetVisualZDelta(params)
-	return VISUAL_Z_DELTA
+function modifier_item_aether_staff_active:GetOverrideAnimation(params)
+	return ACT_DOTA_FLAIL
 end
 
 function modifier_item_aether_staff_active:CheckState()
-	local state =
-		{
-			[MODIFIER_STATE_STUNNED] = true,
-			[MODIFIER_STATE_INVULNERABLE] = true,
-			[MODIFIER_STATE_NO_HEALTH_BAR] = true,
-		}
-	return state
+	return {
+		[MODIFIER_STATE_STUNNED] = true,
+		[MODIFIER_STATE_INVULNERABLE] = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+	}
 end
 
 modifier_item_aether_staff_active_debuff = class({})
 
-local VISUAL_Z_DELTA = 350
 function modifier_item_aether_staff_active_debuff:IsDebuff() return true end
 function modifier_item_aether_staff_active_debuff:IsHidden() return false end
 function modifier_item_aether_staff_active_debuff:IsPurgable() return true end
 function modifier_item_aether_staff_active_debuff:IsStunDebuff() return true end
 function modifier_item_aether_staff_active_debuff:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_VISUAL_Z_DELTA
+		MODIFIER_PROPERTY_OVERRIDE_ANIMATION
 	}
 	return funcs
 end
 
 function modifier_item_aether_staff_active_debuff:OnCreated()
-	self:StartIntervalThink(FrameTime())
 	EmitSoundOn("DOTA_Item.Cyclone.Activate", self:GetParent())
+
 	if IsServer() then
 		self:GetParent():StartGesture(ACT_DOTA_FLAIL)
 		self.angle = self:GetParent():GetAngles()
@@ -155,10 +144,12 @@ function modifier_item_aether_staff_active_debuff:OnCreated()
 		self.pfx_name = "particles/econ/events/ti7/cyclone_ti7.vpcf"
 		self.pfx = ParticleManager:CreateParticle(self.pfx_name, PATTACH_CUSTOMORIGIN, self:GetParent())
 		ParticleManager:SetParticleControl(self.pfx, 0, self.abs)
+
+		self:StartIntervalThink(FrameTime())
 	end
 end
 
-function modifier_item_aether_staff_active_debuff:HorizontalMotion(unit, time)
+function modifier_item_aether_staff_active_debuff:OnIntervalThink()
 	if not IsServer() then return end
 	local angle = self:GetParent():GetAngles()
 	local new_angle = RotateOrientation(angle, QAngle(0,20,0))
@@ -170,12 +161,6 @@ function modifier_item_aether_staff_active_debuff:HorizontalMotion(unit, time)
 		self.step = self.step or (self.cyc_pos.z - self.abs.z) / ((self:GetDuration() - self:GetElapsedTime()) / FrameTime())
 		self.cyc_pos.z = self.cyc_pos.z - self.step
 		self:GetParent():SetAbsOrigin(self.cyc_pos)
-	else 
-		local pos = GetRandomPosition2D(self:GetParent():GetAbsOrigin(),5)
-		while ((pos - self.abs):Length2D() > 50) do
-			pos = GetRandomPosition2D(self:GetParent():GetAbsOrigin(),5)
-		end
-		self:GetParent():SetAbsOrigin(pos)
 	end
 end
 
@@ -198,25 +183,15 @@ function modifier_item_aether_staff_active_debuff:OnDestroy()
 	ApplyDamage(damageTable)
 end
 
-function modifier_item_aether_staff_active_debuff:GetVisualZDelta(params)
-	return VISUAL_Z_DELTA
+function modifier_item_aether_staff_active_debuff:GetOverrideAnimation(params)
+	return ACT_DOTA_FLAIL
 end
 
 function modifier_item_aether_staff_active_debuff:CheckState()
-	local state =
-		{
-			[MODIFIER_STATE_STUNNED] = true,
-			[MODIFIER_STATE_INVULNERABLE] = true,
-			[MODIFIER_STATE_NO_HEALTH_BAR] = true,
-		}
-	return state
+	return {
+		[MODIFIER_STATE_STUNNED] = true,
+		[MODIFIER_STATE_INVULNERABLE] = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+	}
 end
-e =
-		{
-			[MODIFIER_STATE_STUNNED] = true,
-			[MODIFIER_STATE_INVULNERABLE] = true,
-			[MODIFIER_STATE_NO_HEALTH_BAR] = true,
-		}
-	return state
-	
 
