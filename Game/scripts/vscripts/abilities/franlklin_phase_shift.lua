@@ -68,7 +68,10 @@ function modifier_franlklin_phase_shift:DeclareFunctions()
 end
 
 function modifier_franlklin_phase_shift:GetModifierMoveSpeed_Limit()
-	return 100
+    if self:GetCaster():HasScepter() then
+        return 550
+    end
+    return 100
 end
 
 function franlklin_phase_shift:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

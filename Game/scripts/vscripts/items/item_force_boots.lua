@@ -20,14 +20,14 @@ function modifier_item_force_boots_passive:DeclareFunctions ()
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
     }
 end
 
 function modifier_item_force_boots_passive:GetModifierPreAttack_BonusDamage()
     return self:GetAbility():GetSpecialValueFor ("bonus_damage")
 end
-function modifier_item_force_boots_passive:GetModifierMoveSpeedBonus_Constant()
+function modifier_item_force_boots_passive:GetModifierMoveSpeedBonus_Percentage()
     return self:GetAbility():GetSpecialValueFor ("bonus_movement_speed")
 end
 function modifier_item_force_boots_passive:GetModifierBonusStats_Intellect()

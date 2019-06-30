@@ -185,7 +185,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"	// Model.
+		"Model"						"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Range"					// Name of sound set.
 		"ModelScale" 					"0.93"
 		"Level"						"2"
@@ -278,7 +278,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"	// Model.
+		"Model"						"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Range"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -371,7 +371,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"	// Model.
+		"Model"						"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged_mega.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Range"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -396,8 +396,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"41"		// Damage range min.
-		"AttackDamageMax"			"46"		// Damage range max.
+		"AttackDamageMin"			"101"		// Damage range min.
+		"AttackDamageMax"			"106"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
@@ -464,7 +464,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/thief/thief_01_archer.vmdl"	// Model.
+		"Model"						"models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
 		"ModelScale" 					".88"
 		"Level"						"2"
@@ -557,7 +557,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/thief/thief_01_archer.vmdl"	// Model.
+		"Model"						"models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -650,7 +650,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/thief/thief_01_archer.vmdl"	// Model.
+		"Model"						"models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged_mega.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -675,8 +675,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"41"		// Damage range min.
-		"AttackDamageMax"			"46"		// Damage range max.
+		"AttackDamageMin"			"101"		// Damage range min.
+		"AttackDamageMax"			"106"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
@@ -743,9 +743,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_berserker.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Melee"					// Name of sound set.
-		"ModelScale" 					".93"
+		"ModelScale" 					".99"
 		"Level"						"3"
 
 		// Abilities
@@ -768,8 +768,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"19"		// Damage range min.
-		"AttackDamageMax"			"23"		// Damage range max.
+		"AttackDamageMin"			"20"		// Damage range min.
+		"AttackDamageMax"			"24"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
@@ -861,7 +861,7 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"36"		// Damage range min.
+		"AttackDamageMin"			"40"		// Damage range min.
 		"AttackDamageMax"			"44"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
@@ -929,7 +929,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl"	// Model.
+		"Model"						"models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee_mega.vmdl"	// Model.
 		"SoundSet"					"Creep_Bad_Melee_Mega"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -954,8 +954,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"36"		// Damage range min.
-		"AttackDamageMax"			"44"		// Damage range max.
+		"AttackDamageMin"			"100"		// Damage range min.
+		"AttackDamageMax"			"104"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
@@ -1022,7 +1022,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/thief/thief_01.vmdl"	// Model.
+		"Model"						"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"ModelScale" 					"0.93"
 		"Level"						"3"
@@ -1047,8 +1047,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"19"		// Damage range min.
-		"AttackDamageMax"			"23"		// Damage range max.
+		"AttackDamageMin"			"20"		// Damage range min.
+		"AttackDamageMax"			"24"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
@@ -1115,9 +1115,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/thief/thief_01_leader.vmdl"	// Model.
+		"Model"						"models/heroes/furion/treant.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee_Mega"					// Name of sound set.
-		"ModelScale"				"1.12"
+		"ModelScale"				"1.00"
 		"Level"						"1"
 
 			// Abilities
@@ -1140,7 +1140,7 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"36"		// Damage range min.
+		"AttackDamageMin"			"40"		// Damage range min.
 		"AttackDamageMax"			"44"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
@@ -1208,7 +1208,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-		"Model"						"models/creeps/thief/thief_01_leader.vmdl"	// Model.
+		"Model"						"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mega.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee_Mega"					// Name of sound set.
 		"ModelScale"				"1.12"
 		"Level"						"1"
@@ -1233,8 +1233,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"36"		// Damage range min.
-		"AttackDamageMax"			"44"		// Damage range max.
+		"AttackDamageMin"			"100"		// Damage range min.
+		"AttackDamageMax"			"104"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
@@ -4969,14 +4969,14 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"51"		// Damage range min.
-		"AttackDamageMax"			"62"		// Damage range max.
+		"AttackDamageMin"			"101"		// Damage range min.
+		"AttackDamageMax"			"112"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"3.0"		// Speed of attack.
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"690"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/base_attacks/ranged_siege_good.vpcf" // Particle system model for projectile.
+		"AttackRange"				"900"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1100"		// Speed of projectile.
 
 		// Attributes
@@ -5254,14 +5254,14 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"51"		// Damage range min.
-		"AttackDamageMax"			"62"		// Damage range max.
+		"AttackDamageMin"			"101"		// Damage range min.
+		"AttackDamageMax"			"112"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"3.0"		// Speed of attack.
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"690"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/base_attacks/ranged_siege_bad.vpcf" // Particle system model for projectile.
+		"AttackRange"				"900"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_bad.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1100"		// Speed of projectile.
 
 		// Attributes

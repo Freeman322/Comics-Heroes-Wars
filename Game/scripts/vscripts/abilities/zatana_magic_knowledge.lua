@@ -28,15 +28,12 @@ function modifier_zatana_magic_knowledge_aura:IsPurgable() return false end
 function modifier_zatana_magic_knowledge_aura:DeclareFunctions()
 	return {
         MODIFIER_PROPERTY_MANA_BONUS,
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_CAST_RANGE_BONUS,
-		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
+		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
 	}
 end
 
 function modifier_zatana_magic_knowledge_aura:GetModifierManaBonus() return self:GetAbility():GetSpecialValueFor("bonus_mana") end
-function modifier_zatana_magic_knowledge_aura:GetModifierConstantHealthRegen() return self:GetAbility():GetSpecialValueFor("bonus_health_regen") end
 function modifier_zatana_magic_knowledge_aura:GetModifierCastRangeBonus() return self:GetAbility():GetSpecialValueFor("cast_range_bonus") end
 function modifier_zatana_magic_knowledge_aura:GetModifierSpellAmplify_Percentage() return self:GetAbility():GetSpecialValueFor("spell_amp") end
-function modifier_zatana_magic_knowledge_aura:GetModifierConstantManaRegen () return self:GetAbility():GetSpecialValueFor("mana_regen") end
+

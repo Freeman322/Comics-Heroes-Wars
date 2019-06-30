@@ -674,7 +674,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"95"
+				"bonus_movement_speed"	"30"
 			}
 			"02"
 			{
@@ -1498,7 +1498,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"120"
+				"bonus_movement_speed"	"25"
 			}
 			"02"
 			{
@@ -6623,7 +6623,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"140"
+				"bonus_movement_speed"	"40"
 			}
 			"03"
 			{
@@ -7981,4 +7981,112 @@
 			}
 		}
 	}
-}
+	"item_aether_staff"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/cyclone"
+		"ScriptFile"					"items/item_aether_staff"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"	          
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"	 "AbilityCastPoint"				"0.0"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"175"
+		"ItemCost"						"2750"
+		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"cyclone euls;eul's scepter of divinity"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+		    {
+			    "var_type"				"FIELD_INTEGER"
+				"bonus_intellect"       "30"
+			}
+			"02"
+		    {
+			    "var_type"				"FIELD_INTEGER"
+				"bonus_strength"       "6"
+			}
+			"03"
+		    {
+			    "var_type"				"FIELD_INTEGER"
+				"bonus_agility"        "6"
+			}
+			"04"
+		    {
+			    "var_type"				"FIELD_INTEGER"
+				"bonus_armor"       "6"
+			}
+			"05"
+		    {
+                "var_type"              "FIELD_INTEGER"
+				"bonus_hp_reg"        "10"	
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"5"
+			}
+			"07"
+			{
+                "var_type"                       "FIELD_FLOAT"
+				"bonus_magical_armor"       "25"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement"	"70"		
+			}	
+			"09"			
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"		"3.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_drop_damage"	"300"
+			}
+		}
+	}
+	"item_recipe_aether_staff"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                 		"item_datadriven"
+		"AbilityTextureName"		    	"recipe"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					   "540"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_staff"
+		"ItemRequirements"
+		{
+			"01"						"item_cyclone;item_urn_of_shadows;item_pers;item_cloak"
+		}
+	}
+}		

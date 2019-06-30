@@ -4016,7 +4016,7 @@
 		"Ability13"				"special_bonus_attack_speed_100"
 		"Ability14"				"special_bonus_magic_resistance_50"
 		"Ability15"				"special_bonus_armor_5"
-		"Ability16"				"special_bonus_hp_800"
+		"Ability16"				"special_bonus_strength_25"
 		"Ability17"				"special_bonus_all_stats_20"
 
 
@@ -4032,11 +4032,11 @@
 		"AttackRange"					"150"
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"			"30"
-		"AttributeStrengthGain"			"5.100000"
+		"AttributeStrengthGain"			"3.400000"
 		"AttributeBaseIntelligence"		"17"
 		"AttributeIntelligenceGain"		"2.200000"
 		"AttributeBaseAgility"			"9"
-		"AttributeAgilityGain"			"0.80000"
+		"AttributeAgilityGain"			"0.800000"
 		"MovementSpeed"				"290"
 		"MovementTurnRate"				"0.500000"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
@@ -4059,7 +4059,7 @@
 
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"					"200"
+		"StatusHealth"					"120"
 		"StatusHealthRegen"				"1.0"
 		"StatusMana"					"245"
 		"StatusManaRegen"				"0.4"
@@ -4127,8 +4127,8 @@
 		
 		"ArmorPhysical"				"-1"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"				"15"
-		"AttackDamageMax"				"21"
+		"AttackDamageMin"				"20"
+		"AttackDamageMax"				"32"
 		"AttackRate"					"1.700000"
 		"AttackAnimationPoint"			"0.170000"
 
@@ -4136,13 +4136,13 @@
 		"AttackRange"					"550"
 		"ProjectileModel"				"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
 		"ProjectileSpeed"				"3000"
-		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"			"19"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"10"
 		"AttributeStrengthGain"			"1.700000"
-		"AttributeBaseIntelligence"		"15"
-		"AttributeIntelligenceGain"		"2.600000"
-		"AttributeBaseAgility"	"21"
-		"AttributeAgilityGain"	"3.100000"
+		"AttributeBaseIntelligence"		"40"
+		"AttributeIntelligenceGain"		"4.200000"
+		"AttributeBaseAgility"	"12"
+		"AttributeAgilityGain"	"2.100000"
 		"MovementSpeed"		"285"
 		"MovementTurnRate"		"0.700000"
 		"HasAggressiveStance"	"1"
@@ -4167,7 +4167,7 @@
 
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"					"200"
+		"StatusHealth"					"300"
 		"StatusHealthRegen"				"1.0"
 		"StatusMana"					"245"
 		"StatusManaRegen"				"0.4"
@@ -4259,8 +4259,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2500"		// Base health.
-		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusHealth"				"5000"		// Base health.
+		"StatusHealthRegen"			"3"			// Health regeneration rate.
 		"StatusMana"				"600"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 
@@ -4303,9 +4303,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"				"40"		// Damage range min.
-		"AttackDamageMax"				"61"		// Damage range max.	
-		"AttackRate"					"1.15"		// Speed of attack.
+		"AttackDamageMin"				"20"		// Damage range min.
+		"AttackDamageMax"				"26"		// Damage range max.	
+		"AttackRate"					"1.0"		// Speed of attack.
 		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"			"500"		// Range within a target can be acquired.
 		"AttackRange"					"100"		// Range within a target can be attacked.
@@ -4326,11 +4326,11 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"		// Speed.
+		"MovementSpeed"				"300"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"450"		// Base health.
+		"StatusHealth"				"400"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"250"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
@@ -4362,7 +4362,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"kobold_taskmaster_speed_aura"			// Ability 1
+		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -4370,7 +4370,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
-
+        "MagicalResistance"				"50"
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -4379,9 +4379,9 @@
 		"ProjectileSpeed"				"3000"
 		"AttackAcquisitionRange"			"950"
 		"AttackRange"					"550"
-		"AttackDamageMin"				"40"		// Damage range min.
-		"AttackDamageMax"				"61"		// Damage range max.	
-		"AttackRate"					"1.15"		// Speed of attack.
+		"AttackDamageMin"				"50"		// Damage range min.
+		"AttackDamageMax"				"100"		// Damage range max.	
+		"AttackRate"					"1.7"		// Speed of attack.
 		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"			"500"		// Range within a target can be acquired.
 	
@@ -4399,14 +4399,14 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"		// Speed.
+		"MovementSpeed"				"265"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"700"		// Base health.
+		"StatusHealth"				"1200"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"250"			// Base mana.
-		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -4436,20 +4436,20 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"lycan_summon_wolves_critical_strike"			// Ability 1
-		"Ability2"					"alpha_wolf_command_aura"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					"trooper_wind_walk"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"1"			// Physical protection.
-
+		"ArmorPhysical"				"15"			// Physical protection.
+        "MagicalResistance"				"40"
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"				"40"		// Damage range min.
-		"AttackDamageMax"				"61"		// Damage range max.	
-		"AttackRate"					"1.15"		// Speed of attack.
+		"AttackDamageMin"				"24"		// Damage range min.
+		"AttackDamageMax"				"38"		// Damage range max.	
+		"AttackRate"					"0.6"		// Speed of attack.
 		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"			"950"
 		"AttackRange"					"550"
@@ -4469,12 +4469,12 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"		// Speed.
+		"MovementSpeed"				"340"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"250"		// Base health.
-		"StatusHealthRegen"			"10"		// Health regeneration rate.
+		"StatusHealth"				"200"		// Base health.
+		"StatusHealthRegen"			"15"		// Health regeneration rate.
 		"StatusMana"				"250"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
 		

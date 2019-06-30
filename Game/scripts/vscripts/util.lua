@@ -488,6 +488,12 @@ function Util:OnHeroInGame(hero)
         hero:FindAbilityByName("dimm_demons_power"):SetLevel(1)
       end
     end
+    
+    if hero:GetUnitName() == "npc_dota_hero_faceless_void" then
+      if hero:HasAbility("beyonder_void_explosion") then
+        hero:FindAbilityByName("beyonder_void_explosion"):SetLevel(1)
+      end
+    end
 
     if hero:GetUnitName() == "npc_dota_hero_pangolier" then
       Attachments:AttachProp(hero, "attach_attack2", "models/heroes/hero_celebrimbor/bow.vmdl", 1)

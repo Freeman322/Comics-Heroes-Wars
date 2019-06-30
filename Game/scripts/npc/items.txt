@@ -3293,15 +3293,17 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"950"
 		"AbilityCastPoint"				"0.0"
 
-		// Stats
+		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"7.0"
+		"AbilitySharedCooldown"			"urn"
 
 		// Items
 		//-------------------------------------------------------------------------------------------------------------
@@ -3309,6 +3311,7 @@
 		"ItemDisplayCharges"			"1"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3317,15 +3320,16 @@
 		"ItemQuality"					"rare"
 		"ItemAliases"					"urn of shadows"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1.0"
+				"mana_regen"			"2.5"
 			}
 			"02"
 			{
@@ -3354,35 +3358,25 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"soul_heal_interval"	"0.25"
-			}
+				"var_type"				"FIELD_INTEGER"
+				"soul_heal_amount"		"30"
+			}			
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_heal_amount"		"400"
-			}			
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"soul_damage_amount"	"150"
+				"soul_damage_amount"	"25"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"soul_heal_duration"	"8.0"
+				"duration"	"8.0"
 			}
 			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"soul_damage_duration"	"8.0"
-			}
-			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"soul_release_range_tooltip"	"950"
 			}
-		}	
+		}
 	}
 
 
@@ -3720,27 +3714,27 @@
 	//=================================================================================================================
 	// Recipe: Cyclone
 	//=================================================================================================================
-	"item_recipe_cyclone"
+    "item_recipe_cyclone"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"99"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2200"
+		"ItemCost"						"650"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_cyclone"
 		"ItemRequirements"
 		{
-			"01"						"item_mystic_staff;item_void_stone;item_wind_lace"
+			"01"						"item_staff_of_wizardry;item_void_stone;item_wind_lace"
 		}
-	}
+	}	
 
 	//=================================================================================================================
 	// Cyclone
@@ -3754,53 +3748,60 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"655"
+		"AbilityCastRange"				"575"
 		"AbilityCastPoint"				"0.0"
 
-		// Stats
+		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0"
+		"AbilityCooldown"				"23.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"175"
-		"ItemCost"						"6000"
+		"ItemCost"						"2750"
 		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"cyclone euls;eul's scepter of divinity"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"55"
+				"bonus_intellect"		"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"5.5"
+				"bonus_mana_regen"		"5.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"55"
+				"bonus_movement_speed"	"20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cyclone_duration"		"4.0"
+				"cyclone_duration"		"2.5"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"		"655"
+				"cast_range_tooltip"		"575"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_drop_damage"	"50"
 			}
 		}
 	}
@@ -12009,4 +12010,122 @@
 			}
 		}
 	}
+	"item_recipe_meteor_hammer"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_meteor_hammer"
+		"ItemRequirements"
+		{
+			"01"						"item_reaver;item_mystic_staff;item_pers"
+		}
+	}
+	"item_meteor_hammer"
+	{
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"2.0"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"32"
+		"AbilityManaCost"				"300"
+
+		"ItemCost"						"2625"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mh;meteor hammer"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"32"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"		"8.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps_buildings"		"120"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps_units"		"90"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burn_duration"		"6"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"3.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_interval"				"1.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"land_time"				".5"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_radius"		"320"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_duration"		"3.0"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_damage_buildings"		"700"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_damage_units"		"350"
+			}
+		}
+	}		
 }
