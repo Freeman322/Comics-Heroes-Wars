@@ -37591,7 +37591,7 @@
 			"01"
 			{
 				"var_type"            "FIELD_FLOAT"
-				"bonus_hp_regen"      "5 8 11 14"
+				"bonus_hp_regen"      "6 9 12 15"
 			}
 			"02"
 			{
@@ -37606,12 +37606,12 @@
 			"04"
 			{
 				"var_type"           "FIELD_FLOAT"
-				"bonus_damage"       "120 140 160 180"
+				"bonus_damage"       "130 150 170 190"
 			}
 			"05"
 			{
 				"var_type"           "FIELD_FLOAT"
-				"bonus_as"           "20 40 60 80"
+				"bonus_as"           "30 50 70 90"
 			}
 	    }
 	}
@@ -37648,17 +37648,17 @@
 				"05"
 			{
 				"var_type"           "FIELD_FLOAT"
-				"bonus_hp_regen"     "7 14 21 28"
+				"bonus_hp_regen"     "6 10 14 18"
 			}
 			"06"
 			{
 				"var_type"          "FIELD_FLOAT"
-				"bonus_hp_regen_pct" "0.15 0.20 0.25 0.30"
+				"bonus_hp_regen_pct" "0.25 0.30 0.35 0.40"
 			}
 			"06"
 			{
 				"var_type"          "FIELD_FLOAT"
-				"bonus_movespeed"   "5 10 15 20"
+				"bonus_movespeed"   "10 15 20 25"
 			}
 		}	
 	}

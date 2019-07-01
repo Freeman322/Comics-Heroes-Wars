@@ -3,6 +3,12 @@ LinkLuaModifier( "modifier_darkrider_time_aura_aura", "abilities/darkrider_time_
 
 darkrider_time_aura = class({})
 
+function darkrider_time_aura:OnUpgrade()
+    if IsServer() then 
+        self:GetCaster():GetAbilityByIndex(4):SetLevel(1)
+    end
+end
+
 function darkrider_time_aura:OnSpellStart(  )
     if IsServer() then 
         local duration = self:GetSpecialValueFor("duration") 
