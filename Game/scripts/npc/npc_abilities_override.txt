@@ -1723,4 +1723,20 @@
 			}
 		}
 	}
+		"special_bonus_unique_lich_4"
+	{
+		
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"4"
+			}
+		}
+	}
 }

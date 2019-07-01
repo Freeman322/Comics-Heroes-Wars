@@ -14,9 +14,9 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
-		"AbilityCooldown"				"40"
-		"AbilityCastRange"				"900"
-		"AbilityManaCost"				"150"
+		"AbilityCooldown"				"35"
+		"AbilityCastRange"				"720"
+		"AbilityManaCost"				"350"
 
 		//"ItemCost"					""
 		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
@@ -32,7 +32,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_int"			"60"
+				"bonus_int"			"50"
 			}
 			"02"
 			{
@@ -42,7 +42,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"			"200"
+				"bonus_damage"			"170"
 			}	
 			"04"
 			{
@@ -57,27 +57,27 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_hp_reg"			"15"
+				"bonus_hp_reg"			"14"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mana_burn"			"120"
+				"mana_burn"			"100"
 			}
 			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"debuff_duration"		"8"
+				"debuff_duration"		"3.5"
 			}
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"health_reduce"		"40"
+				"health_reduce"		"30"
 			}
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance"			"25"
+				"crit_chance"			"20"
 			}
 			"11"
 			{
@@ -91,7 +91,7 @@
 	{
 		"BaseClass"					"item_datadriven"
 		"AbilityTextureName"			"recipe"
-		"ItemCost"					"1200"
+		"ItemCost"					"2400"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_chronograph"
 
@@ -655,7 +655,7 @@
 		"AbilityTextureName"            "custom/boots_of_protection"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"4"
+		"AbilityCooldown"				"7"
 		"AbilityManaCost"				"0"
 
 		// Item Info
@@ -684,7 +684,22 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"heal"					"3"
+				"heal"					"2"
+			}
+			"04"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"bonus_all_stats"       "10"
+			}
+			"05"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"bonus_magical_armor"   "20"
+			}
+			"06"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"bonus_health"          "400"
 			}
 		}
 	}
@@ -3023,7 +3038,7 @@
 		"ItemResult"					"item_boots_of_protection"
 		"ItemRequirements"
 		{
-			"01"						"item_tranquil_boots"
+			"01"						"item_tranquil_boots;item_crown;item_crown;item_cloak;item_ring_of_tarrasque"
 		}
 	}
 	//=================================================================================================================
@@ -7756,7 +7771,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"static_chance"			"35"
+				"static_chance"			"25"
 			}
 			"07"
 			{
@@ -7781,7 +7796,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chain_chance"				"45"
+				"chain_chance"				"30"
 			}
 			"12"
 			{
@@ -7806,7 +7821,7 @@
 			"16"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_cooldown"			"0.2"
+				"chain_cooldown"			"0.5"
 			}
 			"17"
 			{
@@ -7816,7 +7831,7 @@
 			"18"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_cooldown"			"2.0"
+				"bash_cooldown"			"7.0"
 			}
 			"19"
 			{
@@ -8005,7 +8020,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"175"
-		"ItemCost"					"2750"
+		"ItemCost"					    "2750"
 		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"cyclone euls;eul's scepter of divinity"
@@ -8024,7 +8039,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"       "30"
+				"bonus_intellect"       "25"
 			}
 			"02"
 			{
@@ -8059,7 +8074,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"	"70"		
+				"bonus_movement"	"60"		
 			}	
 			"09"			
 			{

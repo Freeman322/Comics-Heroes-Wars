@@ -5469,6 +5469,31 @@
 	//=================================================================================================================
 	// Bloodstone
 	//=================================================================================================================
+"item_recipe_bloodstone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"120"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bloodstone"
+		"ItemRequirements"
+		{
+			"01"						"item_pers;item_soul_booster"
+		}
+	}
+	
+	//=================================================================================================================
+	// Bloodstone
+	//=================================================================================================================
 	"item_bloodstone"
 	{
 		// General
@@ -5484,11 +5509,11 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"4900"
+		"ItemCost"						"4900"
 		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		"ItemInitialCharges"			"12"
+		"ItemInitialCharges"			"14"
 		"ItemDisplayCharges"			"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AllowedInBackpack"				"0"
@@ -5501,62 +5526,62 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"				"475"
+				"bonus_health"			"475"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"				"425"
+				"bonus_mana"			"425"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"		"6.0"
+				"bonus_health_regen"	"6.0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"			"3.0"
+				"bonus_mana_regen"		"3.0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_regen_multiplier"		"100"
+				"mana_regen_multiplier"		"200"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"regen_per_charge"			"0.25"
+				"regen_per_charge"		"0.3"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"death_charges"			"3"
+				"death_charges"				"3"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_charges"				"1"
+				"kill_charges"			"1"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_range"				"1600"
+				"charge_range"			"1600"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"initial_charges_tooltip"	 "12"
+				"initial_charges_tooltip" "14"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost_percentage" 		"60"
+				"mana_cost_percentage" "30"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"restore_duration" 			"2.0"
+				"restore_duration" "2.0"
 			}
 		}
 	}
@@ -8799,7 +8824,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"6"
+				"bonus_all_stats"		"4"
 			}
 		}
 	}
@@ -9255,7 +9280,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"850"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -9264,7 +9289,7 @@
 		"ItemResult"					"item_rod_of_atos"
 		"ItemRequirements"
 		{
-			"01"						"item_vitality_booster;item_staff_of_wizardry;item_staff_of_wizardry"
+			"01"						"item_staff_of_wizardry;item_crown;item_crown"
 		}
 	}
 
@@ -9281,41 +9306,53 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
-		// Stats
+		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16"
-		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"18"
+		"AbilityCastRange"				"1100"
 		"AbilityCastPoint"				"0.0"
 
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
-		"ItemCost"						"3100"
+		"ItemCost"						"2750"
 		"ItemShopTags"					"int;regen_health"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"rod of atos"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
-		{
+		{		
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"30"
+				"bonus_intellect"		"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"				"350"
+				"bonus_strength"		"10"
 			}
 			"03"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"10"
+			}
+			"04"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0"
+				"duration"				"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"1100"
 			}
 		}
 	}

@@ -34357,9 +34357,10 @@
 		"ScriptFile"					"abilities/darkrider_alter_reverse.lua"
 		"AbilityTextureName"			"custom/ghost_walk"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
@@ -36648,7 +36649,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius"					"230 250 270 300"
+				"radius"					"240 260 280 300"
 				"LinkedSpecialBonus"		"special_bonus_unique_thanos_3"
 			}
 			"02"
@@ -36767,8 +36768,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		"MaxLevel"					"3"
-        "RequiredLevel"				"7"
-		"LevelsBetweenUpgrades"			"7"
+        "RequiredLevel"				"5"
+		"LevelsBetweenUpgrades"			"6"
 
 		"AbilitySpecial"
 		{
@@ -36869,7 +36870,7 @@
 		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/officer_base.lua"
 		"AbilityTextureName"			"custom/officer_base"
-
+        "LevelsBetweenUpgrades"         "3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 
 		// Casting
@@ -37440,7 +37441,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Lich.FrostArmor"
 
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"20 18 16 14"
 		"AbilityManaCost"				"100 110 120 130"
@@ -37465,12 +37466,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"0 50 100 150"
+				"damage"				"30 50 70 90"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"interval"				"1"
+				"interval"				"0.5"
 			}
 			"06"
 			{
@@ -37497,15 +37498,15 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Ancient_Apparition.ChillingTouchCast"
 
-		"AbilityCooldown"				"14 10 6 2"
-		"AbilityManaCost"				"40 60 80 100"
+		"AbilityCooldown"				"8 6 4 2"
+		"AbilityManaCost"				"20 30 40 50"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"					"140 160 180 200"
+				"damage"					"100 120 140 160"
 				"LinkedSpecialBonus"		"special_bonus_unique_ancient_apparition_2"
 			}
 			"02"
@@ -37559,7 +37560,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"heal_amplify"					"2.0 2.5 3.0"
+				"heal_amplify"					"1.0 1.5 2.0"
 			}
 			"03"
 			{
@@ -37605,7 +37606,7 @@
 			"04"
 			{
 				"var_type"           "FIELD_FLOAT"
-				"bonus_damage"       "100 120 140 160"
+				"bonus_damage"       "120 140 160 180"
 			}
 			"05"
 			{
@@ -37619,6 +37620,7 @@
 		"BaseClass"                  "ability_lua"
 		"AbilityTextureName"         "custom/faceless_void_backtrack"
 		"ScriptFile"                 "abilities/beyonder_elder.lua"
+		"LevelsBetweenUpgrades"      "5"
 		"AbilityBehavior"            "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -37631,7 +37633,7 @@
 			"02"
 			{
 				"var_type"            "FIELD_FLOAT"
-				"bonus_mana_regen"    "4 6 8 10"
+				"bonus_mana_regen"    "6 8 10 12"
 			}
 			"03"
 			{
@@ -37641,22 +37643,22 @@
 			"04"
 			{
 				"var_type"           "FIELD_FLOAT"
-					"radius"             "700"
+				"radius"             "700"
 			}	
 				"05"
 			{
 				"var_type"           "FIELD_FLOAT"
-					"bonus_hp_regen"     "5 10 15 20"
+				"bonus_hp_regen"     "7 14 21 28"
 			}
 			"06"
 			{
 				"var_type"          "FIELD_FLOAT"
-				"bonus_hp_regen_pct" "0.20 0.30 0.40 0.50"
+				"bonus_hp_regen_pct" "0.15 0.20 0.25 0.30"
 			}
 			"06"
 			{
 				"var_type"          "FIELD_FLOAT"
-				"bonus_movespeed"   "15 20 25 30"
+				"bonus_movespeed"   "5 10 15 20"
 			}
 		}	
 	}
@@ -37670,10 +37672,10 @@
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"MaxLevel"                     		"4"
-		"AbilityCastRange"					"500 700 100 1400"
+		"AbilityCastRange"					"600 800 1100 1500"
 		"AbilityCastPoint"					"0.35"
 		"AbilityCooldown"					"15.0 14.0 13.0 12.0"
-		"AbilityDamage"					"180 260 340 440"
+		"AbilityDamage"					    "180 260 340 420"
 		"AbilityManaCost"					"200 240 280 320"
 
 		"AbilitySpecial"
@@ -37687,18 +37689,18 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius_start"				"100 180 260 340"
+				"radius_start"				"120 180 260 340"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius_end"				"120 220 320 420"
+				"radius_end"				"140 240 340 440"
 			}
 			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"distance"				"500 700 1000 1400"
+				"distance"				"600 800 1100 1500"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -37723,7 +37725,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"					"1000"
+				"radius"					"1200"
 			}
 		}
 	}
@@ -37768,7 +37770,7 @@
 			"03"
 			{
 				"var_type"         		 "FIELD_FLOAT"
-				"damage_mana_pct"          "10 20 30"
+				"damage_mana_pct"          "10 15 20"
 			}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"

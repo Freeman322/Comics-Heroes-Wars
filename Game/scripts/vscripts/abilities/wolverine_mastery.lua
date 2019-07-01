@@ -1,5 +1,6 @@
 LinkLuaModifier( "modifier_wolverine_mastery", "abilities/wolverine_mastery.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier ("modifier_wolverine_crit", "abilities/wolverine_mastery.lua", 0)
+
+wolverine_mastery = class({})
 
 function wolverine_mastery:GetIntrinsicModifierName() return "modifier_wolverine_mastery" end
 
