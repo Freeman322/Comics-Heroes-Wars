@@ -2411,7 +2411,7 @@
 			"AbilityLayout"				"4"
 			//-------------------------------------------------------------------------------------------------------------
 			"Ability1"				"wolverine_enrage"							// Ability 1
-			"Ability2"				"logan_fury_swipes"									// Ability 2
+			"Ability2"				"wolverine_fury_swipes"									// Ability 2
 			"Ability3"				"wolverine_mastery"							// Ability 3
 			"Ability4"				"generic_hidden"							     // Ability 4
 			"Ability5"			 	"generic_hidden"
@@ -6485,7 +6485,7 @@
 		"Ability1"					"darkrider_speedforce_necromacy"
 		"Ability2"					"darkrider_heartbeat"
 		"Ability3"					"darkrider_inverse"
-		"Ability4"					"generic_hidden"
+		"Ability4"					"darkrider_alter_reverse"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"darkrider_time_aura"
 

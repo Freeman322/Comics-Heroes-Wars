@@ -5,7 +5,7 @@ darkrider_time_aura = class({})
 
 function darkrider_time_aura:OnUpgrade()
     if IsServer() then 
-        self:GetCaster():GetAbilityByIndex(4):SetLevel(1)
+        self:GetCaster():FindAbilityByName("darkrider_alter_reverse"):SetLevel(self:GetLevel())
     end
 end
 
