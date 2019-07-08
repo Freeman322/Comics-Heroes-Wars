@@ -29,18 +29,20 @@ function item_jarnbjorn:OnSpellStart()
           local hCaster = self:GetCaster()
 
           if hTarget ~= nil then
-               local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES, FIND_CLOSEST, false )
-               if #units > 0 then
-                    for _,unit in pairs(units) do
-                         unit:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = ACTIVE_STUN_DURATION } )
+               if ( not hTarget:TriggerSpellAbsorb( self ) ) then
+                    local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES, FIND_CLOSEST, false )
+                    if #units > 0 then
+                         for _,unit in pairs(units) do
+                              unit:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = ACTIVE_STUN_DURATION } )
+                         end
                     end
+
+                    local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/abaddon/abaddon_alliance/abaddon_aphotic_shield_alliance_explosion.vpcf", PATTACH_ABSORIGIN, hTarget )
+                    ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetOrigin() )
+                    ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+                    EmitSoundOn( "Hero_Abaddon.AphoticShield.Destroy", hTarget )
                end
-
-               local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/abaddon/abaddon_alliance/abaddon_aphotic_shield_alliance_explosion.vpcf", PATTACH_ABSORIGIN, hTarget )
-               ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetOrigin() )
-               ParticleManager:ReleaseParticleIndex( nFXIndex )
-
-               EmitSoundOn( "Hero_Abaddon.AphoticShield.Destroy", hTarget )
           end
      end
 end

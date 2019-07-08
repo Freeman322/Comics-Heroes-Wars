@@ -12375,15 +12375,14 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"								"7493"
-		"BaseClass"						    "ability_lua"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"					"2"
-		"AbilityTextureName"		   	    "custom/spiderman_adaptation"
-		"ScriptFile"							"abilities/spiderman_adaptation.lua"
+		"BaseClass"					"ability_lua"
+		"AbilityTextureName"		   	"custom/spiderman_adaptation"
+		"ScriptFile"					"abilities/spiderman_adaptation.lua"
 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -12397,7 +12396,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"130 200 270 340"
+		"AbilityDamage"				"180 280 380 480"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -12467,12 +12466,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"7495"
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
+
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"2"
-		"AbilityTextureName"		    "custom/spiderman_extermination"
+		"AbilityTextureName"		     "custom/spiderman_extermination"
 		"ScriptFile"					"abilities/spiderman_extermination.lua"
 
 		"AbilityCastPoint"				"0"
@@ -12483,7 +12482,7 @@
 
 		"precache"
 		{
-			"particle" 				    "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone_dire.vpcf"
+			"particle" 				"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone_dire.vpcf"
 			"particle"  				"particles/econ/items/broodmother/bm_lycosidaes/bm_lycosidaes_spiderlings_debuff.vpcf"
 		}
 		"AbilitySpecial"
@@ -12491,17 +12490,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"evasion_scepter"			"100"
+				"evasion_scepter"				"100"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"duration_scepter"			"4"
+				"duration_scepter"				"4"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cooldown_scepter"			"50"
+				"cooldown_scepter"				"50"
 			}
 		}
 	}
@@ -12541,23 +12540,23 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"push_length"			"650 800 950 1100"
+				"push_length"				"650 800 950 1100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"web_duration"			"6"
+				"web_duration"				"6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"web_slowing"			"-25 -30 -35 -40"
+				"web_slowing"				"-25 -30 -35 -40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"web_damage"			"40 60 80 100"
-				"LinkedSpecialBonus"	"special_bonus_unique_spiderman_2"
+				"web_damage"				"80 100 120 140"
+				"LinkedSpecialBonus"		"special_bonus_unique_spiderman_2"
 			}
 		}
 	}
@@ -14161,14 +14160,14 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 25 20"
+		"AbilityCooldown"				"50 45 40"
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"200 300 400"
+		"AbilityDamage"				"200 300 400"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150"
+		"AbilityManaCost"				"200 250 300"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -15008,23 +15007,23 @@
 	"tracer_pulse_bomb"
 	{
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/tracer_pulse_bomb.lua"
+		"ScriptFile"						"abilities/tracer_pulse_bomb.lua"
 
-		"AbilityTextureName"	"custom/tracer_energy_blast"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"				"custom/tracer_energy_blast"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PURE"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"						"1"
 
-		"AbilityCastRange"		"600"
-		"AbilityCastPoint"		"0.1"
-		"AbilityManaCost"			"250"
+		"AbilityCastRange"					"600"
+		"AbilityCastPoint"					"0.1"
+		"AbilityManaCost"					"250"
 
 		"precache"
 		{
-			"soundfile"									"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
 		}
 
 		"AbilitySpecial"
@@ -15032,28 +15031,28 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_level"	"80"
-				"LinkedSpecialBonus"	"special_bonus_unique_tracer_pulse_bomb"
+				"damage_per_level"			"30 45 60"
+				"LinkedSpecialBonus"		"special_bonus_unique_tracer_pulse_bomb"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"explosion_radius"	"500"
+				"explosion_radius"			"500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bind_radius"			"125"
+				"bind_radius"				"125"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"explosion_delay"	"1.0"
+				"explosion_delay"			"1.0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_per_attack"		"4"
+				"charge_per_attack"			"4"
 			}
 		}
 	}
@@ -15156,26 +15155,26 @@
 		"AbilityTextureName"			"custom/tracer_blink"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 
-		"AbilityCastPoint"			"0.1"
-		"AbilityManaCost"				"35 30 25 20"
-		"AbilityCooldown"				"9 7 5 3"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"35"
+		"AbilityCooldown"				"11 9 7 5"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_charges"				"2 2 3 3"
+				"max_charges"					"2 2 3 3"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"recharge_time"			"9 7 5 3"
+				"recharge_time"				"11 9 7 5"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range"				"450 500 550 600"
+				"cast_range"					"450 500 550 600"
 			}
 		}
 	}
@@ -23265,7 +23264,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_lua"
+		"BaseClass"             			"ability_lua"
 		"AbilityTextureName"			"custom/ares_terrorize"
 		"ScriptFile"					"abilities/ares_terrorize.lua"
 
@@ -23309,17 +23308,17 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"3.0 3.5 4.0"
+				"duration"						"2.0 2.5 3.0"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius"						"500 600 700"
+				"radius"							"500 600 700"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"incoming_damage"				"-10 20 30"
+				"incoming_damage"					"-10 20 30"
 			}
 		}
 	}
@@ -23360,17 +23359,17 @@
 			"01"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"crit_lifesteal"						"20 30 40 50"
+				"crit_lifesteal"							"10 20 30 40"
 			}
 			"02"
 			{
 				"var_type"								"FIELD_FLOAT"
-				"stun_duration"							"1.6"
+				"stun_duration"							"1.0"
 			}
 			"03"
 			{
 				"var_type"								"FIELD_FLOAT"
-				"creep_stun_duration"					"3.2"
+				"creep_stun_duration"						"3.2"
 			}
 		}
 	}
@@ -35298,7 +35297,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70 60 50"
+		"AbilityCooldown"				"80 70 60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------

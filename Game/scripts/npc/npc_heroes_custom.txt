@@ -3933,7 +3933,7 @@
 		"AttackDamageMax"			"38"									// Damage range max.
 		"AttackRate"				"1.6"									// Speed of attack.
 		"AttackAnimationPoint"		"0.4"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackAcquisitionRange"		"600"									// Range within a target can be acquired.
 		"AttackRange"				"128"									// Range within a target can be attacked.
 
 
@@ -3944,8 +3944,8 @@
 		"AttributeStrengthGain"		"2.1"									// Strength bonus per level.
 		"AttributeBaseIntelligence"	"19"									// Base intelligence
 		"AttributeIntelligenceGain"	"2.3"									// Intelligence bonus per level.
-		"AttributeBaseAgility"		"23"									// Base agility
-		"AttributeAgilityGain"		"3.3"									// Agility bonus per level.
+		"AttributeBaseAgility"		"25"									// Base agility
+		"AttributeAgilityGain"		"4.2"									// Agility bonus per level.
 
 			// Vision
 		//-------------------------------------------------------------------------------------------------------------
@@ -3954,11 +3954,12 @@
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"315"									// Speed.
+		"MovementSpeed"			"335"									// Speed.
 		"MovementTurnRate"			"0.8"									// Turning rate.
 
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"220"
+		
 		"precache"
 		{
 			"model"		 "models/spiderman/spiderman_head_final.vmdl"

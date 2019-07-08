@@ -1554,29 +1554,32 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_lua"
+		"BaseClass"                    	 "item_lua"
 		"ID"							"9251"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "custom/frostmourne"
+		"AbilityTextureName"            	"custom/frostmourne"
 		"ItemQuality"					"epic"
 		"ScriptFile"					"items/item_frostmourne.lua"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0"
+		"AbilityCastPoint"              	"0"
 		"ItemRequiresCharges"			"1"
 		"ItemDisplayCharges"			"1"
-		"ItemStackable"					"0"
-		"ItemPermanent"					"1"
+		"ItemStackable"				"0"
+		"ItemPermanent"				"1"
 		"ItemInitialCharges"			"1"
+
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               "160.0"
+		"AbilityCooldown"               	"160.0"
 
 		"ItemSellable"					"0"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"               "100"
-		"ItemCost"						"18000"
+		"AbilityManaCost"              	"400"
+		
+		"ItemCost"					"18000"
+		
 		"AbilitySpecial"
 		{
 			"01"
