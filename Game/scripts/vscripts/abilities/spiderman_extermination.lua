@@ -68,7 +68,7 @@ function modifier_spiderman_extermination:GetModifierIncomingDamage_Percentage( 
             local target = params.attacker
             local damage = params.damage
 
-            if self:GetAbility():IsCooldownReady() then             
+            if self:GetAbility():IsCooldownReady() and not self:GetParent():PassivesDisabled() then             
                 EmitSoundOn( "Hero_Oracle.FalsePromise.Healed", target )
 
                 local cooldown = self:GetAbility():GetCooldown(self:GetAbility():GetLevel())
