@@ -43,7 +43,7 @@
 					</Panel>
 					<Panel id="Credits_Tester" class="credit_div">
 						<Label text="#Credits_Tester" class="credit_lable"/>
-						<DOTAAvatarImage steamid="76561198151482736" class="credit_avatar"/>           
+						<DOTAAvatarImage steamid="76561198219670717" class="credit_avatar"/>           
 					</Panel>
 				</Panel>
 			</Panel>

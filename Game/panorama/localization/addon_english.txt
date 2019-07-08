@@ -21,7 +21,7 @@
 	"overthrow_game_info_tip04"						""
 	"Credits_Author"				"Author: PG.Freeman"
 	"Credits_Beta"					"Design: The Monster"
-	"Credits_Tester"				"Balance: Yarito"
+	"Credits_Tester"				"Balance: Stygian"
 	"chests_can_respawn"			"Disable chests"
 	"yaz_can_respawn"				"Yaz' can respawn"
 	"courier"						"Free courier"

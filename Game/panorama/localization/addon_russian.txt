@@ -20,7 +20,7 @@
 	"overthrow_game_info_tip04"						""
 	"Credits_Author"				"Автор: Freeman"
 	"Credits_Beta"					"Дизайн: The Monster"
-	"Credits_Tester"				"Баланс: Yarito"
+	"Credits_Tester"				"Баланс: Stygian"
 
 	"chests_can_respawn"			"Выключить сундуки"
 	"yaz_can_respawn"				"Язь может респавнится"
