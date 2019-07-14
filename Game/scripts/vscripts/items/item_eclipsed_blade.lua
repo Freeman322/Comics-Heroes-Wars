@@ -58,7 +58,7 @@ end
 
 function modifier_item_eclipsed_blade_active:CheckState()
 	local state = {
-	[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
+	    [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
 	}
 
 	return state

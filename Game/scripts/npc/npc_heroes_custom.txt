@@ -3703,15 +3703,15 @@
 		"Ability16"				"special_bonus_strength_25"
 		"Ability17"				"special_bonus_unique_sargeras_1"//Стакающаяся пассивка
 		"ArmorPhysical"			 "0"
-	 	 "ProjectileSpeed"			"900"
+	 	"ProjectileSpeed"			"900"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"25"
+		"AttributeBaseStrength"		"20"
 		"AttributeStrengthGain"		"3.300000"
-		"AttributeBaseAgility"		"18"
+		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.000000"
-		"AttributeBaseIntelligence"	"20"
+		"AttributeBaseIntelligence"	"15"
 		"AttributeIntelligenceGain"	"1.800000"
-		"MovementSpeed"			"295"
+		"MovementSpeed"			"275"
 	}
 	"npc_dota_hero_sauron"
 	{

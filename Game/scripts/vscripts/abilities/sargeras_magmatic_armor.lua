@@ -13,7 +13,7 @@ function modifier_sargeras_magmatic_armor_passive:IsHidden() return true end
 function modifier_sargeras_magmatic_armor_passive:DeclareFunctions() return {MODIFIER_EVENT_ON_TAKEDAMAGE} end
 
 function modifier_sargeras_magmatic_armor_passive:OnTakeDamage(params)
-	if self:GetParent() == params.unit and self:GetParent():IsRealHero() and params.attacker:IsBuilding() == false and params.attacker:IsMagicImmune() == false then
+	if self:GetParent() == params.unit and self:GetParent():IsRealHero() and params.attacker:IsBuilding() == false and params.attacker:IsMagicImmune() == false and not self:GetCaster():PassivesDisabled() and not self:GetCaster():IsSilenced() then
 		local count = #(params.attacker:FindAllModifiersByName("modifier_sargeras_magmatic_armor"))
 
 		if count < MAX_MODS_COUNT then
@@ -54,7 +54,8 @@ function modifier_sargeras_magmatic_armor:OnIntervalThink()
 				attacker = hAbility:GetCaster(),
 				damage = iDamage/10,
 				damage_type = DAMAGE_TYPE_MAGICAL,
-				ability = hAbility
+				ability = hAbility,
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL
 			})
 		end
 	end

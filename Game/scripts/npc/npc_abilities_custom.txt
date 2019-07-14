@@ -14641,7 +14641,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_interval"			"25 50 75 100"
+				"damage_interval"			"25 40 65 85"
 				"LinkedSpecialBonus" 		"special_bonus_unique_sargeras"
 			}
 			//"02"
@@ -14652,7 +14652,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_tooltip"			"2 3 4 4"
+				"duration_tooltip"			"1.5 2.0 2.5 3.0"
 			}
 		}
 	}

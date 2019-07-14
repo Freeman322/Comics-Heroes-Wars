@@ -78,7 +78,7 @@ function modifier_raiden_elecro_mine_thinker:OnExplosion(iDamage, vLoc)
             if #units > 0 then
                 for _, unit in pairs(units) do
                     ---if not unit:IsIllusion() then
-                        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = unit, ability = self:GetAbility(), damage = iDamage, damage_type = DAMAGE_TYPE_MAGICAL})
+                        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = unit, ability = self:GetAbility(), damage = iDamage, damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL})
 
 
                         AddNewModifier_pcall(unit, self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})                                         
