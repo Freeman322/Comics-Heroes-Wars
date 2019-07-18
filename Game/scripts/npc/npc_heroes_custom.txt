@@ -2,11 +2,14 @@
 {
 	"npc_dota_hero_abaddon"
 	{
-		"Model"		"models/heroes/hero_khorne_v2/khorne_v2.vmdl"
-		"DisableWearables"	"1"
-		"ModelScale"		"0.680000"
-		"LoadoutScale"		"0.630000"
-		"override_hero"					"npc_dota_hero_abaddon"
+		"HeroID"							"102"
+		"BaseClass"						"npc_dota_hero_abaddon"
+
+		"Model"							"models/heroes/hero_khorne_v2/khorne_v2.vmdl"
+		"DisableWearables"					"1"
+		"ModelScale"						"0.680000"
+		"LoadoutScale"						"0.630000"
+	
 		"Ability1"						"khorn_energy_blast"
 		"Ability2"						"khorn_currupted_attack"
 		"Ability3"						"khorn_life_decay"
@@ -45,29 +48,31 @@
 	}
 	"npc_dota_hero_arc_warden" //имя юнита
 	{
-      // General
-      //----------------------------------------------------------------
-      "override_hero"			"npc_dota_hero_arc_warden"
-      //-------------------------------------------------------------------------------------------------------------
-      "AbilityLayout"			"4"
-      //------------------------------------------------------------------------------------------------------------
-      "Ability1"				"waden_clock_freeze"
-      "Ability2"				"warden_time_lapse"
-      "Ability3"				"warden_crystal"
-      "Ability4"				"generic_hidden"
-      "Ability5"				"generic_hidden"
-      "Ability6"				"eternity_chronosphere"
-      "Ability7"				""
-      "Ability10"				"special_bonus_exp_boost_30"
-      "Ability11"				"special_bonus_all_stats_12"
-      "Ability12"				"special_bonus_spell_block_20"
-      "Ability13"				"special_bonus_agility_10"
-      "Ability14"				"special_bonus_cooldown_reduction_25"
-      "Ability15"				"special_bonus_unique_faceless_void_4"
-      "Ability16"				"special_bonus_agility_25"
-      "Ability17"				"special_bonus_all_stats_20"
-      "AttributePrimary"      	"DOTA_ATTRIBUTE_AGILITY"
-      "ArmorPhysical"			"0"
+		// General
+		//----------------------------------------------------------------
+		"HeroID"							"113"
+		"BaseClass"						"npc_dota_hero_arc_warden"
+		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"			"4"
+		//------------------------------------------------------------------------------------------------------------
+		"Ability1"				"waden_clock_freeze"
+		"Ability2"				"warden_time_lapse"
+		"Ability3"				"warden_crystal"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"eternity_chronosphere"
+		"Ability7"				""
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_spell_block_20"
+		"Ability13"				"special_bonus_agility_10"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_unique_faceless_void_4"
+		"Ability16"				"special_bonus_agility_25"
+		"Ability17"				"special_bonus_all_stats_20"
+		"AttributePrimary"      	"DOTA_ATTRIBUTE_AGILITY"
+		"ArmorPhysical"			"0"
 
   		// Attack
   		//-------------------------------------------------------------------------------------------------------------
@@ -99,10 +104,11 @@
   		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
   		"HealthBarOffset"		"160"
     }
-	"npc_dota_hero_ares"
+	"npc_dota_hero_nyx_assassin"
 	{
-		"override_hero"		    "npc_dota_hero_nyx_assassin"
-
+		"HeroID"					"88"
+		"BaseClass"				"npc_dota_hero_nyx_assassin"
+		
 		"Model"					"models/heroes/hero_ares_ww/ares.vmdl"
 		"DisableWearables"		"1"
 		"SoundSet"				"Hero_DoomBringer"
@@ -150,9 +156,12 @@
 		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		"VoiceFile"				  		"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
 	}
-	"npc_dota_hero_batman"
+	"npc_dota_hero_alchemist"
 	{
-	    "override_hero"			 "npc_dota_hero_alchemist"
+	   	/// "override_hero"			 "npc_dota_hero_alchemist"
+	  	"HeroID"					"73"
+		"BaseClass"				"npc_dota_hero_alchemist"
+
 		"Model"					 "models/heroes/hero_batman/batman.vmdl"
 		"ModelScale"			"1"
 		"DisableWearables"		"1"
@@ -195,11 +204,15 @@
 		"particle_folder"		"particles/units/heroes/hero_night_stalker"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
 	}
-	"npc_dota_hero_beast"
+	"npc_dota_hero_earth_spirit"
 	{
 	    "Model"		"models/heroes/brewmaster/brewmaster_earthspirit.vmdl"
 	    //----------------------------------------------------------------
-	    "override_hero"			"npc_dota_hero_earth_spirit"
+	    ///"override_hero"			"npc_dota_hero_earth_spirit"
+
+	    "HeroID"					"107"
+	    "BaseClass"				"npc_dota_hero_earth_spirit"
+
 	    "DisableWearables"	"1"
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityLayout"				"4"
@@ -235,11 +248,15 @@
 			"model"		"models/heroes/brewmaster/brewmaster_earthspirit.vmdl"
 		}
 	}
-	"npc_dota_hero_black_bolt"
+	"npc_dota_hero_night_stalker"
 	{
 		"AbilityLayout" 		 "4"
 		"ModelScale"			"1.08"
-		"override_hero"			"npc_dota_hero_night_stalker"
+		///"override_hero"			"npc_dota_hero_night_stalker"
+
+		"HeroID"					"60"
+	    	"BaseClass"				"npc_dota_hero_night_stalker"
+
 		"DisableWearables" 		"1"
 		"Model"          		"models/heroes/hero_blackbolt/black_bolt.vmdl"
 		"Ability1"				"bolt_aoe"
@@ -260,11 +277,14 @@
 		"AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
 		"ArmorPhysical"			"0"
 	}
-	"npc_dota_hero_black_panther"
+	"npc_dota_hero_magnataur"
 	{
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
-	    "override_hero"				"npc_dota_hero_magnataur"
+	    ///"override_hero"				"npc_dota_hero_magnataur"
+	    "HeroID"					"97"
+	    "BaseClass"				"npc_dota_hero_magnataur"
+
 	    "Model"					    "models/heroes/hero_black_panther/black_panther.vmdl"
 	    "DisableWearables"			"1"
 
@@ -333,9 +353,12 @@
 			"model"		 "models/items/antimage/pw_tustarkuri_belt/antimage_belt_lod0.vmdl"
 		}
 	}
-	"npc_dota_hero_butcher"
+	"npc_dota_hero_pudge"
 	{
-	 	"override_hero"		     "npc_dota_hero_pudge"
+	 	//// "override_hero"		     "npc_dota_hero_pudge"
+		"HeroID"					"14"
+	    	"BaseClass"				"npc_dota_hero_pudge"
+
 		"Model"	      	     	"models/heroes/hero_pudge/butcher.vmdl"
 		"HealthBarOffset"			"235"
 		"DisableWearables"			"1"
@@ -379,50 +402,57 @@
 		}
 
 	}
-	"npc_dota_hero_byonder"
+	"npc_dota_hero_faceless_void"
 	{
-	    "override_hero"		"npc_dota_hero_faceless_void"
-	    "DisableWearables"  "1"
-	    "ModelScale"		"0.95000"
-	    "AbilityLayout"  "5"
+	    ///"override_hero"		"npc_dota_hero_faceless_void"
+		"HeroID"					"41"
+		"BaseClass"				"npc_dota_hero_faceless_void"
+
+		"DisableWearables"  "1"
+		"ModelScale"		"0.95000"
+		"AbilityLayout"  "5"
 		"Ability1"      "byonder_void_flux"
-	    "Ability2"		"beyonder_void_blast"
-	    "Ability3"		"beyonder_elder"
-	    "Ability4"		"beyonder_void_explosion"
-	    "Ability5"		"byonder_void"
-	    "Ability6"		"generic_hidden"
-	    "Ability7"		""
-	    "Ability10"				"special_bonus_exp_boost_30"
-	    "Ability11"				"special_bonus_all_stats_12"
-	    "Ability12"				"special_bonus_spell_block_20"
-	    "Ability13"				"special_bonus_intelligence_10"
-	    "Ability14"				"special_bonus_cooldown_reduction_25"
-	    "Ability15"				"special_bonus_spell_amplify_3"
-	    "Ability16"				"special_bonus_reincarnation_200"
-	    "Ability17"				"special_bonus_all_stats_20"
-	    "ArmorPhysical"					"1"
+		"Ability2"		"beyonder_void_blast"
+		"Ability3"		"beyonder_elder"
+		"Ability4"		"beyonder_void_explosion"
+		"Ability5"		"byonder_void"
+		"Ability6"		"generic_hidden"
+		"Ability7"		""
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_spell_block_20"
+		"Ability13"				"special_bonus_intelligence_10"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_spell_amplify_3"
+		"Ability16"				"special_bonus_reincarnation_200"
+		"Ability17"				"special_bonus_all_stats_20"
+		"ArmorPhysical"					"1"
 		"AttackCapabilities"		    "DOTA_UNIT_CAP_RANGED_ATTACK"
-	    "AttackDamageMin"				"33"
-	    "AttackDamageMax"				"39"
+		"AttackDamageMin"				"33"
+		"AttackDamageMax"				"39"
 		"AttackRate"				    "1.700000"
-	    "AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
-	    "AttributeBaseStrength"			"14"
-	    "AttributeStrengthGain"			"3.400000"
-	    "AttributeBaseAgility"			"10"
-	    "AttributeAgilityGain"			"1.10000"
-	    "AttributeBaseIntelligence"		"30"
-	    "AttributeIntelligenceGain"		"3.800000"
-	    "StatusHealthRegen"				"5.000000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"14"
+		"AttributeStrengthGain"			"3.400000"
+		"AttributeBaseAgility"			"10"
+		"AttributeAgilityGain"			"1.10000"
+		"AttributeBaseIntelligence"		"30"
+		"AttributeIntelligenceGain"		"3.800000"
+		"StatusHealthRegen"				"5.000000"
 		"AttackRange"                   "700"
 		"ProjectileModel"			    "particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle.vpcf"
-  		"ProjectileSpeed"			    "700"
+		"ProjectileSpeed"			    "700"
 		"Soundset"                      "Hero_Enigma"
-	    "MovementSpeed"					"300"
-	    "MovementTurnRate"				"1.000000"
+		"MovementSpeed"					"300"
+		"MovementTurnRate"				"1.000000"
 	}
-	"npc_dota_hero_cap"
+	"npc_dota_hero_dragon_knight"
 	{
-		"override_hero"     "npc_dota_hero_dragon_knight"
+		//// "override_hero"     "npc_dota_hero_dragon_knight"
+
+		"HeroID"					"49"
+		"BaseClass"				"npc_dota_hero_dragon_knight"
+
 		"ModelScale"		"2.0"
 		"Model"				"models/heroes/hero_america/america.vmdl"
 		"Ability1"			"cap_dragon_tail"
@@ -449,13 +479,17 @@
 			"model"	 "models/cap_america_helmet.vmdl"
 		}
 	}
-	"npc_dota_hero_carnage"
+	"npc_dota_hero_morphling"
 	{
-		"override_hero"		   		"npc_dota_hero_morphling"
+		////"override_hero"		   		"npc_dota_hero_morphling"
+
+		"HeroID"						"10"
+		"BaseClass"					"npc_dota_hero_morphling"
+
 		"Model"						"models/heroes/hero_carnage/carnage.vmdl"
-		"DisableWearables"			"1"
-		"ModelScale"				"1"
-		"LoadoutScale"				"1"
+		"DisableWearables"				"1"
+		"ModelScale"					"1"
+		"LoadoutScale"					"1"
 
 		"Ability1"					"carnage_blood_spray"
 		"Ability2"					"carnage_tombstone"
@@ -496,9 +530,12 @@
 	//=================================================================================================================
 	// HERO: Pangolier
 	//=================================================================================================================
-	"npc_dota_hero_celebrimbor"
+	"npc_dota_hero_pangolier"
 	{
-		"override_hero"		   		"npc_dota_hero_pangolier"
+		////"override_hero"		   		"npc_dota_hero_pangolier"
+		"HeroID"					"120"
+		"BaseClass"				"npc_dota_hero_pangolier"
+
 		"Model"						"models/heroes/hero_celebrimbor/hero_celebrimbor.vmdl"
 		"DisableWearables"			"1"
 
@@ -548,9 +585,12 @@
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"180"
 	}
-	"npc_dota_hero_chifu"
+	"npc_dota_hero_meepo"
 	{
-		"override_hero"		"npc_dota_hero_meepo"
+		///"override_hero"		"npc_dota_hero_meepo"
+		"HeroID"					"82"
+		"BaseClass"				"npc_dota_hero_meepo"
+
 		"Model"		        "models/items/courier/mei_nei_rabbit/mei_nei_rabbit.vmdl"
 		"DisableWearables" "1"
 		"ModelScale"		  "1.4000"
@@ -594,11 +634,13 @@
 	  			   "model"		"models/items/courier/mei_nei_rabbit/mei_nei_rabbit.vmdl"
 	    }
 	}
-	"npc_dota_hero_collector" //имя юнита
+	"npc_dota_hero_invoker" //имя юнита
 	{
 		// General
 		//----------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_invoker"
+		////"override_hero"			"npc_dota_hero_invoker"
+		"HeroID"					"74"
+		"BaseClass"				"npc_dota_hero_invoker"
 		"DisableWearables"	"1"
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"4"
@@ -646,11 +688,14 @@
 		}
 		"AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
 	  }
-	"npc_dota_hero_daredevil" //имя юнита
+	"npc_dota_hero_antimage" //имя юнита
 	{
 		// General
 		//----------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_antimage"
+		////"override_hero"			"npc_dota_hero_antimage"
+		"HeroID"					"1"
+		"BaseClass"				"npc_dota_hero_antimage"
+
 		"Model"                 "models/heroes/hero_daredevil/daredevil.vmdl" //модель
 		"ModelScale"            "0.40" //размер модели
 		"HealthBarOffset"       "140" //насколько высоко будет хп бар
@@ -727,9 +772,11 @@
 				"model"		"models/items/antimage/burning_am_set__head/burning_am_set__head.vmdl"
 		}
 	  }
-	"npc_dota_hero_darkseid"
+	"npc_dota_hero_lone_druid"
 	{
-		"override_hero"     "npc_dota_hero_lone_druid"
+		////"override_hero"     "npc_dota_hero_lone_druid"
+		"HeroID"					"80"
+		"BaseClass"				"npc_dota_hero_lone_druid"
 		"DisableWearables"	"1"
 		"Model"				"models/heroes/earth_spirit/earth_spirit.vmdl"
 		"ModelScale"		"1.190000"
@@ -772,9 +819,12 @@
 			"model"		"models/items/earth_spirit/stone_tranquility_neck/stone_tranquility_neck.vmdl"
 		}
 	}
-	"npc_dota_hero_davy_jones"
-	  	{
-		"override_hero"			      "npc_dota_hero_bristleback"
+	"npc_dota_hero_bristleback"
+	{
+		/////"override_hero"			      "npc_dota_hero_bristleback"
+		"HeroID"					"99"
+		"BaseClass"				"npc_dota_hero_bristleback"
+
 		"Model"		                "models/heroes/hero_davy_jones/davy_jones.vmdl"
 		"SoundSet"		            "Hero_DoomBringer"
 		"IdleExpression"		      "scenes/tidehunter/tidehunter_exp_idle_01.vcd"
@@ -788,7 +838,7 @@
 		"Ability3"    	"jons_ancient_call"
 		"Ability4"		"jons_discord"
 		"Ability5"		"generic_hidden"
-	    "Ability6"    "jons_sea_terror"
+		"Ability6"    "jons_sea_terror"
 
 		"Ability10"		"special_bonus_exp_boost_30"
 		"Ability11"		"special_bonus_all_stats_12"
@@ -797,120 +847,130 @@
 		"Ability14"		"special_bonus_cooldown_reduction_25"
 		"Ability15"		"special_bonus_unique_jons_2"
 		"Ability16"		"special_bonus_unique_jons_1"
-	  	"Ability17"		"special_bonus_strength_25"
+		"Ability17"		"special_bonus_strength_25"
 
-	  	"ArmorPhysical"				"1.000000"
-	  	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	  	"AttackDamageMin"			"27"
-	  	"AttackDamageMax"			"37"
-	  	"AttackRate"				"1.700000"
-	  	"AttackAnimationPoint"		"0.300000"
-	  	"AttackAcquisitionRange"	"600"
-	  	"AttackRange"				"150"
-	  	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	  	"AttributeBaseStrength"		"23"
-	  	"AttributeStrengthGain"		"3.200000"
-	  	"AttributeBaseAgility"		"16"
-	  	"AttributeAgilityGain"		"1.900000"
-	  	"AttributeBaseIntelligence"	"18"
-	  	"AttributeIntelligenceGain"	"2.700000"
-	  	"MovementSpeed"				"295"
-	  	"MovementTurnRate"			"1.000000"
-	  	"HealthBarOffset"			"200"
-	    }
-	"npc_dota_hero_deadpool"
+		"ArmorPhysical"				"1.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"27"
+		"AttackDamageMax"			"37"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.200000"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.900000"
+		"AttributeBaseIntelligence"	"18"
+		"AttributeIntelligenceGain"	"2.700000"
+		"MovementSpeed"				"295"
+		"MovementTurnRate"			"1.000000"
+		"HealthBarOffset"			"200"
+	}
+	"npc_dota_hero_nevermore"
 	{
-	      "override_hero"     		"npc_dota_hero_nevermore"
-	      "Model"		       		"models/heroes/hero_deadpool/deadpool.vmdl"		// Model.
-		  "ModelScale"				"1.75"
-	      "Ability1"				"deadpool_heart"
-	      "Ability2"				"deadpool_bar"
-	      "Ability3"				"deadpool_strike"
-	      "Ability4"				"generic_hidden"
-	      "Ability5"				"generic_hidden"
-	      "Ability6"				"deadpool_omniverse"
-	      "Ability10"				"special_bonus_exp_boost_30"
-	      "Ability11"				"special_bonus_all_stats_12"
-	      "Ability12"				"special_bonus_hp_regen_40"
-	      "Ability13"				"special_bonus_armor_15"
-	      "Ability14"				"special_bonus_cooldown_reduction_25"
-	      "Ability15"				"special_bonus_attack_damage_90"
-	      "Ability16"				"special_bonus_agility_25"
-	      "Ability17"				"special_bonus_all_stats_20"
-	      "AbilityLayout"				"4"
-	      "ArmorPhysical"				"3.000000"
-	      "DisableWearables"			"1"
-	      "AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
-	      "AttackDamageMin"				"38"
-	      "AttackDamageMax"				"54"
-	      "AttackRate"					"1.500000"
-	      "AttackAnimationPoint"		"0.400000"
-	      "AttackAcquisitionRange"		"600"
-	      "AttackRange"	        		"128"
-	      "AttributePrimary"		  	"DOTA_ATTRIBUTE_AGILITY"
-	      "AttributeBaseStrength"		"20"
-	      "AttributeStrengthGain"		"2.200000"
-	      "AttributeBaseAgility"		"24"
-	      "AttributeAgilityGain"		"3.800000"
-	      "AttributeBaseIntelligence"	"18"
-	      "AttributeIntelligenceGain"	"1.800000"
-	      "MovementSpeed"		        "300"
-	      "ParticleFile"				"particles/units/heroes/hero_ember_spirit.pcf"
-	  }
-	"npc_dota_hero_death_itself" //имя юнита
+		///"override_hero"     		"npc_dota_hero_nevermore"
+		"HeroID"					"11"
+		"BaseClass"				"npc_dota_hero_nevermore"
+
+		"Model"		       		"models/heroes/hero_deadpool/deadpool.vmdl"		// Model.
+		"ModelScale"				"1.75"
+		"Ability1"				"deadpool_heart"
+		"Ability2"				"deadpool_bar"
+		"Ability3"				"deadpool_strike"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"deadpool_omniverse"
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_hp_regen_40"
+		"Ability13"				"special_bonus_armor_15"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_attack_damage_90"
+		"Ability16"				"special_bonus_agility_25"
+		"Ability17"				"special_bonus_all_stats_20"
+		"AbilityLayout"				"4"
+		"ArmorPhysical"				"3.000000"
+		"DisableWearables"			"1"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"38"
+		"AttackDamageMax"				"54"
+		"AttackRate"					"1.500000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"	        		"128"
+		"AttributePrimary"		  	"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.200000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"3.800000"
+		"AttributeBaseIntelligence"	"18"
+		"AttributeIntelligenceGain"	"1.800000"
+		"MovementSpeed"		        "300"
+		"ParticleFile"				"particles/units/heroes/hero_ember_spirit.pcf"
+	}
+	"npc_dota_hero_windrunner" //имя юнита
 	{
-	      // General
-	      //----------------------------------------------------------------
-	      "override_hero"				"npc_dota_hero_windrunner"
-	      "Model"						"models/heroes/hero_hela/hela.vmdl"			// Model.
-	      "DisableWearables"			"1"
-	      "ModelScale"		      		"0.930000"
+		// General
+		//----------------------------------------------------------------
+		///"override_hero"				"npc_dota_hero_windrunner"
+	
+		"HeroID"						"21"
+		"BaseClass"					"npc_dota_hero_windrunner"
 
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AbilityLayout"				"4"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "Ability1"					"hela_stifling_dagger"							// Ability 1
-	      "Ability2"					"hela_kinetic_field"									// Ability 2
-	      "Ability3"					"hela_helheim"							// Ability 3
-	      "Ability4"					"generic_hidden"							     // Ability 4
-	      "Ability5"			 	   	"generic_hidden"
-	      "Ability6"					"hela_bullet_rain"
+		"Model"						"models/heroes/hero_hela/hela.vmdl"			// Model.
+		"DisableWearables"				"1"
+		"ModelScale"		      		"0.930000"
 
-	      "Ability10"					"special_bonus_exp_boost_30"
-	      "Ability11"					"special_bonus_all_stats_12"
-	      "Ability12"					"special_bonus_intelligence_10"
-	      "Ability13"					"special_bonus_corruption_4"
-	      "Ability14"					"special_bonus_cooldown_reduction_25"
-	      "Ability15"					"special_bonus_attack_damage_90"
-	      "Ability16"					"special_bonus_20_crit_15"
-	      "Ability17"					"special_bonus_all_stats_20"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"					"hela_stifling_dagger"							// Ability 1
+		"Ability2"					"hela_kinetic_field"									// Ability 2
+		"Ability3"					"hela_helheim"							// Ability 3
+		"Ability4"					"generic_hidden"							     // Ability 4
+		"Ability5"			 	   	"generic_hidden"
+		"Ability6"					"hela_bullet_rain"
 
-	      	"AttributePrimary"     	 	"DOTA_ATTRIBUTE_INTELLECT"
-	      	"ArmorPhysical"				"1.000000"
-	  		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	  		"AttackDamageMin"			"30"
-	  		"AttackDamageMax"			"40"
-	  		"AttackRate"				"1.600000"
-	  		"AttackAnimationPoint"		"0.350000"
-	  		"AttackAcquisitionRange"	"600"
-	  		"AttackRange"				"150"
-	  		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-	  		"AttributeBaseStrength"		"22"
-	  		"AttributeStrengthGain"		"2.000000"
-	  		"AttributeBaseAgility"		"18"
-	  		"AttributeAgilityGain"		"2.200000"
-	  		"AttributeBaseIntelligence"	"23"
-	  		"AttributeIntelligenceGain"	"2.600000"
-	  		"MovementSpeed"				"295"
-	  		"MovementTurnRate"			"0.400000"
-	  		"HealthBarOffset"			"200"
-	  }
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_intelligence_10"
+		"Ability13"					"special_bonus_corruption_4"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_attack_damage_90"
+		"Ability16"					"special_bonus_20_crit_15"
+		"Ability17"					"special_bonus_all_stats_20"
+
+		"AttributePrimary"     	 	"DOTA_ATTRIBUTE_INTELLECT"
+		"ArmorPhysical"				"1.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"
+		"AttackDamageMax"			"40"
+		"AttackRate"				"1.600000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.000000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"2.200000"
+		"AttributeBaseIntelligence"	"23"
+		"AttributeIntelligenceGain"	"2.600000"
+		"MovementSpeed"				"295"
+		"MovementTurnRate"			"0.400000"
+		"HealthBarOffset"			"200"
+	}
 	"npc_dota_hero_death_prophet"
 	{
-		"Model"                 		"models/heroes/ming/zatana.vmdl"
-		"ModelScale"					"0.680000"
-		"LoadoutScale"					"0.630000"
-		"DisableWearables"				"1"
+		"HeroID"							"43"
+		"BaseClass"						"npc_dota_hero_death_prophet"
+
+		"Model"                 				"models/heroes/ming/zatana.vmdl"
+		"ModelScale"						"0.680000"
+		"LoadoutScale"						"0.630000"
+		"DisableWearables"					"1"
 		"Ability1"						"zatana_swarm"
 		"Ability2"						"zatana_magic_knowledge"
 		"Ability3"						"zatana_blood_ritual"
@@ -925,7 +985,7 @@
 		"Ability15"						"special_bonus_intelligence_15"
 		"Ability16"						"special_bonus_all_stats_20"
 		"Ability17"						"special_bonus_unique_zatanna"
-		"override_hero"					"npc_dota_hero_death_prophet"
+		////"override_hero"					"npc_dota_hero_death_prophet"
 		"ArmorPhysical"					"0.0"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"				"26"
@@ -952,11 +1012,14 @@
 	//=================================================================================================================
 	// HERO: Dimm
 	//=================================================================================================================
-	"npc_dota_hero_dimm"
+	"npc_dota_hero_furion"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-	    "override_hero"				"npc_dota_hero_furion"
+	    ////"override_hero"				"npc_dota_hero_furion"
+	    "HeroID"						"53"
+	    "BaseClass"					"npc_dota_hero_furion"
+
 	    "Model"						"models/heroes/hero_dimm/dimm.vmdl"
 	    "DisableWearables"	"1"
 	    "ModelScale"		"0.9"
@@ -1008,12 +1071,15 @@
 			"model"		 				"models/heroes/hero_dimm/weapon.vmdl"
 		}
 	}
-	"npc_dota_hero_doctor_doom"
+	"npc_dota_hero_doom_bringer"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"HeroID"						"69"
+	    "BaseClass"					"npc_dota_hero_doom_bringer"
+
 		"Model"						"models/heroes/hero_doom/doom.vmdl"
-		"override_hero"				"npc_dota_hero_doom_bringer"
+		////"override_hero"				"npc_dota_hero_doom_bringer"
 		"Portrait"					"vgui/hud/heroportraits/portrait_doom_bringer"
 		"ModelScale"				"2.0"
 		"DisableWearables"		    "1"
@@ -1068,11 +1134,14 @@
 			"model"		 "models/doctor_doom/doctor_doom_head.vmdl"
 		}
 	}
-	"npc_dota_hero_doomsdei"
+	"npc_dota_hero_life_stealer"
 	{
-		"override_hero"     "npc_dota_hero_life_stealer"
+		//// "override_hero"     "npc_dota_hero_life_stealer"
+		"HeroID"						"54"
+		"BaseClass"					"npc_dota_hero_life_stealer"
+
 		"ModelScale"		"0.910000"
-	    "DisableWearables"  "1"
+		"DisableWearables"  "1"
 		"AbilityLayout" 	"5"
 		"Ability1"			   "doomsday_death_pact"
 		"Ability2"			   "doomsday_speed"
@@ -1092,22 +1161,23 @@
 		"Ability16"				"special_bonus_strength_25"
 		"Ability17"				"special_bonus_reincarnation_200"
 		"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
-	    "ArmorPhysical"					"3"
+		"ArmorPhysical"					"3"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	  		"AttackDamageMin"			"25"
-	  		"AttackDamageMax"			"35"
-	  		"AttackRate"				"1.600000"
-	  		"AttackAnimationPoint"		"0.350000"
-	  		"AttackAcquisitionRange"	"600"
-	  		"AttackRange"				"150"
-			"AttributeBaseStrength"		"29"
-			"AttributeStrengthGain"		"3.000000"
-			"AttributeBaseIntelligence"	"15"
-			"AttributeIntelligenceGain"	"1.400000"
-			"AttributeBaseAgility"		"18"
-			"AttributeAgilityGain"		"2.200000"
-			"MovementSpeed"				"310"
-			"MovementTurnRate"			"0.400000"
+		"AttackDamageMin"			"25"
+		"AttackDamageMax"			"35"
+		"AttackRate"				"1.600000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"AttributeBaseStrength"		"29"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseIntelligence"	"15"
+		"AttributeIntelligenceGain"	"1.400000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"2.200000"
+		"MovementSpeed"				"310"
+		"MovementTurnRate"			"0.400000"
+
 		"precache"
 		{
 			"model"		"models/items/warlock/golem/doom_of_ithogoaki/doom_of_ithogoaki.vmdl"
@@ -1115,12 +1185,16 @@
 	}
 	//////particles/econ/courier/courier_crystal_rift/courier_ambient_crystal_rift.vpcf
 	/////particles/econ/courier/courier_axolotl_ambient/courier_axolotl_ambient_head.vpcf
-	"npc_dota_hero_dormammu"
+	"npc_dota_hero_phoenix"
 	{
-		"override_hero"		"npc_dota_hero_phoenix"
+		/// "override_hero"		"npc_dota_hero_phoenix"
+
+		"HeroID"				"110"
+		"BaseClass"			"npc_dota_hero_phoenix"
+
 		"Model"				"models/heroes/hero_dormammu/dormammu.vmdl"
-		"ModelScale"		"0.950000"
-		"DisableWearables"	"1"
+		"ModelScale"			"0.950000"
+		"DisableWearables"		"1"
 		"Ability1"			"dormammu_flux"
 		"Ability2"			"dormammu_dark_ritual"
 		"Ability3"			"dormammu_static_storm"
@@ -1130,14 +1204,14 @@
 		"Ability7"			""
 		"Ability8"			""
 		"Ability9"			""
-	  	"Ability10"			"special_bonus_unique_dormammu_3"
-	  	"Ability11"			"special_bonus_all_stats_12"
-	  	"Ability12"			"special_bonus_unique_dormammu_5"
-	  	"Ability13"		    "special_bonus_unique_dormammu"
-	  	"Ability14"			"special_bonus_cooldown_reduction_25"
-	  	"Ability15"			"special_bonus_unique_faceless_void_4"
-	  	"Ability16"			"special_bonus_all_stats_20"
-	  	"Ability17"			"special_bonus_unique_dormammu_2"
+		"Ability10"			"special_bonus_unique_dormammu_3"
+		"Ability11"			"special_bonus_all_stats_12"
+		"Ability12"			"special_bonus_unique_dormammu_5"
+		"Ability13"		    "special_bonus_unique_dormammu"
+		"Ability14"			"special_bonus_cooldown_reduction_25"
+		"Ability15"			"special_bonus_unique_faceless_void_4"
+		"Ability16"			"special_bonus_all_stats_20"
+		"Ability17"			"special_bonus_unique_dormammu_2"
 
 		"ArmorPhysical"				"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -1163,33 +1237,37 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_phoenix.vsndevts"
 	}
-	"npc_dota_hero_draks" //имя юнита
+	"npc_dota_hero_beastmaster" //имя юнита
 	{
 	    // General
 	    //----------------------------------------------------------------
-	    "override_hero"			"npc_dota_hero_beastmaster"
-	    "DisableWearables"	"1"
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityLayout"				"4"
-	    //-------------------------------------------------------------------------------------------------------------
-	    "Ability1"				"draks_venom"
-	    "Ability2"				"draks_double_edge"
-	    "Ability3"				"draks_flesh_heap"
-	    "Ability4"				"generic_hidden"
-	    "Ability5"				"generic_hidden"
-	    "Ability6"				"draks_unholy_strength"
-	    "Ability10"				"special_bonus_exp_boost_30"
-	    "Ability11"				"special_bonus_all_stats_12"
-	    "Ability12"				"special_bonus_hp_regen_40"
-	    "Ability13"				"special_bonus_armor_15"
-	    "Ability14"				"special_bonus_cooldown_reduction_25"
-	    "Ability15"				"special_bonus_attack_damage_90"
-	    "Ability16"				"special_bonus_unique_draks_flesh_heap"
-	    "Ability17"				"special_bonus_spell_block_15"
-	    "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
-	    "ArmorPhysical"					"0"
-        "AttackDamageMin"  "40"
-        "AttackDamageMax"  "46"
+	    //// "override_hero"			"npc_dota_hero_beastmaster"
+
+	    "HeroID"					"38"
+	    "BaseClass"				"npc_dota_hero_beastmaster"
+
+		"DisableWearables"			"1"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"			"4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"				"draks_venom"
+		"Ability2"				"draks_double_edge"
+		"Ability3"				"draks_flesh_heap"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"draks_unholy_strength"
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_hp_regen_40"
+		"Ability13"				"special_bonus_armor_15"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_attack_damage_90"
+		"Ability16"				"special_bonus_unique_draks_flesh_heap"
+		"Ability17"				"special_bonus_spell_block_15"
+		"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+		"ArmorPhysical"					"0"
+		"AttackDamageMin"  "40"
+		"AttackDamageMax"  "46"
 		"AttackRate"		"1.600000"
 		"AttributeBaseStrength"			"20"
 		"AttributeStrengthGain"			"4.00000"
@@ -1203,9 +1281,12 @@
 		"HealthBarOffset"				"180"
 		"StatusHealth"					"200"
 	}
-	"npc_dota_hero_dr_strange"
+	"npc_dota_hero_kunkka"
 	{
-		"override_hero"   			"npc_dota_hero_kunkka"
+		//// "override_hero"   			"npc_dota_hero_kunkka"
+		"HeroID"						"23"
+	     "BaseClass"					"npc_dota_hero_kunkka"
+
 		"Model"			 			"models/heroes/hero_drstrange/dr_strange.vmdl"
 		"ModelScale"				"1"
 		"DisableWearables"			"1"
@@ -1254,11 +1335,13 @@
 	}
 	"npc_dota_hero_earthshaker"
 	{
-		"Model"		"models/heroes/hero_god_emperor/god_emperor.vmdl"
-		"DisableWearables"		"1"
-		"ModelScale"			"0.76"
-		"LoadoutScale"			"0.76"
-		"override_hero"			"npc_dota_hero_earthshaker"
+		"HeroID"						"7"
+	     "BaseClass"					"npc_dota_hero_earthshaker"
+		"Model"						"models/heroes/hero_god_emperor/god_emperor.vmdl"
+		"DisableWearables"				"1"
+		"ModelScale"					"0.76"
+		"LoadoutScale"					"0.76"
+		////"override_hero"			"npc_dota_hero_earthshaker"
 		"Ability1"				"god_emperor_supersonic_strike"
 		"Ability2"				"god_emperor_inqusition"
 		"Ability3"				"god_emperor_cloud_dance"
@@ -1295,9 +1378,12 @@
 		"ItemSlots"
 		{}
 	}
-	"npc_dota_hero_elza"
+	"npc_dota_hero_crystal_maiden"
 	{
-		"override_hero"				"npc_dota_hero_crystal_maiden"
+		"HeroID"						"5"
+	     "BaseClass"					"npc_dota_hero_crystal_maiden"
+
+		//// "override_hero"				"npc_dota_hero_crystal_maiden"
 		"Model"						"models/heroes/hero_elsa/elsa.vmdl"
 		"ModelScale"				"1.18"
 		"LoadoutScale"				"0"
@@ -1349,7 +1435,9 @@
 	{
 	      // General
 	      //----------------------------------------------------------------
-	      "override_hero"			"npc_dota_hero_enigma"
+	      ///"override_hero"			"npc_dota_hero_enigma"
+		 "HeroID"						"33"
+	      "BaseClass"					"npc_dota_hero_enigma"
 	      //-------------------------------------------------------------------------------------------------------------
 	      "AbilityLayout"				"4"
 	      //------------------------------------------------------------------------------------------------------------
@@ -1370,59 +1458,65 @@
 
 	      "AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 	      "AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-	  		"AttributeBaseStrength"		"19"
-	  		"AttributeStrengthGain"		"2.200000"
-	  		"AttributeBaseIntelligence"	"26"
-	  		"AttributeIntelligenceGain"	"2.800000"
-	  		"AttributeBaseAgility"		"18"
-	  		"AttributeAgilityGain"		"1.6"
-	  		"MovementSpeed"				"300"
-	  		"MovementTurnRate"			"0.500000"
-	  		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-	  		"HealthBarOffset"			"220"
-	  		"RingRadius"				"90"
-	  }
-	"npc_dota_hero_fenix"
-	{
-	    "override_hero"		"npc_dota_hero_lina"
-	    "AbilityLayout"		"4"
-	    "Ability1"		"fenix_burning"
-	    "Ability2"		"fenix_strafe"
-	    "Ability3"		"fenix_slam"
-	    "Ability4"		"generic_hidden"
-	    "Ability5"    "generic_hidden"
-	    "Ability6"		"phoenix_rage"
-	    "Ability10"					"special_bonus_exp_boost_30"
-	    "Ability11"					"special_bonus_all_stats_12"
-	    "Ability12"					"special_bonus_hp_regen_40"
-	    "Ability13"					"special_bonus_lifesteal_30"
-	    "Ability14"					"special_bonus_cooldown_reduction_25"
-	    "Ability15"					"special_bonus_spell_lifesteal_60"
-	    "Ability16"					"special_bonus_strength_25"
-	    "Ability17"					"special_bonus_reincarnation_200"
-	    "ArmorPhysical"				"0"
-	    "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	    "AttackDamageMin"			"27"
-	    "AttackDamageMax"			"33"
-	    "AttackRate"				"1.500000"
-	    "AttackAnimationPoint"		"0.60000"
-	    "AttackAcquisitionRange"	"800"
-	    "AttackRange"				"500"
-	    "ProjectileSpeed"			"1700"
-	    "AttributeBaseStrength"		"24"
-	    "AttributeStrengthGain"		"3.400000"
-	    "AttributeBaseIntelligence"	"21"
-	    "AttributeIntelligenceGain"	"2.000000"
-	    "AttributeBaseAgility"		"18"
-	    "AttributeAgilityGain"		"2.300000"
-	    "MovementSpeed"				"310"
-	    "AttributePrimary"      	"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.200000"
+		"AttributeBaseIntelligence"	"26"
+		"AttributeIntelligenceGain"	"2.800000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.6"
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.500000"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"220"
+		"RingRadius"				"90"
 	}
-	"npc_dota_hero_flash" //имя юнита
+	"npc_dota_hero_lina"
+	{
+		"HeroID"						"25"
+		"BaseClass"					"npc_dota_hero_lina"
+
+		////"override_hero"		"npc_dota_hero_lina"
+		"AbilityLayout"		"4"
+		"Ability1"		"fenix_burning"
+		"Ability2"		"fenix_strafe"
+		"Ability3"		"fenix_slam"
+		"Ability4"		"generic_hidden"
+		"Ability5"    "generic_hidden"
+		"Ability6"		"phoenix_rage"
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_lifesteal_30"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_spell_lifesteal_60"
+		"Ability16"					"special_bonus_strength_25"
+		"Ability17"					"special_bonus_reincarnation_200"
+		"ArmorPhysical"				"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"27"
+		"AttackDamageMax"			"33"
+		"AttackRate"				"1.500000"
+		"AttackAnimationPoint"		"0.60000"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"500"
+		"ProjectileSpeed"			"1700"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"3.400000"
+		"AttributeBaseIntelligence"	"21"
+		"AttributeIntelligenceGain"	"2.000000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"2.300000"
+		"MovementSpeed"				"310"
+		"AttributePrimary"      	"DOTA_ATTRIBUTE_STRENGTH"
+	}
+	"npc_dota_hero_bloodseeker" //имя юнита
 	{
 	// General
 	//----------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_bloodseeker"
+		///"override_hero"			"npc_dota_hero_bloodseeker"
+		"HeroID"						"4"
+		"BaseClass"					"npc_dota_hero_bloodseeker"
+
 		"Model"					    "models/heroes/hero_flash/flash.vmdl"			// Model.
 		"DisableWearables"	"1"
 		//-------------------------------------------------------------------------------------------------------------
@@ -1463,9 +1557,12 @@
 			"model" 	"models/items/antimage/pw_tustarkuri_armor/antimage_armor_lod0.vmdl"
 		}
 	}
-	"npc_dota_hero_franklin"
+	"npc_dota_hero_warlock"
   	{
-		"override_hero"			"npc_dota_hero_warlock"
+		"HeroID"						"37"
+		"BaseClass"					"npc_dota_hero_warlock"
+
+		///"override_hero"			"npc_dota_hero_warlock"
 		"Model"					"models/heroes/hero_franklin/franklin.vmdl"
 		"ModelScale"			"1"
 		"DisableWearables"		"1"
@@ -1508,63 +1605,68 @@
 		"HasAggressiveStance"		"1"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
   	}
-	"npc_dota_hero_galactus" //имя юнита
+	"npc_dota_hero_terrorblade" //имя юнита
 	{
-	      // General
-	      //----------------------------------------------------------------
-	      "override_hero"			"npc_dota_hero_terrorblade"
-	      "Model"					"models/heroes/doom/doom.vmdl"
-	      "DisableWearables"		"1"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AbilityLayout"				"4"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "Ability1"				"galactus_life_drain"
-	      "Ability2"				"galactus_echo_jump"
-	      "Ability3"				"galactus_spell_block"
-	      "Ability4"				"generic_hidden"
-	      "Ability5"				"generic_hidden"
-	      "Ability6"				"galactus_world_devour"
-	      "Ability7"				""
-	      "Ability10"				"special_bonus_exp_boost_30"
-	      "Ability11"				"special_bonus_all_stats_12"
-	      "Ability12"				"special_bonus_hp_regen_40"
-	      "Ability13"				"special_bonus_spell_amplify_20"
-	      "Ability14"				"special_bonus_cooldown_reduction_25"
-	      "Ability15"				"special_bonus_unique_faceless_void_4"
-	      "Ability16"				"special_bonus_armor_7"
-	      "Ability17"				"special_bonus_strength_25"
-	      "AttributePrimary"     		"DOTA_ATTRIBUTE_STRENGTH"
-	      "ArmorPhysical"				"3"
-	  	  "AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
-	  	  "AttackDamageMin"				"37"
-	  	  "AttackDamageMax"				"43"
-	  	  "AttackRate"					"1.600000"
-	  	  "AttackAnimationPoint"		"0.300000"
-	  	  "AttackAcquisitionRange"		"600"
-	  	  "AttackRange"					"150"
-	  	  "ProjectileSpeed"				"2000"
-	  	  "AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	  	  "AttributeBaseStrength"		"28"
-	  	  "AttributeStrengthGain"		"3.000000"
-	  	  "AttributeBaseIntelligence"	"25"
-	  	  "AttributeIntelligenceGain"	"2.70000"
-	  	  "AttributeBaseAgility"		"18"
-	  	  "AttributeAgilityGain"		"1.900000"
-	  	  "MovementSpeed"				"315"
-	  	  "MovementTurnRate"			"0.500000"
-	  	  "BoundsHullName"				"DOTA_HULL_SIZE_HERO"
-	  	  "HealthBarOffset"				"280"
-	  	  "StatusHealthRegen"			"6.0000000"
-	      "precache"
-	      {
-	        "model"		"models/galactus/galactus_head.vmdl"
-	      }
+		// General
+		//----------------------------------------------------------------
+		"HeroID"						"109"
+		"BaseClass"					"npc_dota_hero_terrorblade"
+
+		//// "override_hero"			"npc_dota_hero_terrorblade"
+		"Model"					"models/heroes/doom/doom.vmdl"
+		"DisableWearables"		"1"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"				"galactus_life_drain"
+		"Ability2"				"galactus_echo_jump"
+		"Ability3"				"galactus_spell_block"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"galactus_world_devour"
+		"Ability7"				""
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_hp_regen_40"
+		"Ability13"				"special_bonus_spell_amplify_20"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_unique_faceless_void_4"
+		"Ability16"				"special_bonus_armor_7"
+		"Ability17"				"special_bonus_strength_25"
+		"AttributePrimary"     		"DOTA_ATTRIBUTE_STRENGTH"
+		"ArmorPhysical"				"3"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"37"
+		"AttackDamageMax"				"43"
+		"AttackRate"					"1.600000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"					"150"
+		"ProjectileSpeed"				"2000"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"28"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseIntelligence"	"25"
+		"AttributeIntelligenceGain"	"2.70000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.900000"
+		"MovementSpeed"				"315"
+		"MovementTurnRate"			"0.500000"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"				"280"
+		"StatusHealthRegen"			"6.0000000"
+		"precache"
+		{
+		"model"		"models/galactus/galactus_head.vmdl"
+		}
 	}
-	"npc_dota_hero_gambit" //имя юнита
+	"npc_dota_hero_brewmaster" //имя юнита
 	{
 	      // General
 		//----------------------------------------------------------------
-		"override_hero"		  	     	"npc_dota_hero_brewmaster"
+		"HeroID"						"78"
+		"BaseClass"					"npc_dota_hero_brewmaster"
+		///"override_hero"		  	     	"npc_dota_hero_brewmaster"
 		"Model"	            	     	"models/heroes/hero_gambit/gambit.vmdl"
 		"DisableWearables"		     	"1"
 		"ArmorPhysical"		         	"0.000000"
@@ -1609,11 +1711,14 @@
 			"model"		"models/items/courier/blotto_and_stick/blotto.vmdl"
 		}
 	}
-	"npc_dota_hero_ghost_rider" //имя юнита
+	"npc_dota_hero_chaos_knight" //имя юнита
 	{
 		// General
 		//----------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_chaos_knight"
+		///"override_hero"			"npc_dota_hero_chaos_knight"
+		"HeroID"						"81"
+		"BaseClass"					"npc_dota_hero_chaos_knight"
+
 		"HealthBarOffset"       	"140" //насколько высоко будет хп бар
 		"Model"					"models/heroes/hero_ghost_rider/ghost_rider.vmdl"
 		"DisableWearables"		"1"
@@ -1625,9 +1730,9 @@
 		"Ability2"				"gostrider_angel_of_death"									// Ability 2
 		"Ability3"				"gostrider_fire_mist"							// Ability 3
 		"Ability4"				"generic_hidden"							     // Ability 4
-		"Ability5"			    "generic_hidden"
-		"Ability6"			    "gostrider_punishing_gaze"
-		"Ability7"			    ""
+		"Ability5"			     "generic_hidden"
+		"Ability6"			     "gostrider_punishing_gaze"
+		"Ability7"			     ""
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_all_stats_12"
 		"Ability12"				"special_bonus_hp_regen_40"
@@ -1690,11 +1795,15 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
 	}
 
-	"npc_dota_hero_golden_god"
+	"npc_dota_hero_ember_spirit"
 	{
-		"DisableWearables"		"1"
-		"ModelScale"			"1.5"
-		"override_hero"			"npc_dota_hero_ember_spirit"
+		"DisableWearables"			"1"
+		"ModelScale"				"1.5"
+		///"override_hero"			"npc_dota_hero_ember_spirit"
+		
+		"HeroID"					"106"
+		"BaseClass"				"npc_dota_hero_ember_spirit"
+
 		"Ability1"				"golden_god_aoe"
 		"Ability2"				"golden_god_penitence"
 		"Ability3"				"golden_gold_rift"
@@ -1730,11 +1839,15 @@
 		"AttributeIntelligenceGain"	"2.300000"
 		"MovementSpeed"		        "315"
 	}
-	"npc_dota_hero_green_lantern" //имя юнита
+	"npc_dota_hero_storm_spirit" //имя юнита
 	{
 	    // General
 	    //----------------------------------------------------------------
-	    "override_hero"					"npc_dota_hero_storm_spirit"
+	    ///"override_hero"					"npc_dota_hero_storm_spirit"
+	    
+	    "HeroID"						"17"
+	    "BaseClass"					"npc_dota_hero_storm_spirit"
+
 	    "model"             			"models/heroes/hero_greenlantern/greenlantern.vmdl"
 	    "DisableWearables"  			"1"
 	    "ModelScale"					"1"
@@ -1774,9 +1887,14 @@
 		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
 		"MovementSpeed"		        	"310"
 	}
-	"npc_dota_hero_han"
+	"npc_dota_hero_shredder"
 	{
-		"override_hero"			"npc_dota_hero_shredder"
+		///"override_hero"			"npc_dota_hero_shredder"
+		   
+	    "HeroID"						"98"
+	    "BaseClass"					"npc_dota_hero_shredder"
+
+
 		"Model"					"models/heroes/antimage/antimage.vmdl" //модель
 
 		"SoundSet"				"Hero_Windrunner"
@@ -1822,14 +1940,17 @@
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_phoenix.vsndevts"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
 	}
-	"npc_dota_hero_hellspont"
+	"npc_dota_hero_pugna"
 	{
-	  	"override_hero"		 	"npc_dota_hero_pugna"
+	  	///"override_hero"		 	"npc_dota_hero_pugna"
+		"HeroID"					"45"
+	     "BaseClass"				"npc_dota_hero_pugna"
+
 		"HeroGlowColor"		 	"100 149 237"
-		"DisableWearables" 	 	"1"
-		"Model"           	 	"models/heroes/hero_hellspont/hellspont.vmdl"
-		"AbilityLayout"    	 	"5"
-		"ModelScale"		 	"1.40000"
+		"DisableWearables" 	 		"1"
+		"Model"           	 		"models/heroes/hero_hellspont/hellspont.vmdl"
+		"AbilityLayout"    	 		"5"
+		"ModelScale"		 		"1.40000"
 		"Ability1"		     	"life_stealer_infest_datadriven"
 		"Ability2"		     	"helspont_astral_dagger"
 		"Ability3"		     	"helspont_strafe"
@@ -1871,11 +1992,14 @@
 			"model"		"models/items/warlock/golem/doom_of_ithogoaki/doom_of_ithogoaki.vmdl"
 		}
 	}
-	"npc_dota_hero_hulk" //имя юнита
+	"npc_dota_hero_tidehunter" //имя юнита
 	{
 		// General
 		//----------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_tidehunter"
+		///"override_hero"			"npc_dota_hero_tidehunter"
+		"HeroID"					"29"
+	     "BaseClass"				"npc_dota_hero_tidehunter"
+
 		"Model"					"models/heroes/hero_hulk/hulk.vmdl"
 		"DisableWearables"		"1"
 		"ModelScale"            "5.0" //размер модели
@@ -1961,7 +2085,10 @@
 		"ModelScale"				"1.680000"
 		"LoadoutScale"				"0"
 		"DisableWearables"			"1"
-		"override_hero"				"npc_dota_hero_huskar"
+		////"override_hero"			"npc_dota_hero_huskar"
+		"HeroID"					"59"
+	     "BaseClass"				"npc_dota_hero_huskar"
+
 		"Ability1"					"vader_force_strangulation"
 		"Ability2"					"vader_dark_side"
 		"Ability3"					"vader_force_blast"
@@ -2005,9 +2132,12 @@
 		"ItemSlots"
 		{}
 	}
-	"npc_dota_hero_iron_fist"
+	"npc_dota_hero_shadow_shaman"
 	{
-		"override_hero"			     "npc_dota_hero_shadow_shaman"
+		////"override_hero"			     "npc_dota_hero_shadow_shaman"
+		"HeroID"					"27"
+	     "BaseClass"				"npc_dota_hero_shadow_shaman"
+
 		"Model"						 "models/heroes/hero_ironfist/iron_fist.vmdl"
 		"DisableWearables"			"1"
 		"SoundSet"					"Hero_NightStalker"
@@ -2050,9 +2180,12 @@
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"130"
 	}
-	"npc_dota_hero_iron_man"
+	"npc_dota_hero_rattletrap"
 	{
-		"override_hero"		"npc_dota_hero_rattletrap"
+		////"override_hero"		"npc_dota_hero_rattletrap"
+		"HeroID"				"51"
+	     "BaseClass"			"npc_dota_hero_rattletrap"
+
 		"Model"				"models/heroes/hero_ironman/ironman.vmdl"
 		"DisableWearables"  	"1"
 		"ModelScale"			"1.800"
@@ -2092,21 +2225,24 @@
 		"MovementSpeed"				"315"
 		"MovementTurnRate"			"0.600000"
 	}
-	"npc_dota_hero_joker"
+	"npc_dota_hero_dazzle"
 	{
-	    "override_hero"					"npc_dota_hero_dazzle"
+	    ///"override_hero"					"npc_dota_hero_dazzle"
+	    "HeroID"							"50"
+	    "BaseClass"						"npc_dota_hero_dazzle"
+
 	    "Model"		       	 			"models/heroes/hero_joker/joker.vmdl"
-	    "ModelScale" 					"1"
-	    "DisableWearables"				"1"
-	    "AbilityLayout"   				"5"
-	    "Ability1"		    			"joker_land_mines"
-	    "Ability2"		    			"joker_explosive_spec"
-	    "Ability3"		    			"techies_focused_detonate"
-	    "Ability4"		    			"joker_remote_mines"
-	    "Ability5"		    			"joker_nuclear_mine"
-	    "Ability6"		    			"joker_suicide"
-	    "Ability7"		    			""
-	    "Ability8"		   				""
+	    "ModelScale" 						"1"
+	    "DisableWearables"					"1"
+	    "AbilityLayout"   					"5"
+	    "Ability1"		    					"joker_land_mines"
+	    "Ability2"		    					"joker_explosive_spec"
+	    "Ability3"		    					"techies_focused_detonate"
+	    "Ability4"		    					"joker_remote_mines"
+	    "Ability5"		    					"joker_nuclear_mine"
+	    "Ability6"		    					"joker_suicide"
+	    "Ability7"		    					""
+	    "Ability8"		   					""
 	    "Ability10"						"special_bonus_exp_boost_30"
 	    "Ability11"						"special_bonus_unique_techies_4"
 	    "Ability12"						"special_bonus_intelligence_10"
@@ -2115,33 +2251,36 @@
 	    "Ability15"						"special_bonus_mp_500"
 	    "Ability16"						"special_bonus_spell_amplify_15"
 	    "Ability17"						"special_bonus_all_stats_20"
-	    "ArmorPhysical"					"5"
-	    "AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
-	    "AttackDamageMin"				"31"
-	    "AttackDamageMax"				"33"
-	    "AttackRate"					"1.700000"
-	    "AttackAnimationPoint"			"0.330000"
+	    "ArmorPhysical"						"5"
+	    "AttackCapabilities"					"DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageMin"					"31"
+	    "AttackDamageMax"					"33"
+	    "AttackRate"						"1.700000"
+	    "AttackAnimationPoint"				"0.330000"
 
-			"AttackAcquisitionRange"		"950"
-			"AttackRange"					"550"
-			"ProjectileModel"				"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
-			"ProjectileSpeed"				"3000"
+		"AttackAcquisitionRange"				"950"
+		"AttackRange"						"550"
+		"ProjectileModel"					"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+		"ProjectileSpeed"					"3000"
 
-	    "AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
-	    "AttributeBaseStrength"			"21"
-	    "AttributeStrengthGain"			"1.800000"
-	    "AttributeBaseAgility"			"19"
-	    "AttributeAgilityGain"			"2.000000"
-	    "AttributeBaseIntelligence"		"26"
-	    "AttributeIntelligenceGain"		"3.400000"
-	    "MovementSpeed"					"310"
-	    "MovementTurnRate"				"0.600000"
+	    "AttributePrimary"					"DOTA_ATTRIBUTE_INTELLECT"
+	    "AttributeBaseStrength"				"21"
+	    "AttributeStrengthGain"				"1.800000"
+	    "AttributeBaseAgility"				"19"
+	    "AttributeAgilityGain"				"2.000000"
+	    "AttributeBaseIntelligence"			"26"
+	    "AttributeIntelligenceGain"			"3.400000"
+	    "MovementSpeed"						"310"
+	    "MovementTurnRate"					"0.600000"
 	}
 	"npc_dota_hero_juggernaut" //имя юнита
 	{
 		// General
 		//----------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_juggernaut"
+		////"override_hero"			"npc_dota_hero_juggernaut"
+		"HeroID"							"8"
+	     "BaseClass"						"npc_dota_hero_juggernaut"
+
 		"ModelScale"			"0.650000"
 		"Model"					"models/heroes/hero_samurai/samurai.vmdl"
 
@@ -2190,11 +2329,15 @@
 			"model"		"models/heroes/juggernaut/jugg_healing_ward.vmdl"
 		}
 	}
-	"npc_dota_hero_katana"
+	"npc_dota_hero_phantom_assassin"
 	{
-		"override_hero"			"npc_dota_hero_phantom_assassin"
+		////"override_hero"			"npc_dota_hero_phantom_assassin"
+		
+		"HeroID"					"44"
+	     "BaseClass"				"npc_dota_hero_phantom_assassin"
+
 		"Model"				    "models/heroes/hero_katana/katana.vmdl"
-		"DisableWearables"		"1"
+		"DisableWearables"			"1"
 		"Ability1"				"katana_track"
 		"Ability2"				"katana_cairn_of_souls"
 		"Ability3"				"katana_wave_of_silence"
@@ -2229,11 +2372,14 @@
 		"MovementTurnRate"				"0.500000"
 		"HealthBarOffset"				"200"
 	}
-	"npc_dota_hero_king_lich" //имя юнита
+	"npc_dota_hero_skeleton_king" //имя юнита
 	{
 		// General
 		//----------------------------------------------------------------
-		"override_hero"		     	"npc_dota_hero_skeleton_king"
+		////"override_hero"		     	"npc_dota_hero_skeleton_king"
+		"HeroID"						"42"
+	     "BaseClass"					"npc_dota_hero_skeleton_king"
+
 		///"ModelScale"		        "0.70"
 		"DisableWearables"	    	"1"
 		//-------------------------------------------------------------------------------------------------------------
@@ -2247,15 +2393,15 @@
 		"Ability5"		    		"generic_hidden"
 		"Ability6"		    		"lich_king_cold_reaper"
 		"Ability7"		    		"lich_king_reincarnation"
-		"Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_all_stats_12"
-		"Ability12"					"special_bonus_hp_regen_40"
-		"Ability13"					"special_bonus_armor_15"
-		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_magic_resistance_50"
-		"Ability16"					"special_bonus_strength_25"
-		"Ability17"					"special_bonus_unique_lich_king"
-		"AttributePrimary"      	"DOTA_ATTRIBUTE_STRENGTH"
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_hp_regen_40"
+		"Ability13"				"special_bonus_armor_15"
+		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability15"				"special_bonus_magic_resistance_50"
+		"Ability16"				"special_bonus_strength_25"
+		"Ability17"				"special_bonus_unique_lich_king"
+		"AttributePrimary"      		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttackDamageMin"			"32"
 		"AttackDamageMax"			"40"
 		"AttackRate"				"1.600000"
@@ -2277,8 +2423,11 @@
     {
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"override_hero"		    "npc_dota_hero_legion_commander"
-		"DisableWearables"		"1"
+		////"override_hero"		    "npc_dota_hero_legion_commander"
+		"HeroID"					"104"
+	     "BaseClass"				"npc_dota_hero_legion_commander"
+
+		"DisableWearables"			"1"
 		"Model"					"models/heroes/hero_marvel/marvel.vmdl"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -2350,11 +2499,14 @@
 	"npc_dota_hero_lion"
 	{
 		"Model"							"models/heroes/hero_diablo/diablo.vmdl"
-		"override_hero"					"npc_dota_hero_lion"
+		////"override_hero"					"npc_dota_hero_lion"
 
-		"ModelScale"					"1.1000000"
-		"LoadoutScale"					"0"
-		"DisableWearables" 				"1"
+		"HeroID"							"26"
+	     "BaseClass"						"npc_dota_hero_lion"
+
+		"ModelScale"						"1.1000000"
+		"LoadoutScale"						"0"
+		"DisableWearables" 					"1"
 		"AbilityLayout"					"4"
 
 		"Ability1"						"diablo_fire_dissipation"
@@ -2398,206 +2550,220 @@
 			"model"		 "models/heroes/bolvar/isecrown_helmet.vmdl"
 		}
 	}
-	"npc_dota_hero_logan" //имя юнита
+	"npc_dota_hero_lycan" //имя юнита
 	{
-			// General
-			//----------------------------------------------------------------
-			"override_hero"			  "npc_dota_hero_lycan"
-			"ModelScale"          "0.94" //размер модели
-			"HealthBarOffset"     "140" //насколько высоко будет хп бар
-	    	"DisableWearables"    "1"
+		// General
+		//----------------------------------------------------------------
+		////"override_hero"			 "npc_dota_hero_lycan"
+		"HeroID"					"77"
+	     "BaseClass"				"npc_dota_hero_lycan"
 
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityLayout"				"4"
-			//-------------------------------------------------------------------------------------------------------------
-			"Ability1"				"wolverine_enrage"							// Ability 1
-			"Ability2"				"wolverine_fury_swipes"									// Ability 2
-			"Ability3"				"wolverine_mastery"							// Ability 3
-			"Ability4"				"generic_hidden"							     // Ability 4
-			"Ability5"			 	"generic_hidden"
-			"Ability6"			 	"wolverine_berserk"
-			"Ability7"			    ""
-			"Ability10"				"special_bonus_exp_boost_30"
-			"Ability11"				"special_bonus_all_stats_12"
-			"Ability12"				"special_bonus_hp_regen_40"
-			"Ability13"				"special_bonus_attack_speed_100"
-			"Ability14"				"special_bonus_magic_resistance_50"
-			"Ability15"				"special_bonus_attack_damage_90"
-			"Ability16"				"special_bonus_armor_7"
-			"Ability17"				"special_bonus_all_stats_20"
-			"Ability18"				""
+		"ModelScale"          		"0.94" //размер модели
+		"HealthBarOffset"    		"140" //насколько высоко будет хп бар
+		"DisableWearables"    		"1"
+
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"				"wolverine_enrage"							// Ability 1
+		"Ability2"				"wolverine_fury_swipes"									// Ability 2
+		"Ability3"				"wolverine_mastery"							// Ability 3
+		"Ability4"				"generic_hidden"							     // Ability 4
+		"Ability5"			 	"generic_hidden"
+		"Ability6"			 	"wolverine_berserk"
+		"Ability7"			    ""
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_hp_regen_40"
+		"Ability13"				"special_bonus_attack_speed_100"
+		"Ability14"				"special_bonus_magic_resistance_50"
+		"Ability15"				"special_bonus_attack_damage_90"
+		"Ability16"				"special_bonus_armor_7"
+		"Ability17"				"special_bonus_all_stats_20"
+		"Ability18"				""
 
 
-			// Armor
-			//----------------------------------------------------------------
-			"ArmorPhysical"         "3"
-			"MagicalResistance"     "24"
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"         "3"
+		"MagicalResistance"     "24"
 
-			// Attack
-			//----------------------------------------------------------------
-			"AttackCapabilities"    	"DOTA_UNIT_CAP_MELEE_ATTACK"
-			"AttackDamageType"      	"DAMAGE_TYPE_ArmorPhysical"
-			"AttackDamageMin"       	"26.0"
-			"AttackDamageMax"       	"34.0"
-			"AttackRate"            	"1.6"
-			"AttackAnimationPoint"  	"0.4"
-			"AttackAcquisitionRange"	"600"
-			"AttackRange"           	"128"
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"    	"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageType"      	"DAMAGE_TYPE_ArmorPhysical"
+		"AttackDamageMin"       	"26.0"
+		"AttackDamageMax"       	"34.0"
+		"AttackRate"            	"1.6"
+		"AttackAnimationPoint"  	"0.4"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"           	"128"
 
-			// Bounds
-			//----------------------------------------------------------------
-			"BoundsHullName"       		"DOTA_HULL_SIZE_HERO"
-			"RingRadius"            	"70"
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"       		"DOTA_HULL_SIZE_HERO"
+		"RingRadius"            	"70"
 
-			// Movement
-			//----------------------------------------------------------------
-			"MovementCapabilities"  	"DOTA_UNIT_CAP_MOVE_GROUND"
-			"MovementSpeed"         	"310"
-			"MovementTurnRate"      	"0.6"
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"  	"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"         	"310"
+		"MovementTurnRate"      	"0.6"
 
-			// Status
-			//----------------------------------------------------------------
-			"StatusHealth"          	"100"
-			"StatusHealthRegen"     	"2.0"
-			"StatusMana"            	"400"
-			"StatusManaRegen"       	"1"
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"          	"100"
+		"StatusHealthRegen"     	"2.0"
+		"StatusMana"            	"400"
+		"StatusManaRegen"       	"1"
 
-			// Vision
-			//----------------------------------------------------------------
-			"VisionDaytimeRange"    	"1400"
-			"VisionNighttimeRange"  	"800"
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"    	"1400"
+		"VisionNighttimeRange"  	"800"
 
-			"AttributeBaseStrength"   	"26"                   // Base strength
-			"AttributeStrengthGain"   	"3.4"                   // Strength bonus per level.
-			"AttributeBaseIntelligence" "16"                   // Base intelligence
-			"AttributeIntelligenceGain" "1.7"                   // Intelligence bonus per level.
-			"AttributeBaseAgility"    	"18"                   // Base agility
-			"AttributeAgilityGain"    	"2.0"                   // Agility bonus per level.
-			"AttributePrimary"      	"DOTA_ATTRIBUTE_STRENGTH"
-	  }
-	"npc_dota_hero_loki" //имя юнита
+		"AttributeBaseStrength"   	"26"                   // Base strength
+		"AttributeStrengthGain"   	"3.4"                   // Strength bonus per level.
+		"AttributeBaseIntelligence" "16"                   // Base intelligence
+		"AttributeIntelligenceGain" "1.7"                   // Intelligence bonus per level.
+		"AttributeBaseAgility"    	"18"                   // Base agility
+		"AttributeAgilityGain"    	"2.0"                   // Agility bonus per level.
+		"AttributePrimary"      	"DOTA_ATTRIBUTE_STRENGTH"
+	}
+	"npc_dota_hero_rubick" //имя юнита
 	{
 	    // General
 	    //----------------------------------------------------------------
-	    "override_hero"			"npc_dota_hero_rubick"
-	    "Model"					"models/heroes/hero_loki/loki.vmdl"
-	    "AbilityLayout"			"6"
-	    "ModelScale"			"1.55"
-	    "DisableWearables"  	"1"
-	    "Ability1"				"loki_blink_strike"
+	    ///"override_hero"			"npc_dota_hero_rubick"
+	    "HeroID"					"86"
+	    "BaseClass"				"npc_dota_hero_rubick"
+
+
+		"Model"					"models/heroes/hero_loki/loki.vmdl"
+		"AbilityLayout"			"6"
+		"ModelScale"				"1.55"
+		"DisableWearables"  		"1"
+		"Ability1"				"loki_blink_strike"
 		"Ability2"				"loki_wind_walk"
 		"Ability3"				"loki_trap"
 		"Ability4"				"rubick_empty1"
 		"Ability5"				"rubick_empty2"
 		"Ability6"				"loki_spell_steal"
-	    "Ability11"				"special_bonus_exp_boost_30"
-	    "Ability12"				"special_bonus_all_stats_12"
-	    "Ability14"				"special_bonus_hp_regen_40"
-	    "Ability13"				"special_bonus_unique_loki"
-	    "Ability15"				"special_bonus_unique_faceless_void_4"
-	    "Ability16"				"special_bonus_cooldown_reduction_25"
-	    "Ability17"				"special_bonus_magic_resistance_6"
-	    "Ability18"				"special_bonus_spell_block_15"
+		"Ability11"				"special_bonus_exp_boost_30"
+		"Ability12"				"special_bonus_all_stats_12"
+		"Ability14"				"special_bonus_hp_regen_40"
+		"Ability13"				"special_bonus_unique_loki"
+		"Ability15"				"special_bonus_unique_faceless_void_4"
+		"Ability16"				"special_bonus_cooldown_reduction_25"
+		"Ability17"				"special_bonus_magic_resistance_6"
+		"Ability18"				"special_bonus_spell_block_15"
 
 		"AbilityTalentStart" "11"
 
-	    "ArmorPhysical"						"0"
-	    "AttackCapabilities"				"DOTA_UNIT_CAP_MELEE_ATTACK"
-	    "AttackDamageMin"					"22"
-	    "AttackDamageMax"					"30"
-	    "AttackRate"						"1.700000"
-	    "AttackAnimationPoint"				"0.300000"
-	    "AttackAcquisitionRange"			"600"
-	    "AttackRange"						"150"
-	    "AttributePrimary"					"DOTA_ATTRIBUTE_INTELLECT"
-	    "AttributeBaseStrength"				"20"
-	    "AttributeStrengthGain"				"2.000000"
-	    "AttributeBaseIntelligence"			"28"
-	    "AttributeIntelligenceGain"			"3.4000000"
-	    "AttributeBaseAgility"				"18"
-	    "AttributeAgilityGain"				"1.50000"
-	    "MovementSpeed"						"300"
-	    "MovementTurnRate"					"0.600000"
-	    "BoundsHullName"					"DOTA_HULL_SIZE_HERO"
+		"ArmorPhysical"						"0"
+		"AttackCapabilities"				"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"					"22"
+		"AttackDamageMax"					"30"
+		"AttackRate"						"1.700000"
+		"AttackAnimationPoint"				"0.300000"
+		"AttackAcquisitionRange"			"600"
+		"AttackRange"						"150"
+		"AttributePrimary"					"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"				"20"
+		"AttributeStrengthGain"				"2.000000"
+		"AttributeBaseIntelligence"			"28"
+		"AttributeIntelligenceGain"			"3.4000000"
+		"AttributeBaseAgility"				"18"
+		"AttributeAgilityGain"				"1.50000"
+		"MovementSpeed"						"300"
+		"MovementTurnRate"					"0.600000"
+		"BoundsHullName"					"DOTA_HULL_SIZE_HERO"
 	}
-	"npc_dota_hero_magneto" //имя юнита
+	"npc_dota_hero_silencer" //имя юнита
 	{
-	      // General
-	      //----------------------------------------------------------------
-	      "override_hero"			"npc_dota_hero_silencer"
-	      "DisableWearables"		"1"
-		  "Model"					"models/heroes/hero_magnetto/magentto.vmdl"
+		// General
+		//----------------------------------------------------------------
+		///"override_hero"			"npc_dota_hero_silencer"
+		"HeroID"					"75"
+		"BaseClass"				"npc_dota_hero_silencer"
 
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AbilityLayout"				"4"
-	      //-------------------------------------------------------------------------------------------------------------
-	      "Ability1"					"magneto_telekinesis"
-	      "Ability2"					"magneto_natural_order"
-	      "Ability3"					"magneto_shield"
-	      "Ability4"					"generic_hidden"
-		  "Ability5"					"generic_hidden"
-	  	  "Ability6"			   		"magneto_reverse_polarity"
-	      "Ability7"					"magneto_telekinesis_land"
+		"DisableWearables"		"1"
+		"Model"					"models/heroes/hero_magnetto/magentto.vmdl"
 
-	      "Ability10"					"special_bonus_exp_boost_30"
-	      "Ability11"					"special_bonus_all_stats_12"
-	      "Ability12"					"special_bonus_unique_silencer_2"
-	      "Ability13"					"special_bonus_attack_speed_100"
-	      "Ability14"					"special_bonus_cooldown_reduction_25"
-	      "Ability15"					"special_bonus_mp_500"
-	      "Ability16"					"special_bonus_spell_block_15"
-	      "Ability17"					"special_bonus_all_stats_20"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"					"magneto_telekinesis"
+		"Ability2"					"magneto_natural_order"
+		"Ability3"					"magneto_shield"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"			   		"magneto_reverse_polarity"
+		"Ability7"					"magneto_telekinesis_land"
 
-	      // Armor
-	      //----------------------------------------------------------------
-	      "ArmorPhysical"         "0"
-	      "MagicalResistance"     "24"
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_unique_silencer_2"
+		"Ability13"					"special_bonus_attack_speed_100"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_mp_500"
+		"Ability16"					"special_bonus_spell_block_15"
+		"Ability17"					"special_bonus_all_stats_20"
 
-	      // Attack
-	      //----------------------------------------------------------------
-	      "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	      "AttackDamageType"      	"DAMAGE_TYPE_ArmorPhysical"
-	      "AttackDamageMin"       	"26.0"
-	      "AttackDamageMax"       	"34.0"
-	      "AttackRate"            	"1.6"
-	      "AttackAnimationPoint"  	"0.4"
-	      "AttackAcquisitionRange"	"800"
-	      "AttackRange"           	"600"
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"         "0"
+		"MagicalResistance"     "24"
 
-	      // Bounds
-	      //----------------------------------------------------------------
-	      "BoundsHullName"        	"DOTA_HULL_SIZE_HERO"
-	      "RingRadius"            	"70"
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageType"      	"DAMAGE_TYPE_ArmorPhysical"
+		"AttackDamageMin"       	"26.0"
+		"AttackDamageMax"       	"34.0"
+		"AttackRate"            	"1.6"
+		"AttackAnimationPoint"  	"0.4"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"           	"600"
 
-	      // Movement
-	      //----------------------------------------------------------------
-	      "MovementCapabilities"  	"DOTA_UNIT_CAP_MOVE_GROUND"
-	      "MovementSpeed"         	"305"
-	      "MovementTurnRate"      	"0.6"
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"        	"DOTA_HULL_SIZE_HERO"
+		"RingRadius"            	"70"
 
-	      // Status
-	      //----------------------------------------------------------------
-	      "StatusHealth"          	"100"
-	      "StatusHealthRegen"     	"1.0"
-	      "StatusMana"            	"300"
-	      "StatusManaRegen"       	"1.0"
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"  	"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"         	"305"
+		"MovementTurnRate"      	"0.6"
 
-	      // Vision
-	      //----------------------------------------------------------------
-	      "VisionDaytimeRange"    	"1400"
-	      "VisionNighttimeRange"  	"800"
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"          	"100"
+		"StatusHealthRegen"     	"1.0"
+		"StatusMana"            	"300"
+		"StatusManaRegen"       	"1.0"
 
-	      "AttributePrimary"      		"DOTA_ATTRIBUTE_INTELLECT"
-	      "AttributeBaseStrength"   	"20"                   // Base strength
-	      "AttributeStrengthGain"   	"1.8"                   // Strength bonus per level.
-	      "AttributeBaseIntelligence"	"25"                   // Base intelligence
-	      "AttributeIntelligenceGain"	"3.2"                   // Intelligence bonus per level.
-	      "AttributeBaseAgility"    	"20"                   // Base agility
-	      "AttributeAgilityGain"    	"2.3"                   // Agility bonus per level.
-	  }
-	"npc_dota_hero_medivh"
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"    	"1400"
+		"VisionNighttimeRange"  	"800"
+
+		"AttributePrimary"      		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"   	"20"                   // Base strength
+		"AttributeStrengthGain"   	"1.8"                   // Strength bonus per level.
+		"AttributeBaseIntelligence"	"25"                   // Base intelligence
+		"AttributeIntelligenceGain"	"3.2"                   // Intelligence bonus per level.
+		"AttributeBaseAgility"    	"20"                   // Base agility
+		"AttributeAgilityGain"    	"2.3"                   // Agility bonus per level.
+	}
+	"npc_dota_hero_lich"
 	{
-		"override_hero"				"npc_dota_hero_lich"
+		///"override_hero"				"npc_dota_hero_lich"
+		"HeroID"						"31"
+		"BaseClass"					"npc_dota_hero_lich"
+
+
 		"Model"						"models/heroes/medivh_v2/medivh.vmdl"
 		"ModelScale"				"0.68"
 		"LoadoutScale"				"0.68"
@@ -2639,12 +2805,15 @@
 	}
 	"npc_dota_hero_monkey_king"
 	{
-		"override_hero"				    "npc_dota_hero_monkey_king"
-		"Model"		                "models/heroes/monkey_king/monkey_king.vmdl"
-		"SoundSet"		            "Hero_MonkeyKing"
-		"PickSound"		            "monkey_king_monkey_spawn_17"
-		"BanSound"		            "monkey_king_monkey_anger_12"
-		"HeroSelectSoundEffect"		"Hero_MonkeyKing.Pick"
+		////"override_hero"				  "npc_dota_hero_monkey_king"
+		"HeroID"						"114"
+		"BaseClass"					"npc_dota_hero_monkey_king"
+
+		"Model"		               	 "models/heroes/monkey_king/monkey_king.vmdl"
+		"SoundSet"		          	  "Hero_MonkeyKing"
+		"PickSound"		           	 "monkey_king_monkey_spawn_17"
+		"BanSound"		           	 "monkey_king_monkey_anger_12"
+		"HeroSelectSoundEffect"			"Hero_MonkeyKing.Pick"
 
 		"DisableWearables"      	"1"
 		"ModelScale"	          	"0.8100"
@@ -2688,52 +2857,55 @@
 		"HealthBarOffset"			"165"
 		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
 	  }
-	"npc_dota_hero_murlock"
+	"npc_dota_hero_slark"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-	    "override_hero"			    "npc_dota_hero_slark"
-	    "Ability1"					"murlock_dark_pact"						// Ability 1
-	    "Ability2"					"murlock_pounce"							// Ability 2
-	    "Ability3"					"murlock_agility_steal"					// Ability 3
-	    "Ability4"					"generic_hidden"					// Ability 4
-	    "Ability5"					"generic_hidden"
-	    "Ability6"		     	    "murlock_primal_eject"
-	    "Ability7"		         	""
-	    "Ability10"					"special_bonus_exp_boost_30"
-	    "Ability11"					"special_bonus_all_stats_12"
-	    "Ability12"					"special_bonus_hp_regen_40"
-	    "Ability13"					"special_bonus_attack_speed_100"
-	    "Ability14"					"special_bonus_cooldown_reduction_25"
-	    "Ability15"					"special_bonus_agility_15"
-	    "Ability16"					"special_bonus_unique_murloc"
-	    "Ability17"					"special_bonus_all_stats_20"
-	    "DisableWearables"			"1"
-	    "ArmorPhysical"				"0"
-	    "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	    "AttackDamageMin"			"28"
-	    "AttackDamageMax"			"36"
-	    "AttackRate"				"1.600000"
-	    "AttackAnimationPoint"		"0.400000"
-	    "AttackAcquisitionRange"	"600"
-	    "AttackRange"				"150"
-	    "ProjectileSpeed"			"0"
-	    "AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-	    "AttributeBaseStrength"		"20"
-	    "AttributeStrengthGain"		"2.200000"
-	    "AttributeBaseIntelligence"	"18"
-	    "AttributeIntelligenceGain"	"1.700000"
-	    "AttributeBaseAgility"		"24"
-	    "AttributeAgilityGain"		"3.000000"
-	    "VisionDaytimeRange"		"1800"
-	    "VisionNighttimeRange"		"1800"
-	    "MovementSpeed"				"305"
-	    "MovementTurnRate"			"0.500000"
-	    "BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-	    "HealthBarOffset"			"140"
-	    "particle_folder"			"particles/units/heroes/hero_slark"
-	    "GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
-	    "VoiceFile"					"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
+		///"override_hero"			    "npc_dota_hero_slark"
+		"HeroID"						"93"
+		"BaseClass"					"npc_dota_hero_slark"
+
+		"Ability1"					"murlock_dark_pact"						// Ability 1
+		"Ability2"					"murlock_pounce"							// Ability 2
+		"Ability3"					"murlock_agility_steal"					// Ability 3
+		"Ability4"					"generic_hidden"					// Ability 4
+		"Ability5"					"generic_hidden"
+		"Ability6"		     	    	"murlock_primal_eject"
+		"Ability7"		        	 	""
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_all_stats_12"
+		"Ability12"					"special_bonus_hp_regen_40"
+		"Ability13"					"special_bonus_attack_speed_100"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_agility_15"
+		"Ability16"					"special_bonus_unique_murloc"
+		"Ability17"					"special_bonus_all_stats_20"
+		"DisableWearables"			"1"
+		"ArmorPhysical"				"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"28"
+		"AttackDamageMax"			"36"
+		"AttackRate"				"1.600000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.200000"
+		"AttributeBaseIntelligence"	"18"
+		"AttributeIntelligenceGain"	"1.700000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"3.000000"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1800"
+		"MovementSpeed"				"305"
+		"MovementTurnRate"			"0.500000"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"140"
+		"particle_folder"			"particles/units/heroes/hero_slark"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
 		"precache"
 		{
 			"model"	  "models/frostmorn/slark_frostmourne.vmdl"
@@ -2743,29 +2915,31 @@
 	}
 	"npc_dota_hero_necrolyte"
 	{
-		"override_hero"			    	"npc_dota_hero_necrolyte"
+		///"override_hero"			    	"npc_dota_hero_necrolyte"
+		"HeroID"						"36"
+		"BaseClass"					"npc_dota_hero_necrolyte"
 
 		"Model"		                	"models/heroes/hero_palpatine/palpatine.vmdl"
 
 		"AbilityLayout"    			 	"4"
-	    "DisableWearables" 			 	"1"
+	    	"DisableWearables" 			 	"1"
 
-		"SoundSet"						"Hero_zuus"
+		"SoundSet"					"Hero_zuus"
 
-		"Ability1"		      			"palpatine_force"
-		"Ability2"		      			"palpatine_chain_lighning"
-		"Ability3"		      			"palpatine_refraction"
-		"Ability4"		     	 		"generic_hidden"
+		"Ability1"		      		"palpatine_force"
+		"Ability2"		      		"palpatine_chain_lighning"
+		"Ability3"		      		"palpatine_refraction"
+		"Ability4"		     	 	"generic_hidden"
 		"Ability5"		    			"generic_hidden"
 		"Ability6"		    			"palpatine_dark_aura"
-		"Ability10"						"special_bonus_exp_boost_30"
-		"Ability11"						"special_bonus_unique_palpatine_1"
-		"Ability12"						"special_bonus_intelligence_10"
-		"Ability13"						"special_bonus_unique_palpatine_5"
-		"Ability14"						"special_bonus_cooldown_reduction_25"
-		"Ability15"						"special_bonus_unique_palpatine_4"
-		"Ability16"						"special_bonus_unique_palpatine_3"
-		"Ability17"						"special_bonus_all_stats_20"
+		"Ability10"					"special_bonus_exp_boost_30"
+		"Ability11"					"special_bonus_unique_palpatine_1"
+		"Ability12"					"special_bonus_intelligence_10"
+		"Ability13"					"special_bonus_unique_palpatine_5"
+		"Ability14"					"special_bonus_cooldown_reduction_25"
+		"Ability15"					"special_bonus_unique_palpatine_4"
+		"Ability16"					"special_bonus_unique_palpatine_3"
+		"Ability17"					"special_bonus_all_stats_20"
 
 		"ArmorPhysical"					"0"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -2795,47 +2969,50 @@
 
 		"StatusHealth"					"570"
 	}
-	"npc_dota_hero_nightbringer"
+	"npc_dota_hero_bane"
 	{
 		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"override_hero"     		"npc_dota_hero_bane"
-		"DisableWearables"			"1"
-		"ModelScale"        		"4"
-		"Model"					   	"models/heroes/hero_nightbringer/nightbringer.vmdl"		// Model.
-		"Portrait"					"vgui/hud/heroportraits/portrait_gyrocopter"						// Small image for hero selection
-		"SoundSet"					"Hero_spirit_breaker"													// Name of sound set.
-	   		"IdleSoundLoop"			"Hero_Spirit_Breaker.IdleLoop"
+          //-------------------------------------------------------------------------------------------------------------
+          ////"override_hero"     		     "npc_dota_hero_bane"
+          "HeroID"						"3"
+		"BaseClass"					"npc_dota_hero_bane"
 
-		"Ability1"					"nightbringer_offer_of_life"	                     	                    // Ability 1
-		"Ability2"					"nightbringer_spirit_strike"		                                        // Ability 2
-		"Ability3"					"nightbringer_void"		        	                              // Ability 3
-		"Ability4"					"generic_hidden"
-	    "Ability5"          		"generic_hidden"                                     	// Ability 4
-		"Ability6"		  		    "nightbringer_rise_of_night"
-		"Ability7"		    	 	""
-		"Ability10"					"special_bonus_exp_boost_30"
-		"Ability11"					"special_bonus_all_stats_12"
-		"Ability12"					"special_bonus_movement_speed_60"
-		"Ability13"					"special_bonus_spell_amplify_20"
-		"Ability14"					"special_bonus_cooldown_reduction_25"
-		"Ability15"					"special_bonus_cast_range_400"
-		"Ability16"					"special_bonus_spell_amplify_15"
-		"Ability17"					"special_bonus_all_stats_20"
+          "DisableWearables"			     "1"
+          "ModelScale"        		     "4"
+          "Model"					   	"models/heroes/hero_nightbringer/nightbringer.vmdl"		// Model.
+          "Portrait"					"vgui/hud/heroportraits/portrait_gyrocopter"						// Small image for hero selection
+          "SoundSet"					"Hero_spirit_breaker"													// Name of sound set.
+          "IdleSoundLoop"			     "Hero_Spirit_Breaker.IdleLoop"
 
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"0"								// Physical protection.
+          "Ability1"					"nightbringer_offer_of_life"	                     	                    // Ability 1
+          "Ability2"					"nightbringer_spirit_strike"		                                        // Ability 2
+          "Ability3"					"nightbringer_void"		        	                              // Ability 3
+          "Ability4"					"generic_hidden"
+          "Ability5"          		     "generic_hidden"                                     	// Ability 4
+          "Ability6"		  		    "nightbringer_rise_of_night"
+          "Ability7"		    	     	""
+          "Ability10"					"special_bonus_exp_boost_30"
+          "Ability11"					"special_bonus_all_stats_12"
+          "Ability12"					"special_bonus_movement_speed_60"
+          "Ability13"					"special_bonus_spell_amplify_20"
+          "Ability14"					"special_bonus_cooldown_reduction_25"
+          "Ability15"					"special_bonus_cast_range_400"
+          "Ability16"					"special_bonus_spell_amplify_15"
+          "Ability17"					"special_bonus_all_stats_20"
+
+          // Armor
+          //-------------------------------------------------------------------------------------------------------------
+          "ArmorPhysical"				"0"								// Physical protection.
 
 
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"	 	"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"29"									// Damage range min.
-		"AttackDamageMax"			"39"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.3"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
+          // Attack
+          //-------------------------------------------------------------------------------------------------------------
+          "AttackCapabilities"	 	"DOTA_UNIT_CAP_RANGED_ATTACK"
+          "AttackDamageMin"			"29"									// Damage range min.
+          "AttackDamageMax"			"39"									// Damage range max.
+          "AttackRate"				"1.7"									// Speed of attack.
+          "AttackAnimationPoint"		"0.3"									// Normalized time in animation cycle to attack.
+          "AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
 		"AttackRange"			    "600"									// Range within a target can be attacked.
 		"ProjectileSpeed"			"1200"									// Speed of projectile.
 
@@ -2857,15 +3034,19 @@
 		"MovementTurnRate"			"0.6"									// Turning rate.
 		"HasAggressiveStance"		"1"
 		"HealthBarOffset"			"240"
-	  }
-	"npc_dota_hero_nightcrawler"
+	}
+	"npc_dota_hero_gyrocopter"
 	{
-		"override_hero"					"npc_dota_hero_gyrocopter"
+		///"override_hero"					"npc_dota_hero_gyrocopter"
 
-		"Model"						    "models/heroes/hero_nightkrawler/nightcrawler.vmdl"
-        "SoundSet"		                "Hero_MonkeyKing"
-		"ModelScale"					"0.6000"
-		"LoadoutScale"					"0.6000"
+          "HeroID"						     "72"
+		"BaseClass"					     "npc_dota_hero_gyrocopter"
+
+
+		"Model"						     "models/heroes/hero_nightkrawler/nightcrawler.vmdl"
+        	"SoundSet"		                    "Hero_MonkeyKing"
+		"ModelScale"					     "0.6000"
+		"LoadoutScale"					     "0.6000"
 		"AbilityLayout"					"4"
 		"Ability1"						"nightcrawler_blink"
 		"Ability2"						"nightcrawler_soul_exhaustion"
@@ -2909,12 +3090,16 @@
 		"HasAggressiveStance"			"0"
 		"HealthBarOffset"				"165"
 	}
-	"npc_dota_hero_night_king"
+	"npc_dota_hero_sand_king"
 	{
-		"override_hero"				"npc_dota_hero_sand_king"
+		////"override_hero"				"npc_dota_hero_sand_king"
+
+          "HeroID"					     "16"
+		"BaseClass"					"npc_dota_hero_sand_king"
+
 		"Model"						"models/heroes/wraith_king/leoric_base.vmdl"
-		"DisableWearables"			"1"
-		"ModelScale"				"0.88"
+		"DisableWearables"			     "1"
+		"ModelScale"				     "0.88"
 
 		"Ability1"					"ostarion_hellfire_blast"
 		"Ability2"					"ostarion_doom_aura"
@@ -2957,18 +3142,22 @@
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"130"
 	}
-	"npc_dota_hero_nurgle"
+	"npc_dota_hero_disruptor"
 	{
-		"override_hero"				"npc_dota_hero_disruptor"
-		"DisableWearables"			"1"
+		////"override_hero"				"npc_dota_hero_disruptor"
+
+          "HeroID"					     "87"
+		"BaseClass"					"npc_dota_hero_disruptor"
+
+		"DisableWearables"			     "1"
 		"Model"		  	 			"models/heroes/hero_nurgle/nurgle.vmdl"
 		"SoundSet"					"Hero_Pudge"
 		"PickSound"					"pudge_pud_spawn_10"
 		"BanSound"					"pudge_pud_anger_01"
 		"IdleSoundLoop"				"Hero_Pudge.IdleLoop"
-		"ModelScale"				"0.60000"
-		"LoadoutScale"				"0.810000"
-		"NameAliases"				"nurgle"
+		"ModelScale"				     "0.60000"
+		"LoadoutScale"				     "0.810000"
+		"NameAliases"				     "nurgle"
 		"url"						"Disruptor"
 		"CMEnabled"					"1"
 
@@ -3010,9 +3199,13 @@
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_pudge.vsndevts"
 		"VoiceBackgroundSound"		"Pudge.Background"
 	}
-	"npc_dota_hero_oblivion"
+	"npc_dota_hero_oracle"
 	{
-		"override_hero"	   			"npc_dota_hero_oracle"
+		////"override_hero"	   			"npc_dota_hero_oracle"
+          "HeroID"					     "111"
+		"BaseClass"					"npc_dota_hero_oracle"
+
+
 		"DisableWearables"			"1"
 		"Ability1"		     		"oblivion_astral"
 		"Ability2"		     		"oblivion_creatures"
@@ -3041,9 +3234,12 @@
 		"AttributeAgilityGain"			"1.700000"
 		"AttributePrimary"      		"DOTA_ATTRIBUTE_INTELLECT"
 	}
-	"npc_dota_hero_odin"
+	"npc_dota_hero_phantom_lancer"
 	{
-	    "override_hero"	"npc_dota_hero_phantom_lancer"
+	    ////"override_hero"	"npc_dota_hero_phantom_lancer"
+         "HeroID"					     "12"
+	    "BaseClass"					"npc_dota_hero_phantom_lancer"
+
 	    "Model"			"models/heroes/hero_odin/odin.vmdl"
 	    "ModelScale"	"1.65"
 	    "DisableWearables" "1"
@@ -3084,14 +3280,17 @@
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"				"155"
 	}
-	"npc_dota_hero_one_punch_man"
+	"npc_dota_hero_skywrath_mage"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"override_hero"		    "npc_dota_hero_skywrath_mage"
-		"Model"					"models/heroes/hero_sitama/saitama.vmdl"		// Model.
-		"ModelScale"			"0.88"
-		"DisableWearables"		"1"
+		////"override_hero"		    "npc_dota_hero_skywrath_mage"
+		"HeroID"				     "101"
+	     "BaseClass"				"npc_dota_hero_skywrath_mage"
+
+          "Model"					"models/heroes/hero_sitama/saitama.vmdl"		// Model.
+		"ModelScale"			     "0.88"
+		"DisableWearables"		     "1"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"4"
@@ -3139,9 +3338,12 @@
 		"MovementTurnRate"			"0.6"									// Turning rate.
 		"HasAggressiveStance"		"1"										// Plays alternate idle/run animation when near enemies
 	}
-	"npc_dota_hero_outsider"
+	"npc_dota_hero_dark_seer"
 	{
-		"override_hero"	  			"npc_dota_hero_dark_seer"
+	     ////	"override_hero"	  			"npc_dota_hero_dark_seer"
+          "HeroID"				     "55"
+	     "BaseClass"				"npc_dota_hero_dark_seer"
+
 		"Model"		        		"models/heroes/hero_outsider/outsider.vmdl"
 		"DisableWearables"  		"1"
 		"ModelScale"		 		"0.9000"
@@ -3187,13 +3389,16 @@
 	//=================================================================================================================
 	// HERO: Underlord
 	//=================================================================================================================
-	"npc_dota_hero_overvoid"
+	"npc_dota_hero_abyssal_underlord"
 	{
-		"override_hero"		"npc_dota_hero_abyssal_underlord"
+		////"override_hero"		"npc_dota_hero_abyssal_underlord"
+          "HeroID"				"108"
+	     "BaseClass"			"npc_dota_hero_abyssal_underlord"
+
 		"Model"				"models/heroes/overvoid/overvoid.vmdl"
-		"DisableWearables"	"1"
-		"ModelScale"		"0.68"
-		"LoadoutScale"		"0.68"
+		"DisableWearables"	     "1"
+		"ModelScale"		     "0.68"
+		"LoadoutScale"		     "0.68"
 		"AbilityLayout"		"5"
 		"Ability1"			"overvoid_firestorm"
 		"Ability2"			"overvoid_infinite"
@@ -3230,119 +3435,130 @@
 		"MovementTurnRate"				"0.600000"
 		"HealthBarOffset"				"200"
 	}
-	"npc_dota_hero_panda"
-	    	{
-	    		// General
-	    		//-------------------------------------------------------------------------------------------------------------
-	        "override_hero"		    "npc_dota_hero_tusk"
-	        "Model"					"models/heroes/brewmaster/brewmaster.vmdl"				// Model.
-	        "DisableWearables"		"1"
-	        // Abilities
-	        //-------------------------------------------------------------------------------------------------------------
-	        "Ability1"				"po_stomp"			    	// Ability 1
-	        "Ability2"				"po_smoke_strike"					// Ability 2
-	        "Ability3"				"po_degen_aura"					// Ability 3
-	        "Ability4"				"generic_hidden"			    	// Ability 4
-	        "Ability6"				"po_walrus_punch"			    	// Ability 4
-	        "Ability7"				""			    	// Ability 4
-	        "Ability5"				"generic_hidden"
-	        "Ability10"				"special_bonus_exp_boost_30"
-	        "Ability11"				"special_bonus_all_stats_12"
-	        "Ability12"				"special_bonus_movement_speed_60"
-	        "Ability13"				"special_bonus_attack_speed_100"
-	        "Ability14"				"special_bonus_cooldown_reduction_25"
-	        "Ability15"				"special_bonus_attack_damage_90"
-	        "Ability16"				"special_bonus_agility_25"
-	        "Ability17"				"special_bonus_all_stats_20"
+	"npc_dota_hero_tusk"
+     {
+          // General
+          //-------------------------------------------------------------------------------------------------------------
+          ////"override_hero"		    "npc_dota_hero_tusk"
+
+          "HeroID"				     "100"
+          "BaseClass"			     "npc_dota_hero_tusk"
+
+          "Model"					"models/heroes/brewmaster/brewmaster.vmdl"				// Model.
+          "DisableWearables"		     "1"
+          // Abilities
+          //-------------------------------------------------------------------------------------------------------------
+          "Ability1"				"po_stomp"			    	// Ability 1
+          "Ability2"				"po_smoke_strike"					// Ability 2
+          "Ability3"				"po_degen_aura"					// Ability 3
+          "Ability4"				"generic_hidden"			    	// Ability 4
+          "Ability6"				"po_walrus_punch"			    	// Ability 4
+          "Ability7"				""			    	// Ability 4
+          "Ability5"				"generic_hidden"
+          "Ability10"				"special_bonus_exp_boost_30"
+          "Ability11"				"special_bonus_all_stats_12"
+          "Ability12"				"special_bonus_movement_speed_60"
+          "Ability13"				"special_bonus_attack_speed_100"
+          "Ability14"				"special_bonus_cooldown_reduction_25"
+          "Ability15"				"special_bonus_attack_damage_90"
+          "Ability16"				"special_bonus_agility_25"
+          "Ability17"				"special_bonus_all_stats_20"
 
 
-	    		// Armor
-	    		//-------------------------------------------------------------------------------------------------------------
-	    		"ArmorPhysical"			"0"											// Physical protection.
+          // Armor
+          //-------------------------------------------------------------------------------------------------------------
+          "ArmorPhysical"			"0"											// Physical protection.
 
-	    		// Attack
-	    		//-------------------------------------------------------------------------------------------------------------
-	    		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	    		"AttackDamageMin"			"45"									// Damage range min.
-	    		"AttackDamageMax"			"60"									// Damage range max.
-	    		"AttackRate"				"1.6"									// Speed of attack.
-	    		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-	    		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-	    		"AttackRange"				"128"									// Range within a target can be attacked.
+          // Attack
+          //-------------------------------------------------------------------------------------------------------------
+          "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+          "AttackDamageMin"			"45"									// Damage range min.
+          "AttackDamageMax"			"60"									// Damage range max.
+          "AttackRate"				"1.6"									// Speed of attack.
+          "AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
+          "AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+          "AttackRange"				"128"									// Range within a target can be attacked.
 
-	    		// Attributes
-	    		//-------------------------------------------------------------------------------------------------------------
-	    		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-	    		"AttributeBaseStrength"		"22"									// Base strength
-	    		"AttributeStrengthGain"		"2.2"									// Strength bonus per level.
-	    		"AttributeBaseIntelligence"	"21"									// Base intelligence
-	    		"AttributeIntelligenceGain"	"2.0"									// Intelligence bonus per level.
-	    		"AttributeBaseAgility"		"25"									// Base agility
-	    		"AttributeAgilityGain"		"2.9"									// Agility bonus per level.
+          // Attributes
+          //-------------------------------------------------------------------------------------------------------------
+          "AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+          "AttributeBaseStrength"		"22"									// Base strength
+          "AttributeStrengthGain"		"2.2"									// Strength bonus per level.
+          "AttributeBaseIntelligence"	"21"									// Base intelligence
+          "AttributeIntelligenceGain"	"2.0"									// Intelligence bonus per level.
+          "AttributeBaseAgility"		"25"									// Base agility
+          "AttributeAgilityGain"		"2.9"									// Agility bonus per level.
 
-	    		// Status
-	    		//-------------------------------------------------------------------------------------------------------------
-	    		"StatusHealthRegen"			"0.75"									// Health regeneration rate.
+          // Status
+          //-------------------------------------------------------------------------------------------------------------
+          "StatusHealthRegen"			"0.75"									// Health regeneration rate.
 
-	    		// Movement
-	    		//-------------------------------------------------------------------------------------------------------------
-	    		"MovementSpeed"				"300"									// Speed.
-	    		"MovementTurnRate"			"0.6"									// Turning rate.
-	    		"HasAggressiveStance"		"1"										// Plays alternate idle/run animation when near enemies
-	    		"precache"
-			{
-				"model"	  "models/heroes/brewmaster/brewmaster.vmdl"
-			}
+          // Movement
+          //-------------------------------------------------------------------------------------------------------------
+          "MovementSpeed"				"300"									// Speed.
+          "MovementTurnRate"			"0.6"									// Turning rate.
+          "HasAggressiveStance"		"1"										// Plays alternate idle/run animation when near enemies
+          
+          "precache"
+          {
+               "model"	  "models/heroes/brewmaster/brewmaster.vmdl"
+          }
 	}
-	"npc_dota_hero_predator"
+	"npc_dota_hero_bounty_hunter"
 	{
-			"override_hero"					"npc_dota_hero_bounty_hunter"
-			"Model"	              	"models/heroes/hero_predator/predator.vmdl"
-			"ModelScale"		        "1.140000"
-			"LoadoutScale"          "0.5"
-			"DisableWearables"      "1"
+         //// "override_hero"					"npc_dota_hero_bounty_hunter"
+          "HeroID"				     "62"
+          "BaseClass"			     "npc_dota_hero_bounty_hunter"
 
-			"AbilityLayout"					"6"
-			"Ability1"		         "predator_tree_dance"
-			"Ability2"	           	 "predator_observer"
-			"Ability3"		         "predator_hunter_strike"
-			"Ability4"	             "predator_flying_blade"
-			"Ability5"	             "predator_plasma_shot_mode"
-			"Ability6"	             "predator_plasma_shot"
-			"Ability10"				 "special_bonus_exp_boost_30"
-			"Ability11"			     "special_bonus_all_stats_12"
-			"Ability12"		         "special_bonus_attack_speed_100"
-			"Ability13"		         "special_bonus_movement_speed_60"
-			"Ability14"		         "special_bonus_unique_predator"
-			"Ability15"		         "special_bonus_agility_15"
-			"Ability16"		         "special_bonus_spell_amplify_15"
-			"Ability17"		         "special_bonus_all_stats_20"
-			"ArmorPhysical"		      "0"
-			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-			"AttackDamageMin"		     "23"
-			"AttackDamageMax"		     "37"
-			"AttackRate"		          "1.550000"
-			"AttackAnimationPoint"		"0.500000"
-			"AttackAcquisitionRange"	"600"
-			"AttackRange"		          "150"
-			"AttributePrimary"		    "DOTA_ATTRIBUTE_AGILITY"
-			"AttributeBaseStrength"		"20"
-			"AttributeStrengthGain"		"1.900000"
-			"AttributeBaseAgility"		"28"
-			"AttributeAgilityGain"		"3.200000"
-			"AttributeBaseIntelligence"		"19"
-			"AttributeIntelligenceGain"		"2.000000"
-			"MovementSpeed"		         "315"
-			"MovementTurnRate"		     "0.600000"
-			"StatusHealthRegen"		     "2.000000"
-			"VisionDaytimeRange"	 	   "1800"
-			"VisionNighttimeRange"		 "1000"
-			"BoundsHullName"		       "DOTA_HULL_SIZE_HERO"
-			"HealthBarOffset"		       "120"
-	  	}
-	"npc_dota_hero_quicksilver"
+          "Model"	              	"models/heroes/hero_predator/predator.vmdl"
+          "ModelScale"		        "1.140000"
+          "LoadoutScale"          "0.5"
+          "DisableWearables"      "1"
+
+          "AbilityLayout"					"6"
+          "Ability1"		         "predator_tree_dance"
+          "Ability2"	           	 "predator_observer"
+          "Ability3"		         "predator_hunter_strike"
+          "Ability4"	             "predator_flying_blade"
+          "Ability5"	             "predator_plasma_shot_mode"
+          "Ability6"	             "predator_plasma_shot"
+          "Ability10"				 "special_bonus_exp_boost_30"
+          "Ability11"			     "special_bonus_all_stats_12"
+          "Ability12"		         "special_bonus_attack_speed_100"
+          "Ability13"		         "special_bonus_movement_speed_60"
+          "Ability14"		         "special_bonus_unique_predator"
+          "Ability15"		         "special_bonus_agility_15"
+          "Ability16"		         "special_bonus_spell_amplify_15"
+          "Ability17"		         "special_bonus_all_stats_20"
+          "ArmorPhysical"		      "0"
+          "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+          "AttackDamageMin"		     "23"
+          "AttackDamageMax"		     "37"
+          "AttackRate"		          "1.550000"
+          "AttackAnimationPoint"		"0.500000"
+          "AttackAcquisitionRange"	"600"
+          "AttackRange"		          "150"
+          "AttributePrimary"		    "DOTA_ATTRIBUTE_AGILITY"
+          "AttributeBaseStrength"		"20"
+          "AttributeStrengthGain"		"1.900000"
+          "AttributeBaseAgility"		"28"
+          "AttributeAgilityGain"		"3.200000"
+          "AttributeBaseIntelligence"		"19"
+          "AttributeIntelligenceGain"		"2.000000"
+          "MovementSpeed"		         "315"
+          "MovementTurnRate"		     "0.600000"
+          "StatusHealthRegen"		     "2.000000"
+          "VisionDaytimeRange"	 	   "1800"
+          "VisionNighttimeRange"		 "1000"
+          "BoundsHullName"		       "DOTA_HULL_SIZE_HERO"
+          "HealthBarOffset"		       "120"
+     }
+	"npc_dota_hero_ancient_apparition"
 	{
-	    "override_hero" 	"npc_dota_hero_ancient_apparition"
+	     //// "override_hero" 	"npc_dota_hero_ancient_apparition"
+          "HeroID"				     "68"
+          "BaseClass"			     "npc_dota_hero_ancient_apparition"
+
 		"Model"				"models/heroes/hero_qucksilver/quicksilver.vmdl"
 		"DisableWearables"	"1"
 		"ModelScale"		"1.000000"
@@ -3386,9 +3602,12 @@
 			"model"		"models/heroes/antimage/antimage.vmdl"
 		}
 	}
-	"npc_dota_hero_ragnaros"
+	"npc_dota_hero_visage"
 	{
-		"override_hero"			"npc_dota_hero_visage"
+		////"override_hero"			"npc_dota_hero_visage"
+          "HeroID"				     "92"
+          "BaseClass"			     "npc_dota_hero_visage"
+
 		"Model"					"models/heroes/hero_ragnaros/ragnaros.vmdl"
 		"ModelScale"			"0.67"
 		"AbilityLayout"			"4"
@@ -3427,11 +3646,14 @@
 		"MovementTurnRate"		"0.500000"
 		"HealthBarOffset"		"180"
 	}
-	"npc_dota_hero_ralk" //имя юнита
+	"npc_dota_hero_axe" //имя юнита
 	{
-	      // General
-	      //----------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_axe"
+	     // General
+	     //----------------------------------------------------------------
+		///"override_hero"			"npc_dota_hero_axe"
+          "HeroID"				     "2"
+          "BaseClass"			     "npc_dota_hero_axe"
+
 		"DisableWearables"  "1"
 		"ModelScale"            "1.7"
 		//-------------------------------------------------------------------------------------------------------------
@@ -3463,51 +3685,58 @@
 		"StatusHealthRegen"		"3.000000"
 		"MovementSpeed"		"295"
 	}
-	"npc_dota_hero_rf"
+	"npc_dota_hero_weaver"
 	{
-	      "override_hero"		   "npc_dota_hero_weaver"
-	      "Model"		           "models/heroes/hero_reverse_flash/reverseflash.vmdl"
-	      "DisableWearables"		"1"
-	      "ModelScale"				"2.6"
-	      "AbilityLayout"			"4"
-	      "Ability1"		    	"zoom_time_jump"
-	      "Ability2"		    	"zoom_aura"
-	      "Ability3"		    	"zoom_damage_speed"
-	      "Ability4"		    	"generic_hidden"
-	      "Ability5"		    	"generic_hidden"
-	      "Ability6"				"zoom_time_shift"
-	      "Ability9"				""
-	      "Ability10"				"special_bonus_exp_boost_30"
-	      "Ability11"				"special_bonus_all_stats_12"
-	      "Ability12"				"special_bonus_movement_speed_60"
-	      "Ability13"				"special_bonus_attack_speed_100"
-	      "Ability14"				"special_bonus_cooldown_reduction_25"
-	      "Ability15"				"special_bonus_attack_damage_90"
-	      "Ability16"				"special_bonus_agility_25"
-	      "Ability17"				"special_bonus_all_stats_20"
-	      "ArmorPhysical"		"2"
-	      "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	      "AttackDamageMin"		"27"
-	      "AttackDamageMax"		"37"
-	      "AttackRate"		"1.600000"
-	      "AttackAnimationPoint"		"0.350000"
-	      "AttackAcquisitionRange"		"600"
-	      "AttackRange"		"128"
-	      "AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-	      "AttributeBaseStrength"		"19"
-	      "AttributeStrengthGain"		"2.000000"
-	      "AttributeBaseAgility"		"26"
-	      "AttributeAgilityGain"		"3.200000"
-	      "AttributeBaseIntelligence"		"25"
-	      "AttributeIntelligenceGain"		"1.800000"
-	      "MovementSpeed"		"320"
-	      "MovementTurnRate"		"0.600000"
-	      "HealthBarOffset"		"200"
+          ////"override_hero"		"npc_dota_hero_weaver"
+          "HeroID"				"63"
+          "BaseClass"			"npc_dota_hero_weaver"
+
+          "Model"		           "models/heroes/hero_reverse_flash/reverseflash.vmdl"
+          "DisableWearables"		"1"
+          "ModelScale"			"2.6"
+          "AbilityLayout"		"4"
+          "Ability1"		    	"zoom_time_jump"
+          "Ability2"		    	"zoom_aura"
+          "Ability3"		    	"zoom_damage_speed"
+          "Ability4"		    	"generic_hidden"
+          "Ability5"		    	"generic_hidden"
+          "Ability6"			"zoom_time_shift"
+          "Ability9"			""
+          "Ability10"			"special_bonus_exp_boost_30"
+          "Ability11"			"special_bonus_all_stats_12"
+          "Ability12"			"special_bonus_movement_speed_60"
+          "Ability13"			"special_bonus_attack_speed_100"
+          "Ability14"			"special_bonus_cooldown_reduction_25"
+          "Ability15"			"special_bonus_attack_damage_90"
+          "Ability16"			"special_bonus_agility_25"
+          "Ability17"			"special_bonus_all_stats_20"
+          "ArmorPhysical"		"2"
+          "AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
+          "AttackDamageMin"		"27"
+          "AttackDamageMax"		"37"
+          "AttackRate"		     "1.600000"
+          "AttackAnimationPoint"		"0.350000"
+          "AttackAcquisitionRange"		"600"
+          "AttackRange"		     "128"
+          "AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+          "AttributeBaseStrength"		"19"
+          "AttributeStrengthGain"		"2.000000"
+          "AttributeBaseAgility"		"26"
+          "AttributeAgilityGain"		"3.200000"
+          "AttributeBaseIntelligence"		"25"
+          "AttributeIntelligenceGain"		"1.800000"
+          "MovementSpeed"		"320"
+          "MovementTurnRate"		"0.600000"
+          "HealthBarOffset"		"200"
 	}
-	"npc_dota_hero_rocket"
+	"npc_dota_hero_sniper"
 	{
 		"Model"		"models/heroes/hero_racoon/racoon.vmdl"
-		"override_hero"		"npc_dota_hero_sniper"
+		
+          ///"override_hero"		"npc_dota_hero_sniper"
+          "HeroID"				"35"
+          "BaseClass"			"npc_dota_hero_sniper"
+
 		"ModelScale"		"1"
 		"DisableWearables"	"1"
 		"AbilityLayout" 	"4"
@@ -3553,11 +3782,15 @@
 			"model"		"models/items/courier/vigilante_fox_red/vigilante_fox_red.vmdl"
 		}
 	}
-	"npc_dota_hero_ronan"
+	"npc_dota_hero_troll_warlord"
 	{
 		"Model"						"models/heroes/hero_ronan/ronan.vmdl"		// Model.
-		"override_hero"		        "npc_dota_hero_troll_warlord"
-		"DisableWearables" 			"1"
+		
+          ///"override_hero"		          "npc_dota_hero_troll_warlord"
+          "HeroID"				          "95"
+          "BaseClass"			          "npc_dota_hero_troll_warlord"
+
+		"DisableWearables" 			     "1"
 		"ModelScale"					"1"
 
 		"AbilityLayout"				"4"
@@ -3614,69 +3847,74 @@
 			"model"	  "models/ronan/ronan_weapon_shadowmorne.vmdl"
 		}
 	}
-	"npc_dota_hero_roug"
-	    {
-	      // General
-	      //-------------------------------------------------------------------------------------------------------------
-	      "Model"					"models/heroes/hero_rough/rough.vmdl"		// Model.
-	      "override_hero"		    "npc_dota_hero_vengefulspirit"
-	      "DisableWearables"		"1"
-	      "ModelScale"				"1"
+	"npc_dota_hero_vengefulspirit"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"					"models/heroes/hero_rough/rough.vmdl"		// Model.
+		
+          ////"override_hero"		    "npc_dota_hero_vengefulspirit"
 
-	      // Abilitie s
-	      //-------------------------------------------------------------------------------------------------------------
-	      "Ability1"				"rough_wave"			        	// Ability 1
-	      "Ability2"				"rough_cooldown_aura"			        	// Ability 2
-	      "Ability3"				"rough_aoe_debuff"			        	// Ability 3
-	      "Ability4"				"generic_hidden"		        		// Ability 4
-	      "Ability5"				"generic_hidden"
-	      "Ability6"			    "roug_embrace_of_ethernity"
-	      "Ability10"				"special_bonus_exp_boost_30"
-	      "Ability11"				"special_bonus_all_stats_12"
-	      "Ability12"				"special_bonus_movement_speed_60"
-	      "Ability13"				"special_bonus_attack_speed_100"
-	      "Ability14"				"special_bonus_cooldown_reduction_30"
-	      "Ability15"				"special_bonus_attack_damage_90"
-	      "Ability16"				"special_bonus_agility_25"
-	      "Ability17"				"special_bonus_all_stats_20"
-	      // Attack
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	      "AttackDamageMin"			"25"									// Damage range min.
-	      "AttackDamageMax"			"35"									// Damage range max.
-	      "AttackRate"				"1.6"									// Speed of attack.
-	      "AttackAnimationPoint"		"0.33"									// Normalized time in animation cycle to attack.
-	      "AttackAcquisitionRange"	"700"									// Range within a target can be acquired.
-	      "AttackRange"				"450"									// Range within a target can be attacked.
-	      "ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"							// Particle system model for projectile.
-	      "ProjectileSpeed"			"1500"									// Speed of projectile.
+          "HeroID"				     "20"
+          "BaseClass"			     "npc_dota_hero_vengefulspirit"
 
-	      // Attributes
-	      //-------------------------------------------------------------------------------------------------------------
-	      "AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-	      "AttributeBaseStrength"		"18"									// Base strength
-	      "AttributeStrengthGain"		"2.4"									// Strength bonus per level.
-	      "AttributeBaseIntelligence"	"16"									// Base intelligence
-	      "AttributeIntelligenceGain"	"1.8"									// Intelligence bonus per level.
-	      "AttributeBaseAgility"		"26"									// Base agility
-	      "AttributeAgilityGain"		"3.5"									// Agility bonus per level.
+		"DisableWearables"		     "1"
+		"ModelScale"				"1"
 
-	      // Armor
-	      //-------------------------------------------------------------------------------------------------------------
-	      "ArmorPhysical"				"0"											// Physical protection.
+		// Abilitie s
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"				"rough_wave"			        	// Ability 1
+		"Ability2"				"rough_cooldown_aura"			        	// Ability 2
+		"Ability3"				"rough_aoe_debuff"			        	// Ability 3
+		"Ability4"				"generic_hidden"		        		// Ability 4
+		"Ability5"				"generic_hidden"
+		"Ability6"			    "roug_embrace_of_ethernity"
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_all_stats_12"
+		"Ability12"				"special_bonus_movement_speed_60"
+		"Ability13"				"special_bonus_attack_speed_100"
+		"Ability14"				"special_bonus_cooldown_reduction_30"
+		"Ability15"				"special_bonus_attack_damage_90"
+		"Ability16"				"special_bonus_agility_25"
+		"Ability17"				"special_bonus_all_stats_20"
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"25"									// Damage range min.
+		"AttackDamageMax"			"35"									// Damage range max.
+		"AttackRate"				"1.6"									// Speed of attack.
+		"AttackAnimationPoint"		"0.33"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"700"									// Range within a target can be acquired.
+		"AttackRange"				"450"									// Range within a target can be attacked.
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"							// Particle system model for projectile.
+		"ProjectileSpeed"			"1500"									// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"18"									// Base strength
+		"AttributeStrengthGain"		"2.4"									// Strength bonus per level.
+		"AttributeBaseIntelligence"	"16"									// Base intelligence
+		"AttributeIntelligenceGain"	"1.8"									// Intelligence bonus per level.
+		"AttributeBaseAgility"		"26"									// Base agility
+		"AttributeAgilityGain"		"3.5"									// Agility bonus per level.
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"											// Physical protection.
 
 
-	      // Movement
-	      //-------------------------------------------------------------------------------------------------------------
-	      "MovementSpeed"				"295"									// Speed.
-	      "MovementTurnRate"			"0.6"									// Turning rate.
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"295"									// Speed.
+		"MovementTurnRate"			"0.6"									// Turning rate.
 
-	      // Bounds
-	      //-------------------------------------------------------------------------------------------------------------
-	      "BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-	      "HealthBarOffset"			"170"
-	    }
-	"npc_dota_hero_sargeras"
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"170"
+	}
+	"npc_dota_hero_shadow_demon"
 	{
 		"Model"						"models/items/terrorblade/dotapit_s3_fallen_light_metamorphosis/dotapit_s3_fallen_light_metamorphosis.vmdl"
 		"ModelScale"				"1.160000"
@@ -3686,7 +3924,12 @@
 		"AttackRange"				"128"
 		"DisableWearables"			"1"
 		"ProjectileSpeed"  			"0"
-		"override_hero"			"npc_dota_hero_shadow_demon"
+		
+          ////"override_hero"			"npc_dota_hero_shadow_demon"
+
+          "HeroID"				     "79"
+          "BaseClass"			     "npc_dota_hero_shadow_demon"
+
 		"Ability1"				"sargeras_fissure"
 		"Ability2"				"sargeras_magmatic_armor"
 		"Ability3"				"sargeras_fire_bolt"
@@ -3713,13 +3956,16 @@
 		"AttributeIntelligenceGain"	"1.800000"
 		"MovementSpeed"			"275"
 	}
-	"npc_dota_hero_sauron"
+	"npc_dota_hero_slardar"
 	{
-		"override_hero"		"npc_dota_hero_slardar"
-	    "ModelScale"			"3.12"
-		"Model"				    "models/heroes/hero_sauron_/sauron_.vmdl"
-		"Portrait"			  "vgui/hud/heroportraits/portrait_slardar"
-		"DisableWearables"	"1"
+		////"override_hero"		"npc_dota_hero_slardar"
+          "HeroID"			     "28"
+          "BaseClass"			"npc_dota_hero_slardar"
+
+	      "ModelScale"			"3.12"
+		"Model"				"models/heroes/hero_sauron_/sauron_.vmdl"
+		"Portrait"			"vgui/hud/heroportraits/portrait_slardar"
+		"DisableWearables"	     "1"
 		"Ability1"			"sauron_apocalypse"
 		"Ability2"			"sauron_decay_aura"
 		"Ability3"			"sauron_dark_lord"
@@ -3759,9 +4005,12 @@
 		"StatusHealth"			"700"
 
 	}
-	"npc_dota_hero_scarlet_witch"
+	"npc_dota_hero_templar_assassin"
 	{
-		"override_hero" "npc_dota_hero_templar_assassin"
+		////"override_hero"      "npc_dota_hero_templar_assassin"
+          "HeroID"			     "46"
+          "BaseClass"			"npc_dota_hero_templar_assassin"
+
 		"AbilityLayout"		"4"
 		"ModelScale"		"1.57"
 		"Model"				"models/heroes/hero_witch/wanda/wanda.vmdl"
@@ -3806,28 +4055,31 @@
 			"model"		"models/items/lanaya/tashouldergold1021/tashouldergold1021.vmdl"
 		}
 	}
-	"npc_dota_hero_spawn"
-	  {
-	  	"override_hero"				"npc_dota_hero_jakiro"
-	  	"DisableWearables"		"1"
-	  	"ModelScale"		      "0.700000"
-	  	"LoadoutScale"		    "0.650000"
-	  	"Model"		            "models/heroes/hero_spawn/spawn.vmdl"
+	"npc_dota_hero_jakiro"
+	{
+	  	////"override_hero"				"npc_dota_hero_jakiro"
+          "HeroID"			          "64"
+          "BaseClass"			     "npc_dota_hero_jakiro"
 
-	  	"Ability1"		        "spawn_mystic_absorb"
-	  	"Ability2"		        "spawn_infernal_blast"
-	  	"Ability3"		        "spawn_soul_trick"
-	  	"Ability4"	         	"generic_hidden"
-	  	"Ability5"	         	"generic_hidden"
-	  	"Ability6"	         	"spawn_respawn"
-	  	"Ability10"			   	"special_bonus_exp_boost_30"
-	  	"Ability11"			    "special_bonus_all_stats_12"
-	  	"Ability12"				"special_bonus_hp_regen_40"
-	  	"Ability13"		     	"special_bonus_spell_amplify_20"
-	  	"Ability14"				"special_bonus_cooldown_reduction_25"
-	  	"Ability15"			    "special_bonus_intelligence_15"
-	  	"Ability16"				"special_bonus_reincarnation_200"
-	  	"Ability17"				"special_bonus_all_stats_20"
+	  	"DisableWearables"		     "1"
+	  	"ModelScale"		          "0.700000"
+	  	"LoadoutScale"		          "0.650000"
+	  	"Model"		               "models/heroes/hero_spawn/spawn.vmdl"
+
+	  	"Ability1"		           "spawn_mystic_absorb"
+	  	"Ability2"		           "spawn_infernal_blast"
+	  	"Ability3"		           "spawn_soul_trick"
+	  	"Ability4"	         	      "generic_hidden"
+	  	"Ability5"	          	 "generic_hidden"
+	  	"Ability6"	          	 "spawn_respawn"
+	  	"Ability10"			    	 "special_bonus_exp_boost_30"
+	  	"Ability11"			      "special_bonus_all_stats_12"
+	  	"Ability12"				 "special_bonus_hp_regen_40"
+	  	"Ability13"		     	 "special_bonus_spell_amplify_20"
+	  	"Ability14"				 "special_bonus_cooldown_reduction_25"
+	  	"Ability15"			      "special_bonus_intelligence_15"
+	  	"Ability16"				 "special_bonus_reincarnation_200"
+	  	"Ability17"				 "special_bonus_all_stats_20"
 	  	"ArmorPhysical"		    "0"
 	  	"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
 	  	"AttackDamageMin"		  "25"
@@ -3848,10 +4100,13 @@
 	  	"MovementSpeed"		            "295"
 	  	"MovementTurnRate"	      	  "0.500000"
 	  	"HealthBarOffset"		          "280"
-	  }
-	"npc_dota_hero_spectr"
+	}
+	"npc_dota_hero_spectre"
 	{
-		"override_hero"		 "npc_dota_hero_spectre"
+		///"override_hero"		 "npc_dota_hero_spectre"
+          "HeroID"			          "67"
+          "BaseClass"			     "npc_dota_hero_spectre"
+
 		"Model"		        "models/heroes/silencer/silencer.vmdl"
 		"DisableWearables"		"1"
 		"AbilityLayout"		"4"
@@ -3895,12 +4150,15 @@
 			"model"	    "mmodels/dcu_spectre/spectre_head_final.vmdl"
 		}
 	}
-	"npc_dota_hero_spiderman"
+	"npc_dota_hero_riki"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_riki"
-	    "Model"					"models/heroes/hero_spider/spiderman.vmdl"
+		////"override_hero"			"npc_dota_hero_riki"
+          "HeroID"			          "32"
+          "BaseClass"			     "npc_dota_hero_riki"
+
+	     "Model"					"models/heroes/hero_spider/spiderman.vmdl"
 		"DisableWearables"		"1"
 		"ModelScale"			"2.3"
 		// Abilities
@@ -3975,8 +4233,12 @@
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
 	    "Model"						"models/deathstroke/deathstroke.vmdl"		// Model.
-	    "override_hero"             "npc_dota_hero_spirit_breaker"
-	    "ModelScale"                "0.95"
+	    ///"override_hero"             "npc_dota_hero_spirit_breaker"
+
+         "HeroID"			          "71"
+         "BaseClass"			     "npc_dota_hero_spirit_breaker"
+
+	    "ModelScale"                   "0.95"
 	    "DisableWearables"			"1"
 	    // Abilities
 	    //-------------------------------------------------------------------------------------------------------------
@@ -3984,8 +4246,8 @@
 	    "Ability2"					"ds_searing_chains"		                    // Ability 2
 	    "Ability3"					"ds_extra_life"		        	        // Ability 3
 	    "Ability4"					"generic_hidden"		                	// Ability 4
-	    "Ability5"		       "generic_hidden"
-	    "Ability6"			    "ds_sniper_shot"
+	    "Ability5"		               "generic_hidden"
+	    "Ability6"			          "ds_sniper_shot"
 	    "Ability10"				"special_bonus_exp_boost_30"
 	    "Ability11"				"special_bonus_all_stats_12"
 	    "Ability12"				"special_bonus_corruption_4"
@@ -4035,9 +4297,12 @@
 			"model"	 "models/deathstrok.vmdl"
 		}
 	}
-	"npc_dota_hero_steppenwolf"
+	"npc_dota_hero_clinkz"
 	{
-		"override_hero"		   		"npc_dota_hero_clinkz"
+		///"override_hero"		   		"npc_dota_hero_clinkz"
+          "HeroID"			               "56"
+          "BaseClass"			          "npc_dota_hero_clinkz"
+
 		"Model"						"models/heroes/hero_steppenwolf/steppenwolf.vmdl"
 
 		"SoundSet"					"Hero_ShadowDemon"
@@ -4080,7 +4345,10 @@
 	}
 	"npc_dota_hero_sven"
 	{
-	   	"override_hero"		 "npc_dota_hero_sven"
+	   	////"override_hero"		 "npc_dota_hero_sven"
+          "HeroID"			      "18"
+          "BaseClass"		      "npc_dota_hero_sven"
+
 		"AbilityLayout" 		"4"
 	   	"DisableWearables"  	"1"
 		"Ability1"			"apocalypse_revalation"
@@ -4116,11 +4384,15 @@
 		"AttributeAgilityGain"		"2.200000"
 	    "MovementSpeed"		"305"
 	}
-	"npc_dota_hero_thanos" //имя юнита
+	"npc_dota_hero_elder_titan" //имя юнита
 	{
 	      // General
 	      //----------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_elder_titan"
+		///"override_hero"			"npc_dota_hero_elder_titan"
+          
+          "HeroID"			          "103"
+          "BaseClass"		          "npc_dota_hero_elder_titan"
+
 		"Model"					"models/heroes/hero_thanos_eg/thanos.vmdl"			// Model.
 		"DisableWearables"			"1"
 		"ModelScale"  				"2.2"
@@ -4167,93 +4439,102 @@
 		"HealthBarOffset"			"200"
 
 		"StatusHealthRegen"				"11.0"
-	  }
-	"npc_dota_hero_thor" //имя юнита
-	{
-	      // General
-	      //----------------------------------------------------------------
-		"override_hero"			"npc_dota_hero_omniknight"
-		"HealthBarOffset"       "140" //насколько высоко будет хп бар
-		"Model"               	"models/heroes/hero_thor/thor.vmdl"
-		"DisableWearables"		"1"
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"4"
-		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"				"thor_lighning_shield"							// Ability 1
-		"Ability2"				"thor_battle_unite"									// Ability 2
-		"Ability3"				"thor_empower"							// Ability 3
-		"Ability4"				"generic_hidden"							     // Ability 4
-		"Ability5"			    "generic_hidden"
-		"Ability6"			    "thor_ravage"
-		"Ability7"			    ""
-		"Ability10"				"special_bonus_exp_boost_30"
-		"Ability11"				"special_bonus_all_stats_12"
-		"Ability12"				"special_bonus_unique_thor"
-		"Ability13"				"special_bonus_unique_thor_1"
-		"Ability14"				"special_bonus_unique_thor_2"
-		"Ability15"				"special_bonus_unique_thor_3"
-		"Ability16"				"special_bonus_unique_thor_4"
-		"Ability17"				"special_bonus_strength_25"
-		"Ability20"				""
-
-
-	      // Armor
-	      //----------------------------------------------------------------
-	      "ArmorPhysical"         "0"
-	      "MagicalResistance"     "25"
-
-	      // Attack
-	      //----------------------------------------------------------------
-	      "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-	      "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	      "AttackDamageMin"       "28.0"
-	      "AttackDamageMax"       "34.0"
-	      "AttackRate"            "1.65"
-	      "AttackAnimationPoint"  "0.5"
-	      "AttackAcquisitionRange" "600"
-	      "AttackRange"           "128"
-
-	      // Bounds
-	      //----------------------------------------------------------------
-	      "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	      "RingRadius"            "70"
-
-	      // Movement
-	      //----------------------------------------------------------------
-	      "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-	      "MovementSpeed"         "305"
-	      "MovementTurnRate"      "0.6"
-
-	      // Status
-	      //----------------------------------------------------------------
-	      "StatusHealth"          "400"
-	      "StatusHealthRegen"     "1.0"
-	      "StatusMana"            "400"
-	      "StatusManaRegen"       "1.0"
-
-	      // Vision
-	      //----------------------------------------------------------------
-	      "VisionDaytimeRange"    "1400"
-	      "VisionNighttimeRange"  "800"
-
-	      "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
-	      "AttributeBaseStrength"   "25"                   // Base strength
-	      "AttributeStrengthGain"   "3.3"                   // Strength bonus per level.
-	      "AttributeBaseIntelligence" "16"                   // Base intelligence
-	      "AttributeIntelligenceGain" "1.7"                   // Intelligence bonus per level.
-	      "AttributeBaseAgility"    "18"                   // Base agility
-	      "AttributeAgilityGain"    "2.2"                   // Agility bonus per level.
-			"precache"
-			{
-				"model"		"models/thor_head_final.vmdl"
-				"model"		"models/thor_hammer_final.vmdl"
-				"model"		"models/items/dragon_knight/dragon_lord_back/dragon_lord_back.vmdl"
-				"model"		"models/items/dragon_knight/wyvern_shoulder/wyvern_shoulder.vmdl"
-			}
 	}
-	"npc_dota_hero_tracer"
+	"npc_dota_hero_omniknight" //имя юнита
 	{
-		"override_hero"			"npc_dota_hero_enchantress"
+          // General
+          //----------------------------------------------------------------
+          ////"override_hero"			"npc_dota_hero_omniknight"
+
+          "HeroID"			          "57"
+          "BaseClass"		          "npc_dota_hero_omniknight"
+          
+          "HealthBarOffset"       "140" //насколько высоко будет хп бар
+          "Model"               	"models/heroes/hero_thor/thor.vmdl"
+          "DisableWearables"		"1"
+          //-------------------------------------------------------------------------------------------------------------
+          "AbilityLayout"				"4"
+          //-------------------------------------------------------------------------------------------------------------
+          "Ability1"				"thor_lighning_shield"							// Ability 1
+          "Ability2"				"thor_battle_unite"									// Ability 2
+          "Ability3"				"thor_empower"							// Ability 3
+          "Ability4"				"generic_hidden"							     // Ability 4
+          "Ability5"			    "generic_hidden"
+          "Ability6"			    "thor_ravage"
+          "Ability7"			    ""
+          "Ability10"				"special_bonus_exp_boost_30"
+          "Ability11"				"special_bonus_all_stats_12"
+          "Ability12"				"special_bonus_unique_thor"
+          "Ability13"				"special_bonus_unique_thor_1"
+          "Ability14"				"special_bonus_unique_thor_2"
+          "Ability15"				"special_bonus_unique_thor_3"
+          "Ability16"				"special_bonus_unique_thor_4"
+          "Ability17"				"special_bonus_strength_25"
+          "Ability20"				""
+
+
+          // Armor
+          //----------------------------------------------------------------
+          "ArmorPhysical"         "0"
+          "MagicalResistance"     "25"
+
+          // Attack
+          //----------------------------------------------------------------
+          "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+          "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+          "AttackDamageMin"       "28.0"
+          "AttackDamageMax"       "34.0"
+          "AttackRate"            "1.65"
+          "AttackAnimationPoint"  "0.5"
+          "AttackAcquisitionRange" "600"
+          "AttackRange"           "128"
+
+          // Bounds
+          //----------------------------------------------------------------
+          "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+          "RingRadius"            "70"
+
+          // Movement
+          //----------------------------------------------------------------
+          "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+          "MovementSpeed"         "305"
+          "MovementTurnRate"      "0.6"
+
+          // Status
+          //----------------------------------------------------------------
+          "StatusHealth"          "400"
+          "StatusHealthRegen"     "1.0"
+          "StatusMana"            "400"
+          "StatusManaRegen"       "1.0"
+
+          // Vision
+          //----------------------------------------------------------------
+          "VisionDaytimeRange"    "1400"
+          "VisionNighttimeRange"  "800"
+
+          "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+          "AttributeBaseStrength"   "25"                   // Base strength
+          "AttributeStrengthGain"   "3.3"                   // Strength bonus per level.
+          "AttributeBaseIntelligence" "16"                   // Base intelligence
+          "AttributeIntelligenceGain" "1.7"                   // Intelligence bonus per level.
+          "AttributeBaseAgility"    "18"                   // Base agility
+          "AttributeAgilityGain"    "2.2"                   // Agility bonus per level.
+
+		"precache"
+		{
+			"model"		"models/thor_head_final.vmdl"
+			"model"		"models/thor_hammer_final.vmdl"
+			"model"		"models/items/dragon_knight/dragon_lord_back/dragon_lord_back.vmdl"
+			"model"		"models/items/dragon_knight/wyvern_shoulder/wyvern_shoulder.vmdl"
+		}
+	}
+	"npc_dota_hero_enchantress"
+	{
+		////"override_hero"			"npc_dota_hero_enchantress"
+           
+          "HeroID"			          "58"
+          "BaseClass"		          "npc_dota_hero_enchantress"
+          
 		"Model"					"models/heroes/tracer/tracer.vmdl"
 		"DisableWearables"		"1"
 		"ModelScale"			"0.7"
@@ -4294,59 +4575,67 @@
 		"MovementTurnRate"				"0.400000"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
 	}
-	"npc_dota_hero_treant_new"
+	"npc_dota_hero_treant"
 	{
-	    "override_hero"     "npc_dota_hero_treant"
-	    "Model"				"models/heroes/hero_groot/groot.vmdl"
-	    "ModelScale"		"1"
-	    "DisableWearables"	"1"
-		"AbilityLayout" 	"4"
-		"Ability1"			"groot_treants"
-		"Ability2"			"groot_return"
-		"Ability3"			"groot_divided_we_stand"
-		"Ability4"			"generic_hidden"
-		"Ability5"			"generic_hidden"
-		"Ability6"		"treant_great_protector"
-		"Ability7"		""
-		"Ability10"				"special_bonus_exp_boost_30"
-		"Ability11"				"special_bonus_all_stats_12"
-		"Ability12"				"special_bonus_armor_15"
-		"Ability13"				"special_bonus_mp_regen_1"
-		"Ability14"				"special_bonus_cooldown_reduction_25"
-		"Ability15"				"special_bonus_hp_regen_50"
-		"Ability16"				"special_bonus_strength_25"
-		"Ability17"				"special_bonus_unique_groot"
-		"ArmorPhysical"		"2"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"50"
-		"AttackDamageMax"		"60"
-		"AttackRate"		"1.650000"
-		"AttackAnimationPoint"		"0.550000"
-		"AttackAcquisitionRange"		"600"
-		"AttackRange"		"128"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"30"
-		"AttributeStrengthGain"		"3.600000"
-		"AttributeBaseAgility"		"18"
-		"AttributeAgilityGain"		"1.900000"
-		"AttributeBaseIntelligence"		"17"
-		"AttributeIntelligenceGain"		"1.800000"
-		"VisionDaytimeRange"		"1800"
-		"VisionNighttimeRange"		"800"
-		"MovementSpeed"				"295"
-		"MovementTurnRate"		"0.500000"
-		"HealthBarOffset"		"260"
+          ////"override_hero"     "npc_dota_hero_treant"
+          
+          "HeroID"		          "83"
+          "BaseClass"		     "npc_dota_hero_treant"
+
+          "Model"			     "models/heroes/hero_groot/groot.vmdl"
+          "ModelScale"		     "1"
+          "DisableWearables"	     "1"
+          "AbilityLayout" 	     "4"
+          "Ability1"			"groot_treants"
+          "Ability2"			"groot_return"
+          "Ability3"			"groot_divided_we_stand"
+          "Ability4"			"generic_hidden"
+          "Ability5"			"generic_hidden"
+          "Ability6"		     "treant_great_protector"
+          "Ability7"		     ""
+          "Ability10"				"special_bonus_exp_boost_30"
+          "Ability11"				"special_bonus_all_stats_12"
+          "Ability12"				"special_bonus_armor_15"
+          "Ability13"				"special_bonus_mp_regen_1"
+          "Ability14"				"special_bonus_cooldown_reduction_25"
+          "Ability15"				"special_bonus_hp_regen_50"
+          "Ability16"				"special_bonus_strength_25"
+          "Ability17"				"special_bonus_unique_groot"
+          "ArmorPhysical"		"2"
+          "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+          "AttackDamageMin"		"50"
+          "AttackDamageMax"		"60"
+          "AttackRate"		"1.650000"
+          "AttackAnimationPoint"		"0.550000"
+          "AttackAcquisitionRange"		"600"
+          "AttackRange"		"128"
+          "AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+          "AttributeBaseStrength"		"30"
+          "AttributeStrengthGain"		"3.600000"
+          "AttributeBaseAgility"		"18"
+          "AttributeAgilityGain"		"1.900000"
+          "AttributeBaseIntelligence"		"17"
+          "AttributeIntelligenceGain"		"1.800000"
+          "VisionDaytimeRange"		"1800"
+          "VisionNighttimeRange"		"800"
+          "MovementSpeed"				"295"
+          "MovementTurnRate"		"0.500000"
+          "HealthBarOffset"		"260"
 		"precache"
 		{
 			"model"		"models/heroes/furion/treant.vmdl"
 		}
 	}
-	"npc_dota_hero_tribunal"
+	"npc_dota_hero_obsidian_destroyer"
 	{
-		"override_hero"			"npc_dota_hero_obsidian_destroyer"
-		"Model"          		"models/heroes/hero_livingtribunal/tribunal.vmdl"
-		"DisableWearables"	"1"
-		"ModelScale"				"1.650000"
+		////"override_hero"			"npc_dota_hero_obsidian_destroyer"
+          
+          "HeroID"		                    "76"
+          "BaseClass"		               "npc_dota_hero_obsidian_destroyer"
+
+		"Model"          		          "models/heroes/hero_livingtribunal/tribunal.vmdl"
+		"DisableWearables"	               "1"
+		"ModelScale"				     "1.650000"
 		"Ability1"		     		"tribunal_immortal_judje"
 		"Ability2"		    			"tribunal_crit"
 		"Ability3"		    			"tribunal_blink"
@@ -4386,15 +4675,19 @@
 			"model"		"models/heroes/zeus/zeus_hair_arcana.vmdl"
 		}
 	}
-	"npc_dota_hero_tzeentch"
+	"npc_dota_hero_leshrac"
 	{
-		"override_hero"				"npc_dota_hero_leshrac"
+		////"override_hero"				"npc_dota_hero_leshrac"
+          
+          "HeroID"		                    "52"
+          "BaseClass"		               "npc_dota_hero_leshrac"
+
 		"Model"						"models/heroes/hero_tzeentch/tzeentch_zeratul.vmdl"
 
-		"ModelScale"				"0.600000"
-		"LoadoutScale"				"0.600000"
+		"ModelScale"				     "0.600000"
+		"LoadoutScale"				     "0.600000"
 		"HeroGlowColor"				"12 157 179"
-		"DisableWearables"			"1"
+		"DisableWearables"			     "1"
 		"Legs"	"2"
 
 		"AbilityLayout"				"5"
@@ -4439,7 +4732,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"override_hero"					"npc_dota_hero_undying"
+		///"override_hero"					"npc_dota_hero_undying"
+          "HeroID"		                    "85"
+          "BaseClass"		               "npc_dota_hero_undying"
+
 		"DisableWearables"				"1"
 		"Model"							"models/heroes/zeus/zeus_arcana.mdl"		// Model.
 		"ProjectileModel"				"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_base_attack.vpcf"
@@ -4518,94 +4814,103 @@
 			"model"		 "models/heroes/zeus/zeus.mdl"
 		}
 	}
-	"npc_dota_hero_ursa_warrior"
+	"npc_dota_hero_ursa"
 	{
-	      "override_hero"     "npc_dota_hero_ursa"
-	      "DisableWearables"   "1"
-	      "ModelScale"		"0.940000"
-	      "AbilityLayout" 	"4"
-	      "Ability1"				"ursa_warrior_thunder_clap"
-	      "Ability2"				"ursa_warrior_berserkers_blood"
-	      "Ability3"				"ursa_warrior_will"
-	      "Ability4"				"generic_hidden"
-	      "Ability5"				"generic_hidden"
-	      "Ability6"				"ursa_inner_beast"
-	      "Ability9"				""
-	      "Ability10"				"special_bonus_exp_boost_30"
-	      "Ability11"				"special_bonus_unique_ursa_warrior_3"
-	      "Ability12"				"special_bonus_unique_ursa_warrior_2"
-	      "Ability13"				"special_bonus_hp_regen_40"
-	      "Ability14"				"special_bonus_cooldown_reduction_25"
-	      "Ability15"				"special_bonus_unique_ursa_warrior_1"
-	      "Ability16"				"special_bonus_all_stats_20"
-	      "Ability17"				"special_bonus_unique_ursa_warrior"
-	      "ArmorPhysical"	    		"0"
-	      "AttributeBaseStrength"		"30"
-	      "AttributeStrengthGain"		"3.200000"
-	  	  "AttributeBaseAgility"		"18"
-	  	  "AttributeAgilityGain"		"2.800000"
-	  	  "AttributeBaseIntelligence"	"16"
-	  	  "AttributeIntelligenceGain"	"1.600000"
-	      "AttributePrimary"      		"DOTA_ATTRIBUTE_STRENGTH"
+          //// "override_hero"     "npc_dota_hero_ursa"
+
+          "HeroID"		               "70"
+          "BaseClass"		          "npc_dota_hero_ursa"
+
+          "DisableWearables"            "1"
+          "ModelScale"		          "0.940000"
+          "AbilityLayout" 	          "4"
+          "Ability1"				"ursa_warrior_thunder_clap"
+          "Ability2"				"ursa_warrior_berserkers_blood"
+          "Ability3"				"ursa_warrior_will"
+          "Ability4"				"generic_hidden"
+          "Ability5"				"generic_hidden"
+          "Ability6"				"ursa_inner_beast"
+          "Ability9"				""
+          "Ability10"				"special_bonus_exp_boost_30"
+          "Ability11"				"special_bonus_unique_ursa_warrior_3"
+          "Ability12"				"special_bonus_unique_ursa_warrior_2"
+          "Ability13"				"special_bonus_hp_regen_40"
+          "Ability14"				"special_bonus_cooldown_reduction_25"
+          "Ability15"				"special_bonus_unique_ursa_warrior_1"
+          "Ability16"				"special_bonus_all_stats_20"
+          "Ability17"				"special_bonus_unique_ursa_warrior"
+          "ArmorPhysical"	    		"0"
+          "AttributeBaseStrength"		"30"
+          "AttributeStrengthGain"		"3.200000"
+          "AttributeBaseAgility"		"18"
+          "AttributeAgilityGain"		"2.800000"
+          "AttributeBaseIntelligence"	"16"
+          "AttributeIntelligenceGain"	"1.600000"
+          "AttributePrimary"      		"DOTA_ATTRIBUTE_STRENGTH"
 	}
-	"npc_dota_hero_venom"
-	    {
+	"npc_dota_hero_venomancer"
+	{
 	    // General
 	     //-------------------------------------------------------------------------------------------------------------
-	    "Model"					"models/heroes/life_stealer/life_stealer.vmdl"		// Model.
-	    "override_hero"		    "npc_dota_hero_venomancer"
-	    "DisableWearables"		"1"
-	    "AbilityLayout"			"5"
-	    "Ability1"				"venom_posion_damage"
-	    "Ability2"				"venom_venomous_gale"
-	    "Ability3"				"venom_venom"
-	    "Ability4"				"venom_out"
-	    "Ability5"				"generic_hidden"
-	    "Ability6"				"venom_infest"
-	    "Ability10"				"special_bonus_exp_boost_30"
-	    "Ability11"				"special_bonus_all_stats_12"
-	    "Ability12"				"special_bonus_hp_regen_40"
-	    "Ability13"				"special_bonus_all_stats_10"
-	    "Ability14"				"special_bonus_cooldown_reduction_25"
-	    "Ability15"				"special_bonus_all_stats_15"
-	    "Ability16"				"special_bonus_unique_venom"
-	    "Ability17"				"special_bonus_all_stats_20"
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"0"									// Physical protection.
 
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"32"									// Damage range min.
-		"AttackDamageMax"			"38"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.3"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"128"									// Range within a target can be attacked.
-		"ProjectileModel"			""										// Particle system model for projectile.
-		"ProjectileSpeed"			"0"										// Speed of projectile.
+          "HeroID"		               "40"
+          "BaseClass"		          "npc_dota_hero_venomancer"
 
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"			"25"								// Base strength
-		"AttributeStrengthGain"			"2.8"								// Strength bonus per level.
-		"AttributeBaseIntelligence"		"17"								// Base intelligence
-		"AttributeIntelligenceGain"		"1.9"								// Intelligence bonus per level.
-		"AttributeBaseAgility"			"18"								// Base agility
-		"AttributeAgilityGain"			"2.1"								// Agility bonus per level.
-	    "StatusHealthRegen"				"4.000000"
+          "Model"					"models/heroes/life_stealer/life_stealer.vmdl"		// Model.
+          ///"override_hero"		    "npc_dota_hero_venomancer"
+          
+          "DisableWearables"		     "1"
+          "AbilityLayout"			"5"
+          "Ability1"				"venom_posion_damage"
+          "Ability2"				"venom_venomous_gale"
+          "Ability3"				"venom_venom"
+          "Ability4"				"venom_out"
+          "Ability5"				"generic_hidden"
+          "Ability6"				"venom_infest"
+          "Ability10"				"special_bonus_exp_boost_30"
+          "Ability11"				"special_bonus_all_stats_12"
+          "Ability12"				"special_bonus_hp_regen_40"
+          "Ability13"				"special_bonus_all_stats_10"
+          "Ability14"				"special_bonus_cooldown_reduction_25"
+          "Ability15"				"special_bonus_all_stats_15"
+          "Ability16"				"special_bonus_unique_venom"
+          "Ability17"				"special_bonus_all_stats_20"
+          // Armor
+          //-------------------------------------------------------------------------------------------------------------
+          "ArmorPhysical"				"0"									// Physical protection.
 
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"310"									// Speed.
-		"MovementTurnRate"			"0.4"									// Turning rate.
+          // Attack
+          //-------------------------------------------------------------------------------------------------------------
+          "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+          "AttackDamageMin"			"32"									// Damage range min.
+          "AttackDamageMax"			"38"									// Damage range max.
+          "AttackRate"				"1.7"									// Speed of attack.
+          "AttackAnimationPoint"		"0.3"									// Normalized time in animation cycle to attack.
+          "AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+          "AttackRange"				"128"									// Range within a target can be attacked.
+          "ProjectileModel"			""										// Particle system model for projectile.
+          "ProjectileSpeed"			"0"										// Speed of projectile.
 
-		// Bounds
-		//-------------------------------------------------------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"180"
+          // Attributes
+          //-------------------------------------------------------------------------------------------------------------
+          "AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+          "AttributeBaseStrength"			"25"								// Base strength
+          "AttributeStrengthGain"			"2.8"								// Strength bonus per level.
+          "AttributeBaseIntelligence"		"17"								// Base intelligence
+          "AttributeIntelligenceGain"		"1.9"								// Intelligence bonus per level.
+          "AttributeBaseAgility"			"18"								// Base agility
+          "AttributeAgilityGain"			"2.1"								// Agility bonus per level.
+          "StatusHealthRegen"				"4.000000"
+
+          // Movement
+          //-------------------------------------------------------------------------------------------------------------
+          "MovementSpeed"				"310"									// Speed.
+          "MovementTurnRate"			"0.4"									// Turning rate.
+
+          // Bounds
+          //-------------------------------------------------------------------------------------------------------------
+          "BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+          "HealthBarOffset"			"180"
 		"precache"
 		{
 			"model"	  "models/heroes/life_stealer/life_stealer.vmdl"
@@ -4613,8 +4918,13 @@
 	}
 	"npc_dota_hero_wisp"
 	{
-		"Model"		"models/development/invisiblebox.vmdl"
-	    "override_hero"				    "npc_dota_hero_wisp"
+          "HeroID"		               "91"
+          "BaseClass"		          "npc_dota_hero_wisp"
+
+		"Model"		               "models/development/invisiblebox.vmdl"
+
+	     ////"override_hero"				    "npc_dota_hero_wisp"
+
 		"Portrait"		""
 		"SoundSet"		""
 		"DisableWearables"  "1"
@@ -4672,19 +4982,23 @@
 
 		}
 	}
-	"npc_dota_hero_zoom"
+	"npc_dota_hero_razor"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"override_hero"		        "npc_dota_hero_razor"
-		"DisableWearables"			"1"
+		////"override_hero"		        "npc_dota_hero_razor"
+
+          "HeroID"		                    "15"
+          "BaseClass"		               "npc_dota_hero_razor"
+
+		"DisableWearables"			     "1"
 		"Model"						"models/heroes/hero_zoom/zoom.vmdl"			// Model.
 		"SoundSet"					"Hero_Razor"
 		"PickSound"					"night_stalker_nstalk_spawn_01"
 		"BanSound"					"night_stalker_nstalk_anger_07"
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"1"											// Physical protection.
-		"ModelScale"				"2.6"
+		"ModelScale"				     "2.6"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"					"zoom_charge_of_darkness"							// Ability 1
@@ -4692,8 +5006,8 @@
 		"Ability3"					"blackzoom_surge"						// Ability 3
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
-		"Ability6"		  	    	"blackzoom_time_shift"
-		"Ability7"      	   		"zoom_aura_sparks"
+		"Ability6"		  	     	"blackzoom_time_shift"
+		"Ability7"      	   		     "zoom_aura_sparks"
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_spell_block_20"
@@ -4748,9 +5062,14 @@
 	"npc_dota_hero_zuus"
 	{
 		"Model"       				"models/heroes/zeus/zeus.vmdl"
-		"override_hero"	 			"npc_dota_hero_zuus"
-		"DisableWearables" 			"1"
-		"AbilityLayout"  			"6"
+		
+          ////"override_hero"	 			"npc_dota_hero_zuus"
+
+          "HeroID"		                    "22"
+          "BaseClass"		               "npc_dota_hero_zuus"
+
+		"DisableWearables" 			     "1"
+		"AbilityLayout"  			     "6"
 		"Ability1"		 		 	"zuus_arc_lightning_new"
 		"Ability2"					"zuus_lightning_bolt"
 		"Ability3"					"zuus_laguna_blade"
@@ -4766,26 +5085,26 @@
 		"Ability15"					"special_bonus_all_stats_15"
 		"Ability16"					"special_bonus_intelligence_25"
 		"Ability17"					"special_bonus_spell_amplify_15"
-		"AttributePrimary"      	"DOTA_ATTRIBUTE_INTELLECT"
-		"ArmorPhysical"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"22"
-		"AttackDamageMax"		"30"
-		"AttackRate"		"1.700000"
-		"AttackAnimationPoint"		"0.500000"
-		"AttackAcquisitionRange"		"800"
-		"AttackRange"		"400"
-		"ProjectileModel"		"particles/units/heroes/hero_zuus/zuus_base_attack.vpcf"
-		"ProjectileSpeed"		"1200"
-		"AttributeBaseStrength"		"22"
-		"AttributeStrengthGain"		"2.600000"
+		"AttributePrimary"        	     "DOTA_ATTRIBUTE_INTELLECT"
+		"ArmorPhysical"		          "0"
+		"AttackCapabilities"		     "DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		          "22"
+		"AttackDamageMax"		          "30"
+		"AttackRate"		               "1.700000"
+		"AttackAnimationPoint"		     "0.500000"
+		"AttackAcquisitionRange"		     "800"
+		"AttackRange"		               "400"
+		"ProjectileModel"		          "particles/units/heroes/hero_zuus/zuus_base_attack.vpcf"
+		"ProjectileSpeed"		          "1200"
+		"AttributeBaseStrength"		     "22"
+		"AttributeStrengthGain"		     "2.600000"
 		"AttributeBaseIntelligence"		"28"
 		"AttributeIntelligenceGain"		"2.700000"
-		"AttributeBaseAgility"		"18"
-		"AttributeAgilityGain"		"1.500000"
-		"MovementSpeed"		"300"
+		"AttributeBaseAgility"		     "18"
+		"AttributeAgilityGain"		     "1.500000"
+		"MovementSpeed"		          "300"
 	}
-	"npc_dota_hero_arrow"
+	"npc_dota_hero_drow_ranger"
 	{
 		"Model"							"models/heroes/hero_arrow/arrow.vmdl"
 		"DisableWearables"					"1"
@@ -4793,7 +5112,11 @@
 		"CMDisabled"						"1"
 		"HeroDisabled"						"1"
 
-		"override_hero"	 				"npc_dota_hero_drow_ranger"
+		////"override_hero"	 				"npc_dota_hero_drow_ranger"
+
+          "HeroID"		                         "6"
+          "BaseClass"		                    "npc_dota_hero_drow_ranger"
+
 		"ModelScale"						"0.970000"
 		"Ability1"						"arror_searing_arrows"
 		"Ability2"						"arrow_leap"
@@ -4835,16 +5158,20 @@
 		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_drowranger3.vsndevts"
 		"VoiceFile"						"soundevents/voscripts/game_sounds_vo_drowranger3.vsndevts"
 	}
-	"npc_dota_hero_ebonymaw"
+	"npc_dota_hero_viper"
 	{
-		"override_hero"	 				"npc_dota_hero_viper"
+		///"override_hero"	 				"npc_dota_hero_viper"
+
+          "HeroID"		                         "47"
+          "BaseClass"		                    "npc_dota_hero_viper"
 
 		"Model"							"models/heroes/hero_ebony_maw/ebonymaw.vmdl"
 		"Portrait"						"vgui/hud/heroportraits/portrait_viper"
 
-		"ModelScale"					"0.75"
-		"LoadoutScale"					"43"
-		"DisableWearables"				"1"
+		"ModelScale"					     "0.75"
+		"LoadoutScale"					     "43"
+		"DisableWearables"				     "1"
+
 		"Ability1"						"ebonymaw_aether_strike"
 		"Ability2"						"ebonymaw_nether_shield"
 		"Ability3"						"ebonymaw_hazard"
@@ -4886,12 +5213,15 @@
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_viper.vsndevts"
 	}
-	"npc_dota_hero_antman"
+	"npc_dota_hero_tinker"
 	{
-		"override_hero"			"npc_dota_hero_tinker"
-		"ModelScale"			"1"
+		///"override_hero"		     "npc_dota_hero_tinker"
+          "HeroID"		              "34"
+          "BaseClass"		         "npc_dota_hero_tinker"
+
+		"ModelScale"			     "1"
 		"Model"				    "models/heroes/hero_antman/antman.vmdl"
-		"DisableWearables"		"1"
+		"DisableWearables"		     "1"
 		"Ability1"				"antman_size_down"
 		"Ability2"				"antman_size_up"
 		"Ability3"				"antman_spirit_ant"
@@ -5135,13 +5465,16 @@
 			}
 		}
 	}
-	"npc_dota_hero_slaanesh"
+	"npc_dota_hero_queenofpain"
 	{
 		"Model"					"models/heroes/hero_slaanesh/slaanesh.vmdl"
 		"DisableWearables"		"1"
 		"ModelScale"			"1"
 
-		"override_hero"			"npc_dota_hero_queenofpain"
+		////"override_hero"			"npc_dota_hero_queenofpain"
+
+          "HeroID"		              "39"
+          "BaseClass"		         "npc_dota_hero_queenofpain"
 
 		"Ability1"				"slaanesh_lust"
 		"Ability2"				"slaanesh_subordination"
@@ -5190,27 +5523,27 @@
 	"npc_dota_hero_ghost"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "201"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
+		"HeroID"                    "201"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
 
 		"CMDisabled"				"1"
-        // Model info
-        "Model"                     "models/heroes/hero_ghost/ghost.vmdl"
-        "ModelScale"                "1.02"
-        "LoadoutScale"              "1.1"
+		// Model info
+		"Model"                     "models/heroes/hero_ghost/ghost.vmdl"
+		"ModelScale"                "1.02"
+		"LoadoutScale"              "1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "160"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "160"
 
-        // Sound info
-        "SoundSet"					"Hero_Spectre"
+		// Sound info
+		"SoundSet"					"Hero_Spectre"
 		"IdleSoundLoop"				"Hero_Spectre.IdleLoop"
 
-        "PickSound"					"antimage_anti_spawn_01"
+		"PickSound"					"antimage_anti_spawn_01"
 		"BanSound"					"antimage_anti_anger_04"
 
-	 	// Armor
+		// Armor
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"0"
 
@@ -5236,7 +5569,7 @@
 		"AttributeAgilityGain"		"3.100000"
 		"StatusHealthRegen"			"2.0"
 
-        // Abilities
+		// Abilities
 		"Ability1"					"ghost_quantum_phase"
 		"Ability2"					"ghost_fate"
 		"Ability3"					"ghost_quantum_entanglement"
@@ -5244,8 +5577,8 @@
 		"Ability5"					"generic_hidden"
 		"Ability6"					"ghost_mental_chaos"
 
-        // Talents
-	    "Ability10"					"special_bonus_unique_ghost_1"
+		// Talents
+		"Ability10"					"special_bonus_unique_ghost_1"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_unique_ghost_4"
@@ -5259,7 +5592,7 @@
 		"MovementSpeed"				"310"
 		"MovementTurnRate"			"0.500000"
 
-        // Bounds
+		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"RingRadius"				"70"
@@ -5294,34 +5627,34 @@
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_antimage.vsndevts"
 
-        // Card info
-        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
-        "Rolelevels"    			"1,1,1,1,1"
-        "Complexity"    			"2"
+		// Card info
+		"Role"          			"Carry,Support,Disabler,Escape,Nuker"
+		"Rolelevels"    			"1,1,1,1,1"
+		"Complexity"    			"2"
 
-        // Misc
-        "NameAliases"      			"wr"
-        "url"       				"Windranger"
+		// Misc
+		"NameAliases"      			"wr"
+		"url"       				"Windranger"
 
-        "LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
+		"LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
 		"HeroSelectSoundEffect"		"Hero_Antimage.Pick"
 	}
 	"npc_dota_hero_godspeed"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "202"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
+		"HeroID"                    "202"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_godspeed/models/godspeed.vmdl"
-        "ModelScale"                "1.02"
-        "LoadoutScale"              "1.1"
+		// Model info
+		"Model"                     "models/heroes/hero_godspeed/models/godspeed.vmdl"
+		"ModelScale"                "1.02"
+		"LoadoutScale"              "1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "160"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "160"
 
-        // Sound info
+		// Sound info
 		"Portrait"					"vgui/hud/heroportraits/portrait_razor"
 		"IdleExpression"			"scenes/razor/razor_exp_idle_01.vcd"
 		"PickSound"					"razor_raz_spawn_01"
@@ -5329,34 +5662,34 @@
 		"SoundSet"					"Hero_Razor"
 		"IdleSoundLoop"				"Hero_Razor.IdleLoop"
 
-	 	"particle_folder"			"particles/units/heroes/hero_antimage"
+		"particle_folder"			"particles/units/heroes/hero_antimage"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_antimage.vsndevts"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"     "21"
-        "AttributeStrengthGain"     "2.100000"
-        "AttributeBaseIntelligence" "19"
-        "AttributeIntelligenceGain" "1.900000"
-        "AttributeBaseAgility"      "28"
-        "AttributeAgilityGain"      "3.200000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"     "21"
+		"AttributeStrengthGain"     "2.100000"
+		"AttributeBaseIntelligence" "19"
+		"AttributeIntelligenceGain" "1.900000"
+		"AttributeBaseAgility"      "28"
+		"AttributeAgilityGain"      "3.200000"
 
-        // Misc stats
-        "ArmorPhysical"             "0"
-        "MagicalResistance"			"25"
-        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "22"
-        "AttackDamageMax"           "34"
-        "AttackRate"                "1.450000"
-        "AttackAnimationPoint"      "0.400000"
-        "AttackAcquisitionRange"    "600"
-        "AttackRange"               "128"
-        "ProjectileSpeed"           "0"
-        "MovementSpeed"             "325"
-        "MovementTurnRate"          "0.600000"
+		// Misc stats
+		"ArmorPhysical"             "0"
+		"MagicalResistance"			"25"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"           "22"
+		"AttackDamageMax"           "34"
+		"AttackRate"                "1.450000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "600"
+		"AttackRange"               "128"
+		"ProjectileSpeed"           "0"
+		"MovementSpeed"             "325"
+		"MovementTurnRate"          "0.600000"
 
-        // Abilities
+		// Abilities
 		"Ability1"					"godspeed_bend_time"
 		"Ability2"					"godspeed_ember_field"
 		"Ability3"					"godspeed_hyperpath"
@@ -5364,7 +5697,7 @@
 		"Ability5"					"generic_hidden"
 		"Ability6"					"godspeed_speed_void"
 
-	    "Ability10"					"special_bonus_godspeed_1"
+		"Ability10"					"special_bonus_godspeed_1"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_attack_speed_100"
 		"Ability13"					"special_bonus_godspeed_2"
@@ -5373,17 +5706,17 @@
 		"Ability16"					"special_bonus_agility_25"
 		"Ability17"					"special_bonus_all_stats_20"
 
-        // Card info
-        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
-        "Rolelevels"    			"1,1,1,1,1"
-        "Complexity"    			"2"
+		// Card info
+		"Role"          			"Carry,Support,Disabler,Escape,Nuker"
+		"Rolelevels"    			"1,1,1,1,1"
+		"Complexity"    			"2"
 
-        // Misc
-        "NameAliases"      			 "wr"
-        "url"      					 "Windranger"
-        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+		// Misc
+		"NameAliases"      			 "wr"
+		"url"      					 "Windranger"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
 
-		 // Bounds
+		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"RingRadius"				"70"
@@ -5514,19 +5847,19 @@
 	"npc_dota_hero_savitar"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "203"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
+		"HeroID"                    "203"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_savitar/savitar.vmdl"
-        "ModelScale"                "1.02"
-        "LoadoutScale"              "1.1"
+		// Model info
+		"Model"                     "models/heroes/hero_savitar/savitar.vmdl"
+		"ModelScale"                "1.02"
+		"LoadoutScale"              "1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "160"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "160"
 
-        // Sound info
+		// Sound info
 		"Portrait"					"vgui/hud/heroportraits/portrait_rattletrap"
 		"SoundSet"					"Hero_Rattletrap"
 
@@ -5536,34 +5869,34 @@
 
 		"IdleSoundLoop"				"Hero_Razor.IdleLoop"
 
-	 	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_savitar.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_savitar.vsndevts"
 		"particle_folder"			"particles/units/heroes/hero_rattletrap"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_savitar.vsndevts"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"     "21"
-        "AttributeStrengthGain"     "2.300000"
-        "AttributeBaseIntelligence" "18"
-        "AttributeIntelligenceGain" "1.800000"
-        "AttributeBaseAgility"      "28"
-        "AttributeAgilityGain"      "3.000000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"     "21"
+		"AttributeStrengthGain"     "2.300000"
+		"AttributeBaseIntelligence" "18"
+		"AttributeIntelligenceGain" "1.800000"
+		"AttributeBaseAgility"      "28"
+		"AttributeAgilityGain"      "3.000000"
 
-        // Misc stats
-        "ArmorPhysical"             "0"
-        "MagicalResistance"			"25"
-        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "22"
-        "AttackDamageMax"           "34"
-        "AttackRate"                "1.450000"
-        "AttackAnimationPoint"      "0.400000"
-        "AttackAcquisitionRange"    "600"
-        "AttackRange"               "128"
-        "ProjectileSpeed"           "0"
-        "MovementSpeed"             "325"
-        "MovementTurnRate"          "0.600000"
+		// Misc stats
+		"ArmorPhysical"             "0"
+		"MagicalResistance"			"25"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"           "22"
+		"AttackDamageMax"           "34"
+		"AttackRate"                "1.450000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "600"
+		"AttackRange"               "128"
+		"ProjectileSpeed"           "0"
+		"MovementSpeed"             "325"
+		"MovementTurnRate"          "0.600000"
 
-        // Abilities
+		// Abilities
 		"Ability1"					"savitar_speedforce"
 		"Ability2"					"savitar_quantum_tunnel"
 		"Ability3"					"savitar_gods_speed"
@@ -5571,7 +5904,7 @@
 		"Ability5"					"generic_hidden"
 		"Ability6"					"savitar_speedforce_rage"
 
-	    "Ability10"					"special_bonus_exp_boost_30"
+		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_savitar_2"
@@ -5580,17 +5913,17 @@
 		"Ability16"					"special_bonus_agility_25"
 		"Ability17"					"special_bonus_savitar_1"
 
-        // Card info
-        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
-        "Rolelevels"    			"3,1,1,1,1"
-        "Complexity"    			"1"
+		// Card info
+		"Role"          			"Carry,Support,Disabler,Escape,Nuker"
+		"Rolelevels"    			"3,1,1,1,1"
+		"Complexity"    			"1"
 
-        // Misc
-        "NameAliases"      			 "sv"
-        "url"       				"Savitar"
-        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+		// Misc
+		"NameAliases"      			 "sv"
+		"url"       				"Savitar"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
 
-	    // Bounds
+		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"RingRadius"				"70"
@@ -5722,49 +6055,49 @@
 	"npc_dota_hero_superman"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "204"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
+		"HeroID"                    "204"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_superman/superman.vmdl"
-        "ModelScale"                "1.02"
-        "LoadoutScale"              "1.1"
+		// Model info
+		"Model"                     "models/heroes/hero_superman/superman.vmdl"
+		"ModelScale"                "1.02"
+		"LoadoutScale"              "1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "160"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "160"
 
-        // Sound info
+		// Sound info
 		"SoundSet"					"Hero_Beastmaster"
 
-	 	"particle_folder"			"particles/units/heroes/hero_beastmaster"
+		"particle_folder"			"particles/units/heroes/hero_beastmaster"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
-        "AttributeBaseStrength"     "28"
-        "AttributeStrengthGain"     "3.000000"
-        "AttributeBaseIntelligence" "21"
-        "AttributeIntelligenceGain" "1.900000"
-        "AttributeBaseAgility"      "22"
-        "AttributeAgilityGain"      "2.400000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "28"
+		"AttributeStrengthGain"     "3.000000"
+		"AttributeBaseIntelligence" "21"
+		"AttributeIntelligenceGain" "1.900000"
+		"AttributeBaseAgility"      "22"
+		"AttributeAgilityGain"      "2.400000"
 
-        // Misc stats
-        "ArmorPhysical"             "3"
-        "MagicalResistance"			"25"
-        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "22"
-        "AttackDamageMax"           "34"
-        "AttackRate"                "1.700000"
-        "AttackAnimationPoint"      "0.400000"
-        "AttackAcquisitionRange"    "600"
-        "AttackRange"               "128"
-        "ProjectileSpeed"           "0"
-        "MovementSpeed"             "315"
-        "MovementTurnRate"          "0.600000"
+		// Misc stats
+		"ArmorPhysical"             "3"
+		"MagicalResistance"			"25"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"           "22"
+		"AttackDamageMax"           "34"
+		"AttackRate"                "1.700000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "600"
+		"AttackRange"               "128"
+		"ProjectileSpeed"           "0"
+		"MovementSpeed"             "315"
+		"MovementTurnRate"          "0.600000"
 
-        // Abilities
+		// Abilities
 		"Ability1"					"superman_recoil"
 		"Ability2"					"superman_punch"
 		"Ability3"					"superman_ice_wave"
@@ -5782,15 +6115,15 @@
 		"Ability16"					"special_bonus_strength_25"
 		"Ability17"					"special_bonus_unique_superman_6"
 
-        // Card info
-        "Role"          			"Carry,Support,Disabler,Escape,Nuker"
-        "Rolelevels"    			"3,1,1,1,1"
-        "Complexity"    			"1"
+		// Card info
+		"Role"          			"Carry,Support,Disabler,Escape,Nuker"
+		"Rolelevels"    			"3,1,1,1,1"
+		"Complexity"    			"1"
 
-        // Misc
-        "NameAliases"      		    "sm"
-        "url"       				"Superman"
-        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+		// Misc
+		"NameAliases"      		    "sm"
+		"url"       				"Superman"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
 
 		// Items
 		//-------------------------------------------------------------------------------------------------------------
@@ -5798,52 +6131,52 @@
 	"npc_dota_hero_molag_bal"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "205"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
+		"HeroID"                    "205"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_molag_bal/molag_bal.vmdl"
-        "ModelScale"                "1.02"
-        "LoadoutScale"              "1.1"
+		// Model info
+		"Model"                     "models/heroes/hero_molag_bal/molag_bal.vmdl"
+		"ModelScale"                "1.02"
+		"LoadoutScale"              "1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "240"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "240"
 
-        // Sound info
+		// Sound info
 		"SoundSet"					"Hero_Beastmaster"
 
 		"CMEnabled"					"0"
 		"IdleSoundLoop"				"Hero_Grimstroke.IdleLoop"
 
-	 	"particle_folder"			"particles/units/heroes/hero_beastmaster"
+		"particle_folder"			"particles/units/heroes/hero_beastmaster"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
-        "AttributeBaseStrength"     "25"
-        "AttributeStrengthGain"     "3.600000"
-        "AttributeBaseAgility"      "20"
-				"AttributeAgilityGain"      "2.400000"
-				"AttributeBaseIntelligence" "19"
-				"AttributeIntelligenceGain" "1.900000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "25"
+		"AttributeStrengthGain"     "3.600000"
+		"AttributeBaseAgility"      "20"
+		"AttributeAgilityGain"      "2.400000"
+		"AttributeBaseIntelligence" "19"
+		"AttributeIntelligenceGain" "1.900000"
 
-        // Misc stats
-        "ArmorPhysical"             "0"
-        "MagicalResistance"			"25"
-        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "30"
-        "AttackDamageMax"           "38"
-        "AttackRate"                "1.550000"
-        "AttackAnimationPoint"      "0.400000"
-        "AttackAcquisitionRange"    "600"
-        "AttackRange"               "150"
-        "ProjectileSpeed"           "0"
-        "MovementSpeed"             "315"
-        "MovementTurnRate"          "0.600000"
+		// Misc stats
+		"ArmorPhysical"             "0"
+		"MagicalResistance"			"25"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"           "30"
+		"AttackDamageMax"           "38"
+		"AttackRate"                "1.550000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "600"
+		"AttackRange"               "150"
+		"ProjectileSpeed"           "0"
+		"MovementSpeed"             "315"
+		"MovementTurnRate"          "0.600000"
 
-        // Abilities
+		// Abilities
 		"Ability1"					"molagbal_mace_of_oblivion"
 		"Ability2"					"molagbal_vampire"
 		"Ability3"					"molagbal_lord_of_darkness"
@@ -5860,17 +6193,17 @@
 		"Ability16"					"special_bonus_strength_25"
 		"Ability17"					"special_bonus_magic_resistance_6"
 
-        // Card info
+		// Card info
 
 		"Role"						"Support,Disabler,Nuker,Durable"
 		"Rolelevels"				"2,3,1,1"
 		"Complexity"				"2"
 		"Team"						"Bad"
 
-        // Misc
-        "NameAliases"      			"mb"
-        "url"       				"Molag Bal"
-        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+		// Misc
+		"NameAliases"      			"mb"
+		"url"       				"Molag Bal"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
 
 		// Bounds
 		//-------------------------------------------------------------------------------------------------------------
@@ -5901,17 +6234,17 @@
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 
 		"vscripts"					"heroes/molagbal.lua"
-        // Card info
+		// Card info
 
 		"Role"						"Support,Disabler,Nuker,Durable"
 		"Rolelevels"				"2,3,1,1"
 		"Complexity"				"2"
 		"Team"						"Bad"
 
-        // Misc
-        "NameAliases"      			"mb"
-        "url"       				"Molag Bal"
-        "LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
+		// Misc
+		"NameAliases"      			"mb"
+		"url"       				"Molag Bal"
+		"LastHitChallengeRival"     "npc_dota_hero_windrunner" //TODO: Check if its used still
 
 		// Items
 		//-------------------------------------------------------------------------------------------------------------
@@ -5921,7 +6254,7 @@
 		"BaseClass"      			"npc_dota_hero"
 		"HeroID"					"206"
 		"IsCustom"                  "1"
-        "DisableWearables"          "1"
+		"DisableWearables"          "1"
 
 		"Model"						"models/heroes/hero_doctor_fate/fate.vmdl"
 		"IdleExpression"			"scenes/lion/lion_exp_idle_01.vcd"
@@ -6074,9 +6407,9 @@
 	"npc_dota_hero_mercer"
 	{
 		"BaseClass"             	"npc_dota_hero"
-    "HeroID"                    "207"
-    "IsCustom"                  "1"
-    "DisableWearables"          "1"
+		"HeroID"                    "207"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
 
 		"Model"						"models/heroes/hero_mercer/mercer.vmdl"
 		"Portrait"					"vgui/hud/heroportraits/portrait_chaos_knight"
@@ -6165,55 +6498,55 @@
 	"npc_dota_hero_ezekyle"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "208"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
+		"HeroID"                    "208"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_abaddon_the_despoier/abaddon.vmdl"
+		// Model info
+		"Model"                     "models/heroes/hero_abaddon_the_despoier/abaddon.vmdl"
 
-        "ModelScale"                "1.02"
-        "LoadoutScale"              "1.1"
+		"ModelScale"                "1.02"
+		"LoadoutScale"              "1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "240"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "240"
 
-        // Sound info
+		// Sound info
 		"SoundSet"					"Hero_DoomBringer"
 		"IdleSoundLoop"				"Hero_DoomBringer.IdleLoop"
 
-	 	"particle_folder"			"particles/units/heroes/hero_doom_bringer"
+		"particle_folder"			"particles/units/heroes/hero_doom_bringer"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
-        "AttributeBaseStrength"     "32"
-        "AttributeStrengthGain"     "2.900000"
-        "AttributeBaseIntelligence" "18"
-        "AttributeIntelligenceGain" "1.100000"
-        "AttributeBaseAgility"      "18"
-        "AttributeAgilityGain"      "1.200000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"     "32"
+		"AttributeStrengthGain"     "2.900000"
+		"AttributeBaseIntelligence" "18"
+		"AttributeIntelligenceGain" "1.100000"
+		"AttributeBaseAgility"      "18"
+		"AttributeAgilityGain"      "1.200000"
 
-        // Misc stats
-        "ArmorPhysical"             "-2"
-        "MagicalResistance"			"34"
+		// Misc stats
+		"ArmorPhysical"             "-2"
+		"MagicalResistance"			"34"
 
-        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
 
-        "AttackDamageMin"           "60"
-        "AttackDamageMax"           "78"
+		"AttackDamageMin"           "60"
+		"AttackDamageMax"           "78"
 
-        "AttackRate"                "1.760000"
-        "AttackAnimationPoint"      "0.400000"
-        "AttackAcquisitionRange"    "600"
-        "AttackRange"               "200"
-        "ProjectileSpeed"           "0"
+		"AttackRate"                "1.760000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "600"
+		"AttackRange"               "200"
+		"ProjectileSpeed"           "0"
 
-        "MovementSpeed"             "265"
-        "MovementTurnRate"          "0.600000"
+		"MovementSpeed"             "265"
+		"MovementTurnRate"          "0.600000"
 
-        // Abilities
+		// Abilities
 		"Ability1"					"ezekyle_dark_force"
 		"Ability2"					"ezekyle_draknien"
 		"Ability3"					"ezekyle_chaos_mark"
@@ -6252,55 +6585,55 @@
 	"npc_dota_hero_kyloren"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "209"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
-        ///"HeroDisabled"				"1"
+		"HeroID"                    "209"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
+		///"HeroDisabled"				"1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_kyloren/kyloren.vmdl"
+		// Model info
+		"Model"                     "models/heroes/hero_kyloren/kyloren.vmdl"
 
-        "ModelScale"                "2.0"
-        "LoadoutScale"              "1.1"
+		"ModelScale"                "2.0"
+		"LoadoutScale"              "1.1"
 
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "240"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "240"
 
-        // Sound info
+		// Sound info
 		"SoundSet"					"Kyloren"
 		"IdleSoundLoop"				"Kyloren.IdleLoop"
 
-	 	"particle_folder"			"particles/kyloren"
+		"particle_folder"			"particles/kyloren"
 		"GameSoundsFile"			"soundevents/heroes/hero_kyloren.vsndevts"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
-        "AttributeBaseStrength"     "25"
-				"AttributeStrengthGain"     "2.200000"
-        "AttributeBaseAgility"      "32"
-        "AttributeAgilityGain"      "2.900000"
-				"AttributeBaseIntelligence" "21"
-				"AttributeIntelligenceGain" "2.000000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"     "25"
+		"AttributeStrengthGain"     "2.200000"
+		"AttributeBaseAgility"      "32"
+		"AttributeAgilityGain"      "2.900000"
+		"AttributeBaseIntelligence" "21"
+		"AttributeIntelligenceGain" "2.000000"
 
-        // Misc stats
-        "ArmorPhysical"             "2"
-        "MagicalResistance"			"24"
+		// Misc stats
+		"ArmorPhysical"             "2"
+		"MagicalResistance"			"24"
 
-        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
 
-        "AttackDamageMin"           "41"
-        "AttackDamageMax"           "44"
+		"AttackDamageMin"           "41"
+		"AttackDamageMax"           "44"
 
-        "AttackRate"                "1.760000"
-        "AttackAnimationPoint"      "0.400000"
-        "AttackAcquisitionRange"    "600"
-        "AttackRange"               "130"
-        "ProjectileSpeed"           "0"
+		"AttackRate"                "1.760000"
+		"AttackAnimationPoint"      "0.400000"
+		"AttackAcquisitionRange"    "600"
+		"AttackRange"               "130"
+		"ProjectileSpeed"           "0"
 
-        "MovementSpeed"             "305"
-        "MovementTurnRate"          "0.600000"
+		"MovementSpeed"             "305"
+		"MovementTurnRate"          "0.600000"
 
-   		// Abilities
+		// Abilities
 		"Ability1"					"kyloren_freeze"
 		"Ability2"					"kyloren_ways_of_faith"
 		"Ability3"					"kyloren_dark_side"
@@ -6344,23 +6677,23 @@
 	"npc_dota_hero_mercy"
 	{
 		"BaseClass"             	"npc_dota_hero"
-        "HeroID"                    "210"
-        "IsCustom"                  "1"
-        "DisableWearables"          "1"
-        "HeroDisabled"				"1"
+		"HeroID"                    "210"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
+		"HeroDisabled"				"1"
 
-        // Model info
-        "Model"                     "models/heroes/hero_mercy/mercy.vmdl"
-        "ModelScale"                "0.92"
-        "LoadoutScale"              "1.1"
-        "HeroGlowColor"             "200 200 200"
-        "HealthBarOffset"           "240"
+		// Model info
+		"Model"                     "models/heroes/hero_mercy/mercy.vmdl"
+		"ModelScale"                "0.92"
+		"LoadoutScale"              "1.1"
+		"HeroGlowColor"             "200 200 200"
+		"HealthBarOffset"           "240"
 
-        // Sound info
+		// Sound info
 		"SoundSet"					"Hero_Oracle"
 		"IdleSoundLoop"				"Hero_Oracle.IdleLoop"
 
-	 	"particle_folder"			"particles/units/heroes/hero_oracle"
+		"particle_folder"			"particles/units/heroes/hero_oracle"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_oracle.vsndevts"
 
@@ -6368,32 +6701,32 @@
 		"Rolelevels"				"3,2,2,1"
 		"Complexity"				"2"
 
-        // Attribute Stats
-        "AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
-        "AttributeBaseStrength"     "16"
-        "AttributeStrengthGain"     "1.100000"
-        "AttributeBaseIntelligence" "21"
-        "AttributeIntelligenceGain" "1.100000"
-        "AttributeBaseAgility"      "31"
-        "AttributeAgilityGain"      "2.200000"
+		// Attribute Stats
+		"AttributePrimary"          "DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"     "16"
+		"AttributeStrengthGain"     "1.100000"
+		"AttributeBaseIntelligence" "21"
+		"AttributeIntelligenceGain" "1.100000"
+		"AttributeBaseAgility"      "31"
+		"AttributeAgilityGain"      "2.200000"
 
-        // Misc stats
-        "ArmorPhysical"             "2"
-        "MagicalResistance"			"24"
+		// Misc stats
+		"ArmorPhysical"             "2"
+		"MagicalResistance"			"24"
 
-       	"AttackAcquisitionRange"	"800"
+		"AttackAcquisitionRange"	"800"
 		"AttackRange"				"620"
 		"ProjectileModel"			"particles/econ/items/templar_assassin/templar_assassin_butterfly/templar_assassin_meld_attack_butterfly.vpcf"
 		"ProjectileSpeed"			"900"
 		"AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 
-        "AttackDamageMin"           "20"
-        "AttackDamageMax"           "28"
+		"AttackDamageMin"           "20"
+		"AttackDamageMax"           "28"
 
-        "AttackRate"                "1.760000"
-        "AttackAnimationPoint"      "0.400000"
-        "MovementSpeed"             "305"
-        "MovementTurnRate"          "0.600000"
+		"AttackRate"                "1.760000"
+		"AttackAnimationPoint"      "0.400000"
+		"MovementSpeed"             "305"
+		"MovementTurnRate"          "0.600000"
 
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
@@ -6518,9 +6851,12 @@
 
 		}
 	}
-	"npc_dota_hero_custom_lion"
+	"npc_dota_hero_ogre_magi"
 	{
-		"override_hero"					"npc_dota_hero_ogre_magi"
+		////"override_hero"					"npc_dota_hero_ogre_magi"
+
+          "HeroID"		                     "84"
+          "BaseClass"		               "npc_dota_hero_ogre_magi"
 
 		"DisableWearables"				"1"
 
@@ -7392,7 +7728,7 @@
 		"CMDisabled"					"1"
 		"HeroDisabled"					"1"
 
-		"Model"						"models/heroes/hero_bane/bane.vmdl"
+		"Model"						"models/heroes/hero_officer/hero/officer.vmdl"
 		"SoundSet"					"Hero_Sniper"
 
 		"HeroUnlockOrder"				"0"

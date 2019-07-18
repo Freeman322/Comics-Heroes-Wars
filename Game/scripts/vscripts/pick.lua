@@ -175,8 +175,10 @@ function Pick:OnPick(params)
 
   PrecacheUnitByNameAsync( hero, function()
 	  local nHero = PlayerResource:ReplaceHeroWith(playerid, hero, gold, 0)
-	  nHero:RespawnHero(false, false)
+    nHero:RespawnHero(false, false)
   end)
+
+
   CustomNetTables:SetTableValue("pick", "heroes", PLAYER_TABLE)
 end
 
