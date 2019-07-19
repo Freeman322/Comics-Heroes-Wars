@@ -27,7 +27,15 @@ function iron_rearm:OnSpellStart()
     ParticleManager:SetParticleControl( nFXIndex, 0, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl( nFXIndex, 1, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl( nFXIndex, 2, Vector(1, 1, 1))
-    caster:EmitSound("DOTA_Item.SoulRing.Activate")
+
+    local sound = "DOTA_Item.SoulRing.Activate"
+
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "iron_devil") == true then 
+		sound = "IronDevil.CastRearm"
+    end
+    
+    caster:EmitSound(sound)
+
     self.cooldown_channel = self:GetSpecialValueFor( "channel_tooltip" )
 
     for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.

@@ -12,7 +12,13 @@ local hTarget = self:GetCursorTarget()
 					damage = damage * 1.25
 				end
 
-				local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/centaur/dc_centaur_double_edge/_dc_centaur_double_edge.vpcf", PATTACH_CUSTOMORIGIN, nil );
+				local particle = "particles/econ/items/centaur/dc_centaur_double_edge/_dc_centaur_double_edge.vpcf"
+				
+				if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "cage") then
+					particle = "particles/econ/items/monkey_king/arcana/death/monkey_king_spring_cast_arcana_death.vpcf"
+				end
+
+				local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_CUSTOMORIGIN, nil );
 				ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
 				ParticleManager:SetParticleControlEnt( nFXIndex, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
 				ParticleManager:SetParticleControlEnt( nFXIndex, 4, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );

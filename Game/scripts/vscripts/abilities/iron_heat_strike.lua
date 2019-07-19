@@ -45,7 +45,14 @@ function iron_heat_strike.OnSpellStart(self)
             if not hTarget:TriggerSpellAbsorb(self) then
                 local damage = (self:GetSpecialValueFor("damage_mana_pct")/100) * self:GetCaster():GetMaxMana()
 
-                EmitSoundOn("Hero_Lina.LagunaBlade.Immortal",self:GetCaster())
+                local sound = "Hero_Lina.LagunaBlade.Immortal"
+
+                if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "iron_devil") then
+                    sound = "IronDevil.CastUlti"
+                end
+
+                EmitSoundOn(sound,self:GetCaster())
+                
                 if self:GetCaster():HasScepter() then
                     damage=(self:GetSpecialValueFor("damage_scepter")/100) * self:GetCaster():GetMaxMana()
                     local units = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), self:GetCaster(), self:GetSpecialValueFor("aoe_scepter"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, 0, false)

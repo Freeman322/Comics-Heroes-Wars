@@ -5,6 +5,12 @@ function iron_heat_missile:OnSpellStart()
 
 	local particle = "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
 	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "dark_custom") == true then particle = "particles/hero_ironman/iron_rockets.vpcf" end
+	
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "iron_devil") == true then 
+		particle = "particles/hero_ironman/iron_devil_rockets.vpcf" 
+		
+		EmitSoundOn("IronDevil.CastRockets", self:GetCaster())
+	end
 
 	local targets = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false )
 	if #targets > 0 then

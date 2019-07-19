@@ -17762,18 +17762,23 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_lua"
+		"BaseClass"             			"ability_lua"
 		"ScriptFile"					"abilities/draks_unholy_strength.lua"
 		"AbilityTextureName"			"custom/draks_ult"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"HasScepterUpgrade"				"1"
+		
 		"precache"
 		{
-			"model" 	"models/items/beastmaster/beast_heart_marauder_head/beast_heart_marauder_head.vmdl"
-			"model"		"models/items/beastmaster/beast_heart_marauder_shoulder/beast_heart_marauder_shoulder.vmdl"
-			"model"		"models/items/beastmaster/beast_heart_marauder_weapon/beast_heart_marauder_weapon.vmdl"
+			"model" 					"models/items/beastmaster/beast_heart_marauder_head/beast_heart_marauder_head.vmdl"
+			"model"					"models/items/beastmaster/beast_heart_marauder_shoulder/beast_heart_marauder_shoulder.vmdl"
+			"model"					"models/items/beastmaster/beast_heart_marauder_weapon/beast_heart_marauder_weapon.vmdl"
+			"model"					"models/heroes/hero_drax/cage_skin/johnny.vmdl"
+			"particle"				"particles/octavia_skin.vpcf"
+			"particle"				"particles/econ/items/monkey_king/arcana/death/monkey_king_spring_cast_arcana_death.vpcf"
 		}
+		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -20961,14 +20966,17 @@
 
 		"precache"
 		{
-			"particle"  	"particles/refresh_2.vpcf"
+			"particle"  		"particles/refresh_2.vpcf"
 			"model"			"models/heroes/rattletrap/rattletrap_armor.vmdl"
 			"model"			"models/heroes/rattletrap/rattletrap_head.vmdl"
 			"model"			"models/heroes/rattletrap/rattletrap_weapon.vmdl"
 			"model"			"models/heroes/rattletrap/rattletrap_hook.vmdl"
 			"model"			"models/items/rattletrap/eternal_machine_head/eternal_machine_head.vmdl"
-			"particle"  	"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+			"particle"  		"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
 			"particle"		"particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+			"particle"		"particles/ironman/iron_devil_ambient.vpcf"
+			"model"			"models/heroes/hero_ironman/econs/berserk.vmdl"
+			"particle"		"particles/hero_ironman/iron_devil_rockets.vpcf"
 		}
 	}
 

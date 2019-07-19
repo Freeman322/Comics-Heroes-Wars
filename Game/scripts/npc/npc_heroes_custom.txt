@@ -6593,7 +6593,7 @@
 		// Model info
 		"Model"                     "models/heroes/hero_kyloren/kyloren.vmdl"
 
-		"ModelScale"                "2.0"
+		"ModelScale"                "1.15"
 		"LoadoutScale"              "1.1"
 
 		"HeroGlowColor"             "200 200 200"

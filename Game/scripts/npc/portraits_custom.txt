@@ -3192,4 +3192,78 @@
 			}
 		}
 	}
+	"models/heroes/hero_drax/cage_skin/johnny.vmdl"
+	{
+		"PortraitLightPosition"		"43.551277 54.802246 287.199982"
+		"PortraitLightAngles"		"72.274323 -128.474121 0.000000"
+		"PortraitLightFOV"		"63.000000"
+		"PortraitLightDistance"		"471.000000"
+		"PortraitLightColor"		"195 181 254"
+		"PortraitShadowColor"		"189 186 193"
+		"PortraitShadowScale"		"1.025000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientColor"		"61 28 28"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitBackgroundColor1"		"0.100000 0.100000 0.100000"
+		"PortraitBackgroundColor2"		"0.250000 0.250000 0.250000"
+		"PortraitBackgroundColor3"		"0.500000 0.500000 0.500000"
+		"PortraitBackgroundColor4"		"0.700000 0.700000 0.700000"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_bluebloom.vmat"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitLightScale"		"3.650000"
+		"PortraitAmbientDirection"		"-0.033 0.968 -0.249"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"265.064484 1.947924 210.830006"
+				"PortraitAngles"		"6.677104 -178.748169 0.000000"
+				"PortraitFOV"		"13"
+				"PortraitFar"		"1500.000000"
+			}
+		}
+	}
+	"models/heroes/hero_ironman/econs/berserk.vmdl"
+	{
+		"PortraitLightPosition"		"43.551277 54.802246 287.199982"
+		"PortraitLightAngles"		"72.274323 -128.474121 0.000000"
+		"PortraitLightFOV"		"63.000000"
+		"PortraitLightDistance"		"471.000000"
+		"PortraitLightColor"		"195 181 254"
+		"PortraitShadowColor"		"189 186 193"
+		"PortraitShadowScale"		"1.025000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientColor"		"61 28 28"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitBackgroundColor1"		"0.100000 0.100000 0.100000"
+		"PortraitBackgroundColor2"		"0.250000 0.250000 0.250000"
+		"PortraitBackgroundColor3"		"0.500000 0.500000 0.500000"
+		"PortraitBackgroundColor4"		"0.700000 0.700000 0.700000"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_bluebloom.vmat"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitLightScale"		"3.650000"
+		"PortraitAmbientDirection"		"-0.033 0.968 -0.249"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"265.064484 1.947924 120.830006"
+				"PortraitAngles"		"6.677104 -178.748169 0.000000"
+				"PortraitFOV"		"7"
+				"PortraitFar"		"1500.000000"
+			}
+		}
+	}
 }
