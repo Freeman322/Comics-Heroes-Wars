@@ -28733,7 +28733,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"					"800 900 1000 1100"
+				"radius"					"600 700 800 900"
 			}
 			"02"
 			{
@@ -28743,7 +28743,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_speed"				"350 450 550 650"
+				"max_speed"				"250 350 450 550"
 			}
 		}
 	}
