@@ -28710,7 +28710,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_lua"
+		"BaseClass"             			"ability_lua"
 		"AbilityTextureName"			"custom/godspeed_ember_field"
 		"ScriptFile"					"abilities/godspeed_ember_field.lua"
 
@@ -28723,6 +28723,7 @@
 			"particle"  				"particles/status_fx/status_effect_guardian_angel.vpcf"
 			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_batrider.vsndevts"
 		}
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800 900"
@@ -28732,7 +28733,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"600 700 800 900"
+				"radius"					"800 900 1000 1100"
 			}
 			"02"
 			{
@@ -28742,7 +28743,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_speed"				"250 350 450 550"
+				"max_speed"				"350 450 550 650"
 			}
 		}
 	}
