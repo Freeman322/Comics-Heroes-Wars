@@ -55,7 +55,7 @@ function modifier_godspeed_ember_field_aura:GetAuraSearchTeam()
 end
 
 function modifier_godspeed_ember_field_aura:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+	return DOTA_UNIT_TARGET_HERO 
 end
 
 function modifier_godspeed_ember_field_aura:GetAuraSearchFlags()
