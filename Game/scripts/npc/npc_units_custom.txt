@@ -3173,7 +3173,7 @@
 		"Ability13"					"special_bonus_cast_range_200"
 		"Ability14"					"special_bonus_magic_resistance_50"
 		"Ability15"					"special_bonus_spell_amplify_3"
-		"Ability16"					"special_bonus_hp_800"
+		"Ability16"					"special_bonus_strength_25"
 		"Ability17"					"special_bonus_unique_timbersaw"
 
 		"Enabled"					"1"

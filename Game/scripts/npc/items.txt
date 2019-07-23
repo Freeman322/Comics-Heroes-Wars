@@ -2014,6 +2014,31 @@
 		}
 	}
 
+//=================================================================================================================
+	// Recipe: Phase Boots
+	//=================================================================================================================
+	"item_recipe_phase_boots"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"49"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_phase_boots"
+		"ItemRequirements"
+		{
+			"01"						"item_boots;item_chainmail;item_blades_of_attack"
+		}
+	}
+
 	//=================================================================================================================
 	// Phase Boots
 	//=================================================================================================================
@@ -2030,7 +2055,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1550"
+		"ItemCost"						"1480"
 		"ItemShopTags"					"damage;move_speed;hard_to_tag"
 		"ItemQuality"					"common"
 		"ItemAliases"					"phase boots"
@@ -2044,52 +2069,57 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"17"
+				"bonus_movement_speed"	"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20"
+				"bonus_damage_melee"			"18"
 			}			
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_block_melee"	"0"
-			}
+				"bonus_damage_range"			"12"
+			}			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_block_ranged"	"0"
+				"damage_block_melee"	"0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"0"
-			}		
+				"damage_block_ranged"	"0"
+			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"phase_movement_speed"  "28"
+				"block_chance"			"0"
 			}		
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
+				"phase_movement_speed"  "22"
+			}		
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"phase_movement_speed_range"  "10"
 			}
-			"08"
+			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"phase_duration"		"3.0"
 			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"50"
-			}		
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"5"
+				"bonus_attack_speed"	"0"
+			}		
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"6"
 			}		
 		}
 	}
@@ -2564,12 +2594,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"68"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
@@ -2579,7 +2609,7 @@
 			"01"						"item_ring_of_health;item_void_stone"
 		}
 	}
-
+	
 	//=================================================================================================================
 	// Perseverence
 	//=================================================================================================================
@@ -2593,30 +2623,24 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1700"
-		"ItemShopTags"					"regen_health;regen_mana"
+		"ItemShopTags"					"regen_health;regen_mana"		
 		"ItemQuality"					"common"
 		"ItemAliases"					"perseverance"
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-
-		// Special
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"6"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"6.0"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"		"15"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.0"
 			}
 		}
 	}
@@ -2912,22 +2936,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"80"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1725"
+		"ItemCost"						"525"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_vladmir"
 		"ItemRequirements"
 		{
-			"01"						"item_headdress;item_ring_of_basilius;item_lifesteal"
+			"01"						"item_ring_of_basilius;item_lifesteal"
 		}
 	}
-
+	
 	//=================================================================================================================
 	// Vladimir
 	//=================================================================================================================
@@ -2937,59 +2961,51 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"81"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4000"
+		"ItemCost"						"1925"
 		"ItemShopTags"					"lifesteal;damage;armor;regen_mana"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"vladmir's offering;vlads"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"15"
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen_aura"		"1.5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_regen"				"15"
+				"armor_aura"			"4"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen_aura"		"2.2"
-			}
+				"var_type"				"FIELD_INTEGER"
+				"damage_aura"			"15"
+			}			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_aura"			"15"
+				"vampiric_aura"			"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_aura"			"22"
+				"vampiric_aura_ranged"			"10"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"vampiric_aura"			"22"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vampiric_aura_ranged"			"15"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"	"900"
-			}
+				"aura_radius"	"1200"
+			}			
 		}
 	}
 
@@ -4050,19 +4066,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"103"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1250"
+		"ItemCost"						"1250"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_dagon"
 		"ItemRequirements"
 		{
-			"01"						"item_staff_of_wizardry;item_null_talisman"
+			"01"						"item_staff_of_wizardry;item_crown"
 		}
 	}
 
@@ -4072,12 +4088,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"197"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
@@ -4094,12 +4110,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"198"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
@@ -4116,12 +4132,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"199"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
@@ -4138,12 +4154,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"200"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
@@ -4153,7 +4169,7 @@
 			"02"						"item_dagon_4;item_recipe_dagon"
 		}
 	}
-
+	
 	//=================================================================================================================
 	// Dagon
 	//=================================================================================================================
@@ -4179,16 +4195,17 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"180"
-		"ItemCost"						"2720"
+		"AbilityManaCost"				"120 140 160 180 200"
+		"ItemCost"						"2700"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"
+		"ItemQuality"					"rare"	
 		"ItemAliases"					"dagon 1"
-
+		
 		"UpgradesItems"					"item_dagon;item_dagon_2;item_dagon_3;item_dagon_4"
 		"UpgradeRecipe"					"item_recipe_dagon"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -4200,27 +4217,27 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"3"
+				"bonus_all_stats"		"5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"9"
+				"damage"				"400 500 600 700 800"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 500 600 700 800"
+				"range_tooltip"			"600 650 700 750 800"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"600 650 700 750 800"
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0"
 			}
 			"06"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_delay"				"0"
+				"var_type"				"FIELD_FLOAT"
+				"mana_cost_tooltip"		"120"
 			}
 		}
 	}
@@ -4247,16 +4264,17 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"180"
-		"ItemCost"						"3970"
+		"AbilityManaCost"				"120 140 160 180 200"
+		"ItemCost"						"3950"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"
+		"ItemQuality"					"rare"	
 		"ItemAliases"					"dagon 2"
-
+		
 		"UpgradesItems"					"item_dagon_2;item_dagon_3;item_dagon_4"
 		"UpgradeRecipe"					"item_recipe_dagon"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -4268,27 +4286,27 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"3"
+				"bonus_all_stats"		"6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"9"
+				"damage"				"400 500 600 700 800"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 500 600 700 800"
+				"range_tooltip"			"600 650 700 750 800"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"600 650 700 750 800"
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0"
 			}
 			"06"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_delay"				"0"
+				"var_type"				"FIELD_FLOAT"
+				"mana_cost_tooltip"		"140"
 			}
 		}
 	}
@@ -4315,16 +4333,17 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"180"
-		"ItemCost"						"5220"
+		"AbilityManaCost"				"120 140 160 180 200"
+		"ItemCost"						"5200"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
 		"ItemQuality"					"rare"
-		"ItemAliases"					"dagon 3"
+		"ItemAliases"					"dagon 3"	
 
 		"UpgradesItems"					"item_dagon_3;item_dagon_4"
 		"UpgradeRecipe"					"item_recipe_dagon"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -4336,27 +4355,27 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"3"
+				"bonus_all_stats"		"7"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"9"
+				"damage"				"400 500 600 700 800"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 500 600 700 800"
+				"range_tooltip"			"600 650 700 750 800"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"600 650 700 750 800"
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0"
 			}
 			"06"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_delay"				"0"
+				"var_type"				"FIELD_FLOAT"
+				"mana_cost_tooltip"		"160"
 			}
 		}
 	}
@@ -4383,16 +4402,17 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"180"
-		"ItemCost"						"6470"
+		"AbilityManaCost"				"120 140 160 180 200"
+		"ItemCost"						"6450"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
 		"ItemQuality"					"rare"
-		"ItemAliases"					"dagon 4"
+		"ItemAliases"					"dagon 4"	
 
 		"UpgradesItems"					"item_dagon_4"
 		"UpgradeRecipe"					"item_recipe_dagon"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -4404,27 +4424,27 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"3"
+				"bonus_all_stats"		"8"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"9"
+				"damage"				"400 500 600 700 800"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 500 600 700 800"
+				"range_tooltip"			"600 650 700 750 800"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"600 650 700 750 800"
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0"
 			}
 			"06"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_delay"				"0"
+				"var_type"				"FIELD_FLOAT"
+				"mana_cost_tooltip"		"180"
 			}
 		}
 	}
@@ -4451,13 +4471,14 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"180"
-		"ItemCost"						"7720"
+		"AbilityManaCost"				"120 140 160 180 200"
+		"ItemCost"						"7700"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
 		"ItemQuality"					"rare"
-		"ItemAliases"					"dagon 5"
-
-		// Special
+		"ItemAliases"					"dagon 5"	
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -4469,30 +4490,32 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"3"
+				"bonus_all_stats"		"9"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"9"
+				"damage"				"400 500 600 700 800"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 500 600 700 800"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"range_tooltip"			"600 650 700 750 800"
 			}
-			"06"
+			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"damage_delay"				"0"
 			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_cost_tooltip"		"200"
+			}
 		}
 	}
+
+
 	//=================================================================================================================
 	// Recipe: Hand of Midas
 	//=================================================================================================================
@@ -6533,21 +6556,21 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"144"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"300"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_bfury"
 		"ItemRequirements"
 		{
-			"01"						"item_broadsword;item_claymore;item_pers;item_quelling_blade"
+			"01"						"item_demon_edge;item_pers;item_quelling_blade"
 		}
-	}
+	}	
 
 	//=================================================================================================================
 	// Battlefury
@@ -6568,60 +6591,61 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4500"
+		"ItemCost"						"4400"
 		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bf;battle fury"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"55"
+				"bonus_damage"			"45"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"6"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"7.5"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"1.5"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"3.75"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"35"
+				"cleave_damage_percent"	"60"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus"			"160"
+				"quelling_bonus"			"24"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_ranged"	"125"
-			}
+				"quelling_bonus_ranged"	"7"
+			}			
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cleave_starting_width"			"150"
-			}
+			}			
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_ending_width"			"280"
-			}
+				"cleave_ending_width"			"360"
+			}			
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_distance"			"520"
+				"cleave_distance"			"650"
 			}
 			"10"
 			{
@@ -8613,19 +8637,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"184"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"700"
+		"ItemCost"						"800"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_ancient_janggo"
 		"ItemRequirements"
 		{
-			"01"						"item_sobi_mask;item_bracer;item_wind_lace"
+			"01"						"item_sobi_mask;item_crown;item_wind_lace"
 			"02"						"item_ancient_janggo"
 		}
 	}
@@ -8642,13 +8666,15 @@
 		"ItemPermanent"					"1"
 		"FightRecapLevel"				"1"
 
-		// Stats
+		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0"
+		"AbilityCastRange"				"1200"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1780"
+		"ItemCost"						"1625"
 		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"drum of endurance"
@@ -8656,8 +8682,9 @@
 		"ItemDisplayCharges"			"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemRequiresCharges"			"1"
+		"ShouldBeSuggested"				"1"
 
-		// Special
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -8674,42 +8701,37 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"			"3"
+				"bonus_agi"			"6"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"3"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"1"
+				"bonus_movement_speed"	"20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_aura_movement_speed"	"20"
+				"bonus_attack_speed_pct"	"35"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed_pct"	"25"
+				"bonus_movement_speed_pct"	"13"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed_pct"	"13"
+				"duration"				"6"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"6"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"900"
+				"radius"				"1200"
 			}
 		}
 	}
@@ -9052,19 +9074,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"189"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"400"
+		"ItemCost"						"700"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_veil_of_discord"
 		"ItemRequirements"
 		{
-			"01"						"item_helm_of_iron_will;item_null_talisman;item_null_talisman"
+			"01"						"item_helm_of_iron_will;item_crown"
 		}
 	}
 
@@ -9077,8 +9099,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"190"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
-		// Stats
+		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20"
 		"AbilityCastRange"				"1000"
@@ -9088,13 +9111,14 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
-		"ItemCost"						"2240"
+		"ItemCost"						"2050"
 		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"vod;veil of discord"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -9121,31 +9145,30 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"		"6"
+				"bonus_int"		"15"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int"		"12"
+				"resist_debuff"			"-25"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"resist_debuff"			"-25"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"debuff_radius"			"600"
 			}
-			"09"
+			"08"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"resist_debuff_duration"	"16.0"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"1000"
+			}
 		}
 	}
-
 	//=================================================================================================================
 	// Recipe: Guardian Greaves
 	//=================================================================================================================
@@ -9705,6 +9728,30 @@
 	}
 
 	//=================================================================================================================
+	// Recipe: Tranquil Boots
+	//=================================================================================================================
+	"item_recipe_tranquil_boots"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"213"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_tranquil_boots"
+		"ItemRequirements"
+		{
+			"01"						"item_boots;item_wind_lace;item_ring_of_regen"
+		}
+	}
+	
+	//=================================================================================================================
 	// Tranquil Boots
 	//=================================================================================================================
 	"item_tranquil_boots"
@@ -9714,21 +9761,22 @@
 		"ID"							"214"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		// Stats
+		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"13.0"
 		"AbilityManaCost"				"0"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"900"
+		"ItemCost"						"1050"
 		"ItemShopTags"					"move_speed;regen_health;armor"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"tranquil boots"
 		"ItemHideCharges"		     	"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -9740,12 +9788,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"3"
+				"bonus_armor"			"0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"12"
+				"bonus_health_regen"	"16"
 			}
 			"04"
 			{
@@ -9780,7 +9828,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"broken_movement_speed"	"20"
+				"broken_movement_speed"	"18"
 			}
 		}
 	}

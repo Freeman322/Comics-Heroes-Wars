@@ -375,7 +375,7 @@
 		"Ability13"			     "special_bonus_unique_pudge_2"
 	 	"Ability14"			     "special_bonus_magic_resistance_50"
 		"Ability15"				"special_bonus_unique_pudge"
-		"Ability16"				"special_bonus_hp_800"
+		"Ability16"				"special_bonus_strength_25"
 		"Ability17"				"special_bonus_cooldown_reduction_30"
 		"ArmorPhysical"			"0"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -1739,7 +1739,7 @@
 		"Ability13"				"special_bonus_armor_15"
 		"Ability14"				"special_bonus_cooldown_reduction_25"
 		"Ability15"				"special_bonus_unique_faceless_void_4"
-		"Ability16"				"special_bonus_hp_800"
+		"Ability16"				"special_bonus_strength_25"
 		"Ability17"				"special_bonus_all_stats_20"
 
 		// Armor
@@ -3672,7 +3672,7 @@
 		"Ability13"				"special_bonus_armor_15"
 		"Ability14"				"special_bonus_cooldown_reduction_25"
 		"Ability15"				"special_bonus_magic_resistance_50"
-		"Ability16"				"special_bonus_hp_800"
+		"Ability16"				"special_bonus_strength_25"
 		"Ability17"				"special_bonus_all_stats_20"
 		"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
@@ -3824,11 +3824,11 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"			"23"									// Base strength
-		"AttributeStrengthGain"			"3.3"									// Strength bonus per level.
+		"AttributeBaseStrength"			"28"									// Base strength
+		"AttributeStrengthGain"			"3.8"									// Strength bonus per level.
 		"AttributeBaseAgility"			"18"									// Base agility
 		"AttributeAgilityGain"			"1.6"									// Agility bonus per level.
-		"AttributeBaseIntelligence"		"26"									// Base intelligence
+		"AttributeBaseIntelligence"		"21"									// Base intelligence
 		"AttributeIntelligenceGain"		"2.2"									// Intelligence bonus per level.
 
 		// Movement
@@ -7158,7 +7158,7 @@
 		"Ability13"					"special_bonus_cast_range_200"
 		"Ability14"					"special_bonus_magic_resistance_50"
 		"Ability15"					"special_bonus_spell_amplify_3"
-		"Ability16"					"special_bonus_hp_800"
+		"Ability16"					"special_bonus_strength_25"
 		"Ability17"					"special_bonus_unique_timbersaw"
 	}
 	"npc_dota_hero_cosmos"

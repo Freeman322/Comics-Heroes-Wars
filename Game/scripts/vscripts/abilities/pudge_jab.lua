@@ -56,7 +56,7 @@ function modifier_pudge_jab:GetModifierProcAttack_BonusDamage_Pure (params)
                     damage = flDamage,
                     damage_type = DAMAGE_TYPE_PURE,
                     ability = self:GetAbility(),
-                    damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
+                    damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
                 })
 
                 return flDamage

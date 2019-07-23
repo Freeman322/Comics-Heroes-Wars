@@ -73,7 +73,7 @@ function khan_echo_strike:OnProjectileHit( hTarget, vLocation )
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
 		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
-		
+	
 		if hTarget and not hTarget:IsNull() then
 			EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)
 			EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace.Arcana", hTarget)

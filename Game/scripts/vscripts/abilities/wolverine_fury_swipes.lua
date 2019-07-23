@@ -17,10 +17,10 @@ function modifier_wolverine_fury_swipes:IsPurgable() return false end
 
 
 function modifier_wolverine_fury_swipes:DeclareFunctions ()
-    return {MODIFIER_EVENT_ON_ATTACK_START}
+    return {MODIFIER_EVENT_ON_ATTACK_LANDED}
 end
 
-function modifier_wolverine_fury_swipes:OnAttackStart (params)
+function modifier_wolverine_fury_swipes:OnAttackLanded(params)
     if IsServer () then
           if params.attacker == self:GetParent () then
                local chance = self:GetAbility():GetSpecialValueFor ("rupture_chance")
@@ -34,6 +34,9 @@ function modifier_wolverine_fury_swipes:OnAttackStart (params)
                if debuff then
                     if debuff:GetStackCount() < self:GetAbility():GetSpecialValueFor("max_stacks") then
                          debuff:SetStackCount(debuff:GetStackCount() + 1)
+                    end
+                         if debuff:GetStackCount() == self:GetAbility():GetSpecialValueFor("max_stacks") then
+                              debuff:SetStackCount(debuff:GetStackCount())
                     end
                else 
                     params.target:AddNewModifier (self:GetCaster (), self:GetAbility (), "modifier_wolverine_fury_swipes_debuff", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")}):SetStackCount(1)

@@ -6,7 +6,7 @@ function wolverine_berserk:GetIntrinsicModifierName()
 end
 
 if modifier_wolverine_berserk == nil then modifier_wolverine_berserk = class({}) end
-
+	
 function modifier_wolverine_berserk:IsHidden()
    return true
 end

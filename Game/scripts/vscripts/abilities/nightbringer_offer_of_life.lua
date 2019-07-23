@@ -2,7 +2,10 @@ nightbringer_offer_of_life = class({})
 
 function nightbringer_offer_of_life:CastFilterResultTarget( hTarget )
 	if IsServer() then
-		if hTarget ~= nil and hTarget:IsMagicImmune()  then
+		if hTarget ~= nil then
+			if hTarget:IsBuilding() or hTarget:GetTeamNumber() == self:GetCaster():GetTeamNumber() then 
+				return UF_FAIL_BUILDING
+			end
 			return UF_SUCCESS
 		end
 	return UF_SUCCESS

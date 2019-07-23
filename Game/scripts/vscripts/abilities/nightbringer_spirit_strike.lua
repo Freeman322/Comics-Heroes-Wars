@@ -29,7 +29,7 @@ function nightbringer_spirit_strike:OnProjectileHit( hTarget, vLocation )
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = damage_tooltip,
-			damage_type = DAMAGE_TYPE_PURE,
+			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self
 		}
 
