@@ -20918,14 +20918,15 @@
 
 		"precache"
 		{
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
-			"particle"  "particles/effects/jeannie_sword.vpcf"
-			"particle"  "particles/econ/courier/courier_jadehoof_ambient/jadehoof_ambient.vpcf"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"particle"  	"particles/effects/jeannie_sword.vpcf"
+			"particle"  	"particles/econ/courier/courier_jadehoof_ambient/jadehoof_ambient.vpcf"
 			"model"		"models/heroes/dark_custom/sword.vmdl"
 			"model"		"models/heroes/dark_custom/dress.vmdl"
 			"model"		"models/heroes/dark_custom/flag.vmdl"
 			"model"		"models/heroes/dark_custom/jeanne.vmdl"
 			"model"		"models/heroes/dark_custom/hair.vmdl"
+			"particle"	"particles/ironman/iron_devil_ambient/iron_devil_ambient.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
