@@ -4519,7 +4519,7 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/spells/iron_devil_ulti.vsnd"
+                            "value0"        "sounds/spells/muda_requiem.vsnd"
                         }
                     }
                     "volume"            {   "value"     "4.00000"  }
@@ -4533,4 +4533,41 @@
             }
         }
     }
+}
+
+"JpnnyCage.DoubleEdge"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spells/jonny_kage_1.vsnd"
+							"value1"		"sounds/spells/jonny_kage_2.vsnd"
+							"value2"		"sounds/spells/jonny_kage_3.vsnd"
+                            "value3"		"sounds/spells/jonny_kage_4.vsnd"
+                            "value4"		"sounds/spells/jonny_kage_5.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"1.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
 }

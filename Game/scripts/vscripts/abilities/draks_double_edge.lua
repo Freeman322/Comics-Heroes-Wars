@@ -16,6 +16,8 @@ local hTarget = self:GetCursorTarget()
 				
 				if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "cage") then
 					particle = "particles/econ/items/monkey_king/arcana/death/monkey_king_spring_cast_arcana_death.vpcf"
+
+					EmitSoundOn("JpnnyCage.DoubleEdge", self:GetCaster())
 				end
 
 				local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_CUSTOMORIGIN, nil );
