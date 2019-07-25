@@ -41,6 +41,8 @@ end
 
 function modifier_item_ultimate_nullifier:DeclareFunctions ()
     local funcs = {
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
@@ -48,6 +50,15 @@ function modifier_item_ultimate_nullifier:DeclareFunctions ()
     }
 
     return funcs
+end
+
+function modifier_item_ultimate_nullifier:GetModifierBonusStats_Agility (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_agility")
+end
+    
+function modifier_item_ultimate_nullifier:GetModifierBonusStats_Intellect( params )
+    return self:GetAbility():GetSpecialValueFor( "bonus_intellect" )
 end
 
 function modifier_item_ultimate_nullifier:GetModifierPhysicalArmorBonus(params)

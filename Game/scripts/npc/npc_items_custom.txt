@@ -31,55 +31,60 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_int"			"50"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"40"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_mana_regen"		"5"
+				"bonus_int"			"50"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
+				"bonus_mana_regen"		"5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
 				"bonus_damage"			"170"
 			}	
-			"04"
+			"05"
 			{
 				"var_type"	        "FIELD_INTEGER"
 				"bonus_attack_speed"    "60"
 			}
-			"05"
+			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_armor"			"10"
 			}
-			"06"
+			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"bonus_hp_reg"			"14"
 			}
-			"07"
+			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"mana_burn"			"100"
 			}
-			"08"
+			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"debuff_duration"		"3.5"
 			}
-			"09"
+			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"health_reduce"		"30"
 			}
-			"10"
+			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"crit_chance"			"20"
 			}
-			"11"
+			"12"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"crit_damage"			"240"
@@ -195,7 +200,7 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
-		"AbilityCooldown"				"25.0"
+		"AbilityCooldown"				"30.0"
 		"AbilityManaCost"				"175"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -244,12 +249,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_spell_amp"		"55"
+				"active_lifesteale"		"60"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_duration"		"8"
+				"active_duration"		"3"
 			}
 		}
 	}
@@ -3806,7 +3811,7 @@
 		"BaseClass"							"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"3000"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -3927,7 +3932,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"150"
+		"ItemCost"						"550"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -4896,29 +4901,39 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"80"
+				"bonus_agility"			"30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"6"
+				"bonus_intellect"		"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"12"
+				"bonus_damage"			"80"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_burn"				"60"
+				"bonus_armor"			"6"
 			}
 			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"12"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_burn"				"60"
+			}
+			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"mute_duration"			"5.0"
 			}
-			"06"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"slow_pct"				"80"

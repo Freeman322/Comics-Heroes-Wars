@@ -44,6 +44,7 @@ function modifier_item_chronograph:DeclareFunctions()
   return {
     MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
     MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+    MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
     MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
     MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
     MODIFIER_PROPERTY_MANA_BONUS,
@@ -57,6 +58,7 @@ function modifier_item_chronograph:DeclareFunctions()
   }
 end
 
+function modifier_item_chronograph:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("bonus_agility") end
 function modifier_item_chronograph:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("bonus_int") end
 function modifier_item_chronograph:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") end
 function modifier_item_chronograph:GetModifierPreAttack_BonusDamage() return self:GetAbility():GetSpecialValueFor("bonus_damage") end

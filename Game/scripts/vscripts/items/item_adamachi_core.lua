@@ -33,19 +33,25 @@ end
 
 function modifier_item_adamachi_core_active:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-        MODIFIER_PROPERTY_CASTTIME_PERCENTAGE
+        MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT,
     }
 
     return funcs
 end
 
-function modifier_item_adamachi_core_active:GetModifierSpellAmplify_Percentage()
-    return self:GetAbility():GetSpecialValueFor( "active_spell_amp" )
-end
+function modifier_item_adamachi_core_active:OnTakeDamageKillCredit( params )
+    if IsServer() then
+        if params.inflictor and params.attacker == self:GetParent()	then 
+			local damage = (params.damage * (self:GetAbility():GetSpecialValueFor("active_lifesteale") / 100))
 
-function modifier_item_adamachi_core_active:GetModifierPercentageCasttime()
-    return -95
+			self:GetParent():Heal(damage, self:GetAbility())
+
+			local nFXIndex = ParticleManager:CreateParticle( "particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() );
+			ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+            SendOverheadEventMessage( self:GetParent(), OVERHEAD_ALERT_HEAL , self:GetParent(), math.floor( damage ), nil )
+        end
+    end
 end
 
 function modifier_item_adamachi_core_active:OnCreated(table)

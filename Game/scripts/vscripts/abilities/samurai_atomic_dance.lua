@@ -90,8 +90,11 @@ function samurai_atomic_dance:OnSpellStart()
                 EmitSoundOn( "Hero_Juggernaut.OmniSlash.Damage", unit )
                 -- Play named sound on Entity
                 ApplyDamage( DamageTable )
-                if unit:IsCreep() and not unit:GetUnitName() == "npc_dota_warlock_golem_1" then
-                    unit:Kill( self, hCaster )
+                if unit and unit:IsNull() == false then
+                    self:GetCaster():PerformAttack(unit, true, true, true, true, false, false, true)
+                    if unit:IsCreep() and not unit:GetUnitName() == "npc_dota_warlock_golem_1" then
+                        unit:Kill( self, hCaster )
+                    end
                 end
                 local next_unit = unit_table[index + 1]
                 if next_unit == nil then
