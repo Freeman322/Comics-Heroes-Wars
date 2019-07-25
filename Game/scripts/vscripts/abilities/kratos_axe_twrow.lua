@@ -64,11 +64,13 @@ function kratos_axe_twrow:OnProjectileHit( hTarget, vLocation )
 				ability = self
 			}
 
-		ApplyDamage( damage )
+			ApplyDamage( damage )
 
 		EmitSoundOn("Hero_Beastmaster.Attack", hTarget)
 
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("duration") } )
+
+		self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
 	end
 
 	return false

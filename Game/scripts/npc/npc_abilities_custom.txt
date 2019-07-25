@@ -11116,7 +11116,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"		  "DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"		  "DAMAGE_TYPE_PURE"
 		"SpellImmunityType"			  	"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"			    	"1"
 
@@ -21847,7 +21847,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strikes"				"6"
+				"strikes"				"5"
 			}
 		}
 	}
@@ -28728,14 +28728,14 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900"
+		"AbilityCastRange"				"600 800 1000 1200"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"					"600 700 800 900"
+				"radius"					"600 800 1000 1200"
 			}
 			"02"
 			{
@@ -33446,7 +33446,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"						"26 22 18 14"
+		"AbilityCooldown"						"32 28 24 20"
 
 		"AbilityManaCost"						"100"
 

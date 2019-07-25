@@ -31,13 +31,16 @@ function shazam_shazam:OnChannelFinish( bInterrupted )
             duration = self:GetSpecialValueFor("max_duration") ---self:GetShazamDuration()
         })
 
+
         local nFXIndex = ParticleManager:CreateParticle( "particles/shazam/shazam_compression.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
         ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
         ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin() )
         ParticleManager:SetParticleControl( nFXIndex, 2, Vector(200, 200, 0) )
         ParticleManager:SetParticleControl( nFXIndex, 6, self:GetCaster():GetOrigin() )
         ParticleManager:ReleaseParticleIndex( nFXIndex )
-	end
+    else
+        self:EndCooldown()self:RefundManaCost()
+    end
 end
 
 ---@class modifier_shazam_shazam 
