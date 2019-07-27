@@ -67,11 +67,11 @@ function item_sunshines_aromor_passive_modifier:IsHidden() return true end
 function item_sunshines_aromor_passive_modifier:IsPurgable() return false end
 function item_sunshines_aromor_passive_modifier:DeclareFunctions()
   return {
-	    MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+      MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+      MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 	    MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 	    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 	    MODIFIER_PROPERTY_HEALTH_BONUS,
-	    MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK,
 	    MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
 	    MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
 	    MODIFIER_EVENT_ON_TAKEDAMAGE
@@ -95,6 +95,7 @@ function item_sunshines_aromor_passive_modifier:OnTakeDamage( params )
 end
 
 function item_sunshines_aromor_passive_modifier:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor( "bonus_strength" ) end
+function item_sunshines_aromor_passive_modifier:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor( "bonus_agility" ) end
 function item_sunshines_aromor_passive_modifier:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor( "bonus_intellect" ) end
 function item_sunshines_aromor_passive_modifier:GetModifierPhysicalArmorBonus() return self:GetAbility():GetSpecialValueFor( "bonus_armor" ) end
 function item_sunshines_aromor_passive_modifier:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor( "bonus_health" ) end
@@ -115,5 +116,5 @@ item_sunshines_aromor_passive_modifier_aura = class({})
 function item_sunshines_aromor_passive_modifier_aura:IsPurgable() return false end
 function item_sunshines_aromor_passive_modifier_aura:DeclareFunctions() return { MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT} end
 function item_sunshines_aromor_passive_modifier_aura:IsDebuff() return self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() end
-function item_sunshines_aromor_passive_modifier_aura:GetModifierPhysicalArmorBonus() if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then return -10 end return 20 end
-function item_sunshines_aromor_passive_modifier_aura:GetModifierAttackSpeedBonus_Constant() if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then  return -50 end return 50 end
+function item_sunshines_aromor_passive_modifier_aura:GetModifierPhysicalArmorBonus() if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then return 0 end return 0 end
+function item_sunshines_aromor_passive_modifier_aura:GetModifierAttackSpeedBonus_Constant() if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then  return -70 end return 0 end

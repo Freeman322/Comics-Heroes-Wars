@@ -367,7 +367,7 @@
 		"Ability2"          	     "pudge_decay"
 		"Ability3"		          "pudge_flesh_heap_lua"
 		"Ability4"		          "pudge_jab"
-	     "Ability5"          		"generic_hidden"
+	    "Ability5"          	  "generic_hidden"
 		"Ability6"		          "pudge_dismember_lua"
 		"Ability10"			     "special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_all_stats_12"

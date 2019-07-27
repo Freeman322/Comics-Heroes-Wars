@@ -3811,7 +3811,7 @@
 		"BaseClass"							"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3000"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -4427,6 +4427,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"			"80"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"40"
+			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -4435,7 +4440,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"25"
+				"bonus_armor"				"26"
 			}
 			"05"
 			{
