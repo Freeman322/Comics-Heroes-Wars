@@ -14,10 +14,11 @@ local hTarget = self:GetCursorTarget()
 
 				local particle = "particles/econ/items/centaur/dc_centaur_double_edge/_dc_centaur_double_edge.vpcf"
 				
+				local sound = "Hero_Centaur.DoubleEdge"
+
 				if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "cage") then
 					particle = "particles/econ/items/monkey_king/arcana/death/monkey_king_spring_cast_arcana_death.vpcf"
-
-					EmitSoundOn("JpnnyCage.DoubleEdge", self:GetCaster())
+					sound = "JpnnyCage.DoubleEdge"
 				end
 
 				local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_CUSTOMORIGIN, nil );
@@ -27,7 +28,7 @@ local hTarget = self:GetCursorTarget()
 				ParticleManager:SetParticleControlEnt( nFXIndex, 5, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
 				ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-				EmitSoundOn( "Hero_Centaur.DoubleEdge", target )
+				EmitSoundOn( sound, target )
 				EmitSoundOn( "Hero_Centaur.DoubleEdge", self:GetCaster() )
 
 				ApplyDamage({attacker = self:GetCaster(), victim = target, damage = damage, ability = self, damage_type = DAMAGE_TYPE_MAGICAL})

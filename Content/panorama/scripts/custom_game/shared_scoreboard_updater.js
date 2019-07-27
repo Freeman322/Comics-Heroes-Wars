@@ -175,6 +175,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/irondevil.png" );
 				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_beastmaster" && hasModifier(hero_entindex, "modifier_custom_unique"))
+				{
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/jhonny.png" );
+				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_shadow_demon" && hasModifier(hero_entindex, "modifier_sargeras_s7_custom"))
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/sargeras_devourer_of_words_icon.png" );

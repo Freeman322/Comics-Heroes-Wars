@@ -4522,7 +4522,7 @@
                             "value0"        "sounds/spells/muda_requiem.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "4.00000"  }
+                    "volume"            {   "value"     "3.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -4560,7 +4560,7 @@
 					}
 					"volume"
 					{
-						"value"		"1.000000"
+						"value"		"2.000000"
 					}
 					"pitch"
 					{
