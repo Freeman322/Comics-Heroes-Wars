@@ -3854,7 +3854,7 @@
 		// Item Info
 
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2300"
+		"ItemCost"					"5300"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -4578,69 +4578,76 @@
 	"item_time"
 	{
 		// General
-    	//-------------------------------------------------------------------------------------------------------------
-    	"BaseClass"						"item_lua"
-    	"ID"							"9027"
-    	"ScriptFile"					"items/item_time.lua"
-    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    	"Model"							"models/props_gameplay/red_box.vmdl"
-    	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-    	"AbilityTextureName"            "custom/time"
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"item_lua"
+		"ScriptFile"					"items/item_time.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"Model"						"models/props_gameplay/red_box.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"            	"custom/time"
 
-    	// Stats
-    	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityCooldown"				"40"
-    	"AbilityCastRange"				"0"
-    	"AbilityCastPoint"				"0.2"
-    	"AbilityManaCost"				"0"
-    	// Item Info
-    	//-------------------------------------------------------------------------------------------------------------
-    	"ItemCost"						"10700"
-    	"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
-    	"ItemQuality"					"rare"
-    	"ItemAliases"					"vod;veil of discord"
-    	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"175"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.2"
+		"AbilityManaCost"				"375"
 
-    	"precache"
-    	{
-    		"particle"  "particles/item_time/time_gem_active.vpcf"
-    		"particle"  "particles/item_time/time_gem_active_respawn.vpcf"
-    		"particle"  "particles/status_fx/status_effect_necrolyte_spirit.vpcf"
-    		"particle"  "particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf"
-    		"soundfile" "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
-    		"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
-    		"soundfile" "soundevents/game_sounds_heroes/hero_manhattan.vsndevts"
-    		"soundfile" "soundevents/game_sounds_heroes/hero_zoom.vsndevts"
-    	}
-    	"AbilitySpecial"
-    	{
-    		"01"
-    		{
-    			"var_type"					"FIELD_INTEGER"
-    			"bonus_health_regen"		"60"
-    		}
-    		"02"
-    		{
-    			"var_type"					"FIELD_INTEGER"
-    			"bonus_mana_regen"			"12"
-    		}
-    		"03"
-    		{
-    			"var_type"					"FIELD_INTEGER"
-    			"bonus_armor"				"20"
-    		}
+		"AbilitySharedCooldown"			"refresher"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					"10700"
+		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"vod;veil of discord"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"precache"
+		{
+			"particle"  "particles/item_time/time_gem_active.vpcf"
+			"particle"  "particles/item_time/time_gem_active_respawn.vpcf"
+			"particle"  "particles/status_fx/status_effect_necrolyte_spirit.vpcf"
+			"particle"  "particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/hero_manhattan.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/hero_zoom.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"		"60"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana_regen"			"12"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"20"
+			}
 			"04"
 			{
-    			"var_type"					"FIELD_INTEGER"
-    			"bonus_evasion"				"30"
-    		}
-    		"05"
-    		{
-    			"var_type"					"FIELD_INTEGER"
-    			"duration"					"0"
-    		}
-    	}
-   }
+				"var_type"					"FIELD_INTEGER"
+				"bonus_evasion"				"30"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"time_cooldown"				"40"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Orchid
 	//=================================================================================================================

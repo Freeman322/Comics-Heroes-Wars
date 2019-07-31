@@ -1,4 +1,5 @@
 LinkLuaModifier( "item_time_gem", "items/item_time.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_item_time_gem_cooldown", "items/item_time.lua", LUA_MODIFIER_MOTION_NONE )
 
 if item_time == nil then item_time = class({}) end
 
@@ -6,23 +7,38 @@ function item_time:GetIntrinsicModifierName()
 	return "item_time_gem"
 end
 
-function item_time:GetBehavior()
-	return DOTA_ABILITY_BEHAVIOR_PASSIVE
+function item_time:OnSpellStart ()
+    if IsServer() then
+        EmitSoundOn ("DOTA_Item.Refresher.Activate", self:GetCaster () )
+        
+        local nFXIndex = ParticleManager:CreateParticle ("particles/refresh_2.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster ());
+        ParticleManager:SetParticleControlEnt (nFXIndex, 0, self:GetCaster (), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster ():GetOrigin (), true);
+        ParticleManager:ReleaseParticleIndex (nFXIndex);
+        
+        for i=0, 15, 1 do  
+            local current_ability = self:GetCaster ():GetAbilityByIndex (i)
+            if current_ability ~= nil then
+                if current_ability:IsRefreshable() then 
+                    current_ability:EndCooldown ()
+                end
+            end
+        end
+
+        for i=0, 5, 1 do
+            local current_item = self:GetCaster ():GetItemInSlot (i)
+            if current_item ~= nil and current_item:IsRefreshable() then
+                if current_item ~= self and current_item:GetSharedCooldownName() ~= "refresher" then current_item:EndCooldown() end 
+            end
+        end
+    end
 end
 
-if item_time_gem == nil then
-    item_time_gem = class({})
-end
+item_time_gem = class({})
 
-function item_time_gem:GetAttributes ()
-    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
-end
+function item_time_gem:GetAttributes () return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE end
+function item_time_gem:IsHidden() return true end
 
-function item_time_gem:IsHidden()
-    return true --we want item's passive abilities to be hidden most of the times
-end
-
-function item_time_gem:DeclareFunctions() --we want to use these functions in this item
+function item_time_gem:DeclareFunctions()
 local funcs = {
     MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
@@ -68,11 +84,7 @@ function item_time_gem:OnTime(hAttacker, hVictim)
             return false
         end
 
-        if self:GetAbility():IsCooldownReady() == false then 
-            return false
-        end
-
-        if self:GetAbility():IsOwnersManaEnough() == false then 
+        if self:GetParent():HasModifier("modifier_item_time_gem_cooldown") then 
             return false
         end
 
@@ -94,8 +106,7 @@ function item_time_gem:OnTime(hAttacker, hVictim)
 
             EmitSoundOn( "Hero_Weaver.TimeLapse", self:GetParent() )
 
-            self:GetAbility():PayManaCost()
-            self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
+            self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_time_gem_cooldown", {duration = self:GetAbility():GetSpecialValueFor("time_cooldown")})
 
             return true
         end
@@ -136,3 +147,9 @@ function item_time_gem:OnCreated(params)
         self:StartIntervalThink(1)
     end
 end
+
+modifier_item_time_gem_cooldown = ({})
+
+function modifier_item_time_gem_cooldown:IsHidden() return false end
+function modifier_item_time_gem_cooldown:IsPurgable() return false end
+function modifier_item_time_gem_cooldown:RemoveOnDeath() return false end
