@@ -30,26 +30,13 @@ function modifier_item_desolator_3:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
     }
 
     return funcs
 end
 
 
-function modifier_item_desolator_3:GetModifierBonusStats_Strength (params)
-    return self:GetAbility ():GetSpecialValueFor ("bonus_all_stats")
-end
 
-function modifier_item_desolator_3:GetModifierBonusStats_Intellect (params)
-    return self:GetAbility ():GetSpecialValueFor ("bonus_all_stats")
-end
-
-function modifier_item_desolator_3:GetModifierBonusStats_Agility (params)
-    return self:GetAbility ():GetSpecialValueFor ("bonus_all_stats")
-end
 
 
 function modifier_item_desolator_3:GetModifierPreAttack_BonusDamage (params)

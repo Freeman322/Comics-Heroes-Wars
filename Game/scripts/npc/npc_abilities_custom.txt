@@ -4337,7 +4337,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"240 420 600"
+				"damage"					"150 300 450"
 			}
 			"02"
 			{
@@ -4357,7 +4357,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"380 510 850"
+				"damage_scepter"			"300 450 750"
 			}
 			"06"
 			{
@@ -9274,6 +9274,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"custom/zoom_passive1"
 		"ScriptFile"							"abilities/zoom_aura.lua"
+		"LevelsBetweenUpgrades"      "3"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -9286,12 +9287,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed_bonus"			"5 10 15 20"
+				"speed_bonus"			"5 7 10 15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed_bonus"	"35 50 65 80"
+				"attack_speed_bonus"	"15 30 45 60"
 			}
 			"03"
 			{
@@ -9382,7 +9383,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"				  	 	 "80 125 170"
+				"damage"				  	 	 "50 95 140"
 			}
 			"03"
 			{
@@ -9392,12 +9393,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"attack_speed"		    			"150 200 250"
+				"attack_speed"		    			"100 150 200"
 			}
 			"05"
 		   	{
 		   		"var_type"					"FIELD_FLOAT"
-		    		"evasion"		        			"25 45 65"
+		    	"evasion"		        			"25 45 65"
 		   	}
 		   	"06"
 		    {
@@ -17795,6 +17796,11 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"bonus_health_regen"			"30 45 60"
+			}
+			"03"
+			{
+				"var_type"                      "FIELD_INTEGER"
+				"scepter_regen_per_minute"      "1"
 			}
 		}
 	}
@@ -33978,7 +33984,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"				"100 150 200 250"
+				"damage"				"65 115 165 215"
 			}
 			"04"
 			{
@@ -37595,7 +37601,7 @@
 			"03"
 			{
 				"var_type"         		 "FIELD_FLOAT"
-				"damage_mana_pct"          "10 15 20"
+				"damage_mana_pct"          "15 20 25"
 			}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
@@ -37757,6 +37763,7 @@
 		"BaseClass"			        	"ability_lua"
 		"ScriptFile"					"abilities/wolverine_fury_swipes.lua"
 		"AbilityTextureName"     		"custom/wolverine_swipes"
+		"LevelsBetweenUpgrades"      "5"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
@@ -37775,7 +37782,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"armor_reduction"					"0.9 1.2 1.5 1.8"
+				"armor_reduction"					"1.4 1.7 2.0 2.3" //Отвечу за эти цифры если что. Answer for these figures if that.(c)StarForge
 			}
 			"03"
 			{

@@ -18,7 +18,9 @@ end
 function modifier_draks_unholy_strength:GetModifierConstantHealthRegen()
   local regen = self:GetAbility():GetSpecialValueFor("bonus_health_regen")
   if self:GetCaster():HasScepter() then
-    regen = regen + GameRules:GetGameTime() / (60 / self:GetAbility():GetSpecialValueFor("scepter_regen_per_minute"))
+    regen = regen + (GameRules:GetGameTime() / 60) * self:GetAbility():GetSpecialValueFor("scepter_regen_per_minute")
+    if GameRules:GetGameTime() > 0 then
+    end
   end
   return regen
 end
