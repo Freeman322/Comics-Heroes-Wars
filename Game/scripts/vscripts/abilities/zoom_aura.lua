@@ -1,5 +1,6 @@
 LinkLuaModifier ("modifier_zoom_aura", "abilities/zoom_aura.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier ("modifier_zoom_aura_passive", "abilities/zoom_aura.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier ("modifier_reverse_movespeed_steal", "abilities/zoom_aura.lua", LUA_MODIFIER_MOTION_NONE)
 
 zoom_aura = class({})
 
@@ -21,6 +22,22 @@ modifier_zoom_aura_passive = class({})
 function modifier_zoom_aura_passive:IsPurgable() return false end
 function modifier_zoom_aura_passive:IsHidden() return true end
 
+modifier_zoom_aura_passive.m_hMod = nil
+
+function modifier_zoom_aura_passive:OnCreated(params)
+    if IsServer() then
+        self.m_hMod = self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_reverse_movespeed_steal", {speed = --[[ВЫЧИСЛИТЬ НУЖНУЮ СКОРОСТЬ!!!!]]})
+    end 
+end
+
+function modifier_zoom_aura_passive:OnDestroy()
+    if IsServer() then
+        if self.m_hMod and not self.m_hMod:IsNull() then
+            self.m_hMod:Destroy()
+        end 
+    end 
+end
+
 
 function modifier_zoom_aura_passive:DeclareFunctions()
     return {
@@ -40,4 +57,37 @@ end
 function zoom_aura:GetAbilityTextureName()
 	if self:GetCaster():HasModifier("modifier_doomsday_clock") then return "custom/reverse_speed_passive" end
 	return self.BaseClass.GetAbilityTextureName(self)
+end
+
+modifier_reverse_movespeed_steal = class({})
+
+function modifier_reverse_movespeed_steal:IsHidden()
+    return true
+end
+
+function modifier_reverse_movespeed_steal:IsPurgable()
+    return false
+end
+
+function modifier_reverse_movespeed_steal:RemoveOnDeath()
+    return true
+end
+
+function modifier_reverse_movespeed_steal:OnCreated(params)
+    self.m_iMovespeed = params.speed
+end
+
+
+function modifier_reverse_movespeed_steal:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+    }
+
+    return funcs
+end
+
+function modifier_reverse_movespeed_steal:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end 
+
+function modifier_reverse_movespeed_steal:GetModifierMoveSpeedBonus_Constant(params)
+    return self.m_iMovespeed
 end

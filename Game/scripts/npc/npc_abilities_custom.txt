@@ -4316,18 +4316,21 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-    	"precache"
+    		"precache"
 		{
 			"model"		"models/heroes/hero_samurai/samurai_frost_arcana/samurai_frostmourne.vmdl"
 			"model"		"models/heroes/hero_samurai/samurai_frost_arcana/samurai_ghostmask.vmdl"
 			"model"		"models/heroes/hero_samurai/samurai_kantusa.vmdl"
-			"particle"  "particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_favorite_body_ambient.vpcf"
-			"particle"  "particles/econ/items/disruptor/disruptor_resistive_pinfold/disruptor_resistive_ambient_glow_cent.vpcf"
-			"particle"  "particles/hero_arthas/arthas_eyes.vpcf"
-			"particle"  "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_ambient.vpcf"
-			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+			"particle"  	"particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_favorite_body_ambient.vpcf"
+			"particle"  	"particles/econ/items/disruptor/disruptor_resistive_pinfold/disruptor_resistive_ambient_glow_cent.vpcf"
+			"particle"  	"particles/hero_arthas/arthas_eyes.vpcf"
+			"particle"  	"particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_ambient.vpcf"
+			"particle"  	"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
 			"model"		"models/samurai/samurai_emirald_atomic_blade.vmdl"
+			"model"		"models/b2/b2.vmdl"
+			"model"		"models/b2/weapon/weapon.vmdl"
+			"particle"	"particles/econ/items/monkey_king/arcana/monkey_king_arcana_fire_body.vpcf"
 		}
 		"AbilitySpecial"
 		{
@@ -9263,7 +9266,7 @@
 	}
 	"zoom_aura"
 	{
-		// General
+		// Geral
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			        	"ability_lua"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"

@@ -4727,6 +4727,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "353": {
+        "item": "neo_noir",
+        "rarity": "11",
+        "quality": "3",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_juggernaut",
+        "universal": "false",
+        "def_id": "353",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
 };
 
