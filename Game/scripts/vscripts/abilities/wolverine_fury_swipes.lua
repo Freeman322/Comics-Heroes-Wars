@@ -30,6 +30,9 @@ function modifier_wolverine_fury_swipes:OnAttackLanded(params)
                end 
 
                local debuff = params.target:FindModifierByName("modifier_wolverine_fury_swipes_debuff")
+               if params.target:IsBuilding() then
+                    return 
+               else
                
                if debuff then
                     if debuff:GetStackCount() < self:GetAbility():GetSpecialValueFor("max_stacks") then
@@ -43,6 +46,7 @@ function modifier_wolverine_fury_swipes:OnAttackLanded(params)
                end
           end
     end
+end
 
     return 0
 end

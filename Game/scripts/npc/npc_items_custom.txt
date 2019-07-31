@@ -1001,7 +1001,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"65"
+				"bonus_all_stats"		"60"
 			}
 			"02"
 			{
@@ -1036,7 +1036,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_damage"			"10"
+				"bonus_damage"			"25"
 			}
 			"09"
 			{
@@ -1110,14 +1110,9 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"30"
+				"corruption_armor"		"-22"
 			}
 			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-20"
-			}
-			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"corruption_duration"	"15.0"
@@ -1590,17 +1585,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"90"
+				"bonus_all_stats"		"85"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"400"
+				"bonus_health"			"475"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"400"
+				"bonus_mana"			"475"
 			}
 			"04"
 			{
@@ -1615,7 +1610,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_damage"			"20"
+				"bonus_damage"			"50"
 			}
 			"07"
 			{
@@ -3108,7 +3103,7 @@
 		"BaseClass"						"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2600"
+		"ItemCost"						"800"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -3117,7 +3112,7 @@
 		"ItemResult"					"item_death_scyche"
 		"ItemRequirements"
 		{
-			"01"						"item_ethereal_blade;item_skadi"
+			"01"						"item_skadi;item_ethereal_blade;item_broadsword;"
 		}
 	}
 	//=================================================================================================================
@@ -3333,7 +3328,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5000"
+		"ItemCost"						"1800"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3342,7 +3337,7 @@
 		"ItemResult"					"item_frostmourne"
 		"ItemRequirements"
 		{
-			"01"						"item_death_scyche"
+			"01"						"item_death_scyche;item_demon_edge"
 		}
 	}
 	//=================================================================================================================
@@ -3859,7 +3854,7 @@
 		// Item Info
 
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"2300"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3868,7 +3863,7 @@
 		"ItemResult"					"item_time"
 		"ItemRequirements"
 		{
-			"01"				"item_rod_of_atos;item_refresher"
+			"01"				"item_refresher;item_platemail;item_talisman_of_evasion"
 		}
 	}
 	//=================================================================================================================
@@ -4594,7 +4589,7 @@
 
     	// Stats
     	//-------------------------------------------------------------------------------------------------------------
-    	"AbilityCooldown"				"60"
+    	"AbilityCooldown"				"40"
     	"AbilityCastRange"				"0"
     	"AbilityCastPoint"				"0.2"
     	"AbilityManaCost"				"0"
@@ -4622,19 +4617,24 @@
     		"01"
     		{
     			"var_type"					"FIELD_INTEGER"
-    			"bonus_health_regen"		"40"
+    			"bonus_health_regen"		"60"
     		}
     		"02"
     		{
     			"var_type"					"FIELD_INTEGER"
-    			"bonus_all_stats"			"40"
+    			"bonus_mana_regen"			"12"
     		}
     		"03"
     		{
     			"var_type"					"FIELD_INTEGER"
-    			"bonus_damage"				"40"
+    			"bonus_armor"				"20"
     		}
-    		"04"
+			"04"
+			{
+    			"var_type"					"FIELD_INTEGER"
+    			"bonus_evasion"				"30"
+    		}
+    		"05"
     		{
     			"var_type"					"FIELD_INTEGER"
     			"duration"					"0"
@@ -5518,19 +5518,24 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1500"
+				"bonus_cast_range"			"300"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1500"
+				"bonus_health"			"1500"
 			}
 			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"1500"
+			}
+			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"reality_reverse_duration"	"5.0"
 			}
-			"07"
+			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"reality_reverse_radius"	"600"
@@ -6906,17 +6911,17 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"50"
+				"cleave_damage_percent"	"65"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus"			"150"
+				"quelling_bonus"			"24"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_ranged"	"125"
+				"damage_bonus_ranged"	"7"
 			}
 			"15"
 			{
@@ -6931,17 +6936,17 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_distance"			"350"
+				"cleave_distance"			"700"
 			}
 			"18"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp_regen"		"8"
+				"bonus_hp_regen"		"12"
 			}
 			"19"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mp_regen"		"2"
+				"bonus_mp_regen"		"7.5"
 			}
 		}
 	}
@@ -7310,12 +7315,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"40.0"
+		"AbilityCooldown"				"30.0"
 		"AbilitySharedCooldown"			"orchid"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
+		"AbilityManaCost"				"325"
 		"ItemCost"						"13205"
 		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
 		"ItemQuality"					"epic"
@@ -7337,22 +7342,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"100"
+				"bonus_intellect"		"145"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"50"
+				"bonus_attack_speed"	"75"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"90"
+				"bonus_damage"			"300"
 			}
 			"04"
             {
                 "var_type"            	"FIELD_INTEGER"
-                "spell_amp"            	"25"
+                "spell_amp"            	"50"
             }
             "05"
             {
@@ -7367,17 +7372,17 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20"
+				"crit_chance"			"28"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"225"
+				"crit_multiplier"		"275"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_damage_pct"		"8"
+				"movement_damage_pct"		"80"
 			}
 			"10"
 			{
@@ -7392,7 +7397,7 @@
 			"12"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"despair_duration"				"5"
+				"despair_duration"				"7.5"
 			}
 			"13"
 			{
@@ -7412,7 +7417,12 @@
 			"16"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"50"
+				"bonus_all_stats"			"70"
+			}
+			"17"
+			{
+				"var_type"					            "FIELD_INTEGER"
+				"movement_speed_percent_bonus"			"25"
 			}
 		}
 	}

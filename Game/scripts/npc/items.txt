@@ -380,29 +380,32 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"4.0"
 		"Model"							"models/props_gameplay/quelling_blade.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"ItemCost"						"300"
+		"ItemCost"						"200"
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"component"
-		"ItemAliases"					"quelling blade"
+		"ItemAliases"					"qb;quelling blade"
 		"SideShop"						"1"
+		"ShouldBeSuggested"				"1"
+		"ShouldBeInitiallySuggested"	"1"
 
-		// Special
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"36"
+				"damage_bonus"			"24"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"14"
+				"damage_bonus_ranged"	"7"
 			}
 			"03"
 			{
@@ -416,7 +419,7 @@
 			}
 		}
 	}
-
+	
 
 	//=================================================================================================================
 	// Faerie Fire
@@ -6620,7 +6623,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"60"
+				"cleave_damage_percent"	"40"
 			}
 			"05"
 			{
@@ -7561,22 +7564,22 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"159"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_skadi"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster;item_orb_of_venom"
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster"
 		}
 	}
-
+	
 	//=================================================================================================================
 	// Skadi
 	//=================================================================================================================
@@ -7589,13 +7592,14 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5675"
+		"ItemCost"						"5500"
 		"ItemShopTags"					"agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"eos;eye of skadi"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -7617,22 +7621,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-35"
+				"cold_slow_melee"	"-20"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-45"
+				"cold_slow_ranged"	"-45"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cold_duration_melee"	"5.0"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cold_duration_ranged"	"2.5"
+				"cold_duration"	"3.0"
 			}
 		}
 	}

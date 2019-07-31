@@ -24,28 +24,14 @@ end
 
 function item_time_gem:DeclareFunctions() --we want to use these functions in this item
 local funcs = {
-    MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-    MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-    MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-    MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+    MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+    MODIFIER_PROPERTY_EVASION_CONSTANT,
     MODIFIER_EVENT_ON_DEATH
 }
 
 return funcs
-end
-
-function item_time_gem:GetModifierBonusStats_Strength( params )
-    local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "bonus_all_stats" )
-end
-function item_time_gem:GetModifierBonusStats_Intellect( params )
-    local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "bonus_all_stats" )
-end
-function item_time_gem:GetModifierBonusStats_Agility( params )
-    local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "bonus_all_stats" )
 end
 
 function item_time_gem:GetModifierConstantHealthRegen( params )
@@ -53,9 +39,19 @@ function item_time_gem:GetModifierConstantHealthRegen( params )
     return hAbility:GetSpecialValueFor( "bonus_health_regen" )
 end
 
-function item_time_gem:GetModifierPreAttack_BonusDamage( params )
+function item_time_gem:GetModifierConstantManaRegen( params )
     local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "bonus_damage" )
+    return hAbility:GetSpecialValueFor( "bonus_mana_regen" )
+end
+
+function item_time_gem:GetModifierPhysicalArmorBonus( params )
+    local hAbility = self:GetAbility()
+    return hAbility:GetSpecialValueFor( "bonus_armor" )
+end
+
+function item_time_gem:GetModifierEvasion_Constant (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_evasion")
 end
 
 function item_time_gem:OnTime(hAttacker, hVictim)

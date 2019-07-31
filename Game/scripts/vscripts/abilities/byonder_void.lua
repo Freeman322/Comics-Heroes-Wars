@@ -14,7 +14,7 @@ function byonder_void:OnSpellStart()
         if #targets > 0 then
             for _,target in pairs(targets) do
                 target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = duration } )
-                ApplyDamage({victim = target, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION}) 
+                ApplyDamage({victim = target, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY}) 
 			end
         end
     end
