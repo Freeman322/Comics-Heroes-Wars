@@ -370,13 +370,13 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"11000"
+		"ItemCost"						"9500"
 		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		"AbilityCooldown"				"2.0"
+		"AbilityCooldown"				"0.3"
 		"AbilityDamage"					"200"
 
 		// Special
@@ -386,22 +386,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"80"
+				"bonus_damage"			"110"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
+				"bonus_attack_speed"	"60"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"all" 				    "45"
+				"all" 				    "40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_chance" 		    "65"
+				"bash_chance" 		    "75"
 			}
 			"05"
 			{
