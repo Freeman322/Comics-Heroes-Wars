@@ -1449,7 +1449,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"5 10 15 20"
+				"damage"				"20 30 40 50"
 			}
 			"04"
 			{
@@ -1460,7 +1460,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_rate"				"0.1"
+				"tick_rate"				"0.5"
 			}
 		}
 	}
