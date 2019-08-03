@@ -54,7 +54,7 @@ end
 function thinker_nurgle_acid_puddle:OnIntervalThink()
   if IsServer() then
     local flDamagePerTick = self:GetAbility():GetSpecialValueFor("damage")
-    local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetParent(), self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, 0, false )
+    local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetParent(), self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS, 0, false )
     if #units > 0 then
         for _,unit in pairs(units) do
             local damage = {
@@ -80,10 +80,6 @@ end
 if modifier_nurgle_acid_puddle == nil then modifier_nurgle_acid_puddle = class({}) end
 
 function modifier_nurgle_acid_puddle:IsDebuff()
-	return true
-end
-
-function modifier_nurgle_acid_puddle:IsPurgeException()
 	return true
 end
 

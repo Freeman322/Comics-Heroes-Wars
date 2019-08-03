@@ -4708,7 +4708,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9 8 7 6"
+		"AbilityCooldown"				"14 13 12 11"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -6114,7 +6114,6 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12 10 8 6"
-		"AbilityCastRange"				"800 1000 1200 1400"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50 60 70 80"
@@ -6127,12 +6126,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blink_range"			"800 1000 1200 1400"
-			}
-
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"min_blink_range"		"200"
 			}
 		}
 	}
@@ -8047,7 +8040,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 650 850"
+				"damage"				"550 750 950"
 			}
 			"02"
 			{
@@ -8677,7 +8670,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 12 10 8"
+		"AbilityCooldown"				"16 14 12 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -10071,7 +10064,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"cooldown"		    "10 12 14 16"
+				"cooldown"		    "8 12 16 20"
 			}
 			"02"
 			{
@@ -10413,7 +10406,7 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"							// Changes dynamically with scepter
 		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"					"2"
@@ -11975,7 +11968,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_mana_steal"		"40 60 80 100"
+				"base_mana_steal"		"80 120 160 200"
 			}
 			"03"
 			{
@@ -14267,7 +14260,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.5 4.0 4.5 5.0"
+				"duration"					"2.5 3.0 3.5 4.0"
 			}
 		}
 	}
@@ -14713,7 +14706,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"wave_interval"					"0.5"
+				"wave_interval"					"0.7"
 			}
 			"06"
 			{
@@ -15128,7 +15121,7 @@
 
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"35 30 25 20"
-		"AbilityManaCost"					"100"
+		"AbilityManaCost"					"120 130 140 150"
 		"precache"
 		{
 			"particle"  "particles/effects/time_lapse_2.vpcf"
@@ -15139,12 +15132,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"time_jump_cooldown_scepter"	"20 15 10 5"
+				"time_jump_cooldown_scepter"	"22 18 14 10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"manacost_scepter"		"15 10 5 0"
+				"manacost_scepter"		"100 80 60 40"
 			}
 		}
 	}
@@ -15161,7 +15154,7 @@
 
 		"AbilityCastPoint"				"0.1"
 		"AbilityManaCost"				"35"
-		"AbilityCooldown"				"11 9 7 5"
+		"AbilityCooldown"				"13 11 9 7"
 
 		"AbilitySpecial"
 		{
@@ -15173,7 +15166,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"recharge_time"				"11 9 7 5"
+				"recharge_time"				"13 11 9 7"
 			}
 			"03"
 			{
@@ -16274,12 +16267,12 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"armor_reduction_pct"			"-22 -33 -44 -55"
+				"armor_reduction_pct"			"-10 -20 -30 -40"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"magical_armor_reduction"		"-22 -33 -44 -55"
+				"magical_armor_reduction"		"-10 -20 -30 -40"
 			}
 			"05"
 			{
@@ -16395,7 +16388,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"18"
+				"value"						"15"
 			}
 		}
 	}
@@ -28297,7 +28290,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80 70 60"
+		"AbilityCooldown"				"90 80 70"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -29325,7 +29318,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"210 185 160"
+		"AbilityCooldown"				"200 175 150"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -31530,14 +31523,14 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"230 200 170"
+		"AbilityCooldown"				"140 130 120"
 		"AbilityDuration"				"2.25 3.25 4.25"
 
 		"HasScepterUpgrade"				"1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"300 450 600"
+		"AbilityManaCost"				"250 400 550"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -33845,7 +33838,7 @@
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
 
@@ -35828,11 +35821,11 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"26 24 22 20"
+		"AbilityCooldown"				"30 28 26 24"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"					"90 100 110 120"
+		"AbilityManaCost"					"120 140 160 180"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------

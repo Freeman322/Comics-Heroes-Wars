@@ -39,6 +39,8 @@ function modifier_out_jinada:OnAttackLanded (params)
             ParticleManager:ReleaseParticleIndex( nFXIndex )
 
             ApplyDamage({attacker = self:GetCaster(), victim = hTarget, damage = (self:GetAbility():GetSpecialValueFor("gmg_pers") / 100)*hTarget:GetMaxMana(), ability = self:GetAbility(), damage_type = DAMAGE_TYPE_PHYSICAL})
+            ManaSpent = (self:GetAbility():GetSpecialValueFor("gmg_pers") / 100)*hTarget:GetMaxMana()
+            hTarget:SpendMana(ManaSpent, self:GetAbility())
         end
     end
     return 0

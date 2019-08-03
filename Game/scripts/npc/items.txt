@@ -469,7 +469,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"			"500"
+				"hp_restore"			"450"
 			}
 		}
 	}

@@ -3477,7 +3477,7 @@
           "AttackRate"				"1.6"									// Speed of attack.
           "AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
           "AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-          "AttackRange"				"128"									// Range within a target can be attacked.
+          "AttackRange"				"150"									// Range within a target can be attacked.
 
           // Attributes
           //-------------------------------------------------------------------------------------------------------------
@@ -4133,7 +4133,7 @@
 		"AttackRate"		"1.550000"
 		"AttackAnimationPoint"		"0.300000"
 		"AttackAcquisitionRange"		"600"
-		"AttackRange"		"128"
+		"AttackRange"		"150"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"22"
 		"AttributeStrengthGain"		"2.500000"
@@ -4565,8 +4565,8 @@
 		"ProjectileModel"			"particles/units/heroes/hero_tinker/tinker_base_attack.vpcf"
 		"ProjectileSpeed"			"1200"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"18"
-		"AttributeStrengthGain"		"2.000000"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.200000"
 		"AttributeBaseAgility"		"24"
 		"AttributeAgilityGain"		"3.100000"
 		"AttributeBaseIntelligence"		"20"
@@ -6797,6 +6797,7 @@
 		"AttributeIntelligenceGain" 		"1.100000"
 		"AttributeBaseAgility"     		"24"
 		"AttributeAgilityGain"     		"4.200000"
+		"StatusHealth"					"80"
 
 		// Misc stats
 		"ArmorPhysical"             		"2"

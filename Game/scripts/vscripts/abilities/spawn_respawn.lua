@@ -14,7 +14,7 @@ function modifier_spawn_respawn:DeclareFunctions() return {MODIFIER_EVENT_ON_TAK
 function modifier_spawn_respawn:OnTakeDamage(args)
     if self:GetParent() == args.unit then
         if IsServer() then
-            if self:GetParent():IsRealHero() and self:GetParent():GetHealth() <= 0 and self:GetAbility():IsCooldownReady() and self:GetParent():PassivesDisabled() == false then
+            if self:GetParent():IsRealHero() and self:GetParent():GetHealth() <= 0 and self:GetAbility():IsCooldownReady() then
                 EmitSoundOn( "Hero_PhantomLancer.Doppelganger.Appear", self:GetCaster() )
                 self:GetParent():Heal(self:GetCaster():GetMaxHealth(), self:GetAbility())
                 self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
