@@ -4,6 +4,7 @@ scarlet_witch_scarlet_magic = class({})
 
 function scarlet_witch_scarlet_magic:CastFilterResultTarget(hTarget)
     if IsServer () then
+        local nResult = UnitFilter(hTarget, self:GetAbilityTargetTeam (), self:GetAbilityTargetType (), self:GetAbilityTargetFlags (), self:GetCaster ():GetTeamNumber () )
         return nResult
     end
 
