@@ -9,16 +9,15 @@
 		"DisableWearables"					"1"
 		"ModelScale"						"0.680000"
 		"LoadoutScale"						"0.630000"
-	
-		"Ability1"						"khorn_energy_blast"
-		"Ability2"						"khorn_currupted_attack"
-		"Ability3"						"khorn_life_decay"
-		"Ability4"						"generic_hidden"
+
+		"Ability1"						"alien_bite"
+		"Ability2"						"alien_jump"
+		"Ability3"						"alien_acid_blood"
+		"Ability4"						"alien_adaptation"
 		"Ability5"						"generic_hidden"
-		"Ability6"						"khorn_erosion"
-		"Ability7"						""
-		"Ability10"				"special_bonus_exp_boost_30"
-		"Ability11"				"special_bonus_all_stats_12"
+		"Ability6"						"alien_evolution"
+		"Ability10"				"special_bonus_unique_alien_evolution_cd_red"
+		"Ability11"				"special_bonus_unique_alien_bite_crit_damage"
 		"Ability12"				"special_bonus_hp_regen_40"
 		"Ability13"				"special_bonus_armor_15"
 		"Ability14"				"special_bonus_cooldown_reduction_25"
@@ -52,7 +51,7 @@
 		//----------------------------------------------------------------
 		"HeroID"							"113"
 		"BaseClass"						"npc_dota_hero_arc_warden"
-		
+
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"			"4"
 		//------------------------------------------------------------------------------------------------------------
@@ -108,7 +107,7 @@
 	{
 		"HeroID"					"88"
 		"BaseClass"				"npc_dota_hero_nyx_assassin"
-		
+
 		"Model"					"models/heroes/hero_ares_ww/ares.vmdl"
 		"DisableWearables"		"1"
 		"SoundSet"				"Hero_DoomBringer"
@@ -915,7 +914,7 @@
 		// General
 		//----------------------------------------------------------------
 		///"override_hero"				"npc_dota_hero_windrunner"
-	
+
 		"HeroID"						"21"
 		"BaseClass"					"npc_dota_hero_windrunner"
 
@@ -1800,7 +1799,7 @@
 		"DisableWearables"			"1"
 		"ModelScale"				"1.5"
 		///"override_hero"			"npc_dota_hero_ember_spirit"
-		
+
 		"HeroID"					"106"
 		"BaseClass"				"npc_dota_hero_ember_spirit"
 
@@ -1844,7 +1843,7 @@
 	    // General
 	    //----------------------------------------------------------------
 	    ///"override_hero"					"npc_dota_hero_storm_spirit"
-	    
+
 	    "HeroID"						"17"
 	    "BaseClass"					"npc_dota_hero_storm_spirit"
 
@@ -1890,7 +1889,7 @@
 	"npc_dota_hero_shredder"
 	{
 		///"override_hero"			"npc_dota_hero_shredder"
-		   
+
 	    "HeroID"						"98"
 	    "BaseClass"					"npc_dota_hero_shredder"
 
@@ -2332,7 +2331,7 @@
 	"npc_dota_hero_phantom_assassin"
 	{
 		////"override_hero"			"npc_dota_hero_phantom_assassin"
-		
+
 		"HeroID"					"44"
 	     "BaseClass"				"npc_dota_hero_phantom_assassin"
 
@@ -3498,7 +3497,7 @@
           "MovementSpeed"				"300"									// Speed.
           "MovementTurnRate"			"0.6"									// Turning rate.
           "HasAggressiveStance"		"1"										// Plays alternate idle/run animation when near enemies
-          
+
           "precache"
           {
                "model"	  "models/heroes/brewmaster/brewmaster.vmdl"
@@ -3732,7 +3731,7 @@
 	"npc_dota_hero_sniper"
 	{
 		"Model"		"models/heroes/hero_racoon/racoon.vmdl"
-		
+
           ///"override_hero"		"npc_dota_hero_sniper"
           "HeroID"				"35"
           "BaseClass"			"npc_dota_hero_sniper"
@@ -3785,7 +3784,7 @@
 	"npc_dota_hero_troll_warlord"
 	{
 		"Model"						"models/heroes/hero_ronan/ronan.vmdl"		// Model.
-		
+
           ///"override_hero"		          "npc_dota_hero_troll_warlord"
           "HeroID"				          "95"
           "BaseClass"			          "npc_dota_hero_troll_warlord"
@@ -3852,7 +3851,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"Model"					"models/heroes/hero_rough/rough.vmdl"		// Model.
-		
+
           ////"override_hero"		    "npc_dota_hero_vengefulspirit"
 
           "HeroID"				     "20"
@@ -3924,7 +3923,7 @@
 		"AttackRange"				"128"
 		"DisableWearables"			"1"
 		"ProjectileSpeed"  			"0"
-		
+
           ////"override_hero"			"npc_dota_hero_shadow_demon"
 
           "HeroID"				     "79"
@@ -4217,7 +4216,7 @@
 
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"220"
-		
+
 		"precache"
 		{
 			"model"		 "models/spiderman/spiderman_head_final.vmdl"
@@ -4389,7 +4388,7 @@
 	      // General
 	      //----------------------------------------------------------------
 		///"override_hero"			"npc_dota_hero_elder_titan"
-          
+
           "HeroID"			          "103"
           "BaseClass"		          "npc_dota_hero_elder_titan"
 
@@ -4448,7 +4447,7 @@
 
           "HeroID"			          "57"
           "BaseClass"		          "npc_dota_hero_omniknight"
-          
+
           "HealthBarOffset"       "140" //насколько высоко будет хп бар
           "Model"               	"models/heroes/hero_thor/thor.vmdl"
           "DisableWearables"		"1"
@@ -4531,10 +4530,10 @@
 	"npc_dota_hero_enchantress"
 	{
 		////"override_hero"			"npc_dota_hero_enchantress"
-           
+
           "HeroID"			          "58"
           "BaseClass"		          "npc_dota_hero_enchantress"
-          
+
 		"Model"					"models/heroes/tracer/tracer.vmdl"
 		"DisableWearables"		"1"
 		"ModelScale"			"0.7"
@@ -4578,7 +4577,7 @@
 	"npc_dota_hero_treant"
 	{
           ////"override_hero"     "npc_dota_hero_treant"
-          
+
           "HeroID"		          "83"
           "BaseClass"		     "npc_dota_hero_treant"
 
@@ -4629,7 +4628,7 @@
 	"npc_dota_hero_obsidian_destroyer"
 	{
 		////"override_hero"			"npc_dota_hero_obsidian_destroyer"
-          
+
           "HeroID"		                    "76"
           "BaseClass"		               "npc_dota_hero_obsidian_destroyer"
 
@@ -4678,7 +4677,7 @@
 	"npc_dota_hero_leshrac"
 	{
 		////"override_hero"				"npc_dota_hero_leshrac"
-          
+
           "HeroID"		                    "52"
           "BaseClass"		               "npc_dota_hero_leshrac"
 
@@ -4858,7 +4857,7 @@
 
           "Model"					"models/heroes/life_stealer/life_stealer.vmdl"		// Model.
           ///"override_hero"		    "npc_dota_hero_venomancer"
-          
+
           "DisableWearables"		     "1"
           "AbilityLayout"			"5"
           "Ability1"				"venom_posion_damage"
@@ -5062,7 +5061,7 @@
 	"npc_dota_hero_zuus"
 	{
 		"Model"       				"models/heroes/zeus/zeus.vmdl"
-		
+
           ////"override_hero"	 			"npc_dota_hero_zuus"
 
           "HeroID"		                    "22"
@@ -7745,7 +7744,7 @@
 
 		"LastHitChallengeRival"			"npc_dota_hero_drow_ranger"
 		"HeroSelectSoundEffect"			"Hero_Sniper.Pick"
-		
+
 		"GibType"						"default"
 
 		"Ability1"					"officer_base"
@@ -7762,7 +7761,7 @@
 		"Ability15"					"special_bonus_unique_officer_3"
 		"Ability16"					"special_bonus_cooldown_reduction_15"
 		"Ability17"					"special_bonus_all_stats_20"
-		
+
 		"ArmorPhysical"				"-1"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"				"20"
