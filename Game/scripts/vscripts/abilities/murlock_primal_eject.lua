@@ -61,7 +61,7 @@ function modifier_murlock_primal_eject_heal:OnIntervalThink()
     else
         self.regen = self:GetAbility():GetSpecialValueFor( "health_regen" )
         if self:GetCaster():HasTalent("special_bonus_unique_murloc") then
-            self.regen = self.regen*2
+            self.regen = self.regen + 2
         end
     end
 end
@@ -69,6 +69,10 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_murlock_primal_eject_heal:DeclareFunctions()
+	--[[local funcs = {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
+	}]]
 
 	return {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
@@ -77,7 +81,7 @@ function modifier_murlock_primal_eject_heal:DeclareFunctions()
 end
 
 function modifier_murlock_primal_eject_heal:GetModifierMoveSpeedBonus_Percentage( params )
-	return self:GetAbility():GetSpecialValueFor( "bonus_movement_speed" )
+	return self.movespeed
 end
 
 --------------------------------------------------------------------------------
@@ -143,6 +147,10 @@ function modifier_murlock_primal_eject:OnDestroy()
 end
 
 function modifier_murlock_primal_eject:DeclareFunctions()
+    --[[local funcs = {
+        MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY,
+        MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT
+    }]]
 
     return {
         MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY,
@@ -150,7 +158,14 @@ function modifier_murlock_primal_eject:DeclareFunctions()
     }
 end
 function modifier_murlock_primal_eject:CheckState()
-   
+    --[[local state = {
+        [MODIFIER_STATE_INVISIBLE] = true,
+        [MODIFIER_STATE_TRUESIGHT_IMMUNE] = true,
+        [MODIFIER_STATE_INVULNERABLE] = true,
+        [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+        [MODIFIER_STATE_NO_HEALTH_BAR] = true,
+    }]]
+
     return {
         [MODIFIER_STATE_INVISIBLE] = true,
         [MODIFIER_STATE_TRUESIGHT_IMMUNE] = true,

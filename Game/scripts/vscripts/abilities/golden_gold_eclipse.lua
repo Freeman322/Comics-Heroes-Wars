@@ -9,6 +9,7 @@ function golden_gold_eclipse:CastFilterResultTarget( hTarget )
 		if hTarget ~= nil and hTarget:IsMagicImmune() and ( not self:GetCaster():HasScepter() ) then
 			return UF_FAIL_MAGIC_IMMUNE_ENEMY
 		end
+
 		local nResult = UnitFilter( hTarget, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), self:GetCaster():GetTeamNumber() )
 		return nResult
 	end

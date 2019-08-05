@@ -75,7 +75,7 @@ function modifier_ares_dissecting_strike:OnAttackLanded (params)
               local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
               ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetParent():GetAbsOrigin())
 
-              if target:IsRealHero() or target:IsAncient() then
+              if target:IsRealHero() then
                   target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
               else
                   target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("creep_stun_duration")})

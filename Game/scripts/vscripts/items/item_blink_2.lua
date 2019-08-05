@@ -2,10 +2,6 @@ if item_blink_2 == nil then
     item_blink_2 = class({})
 end
 
-function item_blink_2:IsRefreshable()
-    return false
-end
-
 function item_blink_2:OnSpellStart()
     local hCaster = self:GetCaster() 
     local hTarget = false 

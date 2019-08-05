@@ -660,7 +660,7 @@
 		"AbilityTextureName"            "custom/boots_of_protection"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"4"
+		"AbilityCooldown"				"7"
 		"AbilityManaCost"				"0"
 
 		// Item Info
@@ -1284,7 +1284,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"									"220"
+		"ItemCost"									"250"
 		"ItemShopTags"							"pineapple"
 		"ItemQuality"								"epic"
 		"ItemAliases"								"pineapple"
@@ -1303,7 +1303,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"			"210"
+				"hp_restore"			"420"
 			}
 			"02"
 			{
@@ -1328,11 +1328,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"					"250"
 		"AbilityCastPoint"					"0.0"
-		"AbilityCooldown"					"10.0"
+		"AbilityCooldown"					"14.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"200"
+		"ItemCost"							"180"
 		"ItemShopTags"						"epic"
 		"ItemQuality"						"epic"
 		"ItemAliases"						"berry"
@@ -1351,12 +1351,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"			"260"
+				"hp_restore"			"280"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"260"
+				"mana_restore"			"280"
 			}
 			"03"
 			{
@@ -6786,12 +6786,12 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_regen_per_stack"	"0.5"
+				"health_regen_per_stack"	"0.25"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"mana_regen_per_stack"		"0.2"
+				"mana_regen_per_stack"		"0.06"
 			}
 		}
 	}

@@ -1,36 +1,21 @@
 tribunal_blink = class({})
 
-function tribunal_blink:GetCooldown( nLevel )
-	return self.BaseClass.GetCooldown( self, nLevel )
-end
-
-
 function tribunal_blink:OnSpellStart()
-	local hCaster = self:GetCaster() 
-	ProjectileManager:ProjectileDodge(hCaster)
-	local vPoint = self:GetCursorPosition() 
-	local vOrigin = hCaster:GetAbsOrigin() 
-	local nMaxBlink = self:GetSpecialValueFor( "blink_range" ) 
-	local nClamp = self:GetSpecialValueFor( "blink_range" ) 
-	if vPoint then
-		self:Blink(hCaster, vPoint, nMaxBlink, nClamp) 
-	end	
-end
+	local caster = self:GetCaster()
+	ProjectileManager:ProjectileDodge(caster)  --Disjoints disjointable incoming projectiles.
 
+	ParticleManager:CreateParticle("particles/items_fx/blink_dagger_start.vpcf", PATTACH_ABSORIGIN, caster)
+	EmitSoundOn("DOTA_Item.BlinkDagger.Activate", caster)
 
-function tribunal_blink:Blink(hTarget, vPoint, nMaxBlink, nClamp)
-	local vOrigin = hTarget:GetAbsOrigin() 
-	ProjectileManager:ProjectileDodge(hTarget)  
-	ParticleManager:CreateParticle("particles/items_fx/blink_dagger_start.vpcf", PATTACH_ABSORIGIN, hTarget) 
-	hTarget:EmitSound("DOTA_Item.BlinkDagger.Activate") 
-	local vDiff = vPoint - vOrigin 
-	if vDiff:Length2D() > nMaxBlink then 
-		vPoint = vOrigin + (vPoint - vOrigin):Normalized() * nClamp 
-	end
-	hTarget:SetAbsOrigin(vPoint) 
-	FindClearSpaceForUnit(hTarget, vPoint, false) 
-	ParticleManager:CreateParticle("particles/items_fx/blink_dagger_end.vpcf", PATTACH_ABSORIGIN, hTarget)
+	local origin_point = caster:GetAbsOrigin()
+	local target_point = caster:GetCursorPosition()
+	local difference_vector = target_point - origin_point
 
+	caster:SetAbsOrigin(target_point)
+	FindClearSpaceForUnit(caster, target_point, false)
+
+	ParticleManager:CreateParticle("particles/items_fx/blink_dagger_end.vpcf", PATTACH_ABSORIGIN, caster)
 end
 
 function tribunal_blink:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+

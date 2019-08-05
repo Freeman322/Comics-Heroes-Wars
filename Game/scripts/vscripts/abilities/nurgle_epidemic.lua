@@ -55,6 +55,10 @@ function modifier_nurgle_epidemic:IsDebuff()
 	return true
 end
 
+function modifier_nurgle_epidemic:IsPurgeException()
+	return true
+end
+
 function modifier_nurgle_epidemic:GetAuraRadius()
 	return self:GetAbility():GetSpecialValueFor("radius")
 end

@@ -94,7 +94,7 @@ function modifier_slaanesh_omnidrain_thinker:GetAuraSearchType()
 end
 
 function modifier_slaanesh_omnidrain_thinker:GetAuraSearchFlags()
-    return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS
+    return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS
 end
 
 function modifier_slaanesh_omnidrain_thinker:GetModifierAura()

@@ -1,7 +1,7 @@
 LinkLuaModifier( "item_sunshines_aromor_passive_modifier", "items/item_sunshines_aromor.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "item_sunshines_aromor_reduce_modifier", "items/item_sunshines_aromor.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "item_sunshines_aromor_passive_modifier_aura", "items/item_sunshines_aromor.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_dummy", "items/item_sunshines_aromor.lua" ,LUA_MODIFIER_MOTION_NONE )
+
 
 item_sunshines_aromor = class({})
 
@@ -17,12 +17,9 @@ function item_sunshines_aromor:OnSpellStart()
 		for _, allies in pairs (allies) do
 			local particle = ParticleManager:CreateParticle("particles/econ/events/ti6/mekanism_ti6.vpcf", PATTACH_ABSORIGIN_FOLLOW, allies)
 			ParticleManager:SetParticleControl(particle, 0, allies:GetAbsOrigin())
-      allies:EmitSound("Item.GuardianGreaves.Target")
-      if not allies:HasModifier("modifier_dummy") then
-			  allies:Heal(allies:GetMaxHealth() * (self:GetSpecialValueFor("restore_pct") / 100) + self:GetSpecialValueFor("hp_restore"), self:GetCaster())
-        allies:GiveMana(allies:GetMaxMana() * (self:GetSpecialValueFor("restore_pct") / 100))
-        allies:AddNewModifier( self:GetCaster(), self, "modifier_dummy", { duration = self:GetSpecialValueFor("buff_cd") } )
-      end
+			allies:EmitSound("Item.GuardianGreaves.Target")
+			allies:Heal(allies:GetMaxHealth() * (self:GetSpecialValueFor("restore_pct") / 100) + self:GetSpecialValueFor("hp_restore"), self:GetCaster())
+			allies:GiveMana(allies:GetMaxMana() * (self:GetSpecialValueFor("restore_pct") / 100))
 		end
     self:CreateWave()
 	end
@@ -121,9 +118,3 @@ function item_sunshines_aromor_passive_modifier_aura:DeclareFunctions() return {
 function item_sunshines_aromor_passive_modifier_aura:IsDebuff() return self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() end
 function item_sunshines_aromor_passive_modifier_aura:GetModifierPhysicalArmorBonus() if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then return 0 end return 0 end
 function item_sunshines_aromor_passive_modifier_aura:GetModifierAttackSpeedBonus_Constant() if self:GetParent():GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then  return -70 end return 0 end
-
-modifier_dummy = class({})
-function modifier_dummy:IsPurgable() return false end
-function modifier_dummy:GetTexture()
-	return "gem"
-end

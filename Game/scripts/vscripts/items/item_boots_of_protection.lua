@@ -65,7 +65,7 @@ end
 
 function modifier_boots_of_protection:OnTakeDamage (event)
     if event.unit == self:GetParent() then
-        self:GetAbility():StartCooldown(4)
+        self:GetAbility():StartCooldown(2)
     end
 end
 

@@ -28,7 +28,7 @@ if modifier_cosmos_space_warp == nil then modifier_cosmos_space_warp = class({})
 
 function modifier_cosmos_space_warp:IsDebuff() return true end
 function modifier_cosmos_space_warp:IsHidden() return true end
-function modifier_cosmos_space_warp:IsPurgable() return true end
+function modifier_cosmos_space_warp:IsPurgable() return false end
 function modifier_cosmos_space_warp:GetEffectName() return "particles/cosmos/cosmos_space_warp_debuff.vpcf" end
 function modifier_cosmos_space_warp:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_cosmos_space_warp:GetStatusEffectName() return "particles/status_fx/status_effect_enigma_malefice.vpcf" end
