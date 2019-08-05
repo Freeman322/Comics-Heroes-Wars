@@ -1,20 +1,17 @@
-if scarlet_witch_unstable_energy == nil then scarlet_witch_unstable_energy = class({}) end
-LinkLuaModifier( "modifier_scarlet_witch_unstable_energy", "abilities/scarlet_witch_unstable_energy.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_scarlet_witch_unstable_energy", "abilities/scarlet_witch_unstable_energy.lua", 0 )
+scarlet_witch_unstable_energy = class({})
 
 function scarlet_witch_unstable_energy:OnSpellStart ()
-    local hTarget = self:GetCursorTarget ()
-    if hTarget ~= nil then
-        if ( not hTarget:TriggerSpellAbsorb (self) ) then
-            local info = {
+    if self:GetCursorTarget() ~= nil then
+        if not self:GetCursorTarget():TriggerSpellAbsorb (self) then
+            ProjectileManager:CreateTrackingProjectile ({
                 EffectName = "particles/units/heroes/hero_arc_warden/arc_warden_flux_cast.vpcf",
                 Ability = self,
                 iMoveSpeed = 2500,
-                Source = self:GetCaster (),
-                Target = self:GetCursorTarget (),
+                Source = self:GetCaster(),
+                Target = self:GetCursorTarget(),
                 iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
-            }
-
-            ProjectileManager:CreateTrackingProjectile (info)
+            })
             EmitSoundOn ("Hero_ArcWarden.Flux.Cast", self:GetCaster () )
         end
     end
@@ -22,70 +19,48 @@ end
 
 function scarlet_witch_unstable_energy:OnProjectileHit (hTarget, vLocation)
     if IsServer() then
-	    local duration = self:GetSpecialValueFor ("damage_delay")
-	    hTarget:AddNewModifier (self:GetCaster (), self, "modifier_scarlet_witch_unstable_energy", { duration = duration } )
+	    hTarget:AddNewModifier (self:GetCaster (), self, "modifier_scarlet_witch_unstable_energy", {duration = self:GetSpecialValueFor ("damage_delay")})
 	    EmitSoundOn ("DOTA_Item.Bloodthorn.Activate", hTarget)
     	EmitSoundOn ("Hero_ArcWarden.SparkWraith.Damage", hTarget)
 	end
     return true
 end
 
-if modifier_scarlet_witch_unstable_energy == nil then modifier_scarlet_witch_unstable_energy = class({}) end
-
-function modifier_scarlet_witch_unstable_energy:IsPurgable()
-    return false
-end
-
-function modifier_scarlet_witch_unstable_energy:GetStatusEffectName()
-    return "particles/status_fx/status_effect_armor_dazzle.vpcf"
-end
-
-
-function modifier_scarlet_witch_unstable_energy:StatusEffectPriority()
-    return 1000
-end
-
-
-function modifier_scarlet_witch_unstable_energy:GetEffectName()
-    return "particles/units/heroes/hero_arc_warden/arc_warden_flux_tgt.vpcf"
-end
-
-function modifier_scarlet_witch_unstable_energy:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
-end
-
-function modifier_scarlet_witch_unstable_energy:DeclareFunctions()
-    local funcs = {
+modifier_scarlet_witch_unstable_energy = class({
+    IsHidden = function() return false end,
+    IsPurgable = function() return true end,
+    GetStatusEffectName = function() return "particles/status_fx/status_effect_armor_dazzle.vpcf" end,
+    StatusEffectPriority = function() return 1000 end,
+    GetEffectName = function() return "particles/units/heroes/hero_arc_warden/arc_warden_flux_tgt.vpcf" end,
+    GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end,
+    DeclareFunctions = function() return {
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
         MODIFIER_EVENT_ON_TAKEDAMAGE
 
-    }
-
-    return funcs
-end
+    } end,
+    GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end
+})
 
 function modifier_scarlet_witch_unstable_energy:OnDestroy()
 	if IsServer() then
-        local hTarget = self:GetParent()
-        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Activate", hTarget)
-        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Damage", hTarget)
+        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Activate", self:GetParent())
+        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Damage", self:GetParent())
 
-        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Activate", self:GetAbility():GetCaster())
-        EmitSoundOn ("Hero_ArcWarden.SparkWraith.Damage", self:GetAbility():GetCaster())
-
-        if self:GetParent():GetHealthPercent() <= self:GetAbility():GetSpecialValueFor("damage_on_destroy") then
-            self:GetParent():Kill(self:GetAbility(), self:GetCaster())
-        end
-        
-        local pop_pfx = ParticleManager:CreateParticle("particles/items2_fx/orchid_pop.vpcf", PATTACH_OVERHEAD_FOLLOW, hTarget)
-        ParticleManager:SetParticleControl(pop_pfx, 0, hTarget:GetAbsOrigin())
+        local pop_pfx = ParticleManager:CreateParticle("particles/items2_fx/orchid_pop.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
+        ParticleManager:SetParticleControl(pop_pfx, 0, self:GetParent():GetAbsOrigin())
         ParticleManager:SetParticleControl(pop_pfx, 1, Vector(100, 0, 0))
         ParticleManager:ReleaseParticleIndex(pop_pfx)
 
-        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = hTarget, ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_MAGICAL})
+        ApplyDamage({
+            victim = self:GetParent(), ability = self:GetAbility(),
+            attacker = self:GetAbility():GetCaster(),
+            ability = self:GetAbility(),
+            damage = self:GetAbility():GetSpecialValueFor("damage"),
+            damage_type = self:GetAbility():GetAbilityDamageType()
+        })
+        if self:GetParent():GetHealthPercent() <= self:GetAbility():GetSpecialValueFor("damage_on_destroy") then
+            self:GetParent():Kill(self:GetAbility(), self:GetCaster())
+        end
 	end
 end
-
-function scarlet_witch_unstable_energy:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
