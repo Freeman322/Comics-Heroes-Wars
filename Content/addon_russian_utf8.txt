@@ -223,9 +223,9 @@
 		"DOTA_Tooltip_ability_item_frostmourne_Description"                               "Пассивная: SOUL STOLE - Если не на кулдауне, то владелец Фростморна переродится, а так же в радиусе 900 за каждого убитого врага Фростморн получит прибавку к урону в виде вражеской души. \nПассивная: Cold Attack - Ваши атаки будут замедлять скорость передвижения и атаки цели."
 		"DOTA_Tooltip_ability_item_frostmourne_Lore"                          		      "Фростморн жаждет крови!"
 		"DOTA_Tooltip_ability_item_frostmourne_bonus_all_stats"                           "+$all"
-		////"DOTA_Tooltip_ability_item_frostmourne_bonus_health"                              "+$health"
-		////"DOTA_Tooltip_ability_item_frostmourne_bonus_mana"                                "+$mana"
-		////"DOTA_Tooltip_ability_item_frostmourne_bonus_damage"                              "+$damage"
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_health"                              "+$health"
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_mana"                                "+$mana"
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_damage"                              "+$damage"
 		"DOTA_Tooltip_ability_item_frostmourne_cold_attack_damage"                        "ДОП.УРОН от Cold Attack:"
 		"DOTA_TOOLTIP_ABILITY_item_frostmourne_cold_movement_speed"						  "ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
 		"DOTA_TOOLTIP_ABILITY_item_frostmourne_cold_attack_speed"		  				  "ЗАМЕДЛЕНИЕ СКОРОСТИ АТАКИ:"
@@ -623,14 +623,6 @@
 		"DOTA_Tooltip_ability_logan_overpower"	"OVERPOWER"
 		"DOTA_Tooltip_ability_logan_overpower_Description"	"Используя свой боевой опыт, Логан увеличивает скорость атаки на несколько следующих атак."
 		"DOTA_Tooltip_ability_logan_overpower_max_attacks"	"АТАК:"
-
-		"DOTA_Tooltip_ability_logan_fury_swipes"	"Fury Swipes"
-		"DOTA_Tooltip_ability_logan_fury_swipes_Description"	"Когти Росомахи с каждой атакой все глубже впиваются в плоть врага, нанося увеличенный урон с каждой последующей атакой. Дополнительный урон будет потерян, если цель не будет атакована в течение 6 секунд."
-		"DOTA_Tooltip_ability_logan_fury_swipes_damage_per_stack"	"УРОНА ЗА АТАКУ:"
-
-		"DOTA_Tooltip_ability_wolverine_enrage"	"ENRAGE"
-		"DOTA_Tooltip_ability_wolverine_enrage_Description"	"Логан впадает в ярость, увеличивая урон от Fury Swipes и получая на %damage_reduction%%% меньше урона. Снимает все негативные эффекты."
-		"DOTA_Tooltip_ability_wolverine_enrage_duration"	  "ДЛИТЕЛЬНОСТЬ:"
 
 		"DOTA_Tooltip_ability_wolverine_passive_rage"	"The essence of the beast"
 		"DOTA_Tooltip_ability_wolverine_passive_rage_Description"	"Пассивная: Звериные рефлексы Россомахи проявляют себя, давая дополнительную скорость атаки, броню и регенерацию здоровья."
@@ -4111,7 +4103,7 @@
 
 
 		"DOTA_Tooltip_item_sunshines_aromor_passive_modifier_aura"						  "Sunshines Armor Aura"
-		"DOTA_Tooltip_item_sunshines_aromor_passive_modifier_aura_Description"			  "Повышает броню на 20 и скорость атаки на 50, союзникам в радиусе 900, а так-же снижает врагам 10 брони и 50 скорости атаки."
+		"DOTA_Tooltip_item_sunshines_aromor_passive_modifier_aura_Description"			  "Снижает врагам 70 скорости атаки в радиусе 900."
 
 		"DOTA_Tooltip_item_sunshines_aromor_reduce_modifier"						 	 "Sunshines Armor Reduction"
 		"DOTA_Tooltip_item_sunshines_aromor_reduce_modifier_Description"				 "Замедлен"
@@ -5264,7 +5256,6 @@
 		"DOTA_Tooltip_ability_item_desolator_3_Description"                               "Пассивная: Corruption — ваши атаки уменьшают броню цели на 15 секунд. Дополнительно снижает 0.5 брони за каждую минуту игры."
 		"DOTA_Tooltip_ability_item_desolator_3_Lore"                               		  "Древняя коса, которая дает безумную силу"
 		"DOTA_Tooltip_ability_item_desolator_3_bonus_damage"                              "+$damage"
-		"DOTA_Tooltip_ability_item_desolator_3_bonus_all_stats"							  "+$all"
 		"DOTA_Tooltip_ability_item_desolator_3_corruption_armor"                          "СНИЖЕНИЕ БРОНИ:"
 		"DOTA_Tooltip_ability_item_desolator_3_corruption_duration"                       "ДЛИТЕЛЬНОСТЬ:"
 
@@ -6020,18 +6011,7 @@
 		"DOTA_Tooltip_ability_doom_strike_array_strikes"                                  "АТАК:"
 		
 		
-		"DOTA_Tooltip_ability_item_recipe_adamachi_core"                                  "Adamachi Core"
-		"DOTA_Tooltip_ability_item_recipe_adamachi_core_Description"                      ""
-
-		"DOTA_Tooltip_ability_item_adamachi_core"                                         "Adamachi Core"
-		"DOTA_Tooltip_ability_item_adamachi_core_Description"                             "<h1>Активируемая: Nucleon</h1> Усиливает исходящий урон способностей на время длительности баффа."
-		"DOTA_Tooltip_ability_item_adamachi_core_bonus_intelligence"                      "+$int"
-		"DOTA_Tooltip_ability_item_adamachi_core_bonus_health"                            "+$health"
-		"DOTA_Tooltip_ability_item_adamachi_core_bonus_mana"                              "+$mana"
-		"DOTA_Tooltip_ability_item_adamachi_core_bonus_cooldown"                          "+$cooldown_reduce"
-		"DOTA_Tooltip_ability_item_adamachi_core_bonus_lifesteal"                         "%ВАМПИРИЗМ ОТ СПОСОБНОСТЕЙ:"
-		"DOTA_Tooltip_ability_item_adamachi_core_active_spell_amp"                        "%УСИЛЕНИЕ СПОСОБНОСТЕЙ ОТ Nucleon:"
-		"DOTA_Tooltip_ability_item_adamachi_core_active_duration"                         "ДЛИТЕЛЬНОСТЬ Nucleon:"
+		
 
 		"DOTA_Tooltip_ability_item_recipe_orb_of_osuvox"                                  "Orb Of Osuvox"
 		"DOTA_Tooltip_ability_item_recipe_orb_of_osuvox_Description"                      ""
@@ -6385,7 +6365,7 @@
 		"DOTA_Tooltip_ability_ebonymaw_magnetize_duration"                                "ДЛИТЕЛЬНОСТЬ:"
 		
 		"DOTA_TOOLTIP_ABILITY_item_time" 												  "Time Gem"
-		"DOTA_TOOLTIP_ABILITY_item_time_Description" 				 					  "<h1>Passive: Time Lapse</h1> Герой возвращается в положение, в котором он был пять секунд назад, возвращая уровень здоровья и маны на былой уровень."
+		"DOTA_TOOLTIP_ABILITY_item_time_Description" 				 					  "<h1>Active: Reset Cooldowns</h1>Сбрасывает все текущие кулдауны на способностях и предметах.\n<h1>Passive: Time Lapse</h1> Герой возвращается в положение, в котором он был пять секунд назад, возвращая уровень здоровья и маны на былой уровень."
 		"DOTA_TOOLTIP_ABILITY_item_time_Lore" 						 					  "Хоть добрый видит: не сберечь ему. Живую зелень юности своей, Не дай погаснуть свету своему. А ты, хватавший солнце налету, Воспевший свет, узнай к закату дней, Что не уйдёшь безропотно во тьму!"
 		"DOTA_TOOLTIP_ABILITY_item_time_bonus_stats"    			 					  "+$all"
 		"DOTA_Tooltip_ability_item_time_bonus_health_regen"          					  "+$hp_regen"

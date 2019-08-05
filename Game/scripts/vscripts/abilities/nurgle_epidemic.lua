@@ -63,7 +63,6 @@ function modifier_nurgle_epidemic:GetAuraRadius()
 	return self:GetAbility():GetSpecialValueFor("radius")
 end
 
-
 function modifier_nurgle_epidemic:OnCreated( kv )
 	if IsServer() then 
 		self.radius = self:GetAbility():GetSpecialValueFor("radius")
