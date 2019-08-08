@@ -1,148 +1,54 @@
-superman_punch = class ({})
+LinkLuaModifier("modifier_superman_punch", "abilities/superman_punch.lua", 0)
+LinkLuaModifier("modifier_superman_punch_slow", "abilities/superman_punch.lua", 0)
 
-LinkLuaModifier( "modifier_superman_punch", "abilities/superman_punch.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_superman_punch_slow", "abilities/superman_punch.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier( "modifier_superman_punch_flying", "abilities/superman_punch.lua", LUA_MODIFIER_MOTION_NONE)
-
-function superman_punch:GetIntrinsicModifierName()
-	return "modifier_superman_punch"
-end
-
-function superman_punch:OnSpellStart()
-  if IsServer() then
-    self:GetCaster():MoveToTargetToAttack(self:GetCursorTarget())
-  end
-end
-
-
-modifier_superman_punch = class({})
-
-function modifier_superman_punch:IsHidden() return true end
-function modifier_superman_punch:IsPermanent() return true end
-
-
-function modifier_superman_punch:DeclareFunctions()
-  local funcs = {
-        MODIFIER_EVENT_ON_ATTACK_LANDED
-  }
-
-  return funcs
-end
-
+superman_punch = class ({GetIntrinsicModifierName = function() return "modifier_superman_punch" end})
+modifier_superman_punch = class({
+	IsHidden = function() return true end,
+	IsPurgable = function() return true end,
+	DeclareFunctions = function() return {MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_ORDER, MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE} end
+})
+function modifier_superman_punch:OnCreated() self.punch = false end
 function modifier_superman_punch:OnAttackLanded(params)
-  if IsServer() then
-    if self:GetAbility():IsCooldownReady() and self:GetAbility():GetAutoCastState() and params.attacker == self:GetCaster() and self:GetParent():HasModifier("modifier_superman_laser") == false then
+	if not IsServer() then return end
+	if params.attacker == self:GetParent() and params.attacker:IsRealHero() and self:GetAbility():IsCooldownReady() and self:GetAbility():IsOwnersManaEnough() and (self:GetAbility():GetAutoCastState() or self.punch) and not (self:GetParent():HasModifier("modifier_superman_laser") or params.target:IsBuilding() or params.target:IsOther() or params.target:GetTeam() == self:GetParent():GetTeam()) then
         local hTarget = params.target
-        local damage = params.original_damage
-
-        if hTarget:GetTeamNumber() == self:GetCaster():GetTeamNumber() then return false end
-        if hTarget:IsBuilding() or hTarget:IsOther() then return false end
-
-        local damage_mult = self:GetAbility():GetSpecialValueFor("crit_multiplier")
-        if self:GetParent():HasTalent("special_bonus_unique_superman_1") then damage_mult = damage_mult + self:GetParent():FindTalentValue("special_bonus_unique_superman_1") end
 
         local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_tusk/tusk_walruspunch_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
         ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
         ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-        self:GetCaster():EmitSound("Hero_Tusk.WalrusPunch.Target")
+        hTarget:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_knockback", {should_stun = 1, knockback_height = 500, knockback_duration = self:GetAbility():GetSpecialValueFor("fly_duration"), duration = self:GetAbility():GetSpecialValueFor("fly_duration")})
+        hTarget:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_superman_punch_slow", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
 
-        damage = damage * (damage_mult / 100)
-
-        local air_time_duration = 1.0
-        local duration = 3.0
-
-        hTarget:AddNewModifier(self:GetCaster(), self, "modifier_superman_punch_flying", {duration = air_time_duration})
-        hTarget:AddNewModifier(self:GetCaster(), self, "modifier_superman_punch_slow", {duration = duration})
-
-        -- Text particles
         local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_tusk/tusk_walruspunch_txt_ult.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
         ParticleManager:SetParticleControl(particle, 2, self:GetCaster():GetAbsOrigin() + Vector(0, 0, 175))
         ParticleManager:ReleaseParticleIndex(particle)
 
-        ApplyDamage ( {
-            victim = hTarget,
-            attacker = self:GetParent(),
-            damage = damage,
-            damage_type = DAMAGE_TYPE_PHYSICAL,
-            ability = self:GetAbility(),
-            damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_BLOCK,
-        })
-
-        self:GetCaster():EmitSound("Hero_Tusk.WalrusPunch.Cast")
-
-        self:GetAbility():UseResources(false, false, true)
-    end
-  end
-
-  return
-end
-
-modifier_superman_punch_flying = class({})
-
----@override
-function modifier_superman_punch_flying:CheckState()
-    return {
-        [MODIFIER_STATE_STUNNED] = IsServer(), -- Not showing the status bar
-    }
-end
-
----@override
-function modifier_superman_punch_flying:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
-    }
-end
-
----@override
-function modifier_superman_punch_flying:GetOverrideAnimation()
-    return ACT_DOTA_FLAIL
-end
-
----@override
-function modifier_superman_punch_flying:OnCreated(keys)
-    if IsServer() then
-        self.air_time_duration = 1.0
-        local max_height = 650
-
-        self.z_vel = max_height * 4
-        self.direction = Vector(0, 0, self.z_vel)
-
-        self:GetParent():EmitSound("Hero_Tusk.WalrusPunch.Damage")
-
-        self:StartIntervalThink(FrameTime())
+        EmitSoundOn("Hero_Tusk.WalrusPunch.Cast", self:GetParent())
+		EmitSoundOn("Hero_Tusk.WalrusPunch.Target", params.target)
+		self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+		self:GetAbility():PayManaCost()
+		self.punch = false
     end
 end
 
----@override
-function modifier_superman_punch_flying:OnIntervalThink()
-    local unit = self:GetParent()
-    -- Decrease the z velocity
-    self.direction.z = self.direction.z - (self.z_vel *2  *FrameTime())
-    unit:SetAbsOrigin(unit:GetAbsOrigin() + self.direction *  FrameTime())
+function modifier_superman_punch:GetModifierPreAttack_CriticalStrike(params)
+	if params.attacker == self:GetParent() and params.attacker:IsRealHero() and (self:GetAbility():GetAutoCastState() or self.punch) and not (self:GetParent():HasModifier("modifier_superman_laser") or params.target:IsBuilding() or params.target:IsOther() or params.target:GetTeam() == self:GetParent():GetTeam()) then
+		return self:GetAbility():GetSpecialValueFor("crit_multiplier") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_superman_1") or 0)
+	end
 end
 
----@override
-function modifier_superman_punch_flying:OnDestroy()
-    if IsServer() then
-        FindClearSpaceForUnit(self:GetParent(),self:GetParent():GetAbsOrigin(),true)
-    end
+function modifier_superman_punch:OnOrder(params)
+	if params.unit == self:GetParent() then
+		if params.order_type == DOTA_UNIT_ORDER_CAST_TARGET and params.ability:GetName() == self:GetAbility():GetName() then
+			self.punch = true
+		else
+			self.punch = false
+		end
+	end
 end
-
-
-modifier_superman_punch_slow = class({})
-
-
-function modifier_superman_punch_slow:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-    }
-end
-
-function modifier_superman_punch_slow:GetModifierMoveSpeedBonus_Percentage()
-    return -50
-end
-
-function modifier_superman_punch_slow:GetStatusEffectName()
-    return "particles/units/heroes/hero_tusk/tusk_walruspunch_status.vpcf"
-end
+modifier_superman_punch_slow = class({
+	DeclareFunctions = function() return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE} end,
+	GetStatusEffectName = function() return "particles/units/heroes/hero_tusk/tusk_walruspunch_status.vpcf" end
+})
+function modifier_superman_punch_slow:GetModifierMoveSpeedBonus_Percentage() return self:GetAbility():GetSpecialValueFor("slow_pct") * -1 end

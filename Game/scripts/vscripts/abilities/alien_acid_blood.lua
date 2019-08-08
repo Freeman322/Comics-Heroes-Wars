@@ -27,6 +27,13 @@ modifier_acid_blood_thinker = class({
     GetAuraDuration = function() return 1 end
 })
 
+function modifier_acid_blood_thinker:OnCreated()
+    local particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_alchemist/alchemist_acid_spray.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent())
+    ParticleManager:SetParticleControl( particle, 0, self:GetParent():GetAbsOrigin())
+    ParticleManager:SetParticleControl( particle, 1, Vector(self:GetAbility():GetSpecialValueFor("blood_radius"), self:GetAbility():GetSpecialValueFor("blood_radius"), 0))
+    self:AddParticle(particle, false, false, -1, false, true)
+end
+
 function modifier_acid_blood_thinker:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("blood_radius") end
 function modifier_acid_blood_thinker:GetAuraSearchTeam() return self:GetAbility():GetAbilityTargetTeam() end
 function modifier_acid_blood_thinker:GetAuraSearchType() return self:GetAbility():GetAbilityTargetType() end
@@ -44,13 +51,6 @@ function modifier_acid_blood_debuff:OnCreated()
     if IsServer() then
         self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("tick_interval"))
         self:SetStackCount(0)
-
-        local particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_alchemist/alchemist_acid_spray.vpcf", PATTACH_CUSTOMORIGIN, thinker )
-        ParticleManager:SetParticleControl( particle, 0, self:GetParent():GetAbsOrigin())
-        ParticleManager:SetParticleControl( particle, 1, Vector(self:GetAbility():GetSpecialValueFor("blood_radius"), self:GetAbility():GetSpecialValueFor("blood_radius"), 0))
-        ParticleManager:SetParticleControl( particle, 15, Vector(227, 0, 0))
-        ParticleManager:SetParticleControl( particle, 16, Vector(227, 0, 0))
-        self:AddParticle( particle, false, false, -1, false, true )
     end
 end
 function modifier_acid_blood_debuff:OnIntervalThink()

@@ -1955,38 +1955,35 @@
 					}
 			}
 	}
-"magneto_natural_order"
-{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
-			"BaseClass"                 "elder_titan_natural_order"
-	    "AbilityTextureName"        "custom/holdout_battle_rage"
+	"magneto_natural_order"
+	{
+		"BaseClass"								"ability_lua"
+		"ScriptFile"							"abilities/magneto_natural_order.lua"
+		"AbilityTextureName"        "custom/holdout_battle_rage"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
 
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-					"01"
-					{
-						"var_type"							"FIELD_INTEGER"
-						"radius"					"600 650 700 750"
-					}
-					"02"
-					{
-						"var_type"							"FIELD_INTEGER"
-						"armor_reduction_pct"	    "25 40 55 70"
-					}
-					"03"
-					{
-						"var_type"							"FIELD_INTEGER"
-						"magic_resistance_pct"  	"10 15 20 25"
-					}
-			}
-  }
+		"AbilitySpecial"
+		{
+				"01"
+				{
+					"var_type"							"FIELD_INTEGER"
+					"aura_radius"					"600 650 700 750"
+				}
+				"02"
+				{
+					"var_type"							"FIELD_INTEGER"
+					"armor_reduction_pct"	    "20 30 40 50"
+				}
+				"03"
+				{
+					"var_type"							"FIELD_INTEGER"
+					"magic_resistance_pct"  	"10 15 20 25"
+				}
+		}
+  	}
 	//=================================================================================================================
 	// Magneto: Shield
 	//=================================================================================================================
@@ -6334,7 +6331,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12 10 8 6"
-		
+
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50 60 70 80"
@@ -13787,10 +13784,10 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/ragnaros_essence_strike.lua"
 		"AbilityTextureName"			"custom/ragnaros_essence_strike"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Time
@@ -23170,7 +23167,7 @@
 		"AbilityTextureName"			"custom/dimm_ravage"
 		"ScriptFile"					"abilities/dimm_field.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -23179,6 +23176,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"10 15 20 25"
+		"AbilityCastRange"				"600"
 
 		"precache"
 		{
@@ -23569,10 +23567,11 @@
 		"AbilityTextureName"			"custom/ares_dissecting_strike"
 		"ScriptFile"					"abilities/ares_dissecting_strike.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_ChaosKnight.ChaosStrike"
 		"AbilityCastRange"				"150"
@@ -24631,7 +24630,7 @@
 		"ID"							"7585"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/diablo_fire_dissipation.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
@@ -24687,10 +24686,10 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/diablo_burning_attacks.lua"
 		"AbilityTextureName"			"custom/diablo_burning_attacks"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Time
@@ -25364,7 +25363,7 @@
 		"ScriptFile"					"abilities/golden_god_aoe.lua"
 		"AbilityTextureName"			"custom/golden_gold_aoe"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"2"
@@ -31406,13 +31405,14 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12.0 10.0 8.0 6.0"
-		"AbilityCastRange"				"140"
+		"AbilityCastRange"				"128"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -31423,6 +31423,21 @@
 				"var_type"				"FIELD_INTEGER"
 				"crit_multiplier"		"125 150 175 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_superman_1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fly_duration"			"1"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"				"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"3"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -33047,9 +33062,9 @@
 		"AbilityTextureName"			"custom/pudge_essence_shift"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
@@ -33059,7 +33074,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"300"
-		"AbilityCastRange"				"175"
+		"AbilityCastRange"				"135"
 		"AbilityCastPoint"				"0"
 
 		"MaxLevel"						"1"
@@ -34328,11 +34343,6 @@
 				"warp_duration"			"2"
 			}
 			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_mana_damage"			"4000 5000 6000 7000"
-			}
-			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"slowing"					"-25 -35 -45 -55"
@@ -37789,6 +37799,9 @@
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 
 		"AbilityDamage"                	 "325 650 975"
@@ -38049,7 +38062,7 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_MonkeyKing.IronCudgel"
 		"AbilityCastAnimation"			"ACT_INVALID"
@@ -38064,7 +38077,7 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
 		}
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"24 22 20 18"
 
@@ -38098,7 +38111,7 @@
 				"max_damage_ptc"				"35"
 			}
 		}
-	}		
+	}
 	"special_bonus_unique_sheefu_1"
 	{
 		// General
@@ -38131,15 +38144,15 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_AbyssalUnderlord.PitOfMalice"
 
 		"AbilityCastRange"				"750"
 		"AbilityCastPoint"				"0.45"
 		"FightRecapLevel"				"1"
-		
-		// Time		
+
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"16 14 12 10"
 
@@ -38166,7 +38179,7 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"duration"						"6.0"
-			}		
+			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
@@ -38238,7 +38251,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
 		"precache"
 		{
@@ -38283,7 +38296,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"2"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"90 75 60"
 
@@ -38320,4 +38333,4 @@
 			}
 		}
 	}
-}	
+}

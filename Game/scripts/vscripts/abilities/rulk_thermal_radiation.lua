@@ -19,7 +19,7 @@ function modifier_rulk_thermal_radiation:GetModifierAura() return "modifier_rulk
 function modifier_rulk_thermal_radiation:DeclareFunctions() return {MODIFIER_EVENT_ON_TAKEDAMAGE} end
 
 function modifier_rulk_thermal_radiation:OnTakeDamage(params)
-  if params.unit == self:GetParent() and params.attacker:IsRealHero() then
+  if params.unit == self:GetParent() and params.attacker:IsRealHero() and not self:GetParent():PassivesDisabled() then
     if not self:GetCaster():HasModifier("modifier_rulk_thermal_radiation_stacks") then
       self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_rulk_thermal_radiation_stacks", {duration = self:GetAbility():GetSpecialValueFor("stack_duration")})
       self:GetCaster():FindModifierByName("modifier_rulk_thermal_radiation_stacks"):SetStackCount(1)
@@ -39,7 +39,7 @@ function modifier_rulk_thermal_radiation_aura:IsHidden() return true end
 function modifier_rulk_thermal_radiation_aura:OnCreated() self:StartIntervalThink(0.1) end
 
 function modifier_rulk_thermal_radiation_aura:OnIntervalThink()
-  if IsServer() then
+  if IsServer() and not self:GetParent():PassivesDisabled() then
     if self:GetCaster():HasModifier("modifier_rulk_thermal_radiation_stacks") then
       ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), damage = (self:GetAbility():GetSpecialValueFor("base_damage") + self:GetCaster():FindModifierByName("modifier_rulk_thermal_radiation_stacks"):GetStackCount()) / 10, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self})
     else
