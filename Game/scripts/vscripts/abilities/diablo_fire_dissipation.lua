@@ -70,7 +70,7 @@ function modifier_diablo_fire_dissipation:OnIntervalThink ()
         for i=1, #side_units do
             local targets = side_units[i]
             local damage = (targets:GetMaxHealth()*hp_cost)/10
-            ApplyDamage({attacker = caster, victim = targets, ability = self:GetAbility(), damage = damage , damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+            ApplyDamage({attacker = caster, victim = targets, ability = self:GetAbility(), damage = damage , damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
         end
     end
 end
@@ -83,5 +83,4 @@ function modifier_diablo_fire_dissipation:OnDestroy (kv)
     end
 end
 
-function diablo_fire_dissipation:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
-
+function diablo_fire_dissipation:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

@@ -5,7 +5,7 @@ alien_evolution = class({GetIntrinsicModifierName = function() return "modifier_
 function alien_evolution:GetCooldown(nLevel) return self.BaseClass.GetCooldown(self, nLevel) - (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_alien_evolution_cd_red") or 0) end
 modifier_alien_evolution = class({IsHidden = function() return true end, IsPurgable = function() return false end, GetAttributes = function() return MODIFIER_ATTRIBUTE_PERMANENT end})
 
-function modifier_alien_evolution:OnCreated() self.cd = 0 if not IsServer() then return end self:StartIntervalThink(0.03) end
+function modifier_alien_evolution:OnCreated() if not IsServer() then return end self:StartIntervalThink(FrameTime()) end
 function modifier_alien_evolution:OnIntervalThink()
     if not IsServer() then return end
     if self:GetParent():IsRealHero() and self:GetAbility():IsCooldownReady() then

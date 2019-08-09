@@ -530,7 +530,7 @@
 
 	    // Attack
 	    //----------------------------------------------------------------
-	    "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"     // Type of attack - melee, ranged, etc.
+	    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
 	    "AttackDamageMin"     "0"     // Damage range min.
 	    "AttackDamageMax"     "0"     // Damage range max.
 	    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
@@ -563,7 +563,7 @@
 
 	    // Movement
 	    //----------------------------------------------------------------
-	    "MovementCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of locomotion - ground, air
+	    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_FLY"     // Type of locomotion - ground, air
 	    "MovementSpeed"       "450"   // Speed
 	    "MovementTurnRate"      "1.0"   // Turning rate.
 	    "FollowRange"       "250"   // Distance to keep when following
@@ -4107,7 +4107,7 @@
 
 		"LastHitChallengeRival"			"npc_dota_hero_drow_ranger"
 		"HeroSelectSoundEffect"			"Hero_Sniper.Pick"
-		
+
 		"GibType"						"default"
 
 		"Ability1"					"officer_base"
@@ -4124,7 +4124,7 @@
 		"Ability15"					"special_bonus_unique_officer_3"
 		"Ability16"					"special_bonus_cooldown_reduction_30"
 		"Ability17"					"special_bonus_all_stats_20"
-		
+
 		"ArmorPhysical"				"-1"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"				"20"
@@ -4193,15 +4193,15 @@
 		//
 		"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
 		"Model"						"models/heroes/hero_officer/base/base.vmdl"// Model.
-		
+
 		"SoundSet"					"Tower.Water"					// Name of sound set.
 		"MinimapIcon"					"minimap_tower45"
 		"MinimapIconSize"				"320"
 		"Level"						"2"
-		
+
 		// Abilities
 		//----------------------------------------------------------------
-		
+
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 		"Ability2"					"officer_base_trooper"			// Ability 2.
 		"Ability3"					"officer_base_assault"			// Ability 3.
@@ -4270,17 +4270,17 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-		
+
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1900"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-	}	
-	
+	}
+
 	//=================================================================================
 	//=================================================================================
 	"npc_dota_officer_trooper"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/hero_officer/creep/trooper1/trooper.vmdl"	// Model.
@@ -4304,13 +4304,13 @@
 		//----------------------------------------------------------------
 		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"				"20"		// Damage range min.
-		"AttackDamageMax"				"26"		// Damage range max.	
+		"AttackDamageMax"				"26"		// Damage range max.
 		"AttackRate"					"1.0"		// Speed of attack.
 		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"			"500"		// Range within a target can be acquired.
 		"AttackRange"					"100"		// Range within a target can be attacked.
 		"ProjectileModel"				""			// Particle system model for projectile.
-		"ProjectileSpeed"				"0"			// Speed of projectile.		   
+		"ProjectileSpeed"				"0"			// Speed of projectile.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -4333,13 +4333,13 @@
 		"StatusHealth"				"400"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"250"			// Base mana.
-		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
-		
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.
+
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-		
+
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
@@ -4351,7 +4351,7 @@
 	//=================================================================================
 	//=================================================================================
 	"npc_dota_officer_assault"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/hero_officer/creep/trooper2/clone_firearm.vmdl"	// Model.
@@ -4380,11 +4380,11 @@
 		"AttackAcquisitionRange"			"950"
 		"AttackRange"					"550"
 		"AttackDamageMin"				"50"		// Damage range min.
-		"AttackDamageMax"				"100"		// Damage range max.	
+		"AttackDamageMax"				"100"		// Damage range max.
 		"AttackRate"					"1.7"		// Speed of attack.
 		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"			"500"		// Range within a target can be acquired.
-	
+
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"					"40"
@@ -4406,13 +4406,13 @@
 		"StatusHealth"				"1200"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
-		
+		"StatusManaRegen"			"0"		// Mana regeneration rate.
+
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-		
+
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"				"DOTA_TEAM_NEUTRALS"							// Team name.
@@ -4424,7 +4424,7 @@
 	//=================================================================================
 	//=================================================================================
 	"npc_dota_officer_assassin"
-	{										
+	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/hero_officer/creep/trooper3/deathtrooper.vmdl"	// Model.
@@ -4448,7 +4448,7 @@
 		//----------------------------------------------------------------
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"				"24"		// Damage range min.
-		"AttackDamageMax"				"38"		// Damage range max.	
+		"AttackDamageMax"				"38"		// Damage range max.
 		"AttackRate"					"0.6"		// Speed of attack.
 		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"			"950"
@@ -4476,13 +4476,13 @@
 		"StatusHealth"				"200"		// Base health.
 		"StatusHealthRegen"			"15"		// Health regeneration rate.
 		"StatusMana"				"250"			// Base mana.
-		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
-		
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.
+
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-		
+
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
