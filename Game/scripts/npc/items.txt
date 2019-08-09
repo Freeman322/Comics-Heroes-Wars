@@ -3383,7 +3383,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_damage_amount"	"25"
+				"soul_damage_amount"	"50"
 			}
 			"10"
 			{

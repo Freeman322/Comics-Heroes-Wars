@@ -49,7 +49,7 @@ function iron_rearm:OnSpellStart()
     for i=0, 5, 1 do
         local current_item = self:GetCaster ():GetItemInSlot(i)
         if current_item ~= nil then
-            if current_item:GetName () == "item_blink" or current_item:GetName () == "item_blink_2"  then
+            if current_item:GetName () == "item_blink" --[[or current_item:GetName () == "item_blink_2"]]  then
                 current_item:EndCooldown()
             end
         end

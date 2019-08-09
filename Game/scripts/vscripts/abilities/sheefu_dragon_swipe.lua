@@ -89,8 +89,7 @@ function modifier_sheefu_dragon_swipe_modifier:OnIntervalThink()
         end
 
         if self:GetCaster():HasTalent("special_bonus_unique_sheefu_3") then
-            self:GetAbility():GetCaster():PerformAttack(self:GetParent(), true, true, true, true, false, false, true)
-            return
+            self:GetAbility():GetCaster():PerformAttack(self:GetParent(), false, false, true, true, false, false, true)
         end 
         
         ApplyDamage( {
@@ -98,6 +97,14 @@ function modifier_sheefu_dragon_swipe_modifier:OnIntervalThink()
             attacker = self:GetAbility():GetCaster(),
             damage = damage * (ptc / 100),
             damage_type = DAMAGE_TYPE_MAGICAL,
+            ability = self:GetAbility()
+        })
+
+        ApplyDamage( {
+            victim = self:GetParent(),
+            attacker = self:GetAbility():GetCaster(),
+            damage = self:GetAbility():GetSpecialValueFor("bonus_damage"),
+            damage_type = DAMAGE_TYPE_PHYSICAL,
             ability = self:GetAbility()
         })
      end 

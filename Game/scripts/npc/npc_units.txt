@@ -9657,17 +9657,19 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"courier_return_to_base"
-		"Ability2"					"courier_go_to_secretshop"
+		"Ability2"					"courier_go_to_secretshop"		
 		"Ability3"					"courier_return_stash_items"
 		"Ability4"					"courier_take_stash_items"
-		"Ability5"					"courier_transfer_items"
-		"Ability6"					"courier_shield"
+		"Ability5"					"courier_transfer_items"	
+		"Ability6"					"courier_shield"		
 		"Ability7"					"courier_morph"
 		"Ability8"					"courier_take_stash_and_transfer_items"
 		"Ability9"					"courier_transfer_items_to_other_player"
 		"Ability10"					"courier_go_to_enemy_secretshop"
 		"Ability11"					"courier_go_to_sideshop"
 		"Ability12"					"courier_go_to_sideshop2"
+		"Ability13"					"courier_queue_pickup_from_stash"
+		"Ability14"					"courier_dequeue_pickup_from_stash"
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -9679,7 +9681,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"380"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
-
+	
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyGoldMin"				"125"		// Gold earned min.
@@ -9698,7 +9700,7 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_COURIER"
-
+		
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"350"		// Range of vision during day light.
@@ -9710,9 +9712,9 @@
 
 		//Inventory
 		"HasInventory"				"1"
-
+		
 		"IdleExpression"			"scenes/default_idle.vcd"
-
+		
 		"WakesNeutrals"				"0"
 	}
 
@@ -9730,13 +9732,13 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"courier_return_to_base"
-		"Ability2"					"courier_go_to_secretshop"
-		"Ability3"					"courier_return_stash_items"
-		"Ability4"					"courier_take_stash_items"
-		"Ability5"					"courier_transfer_items"
-		"Ability6"					"courier_shield"
-
+		"Ability1"					"courier_return_to_base"			
+		"Ability2"					"courier_go_to_secretshop"				
+		"Ability3"					"courier_return_stash_items"		
+		"Ability4"					"courier_take_stash_items"			
+		"Ability5"					"courier_transfer_items"  	
+		"Ability6"					"courier_shield"						
+		
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"10"		// Physical protection.
@@ -9745,14 +9747,14 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
-		"HealthBarOffset"			"140"
+		"HealthBarOffset"			"140"	
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
 		"MovementSpeed"				"275"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
-
+	
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"349"			// Experience earn.
@@ -9772,7 +9774,7 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_COURIER"
-
+		
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"200"		// Range of vision during day light.
@@ -9786,9 +9788,10 @@
 		"HasInventory"				"1"
 
 		"IdleExpression"			"scenes/default_idle.vcd"
-
+		
 		"WakesNeutrals"				"0"
 	}
+
 
 	"npc_dota_witch_doctor_death_ward"
 	{

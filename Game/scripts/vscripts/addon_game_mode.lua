@@ -189,7 +189,7 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
 	GameRules:SetUseBaseGoldBountyOnHeroes(false)
-
+	
 	GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_wisp" )
 
 	if GetMapName() == "free_for_all" then
@@ -273,7 +273,7 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_HASTE, true ) --Haste
 	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_ILLUSION, false ) --Illusion
 	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_INVISIBILITY, true ) --Invis
-	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_REGENERATION, false ) --Regen
+	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_REGENERATION, true ) --Regen
 	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_ARCANE, true ) --Arcane
 	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_BOUNTY, true ) --Bounty
 end
@@ -483,7 +483,7 @@ function GameMode:GoldFilter(ftable)
 	local pid = ftable.player_id_const
 	local gold = ftable.gold
 
-	---if reason == DOTA_ModifyGold_HeroKill then gold = RandomInt(50, 300) end
+	if reason == DOTA_ModifyGold_HeroKill then ftable.gold = RandomInt(50, 300) end
 
 	return true
 end
