@@ -5160,6 +5160,11 @@
 				"var_type"						"FIELD_INTEGER"
 				"count"		                     "1 2 3 4"
 			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"life_time"						"30"
+			}
 		}
 	}
 	"oblivion_dark_ritual"
@@ -25202,6 +25207,11 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_scepter"			"140 170 200"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stun_duration"				"2"
 			}
 		}
 	}
