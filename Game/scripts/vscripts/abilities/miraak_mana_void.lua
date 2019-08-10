@@ -33,8 +33,7 @@ function modifier_miraak_mana_void:OnAttackLanded (params)
             EmitSoundOn("Hero_Antimage.ManaBreak", params.target)
         end
 
-        self:GetAbility():PayManaCost()
-        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+        self:GetAbility():UseResources(true, false, true)
         self.void = false
     end
 end

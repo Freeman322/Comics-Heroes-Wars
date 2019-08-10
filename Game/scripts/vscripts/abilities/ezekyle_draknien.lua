@@ -53,8 +53,7 @@ function modifier_ezekyle_draknien:OnAttackLanded (params)
                     params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_ezekyle_draknien_debuff", {duration = self:GetAbility():GetSpecialValueFor("soul_duration")})
                     params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("ministun_duration")})
 
-                    self:GetAbility():PayManaCost()
-                    self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
+                    self:GetAbility():UseResources(true, false, true)
 
                     EmitSoundOn("Hero_DoomBringer.InfernalBlade.PreAttack", params.target)
                     EmitSoundOn("Hero_DoomBringer.Attack.Impact", params.target)

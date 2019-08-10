@@ -18,7 +18,7 @@ function modifier_alien_bite:OnAttackLanded(params)
         self:GetCaster():Heal(params.damage, self:GetParent())
         params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_alien_bite_debuff", {duration = self:GetAbility():GetSpecialValueFor("duration")})
         self:GetAbility():PayManaCost()
-        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
         self.bite = false
     end
 end

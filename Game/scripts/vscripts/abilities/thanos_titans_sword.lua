@@ -27,8 +27,7 @@ function modifier_thanos_titans_sword:OnAttackLanded (params)
             end
         end
 
-        self:GetAbility():PayManaCost()
-        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+        self:GetAbility():UseResources(true, false, true)
         self.sword = false
     end
 end

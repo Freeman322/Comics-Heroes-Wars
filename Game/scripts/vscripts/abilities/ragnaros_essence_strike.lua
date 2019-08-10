@@ -9,18 +9,17 @@ modifier_ragnaros_essence_strike = class({
 })
 function modifier_ragnaros_essence_strike:OnCreated() self.strike = false end
 function modifier_ragnaros_essence_strike:OnAttackLanded (params)
-    if self:GetParent () == params.attacker and self:GetParent():IsRealHero() and (self:GetAbility():GetAutoCastState() or self.strike) and self:GetAbility():IsOwnersManaEnough() and not params.target:IsBuilding() then
-    	EmitSoundOn("Hero_DoomBringer.InfernalBlade.PreAttack", params.target)
+	if self:GetParent () == params.attacker and self:GetAbility():IsCooldownReady() and self:GetParent():IsRealHero() and (self:GetAbility():GetAutoCastState() or self.strike) and self:GetAbility():IsOwnersManaEnough() and not params.target:IsBuilding() then
+		EmitSoundOn("Hero_DoomBringer.InfernalBlade.PreAttack", params.target)
 		EmitSoundOn("Hero_DoomBringer.InfernalBlade.Target", params.target)
 
 		params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("ministun_duration")})
-    	params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_ragnaros_essence_strike_target", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")})
+		params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_ragnaros_essence_strike_target", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")})
 
-		self:GetAbility():PayManaCost()
-		self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+		self:GetAbility():UseResources(true, false, true)
 
 		self.strike = false
-    end
+	end
 end
 function modifier_ragnaros_essence_strike:OnOrder(params)
 	if params.unit == self:GetParent() then

@@ -36,21 +36,22 @@ modifier_cosmos_cosmos_power = class({
 })
 function modifier_cosmos_cosmos_power:OnCreated() self.power = false end
 function modifier_cosmos_cosmos_power:OnAttackStart (params)
-     if not IsServer () then return end
-     if params.attacker == self:GetParent() and (self:GetAbility():GetAutoCastState() or self.power) and self:GetAbility():IsCooldownReady() and self:GetAbility():IsOwnersManaEnough() and not (params.target:IsMagicImmune() or params.target:IsBuilding()) then
-         ProjectileManager:CreateTrackingProjectile({
-             EffectName = "particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf",
-             Ability = self:GetAbility(),
-             iMoveSpeed = self:GetCaster():GetProjectileSpeed(),
-             Source = self:GetCaster(),
-             Target = params.target,
-             iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
-         })
-         EmitSoundOn("Hero_Abaddon.Curse.Proc", self:GetCaster())
-         self:GetAbility():PayManaCost()
-         self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
-         self.power = false
-     end
+    if not IsServer () then return end
+    if params.attacker == self:GetParent() and (self:GetAbility():GetAutoCastState() or self.power) and self:GetAbility():IsCooldownReady() and self:GetAbility():IsOwnersManaEnough() and not (params.target:IsMagicImmune() or params.target:IsBuilding()) then
+        ProjectileManager:CreateTrackingProjectile({
+            EffectName = "particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf",
+            Ability = self:GetAbility(),
+            iMoveSpeed = self:GetCaster():GetProjectileSpeed(),
+            Source = self:GetCaster(),
+            Target = params.target,
+            iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
+        })
+        EmitSoundOn("Hero_Abaddon.Curse.Proc", self:GetCaster())
+
+        self:GetAbility():UseResources(true, false, true)
+        
+        self.power = false
+    end
  end
 function modifier_cosmos_cosmos_power:OnOrder(params)
     if params.unit == self:GetParent() then

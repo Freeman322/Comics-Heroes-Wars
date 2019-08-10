@@ -29,8 +29,7 @@ function modifier_dimm_field:OnAttack(params)
             iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
         })
         EmitSoundOn("Ability.DarkRitual", self:GetCaster())
-        self:GetAbility():PayManaCost()
-        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+        self:GetAbility():UseResources(true, false, true)
         self.attack = false
     end
 end

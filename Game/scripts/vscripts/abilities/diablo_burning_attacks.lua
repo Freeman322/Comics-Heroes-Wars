@@ -15,8 +15,7 @@ function modifier_diablo_burning_attacks:OnAttackLanded (params)
         params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_diablo_burning_target", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")})
         params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("ministun_duration") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_diablo_1") or 0)})
 
-        self:GetAbility():PayManaCost()
-        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+        self:GetAbility():UseResources(true, false, true)
 
         EmitSoundOn("Hero_DoomBringer.Attack.Impact", params.target)
         EmitSoundOn("Hero_DoomBringer.InfernalBlade.PreAttack", params.target)

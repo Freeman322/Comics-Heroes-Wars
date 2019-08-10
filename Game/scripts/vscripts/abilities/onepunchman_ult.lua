@@ -100,8 +100,7 @@ function modifier_onepunchman_ult:OnAttackLanded (params)
                   damage_type = self:GetAbility():GetAbilityDamageType()
                 })
 
-                self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
-                self:GetAbility():PayManaCost()
+                self:GetAbility():UseResources(true, false, true)
               end
             end
         end

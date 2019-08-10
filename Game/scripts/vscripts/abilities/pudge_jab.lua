@@ -13,8 +13,8 @@ function modifier_pudge_jab:OnAttackLanded(params)
     if params.attacker == self:GetParent() and self:GetParent():IsRealHero() and self:GetAbility():IsCooldownReady() and self:GetAbility():IsOwnersManaEnough() and (self:GetAbility():GetAutoCastState() or self.jab) and not (params.target:IsBuilding() or params.target:IsAncient()) then
         params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
 
-        self:GetAbility():PayManaCost()
-        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+        self:GetAbility():UseResources(true, false, true)
+        
         ApplyDamage ({ --Урон по Пуджу
                 victim = self:GetParent(),
                 attacker = self:GetParent(),

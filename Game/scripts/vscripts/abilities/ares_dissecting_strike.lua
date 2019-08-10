@@ -16,7 +16,7 @@ end
 
 function modifier_ares_dissecting_strike:OnAttackLanded (params)
     if not IsServer() then return end
-    if params.attacker == self:GetParent() and self:GetParent():IsRealHero() and (self:GetAbility():GetAutoCastState() or self.strike) and self:GetAbility():IsOwnersManaEnough() then
+    if params.attacker == self:GetParent() and self:GetAbility():IsCooldownReady() and self:GetParent():IsRealHero() and (self:GetAbility():GetAutoCastState() or self.strike) and self:GetAbility():IsOwnersManaEnough() then
         local target = params.target
         if self.bLightning then
             local nFXIndex = ParticleManager:CreateParticle( "particles/hero_ares/ares_immortal_lightning_weapon_proc.vpcf", PATTACH_CUSTOMORIGIN, target );
@@ -63,8 +63,7 @@ function modifier_ares_dissecting_strike:OnAttackLanded (params)
             ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetParent():GetAbsOrigin())
         end
 
-        self:GetAbility():PayManaCost()
-        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+        self:GetAbility():UseResources(true, false, true)
         self.strike = false
     end
 end

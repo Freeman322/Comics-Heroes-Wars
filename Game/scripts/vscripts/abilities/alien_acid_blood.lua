@@ -14,7 +14,7 @@ function modifier_acid_blood:OnTakeDamage(params)
     if params.unit == self:GetParent() then
         if self:GetAbility():IsCooldownReady() and self:GetParent():IsRealHero() and params.attacker:IsRealHero()  then
             CreateModifierThinker(self:GetCaster(), self:GetAbility(), "modifier_acid_blood_thinker", {duration = self:GetAbility():GetSpecialValueFor("duration")}, self:GetParent():GetAbsOrigin(), self:GetCaster():GetTeam(), false)
-            self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+            self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
         end
     end
 end

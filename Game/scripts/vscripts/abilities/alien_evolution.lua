@@ -16,6 +16,6 @@ function modifier_alien_evolution:OnIntervalThink()
         EmitSoundOn("", self:GetCaster())
 
         self:GetAbility():EndCooldown()
-        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel() - 1))
+        self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
     end
 end
