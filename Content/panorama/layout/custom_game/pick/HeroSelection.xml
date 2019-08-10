@@ -57,7 +57,7 @@
                </Panel>
             </Panel>
             <Panel id="HeroContainer">
-               <DOTAHeroInspect id="HeroInspect" class="BioTabVisible InspectingHero InspectHeroIntelligence InspectHeroComplexity3" tabindex="auto" selectionpos="auto" heroid="1"/>
+               <DOTAHeroInspect id="HeroInspect" class="BioTabVisible InspectingHero InspectHeroIntelligence InspectHeroComplexity3" tabindex="auto" selectionpos="auto" inspect_hero_id="1"/>
                <Button id="PickButton" onactivate="PickHero()">
                   <Label id="HeroSelectedTarget" text="" />
                   <Label class="PickText" text="Select" />

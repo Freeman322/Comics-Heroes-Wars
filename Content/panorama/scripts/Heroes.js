@@ -571,3 +571,15 @@ Heroes.GetHeroID = function(hero_name) {
 
     return 1
 }
+
+
+Heroes.GetAbilities = function(hero_name) {
+    var abils = GameUI.CustomUIConfig().PlayerTables.GetTableValue("heroes_abilities", "abilities")
+
+    if (abils != null && abils != undefined)
+    {
+        return abils[hero_name]
+    }
+
+    return []
+}

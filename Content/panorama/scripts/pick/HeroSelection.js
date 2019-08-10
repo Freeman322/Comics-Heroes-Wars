@@ -199,7 +199,39 @@ function OnHeroSelected(name, panel) {
 }
 
 function previewHero(hero) {
-    $("#HeroContainer").BCreateChildren('<DOTAHeroInspect id="HeroInspect" class="BioTabVisible InspectingHero InspectHeroIntelligence InspectHeroComplexity3" tabindex="auto" selectionpos="auto" heroid="'+ Heroes.GetHeroID(hero) +'"/>');
+    var abilityPanel = $("#HeroInspect").FindChildTraverse("HeroAbilities");
+    var heroName = $("#HeroInspect").FindChildTraverse("HeroInspectHeroName");
+    var portrait = $("#HeroInspect").FindChildTraverse("HeroMovie");
+
+    for (var j = 0; j < abilityPanel.GetChildCount(); j++) {
+        var abil = abilityPanel.GetChild(j)
+        abil.DeleteAsync(0);
+    }
+
+    heroName.text = $.Localize(hero)
+    portrait.heroid = Heroes.GetHeroID(hero)
+
+    var abils = Heroes.GetAbilities(hero)
+
+    for (var abil in abils) {
+        var ability = $.CreatePanel('DOTAAbilityImage', abilityPanel, undefined);
+        var name = abils[abil];
+
+        ability.abilityname = name
+
+        var mouseOverCapture = (function(name, ability) {
+            return function() { OnTooltipStart(name, ability) }
+        }
+        (name, ability));
+
+        var mouseOutCapture = (function(ability) {
+            return function() { OnTooltipOver(ability) }
+        }
+        (ability));
+
+        ability.SetPanelEvent("onmouseover", mouseOverCapture);
+        ability.SetPanelEvent("onmouseout", mouseOutCapture);
+    }
 
     $("#PickButton").selectedhero = hero
 }

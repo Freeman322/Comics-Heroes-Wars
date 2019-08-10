@@ -2201,7 +2201,7 @@
 		"Ability11"				"special_bonus_all_stats_12"
 		"Ability12"				"special_bonus_hp_regen_40"
 		"Ability13"				"special_bonus_unique_iron_man"
-		"Ability14"				"special_bonus_cooldown_reduction_25"
+		"Ability14"				"special_bonus_unique_clockwerk_2"
 		"Ability15"				"special_bonus_spell_amplify_3"
 		"Ability16"				"special_bonus_spell_block_15"
 		"Ability17"				"special_bonus_all_stats_20"
