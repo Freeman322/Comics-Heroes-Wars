@@ -131,7 +131,6 @@ function modifier_item_frostmourne:Reincarnate()
         -- play sound
         EmitSoundOn("Hero_SkeletonKing.Reincarnate", self:GetParent())
 
-        self:GetAbility():SetCurrentCharges(self:GetAbility():GetCurrentCharges() - 1)
     end
 end
 

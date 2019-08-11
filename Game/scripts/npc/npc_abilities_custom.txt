@@ -8417,12 +8417,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intelligence_stole"		"20 30 40 50"
+				"intelligence_stole"		"15 25 30 40"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intelligence_stole_dur"	"16"
+				"intelligence_stole_dur"	"14"
 			}
 			"03"
 			{
@@ -8490,7 +8490,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"agi_gain"				"4"
+				"agi_gain"				"3"
 			}
 			"02"
 			{
@@ -9498,6 +9498,7 @@
 		"BaseClass"			        	"ability_lua"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"custom/zoom_passive1"
 		"ScriptFile"							"abilities/zoom_aura.lua"
@@ -29963,7 +29964,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"primary_atr_drain"				"20 25 30 35"
+				"primary_atr_drain"				"10 15 20 25"
 			}
 			"07"
 			{
@@ -30001,7 +30002,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"daynight_attr"				"15 20 25 30"
+				"daynight_attr"				"10 15 20 25"
 			}
 			"02"
 			{
@@ -30011,13 +30012,13 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"vampiric"					"20 25 30 35"
+				"vampiric"					"10 15 20 30"
 				"LinkedSpecialBonus"		"special_bonus_unique_molag_bal_2"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"fade_delay"				"1.0"
+				"fade_delay"				"2.0"
 			}
 			"05"
 			{

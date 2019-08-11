@@ -54,6 +54,8 @@
 
 	"item_ice_pearl"            "REMOVE"
 	"item_recipe_ice_pearl"     "REMOVE"
+	"item_overpower_bow"           "REMOVE"
+	"item_recipe_overpower_bow"    "REMOVE"
 
 
 	"special_bonus_strength_25"
