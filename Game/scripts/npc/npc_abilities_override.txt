@@ -688,6 +688,7 @@
 				"var_type"					"FIELD_INTEGER"
 				"damage_scepter"				"725 1000 1375"
 				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
+				"RequiresScepter"				"1"
 			}
 			"03"
 			{
@@ -698,6 +699,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"mana_cost_scepter"				"200 350 500"
+				"RequiresScepter"				"1"
 			}
 			"05"
 			{
@@ -713,6 +715,7 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"splash_radius_scepter"			"425"
+				"RequiresScepter"				"1"
 			}
 		}
 	}

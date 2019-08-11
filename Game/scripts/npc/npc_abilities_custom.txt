@@ -29456,16 +29456,37 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"cloud_duration"	"35"
+				"RequiresScepter"			"1"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"cloud_bolt_interval"	"2.25"
+				"RequiresScepter"			"1"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"cloud_radius"			"450"
+				"RequiresScepter"			"1"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hits_to_kill_tooltip"		"8"
+				"RequiresScepter"			"1"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"creep_hits_to_kill_tooltip"		"16"
+				"RequiresScepter"			"1"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cloud_bounty_tooltip"		"100"
+				"RequiresScepter"			"1"
 			}
 		}
 	}
