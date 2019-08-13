@@ -43,10 +43,10 @@
 
 #HeroGrid {
     width: 75%;
-    height: 85%;
-    margin-top: -5.5%;
-    vertical-align: center;
+    height: 100%;
+    vertical-align: bottom;
     horizontal-align: left;
+
     flow-children: down;
 }
 

@@ -38376,4 +38376,572 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Mod: Life and Death
+	//=================================================================================================================
+	"mod_life_and_death"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"ability_lua"
+		"ScriptFile"					"abilities/mod_life_and_death.lua"
+		"AbilityTextureName"     		"custom/mod_life_and_death"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
+
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"GLOBAL"
+		"AbilityCastPoint"				"1.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"190 180 170"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"350 460 520"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_elder_titan/elder_titan_ancestral_spirit_cast.vpcf"
+			"particle"				"particles/mod/life_and_death_word_buff.vpcf"
+			"particle"				"particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_howl_buff.vpcf"
+			"particle"				"particles/econ/items/axe/axe_helm_shoutmask/axe_beserkers_call_buff_shout_mask.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.5 3.0 3.5"
+				"LinkedSpecialBonus"		"special_bonus_unique_mod_1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"					"25"
+				"LinkedSpecialBonus"		"special_bonus_unique_mod_2"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Mod: Dark Strike
+	//=================================================================================================================
+	"mod_dark_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"ability_lua"
+		"ScriptFile"					"abilities/mod_dark_strike.lua"
+		"AbilityTextureName"     		"custom/mod_dark_strike"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500 600 700 800"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"36.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+
+		"precache"
+		{
+			"particle"				"particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_dagger_debuff.vpcf"
+			"particle"				"particles/econ/items/lifestealer/lifestealer_immortal_backbone_gold/lifestealer_immortal_backbone_gold_rage_cast_flashnoise.vpcf"
+			"particle"				"particles/units/heroes/hero_dragon_knight/dragon_knight_dragon_tail_dragonform_proj_impact.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"6.0"
+				"LinkedSpecialBonus"				"special_bonus_unique_mod_3"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_incomin_per_second"			"4 6 8 10"
+				"LinkedSpecialBonus"				"special_bonus_unique_mod_4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_per_second"					"12 24 32 48"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"move_speed_slow_pct"				"20 30 40 50"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Mod: Mirror in Glass
+	//=================================================================================================================
+	"mod_mirror_in_glass"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"ability_lua"
+		"ScriptFile"					"abilities/mod_mirror_in_glass.lua"
+		"AbilityTextureName"     		"custom/mod_mirror_in_glass"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+
+		"AbilitySound"					"Hero_Necrolyte.DeathPulse"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8 7 6 5"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"				"100 150 200 250"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 130 160 190"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"			"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_soul"			"24 32 48 56"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_souls"				"6 8 10 12"
+				"LinkedSpecialBonus"		"special_bonus_unique_mod_5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"			"400"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	//=================================================================================================================
+	// Mod: Ways of Fate
+	//=================================================================================================================
+	"mod_ways_of_fate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"ability_lua"
+		"ScriptFile"					"abilities/mod_ways_of_fate.lua"
+		"AbilityTextureName"     		"custom/mod_ways_of_fate"
+		
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"					"700"		
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_min"					"10 20 30 40" 
+				"CalculateSpellDamageTooltip"		"1"
+			} 	
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_max"					"40 50 60 70"
+				"CalculateSpellDamageTooltip"		"1"
+			}		
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"special_bonus_unique_mod_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1"
+			}
+		}
+	}
+	"special_bonus_unique_mod_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"25"
+			}
+		}
+	}
+	"special_bonus_unique_mod_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2"
+			}
+		}
+	}
+	"special_bonus_unique_mod_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"4"
+			}
+		}
+	}
+	"special_bonus_unique_mod_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Valkorion: There is only the force
+	//=================================================================================================================
+	"valkorion_illusion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"ability_lua"
+		"ScriptFile"					"abilities/valkorion_illusion.lua"
+		"AbilityTextureName"     		"custom/valkorion_illusion"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		
+		"HasScepterUpgrade"			"1"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Ability: Valkorion Force Touch
+	//=================================================================================================================
+	"valkorion_force_touch"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"ability_lua"
+		"ScriptFile"					"abilities/valkorion_force_touch.lua"
+		"AbilityTextureName"     		"custom/valkorion_force"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_regen_ptc"		"15 25 35 45"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health_regen_ptc"		"10 20 30 40"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spell_steal_ptc"		"50"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"				"600"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	//=================================================================================================================
+	// Ability: Valkorion's Force Wave
+	//=================================================================================================================
+	"valkorion_force_wave"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"ability_lua"
+		"ScriptFile"					"abilities/valkorion_force_wave.lua"
+		"AbilityTextureName"     		"custom/valkorion_force_wave"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"11 10 9 8"
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"130 145 160 175"
+		
+		"precache"
+		{
+			"particle"				"particles/econ/items/axe/axe_ti9_immortal/axe_ti9_call.vpcf"
+			"particle"				"particles/econ/events/ti6/maelstorm_ti6.vpcf"
+			"particle"				"particles/units/heroes/hero_magnataur/magnataur_skewer_debuff.vpcf"
+			"particle"				"particles/status_fx/status_effect_earth_spirit_boulderslow.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"				"425"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.3 0.6 0.9 1.2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"				"130 270 310 460"
+				"LinkedSpecialBonus"	"special_bonus_unique_valkorion_1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}	
+	"special_bonus_unique_valkorion_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"250"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Valkorion: Chain Fade
+	//=================================================================================================================
+	"valkorion_ligning_explosion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"ability_lua"
+		"ScriptFile"					"abilities/valkorion_ligning_explosion.lua"
+		"AbilityTextureName"     		"custom/valkorion_ligning_explosion"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 130 140 150"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800 800 800 800"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.35"	// can chain to multiple units
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"						"80 160 240 320"
+				"LinkedSpecialBonus"			"special_bonus_unique_valkorion_2"
+			}			
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"10.0 10.0 10.0 10.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"						"440"
+			}			
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"magical_armor_reductuion"		"20 30 40 50"
+			}
+		}
+	}	
+	"special_bonus_unique_valkorion_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"125"
+			}
+		}
+	}
 }
