@@ -111,8 +111,6 @@ function mod_ways_of_fate:OnChannelFinish( bInterrupted )
         EmitSoundOn( sound_cast1, caster )
         EmitSoundOn( sound_cast2, caster )
     end 
-
-    self.m_flElapsedTime = 0
 end
 
 function mod_ways_of_fate:OnProjectileHit( target, location )
@@ -125,14 +123,14 @@ function mod_ways_of_fate:OnProjectileHit( target, location )
         local multiplier = #self.units
         
 		local base_damage = self:GetSpecialValueFor( "damage" )
-		local plus_damage = self:GetSpecialValueFor( "bonus_damage_per_target" ) + (self:GetSpecialValueFor( "bonus_damage_per_target" ) * (self.m_flElapsedTime - 1)) 
+		local plus_damage = self:GetSpecialValueFor( "bonus_damage_per_target" )
         local slow = self:GetSpecialValueFor( "slow_duration" )
         
 		-- damage
 		local damageTable = {
 			victim = target,
 			attacker = self:GetCaster(),
-			damage = base_damage + multiplier*plus_damage,
+			damage = (base_damage + multiplier*plus_damage) * self.m_flElapsedTime,
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self, --Optional.
         }

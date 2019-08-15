@@ -38404,7 +38404,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"190 180 170"
+		"AbilityCooldown"				"120"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -38523,7 +38523,7 @@
 		"AbilityTextureName"     		"custom/mod_mirror_in_glass"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 
@@ -38536,7 +38536,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8 7 6 5"
+		"AbilityCooldown"				"60"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -38552,26 +38552,77 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"area_of_effect"			"500"
+				"var_type"				"FIELD_FLOAT"
+				"cast_time_tooltip"	"1.67"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_soul"			"24 32 48 56"
+				"var_type"			"FIELD_INTEGER"
+				"requiem_radius"	"1000"		
 			}
 			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_reduction_ms"	"-25"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_reduction_damage"	"-50"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_reduction_tooltip"	"-50"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"requiem_slow_duration"	"5.0"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_reduction_radius"	"700 700 700"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_soul_conversion"	"2 2 2"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_line_width_start"	"125"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_line_width_end"	"425"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_line_speed"	"700 700 700"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"soul_death_release"	"0.5"
+			}			
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_soul"			"12 18 24 36"
+			}
+			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"max_souls"				"6 8 10 12"
 				"LinkedSpecialBonus"		"special_bonus_unique_mod_5"
 			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"			"400"
-			}
-			"05"
+			"15"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"preattack_damage_per_soul"	"2 2.5 3.0 3.5"
@@ -38772,10 +38823,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				
 		
-		"HasScepterUpgrade"			"1"
-		
-		
+		"AbilityCooldown"				"60 30 10"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
@@ -38887,7 +38938,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"				"130 270 310 460"
+				"damage"				"90 180 270 360"
 				"LinkedSpecialBonus"	"special_bonus_unique_valkorion_1"
 			}
 		}

@@ -1,19 +1,23 @@
 if not valkorion_illusion then valkorion_illusion = class({}) end
 LinkLuaModifier( "modifier_valkorion_illusion", "abilities/valkorion_illusion.lua", LUA_MODIFIER_MOTION_NONE )
 
+valkorion_illusion.m_hIllusion = nil
+
 function valkorion_illusion:OnOwnerDied()
 	if IsServer() then
-          if self:IsActivated() and self:IsTrained() and self:GetCaster():IsRealHero() then
-               local double = CreateUnitByName( self:GetCaster():GetUnitName(), self:GetCaster():GetAbsOrigin(), true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber())
-			double:SetControllableByPlayer(self:GetCaster():GetPlayerID(), false)
+		if self:IsActivated() and self:IsTrained() and self:GetCaster():IsRealHero() and self:IsCooldownReady() then
+			if self.m_hIllusion and self.m_hIllusion:IsNull() == false then UTIL_Remove(m_hIllusion) end 
+			
+               self.m_hIllusion = CreateUnitByName( self:GetCaster():GetUnitName(), self:GetCaster():GetAbsOrigin(), true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber())
+			self.m_hIllusion:SetControllableByPlayer(self:GetCaster():GetPlayerID(), false)
 
 			local caster_level = self:GetCaster():GetLevel()
 			for i = 2, caster_level do
-				double:HeroLevelUp(false)
+				self.m_hIllusion:HeroLevelUp(false)
 			end
 
 			for ability_id = 0, 15 do
-				local ability = double:GetAbilityByIndex(ability_id)
+				local ability = self.m_hIllusion:GetAbilityByIndex(ability_id)
 				if ability then	
 					ability:SetLevel(self:GetCaster():GetAbilityByIndex(ability_id):GetLevel())
 					if ability:GetName() == "valkorion_illusion" then
@@ -27,28 +31,30 @@ function valkorion_illusion:OnOwnerDied()
 				local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
 				if item_in_caster ~= nil and not item_in_caster:IsDroppableAfterDeath() then
 					local item_name = item_in_caster:GetName()
-					if not (item_name == "item_aegis" or item_name == "item_smoke_of_deceit" or item_name == "item_recipe_refresher" or item_name == "item_refresher" or item_name == "item_ward_observer" or item_name == "item_ward_sentry") then
-						local item_created = CreateItem( item_in_caster:GetName(), double, double)
-						double:AddItem(item_created)
+					if not (item_name == "item_aegis" or item_name == "item_frostmourne") then
+						local item_created = CreateItem( item_in_caster:GetName(), self.m_hIllusion, self.m_hIllusion)
+						self.m_hIllusion:AddItem(item_created)
 					end
 				end
 			end
 
-			double:SetMaximumGoldBounty(0)
-			double:SetMinimumGoldBounty(0)
-			double:SetDeathXP(0)
-			double:SetAbilityPoints(0) 
+			self.m_hIllusion:SetMaximumGoldBounty(0)
+			self.m_hIllusion:SetMinimumGoldBounty(0)
+			self.m_hIllusion:SetDeathXP(0)
+			self.m_hIllusion:SetAbilityPoints(0) 
 
-			double:SetHasInventory(false)
-			double:SetCanSellItems(false)
+			self.m_hIllusion:SetHasInventory(false)
+			self.m_hIllusion:SetCanSellItems(false)
 
-			double:AddNewModifier(self:GetCaster(), self, "modifier_valkorion_illusion", nil)
-			double:AddNewModifier(self:GetCaster(), self, "modifier_arc_warden_tempest_double", nil)
-			double:AddNewModifier(self:GetCaster(), self, "modifier_kill", {["duration"] = self:GetCaster():GetLevel() * 2})
+			self.m_hIllusion:AddNewModifier(self:GetCaster(), self, "modifier_valkorion_illusion", nil)
+			self.m_hIllusion:AddNewModifier(self:GetCaster(), self, "modifier_arc_warden_tempest_self.m_hIllusion", nil)
+			self.m_hIllusion:AddNewModifier(self:GetCaster(), self, "modifier_kill", {["duration"] = self:GetCaster():GetLevel() * 2})
 
-			EmitSoundOn("Hero_ArcWarden.TempestDouble.FP", double)
+			EmitSoundOn("Hero_ArcWarden.Tempestself.m_hIllusion.FP", self.m_hIllusion)
 
-			FindClearSpaceForUnit(double, double:GetAbsOrigin(), false)
+			FindClearSpaceForUnit(self.m_hIllusion, self.m_hIllusion:GetAbsOrigin(), false)
+
+			self:UseResources(false, false, true)
           end 
 	end
 end

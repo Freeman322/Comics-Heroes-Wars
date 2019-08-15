@@ -81,7 +81,7 @@ end
 
 function modifier_valkorion_force_touch_passive:OnDestroy()
      if IsServer() then
-          if self:GetCaster():IsRealHero() then
+          if self:GetCaster() and self:GetCaster():IsNull() == false and self:GetCaster():IsRealHero() then
                self:GetAbility():Set(self.m_iManaRegen * (-1), self.m_iHealthRegen * (-1), self.m_iSpell * (-1))
           end
      end 
