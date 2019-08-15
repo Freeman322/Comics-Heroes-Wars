@@ -147,7 +147,7 @@ end
 
 function item_axe_of_phractos_modifier_aura:OnIntervalThink()
     if IsServer() then
-        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+25), damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+60), damage_type = DAMAGE_TYPE_PURE, damage_type = DOTA_DAMAGE_TYPE_MAGICAL})
     end
 end
 
