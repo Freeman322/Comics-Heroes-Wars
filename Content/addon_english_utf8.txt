@@ -11347,5 +11347,42 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_4"	"+4s Frost Shield Duration"
 
 		"DOTA_Tooltip_modifier_spiderman_extermination_dummy"	"Cooldown"
+
+		"DOTA_Tooltip_ability_sheefu_tears_of_fears"                                      "Tears Of Fears"
+		"DOTA_Tooltip_ability_sheefu_tears_of_fears_Description"                          "If the target has a debuff, then she takes increased physical damage from Master Shifu. Upon reaching the maximum number of stacks, the target will instantly lose part of the mana, which was dealt in the form of magic damage."
+		"DOTA_Tooltip_ability_sheefu_tears_of_fears_required_hits"                        "REQUIRED HITS:"
+		"DOTA_Tooltip_ability_sheefu_tears_of_fears_counter_duration"                     "DURATION:"
+		"DOTA_Tooltip_ability_sheefu_tears_of_fears_mana_burn"                            "%MANA BURN:"
+		"DOTA_Tooltip_ability_sheefu_tears_of_fears_bonus_damage"                         "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_sheefu_tears_of_fears_max_damage_ptc"                       "%MAX DAMAGE CAP BY HP:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_sheefu_1"                              "Tears Of Fears ignores damage limit"
+
+		"DOTA_Tooltip_ability_sheefu_dragon_swipe"                                        "Dragon Swipe"
+		"DOTA_Tooltip_ability_sheefu_dragon_swipe_Description"                            "Creates an aura in the area, in which part of Shifu’s damage is inflicted on enemies."
+		"DOTA_Tooltip_ability_sheefu_dragon_swipe_radius"                                 "RADIUS:"
+		"DOTA_Tooltip_ability_sheefu_dragon_swipe_duration"                               "DURATION:"
+		"DOTA_Tooltip_ability_sheefu_dragon_swipe_interval"                               "INTERVAL:"
+		"DOTA_Tooltip_ability_sheefu_dragon_swipe_damage"                                 "%DAMAGE:"
+		"DOTA_Tooltip_ability_sheefu_dragon_swipe_bonus_damage"                           "BONUS PHYSICAL DAMAGE:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_sheefu_2"                              "+15% damage for Dragon Swipe"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_sheefu_3"                              "Applies real attacks for Dragon Swipe"
+
+		"DOTA_Tooltip_ability_sheefu_kung_fu"                                             "Kung Fu"
+		"DOTA_Tooltip_ability_sheefu_kung_fu_Description"                                 "With a small chance, Shifu’s will ignore absolutely any defense and cause part of the damage in the form of hp removal."
+		"DOTA_Tooltip_ability_sheefu_kung_fu_proc_chance"                                 "%IGNORE CHANCE:"
+		"DOTA_Tooltip_ability_sheefu_kung_fu_damage_proc_pct"                             "%DAMAGE:"
+
+		"DOTA_Tooltip_ability_sheefu_death_stranding"                                     "Death Stranding"
+		"DOTA_Tooltip_ability_sheefu_death_stranding_Description"                         "Curses the soul of the enemy, slowing it to the limit and dealing additional damage for each attack from the current supply of mana."
+		"DOTA_Tooltip_ability_sheefu_death_stranding_mana_burn_pct"                       "%MANA BURN:"
+		"DOTA_Tooltip_ability_sheefu_death_stranding_duration"                            "DURATION:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_clockwerk_2"                            "+235 damage for Rocket"
+
+		"npc_dota_hero_mod"													  "Marquis of Death"
+		"npc_dota_hero_valkorion"											  "Valkorion"
 	}	
 }

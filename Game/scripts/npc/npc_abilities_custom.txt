@@ -38565,6 +38565,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"projectile_speed"			"400"
 			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"preattack_damage_per_soul"	"2 2.5 3.0 3.5"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -38575,37 +38580,82 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			        	"ability_lua"
-		"ScriptFile"					"abilities/mod_ways_of_fate.lua"
-		"AbilityTextureName"     		"custom/mod_ways_of_fate"
-		
+		"BaseClass"			        			"ability_lua"
+		"ScriptFile"							"abilities/mod_ways_of_fate.lua"
+		"AbilityTextureName"     				"custom/mod_ways_of_fate"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
 		
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"					"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"						"1"
+
+		"AbilityCastRange"						"1400"
+		"AbilityCastPoint"						"0"
+		"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_3"
+
+		"AbilityCooldown"						"28 24 20 16"
+		"AbilityManaCost"						"100 110 120 130"
+
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityChannelTime"					"3.5"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"
+
+		"precache"
+		{
+			"particle"						"game_sounds_grimstroke.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
-			{	
+			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"					"700"		
+				"start_radius"					"120"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_min"					"10 20 30 40" 
-				"CalculateSpellDamageTooltip"		"1"
-			} 	
+				"var_type"					"FIELD_INTEGER"
+				"end_radius"					"160"
+			}
 			"03"
 			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"				"2400"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"						"120 180 240 300"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage_per_target"		"16 24 32 40"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow_pct"				"50 60 70 80"
+			}
+			"07"
+			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_max"					"40 50 60 70"
-				"CalculateSpellDamageTooltip"		"1"
-			}		
+				"slow_duration"				"1.5"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"vision_duration"				"2.0"
+			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	"special_bonus_unique_mod_1"
 	{
@@ -38808,6 +38858,7 @@
 		"precache"
 		{
 			"particle"				"particles/econ/items/axe/axe_ti9_immortal/axe_ti9_call.vpcf"
+			"particle"				"particles/econ/items/monkey_king/arcana/water/monkey_king_spring_cast_arcana_water.vpcf"
 			"particle"				"particles/econ/events/ti6/maelstorm_ti6.vpcf"
 			"particle"				"particles/units/heroes/hero_magnataur/magnataur_skewer_debuff.vpcf"
 			"particle"				"particles/status_fx/status_effect_earth_spirit_boulderslow.vpcf"

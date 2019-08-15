@@ -360,24 +360,24 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_lua"
+		"BaseClass"					"item_lua"
 		"ID"							"9030"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ScriptFile"					"items/item_axe_of_phractos.lua"
-		"Model"							"models/props_gameplay/red_box.vmdl"
-		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"            "custom/axe_of_phractos"
+		"Model"						"models/props_gameplay/red_box.vmdl"
+		"Effect"					   	"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"            	"custom/axe_of_phractos"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"11000"
+		"ItemCost"					"11000"
 		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		"AbilityCooldown"				"2.0"
-		"AbilityDamage"					"200"
+		"AbilityCooldown"				"0.5"
+		"AbilityDamage"				"200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3100,12 +3100,12 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"9233"
-		"BaseClass"						"item_datadriven"
+		"BaseClass"					"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"800"
+		"ItemCost"					"2100"
 		"ItemShopTags"					""
-		"AbilityTextureName"            "recipe"
+		"AbilityTextureName"           	"recipe"
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
@@ -6296,37 +6296,37 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"			"100"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"				"120"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_status_resist"		"25"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_status_resist"		"30"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"lifesteal_percent"			"35"
 			}
 			"05"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"unholy_lifesteal_percent"	"235"
 			}
 			"06"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"unholy_attack_speed"		"200"
 			}
 			"07"
 			{
-				"var_type"					"FIELD_FLOAT"
+				"var_type"				"FIELD_FLOAT"
 				"unholy_duration"			"5.0"
 			}
 		}

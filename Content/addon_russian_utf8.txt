@@ -1240,8 +1240,7 @@
 		//джокер
 
 		"DOTA_TOOLTIP_ABILITY_joker_suicide" 									"Injustice"
-		"DOTA_TOOLTIP_ABILITY_joker_suicide_Description" 						"Джокеру надоели обычные минки, и он устраивает локальный ядерный взрыв, который нанесет огромный урон и застанит всех врагов на 2 секунды. Урон зависит от максимальной маны Джокера. \n\nУлучшается с Aghanim's Scepter."
-		"DOTA_Tooltip_ability_joker_suicide_Lore"								"Шуточка удалась."
+		"DOTA_TOOLTIP_ABILITY_joker_suicide_Description" 						"Джокер устраивает локальный ядерный взрыв, который нанесет огромный урон и застанит всех врагов на %stun_duration% секунды. Урон зависит от максимальной маны Джокера. \n\nУлучшается с Aghanim's Scepter."
 		"DOTA_Tooltip_ability_joker_suicide_damage"							    "%УРОН:"
 		"DOTA_Tooltip_ability_joker_suicide_radius"							    "РАДИУС:"
 		"DOTA_Tooltip_ability_joker_suicide_hp_cost"							"%ЦЕНА ЗДОРОВЬЯ:"
@@ -2145,7 +2144,7 @@
 		"DOTA_Tooltip_ability_zoom_charge_of_darkness"													"Relativistic Run"
 
 		"DOTA_Tooltipe_modifiers_blackzoom_time_crystal"												"Временная линия заблокирована."
-		"DOTA_Tooltip_ability_zoom_charge_of_darkness_Description"  									"Зум устремляется к цели на релятивистской скорости, при столкновении нанося ей урон, равный текущей скорости. Если на целе был ECHO SHELL, то цель тоже возьмет разбег на Зума, но не нанесет ему урона."
+		"DOTA_Tooltip_ability_zoom_charge_of_darkness_Description"  									"Зум устремляется к цели на релятивистской скорости, при столкновении нанося ей урон, равный текущей скорости."
 		"DOTA_Tooltip_ability_zoom_charge_of_darkness_movement_speed"									"СКОРОСТЬ:"
 		"DOTA_Tooltip_ability_zoom_charge_of_darkness_damage"											"%УРОН:"
 
@@ -3632,11 +3631,8 @@
 		"DOTA_Tooltip_ability_ragnaros_fade_mana_drain"                                   "%ПОПОЛНЕНИЕ МАНЫ:"
 
 		"DOTA_Tooltip_ability_ragnaros_essence_strike"                                    "Essence Strike"
-		"DOTA_Tooltip_ability_ragnaros_essence_strike_Description"                        "Переключаемая - Рагнарос поджигает врага своим Сульфурасом, оглушая на 0.3 сек. Цель горит 4.0 сек. и получает 40 + 1.25%/2.5%/3.75%/5% урона от максимального запаса здоровья в секунду."
-		"DOTA_Tooltip_ability_ragnaros_essence_strike_burn_damage"                        "БАЗОВЫЙ УРОН:"
-		"DOTA_Tooltip_ability_ragnaros_essence_strike_burn_damage_pct"                    "%УРОН"
-		"DOTA_Tooltip_ability_ragnaros_essence_strike_burn_duration"                      "ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_ragnaros_essence_strike_ministun_duration"                  "ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+		"DOTA_Tooltip_ability_ragnaros_essence_strike_Description"                        "Переключаемая - Рагнарос поджигает врага своим Сульфурасом, оглушая на %ministun_duration% сек. Цель горит %burn_duration% сек. и получает %burn_damage% + %burn_damage_pct%%  урона от максимального запаса здоровья в секунду."
+
 
 		"DOTA_Tooltip_ability_ragnaros_hells_gate"                                        "Hells Gate"
 		"DOTA_Tooltip_ability_ragnaros_hells_gate_Description"                            "Активируемая: Рагнарос разливает лужу с лавой, нанося урон врагам в области."
@@ -4566,7 +4562,7 @@
 
 
 		"DOTA_Tooltip_ability_ragnaros_shine_soul"                                        "Shine Soul"
-		"DOTA_Tooltip_ability_ragnaros_shine_soul_Description"                            "Аура - Покрывает землю вокруг героя пламенем, которое наносит урон всем врагам в области действия и замедляет. Имеет 15% встроенного вампиризма."
+		"DOTA_Tooltip_ability_ragnaros_shine_soul_Description"                            "Аура - Покрывает землю вокруг героя пламенем, которое наносит урон всем врагам в области действия и замедляет. Имеет %bonus_vampirism%%  встроенного вампиризма."
 		"DOTA_Tooltip_ability_ragnaros_shine_soul_aura_radius"                            "РАДИУС АУРЫ:"
 		"DOTA_Tooltip_ability_ragnaros_shine_soul_aura_damage"                            "УРОН:"
 		"DOTA_Tooltip_ability_ragnaros_shine_soul_aura_slowing"                           "%ЗАМЕДЛЕНИЕ:"
@@ -6635,8 +6631,8 @@
 
 		"DOTA_Tooltip_ability_miraak_mana_void"                                           "Mana Void"
 		"DOTA_Tooltip_ability_miraak_mana_void_Description"                               "При атаке переводит часть маны в урон."
-		"DOTA_Tooltip_ability_miraak_mana_void_mana_damage"                               "MANA DAMAGE:"
-		"DOTA_Tooltip_ability_miraak_mana_void_ministun_duration"                         "MINISTUN DURATION:"
+		"DOTA_Tooltip_ability_miraak_mana_void_mana_damage"                               "МАНЫ В УРОН:"
+		"DOTA_Tooltip_ability_miraak_mana_void_ministun_duration"                         "ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
 
 		"DOTA_Tooltip_ability_miraak_mark_for_death"                                      "Mark For Death"
 		"DOTA_Tooltip_ability_miraak_mark_for_death_Description"                          "Помечает противника магической печатью, которая наносит ему периодический урон и врагам в области рядом с целью."

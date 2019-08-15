@@ -7411,7 +7411,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"status_resistance"			"30"
+				"status_resistance"			"20"
 			}
 		}
 	}

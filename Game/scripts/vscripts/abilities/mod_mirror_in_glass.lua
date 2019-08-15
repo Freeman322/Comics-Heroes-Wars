@@ -9,6 +9,7 @@ function mod_mirror_in_glass:IsRefreshable()
 end
 
 local MINI_STUN_DURATION = 0.03
+local EF_DMG_CAP = 250
 
 function mod_mirror_in_glass:GetCooldown( nLevel )
     return self.BaseClass.GetCooldown( self, nLevel )
@@ -100,6 +101,22 @@ function modifier_mod_mirror_in_glass:GetModifierAura()
 	return "modifier_mod_mirror_in_glass_target"
 end
 
+function modifier_mod_mirror_in_glass:DeclareFunctions()
+     local funcs = {
+         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
+     }
+     return funcs
+end
+ 
+function modifier_mod_mirror_in_glass:GetModifierPreAttack_BonusDamage()
+     local damage = self:GetStackCount() * self:GetAbility():GetSpecialValueFor( "preattack_damage_per_soul" )
+
+     if (damage > EF_DMG_CAP) then damage = 250 end 
+
+     return damage
+end
+
+ 
 modifier_mod_mirror_in_glass_target = class({})
 
 function modifier_mod_mirror_in_glass_target:IsHidden() return true end

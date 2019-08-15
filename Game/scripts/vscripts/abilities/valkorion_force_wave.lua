@@ -26,7 +26,7 @@ function valkorion_force_wave:OnSpellStart()
       
           EmitSoundOn("Hero_ObsidianDestroyer.Equilibrium.Cast", self:GetCaster())
       
-          local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/axe/axe_ti9_immortal/axe_ti9_call.vpcf", PATTACH_WORLDORIGIN, self:GetCaster() )
+          local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/monkey_king/arcana/water/monkey_king_spring_cast_arcana_water.vpcf", PATTACH_WORLDORIGIN, self:GetCaster() )
           ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetCursorPosition() )
           ParticleManager:SetParticleControl( nFXIndex, 2, Vector(400, 400, 0) )
           ParticleManager:ReleaseParticleIndex( nFXIndex )
