@@ -38414,9 +38414,15 @@
 		{
 			"particle"				"particles/units/heroes/hero_elder_titan/elder_titan_ancestral_spirit_cast.vpcf"
 			"particle"				"particles/mod/life_and_death_word_buff.vpcf"
+			"particle"				"particles/econ/items/grimstroke/ti9_immortal/gs_ti9_artistry_proj.vpcf"
+			"particle"				"particles/econ/items/grimstroke/ti9_immortal/gs_ti9_artistry_dmg_stroke_tgt.vpcf"
+			"particle"				"particles/units/heroes/hero_grimstroke/grimstroke_darkartistry_dmg.vpcf"
+			"particle"				"particles/units/heroes/hero_grimstroke/grimstroke_darkartistry_proj.vpcf"
+			"particle"				"particles/units/heroes/hero_grimstroke/grimstroke_cast2_ground.vpcf"
 			"particle"				"particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_howl_buff.vpcf"
 			"particle"				"particles/econ/items/axe/axe_helm_shoutmask/axe_beserkers_call_buff_shout_mask.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_grimstroke.vsndevts"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

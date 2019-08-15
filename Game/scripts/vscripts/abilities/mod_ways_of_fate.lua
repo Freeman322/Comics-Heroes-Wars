@@ -57,7 +57,7 @@ function mod_ways_of_fate:OnChannelFinish( bInterrupted )
         local spawnDelta = 150
 
         -- set up projectile
-        local projectile_name = "particles/units/heroes/hero_grimstroke/grimstroke_darkartistry_proj.vpcf"
+        local projectile_name = "particles/econ/items/grimstroke/ti9_immortal/gs_ti9_artistry_proj.vpcf"
 
         local distance = self:GetCastRange( self.m_vCursorPos, nil )
         local start_radius = self:GetSpecialValueFor("start_radius")
@@ -160,7 +160,7 @@ function mod_ways_of_fate:OnProjectileHit( target, location )
 
 		-- play effects
 		-- Get Resources
-        local particle_cast = "particles/units/heroes/hero_grimstroke/grimstroke_darkartistry_dmg.vpcf"
+        local particle_cast = "particles/econ/items/grimstroke/ti9_immortal/gs_ti9_artistry_dmg_stroke_tgt.vpcf"
         local sound_target = "Hero_Grimstroke.DarkArtistry.Damage"
         local sound_creep = "Hero_Grimstroke.DarkArtistry.Damage.Creep"
 
