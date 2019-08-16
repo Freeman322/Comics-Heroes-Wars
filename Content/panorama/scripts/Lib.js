@@ -4755,8 +4755,218 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "355": {
+        "item": "bloodmayne_avenger",
+        "rarity": "8",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_lycan",
+        "universal": "false",
+        "def_id": "355",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "356": {
+        "item": "guardian_flame",
+        "rarity": "9",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "shoulder",
+        "hero": "npc_dota_hero_ember_spirit",
+        "universal": "false",
+        "def_id": "356",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "357": {
+        "item": "dread_claws",
+        "rarity": "7",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "weapon",
+        "hero": "npc_dota_hero_life_stealer",
+        "universal": "false",
+        "def_id": "357",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "358": {
+        "item": "cinder_sensei",
+        "rarity": "8",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_ember_spirit",
+        "universal": "false",
+        "def_id": "358",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"       
+    },
+    "359": {
+        "item": "dapper",
+        "rarity": "6",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_pudge",
+        "universal": "false",
+        "def_id": "359",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"       
+    },
+    "360": {
+        "item": "gothic_hunter",
+        "rarity": "6",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_phantom_assasin",
+        "universal": "false",
+        "def_id": "360",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"       
+    },
+    "361": {
+        "item": "ancient_magus",
+        "rarity": "6",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_jakiro",
+        "universal": "false",
+        "def_id": "361",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"       
+    },
+    "362": {
+        "item": "god_eater",
+        "rarity": "5",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_shredder",
+        "universal": "false",
+        "def_id": "362",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "363":{  
+        "universal":"true",
+        "is_treasure":"1",
+        "is_medal":"0",
+        "slot":"treasure",
+        "contains":{  
+           "very_rare":{  
+              "2":"357",
+              "1":"355",
+              "3":"358"
+           },
+           "rare":{  
+              "2":"368",
+              "4":"361",
+              "1":"360",
+              "3":"359"
+           },
+           "extr_rare":{  
+              "2":"356",
+              "1":"364",
+              "3":"365"
+           },
+           "common":{  
+              "2":"367",
+              "1":"366",
+              "3":"362"}
+           }
+    },
+    "364": {
+        "item": "rulk_unleashed",
+        "rarity": "9",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "weapon",
+        "hero": "npc_dota_hero_axe",
+        "universal": "false",
+        "def_id": "364",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "365": {
+        "item": "strange_artifact",
+        "rarity": "9",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_invoker",
+        "universal": "false",
+        "def_id": "365",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "366": {
+        "item": "conscript_shoulder",
+        "rarity": "4",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "shoulder",
+        "hero": "npc_dota_hero_shredder",
+        "universal": "false",
+        "def_id": "366",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "367": {
+        "item": "great_sword",
+        "rarity": "4",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "weapon",
+        "hero": "npc_dota_hero_sven",
+        "universal": "false",
+        "def_id": "367",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "368": {
+        "item": "shield_of_immortal",
+        "rarity": "5",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "shield",
+        "hero": "npc_dota_hero_sven",
+        "universal": "false",
+        "def_id": "368",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
-};
+ };
 
 (function() {
     GameUI.CustomUIConfig().Items = Lib.Items;
