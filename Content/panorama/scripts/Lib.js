@@ -877,7 +877,7 @@ Lib.Items = {
         "item": "zeus_lighning",
         "rarity": "7",
         "quality": "2",
-        "slot": "global",
+        "slot": "head",
         "dropable": "true",
         "hero": "npc_dota_hero_zuus",
         "universal": "true",
@@ -4875,7 +4875,7 @@ Lib.Items = {
         "slot":"treasure",
         "contains":{  
            "very_rare":{  
-              "2":"357",
+              "2":"367",
               "1":"355",
               "3":"358"
            },
@@ -4891,7 +4891,7 @@ Lib.Items = {
               "3":"365"
            },
            "common":{  
-              "2":"367",
+              "2":"369",
               "1":"366",
               "3":"362"}
            }
@@ -4939,12 +4939,12 @@ Lib.Items = {
         "is_music": "0"
     },
     "367": {
-        "item": "great_sword",
-        "rarity": "4",
+        "item": "bonesaw",
+        "rarity": "6",
         "quality": "2",
         "dropable": "false",
-        "slot": "weapon",
-        "hero": "npc_dota_hero_sven",
+        "slot": "offhand",
+        "hero": "npc_dota_hero_pudge",
         "universal": "false",
         "def_id": "367",
         "is_treasure": "0",
@@ -4953,14 +4953,28 @@ Lib.Items = {
         "is_music": "0"
     },
     "368": {
-        "item": "shield_of_immortal",
+        "item": "ferocious_heart",
+        "rarity": "6",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_ursa",
+        "universal": "false",
+        "def_id": "368",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "369": {     
+        "item": "hells_glare",
         "rarity": "5",
         "quality": "2",
         "dropable": "false",
-        "slot": "shield",
-        "hero": "npc_dota_hero_sven",
+        "slot": "weapon",
+        "hero": "npc_dota_hero_terrorblade",
         "universal": "false",
-        "def_id": "368",
+        "def_id": "369",
         "is_treasure": "0",
         "is_medal": "0",
         "is_compendium": "0",
