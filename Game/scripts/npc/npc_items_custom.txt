@@ -449,12 +449,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_health"				"1200"
+				"bonus_health"				"1500"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"1200"
+				"bonus_mana"				"1500"
 			}
 			"03"
 			{
@@ -2944,7 +2944,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"500"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -2953,7 +2953,7 @@
 		"ItemResult"					"item_azuras_staff"
 		"ItemRequirements"
 		{
-			"01"						"item_bloodthorn;item_sheepstick;item_bloodstone;item_platemail"
+			"01"						"item_bloodthorn;item_sheepstick;item_bloodstone;item_soul_booster"
 		}
 	}
 	"item_recipe_bfury_lg"
@@ -3887,7 +3887,7 @@
 		"ItemResult"					"item_timepiece"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_orchid;item_relic;item_relic;item_ultimate_orb;item_ultimate_orb"
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_orchid;item_relic"
 		}
 	}
 	//=================================================================================================================
@@ -3972,7 +3972,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3550"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3981,7 +3981,7 @@
 		"ItemResult"					"item_vermilion_robe"
 		"ItemRequirements"
 		{
-			"01"						"item_crimson_guard;item_pipe;item_ultimate_orb"
+			"01"						"item_crimson_guard;item_pipe;item_ultimate_orb;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -4697,7 +4697,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"80"
+				"bonus_all_stats"		"40"
 			}
 			"02"
 			{
@@ -4707,12 +4707,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"300"
+				"bonus_damage"			"160"
 			}	
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"30"
+				"bonus_armor"			"16"
 			}
 			"05"
 			{
@@ -4989,12 +4989,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"500"
+				"bonus_health"			"600"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"20"
+				"bonus_health_regen"	"25"
 			}
 			"03"
 			{
@@ -5009,19 +5009,24 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_damage_melee"	"80"
+				"bonus_magical_armor"	"30"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_duration"		"5"
+				"block_damage_melee"	"80"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_aoe_radius"		"900"
+				"active_duration"		"5"
 			}
 			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aoe_radius"		"900"
+			}
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"block_damage"			"-50"
@@ -6398,17 +6403,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement"			"70"
+				"bonus_all_stats"			"60"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_mana"				"800"
+				"bonus_health"			    "700"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"60"
+				"bonus_mana"				"400"
 			}
 			"04"
 			{
@@ -6417,50 +6422,55 @@
 			}
 			"05"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"aura_health_regen"			"50"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_magical_armor"		"25"
 			}
 			"06"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"aura_armor"				"7"
+				"var_type"					            "FIELD_INTEGER"
+				"movement_speed_percent_bonus"			"30"
 			}
 			"07"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"aura_health_regen_bonus"	"100"
+				"var_type"					"FIELD_FLOAT"
+				"aura_health_regen"			"50"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_armor_bonus"			"50"
+				"aura_armor"				"7"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_bonus_threshold"		"30"
+				"aura_bonus_magical_armor"	"20"
 			}
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"900"
+				"aura_bonus_threshold"		"30"
 			}
 			"11"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"active_duration"			"6"
+				"aura_radius"				"900"
 			}
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"status_resistance"			"55"
+				"active_duration"			"6"
 			}
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"active_hp_regen"			"2"
+				"status_resistance"			"55"
 			}
 			"14"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"active_hp_regen"			"2"
+			}
+			"15"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"active_mana_regen"			"1"

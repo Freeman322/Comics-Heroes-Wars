@@ -17,6 +17,22 @@ function item_azuras_staff:OnSpellStart ()
             Target = self:GetCursorTarget (),
             iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
         }
+        if ( not hTarget:TriggerSpellAbsorb (self) ) then
+            local mana = hTarget:GetMana() / 2
+
+            hTarget:SpendMana(mana, self)
+            hTarget:Interrupt()
+            local damage = {
+                victim = hTarget,
+                attacker = self:GetCaster(),
+                damage = hTarget:GetMana(),
+                damage_type = DAMAGE_TYPE_MAGICAL,
+                ability = self
+            }
+            ApplyDamage( damage )
+
+            self:GetCaster():Heal(mana, self)
+        end
 
         ProjectileManager:CreateTrackingProjectile (info)
         EmitSoundOn ("Hero_ArcWarden.Flux.Cast", self:GetCaster () )
@@ -78,6 +94,7 @@ function modifier_azuras_staff:CheckState ()
     local state = {
         [MODIFIER_STATE_SILENCED] = true,
         [MODIFIER_STATE_DISARMED] = true,
+        [MODIFIER_STATE_MUTED] = true,
         [MODIFIER_STATE_PASSIVES_DISABLED] = true,
         [MODIFIER_STATE_EVADE_DISABLED] = true,
     }

@@ -34,7 +34,7 @@ function modifier_item_aether_staff:GetModifierConstantManaRegen()	return self:G
 function modifier_item_aether_staff:GetModifierConstantHealthRegen()  return self:GetAbility():GetSpecialValueFor("bonus_hp_reg") end
 function modifier_item_aether_staff:GetModifierPhysicalArmorBonus()  return self:GetAbility():GetSpecialValueFor("bonus_armor") end
 function modifier_item_aether_staff:GetModifierBonusStats_Strength()  return self:GetAbility():GetSpecialValueFor("bonus_strength") end
-function modifier_item_aether_staff:GetModifierMagicalResistanceBonus()  return self:GetAbility():GetSpecialValueFor("bonus_magical_resistance") end
+function modifier_item_aether_staff:GetModifierMagicalResistanceBonus()  return self:GetAbility():GetSpecialValueFor("bonus_magical_armor") end
 function modifier_item_aether_staff:GetModifierBonusStats_Agility()	return self:GetAbility():GetSpecialValueFor("bonus_agility") end
 function modifier_item_aether_staff:GetModifierBonusStats_Intellect()	return self:GetAbility():GetSpecialValueFor("bonus_intellect") end
 function modifier_item_aether_staff:GetModifierMoveSpeedBonus_Constant()	return self:GetAbility():GetSpecialValueFor("bonus_movement") end

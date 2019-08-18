@@ -44,8 +44,8 @@
 	"item_recipe_ghost_staff"      "REMOVE"
 	"item_recipe_oathbreaker"      "REMOVE"
 	"item_oathbreaker"             "REMOVE"
-	"item_azuras_staff"            "REMOVE"
-	"item_recipe_azuras_staff"     "REMOVE"
+	///"item_azuras_staff"            "REMOVE"
+	///"item_recipe_azuras_staff"     "REMOVE"
 
 	"item_boots_of_merlin"     "REMOVE"
 	"item_recipe_boots_of_merlin"     "REMOVE"
