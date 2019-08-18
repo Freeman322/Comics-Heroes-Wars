@@ -6241,12 +6241,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_chance"			"75"
+				"bonus_chance"			"60"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"	"100"
+				"bonus_chance_damage"	"80"
 			}
 		}
 	}

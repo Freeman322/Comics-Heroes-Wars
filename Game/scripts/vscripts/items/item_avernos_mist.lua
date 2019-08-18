@@ -1,4 +1,7 @@
 item_avernos_mist = class({})
+LinkLuaModifier( "modifier_item_avernos_mist", "items/item_avernos_mist.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_item_avernos_mist_aura_self", "items/item_avernos_mist.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_item_avernos_mist_aura_radius", "items/item_avernos_mist.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_item_avernos_mist_active", "items/item_avernos_mist.lua", LUA_MODIFIER_MOTION_NONE )
 
 function item_avernos_mist:ProcsMagicStick()
@@ -6,7 +9,7 @@ function item_avernos_mist:ProcsMagicStick()
 end
 
 function item_avernos_mist:GetIntrinsicModifierName()
-	return "modifier_item_guardian_greaves"
+	return "modifier_item_avernos_mist"
 end
 
 function item_avernos_mist:OnSpellStart()
@@ -20,6 +23,14 @@ function item_avernos_mist:OnSpellStart()
             nearby_ally:AddNewModifier (self:GetCaster (), self, "modifier_item_avernos_mist_active", { duration = self:GetSpecialValueFor ("active_duration") })
         end
     end 
+end
+
+if modifier_item_avernos_mist == nil then
+    modifier_item_avernos_mist = class ( {})
+end
+
+function modifier_item_avernos_mist:IsHidden ()
+    return true
 end
 
 if modifier_item_avernos_mist_active == nil then modifier_item_avernos_mist_active = class({}) end
@@ -69,3 +80,138 @@ function modifier_item_avernos_mist_active:GetModifierTotalPercentageManaRegen (
     return self:GetAbility():GetSpecialValueFor ("active_mana_regen")
 end
 
+function item_avernos_mist:GetIntrinsicModifierName()
+	return "modifier_item_avernos_mist_aura_self"
+end
+
+if modifier_item_avernos_mist_aura_self == nil then modifier_item_avernos_mist_aura_self = class({}) end
+
+function modifier_item_avernos_mist_aura_self:DeclareFunctions ()
+    local funcs = {
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_HEALTH_BONUS,
+        MODIFIER_PROPERTY_MANA_BONUS,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
+    }
+
+    return funcs
+end
+
+function modifier_item_avernos_mist_aura_self:GetModifierHealthBonus (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_health")
+end
+function modifier_item_avernos_mist_aura_self:GetModifierBonusStats_Strength (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_all_stats")
+end
+function modifier_item_avernos_mist_aura_self:GetModifierBonusStats_Intellect (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_all_stats")
+end
+function modifier_item_avernos_mist_aura_self:GetModifierBonusStats_Agility (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_all_stats")
+end
+function modifier_item_avernos_mist_aura_self:GetModifierPhysicalArmorBonus (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_armor")
+end
+function modifier_item_avernos_mist_aura_self:GetModifierMagicalResistanceBonus(params)
+    return self:GetAbility():GetSpecialValueFor("bonus_magical_armor")
+end
+function modifier_item_avernos_mist_aura_self:GetModifierMoveSpeedBonus_Percentage (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("movement_speed_percent_bonus")
+end
+function modifier_item_avernos_mist_aura_self:GetModifierManaBonus (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_mana")
+end
+
+function modifier_item_avernos_mist_aura_self:IsAura()
+	return true
+end
+
+function modifier_item_avernos_mist_aura_self:IsHidden()
+	return true
+end
+
+function modifier_item_avernos_mist_aura_self:IsPurgable()
+	return false
+end
+
+function modifier_item_avernos_mist_aura_self:GetAuraRadius()
+	return 1000
+end
+
+function modifier_item_avernos_mist_aura_self:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
+end
+
+function modifier_item_avernos_mist_aura_self:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_HERO
+end
+
+function modifier_item_avernos_mist_aura_self:GetAuraSearchFlags()
+	return DOTA_UNIT_TARGET_FLAG_NONE
+end
+
+function modifier_item_avernos_mist_aura_self:GetModifierAura()
+	return "modifier_item_avernos_mist_aura_radius"
+end
+
+if modifier_item_avernos_mist_aura_radius == nil then modifier_item_avernos_mist_aura_radius = class({}) end
+
+function modifier_item_avernos_mist_aura_radius:IsPurgable(  )
+    return false
+end
+
+function modifier_item_avernos_mist_aura_radius:OnCreated(table)
+end
+
+function modifier_item_avernos_mist_aura_radius:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
+    }
+
+    return funcs
+end
+
+function modifier_item_avernos_mist_aura_radius:GetModifierPhysicalArmorBonus( params )
+    local abil = self:GetAbility()
+if abil  then
+    if self:GetCaster():GetHealthPercent() <= 30 then
+        return abil:GetSpecialValueFor("aura_armor") * 2
+    end
+  return abil:GetSpecialValueFor("aura_armor")
+end
+return 0
+end
+
+function modifier_item_avernos_mist_aura_radius:GetModifierConstantHealthRegen( params )
+    local abil = self:GetAbility()
+if abil  then
+    if self:GetCaster():GetHealthPercent() <= 30 then
+        return abil:GetSpecialValueFor("aura_health_regen") * 2
+    end
+  return abil:GetSpecialValueFor("aura_health_regen")
+end
+return 0
+end
+
+function modifier_item_avernos_mist_aura_radius:GetModifierMagicalResistanceBonus( params )
+    local abil = self:GetAbility()
+if abil  then
+  return abil:GetSpecialValueFor("aura_bonus_magical_armor")
+end
+return 0
+end
+
+function item_avernos_mist:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end

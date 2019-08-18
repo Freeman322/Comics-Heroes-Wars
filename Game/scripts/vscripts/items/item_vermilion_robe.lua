@@ -36,6 +36,7 @@ function modifier_item_vermilion_robe:DeclareFunctions ()
         MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
         MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK
     }
 
@@ -65,6 +66,10 @@ end
 function modifier_item_vermilion_robe:GetModifierPhysicalArmorBonus (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_armor")
+end
+function modifier_item_vermilion_robe:GetModifierMagicalResistanceBonus(params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_magical_armor")
 end
 
 function modifier_item_vermilion_robe:GetModifierPhysical_ConstantBlock (params)
