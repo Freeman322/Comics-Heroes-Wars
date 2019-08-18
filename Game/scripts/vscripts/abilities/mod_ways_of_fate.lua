@@ -130,7 +130,7 @@ function mod_ways_of_fate:OnProjectileHit( target, location )
 		local damageTable = {
 			victim = target,
 			attacker = self:GetCaster(),
-			damage = (base_damage + multiplier*plus_damage) * self.m_flElapsedTime,
+			damage = ((base_damage + multiplier*plus_damage) * self.m_flElapsedTime) + ((self:GetSpecialValueFor("current_health_damage_ptc") / 100) * target:GetHealth()),
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self, --Optional.
         }

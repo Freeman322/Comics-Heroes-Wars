@@ -4607,29 +4607,16 @@
 		"Model"              			"models/heroes/hero_valkorion/valkorion.vmdl"
 		"ModelScale"					"0.9"
 		"VersusScale"					"0.85"
-		"IdleExpression"				"scenes/zuus/zuus_exp_idle_01.vcd"
 		"SoundSet"					"Hero_zuus"
-		"PickSound"					"zuus_zuus_spawn_01"
-		"BanSound"					"zuus_zuus_anger_03"
-		"Enabled"						"1"
-		"HeroPool1"					"1"
-		"HeroPool2"					"1"
-		"HeroUnlockOrder"				"0"
+	
 		"Role"						"Nuker"
 		"Rolelevels"					"3"
 		"Complexity"					"1"
-		"Team"						"Good"
-		"HeroID"						"22"
-		"BotImplemented"				"1"
+		"Team"						"Bad"
+
 		"LoadoutScale"					"1"
-		"SpectatorLoadoutScale"			 "1"
-		"HeroGlowColor"				"64 166 234"
-		"CMEnabled"					"1"
-		"workshop_guide_name"			"Valkorion"
-		"new_player_enable"				"1"
-		"NoCombine"					"1"
+
 		"LastHitChallengeRival"			"npc_dota_hero_razor"
-		"HeroSelectSoundEffect"			"Hero_Zuus.Pick"
 		"GibType"						"electric"
 
 		"Ability1"		"valkorion_force_wave"
@@ -4668,11 +4655,6 @@
 		"MovementSpeed"			"295"
 		"MovementTurnRate"			"0.600000"
 		"StatusManaRegen"			"0.25"
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-
-		"particle_folder"			"particles/units/heroes/hero_zuus,particles/units/heroes/hero_zeus"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
-		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_zuus.vsndevts"
 
 		"BaseAttackSpeed"				"100"
 

@@ -121,4 +121,7 @@
   "npc_dota_hero_shazam"  "1"
   "npc_dota_hero_misterio"  "1"
   "npc_dota_hero_baane"  "1"
+  "npc_dota_hero_officer"  "1"
+  "npc_dota_hero_mod"  "1"
+  "npc_dota_hero_valkorion"  "1"
 }

@@ -11,7 +11,7 @@ function valkorion_ligning_explosion:OnSpellStart()
                     local damage = self:GetSpecialValueFor("damage")
 
                     if self:GetCaster():HasTalent("special_bonus_unique_valkorion_2") then
-                         damage = self:FindTalentValue("special_bonus_unique_valkorion_2") + damage
+                         damage = damage + self:GetCaster():FindTalentValue("special_bonus_unique_valkorion_2")
                     end
 
                     EmitSoundOn("Hero_ObsidianDestroyer.ArcaneOrb", hTarget)

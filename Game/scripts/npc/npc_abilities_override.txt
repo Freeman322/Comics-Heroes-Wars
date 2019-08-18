@@ -1223,24 +1223,28 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.0"
+				"stun_duration"		"1.5"
+				"RequiresScepter"	"1"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"multicast_delay"	"0.5"
+				"multicast_delay"	"0.6"
+				"RequiresScepter"	"1"
 			}
 
 			"03"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"scepter_mana"		"0.6"
+				"var_type"			"FIELD_INTEGER"
+				"scepter_mana"		"60"
+				"RequiresScepter"	"1"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fireblast_damage"		"320"
+				"fireblast_damage"		"275"
+				"RequiresScepter"	"1"
 			}
 		}
 	}
@@ -1255,38 +1259,38 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_2_times"		"0.7 0.35 0"
+				"multicast_2_times"		"0.75 0.75 0.75"
 			}
 
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_3_times"		"0 0.55 0.9"
+				"multicast_3_times"		"0 0.3 0.3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_4_times"		"0 0.25 0.45"
+				"multicast_4_times"		"0 0 0.15"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bloodlust_aoe"			"575"
+				"bloodlust_aoe"			"700"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_2_times_tooltip"		"70 35 0"
+				"multicast_2_times_tooltip"		"75"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_3_times_tooltip"		"0 35 70"
+				"multicast_3_times_tooltip"		"0 30 30"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_4_times_tooltip"		"0 15 30"
+				"multicast_4_times_tooltip"		"0 0 15"
 			}
 		}
 	}
