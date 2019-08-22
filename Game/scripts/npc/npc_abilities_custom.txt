@@ -28983,13 +28983,13 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"heal_ptc"				"1.5 2.0 2.5 3.0"
+				"var_type"				"FIELD_INTEGER"
+				"speed_gain"				"15 20 25 30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_speed"				"250 350 450 550"
+				"max_gain"				"400"
 			}
 		}
 	}

@@ -710,6 +710,7 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"cooldown_scepter"				"50 45 40"
+				"RequiresScepter"				"1"
 			}
 			"07"
 			{
