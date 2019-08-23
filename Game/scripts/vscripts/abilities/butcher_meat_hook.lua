@@ -94,16 +94,7 @@ function butcher_meat_hook:OnSpellStart()
 	self.bRetracting = false
 	self.hVictim = nil
 	self.bDiedInHook = false
-
-	if self:GetCaster():HasTalent("special_bonus_unique_pudge_2") then 
-		self:EndCooldown()
-		self:StartCooldown(4)
-	end
-	if self:GetCaster():HasTalent("special_bonus_unique_pudge_1") then 
-		self.hook_damage = self.hook_damage + self:GetCaster():FindTalentValue("special_bonus_unique_pudge_1")
-	end
 end
-
 --------------------------------------------------------------------------------
 
 function butcher_meat_hook:OnProjectileHit( hTarget, vLocation )

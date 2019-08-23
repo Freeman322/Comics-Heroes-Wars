@@ -66,7 +66,7 @@ function modifier_pudge_decay:OnIntervalThink()
 			ApplyDamage({
 				victim = self:GetParent(),
 				attacker = self:GetCaster(),
-				damage = self:GetAbility():GetSpecialValueFor("damage") / 10,
+				damage = self:GetAbility():GetSpecialValueFor("damage") / 2,
 				damage_type = DAMAGE_TYPE_MAGICAL,
 				ability = self:GetAbility()
 			})

@@ -82,10 +82,6 @@ function modifier_boots_of_protection:GetModifierConstantHealthRegen ()
     end
 end
 
-function modifier_boots_of_protection:GetModifierPhysicalArmorBonus()
-    return 10
-end
-
 function modifier_boots_of_protection:GetModifierMoveSpeedBonus_Constant()
     return 100
 end

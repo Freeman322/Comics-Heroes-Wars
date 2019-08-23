@@ -81,6 +81,8 @@ function modifier_item_ice_pearl:IsPurgable() return false end
 function modifier_item_ice_pearl:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
@@ -91,7 +93,9 @@ end
 
 function modifier_item_ice_pearl:GetModifierPreAttack_BonusDamage() return self:GetAbility():GetSpecialValueFor ("bonus_damage") end
 function modifier_item_ice_pearl:GetModifierPhysicalArmorBonus() return self:GetAbility():GetSpecialValueFor ("bonus_armor") end
+function modifier_item_ice_pearl:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor("bonus_mp_regen") end
 function modifier_item_ice_pearl:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("bonus_intellect") end
+function modifier_item_ice_pearl:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("bonus_agility") end
 function modifier_item_ice_pearl:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_strength") end
 function modifier_item_ice_pearl:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor("bonus_health") end
 

@@ -2152,7 +2152,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"40"
+				"bonus_damage"			"42"
 			}
 		}
 	}
@@ -2477,7 +2477,7 @@
 	//=================================================================================================================
 	// Power Treads
 	//=================================================================================================================
-	"item_power_treads"
+   "item_power_treads"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2486,38 +2486,62 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1350"
+		"ItemCost"						"1450"
 		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
 		"ItemQuality"					"common"
 		"ItemAliases"					"power treads"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"  "45"
+				"bonus_movement_speed"  "20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"9"
-			}
+				"bonus_stat"			"24"
+			}	
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_attack_speed"			"25"
-			}
+			}		
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"0"
-			}
+			}		
 		}
 	}
+	"item_recipe_power_treads"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"62"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"300"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_power_treads"
+		"ItemRequirements"
+		{
+			"01"						"item_boots;item_crown;item_crown;item_crown"
+		}
+	}
+
+	
 
 	//=================================================================================================================
 	// Recipe: Oblivion Staff
@@ -2711,12 +2735,60 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"505"
+		"ItemCost"						"1200"
 		"ItemShopTags"					"damage;int;agi;str"
 		"ItemQuality"					"common"
 		"ItemAliases"					"bracer"
+		"ShouldBeInitiallySuggested"	"1"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"14"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_magic_resistance"	"10"
+			}
+		}
+	}
 
-		// Special
+	//=================================================================================================================
+	// Wraith Band
+	//=================================================================================================================
+   "item_wraith_band"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"75"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1200"
+		"ItemShopTags"					"damage;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"wraith band"
+		"ShouldBeInitiallySuggested"	"1"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
@@ -2728,96 +2800,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"3"
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Wraith Band
-	//=================================================================================================================
-	"item_wraith_band"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"75"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"2750"
-		"ItemShopTags"					"damage;int;agi;str"
-		"ItemQuality"					"common"
-		"ItemAliases"					"wraith band"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"			"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"30"
-			}
-		}
-	}
-
-
-	//=================================================================================================================
-	// Null Talisman
-	//=================================================================================================================
-	"item_null_talisman"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"77"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"470"
-		"ItemShopTags"					"damage;int;agi;str"
-		"ItemQuality"					"common"
-		"ItemAliases"					"null talisman"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"3"
+				"bonus_agility"			"14"
 			}
 			"03"
 			{
@@ -2827,7 +2810,54 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"3"
+				"bonus_attack_speed"		"20"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Null Talisman
+	//=================================================================================================================
+   "item_null_talisman"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"77"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1200"
+		"ItemShopTags"					"damage;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"null talisman"
+		"ShouldBeInitiallySuggested"	"1"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"14"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_spell_amp"		"5"
 			}
 		}
 	}
@@ -3204,7 +3234,7 @@
 		"ItemResult"					"item_pipe"
 		"ItemRequirements"
 		{
-			"01"						"item_hood_of_defiance;item_headdress"
+			"01"						"item_hood_of_defiance;item_headdress;item_crown"
 		}
 	}
 
@@ -3290,7 +3320,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"0"
+				"bonus_all_stats"		"5"
 			}
 			"12"
 			{
@@ -3594,7 +3624,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"30"
+				"bonus_intellect"		"25"
 			}
 			"02"
 			{
@@ -6447,7 +6477,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"76"
+				"bonus_damage"			"80"
 			}
 			"02"
 			{
@@ -12211,5 +12241,55 @@
 				"impact_damage_units"		"350"
 			}
 		}
-	}		
+	}
+	"item_magic_wand"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"Model"							"models/props_gameplay/magic_wand.vmdl"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12.0"
+		"AbilitySharedCooldown"			"magicwand"
+		"AbilityCastRange"				"1500"
+		"ID"							"36"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"900"
+		"ItemShopTags"					"regen_health;regen_mana;boost_health;boost_mana;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"magic wand"
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_radius"			"1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"restore_per_charge"	"15"
+			}
+		}
+	}
 }

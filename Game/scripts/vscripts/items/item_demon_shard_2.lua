@@ -31,6 +31,7 @@ function modifier_item_demon_shard_2:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_BONUS_NIGHT_VISION,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
         MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE,
@@ -44,6 +45,10 @@ function modifier_item_demon_shard_2:GetModifierProcAttack_BonusDamage_Pure (par
     return hAbility:GetSpecialValueFor ("bonus_damage_post_attack")
 end
 
+function modifier_item_demon_shard_2:GetBonusNightVision(params)
+    local hAbility = self:GetAbility()
+     return hAbility:GetSpecialValueFor("bonus_night_vision")
+end
 
 function modifier_item_demon_shard_2:GetModifierPreAttack_BonusDamage (params)
     local hAbility = self:GetAbility ()

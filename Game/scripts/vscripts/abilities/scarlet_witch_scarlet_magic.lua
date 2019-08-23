@@ -73,8 +73,8 @@ function modifier_scarlet_witch_scarlet_magic:OnIntervalThink()
         attacker = self:GetCaster(),
         ability = self:GetAbility(),
         damage = hp_damage + self:GetAbility():GetSpecialValueFor("base_damage"),
-        damage_type = self:GetAbility():GetAbilityDamageType()
-    })
+        damage_type = self:GetAbility():GetAbilityDamageType(),
+        damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION}) 
 end
 
 function scarlet_witch_scarlet_magic:GetAbilityTextureName()

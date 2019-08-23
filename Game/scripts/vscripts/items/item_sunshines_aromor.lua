@@ -73,7 +73,8 @@ function item_sunshines_aromor_passive_modifier:DeclareFunctions()
 	    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 	    MODIFIER_PROPERTY_HEALTH_BONUS,
 	    MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
-	    MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+      MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+      MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 	    MODIFIER_EVENT_ON_TAKEDAMAGE
 	}
 end
@@ -101,6 +102,7 @@ function item_sunshines_aromor_passive_modifier:GetModifierPhysicalArmorBonus() 
 function item_sunshines_aromor_passive_modifier:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor( "bonus_health" ) end
 function item_sunshines_aromor_passive_modifier:GetModifierMagicalResistanceBonus() return self:GetAbility():GetSpecialValueFor( "bonus_magical_armor" ) end
 function item_sunshines_aromor_passive_modifier:GetModifierHealthRegenPercentage() return self:GetAbility():GetSpecialValueFor("total_health_regen_pct") end
+function item_sunshines_aromor_passive_modifier:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor("hp_regen") end
 function item_sunshines_aromor_passive_modifier:IsAura() return true end
 function item_sunshines_aromor_passive_modifier:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("radius") end
 function item_sunshines_aromor_passive_modifier:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_BOTH end

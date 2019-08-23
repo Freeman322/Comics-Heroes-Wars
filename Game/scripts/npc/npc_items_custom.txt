@@ -2289,92 +2289,102 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"50"
+				"bonus_strength"			"25"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"				"500"
+				"var_type"              "FIELD_INTEGER"
+				"bonus_agility"         "15"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"35"
+				"var_type"              "FIELD_INTEGER"
+				"bonus_mp_regen"        "2"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"25"
+				"bonus_health"				"500"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_return"			"125"
+				"bonus_damage"				"25"
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed_reduction"		"-70"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"				"31"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_speed_reduction"		"-100"
+				"damage_return"			"100"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"			"5.0"
+				"attack_speed_reduction"		"-70"
 			}
 			"10"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"active_duration"			"9.0"
+				"var_type"				"FIELD_INTEGER"
+				"move_speed_reduction"		"-100"
 			}
 			"11"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_restore"				"450"
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"			"3.0"
 			}
 			"12"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"restore_pct"				"20"
+				"var_type"				"FIELD_FLOAT"
+				"active_duration"			"6.0"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_damage"				"300"
+				"hp_restore"				"600"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_movement_speed"		"-40"
+				"restore_pct"				"10"
 			}
 			"15"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_debuff_duration"		"1.25"
+				"var_type"				"FIELD_INTEGER"
+				"blast_damage"				"300"
 			}
 			"16"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_trigger_damage"		"1000"
+				"blast_movement_speed"		"-40"
 			}
 			"17"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"total_health_regen_pct" 	"1.5"
+				"blast_debuff_duration"		"1.25"
 			}
 			"18"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_attack_speed" 		"-60"
+				"blast_trigger_damage"		"1000"
 			}
 			"19"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"total_health_regen_pct" 	"1.5"
+			}
+			"21"
+			{
 				"var_type"				"FIELD_INTEGER"
-				"pearl_shield_cooldown" 		"18"
+				"blast_attack_speed" 		"-60"
+			}
+			"22"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pearl_shield_cooldown" 		"9"
 			}
 		}
 	}
@@ -3155,7 +3165,7 @@
 		// Item Info
 
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2880"
+		"ItemCost"						"3000"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3164,7 +3174,7 @@
 		"ItemResult"					"item_demon_shard_2"
 		"ItemRequirements"
 		{
-			"01"						"item_demon_shard;item_lesser_crit"
+			"01"						"item_dark_shard;item_moon_shard_marvel"
 		}
 	}
 	"item_recipe_desolator_2"
@@ -3492,7 +3502,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1100"
+		"ItemCost"						"525"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3501,7 +3511,7 @@
 		"ItemResult"					"item_ice_pearl"
 		"ItemRequirements"
 		{
-			"01"						"item_shine_of_sea;item_blade_mail"
+			"01"						"item_shine_of_sea;item_shivas_guard;item_blade_mail;item_grief_vessel;item_ogre_axe"
 		}
 	}
 	//=================================================================================================================
@@ -3740,7 +3750,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"575"
+		"ItemCost"						"1575"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -3749,7 +3759,7 @@
 		"ItemResult"					"item_shine_of_sea"
 		"ItemRequirements"
 		{
-			"01"						"item_mekansm;item_shivas_guard;item_vanguard"
+			"01"						"item_mekansm;item_chainmail;item_vanguard"
 		}
 	}
 	"item_recipe_soul_urn"
@@ -3806,7 +3816,7 @@
 		"BaseClass"							"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
+		"ItemCost"						"1500"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -3815,7 +3825,7 @@
 		"ItemResult"					"item_sunshines_aromor"
 		"ItemRequirements"
 		{
-			"01"						"item_shine_of_sea;item_shivas_guard;item_pipe;item_vitality_booster"
+			"01"						"item_shine_of_sea;item_shivas_guard;item_pipe;item_reaver;item_staff_of_wizardy"
 		}
 	}
 	//=================================================================================================================
@@ -3878,7 +3888,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"525"
+		"ItemCost"						"2400"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3887,7 +3897,7 @@
 		"ItemResult"					"item_timepiece"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_orchid;item_relic"
+			"01"						"item_orchid;item_nullifier;item_ultimate_orb;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -4246,42 +4256,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"30"
+				"bonus_all_stats"		"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
+				"bonus_armor"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"80"
+				"damage_reduction"		"70"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"600"
+				"bonus_health"			"500"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_cleanse"		"1800"
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"900"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_reset_interval"	"4.5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"800"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"heal"					"800"
+				"heal"					"400"
 			}
 		}
 	}
@@ -4401,11 +4401,11 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"45"
+		"AbilityCooldown"				"50"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200"
+		"AbilityManaCost"				"475"
 		"ItemCost"						"18400"
 		"ItemShopTags"					"int;armor;hard_to_tag"
 		"ItemQuality"					"epic"
@@ -4420,74 +4420,79 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"80"
+				"bonus_strength"			"50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"40"
+				"bonus_agility"			"30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"			"80"
+				"bonus_intellect"			"60"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"26"
+				"var_type"             "FIELD_INTEGER"
+				"hp_regen"             "24"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"				"1400"
+				"bonus_armor"				"26"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_magical_armor"		"35"
+				"bonus_health"				"1200"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"					"900"
+				"bonus_magical_armor"	     "40"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"				"1500"
+				"radius"					"900"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"restore_pct"				"25"
+				"hp_restore"				"1000"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_damage"				"200"
+				"restore_pct"				"20"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_movement_speed"		"-40"
+				"blast_damage"				"250"
 			}
 			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_movement_speed"		"-40"
+			}
+			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blast_debuff_duration"		"4.0"
 			}
-			"13"
+			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blast_trigger_damage"		"1000"
 			}
-			"14"
+			"15"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"total_health_regen_pct" 	"1.5"
 			}
-			"15"
+			"16"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blast_attack_speed" 		"-60"
@@ -4697,7 +4702,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"40"
+				"bonus_all_stats"		"30"
 			}
 			"02"
 			{
@@ -4707,12 +4712,17 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"160"
+				"bonus_damage"			"100"
 			}	
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"16"
+				"bonus_armor"			"8"
+			}
+			"05"
+			{
+				"var_type"             "FIELD_FLOAT"
+				"bonus_health_regen"   "10"
 			}
 			"05"
 			{
@@ -5415,27 +5425,27 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"all"				        "40"
+				"as"				        "200"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"as"				        "45"
+				"bonus_damage"				"400"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"180"
+				"var_type"                  "FIELD_INTEGER"
+				"bonus_night_vision"        "600"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_post_attack"	"100"
+				"bonus_damage_post_attack"	"80"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"380"
+				"crit_bonus"				"350"
 			}
 			"06"
 			{
@@ -5675,7 +5685,7 @@
 		"ItemResult"					"item_space_stone"
 		"ItemRequirements"
 		{
-			"01"						"item_soul_booster;item_blink_2"
+			"01"						"item_soul_booster;item_blink;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace"
 		}
 	}
 	//=================================================================================================================
@@ -6626,7 +6636,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
+		"ItemCost"						"1250"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -6635,7 +6645,7 @@
 		"ItemResult"					"item_ethereal_boots"
 		"ItemRequirements"
 		{
-			"01"						"item_travel_boots_2;item_blink_2"
+			"01"						"item_travel_boots_2;item_blink;item_ultimate_orb"
 		}
 	}
 
@@ -8109,12 +8119,12 @@
 			"05"
 			{
 				"var_type"              "FIELD_INTEGER"
-				"bonus_hp_reg"        "10"	
+				"bonus_hp_reg"        "12"	
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"5"
+				"bonus_mana_regen"		"6"
 			}
 			"07"
 			{
@@ -8134,7 +8144,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_drop_damage"	"300"
+				"tooltip_drop_damage"	"320"
 			}
 		}
 	}
@@ -8160,4 +8170,208 @@
 			"01"						"item_cyclone;item_urn_of_shadows;item_pers;item_cloak"
 		}
 	}
+	"item_dark_shard"
+	{
+		
+		"BaseClass"                         "item_greater_crit"
+		"AbilityTextureName"                "custom/dark_shard"
+		"AbilityBehavior"				    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemCost"						    "11000"
+		"ItemShopTags"					    "damage;crit"
+		"ItemQuality"					    "epic"
+		"ItemAliases"					    "daedalus"
+		"ItemDeclarations"				    "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"280"
+			}
+		}	
+	}
+	"item_recipe_dark_shard"
+	{
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                 		"item_datadriven"
+		"AbilityTextureName"		    	"recipe"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					   "360"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_dark_shard"
+		"ItemRequirements"
+		{
+			"01"						"item_greater_crit;item_greater_crit"
+		}
+	}
+	"item_dragon_heart"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "custom/dragon_heart"
+		"ScriptFile"					"items/item_dragon_heart.lua"
+
+		"ItemCost"						"15000"
+		"ItemShopTags"					"str;regen_health;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"hot;heart of tarrasque"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCooldown"				"5.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						    "FIELD_INTEGER"
+				"bonus_strength"				    "120"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"heal_amp"	                        "15"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_health"		                "2600"
+			}
+			"04"
+			{
+				"var_type"                         "FIELD_FLOAT"
+				"bonus_damage"                      "160"
+			}
+			"04"
+			{
+				"var_type"                          "FIELD_FLOAT"
+				"burn_damage"                       "6.25"
+			}
+		}
+	}
+	"item_recipe_dragon_heart"
+	{
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                 		"item_datadriven"
+		"AbilityTextureName"		    	"recipe"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					   "3360"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_dragon_heart"
+		"ItemRequirements"
+		{
+			"01"						"item_heart;item_heart;item_radiance"
+		}
+	}
+	"item_mystic_ring"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "custom/mystic_ring"
+		"ScriptFile"					"items/item_mystic_ring.lua"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						    "FIELD_INTEGER"
+				"bonus_intellect"				    "60"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_agility"	                        "8"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_strength"		                "8"
+			}
+			"04"
+			{
+				"var_type"                          "FIELD_FLOAT"
+				"bonus_damage"                      "30"
+			}
+			"05"
+			{
+				"var_type"                         "FIELD_FLOAT"
+				"bonus_amp"                      "20"
+			}
+			"06"
+			{
+				"var_type"                          "FIELD_FLOAT"
+				"bonus_mana_cost_reduction"                "20"
+			}
+			"07"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_armor"	                        "4"
+			}
+			"08"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen"                     "4"
+			}
+			"09"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_cooldown_reduction_per_soul"              "1.6"
+			}
+			"10"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_amp_per_soul"	                        "2.5"
+			}
+		}
+	}
+	"item_recipe_mystic_ring"
+	{
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                 		"item_datadriven"
+		"AbilityTextureName"		    	"recipe"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					   "0"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mystic_ring"
+		"ItemRequirements"
+		{
+			"01"						"item_kaya;item_null_talisman;item_ring_of_basilius;"
+		}
+	}	
 }		

@@ -14,7 +14,7 @@ end
 
 function modifier_lich_stealer:DeclareFunctions ()
     local funcs = {
-        MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE,
+        MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL,
         MODIFIER_EVENT_ON_ATTACK_START,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
@@ -22,7 +22,7 @@ function modifier_lich_stealer:DeclareFunctions ()
     return funcs
 end
 
-function modifier_lich_stealer:GetModifierProcAttack_BonusDamage_Pure (params)
+function modifier_lich_stealer:GetModifierProcAttack_BonusDamage_Physical (params)
  	if self.bonus_damage == nil then
  		self.bonus_damage = 0
  	end

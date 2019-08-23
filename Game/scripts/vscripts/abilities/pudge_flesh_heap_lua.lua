@@ -5,67 +5,93 @@ function pudge_flesh_heap_lua:GetIntrinsicModifierName()
 	return "modifier_flesh_heap_lua"
 end
 
+function pudge_flesh_heap_lua:OnHeroDiedNearby( hVictim, hKiller, kv )
+	if hVictim == nil or hKiller == nil then
+		return
+	end
+
+	if hVictim:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() and self:GetCaster():IsAlive() then
+		self.flesh_heap_range = self:GetSpecialValueFor( "flesh_heap_range" )
+		local vToCaster = self:GetCaster():GetOrigin() - hVictim:GetOrigin()
+		local flDistance = vToCaster:Length2D()
+		if hKiller == self:GetCaster() or self.flesh_heap_range >= flDistance then
+			if self.nKills == nil then
+				self.nKills = 0
+			end
+
+			self.nKills = self.nKills + 1
+
+			local hBuff = self:GetCaster():FindModifierByName( "modifier_flesh_heap_lua" )
+			if hBuff ~= nil then
+				hBuff:SetStackCount( self.nKills )
+				self:GetCaster():CalculateStatBonus()
+			end
+
+			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetCaster() )
+			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 0, 0 ) )
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
+		end
+	end
+end
+
+--------------------------------------------------------------------------------
+
+function pudge_flesh_heap_lua:GetFleshHeapKills()
+	if self.nKills == nil then
+		self.nKills = 0
+	end
+	return self.nKills
+end
+
 modifier_flesh_heap_lua = class({})
 
 --------------------------------------------------------------------------------
-function modifier_flesh_heap_lua:IsPurgable() return false end
-function modifier_flesh_heap_lua:IsHidden() return true end
-function modifier_flesh_heap_lua:IsPurgable() return false end
-function modifier_flesh_heap_lua:RemoveOnDeath() return false end
-function modifier_flesh_heap_lua:OnCreated( kv )
-	if IsServer() then
-		self._nKilledCreeps = 0
-		self._nKilledHeroes = 0
-	end
+function modifier_flesh_heap_lua:IsPurgable()
+	return false
 end
 
+function modifier_flesh_heap_lua:OnCreated( kv )
+	self.flesh_heap_magic_resist = self:GetAbility():GetSpecialValueFor( "flesh_heap_magic_resist" )
+	self.flesh_heap_strength_buff_amount = self:GetAbility():GetSpecialValueFor( "flesh_heap_strength_buff_amount" )
+	if IsServer() then
+		self:SetStackCount( self:GetAbility():GetFleshHeapKills() )
+		self:GetParent():CalculateStatBonus()
+    end
+end
+
+function modifier_flesh_heap_lua:OnRefresh( kv )
+	self.flesh_heap_magic_resist = self:GetAbility():GetSpecialValueFor( "flesh_heap_magic_resist" )
+	self.flesh_heap_strength_buff_amount = self:GetAbility():GetSpecialValueFor( "flesh_heap_strength_buff_amount" )
+	if IsServer() then
+		self:GetParent():CalculateStatBonus()
+	end
+end
 
 function modifier_flesh_heap_lua:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL,
-		MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS,
-		MODIFIER_EVENT_ON_DEATH 
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS	
 	}
-
 	return funcs
 end
 
-function modifier_flesh_heap_lua:OnDeath( params )
-	if IsServer() then
-		if params.attacker == self:GetParent() then
-			if params.unit:IsRealHero() then
-				self:AddParameters(false)
-			elseif params.unit:IsCreature() or params.unit:IsCreep() then
-				self:AddParameters(true)
-			end
-		end
-
-		if params.attacker ~= self:GetParent() and params.unit:IsRealHero() and params.unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and self:GetParent():GetRangeToUnit(params.unit) <= self:GetAbility():GetSpecialValueFor("flesh_heap_range") then
-			self:AddParameters(false)
-		end
-	end 
+function modifier_flesh_heap_lua:GetModifierMagicalResistanceBonus( params )
+	return self.flesh_heap_magic_resist
 end
 
-function modifier_flesh_heap_lua:AddParameters( bCreep )
-	if bCreep then
-		self._nKilledCreeps = self._nKilledCreeps + 1
-	else
-		self._nKilledHeroes = self._nKilledHeroes + 1
-	end
-
-	local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetCaster() )
-	ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 0, 0 ) )
-	ParticleManager:ReleaseParticleIndex( nFXIndex )
+function modifier_flesh_heap_lua:GetModifierBonusStats_Strength( params )
+	return self:GetStackCount() * self.flesh_heap_strength_buff_amount
 end
 
---------------------------------------------------------------------------------
-
-function modifier_flesh_heap_lua:GetModifierExtraHealthBonus( params )
-	return (self._nKilledCreeps * self:GetAbility():GetSpecialValueFor("flesh_heap_health_buff_creep")) + (self._nKilledHeroes * self:GetAbility():GetSpecialValueFor("flesh_heap_health_buff_hero"))
+function modifier_flesh_heap_lua:GetModifierBonusStats_Intellect( params )
+	return self:GetStackCount() * self.flesh_heap_strength_buff_amount
 end
 
-
-function modifier_flesh_heap_lua:GetModifierProcAttack_BonusDamage_Magical( params )
-	return self._nKilledHeroes * self:GetAbility():GetSpecialValueFor("flesh_heap_magical_damage")
+function modifier_flesh_heap_lua:GetModifierBonusStats_Agility( params )
+	return self:GetStackCount() * self.flesh_heap_strength_buff_amount
 end
+
+function pudge_flesh_heap_lua:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 

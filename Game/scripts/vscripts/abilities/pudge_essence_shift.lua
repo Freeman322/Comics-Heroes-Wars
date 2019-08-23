@@ -14,10 +14,7 @@ function pudge_essence_shift:OnSpellStart()
     if IsServer() then
       local hTarget = self:GetCursorTarget()
       if hTarget ~= nil then
-        if self:GetCaster():HasTalent("special_bonus_unique_pudge") then 
-            self:EndCooldown()
-        end
-
+       
         self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
       end
     end
@@ -64,10 +61,7 @@ function modifier_pudge_essence_shift:OnAttackLanded (params)
                 self:GetAbility():PayManaCost()
                 self:GetAbility():StartCooldown(self:GetAbility():GetCooldown(self:GetAbility():GetLevel()))
 
-                if self:GetCaster():HasTalent("special_bonus_unique_pudge") then 
-                    self:GetAbility():EndCooldown()
-                end
-
+  
                 EmitSoundOn("Hero_DoomBringer.InfernalBlade.PreAttack", params.target)
                 EmitSoundOn("Hero_DoomBringer.Attack.Impact", params.target)
             end

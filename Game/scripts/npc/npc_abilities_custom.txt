@@ -5520,14 +5520,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"								"ability_lua"
-		"AbilityTextureName"					"custom/pudge_revenge"
-		"ScriptFile"							"abilities/pudge_flesh_heap_lua.lua"
-
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"MaxLevel"								"4"
-
-		"AbilityCastRange"						"1000"
+		"BaseClass"                                "ability_lua"
+        "AbilityTextureName"            "custom/pudge_flesh_heap_lua"
+        "ScriptFile"                            "abilities/pudge_flesh_heap_lua.lua"
+        "AbilityBehavior"                    "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel"                                "1"
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -5549,28 +5546,23 @@
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"flesh_heap_magical_damage"			"3 6 9 12"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"flesh_heap_health_buff_hero"		"20 35 50 65"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"flesh_heap_health_buff_creep"		"5 10 15 20"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"flesh_heap_range"					"1000"
-			}
-		}
+        {
+            "01"
+            {
+                "var_type"                        "FIELD_INTEGER"
+                "flesh_heap_magic_resist"        "1"
+            }
+            "02"
+            {
+                "var_type"                            "FIELD_FLOAT"
+                "flesh_heap_strength_buff_amount"    "2.5"
+            }
+            "03"
+            {
+                "var_type"                "FIELD_INTEGER"
+                "flesh_heap_range"        "1000"
+            }
+        }
 	}
 	"pudge_essence_shift"
 	{
@@ -9965,7 +9957,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed"		"8000"
+				"movement_speed"		"4500 5000 5500 6000"
 			}
 			"02"
 			{
@@ -10031,7 +10023,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"mana_void_aoe_radius"			"600"
+				"mana_void_aoe_radius"			"325 350 375 400"
 			}
 		}
 	}
@@ -23014,22 +23006,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"decay_radius"			"275 290 305 320"
+				"decay_radius"			"300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"decay_tick"			"0.2"
+				"decay_tick"			"0.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"decay_slow"			"-21 -24 -27 -30"
+				"decay_slow"			"-24 -28 -32 -36"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage"						"60 90 120 150"
+				"damage"						"35 70 105 140"
 				"CalculateSpellDamageTooltip"	"1"
 				"LinkedSpecialBonus"			"special_bonus_unique_pudge_4"
 			}
@@ -38404,11 +38396,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90"
+		"AbilityCooldown"				"100 90 80"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"350 460 520"
+		"AbilityManaCost"				"260 380 500"
 
 		"precache"
 		{
@@ -38431,13 +38423,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5 3.0 3.5"
+				"duration"				"2.0 3.5 5.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_mod_1"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"					"25"
+				"damage"					"20 35 50"
 				"LinkedSpecialBonus"		"special_bonus_unique_mod_2"
 			}
 		}
@@ -39054,6 +39046,194 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"value"						"125"
+			}
+		}
+	}
+	"katana_soul_stole"
+	{
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/katana_soul_stole.lua"
+		"AbilityTextureName"		"custom/katana_soul"
+		"AbilityBehavior"		 	  "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"LevelsBetweenUpgrades"       "8"
+		"RequiredLevel"               "1"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                          "FIELD_FLOAT"
+				"bonus_base_damage"                 "30 60 120 240"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_agility"	                    "2 3 4 5"
+			}
+			"03"
+			{
+				"var_type"                          "FIELD_FLOAT"
+				"bonus_damage"                      "1 3 5 7"
+			}
+			"04"
+			{
+				"var_type"                          "FIELD_FLOAT"
+				"corruption_armor"                  "-3 -7 -14 -28"
+			}
+		}
+	}
+	"special_bonus_unique_katana_2"	
+	{
+	    "BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2"
+			}
+		}
+	}
+	"katana_dagger"
+	{
+		"BaseClass"                   "ability_lua"
+		"ScriptFile"						"abilities/katana_dagger.lua"
+		"AbilityTextureName"		"custom/katana_dagger"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityCastRange"				"525 750 975 1200"
+		"AbilityCastPoint"				"0.1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dagger_damage"				"20 40 60 80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dagger_stun"				"0.2 0.3 0.4 0.5"
+			}
+			"03"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"missile_speed"         "1200"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"katana_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"				"custom/katana_strike"
+		"ScriptFile"								"abilities/katana_strike.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"					"Hero_PhantomAssassin.Strike.Start"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.25"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"17 16 15 14"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"35 40 45 50"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"1.5 2.0 2.5 3.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_bonus"		"100 150 200 250"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movespeed_bonus"			"15 30 45 60"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"murlock_water_wave"
+	{
+		"BaseClass"             		"naga_siren_rip_tide"
+		"AbilityTextureName"            "murlock_water"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_NagaSiren.Riptide.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0 0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"chance"					"17"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"armor_reduction"			"-2 -4 -6 -8"
+				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"20 40 60 80"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"300"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0"
 			}
 		}
 	}

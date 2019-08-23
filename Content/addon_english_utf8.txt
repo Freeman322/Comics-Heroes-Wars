@@ -5009,6 +5009,7 @@
 		"DOTA_Tooltip_ability_item_shine_of_sea_Description"                              "Activated: Super Purge - Restores 300 health to all allies around and purges most of the negative effects on them \ nPassive:. Shine of Sea - Covers the character in a layer of sacred sea water, blocking a part of physical damage."
 		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_all_stats"                          "+$all"
 		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_armor"                              "+$armor"
+		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_health"                                     "+$health"
 		"DOTA_Tooltip_ability_item_shine_of_sea_damage_reduction"                         "DAMAGE REDUCTION:"
 		"DOTA_Tooltip_ability_item_shine_of_sea_damage_cleanse"                           "DAMAGE CLEANSE:"
 		"DOTA_Tooltip_ability_item_shine_of_sea_damage_reset_interval"                    "PURGE INTERVAL:"

@@ -2312,8 +2312,8 @@
 		"Complexity"					"1"
 		"Team"							"Good"
 
-		"ModelScale"					"0.730000"
-		"LoadoutScale"					"0.770000"
+		"ModelScale"					"0.530000"
+		"LoadoutScale"					"0.570000"
 		"SpectatorLoadoutScale"	 		"0.88"
 		"NameAliases"					"mercer"
 		"PickSound"						"ogre_magi_ogmag_spawn_01"
