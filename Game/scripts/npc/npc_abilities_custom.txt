@@ -17229,7 +17229,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tooltip_duration"		"4 5 6"
+				"tooltip_duration"		"5"
 			}
 			"02"
 			{
@@ -28975,13 +28975,13 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"heal_ptc"				"1.5 2.0 2.5 3.0"
+				"var_type"				"FIELD_INTEGER"
+				"speed_gain"				"15 20 25 30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_speed"				"250 350 450 550"
+				"max_gain"				"400"
 			}
 		}
 	}
@@ -38423,13 +38423,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.0 3.5 5.0"
+				"duration"				"5.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_mod_1"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"					"20 35 50"
+				"damage"					"25"
 				"LinkedSpecialBonus"		"special_bonus_unique_mod_2"
 			}
 		}
@@ -38493,7 +38493,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_second"					"12 24 32 48"
+				"damage_per_second"					"20 40 60 80"
 			}
 			"04"
 			{
@@ -38606,7 +38606,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_soul"			"4 6 8 10"
+				"damage_per_soul"			"8 12 16 20"
 			}
 			"14"
 			{
@@ -38707,7 +38707,7 @@
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"current_health_damage_ptc"		"2 3 4 5"
+				"current_health_damage_ptc"		"4 6 8 10"
 			}
 		}
 	}
