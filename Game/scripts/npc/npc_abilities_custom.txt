@@ -2696,6 +2696,8 @@
 		  "model"		 "models/items/doom/demonshard_weapon/demonshard_weapon.vmdl"
 		  "particle"	 "particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_ambient.vpcf"
 		  "particle"	 "particles/econ/items/doom/doom_weapon_demonshard/doom_demonshard_ambient.vpcf"
+		  "model"  "models/items/doom/hells_glare/hells_glare.vmdl"
+		  "particle" "particles/models/items/doom/hells_glare/hells_glare.vsnap"
 	    }
 		"AbilitySpecial"
 		{
@@ -3676,6 +3678,9 @@
 		{
 			"model"  "models/items/axe/shout_mask/shout_mask.vmdl"
 			"particle"  "particles/econ/items/dazzle/dazzle_ti6_gold/dazzle_ti6_gold_ambient.vpcf"
+			"model"         "models/items/axe/ti8_axe_violent_prisoner_of_war_head/ti8_axe_violent_prisoner_of_war_head.vmdl"
+			"model"   "models/items/axe/ti9_jungle_axe/axe_bare.vmdl"
+			"model"       "models/items/axe/ti9_jungle_axe/ti9_jungle_axe_belt.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -5577,12 +5582,12 @@
 		"AbilityTextureName"					"custom/pudge_essence_shift"
 		"ScriptFile"							"abilities/pudge_essence_shift.lua"
 		"AbilityCastPoint"						"0"
-		"AbilityCooldown"						"12 10 8 6"
+		"AbilityCooldown"						"10 8 6 4"
 
 		"AbilityCastRange"						"150"
 
 		"AbilityManaCost"						"50 60 70 80"
-		"AbilityDuration"						"5"
+		"AbilityDuration"						"5 6 7 8"
 
 		"precache"
 		{
@@ -5724,6 +5729,12 @@
 			"model"	 							"models/items/pudge/doomsday_ripper_off_hand/doomsday_ripper_off_hand.vmdl"
 			"model"	 							"models/items/pudge/doomsday_ripper_shoulder/doomsday_ripper_shoulder.vmdl"
 			"particle"							"particles/econ/items/rubick/rubick_puppet_master/rubick_head_puppet_ambient_eye.vpcf"
+			"model"  "models/items/pudge/pudge_dapper_disguise_head/pudge_dapper_disguise_head.vmdl"
+            "particle"  "particles/econ/items/pudge/pudge_ti9_cache/pudge_ti9_cache_head_ambient_fire.vpcf"
+			"particle"  "particles/econ/items/pudge/pudge_ti9_cache/pudge_ti9_cache_head_ambient.vpcf"
+			"particle"  "particles/econ/items/pudge/pudge_ti9_cache/pudge_ti9_cache_head_ambient_glow.vpcf" 
+			"model"   "models/items/pudge/pudge_dapper_disguise_back/pudge_dapper_disguise_back.vmdl"
+			"model"   "models/items/pudge/pudge_dapper_disguise_belt/pudge_dapper_disguise_belt.vmdl"
 		}
 
 		"AbilitySpecial"
@@ -7971,6 +7982,8 @@
 				"model"  "models/items/lifestealer/ravenous_head/ravenous_head.vmdl"
 				"particle"  "particles/econ/items/juggernaut/bladekeeper_bladefury/_dc_juggernaut_blade_fury.vpcf"
 				"model"		"models/items/lifestealer/redrage_head/redrage_head.vmdl"
+				"model"       "models/items/lifestealer/ls_ti9_immortal_arms/ls_ti9_immortal_arms.vmdl"
+				"particle"   "particles/econ/items/lifestealer/ls_ti9_immortal/ls_ti9_immortal_ambient.vpcf"
 			}
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
@@ -10667,7 +10680,31 @@
 			"particle"					"particles/goldengod/goldengod_ambient_hands.vpcf"
 			"particle"					"particles/goldengod/goldengod_ambient_inner.vpcf"
 			"particle"					"particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes.vpcf"
-
+			"model"                     "models/items/ember_spirit/ember_sindur_sensei_belt/ember_sindur_sensei_belt.vmdl"
+			"model"                     "models/items/ember_spirit/ember_sindur_sensei_shoulder/ember_sindur_sensei_shoulder.vmdl"
+			"model"                     "models/items/ember_spirit/ember_sindur_sensei_arms/ember_sindur_sensei_arms.vmdl"
+			"model"                     "models/items/ember_spirit/ember_sindur_sensei_head/ember_sindur_sensei_head.vmdl"
+			"particle"                  "particles/econ/items/ember_spirit/ember_sindur/ember_sindur_head_ambient.vpcf"
+            "particle"                  "particles/econ/items/ember_spirit/ember_sindur/ember_sindur_head_ambient_back.vpcf" 
+			"particle"    "particles/econ/items/ember_spirit/ember_sindur/ember_sindur_head_ambient_brow.vpcf"
+			"particle"    "particles/econ/items/ember_spirit/ember_sindur/ember_sindur_head_ambient_goatee.vpcf"
+			"particle"    "particles/econ/items/ember_spirit/ember_sindur/ember_sindur_head_ambient_lip.vpcf"
+			"particle"    "particles/econ/items/ember_spirit/ember_sindur/ember_sindur_head_ambient_side.vpcf"
+			"particle"    "particles/econ/items/ember_spirit/ember_sindur/ember_sindur_head_ambient_topknot.vpcf"
+			"particle"    "particles/econ/items/ember_spirit/ember_sindur/ember_sindur_head_ambient_topknot_b.vpcf"
+			"model"       "models/items/ember_spirit/ember_ti9_immortal_shoulder/ember_ti9_immortal_shoulder.vmdl"
+			"particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient.vpcf"                  
+	        "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_scarf.vpcf"   
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_sun_rays.vpcf"
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_scarf_core.vpcf"                  
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_scarf_core_b.vpcf"  
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_spike_a.vpcf"                      
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_sun.vpcf"                      
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_sun_core.vpcf"    
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_sun_core_b.vpcf"      
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_sun_core_c.vpcf"                 
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_sun_core_glow.vpcf"
+            "particle"   "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_shoulders_ambient_sun_core_shield.vpcf"
 			"particle"					"particles/econ/items/ember_spirit/ember_spirit_burning_god_offhand/ember_spirit_ambient_burning_god_l.vpcf"
 			"particle"					"particles/econ/items/ember_spirit/ember_spirit_burning_god_offhand/ember_spirit_ambient_burning_god_r.vpcf"
 		}
@@ -14425,6 +14462,17 @@
 			"model"		"models/items/antimage/arc_of_manta__offhand/arc_of_manta__offhand.vmdl"
 			"particle"	"particles/econ/items/antimage/antimage_ti7_golden/antimage_ti7_golden_ambient.vpcf"
 			"model"		"models/items/antimage/anti_mage_dragon_fury_head/anti_mage_dragon_fury_head.vmdl"
+			"model"      "models/items/antimage/god_eater_head/god_eater_head.vmdl"
+			"particle"  "particles/econ/items/antimage/antimage_weapon_godeater/antimage_godeater_head_ambient.vpcf"
+			"model"     "models/items/antimage/god_eater_belt/god_eater_belt.vmdl"                                    
+            "model"            "models/items/antimage/god_eater_armor/god_eater_armor.vmdl"               
+            "model"            "models/items/antimage/god_eater_arms/god_eater_arms.vmdl"      
+            "particle" "particles/econ/items/antimage/antimage_weapon_godeater/antimage_godeater_bracer_ambient_energy.vpcf"                     
+            "particle" "particles/econ/items/antimage/antimage_weapon_godeater/antimage_godeater_bracer_ambient_flare.vpcf"                          
+            "particle" "particles/econ/items/antimage/antimage_weapon_godeater/antimage_godeater_bracer_ambient_magic.vpcf"              
+            "particle" "particles/econ/items/antimage/antimage_weapon_godeater/antimage_godeater_bracer_ambient_smoke.vpcf"                  
+            "model"          "models/items/antimage/god_eater_shoulder/god_eater_shoulder.vmdl"                     
+            "particle"      "particles/econ/items/antimage/antimage_weapon_godeater/antimage_godeater_shoulder_ambient.vpcf"
 		}
 		"AbilitySpecial"
 		{
@@ -14622,7 +14670,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.75 1.0 1.25 1.5"
+				"stun_duration"			"2.0"
 			}
 		}
 	}
@@ -18961,6 +19009,32 @@
 			"model"			"models/items/rubick/forgotten_mask/forgotten_mask.vmdl"
 			"model"			"models/items/rubick/vestments_of_stellar_abyss_shoulder/vestments_of_stellar_abyss_shoulder.vmdl"
 			"particle"  "particles/hero_spawn/spawn_ambient.vpcf"
+			"model" "models/items/rubick/ti9_cache_rubick_ancient_magus_weapon_2/ti9_cache_rubick_ancient_magus_weapon_2.vmdl"
+            "particle"  "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient.vpcf"
+            "particle"  "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_blob.vpcf"
+           "particle"  "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_cubes.vpcf"
+            "particle"   "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_ember.vpcf"
+            "particle"  "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_flare.vpcf"
+           "particle"  "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_glow.vpcf"
+            "particle"  "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_head.vpcf"
+          "particle"  "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_mist.vpcf"
+          "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_ray.vpcf"
+            "particle"  "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_rim.vpcf"
+            "particle"  "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_triangle.vpcf"
+            "particle"   "particles/econ/items/rubick/rubick_ti9_cache_magus_weapon/rubick_ti9_cache_magus_weapon_ambient_triangle_glow.vpcf"
+			 "model"    "models/items/rubick/ti9_cache_rubick_ancient_magus_head_2/ti9_cache_rubick_ancient_magus_head_2.vmdl"
+			 "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_head/rubick_ti9_cache_magus_head_ambient.vpcf"
+			   "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_head/rubick_ti9_cache_magus_head_ambient_rope.vpcf"
+			   "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_head/rubick_ti9_cache_magus_head_ambient_rope_b.vpcf"
+			    "model"        "models/items/rubick/ti9_cache_rubick_ancient_magus_back_2/ti9_cache_rubick_ancient_magus_back_2.vmdl"
+                "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_back/rubick_ti9_cache_magus_back_ambient.vpcf"
+               "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_back/rubick_ti9_cache_magus_back_ambient_beam.vpcf"
+               "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_back/rubick_ti9_cache_magus_back_ambient_beam_m.vpcf"
+               "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_back/rubick_ti9_cache_magus_back_ambient_edge_l.vpcf"
+              "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_back/rubick_ti9_cache_magus_back_ambient_edge_m.vpcf"
+              "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_back/rubick_ti9_cache_magus_back_ambient_edge_r.vpcf"
+             "particle" "particles/econ/items/rubick/rubick_ti9_cache_magus_back/rubick_ti9_cache_magus_back_ambient_glow.vpcf"
+			  "model"        "models/items/rubick/ti9_cache_rubick_ancient_magus_shoulder_2/ti9_cache_rubick_ancient_magus_shoulder_2.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -19601,13 +19675,13 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"					"0.1"
+		"AbilityCastPoint"					"0.35"
 		"AbilityCastRange"					"1200"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"						"22 20 18 16"
-		"AbilityDamage"							"110 180 250 320"
+		"AbilityDamage"							"200 270 340 410"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -19625,7 +19699,7 @@
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"damage"								"3 4 5 6"
+				"damage"								"5 6 7 8"
 			}
 			"03"
 			{
@@ -19638,6 +19712,7 @@
 				"strike_cast_range"		  "1200"
 			}
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
 	//=================================================================================================================
@@ -19671,6 +19746,9 @@
 			"soundfile" 							"soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
 			"particle"								"particles/econ/items/monkey_king/ti7_weapon/mk_ti7_golden_immortal_strike.vpcf"
 			"model"										"models/items/monkey_king/monkey_king_arcana_head/mesh/monkey_king_arcana.vmdl"
+			"model"                                     "models/items/monkey_king/dota_plus_monkey_king_armor/dota_plus_monkey_king_armor.vmdl"
+			"model"                                     "models/items/monkey_king/dota_plus_monkey_king_shoulders/dota_plus_monkey_king_shoulders.vmdl"
+			"model"                                     "models/items/monkey_king/dota_plus_monkey_king_head/dota_plus_monkey_king_head.vmdl"
 			"particle"  							"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pur_immortal_cast.vpcf"
 			"particle" 	 							"particles/econ/items/monkey_king/arcana/monkey_king_arcana_crown.vpcf"
 			"particle"  							"particles/econ/items/monkey_king/arcana/monkey_king_arcana_death.vpcf"
@@ -23994,6 +24072,11 @@
 			"particle"			"particles/hero_ursa/ursa_infernal_rage_cast.vpcf"
 			"particle"			"particles/hero_ursa/ursa_thunderclap.vpcf"
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+			"model"  "models/items/ursa/fierce_heart_belt/fierce_heart_belt.vmdl"
+			"model"  "models/items/ursa/fierce_heart_weapon/fierce_heart_weapon.vmdl"
+			"model"  "models/items/ursa/fierce_heart_arms/fierce_heart_arms.vmdl"
+			"model"      "models/items/ursa/fierce_heart_back/fierce_heart_back.vmdl"
+			"model"  "models/items/ursa/fierce_heart_head/fierce_heart_head.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -27310,6 +27393,7 @@
 			"model"						"models/items/invoker/nightlord_belt/nightlord_belt.vmdl"
 			"particle"					"particles/econ/items/invoker/invoker_darklord/invoker_darklord_ambient.vpcf"
 			"particle"					"particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_base_attack.vpcf"
+			"model"                    "models/heroes/invoker_kid/invoker_kid_debut.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -37638,6 +37722,8 @@
 			"model"			"models/items/lycan/blood_moon_hunter_armor/blood_moon_hunter_armor.vmdl"
 			"model"			"models/items/lycan/blood_moon_hunter_weapon/blood_moon_hunter_weapon.vmdl"
 			"soundfile" 		"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+			"model"        "models/items/lycan/lycan_ti9_immortal_head/lycan_ti9_immortal_head.vmdl"
+			"particle"       "particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_ambient.vpcf" 
 		}
 
 		"AbilitySpecial"
@@ -37906,6 +37992,8 @@
 			"model"		"models/items/faceless_void/bracers_of_aeons/bracers_of_aeons.vmdl"
 			"particle"	"particles/econ/items/faceless_void/faceless_void_bracers_of_aeons/fv_bracers_of_aeons_red_ambient.vpcf"
 			"particle"	"particles/econ/items/faceless_void/faceless_void_weapon_voidhammer/faceless_void_weapon_voidhammer.vpcf"
+			"model" "models/items/faceless_void/green_blessed_mace.vmdl"
+			"particle"              "particles/econ/items/rubick/rubick_arcana/rbck_arc_skeletonking_hellfireblast_skull.vpcf"
 		}
 
 		"AbilityCastRange"				"600"
@@ -39121,6 +39209,45 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
+        "precache"
+		{
+			"model"		"models/items/phantom_assassin/creeping_shadow_shoulder/creeping_shadow_shoulder.vmdl"
+			"model"		"models/items/phantom_assassin/creeping_shadow_belt/creeping_shadow_belt.vmdl"
+			"model"		"models/items/phantom_assassin/creeping_shadow_back/creeping_shadow_back.vmdl"
+			"model"		"models/items/phantom_assassin/toll_of_the_fearful_aria_head/toll_of_the_fearful_aria_head.vmdl"
+			"model"		"models/katana/katana.vmdl"
+			"model"		"models/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_head.vmdl"
+			"particle"  	"particles/hero_katana/katana_pit_of_souls.vpcf"
+			"particle"  	"particles/econ/items/drow/drow_ti6/drow_ti6_silence_wave.vpcf"
+			"particle"  	"particles/hero_katana/katana_ambient.vpcf"
+			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_blade_ambient_b.vpcf"
+			"model"		"models/heroes/hero_katana/katana_arcana.vmdl"
+			"model"		"models/heroes/phantom_assassin/pa_arcana_weapons.vmdl"
+			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_elder_ambient.vpcf"
+			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_blade_ambient_a.vpcf"
+			"particle" 	 "particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_head_ambient.vpcf"
+			"model"       "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_head/ti9_cache_pa_gothic_hunter_head.vmdl"
+			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_head/ti9_cache_pa_gothic_head_ambient.vpcf"
+			"model"        "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_hunter_back.vmdl"
+			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_back_ambient.vpcf"
+			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_back_ambient_rope.vpcf"
+			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_back_ambient_rope_b.vpcf"
+			"model"        "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_hunter_belt.vmdl"
+			"particle"  "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_belt_ambient.vpcf"
+			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_belt_ambient_embers.vpcf"
+		    "particle"  "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_belt_ambient_ray.vpcf"
+			"model"     "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_shoulder/ti9_cache_pa_gothic_hunter_shoulder.vmdl"
+			"model"     "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_hunter_weapon.vmdl"
+			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient.vpcf"                                                      
+		    "particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_back.vpcf"                                                                 
+            "particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_bloom.vpcf"
+            "particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_buzz.vpcf"                      
+            "particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_edge.vpcf"                    
+            "particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye.vpcf"                         
+            "particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye_glow.vpcf"                         
+            "particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye_mist.vpcf"                                
+            "particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye_steam.vpcf"
+		}
 
 		"AbilitySpecial"
 		{
@@ -39170,6 +39297,19 @@
 		"AbilityManaCost"				"35 40 45 50"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"  "particles/econ/items/sven/sven_weapon_ice/sven_ice_sword.vpcf"
+			"particle"  "particles/econ/items/monkey_king/arcana/monkey_king_arc_death.vpcf"
+			"model"		"models/heroes/hero_katana/reality_paradox/reality_paradox_head.vmdl"
+			"model"		"models/heroes/hero_katana/reality_paradox/reality_paradox_shoulder.vmdl"
+			"model"		"models/items/phantom_assassin/creeping_shadow_belt/creeping_shadow_belt.vmdl"
+			"model"		"models/items/phantom_assassin/phantom_knight_belt/phantom_knight_belt.vmdl"
+			"model"		"models/items/phantom_assassin/toll_of_the_fearful_aria_belt/toll_of_the_fearful_aria_belt.vmdl"
+			"model"		"models/items/phantom_assassin/toll_of_the_fearful_aria_belt/toll_of_the_fearful_aria_belt.vmdl"
+			"model"		"models/items/phantom_assassin/creeping_shadow_back/creeping_shadow_back.vmdl"
+			"model"		"models/heroes/hero_katana/reality_paradox/reality_paradox_weapon.vmdl"
+		}
 		"AbilitySpecial"
 		{
 			"01"

@@ -77,6 +77,7 @@ function monkey_king_earth_splitter:OnSpellStart()
 	for _, unit in pairs(units) do
 		EmitSoundOn("Hero_MonkeyKing.Spring.Target", hCaster)
 		unit:AddNewModifier(hCaster, self, "modifier_stunned", {duration = nStun})
+		self:GetCaster():PerformAttack(unit, true, true, true, true, false, false, true)
 		local damage = {
 					victim = unit,
 					attacker = hCaster,
