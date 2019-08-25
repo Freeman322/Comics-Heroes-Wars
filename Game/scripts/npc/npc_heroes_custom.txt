@@ -2369,7 +2369,7 @@
 		"Ability16"				"special_bonus_all_stats_20"
 		"Ability17"				"special_bonus_unique_katana"
 
-		"ArmorPhysical"					"7.000000"
+		"ArmorPhysical"					"4.500000"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"				"14"
 		"StatusHealthRegen"             "3"
