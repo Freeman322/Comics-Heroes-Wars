@@ -2500,17 +2500,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"  "20"
+				"bonus_movement_speed"  "26"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"24"
+				"bonus_stat"			"20"
 			}	
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"			"25"
+				"bonus_attack_speed"			"30"
 			}		
 			"04"
 			{
@@ -2528,7 +2528,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"300"	
+		"ItemCost"						"500"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -2537,7 +2537,7 @@
 		"ItemResult"					"item_power_treads"
 		"ItemRequirements"
 		{
-			"01"						"item_boots;item_crown;item_crown;item_crown"
+			"01"						"item_boots;item_gloves;item_crown;item_crown"
 		}
 	}
 
@@ -12154,7 +12154,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"			"2.0"
+		"AbilityChannelTime"			"1.5"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -12290,6 +12290,98 @@
 				"var_type"				"FIELD_INTEGER"
 				"restore_per_charge"	"15"
 			}
+		}
+	}
+	"item_ring_of_aquila"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"212"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastRange" 				"1200"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2025"
+		"ItemShopTags"					""
+		"ItemQuality"					"rare"
+		"ItemAliases"					"roa;ring of aquila"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"IsObsolete"					"0"
+
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_mana_regen"		"1.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_armor"		"4"
+			}			
+		}		
+	}
+		"item_recipe_ring_of_aquila"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"211"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"700"	
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"IsObsolete"					"0"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ring_of_aquila"
+		"ItemRequirements"
+		{
+			"01"						"item_ring_of_basilius;item_crown;item_crown"
 		}
 	}
 }

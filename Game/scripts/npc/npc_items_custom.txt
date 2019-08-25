@@ -3816,7 +3816,7 @@
 		"BaseClass"							"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1500"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -8319,7 +8319,7 @@
 			"04"
 			{
 				"var_type"                          "FIELD_FLOAT"
-				"bonus_damage"                      "30"
+				"bonus_damage"                      "25"
 			}
 			"05"
 			{
@@ -8362,7 +8362,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					   "0"
+		"ItemCost"					   "1000"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -8371,7 +8371,7 @@
 		"ItemResult"					"item_mystic_ring"
 		"ItemRequirements"
 		{
-			"01"						"item_kaya;item_null_talisman;item_ring_of_basilius;"
+			"01"						"item_kaya;item_null_talisman;item_ring_of_basilius"
 		}
 	}	
 }		

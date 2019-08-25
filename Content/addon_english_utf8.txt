@@ -5069,9 +5069,6 @@
 		"DOTA_Tooltip_modifier_katana_cairn_of_souls" 									 "Cairn of Souls"
 		"DOTA_Tooltip_modifier_katana_cairn_of_souls_Description" 						 "Trying to blow to hell"
 
-		"DOTA_Tooltip_modifier_katana_coup_de_grace" 									 "Ascending Soul"
-		"DOTA_Tooltip_modifier_katana_coup_de_grace_Description" 						 "Increases damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%"
-
 		"DOTA_Tooltip_modifier_khan_windrun" 									 "WindRun"
 
 		"DOTA_Tooltip_modifier_fate_guardian_angel" 						 "Immortality"

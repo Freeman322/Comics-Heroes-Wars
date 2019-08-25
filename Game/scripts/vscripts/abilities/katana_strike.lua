@@ -43,19 +43,22 @@ function katana_strike:OnSpellStart()
 						ability = self,
           })
 
-          self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_katana_strike_bonus", {duration = self:GetAbility():GetSpecialValueFor("duration")})
+          self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_katana_strike_bonus", {duration = self:GetSpecialValueFor("duration")})
         end
     end
     
     modifier_katana_strike_bonus = class({})
     
       function modifier_katana_strike_bonus:DeclareFunctions()
-        local funcs = 
-       {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE} end
+        local funcs = {
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+      }
+    return funcs
+  end
 
-function modifier_katana_strike_bonus:GetModifierMoveSpeedBonus_Percentage() return self:GetAbility():GetSpecialValueFor("movespeed_bonus") end
-function modifier_katana_strike_bonus:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor("attack_speed_bonus") end
+function modifier_katana_strike_bonus:GetModifierMoveSpeedBonus_Percentage( params ) return self:GetAbility():GetSpecialValueFor("movespeed_bonus") end
+function modifier_katana_strike_bonus:GetModifierAttackSpeedBonus_Constant( params ) return self:GetAbility():GetSpecialValueFor("attack_speed_bonus") end
 
         
 

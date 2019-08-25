@@ -114,7 +114,7 @@ function modifier_item_ice_pearl:OnTakeDamage(params)
           damage = params.original_damage * self:GetAbility():GetSpecialValueFor("damage_return") / 100,
           damage_type = DAMAGE_TYPE_PURE,
           ability = self:GetAbility(),
-          damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+          damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
       })
 
         ---self:GetParent():Heal(params.damage, self:GetAbility())
@@ -154,7 +154,7 @@ function modifier_item_ice_pearl_active:OnTakeDamage(params)
                 damage = params.damage,
                 damage_type = DAMAGE_TYPE_PURE,
                 ability = self:GetAbility(),
-                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
             })
 
             EmitSoundOn("DOTA_Item.BladeMail.Damage", params.attacker)

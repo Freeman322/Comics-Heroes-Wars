@@ -1741,8 +1741,6 @@
 		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_all_stats"                          "+$all"
 		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_armor"                              "+$armor"
 		"DOTA_Tooltip_ability_item_shine_of_sea_damage_reduction"                         "DAMAGE REDUCTION:"
-		"DOTA_Tooltip_ability_item_shine_of_sea_damage_cleanse"                           "DAMAGE CLEANSE:"
-		"DOTA_Tooltip_ability_item_shine_of_sea_damage_reset_interval"                    "PURGE INTERVAL:"
 		"DOTA_Tooltip_ability_item_shine_of_sea_radius"                                   "Super Purge RADIUS:"
 		"DOTA_Tooltip_ability_item_shine_of_sea_heal"                                     "Super Purge HEAL:"
 		"DOTA_Tooltip_ability_item_azuras_staff"                                          "Azura's Staff"
@@ -2148,6 +2146,7 @@
 		"DOTA_Tooltip_ability_item_timepiece_bonus_all_stats"                             "+$all"
 		"DOTA_Tooltip_ability_item_timepiece_bonus_attack_speed"                          "+$attack"
 		"DOTA_Tooltip_ability_item_timepiece_bonus_damage"                                "+$damage"
+		"DOTA_Tooltip_ability_item_timepiece_bonus_health_regen"                          "+$hp_regen"
 		"DOTA_Tooltip_ability_item_timepiece_bonus_mana_regen_pct"                        "%+$mana_regen"
 		"DOTA_Tooltip_ability_item_timepiece_time_freeze_dmg"                             "%Time Compass DAMAGE MULTIPLIER:"
 		"DOTA_Tooltip_ability_item_timepiece_time_freeze_duration"                        "Time Compass DURATION:"
@@ -2786,6 +2785,47 @@ Rage, rage against the dying of the light."
 
 		"npc_dota_hero_mod_hype"				"The Marquis was powerful on a multi-universal scale. He was able to travel between parallel universes, effortlessly destroy just about everything, including entire realities, and even use or create high abstract or higher-dimensional entities (stated to vastly overshadow Galactus as if he was less than an insect) as puppet chess pieces during confrontations. Even beings on the level of Eternity were easily under his control."
 		"npc_dota_hero_valkorion_hype"		"Tenebrae—known to the Old Sith Empire as Vitiate, his reconstituted Sith Empire as the Sith Emperor, and his Eternal Empire as Valkorion—was an ancient dark side entity of enormous power who manipulated galactic affairs for 1,500 years..."
+
+		"bloodmayne_avenger"                "Bloodmoon Revival"
+		"bloodmayne_avenger_lore"           ""
+ 
+		"gothic_hunter"                     "Gothic Hunter"
+		"gothic_hunter_lore"                ""
+
+		"dapper"                            "Dapper Disguise"
+		"dapper_lore"                       ""
+
+		"cinder_sensei"                     "Cinder Sensei"
+		"cinder_sensei_lore"                ""
+
+		"god_eater"                         "God Eater"
+		"god_eater_lore"                    ""
+
+		"strange_artifact"                 "Strange Artifact"
+		"strange_artifact_lore"            "Once the collector found a strange but very powerful artifact. Trying to reveal his power, he gained great strength and at the same time became much younger, becoming a child with superpowers and incomprehensible knowledge"
+
+        "ancient_magus"                    "Ancient Magus"
+		"ancient_magus_lore"               "" 
+
+		"rulk_unleashed"                   "THE MAD RULK"
+		"rulk_unleashed_lore"              "One day, Rulk realized that the armor or weapon he did not need it and they can only impede his movement. He also realized that his most powerful and murderous weapon - his hands."
+
+		"hells_glare"                      "Hells Glare"
+		"hells_glare_lore"                 ""
+
+		"treasure_of_golden_age_2"         "Treasure of Sun blessing"
+
+		"beyonder_timebreaker"             "Timebreaker"
+		"beyonder_timebreaker_lore"        ""
+
+		"mischief"                        "Mischief"
+		"mischief_lore"                   ""
+
+		"ferocious_heart"                 "Ferocious Heart"
+		"ferocious_heart_lore"            ""
+
+		"guardian_flame"                  "Listings for Apogee of the Guardian Flame"
+		"guardian_flame_lore"             "It was not only curiosity that drew the Burning Celestial to the mortal plane, but a small, foreboding sense that some larger conflict--greater even than that of the Ancients--may soon come to pass"
 }
 
 
