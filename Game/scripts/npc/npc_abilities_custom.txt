@@ -15501,9 +15501,11 @@
 		"AbilityManaCost"				"100 140 180"
 		"precache"
 		{
-			"particle"  "particles/hero_diablo/diablo_fire_dissipation.vpcf"
-			"model"			"models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
-			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+			"particle"  				"particles/hero_diablo/diablo_fire_dissipation.vpcf"
+			"model"					"models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
+			"particle"  				"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+			"model"					"models/heroes/hero_diablo/econs/freeza/freeza.vmdl"
+			"particle"				"particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff_glow.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -24603,19 +24605,19 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"120 160 200"
-	    "precache"
-	    {
-			"model"		 	"models/heroes/hero_ronan/econs/ronan_ethernal_hammer.vmdl"
-			"model"		 	"models/heroes/hero_ronan/econs/ronan_shadowmourne.vmdl"
-			"model"		 	"models/heroes/hero_ronan/econs/ronan_moltenclaw.vmdl"
-			"model"		 	"models/heroes/hero_ronan/econs/ronan_vanguard.vmdl"
-			"model"			"models/heroes/hero_ronan/econs/ronan_weapon.vmdl"
-			"particle"  	"particles/ronan_strike.vpcf"
-			"particle"  	"particles/one_punch.vpcf"
-			"particle"  	"particles/punch_cracks.vpcf"
-			"particle"  	"particles/econ/items/axe/axe_armor_molten_claw/axe_molten_claw_ambient.vpcf"
-			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
-	    }
+		"precache"
+		{
+				"model"		 	"models/heroes/hero_ronan/econs/ronan_ethernal_hammer.vmdl"
+				"model"		 	"models/heroes/hero_ronan/econs/ronan_shadowmourne.vmdl"
+				"model"		 	"models/heroes/hero_ronan/econs/ronan_moltenclaw.vmdl"
+				"model"		 	"models/heroes/hero_ronan/econs/ronan_vanguard.vmdl"
+				"model"			"models/heroes/hero_ronan/econs/ronan_weapon.vmdl"
+				"particle"  	"particles/ronan_strike.vpcf"
+				"particle"  	"particles/one_punch.vpcf"
+				"particle"  	"particles/punch_cracks.vpcf"
+				"particle"  	"particles/econ/items/axe/axe_armor_molten_claw/axe_molten_claw_ambient.vpcf"
+				"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -24716,7 +24718,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"7585"
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/diablo_fire_dissipation.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -24737,6 +24739,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75 90 105 120"
 
+		"precache"
+		{
+			"particle"  				"particles/freeza/diablo_fire_dissipation.vpcf"
+			"particle"				"particles/econ/items/chaos_knight/chaos_knight_ti9_weapon/chaos_knight_ti9_weapon_blur_crit.vpcf"
+			"particle"				"particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf"
+			"particle"				"particles/econ/items/dazzle/dazzle_ti6_gold/dazzle_ti6_shallow_grave_gold.vpcf"
+			"particle"				"particles/econ/items/crystal_maiden/ti9_immortal_staff/cm_ti9_golden_staff_lvlup_globe.vpcf"
+			"particle"				"particles/thanos/thanos_supernova_explode_a.vpcf"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -27506,13 +27517,13 @@
 
 		"precache"
 		{
-			"model"						"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_belt/ti8_invoker_prism_crystal_spellcaster_belt.vmdl"
-			"model"						"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_shoulder/ti8_invoker_prism_crystal_spellcaster_shoulder.vmdl"
-			"model"						"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_back/ti8_invoker_prism_crystal_spellcaster_capevmdl"
-			"model"						"models/heroes/hero_collector/collector_arcana/collector.vmdl"
+			"model"					"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_belt/ti8_invoker_prism_crystal_spellcaster_belt.vmdl"
+			"model"					"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_shoulder/ti8_invoker_prism_crystal_spellcaster_shoulder.vmdl"
+			"model"					"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_back/ti8_invoker_prism_crystal_spellcaster_capevmdl"
+			"model"					"models/heroes/hero_collector/collector_arcana/collector.vmdl"
 			"particle"  				"particles/collector/alma_ambient.vpcf"
 			"particle"  				"particles/collector/alma_collect_cast.vpcf"
-			"particle" 					"particles/collector/alma_emp_cast.vpcf"
+			"particle" 				"particles/collector/alma_emp_cast.vpcf"
 			"particle"  				"particles/collector/alma_emp_release.vpcf"
 			"particle"  				"particles/collector/alma_sonic_boom.vpcf"
 			"particle"  				"particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf"
@@ -27520,11 +27531,15 @@
 			"particle"  				"particles/collector/alma_tornado.vpcf"
 			"particle"  				"particles/econ/items/lich/lich_ti8_immortal_arms/lich_ti8_chain_frost.vpcf"
 			"particle"  				"particles/collector/alma_ice_blast.vpcf"
-			"model"						"models/items/invoker/frostivus2018_invoker_keeper_of_magic_arms/frostivus2018_invoker_keeper_of_magic_arms.vmdl"
-			"model"						"models/items/invoker/frostivus2018_invoker_keeper_of_magic_back/frostivus2018_invoker_keeper_of_magic_back.vmdl"
-			"model"						"models/items/invoker/frostivus2018_invoker_keeper_of_magic_belt/frostivus2018_invoker_keeper_of_magic_belt.vmdl"
-			"model"						"models/items/invoker/frostivus2018_invoker_keeper_of_magic_shoulder/frostivus2018_invoker_keeper_of_magic_shoulder.vmdl"
+			"model"					"models/items/invoker/frostivus2018_invoker_keeper_of_magic_arms/frostivus2018_invoker_keeper_of_magic_arms.vmdl"
+			"model"					"models/items/invoker/frostivus2018_invoker_keeper_of_magic_back/frostivus2018_invoker_keeper_of_magic_back.vmdl"
+			"model"					"models/items/invoker/frostivus2018_invoker_keeper_of_magic_belt/frostivus2018_invoker_keeper_of_magic_belt.vmdl"
+			"model"					"models/items/invoker/frostivus2018_invoker_keeper_of_magic_shoulder/frostivus2018_invoker_keeper_of_magic_shoulder.vmdl"
 			"particle"  				"particles/items4_fx/meteor_hammer_spell_debuff_detail.vpcf"
+			"model"					"models/heroes/invoker_kid/invoker_kid.vmdl"
+			"particle"				"particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf"
+			"model"					"models/heroes/invoker_kid/invoker_kid_hair.vmdl"
+			"model"					"models/heroes/invoker_kid/invoker_kid_cape.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -39333,8 +39348,8 @@
 	}
 	"murlock_water_wave"
 	{
-		"BaseClass"             		"naga_siren_rip_tide"
-		"AbilityTextureName"            "murlock_water"
+		"BaseClass"             			"naga_siren_rip_tide"
+		"AbilityTextureName"            	"custom/murlock_water"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"

@@ -107,6 +107,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/dante.png" );
 				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_lion" && hasModifier(hero_entindex, "modifier_freeza"))
+				{
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/freeza_icon.png" );
+				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_weaver" && hasModifier(hero_entindex, "modifier_doomsday_clock"))
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/reverse_flash_custommade.png" );

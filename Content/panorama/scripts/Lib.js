@@ -4979,6 +4979,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "370": {
+        "item": "freeza",
+        "rarity": "11",
+        "quality": "11",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_lion",
+        "universal": "false",
+        "def_id": "370",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

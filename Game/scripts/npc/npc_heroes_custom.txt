@@ -7861,7 +7861,7 @@
 		"AttackRate"					"1.700000"
 		"AttackAnimationPoint"			"0.300000"
 		"AttackAcquisitionRange"			"600"
-		"AttackRange"		"150"
+		"AttackRange"					"150"
 		
 		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"			"10"
@@ -7870,7 +7870,7 @@
 		"AttributeIntelligenceGain"		"4.200000"
 		"AttributeBaseAgility"			"12"
 		"AttributeAgilityGain"			"2.100000"
-		"MovementSpeed"				"285"
+		"MovementSpeed"				"335"
 		"MovementTurnRate"				"0.700000"
 
 		"VisionNighttimeRange"			"1400"

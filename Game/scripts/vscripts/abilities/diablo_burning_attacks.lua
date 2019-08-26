@@ -17,6 +17,14 @@ function modifier_diablo_burning_attacks:OnAttackLanded (params)
 
         self:GetAbility():UseResources(true, false, true)
 
+        if Util:PlayerEquipedItem(self:GetParent():GetPlayerOwnerID(), "freeza") == true then 
+			local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/chaos_knight/chaos_knight_ti9_weapon/chaos_knight_ti9_weapon_blur_crit.vpcf", PATTACH_CUSTOMORIGIN, params.attacker );
+            ParticleManager:SetParticleControl( nFXIndex, 0, params.target:GetOrigin());
+            ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+            EmitSoundOn("Freeza.Cast3", params.target)
+        end 
+        
         EmitSoundOn("Hero_DoomBringer.Attack.Impact", params.target)
         EmitSoundOn("Hero_DoomBringer.InfernalBlade.PreAttack", params.target)
         EmitSoundOn("Hero_DoomBringer.InfernalBlade.Target", params.target)

@@ -215,3 +215,9 @@ function modifier_octavia:GetAttackSound( params )
     return "Hero_Juggernaut.Attack"
 end
 
+if modifier_freeza == nil then modifier_freeza = class({}) end
+
+function modifier_freeza:IsHidden() return true end
+function modifier_freeza:IsPurgable() return false end
+function modifier_freeza:RemoveOnDeath() return false end
+

@@ -10,8 +10,15 @@ end
 
 function diablo_fire_blast:OnSpellStart()
 	if IsServer() then 
+		local effect = "particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
+
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "freeza") == true then 
+			effect = "particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf" 
+			soundEffect = "Freeza.Cast2"
+		end 
+
 		local info = {
-				EffectName = "particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf",
+				EffectName = effect,
 				Ability = self,
 				iMoveSpeed = 1000,
 				Source = self:GetCaster(),
@@ -20,6 +27,7 @@ function diablo_fire_blast:OnSpellStart()
 			}
 
 		ProjectileManager:CreateTrackingProjectile( info )
+
 		EmitSoundOn( "Hero_SkeletonKing.Hellfire_Blast", self:GetCaster() )
 	end
 end

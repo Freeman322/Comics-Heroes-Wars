@@ -19,10 +19,6 @@ if item_axe_of_phractos_modifier == nil then
     item_axe_of_phractos_modifier = class({})
 end
 
-function item_axe_of_phractos_modifier:GetEffectName()
-    return "particles/items2_fx/radiance_owner.vpcf"
-end
-
 function item_axe_of_phractos_modifier:GetEffectAttachType()
     return PATTACH_ABSORIGIN_FOLLOW
 end
@@ -46,6 +42,15 @@ end
 function item_axe_of_phractos_modifier:GetAttributes()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
+
+function item_axe_of_phractos_modifier:GetEffectName()
+    if self:GetParent():HasModifier("modifier_freeza") then
+        return "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_flameguard.vpcf"
+    end
+    
+    return "particles/items2_fx/radiance_owner.vpcf"
+end
+
 
 function item_axe_of_phractos_modifier:GetModifierPreAttack_BonusDamage()
     return self:GetAbility():GetSpecialValueFor("bonus_damage")
@@ -147,7 +152,7 @@ end
 
 function item_axe_of_phractos_modifier_aura:OnIntervalThink()
     if IsServer() then
-        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+25), damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+25), damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
     end
 end
 

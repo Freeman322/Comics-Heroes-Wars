@@ -376,8 +376,13 @@
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		"AbilityCooldown"				"0.5"
-		"AbilityDamage"				"200"
+		"AbilityCooldown"				"0.15"
+		"AbilityDamage"				"125"
+
+		"precache"
+		{
+			"particle"				"particles/econ/items/ember_spirit/ember_ti9/ember_ti9_flameguard.vpcf"
+		}
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -386,27 +391,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"80"
+				"bonus_damage"				"80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
+				"bonus_attack_speed"		"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"all" 				    "45"
+				"all" 				    	"45"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_chance" 		    "65"
+				"bash_chance" 		    		"75"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_damage" 			"2.1"
+				"burn_damage" 				"2.1"
 			}
 		}
 	}

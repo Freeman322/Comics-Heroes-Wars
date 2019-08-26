@@ -18,8 +18,17 @@ function modifier_diablo_fire_dissipation:IsPurgable()
 end
 
 function modifier_diablo_fire_dissipation:OnCreated(table)
-	if IsServer() then
-		self.nFXIndex = ParticleManager:CreateParticle( "particles/hero_diablo/diablo_fire_dissipation.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+    if IsServer() then
+        local effect = "particles/hero_diablo/diablo_fire_dissipation.vpcf"
+        local soundEffect = "Hero_Phoenix.SunRay.Beam"
+        local soundEffectLoop = "Hero_Phoenix.SunRay.Loop"
+
+        if Util:PlayerEquipedItem(self:GetParent():GetPlayerOwnerID(), "freeza") == true then 
+            effect = "particles/freeza/diablo_fire_dissipation.vpcf" 
+            soundEffect = "Freeza.Cast1"
+        end 
+
+		self.nFXIndex = ParticleManager:CreateParticle( effect, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControlEnt( self.nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_head", self:GetCaster():GetOrigin(), true )
 		ParticleManager:SetParticleControl( self.nFXIndex, 1, Vector(self:GetCaster():GetAbsOrigin().x, self:GetCaster():GetAbsOrigin().y, self:GetCaster():GetAbsOrigin().z+96)+(self:GetCaster():GetForwardVector():Normalized()*1200))
 		ParticleManager:SetParticleControlEnt( self.nFXIndex, 2, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_head", self:GetCaster():GetOrigin(), true )
@@ -28,9 +37,10 @@ function modifier_diablo_fire_dissipation:OnCreated(table)
 		ParticleManager:SetParticleControlEnt( self.nFXIndex, 9, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_head", self:GetCaster():GetOrigin(), true )
 		self:AddParticle( self.nFXIndex, false, false, -1, false, true )
 
-		self:StartIntervalThink(0.05)
-		EmitSoundOn ("Hero_Phoenix.SunRay.Beam", self:GetCaster())
-        StartSoundEvent ("Hero_Phoenix.SunRay.Loop", self:GetCaster())
+        self:StartIntervalThink(0.05)
+        
+		EmitSoundOn (soundEffect, self:GetCaster())
+        StartSoundEvent (soundEffectLoop, self:GetCaster())
 	end
 end
 

@@ -2043,7 +2043,24 @@
             }
             "strange_artifact"
             {
-                "model"       "models/heroes/invoker_kid/invoker_kid_debut.vmdl"
+                "model"                      "models/heroes/invoker_kid/invoker_kid.vmdl"
+                "model_scale"                "1.25"
+                "projectile"
+                {
+                    "particle"              "particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf"
+                }
+
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/heroes/invoker_kid/invoker_kid_hair.vmdl"
+                    }
+                    "2"
+                    {
+                        "model"         "models/heroes/invoker_kid/invoker_kid_cape.vmdl"
+                    }
+                }
             }
             "edward_scissorhands"
             {
@@ -3127,6 +3144,33 @@
                     "1"
                     {
                         "particle"      "particles/econ/courier/courier_jadehoof_ambient/jadehoof_ambient.vpcf"
+                    }
+                }
+            }
+        }
+    }
+     "npc_dota_hero_lion"
+    {
+        "global"
+        {       
+            "freeza"
+            {
+                "model"                      "models/heroes/hero_diablo/econs/freeza/freeza.vmdl"
+                
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_freeza"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff_glow.vpcf"
                     }
                 }
             }
@@ -6111,7 +6155,7 @@
                     }
                 }
             } 
-             "alma"
+            "alma"
             {
                 "model"                             "models/heroes/hero_collector/collector_arcana/collector.vmdl"
                 "particles"
