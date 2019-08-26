@@ -8669,7 +8669,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"800"	
+		"ItemCost"						"900"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -8720,17 +8720,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int"			"6"
+				"bonus_int"			"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_str"			"6"
+				"bonus_str"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"			"6"
+				"bonus_agi"			"10"
 			}
 			"04"
 			{

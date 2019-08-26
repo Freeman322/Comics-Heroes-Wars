@@ -11502,12 +11502,13 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_katana_strike_attack_speed_bonus"                                   "ATTACK SPEED BONUS:"
 		"DOTA_Tooltip_ability_katana_strike_movespeed_bonus"                                      "%MOVESPEED BONUS"
 
-
 		"DOTA_Tooltip_ability_murlock_water_wave"                                                 "Rip ride"
 		"DOTA_Tooltip_ability_murlock_water_wave_Description"                                     "The Murlock and his illusions have a chance to hit nearby units with a damaging wave of water that lowers armor."
 		"DOTA_Tooltip_ability_murlock_water_wave_chance"                                          "%CHANCE:"
 		"DOTA_Tooltip_ability_murlock_water_wave_armor_reduction"                                 "ARMOR_REDUCTION:"
 		"DOTA_Tooltip_ability_murlock_water_wave_damage"                                          "DAMAGE:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_monkey_king_3"                                 "+650 Primal Spring Damage"
 
 	}	
 }
