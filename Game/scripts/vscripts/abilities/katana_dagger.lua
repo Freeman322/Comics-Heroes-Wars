@@ -36,10 +36,6 @@ function katana_dagger:OnSpellStart()
 						self:CreateProjectile(target)
 					end 
 				end 
-			else 
-				for i = 1, num do 
-					self:CreateProjectile(target)
-				end 
 			end
 		end 
 	end 

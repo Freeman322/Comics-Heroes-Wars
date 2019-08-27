@@ -51,20 +51,23 @@ end
 function modifier_item_dragon_heart:OnTakeDamage (event)
     if event.unit == self:GetParent() and not self:GetParent() ~= event.attacker then
         if event.attacker:IsHero() then
-        self:GetAbility():StartCooldown(5)
+            self:GetAbility():StartCooldown(5)
         end
     end
 end
 
-function modifier_item_dragon_heart:IsHidden ()
+function modifier_item_dragon_heart:IsHidden()
     return true
 end
 
 function modifier_item_dragon_heart:GetModifierConstantHealthRegen ()
-    local regen = self:GetParent():GetMaxHealth () * 7 / 100
-    if self:GetAbility():IsCooldownReady() then
-        return regen
-    else
+    if IsServer() then
+        local regen = self:GetParent():GetMaxHealth () * 7 / 100
+
+        if self:GetAbility():IsCooldownReady() then
+            return regen
+        end
+
         return 0
     end
 end
@@ -77,9 +80,20 @@ function modifier_item_dragon_heart:IsAura()
     return false
 end
 
+function modifier_item_dragon_heart:GetEffectName()
+    if self:GetParent():HasModifier("modifier_freeza") then
+        return "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_flameguard.vpcf"
+    end
+    
+    return "particles/items2_fx/radiance_owner.vpcf"
+end
+
+function modifier_item_dragon_heart:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
 
 function modifier_item_dragon_heart:GetAuraRadius()
-    return 900
+    return 500
 end
 
 function modifier_item_dragon_heart:GetAuraSearchTeam()
@@ -121,7 +135,7 @@ end
 
 function modifier_item_dragon_heart_aura:OnIntervalThink()
     if IsServer() then
-        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetCaster():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+40), damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetCaster():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+40), damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS})
     end
 end
 

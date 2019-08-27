@@ -14,7 +14,7 @@ function diablo_fire_blast:OnSpellStart()
 
 		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "freeza") == true then 
 			effect = "particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf" 
-			soundEffect = "Freeza.Cast2"
+			soundEffect = "Freeza.Cast3"
 		end 
 
 		local info = {

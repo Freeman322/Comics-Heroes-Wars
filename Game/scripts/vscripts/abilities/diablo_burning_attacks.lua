@@ -22,7 +22,7 @@ function modifier_diablo_burning_attacks:OnAttackLanded (params)
             ParticleManager:SetParticleControl( nFXIndex, 0, params.target:GetOrigin());
             ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-            EmitSoundOn("Freeza.Cast3", params.target)
+            EmitSoundOn("Freeza.Cast2", params.target)
         end 
         
         EmitSoundOn("Hero_DoomBringer.Attack.Impact", params.target)

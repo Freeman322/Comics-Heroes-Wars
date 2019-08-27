@@ -37,6 +37,7 @@
  		"item"		"item_sange_and_yasha"
 		"item"		"item_eclipsed_blade"
 		"item"		"item_avernos_mist"
+		"item"		"item_mystic_ring"
 	}
 
 	"weapons_armor"

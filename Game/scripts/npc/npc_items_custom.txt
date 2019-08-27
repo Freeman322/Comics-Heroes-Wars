@@ -2289,104 +2289,59 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"			"50"
+				"bonus_intellect"			"40"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"25"
+				"bonus_strength"			"15"
 			}
 			"03"
 			{
-				"var_type"              "FIELD_INTEGER"
-				"bonus_agility"         "15"
+				"var_type"              		"FIELD_INTEGER"
+				"bonus_agility"        		 "15"
 			}
 			"04"
 			{
-				"var_type"              "FIELD_INTEGER"
-				"bonus_mp_regen"        "2"
+				"var_type"              		"FIELD_INTEGER"
+				"bonus_mp_regen"        		"2"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"				"500"
+				"bonus_damage"				"25"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"25"
+				"bonus_armor"				"20"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"31"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"damage_return"			"100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"attack_speed_reduction"		"-70"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"move_speed_reduction"		"-100"
 			}
-			"11"
+			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"debuff_duration"			"3.0"
 			}
-			"12"
+			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"active_duration"			"6.0"
 			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_restore"				"600"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"restore_pct"				"10"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_damage"				"300"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_movement_speed"		"-40"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_debuff_duration"		"1.25"
-			}
-			"18"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_trigger_damage"		"1000"
-			}
-			"19"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"total_health_regen_pct" 	"1.5"
-			}
-			"21"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_attack_speed" 		"-60"
-			}
-			"22"
+			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"pearl_shield_cooldown" 		"9"
@@ -3507,7 +3462,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"525"
+		"ItemCost"					"525"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3516,7 +3471,7 @@
 		"ItemResult"					"item_ice_pearl"
 		"ItemRequirements"
 		{
-			"01"						"item_shine_of_sea;item_shivas_guard;item_blade_mail;item_grief_vessel;item_ogre_axe"
+			"01"						"item_shivas_guard;item_blade_mail;item_grief_vessel;item_ogre_axe"
 		}
 	}
 	//=================================================================================================================
@@ -5676,12 +5631,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"AbilityTextureName"            "recipe"
+		"BaseClass"					"item_datadriven"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"            	"recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1250"
+		"ItemCost"					"1750"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -5690,7 +5645,7 @@
 		"ItemResult"					"item_space_stone"
 		"ItemRequirements"
 		{
-			"01"						"item_soul_booster;item_blink;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace;item_wind_lace"
+			"01"						"item_soul_booster;item_blink;item_blink"
 		}
 	}
 	//=================================================================================================================
@@ -5700,11 +5655,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_lua"
+		"BaseClass"                    	 "item_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"Model"							"models/props_gameplay/red_box.vmdl"
+		"Model"						"models/props_gameplay/red_box.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"            "custom/space_stone"
+		"AbilityTextureName"           	 "custom/space_stone"
 		"ItemQuality"					"epic"
 
 		"FightRecapLevel"				"1"
@@ -5714,7 +5669,7 @@
 		"AbilityCastRange"				"GLOBAL"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"50.0"
-		"ItemCost"						"8950"
+		"ItemCost"					"8950"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemShopTags"					"teleport"
@@ -5724,9 +5679,9 @@
 
 		"precache"
 		{
-			"particle"  "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_final_ti5.vpcf"
-			"particle"  "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
+			"particle"  				"particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_final_ti5.vpcf"
+			"particle"  				"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
 		}
 
 		// Special
@@ -5735,27 +5690,27 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_mana"				"2500"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_health"				"2500"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"bonus_speed"				"50"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_FLOAT"
+				"var_type"				"FIELD_FLOAT"
 				"wormhole_delay"			"1.75"
 			}
 			"05"
 			{
-				"var_type"					"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"wormhole_radius"			"375"
 			}
 		}
@@ -8250,27 +8205,28 @@
 			"01"
 			{
 				"var_type"						    "FIELD_INTEGER"
-				"bonus_strength"				    "120"
+				"bonus_strength"				   		"120"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"heal_amp"	                        "15"
+				"heal_amp"	                       		 "15"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_health"		                "2600"
+				"bonus_health"		                		"2600"
 			}
 			"04"
 			{
-				"var_type"                         "FIELD_FLOAT"
-				"bonus_damage"                      "160"
+				"var_type"                        			 "FIELD_FLOAT"
+				"bonus_damage"                      		"160"
 			}
 			"04"
 			{
-				"var_type"                          "FIELD_FLOAT"
-				"burn_damage"                       "6.25"
+				"var_type"                          		"FIELD_FLOAT"
+				"burn_damage"                      		"2.75"
+				"CalculateSpellDamageTooltip"				"0"
 			}
 		}
 	}
@@ -8283,7 +8239,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					   "3360"
+		"ItemCost"					"5000"
 		"ItemShopTags"					""
 
 		// Recipe
