@@ -37746,18 +37746,18 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_FLOAT"
+				"var_type"					"FIELD_FLOAT"
 				"attack_speed"					"1.2 1.6 2.0"
 			}
 			"02"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"heal_amplify"					"1.0 1.5 2.0"
+				"var_type"					"FIELD_FLOAT"
+				"heal_amplify"					"0.7 1.0 1.5"
 			}
 			"03"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"armor_amplify"					"0.3 0.35 0.4"
+				"var_type"					"FIELD_FLOAT"
+				"armor_amplify"				"0.3 0.35 0.4"
 			}
 			"04"
 			{
@@ -39160,9 +39160,6 @@
 		"AbilityTextureName"			"custom/katana_soul"
 		"AbilityBehavior"		 	 	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		"LevelsBetweenUpgrades"      		"5"
-		"RequiredLevel"               	"10"
-
 		"Precache"
 		{
 			"particle"				"particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_devour.vpcf"
@@ -39176,7 +39173,7 @@
 			"01"
 			{
 				"var_type"                          "FIELD_FLOAT"
-				"bonus_damage"                      "1 3 5 7"
+				"bonus_damage"                      "2 4 6 8"
 			}
 		}
 	}
@@ -39213,7 +39210,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
+		"AbilityCooldown"				"6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------

@@ -8225,7 +8225,7 @@
 			"04"
 			{
 				"var_type"                          		"FIELD_FLOAT"
-				"burn_damage"                      		"2.75"
+				"burn_damage"                      		"3.5"
 				"CalculateSpellDamageTooltip"				"0"
 			}
 		}
