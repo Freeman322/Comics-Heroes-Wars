@@ -8215,7 +8215,7 @@
 			"03"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_health"		                		"2300"
+				"bonus_health"		                		"2000"
 			}
 			"04"
 			{
@@ -8225,7 +8225,7 @@
 			"04"
 			{
 				"var_type"                          		"FIELD_FLOAT"
-				"burn_damage"                      		"3.5"
+				"burn_damage"                      		"5"
 				"CalculateSpellDamageTooltip"				"0"
 			}
 		}
