@@ -3857,7 +3857,7 @@
 		"ItemResult"					"item_timepiece"
 		"ItemRequirements"
 		{
-			"01"						"item_orchid;item_nullifier;item_ultimate_orb;item_ultimate_orb"
+			"01"						"item_orchid;item_nullifier;item_ultimate_orb;item_ultimate_orb;item_ultimate_orb;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -4662,37 +4662,37 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"30"
+				"bonus_all_stats"		"70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"60"
+				"bonus_attack_speed"	"70"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100"
+				"bonus_damage"			"120"
 			}	
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"8"
+				"bonus_armor"			"10"
 			}
 			"05"
 			{
 				"var_type"             "FIELD_FLOAT"
-				"bonus_health_regen"   "10"
+				"bonus_health_regen"   "12"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"5"
+				"bonus_mana_regen"		"6"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"time_freeze_dmg"		"30"
+				"time_freeze_dmg"		"40"
 			}
 			"07"
 			{
@@ -6694,7 +6694,7 @@
 		"Model"						   "models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"125"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -6787,7 +6787,7 @@
 		"Model"						   "models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"50"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -8215,7 +8215,7 @@
 			"03"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_health"		                		"2600"
+				"bonus_health"		                		"2300"
 			}
 			"04"
 			{
@@ -8265,27 +8265,27 @@
 			"01"
 			{
 				"var_type"						    "FIELD_INTEGER"
-				"bonus_intellect"				    "60"
+				"bonus_intellect"				    "64"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_agility"	                        "8"
+				"bonus_agility"	                        "12"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_strength"		                "8"
+				"bonus_strength"		                "12"
 			}
 			"04"
 			{
 				"var_type"                          "FIELD_FLOAT"
-				"bonus_damage"                      "25"
+				"bonus_damage"                      "35"
 			}
 			"05"
 			{
 				"var_type"                         "FIELD_FLOAT"
-				"bonus_amp"                      "20"
+				"bonus_amp"                      "25"
 			}
 			"06"
 			{
@@ -8295,12 +8295,12 @@
 			"07"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_armor"	                        "4"
+				"bonus_armor"	                        "5"
 			}
 			"08"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_mana_regen"                     "4"
+				"bonus_mana_regen"                     "5"
 			}
 			"09"
 			{
@@ -8323,7 +8323,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					   "1000"
+		"ItemCost"					   "1300"
 		"ItemShopTags"					""
 
 		// Recipe

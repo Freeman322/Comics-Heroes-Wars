@@ -4894,7 +4894,13 @@ Lib.Items = {
               "2":"369",
               "1":"366",
               "3":"362"}
-           }
+           },
+        "hero":"",
+        "is_music":"0",
+        "is_compendium":"0",
+        "item":"treasure_of_golden_age_2",
+        "rarity":"7",
+        "quality":"6"
     },
     "364": {
         "item": "rulk_unleashed",
