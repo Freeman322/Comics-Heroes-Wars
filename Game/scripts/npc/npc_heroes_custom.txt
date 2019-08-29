@@ -7851,7 +7851,7 @@
 		"Ability16"					"special_bonus_unique_mod_5"
 		"Ability17"					"special_bonus_all_stats_20"
 
-		"ArmorPhysical"				"-1"
+		"ArmorPhysical"				"5"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"				"35"
 		"AttackDamageMax"				"43"

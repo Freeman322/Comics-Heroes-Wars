@@ -105,6 +105,8 @@ function modifier_monkey_king_the_shattered_dreams:DoWidghAttack(caster, target,
     unit:AddNewModifier(caster, self:GetAbility(), "modifier_stunned", {duration = 1.5})
 
     ApplyDamage( {attacker = caster, victim = unit, ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_PHYSICAL} )
+    self:GetCaster():PerformAttack (unit, false, false, true, true, false, false, true)
+    self:GetCaster():PerformAttack (unit, false, false, true, true, false, false, true)
 
     if next_target and unit and not unit:IsNull() and not next_target:IsNull() then
       local nFXIndex = ParticleManager:CreateParticle( particle, PATTACH_CUSTOMORIGIN, nil );

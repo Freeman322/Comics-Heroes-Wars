@@ -376,8 +376,8 @@
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		"AbilityCooldown"				"0.15"
-		"AbilityDamage"				"125"
+		"AbilityCooldown"				"0.5"
+		"AbilityDamage"				"250"
 
 		"precache"
 		{
@@ -391,7 +391,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"80"
+				"bonus_damage"				"140"
 			}
 			"02"
 			{
@@ -406,7 +406,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_chance" 		    		"75"
+				"bash_chance" 		    		"70"
 			}
 			"05"
 			{

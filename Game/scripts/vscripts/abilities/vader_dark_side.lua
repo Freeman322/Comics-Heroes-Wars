@@ -65,7 +65,7 @@ function modifier_vader_dark_side:OnIntervalThink()
 		for _, enemy in pairs(units) do
 			enemy:SetMana(enemy:GetMana() - damage)
 			self:GetAbility():GetCaster():SetMana(self:GetCaster():GetMana() + damage)
-			ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = enemy, ability = self:GetAbility(), damage = damage*2, damage_type = DAMAGE_TYPE_MAGICAL})
+			ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = enemy, ability = self:GetAbility(), damage = damage*2, damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_HPLOSS})
 		end
 	end
 end

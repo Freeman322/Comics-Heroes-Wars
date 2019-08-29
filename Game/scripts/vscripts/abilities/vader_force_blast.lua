@@ -46,7 +46,7 @@ function vader_force_blast:OnProjectileHit( hTarget, vLocation )
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = self:GetAbilityDamage() + self.damage,
-			damage_type = DAMAGE_TYPE_PHYSICAL,
+			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self,
 		}
 

@@ -11396,7 +11396,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_mod_dark_strike_move_speed_slow_pct"                        "%MOVESPEED SLOWING:"
 
 		"DOTA_Tooltip_ability_mod_mirror_in_glass"                                        "Mirror In Glass"
-		"DOTA_Tooltip_ability_mod_mirror_in_glass_Description"                            "At the death of any living creature, Marquis of Deat will take his soul to himself, replenishing the soul’s dream. When activated, it will release all souls, dealing damage."
+		"DOTA_Tooltip_ability_mod_mirror_in_glass_Description"                            "At the death of any living creature, Marquis of Death will take his soul to himself, replenishing the soul’s dream. When activated, it will release all souls, dealing damage."
 		"DOTA_Tooltip_ability_mod_mirror_in_glass_requiem_radius"                         "AREA OF EFFECT:"
 		"DOTA_Tooltip_ability_mod_mirror_in_glass_damage_per_soul"                        "DAMAGE PER SOUL:"
 		"DOTA_Tooltip_ability_mod_mirror_in_glass_max_souls"                              "MAX SOULS:"

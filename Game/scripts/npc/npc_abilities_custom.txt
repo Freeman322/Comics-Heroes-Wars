@@ -3082,7 +3082,7 @@
 		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
-		"AbilityCooldown"						"50 55 40"
+		"AbilityCooldown"						"60 50 40"
 
 		"AbilitySpecial"
 		{
@@ -15303,7 +15303,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_level"			"30 45 60"
+				"damage_per_level"			"50"
 				"LinkedSpecialBonus"		"special_bonus_unique_tracer_pulse_bomb"
 			}
 			"02"
@@ -16006,7 +16006,7 @@
 		"AbilityTextureName"			"custom/vader_force_punch"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 
 
@@ -37944,7 +37944,7 @@
 
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.35"
-		"AbilityCooldown"				"200 190 180"
+		"AbilityCooldown"				"180 170 160"
 		"AbilityManaCost"				"300 500 700"
 
 
@@ -37955,7 +37955,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"				"700 800 900"
+				"radius"				"800 900 1000"
 			}
 			"02"
 			{
@@ -37965,7 +37965,8 @@
 			"03"
 			{
 				"var_type"         		 "FIELD_FLOAT"
-				"damage_mana_pct"          "15 20 25"
+				"damage_mana_pct"          "10 20 30"
+				"CalculateSpellDamageTooltip" "0"
 			}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
@@ -38009,7 +38010,7 @@
 			"particle"	"particles/econ/items/faceless_void/faceless_void_bracers_of_aeons/fv_bracers_of_aeons_red_ambient.vpcf"
 			"particle"	"particles/econ/items/faceless_void/faceless_void_weapon_voidhammer/faceless_void_weapon_voidhammer.vpcf"
 			"model" "models/items/faceless_void/green_blessed_mace.vmdl"
-			"particle"              "particles/econ/items/rubick/rubick_arcana/rbck_arc_skeletonking_hellfireblast_skull.vpcf"
+			"particle"              "particles/econ/items/rubick/rubick_arcana/rbck_arc_skeletonking_hellfireblast.vpcf"
 		}
 
 		"AbilityCastRange"				"600"
@@ -38527,13 +38528,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.0"
+				"duration"				"5.0 6.0 7.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_mod_1"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"					"25"
+				"damage"					"20 35 50"
 				"LinkedSpecialBonus"		"special_bonus_unique_mod_2"
 			}
 		}
@@ -38564,7 +38565,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"36.0"
+		"AbilityCooldown"				"40.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -38585,7 +38586,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"6.0"
+				"duration"						"5.0 6.0 7.0 8.0"
 				"LinkedSpecialBonus"				"special_bonus_unique_mod_3"
 			}
 			"02"
@@ -38636,7 +38637,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"				"100 150 200 250"
+		"AbilityDamage"				"50 100 150 200"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -38721,7 +38722,7 @@
 			"15"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"preattack_damage_per_soul"	"2 2.5 3.0 3.5"
+				"preattack_damage_per_soul"	"1 2 3 4"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -38745,7 +38746,7 @@
 		"SpellDispellableType"					"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"						"1"
 
-		"AbilityCastRange"						"1400"
+		"AbilityCastRange"						"1500 2000 2500 3000 "
 		"AbilityCastPoint"						"0"
 		"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_3"
 
