@@ -28,8 +28,8 @@ function modifier_carnage_blood_spray_thinker:OnCreated(event)
 
         EmitSoundOn("Hero_Alchemist.AcidSpray", thinker)
         
-        AddFOWViewer( thinker:GetTeam(), target, 1500, 5, false)
-        GridNav:DestroyTreesAroundPoint(target, 1500, false)
+        AddFOWViewer( thinker:GetTeam(), target, 750, 5, false)
+        GridNav:DestroyTreesAroundPoint(target, 750, false)
     end
 end
 

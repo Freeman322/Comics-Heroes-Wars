@@ -1285,7 +1285,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"					"350"
 		"AbilityCastPoint"					"0.0"
-		"AbilityCooldown"					"6.0"
+		"AbilityCooldown"					"12.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -6469,7 +6469,7 @@
 		"ItemResult"					"item_majestic_staff"
 		"ItemRequirements"
 		{
-			"01"						"item_spirit_vessel;item_ancient_janggo"
+			"01"						"item_spirit_vessel;item_crown;item_crown;item_wind_lace"
 		}
 	}
 

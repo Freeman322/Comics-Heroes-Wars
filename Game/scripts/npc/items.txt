@@ -435,11 +435,11 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"7.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"300"
+		"ItemCost"						"255"
 		"ItemShopTags"					"armor"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"faerie fire"
@@ -464,12 +464,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15"
+				"bonus_damage"			"8"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_restore"			"500"
+				"hp_restore"			"600"
 			}
 		}
 	}
@@ -8678,7 +8678,7 @@
 		"ItemResult"					"item_ancient_janggo"
 		"ItemRequirements"
 		{
-			"01"						"item_sobi_mask;item_crown;item_wind_lace"
+			"01"						"item_sobi_mask;item_crown;item_crown;item_wind_lace"
 			"02"						"item_ancient_janggo"
 		}
 	}
@@ -8707,7 +8707,7 @@
 		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"drum of endurance"
-		"ItemInitialCharges"			"6"
+		"ItemInitialCharges"			"12"
 		"ItemDisplayCharges"			"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemRequiresCharges"			"1"
@@ -8720,17 +8720,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int"			"10"
+				"bonus_int"			"16"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_str"			"10"
+				"bonus_str"			"16"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"			"10"
+				"bonus_agi"			"16"
 			}
 			"04"
 			{
@@ -8745,12 +8745,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed_pct"	"35"
+				"bonus_attack_speed_pct"	"70"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed_pct"	"13"
+				"bonus_movement_speed_pct"	"23"
 			}
 			"08"
 			{
