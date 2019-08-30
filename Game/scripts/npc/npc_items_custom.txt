@@ -3519,7 +3519,7 @@
 		"ItemResult"					"item_monarh_bow"
 		"ItemRequirements"
 		{
-			"01"						"item_butterfly;item_ultimate_orb;item_wraith_band"
+			"01"						"item_butterfly;item_ultimate_orb;item_ultimate_orb;item_wraith_band"
 		}
 	}
 	//=================================================================================================================

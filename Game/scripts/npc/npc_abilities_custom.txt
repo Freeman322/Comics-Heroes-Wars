@@ -32629,7 +32629,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"required_hits"				"5"
+				"required_hits"				"4"
 			}
 			"02"
 			{
@@ -32645,12 +32645,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.9"
+				"stun_duration"				"1.0"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"						"200 250 300 350"
+				"radius"					"200 250 300 350"
 			}
 			"06"
 			{
@@ -34563,7 +34563,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70"
+		"AbilityCooldown"				"40"
 
 		"AbilityDamage"				"275"
 
@@ -38534,7 +38534,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"					"20 35 50"
+				"damage"					"45 60 75"
 				"LinkedSpecialBonus"		"special_bonus_unique_mod_2"
 			}
 		}
@@ -38716,7 +38716,7 @@
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_souls"				"6 8 10 12"
+				"max_souls"				"14 16 18 20"
 				"LinkedSpecialBonus"		"special_bonus_unique_mod_5"
 			}
 			"15"
@@ -38831,7 +38831,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"1"
+				"value"						"7"
 			}
 		}
 	}

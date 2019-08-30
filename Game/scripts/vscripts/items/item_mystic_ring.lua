@@ -36,7 +36,7 @@ function modifier_item_mystic_ring:DeclareFunctions()
 end
  
  
-function modifier_item_mystic_ring:GetModifierSpellAmplify_Percentage_Unique() return self:GetAbility():GetSpecialValueFor("bonus_amp") end
+function modifier_item_mystic_ring:GetModifierSpellAmplify_PercentageUnique() return self:GetAbility():GetSpecialValueFor("bonus_amp") end
 function modifier_item_mystic_ring:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_strength") end
 function modifier_item_mystic_ring:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("bonus_intellect") end
 function modifier_item_mystic_ring:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("bonus_agility") end

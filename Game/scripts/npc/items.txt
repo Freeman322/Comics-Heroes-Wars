@@ -1910,7 +1910,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"10"
+				"bonus_movement_speed"	"15"
 			}
 		}
 	}
@@ -1955,7 +1955,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"		"28"
+				"bonus_movement_speed"		"32"
 			}
 		}
 	}
@@ -1997,7 +1997,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"28"
+				"bonus_movement_speed"	"35"
 			}
 			"02"
 			{
@@ -2038,7 +2038,7 @@
 		"ItemResult"					"item_phase_boots"
 		"ItemRequirements"
 		{
-			"01"						"item_boots;item_chainmail;item_blades_of_attack"
+			"01"						"item_boots;item_chainmail;item_blades_of_attack;item_blades_of_attack"
 		}
 	}
 
@@ -2072,17 +2072,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"15"
+				"bonus_movement_speed"	"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_melee"			"18"
+				"bonus_damage_melee"			"30"
 			}			
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_range"			"12"
+				"bonus_damage_range"			"22"
 			}			
 			"04"
 			{
@@ -2107,7 +2107,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"phase_movement_speed_range"  "10"
+				"phase_movement_speed_range"  "12"
 			}
 			"09"
 			{
@@ -2122,7 +2122,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"6"
+				"bonus_armor"			"7"
 			}		
 		}
 	}
@@ -2500,7 +2500,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"  "26"
+				"bonus_movement_speed"  "30"
 			}
 			"02"
 			{
@@ -2510,7 +2510,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"			"30"
+				"bonus_attack_speed"			"40"
 			}		
 			"04"
 			{
@@ -8445,6 +8445,30 @@
 
 
 	//=================================================================================================================
+	// Recipe: Arcane Boots
+	//=================================================================================================================
+	"item_recipe_arcane_boots"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"179"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_arcane_boots"
+		"ItemRequirements"
+		{
+			"01"						"item_boots;item_energy_booster"
+		}
+	}
+	
+	//=================================================================================================================
 	// Arcane Boots
 	//=================================================================================================================
 	"item_arcane_boots"
@@ -8454,48 +8478,49 @@
 		"ID"							"180"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
-		// Stats
+		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"55.0"
+		"AbilityCastRange"				"1200"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"ItemCost"						"1300"
+		"ItemCost"						"1400"
 		"ItemShopTags"					"move_speed;boost_mana;mana_pool"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"mana;mb;arcane boots"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"15"
+				"bonus_movement"		"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_mana"			"250"
-			}
+			}			
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"replenish_amount"		"135"
+				"replenish_amount"		"160"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"replenish_radius"		"900"
+				"replenish_radius"		"1200"
 			}
 		}
 	}
-
 	//=================================================================================================================
 	// Recipe: Octarine Core
 	//=================================================================================================================
@@ -12253,7 +12278,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12.0"
 		"AbilitySharedCooldown"			"magicwand"
-		"AbilityCastRange"				"1500"
+		"AbilityCastRange"				"99999"
 		"ID"							"36"
 
 		// Item Info
@@ -12278,7 +12303,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_radius"			"1500"
+				"charge_radius"			"99999"
 			}
 			"03"
 			{
@@ -12288,7 +12313,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"restore_per_charge"	"15"
+				"restore_per_charge"	"30"
 			}
 		}
 	}
