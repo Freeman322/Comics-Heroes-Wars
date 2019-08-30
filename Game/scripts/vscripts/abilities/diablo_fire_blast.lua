@@ -11,6 +11,7 @@ end
 function diablo_fire_blast:OnSpellStart()
 	if IsServer() then 
 		local effect = "particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
+		local soundEffect = "Hero_SkeletonKing.Hellfire_Blast"
 
 		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "freeza") == true then 
 			effect = "particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf" 
@@ -18,17 +19,17 @@ function diablo_fire_blast:OnSpellStart()
 		end 
 
 		local info = {
-				EffectName = effect,
-				Ability = self,
-				iMoveSpeed = 1000,
-				Source = self:GetCaster(),
-				Target = self:GetCursorTarget(),
-				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
-			}
+			EffectName = effect,
+			Ability = self,
+			iMoveSpeed = 1000,
+			Source = self:GetCaster(),
+			Target = self:GetCursorTarget(),
+			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
+		}
 
 		ProjectileManager:CreateTrackingProjectile( info )
 
-		EmitSoundOn( "Hero_SkeletonKing.Hellfire_Blast", self:GetCaster() )
+		EmitSoundOn( soundEffect, self:GetCaster() )
 	end
 end
 
