@@ -804,6 +804,10 @@
 		"DOTA_Tooltip_ability_custom_ogre_magi_bloodlust_bonus_movement_speed"            "BONUS MOVEMENT SPEED:"
 		"DOTA_Tooltip_ability_custom_ogre_magi_bloodlust_bonus_attack_speed"              "BONUS ATTACK SPEED:"
 
+		"DOTA_Tooltip_ability_ogre_blood_ritual"                                          "Bloody ritual"
+		"DOTA_Tooltip_ability_ogre_blood_ritual_Description"                              "For each killed enemy Ogre gets a spell amp."
+		"DOTA_Tooltip_ability_ogre_blood_ritual_amp"                                      "%SPELL AMP PER KILL:"
+
 		"DOTA_Tooltip_ability_holdout_culling_blade"                                      "Holdout Culling Blade"
 		"DOTA_Tooltip_ability_holdout_culling_blade_Description"                          ""
 		"DOTA_Tooltip_ability_holdout_culling_blade_leap_distance"                        "LEAP DISTANCE:"
@@ -1369,7 +1373,7 @@
 
 
 		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos"									 "Axe of Phractos"
-		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_Description" 				     "Aura: PHRACTATION - Scorches nearby enemies for 25 magic damage + a portion of their maximum health in a 700 radius."
+		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_Description" 				     "Aura: PHRACTATION - Scorches nearby enemies for 70 magic damage + a portion of their maximum health in a 700 radius."
 		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_Lore" 							 "Great fire axe, which brings death to every foe."
 		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_bonus_damage"    				 "+$damage"
 		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_bonus_attack_speed"   		 	 "+$attack"
@@ -7007,8 +7011,8 @@
 		"DOTA_Tooltip_ability_manhattan_energy_drain_base_mana_steal"					"BASE MANA STEAL:"
 		"DOTA_Tooltip_ability_manhattan_energy_drain_mana_steal_pct"					"%MANA STEAL:"
 		"DOTA_Tooltip_ability_manhattan_energy_drain_steal_duration"					"STEAL DURATION:"
-		"DOTA_Tooltip_ability_special_bonus_unique_manhattan_energy_drain"				"x3 steal duration for Energy Drain"
-		"DOTA_Tooltip_ability_special_bonus_unique_manhattan_energy_drain_1"			"-4 sec cooldown Energy Drain"
+		"DOTA_Tooltip_ability_special_bonus_unique_manhattan_energy_drain"				"x2 steal duration for Energy Drain"
+		"DOTA_Tooltip_ability_special_bonus_unique_manhattan_energy_drain_1"			"-5 sec cooldown Energy Drain"
 		
 		"DOTA_Tooltip_ability_manhattan_energy_surge"									"Energy Surge"
 		"DOTA_Tooltip_ability_manhattan_energy_surge_Description"						"Manhattan throws up the chosen enemy inflicting damage. Burns mana in the amount of damage dealt."
@@ -11432,7 +11436,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_valkorion_force_wave_radius"                                "RADIUS:"
 		"DOTA_Tooltip_ability_valkorion_force_wave_damage"                                "DAMAGE:"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_valkorion_1"                           "+250 damage for Force Wave"
+		"DOTA_Tooltip_ability_special_bonus_unique_valkorion_1"                           "+750 damage for Force Wave"
 
 		"DOTA_Tooltip_ability_valkorion_ligning_explosion"                                "Lightning Explosion"
 		"DOTA_Tooltip_ability_valkorion_ligning_explosion_Description"                    "Creates a chain lightning that reduces the magic resistance of enemies and deals damage."

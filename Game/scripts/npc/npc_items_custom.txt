@@ -352,7 +352,7 @@
 			"14"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"aura_radius"					"700"
+				"aura_radius"					"1500"
 			}
 		}
 	}
@@ -376,7 +376,7 @@
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		"AbilityCooldown"				"0.5"
+		"AbilityCooldown"				"1.0"
 		"AbilityDamage"				"250"
 
 		"precache"

@@ -72,7 +72,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				      "100"
+				"value"				      "140"
 			}
 		}
 	}
@@ -84,7 +84,7 @@
 					"01"
 					{
 						"var_type"					"FIELD_INTEGER"
-						"value"				      "100"
+						"value"				      "140"
 					}
 			}
 	}
@@ -96,7 +96,7 @@
 					"01"
 					{
 						"var_type"					"FIELD_INTEGER"
-						"value"			      	"100"
+						"value"			      	"140"
 					}
 			}
 	}
@@ -877,7 +877,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"12"
 		
 		"RequiredLevel"				"6"
 
@@ -903,12 +903,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pass_damage"			"150 300 450"
+				"pass_damage"			"200 300 400"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"100 150 200"
+				"damage_per_second"		"150 200 250"
 			}
 			"05"
 			{
@@ -963,7 +963,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -987,12 +987,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pass_damage"				"150 300 450"
+				"pass_damage"				"200 300 400"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"			"100 150 200"
+				"damage_per_second"			"150 200 250"
 			}
 			"05"
 			{

@@ -2082,7 +2082,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_range"			"22"
+				"bonus_damage_range"			"24"
 			}			
 			"04"
 			{
@@ -8780,7 +8780,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"6"
+				"duration"				"8"
 			}
 			"09"
 			{
