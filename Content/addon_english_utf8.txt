@@ -1161,21 +1161,15 @@
 		"DOTA_Tooltip_modifier_return_sea"             "FROZEN SHIELD"
 		"DOTA_Tooltip_modifier_return_sea_Description"                     "Does not block damage, but instead deals it to attacker and heals caster for that amount."
 
-
 		"DOTA_TOOLTIP_ABILITY_item_blink_2" "Blink Dagger II"
 		"DOTA_TOOLTIP_ABILITY_item_blink_2_Description" "Teleport to a target point up to 1450 units away."
 		"DOTA_Tooltip_ability_item_blink_2_all"							"ALL STATS:"
 
-
-
-
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2" 				 "Blade of Darkness"
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_Description"    "<h1>Passive: Critical Strike</h1>Grants each attack a %crit_chance%%% chance to deal %crit_bonus%%% damage."
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_bonus_damage"   "+$damage"
-		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_all"			 "+$all"
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_crit_chance" 	 "%CRIT CHANCE:"
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_crit_bonus" 	 "%CRITICAL DAMAGE"
-		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_percent_cleave" "%CLEAVE"
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_as" 			 "+$attack"
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_Lore"	         "The sword belonged to the generation of darkness, who are older than the universe itself"
 
@@ -1185,6 +1179,7 @@
 		"DOTA_Tooltip_ability_item_vermilion_robe_bonus_health_regen"                     "+$hp_regen"
 		"DOTA_Tooltip_ability_item_vermilion_robe_bonus_all_stats"                        "+$all"
 		"DOTA_Tooltip_ability_item_vermilion_robe_bonus_armor"                            "+$armor"
+		"DOTA_Tooltip_ability_item_vermilion_robe_bonus_magical_armor"                     "%+$spell_resist"
 		"DOTA_Tooltip_ability_item_vermilion_robe_block_damage_melee"                     "BLOCK DAMAGE:"
 		"DOTA_Tooltip_ability_item_vermilion_robe_active_duration"                        "ACTIVE DURATION:"
 		"DOTA_Tooltip_ability_item_vermilion_robe_bonus_aoe_radius"                       "AOE RADIUS:"
@@ -5009,10 +5004,7 @@
 		"DOTA_Tooltip_ability_item_shine_of_sea_Description"                              "Activated: Super Purge - Restores 300 health to all allies around and purges most of the negative effects on them \ nPassive:. Shine of Sea - Covers the character in a layer of sacred sea water, blocking a part of physical damage."
 		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_all_stats"                          "+$all"
 		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_armor"                              "+$armor"
-		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_health"                                     "+$health"
 		"DOTA_Tooltip_ability_item_shine_of_sea_damage_reduction"                         "DAMAGE REDUCTION:"
-		"DOTA_Tooltip_ability_item_shine_of_sea_damage_cleanse"                           "DAMAGE CLEANSE:"
-		"DOTA_Tooltip_ability_item_shine_of_sea_damage_reset_interval"                    "PURGE INTERVAL:"
 		"DOTA_Tooltip_ability_item_shine_of_sea_radius"                                   "Super Purge RADIUS:"
 		"DOTA_Tooltip_ability_item_shine_of_sea_heal"                                     "Super Purge HEAL:"
 
@@ -5032,7 +5024,7 @@
 		"DOTA_Tooltip_modifier_azuras_staff_Description"									  "Silenced"
 
 		"DOTA_Tooltip_ability_item_azuras_staff"                                          "Azura's Staff"
-		"DOTA_Tooltip_ability_item_azuras_staff_Description"                              "Activated: Soul Shine - silences and disarms target for %silence_duration% seconds and increases damage dealt to it by %silence_damage_percent%%%. Grants true strike while hitting the target and all attacks will deal critical damage.\nPassive:Critical Strike - Gives a chance to inflict additional damage on each attack."
+		"DOTA_Tooltip_ability_item_azuras_staff_Description"                              "Activated: Soul Shine - silences and disarms target for %silence_duration% seconds and increases damage dealt to it by %silence_damage_percent%%%. Grants true strike while hitting the target and Converts 50% of enemy current mana to your health, also deal damage from burnt mana.\nPassive:Critical Strike - Gives a chance to inflict additional damage on each attack."
 		"DOTA_Tooltip_ability_item_azuras_staff_bonus_all_stats"                      	  "+$all"
 		"DOTA_Tooltip_ability_item_azuras_staff_bonus_mana"                          	  "+$mana"
 		"DOTA_Tooltip_ability_item_azuras_staff_bonus_health"                         	  "+$health"
@@ -5068,6 +5060,9 @@
 
 		"DOTA_Tooltip_modifier_katana_cairn_of_souls" 									 "Cairn of Souls"
 		"DOTA_Tooltip_modifier_katana_cairn_of_souls_Description" 						 "Trying to blow to hell"
+
+		"DOTA_Tooltip_modifier_katana_coup_de_grace" 									 "Ascending Soul"
+		"DOTA_Tooltip_modifier_katana_coup_de_grace_Description" 						 "Increases damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%"
 
 		"DOTA_Tooltip_modifier_khan_windrun" 									 "WindRun"
 
@@ -5855,7 +5850,7 @@
 		"new_npc_dota_hero_dark_seer"  "Outsider"
 		"new_npc_dota_hero_sniper"  "Rocket"
 		"npc_dota_warlock_golem_1"   "YAZ'"
-		"new_npc_dota_hero_faceless_void" "Byonder"
+		"new_npc_dota_hero_faceless_void" "Beyonder"
 		"npc_dota_warlock_golem_2"   "Astral Ghost"
 		"npc_dota_warlock_golem_scepter_1"  "Demon"
 		"npc_dota_warlock_golem_3"   "Demon"
@@ -6524,6 +6519,7 @@
 		"DOTA_Tooltip_ability_item_sunshines_aromor_bonus_strength"                       "+$str"
 		"DOTA_Tooltip_ability_item_sunshines_aromor_bonus_agility"                        "+$agi"
 		"DOTA_Tooltip_ability_item_sunshines_aromor_bonus_intellect"                      "+$int"
+		"DOTA_Tooltip_ability_item_sunshines_aromor_hp_regen"                             "+$hp_regen"
 		"DOTA_Tooltip_ability_item_sunshines_aromor_bonus_health"                         "+$health"
 		"DOTA_Tooltip_ability_item_sunshines_aromor_bonus_magical_armor"                  "+$spell_resist"
 		"DOTA_Tooltip_ability_item_sunshines_aromor_restore_pct"       	  				  "%HEALTH AND MANA RESTORE:"
@@ -8319,10 +8315,10 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_godspeed_speed_void_aghanim_description"                    "Adds AOE radius"
 
 		"DOTA_Tooltip_ability_godspeed_ember_field"                                       "Ember Field"
-		"DOTA_Tooltip_ability_godspeed_ember_field_Description"                           "Heals a hero for part of the distance that the nearest enemies pass, and also adds this speed to himself."
-		"DOTA_Tooltip_ability_godspeed_ember_field_radius"                                "RADIUS:"
-		"DOTA_Tooltip_ability_godspeed_ember_field_heal_ptc"                              "%HEAL PTC:"
-		"DOTA_Tooltip_ability_godspeed_ember_field_max_speed"                             "MAX SPEED:"
+        "DOTA_Tooltip_ability_godspeed_ember_field_Description"                           "Heals a hero for part of the distance that the nearest enemies pass, and also adds this speed to himself."
+        "DOTA_Tooltip_ability_godspeed_ember_field_radius"                                "RADIUS:"
+        "DOTA_Tooltip_ability_godspeed_ember_field_heal_ptc"                              "%HEAL PTC:"
+        "DOTA_Tooltip_ability_godspeed_ember_field_max_speed"                             "MAX SPEED:"
 
 		"DOTA_Tooltip_ability_godspeed_hyperpath"                                         "Hyperpath"
 		"DOTA_Tooltip_ability_godspeed_hyperpath_Description"                             "Makes the hero invulnerable and allows to pass through obstacles."
@@ -8429,15 +8425,17 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_recipe_avernos_mist_Description"                       ""
 
 		"DOTA_Tooltip_ability_item_avernos_mist"                                          "Averno's Mist"
-		"DOTA_Tooltip_ability_item_avernos_mist_Description"                              "<h1>Active: Mist</h1>For %active_duration% seconds, creates a mist shield that blocks %status_resistance%% of the incoming damage, as well as increases healing and mana regeneration.<br><br>Radius: %aura_radius%<br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>\n<h1>Passive: Guardian Aura</h1> Provides nearby allies with %aura_health_regen% health regeneration and %aura_armor% bonus armor. If an allied hero's health falls below %aura_bonus_threshold%%%, they receive %aura_health_regen_bonus% health regeneration and %aura_armor_bonus% armor.\nFlat movement speed bonuses from multiple pairs of boots do not stack."
-		"DOTA_Tooltip_ability_item_avernos_mist_bonus_movement"                           "+$move_speed"
-		"DOTA_Tooltip_ability_item_avernos_mist_bonus_mana"                               "+$mana"
-		"DOTA_Tooltip_ability_item_avernos_mist_bonus_all_stats"                          "+$all"
-		"DOTA_Tooltip_ability_item_avernos_mist_bonus_armor"                              "+$armor"
-		"DOTA_Tooltip_ability_item_avernos_mist_active_duration"                          "Mist DURATION:"
-		"DOTA_Tooltip_ability_item_avernos_mist_status_resistance"                        "%Mist DAMAGE BLOCK:"
-		"DOTA_Tooltip_ability_item_avernos_mist_active_hp_regen"                          "%Mist HP REGEN:"
-		"DOTA_Tooltip_ability_item_avernos_mist_active_mana_regen"                        "%Mist MANA REGEN:"
+        "DOTA_Tooltip_ability_item_avernos_mist_Description"                              "<h1>Active: Mist</h1>For %active_duration% seconds, creates a mist shield that blocks %status_resistance%% of the incoming damage, as well as increases healing and mana regeneration.<br><br>Radius: %aura_radius%<br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>\n<h1>Passive: Guardian Aura</h1> Provides nearby allies with %aura_health_regen% health regeneration, %aura_armor% bonus armor and %bonus_magical_armor%%% magical resistance. If an your hero's health falls below %aura_bonus_threshold%%%, bonuses are doubled.\nFlat movement speed bonuses from multiple pairs of boots do not stack."
+        "DOTA_Tooltip_ability_item_avernos_mist_bonus_all_stats"                          "+$all"
+        "DOTA_Tooltip_ability_item_avernos_mist_bonus_health"                             "+$health"
+        "DOTA_Tooltip_ability_item_avernos_mist_bonus_mana"                               "+$mana"
+        "DOTA_Tooltip_ability_item_avernos_mist_bonus_armor"                              "+$armor"
+        "DOTA_Tooltip_ability_item_avernos_mist_bonus_magical_armor"                      "%+$spell_resist"
+        "DOTA_Tooltip_ability_item_avernos_mist_movement_speed_percent_bonus"             "%+$move_speed"
+        "DOTA_Tooltip_ability_item_avernos_mist_active_duration"                          "Mist DURATION:"
+        "DOTA_Tooltip_ability_item_avernos_mist_status_resistance"                        "%Mist DAMAGE BLOCK:"
+        "DOTA_Tooltip_ability_item_avernos_mist_active_hp_regen"                          "%Mist HP REGEN:"
+        "DOTA_Tooltip_ability_item_avernos_mist_active_mana_regen"                        "%Mist MANA REGEN:"
 
 		"DOTA_Tooltip_ability_item_recipe_majestic_staff"                                 "Majestic Staff"
 		"DOTA_Tooltip_ability_item_recipe_majestic_staff_Description"                     ""
@@ -11168,7 +11166,9 @@ When activated spends mana."
 
 		"DOTA_Tooltip_ability_thanos_titans_sword_bonus_damage"                           "%BONUS DAMAGE:"
 
-				"DOTA_Tooltip_ability_item_ice_pearl_bonus_strength"                              "+$str"
+		"DOTA_Tooltip_ability_item_ice_pearl_bonus_strength"                              "+$str"
+		"DOTA_Tooltip_ability_item_ice_pearl_bonus_agility"                               "+$agi"
+		"DOTA_Tooltip_ability_item_ice_pearl_bonus_mp_regen"                              "+$mana_regen"
 		"DOTA_Tooltip_ability_item_ice_pearl_bonus_health"                                "+$health"
 		"DOTA_Tooltip_ability_item_ice_pearl_hp_restore"                                  "HEALTH RESTORE:"
 		"DOTA_Tooltip_ability_item_ice_pearl_restore_pct"                                 "%RESTORE:"
@@ -11382,5 +11382,132 @@ When activated spends mana."
 
 		"npc_dota_hero_mod"													  "Marquis of Death"
 		"npc_dota_hero_valkorion"											  "Valkorion"
+
+		"DOTA_Tooltip_ability_mod_life_and_death"                                    	  "Life And Death"
+		"DOTA_Tooltip_ability_mod_life_and_death_Description"                             "Delays the fate of the allies. All damage will be applied after the end of the ability, and also partially returned to the enemy."
+		"DOTA_Tooltip_ability_mod_life_and_death_duration"                                "DURATION:"
+		"DOTA_Tooltip_ability_mod_life_and_death_damage"                                  "%ENEMY DAMAGE:"
+
+		"DOTA_Tooltip_ability_mod_dark_strike"                                            "Dark Strike"
+		"DOTA_Tooltip_ability_mod_dark_strike_Description"                                "Deals a strike of pure darkness, increasing all incoming damage over time and dealing periodic damage."
+		"DOTA_Tooltip_ability_mod_dark_strike_duration"                                   "DURATION:"
+		"DOTA_Tooltip_ability_mod_dark_strike_damage_incomin_per_second"                  "%RESISTANCE REDUCTION PER SECOND:"
+		"DOTA_Tooltip_ability_mod_dark_strike_damage_per_second"                          "DAMAGE:"
+		"DOTA_Tooltip_ability_mod_dark_strike_move_speed_slow_pct"                        "%MOVESPEED SLOWING:"
+
+		"DOTA_Tooltip_ability_mod_mirror_in_glass"                                        "Mirror In Glass"
+		"DOTA_Tooltip_ability_mod_mirror_in_glass_Description"                            "At the death of any living creature, Marquis of Death will take his soul to himself, replenishing the soul’s dream. When activated, it will release all souls, dealing damage."
+		"DOTA_Tooltip_ability_mod_mirror_in_glass_requiem_radius"                         "AREA OF EFFECT:"
+		"DOTA_Tooltip_ability_mod_mirror_in_glass_damage_per_soul"                        "DAMAGE PER SOUL:"
+		"DOTA_Tooltip_ability_mod_mirror_in_glass_max_souls"                              "MAX SOULS:"
+		"DOTA_Tooltip_ability_mod_mirror_in_glass_preattack_damage_per_soul"              "DAMAGE BONUS MULTIPLIER:"
+
+		"DOTA_Tooltip_ability_mod_ways_of_fate"                                           "Ways Of Fate"
+		"DOTA_Tooltip_ability_mod_ways_of_fate_Description"                               "Creates a projectile from a particle of its tender soul, the duration of charging affects the damage done. Paints a path of darkness, damaging and slowing enemies. The damage is increased with each enemy hits."
+		"DOTA_Tooltip_ability_mod_ways_of_fate_damage"                                    "DAMAGE:"
+		"DOTA_Tooltip_ability_mod_ways_of_fate_bonus_damage_per_target"                   "BONUS DAMAGE PER TARGET:"
+		"DOTA_Tooltip_ability_mod_ways_of_fate_movement_slow_pct"                         "%MOVEMENT SLOW:"
+		"DOTA_Tooltip_ability_mod_ways_of_fate_slow_duration"                             "SLOW DURATION:"
+		"DOTA_Tooltip_ability_mod_ways_of_fate_current_health_damage_ptc"			  "%CURRENT HEALTH TARGET DAMAGE:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_mod_1"                                 "+1 second duration for Life And Death"
+		"DOTA_Tooltip_ability_special_bonus_unique_mod_2"                                 "+25% damage to enemies for Life And Death"
+		"DOTA_Tooltip_ability_special_bonus_unique_mod_3"                                 "+2 seconds for Dark Strike"
+		"DOTA_Tooltip_ability_special_bonus_unique_mod_4"                                 "+4% resistance reduction for Dark Strike"
+		"DOTA_Tooltip_ability_special_bonus_unique_mod_5"                                 "Infinite Souls"
+		"DOTA_Tooltip_ability_special_bonus_unique_mod_5_Description"                     "Mirror In Glass will ignore souls limit for active ability, but preattack bonus damage still will have 500 limit"
+
+
+		"DOTA_Tooltip_ability_valkorion_illusion"                                         "There is only the Force"
+		"DOTA_Tooltip_ability_valkorion_illusion_Description"                             "No one leaves without a trace. After death, leaves his perfect copy, which can use abilities and objects."
+
+		"DOTA_Tooltip_ability_valkorion_force_touch"                                      "Force Touch"
+		"DOTA_Tooltip_ability_valkorion_force_touch_Description"                          "In the area of the ability's radius, Valkorion steals the regeneration of health, mana, as well as the spell amplification of the enemy units."
+		"DOTA_Tooltip_ability_valkorion_force_touch_mana_regen_ptc"                       "%MANA REGEN:"
+		"DOTA_Tooltip_ability_valkorion_force_touch_health_regen_ptc"                     "%HEALTH REGEN:"
+		"DOTA_Tooltip_ability_valkorion_force_touch_spell_steal_ptc"                      "%SPELL AMPLIFICATION:"
+		"DOTA_Tooltip_ability_valkorion_force_touch_radius"                               "RADIUS:"
+
+		"DOTA_Tooltip_ability_valkorion_force_wave"                                       "Force Wave"
+		"DOTA_Tooltip_ability_valkorion_force_wave_Description"                           "Strikes with force, deals damage in the area."
+		"DOTA_Tooltip_ability_valkorion_force_wave_radius"                                "RADIUS:"
+		"DOTA_Tooltip_ability_valkorion_force_wave_damage"                                "DAMAGE:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_valkorion_1"                           "+250 damage for Force Wave"
+
+		"DOTA_Tooltip_ability_valkorion_ligning_explosion"                                "Lightning Explosion"
+		"DOTA_Tooltip_ability_valkorion_ligning_explosion_Description"                    "Creates a chain lightning that reduces the magic resistance of enemies and deals damage."
+		"DOTA_Tooltip_ability_valkorion_ligning_explosion_damage"                         "DAMAGE:"
+		"DOTA_Tooltip_ability_valkorion_ligning_explosion_duration"                       "DURATION:"
+		"DOTA_Tooltip_ability_valkorion_ligning_explosion_radius"                         "RADIUS:"
+		"DOTA_Tooltip_ability_valkorion_ligning_explosion_magical_armor_reductuion"       "%MAGICAL ARMOR REDUCTUION:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_valkorion_2"                           "+125 damage for Ligning Explosion"
+
+		"DOTA_Tooltip_ability_item_dark_shard"                                                    "Dark shard"
+		"DOTA_Tooltip_ability_item_dark_shard_Description"                                        "<h1>Passive: Critical Strike</h1>Grants each attack a 30% chance to deal 280% damage."
+		"DOTA_Tooltip_ability_item_dark_shard_bonus_damage"                                       "+$damage"
+		"DOTA_Tooltip_ability_item_dark_shard_crit_chance"                                        "%CRIT CHANCE"
+		"DOTA_Tooltip_ability_item_dark_shard_crit_multiplier"                                    "%CRITICAL DAMAGE"
+
+		"DOTA_Tooltip_ability_item_demon_shard_2_bonus_night_vision"                              "BONUS NIGHT VISION:"
+
+		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_health"                                     "+$health"
+
+		"DOTA_Tooltip_ability_item_dragon_heart"                                                  "Deathwing's heart"
+		"DOTA_Tooltip_ability_item_dragon_heart_Description"                                      "<h1>Passive: Dragon's regeneration</h1>Restores a 7% of maximum health per second. This ability is disabled for a short time if damage is taken from an enemy player. \n<h1>Passive: Immolation</h1>Scorches nearby enemies for 40 magic damage + a 5% of owner maximum health in a 500 radius"                                                    
+		"DOTA_Tooltip_ability_item_dragon_heart_bonus_strength"                                   "+$str"
+		"DOTA_Tooltip_ability_item_dragon_heart_heal_amp"                                         "%HEAL AMPLIFY:"
+		"DOTA_Tooltip_ability_item_dragon_heart_bonus_health"                                     "+$health"
+		"DOTA_Tooltip_ability_item_dragon_heart_bonus_damage"                                     "+$damage"
+		"DOTA_Tooltip_ability_item_dragon_heart_Lore"                                             "Deathwing the Destroyer, formerly known as Neltharion the Earth-Warder, was one of the five Dragon Aspects and leader of the black dragonflight. Thousands of years ago, Neltharion was empowered by the Titans with dominion over the earth and the deep places of Azeroth. However, driven mad by the Old Gods, he turned against the other Aspects during the War of the Ancients. Among both mortals and dragons his name became one whispered with a feeling of fear and contempt."
+
+        	"DOTA_Tooltip_ability_item_mystic_ring"                                                   "Arcane Ring"
+		"DOTA_Tooltip_ability_item_mystic_ring_Description"                                       "<h1>Passive: Arcana saturation</h1>For each kill gains a 1.6% cooldown reduction and 2.5% spell amplification. Half of stacks are lost after death and max number of stacks - 10"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_intellect"                                   "+$int"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_agility"                                     "+$agi"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_strength"                                    "+$str"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_damage"                                      "+$damage"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_mana_cost_reduction"                         "%MANACOST REDUCTION:"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_amp"                                         "%+$spell_amp"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_armor"                                       "+$armor"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_mana_regen"                                  "+$mana_regen"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_amp_per_soul"                                "%AMP PER STACK:"
+		"DOTA_Tooltip_ability_item_mystic_ring_bonus_cooldown_reduction_per_soul"                 "%CDR PER STACK:"
+        	"DOTA_Tooltip_ability_item_mystic_ring_Lore"                                              "A powerful gemstone ring that glows with intense magical energy and uses the souls of slain enemies to enhance the owner's magical abilities."
+       
+	   	 "DOTA_TOOLTIP_modifier_item_mystic_ring"                                                  "Arcane saturation"
+		"DOTA_TOOLTIP_modifier_item_mystic_ring_Description"                                      "Gives  %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE% amp and %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING% cooldown reduction"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_katana_2"                                      "+2 daggers for Shadow Dagger"
+
+        	"DOTA_Tooltip_ability_katana_soul_stole"                                                  "Soultaker"
+		"DOTA_Tooltip_ability_katana_soul_stole_Description"                                      "Steals souls of killed targets, increasing bonus damage and agility."
+		"DOTA_Tooltip_ability_katana_soul_stole_bonus_agility"                                    "BONUS AGILITY PER SOUL:"
+		"DOTA_Tooltip_ability_katana_soul_stole_bonus_damage"                                     "BONUS DAMAGE PER SOUL:"
+		"DOTA_Tooltip_ability_katana_soul_stole_bonus_base_damage"                                "+$damage"
+	    	"DOTA_Tooltip_ability_katana_soul_stole_Lore"                                             "The Soultaker is a samurai sword capable of extracting the souls from those that it kills, it's edge is sharp enough to cut through even indestructible Dilustel with ease"
+
+        	"DOTA_Tooltip_modifier_katana_soul_stole"                                                 "Soul stole"
+		"DOTA_Tooltip_modifier_katana_soul_stole_Description"                                     "For stolen souls gaining %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% damage and %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% agility"
+
+		"DOTA_Tooltip_ability_katana_dagger"                                                      "Shadow Dagger"
+		"DOTA_Tooltip_ability_katana_dagger_Description"                                          "Throws a dagger, dealing damage and awhile stunning"
+		"DOTA_Tooltip_ability_katana_dagger_dagger_damage"                                        "DAMAGE:"
+
+		"DOTA_Tooltip_ability_katana_strike"                                                      "Shadow strike"
+		"DOTA_Tooltip_ability_katana_strike_Description"                                          "Teleports behind the target enemy unit, striking x3 of Katana's damage. Also gives bonus attack speed and movespeed for a short time."      
+       	 "DOTA_Tooltip_ability_katana_strike_duration"                                             "BUFF DURATION:"
+		"DOTA_Tooltip_ability_katana_strike_attack_speed_bonus"                                   "ATTACK SPEED BONUS:"
+		"DOTA_Tooltip_ability_katana_strike_movespeed_bonus"                                      "%MOVESPEED BONUS"
+
+		"DOTA_Tooltip_ability_murlock_water_wave"                                                 "Rip ride"
+		"DOTA_Tooltip_ability_murlock_water_wave_Description"                                     "The Murlock and his illusions have a chance to hit nearby units with a damaging wave of water that lowers armor."
+		"DOTA_Tooltip_ability_murlock_water_wave_chance"                                          "%CHANCE:"
+		"DOTA_Tooltip_ability_murlock_water_wave_armor_reduction"                                 "ARMOR_REDUCTION:"
+		"DOTA_Tooltip_ability_murlock_water_wave_damage"                                          "DAMAGE:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_monkey_king_3"                                 "+650 Primal Spring Damage"
+
 	}	
 }

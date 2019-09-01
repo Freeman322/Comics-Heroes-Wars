@@ -15502,6 +15502,7 @@
 		"precache"
 		{
 			"particle"  				"particles/hero_diablo/diablo_fire_dissipation.vpcf"
+			"particle"				"particles/freeza/diablo_fire_dissipation.vpcf"
 			"model"					"models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
 			"particle"  				"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
 			"model"					"models/heroes/hero_diablo/econs/freeza/freeza.vmdl"

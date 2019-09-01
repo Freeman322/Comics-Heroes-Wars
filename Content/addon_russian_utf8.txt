@@ -251,7 +251,7 @@
 		"DOTA_TOOLTIP_ABILITY_item_blink_2_Description" "<h1>Активируемая: Blink</h1>Мгновенно перемещает к указанной точке на расстоянии до %blink_range%."
 
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2" 				 "Blade of Darkness"
-		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_Description"    "<h1>Пассивная: Critical Strike</h1> Каждая атака может с вероятностью в %crit_chance%%% нанести %crit_multiplier%%% урона. \n<h1>Пассивная: Post Attack Damage</h1> Каждая атака наносит любому врагу дополнительный чистый урон в размере %bonus_damage_post_attack%."
+		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_Description"    "<h1>Пассивная: Critical Strike</h1> Каждая атака может с вероятностью в %crit_chance%%% нанести %crit_bonus%%% урона. </font>\nПассивная: Dark Sight - увеличивает радиус обзора ночью на %bonus_night_vision%.."
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_bonus_damage"   "+$damage"
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_all"			 "+$all"
 		"DOTA_TOOLTIP_ABILITY_item_demon_shard_2_as" 			 "+$attack"
@@ -3807,8 +3807,6 @@
 		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_all_stats"                          "+$all"
 		"DOTA_Tooltip_ability_item_shine_of_sea_bonus_armor"                              "+$armor"
 		"DOTA_Tooltip_ability_item_shine_of_sea_damage_reduction"                         "БЛОК:"
-		"DOTA_Tooltip_ability_item_shine_of_sea_damage_cleanse"                           "УРОНА ДЛЯ ОЧИЩЕНИЯ:"
-		"DOTA_Tooltip_ability_item_shine_of_sea_damage_reset_interval"                    "ИНТЕРВАЛ ОЧИЩЕНИЯ:"
 		"DOTA_Tooltip_ability_item_shine_of_sea_radius"                                   "РАДИУС Super Purge:"
 		"DOTA_Tooltip_ability_item_shine_of_sea_heal"                                     "ЛЕЧЕНИЕ Super Purge:"
 
@@ -3828,7 +3826,7 @@
 
 
 		"DOTA_Tooltip_ability_item_azuras_staff"                                          "Azura's Staff"
-		"DOTA_Tooltip_ability_item_azuras_staff_Description"                              "Активируемая: Soul Shine — запрещает цели использовать способности и атаковать на %silence_duration% секунд и увеличивает наносимый ей урон на %silence_damage_percent%%%. По цели невозможно промахнуться, а все атаки по ней наносят критический урон.\nПассивная: Critical Strike — дает шанс нанести дополнительный урон при каждой атаке. Строениям дополнительный урон не наносится."
+		"DOTA_Tooltip_ability_item_azuras_staff_Description"                              "Активируемая: Soul Shine — запрещает цели использовать способности и атаковать на %silence_duration% секунд и увеличивает наносимый ей урон на %silence_damage_percent%%%. По цели невозможно промахнуться.Так же сжигает 50% маны противника и наносит урон от сожженной маны.\nПассивная: Critical Strike — дает шанс нанести дополнительный урон при каждой атаке. Строениям дополнительный урон не наносится."
 		"DOTA_Tooltip_ability_item_azuras_staff_bonus_all_stats"                      	  "+$all"
 		"DOTA_Tooltip_ability_item_azuras_staff_bonus_mana"                          	  "+$mana"
 		"DOTA_Tooltip_ability_item_azuras_staff_bonus_health"                         	  "+$health"
@@ -6766,7 +6764,7 @@
 		"DOTA_Tooltip_ability_item_recipe_avernos_mist_Description"                       ""
 
 		"DOTA_Tooltip_ability_item_avernos_mist"                                          "Averno's Mist"
-		"DOTA_Tooltip_ability_item_avernos_mist_Description"                              "<h1>Активируемая: Mist</h1>На %active_duration% секунд, создает туманный щит, который блокирует %status_resistance%% входящего урона, а так же увеличивает лечение и регенерацию маны.<br><br>Радиус: %aura_radius%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n<h1>Пассивная: Guardian Aura</h1> Действует на союзников вокруг. Увеличивает их восстановление здоровья на %aura_health_regen% и броню на %aura_armor%. Если уровень здоровья союзного героя ниже %aura_bonus_threshold%%%, то аура будет действовать на него сильнее, восстанавливая %aura_health_regen_bonus% здоровья в секунду и увеличивая броню на %aura_armor_bonus%."
+		"DOTA_Tooltip_ability_item_avernos_mist_Description"                              "<h1>Активируемая: Mist</h1>На %active_duration% секунд, создает туманный щит, который блокирует %status_resistance%% входящего урона, а так же увеличивает лечение и регенерацию маны.<br><br>Радиус: %aura_radius%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n<h1>Пассивная: Guardian Aura</h1> Действует на союзников вокруг. Увеличивает их восстановление здоровья на %aura_health_regen%, броню на %aura_armor% и сопротивление магии на %bonus_magical_armor%%%. Если уровень здоровья вашего героя ниже %aura_bonus_threshold%%%, то эффекты удваиваются."
 		"DOTA_Tooltip_ability_item_avernos_mist_bonus_movement"                           "+$move_speed"
 		"DOTA_Tooltip_ability_item_avernos_mist_bonus_mana"                               "+$mana"
 		"DOTA_Tooltip_ability_item_avernos_mist_bonus_all_stats"                          "+$all"
