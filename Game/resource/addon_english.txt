@@ -11512,5 +11512,10 @@ When activated spends mana."
 
 		"DOTA_Tooltip_ability_special_bonus_unique_monkey_king_3"                                 "+650 Primal Spring Damage"
 
+		"DOTA_Tooltip_ability_special_bonus_unique_death_eater"                                  "+225 damage for Deathraze"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_death_eater_2"                                "+3 damage per Soul"
+
+		"npc_dota_hero_death_eater"                                                              "Death Eater"
 	}	
 }

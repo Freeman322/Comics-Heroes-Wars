@@ -124,4 +124,5 @@
   "npc_dota_hero_officer"  "1"
   "npc_dota_hero_mod"  "1"
   "npc_dota_hero_valkorion"  "1"
+  "npc_dota_hero_death_eater" "1"
 }
