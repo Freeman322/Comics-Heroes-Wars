@@ -39490,4 +39490,361 @@
 			}
 		}
 	}
+	"death_eater_deathraze1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Nevermore.Shadowraze"
+		"LinkedAbility"					"nevermore_shadowraze2"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_RAZE_1"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.55"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10 8 6 4"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 60 30 0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_damage"	"70 140 210 280"	
+				"LinkedSpecialBonus"	"special_bonus_unique_death_eater"	
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_radius"	"475"		
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_range"	"200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_cooldown"	"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stack_bonus_damage" "60 80 100 120"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"	"8"
+			}
+		}
+	}
+	"death_eater_deathraze2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"OnLearnbar"					"0"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"LinkedAbility"					"nevermore_shadowraze3"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_RAZE_2"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.55"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10 8 6 4"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 60 30 0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shadowraze_damage"		"100 170 240 310"	
+				"LinkedSpecialBonus" "special_bonus_unique_death_eater"	
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_radius"	"350"		
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_range"	"450"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_cooldown"	"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stack_bonus_damage" "60 80 100 120"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"	"8"
+			}
+		}
+	}
+	"death_eater_deathraze3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"OnLearnbar"					"0"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"LinkedAbility"					"nevermore_shadowraze3"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_RAZE_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.55"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10 8 6 4" 
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 60 30 0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shadowraze_damage"		"160 230 300 370"	
+				"LinkedSpecialBonus" "special_bonus_unique_death_eater"	
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_radius"	"225"		
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_range"	"450"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shadowraze_cooldown"	"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stack_bonus_damage" "60 80 100 120"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"	"8"
+			}
+		}
+	}
+	"death_eater_necromastery"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"OnCastbar"					"0"
+		"HasScepterUpgrade"			"1"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"necromastery_damage_per_soul"	"2 3 4 5"
+				"CalculateSpellDamageTooltip"	"0"
+				"LinkedSpecialBonus"			"special_bonus_unique_death_eater_2"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"necromastery_max_souls"	"14 22 30 38"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"necromastery_soul_release"		"0.5"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"necromastery_souls_hero_bonus"	"8 9 10 11"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"necromastery_max_souls_scepter" "1400 2200 3000 3800"
+				"RequiresScepter"			"1"
+			}			
+		}
+	}
+	"death_eater_deaths_requiem"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
+		"HasScepterUpgrade"		     	"1"
+		"AbilitySound"					"Hero_Nevermore.RequiemOfSouls"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"1.67 1.67 1.67"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"150 135 120"
+		"AbilityDuration"				"5.0 5.0 5.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"100 150 200"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"175 350 525"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Primarily about the damage
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time_tooltip"	"1.67"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_radius"	"1000 1500 2000"		
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_reduction_ms"	"-25 -40 -55"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_reduction_damage"	"-50"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_reduction_tooltip"	"-50"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"requiem_slow_duration"	"5.0"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_reduction_radius"	"700 1200 1700"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_soul_conversion"	"2 2 2"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_line_width_start"	"125 175 225"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_line_width_end"	"425 475 525"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"requiem_line_speed"	"700"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"soul_death_release"	"0.5"
+			}		
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"requiem_heal_pct_scepter"	"100"
+				"RequiresScepter"			"1"
+			}	
+			"14"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"requiem_damage_pct_scepter"	"30 40 50"
+				"RequiresScepter"			"1"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pull_speed"	"500 1000 1500"
+			}		
+		}
+	}
 }
