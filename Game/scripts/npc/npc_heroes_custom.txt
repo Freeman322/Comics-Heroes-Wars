@@ -8007,4 +8007,5 @@
 		"MovementTurnRate"			"1.000000"
 		"StatusManaRegen"			"0.25"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	}
 }
