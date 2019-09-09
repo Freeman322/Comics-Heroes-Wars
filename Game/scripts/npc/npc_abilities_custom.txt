@@ -39536,7 +39536,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"shadowraze_range"	"200"
+				"shadowraze_range"	"300"
 			}
 			"04"
 			{
@@ -39602,7 +39602,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"shadowraze_range"	"450"
+				"shadowraze_range"	"600"
 			}
 			"04"
 			{
@@ -39668,7 +39668,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"shadowraze_range"	"450"
+				"shadowraze_range"	"900"
 			}
 			"04"
 			{
