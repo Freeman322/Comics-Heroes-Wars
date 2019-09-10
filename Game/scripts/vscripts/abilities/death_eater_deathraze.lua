@@ -59,6 +59,8 @@ function death_eater_deathraze.OnSpellStart( this )
 			stack = modifier:GetStackCount()
 		end
 
+		enemy:AddNewModifier(this:GetCaster(), this, "modifier_stunned", {duration = 0.1})
+
 		-- Apply damage
 		local damageTable = {
 			victim = enemy,
