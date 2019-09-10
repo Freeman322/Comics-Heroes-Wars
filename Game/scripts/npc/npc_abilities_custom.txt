@@ -39494,14 +39494,18 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/death_eater_deathraze.lua"
+		"AbilityTextureName"			"shadow_fiend_shadowraze_a"
 		
+
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Nevermore.Shadowraze"
-		"LinkedAbility"					"nevermore_shadowraze2"
+		"LinkedAbility"					"death_eater_deathraze2"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -39560,14 +39564,17 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-	
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/death_eater_deathraze.lua"
+		"AbilityTextureName"			"shadow_fiend_shadowraze_b"
+
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"OnLearnbar"					"0"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"LinkedAbility"					"nevermore_shadowraze3"
+		"LinkedAbility"					"death_eater_deathraze3"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -39626,14 +39633,17 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-	
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/death_eater_deathraze.lua"
+		"AbilityTextureName"			"shadow_fiend_shadowraze_c"
+
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"OnLearnbar"					"0"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"LinkedAbility"					"nevermore_shadowraze3"
+		"LinkedAbility"					"death_eater_deathraze3"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -39690,7 +39700,11 @@
 	}
 	"death_eater_necromastery"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"abilities/death_eater_necromastery.lua"
+		"AbilityTextureName"		"custom/death_eater_necromastery"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"OnCastbar"					"0"
 		"HasScepterUpgrade"			"1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
@@ -39731,6 +39745,10 @@
 	}
 	"death_eater_deaths_requiem"
 	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/death_eater_deaths_requiem.lua"
+		"AbilityTextureName"			"custom/death_eater_deaths_requiem"
+
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	

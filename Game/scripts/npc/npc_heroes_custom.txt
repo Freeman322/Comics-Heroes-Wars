@@ -4935,12 +4935,12 @@
 	}
 	"npc_dota_hero_wisp"
 	{
-          "HeroID"		               "91"
-          "BaseClass"		          "npc_dota_hero_wisp"
+		"HeroID"		               "91"
+		"BaseClass"		          "npc_dota_hero_wisp"
 
 		"Model"		               "models/development/invisiblebox.vmdl"
 
-	     ////"override_hero"				    "npc_dota_hero_wisp"
+		////"override_hero"				    "npc_dota_hero_wisp"
 
 		"Portrait"		""
 		"SoundSet"		""
@@ -7949,24 +7949,27 @@
 	{
     	"BaseClass"     				"npc_dota_hero"
 
-		"IsCustom"                  		"1"
-		"DisableWearables"          		"1"
+		"IsCustom"                  	"1"
+		"DisableWearables"          	"1"
+
+ 		"CMDisabled"					"1"
+		"HeroDisabled"					"1"
 
 		"HeroID" 						"225"
 
 		"Model"              			"models/heroes/shadow_fiend/shadow_fiend.vmdl"
-		"ModelScale"		        "0.980000"
-		"VersusScale"	         	"0.720000"
-		"SoundSet"					"Hero_Nevermore"
+		"ModelScale"		       	 	"0.980000"
+		"VersusScale"	         		"0.720000"
+		"SoundSet"						"Hero_Nevermore"
 
-		"Role"						"Carry,Nuker"
+		"Role"							"Carry,Nuker"
 		"Rolelevels"					"3"
 		"Complexity"					"1"
-		"Team"						"Bad"
+		"Team"							"Bad"
 	
 		"LoadoutScale"					"1"
 		
-		"workshop_guide_name"			"Valkorion"
+		"workshop_guide_name"			"Nevermore"
 	
 		"LastHitChallengeRival"			"npc_dota_hero_nevermore"
 		"GibType"						"ethereal"

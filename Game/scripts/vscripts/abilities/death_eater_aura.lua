@@ -1,61 +1,105 @@
-LinkLuaModifier("modifier_death_eater_debuff", "abilities/death_eater_aura.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_death_eater_aura", "abilities/death_eater_aura.lua", LUA_MODIFIER_MOTION_NONE)
-
 death_eater_aura = class({})
+LinkLuaModifier("modifier_death_eater", "abilities/death_eater_aura.lua", LUA_MODIFIER_MOTION_NONE)
 
-function death_eater_aura:GetIntrinsicModifierName() return "modifier_death_eater_aura" end
+--------------------------------------------------------------------------------
 
-modifier_death_eater_aura = class({})
-
-function modifier_death_eater_aura:IsAura()	return true end
-function modifier_death_eater_aura:IsHidden()	return true end
-function modifier_death_eater_aura:IsPurgable()	return false end
-
-function modifier_death_eater_aura:GetEffectName()
-    return "particles/econ/items/necrolyte/necro_ti9_immortal/necro_ti9_immortal_ambient.vpcf"
-end 
-
-function modifier_death_eater_aura:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
+function death_eater_aura:GetIntrinsicModifierName()
+	return "modifier_death_eater"
 end
 
-function modifier_death_eater_aura:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("radius") end
-function modifier_death_eater_aura:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
-function modifier_death_eater_aura:GetAuraSearchType() return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO end
-function modifier_death_eater_aura:GetAuraSearchFlags()	return DOTA_UNIT_TARGET_FLAG_NONE end
-function modifier_death_eater_aura:GetModifierAura() return "modifier_death_eater_debuff" end
+modifier_death_eater = class({})
+--------------------------------------------------------------------------------
 
-if modifier_death_eater_debuff == nil then
-modifier_death_eater_debuff = class({})
-
-function modifier_death_eater_debuff:IsPurgable() return false end
-function modifier_death_eater_debuff:IsHidden() return true end
-
-function modifier_death_eater_debuff:GetEffectName()
-    return "particles/units/heroes/hero_necrolyte/necrolyte_spirit_debuff_rings.vpcf"
+function modifier_death_eater:IsDebuff()
+	return self:GetParent()~=self:GetAbility():GetCaster()
 end
 
-
-function modifier_death_eater_debuff:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
+function modifier_death_eater:IsHidden()
+	return self:GetParent()==self:GetAbility():GetCaster()
 end
 
+function modifier_death_eater:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+--------------------------------------------------------------------------------
 
-function modifier_death_eater_debuff:OnCreated(table)
+function modifier_death_eater:IsAura()
+	if self:GetCaster() == self:GetParent() then
+		if not self:GetCaster():PassivesDisabled() then
+			return true
+		end
+	end
+	
+	return false
+end
+
+function modifier_death_eater:GetModifierAura()
+	return "modifier_death_eater"
+end
+
+function modifier_death_eater:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+function modifier_death_eater:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+end
+
+function modifier_death_eater:GetAuraSearchFlags()
+	return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+end
+
+function modifier_death_eater:GetAuraRadius()
+	return self:GetAbility():GetSpecialValueFor("radius")
+end
+
+function modifier_death_eater:GetAuraEntityReject( hEntity )
+	return not hEntity:CanEntityBeSeenByMyTeam(self:GetCaster())
+end
+--------------------------------------------------------------------------------
+
+function modifier_death_eater:OnCreated( kv )
+	self.aura_radius = self:GetAbility():GetSpecialValueFor( "radius" )
+    self.armor_reduction = self:GetAbility():GetSpecialValueFor( "presence_armor_reduction" )
+    self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
+
+    if not self:IsAura() and IsServer() then
+        self:StartIntervalThink(1)
+    end 
+end
+
+function modifier_death_eater:OnIntervalThink()
     if IsServer() then
-        self:StartIntervalThink(0.1)
-        self:OnIntervalThink()
-    end
+        ApplyDamage ({
+            victim = self:GetParent(),
+            attacker = self:GetCaster (),
+            damage = (self.damage / 100) * self:GetParent(),
+            damage_type = DAMAGE_TYPE_MAGICAL,
+            ability = self:GetAbility()
+        })
+    end 
 end
 
-function modifier_death_eater_debuff:OnIntervalThink()
-    if IsServer() then
-        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("plague_damage")/100))})
-    end
+function modifier_death_eater:OnRefresh( kv )
+	self.aura_radius = self:GetAbility():GetSpecialValueFor( "radius" )
+    self.armor_reduction = self:GetAbility():GetSpecialValueFor( "presence_armor_reduction" )
+    self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
 end
 
-function modifier_death_eater_debuff:DeclareFunctions() return { MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_bonus} end
-function modifier_death_eater_debuff:GetModifierPhysicalArmorBonus() return self:GetAbility():GetSpecialValueFor("armor_reduction") * -1 end
-function modifier_death_eater_debuff:GetModifierMagicalResistanceBonus() return self:GetAbility():GetSpecialValueFor("magic_resistance") * -1 end
-function modifier_death_eater_debuff:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
+--------------------------------------------------------------------------------
+
+function modifier_death_eater:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+	}
+
+	return funcs
+end
+
+function modifier_death_eater:GetModifierPhysicalArmorBonus( params )
+	if self:GetParent() == self:GetCaster() then
+		return 0
+	end
+
+	return self.armor_reduction
 end
