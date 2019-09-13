@@ -39417,8 +39417,8 @@
 	}
 	"death_eater_aura"
 	{
-	    "BaseClass"						"ability_lua"
-		"AbilityTextureName"			""
+	    	"BaseClass"					"ability_lua"
+		"AbilityTextureName"			"custom/nevermore_dark_lord"
 		"ScriptFile"					"abilities/death_eater_aura"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
@@ -39494,9 +39494,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/death_eater_deathraze.lua"
-		"AbilityTextureName"			"shadow_fiend_shadowraze_a"
+		"AbilityTextureName"			"custom/nevermore_shadowraze1"
 		
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -39564,9 +39564,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/death_eater_deathraze.lua"
-		"AbilityTextureName"			"shadow_fiend_shadowraze_b"
+		"AbilityTextureName"			"custom/nevermore_shadowraze2"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"OnLearnbar"					"0"
@@ -39574,12 +39574,12 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"LinkedAbility"					"death_eater_deathraze3"
+		"LinkedAbility"				"death_eater_deathraze3"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_RAZE_2"
-		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastGestureSlot"			"DEFAULT"
 		"AbilityCastPoint"				"0.55"
 
 		// Time		
@@ -39633,9 +39633,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/death_eater_deathraze.lua"
-		"AbilityTextureName"			"shadow_fiend_shadowraze_c"
+		"AbilityTextureName"			"custom/nevermore_shadowraze3"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"OnLearnbar"					"0"
@@ -39660,6 +39660,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"90 60 30 0"
 
+		"particle"
+		{
+			"particle"				"particles/units/heroes/hero_nevermore/nevermore_shadowraze_debuff.vpcf"
+			"particle"				"particles/hero_demon_eater/lina_spell_dragon_slave_2.vpcf"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -39700,12 +39705,12 @@
 	}
 	"death_eater_necromastery"
 	{
-		"BaseClass"					"ability_lua"
+		"BaseClass"				"ability_lua"
 		"ScriptFile"				"abilities/death_eater_necromastery.lua"
-		"AbilityTextureName"		"custom/death_eater_necromastery"
+		"AbilityTextureName"		"custom/nevermore_necromastery"
 
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"OnCastbar"					"0"
+		"OnCastbar"				"0"
 		"HasScepterUpgrade"			"1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		
@@ -39745,9 +39750,9 @@
 	}
 	"death_eater_deaths_requiem"
 	{
-		"BaseClass"						"ability_lua"
+		"BaseClass"					"ability_lua"
 		"ScriptFile"					"abilities/death_eater_deaths_requiem.lua"
-		"AbilityTextureName"			"custom/death_eater_deaths_requiem"
+		"AbilityTextureName"			"custom/nevermore_requiem"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
@@ -39770,7 +39775,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 150 200"
+		"AbilityDamage"				"100 150 200"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -39780,6 +39785,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.5"	// Primarily about the damage
 
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_nevermore/nevermore_requiemofsouls.vpcf"
+			"particle"				"particles/units/heroes/hero_nevermore/nevermore_shadowraze.vpcf"
+			"particle"				"particles/units/heroes/hero_nevermore/nevermore_requiemofsouls_line.vpcf"
+			"particle"				"particles/collector/collector_projectile.vpcf"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"

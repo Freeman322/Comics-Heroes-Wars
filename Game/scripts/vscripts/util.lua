@@ -1910,6 +1910,34 @@ function Util:SetupConsole()
         end
       end)
     end, "Set time", 0)
+    Convars:RegisterCommand("replace_hero_de", function(command )
+      pcall(function()
+        local pID = Convars:GetCommandClient():GetPlayerID()
+
+        if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+          PrecacheUnitByNameAsync( "npc_dota_hero_death_eater", function()
+            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_death_eater", 0, 0)
+            nHero:RespawnHero(false, false)
+          end)
+        else
+          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+        end
+      end)
+    end, "Set time", 0)
+    Convars:RegisterCommand("replace_hero_d", function(command )
+      pcall(function()
+        local pID = Convars:GetCommandClient():GetPlayerID()
+
+        if PlayerResource:GetSteamAccountID(pID) == 246584391 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+          PrecacheUnitByNameAsync( "npc_dota_hero_phoenix", function()
+            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_phoenix", 0, 0)
+            nHero:RespawnHero(false, false)
+          end)
+        else
+          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+        end
+      end)
+    end, "Set time", 0)
     Convars:RegisterCommand("test_get_data", function(command )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()

@@ -388,7 +388,6 @@ function GameMode:DmgFilter(ftable)
 						local target = EntIndexToHScript(modifier:GetTarget())
 						if target:IsAlive() and not attacker:IsAncient() then
 							target:ModifyHealth(target:GetHealth() - damage, modifier:GetAbility(), true, 0)
-							ApplyDamage ({victim = target, attacker = victim, damage = damage, damage_type = DAMAGE_TYPE_PURE, ability = modifier:GetAbility(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_HPLOSS })
 						end
 						ftable.damage = 0
 					end

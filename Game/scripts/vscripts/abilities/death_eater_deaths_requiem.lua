@@ -15,7 +15,7 @@ function death_eater_deaths_requiem:OnAbilityPhaseStart()
 	local sound_precast = "Hero_Nevermore.RequiemOfSoulsCast"
 
 	-- Create Particles
-	self.effect_precast = ParticleManager:CreateParticle( particle_precast, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )	
+	self.effect_precast = ParticleManager:CreateParticle( "particle_precast", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )	
 
 	-- Play Sounds
 	EmitSoundOn(sound_precast, self:GetCaster())
@@ -33,7 +33,7 @@ function death_eater_deaths_requiem:OnAbilityPhaseInterrupted()
 
 	-- Destroy Particles
 	ParticleManager:DestroyParticle( self.effect_precast, true )
-    StopSoundOn(sound_precast, self:GetCaster())
+    	StopSoundOn(sound_precast, self:GetCaster())
 
 	ParticleManager:ReleaseParticleIndex( self.effect_precast )
 end
@@ -43,6 +43,10 @@ end
 function death_eater_deaths_requiem:OnSpellStart()
 	-- get references
 	local soul_per_line = self:GetSpecialValueFor("requiem_soul_conversion")
+
+	local effect = ParticleManager:CreateParticle( "particles/units/heroes/hero_nevermore/nevermore_requiemofsouls.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )	
+	ParticleManager:SetParticleControl( effect, 0, self:GetCaster():GetAbsOrigin() )	
+	ParticleManager:ReleaseParticleIndex( effect )
 
 	-- get number of souls
 	local lines = 0
@@ -144,7 +148,7 @@ function death_eater_deaths_requiem:Explode( lines )
 	self.duration = self:GetSpecialValueFor("requiem_slow_duration")
 
 	-- get projectile
-	local particle_line = "particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+	local particle_line = "particles/hero_demon_eater/lina_spell_dragon_slave_2.vpcf"
 	local line_length = self:GetSpecialValueFor("requiem_radius")
 	local width_start = self:GetSpecialValueFor("requiem_line_width_start")
 	local width_end = self:GetSpecialValueFor("requiem_line_width_end")

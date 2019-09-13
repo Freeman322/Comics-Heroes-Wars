@@ -60,30 +60,30 @@ end
 
 function modifier_death_eater:OnCreated( kv )
 	self.aura_radius = self:GetAbility():GetSpecialValueFor( "radius" )
-    self.armor_reduction = self:GetAbility():GetSpecialValueFor( "presence_armor_reduction" )
-    self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
+	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "presence_armor_reduction" )
+	self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
 
-    if not self:IsAura() and IsServer() then
-        self:StartIntervalThink(1)
-    end 
+	if not self:IsAura() and IsServer() then
+		self:StartIntervalThink(1)
+	end 
 end
 
 function modifier_death_eater:OnIntervalThink()
-    if IsServer() then
-        ApplyDamage ({
-            victim = self:GetParent(),
-            attacker = self:GetCaster (),
-            damage = (self.damage / 100) * self:GetParent(),
-            damage_type = DAMAGE_TYPE_MAGICAL,
-            ability = self:GetAbility()
-        })
-    end 
+	if IsServer() then
+		ApplyDamage ({
+			victim = self:GetParent(),
+			attacker = self:GetCaster (),
+			damage = (self.damage / 100) * self:GetParent():GetMaxHealth(),
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = self:GetAbility()
+		})
+	end 
 end
 
 function modifier_death_eater:OnRefresh( kv )
 	self.aura_radius = self:GetAbility():GetSpecialValueFor( "radius" )
-    self.armor_reduction = self:GetAbility():GetSpecialValueFor( "presence_armor_reduction" )
-    self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
+	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "presence_armor_reduction" )
+	self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
 end
 
 --------------------------------------------------------------------------------

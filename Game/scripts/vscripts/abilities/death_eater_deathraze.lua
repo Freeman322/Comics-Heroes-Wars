@@ -9,6 +9,41 @@ death_eater_deathraze1 = class({})
 death_eater_deathraze2 = class({})
 death_eater_deathraze3 = class({})
 
+
+function death_eater_deathraze1:OnUpgrade()
+	local abil1 = self:GetCaster():FindAbilityByName("death_eater_deathraze2")
+	local abil2 = self:GetCaster():FindAbilityByName("death_eater_deathraze3")
+
+	if abil1:GetLevel() ~= self:GetLevel() then abil1:SetLevel(self:GetLevel()) end 
+	if abil2:GetLevel() ~= self:GetLevel() then abil2:SetLevel(self:GetLevel()) end 
+end
+
+function death_eater_deathraze2:OnUpgrade()
+	local abil1 = self:GetCaster():FindAbilityByName("death_eater_deathraze1")
+	local abil2 = self:GetCaster():FindAbilityByName("death_eater_deathraze3")
+
+	if abil1:GetLevel() ~= self:GetLevel() then abil1:SetLevel(self:GetLevel()) end 
+	if abil2:GetLevel() ~= self:GetLevel() then abil2:SetLevel(self:GetLevel()) end 
+end
+
+function death_eater_deathraze3:OnUpgrade()
+	local abil1 = self:GetCaster():FindAbilityByName("death_eater_deathraze1")
+	local abil2 = self:GetCaster():FindAbilityByName("death_eater_deathraze2")
+
+	if abil1:GetLevel() ~= self:GetLevel() then abil1:SetLevel(self:GetLevel()) end 
+	if abil2:GetLevel() ~= self:GetLevel() then abil2:SetLevel(self:GetLevel()) end 
+end
+
+local function has_value (tab, val)
+	for index, value in ipairs(tab) do
+		if value == val then
+			return true
+		end
+	end
+
+	return false
+end
+
 function death_eater_deathraze1:OnSpellStart()
 	death_eater_deathraze.OnSpellStart( self )
 end

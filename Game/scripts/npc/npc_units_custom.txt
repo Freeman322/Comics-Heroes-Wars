@@ -4700,9 +4700,9 @@
 
 		"HeroID" 						"225"
 
-		"Model"              			"models/heroes/shadow_fiend/shadow_fiend.vmdl"
-		"ModelScale"		        "0.980000"
-		"VersusScale"	         	"0.720000"
+		"Model"              			"models/heroes/hero_demon_eater/nevermore.vmdl"
+		"ModelScale"		        		"0.980000"
+		"VersusScale"	         			"0.720000"
 		"SoundSet"					"Hero_Nevermore"
 
 		"Role"						"Carry,Nuker"
@@ -4717,7 +4717,7 @@
 		"LastHitChallengeRival"			"npc_dota_hero_nevermore"
 		"GibType"						"ethereal"
  
-	    "Ability1"		"death_eater_deathraze1"
+	   	"Ability1"		"death_eater_deathraze1"
 		"Ability2"		"death_eater_deathraze2"
 		"Ability3"		"death_eater_deathraze3"
 		"Ability4"		"death_eater_necromastery"
@@ -4740,7 +4740,7 @@
 		"AttackAnimationPoint"		"0.4500"
 		"AttackAcquisitionRange"		"800"
 		"AttackRange"				"500"
-		"ProjectileModel"			"particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+		"ProjectileModel"			"particles/collector/collector_projectile.vpcf"
 		"ProjectileSpeed"			"1200"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"21"
