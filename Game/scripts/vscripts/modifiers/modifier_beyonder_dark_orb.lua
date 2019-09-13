@@ -1,30 +1,30 @@
-modifier_beyonder_dark_orb_lua = class({})
+modifier_beyonder_dark_orb = class({})
 
 --------------------------------------------------------------------------------
 -- Classifications
-function modifier_beyonder_dark_orb_lua:IsHidden()
+function modifier_beyonder_dark_orb:IsHidden()
 	return false
 end
 
-function modifier_beyonder_dark_orb_lua:IsDebuff()
+function modifier_beyonder_dark_orb:IsDebuff()
 	return self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber()
 end
 
-function modifier_beyonder_dark_orb_lua:IsStunDebuff()
+function modifier_beyonder_dark_orb:IsStunDebuff()
 	return false
 end
 
-function modifier_beyonder_dark_orb_lua:IsPurgable()
+function modifier_beyonder_dark_orb:IsPurgable()
 	return false
 end
 
-function modifier_beyonder_dark_orb_lua:RemoveOnDeath()
+function modifier_beyonder_dark_orb:RemoveOnDeath()
 	return false
 end
 
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_beyonder_dark_orb_lua:OnCreated( kv )
+function modifier_beyonder_dark_orb:OnCreated( kv )
 	-- reduce intel if debuff, add if buff
 	self.debuff = self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber()
 	self.mult = 1
@@ -37,21 +37,21 @@ function modifier_beyonder_dark_orb_lua:OnCreated( kv )
 	self:AddStack( kv.steal, kv.duration )
 end
 
-function modifier_beyonder_dark_orb_lua:OnRefresh( kv )
+function modifier_beyonder_dark_orb:OnRefresh( kv )
 	if not IsServer() then return end
 
 	self:AddStack( kv.steal, kv.duration )
 end
 
-function modifier_beyonder_dark_orb_lua:OnRemoved()
+function modifier_beyonder_dark_orb:OnRemoved()
 end
 
-function modifier_beyonder_dark_orb_lua:OnDestroy()
+function modifier_beyonder_dark_orb:OnDestroy()
 end
 
 --------------------------------------------------------------------------------
 -- Modifier Effects
-function modifier_beyonder_dark_orb_lua:DeclareFunctions()
+function modifier_beyonder_dark_orb:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 	}
@@ -59,13 +59,13 @@ function modifier_beyonder_dark_orb_lua:DeclareFunctions()
 	return funcs
 end
 
-function modifier_beyonder_dark_orb_lua:GetModifierBonusStats_Intellect()
+function modifier_beyonder_dark_orb:GetModifierBonusStats_Intellect()
 	return self.mult * self:GetStackCount()
 end
 
 --------------------------------------------------------------------------------
 -- Helper
-function modifier_beyonder_dark_orb_lua:AddStack( value, duration )
+function modifier_beyonder_dark_orb:AddStack( value, duration )
 	-- set stack
 	self:SetStackCount( self:GetStackCount() + value )
 
@@ -89,7 +89,7 @@ function modifier_beyonder_dark_orb_lua:AddStack( value, duration )
 	end
 end
 
-function modifier_beyonder_dark_orb_lua:RemoveStack( value )
+function modifier_beyonder_dark_orb:RemoveStack( value )
 	-- set stack
 	self:SetStackCount( self:GetStackCount() - value )
 

@@ -1,33 +1,33 @@
 
-beyonder_dark_orb_lua = class({})
+beyonder_dark_orb = class({})
 LinkLuaModifier( "modifier_generic_orb_effect", "abilities/beyonder_dark_orb.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_beyonder_dark_orb", "modifiers/modifier_beyonder_dark_orb.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_beyonder_dark_orb_stack", "modifiers/modifier_beyonder_dark_orb_stack.lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Passive Modifier
-function beyonder_dark_orb_lua:GetIntrinsicModifierName()
+function beyonder_dark_orb:GetIntrinsicModifierName()
 	return "modifier_generic_orb_effect_lua"
 end
 
 --------------------------------------------------------------------------------
 -- Ability Start
-function beyonder_dark_orb_lua:OnSpellStart()
+function beyonder_dark_orb:OnSpellStart()
 end
 
 --------------------------------------------------------------------------------
 -- Orb Effects
-function beyonder_dark_orb_lua:GetProjectileName()
+function beyonder_dark_orb:GetProjectileName()
 	return "particles/units/heroes/hero_dark_willow/dark_willow_bramble_projectile.vpcf"
 end
 
-function beyonder_dark_orb_lua:OnOrbFire( params )
+function beyonder_dark_orb:OnOrbFire( params )
 	-- play effects
 	local sound_cast = "Hero_ObsidianDestroyer.ArcaneOrb"
 	EmitSoundOn( sound_cast, self:GetCaster() )
 end
 
-function beyonder_dark_orb_lua:OnOrbImpact( params )
+function beyonder_dark_orb:OnOrbImpact( params )
 	local caster = self:GetCaster()
 
 	-- get data
