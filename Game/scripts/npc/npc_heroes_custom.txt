@@ -418,7 +418,7 @@
 
 	}
 	"npc_dota_hero_faceless_void"
-	{
+		{
 	    ///"override_hero"		"npc_dota_hero_faceless_void"
 		"HeroID"					"41"
 		"BaseClass"				"npc_dota_hero_faceless_void"
@@ -443,23 +443,23 @@
 		"Ability17"				"special_bonus_spell_amplify_15"
 		"ArmorPhysical"					"1"
 		"AttackCapabilities"		    "DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"				"33"
-		"AttackDamageMax"				"39"
-		"AttackRate"				    "1.700000"
+		"AttackDamageMin"				"27"
+		"AttackDamageMax"				"35"
+		"AttackRate"				    "1.600000"
 		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"			"14"
+		"AttributeBaseStrength"			"15"
 		"AttributeStrengthGain"			"3.400000"
 		"AttributeBaseAgility"			"10"
 		"AttributeAgilityGain"			"1.10000"
-		"AttributeBaseIntelligence"		"30"
+		"AttributeBaseIntelligence"		"25"
 		"AttributeIntelligenceGain"		"3.800000"
 		"StatusHealthRegen"				"5.000000"
-		"AttackRange"                   "700"
-		"ProjectileModel"			    "particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle.vpcf"
-		"ProjectileSpeed"			    "700"
-		"Soundset"                      "Hero_Enigma"
+		"AttackRange"                   "500"
+		"ProjectileModel"		        "particles/units/heroes/hero_dark_willow/dark_willow_base_attack.vpcf"
+		"ProjectileSpeed"		        "1200"
+		"SoundSet"	                	"Hero_Enigma"
 		"MovementSpeed"					"300"
-		"MovementTurnRate"				"1.000000"
+		"MovementTurnRate"	        	"0.700000"
 	}
 	"npc_dota_hero_dragon_knight"
 	{

@@ -2,6 +2,7 @@ death_eater_deaths_requiem = class({})
 LinkLuaModifier( "modifier_death_eater_deaths_requiem", "abilities/death_eater_deaths_requiem", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_death_eater_deaths_requiem_scepter", "abilities/death_eater_deaths_requiem", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_death_eater_deaths_requiem_pull", "abilities/death_eater_deaths_requiem", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_death_eater_deaths_requiem_pull_debuff", "abilities/death_eater_deaths_requiem", LUA_MODIFIER_MOTION_NONE )
 
 death_eater_deaths_requiem.m_hPullModifier = nil
 
