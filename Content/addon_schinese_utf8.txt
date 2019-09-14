@@ -343,7 +343,10 @@
 		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_Lore"						"长期被遗忘的神灵不稳定的刀刃。"
 		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_bonus_attack_speed"			"+$attack"
 		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_bonus_damage"        		"+$damage"
-		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_bonus_all_stats"		    "+$all"
+		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_bonus_agility"		    "+$agi"
+		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_bonus_strength"		    "+$str"
+		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_bonus_int"		    "+$int"
+		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_bonus_evasion"       "%+$evasion"
 		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_bonus_mana_regen"		    "%+$mana_regen"
 		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_crit_chance"    			"%致命一击几率:"
 		"DOTA_TOOLTIP_ABILITY_item_high_frequency_blade_crit_damage"   			    "%严重损害:"
@@ -3371,8 +3374,7 @@
 		"DOTA_Tooltip_ability_samurai_ecliptic_strike_crit_chance"                        "%DAMAGE CHANCE:"
 
 		"DOTA_Tooltip_ability_samurai_earth_shake"                                        "Relativistic Spurt"
-		"DOTA_Tooltip_ability_samurai_earth_shake_Description"                            "Activated: Samurai transformed into an ethereal being, and rushes to a targeted point. Enemies caught by
-		the ability will be stunned and receive damage. Deals attack damage times two."
+		"DOTA_Tooltip_ability_samurai_earth_shake_Description"                            "Activated: Samurai transformed into an ethereal being, and rushes to a targeted point. Enemies caught bythe ability will be stunned and receive damage. Deals attack damage times two."
 		"DOTA_Tooltip_ability_samurai_earth_shake_stun_duration"                          "STUN DURATION:"
 
 		"DOTA_Tooltip_ability_item_jarnbjorn"                                             "Jarnbjorn"

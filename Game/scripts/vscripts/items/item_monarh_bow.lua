@@ -33,7 +33,9 @@ function modifier_item_monarh_bow:DeclareFunctions ()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_EVASION_CONSTANT,
+        MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
 
@@ -61,6 +63,19 @@ end
 function modifier_item_monarh_bow:GetModifierEvasion_Constant (params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_evasion")
+end
+
+function modifier_item_monarh_bow:GetModifierAttackSpeedBonus_Constant (params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_attack_speed")
+end
+
+function modifier_item_monarh_bow:GetModifierAttackRangeBonus()
+	if self:GetParent():IsRangedAttacker() then
+		return self:GetAbility():GetSpecialValueFor ("bonus_attack_range")
+	else
+		return 0
+	end
 end
 
 

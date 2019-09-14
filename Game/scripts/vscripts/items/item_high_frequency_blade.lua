@@ -46,15 +46,15 @@ function modifier_item_high_frequency_blade:GetModifierPreAttack_BonusDamage (pa
 end
 function modifier_item_high_frequency_blade:GetModifierBonusStats_Strength (params)
     local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_all_stats")
+    return hAbility:GetSpecialValueFor ("bonus_strength")
 end
 function modifier_item_high_frequency_blade:GetModifierBonusStats_Intellect (params)
     local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_all_stats")
+    return hAbility:GetSpecialValueFor ("bonus_int")
 end
 function modifier_item_high_frequency_blade:GetModifierBonusStats_Agility (params)
     local hAbility = self:GetAbility ()
-    return hAbility:GetSpecialValueFor ("bonus_all_stats")
+    return hAbility:GetSpecialValueFor ("bonus_agility")
 end
 function modifier_item_high_frequency_blade:GetModifierAttackSpeedBonus_Constant (params)
     local hAbility = self:GetAbility ()
@@ -64,7 +64,12 @@ function modifier_item_high_frequency_blade:GetModifierConstantManaRegen(params)
     local hAbility = self:GetAbility ()
     return hAbility:GetSpecialValueFor ("bonus_mana_regen")
 end
+function modifier_item_high_frequency_blade:GetModifierEvasion_Constant(params)
+    local hAbility = self:GetAbility ()
+    return hAbility:GetSpecialValueFor ("bonus_evasion")
+end
 function modifier_item_high_frequency_blade:OnAttackStart ( params )
+    
     if IsServer() then
         if params.attacker == self:GetParent() then
             local hAbility = self:GetAbility ()

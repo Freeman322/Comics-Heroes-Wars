@@ -2217,32 +2217,47 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"50"
+				"bonus_agility"		"85"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"50"
+				"bonus_strength"		"20"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"160"
+				"bonus_int"		"20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"2"
+				"bonus_attack_speed"	"120"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15"
+				"bonus_damage"			"200"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"320"
+				"bonus_mana_regen"		"2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"25"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_damage"			"300"
+			}
+			"09"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"bonus_evasion"         "50"
 			}
 		}
 	}
@@ -2454,8 +2469,8 @@
 		"AbilityTextureName"            "custom/monarh_bow"
 		"ScriptFile"					"items/item_monarh_bow.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"20.0"
-		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"25.0"
+		"AbilityManaCost"				"0"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"12000"
@@ -2471,27 +2486,37 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"70"
+				"bonus_agility"			"80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"70"
+				"bonus_strength"		"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"70"
+				"bonus_intellect"		"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"		"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_range"		"250"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"70"
+				"bonus_damage"			"50"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"35"
+				"bonus_evasion"			"40"
 			}
 			"06"
 			{
@@ -3437,7 +3462,7 @@
 		"BaseClass"						"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2030"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -3446,7 +3471,7 @@
 		"ItemResult"					"item_high_frequency_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_greater_crit;item_relic;item_echoe_sabre_marvel"
+			"01"						"item_butterfly;item_greater_crit;item_echoe_sabre_marvel;item_hyperstone;item_void_stone"
 		}
 	}
 	//=================================================================================================================
@@ -3510,7 +3535,7 @@
 		"BaseClass"             		"item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1200"
+		"ItemCost"						"3200"
 		"ItemShopTags"					""
 		"AbilityTextureName"            "recipe"
 		// Recipe
@@ -3519,7 +3544,7 @@
 		"ItemResult"					"item_monarh_bow"
 		"ItemRequirements"
 		{
-			"01"						"item_butterfly;item_ultimate_orb;item_ultimate_orb;item_wraith_band"
+			"01"						"item_butterfly;item_ultimate_orb;item_ultimate_orb;item_dragon_lance"
 		}
 	}
 	//=================================================================================================================
@@ -7708,7 +7733,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1500"
+		"ItemCost"						"1400"
 		"ItemShopTags"						""
 
 		// Recipe
@@ -7717,7 +7742,7 @@
 		"ItemResult"						"item_jarnbjorn"
 		"ItemRequirements"
 		{
-			"01"							"item_mjollnir;item_monkey_king_bar;item_basher;item_ultimate_orb"
+			"01"							"item_mjollnir;item_basher;item_ultimate_orb"
 		}
 	}
 
@@ -7766,17 +7791,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"150"
+				"bonus_damage"				"50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"		"140"
+				"bonus_attack_speed"		"100"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"			"35"
+				"bonus_all_stats"			"25"
 			}
 			"04"
 			{
@@ -7821,7 +7846,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chain_damage"				"260"
+				"chain_damage"				"200"
 			}
 			"13"
 			{

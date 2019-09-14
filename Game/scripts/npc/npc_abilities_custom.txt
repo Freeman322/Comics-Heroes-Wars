@@ -39448,7 +39448,7 @@
 			"04"
 			{
 				"var_type"                  "FIELD_INTEGER"
-				"plague_damage"             "0.05 0.12 0.19 0.26"
+				"plague_damage"             "1.4 1.6 1.8 2.0"
 			}
 		}
 	}
@@ -39738,7 +39738,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_souls_hero_bonus"	"8 9 10 11"
+				"necromastery_souls_hero_bonus"	"9 10 11 12"
 			}
 			"05"
 			{
@@ -39875,67 +39875,6 @@
 				"var_type"				"FIELD_FLOAT"
 				"pull_speed"	"500 1000 1500"
 			}		
-		}
-	}
-	"beyonder_dark_orb"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/beyonder_dark_orb.lua"
-		"AbilityTextureName"			""
-		"FightRecapLevel"				"1"
-		"MaxLevel"						"4"
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
-			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_bramble_projectile.vpcf"
-		}
-		
-		// Ability General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-
-		// Ability Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500"
-
-		// Ability Resource
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 140 170 200"
-		"AbilityCooldown"				"0"
-
-		// Damage
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_pool_damage_pct"	"2 3 4 5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int_steal"		"2 3 4 5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int_steal_duration"		"40 60 80 100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"		"175"
-			}
 		}
 	}
 }

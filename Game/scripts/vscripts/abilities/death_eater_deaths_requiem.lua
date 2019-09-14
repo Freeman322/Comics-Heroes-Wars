@@ -209,7 +209,7 @@ function death_eater_deaths_requiem:Implode( lines, modifier )
 	modifier.identifier = modifierAT
 
 	-- get projectile
-	local particle_line = "particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+	local particle_line = "particles/hero_demon_eater/lina_spell_dragon_slave_2.vpcf"
 	local line_length = self:GetSpecialValueFor("requiem_radius")
 	local width_start = self:GetSpecialValueFor("requiem_line_width_end")
 	local width_end = self:GetSpecialValueFor("requiem_line_width_start")
