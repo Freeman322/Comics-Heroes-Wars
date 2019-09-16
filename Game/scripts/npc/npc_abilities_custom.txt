@@ -39467,7 +39467,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"225"
+				"value"						"270"
 			}
 		}
 	}
@@ -39721,7 +39721,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_damage_per_soul"	"2 3 4 5"
+				"necromastery_damage_per_soul"	"2"
 				"CalculateSpellDamageTooltip"	"0"
 				"LinkedSpecialBonus"			"special_bonus_unique_death_eater_2"
 			}
