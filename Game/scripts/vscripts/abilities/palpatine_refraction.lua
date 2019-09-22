@@ -43,7 +43,8 @@ end
 
 function modifier_palpatine_refraction:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
         MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
         MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
@@ -69,8 +70,12 @@ function modifier_palpatine_refraction:GetEffectAttachType()
     return PATTACH_ABSORIGIN_FOLLOW
 end
 
-function modifier_palpatine_refraction:GetModifierTotalDamageOutgoing_Percentage()
-    return self:GetAbility():GetSpecialValueFor("bonus_outgoing_damage")
+function modifier_palpatine_refraction:GetModifierPreAttack_BonusDamage()
+    return self:GetAbility():GetSpecialValueFor("bonus_damage")
+end
+
+function modifier_palpatine_refraction:GetModifierAttackSpeedBonus_Constant()
+    return self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
 end
 
 function modifier_palpatine_refraction:OnTakeDamage(params)
