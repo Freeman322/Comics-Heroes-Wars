@@ -6656,7 +6656,7 @@
 		"Ability3"					"kyloren_dark_side"
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
-		"Ability6"					"kyloren_force"
+		"Ability6"					"deadpool_hypersonic_slashes"
 
 
 		"Ability10"					"special_bonus_unique_kyloren_1"
@@ -8013,28 +8013,14 @@
 	}
 	"npc_dota_hero_medusa"
 	{
-		"Model"		"models/heroes/medusa/medusa.vmdl"
-		"SoundSet"		"Hero_Medusa"
-		"IdleExpression"		"scenes/medusa/medusa_exp_idle_01.vcd"
+		"BaseClass"     				"npc_dota_hero_medusa"
+		"HeroID" 					"226"
+
 		"CMDisabled"				"1"
 		"HeroDisabled"				"1"
-		"Role"			"Carry,Disabler,Durable"
-		"Rolelevels"	"3,1,1"
-		"Complexity"	"1"
-		"Team"		"Bad"
-		"ModelScale"		"0.850000"
-		"VersusScale"		"0.8200000"
-		"NameAliases"		"medusa,gorgon"
-		"workshop_guide_name"		"Medusa"
-		"PickSound"		"medusa_medus_spawn_01"
-		"BanSound"		"medusa_medus_anger_13"
-		"NoCombine"		"1"
-		"Legs"	"0"
-		"LastHitChallengeRival"		"npc_dota_hero_zuus"
-		"CMEnabled"		"1"
-		"new_player_enable"		"1"
-		"HeroSelectSoundEffect"		"Hero_Medusa.Pick"
-		"GibType"		"default"
+
+
+		"GibType"			"default"
 		"Ability1"		"medusa_split_shot"
 		"Ability2"		"medusa_mystic_snake"
 		"Ability3"		"medusa_mana_shield"

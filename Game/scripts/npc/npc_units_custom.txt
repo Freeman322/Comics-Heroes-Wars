@@ -2598,7 +2598,7 @@
 		"Ability3"					"kyloren_dark_side"
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
-		"Ability6"					"kyloren_force"
+		"Ability6"					"deadpool_hypersonic_slashes"
 
 
 		"Ability10"					"special_bonus_unique_kyloren_1"
