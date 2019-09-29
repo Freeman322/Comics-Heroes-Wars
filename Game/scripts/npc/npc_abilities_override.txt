@@ -2042,7 +2042,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"snake_damage"			"140 180 220 260"
+				"snake_damage"			"240 280 320 360"
 			}
 			"05"
 			{
@@ -2053,22 +2053,22 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"snake_scale"			"35 40 45 50"
+				"snake_scale"			"45 50 55 60"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"initial_speed"			"800"
+				"initial_speed"			"1200 1400 1600 1800"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"return_speed"			"800"
+				"return_speed"			"2400"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stone_form_scepter_base"		"1.0"
+				"stone_form_scepter_base"		"1.0 1.2 1.4 1.6"
 				"RequiresScepter"	"1"
 			}
 			"10"
