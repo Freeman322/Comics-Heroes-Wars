@@ -109,7 +109,7 @@
 		"npc_dota_hero_abaddon"				"Khorne"
 		"npc_dota_hero_huskar"				"Darth Vader"
 		"npc_dota_hero_death_prophet"		"Zatanna"
-		"npc_dota_hero_morphling"			"Carnage"
+		"npc_dota_hero_carnange"			"Carnage"
 		"npc_dota_hero_savitar"				"Savitar"
 		"npc_dota_hero_leshrac"             "Tzeentch"
 		"npc_mega_greevil"					"Ancient Ursa-demon"
@@ -5921,7 +5921,7 @@
 		"new_npc_dota_hero_abaddon"				"Khorne"
 		"new_npc_dota_hero_huskar"				"Darth Vader"
 		"new_npc_dota_hero_death_prophet"		"Zatanna"
-		"new_npc_dota_hero_morphling"			"Carnage"
+		"new_npc_dota_hero_carnange"			"Carnage"
 
 		"new_npc_dota_hero_leshrac"             "Tzeentch"
 		"npc_mega_greevil"					"Ancient Ursa-demon"

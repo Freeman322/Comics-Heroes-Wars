@@ -29,10 +29,9 @@ end
 function deadpool_hypersonic_slashes:OnSpellStart ()
     local hTarget = self:GetCursorTarget ()
     if hTarget ~= nil then
-        if ( not hTarget:TriggerSpellAbsorb (self) ) then
-            hTarget:AddNewModifier (self:GetCaster (), self, "modifier_deadpool_hypersonic_slashes_target", nil)
-            EmitSoundOn ("Hero_Juggernaut.OmniSlash", hTarget)
-        end
+        hTarget:AddNewModifier (self:GetCaster (), self, "modifier_deadpool_hypersonic_slashes_target", nil)
+        EmitSoundOn ("Hero_Juggernaut.OmniSlash", hTarget)
+        
         local nFXIndex = ParticleManager:CreateParticle ("particles/deadpool_multislash_cast.vpcf", PATTACH_CUSTOMORIGIN, hTarget);
         ParticleManager:SetParticleControlEnt (nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin (), true);
         ParticleManager:SetParticleControl (nFXIndex, 1, hTarget:GetOrigin ());

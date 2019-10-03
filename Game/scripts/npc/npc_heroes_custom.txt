@@ -174,11 +174,11 @@
 		"Ability6"				"batman_hookshot"
 		"Ability10"				"special_bonus_unique_batman_2"
 		"Ability11"				"special_bonus_all_stats_12"
-		"Ability12"				"special_bonus_hp_regen_40"
+		"Ability12"				"special_bonus_gold_income_240"
 		"Ability13"				"special_bonus_unique_batman_1"
 		"Ability14"				"special_bonus_unique_batman_3"
 		"Ability15"				"special_bonus_all_stats_15"
-		"Ability16"				"special_bonus_gold_income_5"
+		"Ability16"				"special_bonus_gold_income_420"
 		"Ability17"				"special_bonus_unique_batman"
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -494,17 +494,17 @@
 			"model"	 "models/cap_america_helmet.vmdl"
 		}
 	}
-	"npc_dota_hero_morphling"
+	"npc_dota_hero_carnange"
 	{
-		////"override_hero"		   		"npc_dota_hero_morphling"
+		"HeroID"					"10"
 
-		"HeroID"						"10"
-		"BaseClass"					"npc_dota_hero_morphling"
+		"BaseClass"					"npc_dota_hero"
 
 		"Model"						"models/heroes/hero_carnage/carnage.vmdl"
-		"DisableWearables"				"1"
-		"ModelScale"					"1"
-		"LoadoutScale"					"1"
+
+		"DisableWearables"			"1"
+		"ModelScale"				"1"
+		"LoadoutScale"				"1"
 
 		"Ability1"					"carnage_blood_spray"
 		"Ability2"					"carnage_tombstone"
@@ -512,8 +512,10 @@
 		"Ability4"					"carnage_eject"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"carnage_assimilate"
-		"Ability7"					""
-		"Ability8"					""
+
+		"AbilityTalentStart"		"10"
+
+		"Ability9"					"special_bonus_all_stats_12"
      	"Ability10"					"special_bonus_exp_boost_30"
       	"Ability11"					"special_bonus_all_stats_12"
       	"Ability12"					"special_bonus_hp_regen_40"
@@ -522,17 +524,20 @@
       	"Ability15"					"special_bonus_movement_speed_100"
       	"Ability16"					"special_bonus_lifesteal_100"
 		"Ability17"					"special_bonus_all_stats_20"
-		"AbilityTalentStart"		"10"
-
+	
 		"ArmorPhysical"				"0"
+
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
 		"AttackDamageMin"			"50"
 		"AttackDamageMax"			"50"
 		"AttackRate"				"1.5000"
 		"AttackAnimationPoint"		"0.400000"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"150"
+
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+
 		"AttributeBaseStrength"		"24"
 		"AttributeStrengthGain"		"2.300000"
 		"AttributeBaseIntelligence"	"26"

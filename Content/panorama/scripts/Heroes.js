@@ -44,7 +44,7 @@ Heroes.list = {
             "id": 11,
         },
         {
-            "name": "npc_dota_hero_morphling",
+            "name": "npc_dota_hero_carnange",
             "id": 10,
         },
         {
