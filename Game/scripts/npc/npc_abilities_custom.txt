@@ -10817,7 +10817,6 @@
 		"FightRecapLevel"				 				"2"
 		"AbilityTextureName"		   	    "custom/deadpool_omni_slash"
 		"ScriptFile"										"abilities/deadpool_hypersonic_slashes.lua"
-		"HasScepterUpgrade"							"0"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -10826,7 +10825,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				    "75"
+		"AbilityCooldown"				    "60 50 40"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -33279,18 +33278,18 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"freeze_duration"			"1.0 1.5 2.0 2.5"
+				"freeze_duration"				"1.0 1.5 2.0 2.5"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage"							"150 200 250 300"
+				"damage"						"180 230 300 360"
 				"LinkedSpecialBonus"			"special_bonus_unique_kyloren_1"
 			}
 			"03"
 			{
-				"var_type"								"FIELD_FLOAT"
-				"radius_scepter"					"400"
+				"var_type"						"FIELD_FLOAT"
+				"radius_scepter"				"400"
 			}
 		}
 	}
@@ -33388,7 +33387,7 @@
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.2"
 
-		"AbilityCooldown"					"35 30 25 20"
+		"AbilityCooldown"					"20"
 		"AbilityManaCost"					"50 100 150 200"
 
 		"precache"
@@ -33522,7 +33521,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"							"1.0"
+				"value"							"7"
 			}
 		}
 	}
@@ -33541,7 +33540,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"							"0.5"
+				"value"							"2"
 			}
 		}
 	}

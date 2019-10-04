@@ -255,7 +255,9 @@ function GameMode:InitGameMode()
 
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
 	GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
-	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "GoldFilter" ), self)
+	
+	-----GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "GoldFilter" ), self)
+	
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap( GameMode, "OrderFilter" ), self)
 
 	Util:OnInit()
@@ -474,9 +476,11 @@ function GameMode:ModifierFilter(params)
 
 	return true
 end
+
 function GameMode:OnAbilityLearned(params)
 	Util:LearnedAbility( params )
 end
+
 function GameMode:GoldFilter(ftable)
 	local reason = ftable.reason_const
 	local pid = ftable.player_id_const
@@ -486,6 +490,7 @@ function GameMode:GoldFilter(ftable)
 
 	return true
 end
+
 function GameMode:OrderFilter(params)
 	local unit = EntIndexToHScript(params.units["0"])
 

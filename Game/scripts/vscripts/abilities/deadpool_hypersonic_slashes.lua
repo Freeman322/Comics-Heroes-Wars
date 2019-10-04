@@ -8,13 +8,13 @@ function deadpool_hypersonic_slashes:GetAbilityTextureName()
     return self.BaseClass.GetAbilityTextureName(self) 
 end
   
-
 function deadpool_hypersonic_slashes:GetAOERadius ()
     if self:GetCaster ():HasScepter () then
         return 450
     end
     return 0
 end
+
 function deadpool_hypersonic_slashes:GetCooldown (nLevel)
     return self.BaseClass.GetCooldown (self, nLevel)
 end
@@ -96,12 +96,21 @@ function modifier_deadpool_hypersonic_slashes_target:OnCreated (kv)
     if IsServer () then
         local hTarget = self:GetParent ()
         self.damage = self:GetAbility ():GetSpecialValueFor ("damage")
+
         local caster = self:GetAbility ():GetCaster ()
+
         self.jumps_bonus = 0
+
+        if self:GetCaster():HasTalent("special_bonus_unique_kyloren_4") then self.jumps_bonus = self:GetCaster():FindTalentValue("special_bonus_unique_kyloren_4") end 
+
         self.bounce_tick = self:GetAbility ():GetSpecialValueFor ("bounce_tick")
+
         self.jumps = self:GetAbility ():GetSpecialValueFor ("jumps") + self.jumps_bonus
+
         self:StartIntervalThink (self.bounce_tick)
+
         hTarget:Stop ()
+
         self:GetCaster ():AddNewModifier (self:GetCaster (), self, "modifier_deadpool_hypersonic_slashes", nil)
     end
 end
@@ -133,8 +142,14 @@ function modifier_deadpool_hypersonic_slashes_target:OnIntervalThink ()
         ParticleManager:ReleaseParticleIndex (nFXIndex);
         caster:StartGestureWithPlaybackRate (ACT_DOTA_ATTACK, 2)
         EmitSoundOn ("Hero_Juggernaut.OmniSlash.Damage", target)
+
         caster:PerformAttack (target, true, true, true, true, false, false, true)
         ApplyDamage ( { victim = target, attacker = caster, damage = self.damage, ability = self:GetAbility (), damage_type = DAMAGE_TYPE_PHYSICAL })
+
+        if self:GetCaster():HasTalent("special_bonus_unique_kyloren_5") then 
+            caster:PerformAttack (target, true, true, true, true, false, false, true)
+        end 
+
         self.jumps = self.jumps - 1
     end
 end

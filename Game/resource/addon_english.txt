@@ -2191,11 +2191,9 @@
 		//дэдпул
 
 		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes"						"Hypersonic Slashes"
-		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_Description"			"Kylo Ren leaps towards the target enemy unit with a damaging attack, and then slashes other nearby enemy units. Procs on-hit effects. Ren is invulnerable during this spell.\n\nUpgradable by Aghanim's Scepter."
+		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_Description"			"Kylo Ren leaps towards the target enemy unit with a damaging attack, and then slashes other nearby enemy units. Procs on-hit effects. Ren is invulnerable during this spell."
 		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_jumps"				"JUMPS:"
-		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_bounce_tick"	   	    "FADE TIME:"	
-		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_jumps_scepter"	    "JUMPS PER KILL SCEPTER:"
-		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_aghanim_description"	"Increases the number of jumps per kill."		
+		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_bounce_tick"	   	    "FADE TIME:"		
 
 		"DOTA_TOOLTIP_ABILITY_deadpool_heart"                                     "RED BLOOD"
 		"DOTA_TOOLTIP_ABILITY_deadpool_heart_Description"                         "Passive - Restores a percentage of max health per second."
@@ -10767,8 +10765,8 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_kyloren_force_tooltip_duration"                             "DURATION:"
 		"DOTA_Tooltip_ability_kyloren_force_outgoing_damage_mult"                         "OUTGOING DAMAGE MULT:"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_kyloren_4"                             "+1 sec duration for Force"
-		"DOTA_Tooltip_ability_special_bonus_unique_kyloren_5"                             "+0.5 damage mult per hit for Force"
+		"DOTA_Tooltip_ability_special_bonus_unique_kyloren_4"                             "+7 jumps for Hypersonic Slashes"
+		"DOTA_Tooltip_ability_special_bonus_unique_kyloren_5"                             "x2 damage for Hypersonic Slashes"
 
 		"npc_dota_hero_grimskull"														  "Grimskull"
 
