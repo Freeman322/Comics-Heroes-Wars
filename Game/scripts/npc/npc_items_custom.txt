@@ -540,58 +540,6 @@
 		"ItemKillable"					"0"
 		"ItemCastOnPickup"				"1"
 	}
-	//=================================================================================================================
-	// Blade Mail
-	//=================================================================================================================
-	"item_blade_mail"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9288"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"             		"item_lua"
-		"AbilityTextureName"            "blade_mail"
-		"ScriptFile"					"items/item_blade_mail.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13.0"
-		"AbilitySharedCooldown"			"reflect"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"25"
-		"ItemCost"						"2200"
-		"ItemShopTags"					"damage;armor;int;hard_to_tag"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"blade mail"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"22"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.5"
-			}
-		}
-	}
 	"item_blink_2"
 	{
 		// General
@@ -1006,7 +954,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"60"
+				"bonus_all_stats"		"30"
 			}
 			"02"
 			{
@@ -1590,7 +1538,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"85"
+				"bonus_all_stats"		"100"
 			}
 			"02"
 			{
@@ -1615,7 +1563,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_damage"			"50"
+				"bonus_damage"			"100"
 			}
 			"07"
 			{
@@ -2274,7 +2222,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"42"
+		"AbilityCooldown"				"25"
 		"AbilityCastRange"				"128"
 
 		// Item Info
@@ -2304,17 +2252,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"			"40"
+				"bonus_intellect"			"50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"15"
+				"bonus_strength"			"35"
 			}
 			"03"
 			{
 				"var_type"              		"FIELD_INTEGER"
-				"bonus_agility"        		 "15"
+				"bonus_agility"        		 "25"
 			}
 			"04"
 			{
@@ -2914,7 +2862,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -2923,7 +2871,7 @@
 		"ItemResult"					"item_axe_of_phractos"
 		"ItemRequirements"
 		{
-			"01"						"item_radiance;item_monkey_king_bar"
+			"01"						"item_radiance;item_monkey_king_bar;item_ultimate_orb;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -2972,32 +2920,6 @@
 		"ItemRequirements"
 		{
 			"01"				"item_bfury;item_bfury"
-		}
-	}
-	//=================================================================================================================
-	// Recipe: Blade Mail
-	//=================================================================================================================
-	"item_recipe_blade_mail"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9287"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"             		"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"FightRecapLevel"				"1"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-		"AbilityTextureName"            "recipe"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_blade_mail"
-		"ItemRequirements"
-		{
-			"01"						"item_broadsword;item_chainmail;item_robe"
 		}
 	}
 	//=================================================================================================================
@@ -3107,7 +3029,7 @@
 		"ItemResult"					"item_death_scyche"
 		"ItemRequirements"
 		{
-			"01"						"item_skadi;item_ethereal_blade;item_broadsword;"
+			"01"						"item_skadi;item_ghost;item_broadsword;"
 		}
 	}
 	//=================================================================================================================
@@ -3323,7 +3245,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1800"
+		"ItemCost"						"3800"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3582,7 +3504,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"900"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3591,7 +3513,7 @@
 		"ItemResult"					"item_necronomicon_4"
 		"ItemRequirements"
 		{
-			"01"						"item_necronomicon_3;item_ogre_axe"
+			"01"						"item_necronomicon_3;item_mystic_staff"
 		}
 	}
 
@@ -3710,7 +3632,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1850"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3719,7 +3641,7 @@
 		"ItemResult"					"item_sentinels_cuirass"
 		"ItemRequirements"
 		{
-			"01"						"item_assault;item_ultimate_orb;item_ultimate_orb;item_mjollnir"
+			"01"						"item_mjollnir;item_assault;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -4172,7 +4094,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
+				"bonus_armor"			"15"
 			}
 			"04"
 			{
@@ -4192,17 +4114,17 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_positive_armor"	"9"
+				"aura_positive_armor"	"15"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_negative_armor"	"-9"
+				"aura_negative_armor"	"-15"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"900"
+				"aura_radius"			"1000"
 			}
 		}
 	}

@@ -599,7 +599,7 @@
 		"Model"						"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"
 		"SoundSet"					"n_creep_Ranged"
 		"Level"						"4"
-		"ModelScale"				"0.7"
+		"ModelScale"				"1"
 		"IsSummoned"				"1"
 		"CanBeDominated"			"0"
 		"UnitLabel"					"necroarcher"
@@ -613,14 +613,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"2"
-		"MagicalResistance"			"25"
+		"ArmorPhysical"				"12"
+		"MagicalResistance"			"50"
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"250"
-		"AttackDamageMax"			"270"
+		"AttackDamageMin"			"400"
+		"AttackDamageMax"			"500"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.7"
 		"AttackAnimationPoint"		"0.56"
@@ -662,10 +662,10 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"900"
-		"StatusHealthRegen"			"10"
+		"StatusHealth"				"4500"
+		"StatusHealthRegen"			"40"
 		"StatusMana"				"400"
-		"StatusManaRegen"			"4"
+		"StatusManaRegen"			"10"
 
 		// Team
 		//----------------------------------------------------------------
@@ -687,7 +687,7 @@
 		"Model"						"models/creeps/item_creeps/i_creep_necro_warrior/necro_warrior.vmdl"
 		"SoundSet"					"n_creep_Ranged"
 		"Level"						"6"
-		"ModelScale"				"0.7"
+		"ModelScale"				"1"
 		"IsSummoned"				"1"
 		"CanBeDominated"			"0"
 		"UnitLabel"					"necrowarrior"
@@ -702,14 +702,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"8"
-		"MagicalResistance"			"40"
+		"ArmorPhysical"				"28"
+		"MagicalResistance"			"75"
 		"BaseAttackSpeed"		"100"
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"210"
-		"AttackDamageMax"			"230"
+		"AttackDamageMin"			"300"
+		"AttackDamageMax"			"350"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.75"
 		"AttackAnimationPoint"		"0.56"
@@ -746,13 +746,13 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"410"
+		"MovementSpeed"				"450"
 		"MovementTurnRate"			"0.5"
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1800"
-		"StatusHealthRegen"			"40"
+		"StatusHealth"				"6000"
+		"StatusHealthRegen"			"75"
 		"StatusMana"				"0"
 		"StatusManaRegen"			"0"
 

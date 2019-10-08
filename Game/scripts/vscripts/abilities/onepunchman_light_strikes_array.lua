@@ -53,8 +53,8 @@ function modifier_onepunchman_light_strikes_array_thinker:OnIntervalThink()
     	local unit_table = FindUnitsInRadius(self:GetParent():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 	    if #unit_table > 0 then
 		    for _, unit in pairs(unit_table) do
-		    	if self:GetCaster():HasTalent("special_bonus_unique_saitama_2") and self.strikes == 2 then
-		    		self:GetCaster():PerformAttack(unit, true, true, true, false, false, false, true)
+		    	if self:GetCaster():HasTalent("special_bonus_unique_saitama_2") and self.strikes >= 0 then
+		    		self:GetCaster():PerformAttack(unit, true, true, true, true, false, false, true)
 		    	end
 
 		    	EmitSoundOn("Hero_Pangolier.Swashbuckle.Damage", unit)
@@ -79,7 +79,7 @@ function modifier_onepunchman_light_strikes_array_thinker:OnIntervalThink()
 	    end
 
 	    self.strikes = self.strikes + 1
-	    if self.strikes == 3 then
+	    if self.strikes == 6 then
 	    	self.strikes = 0
 	    end
    end

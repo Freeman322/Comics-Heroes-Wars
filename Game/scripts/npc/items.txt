@@ -1573,7 +1573,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"200"
+		"ItemCost"						"50"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"observer ward"
@@ -1583,10 +1583,11 @@
 		"ItemInitialCharges"			"1"
 		"ItemStockMax"					"4"
 		"ItemStockInitial"				"2"
-		"ItemStockTime"					"150.0"
+		"ItemStockTime"					"135.0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		"ItemSupport"					"1"
 		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -1595,7 +1596,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime"				"3000"
+				"lifetime"				"360"
 			}
 			"02"
 			{
@@ -1605,7 +1606,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"1"
+				"health"				"200"
 			}
 			"04"
 			{
@@ -1637,17 +1638,21 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"200"
+		"ItemCost"						"75"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"sentry ward"
 		"ItemStackable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"2"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"10"
+		"ItemStockInitial"				"4"
+		"ItemStockTime"					"85.0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		"ItemSupport"					"1"
 		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
 
 
 		// Special
@@ -1657,7 +1662,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime"				"700"
+				"lifetime"				"360"
 			}
 			"02"
 			{
@@ -1667,17 +1672,17 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"true_sight_range"		"850"
+				"true_sight_range"		"1000"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"1"
+				"health"				"200"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration_minutes_tooltip"				"4"
+				"duration_minutes_tooltip"				"6"
 			}
 		}
 	}
@@ -1763,12 +1768,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime_observer"				"3000"
+				"lifetime_observer"				"360"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime_sentry"				"700"
+				"lifetime_sentry"				"360"
 			}
 			"06"
 			{
@@ -1788,12 +1793,12 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"true_sight_range"		"850"
+				"true_sight_range"		"1000"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"sentry_duration_minutes_tooltip"		"4"
+				"sentry_duration_minutes_tooltip"		"6"
 			}
 		}
 	}
@@ -6011,6 +6016,83 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Recipe: Blade Mail
+	//=================================================================================================================
+	"item_recipe_blade_mail"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"126"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"FightRecapLevel"				"1"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_blade_mail"
+		"ItemRequirements"
+		{
+			"01"						"item_broadsword;item_chainmail;item_robe"
+		}
+	}
+	
+	//=================================================================================================================
+	// Blade Mail
+	//=================================================================================================================
+	"item_blade_mail"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"127"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25"
+		"ItemCost"						"2200"
+		"ItemShopTags"					"damage;armor;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bm;blade mail;blademail"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"22"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.5"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Recipe: Soul Booster
 	//=================================================================================================================

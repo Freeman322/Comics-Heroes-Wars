@@ -49,7 +49,7 @@ function dormammu_larceny_of_life:OnSpellStart ()
         local item_in_caster = caster:GetItemInSlot (item_id)
         if item_in_caster ~= nil then
             local item_name = item_in_caster:GetName ()
-            if not (item_name == "item_aegis" or item_name == "item_smoke_of_deceit" or item_name == "item_recipe_refresher" or item_name == "item_refresher" or item_name == "item_ward_observer" or item_name == "item_ward_sentry") then
+            if not (item_name == "item_aegis" or item_name == "item_smoke_of_deceit" or item_name == "item_recipe_refresher" or item_name == "item_refresher" or item_name == "item_ward_observer" or item_name == "item_ward_sentry" or item_name == "item_necronomicon_4" or item_name == "item_space_stone") then
                 local item_created = CreateItem (item_in_caster:GetName (), double, double)
                 double:AddItem (item_created)
                 item_created:SetCurrentCharges (item_in_caster:GetCurrentCharges ())

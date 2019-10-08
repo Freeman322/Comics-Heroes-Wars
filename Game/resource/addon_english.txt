@@ -73,7 +73,7 @@
 		"npc_dota_broodmother_spiderling" "Ant"
 		"npc_dota_hero_vengefulspirit" "Rogue"
 		"npc_dota_hero_legion_commander" "Captain Marvel"
-		"npc_imba_necronomicon_archer_4"	"Murlock"
+		"npc_imba_necronomicon_archer_4"	"Archer"
 		"npc_imba_necronomicon_warrior_4"	"Warrior"
 		"npc_dota_hero_nevermore"				"Deadpool"
 		"npc_dota_hero_tusk"  "Po"
@@ -1124,7 +1124,6 @@
 		"DOTA_Tooltip_ability_item_necronomicon_4_bonus_intellect"						"+$int"
 		"DOTA_Tooltip_ability_item_necronomicon_4_bonus_strength"							"+$str"
 		"DOTA_Tooltip_ability_item_necronomicon_4_summon_duration"							"DURATION:"
-		"DOTA_Tooltip_ability_item_necronomicon_4_warrior_health"					"PET's HEALTH:"
 
 		"DOTA_TOOLTIP_ABILITY_item_ds" "Dreamer's Orchid"
 		"DOTA_TOOLTIP_ABILITY_item_ds_Lore" "Any dream can become reality"  
@@ -3321,7 +3320,7 @@
 
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole"							"KREE's RAGE"
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole_Description"				"Enters rage of Kree and receives a temporary boost to armor, damage and movement speed. \n\nUpgradable by Power Gem, adds %bonus_stats_power_gem% strength."
-		"DOTA_Tooltip_ABILITY_ronan_soul_stole_gods_strength_damage"	"BONUS DAMAGE:"
+		"DOTA_Tooltip_ABILITY_ronan_soul_stole_damage"	                "BONUS DAMAGE:"
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole_duration"				"DURATION:"
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole_armor"					"BONUS ARMOR:"
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole_movespeed"				"BONUS MOVEMENT SPEED:"

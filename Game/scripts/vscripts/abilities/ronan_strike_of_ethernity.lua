@@ -52,7 +52,7 @@ function ronan_strike_of_ethernity:OnSpellStart( )
 		if self:GetCaster():HasTalent("special_bonus_unique_ronan_2") then damage_cof = damage_cof + self:GetCaster():FindTalentValue("special_bonus_unique_ronan_2") end
 		
 		local iDamage = damage_cof*stats
-	    ApplyDamage({victim = target, attacker = caster, damage = iDamage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS})
+	    ApplyDamage({victim = target, attacker = caster, damage = iDamage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NONE})
 
 	    if target:GetHealthPercent() <= 15 then
 	        local explosion5 = ParticleManager:CreateParticle("particles/one_punch.vpcf", PATTACH_WORLDORIGIN, target)
