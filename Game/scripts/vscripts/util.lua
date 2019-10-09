@@ -1914,7 +1914,7 @@ function Util:SetupConsole()
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
 
-        if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+        if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 then
           PrecacheUnitByNameAsync( "npc_dota_hero_death_eater", function()
             local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_death_eater", 0, 0)
             nHero:RespawnHero(false, false)
@@ -1942,7 +1942,7 @@ function Util:SetupConsole()
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
 
-        if PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 259404989 then
+        if PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 283449904 then
           PrecacheUnitByNameAsync( "npc_dota_hero_medusa", function()
             local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_medusa", 0, 0)
             nHero:RespawnHero(false, false)

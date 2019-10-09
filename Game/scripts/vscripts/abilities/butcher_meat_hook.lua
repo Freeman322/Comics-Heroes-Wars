@@ -281,7 +281,8 @@ end
 
 function modifier_butcher_meat_hook:OnCreated( kv )
 	if IsServer() then
-        self.traveled_distance = 0
+		self.traveled_distance = 0
+		self.vStartPosition = self:GetCaster():GetAbsOrigin()
 
 		self:StartIntervalThink(0.03)
 		self.speed = self:GetAbility():GetSpecialValueFor("hook_speed")
@@ -322,8 +323,9 @@ end
 
 function modifier_butcher_meat_hook:OnIntervalThink()
 	if IsServer() then
-        local target_point = self:GetCaster():GetAbsOrigin()
-        local caster_location = self:GetParent():GetAbsOrigin()
+        local target_point = self.vStartPosition
+		local caster_location = self:GetParent():GetAbsOrigin()
+		
         local distance = (target_point - caster_location):Length2D()
         local direction = (target_point - caster_location):Normalized()
         local duration = distance/self.speed
