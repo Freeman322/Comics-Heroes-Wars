@@ -954,7 +954,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"30"
+				"bonus_all_stats"		"45"
 			}
 			"02"
 			{
@@ -3245,7 +3245,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3800"
+		"ItemCost"						"3300"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3254,7 +3254,7 @@
 		"ItemResult"					"item_frostmourne"
 		"ItemRequirements"
 		{
-			"01"						"item_death_scyche;item_demon_edge"
+			"01"						"item_death_scyche;item_ultimate_orb;item_demon_edge"
 		}
 	}
 	//=================================================================================================================
@@ -3632,7 +3632,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"1200"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -4109,7 +4109,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strike_damage"			"400"
+				"strike_damage"			"280"
 			}
 			"07"
 			{
