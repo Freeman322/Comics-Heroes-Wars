@@ -115,7 +115,7 @@
 		"npc_dota_hero_earthshaker"		"God-Emperor"
 		"npc_dota_hero_abaddon"			"Khorne"
 
-		"npc_dota_hero_morphling"		"Carnage"
+		"npc_dota_hero_carnange"		"Carnage"
 		"npc_dota_boss_thanos"				"Thanos"
 		"npc_dota_boss_ragnaros"			"Ragnaros"
 		"npc_dota_hero_leshrac"             "Tzeentch"
@@ -329,7 +329,7 @@
 
 
 		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos"									 "Axe of Phractos"
-		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_Description" 				     "Аура: PHRACTATION - Наносит урон в радиусе 700 каждую секунду. Урон зависит от максимально здоровья цели + 25 постоянного урона."
+		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_Description" 				     "Аура: PHRACTATION - Наносит урон в радиусе 700 каждую секунду. Урон зависит от максимально здоровья цели + 70 постоянного урона."
 		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_Lore" 							 "Великий огненный топор, который несет смерть всякому врагу."
 		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_bonus_damage"    				 "+$damage"
 		"DOTA_TOOLTIP_ABILITY_item_axe_of_phractos_bonus_attack_speed"   		 	 "+$attack"
@@ -3218,12 +3218,9 @@
 		"DOTA_Tooltip_ability_bynder_rim_duration"							    "ДЛИТЕЛЬНОСТЬ:"
 
 		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes"						"Hypersonic Slashes"
-		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_Description"			"Дэдпул прыгает на врага с огромной скоростью, разрывая его плоть и ломая кости. Урон наносится от обычной атаки, и все модификаторы атаки, так же будут работать, баш так же может выпасть. В этом заклинании Дэдпул неуязвим. \n\nУлучшается с Aghanim's Scepter."
-		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_Lore"					"Он в ярости!."
+		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_Description"			"Рен прыгает на врага с огромной скоростью, разрывая его плоть и ломая кости. Урон наносится от обычной атаки, и все модификаторы атаки, так же будут работать, баш так же может выпасть. В этом заклинании Рен неуязвим."
 		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_jumps"				"ПРЫЖКОВ:"
 		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_bounce_tick"	    	"ИНТЕРВАЛ:"
-		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_jumps_scepter"	    "ПРЫЖКОВ ЗА УБИЙСТВО СО СКИПЕТРОМ:"
-		"DOTA_Tooltip_ability_deadpool_hypersonic_slashes_aghanim_description"	"Увеличивает количество прыжков за каждое убийство."
 
 		"DOTA_Tooltip_ability_phoenix_rage"                   "DIVINE RETRIBUTION"
 		"DOTA_Tooltip_ability_phoenix_rage_Description"       "Феникс направляет поток огромной энергии, который обездвиживает врага, и наносит ему урон от максимального запаса здоровья Феникса. Феникс полностью неуязвим в это форме. Так же, все юниты на пути луча будут получать урон. \n\nУлучшается с Aghanim's Scepter."
@@ -4731,7 +4728,7 @@
 		"new_npc_dota_hero_abaddon"				"Khorne"
 		"new_npc_dota_hero_huskar"				"Darth Vader"
 		"new_npc_dota_hero_death_prophet"		"Zatanna"
-		"new_npc_dota_hero_morphling"			"Carnage"
+		"new_npc_dota_hero_carnange"			"Carnage"
 		"new_npc_dota_hero_phoenix"           "Dormammu"
 
 		"new_npc_dota_hero_leshrac"             "Tzeentch"
@@ -5141,9 +5138,9 @@
 		"DOTA_Sargeras_Gorshalach"				"Gorshalach, the Dark Render"
 		"DOTA_Sargeras_Gorshalach_Description"  "This the most powerful weapon in the universe. This massive greatsword was originally wielded by Sargeras while he was a member of the Titan Pantheon."
 
-		"DOTA_Tooltip_ability_special_bonus_strength_25"			"+100 к силе"
-		"DOTA_Tooltip_ability_special_bonus_agility_25"				"+100 к ловкости"
-		"DOTA_Tooltip_ability_special_bonus_intelligence_25"		"+100 к интелекту"
+		"DOTA_Tooltip_ability_special_bonus_strength_25"			"+140 к силе"
+		"DOTA_Tooltip_ability_special_bonus_agility_25"				"+140 к ловкости"
+		"DOTA_Tooltip_ability_special_bonus_intelligence_25"		"+140 к интелекту"
 		"DOTA_Tooltip_ability_special_bonus_intelligence_10"		"+35 к интелекту"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_jons_1"			"+10 к длительности Sea Terror"
@@ -5159,10 +5156,10 @@
 		"DOTA_Tooltip_ability_special_bonus_spell_amplify_3"		"+40% к урону способностей"
 		"DOTA_Tooltip_ability_special_bonus_spell_amplify_20"		"+30% к урону способностей"
 		"DOTA_Tooltip_ability_special_bonus_all_stats_15"			"+45 ко всем статам"
-		"DOTA_Tooltip_ability_special_bonus_intelligence_15"		"+75 к интелекту"
-		"DOTA_Tooltip_ability_special_bonus_agility_15"				"+75 к ловкости"
+		"DOTA_Tooltip_ability_special_bonus_intelligence_15"		"+90 к интелекту"
+		"DOTA_Tooltip_ability_special_bonus_agility_15"				"+90 к ловкости"
 		"DOTA_Tooltip_ability_special_bonus_agility_10"				"+50 к ловкости"
-		"DOTA_Tooltip_ability_special_bonus_srength_15"				"+75 к силе"
+		"DOTA_Tooltip_ability_special_bonus_strength_15"			"+90 к силе" 
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_4" "+30% к универсальному уклонению"
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_2"			"Атаки замедляют цель на 60% в течение 4 секунд"
 		"DOTA_Tooltip_ability_special_bonus_reincarnation_200"		"Воскрешение с перезарядкой в 70 секунд"
@@ -5173,7 +5170,7 @@
 		"DOTA_Tooltip_ability_special_bonus_hp_regen_50"			"+100 здоровья в секунду"
 		"DOTA_Tooltip_ability_special_bonus_hp_regen_12"			"+150 здоровья в секунду"
 		"DOTA_Tooltip_ability_special_bonus_mp_regen_1"				"+30 маны в секунду"
-		"DOTA_Tooltip_ability_special_bonus_spell_block_15"			"Поглощение направленной способности раз в 6 сек."
+		"DOTA_Tooltip_ability_special_bonus_spell_block_15"			"Поглощение направленной способности раз в 3 сек."
 		"DOTA_Tooltip_ability_special_bonus_lifesteal_100"			"+90% к вампиризму"
 		"DOTA_Tooltip_ability_special_bonus_lifesteal_10"			"+60% к вампиризму"
 		"DOTA_Tooltip_ability_special_bonus_armor_5"				"+30 к броне"
@@ -6661,10 +6658,9 @@
 		"DOTA_Tooltip_ability_godspeed_speed_void_aghanim_description"                    "Adds AOE radius"
 
 		"DOTA_Tooltip_ability_godspeed_ember_field"                                       "Ember Field"
-		"DOTA_Tooltip_ability_godspeed_ember_field_Description"                           "Повышает свою скорость передвижения в зависиомости от расстояния, которое проходят ближайшие враги. При смерти бонус обнуляется."
-		"DOTA_Tooltip_ability_godspeed_ember_field_radius"                                "RADIUS:"
-		"DOTA_Tooltip_ability_godspeed_ember_field_heal_ptc"                              "%HEAL PTC:"
-		"DOTA_Tooltip_ability_godspeed_ember_field_max_speed"                             "MAX SPEED:"
+		"DOTA_Tooltip_ability_godspeed_ember_field_Description"                           "Годспид при убийстве врага крадет его скорость. При изучении этой способности снимается порог скорости. При каждой смерти полученная скорость снижается."
+		"DOTA_Tooltip_ability_godspeed_ember_field_speed_gain"                            "СКОРОСТЬ ЗА УБИЙСТВО:"
+		"DOTA_Tooltip_ability_godspeed_ember_field_max_gain"                              "МАКС. СКОРОСТИ:"
 
 		"DOTA_Tooltip_ability_godspeed_hyperpath"                                         "Hyperpath"
 		"DOTA_Tooltip_ability_godspeed_hyperpath_Description"                             "Делает героя на время неуязвимым и позволяет ему проходить сквозь препятствия."
@@ -6781,7 +6777,7 @@
 		"DOTA_Tooltip_ability_item_recipe_majestic_staff_Description"                     ""
 
 		"DOTA_Tooltip_ability_item_majestic_staff"                                        "Majestic Staff"
-		"DOTA_Tooltip_ability_item_majestic_staff_Description"                            "<h1>Активируемая: Majestic</h1> Когда накладывается на арага, то снижает ему текущее здоровье на %enemy_hp_drain%%% в секунду, и снижает регенерацию здоровья на %hp_regen_reduction_enemy%%%.<br><br>Когда накладывается на союзников, то лечит от текущего запаса здоровья на %ally_hp_gain%%% в секунду, а так же увеличивает регенерацию здоровья на %hp_regen_increase_allies%%%.<br><br>Длится %duration% секунд."
+		"DOTA_Tooltip_ability_item_majestic_staff_Description"                            "<h1>Активируемая: Majestic</h1> Когда накладывается на врага, то снижает ему текущее здоровье на %enemy_hp_drain%%% в секунду, и снижает регенерацию здоровья на %hp_regen_reduction_enemy%%%.<br><br>Когда накладывается на союзников, то лечит от текущего запаса здоровья на %ally_hp_gain%%% в секунду, а так же увеличивает регенерацию здоровья на %hp_regen_increase_allies%%%.<br><br>Длится %duration% секунд."
 		"DOTA_Tooltip_ability_item_majestic_staff_bonus_health"                           "+$health"
 		"DOTA_Tooltip_ability_item_majestic_staff_bonus_movement_speed"                   "+$move_speed"
 		"DOTA_Tooltip_ability_item_majestic_staff_bonus_mana_regen"                       "+$mana_regen"

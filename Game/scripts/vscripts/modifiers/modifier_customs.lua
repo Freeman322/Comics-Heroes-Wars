@@ -221,3 +221,9 @@ function modifier_freeza:IsHidden() return true end
 function modifier_freeza:IsPurgable() return false end
 function modifier_freeza:RemoveOnDeath() return false end
 
+
+if modifier_uganda == nil then modifier_uganda = class({}) end
+
+function modifier_uganda:IsHidden() return true end
+function modifier_uganda:IsPurgable() return false end
+function modifier_uganda:RemoveOnDeath() return false end

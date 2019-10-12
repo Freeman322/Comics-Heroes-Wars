@@ -382,7 +382,6 @@ function GameMode:DmgFilter(ftable)
 		if ftable.entindex_attacker_const then attacker = EntIndexToHScript(ftable.entindex_attacker_const) end
 		local victim = EntIndexToHScript(ftable.entindex_victim_const)
 		local damage = ftable.damage
-
 			if attacker ~= nil then
 				if victim:HasModifier("modifier_franklin_global_retrocausality_friendly") and victim:HasModifier("modifier_thanos_decimation") == false then
 					local modifier = victim:FindModifierByName("modifier_franklin_global_retrocausality_friendly")
@@ -425,6 +424,12 @@ function GameMode:DmgFilter(ftable)
 							end
 						end
 					end
+				end
+				if victim:GetUnitLabel() == "baloon_creature" then
+					victim:ModifyHealth(victim:GetHealth() - 1, nil, true, 0)
+					
+					ftable.damage = 0
+					return false
 				end
 			end
 			if victim:HasModifier("modifier_ares_terrorize") then

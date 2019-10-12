@@ -3445,4 +3445,66 @@
 			}
 		}
 	}
+	"models/heroes/uganda_skin/uganda.vmdl"
+	{
+		"PortraitLightPosition"		"69.29 -11.57 252.09"
+		"PortraitLightAngles"		"56.51 182.29 0.00"
+		"PortraitLightFOV"		"63"
+		"PortraitLightDistance"		"207"
+		"PortraitLightColor"		"254 233 233"
+		"PortraitShadowColor"		"131 131 131"
+		"PortraitShadowScale"		"1.025000"
+		"PortraitAmbientColor"		"161 100 0"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_desert.vmat"
+		"PortraitBackgroundColor1"		"1 .5 .5"
+		"PortraitBackgroundColor2"		"1 .8 .9"
+		"PortraitBackgroundColor3"		"0 0 0"
+		"PortraitBackgroundColor4"		"1 .5 .5"
+		"PortraitLightScale"		"2.750000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-76.520 7.960 38.340"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"150.65 -44.70 180.53"
+				"PortraitAngles"		"36.08 163.28 0.00"
+				"PortraitFOV"			"30"
+			}
+		}
+	}
+	"models/heroes/hero_pennywise/pennywise.vmdl"
+	{
+		"PortraitLightPosition"		"85.00 9.68 296.06"
+		"PortraitLightAngles"		"62.94 185.36 0.00"
+		"PortraitLightFOV"		"75"
+		"PortraitLightDistance"		"249"
+		"PortraitLightColor"		"243 243 243"
+		"PortraitShadowColor"		"0 0 0"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"131 0 25"
+		"PortraitAmbientScale"		"2.500000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_desert.vmat"
+		"PortraitBackgroundColor1"		"0 0 0"
+		"PortraitBackgroundColor2"		"0 0 0"
+		"PortraitBackgroundColor3"		".8 .2 .1"
+		"PortraitBackgroundColor4"		"0 0 0"
+		"PortraitLightScale"		"1.000000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-75.850 -49.880 27.200"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"150.65 -44.70 263.53"
+				"PortraitAngles"		"36.08 163.28 0.00"
+				"PortraitFOV"		"18"
+			}
+		}
+	}
 }

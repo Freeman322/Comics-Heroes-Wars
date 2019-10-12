@@ -115,8 +115,7 @@ end
 
 function modifier_marvel_quantum_fier:CheckState()
 	local state = {
-	[MODIFIER_STATE_ATTACK_IMMUNE] = true,
-	[MODIFIER_STATE_MAGIC_IMMUNE] = true,
+	[MODIFIER_STATE_ATTACK_IMMUNE] = true
 	}
 
 	return state

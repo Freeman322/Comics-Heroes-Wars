@@ -37,6 +37,10 @@ function manhattan_energy_surge:OnSpellStart()
             self:GetCursorTarget():AddNewModifier(self:GetCaster(), self, "modifier_manhattan_energy_surge", {duration = self:GetSpecialValueFor("stun_duration")})
         end
     end
+
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "uganda") then
+        EmitSoundOn("Uganda.Cast3", self:GetCaster())
+    end
 end
 
 

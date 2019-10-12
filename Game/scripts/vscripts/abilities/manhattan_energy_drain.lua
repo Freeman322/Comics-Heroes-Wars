@@ -21,10 +21,16 @@ end
 
 function manhattan_energy_drain:OnProjectileHit(hTarget, vLocation)
     local duration = self:GetSpecialValueFor("steal_duration") * (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_manhattan_energy_drain") or 1)
+   
     self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_manhattan_energy_drain_buff", {duration = duration})
+    
     hTarget:AddNewModifier(self:GetCaster(), self, "modifier_manhattan_energy_drain_debuff", {duration = duration})
+    
     EmitSoundOn("Hero_Antimage.ManaBreak", hTarget)
 
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "uganda") then
+        EmitSoundOn("Uganda.Cast2", hTarget)
+    end
 end
 
 

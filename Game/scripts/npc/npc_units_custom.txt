@@ -4788,4 +4788,204 @@
 		// Inventory
 		"HasInventory"					"1"
 	}
+	//=================================================================================================================
+	// HERO: Pennywise
+	//=================================================================================================================
+	"npc_dota_hero_pennywise"
+	{
+		"BaseClass"     		"npc_dota_hero"
+			
+		"Model"					"models/heroes/hero_pennywise/pennywise.vmdl"
+		"IdleExpression"		"scenes/bane/bane_exp_idle_01.vcd"
+		"SoundSet"				"Hero_Bane"
+		"IdleSoundLoop"			"Hero_Bane.IdleLoop"
+		"Enabled"				"1"
+		"HeroUnlockOrder"		"2"
+		"Role"					"Support,Disabler,Nuker,Durable"
+		"Rolelevels"			"2,3,1,1"
+		"Complexity"			"2"
+		"Team"					"Bad"
+		
+		"HeroID"				"227"
+
+		"ModelScale"			"0.930000"
+		"LoadoutScale"			"0.830000"
+		"VersusScale"			"0.720000"
+
+		"SpectatorLoadoutScale" "0.8"
+		"HeroGlowColor"			"207 106 125"
+
+		"workshop_guide_name"		"It"
+
+
+		"Ability1"		"pennywise_macroverse_of_madness"
+		"Ability2"		"pennywise_purifying_flames"
+		"Ability3"		"pennywise_fear"
+		"Ability4"		"pennywise_ballon_jump"
+		"Ability5"		"pennywise_baloon"
+		"Ability6"		"pennywise_deadlights"
+		"Ability7"		""
+
+		"Ability10"		"special_bonus_exp_boost_30"
+		"Ability11"		"special_bonus_unique_pennywise_1"
+		"Ability12"		"special_bonus_attack_speed_100"
+		"Ability13"		"special_bonus_cooldown_reduction_20"
+		"Ability14"		"special_bonus_corruption_4"
+		"Ability15"		"special_bonus_spell_amplify_3"
+		"Ability16"		"special_bonus_all_stats_20"
+		"Ability17"		"special_bonus_strength_25"
+
+		"ArmorPhysical"					"1"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"35"
+		"AttackDamageMax"				"41"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"			"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"400"
+		"ProjectileModel"				"particles/world_tower/tower_upgrade/ti7_dire_tower_projectile.vpcf"
+		"ProjectileSpeed"				"900"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"23"
+		"AttributeStrengthGain"			"2.600000"
+		"AttributeBaseIntelligence"		"23"
+		"AttributeIntelligenceGain"		"2.600000"
+		"AttributeBaseAgility"			"23"
+		"AttributeAgilityGain"			"2.600000"
+		"MovementSpeed"					"305"
+		"MovementTurnRate"				"0.600000"
+
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"particle_folder"				"particles/units/heroes/hero_bane"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		"VoiceFile"						"soundevents/voscripts/game_sounds_vo_bane.vsndevts"
+
+		"BaseAttackSpeed"				"100"
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		"RingRadius"					"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		"HealthBarOffset"       		"190"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"					"300"
+		"StatusHealthRegen"				"1.0"
+		"StatusMana"					"245"
+		"StatusManaRegen"				"0.4"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"			"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"					"1"
+	}
+	//=================================================================================
+	// Baloon
+	//=================================================================================
+	"pennywise_baloon_creature"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_base_additive"	// Class of entity of link to.
+		
+		"Model"						"models/heroes/hero_pennywise/econs/baloon.vmdl"	// Model.
+		
+		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
+		"Level"						"0"
+		"UnitLabel"					"baloon_creature"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					""			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"1500"			// Physical protection.
+		"MagicalResistance"			"200"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"			// Type of attack - melee, ranged, etc.
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1"			// Speed of attack.
+		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"500"		// Range within a target can be attacked.
+		"ProjectileModel"			"" // Particle system model for projectile.
+		"ProjectileSpeed"			"900"		// Speed of projectile.
+
+		// Attributes
+		//----------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"			// Base strength
+		"AttributeStrengthGain"		"0"			// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"			// Base intelligence
+		"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"			// Base agility
+		"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"100"			// Gold earned min.
+		"BountyGoldMax"				"100"			// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"16"			// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"500"		// Range of vision during day light.
+		"VisionNighttimeRange"		"500"		// Range of vision at night time.
+
+		// Bots
+		//----------------------------------------------------------------
+		"AttackDesire"				"1.5"		// How much bots want to attack them vs other non-hero things
+	}		
 }

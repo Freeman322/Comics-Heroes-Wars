@@ -34,6 +34,11 @@ if IsServer() then
 
     function modifier_manhattan_reality_warp:OnDestroy()
         EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse.Cast", self:GetParent())
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "uganda") then
+            sound = "Uganda.CastUlti"
+        end
+
         self:GetParent():RemoveNoDraw()
 
         for abilities = 0, 15 do

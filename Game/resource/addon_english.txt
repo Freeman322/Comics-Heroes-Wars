@@ -11460,8 +11460,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_dragon_heart_bonus_health"                                     "+$health"
 		"DOTA_Tooltip_ability_item_dragon_heart_bonus_damage"                                     "+$damage"
 		"DOTA_Tooltip_ability_item_dragon_heart_Lore"                                             "Deathwing the Destroyer, formerly known as Neltharion the Earth-Warder, was one of the five Dragon Aspects and leader of the black dragonflight. Thousands of years ago, Neltharion was empowered by the Titans with dominion over the earth and the deep places of Azeroth. However, driven mad by the Old Gods, he turned against the other Aspects during the War of the Ancients. Among both mortals and dragons his name became one whispered with a feeling of fear and contempt."
-
-        	"DOTA_Tooltip_ability_item_mystic_ring"                                                   "Arcane Ring"
+        "DOTA_Tooltip_ability_item_mystic_ring"                                                   "Arcane Ring"
 		"DOTA_Tooltip_ability_item_mystic_ring_Description"                                       "<h1>Passive: Arcana saturation</h1>For each kill gains a 1.6% cooldown reduction and 2.5% spell amplification. Half of stacks are lost after death and max number of stacks - 10"
 		"DOTA_Tooltip_ability_item_mystic_ring_bonus_intellect"                                   "+$int"
 		"DOTA_Tooltip_ability_item_mystic_ring_bonus_agility"                                     "+$agi"
@@ -11473,21 +11472,21 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_mystic_ring_bonus_mana_regen"                                  "+$mana_regen"
 		"DOTA_Tooltip_ability_item_mystic_ring_bonus_amp_per_soul"                                "%AMP PER STACK:"
 		"DOTA_Tooltip_ability_item_mystic_ring_bonus_cooldown_reduction_per_soul"                 "%CDR PER STACK:"
-        	"DOTA_Tooltip_ability_item_mystic_ring_Lore"                                              "A powerful gemstone ring that glows with intense magical energy and uses the souls of slain enemies to enhance the owner's magical abilities."
+        "DOTA_Tooltip_ability_item_mystic_ring_Lore"                                              "A powerful gemstone ring that glows with intense magical energy and uses the souls of slain enemies to enhance the owner's magical abilities."
        
-	   	 "DOTA_TOOLTIP_modifier_item_mystic_ring"                                                  "Arcane saturation"
+	   	"DOTA_TOOLTIP_modifier_item_mystic_ring"                                                  "Arcane saturation"
 		"DOTA_TOOLTIP_modifier_item_mystic_ring_Description"                                      "Gives  %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE% amp and %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING% cooldown reduction"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_katana_2"                                      "+2 daggers for Shadow Dagger"
 
-        	"DOTA_Tooltip_ability_katana_soul_stole"                                                  "Soultaker"
+        "DOTA_Tooltip_ability_katana_soul_stole"                                                  "Soultaker"
 		"DOTA_Tooltip_ability_katana_soul_stole_Description"                                      "Steals souls of killed targets, increasing bonus damage and agility."
 		"DOTA_Tooltip_ability_katana_soul_stole_bonus_agility"                                    "BONUS AGILITY PER SOUL:"
 		"DOTA_Tooltip_ability_katana_soul_stole_bonus_damage"                                     "BONUS DAMAGE PER SOUL:"
 		"DOTA_Tooltip_ability_katana_soul_stole_bonus_base_damage"                                "+$damage"
-	    	"DOTA_Tooltip_ability_katana_soul_stole_Lore"                                             "The Soultaker is a samurai sword capable of extracting the souls from those that it kills, it's edge is sharp enough to cut through even indestructible Dilustel with ease"
+	    "DOTA_Tooltip_ability_katana_soul_stole_Lore"                                             "The Soultaker is a samurai sword capable of extracting the souls from those that it kills, it's edge is sharp enough to cut through even indestructible Dilustel with ease"
 
-        	"DOTA_Tooltip_modifier_katana_soul_stole"                                                 "Soul stole"
+        "DOTA_Tooltip_modifier_katana_soul_stole"                                                 "Soul stole"
 		"DOTA_Tooltip_modifier_katana_soul_stole_Description"                                     "For stolen souls gaining %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% damage and %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% agility"
 
 		"DOTA_Tooltip_ability_katana_dagger"                                                      "Shadow Dagger"
@@ -11572,5 +11571,42 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_death_eater_deaths_requiem_Note1"									"The movement and attack damage reductions from Requiem of Souls go through spell immunity."
 		"npc_dota_hero_death_eater_bio"													"It is said that death_eater the Shadow Fiend has the soul of a poet, and in fact he has thousands of them. Over the ages he has claimed the souls of poets, priests, emperors, beggars, slaves, philosophers, criminals and (naturally) heroes; no sort of soul escapes him. What he does with them is unknown. No one has ever peered into the Abysm whence death_eater reaches out like an eel from among astral rocks. Does he devour them one after another? Does he mount them along the halls of an eldritch temple, or pickle the souls in necromantic brine? Is he merely a puppet, pushed through the dimensional rift by a demonic puppeteer? Such is his evil, so intense his aura of darkness, that no rational mind may penetrate it. Of course, if you really want to know where the stolen souls go, there's one sure way to find out: Add your soul to his collection. Or just wait for death_eater."
 		
+		"pennywise_baloon_creature"														"Deadlight"
+		"npc_dota_hero_pennywise"														"Pennywise"
+		"npc_dota_hero_pennywise_bio"													"It is a shape-shifting creature known as a Glamour who is billions of years old. Although It lived on planet Earth for many years, It originated in a void/dimension outside the regions of space known as the Macroverse. Since Its true identity is unclear, due to its shape-shifting abilities and being from another universe, Its real name and species are called Deadlights, but few know this, which is why it is referred to as IT. The form of a female spider seems to be Its true physical form on Earth, living deep below the fictional town of Derry, Maine."
+		"npc_dota_hero_pennywise_hype"													"It is a shape-shifting creature known as a Glamour who is billions of years old. Although It lived on planet Earth for many years, It originated in a void/dimension outside the regions of space known as the Macroverse. Since Its true identity is unclear, due to its shape-shifting abilities and being from another universe, Its real name and species are called Deadlights, but few know this, which is why it is referred to as IT. The form of a female spider seems to be Its true physical form on Earth, living deep below the fictional town of Derry, Maine. "
+
+		"DOTA_Tooltip_ability_pennywise_baloon"									"Deadlight"
+		"DOTA_Tooltip_ability_pennywise_baloon_Description"						"Creates a Deadlight at the specified point.\n\nUpgradable by Aghanim's Scepter."
+		"DOTA_Tooltip_ability_pennywise_baloon_baloon_duration"					"DURATION:"
+		"DOTA_Tooltip_ability_pennywise_baloon_baloon_radius"					"RADIUS:"
+		"DOTA_Tooltip_ability_pennywise_baloon_aghanim_description"				"Allow Deadlight to attack all nearby units."
+
+		"DOTA_Tooltip_ability_pennywise_deadlights"								"Terror"
+		"DOTA_Tooltip_ability_pennywise_deadlights_Description"					"Applies Fear aura to each Deadlight."
+		"DOTA_Tooltip_ability_pennywise_deadlights_duration"					"DURATION:"
+		"DOTA_Tooltip_ability_pennywise_deadlights_radius"						"RADIUS:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_pennywise_1"                  "+2 second duration for Terror"
+
+		"DOTA_Tooltip_ability_pennywise_ballon_jump"							"Reality"
+		"DOTA_Tooltip_ability_pennywise_ballon_jump_Description"				"Pennywise instantly moves to selected Deadlight through macroverse."
+
+		"DOTA_Tooltip_ability_pennywise_fear"									"Demolish"
+		"DOTA_Tooltip_ability_pennywise_fear_Description"						"Penetrates into the consciousness of all enemies nearby, forcing them to retreat."
+		"DOTA_Tooltip_ability_pennywise_fear_radius"							"RADIUS:"
+		"DOTA_Tooltip_ability_pennywise_fear_duration"							"DURATION:"
+
+		"DOTA_Tooltip_ability_pennywise_macroverse_of_madness"					"Macroverse of Madness"
+		"DOTA_Tooltip_ability_pennywise_macroverse_of_madness_Description"		"Creates a perfect copy of selected target."
+		"DOTA_Tooltip_ability_pennywise_macroverse_of_madness_duration"			"DURATION:"
+
+		"DOTA_Tooltip_ability_pennywise_purifying_flames"						"Purifying Flames"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_Description"			"Burns away impurities, dealing heavy magic damage to the target before causing them to regenerate health over time. The amount of health regenerated over its duration exceeds the amount of initial damage. Can be cast on enemies and allies."
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_damage"				"DAMAGE:"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_heal_per_second"		"HEAL PER SECOND:"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_total_heal_tooltip"		"TOTAL HEAL:"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_duration"				"DURATION:"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_Note0"						"The healing from Purifying Flames can be stacked with itself."
 	}	
 }

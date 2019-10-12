@@ -3374,7 +3374,8 @@
 		"DOTA_Tooltip_ability_samurai_ecliptic_strike_crit_chance"                        "%DAMAGE CHANCE:"
 
 		"DOTA_Tooltip_ability_samurai_earth_shake"                                        "Relativistic Spurt"
-		"DOTA_Tooltip_ability_samurai_earth_shake_Description"                            "Activated: Samurai transformed into an ethereal being, and rushes to a targeted point. Enemies caught bythe ability will be stunned and receive damage. Deals attack damage times two."
+		"DOTA_Tooltip_ability_samurai_earth_shake_Description"                            "Activated: Samurai transformed into an ethereal being, and rushes to a targeted point. Enemies caught by
+		the ability will be stunned and receive damage. Deals attack damage times two."
 		"DOTA_Tooltip_ability_samurai_earth_shake_stun_duration"                          "STUN DURATION:"
 
 		"DOTA_Tooltip_ability_item_jarnbjorn"                                             "Jarnbjorn"

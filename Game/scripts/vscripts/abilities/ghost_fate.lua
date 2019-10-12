@@ -50,7 +50,13 @@ function modifier_ghost_fate:OnTakeDamage( params )
                 local duration = self:GetAbility():GetSpecialValueFor("damage_drain_duration") 
                 if self:GetParent():HasTalent("special_bonus_unique_ghost_1") then duration = duration + (self:GetParent():FindTalentValue("special_bonus_unique_ghost_1") or 1) end 
 
-                self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_ghost_fate_damage", {duration = duration}):SetStackCount(math.floor(damage))
+                if self:GetParent():HasModifier("modifier_ghost_fate_damage") then
+                    local mod = self:GetParent():FindModifierByName("modifier_ghost_fate_damage")
+
+                    mod:SetStackCount(mod:GetStackCount() + math.floor(damage))
+                else 
+                    self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_ghost_fate_damage", {duration = duration}):SetStackCount(math.floor(damage))
+                end 
 
                 local nFXIndex = ParticleManager:CreateParticle( "particles/ghost/fate.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true);
@@ -74,7 +80,6 @@ end
 function modifier_ghost_fate_damage:GetAttributes ()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
 end
-
 
 function modifier_ghost_fate_damage:DeclareFunctions()
     local funcs = {
