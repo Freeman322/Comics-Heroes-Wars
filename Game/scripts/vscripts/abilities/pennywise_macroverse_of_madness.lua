@@ -105,6 +105,7 @@ end
 function modifier_pennywise_macroverse_of_madness:OnDestroy()
     if IsServer() then
         self:GetCaster():SetAbsOrigin(self:GetParent():GetAbsOrigin())
+        self:GetCaster():FindModifierByName("modifier_pennywise_macroverse_of_madness_caster"):Destroy()
     end
 end
 
@@ -139,15 +140,6 @@ function modifier_pennywise_macroverse_of_madness_caster:OnCreated(params)
     end
 end
 
-function modifier_pennywise_macroverse_of_madness_caster:OnIntervalThink()
-    if IsServer() then
-        if self.m_hUnit and not self.m_hUnit:IsNull() and self.m_hUnit:IsAlive() then
-            self:GetParent():SetAbsOrigin(self.m_hUnit:GetAbsOrigin())
-        else 
-            self:Destroy()
-        end 
-    end
-end
 
 function modifier_pennywise_macroverse_of_madness_caster:OnDestroy()
     if IsServer() then

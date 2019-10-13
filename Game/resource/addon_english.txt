@@ -11601,6 +11601,9 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_pennywise_macroverse_of_madness_Description"		"Creates a perfect copy of selected target."
 		"DOTA_Tooltip_ability_pennywise_macroverse_of_madness_duration"			"DURATION:"
 
+		"DOTA_Tooltip_ability_special_bonus_unique_pennywise_2"                  "Uses processes procs"
+		"DOTA_Tooltip_ability_special_bonus_unique_pennywise_2_Description"      "Deadlights can use orb and processes modifiers, if Pennywise has Aghanim's Scepter"
+
 		"DOTA_Tooltip_ability_pennywise_purifying_flames"						"Purifying Flames"
 		"DOTA_Tooltip_ability_pennywise_purifying_flames_Description"			"Burns away impurities, dealing heavy magic damage to the target before causing them to regenerate health over time. The amount of health regenerated over its duration exceeds the amount of initial damage. Can be cast on enemies and allies."
 		"DOTA_Tooltip_ability_pennywise_purifying_flames_damage"				"DAMAGE:"

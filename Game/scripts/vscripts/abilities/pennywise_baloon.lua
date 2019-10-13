@@ -31,6 +31,10 @@ function pennywise_baloon:OnProjectileHit(hTarget, vLocation)
         if hTarget and not hTarget:IsNull() then
             EmitSoundOn("Item_Desolator.Target", hTarget)
 
+            if self:GetCaster():HasTalent("special_bonus_unique_pennywise_2") then 
+                self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true) return
+            end
+
             self:GetCaster():PerformAttack(hTarget, true, false, true, true, false, false, true)
         end
     end

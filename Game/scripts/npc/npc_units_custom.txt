@@ -4833,7 +4833,7 @@
 		"Ability14"		"special_bonus_corruption_4"
 		"Ability15"		"special_bonus_spell_amplify_3"
 		"Ability16"		"special_bonus_all_stats_20"
-		"Ability17"		"special_bonus_strength_25"
+		"Ability17"		"special_bonus_unique_pennywise_2"
 
 		"ArmorPhysical"					"1"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"

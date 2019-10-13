@@ -60,7 +60,7 @@ end
 
 function modifier_death_eater:OnCreated( kv )
 	self.aura_radius = self:GetAbility():GetSpecialValueFor( "radius" )
-	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "presence_armor_reduction" )
+	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" ) * (-1)
 	self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
 
 	if not self:IsAura() and IsServer() then
@@ -82,7 +82,7 @@ end
 
 function modifier_death_eater:OnRefresh( kv )
 	self.aura_radius = self:GetAbility():GetSpecialValueFor( "radius" )
-	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "presence_armor_reduction" )
+	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" ) * (-1)
 	self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
 end
 

@@ -36,7 +36,7 @@ if IsServer() then
         EmitSoundOn("Hero_ObsidianDestroyer.SanityEclipse.Cast", self:GetParent())
 
         if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "uganda") then
-            sound = "Uganda.CastUlti"
+            EmitSoundOn("Uganda.CastUlti", self:GetParent())
         end
 
         self:GetParent():RemoveNoDraw()
