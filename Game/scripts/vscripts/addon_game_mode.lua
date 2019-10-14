@@ -115,8 +115,11 @@ function Precache( context )
 	PrecacheResource("model", "models/pets/drodo/drodo.vmdl", context)
 	PrecacheResource("model", "models/heroes/hero_elsa/elsa.vmdl", context)
 	PrecacheResource("model", "models/pets/osky/osky.vmdl", context)
+	PrecacheResource("model", "models/heroes/invoker_kid/invoker_kid.vmdl", context)
 	PrecacheResource("model", "models/pets/icewrack_wolf/icewrack_wolf.vmdl", context)
 	PrecacheResource("model", "models/items/courier/onibi_lvl_21/onibi_lvl_21.vmdl", context)
+	PrecacheResource("model", "models/heroes/invoker_kid/invoker_kid_cape.vmdl", context)
+	PrecacheResource("model", "models/heroes/invoker_kid/invoker_kid_hair.vmdl", context)
 
 	PrecacheResource("particle", "particles/econ/pets/pet_drodo_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/econ/courier/courier_onibi/courier_onibi_black_lvl21_ambient.vpcf", context)
@@ -256,7 +259,7 @@ function GameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
 	GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
 	
-	-----GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "GoldFilter" ), self)
+	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "GoldFilter" ), self)
 	
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap( GameMode, "OrderFilter" ), self)
 
@@ -491,7 +494,7 @@ function GameMode:GoldFilter(ftable)
 	local pid = ftable.player_id_const
 	local gold = ftable.gold
 
-	if reason == DOTA_ModifyGold_HeroKill then ftable.gold = RandomInt(50, 300) end
+	if reason == DOTA_ModifyGold_AbandonedRedistribute then ftable.gold = 0 end
 
 	return true
 end

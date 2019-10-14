@@ -61,6 +61,7 @@ end
 function modifier_death_eater:OnCreated( kv )
 	self.aura_radius = self:GetAbility():GetSpecialValueFor( "radius" )
 	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" ) * (-1)
+	self.magic_resist = self:GetAbility():GetSpecialValueFor( "magic_resistance" ) * (-1)
 	self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
 
 	if not self:IsAura() and IsServer() then
@@ -83,6 +84,7 @@ end
 function modifier_death_eater:OnRefresh( kv )
 	self.aura_radius = self:GetAbility():GetSpecialValueFor( "radius" )
 	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" ) * (-1)
+	self.magic_resist = self:GetAbility():GetSpecialValueFor( "magic_resistance" ) * (-1)
 	self.damage = self:GetAbility():GetSpecialValueFor( "plague_damage" )
 end
 
@@ -91,6 +93,7 @@ end
 function modifier_death_eater:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
 	}
 
 	return funcs
@@ -102,4 +105,13 @@ function modifier_death_eater:GetModifierPhysicalArmorBonus( params )
 	end
 
 	return self.armor_reduction
+end
+
+
+function modifier_death_eater:GetModifierMagicalResistanceBonus( params )
+	if self:GetParent() == self:GetCaster() then
+		return 0
+	end
+
+	return self.magic_resist
 end

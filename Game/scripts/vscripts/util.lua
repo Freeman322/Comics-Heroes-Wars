@@ -453,6 +453,19 @@ function Util:OnHeroInGame(hero)
           unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/celty_pet/celty.vmdl"})
         end)
       end
+
+      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "acolyte_of_lost_arts") == true then
+        PrecacheUnitByNameAsync("npc_dota_companion", function()
+          local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+          unit:SetOwner(hero)
+          unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+          unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+          unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/heroes/invoker_kid/invoker_kid.vmdl"})
+
+          SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/invoker_kid/invoker_kid_cape.vmdl"}):FollowEntity(unit, true)
+          SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/invoker_kid/invoker_kid_hair.vmdl"}):FollowEntity(unit, true)
+        end)
+      end
     end
 
     --[[local model = hero:FirstMoveChild()

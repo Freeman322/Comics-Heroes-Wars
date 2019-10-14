@@ -75,9 +75,9 @@ function modifier_death_eater_necromastery:GetModifierPreAttack_BonusDamage( par
 	if not self:GetParent():IsIllusion() then
 		local max_stack = self.soul_max
 		if self:GetParent():HasScepter() then
-			return self:GetStackCount() * self.soul_damage
+			return self:GetStackCount() * (self.soul_damage + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_death_eater_2") or 1))
 		else
-			return math.min(self.soul_max,self:GetStackCount()) * self.soul_damage
+			return math.min(self.soul_max,self:GetStackCount()) * (self.soul_damage + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_death_eater_2") or 1))
 		end
 	end
 end
