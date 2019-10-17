@@ -163,158 +163,188 @@ end
 DOTA_DAMAGE_MULTIPLIER_MAGICAL_HEAL = 0.35
 DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT = 1.0
 DOTA_DAMAGE_MULTIPLIER_MAGICAL_CRIT_CHANCE = 25
+DOTA_GOLD_TICK_TIME = 1
+DOTA_GOLD_PER_TICK = 8
 
 function Activate()
 	GameRules.GameMode = GameMode()
 	GameRules.GameMode:InitGameMode()
 end
+
 function GameMode:InitGameMode()
-	GameRules:SetTimeOfDay( 0.75 )
-	GameRules:SetHeroRespawnEnabled( true )
-	GameRules:SetUseUniversalShopMode( true )
-	GameRules:SetHeroSelectionTime( 0.0 )
-	GameRules:GetGameModeEntity():SetDraftingBanningTimeOverride( 20 )
+    GameRules:SetTimeOfDay( 0.75 )
+    GameRules:SetHeroRespawnEnabled( true )
+    GameRules:SetUseUniversalShopMode( true )
+    GameRules:SetHeroSelectionTime( 0.0 )
+    GameRules:GetGameModeEntity():SetDraftingBanningTimeOverride( 20 )
 
-	Convars:SetBool( "dota_suggest_disable", true )
+    Convars:SetBool( "dota_suggest_disable", true )
 
-	if GetMapName() == "dota_captains_mode" then GameRules:SetPreGameTime( 700.0 ) else GameRules:SetPreGameTime( 120.0 ) end
+    if GetMapName() == "dota_captains_mode" then GameRules:SetPreGameTime( 700.0 ) else GameRules:SetPreGameTime( 120.0 ) end
 
-	GameRules:SetPostGameTime( 60.0 )
-	GameRules:SetTreeRegrowTime( 60.0 )
-	GameRules:SetHeroMinimapIconScale( 0.7 )
-	GameRules:SetCreepMinimapIconScale( 0.7 )
-	GameRules:SetRuneMinimapIconScale( 0.7 )
-	GameRules:SetGoldTickTime( 1 )
-	GameRules:SetGoldPerTick( 10 )
-	GameRules:GetGameModeEntity():SetFixedRespawnTime(10)
-	GameRules:GetGameModeEntity():SetRemoveIllusionsOnDeath( true )
-	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride( true )
-	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
-	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
-	GameRules:SetUseBaseGoldBountyOnHeroes(false)
-	
-	GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_wisp" )
+    GameRules:SetPostGameTime( 60.0 )
+    GameRules:SetTreeRegrowTime( 60.0 )
+    GameRules:SetHeroMinimapIconScale( 0.7 )
+    GameRules:SetCreepMinimapIconScale( 0.7 )
+    GameRules:SetRuneMinimapIconScale( 0.7 )
 
-	if GetMapName() == "free_for_all" then
-		tdm:start()
-	end
+    GameRules:SetGoldTickTime( 0 ) --- ЗАЕБАЛ ЖИРНЫЙ, СУКА, ПРИДЕТСЯ САМОМУ ДЕЛАТЬ ИЗ_ЗА ТЕБЯ!
+    GameRules:SetGoldPerTick( 0 )
 
-	XP_PER_LEVEL_TABLE = {
-		0, 	   --- 1
-		300,   --- 2
-		500,   --- 3
-		800,   --- 4
-		1200,  --- 5
-		1700,  --- 6
-		2300,  --- 7
-		3000,  --- 8
-		3800,  --- 9
-		4700,  --- 10
-		5700,  --- 11
-		6800,  --- 12
-		8000,  --- 13
-		9300,  --- 14
-		10700, --- 15
-		12200, --- 16
-		13800, --- 17
-		15400, --- 18
+    GameRules:GetGameModeEntity():SetFixedRespawnTime(10)
+    GameRules:GetGameModeEntity():SetRemoveIllusionsOnDeath( true )
+    GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride( true )
+    GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
+    GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
+    GameRules:SetUseBaseGoldBountyOnHeroes(false)
 
-		22400, --- 19
-		24600, --- 20
-		27000, --- 21
-		29600, --- 22
-		32400, --- 23
-		35400, --- 24
-		38600, --- 25
+    GameRules:GetGameModeEntity():SetCustomGameForceHero( "npc_dota_hero_wisp" )
 
-		40000, --- 26
-		42000, --- 27
-		44000, --- 28
-		46000, --- 29
-		48000, --- 30
+    if GetMapName() == "free_for_all" then
+        tdm:start()
+    end
 
-		50000, --- 31
-		53000, --- 32
-		56000, --- 33
-		59000, --- 34
-		62000,
-	}
+    XP_PER_LEVEL_TABLE = {
+        0, 	   --- 1
+        300,   --- 2
+        500,   --- 3
+        800,   --- 4
+        1200,  --- 5
+        1700,  --- 6
+        2300,  --- 7
+        3000,  --- 8
+        3800,  --- 9
+        4700,  --- 10
+        5700,  --- 11
+        6800,  --- 12
+        8000,  --- 13
+        9300,  --- 14
+        10700, --- 15
+        12200, --- 16
+        13800, --- 17
+        15400, --- 18
 
-	GameRules:GetGameModeEntity():SetUseCustomHeroLevels(true)
-	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel(XP_PER_LEVEL_TABLE)
+        22400, --- 19
+        24600, --- 20
+        27000, --- 21
+        29600, --- 22
+        32400, --- 23
+        35400, --- 24
+        38600, --- 25
 
-	Convars:SetInt("dota_wait_for_players_to_load_timeout", 260)
-	Convars:SetInt("dota_combine_models", 1 )
-	SendToServerConsole( "dota_combine_models 1" )
+        40000, --- 26
+        42000, --- 27
+        44000, --- 28
+        46000, --- 29
+        48000, --- 30
 
-	-- Hook into game events allowing reload of functions at run time
-	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( GameMode, "OnNPCSpawned" ), self )
-	ListenToGameEvent( "player_reconnected", Dynamic_Wrap( GameMode, 'OnPlayerReconnected' ), self )
-	ListenToGameEvent( "entity_killed", Dynamic_Wrap( GameMode, 'OnEntityKilled' ), self )
-	ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( GameMode, "OnGameRulesStateChange" ), self )
-	ListenToGameEvent( "dota_player_learned_ability", Dynamic_Wrap( GameMode, "OnAbilityLearned" ), self )
+        50000, --- 31
+        53000, --- 32
+        56000, --- 33
+        59000, --- 34
+        62000,
+    }
 
-	GameRules:GetGameModeEntity():SetThink( "OnThink", self, 10 )
+    GameRules:GetGameModeEntity():SetUseCustomHeroLevels(true)
+    GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel(XP_PER_LEVEL_TABLE)
 
-	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
-	GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
-	
-	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "GoldFilter" ), self)
-	
-	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap( GameMode, "OrderFilter" ), self)
+    Convars:SetInt("dota_wait_for_players_to_load_timeout", 260)
+    Convars:SetInt("dota_combine_models", 1 )
+    SendToServerConsole( "dota_combine_models 1" )
 
-	Util:OnInit()
-	Trades:Init()
-	Vote:OnInit()
+    -- Hook into game events allowing reload of functions at run time
+    ListenToGameEvent( "npc_spawned", Dynamic_Wrap( GameMode, "OnNPCSpawned" ), self )
+    ListenToGameEvent( "player_reconnected", Dynamic_Wrap( GameMode, 'OnPlayerReconnected' ), self )
+    ListenToGameEvent( "entity_killed", Dynamic_Wrap( GameMode, 'OnEntityKilled' ), self )
+    ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( GameMode, "OnGameRulesStateChange" ), self )
+    ListenToGameEvent( "dota_player_learned_ability", Dynamic_Wrap( GameMode, "OnAbilityLearned" ), self )
 
-	GameRules.Globals = {};
-	GameRules.Players = {}
-	GameRules.Players[DOTA_TEAM_BADGUYS] = {}
-	GameRules.Players[DOTA_TEAM_GOODGUYS] = {}
+    GameRules:GetGameModeEntity():SetThink( "OnThink", self, 10 )
 
-	GameRules.Globals.Event = {}
+    GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
+    GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
+    GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap( GameMode, "OrderFilter" ), self)
 
-	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_DOUBLEDAMAGE , true ) --Double Damage
-	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_HASTE, true ) --Haste
-	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_ILLUSION, false ) --Illusion
-	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_INVISIBILITY, true ) --Invis
-	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_REGENERATION, true ) --Regen
-	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_ARCANE, true ) --Arcane
+    Util:OnInit()
+    Trades:Init()
+    Vote:OnInit()
+
+    GameRules.Globals = {};
+    GameRules.Players = {}
+    GameRules.Players[DOTA_TEAM_BADGUYS] = {}
+    GameRules.Players[DOTA_TEAM_GOODGUYS] = {}
+
+    GameRules.Globals.Event = {}
+
+    GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_DOUBLEDAMAGE , true ) --Double Damage
+    GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_HASTE, true ) --Haste
+    GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_ILLUSION, false ) --Illusion
+    GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_INVISIBILITY, true ) --Invis
+    GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_REGENERATION, true ) --Regen
+    GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_ARCANE, true ) --Arcane
 	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_BOUNTY, true ) --Bounty
+	
+    ----GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "ModifyGoldFilter" ), self)
+
+    Timers:CreateTimer(5, function() GameMode:GoldTickTimer() return DOTA_GOLD_TICK_TIME end)
 end
+
+function GameMode:GoldTickTimer()
+    if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        for i = 0, DOTA_MAX_PLAYERS - 1 do
+            if PlayerResource:IsValidPlayerID(i) then
+                PlayerResource:ModifyGold(i, DOTA_GOLD_PER_TICK, true, DOTA_ModifyGold_GameTick)
+            end 
+        end
+    end 
+end
+
+
+function GameMode:ModifyGoldFilter(ftable)
+	local reason = ftable.reason_const
+	local pid = ftable.player_id_const
+	local gold = ftable.gold
+
+	return true
+end
+
+
 function GameMode:OnAllPlayersLoaded()
 	if GetMapName() == "dota_captains_mode" then CaptainsMode:Start() else Pick:Start() end
 
 	Util:Setup()
 end
+
 function GameMode:OnGameRulesStateChange(keys)
-	local newState = GameRules:State_Get()
-	if newState == DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD then
-	  self.bSeenWaitForPlayers = true
-	elseif newState == DOTA_GAMERULES_STATE_INIT then
-	elseif newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
-	  GameMode:OnGameStarted(keys)
-	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-	  GameMode:OnAllPlayersLoaded()
-	  if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
-		for i=0,9 do
-		  if PlayerResource:IsValidPlayer(i) then
-			local color = TEAM_COLORS[PlayerResource:GetTeam(i)]
-			PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
-		  end
-		end
-	  end
-	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-	  GameMode:OnGameInProgress()
-	elseif newState == DOTA_GAMERULES_STATE_POST_GAME then
-	  GameMode:OnGameEnded(keys)
-	end
-  end
+    local newState = GameRules:State_Get()
+    if newState == DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD then
+        self.bSeenWaitForPlayers = true
+    elseif newState == DOTA_GAMERULES_STATE_INIT then
+    elseif newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+        GameMode:OnGameStarted(keys)
+    elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+        GameMode:OnAllPlayersLoaded()
+        if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
+            for i=0,9 do
+                if PlayerResource:IsValidPlayer(i) then
+                    local color = TEAM_COLORS[PlayerResource:GetTeam(i)]
+                    PlayerResource:SetCustomPlayerColor(i, color[1], color[2], color[3])
+                end
+            end
+        end
+    elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        GameMode:OnGameInProgress()
+    elseif newState == DOTA_GAMERULES_STATE_POST_GAME then
+        GameMode:OnGameEnded(keys)
+    end
+end
+
 
 function GameMode:OnGameStarted(keys)
 	stats.get_data()
 	stats.get_all_inventories()
 end
+
 function GameMode:OnGameEnded(keys)
 	if GameRules:IsCheatMode() == false and IsInToolsMode() == false then
 		if PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) > 0 and PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS) > 0 then
@@ -327,10 +357,12 @@ function GameMode:OnGameEnded(keys)
 		end
 	end
 end
+
 function GameMode:OnGameInProgress()
 	GameRules.Players[DOTA_TEAM_GOODGUYS] = Util:GetPlayersForTeam(DOTA_TEAM_GOODGUYS)
 	GameRules.Players[DOTA_TEAM_BADGUYS] = Util:GetPlayersForTeam(DOTA_TEAM_BADGUYS)
 end
+
 function GameMode:OnThink()
 	if #GameRules.Players[DOTA_TEAM_GOODGUYS] > 0 and #GameRules.Players[DOTA_TEAM_BADGUYS] > 0 then
 		if GameRules:IsCheatMode() == false and IsInToolsMode() == false then
@@ -341,6 +373,7 @@ function GameMode:OnThink()
 	end
 	return 10
 end
+
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 
@@ -351,6 +384,7 @@ function GameMode:OnNPCSpawned(keys)
 		Util:OnHeroInGame(npc)
 	end
 end
+
 function GameMode:OnEntityKilled( keys )
   local killedUnit = EntIndexToHScript( keys.entindex_killed )
 
@@ -379,75 +413,77 @@ function GameMode:OnEntityKilled( keys )
     	GameRules:SendCustomMessage(res, 0, 0)
     end
 end
+
 function GameMode:DmgFilter(ftable)
-	if pcall(function ()
-		local attacker
-		if ftable.entindex_attacker_const then attacker = EntIndexToHScript(ftable.entindex_attacker_const) end
-		local victim = EntIndexToHScript(ftable.entindex_victim_const)
-		local damage = ftable.damage
-			if attacker ~= nil then
-				if victim:HasModifier("modifier_franklin_global_retrocausality_friendly") and victim:HasModifier("modifier_thanos_decimation") == false then
-					local modifier = victim:FindModifierByName("modifier_franklin_global_retrocausality_friendly")
-					if modifier then
-						local target = EntIndexToHScript(modifier:GetTarget())
-						if target:IsAlive() and not attacker:IsAncient() then
-							target:ModifyHealth(target:GetHealth() - damage, modifier:GetAbility(), true, 0)
-						end
-						ftable.damage = 0
-					end
-				end
-				if attacker:HasModifier( "modifier_tzeentch_warp_connection" ) then
-					local modifier = attacker:FindModifierByName("modifier_tzeentch_warp_connection")
-					if attacker:GetTeamNumber() == modifier:GetCaster():GetTeamNumber() then
-						ftable.damage = ftable.damage * modifier:GetAbility():GetSpecialValueFor("damage_amplification")
-					else
-						ftable.damage = ftable.damage * modifier:GetAbility():GetSpecialValueFor("damage_reducrion")
-					end
-					return true
-				end
-				if victim:HasModifier( "modifier_thanos_believer" ) and not victim:HasModifier("modifier_item_timepiece")  then
-					if damage > victim:GetHealth() then
-						local modifer = victim:FindModifierByName("modifier_thanos_believer")
-						if modifer and modifer:GetAbility():IsCooldownReady() then
-							modifer:GetAbility():StartCooldown(modifer:GetAbility():GetCooldown(modifer:GetAbility():GetLevel()))
-							victim:AddNewModifier( victim, modifer, "modifier_item_aeon_disk_buff", {duration = modifer:GetAbility():GetDuration()} )
-							victim:AddNewModifier( victim, modifer, "modifier_item_lotus_orb_active", {duration = modifer:GetAbility():GetDuration()} )
+    if pcall(function ()
+        local attacker
+        if ftable.entindex_attacker_const then attacker = EntIndexToHScript(ftable.entindex_attacker_const) end
+        local victim = EntIndexToHScript(ftable.entindex_victim_const)
+        local damage = ftable.damage
+        if attacker ~= nil then
+            if victim:HasModifier("modifier_franklin_global_retrocausality_friendly") and victim:HasModifier("modifier_thanos_decimation") == false then
+                local modifier = victim:FindModifierByName("modifier_franklin_global_retrocausality_friendly")
+                if modifier then
+                    local target = EntIndexToHScript(modifier:GetTarget())
+                    if target:IsAlive() and not attacker:IsAncient() then
+                        target:ModifyHealth(target:GetHealth() - damage, modifier:GetAbility(), true, 0)
+                    end
+                    ftable.damage = 0
+                end
+            end
+            if attacker:HasModifier( "modifier_tzeentch_warp_connection" ) then
+                local modifier = attacker:FindModifierByName("modifier_tzeentch_warp_connection")
+                if attacker:GetTeamNumber() == modifier:GetCaster():GetTeamNumber() then
+                    ftable.damage = ftable.damage * modifier:GetAbility():GetSpecialValueFor("damage_amplification")
+                else
+                    ftable.damage = ftable.damage * modifier:GetAbility():GetSpecialValueFor("damage_reducrion")
+                end
+                return true
+            end
+            if victim:HasModifier( "modifier_thanos_believer" ) and not victim:HasModifier("modifier_item_timepiece")  then
+                if damage > victim:GetHealth() then
+                    local modifer = victim:FindModifierByName("modifier_thanos_believer")
+                    if modifer and modifer:GetAbility():IsCooldownReady() then
+                        modifer:GetAbility():StartCooldown(modifer:GetAbility():GetCooldown(modifer:GetAbility():GetLevel()))
+                        victim:AddNewModifier( victim, modifer, "modifier_item_aeon_disk_buff", {duration = modifer:GetAbility():GetDuration()} )
+                        victim:AddNewModifier( victim, modifer, "modifier_item_lotus_orb_active", {duration = modifer:GetAbility():GetDuration()} )
 
-							ftable.damage = 0
-						end
-					end
-				end
-				if victim:HasModifier( "item_time_gem" ) then
-					if damage > victim:GetHealth() then
-						local modifer = victim:FindModifierByName("item_time_gem")
-						if modifer ~= nil then
-							if modifer:OnTime(attacker, victim) then
-								ftable.damage = 0
-								return false
-							end
-						end
-					end
-				end
-				if victim:GetUnitLabel() == "baloon_creature" then
-					victim:ModifyHealth(victim:GetHealth() - 1, nil, true, 0)
-					
-					ftable.damage = 0
-					return false
-				end
-			end
-			if victim:HasModifier("modifier_ares_terrorize") then
-				local dmf = ftable.damage
-				ftable.damage = 0
+                        ftable.damage = 0
+                    end
+                end
+            end
+            if victim:HasModifier( "item_time_gem" ) then
+                if damage > victim:GetHealth() then
+                    local modifer = victim:FindModifierByName("item_time_gem")
+                    if modifer ~= nil then
+                        if modifer:OnTime(attacker, victim) then
+                            ftable.damage = 0
+                            return false
+                        end
+                    end
+                end
+            end
+            if victim:GetUnitLabel() == "baloon_creature" then
+                victim:ModifyHealth(victim:GetHealth() - 1, nil, true, 0)
 
-				local buff = victim:FindModifierByName("modifier_ares_terrorize")
-				victim:ModifyHealth(victim:GetHealth() - dmf, buff:GetAbility(), true, 0)
-			end
-		end) then else
-		printd("We have an eror in dmg filter")
-		print("We have an eror in dmg filter")
-	end
-	return true
+                ftable.damage = 0
+                return false
+            end
+        end
+        if victim:HasModifier("modifier_ares_terrorize") then
+            local dmf = ftable.damage
+            ftable.damage = 0
+
+            local buff = victim:FindModifierByName("modifier_ares_terrorize")
+            victim:ModifyHealth(victim:GetHealth() - dmf, buff:GetAbility(), true, 0)
+        end
+    end) then else
+        printd("We have an eror in dmg filter")
+        print("We have an eror in dmg filter")
+    end
+    return true
 end
+
 function GameMode:GetCompositeDamage(damage, target)
     local magical_damage = damage/2
     local physical_damage = damage/2
@@ -462,12 +498,15 @@ function GameMode:GetCompositeDamage(damage, target)
 
     return magical_damage + phys_damage_comp
 end
+
 function printd( msg )
 	CustomGameEventManager:Send_ServerToAllClients("OnErrorOccupied", {data = msg})
 end
+
 function CDOTAGamerules:printd( msg, pID )
 	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(pID), "OnErrorOccupied", {data = msg})
 end
+
 function GameMode:ModifierFilter(params)
 	local ability_entindex = params.entindex_ability_const
 	local parent_entindex = params.entindex_parent_const
@@ -489,61 +528,51 @@ function GameMode:OnAbilityLearned(params)
 	Util:LearnedAbility( params )
 end
 
-function GameMode:GoldFilter(ftable)
-	local reason = ftable.reason_const
-	local pid = ftable.player_id_const
-	local gold = ftable.gold
-
-	if reason == DOTA_ModifyGold_AbandonedRedistribute then ftable.gold = 0 end
-
-	return true
-end
-
 function GameMode:OrderFilter(params)
-	local unit = EntIndexToHScript(params.units["0"])
+    local unit = EntIndexToHScript(params.units["0"])
 
-	if unit:HasModifier("modifier_cosmos_space_warp") then
-		if params.order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or params.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET then
-			local target = Vector(params.position_x, params.position_y, params.position_z)
+    if unit:HasModifier("modifier_cosmos_space_warp") then
+        if params.order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or params.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET then
+            local target = Vector(params.position_x, params.position_y, params.position_z)
 
-			local movement = target - unit:GetAbsOrigin()
-			local targetPos = unit:GetAbsOrigin() - movement
-
-
-			params.position_x = targetPos.x
-			params.position_y = targetPos.y
-			params.position_z = targetPos.z
-		end
-		if params.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or params.order_type == DOTA_UNIT_ORDER_ATTACK_MOVE then
-			local target = params.entindex_target
-
-			local units = FindUnitsInRadius( unit:GetTeamNumber(), unit:GetOrigin(), unit, 99999, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, 0, FIND_CLOSEST, false )
-			if #units > 0 then
-				params.entindex_target = units[1]:entindex()
-			end
-		end
-		if params.order_type == DOTA_UNIT_ORDER_CAST_POSITION then
-			local target = Vector(params.position_x, params.position_y, params.position_z)
-
-			local movement = target - unit:GetAbsOrigin()
-			local targetPos = unit:GetAbsOrigin() - movement
+            local movement = target - unit:GetAbsOrigin()
+            local targetPos = unit:GetAbsOrigin() - movement
 
 
-			params.position_x = targetPos.x
-			params.position_y = targetPos.y
-			params.position_z = targetPos.z
-		end
-	end
+            params.position_x = targetPos.x
+            params.position_y = targetPos.y
+            params.position_z = targetPos.z
+        end
+        if params.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or params.order_type == DOTA_UNIT_ORDER_ATTACK_MOVE then
+            local target = params.entindex_target
 
-	if unit:HasModifier("cosmos_q_continuum_modifier") then
-		if params.order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or params.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET then
-			local targetPos = vCenter + RandomVector(1) * RandomFloat(0, 10000)
+            local units = FindUnitsInRadius( unit:GetTeamNumber(), unit:GetOrigin(), unit, 99999, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, 0, FIND_CLOSEST, false )
+            if #units > 0 then
+                params.entindex_target = units[1]:entindex()
+            end
+        end
+        if params.order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+            local target = Vector(params.position_x, params.position_y, params.position_z)
 
-			params.position_x = targetPos.x
-			params.position_y = targetPos.y
-			params.position_z = targetPos.z
-		end
-	end
+            local movement = target - unit:GetAbsOrigin()
+            local targetPos = unit:GetAbsOrigin() - movement
 
-	return true
+
+            params.position_x = targetPos.x
+            params.position_y = targetPos.y
+            params.position_z = targetPos.z
+        end
+    end
+
+    if unit:HasModifier("cosmos_q_continuum_modifier") then
+        if params.order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or params.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET then
+            local targetPos = vCenter + RandomVector(1) * RandomFloat(0, 10000)
+
+            params.position_x = targetPos.x
+            params.position_y = targetPos.y
+            params.position_z = targetPos.z
+        end
+    end
+
+    return true
 end
