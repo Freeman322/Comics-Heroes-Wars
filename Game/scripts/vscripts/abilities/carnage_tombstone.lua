@@ -45,7 +45,7 @@ function modifier_carnage_tombstone_thinker:IsAura()
 end
 
 function modifier_carnage_tombstone_thinker:GetAuraRadius()
-    return self:GetAbility():GetSpecialValueFor("radius")
+    return self:GetAbility():GetSpecialValueFor("radius") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_carnage") or 0)
 end
 
 function modifier_carnage_tombstone_thinker:GetAuraSearchTeam()
@@ -118,9 +118,9 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_carnage_tombstone_modifier:GetModifierConstantHealthRegen()
-    return self:GetAbility():GetSpecialValueFor("health_regen")
+    return self:GetAbility():GetSpecialValueFor("health_regen") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_carnage_2") or 0)
 end
 
 function modifier_carnage_tombstone_modifier:GetModifierConstantManaRegen()
-    return self:GetAbility():GetSpecialValueFor("mana_regen")
+    return self:GetAbility():GetSpecialValueFor("mana_regen") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_carnage_2") or 0)
 end

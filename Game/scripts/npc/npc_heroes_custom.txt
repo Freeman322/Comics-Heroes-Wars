@@ -505,6 +505,7 @@
 		"DisableWearables"			"1"
 		"ModelScale"				"1"
 		"LoadoutScale"				"1"
+		"SoundSet"		           "Hero_LifeStealer"
 
 		"Ability1"					"carnage_blood_spray"
 		"Ability2"					"carnage_tombstone"
@@ -518,20 +519,20 @@
 		"Ability9"					"special_bonus_all_stats_12"
      	"Ability10"					"special_bonus_exp_boost_30"
       	"Ability11"					"special_bonus_all_stats_12"
-      	"Ability12"					"special_bonus_hp_regen_40"
+      	"Ability12"					"special_bonus_unique_carnage_2"
       	"Ability13"					"special_bonus_attack_speed_100"
       	"Ability14"					"special_bonus_cooldown_reduction_25"
-      	"Ability15"					"special_bonus_movement_speed_100"
+      	"Ability15"					"special_bonus_unique_carnage"
       	"Ability16"					"special_bonus_lifesteal_100"
 		"Ability17"					"special_bonus_all_stats_20"
 	
-		"ArmorPhysical"				"0"
+		"ArmorPhysical"				"2"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 
 		"AttackDamageMin"			"50"
 		"AttackDamageMax"			"50"
-		"AttackRate"				"1.5000"
+		"AttackRate"				"1.500000"
 		"AttackAnimationPoint"		"0.400000"
 		"AttackAcquisitionRange"	"600"
 		"AttackRange"				"150"
@@ -544,7 +545,7 @@
 		"AttributeIntelligenceGain"	"2.500000"
 		"AttributeBaseAgility"		"20"
 		"AttributeAgilityGain"		"2.400000"
-		"MovementSpeed"				"300"
+		"MovementSpeed"				"315"
 		"MovementTurnRate"			"0.600000"
 	}
 	//=================================================================================================================

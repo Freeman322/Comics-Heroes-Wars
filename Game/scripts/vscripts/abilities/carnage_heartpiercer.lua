@@ -36,11 +36,12 @@ end
 
 function modifier_carnage_heartpiercer:OnAttackLanded (params)
 	if IsServer() then
-	    if params.attacker == self:GetParent() then
+	    if params.attacker == self:GetParent() and self:GetAbility():IsCooldownReady() then
 			if RollPercentage(self:GetAbility():GetSpecialValueFor("chance_pct")) then 
 				params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_carnage_heartpiercer_debuff", {duration = self:GetAbility():GetSpecialValueFor("duration")})
 				EmitSoundOn("Hero_Pangolier.HeartPiercer", params.target)
-			end
+		        self:GetAbility():UseResources(false, false, true)
+		    end
 	    end
 	end
 end
@@ -71,7 +72,6 @@ function modifier_carnage_heartpiercer_debuff:GetEffectAttachType()
     return PATTACH_OVERHEAD_FOLLOW
 end
 
-
 function modifier_carnage_heartpiercer_debuff:OnCreated( kv )
     if IsServer() then
         local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetCaster(), self:GetAbility():GetSpecialValueFor("damage_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
@@ -86,7 +86,7 @@ function modifier_carnage_heartpiercer_debuff:OnCreated( kv )
 				EmitSoundOn("Hero_Pangolier.HeartPiercer.Proc", self:GetParent())
 				EmitSoundOn("Hero_Pangolier.HeartPiercer.Proc.Creep", self:GetParent())
 				
-				unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_stunned", { duration = 0.1 } )
+				unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_stunned", { duration = 0.3 } )
 				
 				local damage = {
 					victim = unit,
@@ -95,7 +95,7 @@ function modifier_carnage_heartpiercer_debuff:OnCreated( kv )
 					damage_type = DAMAGE_TYPE_PURE,
 					ability = self:GetAbility()
 				}
-
+	
 				ApplyDamage( damage )
 			end
 		end

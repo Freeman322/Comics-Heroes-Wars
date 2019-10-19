@@ -1342,7 +1342,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"15"
+				"value"					"5"
 			}
 		}
 	}
@@ -2911,7 +2911,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 100 80"
+		"AbilityCooldown"				"90 80 70"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -21886,7 +21886,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"26 24 22 20"
-		"AbilityDamage"					"60 90 130 200"
+		"AbilityDamage"					"35 70 105 140"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75 90 105 120"
@@ -21905,12 +21905,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"550 600 650 700"
+				"radius"				"450 500 550 600"
+				"LinkedSpecialBonus"    "special_bonus_unique_carnage"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"16"
+				"duration"				"6 9 12 16"
 			}
 			"03"
 			{
@@ -21925,9 +21926,9 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_rate"				"1.0"
+				"tick_rate"				"0.6"
 			}
-		}
+		
 	}
 	//=================================================================================================================
 	//=================================================================================================================
@@ -21940,6 +21941,7 @@
 		"ScriptFile"					"abilities/carnage_heartpiercer.lua"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"               "5.5 5.0 4.5 4.0"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -21956,17 +21958,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"18 23 28 33"
+				"chance_pct"			"20 23 29 32"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5 3.0 3.5 4.0"
+				"duration"				"2.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_pct"				"-25 -30 -35 -40"
+				"slow_pct"				"-45 -50 -55 -60"
 			}
 			"04"
 			{
@@ -21976,7 +21978,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_radius"			"380 400 420 440"
+				"damage_radius"			"130 200 270 340"
 			}
 		}
 	}
@@ -22027,16 +22029,19 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"radius"				"750 800 850 900"
+				"LinkedSpecialBonus"    "special_bonus_unique_carnage"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"health_regen"			"30 40 50 60"
+				"LinkedSpecialBonus"    "special_bonus_unique_carnage_2"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"mana_regen"			"10 15 20 25"
+				"LinkedSpecialBonus"    "special_bonus_unique_carnage_2"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -40376,5 +40381,44 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-	} 
+	}
+		"special_bonus_unique_carnage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"800"
+			}
+		}
+	}
+	"special_bonus_unique_carnage_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"30"
+			}
+		}
+	}
 }
+

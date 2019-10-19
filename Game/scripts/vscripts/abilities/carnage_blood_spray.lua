@@ -42,7 +42,7 @@ function modifier_carnage_blood_spray_thinker:IsAura()
 end
 
 function modifier_carnage_blood_spray_thinker:GetAuraRadius()
-    return self:GetAbility():GetSpecialValueFor("radius")
+    return self:GetAbility():GetSpecialValueFor("radius") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_carnage") or 0)
 end
 
 function modifier_carnage_blood_spray_thinker:GetAuraSearchTeam()
@@ -111,6 +111,7 @@ function modifier_carnage_blood_spray_modifier:OnIntervalThink()
             damage_type = DAMAGE_TYPE_MAGICAL,
             ability = self:GetAbility()
         }
+
         ApplyDamage( damage )
    end
 end

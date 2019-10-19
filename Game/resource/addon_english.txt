@@ -11611,5 +11611,12 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_pennywise_purifying_flames_total_heal_tooltip"		"TOTAL HEAL:"
 		"DOTA_Tooltip_ability_pennywise_purifying_flames_duration"				"DURATION:"
 		"DOTA_Tooltip_ability_pennywise_purifying_flames_Note0"						"The healing from Purifying Flames can be stacked with itself."
+
+		"DOTA_Tooltip_ability_special_bonus_unique_carnage"                      "+800 radius for Blood Spray and Palace"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_carnage_2"                      "+30 mana and health regeneration for Palace"
+ 
+
+	
 	}	
 }
