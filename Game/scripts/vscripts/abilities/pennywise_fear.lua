@@ -7,7 +7,7 @@ function pennywise_fear:OnSpellStart()
 	local radius = self:GetSpecialValueFor( "radius" ) 
 	local duration = self:GetSpecialValueFor(  "duration" )
 
-	local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+	local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS + DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, 0, false )
 	if #units > 0 then
 		for _,unit in pairs(units) do
             unit:AddNewModifier( self:GetCaster(), self, "modifier_pennywise_fear", { duration = duration } )
