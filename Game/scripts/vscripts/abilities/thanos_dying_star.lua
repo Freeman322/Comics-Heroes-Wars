@@ -55,7 +55,7 @@ function thanos_dying_star_thinker:OnIntervalThink()
     local nearby_targets = FindUnitsInRadius(thinker:GetTeam(), thinker:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
     for i, target in ipairs(nearby_targets) do
-        ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = self.damage*0.1, damage_type = DAMAGE_TYPE_PHYSICAL})
+        ApplyDamage({victim = target, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = self.damage*0.1, damage_type = DAMAGE_TYPE_MAGICAL})
     end
 end
 

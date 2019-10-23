@@ -2099,7 +2099,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reflection_pct"	"16 20 24 28"
+				"damage_reflection_pct"	"20 24 28 32"
 			}
 			"02"
 			{
@@ -2155,7 +2155,7 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"1"
@@ -39296,44 +39296,56 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"30"
 
-        	"precache"
+        "precache"
 		{
-			"model"		"models/items/phantom_assassin/creeping_shadow_shoulder/creeping_shadow_shoulder.vmdl"
-			"model"		"models/items/phantom_assassin/creeping_shadow_belt/creeping_shadow_belt.vmdl"
-			"model"		"models/items/phantom_assassin/creeping_shadow_back/creeping_shadow_back.vmdl"
-			"model"		"models/items/phantom_assassin/toll_of_the_fearful_aria_head/toll_of_the_fearful_aria_head.vmdl"
-			"model"		"models/katana/katana.vmdl"
-			"model"		"models/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_head.vmdl"
-			"particle"  	"particles/hero_katana/katana_pit_of_souls.vpcf"
-			"particle"  	"particles/econ/items/drow/drow_ti6/drow_ti6_silence_wave.vpcf"
-			"particle"  	"particles/hero_katana/katana_ambient.vpcf"
-			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_blade_ambient_b.vpcf"
-			"model"		"models/heroes/hero_katana/katana_arcana.vmdl"
-			"model"		"models/heroes/phantom_assassin/pa_arcana_weapons.vmdl"
-			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_elder_ambient.vpcf"
-			"particle"	"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_blade_ambient_a.vpcf"
-			"particle" 	 "particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_head_ambient.vpcf"
-			"model"       "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_head/ti9_cache_pa_gothic_hunter_head.vmdl"
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_head/ti9_cache_pa_gothic_head_ambient.vpcf"
-			"model"        "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_hunter_back.vmdl"
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_back_ambient.vpcf"
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_back_ambient_rope.vpcf"
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_back_ambient_rope_b.vpcf"
-			"model"        "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_hunter_belt.vmdl"
-			"particle"  "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_belt_ambient.vpcf"
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_belt_ambient_embers.vpcf"
-			"particle"  "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_belt_ambient_ray.vpcf"
-			"model"     "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_shoulder/ti9_cache_pa_gothic_hunter_shoulder.vmdl"
-			"model"     "models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_hunter_weapon.vmdl"
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient.vpcf"                                                      
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_back.vpcf"                                                                 
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_bloom.vpcf"
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_buzz.vpcf"                      
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_edge.vpcf"                    
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye.vpcf"                         
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye_glow.vpcf"                         
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye_mist.vpcf"                                
-			"particle" "particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye_steam.vpcf"
+			"model"				"models/items/phantom_assassin/creeping_shadow_shoulder/creeping_shadow_shoulder.vmdl"
+			"model"				"models/items/phantom_assassin/creeping_shadow_belt/creeping_shadow_belt.vmdl"
+			"model"				"models/items/phantom_assassin/creeping_shadow_back/creeping_shadow_back.vmdl"
+			"model"				"models/items/phantom_assassin/toll_of_the_fearful_aria_head/toll_of_the_fearful_aria_head.vmdl"
+			"model"				"models/katana/katana.vmdl"
+			"model"				"models/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_head.vmdl"
+
+			"particle"  		"particles/hero_katana/katana_pit_of_souls.vpcf"
+			"particle"  		"particles/econ/items/drow/drow_ti6/drow_ti6_silence_wave.vpcf"
+			"particle"  		"particles/hero_katana/katana_ambient.vpcf"
+			"particle"			"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_blade_ambient_b.vpcf"
+
+			"model"				"models/heroes/hero_katana/katana_arcana.vmdl"
+			"model"				"models/heroes/phantom_assassin/pa_arcana_weapons.vmdl"
+
+			"particle"			"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_elder_ambient.vpcf"
+			"particle"			"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_blade_ambient_a.vpcf"
+			"particle" 	 		"particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_head_ambient.vpcf"
+
+			"model"      		"models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_head/ti9_cache_pa_gothic_hunter_head.vmdl"
+
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_head/ti9_cache_pa_gothic_head_ambient.vpcf"
+
+			"model"        		"models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_hunter_back.vmdl"
+
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_back_ambient.vpcf"
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_back_ambient_rope.vpcf"
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_back/ti9_cache_pa_gothic_back_ambient_rope_b.vpcf"
+
+			"model"        		"models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_hunter_belt.vmdl"
+
+			"particle"  		"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_belt_ambient.vpcf"
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_belt_ambient_embers.vpcf"
+			"particle"  		"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_belt/ti9_cache_pa_gothic_belt_ambient_ray.vpcf"
+			"model"     		"models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_shoulder/ti9_cache_pa_gothic_hunter_shoulder.vmdl"
+
+			"model"     		"models/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_hunter_weapon.vmdl"
+
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient.vpcf"                                                      
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_back.vpcf"                                                                 
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_bloom.vpcf"
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_buzz.vpcf"                      
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_edge.vpcf"                    
+			"particle"			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye.vpcf"                         
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye_glow.vpcf"                         
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye_mist.vpcf"                                
+			"particle" 			"particles/econ/items/phantom_assassin/ti9_cache_pa_gothic_hunter_weapon/ti9_cache_pa_gothic_weapon_ambient_eye_steam.vpcf"
+			"particle"			"particles/hero_predator/predator_plasma_shot_explosion.vpcf"
 		}
 
 		"AbilitySpecial"
@@ -39346,12 +39358,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dagger_stun"					"0.2 0.3 0.4 0.5"
+				"dagger_stun"				"0.2 0.3 0.4 0.5"
 			}
 			"03"
 			{
-				"var_type"              			"FIELD_INTEGER"
-				"missile_speed"        			 "1200"
+				"var_type"              	"FIELD_INTEGER"
+				"missile_speed"        		 "1200"
 			}
 		}
 

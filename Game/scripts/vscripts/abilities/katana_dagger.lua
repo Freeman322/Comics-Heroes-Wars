@@ -65,6 +65,8 @@ function katana_dagger:OnProjectileHit( hTarget, vLocation )
         EmitSoundOn( "Hero_PhantomAssassin.Dagger.Target", hTarget )
         local magic_missile_damage = self:GetSpecialValueFor( "dagger_damage" )
 
+        self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
+
         local damage = {
             victim = hTarget,
             attacker = self:GetCaster(),
@@ -74,10 +76,19 @@ function katana_dagger:OnProjectileHit( hTarget, vLocation )
         }
 
         ApplyDamage( damage )
-        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("dagger_stun") } )
-    end
 
-    self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true)
+        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("dagger_stun") } )
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "goku") then
+			local nFXIndex = ParticleManager:CreateParticle( "particles/hero_predator/predator_plasma_shot_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+            ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( nFXIndex, 3, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+            ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+			EmitSoundOn( "Hero_ObsidianDestroyer.SanityEclipse.TI8", self:GetCaster() )
+		end
+    end
 end
 
 function katana_dagger:GetAbilityTextureName()
