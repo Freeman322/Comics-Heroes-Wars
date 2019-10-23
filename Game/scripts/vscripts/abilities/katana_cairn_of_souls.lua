@@ -106,5 +106,5 @@ function modifier_katana_cairn_of_souls:GetModifierMoveSpeedBonus_Percentage( pa
     return self:GetAbility():GetSpecialValueFor("slowing")
 end
 
-function katana_cairn_of_souls:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function katana_cairn_of_souls:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
 

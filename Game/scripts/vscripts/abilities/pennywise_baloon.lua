@@ -60,7 +60,7 @@ end
 
 function modifier_pennywise_baloon:OnIntervalThink()
     if IsServer() then
-        local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self:GetAbility():GetSpecialValueFor("baloon_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+        local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self:GetAbility():GetSpecialValueFor("baloon_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS, 0, false )
         if #units > 0 then
             for _,unit in pairs(units) do
                 unit:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = 0.05 } )
@@ -68,7 +68,6 @@ function modifier_pennywise_baloon:OnIntervalThink()
                 self:Attack(unit)
             end
         end
-            
     end 
 end
 

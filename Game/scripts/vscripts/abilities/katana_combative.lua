@@ -5,38 +5,38 @@ LinkLuaModifier( "modifier_katana_combative", "abilities/katana_combative.lua", 
 --------------------------------------------------------------------------------
 
 function katana_combative:GetIntrinsicModifierName()
-	return "modifier_katana_combative"
+    return "modifier_katana_combative"
 end
 
 modifier_katana_combative = class({})
 
 function modifier_katana_combative:IsHidden()
-	return false
+    return false
 end
 
 function modifier_katana_combative:IsPurgable()
-	return false
+    return false
 end
 
 function modifier_katana_combative:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
-	}
+    local funcs = {
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+    }
 
-	return funcs
+    return funcs
 end
 
 
 function modifier_katana_combative:GetModifierMoveSpeedBonus_Percentage( params )
-	return self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
+    return self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
 end
 
 --------------------------------------------------------------------------------
 
 function modifier_katana_combative:GetModifierAttackSpeedBonus_Constant( params )
-	return self:GetAbility():GetSpecialValueFor("bonus_speed")
+    return self:GetAbility():GetSpecialValueFor("bonus_speed")
 end
 
-function katana_combative:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function katana_combative:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
 

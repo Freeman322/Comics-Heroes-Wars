@@ -4142,7 +4142,7 @@
 		"DOTA_TOOLTIP_modifier_doctor_doom_warpath_Description"							"Inflicts damage."
 
 		"DOTA_Tooltip_ability_thanos_dying_star"			 "DYING STAR"
-		"DOTA_Tooltip_ability_thanos_dying_star_Description" "Thanos creates a star, which in 4 seconds turns into a supernova. Every 0.1 seconds inflicts damage based on maximum health of enemies. After the explosion, they will take half their current health as damage and become stunned for 2 seconds."
+		"DOTA_Tooltip_ability_thanos_dying_star_Description" "Thanos creates a star, which in 4 seconds turns into a supernova. Every 0.1 seconds inflicts damage. After the enemies become stunned for 2 seconds."
 		"DOTA_Tooltip_ability_thanos_dying_star_damage"		"%DAMAGE:"
 		"DOTA_Tooltip_ability_thanos_dying_star_duration"	"DELAY:"
 		"DOTA_Tooltip_ability_thanos_dying_star_radius"		"RADIUS:"
@@ -11157,11 +11157,11 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_special_bonus_unique_thanos_2"                              "+14% Shattered Earth damage"
 
 		"DOTA_Tooltip_ability_thanos_titans_sword"                                        "Titan's Sword"
-		"DOTA_Tooltip_ability_thanos_titans_sword_Description"                            "Using his blade, Thanos hits a greater number of enemies, attacking everyone in the radius."
-		"DOTA_Tooltip_ability_thanos_titans_sword_radius"                                 "RADIUS:"
-		"DOTA_Tooltip_ability_thanos_titans_sword_ministun_duration"                      "MINISTUN DURATION:"
+		"DOTA_Tooltip_ability_thanos_titans_sword_Description"                            "Thanos throws his legendary blade with deadly precision, damaging each enemy unit it strikes. The first enemy hero it hits is skewered on the sword, pushing it back. If a skewered hero hits a tree, building, or cliff, they will be impaled to it and stunned."
+		"DOTA_Tooltip_ability_thanos_titans_sword_damage"                                 "DAMAGE:"
+		"DOTA_Tooltip_ability_thanos_titans_sword_stun_duration"                     	  "DURATION:"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_thanos_3"                              "+100 for Titan's Sword radius"
+		"DOTA_Tooltip_ability_special_bonus_unique_thanos_3"                              "+10% current health damage for Titan's Sword"
 
 		"DOTA_Tooltip_ability_thanos_titans_sword_bonus_damage"                           "%BONUS DAMAGE:"
 

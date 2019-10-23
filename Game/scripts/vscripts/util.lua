@@ -1238,8 +1238,6 @@ function Util:OnHeroInGame(hero)
       end
     end
     if hero:GetUnitName() == "npc_dota_hero_elder_titan" then
-      hero:FindAbilityByName("thanos_believer"):SetLevel(1)
-
       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "titans_armor") then
         hero:SetOriginalModel("models/heroes/hero_thanos/thanos.vmdl")
 

@@ -12,7 +12,7 @@ function jons_whirlpool:OnSpellStart()
 end
 
 function jons_whirlpool:GetTinkerPos()
-  return self.vPos
+    return self.vPos
 end
 
 if jons_whirlpool_thinker == nil then jons_whirlpool_thinker = class ({}) end
@@ -48,12 +48,12 @@ function jons_whirlpool_thinker:OnIntervalThink()
     -- Calculate the position of each found unit in relation to the center
     for _,unit in ipairs(units) do
         local kv =
-        {
-            duration = self:GetRemainingTime(),
-            dir_x = self:GetParent():GetAbsOrigin().x,
-            dir_y = self:GetParent():GetAbsOrigin().y,
-            dir_z = self:GetParent():GetAbsOrigin().z,
-        }
+            {
+                duration = self:GetRemainingTime(),
+                dir_x = self:GetParent():GetAbsOrigin().x,
+                dir_y = self:GetParent():GetAbsOrigin().y,
+                dir_z = self:GetParent():GetAbsOrigin().z,
+            }
 
         unit:AddNewModifier(caster, ability, "jons_whirlpool_modifier", kv)
     end
@@ -136,7 +136,7 @@ function jons_whirlpool_modifier:OnCreated( kv )
 end
 
 function jons_whirlpool_modifier:OnIntervalThink()
-	if IsServer() then
+    if IsServer() then
         local unit_location = self:GetParent():GetAbsOrigin()
         local vector_distance = self.vPos - unit_location
         local distance = (vector_distance):Length2D()
@@ -168,5 +168,5 @@ function jons_whirlpool_modifier:OnDestroy()
     end
 end
 
-function jons_whirlpool:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
+function jons_whirlpool:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end
 

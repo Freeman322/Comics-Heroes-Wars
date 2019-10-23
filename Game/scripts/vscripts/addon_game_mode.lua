@@ -293,7 +293,7 @@ function GameMode:GoldTickTimer()
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         for i = 0, DOTA_MAX_PLAYERS - 1 do
             if PlayerResource:IsValidPlayerID(i) then
-                PlayerResource:ModifyGold(i, DOTA_GOLD_PER_TICK, true, DOTA_ModifyGold_GameTick)
+                PlayerResource:ModifyGold(i, DOTA_GOLD_PER_TICK, true, DOTA_ModifyGold_Unspecified)
             end 
         end
     end 

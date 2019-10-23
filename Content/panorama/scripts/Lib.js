@@ -5027,6 +5027,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "373": {
+        "item": "goku",
+        "rarity": "11",
+        "quality": "11",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_phantom_assassin",
+        "universal": "false",
+        "def_id": "373",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

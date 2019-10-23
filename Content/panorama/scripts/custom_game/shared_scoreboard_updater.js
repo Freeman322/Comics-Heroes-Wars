@@ -203,6 +203,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/uganda.png" );
 				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_phantom_assassin" && hasModifier(hero_entindex, "modifier_goku"))
+				{
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/goku.png" );
+				}
 				else
 				{
 					playerPortrait.SetImage( "file://{images}/custom_game/heroes/" + playerInfo.player_selected_hero + ".png" );

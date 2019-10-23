@@ -163,6 +163,7 @@
 			}
 		}
 	}
+
 	"special_bonus_unique_alien_acid_blood_armor_red"
 	{
 		"BaseClass"						"special_bonus_undefined"
@@ -209,6 +210,7 @@
 			}
 		}
 	}
+	
 	"special_bonus_unique_alien_evolution_cd_red"
 	{
 		"BaseClass"						"special_bonus_undefined"
@@ -544,6 +546,7 @@
 			}
 		}
 	}
+
 	"special_bonus_unique_daredevil"
 	{
 		// General
@@ -2150,27 +2153,34 @@
 		"ScriptFile"					"abilities/thanos_dying_star.lua"
 		"AbilityTextureName"			"custom/thanos_supernova"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
-		"AOERadius"						"1000 1100 1200"
+		"MaxLevel"						"1"
+
+		"HasScepterUpgrade"				"1"
+		"IsGrantedByScepter"			"1"
+
+		"AOERadius"						"1200"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"160 130 100"
+		"AbilityCooldown"				"100"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"180 240 300"
+		"AbilityManaCost"				"300"
 
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 650 700"
+		"AbilityCastRange"				"700"
+		"AbilityDamage"					"250"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2214,20 +2224,15 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"damage"					"5 6 7"
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"1200"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"1000 1100 1200"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"duration"					"4"
 			}
-			"04"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"miss_chance"				"30 50 70"
@@ -21928,7 +21933,7 @@
 				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"0.6"
 			}
-		
+		}
 	}
 	//=================================================================================================================
 	//=================================================================================================================
@@ -36824,52 +36829,90 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"					"ability_lua"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/thanos_titans_sword.lua"
 		"AbilityTextureName"			"custom/thanos_titans_sword"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
-		"AbilitySound"					"Hero_DoomBringer.InfernalBlade.Target"
-
-		// Time
+		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16"
-		"AbilityManaCost"				"60 40 20 0"
+ 		"AbilityCastRange"				"900 1000 1100 1200"
+		"AbilityCastPoint"				"0.25"
 
-		"AbilityCastRange"				"175"
-
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0"
+		"AbilityManaCost"				"100"
+		
 		"precache"
 		{
-			"model"					"models/heroes/hero_thanos/thanos.vmdl"
+			"model"		"models/heroes/hero_thanos/thanos.vmdl"
+
+			"particle"	"particles/status_fx/status_effect_mars_spear.vpcf"
+			"particle"	"particles/units/heroes/hero_mars/mars_spear.vpcf"
+			"particle"	"particles/units/heroes/hero_mars/mars_spear_impact.vpcf"
+			"particle"	"particles/units/heroes/hero_mars/mars_spear_impact_debuff.vpcf"
+			"particle"	"particles/thanos/thanos_sword.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
 		}
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"					"240 260 280 300"
-				"LinkedSpecialBonus"		"special_bonus_unique_thanos_3"
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 175 250 325"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ministun_duration"			"0.6"
+				"spear_speed"			"1400"
 			}
 			"03"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"spear_width"			"125"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spear_vision"			"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spear_range"			"900 1000 1100 1200"
+			}
+			"06"
+			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_damage"				"3.0 3.75 4.25 5.0"
+				"activity_duration"		"1.7"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.6 2.0 2.4 2.8"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.25"
+			}			
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_distance"	"75"
 			}
 		}
 	}
@@ -36886,7 +36929,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"100"
+				"value"					"10"
 			}
 		}
 	}
@@ -39175,7 +39218,7 @@
 	}
 	"katana_soul_stole"
 	{
-		"BaseClass"					"ability_lua"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/katana_soul_stole.lua"
 		"AbilityTextureName"			"custom/katana_soul"
 		"AbilityBehavior"		 	 	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -39183,9 +39226,15 @@
 
 		"Precache"
 		{
-			"particle"				"particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_devour.vpcf"
-			"particle"				"particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+			"particle"					"particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_devour.vpcf"
+			"particle"					"particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
+
+			"model"						"models/heroes/hero_katana/goku_skin/goku.vmdl"
+
+			"particle"					"particles/reverse_flash_buff.vpcf"
+			"particle"					"particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6_knockback_debuff.vpcf"
+			"particle"					"particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -40382,7 +40431,7 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
-		"special_bonus_unique_carnage"
+	"special_bonus_unique_carnage"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -40421,4 +40470,3 @@
 		}
 	}
 }
-
