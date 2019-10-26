@@ -121,6 +121,14 @@ function Precache( context )
 	PrecacheResource("model", "models/heroes/invoker_kid/invoker_kid_cape.vmdl", context)
 	PrecacheResource("model", "models/heroes/invoker_kid/invoker_kid_hair.vmdl", context)
 
+    PrecacheResource("model", "models/heroes/storm_spirit/storm_spirit.vmdl", context)
+    PrecacheResource("model", "models/heroes/storm_spirit/storm_hat.vmdl", context)
+    PrecacheResource("model", "models/items/storm_spirit/tormenta_arms/tormenta_arms.vmdl", context)
+    PrecacheResource("model", "models/items/storm_spirit/raikage_ares_armor/raikage_ares_armor.vmdl", context)
+
+    PrecacheResource("particle", "particles/econ/items/storm_spirit/storm_spirit_orchid_hat/storm_spirit_orchid_hat_ribbon.vpcf", context)
+    PrecacheResource("particle", "particles/econ/items/storm_spirit/storm_spirit_tormenta_armor/storm_spirit_tormenta_ambient.vpcf", context)
+
 	PrecacheResource("particle", "particles/econ/pets/pet_drodo_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/econ/courier/courier_onibi/courier_onibi_black_lvl21_ambient.vpcf", context)
 
@@ -481,6 +489,9 @@ function GameMode:DmgFilter(ftable)
         printd("We have an eror in dmg filter")
         print("We have an eror in dmg filter")
     end
+
+    Util:OnDamageWasApplied(ftable)
+
     return true
 end
 

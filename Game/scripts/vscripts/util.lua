@@ -27,7 +27,7 @@ function Util:OnInit(args)
     CustomGameEventManager:RegisterListener("quest_ended", Dynamic_Wrap(Util, 'OnQuestEnded'))
     CustomGameEventManager:RegisterListener("on_cosmetic_item_changed", Dynamic_Wrap(Util, 'OnCosmeticItemUpdated'))
 
-	  ListenToGameEvent( "dota_item_picked_up", Dynamic_Wrap( Util, "OnItemPickUp"), self )
+	ListenToGameEvent( "dota_item_picked_up", Dynamic_Wrap( Util, "OnItemPickUp"), self )
 
     Convars:RegisterCommand( "try_get_data", Dynamic_Wrap(Util, 'GetNetworkStatsData'), "Test", FCVAR_CHEAT )
     Convars:RegisterCommand( "try_set_data", Dynamic_Wrap(Util, 'SetNetworkStatsData'), "Test", FCVAR_CHEAT )
@@ -1489,30 +1489,30 @@ function Util:FindTalentScriptFile(talentName)
 end
 
 function CDOTABaseAbility:GetTalentSpecialValueFor(value)
-	local base = self:GetSpecialValueFor(value)
-	local talentName
-	local valname = "value"
-	local multiply = false
-	local kv = self:GetAbilityKeyValues()
-	for k,v in pairs(kv) do -- trawl through keyvalues
-		if k == "AbilitySpecial" then
-			for l,m in pairs(v) do
-				if m[value] then
-					talentName = m["LinkedSpecialBonus"]
-					if m["LinkedSpecialBonusField"] then valname = m["LinkedSpecialBonusField"] end
-					if m["LinkedSpecialBonusOperation"] and m["LinkedSpecialBonusOperation"] == "SPECIAL_BONUS_MULTIPLY" then multiply = true end
-				end
-			end
-		end
-	end
-	if talentName and self:GetCaster():HasTalent(talentName) then
-		if multiply then
-			base = base * talent:GetSpecialValueFor(valname)
-		else
-			base = base + talent:GetSpecialValueFor(valname)
-		end
-	end
-	return base
+  local base = self:GetSpecialValueFor(value)
+  local talentName
+  local valname = "value"
+  local multiply = false
+  local kv = self:GetAbilityKeyValues()
+  for k,v in pairs(kv) do -- trawl through keyvalues
+      if k == "AbilitySpecial" then
+          for l,m in pairs(v) do
+              if m[value] then
+                  talentName = m["LinkedSpecialBonus"]
+                  if m["LinkedSpecialBonusField"] then valname = m["LinkedSpecialBonusField"] end
+                  if m["LinkedSpecialBonusOperation"] and m["LinkedSpecialBonusOperation"] == "SPECIAL_BONUS_MULTIPLY" then multiply = true end
+              end
+          end
+      end
+  end
+  if talentName and self:GetCaster():HasTalent(talentName) then
+      if multiply then
+          base = base * talent:GetSpecialValueFor(valname)
+      else
+          base = base + talent:GetSpecialValueFor(valname)
+      end
+  end
+  return base
 end
 
 function CDOTA_BaseNPC:SetGodeMode(tBool)
@@ -1599,6 +1599,8 @@ function CDOTA_BaseNPC:RefreshUnit()
 end
 
 function Util:SetupConsole()
+    LinkLuaModifier("modifier_storm_spirit", "modifiers/modifier_storm_spirit.lua", LUA_MODIFIER_MOTION_NONE )
+    
     Convars:RegisterCommand("ban", function(command, userid )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
@@ -1943,6 +1945,21 @@ function Util:SetupConsole()
           PrecacheUnitByNameAsync( "npc_dota_hero_phoenix", function()
             local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_phoenix", 0, 0)
             nHero:RespawnHero(false, false)
+          end)
+        else
+          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+        end
+      end)
+    end, "Set time", 0)
+    Convars:RegisterCommand("replace_hero_s", function(command )
+      pcall(function()
+        local pID = Convars:GetCommandClient():GetPlayerID()
+
+        if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+          PrecacheUnitByNameAsync( "npc_dota_hero_stormspirit", function()
+            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_stormspirit", 0, 0)
+            nHero:RespawnHero(false, false)
+            nHero:AddNewModifier(nHero, nil, "modifier_storm_spirit", nil)
           end)
         else
           Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -2304,85 +2321,82 @@ function Util:OnGauntletAbilitySelected( params )
 end
 
 function CDOTAGamerules:EndGame(team)
-	local ancients = Entities:FindAllByClassname("npc_dota_fort")
-	for _, ancient in pairs(ancients) do
-		if (ancient:GetTeamNumber() == team) then ancient:ForceKill(false) return end
-	end
+  local ancients = Entities:FindAllByClassname("npc_dota_fort")
+  for _, ancient in pairs(ancients) do
+      if (ancient:GetTeamNumber() == team) then ancient:ForceKill(false) return end
+  end
 end
 
 function CDOTA_BaseNPC:GetPhysicalArmorReduction()
-    local armornpc = self:GetPhysicalArmorValue( false )
-    local armor_reduction = 1 - (0.06 * armornpc) / (1 + (0.06 * math.abs(armornpc)))
-    armor_reduction = 100 - (armor_reduction * 100)
-    return armor_reduction
+  local armornpc = self:GetPhysicalArmorValue( false )
+  local armor_reduction = 1 - (0.06 * armornpc) / (1 + (0.06 * math.abs(armornpc)))
+  armor_reduction = 100 - (armor_reduction * 100)
+  return armor_reduction
 end
 
 function CDOTA_BaseNPC:GetTarget()
   local unit
 
   if IsServer() then
-    local units = FindUnitsInRadius( self:GetTeamNumber(), self:GetOrigin(), self, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, FIND_CLOSEST, false )
-    if #units > 0 then
-      unit = units[1]
-    end
+      local units = FindUnitsInRadius( self:GetTeamNumber(), self:GetOrigin(), self, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, FIND_CLOSEST, false )
+      if #units > 0 then
+          unit = units[1]
+      end
   end
 
   return unit;
 end
+
 function CDOTA_BaseNPC:IsHasSuperStatus()
   local data = CustomNetTables:GetTableValue("players", "stats")
   local pID = self:GetPlayerOwnerID()
 
   if data and data[tostring(pID)] then
-    return data[tostring(pID)].shards == "1"
+      return data[tostring(pID)].shards == "1"
   end
 
   return false
 end
 
 function Util:Setup()
-  --[[local ancients = Entities:FindAllByClassname("ent_dota_fountain")
 
-  for k, ancient in pairs(ancients) do
-    ancient:AddNewModifier(ancient, nil, "modifier_fountain", nil)
-  end]]
 end
 
 function CDOTA_BaseNPC:GetBasePos()
   local ancients = Entities:FindAllByClassname("ent_dota_fountain")
 
   for k, ancient in pairs(ancients) do
-    if ancient:GetTeamNumber() == self:GetTeamNumber() then return ancient:GetAbsOrigin() end
+      if ancient:GetTeamNumber() == self:GetTeamNumber() then return ancient:GetAbsOrigin() end
   end
 
   return self:GetAbsOrigin()
 end
 
 function CDOTA_BaseNPC:IsFriendly(target)
-  return target:GetTeamNumber() == self:GetTeamNumber()
+    return target:GetTeamNumber() == self:GetTeamNumber()
 end
 
 function CDOTA_BaseNPC:GetCooldownTimeAfterReduction(cooldown)
-  local cooldown_reduction = 1
+    local cooldown_reduction = 1
 
-  for _, mod in pairs(self:FindAllModifiers()) do
-    pcall(function()
-      if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE) then
-        cooldown_reduction = cooldown_reduction * (1 - mod:GetModifierPercentageCooldown() / 100)
-      end
-      if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING) then
-        cooldown_reduction = cooldown_reduction * (1 - mod:GetModifierPercentageCooldownStacking() / 100)
-      end
-    end)
-  end
+    for _, mod in pairs(self:FindAllModifiers()) do
+        pcall(function()
+            if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE) then
+                cooldown_reduction = cooldown_reduction * (1 - mod:GetModifierPercentageCooldown() / 100)
+            end
+            if mod:HasFunction(MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING) then
+                cooldown_reduction = cooldown_reduction * (1 - mod:GetModifierPercentageCooldownStacking() / 100)
+            end
+        end)
+    end
 
-  return cooldown_reduction * cooldown
+    return cooldown_reduction * cooldown
 end
 
 function AddNewModifier_pcall(target, caster, ability, modifierName, properties)
-  if target:IsNull() or not target then Warning("[AddNewModifier_pcall] utils.lua - target nullptr exeption") return end
+    if target:IsNull() or not target then Warning("[AddNewModifier_pcall] utils.lua - target nullptr exeption") return end
 
-  return target:AddNewModifier(caster, ability, modifierName, properties)
+    return target:AddNewModifier(caster, ability, modifierName, properties)
 end
 
 function WaitForNextFrame(fnc)
@@ -2390,9 +2404,14 @@ function WaitForNextFrame(fnc)
 end
 
 function SetObjectHidden( ubj, hidden )
-  if hidden == true then
-    ubj:AddEffects(EF_NODRAW)
-  else 
-    ubj:RemoveEffects(EF_NODRAW)
-  end
+    if hidden == true then
+        ubj:AddEffects(EF_NODRAW)
+    else
+        ubj:RemoveEffects(EF_NODRAW)
+    end
+end
+
+
+function Util:OnDamageWasApplied(data)
+
 end
