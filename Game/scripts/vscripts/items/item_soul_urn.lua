@@ -1,6 +1,8 @@
 item_soul_urn = class({})
 LinkLuaModifier ("item_soul_urn_modifier", "items/item_soul_urn.lua", LUA_MODIFIER_MOTION_NONE)
 
+local BURN = 0.25
+
 function item_soul_urn:GetIntrinsicModifierName()
     return "item_soul_urn_modifier"
 end
@@ -9,7 +11,7 @@ function item_soul_urn:OnSpellStart ()
     local hTarget = self:GetCursorTarget ()
     if hTarget ~= nil then
         if ( not hTarget:TriggerSpellAbsorb (self) ) then
-            local mana = hTarget:GetMana() / 2
+            local mana = hTarget:GetMana() * BURN
 
             hTarget:SpendMana(mana, self)
             hTarget:Interrupt()

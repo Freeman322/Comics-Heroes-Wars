@@ -11618,5 +11618,7 @@ When activated spends mana."
  
 
 		"npc_dota_hero_stormspirit"													"Green Lantern"
+        "npc_dota_hero_io"                                                          "Green Lantern"
+        "DOTA_Tooltip_ability_special_bonus_unique_wist_str"                                             "Reduces enemies strength"
 	}	
 }

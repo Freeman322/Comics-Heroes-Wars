@@ -34,7 +34,7 @@ end
 modifier_item_rapier_of_despair_buff = class({})
 
 function modifier_item_rapier_of_despair_buff:IsHidden() return false end
-function modifier_item_rapier_of_despair_buff:IsPurgable() return true end
+function modifier_item_rapier_of_despair_buff:IsPurgable() return false end
 function modifier_item_rapier_of_despair_buff:RemoveOnDeath() return true end
 function modifier_item_rapier_of_despair_buff:DeclareFunctions() return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE} end
 function modifier_item_rapier_of_despair_buff:GetEffectName() return "particles/econ/items/witch_doctor/wd_ti8_immortal_head/wd_ti8_immortal_maledict_dots.vpcf" end

@@ -5,7 +5,7 @@ modifier_storm_spirit = class({
     IsHidden = function() return false end,
     IsPurgable = function() return true end,
     IsDebuff = function() return false end,
-    RemoveOnDeath = function() return true end,
+    RemoveOnDeath = function() return false end,
     DeclareFunctions = function() return {MODIFIER_EVENT_ON_ABILITY_FULLY_CAST, MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_PROPERTY_MANA_BONUS} end,
     GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end
 })

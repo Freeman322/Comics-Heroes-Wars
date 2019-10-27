@@ -1600,7 +1600,8 @@ end
 
 function Util:SetupConsole()
     LinkLuaModifier("modifier_storm_spirit", "modifiers/modifier_storm_spirit.lua", LUA_MODIFIER_MOTION_NONE )
-    
+    LinkLuaModifier("modifier_io", "modifiers/modifier_customs.lua", LUA_MODIFIER_MOTION_NONE )
+
     Convars:RegisterCommand("ban", function(command, userid )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
@@ -1966,6 +1967,22 @@ function Util:SetupConsole()
         end
       end)
     end, "Set time", 0)
+    Convars:RegisterCommand("replace_hero_i", function(command )
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+    
+            if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 124112243 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+                PrecacheUnitByNameAsync( "npc_dota_hero_io", function()
+                local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_io", 0, 0)
+                nHero:RespawnHero(false, false)
+                nHero:AddNewModifier(nHero, nil, "modifier_io", nil)
+                
+                end)
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
+      end, "Set time", 0)
     Convars:RegisterCommand("replace_hero_m", function(command )
       pcall(function()
         local pID = Convars:GetCommandClient():GetPlayerID()
@@ -2413,5 +2430,20 @@ end
 
 
 function Util:OnDamageWasApplied(data)
+    if data.entindex_inflictor_const ~= nil then
+        local inflictor = EntIndexToHScript(data.entindex_inflictor_const)
 
+        if inflictor:GetName() == "wisp_spirits" then
+            local target = EntIndexToHScript(data.entindex_victim_const)
+            local caster = EntIndexToHScript(data.entindex_attacker_const)
+    
+            if caster:HasTalent("special_bonus_unique_wist_str") then
+                if decay then
+                    decay:IncrementStackCount()
+                else target:AddNewModifier(caster, inflictor, "modifier_undying_decay_debuff_counter", {duration = inflictor:GetSpecialValueFor("decay_duration")}) end 
+                
+                target:AddNewModifier(caster, inflictor, "modifier_undying_decay_debuff", {duration = inflictor:GetSpecialValueFor("decay_duration")})
+            end
+        end
+    end
 end

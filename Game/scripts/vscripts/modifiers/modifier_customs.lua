@@ -234,3 +234,35 @@ if modifier_goku == nil then modifier_goku = class({}) end
 function modifier_goku:IsHidden() return true end
 function modifier_goku:IsPurgable() return false end
 function modifier_goku:RemoveOnDeath() return false end
+
+if modifier_io == nil then modifier_io = class({}) end
+function modifier_io:IsHidden() return true end
+function modifier_io:IsPurgable() return false end
+function modifier_io:RemoveOnDeath() return false end
+function modifier_io:DeclareFunctions ()
+    local funcs = {
+        MODIFIER_EVENT_ON_ATTACK_LANDED
+    }
+
+    return funcs
+end
+
+function modifier_io:DeclareFunctions()
+	local funcs = {
+        MODIFIER_PROPERTY_VISUAL_Z_DELTA,
+	}
+
+	return funcs
+end
+
+function modifier_io:GetEffectName()
+    return "particles/items4_fx/nullifier_mute_debuff.vpcf"
+end
+
+function modifier_io:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+
+function modifier_io:GetVisualZDelta( params )
+    return 97
+end
