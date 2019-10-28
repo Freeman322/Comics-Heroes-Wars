@@ -5041,6 +5041,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "374": {
+        "item": "hoodlum_chant",
+        "rarity": "10",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "medal",
+        "hero": "",
+        "universal": "true",
+        "def_id": "374",
+        "is_treasure": "0",
+        "is_medal": "1",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

@@ -64,6 +64,14 @@ function modifier_katana_coup_de_grace:GetModifierPreAttack_CriticalStrike(param
                 ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetOrigin(), true )
                 ParticleManager:ReleaseParticleIndex( nFXIndex )
 
+                local nFXIndex = ParticleManager:CreateParticle( "particles/galactus/galactus_seed_of_ambition_eternal_item.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
+                ParticleManager:SetParticleControl(nFXIndex, 0, target:GetAbsOrigin())
+                ParticleManager:SetParticleControl(nFXIndex, 2, target:GetAbsOrigin())
+                ParticleManager:SetParticleControl(nFXIndex, 3, target:GetAbsOrigin())
+                ParticleManager:SetParticleControl(nFXIndex, 6, target:GetAbsOrigin())
+                ParticleManager:SetParticleControl (nFXIndex, 1, Vector (750, 750, 0))
+                ParticleManager:ReleaseParticleIndex( nFXIndex )
+
                 EmitSoundOn( "Hero_EarthShaker.EchoSlam", target )
                 EmitSoundOn( "Hero_EarthShaker.EchoSlamEcho", target )
                 EmitSoundOn( "Hero_EarthShaker.EchoSlamSmall", target )

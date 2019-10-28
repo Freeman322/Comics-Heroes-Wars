@@ -2834,6 +2834,9 @@ Rage, rage against the dying of the light."
 		"acolyte_of_lost_arts"			"Lost Arts"
 		"acolyte_of_lost_arts_lore"		""
 
+        "hoodlum_chant"                 "Hoodlum Chant"
+        "hoodlum_chant_lore"            ""
+
 		"guardian_flame"                  "Listings for Apogee of the Guardian Flame"
 		"guardian_flame_lore"             "It was not only curiosity that drew the Burning Celestial to the mortal plane, but a small, foreboding sense that some larger conflict--greater even than that of the Ancients--may soon come to pass"
 }
