@@ -58,7 +58,7 @@ function modifier_boots_of_protection:GetModifierHealthBonus()
     return self:GetAbility():GetSpecialValueFor("bonus_health") 
 end
 
-function modifier_boots_of_protection:GetModifierMoveSpeedBonus_Percentage () 
+function modifier_boots_of_protection:GetModifierMoveSpeedBonus_Percentage() 
     return self:GetAbility():GetSpecialValueFor ("bonus_movement_speed") 
 end
     

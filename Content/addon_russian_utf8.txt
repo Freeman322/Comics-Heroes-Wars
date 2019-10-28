@@ -4793,7 +4793,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_darkrider"                         	"+2 за мс за каждый стак"
 		"DOTA_Tooltip_ability_special_bonus_20_bash_2"									"+20% к шансу оглушить противника на 0.6 секунд"
 
-		"DOTA_Tooltip_ability_lich_king_cold_reaper_abilities_bonus_range"              	 "ABILITIES BONUS RANGE:"
+		
 		"DOTA_Tooltip_ability_black_flash_speed_blast_radius"                         	     "RADIUS:"
 
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_aghanim_description"              	 	 "Увеличивает радиус способностей на 100 единиц"

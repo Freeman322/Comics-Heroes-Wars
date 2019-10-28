@@ -11,10 +11,15 @@ function modifier_mercer_bloodrage:IsPurgable() return false end
 
 function modifier_mercer_bloodrage:DeclareFunctions()
     local funcs = {
+        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_EVENT_ON_DEATH
     }
 
     return funcs
+end
+
+function modifier_mercer_bloodrage:GetModifierTotalDamageOutgoing_Percentage()
+    return self:GetAbility():GetSpecialValueFor("bonus_damage_outgoing") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_mercer_1") or 0)
 end
 
 function modifier_mercer_bloodrage:GetEffectName()

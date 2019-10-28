@@ -44,7 +44,7 @@ function modifier_mercer_ravage_aura:IsAura()
 end
 
 function modifier_mercer_ravage_aura:GetAuraRadius()
-	return self:GetAbility():GetSpecialValueFor("radius")
+	return self:GetAbility():GetSpecialValueFor("radius") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_mercer_5") or 0)
 end
 
 function modifier_mercer_ravage_aura:GetAuraSearchTeam()

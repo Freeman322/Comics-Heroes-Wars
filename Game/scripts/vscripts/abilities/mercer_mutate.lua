@@ -93,6 +93,11 @@ function modifier_mercer_mutate:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_HEALTH_BONUS,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+        MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
@@ -103,6 +108,26 @@ end
 
 function modifier_mercer_mutate:GetModifierHealthBonus (params)
     return self:GetAbility ():GetSpecialValueFor ("bonus_hp")
+end
+
+function modifier_mercer_mutate:GetModifierMoveSpeedBonus_Percentage (params)
+    if self:HasBlade() then return self:GetAbility():GetSpecialValueFor ("blades_bonus_movespeed") end 
+end
+
+function modifier_mercer_mutate:GetModifierAttackRangeBonus (params)
+    if self:HasBlade() then return self:GetAbility():GetSpecialValueFor ("blades_bonus_attack_range") end 
+end
+
+function modifier_mercer_mutate:GetModifierPreAttack_BonusDamage (params)
+    if self:HasPunch() then return self:GetAbility():GetSpecialValueFor ("punch_bonus_damage") end 
+end
+
+function modifier_mercer_mutate:GetModifierBonusStats_Strength (params)
+    if self:HasPunch() then return self:GetAbility():GetSpecialValueFor ("punch_bonus_strength") end 
+end
+
+function modifier_mercer_mutate:GetModifierPhysicalArmorBonus (params)
+    if self:HasPunch() then return self:GetAbility():GetSpecialValueFor ("punch_bonus_armor") end 
 end
 
 function modifier_mercer_mutate:GetModifierAttackSpeedBonus_Constant (params)

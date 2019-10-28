@@ -1573,7 +1573,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"soul_stole_stack_damage" "10"
+				"soul_stole_stack_damage" "10"			
 			}
 			"09"
 			{

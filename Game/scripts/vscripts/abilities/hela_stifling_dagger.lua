@@ -6,6 +6,12 @@ function hela_stifling_dagger:ProcsMagicStick()
 	return false
 end
 
+function hela_stifling_dagger:GetAbilityDamageType()
+	return IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_hela_2") or DAMAGE_TYPE_PHYSICAL
+end
+  
+
+--------------------------------------------------------------------------------
 function hela_stifling_dagger:OnToggle()
 	if self:GetToggleState() then
 		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_hela_stifling_dagger", nil )

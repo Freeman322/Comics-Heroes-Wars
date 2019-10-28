@@ -20,6 +20,7 @@ end
 function modifier_onepunchman_stats:DeclareFunctions ()
     local funcs = {
         MODIFIER_PROPERTY_EVASION_CONSTANT,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
     }
 
@@ -27,9 +28,14 @@ function modifier_onepunchman_stats:DeclareFunctions ()
 end
 
 function modifier_onepunchman_stats:GetModifierEvasion_Constant(params)
-    return self:GetAbility():GetSpecialValueFor( "bonus_evasion" )
+    return self:GetAbility():GetSpecialValueFor( "bonus_evasion" ) + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_saitama_3") or 0)
 end
+
 
 function modifier_onepunchman_stats:GetModifierMoveSpeedBonus_Percentage(params)
     return self:GetAbility():GetSpecialValueFor( "bonus_move_speed_percent" )
+end
+
+function modifier_onepunchman_stats:GetModifierBonusStats_Agility(params)
+    return self:GetAbility():GetSpecialValueFor( "bonus_agility" ) + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_saitama_3") or 0)
 end
