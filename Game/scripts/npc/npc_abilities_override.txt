@@ -2313,8 +2313,8 @@
 			}
 			"12"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"str_steal"						"4"
+				"var_type"						"FIELD_FLOAT"
+				"str_steal"						"1.5"
 			}	
 			"13"
 			{
@@ -2334,7 +2334,7 @@
 			"16"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"str_steal_scepter"				"10"
+				"str_steal_scepter"				"3"
 				"RequiresScepter"	            "1"
 			}	
 		}

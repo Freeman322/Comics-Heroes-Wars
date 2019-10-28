@@ -31,7 +31,7 @@ function modifier_pennywise_deadlights_aura:StatusEffectPriority() return 1000 e
 function modifier_pennywise_deadlights_aura:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("radius") end
 function modifier_pennywise_deadlights_aura:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
 function modifier_pennywise_deadlights_aura:GetAuraSearchType() return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO end
-function modifier_pennywise_deadlights_aura:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_DEAD end
+function modifier_pennywise_deadlights_aura:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_DEAD + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS end
 function modifier_pennywise_deadlights_aura:GetModifierAura() return "modifier_pennywise_deadlights_debuff" end
 
 function modifier_pennywise_deadlights_aura:OnCreated(event)

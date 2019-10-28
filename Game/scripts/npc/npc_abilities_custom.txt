@@ -39493,7 +39493,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"duration"					"1.5 2.0 2.5 3.0"
+				"duration"					"3"
 			}
 			"02"
 			{

@@ -57,8 +57,6 @@ function modifier_hela_stifling_dagger:OnAttackLanded (params)
 
 	        EmitSoundOn ("Hero_PhantomAssassin.Dagger.Cast", hTarget)
 
-	        hTarget:AddNewModifier(hAbility:GetCaster (), hAbility, "modifier_stunned", { duration = 0.045 })
-
 	        local damage = {
 				victim = hTarget,
 				attacker = self:GetCaster(),

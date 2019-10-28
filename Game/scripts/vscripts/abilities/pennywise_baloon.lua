@@ -28,7 +28,7 @@ end
 
 function pennywise_baloon:OnProjectileHit(hTarget, vLocation)
     if IsServer() then
-        if hTarget and not hTarget:IsNull() then
+        if hTarget and not hTarget:IsNull() and not hTarget:IsAncient() then
             EmitSoundOn("Item_Desolator.Target", hTarget)
 
             if self:GetCaster():HasTalent("special_bonus_unique_pennywise_2") then 
