@@ -34,9 +34,9 @@ function hela_helheim:OnHeroDiedNearby( hVictim, hKiller, kv )
 end
 
 function hela_helheim:OnOwnerDied()
-	if IsServer() then 
-		self.nKills = 0
-	end	
+    if IsServer() then 
+        if not self:GetCaster():HasTalent("special_bonus_unique_hela_3") then  self.nKills = 0 else self.nKills = self.nKills / 2 end 
+    end    
 end
 
 --------------------------------------------------------------------------------
@@ -69,7 +69,7 @@ function modifier_hela_helheim:GetAttributes ()
 end
 
 function modifier_hela_helheim:GetEffectName()
-    return "particles/hela/helheim_effect.vpcf"
+    return "particles/econ/events/ti7/fountain_regen_ti7.vpcf"
 end
 
 function modifier_hela_helheim:GetEffectAttachType()

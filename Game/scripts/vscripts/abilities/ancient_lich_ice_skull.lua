@@ -6,12 +6,6 @@ function ancient_lich_ice_skull:OnSpellStart()
     if IsServer() then
         local vision_radius = self:GetSpecialValueFor( "vision_radius" )
         local bolt_speed = self:GetSpecialValueFor( "bolt_speed" )
-
-        CreateProjectile(self:GetCursorTarget())
-
-        if self:GetCaster():HasTalent("rofl") then
-            CreateProjectile(self:GetCursorTarget())
-        end 
     end
 end
 

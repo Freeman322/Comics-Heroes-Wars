@@ -1,3 +1,5 @@
+LinkLuaModifier ("modifier_item_frostmourne", "items/item_frostmourne.lua", LUA_MODIFIER_MOTION_NONE)
+
 if lich_king_cold_reaper == nil then lich_king_cold_reaper = class({}) end
 
 function lich_king_cold_reaper:IsRefreshable()
@@ -25,7 +27,7 @@ function lich_king_cold_reaper:OnSpellStart()
   ParticleManager:SetParticleControl(nFXIndex, 3, Vector(1, 0, 0))
 
   local damage = self:GetSpecialValueFor("damage")
-  local souls = self:GetCaster():FindModifierByName("modifier_lich_aura_passive")
+  local souls = self:GetCaster():FindModifierByName("modifier_item_frostmourne")
   if souls == nil then
     souls_damage = self:GetSpecialValueFor("bonus_per_soul")
   else
@@ -53,14 +55,9 @@ function lich_king_cold_reaper:OnSpellStart()
       if target:IsRealHero() then 
         ApplyDamage({attacker = self:GetCaster(), victim = target, damage = self.damage, damage_type = self:GetAbilityDamageType(), ability = self})
         target:AddNewModifier(caster, self, "modifier_ancientapparition_coldfeet_freeze", {duration = self:GetSpecialValueFor("duration")})
-        if target:GetHealth() == 0 then
-          local golem = CreateUnitByName( "npc_lich_zombie_golem", origin, true, caster, caster:GetOwner(), caster:GetTeamNumber())
-          golem:SetControllableByPlayer(caster:GetPlayerID(), false)
-          golem:AddNewModifier(caster, self, "modifier_kill", {duration = 30})
         end
-      end
     end
-  end
+end
 
   local creeps = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), self.range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC, 0, 0, false )
   if #creeps > 0 then

@@ -5143,7 +5143,7 @@
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_Description"                          "Activated: Arthas releases the power of Frostmourne, freezing nearby enemies and damaging them. Anything killed by this ability enemies will turn into undead."
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_range"                                "RANGE:"
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_damage"                               "DAMAGE:"
-		"DOTA_Tooltip_ability_lich_king_cold_reaper_bonus_per_soul"                       "BONUS PER SOUL:"
+		"DOTA_Tooltip_ability_lich_king_cold_reaper_bonus_per_soul"                       "BONUS DAMAGE PER SOUL IN FROSTMORNE:"
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_duration"                             "FREEZE DURATION:"
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5960,7 +5960,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_odin"                         	    "+18% bonus attributes for God's Mark"
 		"DOTA_Tooltip_ability_special_bonus_unique_murloc"                         	    "+ x2 healing"
 		"DOTA_Tooltip_ability_special_bonus_unique_medivh"                         	    "+500 Defeaning Blast damage"
-		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+15 Cold Reaper bonus damage per soul"
+		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+5 damage for soul in Frostmorne"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_king"                         	"+800 Flesh Hunger damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_khorne"                         	    "+20% Erosion damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_katana"                         	    "+150% CRIT DAMAGE for ASCENDING SOUL"
@@ -5982,14 +5982,14 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_saitama_2"                         	"Applyis attack on every unit per second for Light Strike Array"
 
 
-		"DOTA_Tooltip_ability_lich_king_cold_reaper_abilities_bonus_range"              	 "ABILITIES BONUS RANGE:"
+
 		"DOTA_Tooltip_ability_black_flash_speed_blast_radius"                         	     "RADIUS:"
 
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_aghanim_description"              	 	 "Increases range of abilities by 100"
 		"DOTA_Tooltip_ability_black_flash_speed_blast_aghanim_description"                   "Makes the ability passive and applies it in a radius 100 on the nearest enemy hero, as well as damage inflicted in the amount of half of the existing stacks Speedforce."
 		"dota_hud_error_cant_cast_no_ability"												 "Can not steal ability"
 
-		"DOTA_Tooltip_ability_lich_king_cold_reaper_abilities_bonus_range"              	 "ABILITIES BONUS RANGE:"
+	
 		"DOTA_Tooltip_ability_black_flash_speed_blast_radius"                         	     "RADIUS:"
 
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_aghanim_description"              	 	 "Increases the range of abilities by 100"
@@ -7567,6 +7567,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_onepunchman_stats"                                          "Limiter"
 		"DOTA_Tooltip_ability_onepunchman_stats_Description"                              "Saitama was an ordinary person with no talents or potential, but through effort alone, he evolved beyond his limits and achieved power that Genus is unable to even fathom."
 		"DOTA_Tooltip_ability_onepunchman_stats_bonus_evasion"                            "%EVASION:"
+		"DOTA_Tooltip_ability_onepunchman_stats_bonus_agility"                            "BONUS AGILITY:"
 		"DOTA_Tooltip_ability_onepunchman_stats_bonus_move_speed_percent"                 "%MOVE SPEED:"
 		"DOTA_Tooltip_ability_onepunchman_stats_Lore"								      "No matter how much effort one puts in, every living being has an intrinsic limit to its growth. Too much power becomes unbearable and overwhelms its host, turning it into a mindless rampaging monster. To ensure that we do not enter the realm where we lose all purpose and ability to reason, God has set limits to the growth of every being. The mechanism with which growth is controlled is called the limiter."
 
@@ -7766,7 +7767,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_special_bonus_unique_joker"							   	   "+460 damage for any mines"
 		"DOTA_Tooltip_ability_special_bonus_unique_joker_1"							   	   "+400 radius for Injustice"
 		
-		"DOTA_Tooltip_ability_special_bonus_unique_iron_fist"							   "+200 damage for Echo Punch"
+		"DOTA_Tooltip_ability_special_bonus_unique_iron_fist"							   "+340 damage for Echo Punch"
 		
 		"DOTA_Tooltip_ability_item_demon_shard_2_bonus_mana_regen"                        "+$mana_regen"
 		"DOTA_Tooltip_ability_item_demon_shard_2_bonus_health_regen"                      "+$hp_regen"
@@ -8686,15 +8687,21 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_mercer_mutate_bonus_hp"                                     "BONUS HP:"
 		"DOTA_Tooltip_ability_mercer_mutate_blades_splash_ptc"                            "%BLADES SPLASH:"
 		"DOTA_Tooltip_ability_mercer_mutate_blades_splash_radius"                         "BLADES SPLASH RADIUS:"
+		"DOTA_Tooltip_ability_mercer_mutate_blades_bonus_movespeed"                       "%BLADES MOVESPEED BONUS:"
+		"DOTA_Tooltip_ability_mercer_mutate_blades_bonus_attack_range"                    "BLADES BONUS ATTACK RANGE:"
 		"DOTA_Tooltip_ability_mercer_mutate_claws_attack_speed"                           "CLAWS ATTACK SPEED:"
 		"DOTA_Tooltip_ability_mercer_mutate_claws_pierce_atack"                           "CLAWS PIERCE ATACK:"
 		"DOTA_Tooltip_ability_mercer_mutate_claws_pierce_atack_chance"                    "%CLAWS PIERCE ATACK CHANCE:"
 		"DOTA_Tooltip_ability_mercer_mutate_punch_bash_duration"                          "PUNCHES BASH DURATION:"
 		"DOTA_Tooltip_ability_mercer_mutate_punch_bash_chance"                            "PUNCHES BASH CHANCE:"
+		"DOTA_Tooltip_ability_mercer_mutate_punch_bonus_damage"                           "PUNCHES BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_mercer_mutate_punch_bonus_armor"                            "PUNCHES BONUS ARMOR:"
+		"DOTA_Tooltip_ability_mercer_mutate_punch_bonus_strength"                         "PUNCHES BONUS STRENTH:"
 
 		"DOTA_Tooltip_ability_mercer_bloodrage"                                           "Bloodrage"
-		"DOTA_Tooltip_ability_mercer_bloodrage_Description"                               "Alex will be healed for a percentage of the max health of any units he kill."
+		"DOTA_Tooltip_ability_mercer_bloodrage_Description"                               "Alex will be healed for a percentage of the max health of any units he kill. Also increases Alex's outgoing damage"
 		"DOTA_Tooltip_ability_mercer_bloodrage_heal_ptc"                                  "%HEAL:"
+		"DOTA_Tooltip_ability_mercer_bloodrage_bonus_damage_outgoing"                     "%BONUS OUTGOING DAMAGE:"
 
 		"DOTA_Tooltip_ability_mercer_ambush"                                              "Ambush"
 		"DOTA_Tooltip_ability_mercer_ambush_Description"                                  "Alex devours a creature, passing on his damage and health for a while."
@@ -8738,10 +8745,10 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_3"                            "+ 240 damage for Ice Wave"
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_4"                            "+ 9% dodge chance for Recoil"
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_5"                            "+ 8 stack mult for Kryptonian"
-		"DOTA_Tooltip_ability_special_bonus_unique_mercer_1"                              "+ 21% heal for Bloodrage"
-		"DOTA_Tooltip_ability_special_bonus_unique_mercer_2"                              "+ 30% cleave for Blades Weapon"
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_1"                              "+ 15% heal and outgoing damage for Bloodrage"
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_2"                              "+ 60% cleave for Blades Weapon"
 		"DOTA_Tooltip_ability_special_bonus_unique_mercer_3"                              "+ 0.45 stun duration"
-		"DOTA_Tooltip_ability_special_bonus_unique_mercer_4"                              "+ 100 damage for Ravage"
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_4"                              "+ 210 damage for Ravage"
 		"DOTA_TOOLTIP_ABILITY_special_bonus_unique_superman_6"							  "Kryptonian ignores night"
 		
 		"npc_dota_companion"															  "Pet"
@@ -11507,9 +11514,9 @@ When activated spends mana."
 
 		"DOTA_Tooltip_ability_special_bonus_unique_monkey_king_3"                                 "+650 Primal Spring Damage"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_death_eater"                                  "+270 damage for Deathraze"
+		"DOTA_Tooltip_ability_special_bonus_unique_death_eater"                                  "+135 damage for Deathraze"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_death_eater_2"                                "+3 damage per Soul"
+		"DOTA_Tooltip_ability_special_bonus_unique_death_eater_2"                                "+1 damage per Soul"
 
 		"npc_dota_hero_death_eater"                                                              "Death Eater"
 
@@ -11615,6 +11622,20 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_special_bonus_unique_carnage"                      "+800 radius for Blood Spray and Palace"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_carnage_2"                      "+30 mana and health regeneration for Palace"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_hela"                           "+400 radius for Bullet Rain"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_hela_2"                         "Pure damage for Stifling Dagger"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_5"                       "+300 radius for Ravage"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_saitama_3"                      "+20 agility and evasion for Limiter"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_hela_3"                         "Helheim loses only half stacks"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_pangolier_3"                    "+70 damage for Pure Strike Array"
+
+
  
 
 		"npc_dota_hero_stormspirit"													"Green Lantern"

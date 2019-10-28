@@ -64,7 +64,7 @@ function modifier_item_frostmourne:DeclareFunctions ()
 end
 
 function modifier_item_frostmourne:GetModifierPreAttack_BonusDamage()
-    return (self:GetAbility():GetSpecialValueFor ("bonus_damage") + (self:GetStackCount() * self:GetAbility():GetSpecialValueFor("soul_stole_stack_damage")))
+    return (self:GetAbility():GetSpecialValueFor ("bonus_damage") + (self:GetStackCount() * self:GetAbility():GetSpecialValueFor("soul_stole_stack_damage") * (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_lich_king") or 1)))
 end
 function modifier_item_frostmourne:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 function modifier_item_frostmourne:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end

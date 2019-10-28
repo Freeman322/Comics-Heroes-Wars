@@ -4701,14 +4701,14 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_saitama_2"                         	"Applyis attack on every unit per second for Light Strike Array"
 
 
-		"DOTA_Tooltip_ability_lich_king_cold_reaper_abilities_bonus_range"              	 "ABILITIES BONUS RANGE:"
+		
 		"DOTA_Tooltip_ability_black_flash_speed_blast_radius"                         	     "RADIUS:"
 
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_aghanim_description"              	 	 "Increases range of abilities by 100"
 		"DOTA_Tooltip_ability_black_flash_speed_blast_aghanim_description"                   "Makes the ability passive and applies it in a radius 100 on the nearest enemy hero, as well as damage inflicted in the amount of half of the existing stacks Speedforce."
 		"dota_hud_error_cant_cast_no_ability"												 "Can not steal ability"
 
-		"DOTA_Tooltip_ability_lich_king_cold_reaper_abilities_bonus_range"              	 "ABILITIES BONUS RANGE:"
+		
 		"DOTA_Tooltip_ability_black_flash_speed_blast_radius"                         	     "RADIUS:"
 
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_aghanim_description"              	 	 "Increases the range of abilities by 100"
@@ -7370,10 +7370,10 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_3"                            "+ 240 damage for Ice Wave"
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_4"                            "+ 9% dodge chance for Recoil"
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_5"                            "+ 8 stack mult for Kryptonian"
-		"DOTA_Tooltip_ability_special_bonus_unique_mercer_1"                              "+ 21% heal for Bloodrage"
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_1"                              "+ 15% heal and outgoing damage for Bloodrage"
 		"DOTA_Tooltip_ability_special_bonus_unique_mercer_2"                              "+ 16% slpash for Blades Weapon"
 		"DOTA_Tooltip_ability_special_bonus_unique_mercer_3"                              "+ 0.45 stun duration"
-		"DOTA_Tooltip_ability_special_bonus_unique_mercer_4"                              "+ 100 damage for Ravage"
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_4"                              "+ 310 damage for Ravage"
 		"DOTA_TOOLTIP_ABILITY_special_bonus_unique_superman_6"							  "Kryptonian ignores night"
 		
 		"npc_dota_companion"															  "Pet"
