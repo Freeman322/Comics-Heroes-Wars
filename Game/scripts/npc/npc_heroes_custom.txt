@@ -8248,7 +8248,7 @@
 		"Ability1"		                "wisp_tether"
 		"Ability2"		                "wisp_spirits"
 		"Ability3"		                "wisp_overcharge"		
-		"Ability4"		                "generic_hidden"
+		"Ability4"		                "io_decay_dummy"
 		"Ability5"		                "generic_hidden"
 		"Ability6"		                "wisp_relocate"
 		"Ability7"		                "wisp_tether_break"

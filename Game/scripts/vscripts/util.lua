@@ -1973,10 +1973,10 @@ function Util:SetupConsole()
     
             if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 124112243 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
                 PrecacheUnitByNameAsync( "npc_dota_hero_io", function()
-                local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_io", 0, 0)
-                nHero:RespawnHero(false, false)
-                nHero:AddNewModifier(nHero, nil, "modifier_io", nil)
-                
+                    local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_io", 0, 0)
+                    nHero:RespawnHero(false, false)
+                    nHero:AddNewModifier(nHero, nil, "modifier_io", nil)
+                    nHero:FindAbilityByName("io_decay_dummy"):SetLevel(1)
                 end)
             else
                 Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -2433,16 +2433,17 @@ function Util:OnDamageWasApplied(data)
     if data.entindex_inflictor_const ~= nil then
         local inflictor = EntIndexToHScript(data.entindex_inflictor_const)
 
-        if inflictor:GetName() == "wisp_spirits" then
+        if inflictor and not inflictor:IsNull() and inflictor:GetName() == "wisp_spirits" then
             local target = EntIndexToHScript(data.entindex_victim_const)
             local caster = EntIndexToHScript(data.entindex_attacker_const)
-    
-            if caster:HasTalent("special_bonus_unique_wist_str") then
-                if decay then
-                    decay:IncrementStackCount()
-                else target:AddNewModifier(caster, inflictor, "modifier_undying_decay_debuff_counter", {duration = inflictor:GetSpecialValueFor("decay_duration")}) end 
-                
-                target:AddNewModifier(caster, inflictor, "modifier_undying_decay_debuff", {duration = inflictor:GetSpecialValueFor("decay_duration")})
+
+            if target and caster and not caster:IsNull() and not target:IsNull() and caster:HasTalent("special_bonus_unique_wist_str") then
+                local ability = caster:FindAbilityByName("io_decay_dummy")
+        
+                if ability and not ability:IsNull() then
+                    caster:SetCursorPosition(target:GetAbsOrigin()) 
+                    ability:OnSpellStart()
+                end
             end
         end
     end

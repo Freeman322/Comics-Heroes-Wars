@@ -40500,4 +40500,71 @@
 			}
 		}
 	}
+    //=================================================================================================================
+	//=================================================================================================================
+	"io_decay_dummy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"undying_decay"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_Undying.Decay.Cast"
+		"FightRecapLevel"				"1"
+		"HasScepterUpgrade"				"1"
+        "MaxLevel"                      "1"
+
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityDuration"				"21"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"decay_damage"					"20"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"str_steal"						"4"
+			}	
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"decay_duration"				"15"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"10"
+			}			
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"str_scale_up"					"2"
+			}		
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"str_steal_scepter"				"10"
+				"RequiresScepter"	"1"
+			}				
+		}
+	}
 }
