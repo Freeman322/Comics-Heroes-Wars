@@ -1,5 +1,11 @@
 medivh_deafening_blast = class({})
 LinkLuaModifier( "modifier_medivh_dummy", "abilities/medivh_deafening_blast.lua", LUA_MODIFIER_MOTION_NONE )
+function  medivh_deafening_blast:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_arcana") then
+		return "custom/quicksilver_blast_custom"
+	end
+	return self.BaseClass.GetAbilityTextureName(self)
+end
 
 function medivh_deafening_blast:GetBehavior()
 	if IsServer() then
@@ -12,11 +18,16 @@ function medivh_deafening_blast:GetBehavior()
 end
 function medivh_deafening_blast:OnSpellStart()
 	self.origin = self:GetCaster():GetAbsOrigin()
+	local effect = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf"
+	local sound = "Hero_Invoker.DeafeningBlast.Immortal"
+	if self:GetCaster():HasModifier("modifier_arcana") then
+		effect = "particles/units/heroes/hero_grimstroke/grimstroke_darkartistry_proj.vpcf" 
+	    sound = "Quicksilver.CustomItem.Cast" end
 	local ultimate = self:GetCaster():FindAbilityByName("medivh_dark_rift"):GetLevel()
 	if ultimate == 3 then
 		-- Get the forward vector of the entity.
 		local info1 = {
-			EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf",
+			EffectName = effect,
 			Ability = self,
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			fStartRadius = 175,
@@ -33,10 +44,10 @@ function medivh_deafening_blast:OnSpellStart()
 		}
 
 		self.nProjID1 = ProjectileManager:CreateLinearProjectile( info1 )
-		EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal" , self:GetCaster() )
+		EmitSoundOn( sound , self:GetCaster() )
 
 			local info2 = {
-			EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf",
+			EffectName = effect,
 			Ability = self,
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			fStartRadius = 175,
@@ -51,11 +62,11 @@ function medivh_deafening_blast:OnSpellStart()
 			iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 			iVisionRadius = 225,
 		}
-		EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal" , self:GetCaster() )
+		EmitSoundOn( sound, self:GetCaster() )
 		self.nProjID2 = ProjectileManager:CreateLinearProjectile( info2 )
 
 			local info3 = {
-			EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf",
+			EffectName = effect,
 			Ability = self,
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			fStartRadius = 175,
@@ -70,11 +81,11 @@ function medivh_deafening_blast:OnSpellStart()
 			iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 			iVisionRadius = 225,
 		}
-		EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal" , self:GetCaster() )
+		EmitSoundOn( sound , self:GetCaster() )
 		self.nProjID3 = ProjectileManager:CreateLinearProjectile( info3 )
 
 			local info4 = {
-			EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf",
+			EffectName = effect,
 			Ability = self,
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			fStartRadius = 175,
@@ -89,11 +100,11 @@ function medivh_deafening_blast:OnSpellStart()
 			iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 			iVisionRadius = 225,
 		}
-		EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal" , self:GetCaster() )
+		EmitSoundOn( sound, self:GetCaster() )
 		self.nProjID4 = ProjectileManager:CreateLinearProjectile( info4 )
 
 			local info5 = {
-			EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf",
+			EffectName = effect,
 			Ability = self,
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			fStartRadius = 175,
@@ -108,11 +119,11 @@ function medivh_deafening_blast:OnSpellStart()
 			iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 			iVisionRadius = 225,
 		}
-		EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal" , self:GetCaster() )
+		EmitSoundOn( sound, self:GetCaster() )
 		self.nProjID5 = ProjectileManager:CreateLinearProjectile( info5 )
 
 			local info6 = {
-			EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf",
+			EffectName = effect,
 			Ability = self,
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			fStartRadius = 175,
@@ -127,11 +138,11 @@ function medivh_deafening_blast:OnSpellStart()
 			iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 			iVisionRadius = 225,
 		}
-		EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal" , self:GetCaster() )
+		EmitSoundOn( sound, self:GetCaster() )
 		self.nProjID6 = ProjectileManager:CreateLinearProjectile( info6 )
 
 			local info7 = {
-			EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf",
+			EffectName = effect,
 			Ability = self,
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			fStartRadius = 175,
@@ -146,11 +157,11 @@ function medivh_deafening_blast:OnSpellStart()
 			iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 			iVisionRadius = 225,
 		}
-		EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal" , self:GetCaster() )
+		EmitSoundOn( sound, self:GetCaster() )
 		self.nProjID7 = ProjectileManager:CreateLinearProjectile( info7 )
 
 			local info8 = {
-			EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf",
+			EffectName = effect,
 			Ability = self,
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			fStartRadius = 175,
@@ -165,13 +176,13 @@ function medivh_deafening_blast:OnSpellStart()
 			iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 			iVisionRadius = 225,
 		}
-		EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal" , self:GetCaster() )
+		EmitSoundOn( sound, self:GetCaster() )
 		self.nProjID8 = ProjectileManager:CreateLinearProjectile( info8 )
 	else
 		local vDirection = self:GetCursorPosition() - self:GetCaster():GetOrigin()
 		vDirection = vDirection:Normalized()
 		local info = {
-			EffectName = "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6.vpcf",
+			EffectName = effect,
 			Ability = self,
 			vSpawnOrigin = self:GetCaster():GetOrigin(),
 			fStartRadius = 175,
@@ -188,7 +199,7 @@ function medivh_deafening_blast:OnSpellStart()
 		}
 
 		self.nProjID = ProjectileManager:CreateLinearProjectile( info )
-		EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal" , self:GetCaster() )
+		EmitSoundOn( sound, self:GetCaster() )
 	end
 end
 
@@ -209,6 +220,19 @@ function medivh_deafening_blast:OnProjectileHit( hTarget, vLocation )
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self,
 		}
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "elder_warlock") == true then
+			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_grimstroke/grimstroke_cast2_ground.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+			ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+			ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_grimstroke/grimstroke_death.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+			ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+			ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+			EmitSoundOn("Quicksilver.CustomItem.Cast", hTarget)
+		end
 		
 		local knockbackProperties =
 		{
@@ -239,4 +263,4 @@ end
 
 function modifier_medivh_dummy:IsPurgable()
     return false
-end
+end 

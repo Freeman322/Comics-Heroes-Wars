@@ -4134,6 +4134,7 @@
 		"DisableWearables"		"1"
 		"AbilityLayout"		"4"
 		"ModelScale" 					"0.74"
+		"SoundSet"		           "Hero_Undying"
 		"Ability1"			"spectre_reality_rift"
 		"Ability2"			"spectre_lvl_death"
 		"Ability3"			"spectre_marksmanship"

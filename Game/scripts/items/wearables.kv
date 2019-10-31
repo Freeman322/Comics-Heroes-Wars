@@ -38,6 +38,16 @@
                         }
                     }
                 }
+            }
+            "pudge_mask"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model" "models/items/pudge/pudge_insanity_mask/pudge_insanity_mask.vmdl"
+                    }
+                }
             } 
             "pudge_arcana"          
             {
@@ -1268,6 +1278,41 @@
                     "model"         "models/items/axe/ti8_axe_violent_prisoner_of_war_head/ti8_axe_violent_prisoner_of_war_head.vmdl"
                 }
             }
+            "fire_rulk_mask"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/items/axe/axe_ti9_immortal_head/axe_ti9_immortal_head.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                 "particle"   "particles/econ/items/axe/axe_ti9_immortal/axe_ti9_immortal_ambient.vpcf"
+                            }
+                        }                 
+                    }
+                }          
+            }
+            "golden_fire_rulk_mask"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"      "models/items/axe/axe_ti9_immortal_head/axe_ti9_immortal_head.vmdl"
+                        "material"   "1"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"    "particles/econ/items/axe/axe_ti9_immortal/axe_ti9_gold_immortal_ambient.vpcf"
+                            }
+                        }
+                    }
+                }
+            }
             "vessels_of_orks_warboss"
             {
                 "models"
@@ -1466,6 +1511,39 @@
                         "model"     "models/items/arc_warden/arctic_warden_shoulder/arctic_warden_head.vmdl"
                     }
                 }   
+            }
+        }
+        "armor"
+        {
+            "wraithbinder"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"    "models/items/arc_warden/aw_ti9_immortal_shoulders/aw_ti9_immortal_shoulders.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle" "particles/econ/items/arc_warden/arc_warden_ti9_immortal/arc_warden_ti9_immortal_ambient.vpcf"
+                            }
+                            "2"
+                            {
+                                "particle" "particles/econ/items/arc_warden/arc_warden_ti9_immortal/arc_warden_ti9_creature_plasma.vpcf"
+
+                            }
+                            "3"
+                            {
+                                "particle" "particles/econ/items/arc_warden/arc_warden_ti9_immortal/arc_warden_ti9_creature_eyes_stream.vpcf"
+                            }
+                        }
+                    }         
+                }
+                "projectile"
+                {
+                    "particle" "particles/econ/items/arc_warden/arc_warden_ti9_immortal/arc_warden_ti9_wraith_prj.vpcf"
+                }
             }
         }
     }
@@ -1669,6 +1747,25 @@
             {
                 
             }
+            "bloodlust_mask"
+            {           
+                "models"
+                {
+                    "1"
+                    {
+                        "model" "models/items/silencer/ti6_helmet/mesh/ti6_helmet.vmdl"
+                        "material" "1"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle" "particles/econ/items/silencer/silencer_ti6/silencer_ti6_witness_ambient.vpcf"
+                            
+                            }                                                  
+                        }
+                    }
+                }
+            }                 
         }
         "belt"
         {
@@ -1749,6 +1846,43 @@
                     "4"
                     {
                         "model" "models/items/silencer/frostivus2018_silencer_silent_paragon_head/frostivus2018_silencer_silent_paragon_head.vmdl"                
+                    }
+                }
+            }
+            "echo_glaive"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"        "models/items/silencer/silencer_ti8_immortal_weapon/silencer_ti8_immortal_weapon.vmdl"
+                        "modifiers"
+                        {
+                            "1"
+                            {                               
+                               "modifier"          "modifier_legacy_of_blast_gold"
+                               "modifier_path"     "modifiers/modifier_legacy_of_blast_gold.lua"
+                            }
+                        }
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"  "particles/econ/items/silencer/silencer_ti8/silencer_ti8_ambient.vpcf"
+                            }                
+                        }            
+                    }
+                    "2"
+                    {
+                        "model" "models/items/silencer/the_hazhadal_magebreaker_shoulder/the_hazhadal_magebreaker_shoulder.vmdl"
+                    }
+                    "3"
+                    {
+                        "model" "models/items/silencer/the_hazhadal_magebreaker_belt/the_hazhadal_magebreaker_belt.vmdl"
+                    }
+                    "4"
+                    {
+                        "model" "models/items/silencer/the_hazhadal_magebreaker_arms/the_hazhadal_magebreaker_arms.vmdl"
                     }
                 }
             }
@@ -5619,6 +5753,32 @@
                     }
                 }
             }
+            "dirge"
+            {
+                "model"                  "models/heroes/undying/undying.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model" "models/items/undying/davy_jones_set_armor/davy_jones_set_armor.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle" "particles/econ/items/undying/undying_davy_jones/undying_davy_jones_armor_ambient.vpcf"
+                            }
+                        }
+                    }
+                    "2"
+                    {
+                        "model" "models/items/undying/davy_jones_set_arms/davy_jones_set_arms.vmdl"
+                    }
+                    "3"
+                    {
+                        "model" "models/items/undying/davy_jones_set_head/davy_jones_set_head.vmdl"
+                    }
+                }
+            }
             "plague_doctor"
             {
                 "model"                 "models/heroes/hero_nurgle/econs/scp049_skin/doctor.vmdl"
@@ -6687,7 +6847,69 @@
                         }     
                     }
                 }
-            } 
+            }
+            "blood_feather"
+            {
+                "model"      "models/heroes/skywrath_mage/skywrath_mage.vmdl"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"   "models/items/skywrath_mage/skywrath_ti9_immortal_back/skywrath_ti9_immortal_back.vmdl"
+                        "material" "2"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle" "particles/econ/items/skywrath_mage/skywrath_ti9_immortal_back/skywrath_mage_ti9_crimson_ambient.vpcf"
+                            }
+                        }
+                    }
+                    "2"
+                    {
+                        "model" "models/items/skywrath_mage/empyrean.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle" "particles/stygian/bloody_feather_empyrean.vpcf"
+                            }
+                        }
+                    }
+                    "3"
+                    {
+                        "model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_head.vmdl"
+                        "material" "1"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle" "particles/econ/items/skywrath_mage/ti8_set/skywrath_ti8_head_alternate_ambient.vpcf"
+                            }
+                        }
+                    }
+                    "4"
+                    {
+                        "model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_shoulder.vmdl"
+                        "material" "1"
+                    }
+                    "5"
+                    {
+                        "model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_belt.vmdl"
+                        "material" "1"
+                    }
+                    "6"
+                    {
+                        "model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_arms.vmdl"
+                        "material" "1"
+                    }
+                }
+            }
+            "projectile"
+            {
+                "particle" "particles/econ/items/skywrath_mage/skywrath_ti9_immortal_back/skywrath_mage_ti9_arcane_bolt_crimson.vpcf"
+            }
+
             "tribunal_the_seven_evils"
             {
                 "model"                 "models/heroes/lich/lich.vmdl"
@@ -7464,6 +7686,149 @@
                 }
             }
         }
+    }
+    "npc_dota_hero_lich"
+    {
+        "armor"
+        {
+            "elder_warlock"
+            {
+                "model" "models/heroes/warlock/warlock.vmdl"
+                "model_scale" "0.9"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_head/ti_8_warlock_darkness_apostate_head.vmdl"
+                    }
+                    "2"
+                    {
+                        "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_arms/ti_8_warlock_darkness_apostate_arms.vmdl"
+                    }
+                    "3"
+                    {
+                        "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_back/ti_8_warlock_darkness_apostate_back.vmdl"
+                    }
+                    "4"
+                    {
+                        "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_belt/ti_8_warlock_darkness_apostate_belt.vmdl"
+                    }
+                    "5"
+                    {
+                        "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_off_hand/ti_8_warlock_darkness_apostate_off_hand.vmdl"
+                    }
+                    "6"
+                    {
+                        "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_shoulder/ti_8_warlock_darkness_apostate_shoulder.vmdl"
+                    }
+                    "7"
+                    {
+                        "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_weapon/ti_8_warlock_darkness_apostate_weapon.vmdl"
+                    }
+                }
+                "projectile"
+                {
+                  "particle"  "particles/stygian/elder_warlock_attack.vpcf"
+                }
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_arcana"
+                        "modifier_path"     "modifiers/modifier_arcana.lua"
+                    }
+                } 
+            }
+        }
+    }
+    "npc_dota_hero_vengefulspirit"
+    {
+        "armor"
+        {
+            "succubus"
+            {
+                "model"  "models/heroes/queenofpain/queenofpain.vmdl"
+                "model_scale" "0.8"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"  "models/items/queenofpain/shadeofagony/shadeofagony.vmdl"
+                    }
+                    "2"
+                    {
+                        "model"  "models/items/queenofpain/tpl_shoulder_lvl3/tpl_shoulder_lvl3.vmdl"
+                    }
+                    "3"
+                    {
+                        "model"  "models/items/queenofpain/qop_ti8_weapon/qop_ti8_weapon.vmdl"
+                        "material" "1"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient.vpcf"
+                            }
+                            "2"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_a.vpcf"
+                            }
+                            "3"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_b.vpcf"
+                            }
+                            "4"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_core.vpcf"
+                            }
+                            "5"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_end.vpcf"
+                            }
+                            "6"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_eye.vpcf"
+                            }                                              
+                        }
+                    }
+                    "4"
+                    {
+                        "model" "models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient.vpcf"
+                            }
+                            "2"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_black.vpcf"
+                            }
+                            "3"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_smoke.vpcf"
+                            }
+                            "4"
+                            {
+                                "particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_feather.vpcf"
+                            }
+                        }
+                    }
+                }         
+                "projectile"
+                {
+                    "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_golden_shadow_strike.vpcf"
+                }
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_arcana"
+                        "modifier_path"     "modifiers/modifier_arcana.lua"
+                    }
+                } 
+            }
+        } 
     }
     "npc_dota_hero_stormspirit"
     {
