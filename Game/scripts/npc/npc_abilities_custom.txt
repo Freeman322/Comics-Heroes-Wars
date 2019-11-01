@@ -40660,13 +40660,13 @@
 			}
 			"02"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"str_steal"						"4"
+				"var_type"						"FIELD_FLOAT"
+				"str_steal"						"1.5"
 			}	
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"decay_duration"				"15"
+				"decay_duration"				"60"
 			}
 			"04"
 			{
@@ -40681,8 +40681,8 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"str_steal_scepter"				"10"
-				"RequiresScepter"	"1"
+				"str_steal_scepter"				"3"
+				"RequiresScepter"	            "1"
 			}				
 		}
 	}
