@@ -6345,7 +6345,17 @@
 			"model"						"models/items/lich/frostivus2018_lich_frozenworlds_arms/frostivus2018_lich_frozenworlds_arms.vmdl"
 			"model"						"models/items/lich/lich_immortal/lich_immortal.vmdl"
 			"model"						"models/items/lich/lich_ti8_immortal_arms/lich_ti8_immortal_arms.vmdl"
-		}
+			"model"                      "models/items/skywrath_mage/skywrath_ti9_immortal_back/skywrath_ti9_immortal_back.vmdl"
+			"particle"                 "particles/econ/items/skywrath_mage/skywrath_ti9_immortal_back/skywrath_mage_ti9_crimson_ambient.vpcf"
+			"model"                   "models/items/skywrath_mage/empyrean.vmdl"
+			"particle"                 "particles/stygian/bloody_feather_empyrean.vpcf"
+			"model"                  "models/items/skywrath_mage/ti8_set/skywrath_ti8_head.vmdl"
+			"particle"               "particles/econ/items/skywrath_mage/ti8_set/skywrath_ti8_head_alternate_ambient.vpcf"
+			"model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_shoulder.vmdl"
+			"model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_belt.vmdl"
+			"model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_arms.vmdl"
+			"particle" "particles/econ/items/skywrath_mage/skywrath_ti9_immortal_back/skywrath_mage_ti9_arcane_bolt_crimson.vpcf"
+ 		}
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -18529,6 +18539,11 @@
 			"model"		"models/heroes/plus_skins/pugalo_skin/pugalo.vmdl"
 			"model"		"models/heroes/hero_nurgle/econs/scp049_skin/doctor.vmdl"
 			"particle"	"particles/plus/pugalo_ambient.vpcf"
+			"model"      "models/heroes/undying/undying.vmdl"
+			"model"      "models/items/undying/davy_jones_set_armor/davy_jones_set_armor.vmdl"
+			"particle" "particles/econ/items/undying/undying_davy_jones/undying_davy_jones_armor_ambient.vpcf"
+			"model" "models/items/undying/davy_jones_set_arms/davy_jones_set_arms.vmdl"
+			"model" "models/items/undying/davy_jones_set_head/davy_jones_set_head.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
