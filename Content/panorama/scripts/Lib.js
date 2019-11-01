@@ -5055,6 +5055,212 @@ Lib.Items = {
         "is_medal": "1",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "375": {
+        "item": "echo_glaive",
+        "rarity": "7",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "weapon",
+        "hero": "npc_dota_hero_spectre",
+        "universal": "false",
+        "def_id": "375",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "376": {
+        "item": "bloodlust_mask",
+        "rarity": "10",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_spectre",
+        "universal": "false",
+        "def_id": "376",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "377": {
+        "item": "wraithbinder",
+        "rarity": "7",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "armor",
+        "hero": "npc_dota_hero_arc_warden",
+        "universal": "false",
+        "def_id": "377",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "378": {
+        "item": "succubus",
+        "rarity": "10",
+        "quality": "10",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_vengefulspirit",
+        "universal": "false",
+        "def_id": "378",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "379": {
+        "item": "elder_warlock",
+        "rarity": "10",
+        "quality": "10",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_lich",
+        "universal": "false",
+        "def_id": "379",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "380":{  
+        "universal":"true",
+        "is_treasure":"1",
+        "is_medal":"0",
+        "slot":"treasure",
+        "contains":{  
+           "very_rare":{  
+              "2":"376",
+              "1":"384",
+              "3":"385"
+           },
+           "rare":{  
+              "2":"176",
+              "4":"377",
+              "1":"383",
+              "3":"375"
+           },
+           "extr_rare":{  
+              "2":"379",
+              "1":"378",
+              "3":"386"
+           },
+           "common":{  
+              "2":"382",
+              "1":"381",
+              "3":"62"}
+           },
+        "hero":"",
+        "is_music":"0",
+        "is_compendium":"0",
+        "item":"halloween_special",
+        "rarity":"10",
+        "quality":"2"
+    },
+    "381": {
+        "item": "pudge_mask",
+        "rarity": "7",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_pudge",
+        "universal": "false",
+        "def_id": "379",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "382": {
+        "item": "fire_rulk_mask",
+        "rarity": "7",
+        "quality": "6",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_axe",
+        "universal": "false",
+        "def_id": "382",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "383": {
+        "item": "golden_fire_rulk_mask",
+        "rarity": "7",
+        "quality": "6",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_axe",
+        "universal": "false",
+        "def_id": "383",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "384": {
+        "item": "dirge",
+        "rarity": "10",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_disruptor",
+        "universal": "false",
+        "def_id": "384",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "385": {
+        "item": "blood_feather",
+        "rarity": "10",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "head",
+        "hero": "npc_dota_hero_obsidian_destroyer",
+        "universal": "false",
+        "def_id": "385",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "386": {
+        "item": "twilight_lamp",
+        "rarity": "11",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "treasure",
+        "hero": "",
+        "universal": "false",
+        "def_id": "386",
+        "is_treasure": "1",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0",
+        "contains": {
+            "common": {
+                "1": "",
+                "2": ""
+            },
+            "rare": {
+                "1": "",
+                "2": ""
+            },
+            "very_rare": {
+                "3": "",
+                "4": ""
+            },
+            "extr_rare": {
+                "1": "",
+                "2": ""
+            }
+        }
     }
  };
 

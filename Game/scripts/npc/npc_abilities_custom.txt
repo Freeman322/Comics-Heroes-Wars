@@ -2625,6 +2625,11 @@
 		"precache"
 		{
 			"particle"  "particles/eternity/chronosphere.vpcf"
+			"particle"  "particles/econ/items/arc_warden/arc_warden_ti9_immortal/arc_warden_ti9_creature_plasma.vpcf"
+			"particle" "particles/econ/items/arc_warden/arc_warden_ti9_immortal/arc_warden_ti9_creature_eyes_stream.vpcf"
+			"particle" "particles/econ/items/arc_warden/arc_warden_ti9_immortal/arc_warden_ti9_immortal_ambient.vpcf"
+			"particle" "particles/econ/items/arc_warden/arc_warden_ti9_immortal/arc_warden_ti9_wraith_prj.vpcf"
+			"model"    "models/items/arc_warden/aw_ti9_immortal_shoulders/aw_ti9_immortal_shoulders.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3580,6 +3585,9 @@
 			"model"				"models/items/axe/oglodi_big_boss_belt/oglodi_big_boss_belt.vmdl"
 			"model"				"models/items/axe/oglodi_big_boss_armor/oglodi_big_boss_armor.vmdl"
 			"model"				"models/items/axe/oglodi_big_boss_weapon/oglodi_big_boss_weapon.vmdl"
+			"model"      "models/items/axe/axe_ti9_immortal_head/axe_ti9_immortal_head.vmdl"
+			"particle"   "particles/econ/items/axe/axe_ti9_immortal/axe_ti9_gold_immortal_ambient.vpcf"
+			"particle"   "particles/econ/items/axe/axe_ti9_immortal/axe_ti9_immortal_ambient.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -5736,6 +5744,7 @@
 			"particle"  "particles/econ/items/pudge/pudge_ti9_cache/pudge_ti9_cache_head_ambient_glow.vpcf" 
 			"model"   "models/items/pudge/pudge_dapper_disguise_back/pudge_dapper_disguise_back.vmdl"
 			"model"   "models/items/pudge/pudge_dapper_disguise_belt/pudge_dapper_disguise_belt.vmdl"
+			"model" "models/items/pudge/pudge_insanity_mask/pudge_insanity_mask.vmdl"
 		}
 
 		"AbilitySpecial"
@@ -6336,7 +6345,17 @@
 			"model"						"models/items/lich/frostivus2018_lich_frozenworlds_arms/frostivus2018_lich_frozenworlds_arms.vmdl"
 			"model"						"models/items/lich/lich_immortal/lich_immortal.vmdl"
 			"model"						"models/items/lich/lich_ti8_immortal_arms/lich_ti8_immortal_arms.vmdl"
-		}
+			"model"                      "models/items/skywrath_mage/skywrath_ti9_immortal_back/skywrath_ti9_immortal_back.vmdl"
+			"particle"                 "particles/econ/items/skywrath_mage/skywrath_ti9_immortal_back/skywrath_mage_ti9_crimson_ambient.vpcf"
+			"model"                   "models/items/skywrath_mage/empyrean.vmdl"
+			"particle"                 "particles/stygian/bloody_feather_empyrean.vpcf"
+			"model"                  "models/items/skywrath_mage/ti8_set/skywrath_ti8_head.vmdl"
+			"particle"               "particles/econ/items/skywrath_mage/ti8_set/skywrath_ti8_head_alternate_ambient.vpcf"
+			"model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_shoulder.vmdl"
+			"model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_belt.vmdl"
+			"model" "models/items/skywrath_mage/ti8_set/skywrath_ti8_arms.vmdl"
+			"particle" "particles/econ/items/skywrath_mage/skywrath_ti9_immortal_back/skywrath_mage_ti9_arcane_bolt_crimson.vpcf"
+ 		}
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -9143,6 +9162,14 @@
 	      "model"		 "models/items/silencer/frostivus2018_silencer_silent_paragon_shoulder/frostivus2018_silencer_silent_paragon_shoulder.vmdl"
 	      "particle"     "particles/econ/items/silencer/silencer_silent_paragon/silencer_silent_paragon_shield_ambient.vpcf"
 	      "particle"     "particles/econ/items/silencer/silencer_silent_paragon/silencer_silent_paragon_belt_ambient.vpcf"
+		  "model" "models/items/silencer/ti6_helmet/mesh/ti6_helmet.vmdl"
+		  "particle" "particles/econ/items/silencer/silencer_ti6/silencer_ti6_witness_ambient.vpcf"
+		  "model"        "models/items/silencer/silencer_ti8_immortal_weapon/silencer_ti8_immortal_weapon.vmdl"
+		  "particle"  "particles/econ/items/silencer/silencer_ti8/silencer_ti8_ambient.vpcf"
+		  "model" "models/items/silencer/the_hazhadal_magebreaker_belt/the_hazhadal_magebreaker_belt.vmdl"
+		  "model" "models/items/silencer/the_hazhadal_magebreaker_shoulder/the_hazhadal_magebreaker_shoulder.vmdl"
+		  "model" "models/items/silencer/the_hazhadal_magebreaker_arms/the_hazhadal_magebreaker_arms.vmdl"
+                    
 	    }
 		"AbilitySpecial"
 		{
@@ -10171,9 +10198,24 @@
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
 			"particle"		"particles/units/heroes/hero_silencer/silencer_curse.vpcf"
 			"particle"		"particles/units/heroes/hero_silencer/silencer_curse_aoe.vpcf"
-
+			"model" "models/items/silencer/the_hazhadal_magebreaker_arms/the_hazhadal_magebreaker_arms.vmdl"
+            "model"  "models/items/queenofpain/shadeofagony/shadeofagony.vmdl"
+			"model"  "models/items/queenofpain/tpl_shoulder_lvl3/tpl_shoulder_lvl3.vmdl"
+			"model"  "models/items/queenofpain/qop_ti8_weapon/qop_ti8_weapon.vmdl"
+			"particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient.vpcf"
+            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_a.vpcf"
+            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_b.vpcf"
+            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_core.vpcf"
+            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_end.vpcf"                 
+            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_eye.vpcf"
+			"model" "models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
+			"particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient.vpcf"
+			"particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_black.vpcf"
+			"particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_smoke.vpcf"
+			"particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_feather.vpcf"
+			"particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_golden_shadow_strike.vpcf"
 		}
-
+		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
@@ -10287,6 +10329,7 @@
 				"stun"		        "1.25 1.5 1.75 2.0"
 			}
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 	}
 	"rough_cooldown_aura"
 	{
@@ -10365,7 +10408,7 @@
 				"cooldown_scepter"			"60 55 50"
 			}
 		}
-
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"marvel_blink"
 	{
@@ -13154,6 +13197,15 @@
 			"particle"  "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_ambient.vpcf"
 			"particle"  "particles/econ/items/mirana/mirana_sapphire_sabrelynx/mirana_sabrelynx_eye_b.vpcf"
 			"model"		"models/heroes/medivh_v2/the_god_of_magic/immortal_mask.vmdl"
+			"model"     "models/heroes/warlock/warlock.vmdl"
+			"particle"  "particles/stygian/elder_warlock_attack.vpcf"
+			"model"  "models/items/warlock/ti_8_warlock_darkness_apostate_head/ti_8_warlock_darkness_apostate_head.vmdl"
+            "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_arms/ti_8_warlock_darkness_apostate_arms.vmdl"
+            "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_back/ti_8_warlock_darkness_apostate_back.vmdl"
+            "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_belt/ti_8_warlock_darkness_apostate_belt.vmdl"
+            "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_off_hand/ti_8_warlock_darkness_apostate_off_hand.vmdl"
+            "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_shoulder/ti_8_warlock_darkness_apostate_shoulder.vmdl"
+            "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_weapon/ti_8_warlock_darkness_apostate_weapon.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -13347,7 +13399,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"creep_radius"			"900"
+				"creep_radius"			"900 1200 1500 1800"
 			}
 			"03"
 			{
@@ -18487,6 +18539,11 @@
 			"model"		"models/heroes/plus_skins/pugalo_skin/pugalo.vmdl"
 			"model"		"models/heroes/hero_nurgle/econs/scp049_skin/doctor.vmdl"
 			"particle"	"particles/plus/pugalo_ambient.vpcf"
+			"model"      "models/heroes/undying/undying.vmdl"
+			"model"      "models/items/undying/davy_jones_set_armor/davy_jones_set_armor.vmdl"
+			"particle" "particles/econ/items/undying/undying_davy_jones/undying_davy_jones_armor_ambient.vpcf"
+			"model" "models/items/undying/davy_jones_set_arms/davy_jones_set_arms.vmdl"
+			"model" "models/items/undying/davy_jones_set_head/davy_jones_set_head.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

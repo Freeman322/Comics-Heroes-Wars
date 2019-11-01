@@ -19,16 +19,25 @@ function medivh_energy_void_thinker:OnCreated(event)
         local thinker = self:GetParent()
         local ability = self:GetAbility()
         local target = self:GetAbility():GetCaster():GetCursorPosition()
+        local sound = "Hero_Invoker.EMP.Cast"
+        local sound2 = "Hero_Invoker.EMP.Charge"
 
         self.radius = ability:GetSpecialValueFor("area_of_effect")
 
-        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_invoker/invoker_emp.vpcf", PATTACH_CUSTOMORIGIN, thinker )
-        ParticleManager:SetParticleControl( nFXIndex, 0, target)
-        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(625, 625, 0))
-        self:AddParticle( nFXIndex, false, false, -1, false, true )
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "elder_warlock") then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/stygian/elder_warlock_emp.vpcf", PATTACH_CUSTOMORIGIN, thinker )
+            ParticleManager:SetParticleControl( nFXIndex, 0, target)
+            ParticleManager:SetParticleControl( nFXIndex, 1, Vector(625, 625, 0))
+            self:AddParticle( nFXIndex, false, false, -1, false, true )
+        else 
+            local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_invoker/invoker_emp.vpcf", PATTACH_CUSTOMORIGIN, thinker )
+            ParticleManager:SetParticleControl( nFXIndex, 0, target)
+            ParticleManager:SetParticleControl( nFXIndex, 1, Vector(625, 625, 0))
+            self:AddParticle( nFXIndex, false, false, -1, false, true )
+        end
 
-        EmitSoundOn("Hero_Invoker.EMP.Cast", thinker)
-        EmitSoundOn("Hero_Invoker.EMP.Charge", thinker)
+        EmitSoundOn(sound, thinker)
+        EmitSoundOn(sound2, thinker)
 
         AddFOWViewer( thinker:GetTeam(), target, 1500, 5, false)
         GridNav:DestroyTreesAroundPoint(target, 1500, false)
@@ -37,14 +46,23 @@ end
 
 function medivh_energy_void_thinker:OnDestroy()
     if IsServer() then
-    	local thinker = self:GetParent()
+        local thinker = self:GetParent()
+        local sound3 = "Hero_Invoker.EMP.Discharge"
 
-        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_invoker/invoker_emp_explode.vpcf", PATTACH_CUSTOMORIGIN, nil );
-        ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetAbsOrigin());
-        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(500, 500, 0));
-        ParticleManager:ReleaseParticleIndex( nFXIndex );
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "elder_warlock") then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/stygian/elder_warlock_emp_explode.vpcf", PATTACH_CUSTOMORIGIN, nil );
+            ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetAbsOrigin());
+            ParticleManager:SetParticleControl( nFXIndex, 1, Vector(500, 500, 0));
+            ParticleManager:ReleaseParticleIndex( nFXIndex );
+            sound3 = "Hero_Lion.FoD.Target.TI8_layer"
+        else   
+            local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_invoker/invoker_emp_explode.vpcf", PATTACH_CUSTOMORIGIN, nil );
+            ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetAbsOrigin());
+            ParticleManager:SetParticleControl( nFXIndex, 1, Vector(500, 500, 0));
+            ParticleManager:ReleaseParticleIndex( nFXIndex );
+        end
 
-        EmitSoundOn( "Hero_Invoker.EMP.Discharge", thinker )
+        EmitSoundOn( sound3, thinker )
 
         local nearby_targets = FindUnitsInRadius(thinker:GetTeam(), thinker:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 

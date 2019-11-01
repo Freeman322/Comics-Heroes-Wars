@@ -24,15 +24,22 @@ function modifier_roug_embrace_of_ethernity:IsPurgable() return false end
 function modifier_roug_embrace_of_ethernity:OnCreated()
 	self:StartIntervalThink(0.1)
   if IsServer() then
-    local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-    ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true )
-    ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true )
-    ParticleManager:SetParticleControlEnt( nFXIndex, 3, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true )
-    ParticleManager:SetParticleControlEnt( nFXIndex, 4, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true )
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "succubus") == true then
+		local nFXIndex = ParticleManager:CreateParticle( "particles/spectre/succubus_drain.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
+        ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_mouth", self:GetParent():GetOrigin() + Vector( 0, 0, 96 ), true );
+		ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true );
+        self:AddParticle( nFXIndex, false, false, -1, false, true )
+    else
+       local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+       ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true )
+       ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true )
+       ParticleManager:SetParticleControlEnt( nFXIndex, 3, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true )
+       ParticleManager:SetParticleControlEnt( nFXIndex, 4, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true )
 
-    ParticleManager:SetParticleControlEnt( nFXIndex, 5, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin(), true )
-    ParticleManager:SetParticleControlEnt( nFXIndex, 6, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin(), true )
-    self:AddParticle( nFXIndex, false, false, -1, false, true )
+       ParticleManager:SetParticleControlEnt( nFXIndex, 5, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin(), true )
+       ParticleManager:SetParticleControlEnt( nFXIndex, 6, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin(), true )
+       self:AddParticle( nFXIndex, false, false, -1, false, true )
+    end
   end
 end
 

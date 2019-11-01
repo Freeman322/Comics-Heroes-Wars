@@ -5,9 +5,15 @@ rough_wave = class({})
 function rough_wave:OnSpellStart()
 	local vDirection = self:GetCursorPosition() - self:GetCaster():GetOrigin()
 	vDirection = vDirection:Normalized()
+	 
+	local sound = "Hero_VengefulSpirit.WaveOfTerror"
+	local projectile = "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+	if self:GetCaster():HasModifier("modifier_arcana") then
+		projectile = "particles/units/heroes/hero_queenofpain/queen_sonic_wave.vpcf" 
+	    sound = "Hero_QueenOfPain.SonicWave" end
 
 	local info = {
-		EffectName = "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf",
+		EffectName = projectile,
 		Ability = self,
 		vSpawnOrigin = self:GetCaster():GetOrigin(),
 		fStartRadius = 150,
@@ -23,7 +29,7 @@ function rough_wave:OnSpellStart()
 		iVisionRadius = 100,
 	}
 	self.nProjID = ProjectileManager:CreateLinearProjectile( info )
-	EmitSoundOn( "Hero_VengefulSpirit.WaveOfTerror" , self:GetCaster() )
+	EmitSoundOn( sound, self:GetCaster() )
 end
 
 
