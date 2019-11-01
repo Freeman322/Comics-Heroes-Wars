@@ -13187,7 +13187,7 @@
 			"particle"  "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_ambient.vpcf"
 			"particle"  "particles/econ/items/mirana/mirana_sapphire_sabrelynx/mirana_sabrelynx_eye_b.vpcf"
 			"model"		"models/heroes/medivh_v2/the_god_of_magic/immortal_mask.vmdl"
-			"model"     "models/heroes/warlock/warlock.vmdl""models/heroes/warlock/warlock.vmdl"
+			"model"     "models/heroes/warlock/warlock.vmdl"
 			"particle"  "particles/stygian/elder_warlock_attack.vpcf"
 			"model"  "models/items/warlock/ti_8_warlock_darkness_apostate_head/ti_8_warlock_darkness_apostate_head.vmdl"
             "model"  "models/items/warlock/ti_8_warlock_darkness_apostate_arms/ti_8_warlock_darkness_apostate_arms.vmdl"
@@ -13389,7 +13389,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"creep_radius"			"900"
+				"creep_radius"			"900 1200 1500 1800"
 			}
 			"03"
 			{
