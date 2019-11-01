@@ -4,7 +4,11 @@ manhattan_reality_warp = ({IsStealable = function() return false end})
 
 function manhattan_reality_warp:OnSpellStart()
     if IsServer() then
-        self:GetCursorTarget():AddNewModifier(self:GetCaster(), self, "modifier_manhattan_reality_warp", {duration = self:GetSpecialValueFor("duration")})
+        local target = self:GetCursorTarget()
+        
+        if ( not target:TriggerSpellAbsorb (self) ) then
+            target:AddNewModifier(self:GetCaster(), self, "modifier_manhattan_reality_warp", {duration = self:GetSpecialValueFor("duration")})
+        end
     end
 end
 

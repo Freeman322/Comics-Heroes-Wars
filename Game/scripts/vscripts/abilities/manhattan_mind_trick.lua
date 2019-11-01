@@ -6,12 +6,14 @@ LinkLuaModifier ("manhattan_mind_trick_modifier_cooldown", "abilities/manhattan_
 manhattan_mind_trick = class ( {})
 
 function manhattan_mind_trick:OnSpellStart ()
-    local point = self:GetCursorPosition ()
-    local caster = self:GetCaster ()
-    local team_id = caster:GetTeamNumber ()
-    local duration = self:GetSpecialValueFor ("duration")
-    local thinker = CreateModifierThinker (caster, self, "manhattan_mind_trick_thinker", { duration = duration }, point, team_id, false)
-    self.cooldown = self:GetSpecialValueFor ("cooldown_bonus")
+    if IsServer() then
+        local point = self:GetCursorPosition ()
+        local caster = self:GetCaster ()
+        local team_id = caster:GetTeamNumber ()
+        local duration = self:GetSpecialValueFor ("duration")
+        local thinker = CreateModifierThinker (caster, self, "manhattan_mind_trick_thinker", { duration = duration }, point, team_id, false)
+        self.cooldown = self:GetSpecialValueFor ("cooldown_bonus")
+    end
 end
 
 function manhattan_mind_trick:GetAOERadius ()

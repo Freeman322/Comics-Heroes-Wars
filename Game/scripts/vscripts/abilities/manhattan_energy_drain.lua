@@ -9,14 +9,20 @@ function manhattan_energy_drain:GetCooldown(nLevel)
 end
 
 function manhattan_energy_drain:OnSpellStart()
-    ProjectileManager:CreateTrackingProjectile({
-            EffectName = "particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_proj.vpcf",
-            Ability = self,
-            iMoveSpeed = 2000,
-            Source = self:GetCaster(),
-            Target = self:GetCursorTarget(),
-            iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
-        })
+    if IsServer() then
+        local hTarget = self:GetCursorTarget()
+
+        if ( not hTarget:TriggerSpellAbsorb (self) ) then
+            ProjectileManager:CreateTrackingProjectile({
+                EffectName = "particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_proj.vpcf",
+                Ability = self,
+                iMoveSpeed = 2000,
+                Source = self:GetCaster(),
+                Target = hTarget,
+                iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
+            })
+        end
+    end
 end
 
 function manhattan_energy_drain:OnProjectileHit(hTarget, vLocation)
