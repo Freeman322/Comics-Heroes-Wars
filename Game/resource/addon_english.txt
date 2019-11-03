@@ -11640,6 +11640,9 @@ When activated spends mana."
 
 		"npc_dota_hero_stormspirit"													"Green Lantern"
         "npc_dota_hero_io"                                                          "Green Lantern"
-        "DOTA_Tooltip_ability_special_bonus_unique_wist_str"                                             "Reduces enemies strength"
+        "DOTA_Tooltip_ability_special_bonus_unique_wist_str"                        "Reduces enemies strength"
+
+        "npc_dota_hero_chaos_king"                                                  "Chaos King"
+        "npc_dota_hero_chaos_king_hype"                                             "Fall like cosmic leaves, here at reality's end -- old gods of Zenn-La! Amatsu-Mikaboshi is the God of Evil, Chaos and the Stars to the follows of the Shinto religion in Japan. He is not actually a Amatsu-Kami but a primordial being who was imprisoned in Yomi, the Shinto underworld for all eternity."
 	}	
 }

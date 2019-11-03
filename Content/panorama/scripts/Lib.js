@@ -5072,7 +5072,7 @@ Lib.Items = {
     },
     "376": {
         "item": "bloodlust_mask",
-        "rarity": "10",
+        "rarity": "8",
         "quality": "2",
         "dropable": "false",
         "slot": "head",
@@ -5204,7 +5204,7 @@ Lib.Items = {
     },
     "384": {
         "item": "dirge",
-        "rarity": "10",
+        "rarity": "8",
         "quality": "2",
         "dropable": "false",
         "slot": "head",
@@ -5218,7 +5218,7 @@ Lib.Items = {
     },
     "385": {
         "item": "blood_feather",
-        "rarity": "10",
+        "rarity": "8",
         "quality": "2",
         "dropable": "false",
         "slot": "head",
@@ -5232,7 +5232,7 @@ Lib.Items = {
     },
     "386": {
         "item": "twilight_lamp",
-        "rarity": "11",
+        "rarity": "10",
         "quality": "4",
         "dropable": "false",
         "slot": "treasure",

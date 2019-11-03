@@ -566,11 +566,14 @@ Heroes.list = {
         {
             "name": "npc_dota_hero_valkorion",
             "id": 224,
-        }
-        ,
+        },
         {
             "name": "npc_dota_hero_pennywise",
             "id": 227,
+        },
+        {
+            "name": "npc_dota_hero_chaos_king",
+            "id": 230,
         }
     ]
 }
