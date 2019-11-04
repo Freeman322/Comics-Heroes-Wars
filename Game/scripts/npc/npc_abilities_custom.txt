@@ -9597,11 +9597,11 @@
 	       		"var_type"				"FIELD_FLOAT"
 	        	"stun_duration"	  "1.1 1.4 1.7 2"
 	       	}
-					"03"
-					{
-						"var_type"				"FIELD_FLOAT"
-						"speed_steal"			"5"
-					}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed_steal"			"5"
+			}
 		}
 	}
 	"zoom_time_shift"
@@ -40769,11 +40769,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 12 10 8"
+		"AbilityCooldown"				"19 18 17 16"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"70 80 90 100"
+		"AbilityDamage"					"80 120 160 200"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -40795,25 +40795,24 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blast_stun_duration"	"1.1 1.4 1.7 2.0"
-	
+				"blast_stun_duration"	"1.4 1.7 2.0 2.3"
+				"LinkedSpecialBonus"    "special_bonus_unique_chaos_king_6"
 			}			
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blast_dot_duration"	"3.0 3.5 4.0 4.5"
-				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_7"
+				"blast_dot_duration"	"2.6 3.3 4.0 4.7"
 			}			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_slow"			"-20"
+				"blast_slow"			"-25"
 			}			
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_dot_damage"		"10 30 50 70"
-				"LinkedSpecialBonus"	"special_bonus_unique_chaos_king_1"
+				"blast_dot_damage"		"35 40 65 85"
+				"LinkedSpecialBonus"    "special_bonus_unique_chaos_king_5"
 			}			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -40833,7 +40832,9 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"4"
+		"MaxLevel"						"1"
+		"HasScepterUpgrade"				"1"
+		"IsGrantedByScepter"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -40844,7 +40845,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"45"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -40859,7 +40860,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"illusion_duration"			"15"
+				"illusion_duration"			"20"
 			}
 			"02"
 			{
@@ -40875,17 +40876,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_take_damage_percent"	"250"
+				"images_take_damage_percent"	"200"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_take_damage_percent_tooltip"			"350"
+				"images_take_damage_percent_tooltip"			"300"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_movespeed_bonus"			"30"
+				"images_movespeed_bonus"			"50"
 			}				
 		}
 	}
@@ -40914,11 +40915,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7 6 5 4"
+		"AbilityCooldown"				"13 12 11 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityManaCost"				"0"
 
         // Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -40984,7 +40985,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"latch_duration"			"16"
+				"latch_duration"			"6 10 14 18"
 			}
 			"03"
 			{
@@ -41009,13 +41010,13 @@
             "07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"20 30 40 50"
+				"damage_per_second"		"40 60 80 100"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_4"				
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"600 600 600 600"
+				"radius"				"600 800 1000 1200"
 			}
 			"09"
 			{
@@ -41049,7 +41050,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
-		"AbilityCooldown"				"100"
+		"AbilityCooldown"				"140"
 		"AbilityCastRange"				"700 800 900"
 		"AbilityCastPoint"				"0.65"
 		"AbilityManaCost"				"150 200 250"
@@ -41063,7 +41064,122 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"		        "9.0 13.0 16.0"
+				"duration"		        "5.0 5.9 6.8"
+				"LinkedSpecialBonus"    "special_bonus_unique_chaos_king_2"
+			}
+		}
+	}
+	"special_bonus_unique_chaos_king"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"40"
+			}
+		}
+	}
+	"special_bonus_unique_chaos_king_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1.2"
+			}
+		}
+	}
+	"special_bonus_unique_chaos_king_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2"
+			}
+		}
+	}
+	"special_bonus_unique_chaos_king_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1"
+			}
+		}
+	}
+	"special_bonus_unique_chaos_king_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"25"
+			}
+		}
+	}
+	"special_bonus_unique_chaos_king_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"0.9"
 			}
 		}
 	}

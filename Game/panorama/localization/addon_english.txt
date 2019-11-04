@@ -2839,6 +2839,42 @@ Rage, rage against the dying of the light."
 
 		"guardian_flame"                  "Listings for Apogee of the Guardian Flame"
 		"guardian_flame_lore"             "It was not only curiosity that drew the Burning Celestial to the mortal plane, but a small, foreboding sense that some larger conflict--greater even than that of the Ancients--may soon come to pass"
+
+		"succubus"                        "Ancient Succubus"
+		"succubus_lore"                   ""
+
+		"elder_warlock"                   "Elder Warlock"
+		"elder_warlock_lore"              ""
+
+		"pudge_mask"                      "Mask of the Mad Harvester"
+		"pudge_mask_lore"                 ""
+
+		"fire_rulk_mask"                  "Crucible of Rile"
+		"fire_rulk_mask_lore"             "The Crucible of Rile both feeds upon and fuels the anger of any who don it. Always found upon a melted husk surrounded by a mess of corpses and viscera, it has never once passed between two pair of living hands."
+
+		"golden_fire_rulk_mask"           "Golden Crucible of Rile"
+		"golden_fire_rulk_mask_lore"      "The Crucible of Rile both feeds upon and fuels the anger of any who don it. Always found upon a melted husk surrounded by a mess of corpses and viscera, it has never once passed between two pair of living hands."
+
+		"dirge"                           "Seablight Procession"
+		"dirge_lore"                      ""
+
+		"blood_feather"                   "Revenge of the Bloody Feather"
+		"blood_feather_lore"              ""
+
+		"twilight_lamp"                   "Dusk lamp"
+		"twilight_lamp_lore"              ""
+
+		"halloween_special"               "Halloween 2019 special treasure"
+		"halloween_special_lore"          "For 2019 halloween event"
+
+		"wraithbinder"                    "Wraithbinder"
+		"wraithbinder_lore"               "Though unable to cross over of their own will, some types of wraith love nothing more than to consume the energies of the mortal plane. Because each shred of power they absorb manifests tenfold in their home realm, they gladly trade service to Zett for the access he grants to our world."
+
+		"bloodlust_mask"                  "Bloodthirsty mask"
+		"bloodlust_mask_lore"             ""
+
+		"echo_glaive"                     "Echo glaive"
+		"echo_glaive_lore"                ""
 }
 
 
