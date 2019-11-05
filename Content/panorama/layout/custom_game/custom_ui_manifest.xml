@@ -60,12 +60,9 @@
 	if (Players.IsSpectator(Players.GetLocalPlayer()) == false) {
 		if (info.map_name == "maps/dota_captains_mode.vpk") {
 			$.GetContextPanel().BCreateChildren('<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/pick/CaptainsMode.xml" />');
-		}else if (info.map_name == "maps/dota.vpk") {
+		}else if (info.map_name == "maps/dota.vpk" || info.map_name == "maps/free_for_all.vpk" || info.map_name == "maps/quoijes_massacre.vpk") {
 			$.GetContextPanel().BCreateChildren('<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/pick/HeroSelection.xml" />');
-		}else if (info.map_name == "maps/free_for_all.vpk") {
-			$.GetContextPanel().BCreateChildren('<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/pick/HeroSelection.xml" />');
-		}else{
-		}
+        }
 	}
 
 	$.GetContextPanel().BCreateChildren('<CustomUIElement id="UIHeroSelection" type="Hud"       				layoutfile="file://{resources}/layout/custom_game/UI.xml"/>');

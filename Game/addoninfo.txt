@@ -1,22 +1,26 @@
 "AddonInfo"
 {
-  "TeamCount" 						  "10"
-  "maps"      						  "dota free_for_all dota_captains_mode" 
-  "IsPlayable"  					  "1"
-  "CheckAFKPlayers"     			  "1"
-  "PenaltiesEnabled"     			  "1"
-  "HeroGuidesSupported"				  "1"
+    "TeamCount" 						"10"
+    "maps"      						"dota free_for_all dota_captains_mode quoijes_massacre" 
+    "IsPlayable"  					    "1"
+    "CheckAFKPlayers"     			    "1"
+    "PenaltiesEnabled"     			    "1"
+    "HeroGuidesSupported"				"1"
   
-  "dota"
-  {
-	  "MaxPlayers"                    "10"
-  }
-  "free_for_all"
-  {
-	  "MaxPlayers"                    "10"
-  }
-  "dota_captains_mode"
-  {
-	  "MaxPlayers"                    "10"
-  }
+    "dota"
+    {
+        "MaxPlayers"                    "10"
+    }
+    "free_for_all"
+    {
+        "MaxPlayers"                    "10"
+    }
+    "dota_captains_mode"
+    {
+        "MaxPlayers"                    "10"
+    }
+    "quoijes_massacre"
+    {
+        "MaxPlayers"                    "8"
+    }
 }

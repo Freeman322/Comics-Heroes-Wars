@@ -11,6 +11,7 @@ require('reports')
 require('addon_init')
 require('CaptainsMode')
 require('Stats')
+require('Event')
 
 local vCenter = Vector( 706.149, 3112.51, 235.403 )
 local iCone = 0.08715
@@ -291,7 +292,11 @@ function GameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_INVISIBILITY, true ) --Invis
     GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_REGENERATION, true ) --Regen
     GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_ARCANE, true ) --Arcane
-	GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_BOUNTY, true ) --Bounty
+    GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_BOUNTY, true ) --Bounty
+    
+    if GetMapName() == "quoijes_massacre" then
+        Event:OnInit()
+    end 
 	
     ----GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "ModifyGoldFilter" ), self)
 

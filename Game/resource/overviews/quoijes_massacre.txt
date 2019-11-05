@@ -1,0 +1,8 @@
+quoijes_massacre
+{
+	material materials/overviews/quoijes_massacre.vmat
+	pos_x -3968
+	pos_y 4544
+	scale 9.438
+}
+
