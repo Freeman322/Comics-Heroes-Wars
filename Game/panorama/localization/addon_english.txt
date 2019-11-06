@@ -2843,6 +2843,12 @@ Rage, rage against the dying of the light."
 		"succubus"                        "Ancient Succubus"
 		"succubus_lore"                   ""
 
+        "kama_bullet"                     "The Kama-Bullet"
+        "kama_bullet_lore"                "Without any doubts, most powerful man alive"
+
+        "bolvar_fordragon"                "Bolvar Fordragon"
+        "bolvar_fordragon_lore"           ""
+
 		"elder_warlock"                   "Elder Warlock"
 		"elder_warlock_lore"              ""
 

@@ -6006,6 +6006,583 @@
 	}
 
     //=================================================================================
+	// Creature: Tidehunter Medium
+	// Round 7
+	//=================================================================================
+	"npc_dota_creature_tidehunter_medium"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/tidehunter/tidehunter.vmdl"
+		"SoundSet"					"Hero_Tidehunter"
+		"Level"						"1"
+		"ModelScale" 				"1.3"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"
+		"ConsideredHero"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"creature_tidehunter_gush"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"3"
+		"MagicalResistance"			"10"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"120"
+		"AttackRate"				"1.7"
+		"AttackAnimationPoint"		"0.6"
+		"AttackAcquisitionRange"	"700"
+		"AttackRange"				"150"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			""
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"200"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"119"
+		"BountyGoldMin"				"76"
+		"BountyGoldMax"				"88"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"
+		"MovementTurnRate"			"0.4"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1900"
+		"StatusHealthRegen"			"1"
+		"StatusMana"				"900"
+		"StatusManaRegen"			"5.0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		//Inventory
+		"HasInventory"				"1"
+
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{	
+			//Basic AI State
+			//-----------------------------------------------------------------
+			"DefaultState"			"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"			"Invade"
+					"Aggression"	"60.0"
+					"Avoidance"		"0.0"
+					"Support"		"0.0"
+				}
+			}
+
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"creature_tidehunter_gush"
+					"Linear"			"1"
+					"AOE"				"1"
+					"Radius"			"100"
+					"MinimumTargets"	"1"
+				}
+			}
+
+			"EquippedItems"
+			{
+				"UltimateScepter"
+				{
+					"Item"					"item_ultimate_scepter"
+				}
+			}
+			
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"75"
+			"DamageGain"				"7"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"13"
+
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"34" // arms: default
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"35" // belt: default
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"36" // weapon: default
+				}
+				"Wearable4"
+				{
+					"ItemDef"			"37" // offhand_weapon: default
+				}
+				"Wearable5"
+				{
+					"ItemDef"			"583" // back: default
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================
+	// Creature: Tidehunter Large
+	// Round 7
+	//=================================================================================
+	"npc_dota_creature_tidehunter_large"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/tidehunter/tidehunter.vmdl"
+		"SoundSet"					"Hero_Tidehunter"
+		"Level"						"1"
+		"ModelScale" 				"2.0"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"creature_tidehunter_gush"
+		"Ability2"					"tidehunter_kraken_shell"
+		"Ability3"					"tidehunter_anchor_smash"
+		"Ability4"					"tidehunter_ravage"
+		"Ability5"					""
+		"Ability6"					""
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"10"
+		"MagicalResistance"			"20"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"450"
+		"AttackDamageMax"			"500"
+		"AttackRate"				"1.5"
+		"AttackAnimationPoint"		"0.6"
+		"AttackAcquisitionRange"	"700"
+		"AttackRange"				"150"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			""
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"300"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"119"
+		"BountyGoldMin"				"76"
+		"BountyGoldMax"				"88"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"375"
+		"MovementTurnRate"			"0.4"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"8000"
+		"StatusHealthRegen"			"10"
+		"StatusMana"				"2000"
+		"StatusManaRegen"			"10.0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		//Inventory
+		"HasInventory"				"1"
+
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{	
+			//Basic AI State
+			//-----------------------------------------------------------------
+			"DefaultState"			"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"			"Invade"
+					"Aggression"	"60.0"
+					"Avoidance"		"0.0"
+					"Support"		"0.0"
+				}
+			}
+
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"tidehunter_gush"
+					"Linear"			"1"
+					"AOE"				"1"
+					"Radius"			"100"
+					"MinimumTargets"	"1"
+				}
+				"Ability4"
+				{
+					"Name"				"tidehunter_ravage"
+					"AOE"				"1"
+					"Radius"			"900"
+					"MinimumTargets"	"3"
+				}
+			}
+
+			"EquippedItems"
+			{
+				"UltimateScepter"
+				{
+					"Item"					"item_ultimate_scepter"
+				}
+			}
+			
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"150"
+			"DamageGain"				"30"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"13"
+
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"34" // arms: default
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"35" // belt: default
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"7469" // weapon: Claddish Cudgel
+				}
+				"Wearable4"
+				{
+					"ItemDef"			"37" // offhand_weapon: default
+				}
+				"Wearable5"
+				{
+					"ItemDef"			"4092" // back: kraken shell
+				}
+				"Wearable6"
+				{
+					"ItemDef"			"4093" // head: octopus hat
+				}
+			}
+		}
+	}
+
+	//=================================================================================
+	// Creature: Satyr Soulstealer
+	// Round 11
+	//=================================================================================
+	"npc_dota_creature_satyr_soulstealer"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/creeps/neutral_creeps/n_creep_satyr_c/n_creep_satyr_c.vmdl"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"1"
+		"ModelScale" 				"0.7"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"2"
+		"MagicalResistance"			"10"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"180"
+		"AttackDamageMax"			"230"
+		"AttackRate"				"1.35"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"100"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			""
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"140"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"119"
+		"BountyGoldMin"				"76"
+		"BountyGoldMax"				"88"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"390"
+		"MovementTurnRate"			"0.5"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1000"
+		"StatusHealthRegen"			"1.0"
+		"StatusMana"				"200"
+		"StatusManaRegen"			"1.0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{	
+			//Basic AI State
+			//-----------------------------------------------------------------
+			"DefaultState"			"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"			"Invade"
+					"Aggression"	"60.0"
+					"Avoidance"		"0.0"
+					"Support"		"0.0"
+				}
+			}
+			
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"75"
+			"DamageGain"				"5"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"13"
+		}
+	}
+
+	//=================================================================================
+	// Creature: Night Stalker
+	// Round 11
+	//=================================================================================
+	"npc_dota_creature_night_stalker"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/nightstalker/nightstalker.vmdl"
+		"SoundSet"					"Hero_NightStalker"
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+		"ConsideredHero"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"night_stalker_void"
+		"Ability2"					"night_stalker_crippling_fear"
+		"Ability3"					"night_stalker_hunter_in_the_night"
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"2"
+		"MagicalResistance"			"10"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"250"
+		"AttackDamageMax"			"300"
+		"AttackRate"				"1.7"
+		"AttackAnimationPoint"		"0.55"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"150"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			""
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"230"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"119"
+		"BountyGoldMin"				"76"
+		"BountyGoldMax"				"88"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"400"
+		"MovementTurnRate"			"0.5"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2000"
+		"StatusHealthRegen"			"3.0"
+		"StatusMana"				"900"
+		"StatusManaRegen"			"5.0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		//Inventory
+		"HasInventory"				"1"
+
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{	
+			//Basic AI State
+			//-----------------------------------------------------------------
+			"DefaultState"			"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"			"Invade"
+					"Aggression"	"60.0"
+					"Avoidance"		"0.0"
+					"Support"		"0.0"
+				}
+			}
+
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"night_stalker_void"
+					"Damage"			"1"
+				}
+			}
+
+			"EquippedItems"
+			{
+				"PhaseBoots"
+				{
+					"Item"					"item_phase_boots"
+				}
+				"UltimateScepter"
+				{
+					"Item"					"item_ultimate_scepter"
+				}
+			}
+			
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"75"
+			"DamageGain"				"5"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"13"
+
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"337"
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"338"
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"339"
+				}
+			}
+		}
+	}
+
+    //=================================================================================
 	// Creature: Large Spirit Bear
 	//=================================================================================
 	"npc_dota_creature_large_spirit_bear"
@@ -7400,6 +7977,236 @@
                 "Wearable2" { "ItemDef" "6647" }
                 "Wearable2" { "ItemDef" "251" }
 			}
+		}
+	}
+    "npc_dota_boss_supreme_butcher"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to
+		"ModelScale"				"1.75"
+		"Level"						"100"
+		"ConsideredHero"			"1"
+
+		"SoundSet"					"Hero_Pudge"								// Name of sound set.
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+		"IdleSoundLoop"				"Hero_Pudge.IdleLoop"
+
+		"MinimapIcon"               "minimap_candybucket"
+		"MinimapIconSize"           "1000"
+
+		"Model"						"models/items/pudge/arcana/pudge_arcana_base.vmdl"
+	
+		// Inventory
+		//----------------------------------------------------------------
+		"HasInventory"				"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+
+		"Ability1"					"pudge_meat_hook"
+		"Ability2"					"pudge_dismember"
+	    "Ability3"					"roshan_spell_block"
+		"Ability4"					"roshan_bash"
+		"Ability5"					"neutral_spell_immunity"
+		"Ability6"					"neutral_magical_immunity"	
+		"Ability7"					"necrolyte_heartstopper_aura"
+        "Ability8"					"necrolyte_reapers_scythe"
+		"Ability9"					"undying_soul_rip"
+		"Ability10"					"undying_tombstone"
+		"Ability11"					"skeleton_king_hellfire_blast"
+		"Ability12"					"skeleton_king_vampiric_aura"
+		"Ability13"					"sven_gods_strength"		
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"25"			// Physical protection.
+		"MagicalResistance"			"90"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"14645"		// Damage range min.
+		"AttackDamageMax"			"14760"		// Damage range max.
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
+		"AttackRange"				"128"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"123200"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"300"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"340"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"15000000"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"18500"		// Base mana.
+		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"20000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"20000"		// Range of vision at night time.
+	
+        "vscripts"					"ai/ai_pudge.lua"
+        // Creature Data
+        //----------------------------------------------------------------------------------------------------------------------
+        "Creature"
+        {
+			"CanRespawn"				"0"
+
+			"OffensiveAbilities"
+			{
+				"Ability1"                
+				{
+					"Name"                "undying_tombstone"
+					"Damage"               "1"
+					"AOE"                  "1"
+					"Radius"               "650"
+					"MinimumTargets"       "1"
+				}
+				"Ability2"                
+				{
+					"Name"                "undying_soul_rip"
+			  		"Damage"               "1"
+					"AOE"                  "1"
+					"Radius"               "650"
+					"MinimumTargets"       "1"
+				}
+				"Ability3"
+				{
+					"Name"                 "necrolyte_reapers_scythe"
+					"Damage"               "1"
+					"Stun"				   "1"
+				}
+				"Ability4"
+				{
+					"Name"                 "skeleton_king_hellfire_blast"
+					"Damage"               "1"
+				}
+			}
+
+			"DefensiveAbilities"
+			{
+				"Ability1"              
+				{
+					"Name"     			"sven_gods_strength"
+					"Buff"     			"1"
+					"UseSelfishly"        "1"
+				}
+			}
+
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+	
+			"DefaultState"				"Invade"
+
+			"EquippedItems"
+			{	      
+				"Drums"
+				{
+					"Item"					"item_ancient_janggo"
+					"Charges"				"10"
+				}
+				"Scepter"
+				{
+					"Item"					"item_ultimate_scepter"
+				}
+				"ShivasGuard"
+				{
+					"Item"					"item_shivas_guard"
+				}
+				"PhaseBoots"
+				{
+					"Item"					"item_phase_boots"
+				}
+				"BlackKingBar"
+				{
+					"Item"					"item_black_king_bar"
+				}
+				"MonkeyKingBar"
+				{
+					"Item"					"item_monkey_king_bar"
+				}			
+			}
+			
+            "AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"4007"
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"7756"
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"6085"
+				}
+				"Wearable4"
+				{
+					"ItemDef"			"4760"
+				}
+				"Wearable5"
+				{
+					"ItemDef"			"12808"
+				}
+                "Wearable6"
+				{
+					"ItemDef"			"4733"
+				}
+                "Wearable7"
+				{
+					"ItemDef"			"5050"
+				}
+			}
+
+			"DisableResistance"			"100.0"
+		
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"500"
+			"DamageGain"				"25"
+			"ArmorGain"					"1"
+			"MagicResistGain"			"1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"100"
+		
+			"DefaultState"				"Invade"
 		}
 	}
 }

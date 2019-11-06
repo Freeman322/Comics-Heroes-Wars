@@ -69,20 +69,6 @@ function Event:Start()
 
     self.m_bSpawning = true
 
-    for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-        if PlayerResource:IsValidPlayerID(nPlayerID) then
-            if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-                local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-                
-                for i=1, 35 do
-                    hero:HeroLevelUp(true)
-                end
-
-                hero:ModifyGold(15000, true, 0)
-            end
-        end
-	end
-
     Timers:CreateTimer(5, function() self:CreateUnits() return 30 end)
 end
 
@@ -123,10 +109,29 @@ function Event:Spawn(unit, count)
     end
 end
 
+function Event:RunBoss()
+    local entWp = self:GetSpawn()
+
+    PrecacheUnitByNameAsync("npc_dota_boss_supreme_butcher", function()
+        local creature = CreateUnitByName("npc_dota_boss_supreme_butcher", entWp:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS )
+        creature:SetChampion( true )
+
+        creature:SetInitialGoalEntity( self.m_hWaypoints[entWp:GetName()] )
+
+        FindClearSpaceForUnit(creature, creature:GetAbsOrigin(), true)
+    end)
+end
+
 
 function Event:OnThink()
     self:_CheckForDefeat()
     if GameRules:GetGameTime() >= 900 and self.m_bSpawning then
+        local res = "The Great Supreme Butcher is coming! Its too late for escape!"
+        GameRules:SendCustomMessage(res, 0, 0)
+
+        stats.set_event_drop(363)
+
+        self:RunBoss()
         self.m_bSpawning = false
     end 
 	return 1
@@ -160,10 +165,19 @@ end
 
 
 function Event:OnNPCSpawned( event )
-	local spawnedUnit = EntIndexToHScript( event.entindex )
+    local spawnedUnit = EntIndexToHScript( event.entindex )
+    
 	if not spawnedUnit or spawnedUnit:GetClassname() == "npc_dota_thinker" or spawnedUnit:IsPhantom() then
 		return
-	end
+    end
+    
+    if spawnedUnit:IsRealHero() then
+        for i=1, 35 do
+            spawnedUnit:HeroLevelUp(true)
+        end
+
+        spawnedUnit:ModifyGold(10000, true, 0)
+    end 
 
 	if spawnedUnit:IsCreature() then
 		spawnedUnit:SetHPGain( spawnedUnit:GetMaxHealth() * 0.3 ) -- LEVEL SCALING VALUE FOR HP
@@ -205,19 +219,21 @@ function Event:OnEntityKilled( event )
         if killedUnit:IsCreature() then
             self:CheckForLootItemDrop(killedUnit)
         end 
+        if killedUnit:GetUnitName() == "npc_dota_boss_supreme_butcher" then
+            stats.set_event_drop(380)
+            GameRules:MakeTeamLose( DOTA_TEAM_BADGUYS )
+        end 
 	end
 end
 
 function Event:CheckForLootItemDrop( killedUnit )
-	for _,itemDropInfo in pairs( self._vLootItemDropsList ) do
-		if RollPercentage( itemDropInfo["Chance"] ) then
-			local newItem = CreateItem( itemDropInfo["Item"], nil, nil )
-			newItem:SetPurchaseTime( 0 )
-			if newItem:IsPermanent() and newItem:GetShareability() == ITEM_FULLY_SHAREABLE then
-				item:SetStacksWithOtherOwners( true )
-			end
-			local drop = CreateItemOnPositionSync( killedUnit:GetAbsOrigin(), newItem )
-			drop.IsLootDrop = true
-		end
-	end
+	if RollPercentage( 5 ) then
+        local newItem = CreateItem( "item_bag_of_gold", nil, nil )
+        newItem:SetPurchaseTime( 0 )
+        if newItem:IsPermanent() and newItem:GetShareability() == ITEM_FULLY_SHAREABLE then
+            item:SetStacksWithOtherOwners( true )
+        end
+        local drop = CreateItemOnPositionSync( killedUnit:GetAbsOrigin(), newItem )
+        drop.IsLootDrop = true
+    end
 end

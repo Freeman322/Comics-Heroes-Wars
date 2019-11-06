@@ -840,3 +840,33 @@ function stats.kick_player(pID)
         UTIL_Remove(p)
     end
 end
+
+function stats.set_event_drop(itemdefid)
+    local items = {}
+
+    for i = 0, DOTA_MAX_PLAYERS - 1 do
+        if PlayerResource:IsValidPlayerID(i) and not PlayerResource:IsFakeClient(i) and PlayerResource:GetConnectionState(i) ~= DOTA_CONNECTION_STATE_ABANDONED then
+            if Util.econs then 
+                local item = Util.econs[tostring(itemdefid)]
+
+                DeepPrintTable(item)
+
+                local data = {
+                    item = drop,
+                    rarity = item['rarity'],
+                    quality = item['quality'],
+                    is_medal = item['is_medal'],
+                    is_treasure = item['is_treasure'],
+                    tradeable = 1,
+                    steam_id = tostring(PlayerResource:GetSteamAccountID(i))
+                }
+                  
+                stats.create_item(data)
+
+                items[i] = data
+            end 
+        end
+    end
+
+    CustomNetTables:SetTableValue("players", "drop", items)
+end

@@ -2858,6 +2858,9 @@
 		"precache"
 		{
 			"particle"  "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_snow_arcana1.vpcf"
+            "model"     "models/heroes/arthas/bolvar_skin/bolvar.vmdl"
+            "model"     "models/heroes/arthas/bolvar_skin/bolvar_weapon.vmdl"
+            "model"     "models/heroes/arthas/bolvar_skin/bolvar_helmet.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

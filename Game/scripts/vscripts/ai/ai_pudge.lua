@@ -68,7 +68,7 @@ end
 BehaviorDismember = {}
 
 function BehaviorDismember:Evaluate()
-	self.dismemberAbility = thisEntity:FindAbilityByName("creature_dismember")
+	self.dismemberAbility = thisEntity:FindAbilityByName("pudge_dismember")
 	local target
 	local desire = 0
 
@@ -121,7 +121,7 @@ function BehaviorThrowHook:Evaluate()
 	-- let's not choose this twice in a row
 	if currentBehavior == self then return desire end
 
-	self.hookAbility = thisEntity:FindAbilityByName( "creature_meat_hook" )
+	self.hookAbility = thisEntity:FindAbilityByName( "pudge_meat_hook" )
 
 	if self.hookAbility and self.hookAbility:IsFullyCastable() then
 		self.target = AICore:RandomEnemyHeroInRange( thisEntity, self.hookAbility:GetCastRange() )

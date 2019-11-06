@@ -913,12 +913,6 @@ function Util:OnHeroInGame(hero)
       LinkLuaModifier("modifier_doom", "modifiers/modifier_doom.lua", LUA_MODIFIER_MOTION_NONE)
       hero:AddNewModifier(hero, nil, "modifier_doom", nil)
     end
-    if hero:GetUnitName() == "npc_dota_hero_skeleton_king" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "arthas_prince") then
-        hero:SetOriginalModel("models/heroes/arthas/arthas_prince/arthas_prince.vmdl")
-        hero:SetModelScale(0.76)
-      end
-    end
     if hero:GetUnitName() == "npc_dota_hero_visage" then
       local nFXIndex = ParticleManager:CreateParticle( "particles/ragnaros/ragnaros_head.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
       ParticleManager:SetParticleControlEnt( nFXIndex, 0, hero, PATTACH_POINT_FOLLOW, "attach_inner", hero:GetOrigin(), true )

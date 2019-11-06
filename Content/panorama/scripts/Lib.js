@@ -5261,6 +5261,34 @@ Lib.Items = {
                 "2": ""
             }
         }
+    },
+    "387": {
+        "item": "bolvar_fordragon",
+        "rarity": "10",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_skeleton_king",
+        "universal": "false",
+        "def_id": "387",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "388": {
+        "item": "kama_bullet",
+        "rarity": "10",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_skywrath_mage",
+        "universal": "false",
+        "def_id": "388",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 
