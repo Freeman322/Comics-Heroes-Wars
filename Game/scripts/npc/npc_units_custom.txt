@@ -5239,7 +5239,7 @@
 
 		"Ability7"		                ""
 		"Ability8"		                ""
-		"Ability10"		                "special_bonus_exp_boost_30"
+		"Ability10"		                "special_bonus_unique_doom_4"
 		"Ability11"		                "special_bonus_unique_chaos_king_5"
 		"Ability12"		                "special_bonus_unique_chaos_king_2"
 		"Ability13"		                "special_bonus_unique_chaos_king_6"
@@ -7282,8 +7282,8 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to
-		"ModelScale"				"1.5"
-		"Level"						"50"
+		"ModelScale"				"2.5"
+		"Level"						"15"
 		"ConsideredHero"			"1"
 		"UnitLabel"                 "supreme_bear"
 
@@ -7314,9 +7314,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"43345"		// Damage range min.
-		"AttackDamageMax"			"56460"		// Damage range max.
-		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackDamageMin"			"143345"		// Damage range min.
+		"AttackDamageMax"			"156460"		// Damage range max.
+		"AttackRate"				"2.0"		// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
@@ -7347,7 +7347,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"8000"		// Base health.
+		"StatusHealth"				"100000"		// Base health.
 		"StatusHealthRegen"			"4.0"		// Health regeneration rate.
 		"StatusMana"				"8500"		// Base mana.
 		"StatusManaRegen"			"10.0"		// Mana regeneration rate.
@@ -7481,8 +7481,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"4645"		// Damage range min.
-		"AttackDamageMax"			"4760"		// Damage range max.
+		"AttackDamageMin"			"5645"		// Damage range min.
+		"AttackDamageMax"			"5760"		// Damage range max.
 		"AttackRate"				"1.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
@@ -7736,7 +7736,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
+		"Level"						"10"
 		"ModelScale" 				"1.9"
 
 		// Abilities
@@ -7827,8 +7827,8 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
-		"ModelScale" 				"1.75"
+		"Level"						"50"
+		"ModelScale" 				"2.75"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -8021,7 +8021,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"25"			// Physical protection.
-		"MagicalResistance"			"90"		// Magical protection.
+		"MagicalResistance"			"80"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------

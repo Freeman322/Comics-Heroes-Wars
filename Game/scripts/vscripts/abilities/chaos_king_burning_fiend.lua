@@ -8,8 +8,15 @@ function chaos_king_burning_fiend:IsStealable() return false end
  
 local CONST_COOLDOWN_NOT_REDUC = 100
 
+function chaos_king_burning_fiend:GetCooldown( nLevel )
+    return self.BaseClass.GetCooldown( self, nLevel ) - (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_chaos_king") or 0)
+end
+
 function chaos_king_burning_fiend:OnSpellStart()
-	local duration = self:GetSpecialValueFor(  "duration" )
+    local duration = self:GetSpecialValueFor(  "duration" )
+    
+    if self:GetCaster():HasTalent("special_bonus_unique_chaos_king_2") then duration = duration + self:GetCaster():FindTalentValue("special_bonus_unique_chaos_king_2") end
+
 	local hTarget = self:GetCursorTarget()
 
     if hTarget then 

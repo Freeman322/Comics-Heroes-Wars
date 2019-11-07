@@ -11645,25 +11645,27 @@ When activated spends mana."
         "npc_dota_hero_chaos_king"                                                  "Chaos King"
         "npc_dota_hero_chaos_king_hype"                                             "Fall like cosmic leaves, here at reality's end -- old gods of Zenn-La! Amatsu-Mikaboshi is the God of Evil, Chaos and the Stars to the follows of the Shinto religion in Japan. He is not actually a Amatsu-Kami but a primordial being who was imprisoned in Yomi, the Shinto underworld for all eternity."
 
-		"DOTA_Tooltip_ability_chaos_king_hellfire"                                  "Chaosflame blast"
-		"DOTA_Tooltip_ability_chaos_king_hellfire_Description"                      "Chaos King sears an enemy unit with chaos fire, dealing damage and stunning, then dealing damage over time, slowing the target and reduces his outgoing damage."
-		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_outgoing_damage_reduction"  "%OUTGOING DAMAGE REDUCTION:"
-		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_stun_duration"              "STUN DURATION:"
-		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_dot_duration"               "DEBUFF DURATION:"
-		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_slow"                       "%MOVE SPEED SLOW:"
-		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_dot_damage"                 "DAMAGE OVER TIME:"
+		"DOTA_Tooltip_ability_chaos_king_hellfire"                                          "Chaosflame blast"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_Description"                              "Chaos King sears an enemy unit with chaos fire, dealing damage and stunning, then dealing damage over time, slowing the target and reduces his outgoing damage."
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_outgoing_damage_reduction"          "%OUTGOING DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_stun_duration"                      "STUN DURATION:"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_dot_duration"                       "DEBUFF DURATION:"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_slow"                               "%MOVE SPEED SLOW:"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_dot_damage"                         "DAMAGE OVER TIME:"
 
 		"DOTA_Tooltip_ability_chaos_king_static_shield"                                     "Absorption of Chaos"
 		"DOTA_Tooltip_ability_chaos_king_static_shield_Description"                         "When the Chaos King is attacked, he stuns the attacker and temporarily dodges all projectiles"
         "DOTA_Tooltip_ability_chaos_king_static_shield_duration"                            "DODGE DURATION:"
 
-		"DOTA_Tooltip_ability_chaos_king_inner_fear"                                        "Creature born in Chaos"
-		"DOTA_Tooltip_ability_chaos_king_inner_fear_Description"                            "The Chaos King summons a creature from the bowels that moves quickly towards the target, it silences his and envelops the nearby earth in flames which damage enemies"
+		"DOTA_Tooltip_ability_chaos_king_inner_fear"                                        "Creature Born in Chaos"
+		"DOTA_Tooltip_ability_chaos_king_inner_fear_Description"                            "The Chaos King summons a creature from the bowels that moves quickly towards the target, it silences his and envelops the nearby earth in flames which damage enemies. \n\nUpgradable by Aghanim's Scepter."
 		"DOTA_Tooltip_ability_chaos_king_inner_fear_latch_duration"                         "LATCH DURATION:"
 		"DOTA_Tooltip_ability_chaos_king_inner_fear_destroy_attacks"                        "ATTACKS TO DESTROY:"
 		"DOTA_Tooltip_ability_chaos_king_inner_fear_silence_duration"                       "SILENCE DURATION:"
 		"DOTA_Tooltip_ability_chaos_king_inner_fear_damage_per_second"                      "SCORCHED EARTH DAMAGE:"
 		"DOTA_Tooltip_ability_chaos_king_inner_fear_radius"                                 "SCORCHED EARTH RADIUS:"
+        "DOTA_Tooltip_ability_chaos_king_inner_fear_aghanim_description"			        "Creature deals damage based on Chaos King's damage."
+
 
 		"DOTA_Tooltip_ability_chaos_king_chaos_clone"                                       "Reflection of Chaos"
 		"DOTA_Tooltip_ability_chaos_king_chaos_clone_Description"                           "Creates an chaos illusion of a target enemy hero. Illusion is spell immune, and has bonus movement speed and attack damage."
@@ -11678,16 +11680,11 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_chaos_king_burning_fiend_aghanim_description"                 "Grants a new ability: Reflection of Chaos"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king"                              "-30 cooldown for Primal Chaos"
-		
-		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_2"                            "+1.2 duration for Primal Chaos"
-		
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_2"                            "+1.2 duration for Primal Chaos"	
 		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_3"                            "+2 Creature of Chaos summon"
-
 		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_4"                            "Awakened Absorption of Chaos"
-		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_4_Description"                "Absorption of Chaos also gives 70% amp and spell immunity"
-		
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_4_Description"                "Absorption of Chaos also gives spell immunity"	
 		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_5"                            "+25 Damage over time for Chaosflame blast"
-
-		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_6"                            "+0.9 stun duration for Chaosflame blast"
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_6"                            "+1 second stun duration for Chaosflame blast"
 	}	
 }

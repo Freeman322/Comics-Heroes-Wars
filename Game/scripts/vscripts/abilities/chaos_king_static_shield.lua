@@ -33,6 +33,10 @@ function modifier_chaos_king_static_shield:GetModifierEvasion_Constant( params )
             params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned", {duration = 0.75})
             self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_clinkz_strafe", {duration = self:GetAbility():GetSpecialValueFor("duration")})
 
+            if self:GetCaster():HasTalent("special_bonus_unique_chaos_king_4") then
+                self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_neutral_spell_immunity", {duration = self:GetAbility():GetSpecialValueFor("duration")})
+            end 
+            
             return 100
         end 
     end 

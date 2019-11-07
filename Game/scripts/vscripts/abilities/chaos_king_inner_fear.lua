@@ -39,6 +39,36 @@ function chaos_king_inner_fear:OnSpellStart ()
             unit:SetForceAttackTarget(hTarget)
         end)
 
+        if self:GetCaster():HasTalent("special_bonus_unique_chaos_king_3") then 
+            PrecacheUnitByNameAsync("npc_dota_chaos_king_ink_creature", function()
+                local unit = CreateUnitByName( "npc_dota_chaos_king_ink_creature", self:GetCaster():GetAbsOrigin(), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber())
+               
+                unit:AddNewModifier(unit, self, "modifier_inner_fear", {duration = duration, target = hTarget:entindex()})
+                unit:AddNewModifier(unit, self, "modifier_kill", {duration = duration})
+                unit:AddNewModifier(unit, self, "modifier_doom_bringer_scorched_earth_effect_aura", {duration = duration})
+    
+                FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
+    
+                unit:SetBaseDamageMin(self:GetSpecialValueFor("creature_damage"))
+                unit:SetBaseDamageMax(self:GetSpecialValueFor("creature_damage"))
+                unit:SetBaseMoveSpeed(self:GetSpecialValueFor("speed"))
+                unit:SetBaseMaxHealth(self:GetSpecialValueFor("destroy_attacks"))
+                unit:SetAttackCapability(1)
+    
+                local order_caster =
+                {
+                    UnitIndex = unit:entindex(),
+                    OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
+                    TargetIndex = hTarget:entindex()
+                }
+        
+                hTarget:Stop()
+                ExecuteOrderFromTable(order_caster)
+        
+                unit:SetForceAttackTarget(hTarget)
+            end)
+        end
+
         ApplyDamage({
             victim = hTarget,
             attacker = self:GetCaster(),
@@ -74,19 +104,26 @@ function modifier_inner_fear:OnIntervalThink()
     if IsServer() then
         if not self.m_hTarget or self.m_hTarget:IsNull() or not self.m_hTarget:IsAlive() then
             self.m_hTarget = self:FindNextTarget()
-
+            
             if not self.m_hTarget then self:Destroy() end 
         end 
 
-        local order_caster =
-        {
-            UnitIndex = self:GetParent():entindex(),
-            OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
-            TargetIndex = self.m_hTarget:entindex()
-        }
+        if self.m_hTarget then
+            local order_caster =
+            {
+                UnitIndex = self:GetParent():entindex(),
+                OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
+                TargetIndex = self.m_hTarget:entindex()
+            }
 
-        ExecuteOrderFromTable(order_caster)
-        self:GetParent():SetForceAttackTarget(hTarget)
+            ExecuteOrderFromTable(order_caster)
+
+            self:GetParent():SetForceAttackTarget(self.m_hTarget)
+
+            if self:GetAbility():GetCaster():HasScepter() then
+                self:GetAbility():GetCaster():PerformAttack(self.m_hTarget, true, true, true, true, false, false, true)
+            end 
+        end
     end
 end
 

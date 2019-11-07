@@ -45,9 +45,12 @@ function chaos_king_hellfire:OnProjectileHit( hTarget, vLocation )
         ApplyDamage(damageTable)
 
         local duration = self:GetSpecialValueFor( "blast_dot_duration" )
+        local stun_duration = self:GetSpecialValueFor( "blast_stun_duration" )
         
+        if self:GetCaster():HasTalent("special_bonus_unique_chaos_king_6") then stun_duration = stun_duration + self:GetCaster():FindTalentValue("special_bonus_unique_chaos_king_6") end 
+
         hTarget:AddNewModifier( self:GetCaster(), self, "modifier_chaos_king_hellfire", { duration = duration } )
-        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor( "blast_stun_duration" ) } )
+        hTarget:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = stun_duration } )
 	end
 
 	return true
@@ -88,7 +91,7 @@ function modifier_chaos_king_hellfire:OnCreated( kv )
     if IsServer() then 
         self.damage = self:GetAbility():GetSpecialValueFor("blast_dot_damage")
 
-        if self:GetCaster():HasTalent("special_bonus_unique_chaos_king_1") then self.damage = self.damage + self:GetCaster():FindTalentValue("special_bonus_unique_chaos_king_1") end 
+        if self:GetCaster():HasTalent("special_bonus_unique_chaos_king_5") then self.damage = self.damage + self:GetCaster():FindTalentValue("special_bonus_unique_chaos_king_5") end 
 
         self:StartIntervalThink(1)
         self:OnIntervalThink()
