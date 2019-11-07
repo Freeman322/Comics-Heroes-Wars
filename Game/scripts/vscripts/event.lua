@@ -45,6 +45,26 @@ function Event:OnInit()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride( true )
     GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 
+    --[[Convars:RegisterCommand("test_drop", function()
+        pcall(function() 
+            stats.set_event_drop(363)
+        end)
+      end, "", 0)
+
+    Convars:RegisterCommand("test_run_boss", function()
+        pcall(function() 
+            local res = "The Great Supreme Butcher is coming! Its too late for escape!"
+            GameRules:SendCustomMessage(res, 0, 0)
+    
+            stats.set_event_drop(363)
+    
+            self.m_bSpawning = false
+    
+            self:ClearUnits()
+            self:RunBoss()
+        end)
+    end, "", 0)]]--
+
     self._entAncient = Entities:FindByName( nil, "dota_goodguys_fort" )
 
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 8 )
@@ -72,9 +92,18 @@ function Event:Start()
     Timers:CreateTimer(5, function() self:CreateUnits() return 30 end)
 end
 
+function Event:ClearUnits()
+    local creeps = FindUnitsInRadius( 3, Vector(0, 0, 0), nil, 999999, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+    if #creeps > 0 then
+        for _,creep in pairs(creeps) do
+            creep:ForceKill(false)
+        end
+    end
+end
+
 
 function Event:CreateUnits()
-    if self.m_bSpawning then
+    if self.m_bSpawning == true then
         for k,v in pairs(self.m_hUnits) do
             if RollPercentage(tonumber((v["chance"]))) and GameRules:GetGameTime() >= tonumber(v["min_time"]) then
                 self:Spawn(k, tonumber(v["count"]))
@@ -125,14 +154,19 @@ end
 
 function Event:OnThink()
     self:_CheckForDefeat()
-    if GameRules:GetGameTime() >= 900 and self.m_bSpawning then
+    
+    if GameRules:GetGameTime() >= 900 and self.m_bSpawning == true then
         local res = "The Great Supreme Butcher is coming! Its too late for escape!"
         GameRules:SendCustomMessage(res, 0, 0)
 
-        stats.set_event_drop(363)
+        if not GameRules:IsCheatMode() then
+            stats.set_event_drop(363)
+        end
 
-        self:RunBoss()
         self.m_bSpawning = false
+
+        self:ClearUnits()
+        self:RunBoss()
     end 
 	return 1
 end
@@ -171,7 +205,7 @@ function Event:OnNPCSpawned( event )
 		return
     end
     
-    if spawnedUnit:IsRealHero() then
+    if spawnedUnit:IsRealHero() and not spawnedUnit:IsTempestDouble() and not spawnedUnit:HasModifier("modifier_kill") then
         for i=1, 35 do
             spawnedUnit:HeroLevelUp(true)
         end
@@ -220,7 +254,9 @@ function Event:OnEntityKilled( event )
             self:CheckForLootItemDrop(killedUnit)
         end 
         if killedUnit:GetUnitName() == "npc_dota_boss_supreme_butcher" then
-            stats.set_event_drop(380)
+            if not GameRules:IsCheatMode() then
+                stats.set_event_drop(380)
+            end
             GameRules:MakeTeamLose( DOTA_TEAM_BADGUYS )
         end 
 	end

@@ -51,7 +51,7 @@
 
 	var info = Game.GetMapInfo()
 
-	if (info.map_name == "maps/dota_captains_mode.vpk" || info.map_name == "maps/dota.vpk" || info.map_name == "maps/free_for_all.vpk"){
+	if (info.map_name == "maps/dota_captains_mode.vpk" || info.map_name == "maps/dota.vpk" || info.map_name == "maps/free_for_all.vpk" || info.map_name == "maps/quoijes_massacre.vpk"){
 		$.GetContextPanel().BCreateChildren('<CustomUIElement type="Hud" id="scoreboardTop" layoutfile="file://{resources}/layout/custom_game/multiteam_top_scoreboard.xml" />')
 		$.GetContextPanel().BCreateChildren('<CustomUIElement type="FlyoutScoreboard" id="flyingScoreboard" layoutfile="file://{resources}/layout/custom_game/multiteam_flyout_scoreboard.xml" />')
 		$.GetContextPanel().BCreateChildren('<CustomUIElement type="EndScreen" 		id="EndScreen" layoutfile="file://{resources}/layout/custom_game/multiteam_end_screen.xml"/>');

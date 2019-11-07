@@ -849,10 +849,8 @@ function stats.set_event_drop(itemdefid)
             if Util.econs then 
                 local item = Util.econs[tostring(itemdefid)]
 
-                DeepPrintTable(item)
-
                 local data = {
-                    item = drop,
+                    item = tostring(itemdefid),
                     rarity = item['rarity'],
                     quality = item['quality'],
                     is_medal = item['is_medal'],

@@ -7689,7 +7689,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"40"		// Base health.
+		"StatusHealth"				"14540"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -7736,7 +7736,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"10"
+		"Level"						"1"
 		"ModelScale" 				"1.9"
 
 		// Abilities
@@ -7780,7 +7780,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"56000"		// Base health.
+		"StatusHealth"				"35000"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -7872,7 +7872,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"650"		// Base health.
+		"StatusHealth"				"45650"		// Base health.
 		"StatusHealthRegen"			"1.0"		// Health regeneration rate.
 		"StatusMana"				"450"		// Base mana.
 		"StatusManaRegen"			"6.0"		// Mana regeneration rate.		 
@@ -8008,15 +8008,13 @@
 		"Ability2"					"pudge_dismember"
 	    "Ability3"					"roshan_spell_block"
 		"Ability4"					"roshan_bash"
-		"Ability5"					"neutral_spell_immunity"
-		"Ability6"					"neutral_magical_immunity"	
-		"Ability7"					"necrolyte_heartstopper_aura"
-        "Ability8"					"necrolyte_reapers_scythe"
-		"Ability9"					"undying_soul_rip"
-		"Ability10"					"undying_tombstone"
-		"Ability11"					"skeleton_king_hellfire_blast"
-		"Ability12"					"skeleton_king_vampiric_aura"
-		"Ability13"					"sven_gods_strength"		
+		"Ability5"					"necrolyte_heartstopper_aura"
+        "Ability6"					"necrolyte_reapers_scythe"
+		"Ability7"					"undying_soul_rip"
+		"Ability8"					"undying_tombstone"
+		"Ability9"					"skeleton_king_hellfire_blast"
+		"Ability10"					"skeleton_king_vampiric_aura"
+		"Ability11"					"sven_gods_strength"		
 
 		// Armor
 		//----------------------------------------------------------------
@@ -8055,7 +8053,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"15000000"		// Base health.
+		"StatusHealth"				"5000000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 		"StatusMana"				"18500"		// Base mana.
 		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.
