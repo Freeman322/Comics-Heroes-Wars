@@ -7347,7 +7347,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"100000"		// Base health.
+		"StatusHealth"				"30000"		// Base health.
 		"StatusHealthRegen"			"4.0"		// Health regeneration rate.
 		"StatusMana"				"8500"		// Base mana.
 		"StatusManaRegen"			"10.0"		// Mana regeneration rate.
@@ -7984,7 +7984,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to
-		"ModelScale"				"1.75"
+		"ModelScale"				"2.5"
 		"Level"						"100"
 		"ConsideredHero"			"1"
 
@@ -8026,7 +8026,7 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"14645"		// Damage range min.
 		"AttackDamageMax"			"14760"		// Damage range max.
-		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackRate"				"0.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
