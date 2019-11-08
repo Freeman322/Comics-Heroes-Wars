@@ -89,6 +89,12 @@ function Event:Start()
 
     self.m_bSpawning = true
 
+    for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+		if PlayerResource:IsValidPlayerID(nPlayerID) and PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+			PlayerResource:SetGold(nPlayerID, 15000, true)
+		end
+	end
+
     Timers:CreateTimer(5, function() self:CreateUnits() return 30 end)
 end
 
@@ -209,8 +215,6 @@ function Event:OnNPCSpawned( event )
         for i=1, 35 do
             spawnedUnit:HeroLevelUp(true)
         end
-
-        spawnedUnit:ModifyGold(10000, true, 0)
     end 
 
 	if spawnedUnit:IsCreature() then
