@@ -165,6 +165,9 @@ function RebuildUI() {
 
         $("#npc_dota_hero_phoenix").SetHasClass("Banned", true);
         $("#npc_dota_hero_phoenix").hittest = false;
+
+        $("#npc_dota_hero_tinker").SetHasClass("Banned", true);
+        $("#npc_dota_hero_tinker").hittest = false;
     }
 
     if (getClientStatus(Players.GetLocalPlayer()) < 1) return;

@@ -93,7 +93,7 @@ function Event:Start()
 		if PlayerResource:IsValidPlayerID(nPlayerID) and PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
 			PlayerResource:SetGold(nPlayerID, 15000, true)
 		end
-	end
+    end
 
     Timers:CreateTimer(5, function() self:CreateUnits() return 30 end)
 end
@@ -170,6 +170,12 @@ function Event:OnThink()
         end
 
         self.m_bSpawning = false
+
+        local heroes = HeroList:GetAllHeroes()
+
+        for k,v in pairs(heroes) do
+            v:RespawnHero(false, false)
+        end
 
         self:ClearUnits()
         self:RunBoss()
