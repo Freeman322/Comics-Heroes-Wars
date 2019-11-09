@@ -7985,6 +7985,9 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to
 		"ModelScale"				"2.5"
 		"Level"						"100"
+
+	    "IsSummoned"				"1"
+		"IsAncient"					"1"
 		"ConsideredHero"			"1"
 
 		"SoundSet"					"Hero_Pudge"								// Name of sound set.
@@ -8025,8 +8028,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"15000"		// Damage range min.
-		"AttackDamageMax"			"15000"		// Damage range max.
+		"AttackDamageMin"			"12000"		// Damage range min.
+		"AttackDamageMax"			"12000"		// Damage range max.
 		"AttackRate"				"0.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
@@ -8054,7 +8057,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"700000"		// Base health.
+		"StatusHealth"				"340000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 		"StatusMana"				"18500"		// Base mana.
 		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.

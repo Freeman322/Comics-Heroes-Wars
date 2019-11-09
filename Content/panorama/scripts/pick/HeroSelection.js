@@ -168,6 +168,12 @@ function RebuildUI() {
 
         $("#npc_dota_hero_tinker").SetHasClass("Banned", true);
         $("#npc_dota_hero_tinker").hittest = false;
+
+        $("#npc_dota_hero_alchemist").SetHasClass("Banned", true);
+        $("#npc_dota_hero_alchemist").hittest = false;
+
+        $("#npc_dota_hero_juggernaut").SetHasClass("Banned", true);
+        $("#npc_dota_hero_juggernaut").hittest = false;
     }
 
     if (getClientStatus(Players.GetLocalPlayer()) < 1) return;
