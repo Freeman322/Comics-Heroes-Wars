@@ -61,15 +61,17 @@ function modifier_chaos_king_burning_fiend:OnCreated(params)
 end
 
 function modifier_chaos_king_burning_fiend:OnIntervalThink()
-	if IsServer() then
+    if IsServer() then
+        if not self.m_hTarget or self.m_hTarget:IsNull() or not self.m_hTarget:IsAlive() then
+            self:Destroy() return
+        end 
+
         local order_caster =
         {
             UnitIndex = self:GetParent():entindex(),
             OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
             TargetIndex = self.m_hTarget:entindex()
         }
-
-        self.m_hTarget:Stop()
 
         ExecuteOrderFromTable(order_caster)
 
