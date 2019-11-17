@@ -1,7 +1,7 @@
 "AddonInfo"
 {
     "TeamCount" 						"10"
-    "maps"      						"dota free_for_all dota_captains_mode quoijes_massacre" 
+    "maps"      						"dota free_for_all dota_captains_mode" 
     "IsPlayable"  					    "1"
     "CheckAFKPlayers"     			    "1"
     "PenaltiesEnabled"     			    "1"
@@ -18,9 +18,5 @@
     "dota_captains_mode"
     {
         "MaxPlayers"                    "10"
-    }
-    "quoijes_massacre"
-    {
-        "MaxPlayers"                    "8"
     }
 }

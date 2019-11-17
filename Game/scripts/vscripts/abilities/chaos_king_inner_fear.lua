@@ -7,39 +7,20 @@ function chaos_king_inner_fear:OnSpellStart ()
     if IsServer() then
         local hTarget = self:GetCaster():GetCursorCastTarget()
         local duration = self:GetSpecialValueFor("latch_duration")
+        local creatures = 1
+
+        local damage = self:GetSpecialValueFor("creature_damage")
+
+        if self:GetCaster():HasScepter() then damage = damage + self:GetCaster():GetAverageTrueAttackDamage(hTarget) end 
+
+        print(damage)
+
+        if self:GetCaster():HasTalent("special_bonus_unique_chaos_king_3") then  creatures = 2 end 
 
         EmitSoundOn ("Hero_Grimstroke.InkCreature.Cast", self:GetCaster() )
         EmitSoundOn ("Hero_Grimstroke.InkCreature.Spawn", hTarget)
-
-        PrecacheUnitByNameAsync("npc_dota_chaos_king_ink_creature", function()
-            local unit = CreateUnitByName( "npc_dota_chaos_king_ink_creature", self:GetCaster():GetAbsOrigin(), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber())
-           
-            unit:AddNewModifier(unit, self, "modifier_inner_fear", {duration = duration, target = hTarget:entindex()})
-            unit:AddNewModifier(unit, self, "modifier_kill", {duration = duration})
-            unit:AddNewModifier(unit, self, "modifier_doom_bringer_scorched_earth_effect_aura", {duration = duration})
-
-            FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
-
-            unit:SetBaseDamageMin(self:GetSpecialValueFor("creature_damage"))
-            unit:SetBaseDamageMax(self:GetSpecialValueFor("creature_damage"))
-            unit:SetBaseMoveSpeed(self:GetSpecialValueFor("speed"))
-            unit:SetBaseMaxHealth(self:GetSpecialValueFor("destroy_attacks"))
-            unit:SetAttackCapability(1)
-
-            local order_caster =
-            {
-                UnitIndex = unit:entindex(),
-                OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
-                TargetIndex = hTarget:entindex()
-            }
-    
-            hTarget:Stop()
-            ExecuteOrderFromTable(order_caster)
-    
-            unit:SetForceAttackTarget(hTarget)
-        end)
-
-        if self:GetCaster():HasTalent("special_bonus_unique_chaos_king_3") then 
+        
+        for i = 1, creatures do
             PrecacheUnitByNameAsync("npc_dota_chaos_king_ink_creature", function()
                 local unit = CreateUnitByName( "npc_dota_chaos_king_ink_creature", self:GetCaster():GetAbsOrigin(), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber())
                
@@ -49,18 +30,23 @@ function chaos_king_inner_fear:OnSpellStart ()
     
                 FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
     
-                unit:SetBaseDamageMin(self:GetSpecialValueFor("creature_damage"))
-                unit:SetBaseDamageMax(self:GetSpecialValueFor("creature_damage"))
+                unit:SetBaseDamageMin(damage)
+                unit:SetBaseDamageMax(damage)
                 unit:SetBaseMoveSpeed(self:GetSpecialValueFor("speed"))
                 unit:SetBaseMaxHealth(self:GetSpecialValueFor("destroy_attacks"))
                 unit:SetAttackCapability(1)
+    
+                unit:SetMaxHealth(self:GetSpecialValueFor("destroy_attacks"))
+                unit:SetHealth(self:GetSpecialValueFor("destroy_attacks"))
+    
+                unit:Attribute_SetIntValue("bFollowPointAttack", 1) ---- Теперь любое существо в игре может быть помечено этим флагом. Использовать, если нужно отнимать 1 хп за любой урон!
     
                 local order_caster =
                 {
                     UnitIndex = unit:entindex(),
                     OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
                     TargetIndex = hTarget:entindex()
-                }
+                } 
         
                 hTarget:Stop()
                 ExecuteOrderFromTable(order_caster)
@@ -120,9 +106,9 @@ function modifier_inner_fear:OnIntervalThink()
 
             self:GetParent():SetForceAttackTarget(self.m_hTarget)
 
-            if self:GetAbility():GetCaster():HasScepter() then
+            --[[if self:GetAbility():GetCaster():HasScepter() then
                 self:GetAbility():GetCaster():PerformAttack(self.m_hTarget, true, true, true, true, false, false, true)
-            end 
+            end ]]--
         end
     end
 end

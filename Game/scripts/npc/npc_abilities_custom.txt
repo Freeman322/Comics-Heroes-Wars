@@ -3633,6 +3633,27 @@
 
 		"AbilityCastRange"							"450 500 550 600"
 
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+			"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_scorched_earth_buff.vpcf"
+			"particle"			"particles/units/heroes/hero_doom_bringer/doom_scorched_earth.vpcf"
+			"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_scorched_earth_debuff.vpcf"
+			"model"				"models/items/axe/harbingerwar_head/harbingerwar_head.vmdl"
+			"model"				"models/items/axe/axe_cape/axe_cape.vmdl"
+			"particle"			"particles/econ/items/axe/axe_cinder/axe_cinder_ambient_alt.vpcf"
+			"model"				"models/items/axe/generic_blinkdag/generic_blinkdag.vmdl"
+			"model"				"models/items/axe/hood_executioner.vmdl"
+			"model"				"models/items/axe/oglodi_big_boss_head/oglodi_big_boss_head.vmdl"
+			"model"				"models/items/axe/oglodi_big_boss_misc/oglodi_big_boss_misc.vmdl"
+			"model"				"models/items/axe/oglodi_big_boss_belt/oglodi_big_boss_belt.vmdl"
+			"model"				"models/items/axe/oglodi_big_boss_armor/oglodi_big_boss_armor.vmdl"
+			"model"				"models/items/axe/oglodi_big_boss_weapon/oglodi_big_boss_weapon.vmdl"
+			"model"      "models/items/axe/axe_ti9_immortal_head/axe_ti9_immortal_head.vmdl"
+			"particle"   "particles/econ/items/axe/axe_ti9_immortal/axe_ti9_gold_immortal_ambient.vpcf"
+			"particle"   "particles/econ/items/axe/axe_ti9_immortal/axe_ti9_immortal_ambient.vpcf"
+        }
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -40915,7 +40936,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 12 11 10"
+		"AbilityCooldown"				"12 10 8 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -40966,7 +40987,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"32 28 24 20"
+		"AbilityCooldown"				"32"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -41044,17 +41065,16 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"HasScepterUpgrade"			    "1"
 		"FightRecapLevel"				"1"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
-		"AbilityCooldown"				"140"
+		"AbilityCooldown"				"120 100 80"
 		"AbilityCastRange"				"700 800 900"
-		"AbilityCastPoint"				"0.65"
-		"AbilityManaCost"				"150 200 250"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"250 300 450"
 		
 		"AbilityModifierSupportValue"	"0.75"
 
@@ -41079,7 +41099,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"		        "5.0 5.9 6.8"
+				"duration"		        "2.0 2.5 3.0"
 				"LinkedSpecialBonus"    "special_bonus_unique_chaos_king_2"
 			}
 		}
