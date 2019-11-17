@@ -11677,7 +11677,6 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_chaos_king_burning_fiend"                                     "Primal Chaos"
 		"DOTA_Tooltip_ability_chaos_king_burning_fiend_Description"                         "The Chaos King clouds the minds of all enemy heroes on the map, they begin to attack the chosen target and lose control"
 		"DOTA_Tooltip_ability_chaos_king_burning_fiend_duration"                            "CHAOS DURATION:"
-		"DOTA_Tooltip_ability_chaos_king_burning_fiend_aghanim_description"                 "Grants a new ability: Reflection of Chaos"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king"                              "-30 cooldown for Primal Chaos"
 		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_2"                            "+1.2 duration for Primal Chaos"	

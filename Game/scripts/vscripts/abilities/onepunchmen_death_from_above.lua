@@ -47,7 +47,11 @@ function onepunchmen_death_from_above:BlowUp()
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 		EmitSoundOn( "Hero_Pangolier.TailThump.Shield", self:GetCaster() )
-		GridNav:DestroyTreesAroundPoint( self:GetCaster():GetOrigin(), radius, false )
+        GridNav:DestroyTreesAroundPoint( self:GetCaster():GetOrigin(), radius, false )
+        
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "kama_bullet") then
+            EmitSoundOn( "Kama.CastJump", self:GetCaster() )
+        end
 	end
 end
 

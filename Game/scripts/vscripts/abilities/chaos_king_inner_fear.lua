@@ -113,32 +113,6 @@ function modifier_inner_fear:OnIntervalThink()
     end
 end
 
-function modifier_inner_fear:DeclareFunctions()
-    local funcs = {
-        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
-        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
-        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
-        MODIFIER_EVENT_ON_TAKEDAMAGE
-    }
-
-    return funcs
-end
-
-function modifier_inner_fear:GetModifierPreAttack_BonusDamage()
-    return self:GetAbility():GetSpecialValueFor("bonus_damage")
-end
-
-function modifier_inner_fear:GetModifierAttackSpeedBonus_Constant()
-    return self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
-end
-
-function modifier_inner_fear:OnTakeDamage(params)
-    if IsServer() then 
-        if params.unit == self:GetParent() then
-            self:GetParent():ModifyHealth(self:GetParent():GetHealth() - 1, self:GetAbility(), true, 0)
-        end 
-	end
-end
 
 function modifier_inner_fear:CheckState()
 	local state = {
@@ -148,7 +122,3 @@ function modifier_inner_fear:CheckState()
 
 	return state
 end
-
-function modifier_inner_fear:GetAbsoluteNoDamagePhysical() return 1 end
-function modifier_inner_fear:GetAbsoluteNoDamageMagical() return 1 end
-function modifier_inner_fear:GetAbsoluteNoDamagePhysical() return 1 end

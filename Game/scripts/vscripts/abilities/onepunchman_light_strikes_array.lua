@@ -20,6 +20,10 @@ function onepunchman_light_strikes_array:OnSpellStart()
 	    local thinker = CreateModifierThinker(caster, self, "modifier_onepunchman_light_strikes_array_thinker", {duration = self:GetSpecialValueFor("duration")}, point, team_id, false)
 	    thinker:SetForwardVector(self:GetCaster():GetForwardVector())
 
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "kama_bullet") then
+            EmitSoundOn( "Kama.CastAbil", self:GetCaster() )
+        end
+
 	    self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_onepunchman_light_strikes_array_caster", {duration = self:GetSpecialValueFor("duration")})
 	end
 end
