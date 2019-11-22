@@ -2852,6 +2852,12 @@ Rage, rage against the dying of the light."
 		"elder_warlock"                   "Elder Warlock"
 		"elder_warlock_lore"              ""
 
+        "scarlett"                        "Scarlett"
+        "scarlett_lore"                        ""
+
+        "star_emblem"                        "Star Emblem"
+        "star_emblem_lore"                        ""
+        
 		"pudge_mask"                      "Mask of the Mad Harvester"
 		"pudge_mask_lore"                 ""
 

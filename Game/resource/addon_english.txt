@@ -6510,6 +6510,7 @@
 		"DOTA_Tooltip_ability_enigma_vacuum_Description"                                  "Toggleable: Infinity gradually draws all enemies to itself in the radius of action."
 		"DOTA_Tooltip_ability_enigma_vacuum_radius"                                       "RADIUS:"
 		"DOTA_Tooltip_ability_enigma_vacuum_speed"                                        "SPEED:"
+        "DOTA_Tooltip_ability_enigma_vacuum_damage_mult"                                  "INTELLECT TO DAMAGE:"
 
 		"DOTA_Tooltip_ability_item_sunshines_aromor_bonus_strength"                       "+$str"
 		

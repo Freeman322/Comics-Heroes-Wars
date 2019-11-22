@@ -278,11 +278,7 @@ function modifier_infinity_black_hole:OnIntervalThink()
         damage_table.ability = self:GetAbility()
         damage_table.damage_type = DAMAGE_TYPE_PURE
         damage_table.damage = damage/100
-        damage_table.damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS
-
-        if not self:GetParent():GetUnitName() ~= "npc_mega_greevil" and self:GetParent():GetUnitName() ~= "npc_dota_warlock_golem_1" then
-            ApplyDamage(damage_table)
-        end
+        damage_table.damage_flags = DOTA_DAMAGE_FLAG_HPLOSS
 
 		if not self:GetAbility():IsChanneling() then
             FindClearSpaceForUnit(self:GetParent(), self:GetParent():GetAbsOrigin(), false)

@@ -133,7 +133,8 @@ function Precache( context )
 
 	PrecacheResource("particle", "particles/econ/pets/pet_drodo_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/econ/courier/courier_onibi/courier_onibi_black_lvl21_ambient.vpcf", context)
-
+    PrecacheResource("particle", "particles/star_emblem/star_emblem_hero_effect.vpcf", context)
+    
 	PrecacheResource("particle", "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_weather_underwater.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_snow.vpcf", context)

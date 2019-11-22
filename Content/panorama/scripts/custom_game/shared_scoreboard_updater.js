@@ -98,6 +98,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				if (playerInfo.player_selected_hero == "npc_dota_hero_templar_assassin" && hasModifier(hero_entindex, "modifier_neo_noir"))
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/neo_noir.png" );
+                }
+                else if (playerInfo.player_selected_hero == "npc_dota_hero_storm_spirit" && hasModifier(hero_entindex, "modifier_scarlett"))
+				{
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/scarlett_skin.png" );
 				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_nyx_assassin" && hasModifier(hero_entindex, "modifier_the_firs_hunter"))
 				{
