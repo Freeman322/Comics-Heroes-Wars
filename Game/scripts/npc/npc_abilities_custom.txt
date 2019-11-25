@@ -286,7 +286,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"strike_radius"				"200"
+				"strike_radius"				"150"
 			}
 			"04"
 			{
@@ -19778,7 +19778,7 @@
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"strike_radius"					"220"
+				"strike_radius"					"150"
 			}
 			"04"
 			{
@@ -22770,7 +22770,7 @@
 				"stun_duration"			"1.3 1.6 1.9 2.2"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	//=================================================================================================================
 	// Pangolier: Swashbuckle
@@ -22852,7 +22852,7 @@
 				"duration_slowing"		"3.5"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"onepunchman_ult"
 	{
@@ -39732,7 +39732,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 13 11 9"
+		"AbilityCooldown"				"10"
 
 
 		// Cost
@@ -39801,7 +39801,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 13 11 9"
+		"AbilityCooldown"				"10"
 
 
 		// Cost
@@ -39870,7 +39870,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 13 11 9" 
+		"AbilityCooldown"				"10" 
 
 
 		// Cost
@@ -41195,6 +41195,276 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"0.9"
+			}
+		}
+	}
+	"aqua_man_water_wave"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"				"custom/"
+		"ScriptFile"								"abilities/aqua_man_water_wave.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.35"
+		"AbilityCooldown"				"12"
+		"AbilityDamage"					"80 160 240 320"
+		"AbilityManaCost"				"70 80 90 100"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-3 -6 -9 -12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"crush_extra_slow"				"-20 -25 -30 -35"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"crush_attack_slow_tooltip"		"-20 -25 -30 -35"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"aqua_man_waveform"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_lua"
+		"ScriptFile"							"abilities/aqua_man_waveform.lua"
+		"AbilityTextureName"			"custom/"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"					"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"19 16 13 10"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"125 200 275 350"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 110 100 90"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers	
+    }
+	"aqua_man_sea_lord"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/aqua_man_sea_lord.lua"
+		"AbilityTextureName"			"custom/chaos_king_static_shield"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movespeed_on_water"	"40"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_hp_regen_on_water"	"10"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor_on_water"		"6"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"water_strike_base_damage"	"20"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"water_strike_damage_agi"	"0.5"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_movespeed_on_water"	"1000"
+			}
+		}
+    }
+	"special_bonus_unique_aqua_man"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1"
+			}
+		}
+	}
+	"aqua_man_wave"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"BaseClass"					"ability_lua"
+		"AbilityTextureName"				""
+		"ScriptFile"					"abilities/aqua_man_wave.lua"
+		"LevelsBetweenUpgrades"         "4"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200 1600 2000 2400"
+		"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7"
+		"AbilityDuration"				"3.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 75 90 105"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wave_speed"	        	"1500"
+			}			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wave_width_initial"     	"260"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wave_width_end"		    "260"
+			}	
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wave_distance"		     	"1200 1600 2000 2400"
+			}
+			"05"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"wave_damage"	           "60 90 120 150"
+			} 
+			"06"
+			{
+				"var_type"                 "FIELD_FLOAT"
+				"bonus_damage_agi"         "1.2 1.7 2.2 2.7"
+			}
+		}
+	}
+	"aqua_man_sphere"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"					"abilities/aqua_man_water_sphere.lua"
+		"AbilityTextureName"			"custom/"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90 70 50"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 200 275"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"800 1200 1600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0 4.5 5.0"
+			}
+			"03"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"aqua_man_movespeed"     "700 900 1100"  //мувспид аквамена в сфере
 			}
 		}
 	}

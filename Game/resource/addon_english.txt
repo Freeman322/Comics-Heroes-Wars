@@ -11686,5 +11686,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_4_Description"                "Absorption of Chaos also gives spell immunity"	
 		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_5"                            "+25 Damage over time for Chaosflame blast"
 		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_6"                            "+1 second stun duration for Chaosflame blast"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_aqua_man"                                "Waveform Attacks Targets"
 	}	
 }

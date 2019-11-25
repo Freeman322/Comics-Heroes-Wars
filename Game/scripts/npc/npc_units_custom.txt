@@ -5376,6 +5376,111 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_ATTACHED"
 	}
+	"npc_dota_hero_aqua_man"
+	{
+        "BaseClass"     				"npc_dota_hero"
+		"HeroID"						"232"
+
+		"Model"		                    "models/heroes/morphling/morphling.vmdl"
+		"SoundSet"		                "Hero_Morphling"
+		"Enabled"		                "1"
+		"HeroUnlockOrder"		        "1"
+	    "Role"			                "Carry,Escape,Durable,Nuker,Disabler"
+		"Rolelevels"	                "1,1,3,3,1"
+		"Complexity"	                "1"
+		"Team"		                    "Bad"
+
+		"ModelScale"		            "0.970000"
+		"VersusScale"		            "0.9700000"
+		"LoadoutScale"		            "0.970000"
+
+		"SpectatorLoadoutScale"         "0.78"
+		"HeroGlowColor"		            "12 157 179"
+		"PickSound"		                "morphling_mrph_spawn_01"
+		"BanSound"		                "morphling_mrph_anger_07"
+		"CMEnabled"		                "1"
+		"Legs"          	            "4"
+		"workshop_guide_name"		    "Leshrac"
+		"new_player_enable"		        "1"
+		"LastHitChallengeRival"		    "npc_dota_hero_necrolyte"
+		"HeroSelectSoundEffect"		    "Hero_Morphling.Pick"
+
+		
+		"Ability1"		                "aqua_man_waveform"
+		"Ability2"		                "aqua_man_water_wave"
+		"Ability3"		                "aqua_man_wave"		
+		"Ability4"		                "aqua_man_sea_lord"
+		"Ability5"		                "generic_hidden"
+		"Ability6"		                "aqua_man_sphere"
+
+		"Ability7"		                ""
+		"Ability8"		                ""
+		"Ability10"		                "special_bonus_exp_boost_30"
+		"Ability11"		                "special_bonus_all_stats_12"
+		"Ability12"		                "special_bonus_unique_aqua_man"
+		"Ability13"		                ""
+		"Ability14"		                ""
+		"Ability15"		                ""
+		"Ability16"		                ""
+		"Ability17"		                ""
+
+		"ArmorPhysical"		            "6"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		        "22"
+		"AttackDamageMax"		        "28"
+		"AttackRate"		            "1.600000"
+		"AttackAnimationPoint"		    "0.400000"
+		"AttackAcquisitionRange"		"508"
+		"AttackRange"		            "128"
+		"AttributePrimary"		        "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"	    	"12"
+		"AttributeStrengthGain"		    "1.600000"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"3.0"
+		"AttributeBaseAgility"		    "30"
+		"AttributeAgilityGain"		    "4.300000"
+		"MovementSpeed"		            "300"
+		"MovementTurnRate"		        "0.500000"
+		"BoundsHullName"		        "DOTA_HULL_SIZE_HERO"
+		"particle_folder"	         	"particles/units/heroes/hero_morphling"
+		"GameSoundsFile"         		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"VoiceFile"	                 	"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
+
+		"BaseAttackSpeed"				"100"
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		"RingRadius"					"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		"HealthBarOffset"       		"190"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"					"300"
+		"StatusHealthRegen"				"1.0"
+		"StatusMana"					"245"
+		"StatusManaRegen"				"0.4"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"			"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"					"1"
+    }
 
 
 
