@@ -271,6 +271,7 @@ function modifier_infinity_black_hole:OnIntervalThink()
                 damage = damage + bonus
             end
         end
+
         local damage_table = {}
 
         damage_table.attacker = self:GetCaster()
@@ -279,6 +280,8 @@ function modifier_infinity_black_hole:OnIntervalThink()
         damage_table.damage_type = DAMAGE_TYPE_PURE
         damage_table.damage = damage/100
         damage_table.damage_flags = DOTA_DAMAGE_FLAG_HPLOSS
+
+        ApplyDamage(damage_table)
 
 		if not self:GetAbility():IsChanneling() then
             FindClearSpaceForUnit(self:GetParent(), self:GetParent():GetAbsOrigin(), false)

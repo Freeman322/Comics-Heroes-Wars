@@ -2483,12 +2483,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 160 220"
+				"damage"				"130 190 250"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_perc"			"2.0 3.0 4.0"
+				"damage_perc"			"2.25 3.25 4.25"
 			}
 			"07"
 			{
@@ -12373,9 +12373,7 @@
 		"AbilityCooldown"				"65 55 45 35"
 		"AbilityManaCost"				"100 150 200 250"
 		"AbilityCastRange"				"500 550 600 650"
-
-		"HasScepterUpgrade"				"1"
-
+        
 		"AbilitySpecial"
 		{
 			"01"
@@ -19489,12 +19487,18 @@
 		"precache"
 		{
 			"soundfile"     "soundevents/game_sounds_heroes/game_sounds_storm_spirit.vsndevts"
+
 			"model"			"models/heroes/hero_green_lantern/green_lantern_immortal_head.vmdl"
 			"model"			"models/items/antimage/distinguished_conscript_armor/distinguished_conscript_armor.vmdl"
 			"model"			"models/items/antimage/distinguished_conscript_belt/distinguished_conscript_belt.vmdl"
 			"model"			"models/items/antimage/god_eater_arms/god_eater_arms.vmdl"
             "model"         "models/heroes/hero_green_lantern/skarlett_skin_for_lantern/scarlett.vmdl"
+
+            "particle"      "particles/econ/items/witch_doctor/witch_doctor_ribbitar/witch_doctor_ribbitar_ward_attack.vpcf"
+            "particle"      "particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf"
+
 			"model"			"models/items/antimage/leggings_of_the_awakened/leggings_of_the_awakened.vmdl"
+
             "particle"      "particles/econ/courier/courier_jade_horn/courier_jade_horn_ambient_eye.vpcf"
 			"particle"      "particles/ironman/iron_devil_ambient/nullifier_mute_debuff.vpcf"
             "particle"      "particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_magic_missle_crimson.vpcf"
