@@ -4869,7 +4869,114 @@
 					}
 					"volume"
 					{
+						"value"		"5.000000"
+					}
+					"pitch"
+					{
 						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Kama.Spawn"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/kama_spawn1.vsnd"
+                            "value1"		"sounds/econs/kama_spawn2.vsnd"
+                            "value2"		"sounds/econs/kama_spawn3.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"1.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Kama.CastAbil"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/kama/mini-sha2.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"5.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Kama.CastJump"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/kama/mini-sha.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"5.000000"
 					}
 					"pitch"
 					{

@@ -2,6 +2,8 @@ sheefu_death_stranding = class ( {})
 
 LinkLuaModifier ("modifier_sheefu_death_stranding", "abilities/sheefu_death_stranding.lua", LUA_MODIFIER_MOTION_NONE)
 
+local MICRO_BASH_DURATION = 0.35
+
 function sheefu_death_stranding:CastFilterResultTarget (hTarget)
     if IsServer () then
         local nResult = UnitFilter (hTarget, self:GetAbilityTargetTeam (), self:GetAbilityTargetType (), self:GetAbilityTargetFlags (), self:GetCaster ():GetTeamNumber () )
@@ -40,6 +42,10 @@ function sheefu_death_stranding:OnSpellStart ()
                     ParticleManager:SetParticleControl( nFXIndex, 2, hTarget:GetOrigin());
                     ParticleManager:SetParticleControl( nFXIndex, 5, hTarget:GetOrigin());
                     ParticleManager:ReleaseParticleIndex( nFXIndex );
+
+                    hTarget:Stop()
+                    hTarget:Interrupt()
+                    hTarget:AddNewModifier(self:GetCaster(), self, "modifier_stunned", { duration = MICRO_BASH_DURATION } )
 
                     hTarget:AddNewModifier( self:GetCaster(), self, "modifier_sheefu_death_stranding", { duration = self:GetSpecialValueFor("duration") } )
                end
@@ -117,7 +123,9 @@ end
 
 function modifier_sheefu_death_stranding:CheckState()
 	local state = {
-        [MODIFIER_STATE_PASSIVES_DISABLED] = true
+        [MODIFIER_STATE_PASSIVES_DISABLED] = true,
+        [MODIFIER_STATE_SILENCED] = true,
+        [MODIFIER_STATE_DISARMED] = true
 	}
 
 	return state

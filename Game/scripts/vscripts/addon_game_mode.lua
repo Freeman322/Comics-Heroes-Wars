@@ -133,7 +133,8 @@ function Precache( context )
 
 	PrecacheResource("particle", "particles/econ/pets/pet_drodo_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/econ/courier/courier_onibi/courier_onibi_black_lvl21_ambient.vpcf", context)
-
+    PrecacheResource("particle", "particles/star_emblem/star_emblem_hero_effect.vpcf", context)
+    
 	PrecacheResource("particle", "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_weather_underwater.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_snow.vpcf", context)
@@ -293,13 +294,7 @@ function GameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_REGENERATION, true ) --Regen
     GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_ARCANE, true ) --Arcane
     GameRules:GetGameModeEntity():SetRuneEnabled( DOTA_RUNE_BOUNTY, true ) --Bounty
-    
-    if GetMapName() == "quoijes_massacre" then
-        Event:OnInit()
-    end 
-	
-    ----GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap( GameMode, "ModifyGoldFilter" ), self)
-
+ 
     Timers:CreateTimer(5, function() GameMode:GoldTickTimer() return DOTA_GOLD_TICK_TIME end)
 end
 
@@ -435,6 +430,12 @@ function GameMode:DmgFilter(ftable)
         local victim = EntIndexToHScript(ftable.entindex_victim_const)
         local damage = ftable.damage
         if attacker ~= nil then
+            if victim:Attribute_GetIntValue("bFollowPointAttack", 0) == 1 then
+                victim:ModifyHealth(victim:GetHealth() - 1, nil, true, 0)
+
+                ftable.damage = 0
+                return false
+            end
             if victim:HasModifier("modifier_franklin_global_retrocausality_friendly") and victim:HasModifier("modifier_thanos_decimation") == false then
                 local modifier = victim:FindModifierByName("modifier_franklin_global_retrocausality_friendly")
                 if modifier then
@@ -454,18 +455,6 @@ function GameMode:DmgFilter(ftable)
                 end
                 return true
             end
-            if victim:HasModifier( "modifier_thanos_believer" ) and not victim:HasModifier("modifier_item_timepiece")  then
-                if damage > victim:GetHealth() then
-                    local modifer = victim:FindModifierByName("modifier_thanos_believer")
-                    if modifer and modifer:GetAbility():IsCooldownReady() then
-                        modifer:GetAbility():StartCooldown(modifer:GetAbility():GetCooldown(modifer:GetAbility():GetLevel()))
-                        victim:AddNewModifier( victim, modifer, "modifier_item_aeon_disk_buff", {duration = modifer:GetAbility():GetDuration()} )
-                        victim:AddNewModifier( victim, modifer, "modifier_item_lotus_orb_active", {duration = modifer:GetAbility():GetDuration()} )
-
-                        ftable.damage = 0
-                    end
-                end
-            end
             if victim:HasModifier( "item_time_gem" ) then
                 if damage > victim:GetHealth() then
                     local modifer = victim:FindModifierByName("item_time_gem")
@@ -476,12 +465,6 @@ function GameMode:DmgFilter(ftable)
                         end
                     end
                 end
-            end
-            if victim:GetUnitLabel() == "baloon_creature" then
-                victim:ModifyHealth(victim:GetHealth() - 1, nil, true, 0)
-
-                ftable.damage = 0
-                return false
             end
         end
         if victim:HasModifier("modifier_ares_terrorize") then

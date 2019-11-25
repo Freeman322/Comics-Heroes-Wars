@@ -381,93 +381,98 @@ function Util:OnHeroInGame(hero)
     if hero:GetPrimaryAttribute() == 2 and hero:GetUnitName() ~= "npc_dota_hero_silencer" then hero:AddNewModifier(hero, hero:GetAbilityByIndex(0), "modifier_silencer_int_steal", nil) end
 
     if not hero:HasModifier("modifier_kill") and not hero:IsIllusion() and not hero:IsTempestDouble() then
-      hero:AddNewModifier(hero, hero:GetAbilityByIndex(0), "modifier_respawn_time", nil)
-
-      --[[ParticleManager:CreateParticleForPlayer("particles/rain_fx/econ_moonlight.vpcf", PATTACH_EYES_FOLLOW, hero, hero:GetPlayerOwner())
-      ParticleManager:CreateParticleForPlayer("particles/rain_fx/econ_rain.vpcf", PATTACH_EYES_FOLLOW, hero, hero:GetPlayerOwner())]]
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "drodo_duffin") == true then
+        hero:AddNewModifier(hero, hero:GetAbilityByIndex(0), "modifier_respawn_time", nil)
+      
+        --[[ParticleManager:CreateParticleForPlayer("particles/rain_fx/econ_moonlight.vpcf", PATTACH_EYES_FOLLOW, hero, hero:GetPlayerOwner())
+        ParticleManager:CreateParticleForPlayer("particles/rain_fx/econ_rain.vpcf", PATTACH_EYES_FOLLOW, hero, hero:GetPlayerOwner())]]
+      
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "drodo_duffin") == true then
           PrecacheUnitByNameAsync("npc_dota_companion", function()
-            local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
-            unit:SetOwner(hero)
-            unit:SetControllableByPlayer(hero:GetPlayerID(), true)
-            unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
-            unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/drodo/drodo.vmdl"})
-
-            local nFXIndex = ParticleManager:CreateParticle( "particles/econ/pets/pet_drodo_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
-            ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
-            ParticleManager:ReleaseParticleIndex(nFXIndex)
+          local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+          unit:SetOwner(hero)
+          unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+          unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+          unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/drodo/drodo.vmdl"})
+      
+          local nFXIndex = ParticleManager:CreateParticle( "particles/econ/pets/pet_drodo_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
+          ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
+          ParticleManager:ReleaseParticleIndex(nFXIndex)
           end)
-      end
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "icewrack_wolf") == true then
-        PrecacheUnitByNameAsync("npc_dota_companion", function()
+        end
+      
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/star_emblem/star_emblem_hero_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
+      
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "icewrack_wolf") == true then
+          PrecacheUnitByNameAsync("npc_dota_companion", function()
           local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
           unit:SetOwner(hero)
           unit:SetControllableByPlayer(hero:GetPlayerID(), true)
           unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
           unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/icewrack_wolf/icewrack_wolf.vmdl"})
-
+      
           local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/puck/puck_snowflake/puck_snowflake_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
           ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
           ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
           ParticleManager:ReleaseParticleIndex(nFXIndex)
-        end)
-      end
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "otto_dragon") == true then
+          end)
+        end
+      
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "otto_dragon") == true then
           PrecacheUnitByNameAsync("npc_dota_companion", function()
           local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
           unit:SetOwner(hero)
           unit:SetControllableByPlayer(hero:GetPlayerID(), true)
           unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
           unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/osky/osky.vmdl"})
-
+      
           local nFXIndex = ParticleManager:CreateParticle( "particles/econ/pets/otto_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
           ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_eye_l", unit:GetOrigin(), true )
           ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
           ParticleManager:SetParticleControlEnt( nFXIndex, 2, unit, PATTACH_POINT_FOLLOW, "attach_eye_l", unit:GetOrigin(), true )
-
+      
           ParticleManager:SetParticleControl( nFXIndex, 15, Vector(79, 216, 11) )
           ParticleManager:SetParticleControl( nFXIndex, 16, Vector(1, 0, 0) )
           ParticleManager:ReleaseParticleIndex(nFXIndex)
           end)
-      end
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "argentum_swoedsmith") == true then
-        PrecacheUnitByNameAsync("npc_dota_companion", function()
+        end
+      
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "argentum_swoedsmith") == true then
+          PrecacheUnitByNameAsync("npc_dota_companion", function()
           local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
           unit:SetOwner(hero)
           unit:SetControllableByPlayer(hero:GetPlayerID(), true)
           unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
           unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/heroes/hero_elsa/elsa.vmdl"})
-        end)
-      end
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "celty") == true then
-        PrecacheUnitByNameAsync("npc_dota_companion", function()
+          end)
+        end
+      
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "celty") == true then
+          PrecacheUnitByNameAsync("npc_dota_companion", function()
           local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
           unit:SetOwner(hero)
           unit:SetControllableByPlayer(hero:GetPlayerID(), true)
           unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
           unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/celty_pet/celty.vmdl"})
-        end)
-      end
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "acolyte_of_lost_arts") == true then
-        PrecacheUnitByNameAsync("npc_dota_companion", function()
+          end)
+        end
+      
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "acolyte_of_lost_arts") == true then
+          PrecacheUnitByNameAsync("npc_dota_companion", function()
           local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
           unit:SetOwner(hero)
           unit:SetControllableByPlayer(hero:GetPlayerID(), true)
           unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
           unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/heroes/invoker_kid/invoker_kid.vmdl"})
-
+      
           SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/invoker_kid/invoker_kid_cape.vmdl"}):FollowEntity(unit, true)
           SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/invoker_kid/invoker_kid_hair.vmdl"}):FollowEntity(unit, true)
-        end)
+          end)
+        end
       end
-    end
-
+      
     --[[local model = hero:FirstMoveChild()
     while model ~= nil do
         if model:GetClassname() == "dota_item_wearable" then

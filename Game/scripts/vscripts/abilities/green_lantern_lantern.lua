@@ -4,11 +4,11 @@ LinkLuaModifier( "modifier_green_lantern_lantern_aura_effect", "abilities/green_
 green_lantern_lantern = class({})
 
 function green_lantern_lantern:OnSpellStart()
-  local unit = CreateUnitByName( "npc_dota_gl_lantern", self:GetCursorPosition(), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeam())
-  unit:AddNewModifier(self:GetCaster(), self, "modifier_green_lantern_lantern_aura", { duration = self:GetSpecialValueFor("duration") })
-  unit:AddNewModifier(self:GetCaster(), self, "modifier_kill", { duration = self:GetSpecialValueFor("duration") })
-	FindClearSpaceForUnit(unit, self:GetCursorPosition(), true)
-	EmitSoundOn( "Hero_Sven.GodsStrength", self:GetCaster() )
+    local unit = CreateUnitByName( "npc_dota_gl_lantern", self:GetCursorPosition(), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeam())
+    unit:AddNewModifier(self:GetCaster(), self, "modifier_green_lantern_lantern_aura", { duration = self:GetSpecialValueFor("duration") })
+    unit:AddNewModifier(self:GetCaster(), self, "modifier_kill", { duration = self:GetSpecialValueFor("duration") })
+    FindClearSpaceForUnit(unit, self:GetCursorPosition(), true)
+    EmitSoundOn( "Hero_Sven.GodsStrength", self:GetCaster() )
 end
 
 modifier_green_lantern_lantern_aura = class({
@@ -42,6 +42,6 @@ end
 
 function modifier_green_lantern_lantern_aura_effect:GetModifierTotalPercentageManaRegen()
     if self:GetParent() == self:GetCaster() then
-      return self:GetAbility():GetSpecialValueFor ("mana_regen_pct")
+        return self:GetAbility():GetSpecialValueFor ("mana_regen_pct")
     end
 end

@@ -5289,6 +5289,34 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "389": {
+        "item": "scarlett",
+        "rarity": "11",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_storm_spirit",
+        "universal": "false",
+        "def_id": "389",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "390": {
+        "item": "star_emblem",
+        "rarity": "10",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "univarsal_item",
+        "universal": "false",
+        "def_id": "390",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

@@ -105,6 +105,12 @@ function modifier_custom_unique:IsPurgable() return false end
 function modifier_custom_unique:RemoveOnDeath() return false end
 
 
+if modifier_scarlett == nil then modifier_scarlett = class({}) end 
+function modifier_scarlett:IsHidden() return true end
+function modifier_scarlett:IsPurgable() return false end
+function modifier_scarlett:RemoveOnDeath() return false end
+
+
 if modifier_sargeras_s7_custom == nil then modifier_sargeras_s7_custom = class({}) end
 
 function modifier_sargeras_s7_custom:IsHidden() return true end

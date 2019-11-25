@@ -6,21 +6,8 @@ function enigma_vacuum:ProcsMagicStick()
 	return false
 end
 
---------------------------------------------------------------------------------
-
-function enigma_vacuum:OnToggle()
-	if self:GetToggleState() then
-		self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_enigma_vacuum_aura", nil )
-
-		if not self:GetCaster():IsChanneling() then
-			self:GetCaster():StartGesture( ACT_DOTA_CAST_ABILITY_ROT )
-		end
-	else
-		local hRotBuff = self:GetCaster():FindModifierByName( "modifier_enigma_vacuum_aura" )
-		if hRotBuff ~= nil then
-			hRotBuff:Destroy()
-		end
-	end
+function enigma_vacuum:GetIntrinsicModifierName()
+	return "modifier_enigma_vacuum_aura"
 end
 
 if modifier_enigma_vacuum_aura == nil then modifier_enigma_vacuum_aura = class({}) end
@@ -61,7 +48,7 @@ if modifier_enigma_vacuum == nil then modifier_enigma_vacuum = class({}) end
 
 function modifier_enigma_vacuum:OnCreated(htable)
     if IsServer() then
-		self:StartIntervalThink(0.03)
+		self:StartIntervalThink(FrameTime())
 	end
 end
 
@@ -82,8 +69,14 @@ function modifier_enigma_vacuum:OnIntervalThink()
     local direction = (vector_distance):Normalized()
     -- If the target is greater than 40 units from the center, we move them 40 units towards it, otherwise we move them directly to the center
     if distance >= 80 then
-        parent:SetAbsOrigin(unit_location + direction * speed)
+        local pos = unit_location + direction * speed
+
+        parent:SetAbsOrigin(pos)
+
+        FindClearSpaceForUnit(parent, pos, false)
     end
+
+    ApplyDamage ({attacker = self:GetAbility():GetCaster(), victim = parent, ability = self:GetAbility(), damage = self:GetCaster():GetIntellect() * FrameTime() * self:GetAbility():GetSpecialValueFor("damage_mult"), damage_type = self:GetAbility():GetAbilityDamageType(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
 end
 
 function modifier_enigma_vacuum:OnDestroy()

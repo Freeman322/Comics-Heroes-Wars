@@ -12365,7 +12365,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"900"
+		"ItemCost"						"400"
 		"ItemShopTags"					"regen_health;regen_mana;boost_health;boost_mana;int;agi;str"
 		"ItemQuality"					"common"
 		"ItemAliases"					"magic wand"
@@ -12380,17 +12380,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"100"
+				"max_charges"			"25"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_radius"			"99999"
+				"charge_radius"			"1200"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"9"
+				"bonus_all_stats"		"5"
 			}
 			"04"
 			{
@@ -12469,7 +12469,7 @@
 			}			
 		}		
 	}
-		"item_recipe_ring_of_aquila"
+	"item_recipe_ring_of_aquila"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

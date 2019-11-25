@@ -2,43 +2,20 @@ LinkLuaModifier("modifier_manhattan_energy_surge", "abilities/manhattan_energy_s
 
 manhattan_energy_surge = class({})
 
-function manhattan_energy_surge:GetBehavior() return self:GetCaster():HasScepter() and DOTA_ABILITY_BEHAVIOR_AOE + DOTA_ABILITY_BEHAVIOR_NO_TARGET or DOTA_ABILITY_BEHAVIOR_UNIT_TARGET end
-
 function manhattan_energy_surge:OnSpellStart()
     if IsServer() then
         local target = self:GetCursorTarget()
 
-        if self:GetCaster():HasScepter() then
-            for _, enemy in pairs(FindUnitsInRadius( self:GetCaster():GetTeamNumber(), target:GetOrigin(), self:GetCaster(), self:GetSpecialValueFor("cast_range"), self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(), 0, false)) do
-                enemy:AddNewModifier(self:GetCaster(), self, "modifier_knockback", {
-                    center_x = enemy:GetAbsOrigin(),
-                    center_y = enemy:GetAbsOrigin(),
-                    center_z = enemy:GetAbsOrigin(),
-                    duration = self:GetSpecialValueFor("stun_duration"),
-                    knockback_duration = self:GetSpecialValueFor("stun_duration"),
-                    knockback_height = 300
-                })
-                enemy:AddNewModifier(self:GetCaster(), self, "modifier_manhattan_energy_surge", {duration = self:GetSpecialValueFor("stun_duration")})
-            end
-
-            local particle = ParticleManager:CreateParticle("particles/manhattan_energy_surge.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
-            ParticleManager:SetParticleControl(particle, 0, self:GetCaster():GetAbsOrigin())
-            ParticleManager:SetParticleControl(particle, 1, Vector(self:GetSpecialValueFor("cast_range"), self:GetSpecialValueFor("cast_range"), self:GetSpecialValueFor("cast_range")))
-            ParticleManager:SetParticleControl(particle, 11, Vector(self:GetSpecialValueFor("cast_range"), self:GetSpecialValueFor("cast_range"), self:GetSpecialValueFor("cast_range")))
-
-
-        else
-            if ( not target:TriggerSpellAbsorb (self) ) then
-                target:AddNewModifier(self:GetCaster(), self, "modifier_knockback", {
-                    center_x = target:GetAbsOrigin(),
-                    center_y = target:GetAbsOrigin(),
-                    center_z = target:GetAbsOrigin(),
-                    duration = self:GetSpecialValueFor("stun_duration"),
-                    knockback_duration = self:GetSpecialValueFor("stun_duration"),
-                    knockback_height = 100
-                })
-                target:AddNewModifier(self:GetCaster(), self, "modifier_manhattan_energy_surge", {duration = self:GetSpecialValueFor("stun_duration")})
-            end
+        if ( not target:TriggerSpellAbsorb (self) ) then
+            target:AddNewModifier(self:GetCaster(), self, "modifier_knockback", {
+                center_x = target:GetAbsOrigin(),
+                center_y = target:GetAbsOrigin(),
+                center_z = target:GetAbsOrigin(),
+                duration = self:GetSpecialValueFor("stun_duration"),
+                knockback_duration = self:GetSpecialValueFor("stun_duration"),
+                knockback_height = 100
+            })
+            target:AddNewModifier(self:GetCaster(), self, "modifier_manhattan_energy_surge", {duration = self:GetSpecialValueFor("stun_duration")})
         end
     end
 
@@ -46,8 +23,6 @@ function manhattan_energy_surge:OnSpellStart()
         EmitSoundOn("Uganda.Cast3", self:GetCaster())
     end
 end
-
-
 
 modifier_manhattan_energy_surge = class({
     IsHidden = function() return true end,
