@@ -8369,6 +8369,10 @@
         "BaseClass"     				"npc_dota_hero"
 		"HeroID"						"232"
 
+        "IsCustom"                      "1"
+		"DisableWearables"              "1"
+		"HeroDisabled"				    "1"
+
 		"Model"		                    "models/heroes/morphling/morphling.vmdl"
 		"SoundSet"		                "Hero_Morphling"
 		"Enabled"		                "1"
