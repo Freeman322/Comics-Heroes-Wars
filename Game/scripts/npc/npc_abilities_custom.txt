@@ -10997,7 +10997,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"attack_speed_bonus"	"55 70 85 100"
+				"movement_speed_bonus"	"15 20 25 30"
 			}
 			"02"
 			{
@@ -25162,6 +25162,16 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"activation_delay"			"0.05"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"1"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_restore_time"	"7 6 5 4"
 			}
 		}
 	}

@@ -2977,7 +2977,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"525"	
+		"ItemCost"						"350"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -2986,7 +2986,7 @@
 		"ItemResult"					"item_vladmir"
 		"ItemRequirements"
 		{
-			"01"						"item_ring_of_basilius;item_lifesteal"
+			"01"						"item_ring_of_basilius;item_buckler;item_lifesteal"
 		}
 	}
 	
@@ -3003,7 +3003,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1925"
+		"ItemCost"						"2150"
 		"ItemShopTags"					"lifesteal;damage;armor;regen_mana"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"vladmir's offering;vlads"
@@ -3022,28 +3022,23 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_aura"			"4"
+				"armor_aura"			"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_aura"			"15"
-			}			
+				"vampiric_aura"			"25"
+			}
 			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vampiric_aura"			"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vampiric_aura_ranged"			"10"
-			}
-			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aura_radius"	"1200"
 			}			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"6"
+			}
 		}
 	}
 
@@ -3059,7 +3054,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"250"
+		"ItemCost"						"50"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3101,32 +3096,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"5"
+				"bonus_all_stats"		"3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"3"
+				"bonus_aoe_armor"		"2"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_aoe_radius"		"900"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aoe_armor"		"2"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_aoe_duration"	"30.0"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_aoe_duration_hero"	"25.0"
+				"bonus_aoe_radius"		"1200"
 			}
 		}
 	}
@@ -3142,7 +3122,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"200"
 		"ItemShopTags"					""
 
 		// Sound
@@ -3157,7 +3137,7 @@
 		"ItemResult"					"item_ring_of_basilius"
 		"ItemRequirements"
 		{
-			"01"						"item_sobi_mask;item_ring_of_protection"
+			"01"						"item_sobi_mask"
 		}
 	}
 
@@ -3193,27 +3173,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15"
+				"bonus_all_stats"		"3"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"2"
+				"var_type"				"FIELD_FLOAT"
+				"aura_mana_regen"		"1.25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"900"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen"		"1"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"2"
+				"aura_radius"			"1200"
 			}
 		}
 	}
@@ -5523,35 +5493,9 @@
 		"ItemResult"					"item_bloodstone"
 		"ItemRequirements"
 		{
-			"01"						"item_pers;item_soul_booster"
+			"01"						"item_kaya;item_soul_booster"
 		}
-	}
-	
-	//=================================================================================================================
-	// Bloodstone
-	//=================================================================================================================
-"item_recipe_bloodstone"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"120"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_bloodstone"
-		"ItemRequirements"
-		{
-			"01"						"item_pers;item_soul_booster"
-		}
-	}
-	
+	}	
 	//=================================================================================================================
 	// Bloodstone
 	//=================================================================================================================
@@ -5570,7 +5514,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4900"
+		"ItemCost"						"5250"
 		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
@@ -5587,7 +5531,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"475"
+				"bonus_health"			"425"
 			}
 			"02"
 			{
@@ -5596,50 +5540,60 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"6.0"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"			"50"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3.0"
-			}
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction"			"15"
+			}			
 			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"			"20"
+			}	
+			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"mana_regen_multiplier"		"200"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen_per_charge"		"0.3"
-			}
 			"07"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"death_charges"				"3"
+				"var_type"				"FIELD_FLOAT"
+				"regen_per_charge"		"0.2"
 			}
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"kill_charges"			"1"
+				"var_type"				"FIELD_FLOAT"
+				"amp_per_charge"		"0.7"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_range"			"1600"
+				"death_charges"				"3"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"initial_charges_tooltip" "14"
+				"kill_charges"			"1"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost_percentage" "30"
+				"charge_range"			"1600"
 			}
 			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"initial_charges_tooltip" "14"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost_percentage" "30"
+			}
+			"14"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"restore_duration" "2.0"
@@ -12430,22 +12384,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"30"
+				"bonus_damage"			"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"10"
+				"bonus_strength"		"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"10"
+				"bonus_agility"			"15"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"10"
+				"bonus_intellect"		"15"
 			}
 			"05"
 			{

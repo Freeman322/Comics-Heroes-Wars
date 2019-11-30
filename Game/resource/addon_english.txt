@@ -2204,8 +2204,8 @@
 
 
 		"DOTA_TOOLTIP_ABILITY_deadpool_bar"                                     "RED RAGE"
-		"DOTA_TOOLTIP_ABILITY_deadpool_bar_Description"                         "Deadpool becomes Spell Immune, gains 100% resistance to magic damage, and gains increased attack speed."
-		"DOTA_Tooltip_ability_deadpool_bar_attack_speed_bonus"					"BONUS ATTACK SPEED:"
+		"DOTA_TOOLTIP_ABILITY_deadpool_bar_Description"                         "Deadpool becomes Spell Immune, gains 100% resistance to magic damage, and gains increased movespeed."
+		"DOTA_Tooltip_ability_deadpool_bar_movement_speed_bonus"					"BONUS MOVEMENT SPEED:"
 		"DOTA_Tooltip_ability_deadpool_bar_duration"							"DURATION:"
 
 

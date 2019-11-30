@@ -1243,6 +1243,8 @@
 		"ItemAliases"								"pineapple"
 		"ItemShareability"					"ITEM_NOT_SHAREABLE"
 		"ItemStackable"							"0"
+		"ItemStockMax"					"6"
+		"ItemStockTime"					"120.0"
 		"ItemPermanent"							"0"
 		"ItemInitialCharges"				"1"
 		"SideShop"									"0"
