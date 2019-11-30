@@ -4,18 +4,23 @@ function loki_blink_strike:OnSpellStart()
     if IsServer() then
         local target = self:GetCursorTarget()
         local particle = "particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike.vpcf"
+        
         if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "loki_golden_poseidons_daggers") == true then
-          particle = "particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf"
+            particle = "particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf"
+        end
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "lovuska_jokera") == true then
+            EmitSoundOn("Loki.CustomCast1", self:GetCaster())
         end
 
         local nFXIndex = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
-		ParticleManager:SetParticleControl(nFXIndex, 0, self:GetCaster():GetAbsOrigin())
-		ParticleManager:SetParticleControl(nFXIndex, 1, self:GetCaster():GetAbsOrigin())
-		ParticleManager:SetParticleControl(nFXIndex, 2, self:GetCaster():GetAbsOrigin())
-		ParticleManager:SetParticleControl(nFXIndex, 3, target:GetAbsOrigin())
-		ParticleManager:ReleaseParticleIndex(nFXIndex)
+        ParticleManager:SetParticleControl(nFXIndex, 0, self:GetCaster():GetAbsOrigin())
+        ParticleManager:SetParticleControl(nFXIndex, 1, self:GetCaster():GetAbsOrigin())
+        ParticleManager:SetParticleControl(nFXIndex, 2, self:GetCaster():GetAbsOrigin())
+        ParticleManager:SetParticleControl(nFXIndex, 3, target:GetAbsOrigin())
+        ParticleManager:ReleaseParticleIndex(nFXIndex)
 
-    	EmitSoundOn( "Hero_Riki.Blink_Strike.Immortal", self:GetCaster() )
+        EmitSoundOn( "Hero_Riki.Blink_Strike.Immortal", self:GetCaster() )
         local victim_angle = target:GetAnglesAsVector()
         local victim_forward_vector = target:GetForwardVector()
         local victim_angle_rad = victim_angle.y*math.pi/180
@@ -33,14 +38,19 @@ function loki_blink_strike:OnSpellStart()
 
         EmitSoundOn("Hero_Riki.Blink_Strike", target)
         if target:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
-          self:GetCaster():PerformAttack(target, true, true, true, true, false, false, true)
-					ApplyDamage({
-						victim = target,
-						attacker = self:GetCaster(),
-						damage = self:GetAbilityDamage(),
-						damage_type = self:GetAbilityDamageType(),
-						ability = self,
-					})
+            self:GetCaster():PerformAttack(target, true, true, true, true, false, false, true)
+            ApplyDamage({
+                victim = target,
+                attacker = self:GetCaster(),
+                damage = self:GetAbilityDamage(),
+                damage_type = self:GetAbilityDamageType(),
+                ability = self,
+            })
         end
     end
+end
+
+function loki_blink_strike:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_lovuska_jokera") then return "custom/loki_blink_strike_custom" end
+    return self.BaseClass.GetAbilityTextureName(self) 
 end

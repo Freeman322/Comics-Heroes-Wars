@@ -5317,6 +5317,48 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "391": {
+        "item": "lovuska_jokera",
+        "rarity": "11",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_rubick",
+        "universal": "false",
+        "def_id": "391",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "392": {
+        "item": "arsen",
+        "rarity": "11",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_companion",
+        "universal": "false",
+        "def_id": "392",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "392": {
+        "item": "undead_warrior",
+        "rarity": "11",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_clinkz",
+        "universal": "false",
+        "def_id": "392",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

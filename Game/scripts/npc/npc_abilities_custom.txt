@@ -20038,6 +20038,10 @@
 			"particle"		"particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike.vpcf"
 			"particle"  	"particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_gold.vpcf"
 			"particle"  	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_start_sparkles.vpcf"
+            "model"         "models/heroes/hero_loki/loki_joker_skin/loki_skin.vmdl"
+            "model"         "models/heroes/hero_loki/loki_joker_skin/gun/gun.vmdl"
+            "model"         "models/heroes/hero_loki/loki_joker_skin/sword/sword.vmdl"
+            "particle"      "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
 			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
 		}
 		// Special
@@ -20079,6 +20083,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50 60 70 80"
 
+    
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"

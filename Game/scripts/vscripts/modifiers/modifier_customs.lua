@@ -155,6 +155,25 @@ function modifier_officer:GetAttackSound( params )
     return "Hero_Tinker.Laser"
 end
 
+if modifier_lovuska_jokera == nil then modifier_lovuska_jokera = class({}) end
+
+function modifier_lovuska_jokera:IsHidden() return true end
+function modifier_lovuska_jokera:IsPurgable() return false end
+function modifier_lovuska_jokera:RemoveOnDeath() return false end
+function modifier_lovuska_jokera:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND,
+        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS
+    }
+
+    return funcs
+end
+
+function modifier_lovuska_jokera:GetAttackSound( params )
+    return "Hero_Juggernaut.Attack"
+end
+
+
 if modifier_android == nil then modifier_android = class({}) end
 
 function modifier_android:IsHidden() return true end
