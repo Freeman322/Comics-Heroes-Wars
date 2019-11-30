@@ -26,8 +26,12 @@
 	"item_recipe_perseus_boots"      "REMOVE"
 	"item_recipe_travel"     "REMOVE"
 	"item_travel"      "REMOVE"
+	"item_telescope_tube" "REMOVE"
+	"item_recipe_telescope_tube" "REMOVE"
 	///"item_recipe_power_treads"      "REMOVE"
 	///"item_power_treads"     "REMOVE"
+	"item_spirit_orb"           "REMOVE"
+	"item_ring_of_protection"           "REMOVE"
 	"item_recipe_intelligence_boots"     "REMOVE"
 	"item_intelligence_boots"     "REMOVE"
 	"item_recipe_strength_boots"     "REMOVE"
@@ -242,7 +246,7 @@
       "01"
       {
         "var_type"          "FIELD_INTEGER"
-        "value"       "2000"
+        "value"       "1000"
       }
     }
   }

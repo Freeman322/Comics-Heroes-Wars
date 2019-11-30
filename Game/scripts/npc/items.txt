@@ -1573,7 +1573,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"50"
+		"ItemCost"						"0"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"observer ward"
@@ -1596,7 +1596,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime"				"360"
+				"lifetime"				"720"
 			}
 			"02"
 			{
@@ -1611,7 +1611,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration_minutes_tooltip"				"6"
+				"duration_minutes_tooltip"				"12"
 			}
 		}
 	}
@@ -1662,7 +1662,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime"				"360"
+				"lifetime"				"720"
 			}
 			"02"
 			{
@@ -1682,7 +1682,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration_minutes_tooltip"				"6"
+				"duration_minutes_tooltip"				"12"
 			}
 		}
 	}
@@ -1768,12 +1768,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime_observer"				"360"
+				"lifetime_observer"				"720"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime_sentry"				"360"
+				"lifetime_sentry"				"720"
 			}
 			"06"
 			{
@@ -1788,7 +1788,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"observer_duration_minutes_tooltip"		"6"
+				"observer_duration_minutes_tooltip"		"12"
 			}
 			"09"
 			{
@@ -1798,7 +1798,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"sentry_duration_minutes_tooltip"		"6"
+				"sentry_duration_minutes_tooltip"		"12"
 			}
 		}
 	}
@@ -12384,7 +12384,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"0"
+				"bonus_damage"			"30"
 			}
 			"02"
 			{
@@ -12414,7 +12414,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen"		"1.0"
+				"aura_mana_regen"		"1.5"
 			}
 			"08"
 			{
@@ -12431,7 +12431,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"700"	
+		"ItemCost"						"280"	
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"IsObsolete"					"0"
@@ -12442,7 +12442,7 @@
 		"ItemResult"					"item_ring_of_aquila"
 		"ItemRequirements"
 		{
-			"01"						"item_ring_of_basilius;item_crown;item_crown"
+			"01"						"item_ring_of_basilius;item_blades_of_attack;item_crown;item_crown;"
 		}
 	}
 }

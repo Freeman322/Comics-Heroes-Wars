@@ -3773,7 +3773,7 @@
 		// Item Info
 
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"5300"
+		"ItemCost"					"1300"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3782,7 +3782,7 @@
 		"ItemResult"					"item_time"
 		"ItemRequirements"
 		{
-			"01"				"item_refresher;item_platemail;item_talisman_of_evasion"
+			"01"				"item_refresher;item_platemail;item_talisman_of_evasion;item_ultimate_orb;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -4559,6 +4559,11 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"time_cooldown"				"40"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"				"40"
 			}
 		}
 	}
@@ -8214,52 +8219,37 @@
 			"01"
 			{
 				"var_type"						    "FIELD_INTEGER"
-				"bonus_intellect"				    "64"
+				"bonus_intellect"				    "40"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_agility"	                        "12"
+				"bonus_agility"	                        "15"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_strength"		                "12"
+				"bonus_strength"		                "15"
 			}
 			"04"
 			{
-				"var_type"                          "FIELD_FLOAT"
-				"bonus_damage"                      "35"
+				"var_type"                         "FIELD_FLOAT"
+				"bonus_amp"                      "15"
 			}
 			"05"
 			{
-				"var_type"                         "FIELD_FLOAT"
-				"bonus_amp"                      "25"
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen"                     "2"
 			}
 			"06"
 			{
-				"var_type"                          "FIELD_FLOAT"
-				"bonus_mana_cost_reduction"                "20"
+				"var_type"							"FIELD_FLOAT"
+				"bonus_cooldown_reduction_per_soul"              "1.0"
 			}
 			"07"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_armor"	                        "5"
-			}
-			"08"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_mana_regen"                     "5"
-			}
-			"09"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_cooldown_reduction_per_soul"              "1.6"
-			}
-			"10"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_amp_per_soul"	                        "2.5"
+				"bonus_amp_per_soul"	                        "1.5"
 			}
 		}
 	}
@@ -8272,7 +8262,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					   "1300"
+		"ItemCost"					   "300"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -8281,7 +8271,101 @@
 		"ItemResult"					"item_mystic_ring"
 		"ItemRequirements"
 		{
-			"01"						"item_kaya;item_null_talisman;item_ring_of_basilius"
+			"01"						"item_null_talisman;item_null_talisman;item_ring_of_basilius"
+		}
+	}
+	"item_bloody_tome"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"            "custom/mystic_ring"
+		"ScriptFile"					"items/item_bloody_tome.lua"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						    "FIELD_INTEGER"
+				"bonus_intellect"				    "100"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_agility"	                        "30"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_strength"		                "30"
+			}
+			"04"
+			{
+				"var_type"                         "FIELD_FLOAT"
+				"bonus_amp"                      "40"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen"                     "2"
+			}
+			"06"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_cooldown_reduction"              "10"
+			}
+			"07"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_amp_per_soul"	                        "1.5"
+			}
+			"08"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"mana_bonus"	                        "500"
+			}
+			"09"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_health"	                        "500"
+			}
+			"10"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_mana_regen_pct"	                        "0.7"
+			}
+			"11"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"manacost_reduction"	                        "30"
+			}
+			"12"
+			{
+				"var_type"                          "FIELD_FLOAT"
+				"soul_stole_range"                  "700"
+			}
+		}
+	}
+	"item_recipe_bloody_tome"
+	{
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                 		"item_datadriven"
+		"AbilityTextureName"		    	"recipe"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					   "2100"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bloody_tome"
+		"ItemRequirements"
+		{
+			"01"						"item_mystic_ring;item_bloodstone"
 		}
 	}	
 }		

@@ -11,7 +11,7 @@ function item_time:OnSpellStart ()
     if IsServer() then
         EmitSoundOn ("DOTA_Item.Refresher.Activate", self:GetCaster () )
         
-        local nFXIndex = ParticleManager:CreateParticle ("particles/refresh_2.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster ());
+        local nFXIndex = ParticleManager:CreateParticle ("particles/items2_fx/refresher.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster ());
         ParticleManager:SetParticleControlEnt (nFXIndex, 0, self:GetCaster (), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster ():GetOrigin (), true);
         ParticleManager:ReleaseParticleIndex (nFXIndex);
         
@@ -43,6 +43,9 @@ local funcs = {
     MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
     MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+    MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+    MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+    MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
     MODIFIER_PROPERTY_EVASION_CONSTANT,
     MODIFIER_EVENT_ON_DEATH
 }
@@ -50,6 +53,25 @@ local funcs = {
 return funcs
 end
 
+function item_time_gem:GetModifierBonusStats_Strength( params )
+    local hAbility = self:GetAbility()
+    return hAbility:GetSpecialValueFor( "bonus_all_stats" )
+end
+
+function item_time_gem:GetModifierBonusStats_Intellect( params )
+    local hAbility = self:GetAbility()
+    return hAbility:GetSpecialValueFor( "bonus_all_stats" )
+end
+
+function item_time_gem:GetModifierBonusStats_Agility( params )
+    local hAbility = self:GetAbility()
+    return hAbility:GetSpecialValueFor( "bonus_all_stats" )
+end
+
+function item_time_gem:GetModifierConstantHealthRegen( params )
+    local hAbility = self:GetAbility()
+    return hAbility:GetSpecialValueFor( "bonus_health_regen" )
+end
 function item_time_gem:GetModifierConstantHealthRegen( params )
     local hAbility = self:GetAbility()
     return hAbility:GetSpecialValueFor( "bonus_health_regen" )

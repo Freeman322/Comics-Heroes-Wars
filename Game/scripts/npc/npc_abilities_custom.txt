@@ -9033,7 +9033,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5 6 7"
+				"duration"					"4 5 6"
 			}
 			"03"
 			{
@@ -9053,7 +9053,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cooldown_scepter"			"50 40 30"
+				"cooldown_scepter"			"70 55 40"
 			}
 			"07"
 			{

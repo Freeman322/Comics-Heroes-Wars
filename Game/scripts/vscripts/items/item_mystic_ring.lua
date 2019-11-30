@@ -1,4 +1,5 @@
 LinkLuaModifier("modifier_item_mystic_ring", "items/item_mystic_ring" , 0)
+LinkLuaModifier("modifier_item_mystic_ring_aura", "items/item_mystic_ring" , 0)
  
 item_mystic_ring = class({})
  
@@ -16,6 +17,10 @@ end
  
 modifier_item_mystic_ring = class({})
  
+function modifier_item_mystic_ring:GetEffectName()
+    return "particles/generic_gameplay/rune_arcane_owner.vpcf"
+end 
+
 function modifier_item_mystic_ring:IsPurgable() return false end
 function modifier_item_mystic_ring:IsHidden()   return false end
 function modifier_item_mystic_ring:RemoveOnDeath() return false end
@@ -27,10 +32,6 @@ function modifier_item_mystic_ring:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_MANACOST_PERCENTAGE,
         MODIFIER_EVENT_ON_HERO_KILLED,
     }
 end
@@ -40,10 +41,6 @@ function modifier_item_mystic_ring:GetModifierSpellAmplify_PercentageUnique() re
 function modifier_item_mystic_ring:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_strength") end
 function modifier_item_mystic_ring:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("bonus_intellect") end
 function modifier_item_mystic_ring:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("bonus_agility") end
-function modifier_item_mystic_ring:GetModifierPreAttack_BonusDamage() return self:GetAbility():GetSpecialValueFor("bonus_damage") end
-function modifier_item_mystic_ring:GetModifierPercentageManacost() return self:GetAbility():GetSpecialValueFor("bonus_mana_cost_reduction") end
-function modifier_item_mystic_ring:GetModifierPhysicalArmorBonus() return self:GetAbility():GetSpecialValueFor("bonus_armor") end
-function modifier_item_mystic_ring:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") end
 function modifier_item_mystic_ring:GetModifierPercentageCooldownStacking() return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("bonus_cooldown_reduction_per_soul") or 1) end
 function modifier_item_mystic_ring:GetModifierSpellAmplify_Percentage() return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("bonus_amp_per_soul") or 1) end
 function modifier_item_mystic_ring:OnHeroKilled(params)
@@ -56,3 +53,42 @@ function modifier_item_mystic_ring:OnHeroKilled(params)
     end
 function item_mystic_ring:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self) end 
 end
+
+if modifier_item_mystic_ring_aura == nil then modifier_item_mystic_ring_aura = class({}) end
+
+function modifier_item_mystic_ring_aura:IsAura()
+	return true
+end
+
+function modifier_item_mystic_ring_aura:IsHidden()
+	return true
+end
+
+function modifier_item_mystic_ring_aura:IsPurgable()
+	return false
+end
+
+function modifier_item_mystic_ring_aura:GetAuraRadius()
+	return 1200
+end
+
+function modifier_item_mystic_ring_aura:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
+end
+
+function modifier_item_mystic_ring_aura:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_TEAM_BOTH
+end
+
+function modifier_item_mystic_ring_aura:GetAuraSearchFlags()
+	return DOTA_UNIT_TARGET_FLAG_NONE
+end
+
+function modifier_item_mystic_ring_aura:DeclareFunctions ()
+    local funcs = {
+       MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+    }
+
+function modifier_item_mystic_ring_aura:GetModifierConstantManaRegen()	
+    return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") end
+end 
