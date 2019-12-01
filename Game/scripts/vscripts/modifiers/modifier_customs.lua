@@ -164,13 +164,31 @@ function modifier_strange_artifact:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
     }
+    return funcs
+end
+        
+function modifier_strange_artifact:GetAttackSound( params )
+         return "Hero_VoidSpirit.Pulse.Target"
+ end
+
+if modifier_lovuska_jokera == nil then modifier_lovuska_jokera = class({}) end
+
+function modifier_lovuska_jokera:IsHidden() return true end
+function modifier_lovuska_jokera:IsPurgable() return false end
+function modifier_lovuska_jokera:RemoveOnDeath() return false end
+function modifier_lovuska_jokera:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND,
+        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS
+    }
 
     return funcs
 end
 
-function modifier_strange_artifact:GetAttackSound( params )
-    return "Hero_VoidSpirit.Pulse.Target"
+function modifier_lovuska_jokera:GetAttackSound( params )
+    return "Hero_Juggernaut.Attack"
 end
+
 
 if modifier_android == nil then modifier_android = class({}) end
 

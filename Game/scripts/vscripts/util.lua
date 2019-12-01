@@ -1380,52 +1380,7 @@ function Util:OnHeroInGame(hero)
       LinkLuaModifier("modifier_deadpool", "modifiers/modifier_deadpool.lua", LUA_MODIFIER_MOTION_NONE)
       hero:AddNewModifier(hero, nil, "modifier_deadpool", nil)
     end
-    if hero:GetUnitName() == "npc_dota_hero_rubick" then
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "loki_puppeteer") == true then
-            hero:SetOriginalModel("models/heroes/hero_loki/loki_set/loki_grey_knight.vmdl")
-
-            local sword_left = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_set/loki_grey_knight_weap_left.vmdl"})
-            sword_left:FollowEntity(hero, true)
-
-            local sword_right = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_set/loki_grey_knight_weap_right.vmdl"})
-            sword_right:FollowEntity(hero, true)
-          return
-        end
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "loki_golden_poseidons_daggers") == true then
-            local sword_left = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_poseidon_edge/loki_poseidon_left.vmdl"})
-            sword_left:FollowEntity(hero, true)
-            sword_left:SetMaterialGroup("gold")
-            local sword_right = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_poseidon_edge/loki_poseidon_right.vmdl"})
-            sword_right:FollowEntity(hero, true)
-            sword_right:SetMaterialGroup("gold")
-            return
-        end
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "loki_poseidons_daggers") == true then
-            local sword_left = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_poseidon_edge/loki_poseidon_left.vmdl"})
-            sword_left:FollowEntity(hero, true)
-            sword_left:SetMaterialGroup("gold")
-
-            local sword_right = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_poseidon_edge/loki_poseidon_right.vmdl"})
-            sword_right:FollowEntity(hero, true)
-            sword_left:SetMaterialGroup("gold")
-            return
-        end
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "rubic_purlex_stuff") == true then
-          local sword_left = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_rare_knives/loki_left_knife.vmdl"})
-          sword_left:FollowEntity(hero, true)
-
-          local sword_right = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_rare_knives/loki_right_knife.vmdl"})
-          sword_right:FollowEntity(hero, true)
-          return
-        end
-
-        local sword_left = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_left_weapon.vmdl"})
-        sword_left:FollowEntity(hero, true)
-
-        local sword_right = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_loki/loki_right_weapon.vmdl"})
-        sword_right:FollowEntity(hero, true)
-    end
-
+   
     if hero:GetUnitName() == "npc_dota_hero_earth_spirit" then
       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "beast_arcana") then
         LinkLuaModifier("modifier_beast_arcana", "modifiers/modifier_beast_arcana.lua", LUA_MODIFIER_MOTION_NONE)

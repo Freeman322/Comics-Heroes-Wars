@@ -99,6 +99,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/neo_noir.png" );
                 }
+                else if (playerInfo.player_selected_hero == "npc_dota_hero_rubick" && hasModifier(hero_entindex, "modifier_lovuska_jokera"))
+				{
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/lovuska_jokera.png" );
+				}
                 else if (playerInfo.player_selected_hero == "npc_dota_hero_storm_spirit" && hasModifier(hero_entindex, "modifier_scarlett"))
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/scarlett_skin.png" );
