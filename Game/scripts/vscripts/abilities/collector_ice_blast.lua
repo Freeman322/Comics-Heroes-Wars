@@ -48,10 +48,18 @@ function collector_ice_blast:OnSpellStart()
           return 
         end
 
-        EmitSoundOn("Hero_Crystal.CrystalNova", self:GetCaster())
+        local particle_cast = "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
+        local sound_cast = "Hero_Centaur.DoubleEdge.TI9_layer"
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "strange_artifact") then
+            particle_cast = "particles/econ/items/centaur/centaur_ti9/centaur_double_edge_ti9.vpcf"
+            sound_cast =    "Hero_Centaur.DoubleEdge.TI9_layer"
+        end
+
+        EmitSoundOn(sound_cast, self:GetCaster())
         EmitSoundOn("hero_Crystal.CrystalNovaCast", self:GetCaster())
     
-        local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf", PATTACH_WORLDORIGIN, self:GetCaster() )
+        local nFXIndex = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, self:GetCaster() )
         ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetCursorPosition() )
         ParticleManager:SetParticleControl( nFXIndex, 1, Vector(radius, radius, 0) )
         ParticleManager:ReleaseParticleIndex( nFXIndex )

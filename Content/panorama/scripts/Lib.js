@@ -4921,7 +4921,7 @@ Lib.Items = {
         "rarity": "10",
         "quality": "10",
         "dropable": "false",
-        "slot": "head",
+        "slot": "global",
         "hero": "npc_dota_hero_invoker",
         "universal": "false",
         "def_id": "365",
@@ -5346,7 +5346,7 @@ Lib.Items = {
         "is_compendium": "0",
         "is_music": "0"
     },
-    "392": {
+    "393": {
         "item": "undead_warrior",
         "rarity": "11",
         "quality": "2",
@@ -5354,7 +5354,7 @@ Lib.Items = {
         "slot": "global",
         "hero": "npc_dota_hero_clinkz",
         "universal": "false",
-        "def_id": "392",
+        "def_id": "393",
         "is_treasure": "0",
         "is_medal": "0",
         "is_compendium": "0",
