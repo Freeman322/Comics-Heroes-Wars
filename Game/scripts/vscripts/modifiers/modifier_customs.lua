@@ -155,6 +155,23 @@ function modifier_officer:GetAttackSound( params )
     return "Hero_Tinker.Laser"
 end
 
+if modifier_strange_artifact == nil then modifier_strange_artifact = class({}) end
+
+function modifier_strange_artifact:IsHidden() return true end
+function modifier_strange_artifact:IsPurgable() return false end
+function modifier_strange_artifact:RemoveOnDeath() return false end
+function modifier_strange_artifact:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
+    }
+
+    return funcs
+end
+
+function modifier_strange_artifact:GetAttackSound( params )
+    return "Hero_VoidSpirit.Pulse.Target"
+end
+
 if modifier_android == nil then modifier_android = class({}) end
 
 function modifier_android:IsHidden() return true end

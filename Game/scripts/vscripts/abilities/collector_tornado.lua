@@ -43,6 +43,10 @@ function collector_tornado:OnSpellStart()
         if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
             particle_cast = "particles/collector/alma_tornado.vpcf"
         end
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "strange_artifact") then
+            particle_cast = "particles/stygian/invoker_kid_tornado_ti6.vpcf"
+        end
         
         local info = {
             EffectName = particle_cast,

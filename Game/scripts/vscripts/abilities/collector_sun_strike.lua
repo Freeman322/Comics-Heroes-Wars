@@ -119,6 +119,11 @@ function modifier_collector_sun_strike_thinker:PlayEffects1()
 	local particle_cast = "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_immortal1.vpcf"
 	local sound_cast = "Hero_Invoker.SunStrike.Charge.Apex"
 
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "strange_artifact") then
+	    particle_cast = "particles/econ/items/lina/lina_ti7/light_strike_array_pre_ti7_gold.vpcf"
+		sound_cast = "Ability.PreLightStrikeArray.ti7"
+      end
+
 	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticleForTeam( particle_cast, PATTACH_WORLDORIGIN, self:GetCaster(), self:GetCaster():GetTeamNumber() )
 	ParticleManager:SetParticleControl( effect_cast, 0, self:GetParent():GetOrigin() )
@@ -133,6 +138,11 @@ function modifier_collector_sun_strike_thinker:PlayEffects2()
 	-- Get Resources
 	local particle_cast = "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_immortal1.vpcf"
 	local sound_cast = "Hero_Invoker.SunStrike.Ignite.Apex"
+
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "strange_artifact") then
+		 particle_cast = "particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf"
+		 sound_cast = "Hero_Phoenix.SuperNova.Explode"
+      end
 
 	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, self:GetCaster() )

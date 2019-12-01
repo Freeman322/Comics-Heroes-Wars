@@ -35,6 +35,7 @@ modifier_collector_exort = class({})
 
 --------------------------------------------------------------------------------
 -- Classifications
+
 function modifier_collector_exort:IsHidden()
 	return false
 end

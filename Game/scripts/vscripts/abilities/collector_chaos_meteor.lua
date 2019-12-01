@@ -56,9 +56,15 @@ end
 function modifier_collector_chaos_meteor_delay:OnCreated( kv )
   if IsServer() then
       local particle = "particles/items4_fx/meteor_hammer_aoe.vpcf"
+      local sound = "Hero_ElderTitan.EchoStomp.Channel.ti7"
       if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
           particle = "particles/collector/alma_meteor_aoe.vpcf"
       end
+
+      if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "strange_artifact") then
+        particle = "particles/units/heroes/hero_void_spirit/void_spirit_astral_step_destination.vpcf"
+        sound = "Hero_VoidSpirit.Dissimilate.Cast"
+    end
 
       local fx = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, self:GetParent() )
       ParticleManager:SetParticleControl( fx, 0, self:GetParent():GetOrigin() )
@@ -66,7 +72,7 @@ function modifier_collector_chaos_meteor_delay:OnCreated( kv )
       self:AddParticle(fx, false, false, -1, false, false)
 
       -- Create Sound
-      EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), "Hero_ElderTitan.EchoStomp.Channel.ti7", self:GetCaster() )
+      EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), sound, self:GetCaster() )
   end
 end
 
@@ -112,9 +118,15 @@ end
 
 function modifier_collector_chaos_meteor_thinker:OnIntervalThink()
   if IsServer() then
+      local sound2 = "Hero_ElderTitan.EchoStomp.ti7"
       local particle = "particles/items4_fx/meteor_hammer_spell.vpcf"
       if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
           particle = "particles/collector/alma_meteor_proj.vpcf"
+      end
+
+      if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "strange_artifact") then
+        particle = "particles/stygian/collector_kid_meteor.vpcf"
+        sound2 = "Hero_VoidSpirit.Dissimilate.Stun"
       end
 
       local fx = ParticleManager:CreateParticle( particle, PATTACH_WORLDORIGIN, self:GetCaster() )
@@ -152,7 +164,7 @@ function modifier_collector_chaos_meteor_thinker:OnIntervalThink()
           ApplyDamage(damageTable)
       end
 
-      EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), "Hero_ElderTitan.EchoStomp.ti7", self:GetCaster() )
+      EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), sound2, self:GetCaster() )
   end
 end
 

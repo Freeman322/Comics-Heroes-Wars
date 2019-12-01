@@ -27687,7 +27687,18 @@
 			"model"					"models/heroes/invoker_kid/invoker_kid.vmdl"
 			"particle"				"particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf"
 			"model"					"models/heroes/invoker_kid/invoker_kid_hair.vmdl"
+			"particle"              "particles/stygian/invoker_kid_tornado_ti6.vpcf"
 			"model"					"models/heroes/invoker_kid/invoker_kid_cape.vmdl"
+			"particle"              "particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7_gold.vpcf"
+			"particle"              "particles/econ/items/lina/lina_ti7/light_strike_array_pre_ti7_gold.vpcf"
+			"soundfile"             "sounds/weapons/hero/phoenix/super_nova_explode.vsnd"
+			"soundfile"            "sounds/weapons/hero/lina/prelightstrikearray.vsnd"
+			"particle"             "particles/econ/items/naga/naga_ti8_immortal_tail/naga_ti8_immortal_riptide.vpcf"
+            "soundfile"            "sounds/weapons/hero/naga_siren/riptide01.vsnd",
+			"soundfile"           "sounds/weapons/hero/naga_siren/riptide02.vsnd",
+			"soundfile"           "sounds/weapons/hero/naga_siren/riptide03.vsnd"
+            "soundfile"            "sounds/weapons/hero/tidehunter/tidehunter_gush_impact.vsnd"
+			"soundfile"            "sounds/weapons/hero/void_spirit/pulse_target.vsnd"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -28168,6 +28179,10 @@
 			"particle"	"particles/units/heroes/hero_invoker/invoker_ghost_walk_debuff.vpcf"
 			"particle"	"particles/items4_fx/meteor_hammer_aoe.vpcf"
 			"particle"	"particles/items4_fx/meteor_hammer_spell_debuff.vpcf"
+			"soundfile" "sounds/weapons/hero/void_spirit/dissimilate_cast.vsnd"
+			"soundfile" "sounds/weapons/hero/void_spirit/dissimilate_stun.vsnd"
+			"particle"  "particles/stygian/collector_kid_meteor.vpcf"
+			"particle"  "particles/units/heroes/hero_void_spirit/void_spirit_astral_step_destination.vpcf"
 		}
 
 		// Special
