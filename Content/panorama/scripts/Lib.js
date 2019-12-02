@@ -5359,6 +5359,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "394": {
+        "item": "kawaii",
+        "rarity": "11",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_companion",
+        "universal": "false",
+        "def_id": "394",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

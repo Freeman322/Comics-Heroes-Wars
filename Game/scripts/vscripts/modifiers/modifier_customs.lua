@@ -168,8 +168,8 @@ function modifier_strange_artifact:DeclareFunctions()
 end
         
 function modifier_strange_artifact:GetAttackSound( params )
-         return "Hero_VoidSpirit.Pulse.Target"
- end
+    return "Hero_VoidSpirit.Pulse.Target"
+end
 
 if modifier_lovuska_jokera == nil then modifier_lovuska_jokera = class({}) end
 

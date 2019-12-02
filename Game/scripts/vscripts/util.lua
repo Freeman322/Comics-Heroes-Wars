@@ -73,66 +73,66 @@ function Util:DeleteEconItem(data)
 end
 
 function Util:GetHeroID( hero_name )
-  if Util.heroes_ids then
-    for k, hero in pairs(Util.heroes_ids) do
-      if hero["name"] == hero_name then return tonumber(hero["id"]) end
+    if Util.heroes_ids then
+        for k, hero in pairs(Util.heroes_ids) do
+            if hero["name"] == hero_name then return tonumber(hero["id"]) end
+        end
     end
-  end
-  return nil
+    return nil
 end
 
 function Util:OnItemPickUp( event )
-  pcall(function()
-    local item = EntIndexToHScript( event.ItemEntityIndex )
-    local owner = EntIndexToHScript( event.HeroEntityIndex )
-    r = RandomInt(200, 400)
-    if event.itemname == "item_bag_of_gold" then
-      PlayerResource:ModifyGold( owner:GetPlayerID(), r, true, 0 )
-      SendOverheadEventMessage( owner, OVERHEAD_ALERT_GOLD, owner, r, nil )
-      UTIL_Remove( item )
-    end
-  end)
+    pcall(function()
+        local item = EntIndexToHScript( event.ItemEntityIndex )
+        local owner = EntIndexToHScript( event.HeroEntityIndex )
+        r = RandomInt(200, 400)
+        if event.itemname == "item_bag_of_gold" then
+            PlayerResource:ModifyGold( owner:GetPlayerID(), r, true, 0 )
+            SendOverheadEventMessage( owner, OVERHEAD_ALERT_GOLD, owner, r, nil )
+            UTIL_Remove( item )
+        end
+    end)
 end
 
 function Util:GetAbilityBehavior(name)
-  local path = LoadKeyValues('scripts/npc/npc_abilities_custom.txt')
-  if path[name] then
-    if path[name]["AbilityBehavior"] then
-      return path[name]["AbilityBehavior"]
+    local path = LoadKeyValues('scripts/npc/npc_abilities_custom.txt')
+    if path[name] then
+        if path[name]["AbilityBehavior"] then
+            return path[name]["AbilityBehavior"]
+        end
     end
-  end
 end
 
 function Util:GetAllHeroesCMMode()
-  local heroes = {}
-  local path = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
+    local heroes = {}
+    local path = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
 
-  for k,v in pairs(path) do
-      local hero = v["override_hero"] or k
-      if hero then
-        if v["CMDisabled"] == nil and v["HeroDisabled"] == nil then
-          table.insert( heroes, hero )
+    for k,v in pairs(path) do
+        local hero = v["override_hero"] or k
+        if hero then
+            if v["CMDisabled"] == nil and v["HeroDisabled"] == nil then
+                table.insert( heroes, hero )
+            end
         end
-      end
-  end
+    end
 
-  return heroes
+    return heroes
 end
 
 function Util:GetAllHeroesCMModeDisabled()
-  local heroes = {}
-  local path = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
+    local heroes = {}
+    local path = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
 
-  for k,v in pairs(path) do
-      local hero = v["override_hero"] or k
-      if hero then
-        if v["CMDisabled"] or v["HeroDisabled"] then
-          table.insert( heroes, hero )
+    for k,v in pairs(path) do
+        local hero = v["override_hero"] or k
+        if hero then
+            if v["CMDisabled"] or v["HeroDisabled"] then
+                table.insert( heroes, hero )
+            end
         end
-      end
-  end
+    end
 
-  return heroes
+    return heroes
 end
 
 function Util:GetHeroList()
@@ -144,7 +144,7 @@ function Util:GetHeroList()
     for k,v in pairs(path) do
         local hero = v["override_hero"] or k
         if hero and v["HeroDisabled"] == nil then
-          result[hero] = v["AttributePrimary"]
+            result[hero] = v["AttributePrimary"]
         end
     end
 
@@ -166,201 +166,203 @@ function Util:GetHeroAbilityList()
 end
 
 function Util:GetItemID(string)
-  local id = -1
-  local array = {}
-  local econs = PlayerTables:GetTableValue("globals", "econs")
-  for _, item in pairs(econs) do
-    if item['item'] == string then
-      table.insert(array, tostring(item['def_id']))
+    local id = -1
+    local array = {}
+    local econs = PlayerTables:GetTableValue("globals", "econs")
+    for _, item in pairs(econs) do
+        if item['item'] == string then
+            table.insert(array, tostring(item['def_id']))
+        end
     end
-  end
-  return array
+    return array
 end
 
 function Util:PlayerEquipedItem(pID, string)
-  local steam_id = PlayerResource:GetSteamAccountID(pID)
-  steam_id = tostring(steam_id)
-  local items = Util:GetItemID(string)
-  if GameRules.Globals.Inventories then
-    if GameRules.Globals.Inventories[steam_id] then
-      local array = GameRules.Globals.Inventories[steam_id]
-      for _, item in pairs(array) do
-        for _, def_id in pairs(items) do
-          if item['steam_id'] == tostring(steam_id) and item['def_id'] == def_id and item['state'] == "1" then
-            return true
-          end
+    local steam_id = PlayerResource:GetSteamAccountID(pID)
+    steam_id = tostring(steam_id)
+    local items = Util:GetItemID(string)
+    if GameRules.Globals.Inventories then
+        if GameRules.Globals.Inventories[steam_id] then
+            local array = GameRules.Globals.Inventories[steam_id]
+            for _, item in pairs(array) do
+                for _, def_id in pairs(items) do
+                    if item['steam_id'] == tostring(steam_id) and item['def_id'] == def_id and item['state'] == "1" then
+                        return true
+                    end
+                end
+            end
         end
-      end
     end
-  end
-  return false
+    return false
 end
 
 function Util:PlayerHasItem(pID, string)
-  local steam_id = PlayerResource:GetSteamAccountID(pID)
-  steam_id = tostring(steam_id)
-  if GameRules.Globals.Inventories then
-    if GameRules.Globals.Inventories[steam_id] then
-      local array = GameRules.Globals.Inventories[steam_id]
-      for _, item in pairs(array) do
-        if item['steam_id'] == tostring(steam_id) and item['def_id'] == tostring(Util:GetItemID(string)) then
-          return true
+    local steam_id = PlayerResource:GetSteamAccountID(pID)
+    steam_id = tostring(steam_id)
+    if GameRules.Globals.Inventories then
+        if GameRules.Globals.Inventories[steam_id] then
+            local array = GameRules.Globals.Inventories[steam_id]
+            for _, item in pairs(array) do
+                if item['steam_id'] == tostring(steam_id) and item['def_id'] == tostring(Util:GetItemID(string)) then
+                    return true
+                end
+            end
         end
-      end
     end
-  end
-  return false
+    return false
 end
 
-function Util:GetItemForHero(def_id)
-  for k, v in pairs(Util.econs) do
-    if(tostring(v["def_id"])) == tostring(def_id) then
-      return v["hero"]
-    end
-  end
 
-  return nil
+function Util:GetItemForHero(def_id)
+    for k, v in pairs(Util.econs) do
+        if(tostring(v["def_id"])) == tostring(def_id) then
+            return v["hero"]
+        end
+    end
+
+    return nil
 end
 
 function Util:GetItemName(def_id)
-  for k, v in pairs(Util.econs) do
-    if(tostring(v["def_id"])) == tostring(def_id) then
-      return v["item"]
+    for k, v in pairs(Util.econs) do
+        if(tostring(v["def_id"])) == tostring(def_id) then
+            return v["item"]
+        end
     end
-  end
 
-  return nil
+    return nil
 end
 
 function Util:PlayerHasAdminRules(pID)
-  local data = CustomNetTables:GetTableValue("players", "stats")
-  if data and data[tostring(pID)] then
-    return data[tostring(pID)].status == "2"
-  end
+    local data = CustomNetTables:GetTableValue("players", "stats")
+    if data and data[tostring(pID)] then
+        return data[tostring(pID)].status == "2"
+    end
 
-  return false
+    return false
 end
 
 function Util:UpdateWearables(hero, playerID)
-  local items = {}
-  local name = hero:GetUnitName()
-  local steam_id = PlayerResource:GetSteamAccountID(playerID)
-  if GameRules.Globals.Inventories then
-    if GameRules.Globals.Inventories[tostring(steam_id)] then
-      for id, _econ in pairs(GameRules.Globals.Inventories[tostring(steam_id)]) do
-        if _econ["state"] == "1" and Util:GetItemForHero(_econ["def_id"]) == name then
-          local econ_name = Util:GetItemName(_econ["def_id"])
-          table.insert( items, econ_name )
+    local items = {}
+    local name = hero:GetUnitName()
+    local steam_id = PlayerResource:GetSteamAccountID(playerID)
+    if GameRules.Globals.Inventories then
+        if GameRules.Globals.Inventories[tostring(steam_id)] then
+            for id, _econ in pairs(GameRules.Globals.Inventories[tostring(steam_id)]) do
+                if _econ["state"] == "1" and Util:GetItemForHero(_econ["def_id"]) == name then
+                    local econ_name = Util:GetItemName(_econ["def_id"])
+                    table.insert( items, econ_name )
+                end
+            end
         end
-      end
     end
-  end
-  Util:_EquipItem(hero, items)
+    Util:_EquipItem(hero, items)
 end
 
-function Util:_EquipItem(hero, items)
-  if __wearables == nil then __wearables = LoadKeyValues("scripts/items/wearables.kv") end
 
-  local used_slots = {}
-  hero.wearables = {}
-  hero.modifiers = {}
-  hero.particles = {}
-  local hero_slots = __wearables[hero:GetUnitName()]
-  if hero_slots then
-    for _slot, slot in pairs(hero_slots) do
-      used_slots[_slot] = false
-      for __index, user_item in pairs(items) do
-        if slot[user_item] ~= nil then
-          Util:EquipItemData(hero, slot[user_item], _slot)
-          used_slots[_slot] = true
-          break
+function Util:_EquipItem(hero, items)
+    if __wearables == nil then __wearables = LoadKeyValues("scripts/items/wearables.kv") end
+
+    local used_slots = {}
+    hero.wearables = {}
+    hero.modifiers = {}
+    hero.particles = {}
+    local hero_slots = __wearables[hero:GetUnitName()]
+    if hero_slots then
+        for _slot, slot in pairs(hero_slots) do
+            used_slots[_slot] = false
+            for __index, user_item in pairs(items) do
+                if slot[user_item] ~= nil then
+                    Util:EquipItemData(hero, slot[user_item], _slot)
+                    used_slots[_slot] = true
+                    break
+                end
+            end
         end
-      end
-    end
-    for _i, _bool in pairs(used_slots) do
-      if not _bool then
-        if hero_slots[_i]["__default"] then
-          Util:EquipItemData(hero, hero_slots[_i]["__default"], _i)
+        for _i, _bool in pairs(used_slots) do
+            if not _bool then
+                if hero_slots[_i]["__default"] then
+                    Util:EquipItemData(hero, hero_slots[_i]["__default"], _i)
+                end
+            end
         end
-      end
-    end
-    if not items then
-      for _slot, slot in pairs(hero_slots) do
-        if slot["__default"] then
-          Util:EquipItemData(hero, slot["__default"], _slot)
+        if not items then
+            for _slot, slot in pairs(hero_slots) do
+                if slot["__default"] then
+                    Util:EquipItemData(hero, slot["__default"], _slot)
+                end
+            end
         end
-      end
     end
-  end
 end
 
 function Util:ParseRenderColor( color, hero )
-  if color == "black" then hero:SetRenderColor(0, 0, 0) end
-  if color == "gold" then hero:SetRenderColor(255, 215, 0) end
+    if color == "black" then hero:SetRenderColor(0, 0, 0) end
+    if color == "gold" then hero:SetRenderColor(255, 215, 0) end
 end
 
 function Util:EquipItemData(hero, item_data, slot)
-  local econ_params = item_data
-  if econ_params["model"] then
-    hero:SetOriginalModel(econ_params["model"])
-  end
-  if econ_params["model_scale"] then
-    hero:SetModelScale(tonumber(econ_params["model_scale"]))
-  end
-  if econ_params["models"] ~= nil then
-    for _, model in pairs(econ_params["models"]) do
-      local _econ = SpawnEntityFromTableSynchronous("prop_dynamic", {model = model["model"]})
-      _econ:FollowEntity(hero, true)
-      hero.wearables[slot] = _econ
-      if model["material"] then
-        _econ:SetMaterialGroup(tostring(model["material"]))
-      end
-      if model["model_scale"] then
-        _econ:SetModelScale(tonumber(model["model_scale"]))
-      end
-      if model["particles"] ~= nil then
-        for __index, particle in pairs(model["particles"]) do
-          local _particle = ParticleManager:CreateParticle( particle["particle"], PATTACH_ABSORIGIN_FOLLOW, _econ )
-          table.insert( hero.particles , _particle )
-          if particle["ControlPoints"] ~= nil then
-            for _point, point_params in pairs(particle["ControlPoints"]) do
-              ParticleManager:SetParticleControlEnt( _particle, tonumber(_point), _econ, PATTACH_POINT_FOLLOW, point_params, _econ:GetOrigin(), true )
+    local econ_params = item_data
+    if econ_params["model"] then
+        hero:SetOriginalModel(econ_params["model"])
+    end
+    if econ_params["model_scale"] then
+        hero:SetModelScale(tonumber(econ_params["model_scale"]))
+    end
+    if econ_params["models"] ~= nil then
+        for _, model in pairs(econ_params["models"]) do
+            local _econ = SpawnEntityFromTableSynchronous("prop_dynamic", {model = model["model"]})
+            _econ:FollowEntity(hero, true)
+            hero.wearables[slot] = _econ
+            if model["material"] then
+                _econ:SetMaterialGroup(tostring(model["material"]))
             end
-          end
+            if model["model_scale"] then
+                _econ:SetModelScale(tonumber(model["model_scale"]))
+            end
+            if model["particles"] ~= nil then
+                for __index, particle in pairs(model["particles"]) do
+                    local _particle = ParticleManager:CreateParticle( particle["particle"], PATTACH_ABSORIGIN_FOLLOW, _econ )
+                    table.insert( hero.particles , _particle )
+                    if particle["ControlPoints"] ~= nil then
+                        for _point, point_params in pairs(particle["ControlPoints"]) do
+                            ParticleManager:SetParticleControlEnt( _particle, tonumber(_point), _econ, PATTACH_POINT_FOLLOW, point_params, _econ:GetOrigin(), true )
+                        end
+                    end
+                end
+            end
         end
-      end
     end
-  end
 
-  if econ_params["render"] then Util:ParseRenderColor(econ_params["render"], hero) end
+    if econ_params["render"] then Util:ParseRenderColor(econ_params["render"], hero) end
 
-  if econ_params["projectile"] ~= nil then
-    hero:SetRangedProjectileName(econ_params["projectile"]["particle"])
-  end
-  if econ_params["particles"] ~= nil then
-    for __, particle in pairs(econ_params["particles"]) do
-      local _particle = ParticleManager:CreateParticle( particle["particle"], PATTACH_ABSORIGIN_FOLLOW, hero )
-      table.insert( hero.particles , _particle )
-      if particle["ControlPoints"] ~= nil then
-        for _point, point_params in pairs(particle["ControlPoints"]) do
-          ParticleManager:SetParticleControlEnt( _particle, tonumber(_point), hero, PATTACH_POINT_FOLLOW, point_params["attach_point"] , hero:GetOrigin(), true )
+    if econ_params["projectile"] ~= nil then
+        hero:SetRangedProjectileName(econ_params["projectile"]["particle"])
+    end
+    if econ_params["particles"] ~= nil then
+        for __, particle in pairs(econ_params["particles"]) do
+            local _particle = ParticleManager:CreateParticle( particle["particle"], PATTACH_ABSORIGIN_FOLLOW, hero )
+            table.insert( hero.particles , _particle )
+            if particle["ControlPoints"] ~= nil then
+                for _point, point_params in pairs(particle["ControlPoints"]) do
+                    ParticleManager:SetParticleControlEnt( _particle, tonumber(_point), hero, PATTACH_POINT_FOLLOW, point_params["attach_point"] , hero:GetOrigin(), true )
+                end
+            end
         end
-      end
     end
-  end
-  if econ_params["modifiers"] ~= nil then
-    for __id, modifier in pairs(econ_params["modifiers"]) do
-      LinkLuaModifier(modifier["modifier"], modifier["modifier_path"], LUA_MODIFIER_MOTION_NONE)
-      local mod = hero:AddNewModifier(hero, nil, modifier["modifier"], nil)
-      hero.modifiers[slot] = mod
+    if econ_params["modifiers"] ~= nil then
+        for __id, modifier in pairs(econ_params["modifiers"]) do
+            LinkLuaModifier(modifier["modifier"], modifier["modifier_path"], LUA_MODIFIER_MOTION_NONE)
+            local mod = hero:AddNewModifier(hero, nil, modifier["modifier"], nil)
+            hero.modifiers[slot] = mod
+        end
     end
-  end
-  if econ_params["material"] then
-    hero:SetMaterialGroup(tostring(econ_params["material"]))
-  end
-  if econ_params["ambient"] then
-    StartSoundEvent(econ_params["ambient"], hero)
-  end
+    if econ_params["material"] then
+        hero:SetMaterialGroup(tostring(econ_params["material"]))
+    end
+    if econ_params["ambient"] then
+        StartSoundEvent(econ_params["ambient"], hero)
+    end
 end
 
 function Util:OnHeroInGame(hero)
@@ -387,17 +389,17 @@ function Util:OnHeroInGame(hero)
         ParticleManager:CreateParticleForPlayer("particles/rain_fx/econ_rain.vpcf", PATTACH_EYES_FOLLOW, hero, hero:GetPlayerOwner())]]
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "drodo_duffin") == true then
-          PrecacheUnitByNameAsync("npc_dota_companion", function()
-          local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
-          unit:SetOwner(hero)
-          unit:SetControllableByPlayer(hero:GetPlayerID(), true)
-          unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
-          unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/drodo/drodo.vmdl"})
-      
-          local nFXIndex = ParticleManager:CreateParticle( "particles/econ/pets/pet_drodo_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
-          ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
-          ParticleManager:ReleaseParticleIndex(nFXIndex)
-          end)
+            PrecacheUnitByNameAsync("npc_dota_companion", function()
+                local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+                unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+                unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/drodo/drodo.vmdl"})
+            
+                local nFXIndex = ParticleManager:CreateParticle( "particles/econ/pets/pet_drodo_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
+                ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
+                ParticleManager:ReleaseParticleIndex(nFXIndex)
+            end)
         end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem") == true then
@@ -406,70 +408,100 @@ function Util:OnHeroInGame(hero)
         end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "icewrack_wolf") == true then
-          PrecacheUnitByNameAsync("npc_dota_companion", function()
-          local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
-          unit:SetOwner(hero)
-          unit:SetControllableByPlayer(hero:GetPlayerID(), true)
-          unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
-          unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/icewrack_wolf/icewrack_wolf.vmdl"})
-      
-          local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/puck/puck_snowflake/puck_snowflake_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
-          ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
-          ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
-          ParticleManager:ReleaseParticleIndex(nFXIndex)
-          end)
+            PrecacheUnitByNameAsync("npc_dota_companion", function()
+                local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+                unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+                unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/icewrack_wolf/icewrack_wolf.vmdl"})
+            
+                local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/puck/puck_snowflake/puck_snowflake_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
+                ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
+                ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
+                ParticleManager:ReleaseParticleIndex(nFXIndex)
+            end)
+        end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "arsen") == true then
+            PrecacheUnitByNameAsync("npc_dota_companion", function()
+                local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+                unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+                unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/per_jopka/arsene.vmdl"})
+            
+                SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/pets/per_jopka/attachments.vmdl"}):FollowEntity(unit, true)
+            end)
+        end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "kawaii") == true then
+            PrecacheUnitByNameAsync("npc_dota_companion", function()
+                local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+                unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+                unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/kawaii_pet/kawaii.vmdl"})
+            
+                local nFXIndex = ParticleManager:CreateParticle( "particles/econ/courier/courier_trail_orbit/courier_trail_orbit.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
+                ParticleManager:SetParticleControl( nFXIndex, 15, Vector(255, 105, 180) )
+                ParticleManager:SetParticleControl( nFXIndex, 16, Vector(255, 105, 180) )
+                ParticleManager:ReleaseParticleIndex(nFXIndex)
+
+                local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/invoker/invoker_ti6/invoker_deafening_blast_ti6_knockback_debuff.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
+                ParticleManager:ReleaseParticleIndex(nFXIndex)
+            end)
         end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "otto_dragon") == true then
-          PrecacheUnitByNameAsync("npc_dota_companion", function()
-          local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
-          unit:SetOwner(hero)
-          unit:SetControllableByPlayer(hero:GetPlayerID(), true)
-          unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
-          unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/osky/osky.vmdl"})
-      
-          local nFXIndex = ParticleManager:CreateParticle( "particles/econ/pets/otto_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
-          ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_eye_l", unit:GetOrigin(), true )
-          ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
-          ParticleManager:SetParticleControlEnt( nFXIndex, 2, unit, PATTACH_POINT_FOLLOW, "attach_eye_l", unit:GetOrigin(), true )
-      
-          ParticleManager:SetParticleControl( nFXIndex, 15, Vector(79, 216, 11) )
-          ParticleManager:SetParticleControl( nFXIndex, 16, Vector(1, 0, 0) )
-          ParticleManager:ReleaseParticleIndex(nFXIndex)
-          end)
+            PrecacheUnitByNameAsync("npc_dota_companion", function()
+                local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+                unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+                unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/osky/osky.vmdl"})
+            
+                local nFXIndex = ParticleManager:CreateParticle( "particles/econ/pets/otto_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
+                ParticleManager:SetParticleControlEnt( nFXIndex, 0, unit, PATTACH_POINT_FOLLOW, "attach_eye_l", unit:GetOrigin(), true )
+                ParticleManager:SetParticleControlEnt( nFXIndex, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetOrigin(), true )
+                ParticleManager:SetParticleControlEnt( nFXIndex, 2, unit, PATTACH_POINT_FOLLOW, "attach_eye_l", unit:GetOrigin(), true )
+            
+                ParticleManager:SetParticleControl( nFXIndex, 15, Vector(79, 216, 11) )
+                ParticleManager:SetParticleControl( nFXIndex, 16, Vector(1, 0, 0) )
+                ParticleManager:ReleaseParticleIndex(nFXIndex)
+            end)
         end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "argentum_swoedsmith") == true then
-          PrecacheUnitByNameAsync("npc_dota_companion", function()
-          local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
-          unit:SetOwner(hero)
-          unit:SetControllableByPlayer(hero:GetPlayerID(), true)
-          unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
-          unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/heroes/hero_elsa/elsa.vmdl"})
-          end)
+            PrecacheUnitByNameAsync("npc_dota_companion", function()
+                local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+                unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+                unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/heroes/hero_elsa/elsa.vmdl"})
+            end)
         end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "celty") == true then
-          PrecacheUnitByNameAsync("npc_dota_companion", function()
-          local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
-          unit:SetOwner(hero)
-          unit:SetControllableByPlayer(hero:GetPlayerID(), true)
-          unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
-          unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/celty_pet/celty.vmdl"})
-          end)
+            PrecacheUnitByNameAsync("npc_dota_companion", function()
+                local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+                unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+                unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/celty_pet/celty.vmdl"})
+            end)
         end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "acolyte_of_lost_arts") == true then
-          PrecacheUnitByNameAsync("npc_dota_companion", function()
-          local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
-          unit:SetOwner(hero)
-          unit:SetControllableByPlayer(hero:GetPlayerID(), true)
-          unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
-          unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/heroes/invoker_kid/invoker_kid.vmdl"})
-      
-          SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/invoker_kid/invoker_kid_cape.vmdl"}):FollowEntity(unit, true)
-          SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/invoker_kid/invoker_kid_hair.vmdl"}):FollowEntity(unit, true)
-          end)
+            PrecacheUnitByNameAsync("npc_dota_companion", function()
+                local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+                unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+                unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/heroes/invoker_kid/invoker_kid.vmdl"})
+            
+                SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/invoker_kid/invoker_kid_cape.vmdl"}):FollowEntity(unit, true)
+                SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/invoker_kid/invoker_kid_hair.vmdl"}):FollowEntity(unit, true)
+            end)
         end
       end
       

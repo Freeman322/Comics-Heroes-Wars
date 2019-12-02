@@ -21427,12 +21427,14 @@
 			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
 			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
-			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start.vpcf"
-			"particle"	"particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_totem_leap.vpcf"
-			"model"		"models/heroes/hero_steppenwolf/weapon/weapon.vmdl"
-			"model"		"models/heroes/hero_black_panther/spangled_skin/nike.vmdl"
-			"model"		"models/heroes/hero_black_panther/spangled_skin/nike_weapon.vmdl"
-			"particle"	"particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
+			"particle"	    "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start.vpcf"
+			"particle"	    "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_totem_leap.vpcf"
+			"model"		    "models/heroes/hero_steppenwolf/weapon/weapon.vmdl"
+			"model"		    "models/heroes/hero_black_panther/spangled_skin/nike.vmdl"
+			"model"		    "models/heroes/hero_black_panther/spangled_skin/nike_weapon.vmdl"
+            "model"         "models/heroes/hero_steppenwolf/steppenwolf_samurai/samurai.vmdl"
+            "model"         "models/heroes/hero_steppenwolf/steppenwolf_samurai/sword.vmdl"
+			"particle"	    "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -25110,7 +25112,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-    "LevelsBetweenUpgrades"  			"4"
+        "LevelsBetweenUpgrades"  			"4"
 
 		"precache"
 		{
@@ -25139,46 +25141,51 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"350"
+				"radius"				"400"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"proximity_threshold"		"0"
+				"proximity_threshold"				"1.6"
 			}
 			"03"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"damage"						"250 400 650 800"
-				"LinkedSpecialBonus"			"special_bonus_unique_joker"
-				"CalculateSpellDamageTooltip"	"1"
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"200 400 600 800"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"burn_duration"				"5"
-			}
+			}	
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"building_damage_pct"		"25"
-			}
+			}	
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"activation_delay"			"0.05"
+				"activation_delay"			"1.75"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"1"
+				"max_charges"			"3"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"7 6 5 4"
+				"charge_restore_time"	"23"
 			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_scepter_bonus"		"300"
+				"RequiresScepter"			"1"
+			}	
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	//=================================================================================================================
 	// Ability: Joker Explosice Specialist
@@ -27703,7 +27710,7 @@
 			"soundfile"           "sounds/weapons/hero/naga_siren/riptide02.vsnd",
 			"soundfile"           "sounds/weapons/hero/naga_siren/riptide03.vsnd"
             "soundfile"            "sounds/weapons/hero/tidehunter/tidehunter_gush_impact.vsnd"
-			"soundfile"            "sounds/weapons/hero/void_spirit/pulse_target.vsnd"
+			"soundfile"            "soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts" ///// ??????? Че это за 
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

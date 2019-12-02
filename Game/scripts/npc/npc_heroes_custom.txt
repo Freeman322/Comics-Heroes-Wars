@@ -4324,12 +4324,12 @@
 	"npc_dota_hero_clinkz"
 	{
 		///"override_hero"		   		"npc_dota_hero_clinkz"
-          "HeroID"			               "56"
-          "BaseClass"			          "npc_dota_hero_clinkz"
+        "HeroID"			               "56"
+        "BaseClass"			          "npc_dota_hero_clinkz"
 
 		"Model"						"models/heroes/hero_steppenwolf/steppenwolf.vmdl"
 
-		"SoundSet"					"Hero_ShadowDemon"
+		"SoundSet"					"Hero_AbyssalUnderlord"
 		"ModelScale"				"1.1"
 		"DisableWearables"			"1"
 		"Ability1"					"steppenwolf_natural_order"

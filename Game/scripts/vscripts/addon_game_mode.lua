@@ -111,11 +111,14 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/heroes/hero_kyloren.vsndevts", context )
 
 
+    PrecacheResource("model", "models/pets/kawaii_pet/kawaii.vmdl", context)
 	PrecacheResource("model", "models/development/invisiblebox.vmdl", context)
 	PrecacheResource("model", "models/items/courier/amaterasu/amaterasu.vmdl", context)
 	PrecacheResource("model", "models/pets/drodo/drodo.vmdl", context)
 	PrecacheResource("model", "models/heroes/hero_elsa/elsa.vmdl", context)
-	PrecacheResource("model", "models/pets/osky/osky.vmdl", context)
+    PrecacheResource("model", "models/pets/osky/osky.vmdl", context)
+    PrecacheResource("model", "models/pets/per_jopka/arsene.vmdl", context)
+    PrecacheResource("model", "models/pets/per_jopka/attachments.vmdl", context)
     PrecacheResource("model", "models/heroes/invoker_kid/invoker_kid.vmdl", context)
     PrecacheResource("model", "models/heroes/dark_willow/dark_willow_wisp.vmdl", context)
 	PrecacheResource("model", "models/pets/icewrack_wolf/icewrack_wolf.vmdl", context)
@@ -128,6 +131,7 @@ function Precache( context )
     PrecacheResource("model", "models/items/storm_spirit/tormenta_arms/tormenta_arms.vmdl", context)
     PrecacheResource("model", "models/items/storm_spirit/raikage_ares_armor/raikage_ares_armor.vmdl", context)
 
+    PrecacheResource("particle", "particles/econ/courier/courier_trail_orbit/courier_trail_orbit.vpcf", context)
     PrecacheResource("particle", "particles/econ/items/storm_spirit/storm_spirit_orchid_hat/storm_spirit_orchid_hat_ribbon.vpcf", context)
     PrecacheResource("particle", "particles/econ/items/storm_spirit/storm_spirit_tormenta_armor/storm_spirit_tormenta_ambient.vpcf", context)
 
