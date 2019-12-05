@@ -2887,6 +2887,18 @@ Rage, rage against the dying of the light."
 
 		"echo_glaive"                     "Echo glaive"
 		"echo_glaive_lore"                ""
+
+        "kawaii"                            "Kawaii"
+		"kawaii_lore"                       ""
+
+        "undead_warrior"                    "Undead Warrior"
+		"undead_warrior_lore"               ""
+
+        "arsen"                             "Arsene"
+		"arsen_lore"                         ""
+
+        "lovuska_jokera"                     "Joka"
+		"lovuska_jokera_lore"                 ""
 }
 
 

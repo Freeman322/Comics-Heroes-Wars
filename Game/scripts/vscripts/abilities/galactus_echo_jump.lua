@@ -1,4 +1,4 @@
-LinkLuaModifier("modifier_galactus_echo_jump", "abilities/galactus_echo_jump.lua", LUA_MODIFIER_MOTION_BOTH)
+LinkLuaModifier("modifier_galactus_echo_jump", "abilities/galactus_echo_jump.lua", LUA_MODIFIER_MOTION_NONE)
 
 galactus_echo_jump = class({})
 
@@ -68,35 +68,18 @@ end
 
 function modifier_galactus_echo_jump:OnCreated( kv )
     if IsServer() then
-        if self:ApplyHorizontalMotionController() == false then
-            self:Destroy()
-        end
         abil = {}
         abil.leap_direction = (self:GetParent():GetCursorPosition() - self:GetParent():GetAbsOrigin()):Normalized()
         abil.leap_distance = (self:GetParent():GetCursorPosition() - self:GetParent():GetAbsOrigin()):Length2D()
         abil.leap_speed = 1900/30
         abil.leap_traveled = 0
         abil.leap_z = 0
-        self:ApplyVerticalMotionController()
-        self:ApplyHorizontalMotionController()
+    
+        self:StartIntervalThink(FrameTime())
     end
 end
 
-function modifier_galactus_echo_jump:UpdateHorizontalMotion( me, dt )
-    if IsServer() then
-        local caster = self:GetParent()
-        local ability = self:GetAbility()
-
-        if abil.leap_traveled < abil.leap_distance then
-            caster:SetAbsOrigin(caster:GetAbsOrigin() + abil.leap_direction * abil.leap_speed)
-            abil.leap_traveled = abil.leap_traveled + abil.leap_speed
-        else
-            caster:InterruptMotionControllers(true)
-        end
-    end
-end
-
-function modifier_galactus_echo_jump:UpdateVerticalMotion( me, dt )
+function modifier_galactus_echo_jump:OnIntervalThink()
     if IsServer() then
         local caster = self:GetParent()
         local ability = self:GetAbility()
@@ -113,12 +96,19 @@ function modifier_galactus_echo_jump:UpdateVerticalMotion( me, dt )
             abil.leap_z = abil.leap_z - abil.leap_speed/2
             caster:SetAbsOrigin(GetGroundPosition(caster:GetAbsOrigin(), caster) + Vector(0,0,abil.leap_z))
         end
+
+        if abil.leap_traveled < abil.leap_distance then
+            caster:SetAbsOrigin(caster:GetAbsOrigin() + abil.leap_direction * abil.leap_speed)
+            abil.leap_traveled = abil.leap_traveled + abil.leap_speed
+        else
+            self:OnMotionInterrupted()
+        end
     end
 end
 
 
 --------------------------------------------------------------------------------
-function modifier_galactus_echo_jump:OnHorizontalMotionInterrupted()
+function modifier_galactus_echo_jump:OnMotionInterrupted()
     if IsServer() then
         local caster = self:GetParent()
         if caster:HasScepter() then
@@ -158,6 +148,14 @@ function modifier_galactus_echo_jump:OnHorizontalMotionInterrupted()
                 if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
                     hTarget:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
                     
+                    local damage = {
+                        victim = hTarget,
+                        attacker = self:GetCaster(),
+                        damage = self:GetAbility():GetAbilityDamage(),
+                        damage_type = self:GetAbility():GetAbilityDamageType(),
+                        ability = self
+                    }
+
                     ApplyDamage( damage )
                 end
             end

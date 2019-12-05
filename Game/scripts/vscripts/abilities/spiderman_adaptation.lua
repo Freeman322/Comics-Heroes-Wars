@@ -1,5 +1,6 @@
-LinkLuaModifier ("modifier_spiderman_adaptation", "abilities/spiderman_adaptation.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
-LinkLuaModifier ("modifier_spiderman_adaptation_slowing", "abilities/spiderman_adaptation.lua", LUA_MODIFIER_MOTION_HORIZONTAL)
+LinkLuaModifier ("modifier_spiderman_adaptation", "abilities/spiderman_adaptation.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier ("modifier_spiderman_adaptation_slowing", "abilities/spiderman_adaptation.lua", LUA_MODIFIER_MOTION_NONE)
+
 spiderman_adaptation = class ( {})
 
 function spiderman_adaptation:GetAOERadius()
@@ -40,9 +41,8 @@ function modifier_spiderman_adaptation:OnCreated ()
         self.leap_speed = 1600/30
         self.leap_traveled = 0
         self.leap_z = 0
-        if self:ApplyHorizontalMotionController () == false then
-            self:Destroy ()
-        end
+        
+        self:StartIntervalThink(FrameTime())
     end
 end
 
@@ -84,7 +84,7 @@ function modifier_spiderman_adaptation:CheckState ()
 end
 
 
-function modifier_spiderman_adaptation:UpdateHorizontalMotion (me, dt)
+function modifier_spiderman_adaptation:OnIntervalThink()
     if IsServer () then
         local caster = self:GetParent()
         local ability = self:GetAbility()
@@ -93,12 +93,12 @@ function modifier_spiderman_adaptation:UpdateHorizontalMotion (me, dt)
             caster:SetAbsOrigin (caster:GetAbsOrigin () + self.leap_direction * self.leap_speed)
             self.leap_traveled = self.leap_traveled + self.leap_speed
         else
-            caster:InterruptMotionControllers (true)
+            self:OnUnitLanded()
         end
     end
 end
 
-function modifier_spiderman_adaptation:OnHorizontalMotionInterrupted ()
+function modifier_spiderman_adaptation:OnUnitLanded()
     if IsServer () then
         local nearby_units = FindUnitsInRadius (self:GetCaster():GetTeam (), self:GetCaster():GetAbsOrigin (), nil, 275,  DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
