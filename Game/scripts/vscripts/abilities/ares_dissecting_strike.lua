@@ -1,5 +1,7 @@
 LinkLuaModifier("modifier_ares_dissecting_strike", "abilities/ares_dissecting_strike.lua", 0)
+
 ares_dissecting_strike = class({GetIntrinsicModifierName = function() return "modifier_ares_dissecting_strike" end})
+
 modifier_ares_dissecting_strike = class({
     IsHidden = function() return true end,
     IsPurgable = function() return false end,
@@ -7,10 +9,12 @@ modifier_ares_dissecting_strike = class({
 })
 
 function modifier_ares_dissecting_strike:OnCreated()
-  if not IsServer() then return end
+    if not IsServer() then return end
+
     if Util:PlayerEquipedItem(self:GetParent():GetPlayerOwnerID(), "ares_son_of_zeus") == true then
-      self.bLightning = true
+        self.bLightning = true
     end
+
     self.strike = false
 end
 
