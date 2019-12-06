@@ -118,6 +118,8 @@ function modifier_spiderman_adaptation:OnUnitLanded()
         ParticleManager:ReleaseParticleIndex( nFXIndex )
         EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_EarthShaker.Totem", self:GetCaster() )
         
+        FindClearSpaceForUnit(self:GetParent(), self:GetParent():GetAbsOrigin(), false)
+        
         self:Destroy ()
     end
 end

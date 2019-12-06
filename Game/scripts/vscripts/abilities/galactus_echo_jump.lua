@@ -160,6 +160,9 @@ function modifier_galactus_echo_jump:OnMotionInterrupted()
                 end
             end
         end
+
+        FindClearSpaceForUnit(self:GetParent(), self:GetParent():GetAbsOrigin(), false)
+        
         self:Destroy()
     end
 end

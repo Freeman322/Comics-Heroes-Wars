@@ -27239,6 +27239,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Terrorblade.Sunder.Target"
