@@ -37637,7 +37637,9 @@
 		"ScriptFile"					"abilities/officer_move.lua"
 		"AbilityTextureName"			"rubick_empty1"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Rattletrap.Power_Cogs"
@@ -41536,6 +41538,26 @@
 			{
 				"var_type"              "FIELD_INTEGER"
 				"aqua_man_movespeed"     "700 900 1100"  //мувспид аквамена в сфере
+			}
+		}
+	}
+
+    "special_bonus_unique_officer_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1000"
 			}
 		}
 	}

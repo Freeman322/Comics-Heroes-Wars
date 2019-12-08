@@ -29,7 +29,7 @@ end
 
 function officer_move:OnSpellStart( )
      if IsServer() then
-          local point = self:GetCursorPosition()
+          local point = self:GetCursorTarget():GetAbsOrigin()
           
           Timers:CreateTimer(self:GetSpecialValueFor("duration"), function()
                local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), EF_GLOBAL, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, 0, 0, false )

@@ -34,12 +34,13 @@ function officer_base:OnSpellStart( )
                     local base = CreateUnitByName("npc_dota_unit_officer_base", point, true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber())
                     base:SetControllableByPlayer(self:GetCaster():GetPlayerOwnerID(), true)
                     base:SetUnitCanRespawn(false)
+                    base.m_hOwner = caster
 
                     local mana = self:GetSpecialValueFor("max_mana_regen")
 
                     if self:GetCaster():HasTalent("special_bonus_unique_officer_2") then mana = mana + self:GetCaster():FindTalentValue("special_bonus_unique_officer_2") end 
                    
-                    base:SetBaseManaRegen(base:GetManaRegen() + mana)
+                    base:SetBaseManaRegen(base:GetManaRegen() + mana + (caster:GetLevel() / 4))
 
                     base.i_mRounds = 0
                     base.i_Hero = self:GetCaster()

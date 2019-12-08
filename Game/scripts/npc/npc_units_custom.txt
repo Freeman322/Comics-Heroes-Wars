@@ -4119,11 +4119,11 @@
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_unique_officer_1"
 		"Ability12"					"special_bonus_spell_amplify_20"
-		"Ability13"					"special_bonus_unique_officer_2"
-		"Ability14"					"special_bonus_intelligence_15"
+		"Ability13"					"special_bonus_unique_officer_5"
+		"Ability14"					"special_bonus_unique_officer_4"
 		"Ability15"					"special_bonus_unique_officer_3"
 		"Ability16"					"special_bonus_cooldown_reduction_30"
-		"Ability17"					"special_bonus_all_stats_20"
+		"Ability17"					"special_bonus_unique_officer_2"
 
 		"ArmorPhysical"				"-1"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -4207,7 +4207,7 @@
 		"Ability3"					"officer_base_assault"			// Ability 3.
 		"Ability4"					"officer_base_asassin"			// Ability 4.
 		"Ability5"					"officer_base_round"			// Ability 5.
-		"Ability6"					"officer_base_gold"			// Ability 6 - Extra.
+		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
@@ -4284,16 +4284,16 @@
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/hero_officer/creep/trooper1/trooper.vmdl"	// Model.
-		"BaseClass"					"npc_dota_creep_neutral"
+		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"Level"						"1"
-		"ModelScale" 					".9"
+		"ModelScale" 				".9"
 
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_moment_of_courage"			// Ability 1
-		"Ability2"					"centaur_khan_war_stomp"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability2"					"mars_bulwark"			// Ability 2
+		"Ability3"					"sven_warcry"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
@@ -4307,8 +4307,8 @@
 		"AttackDamageMax"				"26"		// Damage range max.
 		"AttackRate"					"1.0"		// Speed of attack.
 		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"			"500"		// Range within a target can be acquired.
-		"AttackRange"					"100"		// Range within a target can be attacked.
+		"AttackAcquisitionRange"		"500"		// Range within a target can be acquired.
+		"AttackRange"					"128"		// Range within a target can be attacked.
 		"ProjectileModel"				""			// Particle system model for projectile.
 		"ProjectileSpeed"				"0"			// Speed of projectile.
 
@@ -4330,8 +4330,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"400"		// Base health.
-		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusHealth"				"900"		// Base health.
+		"StatusHealthRegen"			"10.0"		// Health regeneration rate.
 		"StatusMana"				"250"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.
 
@@ -4346,6 +4346,23 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+        "Creature"
+        {
+			"CanRespawn"				"0"
+
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"200"
+			"DamageGain"				"25"
+			"ArmorGain"					"3"
+			"MagicResistGain"			"1"
+			"MoveSpeedGain"				"30"
+			"BountyGain"				"3"
+			"XPGain"					"100"
+		
+			"DefaultState"				"Invade"
+		}
 	}
 
 	//=================================================================================
@@ -4355,21 +4372,21 @@
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/hero_officer/creep/trooper2/clone_firearm.vmdl"	// Model.
-		"BaseClass"					"npc_dota_creep_neutral"
+		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Tinker"
 		"Level"						"1"
 		"ModelScale" 					".9"
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"ursa_overpower"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"1"			// Physical protection.
+		"ArmorPhysical"				"3"			// Physical protection.
         "MagicalResistance"				"50"
 		// Attack
 		//----------------------------------------------------------------
@@ -4377,7 +4394,7 @@
 
 		"ProjectileModel"				"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
 		"ProjectileSpeed"				"3000"
-		"AttackAcquisitionRange"			"950"
+		"AttackAcquisitionRange"		"950"
 		"AttackRange"					"550"
 		"AttackDamageMin"				"50"		// Damage range min.
 		"AttackDamageMax"				"100"		// Damage range max.
@@ -4399,14 +4416,14 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"265"		// Speed.
+		"MovementSpeed"				"350"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		// Base health.
-		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.
+		"StatusHealth"				"250"		// Base health.
+		"StatusHealthRegen"			"1"		// Health regeneration rate.
+		"StatusMana"				"250"			// Base mana.
+		"StatusManaRegen"			"20"		// Mana regeneration rate.
 
 		// Vision
 		//----------------------------------------------------------------
@@ -4419,6 +4436,23 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+        "Creature"
+        {
+			"CanRespawn"				"0"
+
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"100"
+			"DamageGain"				"25"
+			"ArmorGain"					"3"
+			"MagicResistGain"			"1"
+			"MoveSpeedGain"				"30"
+			"BountyGain"				"3"
+			"XPGain"					"100"
+		
+			"DefaultState"				"Invade"
+		}
 	}
 
 	//=================================================================================
@@ -4428,7 +4462,7 @@
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/hero_officer/creep/trooper3/deathtrooper.vmdl"	// Model.
-		"BaseClass"					"npc_dota_creep_neutral"
+		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Tinker"
 		"Level"						"1"
 		"ModelScale" 					".9"
@@ -4451,13 +4485,13 @@
 		"AttackDamageMax"				"38"		// Damage range max.
 		"AttackRate"					"0.6"		// Speed of attack.
 		"AttackAnimationPoint"			"0.38"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"			"950"
+		"AttackAcquisitionRange"		"950"
 		"AttackRange"					"550"
 		"ProjectileModel"				"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
 		"ProjectileSpeed"				"3000"
 		// Bounds
 		//----------------------------------------------------------------
-		"RingRadius"					"40"
+		"RingRadius"					"0"
 		"HealthBarOffset"				"130"
 
 		// Bounty
@@ -4473,7 +4507,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"200"		// Base health.
+		"StatusHealth"				"500"		// Base health.
 		"StatusHealthRegen"			"15"		// Health regeneration rate.
 		"StatusMana"				"250"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.
@@ -4489,6 +4523,23 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        
+        "Creature"
+        {
+			"CanRespawn"				"0"
+
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"250"
+			"DamageGain"				"25"
+			"ArmorGain"					"3"
+			"MagicResistGain"			"1"
+			"MoveSpeedGain"				"25"
+			"BountyGain"				"3"
+			"XPGain"					"100"
+		
+			"DefaultState"				"Invade"
+		}
 	}
 	"npc_dota_hero_mod"
 	{

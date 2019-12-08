@@ -11266,9 +11266,11 @@ When activated spends mana."
 
 		"npc_dota_unit_officer_base"											"Military Base"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_officer_1"						"+5 sec Order duration"
+		"DOTA_Tooltip_ability_special_bonus_unique_officer_1"						"Order include Officer attack"
 		"DOTA_Tooltip_ability_special_bonus_unique_officer_2"						"+1.5 manaregen for base"
 		"DOTA_Tooltip_ability_special_bonus_unique_officer_3"						"+400 damage for Artillery Battery"
+		"DOTA_Tooltip_ability_special_bonus_unique_officer_4"						"Infinite rounds for Artillery Battery"
+        "DOTA_Tooltip_ability_special_bonus_unique_officer_5"						"7% HP regen for Units"
 
 		"android"															"Android"
 		"android_lore"														""

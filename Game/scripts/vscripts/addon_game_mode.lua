@@ -273,7 +273,7 @@ function GameMode:InitGameMode()
     ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( GameMode, "OnGameRulesStateChange" ), self )
     ListenToGameEvent( "dota_player_learned_ability", Dynamic_Wrap( GameMode, "OnAbilityLearned" ), self )
 
-    GameRules:GetGameModeEntity():SetThink( "OnThink", self, 10 )
+    GameRules:GetGameModeEntity():SetThink( "OnIntervalThink", self, 10 )
 
     GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
     GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
@@ -375,14 +375,21 @@ function GameMode:OnGameInProgress()
 	GameRules.Players[DOTA_TEAM_BADGUYS] = Util:GetPlayersForTeam(DOTA_TEAM_BADGUYS)
 end
 
-function GameMode:OnThink()
+function GameMode:OnIntervalThink()
 	if #GameRules.Players[DOTA_TEAM_GOODGUYS] > 0 and #GameRules.Players[DOTA_TEAM_BADGUYS] > 0 then
 		if GameRules:IsCheatMode() == false and IsInToolsMode() == false then
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS  then
 				Util:CheckGameState()
 			end
 		end
-	end
+    end
+
+    for i=0, 24 do
+        if PlayerResource:IsValidPlayerID(i) and PlayerResource:GetSelectedHeroEntity(i) ~= nil and PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
+            UTIL_Remove(PlayerResource:GetSelectedHeroEntity(i))
+        end 
+    end
+
 	return 10
 end
 
