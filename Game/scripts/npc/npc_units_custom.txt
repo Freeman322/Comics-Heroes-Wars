@@ -4330,7 +4330,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"900"		// Base health.
+		"StatusHealth"				"20"		// Base health.
 		"StatusHealthRegen"			"10.0"		// Health regeneration rate.
 		"StatusMana"				"250"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.
@@ -4353,7 +4353,7 @@
 
 			//Level Up Parameters
 			//-----------------------------------------------------------------
-			"HPGain"					"200"
+			"HPGain"					"500"
 			"DamageGain"				"25"
 			"ArmorGain"					"3"
 			"MagicResistGain"			"1"
@@ -4420,7 +4420,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"250"		// Base health.
+		"StatusHealth"				"70"		// Base health.
 		"StatusHealthRegen"			"1"		// Health regeneration rate.
 		"StatusMana"				"250"			// Base mana.
 		"StatusManaRegen"			"20"		// Mana regeneration rate.
@@ -4443,7 +4443,7 @@
 
 			//Level Up Parameters
 			//-----------------------------------------------------------------
-			"HPGain"					"100"
+			"HPGain"					"210"
 			"DamageGain"				"25"
 			"ArmorGain"					"3"
 			"MagicResistGain"			"1"
@@ -4507,7 +4507,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"500"		// Base health.
+		"StatusHealth"				"80"		// Base health.
 		"StatusHealthRegen"			"15"		// Health regeneration rate.
 		"StatusMana"				"250"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.
@@ -4530,7 +4530,7 @@
 
 			//Level Up Parameters
 			//-----------------------------------------------------------------
-			"HPGain"					"250"
+			"HPGain"					"270"
 			"DamageGain"				"25"
 			"ArmorGain"					"3"
 			"MagicResistGain"			"1"

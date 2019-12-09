@@ -1,6 +1,8 @@
 officer_base_trooper = class({})
 
-local MAX_UNITS = 4
+local MAX_UNITS = 3
+
+officer_base_trooper.m_hUnits = {}
 
 function officer_base_trooper:OnSpellStart( )
     if IsServer() then
@@ -18,6 +20,8 @@ function officer_base_trooper:OnSpellStart( )
                     bonus = base:GetMaxHealth() * 0.07
                 end 
 
+                table.insert( self.m_hUnits, base )
+
                 base:CreatureLevelUp(level)
                 base:SetBaseHealthRegen(level * 6 + bonus)
                 base:SetBaseAttackTime(1.7 / level)
@@ -33,5 +37,13 @@ function officer_base_trooper:GetParentAbilityLevel(base)
 end
 
 function officer_base_trooper:GetCurrenUnits()
-    return #Entities:FindAllByName("npc_dota_officer_trooper")
+    local i = 0
+
+    for k,v in pairs(self.m_hUnits) do
+        if v and not v:IsNull() and v:IsAlive() then
+            i = i + 1
+        end 
+    end
+
+    return i
 end

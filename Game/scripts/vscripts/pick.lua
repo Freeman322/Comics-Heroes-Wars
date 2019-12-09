@@ -114,128 +114,133 @@ local heroes = {
 
 
 function Pick:Start()
-  CustomGameEventManager:RegisterListener("hero_picked", Dynamic_Wrap(Pick, 'OnPick'))
-  CustomGameEventManager:RegisterListener("random_hero", Dynamic_Wrap(Pick, 'OnRandomHeroSelected'))
-  CustomGameEventManager:RegisterListener("hero_banned", Dynamic_Wrap(Pick, 'OnBan'))
+    CustomGameEventManager:RegisterListener("hero_picked", Dynamic_Wrap(Pick, 'OnPick'))
+    CustomGameEventManager:RegisterListener("random_hero", Dynamic_Wrap(Pick, 'OnRandomHeroSelected'))
+    CustomGameEventManager:RegisterListener("hero_banned", Dynamic_Wrap(Pick, 'OnBan'))
 
-  GameRules:GetGameModeEntity():SetThink("OnIntervalThink", Pick, 1)
-  Convars:RegisterCommand( "try_connect", Dynamic_Wrap(Pick, 'OnConnectFull'), "Test", FCVAR_CHEAT )
-  if IsInToolsMode() then
-    TIMER = 5
-  end
+    GameRules:GetGameModeEntity():SetThink("OnIntervalThink", Pick, 1)
+
+    Convars:RegisterCommand( "try_connect", Dynamic_Wrap(Pick, 'OnConnectFull'), "Test", FCVAR_CHEAT )
+
+    LinkLuaModifier("modifier_connection_state", "modifiers/modifier_connection_state.lua", LUA_MODIFIER_MOTION_NONE)
+
+    if IsInToolsMode() then
+        TIMER = 5
+    end
 end
 
 
 function Pick:OnIntervalThink()
-  if TIMER >= 0 then
-    CustomNetTables:SetTableValue("pick", "timer", {time = TIMER})
-    TIMER = TIMER - 1
-  else
-    return nil
-  end
+    if TIMER >= 0 then
+        CustomNetTables:SetTableValue("pick", "timer", {time = TIMER})
+        TIMER = TIMER - 1
+    else
+        return nil
+    end
 
-  return 1
+    return 1
 end
 
 function Pick:OnPick(params)
-  local hero = params.hero
-  local playerid = params.playerID
-  local team = PlayerResource:GetTeam(playerid)
+    local hero = params.hero
+    local playerid = params.playerID
+    local team = PlayerResource:GetTeam(playerid)
 
-  if PLAYER_TABLE[playerid] then
-    return
-  end
-  if HERO_TABLE[hero] then
-    return
-  end
-  if Pick:IsHeroBanned(hero) == true then
-    return
-  end
+    if PLAYER_TABLE[playerid] then
+        return
+    end
+    if HERO_TABLE[hero] then
+        return
+    end
+    if Pick:IsHeroBanned(hero) == true then
+        return
+    end
 
-  if TIMER >= 50 then 
-    return
-  end
+    if TIMER >= 50 then
+        return
+    end
 
-  local gold = 1000;
-  local HasRandomed = false;
-  if PlayerResource:HasRandomed(playerid) then
-    gold = gold + 800;
-    HasRandomed = true;
-  end
+    local gold = 1000;
+    local HasRandomed = false;
+    if PlayerResource:HasRandomed(playerid) then
+        gold = gold + 800;
+        HasRandomed = true;
+    end
 
-  HERO_TABLE[hero] = hero
+    HERO_TABLE[hero] = hero
 
-  PLAYER_TABLE[playerid] = {}
+    PLAYER_TABLE[playerid] = {}
 
-  PLAYER_TABLE[playerid].playerid = playerid
-  PLAYER_TABLE[playerid].hero = hero
-  PLAYER_TABLE[playerid].isRandomed = HasRandomed
-
-
-
-  PrecacheUnitByNameAsync( hero, function()
-	  local nHero = PlayerResource:ReplaceHeroWith(playerid, hero, gold, 0)
-    nHero:RespawnHero(false, false)
-  end)
+    PLAYER_TABLE[playerid].playerid = playerid
+    PLAYER_TABLE[playerid].hero = hero
+    PLAYER_TABLE[playerid].isRandomed = HasRandomed
 
 
-  CustomNetTables:SetTableValue("pick", "heroes", PLAYER_TABLE)
+
+    PrecacheUnitByNameAsync( hero, function()
+        local nHero = PlayerResource:ReplaceHeroWith(playerid, hero, gold, 0)
+        nHero:RespawnHero(false, false)
+        nHero:AddNewModifier(nHero, nil, "modifier_connection_state", nil)
+    end)
+
+
+    CustomNetTables:SetTableValue("pick", "heroes", PLAYER_TABLE)
 end
 
 
 function Pick:OnRandomHeroSelected(params)
-  local playerid = params.playerID
+    local playerid = params.playerID
 
-  if TIMER >= 50 then 
-    return
-  end
-  
-  local temp = RandomInt(1, #heroes)
+    if TIMER >= 50 then
+        return
+    end
 
-  while HERO_TABLE[hero_name] do
-    temp = RandomInt(1, #heroes)
-  end
-  local hero_name = heroes[temp]
+    local temp = RandomInt(1, #heroes)
 
-  local keys = {}
-  keys.hero = hero_name
-  keys.playerID = playerid
-  PlayerResource:SetHasRandomed(playerid)
-  Pick:OnPick(keys)
+    while HERO_TABLE[hero_name] do
+        temp = RandomInt(1, #heroes)
+    end
+    local hero_name = heroes[temp]
+
+    local keys = {}
+    keys.hero = hero_name
+    keys.playerID = playerid
+    PlayerResource:SetHasRandomed(playerid)
+    Pick:OnPick(keys)
 end
 
 function Pick:OnConnectFull(  )
-  Timers:CreateTimer(1, function()
-    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(0), "OnConnectFull", {})
-    return nil
-  end)
+    Timers:CreateTimer(1, function()
+        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(0), "OnConnectFull", {})
+        return nil
+    end)
 end
 
 function Pick:OnBan(params)
-	local hero = params.hero
-	local playerid = params.playerID
-	local team = PlayerResource:GetTeam(playerid)
-	if HERO_TABLE[hero_name] then 
-		return 
-	end
-	if #BANS[team] >= MAX_BANS_PER_TEAM then 
-		return
-	end
-	BANS["TOTAL"] = BANS["TOTAL"] + 1
-	table.insert(BANS[team], hero)
-	CustomNetTables:SetTableValue("pick", "bans", BANS)
+    local hero = params.hero
+    local playerid = params.playerID
+    local team = PlayerResource:GetTeam(playerid)
+    if HERO_TABLE[hero_name] then
+        return
+    end
+    if #BANS[team] >= MAX_BANS_PER_TEAM then
+        return
+    end
+    BANS["TOTAL"] = BANS["TOTAL"] + 1
+    table.insert(BANS[team], hero)
+    CustomNetTables:SetTableValue("pick", "bans", BANS)
 end
 
 function Pick:IsHeroBanned(heroname)
-  for _,v in pairs(BANS[DOTA_TEAM_GOODGUYS]) do
-      if heroname == v then 
-        return true
-      end
-  end
-  for _,c in pairs(BANS[DOTA_TEAM_BADGUYS]) do
-     if heroname == c then 
-        return true
-      end
-  end
-  return false
+    for _,v in pairs(BANS[DOTA_TEAM_GOODGUYS]) do
+        if heroname == v then
+            return true
+        end
+    end
+    for _,c in pairs(BANS[DOTA_TEAM_BADGUYS]) do
+        if heroname == c then
+            return true
+        end
+    end
+    return false
 end

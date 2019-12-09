@@ -383,13 +383,7 @@ function GameMode:OnIntervalThink()
 			end
 		end
     end
-
-    for i=0, 24 do
-        if PlayerResource:IsValidPlayerID(i) and PlayerResource:GetSelectedHeroEntity(i) ~= nil and PlayerResource:GetConnectionState(i) == DOTA_CONNECTION_STATE_ABANDONED then
-            UTIL_Remove(PlayerResource:GetSelectedHeroEntity(i))
-        end 
-    end
-
+    
 	return 10
 end
 
