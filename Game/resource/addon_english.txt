@@ -3312,10 +3312,10 @@
 		"DOTA_Tooltip_ABILITY_ronan_bash_chance"									"CHANCE:"
 		"DOTA_Tooltip_ABILITY_ronan_bash_bonus_damage"								"DAMAGE:"
 
-		"DOTA_Tooltip_ability_ronan_passive"						"FEAR"
-		"DOTA_Tooltip_ability_ronan_passive_Description"  		"Ronan creates a dark echo of his opponents souls, causing them to attack their hosts"
-		"DOTA_Tooltip_ability_ronan_passive_illusion_duration"			"DURATION:"
-		"DOTA_Tooltip_ability_ronan_passive_illusion_outgoing_tooltip"	"%OUTGOING DAMAGE:"
+		"DOTA_Tooltip_ability_ronan_passive"						    "FEAR"
+		"DOTA_Tooltip_ability_ronan_passive_Description"  		        "Ronan creates a dark echo which stuns all nearby enemies and deals damage."
+		"DOTA_Tooltip_ability_ronan_passive_knockback_duration"			"DURATION:"
+		"DOTA_Tooltip_ability_ronan_passive_damage"	                    "DAMAGE:"
 		"DOTA_Tooltip_ability_ronan_passive_move_slow"					"%SLOWING:"
 
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole"							"KREE's RAGE"
@@ -3533,6 +3533,9 @@
 		"DOTA_Tooltip_ABILITY_lich_aura_passive_Lore"				"Soul sealed Frostmourne give him strength and crave blood ...."
 		"DOTA_Tooltip_ABILITY_lich_aura_passive_range"				"RADIUS:"
 		"DOTA_Tooltip_ABILITY_lich_aura_passive_damage_buff_amount"	"DAMAGE PER STACK:"
+
+        "DOTA_Tooltip_ability_special_bonus_unique_weaver_1"                                "+75 damage for Wind Walk"
+        "DOTA_Tooltip_ability_special_bonus_unique_weaver_2"                                "+200 speed for Wind Walk"
 
 		////nightbringer
 		"DOTA_Tooltip_ability_nightbringer_rise_of_night"									"RISE OF NIGHT"

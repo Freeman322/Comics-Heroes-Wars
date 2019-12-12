@@ -4035,7 +4035,7 @@
   				"speed"			     	"550 600 750 800"
   			}
 		}
-}
+    }
  	//=================================================================================================================
 	// Loki: Spark Trap
 	//=================================================================================================================
@@ -4445,6 +4445,8 @@
 			"particle"  "particles/hero_samurai/frost_sword_ambient.vpcf"
 			"particle"  "particles/hero_samurai/samurai_stomic_dance_arcana_tgt.vpcf"
 			"particle"  "particles/hero_samurai/samurai_stomic_dance_arcana_snow.vpcf"
+            "model"		"models/heroes/hero_deadpool/econs/sephiroth_custom/econs/wing.vmdl"
+			"model"		"models/heroes/hero_deadpool/econs/sephiroth_custom/sephiroth.vmdl"
 			"particle"  "particles/hero_samurai/samurai_stomic_dance_arcana_trail.vpcf"
 			"model" 	"models/heroes/juggernaut/juggernaut_arcana.vmdl"
 			"model"		"models/items/juggernaut/arcana/juggernaut_arcana_mask.vmdl"
@@ -4460,6 +4462,11 @@
 			"particle"  "particles/econ/courier/courier_crystal_rift/courier_ambient_crystal_rift.vpcf"
 			"particle"  "particles/econ/items/juggernaut/jugg_serrakura/juggernaut_omni_slash_trail_serrakura.vpcf"
 			"particle"  "particles/econ/items/juggernaut/jugg_serrakura/juggernaut_omni_slash_tgt_serrakura.vpcf"
+            "model"     "models/heroes/hero_ironman/econs/berserk_samurai.vmdl"
+            "model"     "models/heroes/hero_ironman/econs/sword.vmdl"
+            "particle"  "particles/items4_fx/nullifier_mute_debuff.vpcf"
+            "particle"  "particles/reverse_flash/reverse_flash_arcana.vpcf"
+            "particle"  "particles/ironman/iron_devil_ambient/iron_devil_ambient.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -9886,11 +9893,11 @@
 
 	"venom_out"
 	{
-		"BaseClass"								"ability_lua"
-		"ScriptFile"							"abilities/venom_infest.lua"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/venom_infest.lua"
 
 		"AbilityTextureName"			"custom/venom_out"
-		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
@@ -9905,24 +9912,31 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5619"
-		"BaseClass"						"terrorblade_reflection"
+		"BaseClass"						"huskar_inner_fire"
 		"AbilityTextureName"			"custom/ronan_passive"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"					
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"   
+		"AbilitySound"					"Hero_Huskar.Inner_Vitality"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"55 70 85 100"
+		"AbilityManaCost"				"75 100 125 150"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// already gets credit for the healing
+
 		"precache"
 		{
 			"particle"  "particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_hammer_ambient.vpcf"
@@ -9930,6 +9944,7 @@
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -9937,33 +9952,28 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"illusion_duration"			"3.5 4.0 4.5 5.0"
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 170 240 310"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"illusion_outgoing_damage"	"-45.0 -30.0 -15.0 0.0"
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"illusion_outgoing_tooltip"	"55.0 70.0 85.0 100.0"
+				"var_type"				"FIELD_FLOAT"
+				"disarm_duration"		"1.75 2.5 3.25 4"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"move_slow"					"25 30 35 40"
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"550"
 			}
 			"05"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_slow_tooltip"		"25 30 35 40"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"range"						"900 1000 1100 1200"
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.6"
 			}
 		}
 	}
@@ -10854,8 +10864,6 @@
 			"particle"  "particles/plus/pugalo_ambient.vpcf"
 			"model"		"models/b2/b2.vmdl"
 			"model"		"models/b2/weapon/weapon.vmdl"
-			"model"		"models/heroes/hero_deadpool/econs/sephiroth_custom/econs/wing.vmdl"
-			"model"		"models/heroes/hero_deadpool/econs/sephiroth_custom/sephiroth.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -20091,22 +20099,29 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"80 120 160 200"
+				"damage"				"100 125 150 175"
+				"LinkedSpecialBonus"	"special_bonus_unique_weaver_1"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"200"
+				"speed"				    "225"
+				"LinkedSpecialBonus"	"special_bonus_unique_weaver_2"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fade_time"				"0.2"
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"175 175 175 175"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.2 3.8 4.4 5.0"
+				"fade_time"				"0.25 0.25 0.25 0.25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0 4.0 4.0 4.0"
 			}
 		}
 	}
