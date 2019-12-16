@@ -71,29 +71,27 @@ function modifier_kratos_god_of_war:OnTakeDamage(params)
         if params.unit == self:GetParent() then
 			local target = params.attacker
 
-            if target == self:GetParent() then
-                return
+            ----fixed crash. Valve cant chech for nullptr after damage is dealt, so we should do that.
+            if target and not target:IsNull() and target:IsAlive() then
+                if target == self:GetParent() then return end
+                if target:GetClassname() == "ent_dota_fountain" then return end
+                
+                EmitSoundOn("Kratos.GOW.Damage", target)      
+
+                local nFXIndex = ParticleManager:CreateParticle ("particles/units/heroes/hero_elder_titan/elder_titan_ancestral_spirit_cast.vpcf", PATTACH_WORLDORIGIN, self:GetParent())
+                ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetAbsOrigin())
+                ParticleManager:SetParticleControl( nFXIndex, 2, self:GetParent():GetAbsOrigin())
+                ParticleManager:ReleaseParticleIndex( nFXIndex );  
+                
+                ApplyDamage ( {
+                    victim = target,
+                    attacker = self:GetParent(),
+                    damage = params.original_damage,
+                    damage_type = params.damage_type,
+                    ability = self:GetAbility(),
+                    damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
+                })
             end
-
-            if target:GetClassname() == "ent_dota_fountain" then
-        	   return
-            end
-
-            ApplyDamage ( {
-                victim = target,
-                attacker = self:GetParent(),
-                damage = params.original_damage,
-                damage_type = params.damage_type,
-                ability = self:GetAbility(),
-                damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
-            })
-
-            EmitSoundOn("Kratos.GOW.Damage", target)      
-
-            local nFXIndex = ParticleManager:CreateParticle ("particles/units/heroes/hero_elder_titan/elder_titan_ancestral_spirit_cast.vpcf", PATTACH_WORLDORIGIN, self:GetParent())
-			ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetAbsOrigin())
-			ParticleManager:SetParticleControl( nFXIndex, 2, self:GetParent():GetAbsOrigin())
-			ParticleManager:ReleaseParticleIndex( nFXIndex );  
 		end
 	end
 end
