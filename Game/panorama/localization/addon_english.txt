@@ -2858,6 +2858,9 @@ Rage, rage against the dying of the light."
         "star_emblem"                        "Star Emblem"
         "star_emblem_lore"                        ""
         
+        "star_emblem_green"                        "Star Emblem II"
+        "star_emblem_green_lore"                        ""
+
 		"pudge_mask"                      "Mask of the Mad Harvester"
 		"pudge_mask_lore"                 ""
 

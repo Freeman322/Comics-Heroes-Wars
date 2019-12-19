@@ -5387,6 +5387,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "396": {
+        "item": "star_emblem_green",
+        "rarity": "10",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "univarsal_item",
+        "universal": "false",
+        "def_id": "396",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

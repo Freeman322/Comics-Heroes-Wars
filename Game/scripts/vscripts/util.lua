@@ -406,6 +406,11 @@ function Util:OnHeroInGame(hero)
             local nFXIndex = ParticleManager:CreateParticle( "particles/star_emblem/star_emblem_hero_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
             ParticleManager:ReleaseParticleIndex(nFXIndex)
         end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem_green") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/red_emblem/red_emblem.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "icewrack_wolf") == true then
             PrecacheUnitByNameAsync("npc_dota_companion", function()

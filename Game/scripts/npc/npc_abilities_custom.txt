@@ -2011,13 +2011,13 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_per_mana"			"1.7 2.0 2.3 2.6"
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_mana"		"1.6 1.9 2.2 2.5"
 			}
 			"02"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"absorption_tooltip"	    "65"
+				"var_type"				"FIELD_FLOAT"
+				"absorption_pct"			"70"
 			}
 		}
 	}
