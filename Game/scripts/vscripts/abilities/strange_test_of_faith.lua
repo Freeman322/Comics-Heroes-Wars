@@ -8,6 +8,10 @@ function strange_test_of_faith:OnSpellStart()
             self:GetCursorTarget():AddNewModifier( self:GetCaster(), self, "modifier_strange_test_of_faith", { duration = self:GetSpecialValueFor( "duration" ) } )
             self:GetCursorTarget():Purge( false, true, false, true, false )
             EmitSoundOn( "Hero_Abaddon.AphoticShield.Cast", self:GetCursorTarget() )
+
+            if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "cat") then
+                EmitSoundOn( "Strange.Cast1", self:GetCaster() )
+            end
     	end
     end
 end

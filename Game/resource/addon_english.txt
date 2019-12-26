@@ -11701,5 +11701,9 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_bloody_tome_bonus_cooldown_reduction"                    "%+$cooldown_reduce"
 		"DOTA_Tooltip_ability_item_bloody_tome_manacost_reduction"                          "%+$mana_cost_perc"
 		"DOTA_Tooltip_ability_item_bloody_tome_bonus_amp"                                   "%+$spell_amp"
+
+    
+        "npc_dota_hero_gorr"                                                                "Gorr"
+        "npc_dota_hero_gorr_hype"                                                           "My name is Gorr, son of a nameless father, outcast from a forgotten world. I have slain my way through multitudes to stand here at the genesis of all things. Blackened by vengeance, wet with holy blood. One simple dream still strong in my heart... The dream of a godless age."
 	}	
 }

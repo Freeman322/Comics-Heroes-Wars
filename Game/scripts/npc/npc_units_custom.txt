@@ -8371,4 +8371,94 @@
 			"DefaultState"				"Invade"
 		}
 	}
+    "npc_dota_hero_gorr"
+	{
+        "BaseClass"     				"npc_dota_hero"
+		"HeroID"						"233"
+
+        "IsCustom"                      "1"
+		"DisableWearables"              "1"
+
+		"Model"		                    "models/heroes/hero_gorr/gorr.vmdl"
+		"IdleExpression"		        "scenes/mars/mars_exp_idle_01.vcd"
+		"SoundSet"		                "Hero_Mars"
+		"Enabled"		                "1"
+		"Role"			                "Carry,Initiator,Disabler,Durable"
+		"Rolelevels"	                "1,2,2,3"
+		"Complexity"	                "1"
+		"Team"		                    "Good"
+		
+        "ModelScale"		            "0.900000"
+		"VersusScale"		            "0.750000"
+
+		"LoadoutScale"		            "0.8"
+	
+		"Ability1"		                ""
+		"Ability2"		                ""
+		"Ability3"		                ""
+		"Ability4"		                ""
+		"Ability5"		                ""
+		"Ability6"	                	""
+		"Ability10"		                "special_bonus_strength_8"
+		"Ability11"		                "special_bonus_movement_speed_20"
+		"Ability12"		                "special_bonus_attack_damage_25"
+		"Ability13"		                "special_bonus_armor_8"
+		"Ability14"		                "special_bonus_unique_mars_spear_bonus_damage"
+		"Ability15"		                "special_bonus_unique_mars_spear_stun_duration"
+		"Ability16"		                "special_bonus_unique_mars_gods_rebuke_extra_crit"
+		"Ability17"		                "special_bonus_unique_mars_arena_of_blood_hp_regen"
+		"ArmorPhysical"		            "-1"
+		"AttackCapabilities"		    "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		        "29"
+		"AttackDamageMax"		        "37"
+		"AttackRate"		            "1.800000"
+		"AttackAnimationPoint"		    "0.40000"
+	
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		            "150"
+	
+		"AttributePrimary"		        "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		    "23"
+		"AttributeStrengthGain"		    "3.200000"
+		"AttributeBaseAgility"		    "20"
+		"AttributeAgilityGain"		    "1.900000"
+		"AttributeBaseIntelligence"		"17"
+		"AttributeIntelligenceGain"		"1.400000"
+		"MovementSpeed"		            "310"
+		"MovementTurnRate"		        "0.800000"
+		"HasAggressiveStance"		    "1"
+		"GameSoundsFile"		        "soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
+		"VoiceFile"		                "soundevents/voscripts/game_sounds_vo_mars.vsndevts"
+
+        // Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"				"300"
+		"StatusHealthRegen"			"2.0"
+		"StatusMana"				"645"
+		"StatusManaRegen"			"6.0"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"				    "DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1700"									// Range of vision during day light.
+		"VisionNighttimeRange"		"2000"									// Range of vision at night time.
+
+		// Inventory
+		"HasInventory"				"1"
+    }
 }

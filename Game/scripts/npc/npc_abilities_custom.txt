@@ -4467,6 +4467,9 @@
             "particle"  "particles/items4_fx/nullifier_mute_debuff.vpcf"
             "particle"  "particles/reverse_flash/reverse_flash_arcana.vpcf"
             "particle"  "particles/ironman/iron_devil_ambient/iron_devil_ambient.vpcf"
+            "model"     "models/heroes/hero_atomic_samurai/zoro_skin/zoro.vmdl"
+            "model"     "models/heroes/hero_atomic_samurai/zoro_skin/katana.vmdl"
+            "particle"  "particles/cosmos/cosmos_space_warp_debuff.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -8370,7 +8373,8 @@
 		"precache"
 		{
 			"model"  		"models/heroes/hero_drstrange/bracers_of_eternity/bracers_of_eternity.vmdl"
-			"model"		"models/heroes/hero_drstrange/cape.vmdl"
+			"model"		    "models/heroes/hero_drstrange/cape.vmdl"
+            "model"         "models/heroes/hero_strange/doremon/doraemon.vmdl"
 			"particle"  	"particles/econ/courier/courier_hermit_crab/hermit_crab_octarine_ambient.vpcf"
 		}
 		// Special
@@ -12759,6 +12763,8 @@
 			"model"		 "models/ant_man_weap1.vmdl"
 			"model"		 "models/items/antimage/pw_tustarkuri_belt/antimage_belt_lod0.vmdl"
 			"model"		 "models/items/antimage/mage_eraser_belt/mage_eraser_belt.vmdl"
+            "model"      "models/heroes/hero_spider/spiderman_custom/lee.vmdl"
+            "particle"   "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
 		}
 		"AbilitySpecial"
 		{
@@ -19328,6 +19334,8 @@
 			"model"		"models/items/rubick/gambling_mage_rubick_weapon/gambling_mage_rubick_weapon.vmdl"
 			"particle"	"particles/econ/items/rubick/rubick_gambling_mage/rubick_gambling_mage_ambient.vpcf"
 			"model"		"models/items/rubick/gambling_mage_rubick_back/gambling_mage_rubick_back.vmdl"
+            "model"     "models/heroes/hero_spawn/spawn_custom/pepe.vmdl"
+            "particle"  "particles/units/heroes/hero_centaur/centaur_return_buff.vpcf"
 		}
 
 		"AbilitySpecial"
@@ -34895,9 +34903,12 @@
 
 		"precache"
 		{
-			"model"		"models/heroes/hero_america/econs/alisa/alisa.vmdl"
-			"particle"	"particles/jetstream_alisa.vpcf"
-			"particle"	"particles/hero_joker/joker_ambient.vpcf"
+			"model"		    "models/heroes/hero_america/econs/alisa/alisa.vmdl"
+            "model"         "models/heroes/hero_atomic_samurai/zoro_skin/zoro.vmdl"
+            "model"         "models/heroes/hero_atomic_samurai/zoro_skin/katana.vmdl"
+			"particle"	    "particles/jetstream_alisa.vpcf"
+            "particle"      "particles/cosmos/cosmos_space_warp_debuff.vpcf"
+			"particle"	    "particles/hero_joker/joker_ambient.vpcf"
 			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
 		}
 

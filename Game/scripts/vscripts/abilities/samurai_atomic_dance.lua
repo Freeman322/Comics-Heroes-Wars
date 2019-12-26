@@ -75,6 +75,9 @@ function samurai_atomic_dance:OnSpellStart()
         end
     end)
     if IsServer() then
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "zoro") then
+            EmitSoundOn( "Zoro.Cast4", self:GetCaster() )
+        end
         for index, unit in pairs(unit_table) do
             Timers:CreateTimer(index * 0.1, function()
                 hCaster:SetAbsOrigin(unit:GetAbsOrigin())

@@ -152,28 +152,13 @@ function RebuildUI() {
         }
     }
 
-    if (Game.GetMapInfo().map_name == "maps/quoijes_massacre.vpk")
+    if (Game.GetMapInfo().map_name == "maps/dota.vpk")
     {
-        $("#npc_dota_hero_skywrath_mage").SetHasClass("Banned", true);
-        $("#npc_dota_hero_skywrath_mage").hittest = false;
+        $("#npc_dota_hero_godspeed").SetHasClass("Banned", true);
+        $("#npc_dota_hero_godspeed").hittest = false;
 
-        $("#npc_dota_hero_enigma").SetHasClass("Banned", true);
-        $("#npc_dota_hero_enigma").hittest = false;
-
-        $("#npc_dota_hero_kyloren").SetHasClass("Banned", true);
-        $("#npc_dota_hero_kyloren").hittest = false;
-
-        $("#npc_dota_hero_phoenix").SetHasClass("Banned", true);
-        $("#npc_dota_hero_phoenix").hittest = false;
-
-        $("#npc_dota_hero_tinker").SetHasClass("Banned", true);
-        $("#npc_dota_hero_tinker").hittest = false;
-
-        $("#npc_dota_hero_alchemist").SetHasClass("Banned", true);
-        $("#npc_dota_hero_alchemist").hittest = false;
-
-        $("#npc_dota_hero_juggernaut").SetHasClass("Banned", true);
-        $("#npc_dota_hero_juggernaut").hittest = false;
+        $("#npc_dota_hero_dark_rider").SetHasClass("Banned", true);
+        $("#npc_dota_hero_dark_rider").hittest = false;
     }
 
     if (getClientStatus(Players.GetLocalPlayer()) < 1) return;
