@@ -15,31 +15,21 @@ function beyonder_void_strike:OnSpellStart()
 	local origin = caster:GetOrigin()
 	local target_direction = (point-origin):Normalized()
 	local cast_angle = VectorToAngles(cast_direction).y
-
-    local targets = FindUnitsInRadius()
-    (	caster:GetTeamNumber(),
-		origin,
-		nil,
-		radius,
-		self:GetAbilityTargetTeam(),
-		self:GetAbilityTargetType(),
-		self:GetAbilityTargetFlags(),
-		FIND_ANY_ORDER,
-		false )
+	local targets = FindUnitsInRadius (caster:GetTeamNumber(), origin, nil,	radius,	self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(),	FIND_ANY_ORDER,	false )
 
 	for _, target in pairs(targets) do
 		local target_direction = (target:GetOrigin() - origin):Normalized()
 		local target_angle = VectorToAngles(target_direction).y
-		local angle_diff = math.abs(AngleDiff(cast_angle, target_angle))
+		local angle_diff = math.abs(AngleDiff(cast_angle, target_angle))	
 		local stun = self:GetCaster():GetMana()/1000
 
 
 		target:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun})
 
 		caster:PerformAttack(
-			target, true, true, true, true, true, false,	true) end
+			target, true, true, true, true, true, false, true) end
 
-	self:PlayEffects2( enemy, origin, cast_direction )
+	self:PlayEffects2( target, origin, cast_direction )
 end
 
 function beyonder_void_strike:PlayEffects1( caught, direction )
