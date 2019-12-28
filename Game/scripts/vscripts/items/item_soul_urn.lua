@@ -1,38 +1,9 @@
 item_soul_urn = class({})
 LinkLuaModifier ("item_soul_urn_modifier", "items/item_soul_urn.lua", LUA_MODIFIER_MOTION_NONE)
 
-local BURN = 0.25
-
 function item_soul_urn:GetIntrinsicModifierName()
     return "item_soul_urn_modifier"
 end
-
-function item_soul_urn:OnSpellStart ()
-    local hTarget = self:GetCursorTarget ()
-    if hTarget ~= nil then
-        if ( not hTarget:TriggerSpellAbsorb (self) ) then
-            local mana = hTarget:GetMana() * BURN
-
-            hTarget:SpendMana(mana, self)
-            hTarget:Interrupt()
-
-            self:GetCaster():Heal(mana, self)
-
-            local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/earthshaker/earthshaker_totem_ti6/earthshaker_totem_ti6_cast.vpcf", PATTACH_CUSTOMORIGIN, nil );
-            ParticleManager:SetParticleControl( nFXIndex, 0, hTarget:GetOrigin() );
-            ParticleManager:ReleaseParticleIndex( nFXIndex );
-
-            local nFXIndexCaster = ParticleManager:CreateParticle( "particles/units/heroes/hero_lich/lich_dark_ritual.vpcf", PATTACH_CUSTOMORIGIN, hTarget );
-            ParticleManager:SetParticleControlEnt( nFXIndexCaster, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );
-            ParticleManager:SetParticleControlEnt( nFXIndexCaster, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin(), true );
-            ParticleManager:ReleaseParticleIndex( nFXIndexCaster );
-        
-            EmitSoundOn("DOTA_Item.Bloodstone.Cast", hTarget)
-        end
-    end
-end
-
-
 item_soul_urn_modifier = class({})
 
 function item_soul_urn_modifier:IsHidden()

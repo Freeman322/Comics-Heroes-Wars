@@ -406,6 +406,10 @@ function Util:OnHeroInGame(hero)
             local nFXIndex = ParticleManager:CreateParticle( "particles/star_emblem/star_emblem_hero_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
             ParticleManager:ReleaseParticleIndex(nFXIndex)
         end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "heart_timegem") == true then
+          hero:AddNewModifier(hero, nil, "modifier_heart_timegem", {id = hero:GetPlayerID()})
+      end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "icewrack_wolf") == true then
             PrecacheUnitByNameAsync("npc_dota_companion", function()

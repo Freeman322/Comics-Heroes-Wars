@@ -134,7 +134,7 @@
 		"new_npc_dota_hero_queenofpain"			"Slaanesh"
 
 		"dota_chatwheel_message_GG"					"Это ГГ, бл*ть!"
-		"dota_chatwheel_message_GGWP"				"Норм пацанчики попались! ГГ"
+		"dota_chatwheel_message_GGWP"				"Hey Dude! Nice cock"
 		"dota_chatwheel_message_All_GG"				"Это ГГ, бл*ть! Вас Вые*али!"
 		"dota_chatwheel_message_All_GGWP"			"Норм пацанчики попались! ГГ"
 		"dota_chatwheel_message_What_To_Buy"		"Поцы, что мне собрать?! Я рак."
@@ -4125,7 +4125,7 @@
 		"DOTA_Tooltip_ability_god_emperor_supersonic_strike_magic_missile_stun"           "ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
 
 		"DOTA_Tooltip_ability_khorn_erosion"                                              "Erosion"
-		"DOTA_Tooltip_ability_khorn_erosion_Description"                                  "Аура: Все враги в радиусе действия при передвижения будут получать урон от пройденного расстояния."
+		"DOTA_Tooltip_ability_khorn_erosion_Description"                                  "Аура: Все враги в радиусе действия пр������ передвижения будут получать урон от пройденного расстояния."
 		"DOTA_Tooltip_ability_khorn_erosion_aura_radius"                                  "РАДИУС:"
 		"DOTA_Tooltip_ability_khorn_erosion_aura_damage"                                  "%УРОН:"
 
@@ -4820,10 +4820,10 @@
 
 		"DOTA_Tooltip_ability_predator_observer"                                          "Observer"
 		"DOTA_Tooltip_ability_predator_observer_Description"                              "Пасcивная: При каждом ударе по врагу, Predator снижает броню врагу и наносит дополнительный урон."
-		"DOTA_Tooltip_ability_predator_observer_armor_per_hit"                            "БРОНИ ЗА УДАР:"
-		"DOTA_Tooltip_ability_predator_observer_damager_per_stack"                        "УРОН ЗА СТАК:"
+		"DOTA_Tooltip_ability_predator_observer_armor_per_hit"                            "СНИЖЕНИЕ БРОНИ ЗА УДАР:"
+		"DOTA_Tooltip_ability_predator_observer_damager_per_stack"                        "ДОПОЛНИТЕЛЬНЫЙ УРОН ЗА СТАК:"
 		"DOTA_Tooltip_ability_predator_observer_debuff_duration"                          "ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_predator_observer_lifesteal"                                "%ЛЕЧЕНИЕ:"
+
 
 		"DOTA_Tooltip_ability_predator_hunter_strike"                                     "Hunter Strike"
 		"DOTA_Tooltip_ability_predator_hunter_strike_Description"                         "Активируемая: Predator оглушает всех юнитов, попавших в область действия способности."
@@ -6266,9 +6266,6 @@
 		"DOTA_Tooltip_ability_item_reality_gem"                                           "Reality Gem"
 		"DOTA_Tooltip_ability_item_reality_gem_Description"                               "<h1>Active: Reverse Reality </h1> В определенной области полностью меняет свойства реальности - превращая урон в анти-урон."
 		"DOTA_Tooltip_ability_item_reality_gem_Lore" 									  "Существуют реликвии, которые предшествуют самой Вселенной. То, что находится в ней, является одним из них. Девять миров не вечны. У них был рассвет, так же, как и будет закат. Но это... эта реликвия вечна..."
-		"DOTA_Tooltip_ability_item_reality_gem_bonus_all_stats"                           "+$all"
-		"DOTA_Tooltip_ability_item_reality_gem_bonus_health_regen"                        "+$hp_regen"
-		"DOTA_Tooltip_ability_item_reality_gem_bonus_damage"                              "+$damage"
 		"DOTA_Tooltip_ability_item_reality_gem_bonus_health"                              "+$health"
 		"DOTA_Tooltip_ability_item_reality_gem_bonus_mana"                                "+$mana"
 		"DOTA_Tooltip_ability_item_reality_gem_reality_reverse_duration"                  "REVERSE REAVILTY ДЛИТЕЛЬНОСТЬ:"
@@ -6308,7 +6305,6 @@
 		"DOTA_Tooltip_ability_item_power_gem_Lore"  									  "То, что скрыто в этой сфере... я не знаю, что это, но точно знаю, что это страшнейшее оружие из всех существующих..."
 		"DOTA_Tooltip_ability_item_power_gem_bonus_strength"                              "+$str"
 		"DOTA_Tooltip_ability_item_power_gem_bonus_intellect"                             "+$int"
-		"DOTA_Tooltip_ability_item_power_gem_bonus_damage"                                "+$damage"
 		"DOTA_Tooltip_ability_item_power_gem_bonus_spell_damage"                          "%+$spell_amp"
 		"DOTA_Tooltip_ability_item_power_gem_power_duration"                              "Ancient Power ДЛИТЕЛЬНОСТЬ:"
 		"DOTA_Tooltip_ability_item_power_gem_power_totaldmg"                              "%Ancient Power УРОН:"
@@ -6663,7 +6659,7 @@
 		"DOTA_Tooltip_ability_godspeed_ember_field_max_gain"                              "МАКС. СКОРОСТИ:"
 
 		"DOTA_Tooltip_ability_godspeed_hyperpath"                                         "Hyperpath"
-		"DOTA_Tooltip_ability_godspeed_hyperpath_Description"                             "Делает героя на время неуязвимым и позволяет ему проходить сквозь препятствия."
+		"DOTA_Tooltip_ability_godspeed_hyperpath_Description"                             "Делает героя на время неуязвимым и позволяет ему проходить сквозь преп��тс��в��я."
 		"DOTA_Tooltip_ability_godspeed_hyperpath_duration"                                "DURATION:"
 
 		"DOTA_Tooltip_ability_savitar_speedforce_rage"                                    "Speedforce Rage"

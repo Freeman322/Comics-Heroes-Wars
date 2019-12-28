@@ -88,10 +88,18 @@ function modifier_item_power_gem:DeclareFunctions() --we want to use these funct
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_MANACOST_PERCENTAGE,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
     }
 
     return funcs
+end
+
+
+
+function modifier_item_power_gem:GetModifierPercentageManacost( params )
+    local hAbility = self:GetAbility()
+    return hAbility:GetSpecialValueFor( "bonus_mana_cost" )
 end
 
 function modifier_item_power_gem:GetModifierBonusStats_Strength( params )

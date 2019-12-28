@@ -26,9 +26,6 @@ end
 function item_axe_of_phractos_modifier:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
@@ -61,27 +58,12 @@ function item_axe_of_phractos_modifier:GetModifierAttackSpeedBonus_Constant( par
     return hAbility:GetSpecialValueFor( "bonus_attack_speed" )
 end
 
-function item_axe_of_phractos_modifier:GetModifierBonusStats_Strength( params )
-    local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "all" )
-end
-
-function item_axe_of_phractos_modifier:GetModifierBonusStats_Intellect( params )
-    local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "all" )
-end
-function item_axe_of_phractos_modifier:GetModifierBonusStats_Agility( params )
-    local hAbility = self:GetAbility()
-    return hAbility:GetSpecialValueFor( "all" )
-end
-
 function item_axe_of_phractos_modifier:OnAttackLanded( params )
     if params.attacker == self:GetParent() and params.attacker:IsRealHero() then
         if RollPercentage(self:GetAbility():GetSpecialValueFor("bash_chance")) and self:GetAbility():IsCooldownReady() then
             if not params.target:IsBuilding() then
-                params.target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 0.1})
-                ApplyDamage({attacker = self:GetParent(), victim = params.target, ability = self:GetAbility(), damage = self:GetAbility():GetAbilityDamage(), damage_type = DAMAGE_TYPE_PURE})
-
+                ApplyDamage({attacker = self:GetParent(), victim = params.target, ability = self:GetAbility(), damage = self:GetAbility():GetAbilityDamage(), damage_type = DAMAGE_TYPE_MAGICAL})
+                EmitSoundOn("Hero_Clinkz.SearingArrows.Impact.Immortal", victim)
                 self:GetAbility():UseResources(false, false, true)
             end
         end
@@ -152,7 +134,7 @@ end
 
 function item_axe_of_phractos_modifier_aura:OnIntervalThink()
     if IsServer() then
-        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+70), damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetParent():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+70), damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
     end
 end
 
