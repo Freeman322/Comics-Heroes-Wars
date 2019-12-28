@@ -926,6 +926,64 @@
                     }
                 }
             } 
+            "zoro"
+            {
+                "model"             "models/heroes/hero_atomic_samurai/zoro_skin/zoro.vmdl"
+                "model_scale"       "1"
+                "models"
+                {
+                    "1"
+                    {
+                        "model" "models/heroes/hero_atomic_samurai/zoro_skin/katana.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/cosmos/cosmos_space_warp_debuff.vpcf"
+
+                    }
+                }
+            }
+            "iron_devil"
+            {
+                "model"         "models/heroes/hero_ironman/econs/berserk_samurai.vmdl"
+
+                "model_scale"       "1.8"
+
+                "models"
+                {      
+                    "1"
+                    {
+                        "model" "models/heroes/hero_ironman/econs/sword.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"      "particles/reverse_flash/reverse_flash_arcana.vpcf"          
+                            }
+                        }
+                    }
+                }
+
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/ironman/iron_devil_ambient/iron_devil_ambient.vpcf"
+                    }
+                }
+
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_custom_unique"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+            }
             "sephiroth"
             {
                 "model"     "models/heroes/hero_deadpool/econs/sephiroth_custom/sephiroth.vmdl"
@@ -1201,6 +1259,14 @@
                         "model" "models/heroes/hero_samurai/samurai_hat.vmdl"
                     }
                 }
+            }
+            "zoro"
+            {
+
+            }
+            "iron_devil"
+            {
+                
             }
             "sephiroth"
             {
@@ -2717,7 +2783,26 @@
                     }
                 }        
             }
-        } 
+            "cat"
+            {
+                "model"             "models/heroes/hero_strange/doremon/doraemon.vmdl"
+                "model_scale"       "3"
+            }
+        }
+        "cape" 
+        {
+            "__default"
+            {
+                "1"
+                {
+                    "model"                 "models/heroes/hero_drstrange/cape.vmdl"
+                }
+            }
+            "cat"
+            {
+
+            }
+        }
         "hand"
         {
             "demon_arm"
@@ -2741,6 +2826,10 @@
                     }
                 }
             }
+            "cat"
+            {
+
+            }
         }
         "weapon"
         {
@@ -2753,6 +2842,10 @@
                         "model"                 "models/heroes/hero_drstrange/fishstick/fishstic.vmdl"         
                     }
                 }
+            }
+            "cat"
+            {
+                
             }
         }
     }
@@ -5505,6 +5598,18 @@
                     }
                 }
             }
+            "pepe"
+            {
+                "model"             "models/heroes/hero_spawn/spawn_custom/pepe.vmdl"
+                "model_scale"       "1.5"
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/units/heroes/hero_centaur/centaur_return_buff.vpcf"
+                    }
+                }
+            }
         }
         "head"          
         {
@@ -5542,6 +5647,10 @@
                         }
                     }
                 }
+            }
+            "pepe"
+            {
+
             }
         } 
         "cape"          
@@ -5597,6 +5706,10 @@
                     }
                 }
             }
+            "pepe"
+            {
+
+            }
         } 
         "shoulder"          
         {
@@ -5619,6 +5732,10 @@
                         "model"        "models/items/rubick/ti9_cache_rubick_ancient_magus_shoulder_2/ti9_cache_rubick_ancient_magus_shoulder_2.vmdl"
                     }
                 }
+            }
+            "pepe"
+            {
+
             }
         } 
     }
@@ -7048,6 +7165,26 @@
                     }
                 }
             } 
+            "zoro"
+            {
+                "model"             "models/heroes/hero_atomic_samurai/zoro_skin/zoro.vmdl"
+                "model_scale"       "1"
+                "models"
+                {
+                    "1"
+                    {
+                        "model" "models/heroes/hero_atomic_samurai/zoro_skin/katana.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/cosmos/cosmos_space_warp_debuff.vpcf"
+
+                    }
+                }
+            }
             "neo_noir"
             {
                 "model"             "models/b2/b2.vmdl"
@@ -8060,7 +8197,48 @@
                         "modifier_path"     "modifiers/modifier_customs.lua"
                     }
                 }
-            }                  
+            }
+        }
+    }
+    "npc_dota_hero_riki"
+    {
+        "weapon"
+        {
+            "lee"
+            {
+                "model"                 "models/heroes/hero_spider/spiderman_custom/lee.vmdl"
+                "model_scale"           "1.60"
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+                    }
+                }
+            }
+        }
+    }
+    "npc_dota_hero_gorr"
+    {
+        "weapon"
+        {
+            "__default"
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"         "models/heroes/hero_gorr/sword.vmdl"
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/gorr/gorr_ambient.vpcf"
+                    }
+                }
+            }
         }
     }
     "npc_dota_hero_rubick"

@@ -143,7 +143,8 @@ function Precache( context )
 	PrecacheResource("particle", "particles/rain_fx/econ_weather_underwater.vpcf", context)
 	PrecacheResource("particle", "particles/rain_fx/econ_snow.vpcf", context)
 	PrecacheResource("particle", "particles/econ/pets/otto_ambient.vpcf", context)
-	PrecacheResource("particle", "particles/units/heroes/hero_drow/drow_base_attack.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_drow/drow_base_attack.vpcf", context)
+    PrecacheResource("particle", "particles/red_emblem/red_emblem.vpcf", context)
 
 	PrecacheResource("soundfile", "soundevents/custom_sounds.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/hero_zoom.vsndevts", context)
@@ -273,7 +274,7 @@ function GameMode:InitGameMode()
     ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( GameMode, "OnGameRulesStateChange" ), self )
     ListenToGameEvent( "dota_player_learned_ability", Dynamic_Wrap( GameMode, "OnAbilityLearned" ), self )
 
-    GameRules:GetGameModeEntity():SetThink( "OnThink", self, 10 )
+    GameRules:GetGameModeEntity():SetThink( "OnIntervalThink", self, 10 )
 
     GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
     GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
@@ -375,14 +376,15 @@ function GameMode:OnGameInProgress()
 	GameRules.Players[DOTA_TEAM_BADGUYS] = Util:GetPlayersForTeam(DOTA_TEAM_BADGUYS)
 end
 
-function GameMode:OnThink()
+function GameMode:OnIntervalThink()
 	if #GameRules.Players[DOTA_TEAM_GOODGUYS] > 0 and #GameRules.Players[DOTA_TEAM_BADGUYS] > 0 then
 		if GameRules:IsCheatMode() == false and IsInToolsMode() == false then
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS  then
 				Util:CheckGameState()
 			end
 		end
-	end
+    end
+    
 	return 10
 end
 

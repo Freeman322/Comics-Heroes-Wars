@@ -21,6 +21,10 @@ function spiderman_adaptation:OnSpellStart ()
         local caster = self:GetCaster ()
         caster:AddNewModifier (caster, self, "modifier_spiderman_adaptation", nil)
         EmitSoundOn ("Ability.Leap", caster)
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "lee") then
+            EmitSoundOn( "Lee.Cast1", self:GetCaster() )
+        end
     end
 end
 
@@ -117,6 +121,8 @@ function modifier_spiderman_adaptation:OnUnitLanded()
         ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 275, 1, 1 ) )
         ParticleManager:ReleaseParticleIndex( nFXIndex )
         EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), "Hero_EarthShaker.Totem", self:GetCaster() )
+        
+        FindClearSpaceForUnit(self:GetParent(), self:GetParent():GetAbsOrigin(), false)
         
         self:Destroy ()
     end

@@ -16,7 +16,7 @@ function Util:OnInit(args)
 
     PlayerTables:CreateTable("heroes_abilities", {abilities = Util:GetHeroAbilityList()}, true)
 
-    local f = "[{\n\"name\":\"npc_dota_hero_antimage\",\n\"id\":1\n},\n{\n\"name\":\"npc_dota_hero_axe\",\n\"id\":2\n},\n{\n\"name\":\"npc_dota_hero_bane\",\n\"id\":3\n},\n{\n\"name\":\"npc_dota_hero_bloodseeker\",\n\"id\":4\n},\n{\n\"name\":\"npc_dota_hero_crystal_maiden\",\n\"id\":5\n},\n{\n\"name\":\"npc_dota_hero_drow_ranger\",\n\"id\":6\n},\n{\n\"name\":\"npc_dota_hero_earthshaker\",\n\"id\":7\n},\n{\n\"name\":\"npc_dota_hero_juggernaut\",\n\"id\":8\n},\n{\n\"name\":\"npc_dota_hero_mirana\",\n\"id\":9\n},\n{\n\"name\":\"npc_dota_hero_nevermore\",\n\"id\":11\n},\n{\n\"name\":\"npc_dota_hero_carnange\",\n\"id\":10\n},\n{\n\"name\":\"npc_dota_hero_phantom_lancer\",\n\"id\":12\n},\n{\n\"name\":\"npc_dota_hero_puck\",\n\"id\":13\n},\n{\n\"name\":\"npc_dota_hero_pudge\",\n\"id\":14\n},\n{\n\"name\":\"npc_dota_hero_razor\",\n\"id\":15\n},\n{\n\"name\":\"npc_dota_hero_sand_king\",\n\"id\":16\n},\n{\n\"name\":\"npc_dota_hero_storm_spirit\",\n\"id\":17\n},\n{\n\"name\":\"npc_dota_hero_sven\",\n\"id\":18\n},\n{\n\"name\":\"npc_dota_hero_tiny\",\n\"id\":19\n},\n{\n\"name\":\"npc_dota_hero_vengefulspirit\",\n\"id\":20\n},\n{\n\"name\":\"npc_dota_hero_windrunner\",\n\"id\":21\n},\n{\n\"name\":\"npc_dota_hero_zuus\",\n\"id\":22\n},\n{\n\"name\":\"npc_dota_hero_kunkka\",\n\"id\":23\n},\n{\n\"name\":\"npc_dota_hero_lina\",\n\"id\":25\n},\n{\n\"name\":\"npc_dota_hero_lich\",\n\"id\":31\n},\n{\n\"name\":\"npc_dota_hero_lion\",\n\"id\":26\n},\n{\n\"name\":\"npc_dota_hero_shadow_shaman\",\n\"id\":27\n},\n{\n\"name\":\"npc_dota_hero_slardar\",\n\"id\":28\n},\n{\n\"name\":\"npc_dota_hero_tidehunter\",\n\"id\":29\n},\n{\n\"name\":\"npc_dota_hero_witch_doctor\",\n\"id\":30\n},\n{\n\"name\":\"npc_dota_hero_riki\",\n\"id\":32\n},\n{\n\"name\":\"npc_dota_hero_enigma\",\n\"id\":33\n},\n{\n\"name\":\"npc_dota_hero_tinker\",\n\"id\":34\n},\n{\n\"name\":\"npc_dota_hero_sniper\",\n\"id\":35\n},\n{\n\"name\":\"npc_dota_hero_necrolyte\",\n\"id\":36\n},\n{\n\"name\":\"npc_dota_hero_warlock\",\n\"id\":37\n},\n{\n\"name\":\"npc_dota_hero_beastmaster\",\n\"id\":38\n},\n{\n\"name\":\"npc_dota_hero_queenofpain\",\n\"id\":39\n},\n{\n\"name\":\"npc_dota_hero_venomancer\",\n\"id\":40\n},\n{\n\"name\":\"npc_dota_hero_faceless_void\",\n\"id\":41\n},\n{\n\"name\":\"npc_dota_hero_skeleton_king\",\n\"id\":42\n},\n{\n\"name\":\"npc_dota_hero_death_prophet\",\n\"id\":43\n},\n{\n\"name\":\"npc_dota_hero_phantom_assassin\",\n\"id\":44\n},\n{\n\"name\":\"npc_dota_hero_pugna\",\n\"id\":45\n},\n{\n\"name\":\"npc_dota_hero_templar_assassin\",\n\"id\":46\n},\n{\n\"name\":\"npc_dota_hero_viper\",\n\"id\":47\n},\n{\n\"name\":\"npc_dota_hero_luna\",\n\"id\":48\n},\n{\n\"name\":\"npc_dota_hero_dragon_knight\",\n\"id\":49\n},\n{\n\"name\":\"npc_dota_hero_dazzle\",\n\"id\":50\n},\n{\n\"name\":\"npc_dota_hero_rattletrap\",\n\"id\":51\n},\n{\n\"name\":\"npc_dota_hero_leshrac\",\n\"id\":52\n},\n{\n\"name\":\"npc_dota_hero_furion\",\n\"id\":53\n},\n{\n\"name\":\"npc_dota_hero_life_stealer\",\n\"id\":54\n},\n{\n\"name\":\"npc_dota_hero_dark_seer\",\n\"id\":55\n},\n{\n\"name\":\"npc_dota_hero_clinkz\",\n\"id\":56\n},\n{\n\"name\":\"npc_dota_hero_omniknight\",\n\"id\":57\n},\n{\n\"name\":\"npc_dota_hero_enchantress\",\n\"id\":58\n},\n{\n\"name\":\"npc_dota_hero_huskar\",\n\"id\":59\n},\n{\n\"name\":\"npc_dota_hero_night_stalker\",\n\"id\":60\n},\n{\n\"name\":\"npc_dota_hero_broodmother\",\n\"id\":61\n},\n{\n\"name\":\"npc_dota_hero_bounty_hunter\",\n\"id\":62\n},\n{\n\"name\":\"npc_dota_hero_weaver\",\n\"id\":63\n},\n{\n\"name\":\"npc_dota_hero_jakiro\",\n\"id\":64\n},\n{\n\"name\":\"npc_dota_hero_batrider\",\n\"id\":65\n},\n{\n\"name\":\"npc_dota_hero_chen\",\n\"id\":66\n},\n{\n\"name\":\"npc_dota_hero_spectre\",\n\"id\":67\n},\n{\n\"name\":\"npc_dota_hero_doom_bringer\",\n\"id\":69\n},\n{\n\"name\":\"npc_dota_hero_ancient_apparition\",\n\"id\":68\n},\n{\n\"name\":\"npc_dota_hero_ursa\",\n\"id\":70\n},\n{\n\"name\":\"npc_dota_hero_spirit_breaker\",\n\"id\":71\n},\n{\n\"name\":\"npc_dota_hero_gyrocopter\",\n\"id\":72\n},\n{\n\"name\":\"npc_dota_hero_alchemist\",\n\"id\":73\n},\n{\n\"name\":\"npc_dota_hero_invoker\",\n\"id\":74\n},\n{\n\"name\":\"npc_dota_hero_silencer\",\n\"id\":75\n},\n{\n\"name\":\"npc_dota_hero_obsidian_destroyer\",\n\"id\":76\n},\n{\n\"name\":\"npc_dota_hero_lycan\",\n\"id\":77\n},\n{\n\"name\":\"npc_dota_hero_brewmaster\",\n\"id\":78\n},\n{\n\"name\":\"npc_dota_hero_shadow_demon\",\n\"id\":79\n},\n{\n\"name\":\"npc_dota_hero_lone_druid\",\n\"id\":80\n},\n{\n\"name\":\"npc_dota_hero_chaos_knight\",\n\"id\":81\n},\n{\n\"name\":\"npc_dota_hero_meepo\",\n\"id\":82\n},\n{\n\"name\":\"npc_dota_hero_treant\",\n\"id\":83\n},\n{\n\"name\":\"npc_dota_hero_ogre_magi\",\n\"id\":84\n},\n{\n\"name\":\"npc_dota_hero_undying\",\n\"id\":85\n},\n{\n\"name\":\"npc_dota_hero_rubick\",\n\"id\":86\n},\n{\n\"name\":\"npc_dota_hero_disruptor\",\n\"id\":87\n},\n{\n\"name\":\"npc_dota_hero_nyx_assassin\",\n\"id\":88\n},\n{\n\"name\":\"npc_dota_hero_naga_siren\",\n\"id\":89\n},\n{\n\"name\":\"npc_dota_hero_keeper_of_the_light\",\n\"id\":90\n},\n{\n\"name\":\"npc_dota_hero_wisp\",\n\"id\":91\n},\n{\n\"name\":\"npc_dota_hero_visage\",\n\"id\":92\n},\n{\n\"name\":\"npc_dota_hero_slark\",\n\"id\":93\n},\n{\n\"name\":\"npc_dota_hero_medusa\",\n\"id\":94\n},\n{\n\"name\":\"npc_dota_hero_troll_warlord\",\n\"id\":95\n},\n{\n\"name\":\"npc_dota_hero_centaur\",\n\"id\":96\n},\n{\n\"name\":\"npc_dota_hero_magnataur\",\n\"id\":97\n},\n{\n\"name\":\"npc_dota_hero_shredder\",\n\"id\":98\n},\n{\n\"name\":\"npc_dota_hero_bristleback\",\n\"id\":99\n},\n{\n\"name\":\"npc_dota_hero_tusk\",\n\"id\":100\n},\n{\n\"name\":\"npc_dota_hero_skywrath_mage\",\n\"id\":101\n},\n{\n\"name\":\"npc_dota_hero_abaddon\",\n\"id\":102\n},\n{\n\"name\":\"npc_dota_hero_elder_titan\",\n\"id\":103\n},\n{\n\"name\":\"npc_dota_hero_legion_commander\",\n\"id\":104\n},\n{\n\"name\":\"npc_dota_hero_ember_spirit\",\n\"id\":106\n},\n{\n\"name\":\"npc_dota_hero_earth_spirit\",\n\"id\":107\n},\n{\n\"name\":\"npc_dota_hero_abyssal_underlord\",\n\"id\":108\n},\n{\n\"name\":\"npc_dota_hero_terrorblade\",\n\"id\":109\n},\n{\n\"name\":\"npc_dota_hero_phoenix\",\n\"id\":110\n},\n{\n\"name\":\"npc_dota_hero_techies\",\n\"id\":105\n},\n{\n\"name\":\"npc_dota_hero_oracle\",\n\"id\":111\n},\n{\n\"name\":\"npc_dota_hero_winter_wyvern\",\n\"id\":112\n},\n{\n\"name\":\"npc_dota_hero_arc_warden\",\n\"id\":113\n},\n{\n\"name\":\"npc_dota_hero_monkey_king\",\n\"id\":114\n},\n{\n\"name\":\"npc_dota_hero_pangolier\",\n\"id\":120\n},\n{\n\"name\":\"npc_dota_hero_dark_willow\",\n\"id\":119\n},\n{\n\"name\":\"npc_dota_hero_grimstroke\",\n\"id\":121\n},\n{\n\"name\":\"npc_dota_hero_miraak\",\n\"id\":200\n},\n{\n\"name\":\"npc_dota_hero_godspeed\",\n\"id\":202\n},\n{\n\"name\":\"npc_dota_hero_savitar\",\n\"id\":203\n},\n{\n\"name\":\"npc_dota_hero_ghost\",\n\"id\":201\n},\n{\n\"name\":\"npc_dota_hero_superman\",\n\"id\":204\n},\n{\n\"name\":\"npc_dota_hero_molag_bal\",\n\"id\":205\n},\n{\n\"name\":\"npc_dota_hero_doctor_fate\",\n\"id\":206\n},\n{\n\"name\":\"npc_dota_hero_mercer\",\n\"id\":207\n},\n{\n\"name\":\"npc_dota_hero_ezekyle\",\n\"id\":208\n},\n{\n\"name\":\"npc_dota_hero_kyloren\",\n\"id\":209\n},\n{\n\"name\":\"npc_dota_hero_mercy\",\n\"id\":210\n},\n{\n\"name\":\"npc_dota_hero_dark_rider\",\n\"id\":211\n},\n{\n\"name\":\"npc_dota_hero_grimskull\",\n\"id\":212\n},\n{\n\"name\":\"npc_dota_hero_kratos\",\n\"id\":213\n},\n{\n\"name\":\"npc_dota_hero_warboss\",\n\"id\":214\n},\n{\n\"name\":\"npc_dota_hero_cosmos\",\n\"id\":215\n},\n{\n\"name\":\"npc_dota_hero_jetstream_sam\",\n\"id\":216\n},\n{\n\"name\":\"npc_dota_hero_raiden\",\n\"id\":217\n},\n{\n\"name\":\"npc_dota_hero_misterio\",\n\"id\":218\n},\n{\n\"name\":\"npc_dota_hero_shazam\",\n\"id\":219\n},\n{\n\"name\":\"npc_dota_hero_ogre\",\n\"id\":220\n},\n{\n\"name\":\"npc_dota_hero_baane\",\n\"id\":221\n},\n{\n\"name\":\"npc_dota_hero_officer\",\n\"id\":222\n},\n{\n\"name\":\"npc_dota_hero_mod\",\n\"id\":223\n},\n{\n\"name\":\"npc_dota_hero_valkorion\",\n\"id\":224\n},\n{\n\"name\":\"npc_dota_hero_pennywise\",\n\"id\":227\n},\n{\n\"name\":\"npc_dota_hero_chaos_king\",\n\"id\":230\n}\n]\n"
+    local f = "[{\n\"name\":\"npc_dota_hero_antimage\",\n\"id\":1\n},\n{\n\"name\":\"npc_dota_hero_axe\",\n\"id\":2\n},\n{\n\"name\":\"npc_dota_hero_bane\",\n\"id\":3\n},\n{\n\"name\":\"npc_dota_hero_bloodseeker\",\n\"id\":4\n},\n{\n\"name\":\"npc_dota_hero_crystal_maiden\",\n\"id\":5\n},\n{\n\"name\":\"npc_dota_hero_drow_ranger\",\n\"id\":6\n},\n{\n\"name\":\"npc_dota_hero_earthshaker\",\n\"id\":7\n},\n{\n\"name\":\"npc_dota_hero_juggernaut\",\n\"id\":8\n},\n{\n\"name\":\"npc_dota_hero_mirana\",\n\"id\":9\n},\n{\n\"name\":\"npc_dota_hero_nevermore\",\n\"id\":11\n},\n{\n\"name\":\"npc_dota_hero_carnange\",\n\"id\":10\n},\n{\n\"name\":\"npc_dota_hero_phantom_lancer\",\n\"id\":12\n},\n{\n\"name\":\"npc_dota_hero_puck\",\n\"id\":13\n},\n{\n\"name\":\"npc_dota_hero_pudge\",\n\"id\":14\n},\n{\n\"name\":\"npc_dota_hero_razor\",\n\"id\":15\n},\n{\n\"name\":\"npc_dota_hero_sand_king\",\n\"id\":16\n},\n{\n\"name\":\"npc_dota_hero_storm_spirit\",\n\"id\":17\n},\n{\n\"name\":\"npc_dota_hero_sven\",\n\"id\":18\n},\n{\n\"name\":\"npc_dota_hero_tiny\",\n\"id\":19\n},\n{\n\"name\":\"npc_dota_hero_vengefulspirit\",\n\"id\":20\n},\n{\n\"name\":\"npc_dota_hero_windrunner\",\n\"id\":21\n},\n{\n\"name\":\"npc_dota_hero_zuus\",\n\"id\":22\n},\n{\n\"name\":\"npc_dota_hero_kunkka\",\n\"id\":23\n},\n{\n\"name\":\"npc_dota_hero_lina\",\n\"id\":25\n},\n{\n\"name\":\"npc_dota_hero_lich\",\n\"id\":31\n},\n{\n\"name\":\"npc_dota_hero_lion\",\n\"id\":26\n},\n{\n\"name\":\"npc_dota_hero_shadow_shaman\",\n\"id\":27\n},\n{\n\"name\":\"npc_dota_hero_slardar\",\n\"id\":28\n},\n{\n\"name\":\"npc_dota_hero_tidehunter\",\n\"id\":29\n},\n{\n\"name\":\"npc_dota_hero_witch_doctor\",\n\"id\":30\n},\n{\n\"name\":\"npc_dota_hero_riki\",\n\"id\":32\n},\n{\n\"name\":\"npc_dota_hero_enigma\",\n\"id\":33\n},\n{\n\"name\":\"npc_dota_hero_tinker\",\n\"id\":34\n},\n{\n\"name\":\"npc_dota_hero_sniper\",\n\"id\":35\n},\n{\n\"name\":\"npc_dota_hero_necrolyte\",\n\"id\":36\n},\n{\n\"name\":\"npc_dota_hero_warlock\",\n\"id\":37\n},\n{\n\"name\":\"npc_dota_hero_beastmaster\",\n\"id\":38\n},\n{\n\"name\":\"npc_dota_hero_queenofpain\",\n\"id\":39\n},\n{\n\"name\":\"npc_dota_hero_venomancer\",\n\"id\":40\n},\n{\n\"name\":\"npc_dota_hero_faceless_void\",\n\"id\":41\n},\n{\n\"name\":\"npc_dota_hero_skeleton_king\",\n\"id\":42\n},\n{\n\"name\":\"npc_dota_hero_death_prophet\",\n\"id\":43\n},\n{\n\"name\":\"npc_dota_hero_phantom_assassin\",\n\"id\":44\n},\n{\n\"name\":\"npc_dota_hero_pugna\",\n\"id\":45\n},\n{\n\"name\":\"npc_dota_hero_templar_assassin\",\n\"id\":46\n},\n{\n\"name\":\"npc_dota_hero_viper\",\n\"id\":47\n},\n{\n\"name\":\"npc_dota_hero_luna\",\n\"id\":48\n},\n{\n\"name\":\"npc_dota_hero_dragon_knight\",\n\"id\":49\n},\n{\n\"name\":\"npc_dota_hero_dazzle\",\n\"id\":50\n},\n{\n\"name\":\"npc_dota_hero_rattletrap\",\n\"id\":51\n},\n{\n\"name\":\"npc_dota_hero_leshrac\",\n\"id\":52\n},\n{\n\"name\":\"npc_dota_hero_furion\",\n\"id\":53\n},\n{\n\"name\":\"npc_dota_hero_life_stealer\",\n\"id\":54\n},\n{\n\"name\":\"npc_dota_hero_dark_seer\",\n\"id\":55\n},\n{\n\"name\":\"npc_dota_hero_clinkz\",\n\"id\":56\n},\n{\n\"name\":\"npc_dota_hero_omniknight\",\n\"id\":57\n},\n{\n\"name\":\"npc_dota_hero_enchantress\",\n\"id\":58\n},\n{\n\"name\":\"npc_dota_hero_huskar\",\n\"id\":59\n},\n{\n\"name\":\"npc_dota_hero_night_stalker\",\n\"id\":60\n},\n{\n\"name\":\"npc_dota_hero_broodmother\",\n\"id\":61\n},\n{\n\"name\":\"npc_dota_hero_bounty_hunter\",\n\"id\":62\n},\n{\n\"name\":\"npc_dota_hero_weaver\",\n\"id\":63\n},\n{\n\"name\":\"npc_dota_hero_jakiro\",\n\"id\":64\n},\n{\n\"name\":\"npc_dota_hero_batrider\",\n\"id\":65\n},\n{\n\"name\":\"npc_dota_hero_chen\",\n\"id\":66\n},\n{\n\"name\":\"npc_dota_hero_spectre\",\n\"id\":67\n},\n{\n\"name\":\"npc_dota_hero_doom_bringer\",\n\"id\":69\n},\n{\n\"name\":\"npc_dota_hero_ancient_apparition\",\n\"id\":68\n},\n{\n\"name\":\"npc_dota_hero_ursa\",\n\"id\":70\n},\n{\n\"name\":\"npc_dota_hero_spirit_breaker\",\n\"id\":71\n},\n{\n\"name\":\"npc_dota_hero_gyrocopter\",\n\"id\":72\n},\n{\n\"name\":\"npc_dota_hero_alchemist\",\n\"id\":73\n},\n{\n\"name\":\"npc_dota_hero_invoker\",\n\"id\":74\n},\n{\n\"name\":\"npc_dota_hero_silencer\",\n\"id\":75\n},\n{\n\"name\":\"npc_dota_hero_obsidian_destroyer\",\n\"id\":76\n},\n{\n\"name\":\"npc_dota_hero_lycan\",\n\"id\":77\n},\n{\n\"name\":\"npc_dota_hero_brewmaster\",\n\"id\":78\n},\n{\n\"name\":\"npc_dota_hero_shadow_demon\",\n\"id\":79\n},\n{\n\"name\":\"npc_dota_hero_lone_druid\",\n\"id\":80\n},\n{\n\"name\":\"npc_dota_hero_chaos_knight\",\n\"id\":81\n},\n{\n\"name\":\"npc_dota_hero_meepo\",\n\"id\":82\n},\n{\n\"name\":\"npc_dota_hero_treant\",\n\"id\":83\n},\n{\n\"name\":\"npc_dota_hero_ogre_magi\",\n\"id\":84\n},\n{\n\"name\":\"npc_dota_hero_undying\",\n\"id\":85\n},\n{\n\"name\":\"npc_dota_hero_rubick\",\n\"id\":86\n},\n{\n\"name\":\"npc_dota_hero_disruptor\",\n\"id\":87\n},\n{\n\"name\":\"npc_dota_hero_nyx_assassin\",\n\"id\":88\n},\n{\n\"name\":\"npc_dota_hero_naga_siren\",\n\"id\":89\n},\n{\n\"name\":\"npc_dota_hero_keeper_of_the_light\",\n\"id\":90\n},\n{\n\"name\":\"npc_dota_hero_wisp\",\n\"id\":91\n},\n{\n\"name\":\"npc_dota_hero_visage\",\n\"id\":92\n},\n{\n\"name\":\"npc_dota_hero_slark\",\n\"id\":93\n},\n{\n\"name\":\"npc_dota_hero_medusa\",\n\"id\":94\n},\n{\n\"name\":\"npc_dota_hero_troll_warlord\",\n\"id\":95\n},\n{\n\"name\":\"npc_dota_hero_centaur\",\n\"id\":96\n},\n{\n\"name\":\"npc_dota_hero_magnataur\",\n\"id\":97\n},\n{\n\"name\":\"npc_dota_hero_shredder\",\n\"id\":98\n},\n{\n\"name\":\"npc_dota_hero_bristleback\",\n\"id\":99\n},\n{\n\"name\":\"npc_dota_hero_tusk\",\n\"id\":100\n},\n{\n\"name\":\"npc_dota_hero_skywrath_mage\",\n\"id\":101\n},\n{\n\"name\":\"npc_dota_hero_abaddon\",\n\"id\":102\n},\n{\n\"name\":\"npc_dota_hero_elder_titan\",\n\"id\":103\n},\n{\n\"name\":\"npc_dota_hero_legion_commander\",\n\"id\":104\n},\n{\n\"name\":\"npc_dota_hero_ember_spirit\",\n\"id\":106\n},\n{\n\"name\":\"npc_dota_hero_earth_spirit\",\n\"id\":107\n},\n{\n\"name\":\"npc_dota_hero_abyssal_underlord\",\n\"id\":108\n},\n{\n\"name\":\"npc_dota_hero_terrorblade\",\n\"id\":109\n},\n{\n\"name\":\"npc_dota_hero_phoenix\",\n\"id\":110\n},\n{\n\"name\":\"npc_dota_hero_techies\",\n\"id\":105\n},\n{\n\"name\":\"npc_dota_hero_oracle\",\n\"id\":111\n},\n{\n\"name\":\"npc_dota_hero_winter_wyvern\",\n\"id\":112\n},\n{\n\"name\":\"npc_dota_hero_arc_warden\",\n\"id\":113\n},\n{\n\"name\":\"npc_dota_hero_monkey_king\",\n\"id\":114\n},\n{\n\"name\":\"npc_dota_hero_pangolier\",\n\"id\":120\n},\n{\n\"name\":\"npc_dota_hero_dark_willow\",\n\"id\":119\n},\n{\n\"name\":\"npc_dota_hero_grimstroke\",\n\"id\":121\n},\n{\n\"name\":\"npc_dota_hero_miraak\",\n\"id\":200\n},\n{\n\"name\":\"npc_dota_hero_godspeed\",\n\"id\":202\n},\n{\n\"name\":\"npc_dota_hero_savitar\",\n\"id\":203\n},\n{\n\"name\":\"npc_dota_hero_ghost\",\n\"id\":201\n},\n{\n\"name\":\"npc_dota_hero_superman\",\n\"id\":204\n},\n{\n\"name\":\"npc_dota_hero_molag_bal\",\n\"id\":205\n},\n{\n\"name\":\"npc_dota_hero_doctor_fate\",\n\"id\":206\n},\n{\n\"name\":\"npc_dota_hero_mercer\",\n\"id\":207\n},\n{\n\"name\":\"npc_dota_hero_ezekyle\",\n\"id\":208\n},\n{\n\"name\":\"npc_dota_hero_kyloren\",\n\"id\":209\n},\n{\n\"name\":\"npc_dota_hero_mercy\",\n\"id\":210\n},\n{\n\"name\":\"npc_dota_hero_dark_rider\",\n\"id\":211\n},\n{\n\"name\":\"npc_dota_hero_grimskull\",\n\"id\":212\n},\n{\n\"name\":\"npc_dota_hero_kratos\",\n\"id\":213\n},\n{\n\"name\":\"npc_dota_hero_warboss\",\n\"id\":214\n},\n{\n\"name\":\"npc_dota_hero_cosmos\",\n\"id\":215\n},\n{\n\"name\":\"npc_dota_hero_jetstream_sam\",\n\"id\":216\n},\n{\n\"name\":\"npc_dota_hero_raiden\",\n\"id\":217\n},\n{\n\"name\":\"npc_dota_hero_misterio\",\n\"id\":218\n},\n{\n\"name\":\"npc_dota_hero_shazam\",\n\"id\":219\n},\n{\n\"name\":\"npc_dota_hero_ogre\",\n\"id\":220\n},\n{\n\"name\":\"npc_dota_hero_baane\",\n\"id\":221\n},\n{\n\"name\":\"npc_dota_hero_officer\",\n\"id\":222\n},\n{\n\"name\":\"npc_dota_hero_mod\",\n\"id\":223\n},\n{\n\"name\":\"npc_dota_hero_valkorion\",\n\"id\":224\n},\n{\n\"name\":\"npc_dota_hero_pennywise\",\n\"id\":227\n},\n{\n\"name\":\"npc_dota_hero_chaos_king\",\n\"id\":230\n},\n{\n\"name\":\"npc_dota_hero_gorr\",\n\"id\":233\n}\n]\n"
     local tojson = json.decode(f)
     Util.heroes_ids = tojson
 
@@ -408,8 +408,13 @@ function Util:OnHeroInGame(hero)
         end
 
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "heart_timegem") == true then
-          hero:AddNewModifier(hero, nil, "modifier_heart_timegem", {id = hero:GetPlayerID()})
+          hero:AddNewModifier(hero, nil, "modifier_heart_timegem", nil)
       end
+      
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem_green") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/red_emblem/red_emblem.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "icewrack_wolf") == true then
             PrecacheUnitByNameAsync("npc_dota_companion", function()
@@ -1134,10 +1139,6 @@ function Util:OnHeroInGame(hero)
         hero:AddNewModifier(hero, nil, "modifier_arcana", nil)
       end
     end
-    if hero:GetUnitName() == "npc_dota_hero_kunkka" then
-      local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_drstrange/cape.vmdl"})
-      mask:FollowEntity(hero, true)
-    end
     if hero:GetUnitName() == "npc_dota_hero_sven" then
       hero:SetRenderColor(105, 105, 105)
 
@@ -1434,33 +1435,33 @@ function CDOTA_BaseNPC:HasTalent(talentName)
 end
 
 function CDOTA_BaseNPC:WillReflectAnySpell()
-  local modifiersList = {
-    "modifier_item_lotus_orb_active",
-    "modifier_item_sphere_target",
-    "modifier_ebonymaw_nether_shield",
-    "modifier_item_orb_of_osuvox",
-    "modifier_item_void_orb_active",
-    "modifier_roshan_spell_block"
-  }
-  for _, modifier in pairs(modifiersList) do
-    if self:HasModifier(modifier) then return true end
-  end
-  return false
+    local modifiersList = {
+        "modifier_item_lotus_orb_active",
+        "modifier_item_sphere_target",
+        "modifier_ebonymaw_nether_shield",
+        "modifier_item_orb_of_osuvox",
+        "modifier_item_void_orb_active",
+        "modifier_roshan_spell_block"
+    }
+    for _, modifier in pairs(modifiersList) do
+        if self:HasModifier(modifier) then return true end
+    end
+    return false
 end
 
 function CDOTA_BaseNPC:IsAbilityOnCooldown(ability)
-  if self:HasAbility(ability) then return not self:FindAbilityByName(ability):IsCooldownReady() end
-  return nil
+    if self:HasAbility(ability) then return not self:FindAbilityByName(ability):IsCooldownReady() end
+    return nil
 end
 
 function CDOTA_Ability_Lua:IsIgnoreCooldownReduction()
-  if Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] ~= nil then
-    if Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == "1" or Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == 1 then
-      return true
+    if Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] ~= nil then
+        if Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == "1" or Util.abilities[self:GetAbilityName()]["IgnoreCooldownReduction"] == 1 then
+            return true
+        end
     end
-  end
 
-  return false
+    return false
 end
 
 function CDOTA_BaseNPC:FindTalentValue(talentName)
@@ -1471,65 +1472,65 @@ function CDOTA_BaseNPC:FindTalentValue(talentName)
 end
 
 function Util:FindTalentScriptFile(talentName)
-  if Util.abilities and Util.abilities[talentName] and Util.abilities[talentName]["BaseClass"] == "special_bonus_undefined" then
-    return Util.abilities[talentName]["ScriptFile"]
-  end
+    if Util.abilities and Util.abilities[talentName] and Util.abilities[talentName]["BaseClass"] == "special_bonus_undefined" then
+        return Util.abilities[talentName]["ScriptFile"]
+    end
 
-  return nil
+    return nil
 end
 
 function CDOTABaseAbility:GetTalentSpecialValueFor(value)
-  local base = self:GetSpecialValueFor(value)
-  local talentName
-  local valname = "value"
-  local multiply = false
-  local kv = self:GetAbilityKeyValues()
-  for k,v in pairs(kv) do -- trawl through keyvalues
-      if k == "AbilitySpecial" then
-          for l,m in pairs(v) do
-              if m[value] then
-                  talentName = m["LinkedSpecialBonus"]
-                  if m["LinkedSpecialBonusField"] then valname = m["LinkedSpecialBonusField"] end
-                  if m["LinkedSpecialBonusOperation"] and m["LinkedSpecialBonusOperation"] == "SPECIAL_BONUS_MULTIPLY" then multiply = true end
-              end
-          end
-      end
-  end
-  if talentName and self:GetCaster():HasTalent(talentName) then
-      if multiply then
-          base = base * talent:GetSpecialValueFor(valname)
-      else
-          base = base + talent:GetSpecialValueFor(valname)
-      end
-  end
-  return base
+    local base = self:GetSpecialValueFor(value)
+    local talentName
+    local valname = "value"
+    local multiply = false
+    local kv = self:GetAbilityKeyValues()
+    for k,v in pairs(kv) do -- trawl through keyvalues
+        if k == "AbilitySpecial" then
+            for l,m in pairs(v) do
+                if m[value] then
+                    talentName = m["LinkedSpecialBonus"]
+                    if m["LinkedSpecialBonusField"] then valname = m["LinkedSpecialBonusField"] end
+                    if m["LinkedSpecialBonusOperation"] and m["LinkedSpecialBonusOperation"] == "SPECIAL_BONUS_MULTIPLY" then multiply = true end
+                end
+            end
+        end
+    end
+    if talentName and self:GetCaster():HasTalent(talentName) then
+        if multiply then
+            base = base * talent:GetSpecialValueFor(valname)
+        else
+            base = base + talent:GetSpecialValueFor(valname)
+        end
+    end
+    return base
 end
 
 function CDOTA_BaseNPC:SetGodeMode(tBool)
-	LinkLuaModifier( "modifier_god", "modifiers/modifier_god.lua" ,LUA_MODIFIER_MOTION_NONE )
+    LinkLuaModifier( "modifier_god", "modifiers/modifier_god.lua" ,LUA_MODIFIER_MOTION_NONE )
     if tBool == "true" then
         if self:HasModifier("modifier_god") then
-        	self:RemoveModifierByName("modifier_god")
+            self:RemoveModifierByName("modifier_god")
         end
         self:AddNewModifier(self, nil, "modifier_god", nil)
     elseif tBool == "false" then
-    	if self:HasModifier("modifier_god") then
-    		self:RemoveModifierByName("modifier_god")
+        if self:HasModifier("modifier_god") then
+            self:RemoveModifierByName("modifier_god")
         end
     end
     return
 end
 
 function CDOTA_BaseNPC:SetDemiGodeMode(tBool)
-	LinkLuaModifier( "modifier_demigod", "modifiers/modifier_demigod.lua" ,LUA_MODIFIER_MOTION_NONE )
+    LinkLuaModifier( "modifier_demigod", "modifiers/modifier_demigod.lua" ,LUA_MODIFIER_MOTION_NONE )
     if tBool == "true" then
         if self:HasModifier("modifier_demigod") then
-        	self:RemoveModifierByName("modifier_demigod")
+            self:RemoveModifierByName("modifier_demigod")
         end
         self:AddNewModifier(self, nil, "modifier_demigod", nil)
     elseif tBool == "false" then
-    	if self:HasModifier("modifier_demigod") then
-    		self:RemoveModifierByName("modifier_demigod")
+        if self:HasModifier("modifier_demigod") then
+            self:RemoveModifierByName("modifier_demigod")
         end
     end
     return
@@ -1537,430 +1538,431 @@ end
 
 function CDOTA_BaseNPC:SwapDebuffs(hTarget)
     if not hTarget then
-      return
+        return
     end
     local modifiers = self:FindAllModifiers()
     for _, mod in pairs(modifiers) do
-      if mod and mod:GetDuration() > 0 and (mod:IsPurgable() or mod:IsPurgeException()) then
-        local dur = mod:GetRemainingTime()
-        local name = mod:GetName()
-        local abil = mod:GetAbility()
+        if mod and mod:GetDuration() > 0 and (mod:IsPurgable() or mod:IsPurgeException()) then
+            local dur = mod:GetRemainingTime()
+            local name = mod:GetName()
+            local abil = mod:GetAbility()
 
-        hTarget:AddNewModifier(self, abil, name, {duration = dur})
+            hTarget:AddNewModifier(self, abil, name, {duration = dur})
 
-        mod:Destroy()
-      end
+            mod:Destroy()
+        end
     end
     return
 end
 
 function CDOTA_BaseNPC:CanReincarnate()
-  local items = {
-    "item_aegis",
-    "item_frostmourne"
-  }
-  for _, item in pairs(items) do
-    if self:FindItemInInventory(item) then
-      if self:FindItemInInventory(item):IsCooldownReady() then
-        return true
-      end
+    local items = {
+        "item_aegis",
+        "item_frostmourne"
+    }
+    for _, item in pairs(items) do
+        if self:FindItemInInventory(item) then
+            if self:FindItemInInventory(item):IsCooldownReady() then
+                return true
+            end
+        end
     end
-  end
-  return false
+    return false
 end
 
 function CDOTA_BaseNPC:RefreshUnit()
-	for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.
-		local current_ability = self:GetAbilityByIndex(i)
-		if current_ability ~= nil then
-			current_ability:EndCooldown()
-		end
-	end
+    for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.
+        local current_ability = self:GetAbilityByIndex(i)
+        if current_ability ~= nil then
+            current_ability:EndCooldown()
+        end
+    end
 
-	--Refresh all items the caster has.
-	for i=0, 5, 1 do
-		local current_item = self:GetItemInSlot(i)
-		if current_item ~= nil then
-			current_item:EndCooldown()
-		end
-	end
-	self:SetHealth(self:GetMaxHealth())
-	self:SetMana(self:GetMaxMana())
+    --Refresh all items the caster has.
+    for i=0, 5, 1 do
+        local current_item = self:GetItemInSlot(i)
+        if current_item ~= nil then
+            current_item:EndCooldown()
+        end
+    end
+    self:SetHealth(self:GetMaxHealth())
+    self:SetMana(self:GetMaxMana())
 end
+
 
 function Util:SetupConsole()
     LinkLuaModifier("modifier_storm_spirit", "modifiers/modifier_storm_spirit.lua", LUA_MODIFIER_MOTION_NONE )
     LinkLuaModifier("modifier_io", "modifiers/modifier_customs.lua", LUA_MODIFIER_MOTION_NONE )
 
     Convars:RegisterCommand("ban", function(command, userid )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then
-          local playerName = tostring(PlayerResource:GetPlayerName(tonumber(userid)))
-          local msg =  playerName .. " left the game. (Account is untrusted)"
-          GameRules:SendCustomMessage(msg, 0, 0)
-          Timers:CreateTimer(15, function()
-            local res = "<font color=\"#ff0000\"> ".. playerName .." forever denied access to the official servers. (VAC ban) </font>"
-            GameRules:SendCustomMessage(res, 0, 0)
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+            if Util:PlayerHasAdminRules(pID) then
+                local playerName = tostring(PlayerResource:GetPlayerName(tonumber(userid)))
+                local msg =  playerName .. " left the game. (Account is untrusted)"
+                GameRules:SendCustomMessage(msg, 0, 0)
+                Timers:CreateTimer(15, function()
+                    local res = "<font color=\"#ff0000\"> ".. playerName .." forever denied access to the official servers. (VAC ban) </font>"
+                    GameRules:SendCustomMessage(res, 0, 0)
 
-           ---Network:BanPlayer(tonumber(userid))
-            local p = PlayerResource:GetPlayer(tonumber(userid))
-            local h = p:GetAssignedHero()
+                    ---Network:BanPlayer(tonumber(userid))
+                    local p = PlayerResource:GetPlayer(tonumber(userid))
+                    local h = p:GetAssignedHero()
 
-            UTIL_Remove(h)
-            UTIL_Remove(p)
-          end)
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+                    UTIL_Remove(h)
+                    UTIL_Remove(p)
+                end)
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Permanently ban a user with specific id", 0)
 
     Convars:RegisterCommand("clients_status", function()
-      pcall(function() for i = 0, DOTA_MAX_PLAYERS do
-        if PlayerResource:IsValidPlayerID(i) then
-          local playerName = tostring(PlayerResource:GetPlayerName(i))
-          GameRules:printd(playerName .. " as player ID: " .. i, Convars:GetCommandClient():GetPlayerID())
-        end
-      end end)
+        pcall(function() for i = 0, DOTA_MAX_PLAYERS do
+            if PlayerResource:IsValidPlayerID(i) then
+                local playerName = tostring(PlayerResource:GetPlayerName(i))
+                GameRules:printd(playerName .. " as player ID: " .. i, Convars:GetCommandClient():GetPlayerID())
+            end
+        end end)
     end, "Print all players", 0)
 
     Convars:RegisterCommand("godmode", function(command, statement )
-      local hero = Convars:GetCommandClient()
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        PlayerResource:GetPlayer(tonumber(Convars:GetCommandClient():GetPlayerID())):GetAssignedHero():SetGodeMode(statement)
-      else
-        Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-      end
+        local hero = Convars:GetCommandClient()
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            PlayerResource:GetPlayer(tonumber(Convars:GetCommandClient():GetPlayerID())):GetAssignedHero():SetGodeMode(statement)
+        else
+            Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+        end
     end, "Set on or off godmode", 0)
 
     Convars:RegisterCommand("demigod", function(command, statement )
-      local hero = Convars:GetCommandClient()
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        PlayerResource:GetPlayer(tonumber(Convars:GetCommandClient():GetPlayerID())):GetAssignedHero():SetDemiGodeMode(statement)
-      else
-        Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-      end
+        local hero = Convars:GetCommandClient()
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            PlayerResource:GetPlayer(tonumber(Convars:GetCommandClient():GetPlayerID())):GetAssignedHero():SetDemiGodeMode(statement)
+        else
+            Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+        end
     end, "Set on or off dimigod", 0)
 
     Convars:RegisterCommand("givegold", function(command, player, ammount )
-      local pID = Convars:GetCommandClient():GetPlayerID()
-      if Util:PlayerHasAdminRules(pID) then
-        PlayerResource:ModifyGold(tonumber(player), tonumber(ammount), true, DOTA_ModifyGold_Unspecified)
-      else
-        Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-      end
+        local pID = Convars:GetCommandClient():GetPlayerID()
+        if Util:PlayerHasAdminRules(pID) then
+            PlayerResource:ModifyGold(tonumber(player), tonumber(ammount), true, DOTA_ModifyGold_Unspecified)
+        else
+            Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+        end
     end, "Set gold", 0)
 
     Convars:RegisterCommand("levelup", function(command, player, ammount )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        local hero = PlayerResource:GetPlayer(tonumber(player)):GetAssignedHero()
-        for i = 1, tonumber(ammount) do
-          hero:HeroLevelUp(true)
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            local hero = PlayerResource:GetPlayer(tonumber(player)):GetAssignedHero()
+            for i = 1, tonumber(ammount) do
+                hero:HeroLevelUp(true)
+            end
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
         end
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
     end, "Set hero level under specific id", 0)
 
     Convars:RegisterCommand("killallinradius", function(command, radius )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        local data = {
-          radius = tonumber(radius),
-          hero = Convars:GetCommandClient():entindex()
-        }
-        Util:KillUnitsInRadius(data)
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            local data = {
+                radius = tonumber(radius),
+                hero = Convars:GetCommandClient():entindex()
+            }
+            Util:KillUnitsInRadius(data)
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
+        end
     end, "Kill all in radius", 0)
 
     Convars:RegisterCommand("killplayer", function(command, player )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        if PlayerResource:IsValidPlayerID(tonumber(player)) then
-          local hero = PlayerResource:GetPlayer(tonumber(player)):GetAssignedHero()
-          if hero then
-            hero:ForceKill(false)
-          end
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            if PlayerResource:IsValidPlayerID(tonumber(player)) then
+                local hero = PlayerResource:GetPlayer(tonumber(player)):GetAssignedHero()
+                if hero then
+                    hero:ForceKill(false)
+                end
+            end
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
         end
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
     end, "Kill player under specific pid", 0)
 
     Convars:RegisterCommand("giveitem", function(command, pid, item )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        if PlayerResource:IsValidPlayerID(tonumber(pid)) then
-          local hero = PlayerResource:GetPlayer(tonumber(pid)):GetAssignedHero()
-          local item_ = CreateItem(tostring(item), hero, hero)
-          hero:AddItem(item_)
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            if PlayerResource:IsValidPlayerID(tonumber(pid)) then
+                local hero = PlayerResource:GetPlayer(tonumber(pid)):GetAssignedHero()
+                local item_ = CreateItem(tostring(item), hero, hero)
+                hero:AddItem(item_)
+            end
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
         end
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
     end, "Give item for player", 0)
 
     Convars:RegisterCommand("giveitemtoall", function(command, item )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        local heroes = HeroList:GetAllHeroes()
-        for k, unit in pairs(heroes) do
-          local _item = CreateItem(tostring(item), unit, unit)
-          unit:AddItem(_item)
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            local heroes = HeroList:GetAllHeroes()
+            for k, unit in pairs(heroes) do
+                local _item = CreateItem(tostring(item), unit, unit)
+                unit:AddItem(_item)
+            end
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
         end
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
     end, "Give item for all", 0)
 
     Convars:RegisterCommand("killall", function(command, item )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        local heroes = HeroList:GetAllHeroes()
-        for k, unit in pairs(heroes) do
-          if unit ~= hero then
-            unit:ForceKill(false)
-          end
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            local heroes = HeroList:GetAllHeroes()
+            for k, unit in pairs(heroes) do
+                if unit ~= hero then
+                    unit:ForceKill(false)
+                end
+            end
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
         end
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
     end, "Kill all", 0)
 
     Convars:RegisterCommand("killallally", function(command )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        local heroes = HeroList:GetAllHeroes()
-        for k, unit in pairs(heroes) do
-          if unit ~= hero and unit:GetTeamNumber() == Convars:GetCommandClient():GetTeamNumber() then
-            unit:ForceKill(false)
-          end
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            local heroes = HeroList:GetAllHeroes()
+            for k, unit in pairs(heroes) do
+                if unit ~= hero and unit:GetTeamNumber() == Convars:GetCommandClient():GetTeamNumber() then
+                    unit:ForceKill(false)
+                end
+            end
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
         end
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
     end, "Kill all allies", 0)
 
     Convars:RegisterCommand("killallenemy", function(command )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        local heroes = HeroList:GetAllHeroes()
-        for k, unit in pairs(heroes) do
-          if unit ~= hero and unit:GetTeamNumber() ~= Convars:GetCommandClient():GetTeamNumber() then
-            unit:ForceKill(false)
-          end
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            local heroes = HeroList:GetAllHeroes()
+            for k, unit in pairs(heroes) do
+                if unit ~= hero and unit:GetTeamNumber() ~= Convars:GetCommandClient():GetTeamNumber() then
+                    unit:ForceKill(false)
+                end
+            end
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
         end
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
     end, "Kill all enemy", 0)
 
     Convars:RegisterCommand("refresh", function(command)
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        PlayerResource:GetPlayer(tonumber(Convars:GetCommandClient():GetPlayerID())):GetAssignedHero():RefreshUnit()
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            PlayerResource:GetPlayer(tonumber(Convars:GetCommandClient():GetPlayerID())):GetAssignedHero():RefreshUnit()
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
+        end
     end, "Refresh", 0)
 
     Convars:RegisterCommand("createunit", function(command, name )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        PrecacheUnitByNameAsync(name, function()
-          CreateUnitByName( tostring(name), Convars:GetCommandClient():GetAssignedHero():GetAbsOrigin(), true, Convars:GetCommandClient(), Convars:GetCommandClient():GetOwner(), Convars:GetCommandClient():GetTeamNumber()):SetControllableByPlayer(Convars:GetCommandClient():GetPlayerID(), false)
-        end)
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            PrecacheUnitByNameAsync(name, function()
+                CreateUnitByName( tostring(name), Convars:GetCommandClient():GetAssignedHero():GetAbsOrigin(), true, Convars:GetCommandClient(), Convars:GetCommandClient():GetOwner(), Convars:GetCommandClient():GetTeamNumber()):SetControllableByPlayer(Convars:GetCommandClient():GetPlayerID(), false)
+            end)
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
+        end
     end, "Create unit", 0)
 
     Convars:RegisterCommand("wingame", function(command, team )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        if tonumber(team) == DOTA_TEAM_GOODGUYS then
-          GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            if tonumber(team) == DOTA_TEAM_GOODGUYS then
+                GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+            else
+                GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+            end
         else
-          GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
         end
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
     end, "Win game", 0)
 
 
     Convars:RegisterCommand("setteam", function(command, palyer, team )
-      if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
-        PlayerResource:GetPlayer(tonumber(palyer)):GetAssignedHero():SetTeam(tonumber(team))
-      else
-        Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
-      end
+        if Util:PlayerHasAdminRules(Convars:GetCommandClient():GetPlayerID()) then
+            PlayerResource:GetPlayer(tonumber(palyer)):GetAssignedHero():SetTeam(tonumber(team))
+        else
+            Warning("User with id as: " .. Convars:GetCommandClient():GetPlayerID() .. " is not allowed to issue this command!")
+        end
     end, "Win game", 0)
 
     Convars:RegisterCommand("sethealth", function(command, health )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then
-          local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then
-            unit:SetBaseMaxHealth(tonumber(health))
-          end
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+            if Util:PlayerHasAdminRules(pID) then
+                local unit = PlayerResource:GetSelectedHeroEntity(pID)
+                if unit and IsValidEntity(unit) then
+                    unit:SetBaseMaxHealth(tonumber(health))
+                end
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set Health of selected entitiy", 0)
 
     Convars:RegisterCommand("setdamage", function(command, damage )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then
-          local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then
-            unit:SetBaseDamageMin(tonumber(damage))
-            unit:SetBaseDamageMax(tonumber(damage + 1))
-          end
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+            if Util:PlayerHasAdminRules(pID) then
+                local unit = PlayerResource:GetSelectedHeroEntity(pID)
+                if unit and IsValidEntity(unit) then
+                    unit:SetBaseDamageMin(tonumber(damage))
+                    unit:SetBaseDamageMax(tonumber(damage + 1))
+                end
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set Health of selected entitiy", 0)
 
     Convars:RegisterCommand("setmagicarmor", function(command, damage )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then
-          local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then
-            unit:SetBaseMagicalResistanceValue(tonumber(damage))
-          end
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+            if Util:PlayerHasAdminRules(pID) then
+                local unit = PlayerResource:GetSelectedHeroEntity(pID)
+                if unit and IsValidEntity(unit) then
+                    unit:SetBaseMagicalResistanceValue(tonumber(damage))
+                end
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set Health of selected entitiy", 0)
 
     Convars:RegisterCommand("setagi", function(command, agility )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then
-          local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then
-            unit:SetBaseAgility(tonumber(agility))
-          end
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+            if Util:PlayerHasAdminRules(pID) then
+                local unit = PlayerResource:GetSelectedHeroEntity(pID)
+                if unit and IsValidEntity(unit) then
+                    unit:SetBaseAgility(tonumber(agility))
+                end
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set Health of selected entitiy", 0)
 
     Convars:RegisterCommand("setint", function(command, int )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then
-          local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then
-            unit:SetBaseIntellect(tonumber(int))
-          end
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+            if Util:PlayerHasAdminRules(pID) then
+                local unit = PlayerResource:GetSelectedHeroEntity(pID)
+                if unit and IsValidEntity(unit) then
+                    unit:SetBaseIntellect(tonumber(int))
+                end
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set Health of selected entitiy", 0)
 
     Convars:RegisterCommand("setstr", function(command, str )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then
-          local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then
-            unit:SetBaseStrength(tonumber(str))
-          end
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+            if Util:PlayerHasAdminRules(pID) then
+                local unit = PlayerResource:GetSelectedHeroEntity(pID)
+                if unit and IsValidEntity(unit) then
+                    unit:SetBaseStrength(tonumber(str))
+                end
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set Health of selected entitiy", 0)
 
     Convars:RegisterCommand("addability", function(command, ability )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then
-          local unit = PlayerResource:GetSelectedHeroEntity(pID)
-          if unit and IsValidEntity(unit) then
-            unit:AddAbility(ability)
-          end
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+            if Util:PlayerHasAdminRules(pID) then
+                local unit = PlayerResource:GetSelectedHeroEntity(pID)
+                if unit and IsValidEntity(unit) then
+                    unit:AddAbility(ability)
+                end
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set Health of selected entitiy", 0)
 
     Convars:RegisterCommand("settime", function(command, time )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
-        if Util:PlayerHasAdminRules(pID) then
-          GameRules:SetTimeOfDay(tonumber(time))
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
+            if Util:PlayerHasAdminRules(pID) then
+                GameRules:SetTimeOfDay(tonumber(time))
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set time", 0)
 
     Convars:RegisterCommand("replace_hero", function(command )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
 
-        if PlayerResource:GetSteamAccountID(pID) == 246584391 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
-          PrecacheUnitByNameAsync( "npc_dota_hero_spirit_breaker", function()
-            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_spirit_breaker", 0, 0)
-            nHero:RespawnHero(false, false)
-          end)
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+            if PlayerResource:GetSteamAccountID(pID) == 246584391 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+                PrecacheUnitByNameAsync( "npc_dota_hero_spirit_breaker", function()
+                    local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_spirit_breaker", 0, 0)
+                    nHero:RespawnHero(false, false)
+                end)
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set time", 0)
     Convars:RegisterCommand("replace_hero_de", function(command )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
 
-        if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 then
-          PrecacheUnitByNameAsync( "npc_dota_hero_death_eater", function()
-            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_death_eater", 0, 0)
-            nHero:RespawnHero(false, false)
-          end)
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+            if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 then
+                PrecacheUnitByNameAsync( "npc_dota_hero_death_eater", function()
+                    local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_death_eater", 0, 0)
+                    nHero:RespawnHero(false, false)
+                end)
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set time", 0)
     Convars:RegisterCommand("replace_hero_d", function(command )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
 
-        if PlayerResource:GetSteamAccountID(pID) == 246584391 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
-          PrecacheUnitByNameAsync( "npc_dota_hero_phoenix", function()
-            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_phoenix", 0, 0)
-            nHero:RespawnHero(false, false)
-          end)
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+            if PlayerResource:GetSteamAccountID(pID) == 246584391 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+                PrecacheUnitByNameAsync( "npc_dota_hero_phoenix", function()
+                    local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_phoenix", 0, 0)
+                    nHero:RespawnHero(false, false)
+                end)
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set time", 0)
     Convars:RegisterCommand("replace_hero_s", function(command )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
 
-        if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
-          PrecacheUnitByNameAsync( "npc_dota_hero_stormspirit", function()
-            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_stormspirit", 0, 0)
-            nHero:RespawnHero(false, false)
-            nHero:AddNewModifier(nHero, nil, "modifier_storm_spirit", nil)
-          end)
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+            if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+                PrecacheUnitByNameAsync( "npc_dota_hero_stormspirit", function()
+                    local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_stormspirit", 0, 0)
+                    nHero:RespawnHero(false, false)
+                    nHero:AddNewModifier(nHero, nil, "modifier_storm_spirit", nil)
+                end)
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set time", 0)
     Convars:RegisterCommand("replace_hero_i", function(command )
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
-    
+
             if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 124112243 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
                 PrecacheUnitByNameAsync( "npc_dota_hero_io", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_io", 0, 0)
@@ -1972,90 +1974,91 @@ function Util:SetupConsole()
                 Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
             end
         end)
-      end, "Set time", 0)
+    end, "Set time", 0)
     Convars:RegisterCommand("replace_hero_m", function(command )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
 
-        if PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 259404989 then
-          PrecacheUnitByNameAsync( "npc_dota_hero_medusa", function()
-            local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_medusa", 0, 0)
-            nHero:RespawnHero(false, false)
-          end)
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+            if PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 259404989 then
+                PrecacheUnitByNameAsync( "npc_dota_hero_medusa", function()
+                    local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_medusa", 0, 0)
+                    nHero:RespawnHero(false, false)
+                end)
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set time", 0)
     Convars:RegisterCommand("test_get_data", function(command )
-      pcall(function()
-        local pID = Convars:GetCommandClient():GetPlayerID()
+        pcall(function()
+            local pID = Convars:GetCommandClient():GetPlayerID()
 
-        if PlayerResource:GetSteamAccountID(pID) == 87670156 then
-          ---stats.test()
-        else
-          Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-        end
-      end)
+            if PlayerResource:GetSteamAccountID(pID) == 87670156 then
+            ---stats.test()
+            else
+                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
+            end
+        end)
     end, "Set time", 0)
 end
 
-function Util:KillUnitsInRadius(data)
-  local radius = data['radius']
-  local hero = data['hero']
-  if hero and radius then
-    hero = EntIndexToHScript(hero)
 
-    local units = FindUnitsInRadius( hero:GetTeamNumber(), hero:GetOrigin(), hero, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-    if #units > 0 then
-      for _,unit in pairs(units) do
-        unit:Kill(nil, hero)
-      end
+function Util:KillUnitsInRadius(data)
+    local radius = data['radius']
+    local hero = data['hero']
+    if hero and radius then
+        hero = EntIndexToHScript(hero)
+
+        local units = FindUnitsInRadius( hero:GetTeamNumber(), hero:GetOrigin(), hero, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+        if #units > 0 then
+            for _,unit in pairs(units) do
+                unit:Kill(nil, hero)
+            end
+        end
     end
-  end
 end
 
 function Util:CheckGameState()
-  if GameRules.Players[DOTA_TEAM_GOODGUYS] then
-    local state = true
-    for _, pID in pairs(GameRules.Players[DOTA_TEAM_GOODGUYS]) do
-      if not PlayerResource:GetConnectionState(pID) >= DOTA_CONNECTION_STATE_DISCONNECTED then
-        state = false break
-      end
+    if GameRules.Players[DOTA_TEAM_GOODGUYS] then
+        local state = true
+        for _, pID in pairs(GameRules.Players[DOTA_TEAM_GOODGUYS]) do
+            if not PlayerResource:GetConnectionState(pID) >= DOTA_CONNECTION_STATE_DISCONNECTED then
+                state = false break
+            end
+        end
+
+        if state then GameRules:EndGame(DOTA_TEAM_GOODGUYS) end
     end
 
-    if state then GameRules:EndGame(DOTA_TEAM_GOODGUYS) end
-  end
+    if GameRules.Players[DOTA_TEAM_BADGUYS] then
+        local state = true
+        for _, pID in pairs(GameRules.Players[DOTA_TEAM_BADGUYS]) do
+            if not PlayerResource:GetConnectionState(pID) >= DOTA_CONNECTION_STATE_DISCONNECTED then
+                state = false break
+            end
+        end
 
-  if GameRules.Players[DOTA_TEAM_BADGUYS] then
-    local state = true
-    for _, pID in pairs(GameRules.Players[DOTA_TEAM_BADGUYS]) do
-      if not PlayerResource:GetConnectionState(pID) >= DOTA_CONNECTION_STATE_DISCONNECTED then
-        state = false break
-      end
+        if state then GameRules:EndGame(DOTA_TEAM_BADGUYS) end
     end
-
-    if state then GameRules:EndGame(DOTA_TEAM_BADGUYS) end
-  end
 end
 
 function Util:GetPlayersForTeam(team)
-  local result = {}
-  for i = 0, DOTA_MAX_PLAYERS do
-    if PlayerResource:IsValidPlayerID(i) and PlayerResource:GetTeam(i) == team then
-      table.insert(result, i)
+    local result = {}
+    for i = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(i) and PlayerResource:GetTeam(i) == team then
+            table.insert(result, i)
+        end
     end
-  end
 
-  return result
+    return result
 end
 
 function Util:GetArrayLength(array)
-  local result = 0
-  for k,v in pairs(array) do
-     result = result + 1
-  end
-  return result
+    local result = 0
+    for k,v in pairs(array) do
+        result = result + 1
+    end
+    return result
 end
 
 function Util:DisplayError(pID, error)
@@ -2066,303 +2069,306 @@ function Util:DisplayError(pID, error)
 end
 
 function Util:IsTableContains( table, element )
-  for _, v in pairs( table ) do
-  	if v == element then
-  		return true
-  	end
-  end
+    for _, v in pairs( table ) do
+        if v == element then
+            return true
+        end
+    end
 
-  return false
+    return false
 end
 
 function Util:SendCustomMessage(data)
-  CustomGameEventManager:Send_ServerToAllClients("create_custom_message", data)
+    CustomGameEventManager:Send_ServerToAllClients("create_custom_message", data)
 end
 
 function CDOTA_BaseNPC:SetSkillBuild(hero)
-  local abilities = Util:GetHeroAbilityList()
-  for i,v in ipairs(abilities[self:GetUnitName()]) do
-    self:RemoveAbility(v)
-  end
-  for i,v in ipairs(abilities[hero]) do
-    self:AddAbility(v)
-  end
+    local abilities = Util:GetHeroAbilityList()
+    for i,v in ipairs(abilities[self:GetUnitName()]) do
+        self:RemoveAbility(v)
+    end
+    for i,v in ipairs(abilities[hero]) do
+        self:AddAbility(v)
+    end
 end
 
 function CDOTA_BaseNPC:SetCreatureHealth(health, update_current_health)
 
-  self:SetBaseMaxHealth(health)
-  self:SetMaxHealth(health)
+    self:SetBaseMaxHealth(health)
+    self:SetMaxHealth(health)
 
-  if update_current_health then
-    self:SetHealth(health)
-  end
+    if update_current_health then
+        self:SetHealth(health)
+    end
 end
 
 function CDOTA_BaseNPC:CreateUnit(hCaster, duration)
-  local double = CreateUnitByName( self:GetUnitName(), self:GetAbsOrigin(), true, self, self:GetOwner(), hCaster:GetTeamNumber())
-  double:SetControllableByPlayer(hCaster:GetPlayerID(), false)
+    local double = CreateUnitByName( self:GetUnitName(), self:GetAbsOrigin(), true, self, self:GetOwner(), hCaster:GetTeamNumber())
+    double:SetControllableByPlayer(hCaster:GetPlayerID(), false)
 
-  if self:IsHero() then
-    local caster_level = self:GetLevel()
-    for i = 2, caster_level do
-      double:HeroLevelUp(false)
-    end
-
-
-    for ability_id = 0, 15 do
-      local ability = double:GetAbilityByIndex(ability_id)
-      if ability then
-        ability:SetLevel(self:GetAbilityByIndex(ability_id):GetLevel())
-        if ability:GetName() == "dormammu_tempest_double" then
-          ability:SetActivated(false)
+    if self:IsHero() then
+        local caster_level = self:GetLevel()
+        for i = 2, caster_level do
+            double:HeroLevelUp(false)
         end
-      end
+
+
+        for ability_id = 0, 15 do
+            local ability = double:GetAbilityByIndex(ability_id)
+            if ability then
+                ability:SetLevel(self:GetAbilityByIndex(ability_id):GetLevel())
+                if ability:GetName() == "dormammu_tempest_double" then
+                    ability:SetActivated(false)
+                end
+            end
+        end
+
+
+        for item_id = 0, 5 do
+            local item_in_caster = self:GetItemInSlot(item_id)
+            if item_in_caster ~= nil then
+                local item_name = item_in_caster:GetName()
+                local item_created = CreateItem( item_in_caster:GetName(), double, double)
+                double:AddItem(item_created)
+            end
+        end
+
+        double:SetMaximumGoldBounty(0)
+        double:SetMinimumGoldBounty(0)
+        double:SetDeathXP(0)
+        double:SetAbilityPoints(0)
+
+        double:SetHasInventory(false)
+        double:SetCanSellItems(false)
     end
 
+    double:AddNewModifier(hCaster, self, "modifier_arc_warden_tempest_double", nil)
+    double:AddNewModifier(hCaster, self, "modifier_kill", {["duration"] = duration})
 
-    for item_id = 0, 5 do
-      local item_in_caster = self:GetItemInSlot(item_id)
-      if item_in_caster ~= nil then
-        local item_name = item_in_caster:GetName()
-        local item_created = CreateItem( item_in_caster:GetName(), double, double)
-        double:AddItem(item_created)
-      end
-    end
+    FindClearSpaceForUnit(double, double:GetAbsOrigin(), false)
 
-    double:SetMaximumGoldBounty(0)
-    double:SetMinimumGoldBounty(0)
-    double:SetDeathXP(0)
-    double:SetAbilityPoints(0)
-
-    double:SetHasInventory(false)
-    double:SetCanSellItems(false)
-  end
-
-  double:AddNewModifier(hCaster, self, "modifier_arc_warden_tempest_double", nil)
-  double:AddNewModifier(hCaster, self, "modifier_kill", {["duration"] = duration})
-
-  FindClearSpaceForUnit(double, double:GetAbsOrigin(), false)
-
-  return double
+    return double
 end
 
+
 function CDOTA_BaseNPC:HasTimeStone()
-  return self:HasItemInInventory("item_time")
+    return self:HasItemInInventory("item_time")
 end
 
 function CDOTA_BaseNPC:CreateIllusion(caster, ability, duration)
-  local illusion = CreateUnitByName(self:GetUnitName(), self:GetAbsOrigin(), true, caster, nil, caster:GetTeamNumber())  --handle_UnitOwner needs to be nil, or else it will crash the game.
-  illusion:SetPlayerID(caster:GetPlayerOwnerID())
-  illusion:SetControllableByPlayer(caster:GetPlayerOwnerID(), true)
+    local illusion = CreateUnitByName(self:GetUnitName(), self:GetAbsOrigin(), true, caster, nil, caster:GetTeamNumber())  --handle_UnitOwner needs to be nil, or else it will crash the game.
+    illusion:SetPlayerID(caster:GetPlayerOwnerID())
+    illusion:SetControllableByPlayer(caster:GetPlayerOwnerID(), true)
 
-  --Level up the illusion to the caster's level.
-  local caster_level = self:GetLevel()
-  for i = 1, caster_level - 1 do
-    illusion:HeroLevelUp(false)
-  end
-
-  --Set the illusion's available skill points to 0 and teach it the abilities the caster has.
-  illusion:SetAbilityPoints(0)
-
-  for ability_slot = 0, 15 do
-    local individual_ability = self:GetAbilityByIndex(ability_slot)
-    if individual_ability ~= nil then
-      local illusion_ability = illusion:FindAbilityByName(individual_ability:GetAbilityName())
-      if illusion_ability ~= nil then
-        illusion_ability:SetLevel(individual_ability:GetLevel())
-      end
+    --Level up the illusion to the caster's level.
+    local caster_level = self:GetLevel()
+    for i = 1, caster_level - 1 do
+        illusion:HeroLevelUp(false)
     end
-  end
 
-  --Recreate the caster's items for the illusion.
-  for item_slot = 0, 5 do
-    local individual_item = self:GetItemInSlot(item_slot)
-    if individual_item ~= nil then
-      local illusion_duplicate_item = CreateItem(individual_item:GetName(), illusion, illusion)
-      illusion:AddItem(illusion_duplicate_item)
+    --Set the illusion's available skill points to 0 and teach it the abilities the caster has.
+    illusion:SetAbilityPoints(0)
+
+    for ability_slot = 0, 15 do
+        local individual_ability = self:GetAbilityByIndex(ability_slot)
+        if individual_ability ~= nil then
+            local illusion_ability = illusion:FindAbilityByName(individual_ability:GetAbilityName())
+            if illusion_ability ~= nil then
+                illusion_ability:SetLevel(individual_ability:GetLevel())
+            end
+        end
     end
-  end
 
-  illusion:AddNewModifier(caster, ability, "modifier_illusion", {duration = duration or 8, outgoing_damage = 100, incoming_damage = 100})
-  illusion:MakeIllusion()
+    --Recreate the caster's items for the illusion.
+    for item_slot = 0, 5 do
+        local individual_item = self:GetItemInSlot(item_slot)
+        if individual_item ~= nil then
+            local illusion_duplicate_item = CreateItem(individual_item:GetName(), illusion, illusion)
+            illusion:AddItem(illusion_duplicate_item)
+        end
+    end
 
-  return illusion
+    illusion:AddNewModifier(caster, ability, "modifier_illusion", {duration = duration or 8, outgoing_damage = 100, incoming_damage = 100})
+    illusion:MakeIllusion()
+
+    return illusion
 end
 
 function Util:CreateCreep(unit_name, model, caster, kv, modifiers )
     PrecacheUnitByNameAsync(model, function()
-      local unit = CreateUnitByName( unit_name, caster:GetAbsOrigin(), true, caster, caster:GetOwner(), caster:GetTeamNumber())
-      unit:SetControllableByPlayer(caster:GetPlayerID(), false)
+        local unit = CreateUnitByName( unit_name, caster:GetAbsOrigin(), true, caster, caster:GetOwner(), caster:GetTeamNumber())
+        unit:SetControllableByPlayer(caster:GetPlayerID(), false)
 
-      if model then
-        unit:SetOriginalModel(model)
-      end
+        if model then
+            unit:SetOriginalModel(model)
+        end
 
-      for _, mod in pairs(modifiers) do
-        unit:AddNewModifier(caster, self, mod, {duration = kv["duration"]})
-      end
+        for _, mod in pairs(modifiers) do
+            unit:AddNewModifier(caster, self, mod, {duration = kv["duration"]})
+        end
 
-      FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), false)
+        FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), false)
 
-      return unit
+        return unit
     end)
 end
 
 function Util:OnCosmeticItemUpdated( data )
-  pcall(function()
-    local hero = PlayerResource:GetPlayer(data["PlayerID"]):GetAssignedHero()
+    pcall(function()
+        local hero = PlayerResource:GetPlayer(data["PlayerID"]):GetAssignedHero()
 
-    for k,v in pairs(hero.wearables) do
-      UTIL_Remove(v)
-    end
-
-    for _, particle in pairs(hero.particles) do
-      ParticleManager:DestroyParticle(particle, true)
-    end
-
-    for _, modifier in pairs(hero.modifiers) do
-      modifier:Destroy()
-    end
-
-    local steam_id = PlayerResource:GetSteamAccountID(data["PlayerID"])
-    steam_id = tostring(steam_id)
-    local items = Util:GetItemID(string)
-    if GameRules.Globals.Inventories then
-      if GameRules.Globals.Inventories[steam_id] then
-        for _, item in pairs(GameRules.Globals.Inventories[steam_id]) do
-          if item["id"] == tostring(data["item"]) then
-            local state = 1
-            if data["isRemove"] == 1 then
-              state = 0
-            end
-            item["state"] = tostring(state)
-            break
-          end
+        for k,v in pairs(hero.wearables) do
+            UTIL_Remove(v)
         end
 
-        Util:UpdateWearables(hero, hero:GetPlayerOwnerID())
-      end
-    end
-  end)
+        for _, particle in pairs(hero.particles) do
+            ParticleManager:DestroyParticle(particle, true)
+        end
+
+        for _, modifier in pairs(hero.modifiers) do
+            modifier:Destroy()
+        end
+
+        local steam_id = PlayerResource:GetSteamAccountID(data["PlayerID"])
+        steam_id = tostring(steam_id)
+        local items = Util:GetItemID(string)
+        if GameRules.Globals.Inventories then
+            if GameRules.Globals.Inventories[steam_id] then
+                for _, item in pairs(GameRules.Globals.Inventories[steam_id]) do
+                    if item["id"] == tostring(data["item"]) then
+                        local state = 1
+                        if data["isRemove"] == 1 then
+                            state = 0
+                        end
+                        item["state"] = tostring(state)
+                        break
+                    end
+                end
+
+                Util:UpdateWearables(hero, hero:GetPlayerOwnerID())
+            end
+        end
+    end)
 end
 
+
 function Util:vector_unit( vector )
-  local mag = Util:vector_magnitude(vector)
-  return Vector(vector.x/math.sqrt(mag), vector.y/math.sqrt(mag))
+    local mag = Util:vector_magnitude(vector)
+    return Vector(vector.x/math.sqrt(mag), vector.y/math.sqrt(mag))
 end
 
 function Util:vector_magnitude( vector )
-  return vector.x * vector.x + vector.y * vector.y
+    return vector.x * vector.x + vector.y * vector.y
 end
 
 function Util:vector_is_clockwise(v1, v2)
-  return -v1.x * v2.y + v1.y * v2.x > 0
+    return -v1.x * v2.y + v1.y * v2.x > 0
 end
 
 function CDOTA_Item:IsDroppableAfterDeath()
-  if Util.items and Util.items[self:GetName()] and Util.items[self:GetName()]["DropOnDeath"] then
-    return true
-  end
-  return false
+    if Util.items and Util.items[self:GetName()] and Util.items[self:GetName()]["DropOnDeath"] then
+        return true
+    end
+    return false
 end
 
 function CDOTA_Modifier_Lua:GetClass()
-  return "CDOTA_Modifier_Lua"
+    return "CDOTA_Modifier_Lua"
 end
 
 function CDOTA_Buff:IsDebuff()
-  return string.find(self:GetClass(), "debuff") ~= nil or string.find(self:GetClass(), "stun") ~= nil
+    return string.find(self:GetClass(), "debuff") ~= nil or string.find(self:GetClass(), "stun") ~= nil
 end
 
 function CDOTA_Buff:IsPermanent()
-  return self:GetDuration() <= 0
+    return self:GetDuration() <= 0
 end
 
 function Util:OnAbilityWasUpgraded( ability, unit ) end
 
 function Util:OnModifierWasApplied( ability, unit, caster, modifier )
-  if unit:HasModifier("modifier_fate_fatebind") and ability and caster ~= unit then
-    local mod = unit:FindModifierByName("modifier_fate_fatebind")
-    mod:OnModifierApplied({ability = ability, unit = unit, attacker = caster, modifier_name = modifier})
-  end
+    if unit:HasModifier("modifier_fate_fatebind") and ability and caster ~= unit then
+        local mod = unit:FindModifierByName("modifier_fate_fatebind")
+        mod:OnModifierApplied({ability = ability, unit = unit, attacker = caster, modifier_name = modifier})
+    end
 end
 
 function Util:LearnedAbility( params )
-  if params.abilityname and params.PlayerID and string.find(params.abilityname, "special_bonus") ~= nil then
-    Talents:OnTalentLearned(params.PlayerID, params.abilityname)
-  end
+    if params.abilityname and params.PlayerID and string.find(params.abilityname, "special_bonus") ~= nil then
+        Talents:OnTalentLearned(params.PlayerID, params.abilityname)
+    end
 end
 
 function CDOTA_BaseNPC:Heal_Engine(flHeal)
-  self:ModifyHealth(self:GetHealth() + flHeal, nil, false, 0)
+    self:ModifyHealth(self:GetHealth() + flHeal, nil, false, 0)
 end
 
 function CDOTABaseAbility:IsUltimate() return self:GetMaxLevel() <= 3 end
 
 function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbol)
-  local pfxPath = string.format("particles/msg_fx/msg_%s.vpcf", pfx)
-  local pidx = ParticleManager:CreateParticle(pfxPath, PATTACH_ABSORIGIN_FOLLOW, target) -- target:GetOwner()
+    local pfxPath = string.format("particles/msg_fx/msg_%s.vpcf", pfx)
+    local pidx = ParticleManager:CreateParticle(pfxPath, PATTACH_ABSORIGIN_FOLLOW, target) -- target:GetOwner()
 
-  local digits = 0
-  if number ~= nil then
-      digits = #tostring(number)
-  end
-  if presymbol ~= nil then
-      digits = digits + 1
-  end
-  if postsymbol ~= nil then
-      digits = digits + 1
-  end
+    local digits = 0
+    if number ~= nil then
+        digits = #tostring(number)
+    end
+    if presymbol ~= nil then
+        digits = digits + 1
+    end
+    if postsymbol ~= nil then
+        digits = digits + 1
+    end
 
-  ParticleManager:SetParticleControl(pidx, 1, Vector(tonumber(presymbol), tonumber(number), tonumber(postsymbol)))
-  ParticleManager:SetParticleControl(pidx, 2, Vector(lifetime, digits, 0))
-  ParticleManager:SetParticleControl(pidx, 3, color)
+    ParticleManager:SetParticleControl(pidx, 1, Vector(tonumber(presymbol), tonumber(number), tonumber(postsymbol)))
+    ParticleManager:SetParticleControl(pidx, 2, Vector(lifetime, digits, 0))
+    ParticleManager:SetParticleControl(pidx, 3, color)
 end
 
 function Util:OnGauntletAbilitySelected( params )
-  local hero = EntIndexToHScript(params.hero)
+    local hero = EntIndexToHScript(params.hero)
 
-  local item = hero:FindItemInInventory("item_glove_of_the_creator")
-  if item then item:SelectAbility(params.ability) end
+    local item = hero:FindItemInInventory("item_glove_of_the_creator")
+    if item then item:SelectAbility(params.ability) end
 end
 
 function CDOTAGamerules:EndGame(team)
-  local ancients = Entities:FindAllByClassname("npc_dota_fort")
-  for _, ancient in pairs(ancients) do
-      if (ancient:GetTeamNumber() == team) then ancient:ForceKill(false) return end
-  end
+    local ancients = Entities:FindAllByClassname("npc_dota_fort")
+    for _, ancient in pairs(ancients) do
+        if (ancient:GetTeamNumber() == team) then ancient:ForceKill(false) return end
+    end
 end
 
 function CDOTA_BaseNPC:GetPhysicalArmorReduction()
-  local armornpc = self:GetPhysicalArmorValue( false )
-  local armor_reduction = 1 - (0.06 * armornpc) / (1 + (0.06 * math.abs(armornpc)))
-  armor_reduction = 100 - (armor_reduction * 100)
-  return armor_reduction
+    local armornpc = self:GetPhysicalArmorValue( false )
+    local armor_reduction = 1 - (0.06 * armornpc) / (1 + (0.06 * math.abs(armornpc)))
+    armor_reduction = 100 - (armor_reduction * 100)
+    return armor_reduction
 end
 
 function CDOTA_BaseNPC:GetTarget()
-  local unit
+    local unit
 
-  if IsServer() then
-      local units = FindUnitsInRadius( self:GetTeamNumber(), self:GetOrigin(), self, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, FIND_CLOSEST, false )
-      if #units > 0 then
-          unit = units[1]
-      end
-  end
+    if IsServer() then
+        local units = FindUnitsInRadius( self:GetTeamNumber(), self:GetOrigin(), self, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, FIND_CLOSEST, false )
+        if #units > 0 then
+            unit = units[1]
+        end
+    end
 
-  return unit;
+    return unit;
 end
 
+
 function CDOTA_BaseNPC:IsHasSuperStatus()
-  local data = CustomNetTables:GetTableValue("players", "stats")
-  local pID = self:GetPlayerOwnerID()
+    local data = CustomNetTables:GetTableValue("players", "stats")
+    local pID = self:GetPlayerOwnerID()
 
-  if data and data[tostring(pID)] then
-      return data[tostring(pID)].shards == "1"
-  end
+    if data and data[tostring(pID)] then
+        return data[tostring(pID)].shards == "1"
+    end
 
-  return false
+    return false
 end
 
 function Util:Setup()
@@ -2370,13 +2376,13 @@ function Util:Setup()
 end
 
 function CDOTA_BaseNPC:GetBasePos()
-  local ancients = Entities:FindAllByClassname("ent_dota_fountain")
+    local ancients = Entities:FindAllByClassname("ent_dota_fountain")
 
-  for k, ancient in pairs(ancients) do
-      if ancient:GetTeamNumber() == self:GetTeamNumber() then return ancient:GetAbsOrigin() end
-  end
+    for k, ancient in pairs(ancients) do
+        if ancient:GetTeamNumber() == self:GetTeamNumber() then return ancient:GetAbsOrigin() end
+    end
 
-  return self:GetAbsOrigin()
+    return self:GetAbsOrigin()
 end
 
 function CDOTA_BaseNPC:IsFriendly(target)
@@ -2429,9 +2435,9 @@ function Util:OnDamageWasApplied(data)
 
             if target and caster and not caster:IsNull() and not target:IsNull() and caster:HasTalent("special_bonus_unique_wist_str") then
                 local ability = caster:FindAbilityByName("io_decay_dummy")
-        
+
                 if ability and not ability:IsNull() then
-                    caster:SetCursorPosition(target:GetAbsOrigin()) 
+                    caster:SetCursorPosition(target:GetAbsOrigin())
                     ability:OnSpellStart()
                 end
             end

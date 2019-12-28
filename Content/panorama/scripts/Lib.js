@@ -5499,6 +5499,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "404": {
+        "item": "ghost_samurai",
+        "rarity": "10",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_juggernaut",
+        "universal": "false",
+        "def_id": "404",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

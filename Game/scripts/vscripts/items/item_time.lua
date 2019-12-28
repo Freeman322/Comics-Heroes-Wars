@@ -7,6 +7,11 @@ function item_time:GetIntrinsicModifierName()
 	return "item_time_gem"
 end
 
+function item_time:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_heart_timegem") then return "custom/heart_timegem" end
+	return self.BaseClass.GetAbilityTextureName(self)
+end
+
 function item_time:OnSpellStart ()
     if IsServer() then
         local sound = "DOTA_Item.Refresher.Activate"

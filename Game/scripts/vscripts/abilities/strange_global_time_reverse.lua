@@ -25,6 +25,10 @@ function strange_global_time_reverse:OnSpellStart(  )
                 end 
             end
         end 
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "cat") then
+            EmitSoundOn( "Strange.CastReverse", self:GetCaster() )
+        end
     end
 end
 

@@ -3312,10 +3312,10 @@
 		"DOTA_Tooltip_ABILITY_ronan_bash_chance"									"CHANCE:"
 		"DOTA_Tooltip_ABILITY_ronan_bash_bonus_damage"								"DAMAGE:"
 
-		"DOTA_Tooltip_ability_ronan_passive"						"FEAR"
-		"DOTA_Tooltip_ability_ronan_passive_Description"  		"Ronan creates a dark echo of his opponents souls, causing them to attack their hosts"
-		"DOTA_Tooltip_ability_ronan_passive_illusion_duration"			"DURATION:"
-		"DOTA_Tooltip_ability_ronan_passive_illusion_outgoing_tooltip"	"%OUTGOING DAMAGE:"
+		"DOTA_Tooltip_ability_ronan_passive"						    "FEAR"
+		"DOTA_Tooltip_ability_ronan_passive_Description"  		        "Ronan creates a dark echo which stuns all nearby enemies and deals damage."
+		"DOTA_Tooltip_ability_ronan_passive_knockback_duration"			"DURATION:"
+		"DOTA_Tooltip_ability_ronan_passive_damage"	                    "DAMAGE:"
 		"DOTA_Tooltip_ability_ronan_passive_move_slow"					"%SLOWING:"
 
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole"							"KREE's RAGE"
@@ -3534,6 +3534,9 @@
 		"DOTA_Tooltip_ABILITY_lich_aura_passive_range"				"RADIUS:"
 		"DOTA_Tooltip_ABILITY_lich_aura_passive_damage_buff_amount"	"DAMAGE PER STACK:"
 
+        "DOTA_Tooltip_ability_special_bonus_unique_weaver_1"                                "+75 damage for Wind Walk"
+        "DOTA_Tooltip_ability_special_bonus_unique_weaver_2"                                "+200 speed for Wind Walk"
+
 		////nightbringer
 		"DOTA_Tooltip_ability_nightbringer_rise_of_night"									"RISE OF NIGHT"
 		"DOTA_Tooltip_ability_nightbringer_rise_of_night_Description"  					    "Activated - Chaos God curses the enemy hero, disarming him, and increasing any incoming damage. \n\nUpgradable by Aghanim's Scepter"
@@ -3577,8 +3580,9 @@
 		"DOTA_Tooltip_ABILITY_murlock_pounce_pounce_distance"				"RANGE:"
 		"DOTA_Tooltip_ABILITY_murlock_pounce_pounce_damage"					"DAMAGE:"
 		"DOTA_Tooltip_ABILITY_murlock_pounce_Lore"							"Murlocs - dangerous killers: aggressive and fearless."
-		"DOTA_Tooltip_ABILITY_murlock_pounce_cooldown_scepter"		"COOLDOWN SCEPTER:"
-		"DOTA_Tooltip_ability_murlock_pounce_aghanim_description"			"Reduces cooldown."
+		"DOTA_Tooltip_ABILITY_murlock_pounce_cooldown_scepter"		        "COOLDOWN SCEPTER:"
+		"DOTA_Tooltip_ability_murlock_pounce_aghanim_description"			"Gives 2 charges and increases range."
+		"DOTA_Tooltip_ability_murlock_pounce_pounce_distance_scepter"       "RANGE SCEPTER:"
 
 		"DOTA_Tooltip_ABILITY_murlock_heart"								"REGENERATION FACTOR"
 		"DOTA_Tooltip_ABILITY_murlock_heart_Description"					"Passive - Murloc restores a percentage of his max hp per second, if there are no heroes in a 250 range. Adds bonus move speed."
@@ -4163,12 +4167,12 @@
 		"DOTA_TOOLTIP_modifier_collector_ult"											"Absoriginal Power"
 		"DOTA_Tooltip_collector_passive_modifier"										"RAVAGE"
 		"DOTA_Tooltip_ability_item_soul_urn"                                            "Soul Medallion"
-		"DOTA_Tooltip_ability_item_soul_urn_Description"								"<h1>Active: Magic Pact</h1> Converts 50% of enemy current mana to your health.\n <h1>Passive: Magical Crit</h1>Damage dealt by ability may be critical."
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_all_stats"                            "+$all"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_armor"                                "+$armor"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_health_regen"                         "+$hp_regen"
+		"DOTA_Tooltip_ability_item_soul_urn_Description"								"<h1>Passive: Magical Crit</h1>Damage dealt by ability may be critical."
 		"DOTA_Tooltip_ability_item_soul_urn_bonus_mana_regen"                           "+$mana_regen"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_strike"                            "%+$magical_crit"
+		"DOTA_Tooltip_ability_item_soul_urn_bonus_intellect"                            "+$int"
+		"DOTA_Tooltip_ability_item_soul_urn_bonus_mana"                                 "+$mana"
+		"DOTA_Tooltip_ability_item_soul_urn_bonus_cast_time"                            "%BONUS CAST TIME:"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_chance"                            "%CRITICAL CHANCE:"
 
 		"DOTA_Tooltip_ability_murlock_primal_eject"										"PRIMAL EJECT"
@@ -4510,7 +4514,6 @@
 		"DOTA_Tooltip_ability_item_gungner"                                               "Gungnir"
 		"DOTA_Tooltip_ability_item_gungner_Description"                                   "Activated - ENERGY BLAST: Fires a lightningbolt, dealing damage and stunning the enemy."
 		"DOTA_Tooltip_ability_item_gungner_Lore"                                  		  "The spear of Odin, one of the most powerful artifacts in the universe."
-		"DOTA_Tooltip_ability_item_gungner_bonus_damage"                                  "+$damage"
 		"DOTA_Tooltip_ability_item_gungner_bonus_attack_speed"                            "+$attack"
 		"DOTA_Tooltip_ability_item_gungner_bonus_all_stats"                               "+$all"
 		"DOTA_Tooltip_ability_item_gungner_bonus_attack_range"                            "+$attack_range"
@@ -7851,8 +7854,10 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_soul_bonus_vision"                                     "BONUS VISION:"
 		"DOTA_Tooltip_ability_item_soul_bonus_mana_regen"                                 "+$mana_regen"
 		"DOTA_Tooltip_ability_item_soul_bonus_all_stats"                                  "+$all"
+		"DOTA_Tooltip_ability_item_soul_bonus_health_regen"                               "+$hp_regen"
+		"DOTA_Tooltip_ability_item_soul_bonus_mp"                                      "+$mana"
+		"DOTA_Tooltip_ability_item_soul_bonus_hp"                                      "+$health"
 		"DOTA_Tooltip_ability_item_soul_magical_damage_return"                            "%MAGICAL DAMAGE RETURN:"
-		"DOTA_Tooltip_ability_item_soul_soul_radius"                                      "Acknowledge RADIUS:"
 		"DOTA_Tooltip_ability_item_soul_overseer_duration"                                "Acknowledge DURATION:"
 		
 		"DOTA_Tooltip_ability_item_glove_of_the_creator"                                  "The Infinity Gauntlet"
@@ -8869,9 +8874,8 @@ When activated spends mana."
 		
 		"DOTA_Tooltip_ability_item_jetsu"                                            	  "Jetsu"
 		"DOTA_Tooltip_ability_item_jetsu_Description"                                     "<h1>Passive: Aethereal Power</h1> Decreases cast time of abilities by %bonus_casttime%."
-		"DOTA_Tooltip_ability_item_jetsu_spell_amp"                                       "SPELL AMP:"
-		"DOTA_Tooltip_ability_item_jetsu_bonus_int"                                       "BONUS INT:"
-		"DOTA_Tooltip_ability_item_jetsu_bonus_casttime"                                  "BONUS CASTTIME:"
+		"DOTA_Tooltip_ability_item_jetsu_bonus_int"                                       "+$int"
+		"DOTA_Tooltip_ability_item_jetsu_bonus_casttime"                                  "%BONUS CASTTIME:"
 
 		"DOTA_Tooltip_ability_item_recipe_jetsu"                                          "Jetsu"
 		"DOTA_Tooltip_ability_item_recipe_jetsu_Description"                              ""
@@ -11262,9 +11266,11 @@ When activated spends mana."
 
 		"npc_dota_unit_officer_base"											"Military Base"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_officer_1"						"+5 sec Order duration"
+		"DOTA_Tooltip_ability_special_bonus_unique_officer_1"						"Order include Officer attack"
 		"DOTA_Tooltip_ability_special_bonus_unique_officer_2"						"+1.5 manaregen for base"
 		"DOTA_Tooltip_ability_special_bonus_unique_officer_3"						"+400 damage for Artillery Battery"
+		"DOTA_Tooltip_ability_special_bonus_unique_officer_4"						"Infinite rounds for Artillery Battery"
+        "DOTA_Tooltip_ability_special_bonus_unique_officer_5"						"7% HP regen for Units"
 
 		"android"															"Android"
 		"android_lore"														""
@@ -11708,9 +11714,12 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_elemental_treads"                                         "Elemental Treads"
 		"DOTA_Tooltip_ability_item_elemental_treads_Description"                             "<h1>Passive: Gift of the Elements</h1> Elements grant your hero bonus to attributes."
 		"DOTA_Tooltip_ability_item_elemental_treads_bonus_all_stats"                         "+$all"
-		"DOTA_Tooltip_ability_item_elemental_treads_bonus_stats_all_pct"                     "%+all"
+		"DOTA_Tooltip_ability_item_elemental_treads_bonus_stats_all_pct"                     "%GIFT OF THE ELEMENTS BONUS ATTRIBUTES:"
 		"DOTA_Tooltip_ability_item_elemental_treads_bonus_attack_speed"                      "+$attack"
 		"DOTA_Tooltip_ability_item_elemental_treads_bonus_movespeed_pct"                     "%+$move_speed"
  
+    
+        "npc_dota_hero_gorr"                                                                "Gorr"
+        "npc_dota_hero_gorr_hype"                                                           "My name is Gorr, son of a nameless father, outcast from a forgotten world. I have slain my way through multitudes to stand here at the genesis of all things. Blackened by vengeance, wet with holy blood. One simple dream still strong in my heart... The dream of a godless age."
 	}	
 }

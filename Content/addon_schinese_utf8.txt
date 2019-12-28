@@ -2884,9 +2884,6 @@
 		"DOTA_Tooltip_collector_passive_modifier"										"RAVAGE"
 		"DOTA_Tooltip_ability_item_soul_urn"                                            "Soul Medallion"
 		"DOTA_Tooltip_ability_item_soul_urn_Description"								"<h1>Active: Magic Pact</h1> Converts 50% of enemy current mana to your health.\n <h1>Passive: Magical Crit</h1>Damage dealt by ability may be critical."
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_all_stats"                            "+$all"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_armor"                                "+$armor"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_health_regen"                         "+$hp_regen"
 		"DOTA_Tooltip_ability_item_soul_urn_bonus_mana_regen"                           "+$mana_regen"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_strike"                            "%+$magical_crit"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_chance"                            "%CRITICAL CHANCE:"
@@ -6480,19 +6477,15 @@
 		"DOTA_Tooltip_ability_item_power_gem_power_totaldmg"                              "%Ancient Power DAMAGE:"
 
 		"DOTA_Tooltip_ability_item_soul"                                                  "Soul Gem"
-		"DOTA_Tooltip_ability_item_soul_Description"                                      "<h1>Active: Acknowledge </h1> Detects the souls of absolutely all creatures on the map. \n <h1>Passive: Eye</h1>Grants absolute fow's provided true sight aura in radius 1200. \n <h1>Passive: Refraction</h1> If damage was magical, it will be returned back to attacker."
+		"DOTA_Tooltip_ability_item_soul_Description"                                      "<h1>Active: Acknowledge </h1> Detects the souls of absolutely all creatures on the map. \n <h1>Passive: Refraction</h1> If damage was magical, it will be returned back to attacker."
 		"DOTA_Tooltip_ability_item_soul_Lore"                                      		  "Do not go gentle into that good night,
 		Old age should burn and rave at close of day;
 		Rage, rage against the dying of the light.
 		Though wise men at their end know dark is right,
 		Because their words had forked no lightning they
 		Do not go gentle into that good night."
-		"DOTA_Tooltip_ability_item_soul_bonus_attack_speed"                               "+$attack"
 		"DOTA_Tooltip_ability_item_soul_bonus_vision"                                     "BONUS VISION:"
-		"DOTA_Tooltip_ability_item_soul_bonus_mana_regen"                                 "+$mana_regen"
-		"DOTA_Tooltip_ability_item_soul_bonus_all_stats"                                  "+$all"
 		"DOTA_Tooltip_ability_item_soul_magical_damage_return"                            "%MAGICAL DAMAGE RETURN:"
-		"DOTA_Tooltip_ability_item_soul_soul_radius"                                      "Acknowledge RADIUS:"
 		"DOTA_Tooltip_ability_item_soul_overseer_duration"                                "Acknowledge DURATION:"
 		
 		"DOTA_Tooltip_ability_item_glove_of_the_creator"                                  "The Infinity Gauntlet"
@@ -7491,7 +7484,6 @@
 		
 		"DOTA_Tooltip_ability_item_jetsu"                                            	  "Jetsu"
 		"DOTA_Tooltip_ability_item_jetsu_Description"                                     "<h1>Passive: Aethereal Power</h1> Decreases cast time of abilities by %bonus_casttime%."
-		"DOTA_Tooltip_ability_item_jetsu_spell_amp"                                       "SPELL AMP:"
 		"DOTA_Tooltip_ability_item_jetsu_bonus_int"                                       "BONUS INT:"
 		"DOTA_Tooltip_ability_item_jetsu_bonus_casttime"                                  "BONUS CASTTIME:"
 

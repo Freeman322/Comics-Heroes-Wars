@@ -20,6 +20,10 @@ function strange_obliteration_of_eternity:OnSpellStart(  )
         ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin() );
         ParticleManager:SetParticleControl( nFXIndex, 2, self:GetCaster():GetOrigin() );
         ParticleManager:ReleaseParticleIndex(nFXIndex)
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "cat") then
+            EmitSoundOn( "Strange.Cast4", self:GetCaster() )
+        end
     end
 end
 

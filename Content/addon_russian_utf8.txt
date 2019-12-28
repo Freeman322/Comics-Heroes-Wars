@@ -3010,10 +3010,7 @@
 		"DOTA_Tooltip_collector_passive_modifier"										"RAVAGE"
 
 		"DOTA_Tooltip_ability_item_soul_urn"                                              "Soul Medallion"
-		"DOTA_Tooltip_ability_item_soul_urn_Description"								  "<h1>Активируемая: Magic Pact</h1> Поглощает 50% маны врага и лечит героя на это значение.\n <h1>Пассивная: Magical Crit</h1>Урон, нанесенный способностью, может быть критическим."		
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_all_stats"                              "+$all"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_armor"                                  "+$armor"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_health_regen"                           "+$hp_regen"
+		"DOTA_Tooltip_ability_item_soul_urn_Description"								  "<h1>Пассивная: Magical Crit</h1>Урон, нанесенный способностью, может быть критическим."		
 		"DOTA_Tooltip_ability_item_soul_urn_bonus_mana_regen"                             "+$mana_regen"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_strike"                              "%+$magical_crit"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_chance"                              "%ШАНС:"
@@ -6310,14 +6307,11 @@
 		"DOTA_Tooltip_ability_item_power_gem_power_totaldmg"                              "%Ancient Power УРОН:"
 
 		"DOTA_Tooltip_ability_item_soul"                                                  "Soul Gem"
-		"DOTA_Tooltip_ability_item_soul_Description"                                      "<h1>Active: Acknowledge </h1> Раскрывает местоположение абсолютно всех существ на карте. \n <h1>Passive: Eye</h1>Дарует ауру fow's sight в радиусе 1200. \n <h1>Passive: Refraction</h1> Если урон был магическим, то он будет возвращен вражескогму кастеру."
+		"DOTA_Tooltip_ability_item_soul_Description"                                      "<h1>Active: Acknowledge </h1> Раскрывает местоположение абсолютно всех существ на карте. \n <h1>Passive: Refraction</h1> Если урон был магическим, то он будет возвращен вражескогму кастеру."
 		"DOTA_Tooltip_ability_item_soul_Lore"                                      		  "Не уходи безропотно во тьму, Будь яростней пред бурей всех ночей, Не дай погаснуть свету своему! Хоть мудрый знает — не осилишь тьму, Во мгле словами не зажжёшь лучей — Не уходи безропотно во тьму!"
 		"DOTA_Tooltip_ability_item_soul_bonus_attack_speed"                               "+$attack"
 		"DOTA_Tooltip_ability_item_soul_bonus_vision"                                     "ДОП.ДАЛЬНОСТЬ ОБЗОРА:"
-		"DOTA_Tooltip_ability_item_soul_bonus_mana_regen"                                 "+$mana_regen"
-		"DOTA_Tooltip_ability_item_soul_bonus_all_stats"                                  "+$all"
 		"DOTA_Tooltip_ability_item_soul_magical_damage_return"                            "%ВОЗВРАЩЕНИЕ МАГИЧЕСКОГО УРОНА:"
-		"DOTA_Tooltip_ability_item_soul_soul_radius"                                      "Acknowledge РАДИУС:"
 		"DOTA_Tooltip_ability_item_soul_overseer_duration"                                "Acknowledge ДЛИТЕЛЬНОСТЬ:"
 		
 		"DOTA_Tooltip_ability_item_glove_of_the_creator"                                  "The Infinity Gauntlet"

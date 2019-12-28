@@ -1587,9 +1587,6 @@
 		"DOTA_Tooltip_ability_item_heart_of_abyss_mana_regen"							"%MANA REGEN IN SEC:"
 		"DOTA_Tooltip_ability_item_soul_urn"                                              "Soul Medallion"
 		"DOTA_Tooltip_ability_item_soul_urn_Description"                                  "Passive - SPELL CRIT: Allows abilities to deal critical strikes.Types of damage that can crit: <font color=\"#A020F0\"> MAGICAL</font>, <font color=\"#FF0000\"> PURE</font>, <font color=\"#FFFF00\"> MENTHAL</font> and <font color=\"#70EA72\">HP REMOVAL</font>."
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_all_stats"                              "+$all"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_armor"                                  "+$armor"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_health_regen"                           "+$hp_regen"
 		"DOTA_Tooltip_ability_item_soul_urn_bonus_mana_regen"                             "+$mana_regen"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_strike"                              "%+$magical_crit"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_chance"                              "%CRITICAL CHANCE:"
@@ -2858,6 +2855,21 @@ Rage, rage against the dying of the light."
         "star_emblem"                        "Star Emblem"
         "star_emblem_lore"                        ""
         
+        "star_emblem_green"                        "Star Emblem II"
+        "star_emblem_green_lore"                        ""
+
+        "lee"                             "Lee"
+        "lee_lore"                        ""
+
+        "zoro"                             "Zoro"
+        "zoro_lore"                        ""
+
+        "pepe"                             "Pepe"
+        "pepe_lore"                        ""
+
+        "cat"                             "Doraemon"
+        "cat_lore"                        ""
+
 		"pudge_mask"                      "Mask of the Mad Harvester"
 		"pudge_mask_lore"                 ""
 

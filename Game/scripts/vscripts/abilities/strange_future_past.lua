@@ -78,6 +78,10 @@ function strange_future_past:OnSpellStart(  )
             EmitSoundOn( "Hero_Invoker.Tornado.Cast.Immortal", self:GetCaster() )
             EmitSoundOn( "Hero_Invoker.DeafeningBlast.Immortal", hTarget )
 
+            if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "cat") then
+                EmitSoundOn( "Strange.Cast2", self:GetCaster() )
+            end
+
             ApplyDamage( damage_table )
         end
     end
