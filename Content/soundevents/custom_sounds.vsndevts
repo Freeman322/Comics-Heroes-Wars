@@ -5116,7 +5116,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5152,7 +5152,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+					    "value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5188,7 +5188,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5224,7 +5224,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5259,7 +5259,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5294,7 +5294,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5329,7 +5329,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5364,7 +5364,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5399,7 +5399,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5438,6 +5438,111 @@
 					"volume"
 					{
 						"value"		"2.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Sailor.Cast1"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/sailor/sailor1.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Sailor.Cast3"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/sailor/sailor3.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Sailor.Cast4"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/sailor/sailor4.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
 					}
 					"pitch"
 					{

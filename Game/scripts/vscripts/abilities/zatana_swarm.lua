@@ -33,6 +33,10 @@ function zatana_swarm:OnSpellStart()
 
 	self.nProjID = ProjectileManager:CreateLinearProjectile( info )
 	EmitSoundOn( "Hero_DeathProphet.CarrionSwarm.Mortis" , self:GetCaster() )
+
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sailor") then
+		EmitSoundOn( "Sailor.Cast1", self:GetCaster() )
+	end
 end
 
 function zatana_swarm:OnProjectileHit( hTarget, vLocation )

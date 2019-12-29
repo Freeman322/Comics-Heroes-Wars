@@ -16269,11 +16269,14 @@
 		"AbilityManaCost"				"80 100 120"
 		"precache"
 		{
-			"particle" 	"particles/hero_zatana/zatana_eclipse.vpcf"
-			"particle" 	"particles/hero_zatana/zatana_ritual_a.vpcf"
-			"particle"  "particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pur_immortal_cast.vpcf"
-			"particle"  "particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
-			"particle"  "particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf"
+			"model"						"models/heroes/ming/sailor_skin/sailor.vmdl"
+			"model"						"models/heroes/ming/sailor_skin/sailor_hair.vmdl"
+			
+			"particle" 					"particles/hero_zatana/zatana_eclipse.vpcf"
+			"particle" 					"particles/hero_zatana/zatana_ritual_a.vpcf"
+			"particle"  				"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pur_immortal_cast.vpcf"
+			"particle" 		 			"particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
+			"particle"  				"particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

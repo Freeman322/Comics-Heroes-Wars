@@ -1,33 +1,6 @@
---[[spiderman_poision_attack = class ( {})
-LinkLuaModifier ("modifier_spiderman_poision_attack", "heroes/hero_spiderman/spiderman_poision_attack.lua", LUA_MODIFIER_MOTION_NONE)
-
-function spiderman_poision_attack:GetIntrinsicModifierName ()
-    return "modifier_spiderman_poision_attack"
-end
-function spiderman_poision_attack:GetBehavior ()
-     return DOTA_ABILITY_BEHAVIOR_PASSIVE
-end
-
-modifier_spiderman_poision_attack = class ( {})
-
-function modifier_spiderman_poision_attack:IsHidden ()
-    return true
-end
-
-function modifier_spiderman_poision_attack:DeclareFunctions ()
-    local funcs = {
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
-    }
-
-    return funcs
-end
-
-
-function modifier_spiderman_poision_attack:GetModifierPreAttack_BonusDamage (params)
-    return self:GetAbility():GetSpecialValueFor ("bonus_damage")
-end]]
 LinkLuaModifier ("spiderman_adaptation_thinker",  "abilities/spiderman_poision_attack.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier ("modifier_spiderman_adaptation_buff",  "abilities/spiderman_poision_attack.lua", LUA_MODIFIER_MOTION_NONE)
+
 if spiderman_poision_attack == nil then
     spiderman_poision_attack = class ( {})
 end
@@ -119,7 +92,9 @@ function modifier_spiderman_adaptation_buff:OnIntervalThink()
             damage = flDamage,
             damage_type = self:GetAbility():GetAbilityDamageType(),
             ability = self:GetAbility()
-        } ApplyDamage( damage )
+        } 
+        
+        ApplyDamage( damage )
     end 
 end
 

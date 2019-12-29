@@ -353,7 +353,18 @@ function Util:EquipItemData(hero, item_data, slot)
     if econ_params["modifiers"] ~= nil then
         for __id, modifier in pairs(econ_params["modifiers"]) do
             LinkLuaModifier(modifier["modifier"], modifier["modifier_path"], LUA_MODIFIER_MOTION_NONE)
-            local mod = hero:AddNewModifier(hero, nil, modifier["modifier"], nil)
+            
+            local params = nil
+
+            if modifier["params"] ~= nil then
+                params = {}
+                
+                for k,v in pairs(modifier["params"]) do
+                    params[k] = v
+                end
+            end
+
+            local mod = hero:AddNewModifier(hero, nil, modifier["modifier"], params)
             hero.modifiers[slot] = mod
         end
     end

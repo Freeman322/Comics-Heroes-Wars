@@ -2867,6 +2867,9 @@ Rage, rage against the dying of the light."
         "zoro"                             "Zoro"
         "zoro_lore"                        ""
 
+		"sailor"                             "Sailor"
+        "sailor_lore"                        ""
+
         "pepe"                             "Pepe"
         "pepe_lore"                        ""
 
