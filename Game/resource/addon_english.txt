@@ -8312,9 +8312,9 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_miraak_dragon_aspect_radius"                                "RADIUS:"
 
 		"DOTA_Tooltip_ability_godspeed_bend_time"                                         "Bend Time"
-		"DOTA_Tooltip_ability_godspeed_bend_time_Description"                             "Curses the enemy, and while he moves, he will be dealt damage from distance."
+		"DOTA_Tooltip_ability_godspeed_bend_time_Description"                             "Curses the enemy, at the end of the ability, the entire distance that the enemy passed will be obtained as the speed of movement."
 		"DOTA_Tooltip_ability_godspeed_bend_time_duration"                                "DURATION:"
-		"DOTA_Tooltip_ability_godspeed_bend_time_damage"                                  "DAMAGE:"
+		"DOTA_Tooltip_ability_godspeed_bend_time_speed_ptc"                               "%SPEED GAIN BY DISTANCE:"
 
 		"DOTA_Tooltip_ability_godspeed_speed_void"                                        "Speed Void"
 		"DOTA_Tooltip_ability_godspeed_speed_void_Description"                            "Creates a powerful mental blow that damages, depending on what distance the enemy passed during his lifetime. \n\nUpgradable by Aghanim's Scepter."
@@ -8323,10 +8323,20 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_godspeed_speed_void_radius_scepter"                         "AOE RADIUS SCEPTER:"
 		"DOTA_Tooltip_ability_godspeed_speed_void_aghanim_description"                    "Adds AOE radius"
 
+        "DOTA_Tooltip_ability_godspeed_speed_abyss"                                        "Speed Abyss"
+        "DOTA_Tooltip_ability_godspeed_speed_abyss_Description"                            "Deals a terrible mental blow, taking the imprint of the enemy’s soul, taking damage for a short period of time equal to the enemy’s movement speed"
+        "DOTA_Tooltip_ability_godspeed_speed_abyss_duration"                               "DURATION:"
+
 		"DOTA_Tooltip_ability_godspeed_ember_field"                                       "Ember Field"
 		"DOTA_Tooltip_ability_godspeed_ember_field_Description"                           "Godspeed steals his speed when killing an enemy. When studying this ability, the speed threshold is removed. With every death, the speed gained is reduced."
 		"DOTA_Tooltip_ability_godspeed_ember_field_speed_gain"                            "SPEED PER KILL:"
 		"DOTA_Tooltip_ability_godspeed_ember_field_max_gain"                              "MAX SPEED:"
+
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow"                                  "Speedforce Flow"
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_Description"                      "Releases all movement speed as damage over an area. The speed gained by the first ability will be reset."
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_damage"                           "BASE DAMAGE:"
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_radius"                                "RADIUS:"
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_disarm_duration"                       "DISARM DURATION:"
 
 		"DOTA_Tooltip_ability_godspeed_hyperpath"                                         "Hyperpath"
 		"DOTA_Tooltip_ability_godspeed_hyperpath_Description"                             "Makes the hero invulnerable and allows to pass through obstacles."

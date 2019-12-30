@@ -3941,4 +3941,67 @@
 			}
 		}
 	}
+	"models/heroes/hero_murloc/sanji_skin/sanji.vmdl"
+	{
+		"PortraitLightPosition"		"85.00 9.68 296.06"
+		"PortraitLightAngles"		"62.94 185.36 0.00"
+		"PortraitLightFOV"		"75"
+		"PortraitLightDistance"		"249"
+		"PortraitLightColor"		"243 243 243"
+		"PortraitShadowColor"		"0 0 0"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"131 0 25"
+		"PortraitAmbientScale"		"2.500000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_desert.vmat"
+		"PortraitBackgroundColor1"		"0 0 0"
+		"PortraitBackgroundColor2"		"0 0 0"
+		"PortraitBackgroundColor3"		".8 .2 .1"
+		"PortraitBackgroundColor4"		"0 0 0"
+		"PortraitLightScale"		"1.000000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-75.850 -49.880 27.200"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"150.65 -50.70 250"
+				"PortraitAngles"		"36.08 163.28 0.00"
+				"PortraitFOV"		    "15"
+			}
+		}
+	}
+	"models/heroes/hero_savitar/kirito_skin/kirito.vmdl"
+	{
+		"PortraitLightPosition"		"101.03 -37.93 196.33"
+		"PortraitLightAngles"		"22.78 139.18 0.00"
+		"PortraitLightFOV"		"40"
+		"PortraitLightDistance"		"160"
+		"PortraitLightColor"		"254 238 204"
+		"PortraitShadowColor"		"89 97 151"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"48 111 144"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitSpecularColor"		"0.97 0.07 0.09"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_whiteExterior.vmat"
+		"PortraitBackgroundColor1"		".7 .9 1"
+		"PortraitBackgroundColor2"		".7 .9 1"
+		"PortraitBackgroundColor3"		".7 .9 1"
+		"PortraitBackgroundColor4"		"1 1 1"
+		"PortraitLightScale"		"1.400000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-119.430 135.430 -64.400"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"174.88 63.83 192.12"
+				"PortraitAngles"		"13.61 201.09 0.00"
+				"PortraitFOV"			"6"
+			}
+		}
+	}
 }

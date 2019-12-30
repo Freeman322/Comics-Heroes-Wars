@@ -9,8 +9,6 @@ LinkLuaModifier( "modifier_darkrider_alter_reverse_aura", "abilities/darkrider_a
 
 darkrider_alter_reverse.bInterrupted = false
 
-function darkrider_alter_reverse:OnUpgrade() if IsServer() then local heroes = HeroList:GetAllHeroes() for k, hero in pairs(heroes) do if not hero:HasModifier("modifier_darkrider_alter_reverse") then hero:AddNewModifier(self:GetCaster(), self, "modifier_darkrider_alter_reverse", nil) end end end end
-function darkrider_alter_reverse:OnOwnerSpawned() if IsServer() then local heroes = HeroList:GetAllHeroes() for k, hero in pairs(heroes) do if not hero:HasModifier("modifier_darkrider_alter_reverse") then hero:AddNewModifier(self:GetCaster(), self, "modifier_darkrider_alter_reverse", nil) end end end end
 function darkrider_alter_reverse:GetConceptRecipientType() return DOTA_SPEECH_USER_ALL end
 function darkrider_alter_reverse:SpeakTrigger() return DOTA_ABILITY_SPEAK_CAST end
 function darkrider_alter_reverse:GetChannelTime() return self:GetSpecialValueFor("channel") end
@@ -23,51 +21,6 @@ function darkrider_alter_reverse:OnChannelFinish( bInterrupted )
           if bInterrupted then self:GetCaster():RemoveModifierByName( "modifier_darkrider_alter_reverse_aura" ) end 
      end 
 end
-
-
-if modifier_darkrider_alter_reverse == nil then modifier_darkrider_alter_reverse = class({}) end
-
-function modifier_darkrider_alter_reverse:DeclareFunctions()
-    return { MODIFIER_EVENT_ON_UNIT_MOVED, MODIFIER_EVENT_ON_DEATH }
-end
-
-function modifier_darkrider_alter_reverse:OnCreated(params)
-    if IsServer() then 
-        self._iDistance = 0
-        self._vPosition = self:GetParent():GetAbsOrigin()
-    end 
-end
-
-function modifier_darkrider_alter_reverse:GetTotalDistance()
-    if IsServer() then 
-        return self._iDistance or 0
-    end 
-end
-
-function modifier_darkrider_alter_reverse:OnDeath(params)
-    if IsServer() and params.unit == self:GetParent() then 
-        self._iDistance = 0
-    end 
-end
-
-function modifier_darkrider_alter_reverse:OnUnitMoved(params)
-	if IsServer() then 
-		if params.unit == self:GetParent() then 
-			if self._vPosition ~= self:GetParent():GetAbsOrigin() then 
-				local distance = (self:GetParent():GetAbsOrigin() - self._vPosition):Length2D()
-
-				self._vPosition = self:GetParent():GetAbsOrigin()
-
-				self:OnPositionChanged(distance)
-			end 			
-		end
-	end 
-end
-
-function modifier_darkrider_alter_reverse:OnPositionChanged( distance ) if IsServer() then self._iDistance = (self._iDistance or 0) + distance end end
-function modifier_darkrider_alter_reverse:IsHidden() return true end
-function modifier_darkrider_alter_reverse:IsPurgable() return false end
-function modifier_darkrider_alter_reverse:RemoveOnDeath() return false end
 
 if modifier_darkrider_alter_reverse_aura_debuff == nil then modifier_darkrider_alter_reverse_aura_debuff = class({}) end
 
@@ -87,10 +40,7 @@ function modifier_darkrider_alter_reverse_aura_debuff:OnDestroy()
           if self:GetAbility().bInterrupted then return end 
 
           local damage = self:GetAbility():GetAbilityDamage()
-          local modifier = self:GetParent():FindModifierByName("modifier_darkrider_alter_reverse")
 
-          if modifier then damage = damage + (modifier:GetTotalDistance() * (self:GetAbility():GetSpecialValueFor("distance_ptc") / 100)) end 
-         
           local kv =
           {
                center_x = self._vLoc.x,

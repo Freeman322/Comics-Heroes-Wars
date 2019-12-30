@@ -5485,6 +5485,99 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "403": {
+        "item": "kirito",
+        "rarity": "11",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_savitar",
+        "universal": "false",
+        "def_id": "403",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "404": {
+        "item": "sanji",
+        "rarity": "11",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_slark",
+        "universal": "false",
+        "def_id": "404",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "405": {
+        "item": "2019_service_medal",
+        "rarity": "10",
+        "quality": "4",
+        "slot": "medal",
+        "dropable": "false",
+        "hero": "",
+        "universal": "true",
+        "def_id": "405",
+        "is_treasure": "0",
+        "is_medal": "1",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "406": {
+        "item": "guru",
+        "rarity": "10",
+        "quality": "4",
+        "slot": "medal",
+        "dropable": "false",
+        "hero": "",
+        "universal": "true",
+        "def_id": "406",
+        "is_treasure": "0",
+        "is_medal": "1",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "407":{  
+        "universal":"true",
+        "is_treasure":"1",
+        "is_medal":"0",
+        "slot":"treasure",
+        "contains":{  
+           "very_rare":{  
+              "1":"199",
+              "2":"200",
+              "3":"252"
+           },
+           "rare":{  
+              "1":"376",
+              "2":"387",
+              "3":"378",
+              "4":"311"
+           },
+           "common":{  
+              "1":"384",
+              "2":"376",
+              "3":"385"
+           },
+           "extr_rare":{  
+              "2":"388",
+              "1":"364",
+              "3":"403"
+           }
+        },
+        "dropable":"true",
+        "def_id":"407",
+        "hero":"",
+        "is_music":"0",
+        "is_compendium":"0",
+        "item":"2019_winter_chest",
+        "rarity":"11",
+        "quality":"2"
     }
  };
 

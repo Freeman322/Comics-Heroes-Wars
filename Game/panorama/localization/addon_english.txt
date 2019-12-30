@@ -2864,11 +2864,26 @@ Rage, rage against the dying of the light."
         "lee"                             "Lee"
         "lee_lore"                        ""
 
+		"kirito"							"The Kirito"
+		"kirito_lore"						"Lol What?!"
+
         "zoro"                             "Zoro"
         "zoro_lore"                        ""
 
 		"sailor"                             "Sailor"
         "sailor_lore"                        ""
+
+		"sanji"								"Sanji"
+		"sanji_lore"						""
+
+		"2019_service_medal"			 	"2019 Year Service Medal"
+		"2019_service_medal_lore"			"Here is another year behind! In the new year, more adventures await us, friend!"
+
+		"guru"								"2019 Year Guru Medal"
+		"guru_lore"							""
+
+		"2019_winter_chest"					"Trust of The Founder vol.2"
+		"2019_winter_chest_lore"			""
 
         "pepe"                             "Pepe"
         "pepe_lore"                        ""

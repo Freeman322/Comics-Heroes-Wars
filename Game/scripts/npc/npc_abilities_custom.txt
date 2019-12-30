@@ -11589,6 +11589,7 @@
 		"AbilityManaCost"				"60 80 100 120"
 		"precache"
 		{
+		    "model"     "models/heroes/hero_murloc/sanji_skin/sanji.vmdl"
 			"particle"  "particles/units/heroes/heroes_underlord/underlord_ambient.vpcf"
 			"particle"  "particles/murlock/murlock_golden_helmet_water_wave.vpcf"
 			"particle"  "particles/econ/items/phoenix/phoenix_solar_forge/phoenix_solar_forge_ambient.vpcf"
@@ -29179,9 +29180,13 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage"						"20 30 40 50"
-				"CalculateSpellDamageTooltip"	"1"
+				"speed_ptc"						"5 10 15 20"
 				"LinkedSpecialBonus"			"special_bonus_godspeed_1"
+			}
+			"03"
+			{
+			    "var_type"						"FIELD_FLOAT"
+            	"max_gain"						"900"
 			}
 		}
 	}
@@ -29358,6 +29363,7 @@
 
 		"precache"
 		{
+		    "model"                     "models/heroes/hero_savitar/kirito_skin/kirito.vmdl"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_savitar.vsndevts"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
 			"particle"					"particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_cast_moonfall.vpcf"
@@ -32960,7 +32966,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_regen"				"0.5 0.75 1.0 1.5"
+				"health_regen"				"1.0 1.35 1.65 2.0"
 			}
 			"04"
 			{
@@ -34825,7 +34831,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40"
 
-		"AbilityDamage"				"275"
+		"AbilityDamage"				    "275 360 525"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -41590,4 +41596,109 @@
 			}
 		}
 	}
+	//=================================================================================================================
+    //=================================================================================================================
+    "godspeed_speed_abyss"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"             		"ability_lua"
+        "AbilityTextureName"			"custom/godspeed_speed_abyss"
+        "ScriptFile"					"abilities/godspeed_speed_abyss.lua"
+
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "FightRecapLevel"				"2"
+        "AbilitySound"					"Hero_Antimage.ManaVoid"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.15"
+        "AbilityCastRange"				"600"
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"120"
+
+        "precache"
+        {
+            "particle"  "particles/godspeed/godspeed_speed_void.vpcf"
+            "particle"  "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_base_a.vpcf"
+            "particle"  "particles/units/heroes/hero_zeus/zeus_ambient_hands.vpcf"
+            "particle"  "particles/hero_godspeed/godspeed_ambient.vpcf"
+            "particle"  "particles/status_fx/status_effect_faceless_timewalk.vpcf"
+            "particle"  "particles/hero_zoom/blackzoom_time_shift.vpcf"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+        }
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "duration"				"8.5 10.5 14.5"
+            }
+        }
+    }
+    //=================================================================================================================
+    //=================================================================================================================
+    "godspeed_speedforce_flow"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"             		"ability_lua"
+        "AbilityTextureName"			"custom/godspeed_speedforce_flow"
+        "ScriptFile"					"abilities/godspeed_speedforce_flow.lua"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"500"
+        "AbilityCastPoint"				"0.2"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"60 50 40 30"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityModifierSupportValue"	"0.0"	// already gets credit for the healing
+
+        "precache"
+        {
+            "particle"                  "particles/econ/items/axe/axe_ti9_immortal/axe_ti9_gold_call.vpcf"
+            "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+        }
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "damage"				"50 75 100 125"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "radius"				"450 500 550 600"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "disarm_duration"		"0.5 1.0 1.5 2.0"
+            }
+        }
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+    }
 }
