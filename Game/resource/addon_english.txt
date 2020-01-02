@@ -8333,7 +8333,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_godspeed_ember_field_max_gain"                              "MAX SPEED:"
 
         "DOTA_Tooltip_ability_godspeed_speedforce_flow"                                  "Speedforce Flow"
-        "DOTA_Tooltip_ability_godspeed_speedforce_flow_Description"                      "Releases all movement speed as damage over an area. The speed gained by the first ability will be reset."
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_Description"                      "Releases all movement speed as damage over an area."
         "DOTA_Tooltip_ability_godspeed_speedforce_flow_damage"                           "BASE DAMAGE:"
         "DOTA_Tooltip_ability_godspeed_speedforce_flow_radius"                                "RADIUS:"
         "DOTA_Tooltip_ability_godspeed_speedforce_flow_disarm_duration"                       "DISARM DURATION:"
@@ -11712,7 +11712,22 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_bloody_tome_manacost_reduction"                          "%+$mana_cost_perc"
 		"DOTA_Tooltip_ability_item_bloody_tome_bonus_amp"                                   "%+$spell_amp"
 
-    
+
+        "DOTA_Tooltip_ability_godspeed_gods_speed"                                    "God's Speed"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_Description"                        "Active: God's Speed - For a short time increase movespeed. \nPassive: Apex Attack - Deals bonus magical damage by part of current ideal movespeed."
+        "DOTA_Tooltip_ability_godspeed_gods_speed_duration"                           "DURATION:"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_active_speed"                             "%MOVE SPEED BONUS:"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_speed_factor"                      "%SPEED TO DAMAGE:"
+
+
+		"DOTA_Tooltip_ability_special_bonus_unique_godspeed_1"                    "+1.5 sec duration for God's Speed"
+		"DOTA_Tooltip_ability_special_bonus_unique_godspeed_2"                    "+15% damage for God's Speed"
+
+		"DOTA_Tooltip_ability_rogue_avatar_aura"                                    "Avatar"
+        "DOTA_Tooltip_ability_rogue_avatar_aura_Description"                        "Aura: Avatar Aura - In radius, increases main attribute of allied heroes for %main_attr% percent. Do not work for non-real heroes."
+        "DOTA_Tooltip_ability_rogue_avatar_aura_main_attr"                          "%MAIN ATTRIBUTE BONUS:"
+        "DOTA_Tooltip_ability_rogue_avatar_aura_radius"                             "RADIUS:"
+
         "npc_dota_hero_gorr"                                                                "Gorr"
         "npc_dota_hero_gorr_hype"                                                           "My name is Gorr, son of a nameless father, outcast from a forgotten world. I have slain my way through multitudes to stand here at the genesis of all things. Blackened by vengeance, wet with holy blood. One simple dream still strong in my heart... The dream of a godless age."
 	}	

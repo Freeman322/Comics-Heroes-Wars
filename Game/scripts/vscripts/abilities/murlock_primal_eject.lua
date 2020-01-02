@@ -14,6 +14,10 @@ function murlock_primal_eject:OnSpellStart ()
     local duration = self:GetSpecialValueFor("duration")
     caster:AddNewModifier (caster, self, "modifier_murlock_primal_eject", { duration = duration })
     caster:AddNewModifier (caster, self, "modifier_invisible", { duration = duration })
+
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sanji") == true then
+        EmitSoundOn("Sanji.Cast4", caster)
+    end
 end
 
 modifier_murlock_primal_eject_heal = class({})

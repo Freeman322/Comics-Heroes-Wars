@@ -12,6 +12,10 @@ function murlock_pounce:OnSpellStart()
     local hero = self:GetCaster()
     EmitSoundOn("Hero_Slark.Pounce.Cast", hero)
     hero:AddNewModifier(hero, self, "modifier_slark_pounce", nil)
+
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sanji") == true then
+        EmitSoundOn("Sanji.Cast2", caster)
+    end
 end
 
 function murlock_pounce:GetPlaybackRateOverride()

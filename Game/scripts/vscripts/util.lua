@@ -49,6 +49,7 @@ function Util:OnInit(args)
     LinkLuaModifier("modifier_arcana", "modifiers/modifier_arcana.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_pet_model", "modifiers/modifier_pet_model.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_fountain", "modifiers/modifier_fountain.lua", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_dark_emblem", "modifiers/modifier_customs.lua", LUA_MODIFIER_MOTION_NONE)
 
     CustomGameEventManager:RegisterListener("on_chat_recived", Dynamic_Wrap(Util, 'OnChatUpdated'))
     CustomGameEventManager:RegisterListener("on_gauntlet_ability_selected", Dynamic_Wrap(Util, 'OnGauntletAbilitySelected'))
@@ -416,6 +417,10 @@ function Util:OnHeroInGame(hero)
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem") == true then
             local nFXIndex = ParticleManager:CreateParticle( "particles/star_emblem/star_emblem_hero_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
             ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "dark_emblem") == true then
+            hero:AddNewModifier(hero, nil, "modifier_dark_emblem", nil)
         end
 
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem_green") == true then

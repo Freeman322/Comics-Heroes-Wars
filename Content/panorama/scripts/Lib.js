@@ -5578,6 +5578,62 @@ Lib.Items = {
         "item":"2019_winter_chest",
         "rarity":"11",
         "quality":"2"
+    },
+    "408": {
+        "item": "dark_emblem",
+        "rarity": "10",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "univarsal_item",
+        "universal": "false",
+        "def_id": "408",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "409": {
+        "item": "2020_tier1",
+        "rarity": "10",
+        "quality": "4",
+        "slot": "medal",
+        "dropable": "false",
+        "hero": "",
+        "universal": "true",
+        "def_id": "409",
+        "is_treasure": "0",
+        "is_medal": "1",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "410": {
+        "item": "2020_tier2",
+        "rarity": "10",
+        "quality": "4",
+        "slot": "medal",
+        "dropable": "false",
+        "hero": "",
+        "universal": "true",
+        "def_id": "410",
+        "is_treasure": "0",
+        "is_medal": "1",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "411": {
+        "item": "2020_tier3",
+        "rarity": "10",
+        "quality": "4",
+        "slot": "medal",
+        "dropable": "false",
+        "hero": "",
+        "universal": "true",
+        "def_id": "411",
+        "is_treasure": "0",
+        "is_medal": "1",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 
