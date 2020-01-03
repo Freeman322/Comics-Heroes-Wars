@@ -41791,7 +41791,12 @@
                 "var_type"					"FIELD_FLOAT"
                 "active_speed"	            "25 40 65 80"
             }
-            "03"
+			"03"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "bonus_speed"	            "25 40 60 75"
+            }
+            "04"
             {
                 "var_type"					"FIELD_INTEGER"
                 "speed_factor"				"6 9 14 20"

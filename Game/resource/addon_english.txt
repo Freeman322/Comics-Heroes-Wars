@@ -11713,11 +11713,13 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_bloody_tome_bonus_amp"                                   "%+$spell_amp"
 
 
-        "DOTA_Tooltip_ability_godspeed_gods_speed"                                    "God's Speed"
-        "DOTA_Tooltip_ability_godspeed_gods_speed_Description"                        "Active: God's Speed - For a short time increase movespeed. \nPassive: Apex Attack - Deals bonus magical damage by part of current ideal movespeed."
-        "DOTA_Tooltip_ability_godspeed_gods_speed_duration"                           "DURATION:"
-        "DOTA_Tooltip_ability_godspeed_gods_speed_active_speed"                             "%MOVE SPEED BONUS:"
+        "DOTA_Tooltip_ability_godspeed_gods_speed"                                   "God's Speed"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_Description"                       "Active: God's Speed - For a short time increase movespeed. \nPassive: Apex Attack - Deals bonus magical damage by part of current ideal movespeed."
+        "DOTA_Tooltip_ability_godspeed_gods_speed_duration"                          "DURATION:"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_active_speed"                      "%MOVE SPEED BONUS:"
         "DOTA_Tooltip_ability_godspeed_gods_speed_speed_factor"                      "%SPEED TO DAMAGE:"
+		"DOTA_Tooltip_ability_godspeed_gods_speed_bonus_speed"                       "PASSIVE SPEED:"
+
 
 
 		"DOTA_Tooltip_ability_special_bonus_unique_godspeed_1"                    "+1.5 sec duration for God's Speed"

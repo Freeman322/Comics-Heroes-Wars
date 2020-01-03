@@ -70,8 +70,16 @@ end
 modifier_godspeed_gods_speed_passive = class({
     IsHidden = function() return true end,
     IsPurgable = function() return false end,
-    DeclareFunctions = function() return {MODIFIER_EVENT_ON_ATTACK_LANDED} end
+    DeclareFunctions = function() return {MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT} end
 })
+
+function modifier_godspeed_gods_speed_passive:GetModifierIgnoreMovespeedLimit()
+    return 1
+end
+
+function modifier_godspeed_gods_speed_passive:GetModifierMoveSpeedBonus_Constant()
+    return self:GetAbility():GetSpecialValueFor("bonus_speed")
+end
 
 function modifier_godspeed_gods_speed_passive:OnAttackLanded (params)
     if not IsServer() then return end
