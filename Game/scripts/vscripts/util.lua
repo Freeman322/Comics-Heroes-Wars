@@ -428,6 +428,11 @@ function Util:OnHeroInGame(hero)
             ParticleManager:ReleaseParticleIndex(nFXIndex)
         end
 
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem_2") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/star_emblem_3/star_emblem_3_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
+
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "dark_emblem_2") == true then
             local nFXIndex = ParticleManager:CreateParticle( "particles/hero_effects/green_hero_effect_ground.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
             ParticleManager:ReleaseParticleIndex(nFXIndex)

@@ -45,7 +45,7 @@ function modifier_ebonymaw_nether_shield:GetReflectSpell(keys)
         EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Start", self:GetParent())
         EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Cast", self:GetParent())
 
-        if keys.ability:GetAbilityName() == "loki_spell_steal" or not keys.ability:IsStealable() then
+        if keys.ability:GetAbilityName() == "loki_spell_steal" or keys.ability:GetAbilityName() == "zoom_charge_of_darkness" or keys.ability:GetAbilityName() == "raiden_storm_flight" or not keys.ability:IsStealable() then
             return nil
         end
 

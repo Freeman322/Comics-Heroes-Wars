@@ -76,7 +76,7 @@ function modifier_enigma_vacuum:OnIntervalThink()
         FindClearSpaceForUnit(parent, pos, false)
     end
 
-    ApplyDamage ({attacker = self:GetAbility():GetCaster(), victim = parent, ability = self:GetAbility(), damage = self:GetCaster():GetIntellect() * FrameTime() * self:GetAbility():GetSpecialValueFor("damage_mult"), damage_type = self:GetAbility():GetAbilityDamageType(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+    ApplyDamage ({attacker = self:GetAbility():GetCaster(), victim = parent, ability = self:GetAbility(), damage = self:GetCaster():GetIntellect() * FrameTime() * self:GetAbility():GetSpecialValueFor("damage_mult"), damage_type = self:GetAbility():GetAbilityDamageType(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL})
 end
 
 function modifier_enigma_vacuum:OnDestroy()

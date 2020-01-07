@@ -101,14 +101,18 @@ function modifier_khan_winds_trick_aura:GetAbsorbSpell(keys)
     if self.stored ~= nil then
         self.stored:RemoveSelf() --we make sure to remove previous spell.
     end
+
     local hCaster = self:GetParent()
+
     EmitSoundOn( "Hero_AbyssalUnderlord.Firestorm.Target", self:GetParent( ))
     EmitSoundOn( "Hero_AbyssalUnderlord.Pit.TargetHero", self:GetParent( ))
     EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Start", self:GetParent())
     EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Cast", self:GetParent())
+
     if keys.ability:GetAbilityName() == "loki_spell_steal" then
         return nil
     end
+
     local hAbility = hCaster:AddAbility(keys.ability:GetAbilityName())
 
     hAbility:SetStolen(true) --just to be safe with some interactions.
@@ -116,6 +120,7 @@ function modifier_khan_winds_trick_aura:GetAbsorbSpell(keys)
     hAbility:SetLevel(keys.ability:GetLevel()) --same level of ability as the origin.
     hCaster:SetCursorCastTarget(keys.ability:GetCaster()) --lets send this spell back.
     hAbility:OnSpellStart() --cast the spell.
+    
     self.stored = hAbility --store the spell reference for future use.
 
     ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
@@ -126,11 +131,8 @@ end
 function modifier_khan_winds_trick_aura:OnTakeDamage( params )
     if params.unit == self:GetParent() then
         if params.attacker:HasModifier("modifier_khan_winds_trick_dummy") == false then
-            pcall(function()
-                params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned",{duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
-                self:GetParent():Heal(params.damage, self:GetAbility())
-                params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_khan_winds_trick_dummy",{duration = self:GetAbility():GetSpecialValueFor("duration")})
-            end)
+            params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned",{duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
+            params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_khan_winds_trick_dummy",{duration = self:GetAbility():GetSpecialValueFor("duration")})
     	end
     end
 end

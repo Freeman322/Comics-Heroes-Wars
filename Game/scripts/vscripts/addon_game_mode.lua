@@ -146,6 +146,7 @@ function Precache( context )
     PrecacheResource("particle", "particles/units/heroes/hero_drow/drow_base_attack.vpcf", context)
     PrecacheResource("particle", "particles/red_emblem/red_emblem.vpcf", context)
     PrecacheResource("particle", "particles/hero_effects/green_hero_effect_ground.vpcf", context)
+    PrecacheResource("particle", "particles/star_emblem_3/star_emblem_3_effect.vpcf", context)
 
 	PrecacheResource("soundfile", "soundevents/custom_sounds.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/hero_zoom.vsndevts", context)
@@ -280,6 +281,7 @@ function GameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap( GameMode, "DmgFilter" ), self)
     GameRules:GetGameModeEntity():SetModifierGainedFilter(Dynamic_Wrap( GameMode, "ModifierFilter" ), self)
     GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap( GameMode, "OrderFilter" ), self)
+    GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, "GoldFilter"), self)
 
     Util:OnInit()
     Trades:Init()
@@ -306,7 +308,7 @@ end
 function GameMode:GoldTickTimer()
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         for i = 0, DOTA_MAX_PLAYERS - 1 do
-            if PlayerResource:IsValidPlayerID(i) then
+            if PlayerResource:IsValidPlayerID(i) and PlayerResource:GetConnectionState(i) <= 2 then
                 PlayerResource:ModifyGold(i, DOTA_GOLD_PER_TICK, true, DOTA_ModifyGold_Unspecified)
             end 
         end
@@ -314,10 +316,14 @@ function GameMode:GoldTickTimer()
 end
 
 
-function GameMode:ModifyGoldFilter(ftable)
+function GameMode:GoldFilter(ftable)
 	local reason = ftable.reason_const
 	local pid = ftable.player_id_const
 	local gold = ftable.gold
+
+    if reason == DOTA_ModifyGold_AbandonedRedistribute or reason == DOTA_ModifyGold_GameTick then
+        return false
+    end
 
 	return true
 end

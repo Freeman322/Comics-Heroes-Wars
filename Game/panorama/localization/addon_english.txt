@@ -2867,6 +2867,9 @@ Rage, rage against the dying of the light."
 		"dark_emblem_2"						"Green Emblem"
 		"dark_emblem_2_lore"				""
 
+		"star_emblem_2"						"Star Emblem III"
+		"star_emblem_2_lore"				""
+
 		"kirito"							"The Kirito"
 		"kirito_lore"						"Lol What?!"
 

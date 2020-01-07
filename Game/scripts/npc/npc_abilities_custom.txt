@@ -2307,7 +2307,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-        "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"BaseClass"                     "ability_lua"
 		"AbilityTextureName"            "custom/enigma_vacuum"
@@ -2470,7 +2470,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"far_radius"			"650"
+				"far_radius"			"450"
 			}
 			"03"
 			{
@@ -2485,7 +2485,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_perc"			"2.25 3.25 4.25"
+				"damage_perc"			"1.5 2.0 2.5"
 			}
 			"06"
 			{
@@ -4574,7 +4574,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 50 40"
+		"AbilityCooldown"				"80"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4607,7 +4607,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"150 300 450"
+				"damage"					"100 200 300"
 			}
 			"02"
 			{
@@ -4622,12 +4622,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cooldown_scepter"			"30"
+				"cooldown_scepter"			"45"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"300 450 750"
+				"damage_scepter"			"300 400 500"
 			}
 			"06"
 			{
@@ -14525,9 +14525,10 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35 30 25"
+		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"				"200 300 400"
+		"AbilityDamage"				"350 475 620"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -34522,17 +34523,16 @@
 	//=================================================================================================================
 	"cosmos_jumper"
 	{
-		"BaseClass"					"ability_lua"
+		"BaseClass"					    "ability_lua"
 		"ScriptFile"					"abilities/cosmos_jumper.lua"
 		"AbilityTextureName"			"custom/jumper"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"									"1"
+		"MaxLevel"						"1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------

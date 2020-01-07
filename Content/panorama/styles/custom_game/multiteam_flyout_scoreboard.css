@@ -236,6 +236,22 @@
 	text-shadow: 2px 2px 2px black;
 	margin-top: -1px;
 }
+
+#DisableHelpButton
+{
+	margin-right: 36px;
+	margin-top: 0px;
+	horizontal-align: right;
+	vertical-align: top;
+	width: 16px;
+	height: 16px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-image: url( "file://{images}/all_hero_challenge_icon.png" );
+	opacity: 0.8;
+}
+
 #MuteButton
 {
 	margin-right: 0px;

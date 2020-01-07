@@ -30,6 +30,11 @@
 			}
 		}
 
+		function ToggleHelp()
+		{
+
+		}
+
 		(function()
 		{
 			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
@@ -47,6 +52,7 @@
 					<Label id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
 				</Panel>
 				<Label id="TeammateGoldAmount" text="999" />
+				<Button id="DisableHelpButton" onactivate="ToggleHelp();" />
 				<Button id="MuteButton" onactivate="ToggleMute();" />
 				<Button id="ReportButton" onactivate="Report();" />
 			</Panel>
