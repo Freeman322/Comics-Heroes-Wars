@@ -44,6 +44,8 @@ function spiderman_extermination:OnSpellStart()
             EmitSoundOn( "Item.CrimsonGuard.Cast", self:GetCaster() )
 
             self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_4 );
+
+            if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "rat") then EmitSoundOn("Rat.Cast", self:GetCaster()) end
         end
     end
 end

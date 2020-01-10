@@ -5111,6 +5111,7 @@
 		"AbilityManaCost"				"200 250 300"
 		"precache"
 		{
+		    "model"     "models/rat_skin/mouse.vmdl"
 			"particle"  "particles/hero_jaina/jaina_overvoid_effect.vpcf"
 			"particle"  "particles/hero_jaina/jaina_overvoid_aoe_ring.vpcf"
 		}
@@ -11632,7 +11633,7 @@
 		}
 	}
 	"murlock_pounce"
-		{
+    {
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						 	"ability_lua"
@@ -11651,6 +11652,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"					"70 80 90 100"
 
+        "precache"
+        {
+             "model"		 "models/rat_skin/mouse.vmdl"
+            "model"		 "models/items/slark/slark_head_immortal/slark_head_immortal.vmdl"
+            "model"		 "models/heroes/hero_murloc/murlock_azinoth_arcana.vmdl"
+            "model"		 "models/items/slark/deepscoundrel_back/deepscoundrel_back.vmdl"
+            "model"		 "models/items/slark/deepscoundrel_arms/deepscoundrel_arms.vmdl"
+            "model"		 "models/items/slark/deep_sea_dragoon_head/deep_sea_dragoon_head.vmdl"
+            "model"		 "models/items/slark/pale_justice/pale_justice.vmdl"
+            "model"		 "models/items/slark/hookblade_skadi/hookblade_skadi.vmdl"
+            "particle"      "particles/econ/items/slark/slark_head_immortal/slark_head_immortal_ambient.vpcf"
+            "particle"		 "particles/econ/items/slark/hookblade_of_skadi/slark_hookblade_skadi_ambient.vpcf"
+            "particle"		 "models/items/slark/golden_barb_of_skadi/golden_barb_of_skadi.vmdl"
+            "particle"		 "particles/econ/items/slark/slark_golden_barb_of_skadi/slark_golden_barb_of_skadi_ambient.vpcf"
+        }
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -12762,10 +12778,12 @@
 			"model"		 "models/spiderman/spiderman_head_final.vmdl"
 			"model"		 "models/items/antimage/mage_eraser_armor/mage_eraser_armor.vmdl"
 			"model"		 "models/ant_man_weap1.vmdl"
+			"model"      "models/rat_skin/mouse.vmdl"
 			"model"		 "models/items/antimage/pw_tustarkuri_belt/antimage_belt_lod0.vmdl"
 			"model"		 "models/items/antimage/mage_eraser_belt/mage_eraser_belt.vmdl"
             "model"      "models/heroes/hero_spider/spiderman_custom/lee.vmdl"
             "particle"   "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+            "particle"   "particles/items4_fx/nullifier_mute_debuff_cloud.vpcf"
 		}
 		"AbilitySpecial"
 		{
@@ -39496,12 +39514,12 @@
             "02"
             {
                 "var_type"                            "FIELD_FLOAT"
-                "bonus_agility"                        "2 3 4 5"
+                "bonus_agility"                        "1 2 3 4"
             }
             "03"
             {
                 "var_type"                          "FIELD_FLOAT"
-                "bonus_damage"                      "1 3 5 7"
+                "bonus_damage"                      "1.5 3.5 4.25 6.0"
             }
         }
 	}

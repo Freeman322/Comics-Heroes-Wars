@@ -15,9 +15,8 @@ function spiderman_poision_attack:OnSpellStart ()
     local duration = self:GetSpecialValueFor ("web_duration")
     local thinker = CreateModifierThinker (hTarget, self, "spiderman_adaptation_thinker", {duration = duration }, point, team_id, false)
 
-    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "lee") then
-        EmitSoundOn( "Lee.Cast3", self:GetCaster() )
-    end
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "lee") then EmitSoundOn( "Lee.Cast3", self:GetCaster() ) end
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "rat") then EmitSoundOn("Rat.Cast", self:GetCaster()) end
 end
 
 spiderman_adaptation_thinker = class ( {})

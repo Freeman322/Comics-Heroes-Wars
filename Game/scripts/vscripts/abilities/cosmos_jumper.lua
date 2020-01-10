@@ -13,6 +13,10 @@ function cosmos_jumper:CastFilterResultTarget( hTarget )
           return UF_FAIL_CUSTOM
      end
 
+     if hTarget:IsBuilding() then
+          return UF_FAIL_CUSTOM
+     end
+
      return UF_SUCCESS
 end
 

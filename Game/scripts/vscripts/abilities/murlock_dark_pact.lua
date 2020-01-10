@@ -24,9 +24,8 @@ function murlock_dark_pact:OnSpellStart()
 
         self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_1 );
 
-        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sanji") == true then
-            EmitSoundOn("Sanji.Cast1", caster)
-        end
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sanji") == true then EmitSoundOn("Sanji.Cast1", caster) end
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "rat") then EmitSoundOn("Rat.Cast", self:GetCaster()) end
     end
 end
 

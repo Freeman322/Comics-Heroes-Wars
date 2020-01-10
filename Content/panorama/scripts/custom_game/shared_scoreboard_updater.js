@@ -215,6 +215,18 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/goku.png" );
 				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_crystal_maiden" && hasModifier(hero_entindex, "modifier_rat"))
+				{
+					playerPortrait.SetImage( "file://{images}/custom_game/heroes/rat.png" );
+				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_slark" && hasModifier(hero_entindex, "modifier_rat"))
+				{
+					playerPortrait.SetImage( "file://{images}/custom_game/heroes/rat.png" );
+				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_riki" && hasModifier(hero_entindex, "modifier_rat"))
+				{
+					playerPortrait.SetImage( "file://{images}/custom_game/heroes/rat.png" );
+				}
 				else
 				{
 					playerPortrait.SetImage( "file://{images}/custom_game/heroes/" + playerInfo.player_selected_hero + ".png" );

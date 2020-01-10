@@ -2950,6 +2950,12 @@ Rage, rage against the dying of the light."
 
         "2020_tier3"						"CHW WORLD CUP 2020 QUARTERFINALIST"
         "2020_tier3_lore"					"In the end... Its doesnt even matter."
+
+        "rat"                               "Mr. Disney"
+        "rat_lore"                          ""
+
+        "star_emblem_3"                     "Star Emblem III"
+        "star_emblem_3_lore"                ""
 }
 
 

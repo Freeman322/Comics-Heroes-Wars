@@ -42,6 +42,8 @@ function jaina_overvoid_thinker:OnCreated(event)
         EmitSoundOn("Hero_AbyssalUnderlord.DarkRift.Cancel", thinker)
         AddFOWViewer( thinker:GetTeam(), target, 1500, 5, false)
         GridNav:DestroyTreesAroundPoint(target, 1500, false)
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "rat") then EmitSoundOn("Rat.Cast", self:GetCaster()) end
     end
 end
 
