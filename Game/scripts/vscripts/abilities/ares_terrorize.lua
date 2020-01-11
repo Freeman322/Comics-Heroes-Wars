@@ -66,6 +66,8 @@ function ares_terrorize:OnProjectileHit_ExtraData( hTarget, vLocation, table )
 			ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetSpecialValueFor("radius"), self:GetSpecialValueFor("radius"), 0));
 			ParticleManager:ReleaseParticleIndex( nFXIndex );
 			------------------------------ Skin Effect ------------------------------------
+
+			EmitSoundOn( "Ares.Anime.Cast4", hCaster )
 		else
 			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell.vpcf", PATTACH_CUSTOMORIGIN, nil );
 			ParticleManager:SetParticleControl( nFXIndex, 0, vLocation);
@@ -81,10 +83,13 @@ function ares_terrorize:OnProjectileHit_ExtraData( hTarget, vLocation, table )
 
 		for i, target in ipairs(units) do
 			target:EmitSound("Hero_DarkWillow.Fear.Location")
+
 			target:AddNewModifier(self:GetCaster(), self, "modifier_ares_terrorize_deni", {duration = self:GetSpecialValueFor("duration")})
 			target:AddNewModifier(self:GetCaster(), self, "modifier_ares_terrorize", {duration = self:GetSpecialValueFor("duration")})
 		end
+
 		AddFOWViewer(self:GetCaster():GetTeamNumber(), vLocation, 400, 5, true)
+
 		return nil
 	end
 end

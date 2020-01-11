@@ -3,11 +3,11 @@ palpatine_force = class({})
 LinkLuaModifier( "modifier_charges", "modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE )
 
 function palpatine_force:OnUpgrade()
-  if IsServer() then
-    if not self:GetCaster():HasModifier("modifier_charges") then
-      self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_charges", nil)
+    if IsServer() then
+        if not self:GetCaster():HasModifier("modifier_charges") then
+            self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_charges", nil)
+        end
     end
-  end
 end
 
 function palpatine_force:OnSpellStart ()

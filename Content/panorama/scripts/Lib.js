@@ -5732,6 +5732,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "419": {
+        "item": "dark_custom",
+        "rarity": "11",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_phantom_lancer",
+        "universal": "false",
+        "def_id": "419",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

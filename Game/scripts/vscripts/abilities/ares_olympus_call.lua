@@ -10,15 +10,6 @@ function ares_olympus_call:OnSpellStart()
 	local radius = self:GetSpecialValueFor( "radius" )
 	local duration = self:GetSpecialValueFor(  "duration" )
 
-	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "izanagi") then
-		------------------------------ Skin Effect ------------------------------------
-		local nFXIndex = ParticleManager:CreateParticle( "particles/ares_izanagi/olympus_call_aoe.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
-		ParticleManager:SetParticleControl( nFXIndex, 0,  self:GetCaster():GetAbsOrigin())
-		ParticleManager:SetParticleControl( nFXIndex, 1,  Vector(radius, 1, 0))
-		ParticleManager:ReleaseParticleIndex( nFXIndex )
-		------------------------------ Skin Effect ------------------------------------
-	end
-
 	local allies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 	if #allies > 0 then
 		for _,ally in pairs(allies) do
@@ -35,6 +26,18 @@ function ares_olympus_call:OnSpellStart()
 	EmitSoundOn( "Hero_Sven.Layer.GodsStrength", self:GetCaster() )
 	EmitSoundOn( "Hero_Sven.WarCry", self:GetCaster() )
 	EmitSoundOn( "Hero_Sven.GodsStrength", self:GetCaster() )
+
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "izanagi") then
+		------------------------------ Skin Effect ------------------------------------
+		local nFXIndex = ParticleManager:CreateParticle( "particles/ares_izanagi/olympus_call_aoe.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+		ParticleManager:SetParticleControl( nFXIndex, 0,  self:GetCaster():GetAbsOrigin())
+		ParticleManager:SetParticleControl( nFXIndex, 1,  Vector(radius, 1, 0))
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
+		------------------------------ Skin Effect ------------------------------------
+
+		EmitSoundOn( "Ares.Anime.Cast2", self:GetCaster() )
+	end
+
 	self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_3 );
 end
 

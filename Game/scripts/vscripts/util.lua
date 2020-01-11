@@ -1274,27 +1274,6 @@ function Util:OnHeroInGame(hero)
         hero:SetMaterialGroup("immortal_mask")
       end
     end
-    if hero:GetUnitName() == "npc_dota_hero_phantom_lancer" then
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "odin_spear_of_fate") == true then
-          local spear = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_odin/odin_spear_of_fate.vmdl"})
-          spear:FollowEntity(hero, true)
-
-          local eyes2 = ParticleManager:CreateParticle( "particles/econ/items/enchantress/enchantress_virgas/ench_virgas_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, spear )
-          ParticleManager:SetParticleControlEnt( eyes2, 0, spear, PATTACH_POINT_FOLLOW, "attach_root" , spear:GetOrigin(), true )
-        else
-          local spear = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_odin/odin_spear.vmdl"})
-          spear:FollowEntity(hero, true)
-        end
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "odin_elder_scroll") == true then
-          local back = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_odin/odin_elder_scroll.vmdl"})
-          back:FollowEntity(hero, true)
-        end
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "odin_odinforce") == true then
-          local cape = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_odin/odin_odinforce.vmdl"})
-          cape:FollowEntity(hero, true)
-        end
-        ---particles/econ/items/enchantress/enchantress_virgas/ench_virgas_ambient.vpcf
-    end
     if hero:GetUnitName() == "npc_dota_hero_dazzle" then
       SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_joker/econs/pistol.vmdl"}):FollowEntity(hero, true)
     end
