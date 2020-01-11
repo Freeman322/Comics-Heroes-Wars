@@ -23811,6 +23811,20 @@
 			"particle"  "particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell.vpcf"
 			"particle"  "particles/hero_ebony/ebonymaw_hazard_debuff.vpcf"
 			"particle"  "particles/status_fx/status_effect_dark_willow_wisp_fear.vpcf"
+			"model"     "models/heroes/hero_ares_ww/econs/anime_skin/izanagi.vmdl"
+			"model"     "models/heroes/hero_ares_ww/econs/anime_skin/sword.vmdl"
+			"particle"  "particles/ares_izanagi/terrorize_aoe.vpcf"
+			"particle"  "particles/ares_izanagi/olympus_call_aoe.vpcf"
+			"particle"  "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
+			"particle"  "particles/ares_izanagi/terrorize_projectile.vpcf"
+			"particle"  "particles/ares_izanagi/terrorize_aoe.vpcf"
+			"particle"  "particles/ares_izanagi/shadow_realm_charge.vpcf"
+			"particle"  "particles/ares_izanagi/shadow_realm_landing.vpcf"
+			"particle"  "particles/econ/items/dazzle/dazzle_ti6_gold/dazzle_ti6_shallow_grave_gold.vpcf"
+			"particle"  "particles/ares_izanagi/olympus_call_aoe.vpcf"
+			"particle"  "particles/ares_izanagi/dissecting_strike.vpcf"
+			"particle"  "particles/ares_izanagi/terrorize_projectile.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -25977,14 +25991,14 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_mana_pct"				"20 35 50"
+				"damage_mana_pct"				"15 20 25"
 				"LinkedSpecialBonus"			"special_bonus_unique_ebonymaw_3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_kill_border"		"10 13 16"
+				"mana_kill_border"		"6 8 10"
 			}
 			"05"
 			{

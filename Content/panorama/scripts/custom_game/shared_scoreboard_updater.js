@@ -227,6 +227,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 					playerPortrait.SetImage( "file://{images}/custom_game/heroes/rat.png" );
 				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_nyx_assassin" && hasModifier(hero_entindex, "modifier_izanagi"))
+				{
+					playerPortrait.SetImage( "file://{images}/custom_game/heroes/izanagi.png" );
+				}
 				else
 				{
 					playerPortrait.SetImage( "file://{images}/custom_game/heroes/" + playerInfo.player_selected_hero + ".png" );

@@ -2,6 +2,11 @@ LinkLuaModifier ("modifier_ares_gods_strength", "abilities/ares_gods_strength.lu
 
 if ares_gods_strength == nil then ares_gods_strength = class({})  end
 
+function ares_gods_strength:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_izanagi") then return "custom/ares_gods_strength_izanagi" end
+    return self.BaseClass.GetAbilityTextureName(self)
+end
+
 function ares_gods_strength:GetBehavior ()
     local behav = DOTA_ABILITY_BEHAVIOR_PASSIVE
     return behav

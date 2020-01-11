@@ -818,62 +818,6 @@ function Util:OnHeroInGame(hero)
         ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, cape )
       end
     end
-    if hero:GetUnitName() == "npc_dota_hero_nyx_assassin" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "the_first_hunter") == true then
-        hero:SetOriginalModel("models/heroes/hero_ares_arcana/ares.vmdl")
-
-        LinkLuaModifier("modifier_the_firs_hunter" , "modifiers/modifier_the_firs_hunter.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:AddNewModifier(hero, nil, "modifier_the_firs_hunter", nil)
-
-        Timers:CreateTimer(0.1, function()
-          SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_arcana/weapon/weapon.vmdl"}):FollowEntity(hero, true)
-
-          ParticleManager:CreateParticle( "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_c_lvl21.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:CreateParticle( "particles/econ/courier/courier_oculopus/courier_oculopus_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:CreateParticle( "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_c_lvl21.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:CreateParticle( "particles/econ/courier/courier_trail_hw_2013/courier_trail_hw_2013.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-
-          local pudge_donat2 = ParticleManager:CreateParticle( "particles/econ/courier/courier_greevil_black/courier_greevil_black_ambient_2.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-          ParticleManager:SetParticleControlEnt( pudge_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-          ParticleManager:SetParticleControl( pudge_donat2, 2, Vector(0, 0, 0))
-        end)
-        return
-      end
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ashbringer") == true then
-        local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/ashbringer.vmdl"})
-        weapon:FollowEntity(hero, true)
-
-        local weapon_pfx = ParticleManager:CreateParticle( "particles/econ/ashbringer.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon )
-        ParticleManager:SetParticleControlEnt( weapon_pfx, 0, weapon, PATTACH_POINT_FOLLOW, "attach_flame" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weapon_pfx, 1, weapon, PATTACH_POINT_FOLLOW, "attach_flame" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weapon_pfx, 2, weapon, PATTACH_POINT_FOLLOW, "attach_flame" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControl( weapon_pfx, 15, Vector(255, 255, 255))
-        ParticleManager:SetParticleControl( weapon_pfx, 16, Vector(0, 0, 0))
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ares_olympus_sword") == true then
-        local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/ares_legendary_weapon.vmdl"})
-        weapon:FollowEntity(hero, true)
-      elseif  Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ares_son_of_zeus") == true then
-        local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/ares_zuus_weapon.vmdl"})
-        weapon:FollowEntity(hero, true)
-
-        local pfx = ParticleManager:CreateParticle( "particles/hero_ares/ares_immortal_lightning_weapon.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon )
-        ParticleManager:SetParticleControlEnt( pfx, 0, weapon, PATTACH_POINT_FOLLOW, "attach_grip" , weapon:GetOrigin(), true )
-      else
-        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/weap_right.vmdl"}):FollowEntity(hero, true)
-      end
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ares_olympus_shield") == true then
-        local shield = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/ares_aegis.vmdl"})
-        shield:FollowEntity(hero, true)
-      else
-        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/weap_left.vmdl"}):FollowEntity(hero, true)
-      end
-      local eyes = ParticleManager:CreateParticle( "particles/econ/items/doom/doom_baphomet_set/doom_skulleye.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( eyes, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( eyes, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-
-    end
     if hero:GetUnitName() == "npc_dota_hero_bane" then
         local pudge_donat = ParticleManager:CreateParticle( "particles/econ/items/pugna/pugna_ward_ti5/pugna_ambient_eyes_ti_5.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
         ParticleManager:SetParticleControlEnt( pudge_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )

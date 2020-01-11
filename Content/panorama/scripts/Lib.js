@@ -5718,6 +5718,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "418": {
+        "item": "izanagi",
+        "rarity": "11",
+        "quality": "2",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_nyx_assassin",
+        "universal": "false",
+        "def_id": "418",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 
