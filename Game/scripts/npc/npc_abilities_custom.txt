@@ -16291,7 +16291,14 @@
 		{
 			"model"						"models/heroes/ming/sailor_skin/sailor.vmdl"
 			"model"						"models/heroes/ming/sailor_skin/sailor_hair.vmdl"
-			
+			"model"                     "models/heroes/dark_custom/jeanne.vmdl"
+			"model"                     "models/heroes/dark_custom/flag.vmdl"
+			"model"                     "models/heroes/dark_custom/dress.vmdl"
+			"model"                     "models/heroes/dark_custom/sword.vmdl"
+			"model"                     "models/heroes/dark_custom/hair.vmdl"
+            "model"                     "models/rat_skin/mouse.vmdl"
+            "particle"                  "particles/items4_fx/nullifier_mute_debuff_cloud.vpcf"
+			"particle"                  "particles/econ/courier/courier_jadehoof_ambient/jadehoof_ambient.vpcf"
 			"particle" 					"particles/hero_zatana/zatana_eclipse.vpcf"
 			"particle" 					"particles/hero_zatana/zatana_ritual_a.vpcf"
 			"particle"  				"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_pur_immortal_cast.vpcf"
