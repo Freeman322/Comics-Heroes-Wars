@@ -320,6 +320,11 @@ function modifier_butcher_meat_hook:CheckState()
 	return state
 end
 
+function modifier_butcher_meat_hook:OnDestroy()
+	if IsServer() then
+		FindClearSpaceForUnit( self:GetParent(), self:GetParent():GetAbsOrigin(), false )
+	end
+end
 
 function modifier_butcher_meat_hook:OnIntervalThink()
 	if IsServer() then

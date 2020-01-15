@@ -31,8 +31,7 @@ function zatana_eclipse:OnSpellStart()
 		ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );
 		ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sailor") then
-			EmitSoundOn( "Sailor.Cast4", self:GetCaster() )
-		end
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sailor") then EmitSoundOn( "Sailor.Cast4", self:GetCaster() ) end
+		if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "rat") then EmitSoundOn("Rat.Cast", self:GetCaster()) end
 	end
 end

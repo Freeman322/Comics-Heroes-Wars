@@ -2,10 +2,10 @@ LinkLuaModifier ("eternity_chronosphere_thinker", "abilities/eternity_chronosphe
 LinkLuaModifier ("eternity_chronosphere_modifier", "abilities/eternity_chronosphere.lua", LUA_MODIFIER_MOTION_NONE)
 
 eternity_chronosphere = class ( {})
-local cooldown = {}
+
 function eternity_chronosphere:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then
-        return 60
+        return 80
     end
 
     return self.BaseClass.GetCooldown( self, nLevel )
@@ -76,7 +76,7 @@ function eternity_chronosphere_thinker:GetAuraSearchTeam ()
 end
 
 function eternity_chronosphere_thinker:GetAuraSearchType ()
-    return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_COURIER + DOTA_UNIT_TARGET_HERO
+    return DOTA_UNIT_TARGET_ALL
 end
 
 function eternity_chronosphere_thinker:GetAuraSearchFlags ()
@@ -87,132 +87,78 @@ function eternity_chronosphere_thinker:GetModifierAura ()
     return "eternity_chronosphere_modifier"
 end
 
-
 eternity_chronosphere_modifier = class ( {})
 
 function eternity_chronosphere_modifier:IsBuff ()
     if self:GetParent() == self:GetAbility():GetCaster() then
 	    return true
-    else
-        return false
     end
+
+    return false
 end
 
 function eternity_chronosphere_modifier:OnCreated( kv )
 	if IsServer() then
 		if self:GetAbility():GetCaster() ~= self:GetParent() then
-            self.attackers_table = {}
-            self.heal = 0
-            self.damage = 0
-            self.mana = self:GetParent():GetMana()
             for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.
                 local current_ability = self:GetParent():GetAbilityByIndex(i)
                 if current_ability ~= nil then
-                    cooldown[current_ability] = current_ability:GetCooldownTimeRemaining()
+                    current_ability:SetFrozenCooldown( true )
                 end
             end
-            self:StartIntervalThink(0.03)
         end
 	end
-end
-
-function eternity_chronosphere_modifier:OnIntervalThink()
-    if IsServer() then
-        if self:GetAbility():GetCaster() ~= self:GetParent() then
-            self:GetParent():SetMana(self.mana)
-            for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.
-                local current_ability = self:GetParent():GetAbilityByIndex(i)
-                if current_ability ~= nil then
-                    current_ability:EndCooldown()
-                    current_ability:StartCooldown(cooldown[current_ability])
-                end
-            end
-        end
-    end
 end
 
 function eternity_chronosphere_modifier:OnDestroy()
     if IsServer() then
         if self:GetAbility():GetCaster() ~= self:GetParent() then
-            self:GetParent():Heal( self.heal, self:GetParent() )
-            -- Heal this unit.
-            for attacker,data in pairs(self.attackers_table) do
-                ApplyDamage({attacker = attacker, victim = self:GetParent(), ability = self:GetAbility(), damage = data.damage, damage_type = DAMAGE_TYPE_PURE })
-            end
-        end
-    end
-end
-
-function eternity_chronosphere_modifier:OnTakeDamage( params )
-    if self:GetParent () == params.unit then
-        if self:GetAbility():GetCaster() ~= self:GetParent() then
-            local parent = params.unit
-            local attacker = params.attacker
-            local damage = params.damage
-            local damage_type = params.damage_type
-            if  self.attackers_table[attacker] == nil then
-                self.attackers_table[attacker] = {}
-            end
-            if self.attackers_table[attacker].damage == nil then
-                self.attackers_table[attacker].damage = 0
-            end
-
-            self.attackers_table[attacker].damage = self.attackers_table[attacker].damage + damage
-            self.attackers_table[attacker].damage_type = damage_type
-
-            self:GetParent():SetHealth( self:GetParent():GetHealth() + damage )
-
-            for i=0, 5, 1 do
-                local current_item = self:GetParent():GetItemInSlot(i)
-                if current_item ~= nil then
-                    if current_item:GetName() == "item_heart" or  current_item:GetName() == "item_heart_2" then
-                        current_item:EndCooldown()
-                    end
+            for i=0, 15, 1 do  --The maximum number of abilities a unit can have is currently 16.
+                local current_ability = self:GetParent():GetAbilityByIndex(i)
+                if current_ability ~= nil then
+                    current_ability:SetFrozenCooldown( false )
                 end
             end
-            self.damage = self.damage + damage
         end
     end
 end
 
-function eternity_chronosphere_modifier:OnHealReceived( params )
-    if self:GetParent () == params.unit then
-        if self:GetAbility():GetCaster() ~= self:GetParent() then
-            self.heal = self.heal + params.gain
-            self:GetParent ():SetHealth ( self:GetParent():GetHealth() - params.gain )
-        end
-    end
-end
 
 function eternity_chronosphere_modifier:DeclareFunctions ()
-    return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_EVENT_ON_HEAL_RECEIVED, MODIFIER_EVENT_ON_TAKEDAMAGE}
+    return {MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE}
 end
 
-function eternity_chronosphere_modifier:GetModifierMoveSpeedBonus_Constant (params)
+function eternity_chronosphere_modifier:GetModifierMoveSpeed_Absolute (params)
     if self:GetParent() == self:GetAbility():GetCaster() then
-	    return 1200
-    else
-        return 0
+        return 1200
     end
+
+    return 0
+end
+
+function eternity_chronosphere_modifier:GetModifierDamageOutgoing_Percentage (params)
+    if self:GetParent() == self:GetAbility():GetCaster() and self:GetCaster():HasScepter() then
+        return 100
+    end
+
+    return 0
 end
 
 function eternity_chronosphere_modifier:GetModifierAttackSpeedBonus_Constant (params)
     if self:GetParent() == self:GetAbility():GetCaster() then
 	    return 200
-    else
-        return 0
     end
+
+    return 0
 end
 
 
 function eternity_chronosphere_modifier:CheckState()
-	local state = {[MODIFIER_STATE_STUNNED] = true, [MODIFIER_STATE_FROZEN] = true}
-    local state2 = {[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true, [MODIFIER_STATE_INVULNERABLE] = true}
     if self:GetParent() == self:GetAbility():GetCaster() then
-	    return state2
-    else
-        return state
+	    return {[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true, [MODIFIER_STATE_INVULNERABLE] = true}
     end
+
+    return {[MODIFIER_STATE_STUNNED] = true, [MODIFIER_STATE_FROZEN] = true}
 end
 
 function eternity_chronosphere:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

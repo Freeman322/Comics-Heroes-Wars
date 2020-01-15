@@ -5788,6 +5788,34 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "423": {
+        "item": "platinum_emblem",
+        "rarity": "10",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "univarsal_item",
+        "universal": "false",
+        "def_id": "423",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
+    },
+    "424": {
+        "item": "star_emblem_4",
+        "rarity": "10",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "univarsal_item",
+        "universal": "false",
+        "def_id": "424",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 

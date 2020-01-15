@@ -2648,17 +2648,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.5 4.0 4.5"
+				"duration"				"3.0 3.25 3.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_scepter"		"5.0 5.5 6.0"
+				"duration_scepter"		"3.5 4.0 4.5"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cooldown_scepter"		"80 70 60"
+				"cooldown_scepter"		"80"
 			}
 			"05"
 			{
@@ -3087,7 +3087,7 @@
 
 	"flash_speedforce_power"
 	{
-		"BaseClass"							"ability_lua"
+		"BaseClass"							    "ability_lua"
 		"ScriptFile"							"abilities/flash_speedforce_power.lua"
 
 		"AbilityTextureName"					"custom/void"
@@ -3096,7 +3096,7 @@
 		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
-		"AbilityCooldown"						"60 50 40"
+		"AbilityCooldown"						"60"
 
 		"AbilitySpecial"
 		{
@@ -5157,13 +5157,18 @@
 
 		"precache"
 		{
-			"model"   		"models/heroes/hero_oblivion/anubis_jujment/anubis_jugment.vmdl"
+			"model"   		    "models/heroes/hero_oblivion/anubis_jujment/anubis_jugment.vmdl"
 			"particle"  		"particles/econ/courier/courier_roshan_desert_sands/courier_roshan_desert_sands_eyes.vpcf"
 			"particle"  		"particles/units/heroes/hero_bane/bane_nightmare_inkblots.vpcf"
 			"particle"  		"particles/units/heroes/hero_bane/bane_nightmare_inkblots_thick.vpcf"
-			"particle" 		"particles/units/heroes/hero_bane/bane_nightmare_worms.vpcf"
+			"particle" 		    "particles/units/heroes/hero_bane/bane_nightmare_worms.vpcf"
 			"particle"  		"particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_ambient.vpcf"
-			"model"			"models/items/oracle/ti7_immortal_weapon/oracle_ti7_immortal_weapon.vmdl"
+			"model"			    "models/items/oracle/ti7_immortal_weapon/oracle_ti7_immortal_weapon.vmdl"
+			"model"             "models/heroes/oracle/head_item.vmdl"
+			"model"             "models/heroes/oracle/armor.vmdl"
+			"model"             "models/heroes/oracle/back_item.vmdl"
+			"model"             "models/items/oracle/ti7_immortal_weapon/oracle_ti7_immortal_weapon.vmdl"
+			"model"             "models/heroes/oracle/weapon.vmdl"
 		}
 
 		"AbilitySpecial"
@@ -13743,6 +13748,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200 250 300"
 
+        "precache"
+		{
+			"model"                     "models/heroes/dark_custom/jeanne.vmdl"
+            "model"                     "models/heroes/dark_custom/flag.vmdl"
+            "model"                     "models/heroes/dark_custom/dress.vmdl"
+            "model"                     "models/heroes/dark_custom/sword.vmdl"
+            "model"                     "models/heroes/dark_custom/hair.vmdl"
+
+            "particle"                  "particles/items4_fx/nullifier_mute_debuff_cloud.vpcf"
+            "particle"                  "particles/econ/courier/courier_jadehoof_ambient/jadehoof_ambient.vpcf"
+			"particle"                  "particles/econ/items/enchantress/enchantress_virgas/ench_virgas_ambient.vpcf"
+
+			"model"                     "models/heroes/hero_odin/odin_odinforce.vmdl"
+			"model"                     "models/heroes/hero_odin/odin_elder_scroll.vmdl"
+			"model"                     "models/heroes/hero_odin/odin_spear.vmdl"
+			"model"                     "models/heroes/hero_odin/odin_spear_of_fate.vmdl"
+			"model"                     "models/heroes/dark_custom/jeanne.vmdl"
+		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -14743,28 +14766,27 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"						   				  "12220"
-		"BaseClass"             	"ability_lua"
-		"AbilityTextureName"      			"custom/khan_speedforce_power"
-		"ScriptFile"				   	  "abilities/khan_winds_trick.lua"
-		"AbilityType"								"DOTA_ABILITY_TYPE_BASIC"
+		"BaseClass"             	            "ability_lua"
+		"AbilityTextureName"      			    "custom/khan_speedforce_power"
+		"ScriptFile"				   	        "abilities/khan_winds_trick.lua"
+		"AbilityType"							"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitTargetTeam"			        "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			        "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"					    "SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			        "SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"						"2"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"300 325 350 375"
 		"AbilityCastPoint"				"0"
 
-		"AbilityCooldown"				"26 24 22 20"
+		"AbilityCooldown"				"24"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"80 100 120 140"
+
 		"precache"
 		{
 			"particle"  "particles/hero_khan/khan_wind_trick_buff.vpcf"
@@ -14772,27 +14794,23 @@
 			"particle"  "particles/hero_khan/khan_echo_strike_projectile.vpcf"
 			"particle"  "particles/hero_khan/khan_echo_strike_jump.vpcf"
 		}
+
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5 3.0 3.5 4.0"
+				"duration"				"0.75 1.25 1.75 2.25"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius"					"300 325 350 375"
+				"chance"				"100"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chance"					"100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2.0"
+				"stun_duration"			"1.0 1.5 2.0 2.5"
 			}
 		}
 	}

@@ -4876,7 +4876,7 @@
 		"DOTA_Tooltip_ability_eternity_chronosphere_duration_scepter"                     "DURATION SCEPTER:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_cooldown_scepter"                     "COOLDOWN SCEPTER:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_bonus_attack_speed"                   "BONUS ATTACK SPEED:"
-		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Increases duration and reduces cooldown."
+		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Increases duration and reduces cooldown, as well as increase attack damage by twice"
 
 
 		"DOTA_TOOLTIP_eternity_chronosphere_modifier"									  "TIME HOLE"

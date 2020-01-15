@@ -23,9 +23,8 @@ function zatana_blood_ritual:OnSpellStart()
 		ApplyDamage(table) 
 	end
 
-	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sailor") then
-		EmitSoundOn( "Sailor.Cast3", self:GetCaster() )
-	end
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "sailor") then EmitSoundOn( "Sailor.Cast3", self:GetCaster() ) end
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "rat") then EmitSoundOn("Rat.Cast", self:GetCaster()) end
 end
 function zatana_blood_ritual:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 
