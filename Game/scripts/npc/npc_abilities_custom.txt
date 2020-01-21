@@ -2618,7 +2618,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"160 140 120"
+		"AbilityCooldown"				"90"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -2648,17 +2648,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 3.25 3.5"
+				"duration"				"3.5 3.8 4.25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_scepter"		"3.5 4.0 4.5"
+				"duration_scepter"		"4.25 4.8 5.45"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cooldown_scepter"		"80"
+				"cooldown_scepter"		"60"
 			}
 			"05"
 			{
@@ -22274,6 +22274,7 @@
 		}
 	}
 
+
 	//=================================================================================================================
 	// Pangolier: Swashbuckle
 	//=================================================================================================================
@@ -22284,7 +22285,7 @@
 		"BaseClass"             		"pangolier_swashbuckle"
 		"AbilityTextureName"			"custom/doom_strike_array"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"

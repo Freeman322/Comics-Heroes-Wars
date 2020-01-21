@@ -5,7 +5,7 @@ eternity_chronosphere = class ( {})
 
 function eternity_chronosphere:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then
-        return 80
+        return 60
     end
 
     return self.BaseClass.GetCooldown( self, nLevel )
@@ -125,7 +125,7 @@ end
 
 
 function eternity_chronosphere_modifier:DeclareFunctions ()
-    return {MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE}
+    return {MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}
 end
 
 function eternity_chronosphere_modifier:GetModifierMoveSpeed_Absolute (params)

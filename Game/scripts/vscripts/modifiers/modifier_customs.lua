@@ -280,13 +280,6 @@ if modifier_io == nil then modifier_io = class({}) end
 function modifier_io:IsHidden() return true end
 function modifier_io:IsPurgable() return false end
 function modifier_io:RemoveOnDeath() return false end
-function modifier_io:DeclareFunctions ()
-    local funcs = {
-        MODIFIER_EVENT_ON_ATTACK_LANDED
-    }
-
-    return funcs
-end
 
 function modifier_io:DeclareFunctions()
 	local funcs = {
@@ -307,3 +300,38 @@ end
 function modifier_io:GetVisualZDelta( params )
     return 97
 end
+
+if modifier_dark_emblem == nil then modifier_dark_emblem = class({}) end
+function modifier_dark_emblem:IsHidden() return true end
+function modifier_dark_emblem:IsPurgable() return false end
+function modifier_dark_emblem:RemoveOnDeath() return false end
+function modifier_dark_emblem:DeclareFunctions ()
+    local funcs = {
+        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE
+    }
+
+    return funcs
+end
+function modifier_dark_emblem:GetEffectName()
+    return "particles/econ/events/ti7/fountain_regen_ti7_lvl3.vpcf"
+end
+function modifier_dark_emblem:GetEffectAttachType()
+    return PATTACH_ABSORIGIN_FOLLOW
+end
+function modifier_dark_emblem:GetModifierPercentageCooldown( params )
+    if IsServer() then
+        return 50
+    end
+end
+
+if modifier_rat == nil then modifier_rat = class({}) end
+
+function modifier_rat:IsHidden() return true end
+function modifier_rat:IsPurgable() return false end
+function modifier_rat:RemoveOnDeath() return false end
+
+if modifier_izanagi == nil then modifier_izanagi = class({}) end
+
+function modifier_izanagi:IsHidden() return true end
+function modifier_izanagi:IsPurgable() return false end
+function modifier_izanagi:RemoveOnDeath() return false end
