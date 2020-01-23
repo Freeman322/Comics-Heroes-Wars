@@ -41370,7 +41370,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"				"custom/"
+		"AbilityTextureName"				"custom/aqua_man_water_wave"
 		"ScriptFile"								"abilities/aqua_man_water_wave.lua"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -41389,18 +41389,18 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
+				"var_type"				        "FIELD_INTEGER"
+				"radius"				        "350"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-3 -6 -9 -12"
+				"var_type"				        "FIELD_INTEGER"
+				"absolute_speed"		        "525 625 725 825"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0"
+				"var_type"				        "FIELD_FLOAT"
+				"duration"				        "4.0 4.5 5.0 5.5"
 			}
 			"04"
 			{
@@ -41408,10 +41408,20 @@
 				"crush_extra_slow"				"-20 -25 -30 -35"
 			}
 			"05"
+            {
+                "var_type"				        "FIELD_INTEGER"
+                "armor_reduction"		        "-6 -12 -18 -24"
+            }
+			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"crush_attack_slow_tooltip"		"-20 -25 -30 -35"
 			}
+			"07"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "cast_debuff_duration"		    "0.5 1.0 1.5 2.0"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -41421,12 +41431,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"								"ability_lua"
 		"ScriptFile"							"abilities/aqua_man_waveform.lua"
-		"AbilityTextureName"			"custom/"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"			        "custom/aqua_man_waveform"
+		"AbilityBehavior"					    "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 
-		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"					"1"
+		"AbilityUnitDamageType"		            "DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				        "SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"					    "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -41447,7 +41457,16 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers	
+		"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
+
+		"precache"
+        {
+            "particle"					"particles/econ/events/ti7/fountain_regen_ti7_lvl3.vpcf"
+            "particle"					"particles/units/heroes/hero_morphling/morphling_waveform.vpcf"
+            "particle"					"particles/units/heroes/hero_tidehunter/tidehunter_gush_upgrade.vpcf"
+            "particle"					"particles/units/heroes/hero_tidehunter/tidehunter_gush_splash_water3.vpcf"
+            "model"                     "models/heroes/hero_aquaman/weapon.vmdl"
+        }
     }
 	"aqua_man_sea_lord"
 	{
@@ -41455,12 +41474,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/aqua_man_sea_lord.lua"
-		"AbilityTextureName"			"custom/chaos_king_static_shield"
+		"AbilityTextureName"			"custom/aqua_man_sea_lord"
 
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"			
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
+
+		"MaxLevel"                      "1"
 
         // Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -41469,32 +41490,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movespeed_on_water"	"40"
+				"river_speed"				"65"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"bonus_hp_regen_on_water"	"10"
+				"puddle_regen"				"35"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor_on_water"		"6"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"water_strike_base_damage"	"20"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"water_strike_damage_agi"	"0.5"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"max_movespeed_on_water"	"1000"
+				"puddle_armor"				"12"
 			}
 		}
     }
@@ -41527,8 +41533,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"BaseClass"					"ability_lua"
-		"AbilityTextureName"				""
+		"BaseClass"					    "ability_lua"
+		"AbilityTextureName"			"custom/aqua_man_wave"
 		"ScriptFile"					"abilities/aqua_man_wave.lua"
 		"LevelsBetweenUpgrades"         "4"
 		
@@ -41586,9 +41592,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"					"ability_lua"
-		"ScriptFile"					"abilities/aqua_man_water_sphere.lua"
-		"AbilityTextureName"			"custom/"
+		"BaseClass"					    "ability_lua"
+		"ScriptFile"					"abilities/aqua_man_sphere.lua"
+		"AbilityTextureName"			"custom/aqua_man_sphere"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -41621,7 +41627,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"800 1200 1600"
+				"radius"				"1000"
 			}
 			"02"
 			{
@@ -41900,5 +41906,368 @@
                 "value"						"15"
             }
         }
+    }
+    //=================================================================================================================
+    // Ability: Gorr
+    //=================================================================================================================
+    "gorr_gorr"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"             		"ability_lua"
+        "AbilityTextureName"			"custom/gorr_gorr"
+        "ScriptFile"					"abilities/gorr_gorr.lua"
+        "MaxLevel"                      "1"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "percent_damage"		"50"
+            }
+        }
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+    }
+    //=================================================================================================================
+    // Gorr: Butch
+    //=================================================================================================================
+    "gorr_butch"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"             		"ability_lua"
+        "AbilityTextureName"			"custom/gorr_butch"
+        "ScriptFile"					"abilities/gorr_butch.lua"
+
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "FightRecapLevel"				"2"
+        "AbilitySound"					"Hero_Silencer.GlobalSilence.Cast"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.3 0.3 0.3"
+        "AbilityCastRange"				"250 375 525"
+        "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"130 100 60"
+        "AbilityDuration"				"4.5 5.25 6.0"
+
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"300 450 600"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityModifierSupportValue"	"0.5"	// Hits all units on the map.
+
+        "precache"
+        {
+            "particle"  "particles/econ/items/witch_doctor/wd_ti8_immortal_head/wd_ti8_immortal_maledict_aoe.vpcf"
+            "particle"  "particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_devour.vpcf"
+            "particle"  "particles/godspeed/godspeed_bend_time.vpcf"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+        }
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "duration"	                "5 7 9"
+                "LinkedSpecialBonus"	    "special_bonus_unique_gorr_1"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "damage_ptc"	            "6 12 18"
+                "LinkedSpecialBonus"	    "special_bonus_unique_gorr_2"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "radius"	                "250 375 525"
+                "LinkedSpecialBonus"	    "special_bonus_unique_gorr_3"
+            }
+        }
+    }
+    "special_bonus_unique_gorr_1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"special_bonus_undefined"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "value"						"3"
+            }
+        }
+    }
+    "special_bonus_unique_gorr_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"special_bonus_undefined"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "value"						"15"
+            }
+        }
+    }
+    "special_bonus_unique_gorr_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"special_bonus_undefined"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "value"						"250"
+            }
+        }
+    }
+    //=================================================================================================================
+    //
+    //=================================================================================================================
+    "gorr_lightspeed_dash"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"             		"ability_lua"
+        "AbilityTextureName"			"custom/gorr_lightspeed_dash"
+        "ScriptFile"					"abilities/gorr_lightspeed_dash.lua"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        //"AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "FightRecapLevel"				"1"
+        "AbilitySound"					"Hero_VoidSpirit.AstralStep.Start"
+        "AnimationPlaybackRate"			"1.5" // 1.0 corresponds to cast point of 0.3
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.2"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"100"
+
+        "precache"
+        {
+            "particle"                   "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step.vpcf"
+            "particle"                   "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_impact.vpcf"
+            "particle"                   "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_dmg.vpcf"
+            "particle"                   "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_debuff.vpcf"
+            "particle"                   "particles/status_fx/status_effect_void_spirit_astral_step_debuff.vpcf"
+            "soundfile"                  "soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
+        }
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "radius"				"170"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "max_charges"			"2"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "charge_restore_time"	"30 25 20"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "min_travel_distance"	"200"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "max_travel_distance"	"700 900 1100"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "pop_damage_delay"		"1.25"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "pop_damage"			"150 200 250"
+            }
+            "08"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "movement_slow_pct"		"40 60 80"
+            }
+        }
+        "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+    }
+    //=================================================================================================================
+    //=================================================================================================================
+    "gorr_seduction"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"             		"ability_lua"
+        "AbilityTextureName"			"custom/gorr_seduction"
+        "ScriptFile"					"abilities/gorr_seduction.lua"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+        "FightRecapLevel"				"1"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+        "AbilityCooldown"				"22"
+        "AbilityManaCost"				"115 120 125 130"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "radius"						"315"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "stun_duration"					"1.0 1.25 1.5 1.75"
+                "LinkedSpecialBonus"	        "special_bonus_unique_gorr_4"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "stomp_damage"					"80 110 140 170"
+            }
+        }
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+    }
+    "special_bonus_unique_gorr_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"special_bonus_undefined"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "value"						"1.0"
+            }
+        }
+    }
+    "special_bonus_unique_gorr_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"special_bonus_undefined"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "value"						"1"
+            }
+        }
+    }
+    //=================================================================================================================
+    //=================================================================================================================
+    "gorr_necrostrike"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"             		"ability_lua"
+        "AbilityTextureName"			"custom/gorr_necrostrike"
+        "ScriptFile"					"abilities/gorr_necrostrike.lua"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "hits"		            "4 5 6 7"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "damage_per_hit"	    "15 30 45 60"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "lifesteal_per_hit"	    "4 6 8 10"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "debuff_duration"	    "5"
+            }
+        }
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
     }
 }

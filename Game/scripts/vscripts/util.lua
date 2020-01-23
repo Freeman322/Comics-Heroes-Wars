@@ -1803,7 +1803,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 then
+            if IsHasSuperStatus(pID) then
                 PrecacheUnitByNameAsync( "npc_dota_hero_death_eater", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_death_eater", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1817,7 +1817,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 246584391 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+            if IsHasSuperStatus(pID) then
                 PrecacheUnitByNameAsync( "npc_dota_hero_phoenix", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_phoenix", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1831,7 +1831,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+            if IsHasSuperStatus(pID) then
                 PrecacheUnitByNameAsync( "npc_dota_hero_stormspirit", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_stormspirit", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1846,7 +1846,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 124112243 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+            if IsHasSuperStatus(pID) then
                 PrecacheUnitByNameAsync( "npc_dota_hero_io", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_io", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1862,7 +1862,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 259404989 then
+            if IsHasSuperStatus(pID) then
                 PrecacheUnitByNameAsync( "npc_dota_hero_medusa", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_medusa", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1876,15 +1876,20 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 87670156 then
             ---stats.test()
-            else
-                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-            end
         end)
     end, "Set time", 0)
 end
 
+function IsHasSuperStatus(id)
+    local data = CustomNetTables:GetTableValue("players", "stats")
+
+    if data and data[tostring(id)] then
+        return data[tostring(id)].shards == "1"
+    end
+
+    return false
+end
 
 function Util:KillUnitsInRadius(data)
     local radius = data['radius']
@@ -2270,6 +2275,41 @@ end
 
 function CDOTA_BaseNPC:IsFriendly(target)
     return target:GetTeamNumber() == self:GetTeamNumber()
+end
+
+local gods =
+{
+    "npc_dota_hero_omniknight",
+    "npc_dota_hero_phantom_lancer",
+    "npc_dota_hero_abaddon",
+    "npc_dota_hero_nyx_assassin",
+    "npc_dota_hero_lone_druid",
+    "npc_dota_hero_windrunner",
+    "npc_dota_hero_earthshaker",
+    "npc_dota_hero_enigma",
+    "npc_dota_hero_ember_spirit",
+    "npc_dota_hero_dazzle",
+    "npc_dota_hero_rubick",
+    "npc_dota_hero_monkey_king",
+    "npc_dota_hero_bane",
+    "npc_dota_hero_disruptor",
+    "npc_dota_hero_oracle",
+    "npc_dota_hero_dark_seer",
+    "npc_dota_hero_shadow_demon",
+    "npc_dota_hero_clinkz",
+    "npc_dota_hero_obsidian_destroyer",
+    "npc_dota_hero_leshrac",
+    "npc_dota_hero_queenofpain"
+}
+
+function CDOTA_BaseNPC:IsGod()
+    for _, hero in pairs(gods) do
+        if self:GetUnitName() == hero then
+            return true
+        end
+    end
+
+    return false
 end
 
 function CDOTA_BaseNPC:GetCooldownTimeAfterReduction(cooldown)

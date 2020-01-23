@@ -11730,7 +11730,9 @@ When activated spends mana."
         "DOTA_Tooltip_ability_rogue_avatar_aura_main_attr"                          "%MAIN ATTRIBUTE BONUS:"
         "DOTA_Tooltip_ability_rogue_avatar_aura_radius"                             "RADIUS:"
 
-        "npc_dota_hero_gorr"                                                                "Gorr"
-        "npc_dota_hero_gorr_hype"                                                           "My name is Gorr, son of a nameless father, outcast from a forgotten world. I have slain my way through multitudes to stand here at the genesis of all things. Blackened by vengeance, wet with holy blood. One simple dream still strong in my heart... The dream of a godless age."
+        "npc_dota_hero_aqua_man"                                                    "Aquaman"
+        "npc_dota_hero_aqua_man_hype"                                               "A founding member of the Justice League of America, Aquaman has fought alongside Superman, Batman and Wonder Woman and held his own against the biggest threats the universe has ever seen. Despite being misunderstood by many as someone who merely “talks to fish,” Aquaman’s super-strength and fighting prowess alone make him a force to be reckoned with. His telepathic abilities make him one of the most powerful minds on the planet. If one chooses to underestimate the sea king, they do so at their own peril."
+        "npc_dota_hero_gorr"                                                        "Gorr"
+        "npc_dota_hero_gorr_hype"                                                   "My name is Gorr, son of a nameless father, outcast from a forgotten world. I have slain my way through multitudes to stand here at the genesis of all things. Blackened by vengeance, wet with holy blood. One simple dream still strong in my heart... The dream of a godless age."
 	}	
 }

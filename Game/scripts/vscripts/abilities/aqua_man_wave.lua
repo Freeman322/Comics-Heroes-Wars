@@ -10,7 +10,6 @@ function aqua_man_wave:OnSpellStart()
         self.aqua_man_wave_distance = self:GetSpecialValueFor( "wave_distance" )
         local agility = self:GetCaster():GetAgility() * self:GetSpecialValueFor("bonus_damage_agi")
         self.aqua_man_wave_damage = self:GetSpecialValueFor( "wave_damage" ) + agility
-        
 
         EmitSoundOn( "Hero_NagaSiren.Riptide.Cast", self:GetCaster() )
 

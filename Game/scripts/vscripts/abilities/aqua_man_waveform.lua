@@ -1,13 +1,13 @@
 aqua_man_waveform = class({})
+
 LinkLuaModifier( "modifier_aqua_man_waveform", "abilities/aqua_man_waveform.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_aqua_man_waveform_debuff", "abilities/aqua_man_waveform.lua", LUA_MODIFIER_MOTION_NONE )
 
+aqua_man_waveform.m_hMod = nil
 
 function aqua_man_waveform:OnSpellStart(  )
     if IsServer() then
         local caster = self:GetCaster()
-        local absorigin = caster:GetAbsOrigin()
-        local target_origin = caster:GetCursorPosition()
 
         local vDirection = self:GetCursorPosition() - self:GetCaster():GetOrigin()
         vDirection = vDirection:Normalized()
@@ -32,11 +32,29 @@ function aqua_man_waveform:OnSpellStart(  )
             iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
             iVisionRadius = 150,
         }
-        local duration = (fDistance/1000)
+
+        local duration = (fDistance/info.iMoveSpeed)
+
         EmitSoundOn( "Hero_Morphling.Waveform" , self:GetCaster() )
-        caster:AddNewModifier( caster, self, "modifier_aqua_man_waveform", {duration = duration} )
-        self.nProjID = ProjectileManager:CreateLinearProjectile( info )
+
+        self.m_hMod = caster:AddNewModifier( caster, self, "modifier_aqua_man_waveform", nil )
+
+        ProjectileManager:CreateLinearProjectile( info )
     end
+end
+
+
+function aqua_man_waveform:OnProjectileHit_ExtraData( hTarget, vLocation, table )
+    if hTarget == nil then
+        self:GetCaster():SetAbsOrigin(vLocation)
+        FindClearSpaceForUnit( self:GetCaster(), vLocation, true)
+
+        if self.m_hMod then
+            self.m_hMod:Destroy()
+        end
+    end
+
+    return false
 end
 
 function aqua_man_waveform:OnProjectileHit( hTarget, vLocation )
@@ -46,16 +64,12 @@ function aqua_man_waveform:OnProjectileHit( hTarget, vLocation )
 			attacker = self:GetCaster(),
 			damage = self:GetAbilityDamage(),
 			damage_type = DAMAGE_TYPE_MAGICAL,
-            ability = self,
-            
+            ability = self
         }
 
-        if self:GetCaster():HasTalent("special_bonus_unique_aqua_man") then 
-            self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true) 
-        end
+        if self:GetCaster():HasTalent("special_bonus_unique_aqua_man") then self:GetCaster():PerformAttack(hTarget, true, true, true, true, false, false, true) end
 
         EmitSoundOn( "Hero_Morphling.AdaptiveStrikeAgi.Target" , hTarget)
-      		       
         ApplyDamage( damage )
 	end
 
@@ -63,26 +77,18 @@ function aqua_man_waveform:OnProjectileHit( hTarget, vLocation )
 end
 
 modifier_aqua_man_waveform = class({})
-function modifier_aqua_man_waveform:IsHidden()
-    return true
-end
+
+function modifier_aqua_man_waveform:IsHidden() return true end
+function modifier_aqua_man_waveform:IsPurgable() return true end
 
 function modifier_aqua_man_waveform:OnCreated( kv )
     if IsServer() then
         self:GetParent():AddNoDraw()
-        local nFXIndex = ParticleManager:CreateParticle( "", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-        ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true )
-        ParticleManager:SetParticleControl( nFXIndex, 5, Vector(200, 200, 0))
-        self:AddParticle( nFXIndex, false, false, -1, false, true )
-        self.destroy_pos = self:GetAbility():GetCaster():GetCursorPosition()
     end
 end
 function modifier_aqua_man_waveform:OnDestroy(  )
      if IsServer() then
         self:GetParent():RemoveNoDraw()
-        self:GetParent():SetAbsOrigin( self.destroy_pos )
-        FindClearSpaceForUnit( self:GetParent(), self.destroy_pos, false )
-        -- Place a unit somewhere not already occupied.
     end
 end
 
