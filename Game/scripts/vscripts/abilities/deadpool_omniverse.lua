@@ -61,114 +61,17 @@ function modifier_deadpool_omniverse:DeclareFunctions()
 	return funcs
 end
 
-function modifier_deadpool_omniverse:GetModifierMoveSpeed_Absolute() return 150 end
+function modifier_deadpool_omniverse:GetModifierMoveSpeed_Absolute() return 128 end
 function modifier_deadpool_omniverse:CheckState () return { [MODIFIER_STATE_SILENCED] = true } end
-function modifier_deadpool_omniverse:OnCreated( kv ) if IsServer() then self:CreateIllusion(self:GetCaster(), self:GetParent():GetAbsOrigin()) end end
-function modifier_deadpool_omniverse:CreateIllusion(caster, location )
-	local ability = self:GetAbility()
-	local modifyIllusion = function ( illusion )
-        illusion:SetForwardVector( caster:GetForwardVector() )
-        
-		while illusion:GetLevel() < caster:GetLevel() do
-			illusion:HeroLevelUp( false )
-        end
-        
-        illusion:SetAbilityPoints( 0 )
-        
-		local abilityCount = caster:GetAbilityCount()
-		for i=0,abilityCount-1 do
-			local ability = caster:GetAbilityByIndex(i)
-			if ability and illusion:GetAbilityByIndex(i) then
-				illusion:GetAbilityByIndex(i):SetLevel( ability:GetLevel() )
-			end
-        end
-        
-        for item_id = 0, 5 do
-            local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
-            if item_in_caster ~= nil and not item_in_caster:IsDroppableAfterDeath() then
-                local item_name = item_in_caster:GetName()
-                if not (item_name == "item_aegis" or item_name == "item_smoke_of_deceit" or item_name == "item_recipe_refresher" or item_name == "item_refresher" or item_name == "item_ward_observer" or item_name == "item_ward_sentry") then
-                    local item_created = CreateItem( item_in_caster:GetName(), double, double)
-                    illusion:AddItem(item_created)
-                end
-            end
-        end
-
-		-- make illusion
-		illusion:MakeIllusion()
-		illusion:SetOwner( self:GetCaster() )
-        illusion:SetPlayerID( self:GetCaster():GetPlayerID() )
-        illusion:SetForceAttackTarget(self:GetParent())
-
-        FindClearRandomPositionAroundUnit(illusion, self:GetParent(), 30)
-
-		illusion:AddNewModifier(
-			self:GetCaster(),
-			self:GetAbility(),
-			"modifier_illusion",
-			{
-				duration = self:GetAbility():GetSpecialValueFor("duration"),
-				outgoing_damage = 100,
-				incoming_damage = 0,
-			}
-        )
-        
-        illusion:AddNewModifier(
-			self:GetCaster(),
-			self:GetAbility(),
-			"modifier_deadpool_omniverse_illusion",
-			{
-				duration = self:GetAbility():GetSpecialValueFor("duration"),
-				outgoing_damage = 0,
-				incoming_damage = 0,
-			}
-        )
-        
-        self.unit = illusion
-	end
-
-	-- Create unit
-	CreateUnitByNameAsync(
-		caster:GetUnitName(), 
-		location, 
-		false, 
-		self:GetCaster(),
-		nil, 
-		self:GetCaster():GetTeamNumber(), 
-		modifyIllusion
-    )
-end
-function modifier_deadpool_omniverse:OnDestroy()
+function modifier_deadpool_omniverse:OnCreated( kv )
     if IsServer() then
-        if self.unit then 
-            pcall(function()
-                UTIL_Remove(self.unit)
-            end)
-        end  
-    end 
-end
-if not modifier_deadpool_omniverse_illusion then modifier_deadpool_omniverse_illusion = class({}) end 
-
-function modifier_deadpool_omniverse_illusion:GetStatusEffectName() return "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_wm16_dire.vpcf" end
-function modifier_deadpool_omniverse_illusion:StatusEffectPriority() return 1000 end
-function modifier_deadpool_omniverse_illusion:IsHidden() return true end
-function modifier_deadpool_omniverse_illusion:CheckState()
-    local state = {
-        [MODIFIER_STATE_INVULNERABLE] = true,
-        [MODIFIER_STATE_NO_HEALTH_BAR] = true,
-        [MODIFIER_STATE_CANNOT_MISS] = true
-    }
-
-    return state
-end
-function modifier_deadpool_omniverse_illusion:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
-	}
-
-	return funcs
+        self:StartIntervalThink(1 / self:GetCaster():GetAttacksPerSecond())
+        self:OnIntervalThink()
+    end
 end
 
-function modifier_deadpool_omniverse_illusion:GetModifierMoveSpeed_Absolute() return 550 end
-function modifier_deadpool_omniverse_illusion:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
-function modifier_deadpool_omniverse_illusion:IsPurgable() return false end
+function modifier_deadpool_omniverse:OnIntervalThink()
+    if IsServer() then
+        self:GetCaster():PerformAttack(self:GetParent(), false, true, true, false, false, false, false)
+    end
+end

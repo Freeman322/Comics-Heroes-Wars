@@ -13,7 +13,7 @@ function aqua_man_sphere:OnSpellStart ()
     local team_id = caster:GetTeamNumber ()
     local duration = self:GetSpecialValueFor ("duration")
 
-    local thinker = CreateModifierThinker (caster, self, "modifier_aqua_man_sphere_thinker", {duration = duration }, point, team_id, false)
+    local thinker = CreateModifierThinker (caster, self, "modifier_aqua_man_sphere_thinker", {duration = duration, x = point.x, y = point.y, z = point.z  }, point, team_id, false)
 
     EmitSoundOn("Aquaman.Ult.Cast", caster)
 end
@@ -62,11 +62,29 @@ function modifier_aqua_man_sphere_thinker_debuff:IsBuff()
     return false
 end
 
-function modifier_aqua_man_sphere_thinker_debuff:OnCreated( kv )
+
+function modifier_aqua_man_sphere_thinker_debuff:OnCreated(params)
     if IsServer() then
         self:StartIntervalThink(1.75)
+
+        self.radius = self:GetAbility():GetSpecialValueFor("radius")
+
+        -- aura references
+        self.aura_origin = Vector(params.x, params.y, params.z)
+
+        self.parent = self:GetParent()
+        self.width = 100
+        self.max_speed = 550
+        self.min_speed = 0.1
+        self.max_min = self.max_speed-self.min_speed
+
+        -- check inside/outside
+        self.inside = (self.parent:GetOrigin()-self.aura_origin):Length2D() < self.radius
+
+        self:OnIntervalThink()
     end
 end
+
 
 function modifier_aqua_man_sphere_thinker_debuff:OnDestroy()
     if IsServer() then
@@ -85,7 +103,7 @@ function modifier_aqua_man_sphere_thinker_debuff:GetModifierMoveSpeed_Absolute (
         return self:GetAbility():GetSpecialValueFor("aqua_man_movespeed")
     end
 
-    return 0
+    return 25
 end
 
 

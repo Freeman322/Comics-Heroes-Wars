@@ -1,13 +1,10 @@
 palpatine_force = class({})
 
-LinkLuaModifier( "modifier_charges", "modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_generic_charges", "modifiers/modifier_generic_charges.lua", LUA_MODIFIER_MOTION_NONE )
 
-function palpatine_force:OnUpgrade()
-    if IsServer() then
-        if not self:GetCaster():HasModifier("modifier_charges") then
-            self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_charges", nil)
-        end
-    end
+-- Passive Modifier
+function palpatine_force:GetIntrinsicModifierName()
+    return "modifier_generic_charges"
 end
 
 function palpatine_force:OnSpellStart ()

@@ -1,7 +1,22 @@
 LinkLuaModifier ("modifier_item_frostmourne", "items/item_frostmourne.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier ("modifier_item_frostmourne_slowing", "items/item_frostmourne.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier ("modifier_item_death_scyche_active", "items/item_death_scyche.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_frostmourne = class({})
+
+function item_frostmourne:OnSpellStart ()
+    if IsServer() then
+        local duration = self:GetSpecialValueFor ("active_effect_duration")
+
+        self:GetCaster ():AddNewModifier (self:GetCaster (), self, "modifier_item_death_scyche_active", { duration = duration } )
+
+        local nFXIndex = ParticleManager:CreateParticle ("particles/units/heroes/hero_sven/sven_spell_warcry.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster () )
+        ParticleManager:SetParticleControlEnt (nFXIndex, 2, self:GetCaster (), PATTACH_POINT_FOLLOW, "attach_head", self:GetCaster ():GetOrigin (), true)
+        ParticleManager:ReleaseParticleIndex (nFXIndex)
+
+        EmitSoundOn ("Hero_DoomBringer.Devour", self:GetCaster () )
+    end
+end
 
 function item_frostmourne:IsRefreshable() return false end
 function item_frostmourne:GetCooldown(nLevel) return self.BaseClass.GetCooldown( self, nLevel ) end
@@ -14,8 +29,10 @@ function item_frostmourne:OnHeroDiedNearby (hVictim, hKiller, kv)
 
     if hVictim:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() and self:GetCaster():IsAlive() then
         self.range = self:GetSpecialValueFor ("soul_stole_range")
+
         local vToCaster = self:GetCaster ():GetOrigin () - hVictim:GetOrigin ()
         local flDistance = vToCaster:Length2D ()
+
         if hKiller == self:GetCaster () or self.range >= flDistance then
             self:SetCurrentCharges(self:GetCurrentCharges() + 1)
 
@@ -33,14 +50,29 @@ end
 modifier_item_frostmourne = class({})
 
 function modifier_item_frostmourne:IsHidden() return true end
-function modifier_item_frostmourne:WillReincarnate() return self.IsReincarnating end
+function modifier_item_frostmourne:IsPurgable() return true end
+
+modifier_item_frostmourne.m_hMod = nil
 
 function modifier_item_frostmourne:OnCreated (kv)
     if IsServer () then
-        self:GetParent ():CalculateStatBonus ()
-        self.IsReincarnating = false
+        self:GetParent():CalculateStatBonus ()
 
         self:StartIntervalThink(FrameTime())
+
+        if self.m_hMod and not self.m_hMod:IsNull() then
+            self.m_hMod:Destroy()
+        end
+
+        self.m_hMod = self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_special_bonus_reincarnation", nil)
+    end
+end
+
+function modifier_item_frostmourne:OnDestroy()
+    if IsServer () then
+        if self.m_hMod and not self.m_hMod:IsNull() then
+            self.m_hMod:Destroy()
+        end
     end
 end
 
@@ -58,8 +90,7 @@ function modifier_item_frostmourne:DeclareFunctions ()
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_EVENT_ON_ATTACK_LANDED,
-        MODIFIER_PROPERTY_REINCARNATION
+        MODIFIER_EVENT_ON_ATTACK_LANDED
     }
 end
 
@@ -87,51 +118,6 @@ function modifier_item_frostmourne:OnAttackLanded (params)
         end
     end
     return 0
-end
-
-function modifier_item_frostmourne:ReincarnateTime()
-    if IsServer() then
-        if self:GetAbility():IsCooldownReady() and self:GetParent():IsRealHero() and self:GetAbility():GetCurrentCharges() > 0  then
-            self:Reincarnate()
-            return self:GetAbility():GetSpecialValueFor("reincarnate_time")
-        end
-
-        return 0
-    end
-end
-
-function modifier_item_frostmourne:Reincarnate()
-    if IsServer() then
-        -- spend resources
-        self:GetAbility():UseResources(true, false, true)
-
-        -- find affected enemies
-        local enemies = FindUnitsInRadius(
-            self:GetParent():GetTeamNumber(),	-- int, your team number
-            self:GetParent():GetOrigin(),	-- point, center point
-            nil,	-- handle, cacheUnit. (not known)
-            self:GetAbility():GetSpecialValueFor("slow_radius"),	-- float, radius. or use FIND_UNITS_EVERYWHERE
-            DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-            0,	-- int, flag filter
-            0,	-- int, order filter
-            false	-- bool, can grow cache
-        )
-
-        -- apply slow
-        for _,enemy in pairs(enemies) do
-            enemy:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_wraith_king_reincarnation_debuff", { duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
-        end
-
-        local effect_cast = ParticleManager:CreateParticle( "particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf", PATTACH_ABSORIGIN, self:GetParent() )
-        ParticleManager:SetParticleControl( effect_cast, 0, self:GetParent():GetOrigin() )
-        ParticleManager:SetParticleControl( effect_cast, 1, Vector( 3, 0, 0 ) )
-        ParticleManager:ReleaseParticleIndex( effect_cast )
-
-        -- play sound
-        EmitSoundOn("Hero_SkeletonKing.Reincarnate", self:GetParent())
-
-    end
 end
 
 modifier_item_frostmourne_slowing = class({})
