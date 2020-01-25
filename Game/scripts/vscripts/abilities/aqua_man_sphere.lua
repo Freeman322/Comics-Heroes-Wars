@@ -86,7 +86,7 @@ function modifier_aqua_man_sphere_thinker_debuff:OnCreated(params)
 end
 
 
-function modifier_aqua_man_sphere_thinker_debuff:OnDestroy()
+function modifier_aqua_man_sphere_thinker_debuff:OnIntervalThink()
     if IsServer() then
         if self:IsBuff() == false then
             self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = 0.9})

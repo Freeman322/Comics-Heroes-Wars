@@ -24,6 +24,10 @@ function modifier_gorr_necrostrike:OnAttackLanded (params)
 
             self:IncrementStackCount()
 
+            if self:GetStackCount() > hits then
+                self:SetStackCount(hits)
+            end
+
             if params.target:IsHero() then
                 params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_gorr_necrostrike_target", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")})
             end
@@ -43,10 +47,6 @@ function modifier_gorr_necrostrike:OnAttackLanded (params)
             ParticleManager:ReleaseParticleIndex(lifesteal_fx)
 
             EmitSoundOn("DOTA_Item.MKB.Minibash", params.target)
-
-            if self:GetStackCount() >= hits then
-                self:SetStackCount(1)
-            end
         end
     end
 end

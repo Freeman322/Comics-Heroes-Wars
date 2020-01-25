@@ -1809,61 +1809,6 @@
 			}
 		}
 	}
-	"ghost_rider_punishing_gaze_lua"
-	{
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				      	  "ability_lua"
-			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-			"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
-			"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
-			"FightRecapLevel"						"2"
-			"AbilityTextureName"				"custom/ghost_rider_spell"
-			"ScriptFile"								"abilities/ghost_rider_punishing_gaze_lua.lua"
-			"HasScepterUpgrade"					"1"
-			// Time
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"					"100 85 70"
-
-			// Casting
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"500"
-			"AbilityCastPoint"				"0.2"
-
-			// Cost
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"150 75 0"
-			"precache"
-			{
-				"particle"  "particles/hero_ghost_rider/ghost_rider_punishing_gaze_agh.vpcf"
-				"model"	 		"models/items/chaos_knight/oni_knight_the_dark_conqueror_head/oni_knight_the_dark_conqueror_head.vmdl"
-				"model"	 		"models/items/chaos_knight/oni_knight_the_dark_conqueror_mount/oni_knight_the_dark_conqueror_mount.vmdl"
-				"model"	 		"models/items/chaos_knight/oni_knight_the_dark_conqueror_weapon/oni_knight_the_dark_conqueror_weapon.vmdl"
-				"model"	 		"models/items/chaos_knight/rising_chaos_spaulders/rising_chaos_spaulders.vmdl"
-				"model"	 		"models/items/chaos_knight/oni_knight_the_dark_conqueror_shoulder/oni_knight_the_dark_conqueror_shoulder.vmdl"
-				"model"	 		"models/items/chaos_knight/oni_knight_the_dark_conqueror_off_hand/oni_knight_the_dark_conqueror_off_hand.vmdl"
-				"particle"  "particles/death_eye.vpcf"
-				"model"			"models/heroes/abaddon/abaddon.vmdl"
-				"particle"  "particles/econ/events/ti7/dagon_ti7.vpcf"
-				"particle"  "particles/hero_ghost_rider/ghost_rider_punishing_gaze_agh_arcana.vpcf"
-				"particle"  "particles/units/heroes/hero_abaddon/abaddon_ambient.vpcf"
-				"particle"  "particles/units/heroes/hero_abaddon/abaddon_weapon_blur2.vpcf"
-			}
-
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-					"01"
-					{
-						"var_type"					"FIELD_FLOAT"
-						"aoe_scepter"		        "325"
-					}
-			}
-	}
 	//=================================================================================================================
 	// Rubick: Telekinesis
 	//=================================================================================================================
@@ -41551,6 +41496,17 @@
 				"var_type"                 "FIELD_FLOAT"
 				"bonus_damage_agi"         "1.2 1.7 2.2 2.7"
 			}
+			"07"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "movement_speed"	"-40 -40 -40 -40"
+            }
+            "08"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "negative_armor"		"4 5 6 7"
+                "LinkedSpecialBonus"	"special_bonus_unique_tidehunter"
+            }
 		}
 	}
 	"aqua_man_sphere"
@@ -41944,6 +41900,9 @@
             "particle"  "particles/econ/items/witch_doctor/wd_ti8_immortal_head/wd_ti8_immortal_maledict_aoe.vpcf"
             "particle"  "particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_devour.vpcf"
             "particle"  "particles/godspeed/godspeed_bend_time.vpcf"
+            "model"     "models/heroes/hero_gorr/sword.vmdl"
+            "particle"  "particles/gorr/gorr_ambient.vpcf"
+            "particle"  "particles/gorr/gorr_scream.vpcf"
             "soundfile" "soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
         }
         // Special
@@ -42465,9 +42424,6 @@
         "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
         "FightRecapLevel"				"2"
         "AbilitySound"					"hero_viper.viperStrike"
-
-        "HasScepterUpgrade"			"1"
-
         // Casting
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastRange"				"500"
