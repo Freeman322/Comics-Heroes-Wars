@@ -121,12 +121,9 @@ end
 
 function modifier_item_reality_gem:DeclareFunctions() 
     local funcs = {
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_CAST_RANGE_BONUS,
-        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_MANA_BONUS
     }
@@ -134,20 +131,10 @@ function modifier_item_reality_gem:DeclareFunctions()
     return funcs
 end
 
-function modifier_item_reality_gem:GetModifierBonusStats_Agility( params )
-    return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" )
-end
 
-function modifier_item_reality_gem:GetModifierBonusStats_Intellect( params )
-    return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" )
-end
 
-function modifier_item_reality_gem:GetModifierBonusStats_Strength( params )
-    return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" )
-end
-
-function modifier_item_reality_gem:GetModifierPreAttack_BonusDamage( params )
-    return self:GetAbility():GetSpecialValueFor( "bonus_damage" )
+function modifier_item_reality_gem:GetModifierConstantManaRegen( params )
+    return self:GetAbility():GetSpecialValueFor( "bonus_mana_regen" )
 end
 
 function modifier_item_reality_gem:GetModifierCastRangeBonus( params )

@@ -67,6 +67,11 @@ function modifier_mera:IsHidden() return true end
 function modifier_mera:IsPurgable() return false end
 function modifier_mera:RemoveOnDeath() return false end
 
+if modifier_heart_timegem == nil then modifier_heart_timegem = class({}) end 
+function modifier_heart_timegem:IsHidden() return true end
+function modifier_heart_timegem:IsPurgable() return false end
+function modifier_mera:RemoveOnDeath() return false end
+
 if modifier_beerus == nil then modifier_beerus = class({}) end 
 function modifier_beerus:IsHidden() return true end
 function modifier_beerus:IsPurgable() return false end
@@ -169,6 +174,22 @@ end
         
 function modifier_strange_artifact:GetAttackSound( params )
     return "Hero_VoidSpirit.Pulse.Target"
+end
+
+if modifier_deep_murloc == nil then modifier_deep_murloc = class({}) end
+
+function modifier_deep_murloc:IsHidden() return true end
+function modifier_deep_murloc:IsPurgable() return false end
+function modifier_deep_murloc:RemoveOnDeath() return false end
+function modifier_deep_murloc:DeclareFunctions()
+    local funcs = {
+        MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
+    }
+    return funcs
+end
+        
+function modifier_deep_murloc:GetAttackSound( params )
+    return "Deep_Murloc.Attack"
 end
 
 if modifier_lovuska_jokera == nil then modifier_lovuska_jokera = class({}) end

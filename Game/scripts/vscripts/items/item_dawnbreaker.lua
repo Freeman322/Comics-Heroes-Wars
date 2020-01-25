@@ -86,8 +86,9 @@ end
 
 function modifier_item_dawnbreaker:GetModifierProcAttack_BonusDamage_Pure (params)
     if IsServer() then 
+        if params.attacker == self:GetParent() and params.attacker:IsRealHero() then
         if not params.target:IsBuilding() and not params.target:IsAncient() then
-            return params.target:GetHealth() * (self:GetAbility():GetSpecialValueFor("damage_pers") / 100)
+            return params.target:GetHealth() * (self:GetAbility():GetSpecialValueFor("damage_pers") / 100) end
         end 
     end 
 end
@@ -101,6 +102,7 @@ function modifier_item_dawnbreaker:OnTakeDamage(params)
                 EmitSoundOn("Hero_Oracle.FortunesEnd.Target", self:GetParent())
 
                 self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_aeon_disk_buff", {duration = self:GetAbility():GetSpecialValueFor("soul_keep_duration")})
+                self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_black_king_bar_immune", {duration = self:GetAbility():GetSpecialValueFor("soul_keep_duration")})
                 self:StartCooldown(self:GetAbility():GetSpecialValueFor("soul_keep_cooldown"))
             end 
         end 

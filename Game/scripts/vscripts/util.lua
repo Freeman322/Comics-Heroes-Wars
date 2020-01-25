@@ -433,6 +433,10 @@ function Util:OnHeroInGame(hero)
             hero:AddNewModifier(hero, nil, "modifier_dark_emblem", nil)
         end
 
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "heart_timegem") == true then
+          hero:AddNewModifier(hero, nil, "modifier_heart_timegem", nil)
+        end
+      
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem_green") == true then
             local nFXIndex = ParticleManager:CreateParticle( "particles/red_emblem/red_emblem.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
             ParticleManager:ReleaseParticleIndex(nFXIndex)

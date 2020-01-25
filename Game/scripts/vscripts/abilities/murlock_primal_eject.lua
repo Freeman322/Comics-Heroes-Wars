@@ -10,7 +10,11 @@ end
 
 function murlock_primal_eject:OnSpellStart ()
     local caster = self:GetCaster ()
-    EmitSoundOn ("Hero_Silencer.GlaivesOfWisdom.Damage", caster)
+    local sound = "Hero_Silencer.GlaivesOfWisdom.Damage"
+    if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "deep_murloc") then
+        sound = "Deep_Murloc.Ulti"
+    end
+    EmitSoundOn (sound, caster)
     local duration = self:GetSpecialValueFor("duration")
     caster:AddNewModifier (caster, self, "modifier_murlock_primal_eject", { duration = duration })
     caster:AddNewModifier (caster, self, "modifier_invisible", { duration = duration })

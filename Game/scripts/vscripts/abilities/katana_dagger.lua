@@ -29,7 +29,7 @@ function katana_dagger:OnSpellStart()
             local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), target:GetOrigin(), target, 700, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 
             ---- Если юнитов в массиве больше 0
-            if #units > 0 then
+            if #units > 1 then
                 for _,  unit in pairs(units) do
                     num = num - 1
 

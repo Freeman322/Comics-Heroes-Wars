@@ -7,13 +7,28 @@ function item_time:GetIntrinsicModifierName()
 	return "item_time_gem"
 end
 
+function item_time:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_heart_timegem") then return "custom/heart_timegem" end
+	return self.BaseClass.GetAbilityTextureName(self)
+end
+
 function item_time:OnSpellStart ()
     if IsServer() then
-        EmitSoundOn ("DOTA_Item.Refresher.Activate", self:GetCaster () )
+        local sound = "DOTA_Item.Refresher.Activate"
+
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "heart_timegem") then
+            local nFXIndex = ParticleManager:CreateParticle ("particles/stygian/heart_timegem.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster ());
+            ParticleManager:SetParticleControlEnt (nFXIndex, 0, self:GetCaster (), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster ():GetOrigin (), true);
+            ParticleManager:ReleaseParticleIndex (nFXIndex);
+            sound = "Heart_Timegem.Cast" 
+        else
         
         local nFXIndex = ParticleManager:CreateParticle ("particles/items2_fx/refresher.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster ());
         ParticleManager:SetParticleControlEnt (nFXIndex, 0, self:GetCaster (), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster ():GetOrigin (), true);
         ParticleManager:ReleaseParticleIndex (nFXIndex);
+        end
+
+        EmitSoundOn (sound, self:GetCaster () )
         
         for i=0, 15, 1 do  
             local current_ability = self:GetCaster ():GetAbilityByIndex (i)
@@ -94,6 +109,7 @@ end
 
 function item_time_gem:OnTime(hAttacker, hVictim)
     if IsServer() then
+        local sound = "Hero_Weaver.TimeLapse" 
         if self:GetCaster() == nil then
             return false
         end
@@ -115,6 +131,19 @@ function item_time_gem:OnTime(hAttacker, hVictim)
             self:GetParent():SetHealth( self.tStates[0].health )
             self:GetParent():SetMana( self.tStates[0].mana )
 
+            if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "heart_timegem") then
+                local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/wisp/wisp_death_ti7_model_heart.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+                ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin())
+                ParticleManager:SetParticleControl( nFXIndex, 1, self:GetParent():GetOrigin())
+                ParticleManager:SetParticleControl( nFXIndex, 2, Vector(1, 1, 1))
+                ParticleManager:SetParticleControl( nFXIndex, 3, self:GetParent():GetOrigin())
+                ParticleManager:SetParticleControl( nFXIndex, 4, self:GetParent():GetOrigin())
+                ParticleManager:SetParticleControl( nFXIndex, 5, self:GetParent():GetOrigin())
+                ParticleManager:SetParticleControl( nFXIndex, 6, self:GetParent():GetOrigin())
+                ParticleManager:SetParticleControl( nFXIndex, 10,self:GetParent():GetOrigin())
+                ParticleManager:ReleaseParticleIndex( nFXIndex )
+            sound = "Heart_Timegem.Cast"
+            else
             local nFXIndex = ParticleManager:CreateParticle( "particles/effects/time_lapse_2.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
             ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin())
             ParticleManager:SetParticleControl( nFXIndex, 1, self:GetParent():GetOrigin())
@@ -125,8 +154,9 @@ function item_time_gem:OnTime(hAttacker, hVictim)
             ParticleManager:SetParticleControl( nFXIndex, 6, self:GetParent():GetOrigin())
             ParticleManager:SetParticleControl( nFXIndex, 10,self:GetParent():GetOrigin())
             ParticleManager:ReleaseParticleIndex( nFXIndex )
+            end
 
-            EmitSoundOn( "Hero_Weaver.TimeLapse", self:GetParent() )
+            EmitSoundOn( sound, self:GetParent() )
 
             self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_time_gem_cooldown", {duration = self:GetAbility():GetSpecialValueFor("time_cooldown")})
 
@@ -175,3 +205,8 @@ modifier_item_time_gem_cooldown = ({})
 function modifier_item_time_gem_cooldown:IsHidden() return false end
 function modifier_item_time_gem_cooldown:IsPurgable() return false end
 function modifier_item_time_gem_cooldown:RemoveOnDeath() return false end
+
+function item_time:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_heart_timegem") then return "custom/heart_timegem" end
+	return self.BaseClass.GetAbilityTextureName(self)
+end

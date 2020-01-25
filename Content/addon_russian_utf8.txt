@@ -134,7 +134,7 @@
 		"new_npc_dota_hero_queenofpain"			"Slaanesh"
 
 		"dota_chatwheel_message_GG"					"Это ГГ, бл*ть!"
-		"dota_chatwheel_message_GGWP"				"Норм пацанчики попались! ГГ"
+		"dota_chatwheel_message_GGWP"				"Hey Dude! Nice cock"
 		"dota_chatwheel_message_All_GG"				"Это ГГ, бл*ть! Вас Вые*али!"
 		"dota_chatwheel_message_All_GGWP"			"Норм пацанчики попались! ГГ"
 		"dota_chatwheel_message_What_To_Buy"		"Поцы, что мне собрать?! Я рак."
@@ -2993,10 +2993,7 @@
 		"DOTA_Tooltip_collector_passive_modifier"										"RAVAGE"
 
 		"DOTA_Tooltip_ability_item_soul_urn"                                              "Soul Medallion"
-		"DOTA_Tooltip_ability_item_soul_urn_Description"								  "<h1>Активируемая: Magic Pact</h1> Поглощает 50% маны врага и лечит героя на это значение.\n <h1>Пассивная: Magical Crit</h1>Урон, нанесенный способностью, может быть критическим."		
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_all_stats"                              "+$all"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_armor"                                  "+$armor"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_health_regen"                           "+$hp_regen"
+		"DOTA_Tooltip_ability_item_soul_urn_Description"								  "<h1>Пассивная: Magical Crit</h1>Урон, нанесенный способностью, может быть критическим."		
 		"DOTA_Tooltip_ability_item_soul_urn_bonus_mana_regen"                             "+$mana_regen"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_strike"                              "%+$magical_crit"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_chance"                              "%ШАНС:"
@@ -4108,7 +4105,7 @@
 		"DOTA_Tooltip_ability_god_emperor_supersonic_strike_magic_missile_stun"           "ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
 
 		"DOTA_Tooltip_ability_khorn_erosion"                                              "Erosion"
-		"DOTA_Tooltip_ability_khorn_erosion_Description"                                  "Аура: Все враги в радиусе действия при передвижения будут получать урон от пройденного расстояния."
+		"DOTA_Tooltip_ability_khorn_erosion_Description"                                  "Аура: Все враги в радиусе действия пр������ передвижения будут получать урон от пройденного расстояния."
 		"DOTA_Tooltip_ability_khorn_erosion_aura_radius"                                  "РАДИУС:"
 		"DOTA_Tooltip_ability_khorn_erosion_aura_damage"                                  "%УРОН:"
 
@@ -4803,10 +4800,10 @@
 
 		"DOTA_Tooltip_ability_predator_observer"                                          "Observer"
 		"DOTA_Tooltip_ability_predator_observer_Description"                              "Пасcивная: При каждом ударе по врагу, Predator снижает броню врагу и наносит дополнительный урон."
-		"DOTA_Tooltip_ability_predator_observer_armor_per_hit"                            "БРОНИ ЗА УДАР:"
-		"DOTA_Tooltip_ability_predator_observer_damager_per_stack"                        "УРОН ЗА СТАК:"
+		"DOTA_Tooltip_ability_predator_observer_armor_per_hit"                            "СНИЖЕНИЕ БРОНИ ЗА УДАР:"
+		"DOTA_Tooltip_ability_predator_observer_damager_per_stack"                        "ДОПОЛНИТЕЛЬНЫЙ УРОН ЗА СТАК:"
 		"DOTA_Tooltip_ability_predator_observer_debuff_duration"                          "ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_predator_observer_lifesteal"                                "%ЛЕЧЕНИЕ:"
+
 
 		"DOTA_Tooltip_ability_predator_hunter_strike"                                     "Hunter Strike"
 		"DOTA_Tooltip_ability_predator_hunter_strike_Description"                         "Активируемая: Predator оглушает всех юнитов, попавших в область действия способности."
@@ -6250,9 +6247,6 @@
 		"DOTA_Tooltip_ability_item_reality_gem"                                           "Reality Gem"
 		"DOTA_Tooltip_ability_item_reality_gem_Description"                               "<h1>Active: Reverse Reality </h1> В определенной области полностью меняет свойства реальности - превращая урон в анти-урон."
 		"DOTA_Tooltip_ability_item_reality_gem_Lore" 									  "Существуют реликвии, которые предшествуют самой Вселенной. То, что находится в ней, является одним из них. Девять миров не вечны. У них был рассвет, так же, как и будет закат. Но это... эта реликвия вечна..."
-		"DOTA_Tooltip_ability_item_reality_gem_bonus_all_stats"                           "+$all"
-		"DOTA_Tooltip_ability_item_reality_gem_bonus_health_regen"                        "+$hp_regen"
-		"DOTA_Tooltip_ability_item_reality_gem_bonus_damage"                              "+$damage"
 		"DOTA_Tooltip_ability_item_reality_gem_bonus_health"                              "+$health"
 		"DOTA_Tooltip_ability_item_reality_gem_bonus_mana"                                "+$mana"
 		"DOTA_Tooltip_ability_item_reality_gem_reality_reverse_duration"                  "REVERSE REAVILTY ДЛИТЕЛЬНОСТЬ:"
@@ -6292,20 +6286,16 @@
 		"DOTA_Tooltip_ability_item_power_gem_Lore"  									  "То, что скрыто в этой сфере... я не знаю, что это, но точно знаю, что это страшнейшее оружие из всех существующих..."
 		"DOTA_Tooltip_ability_item_power_gem_bonus_strength"                              "+$str"
 		"DOTA_Tooltip_ability_item_power_gem_bonus_intellect"                             "+$int"
-		"DOTA_Tooltip_ability_item_power_gem_bonus_damage"                                "+$damage"
 		"DOTA_Tooltip_ability_item_power_gem_bonus_spell_damage"                          "%+$spell_amp"
 		"DOTA_Tooltip_ability_item_power_gem_power_duration"                              "Ancient Power ДЛИТЕЛЬНОСТЬ:"
 		"DOTA_Tooltip_ability_item_power_gem_power_totaldmg"                              "%Ancient Power УРОН:"
 
 		"DOTA_Tooltip_ability_item_soul"                                                  "Soul Gem"
-		"DOTA_Tooltip_ability_item_soul_Description"                                      "<h1>Active: Acknowledge </h1> Раскрывает местоположение абсолютно всех существ на карте. \n <h1>Passive: Eye</h1>Дарует ауру fow's sight в радиусе 1200. \n <h1>Passive: Refraction</h1> Если урон был магическим, то он будет возвращен вражескогму кастеру."
+		"DOTA_Tooltip_ability_item_soul_Description"                                      "<h1>Active: Acknowledge </h1> Раскрывает местоположение абсолютно всех существ на карте. \n <h1>Passive: Refraction</h1> Если урон был магическим, то он будет возвращен вражескогму кастеру."
 		"DOTA_Tooltip_ability_item_soul_Lore"                                      		  "Не уходи безропотно во тьму, Будь яростней пред бурей всех ночей, Не дай погаснуть свету своему! Хоть мудрый знает — не осилишь тьму, Во мгле словами не зажжёшь лучей — Не уходи безропотно во тьму!"
 		"DOTA_Tooltip_ability_item_soul_bonus_attack_speed"                               "+$attack"
 		"DOTA_Tooltip_ability_item_soul_bonus_vision"                                     "ДОП.ДАЛЬНОСТЬ ОБЗОРА:"
-		"DOTA_Tooltip_ability_item_soul_bonus_mana_regen"                                 "+$mana_regen"
-		"DOTA_Tooltip_ability_item_soul_bonus_all_stats"                                  "+$all"
 		"DOTA_Tooltip_ability_item_soul_magical_damage_return"                            "%ВОЗВРАЩЕНИЕ МАГИЧЕСКОГО УРОНА:"
-		"DOTA_Tooltip_ability_item_soul_soul_radius"                                      "Acknowledge РАДИУС:"
 		"DOTA_Tooltip_ability_item_soul_overseer_duration"                                "Acknowledge ДЛИТЕЛЬНОСТЬ:"
 		
 		"DOTA_Tooltip_ability_item_glove_of_the_creator"                                  "The Infinity Gauntlet"
@@ -6647,7 +6637,7 @@
 		"DOTA_Tooltip_ability_godspeed_ember_field_max_gain"                              "МАКС. СКОРОСТИ:"
 
 		"DOTA_Tooltip_ability_godspeed_hyperpath"                                         "Hyperpath"
-		"DOTA_Tooltip_ability_godspeed_hyperpath_Description"                             "Делает героя на время неуязвимым и позволяет ему проходить сквозь препятствия."
+		"DOTA_Tooltip_ability_godspeed_hyperpath_Description"                             "Делает героя на время неуязвимым и позволяет ему проходить сквозь преп��тс��в��я."
 		"DOTA_Tooltip_ability_godspeed_hyperpath_duration"                                "DURATION:"
 
 		"DOTA_Tooltip_ability_savitar_speedforce_rage"                                    "Speedforce Rage"
