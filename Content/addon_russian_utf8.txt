@@ -683,28 +683,11 @@
 		////Гонщик	
 
 
-		"DOTA_Tooltip_ability_ghost_rider_searing_chains"	"SEARING CHAINS"
-		"DOTA_Tooltip_ability_ghost_rider_searing_chains_Description"	"Активируемая: Гонщик связывает ближайших юнитов огненной цепью, которая не даёт им передвигаться."
-		"DOTA_Tooltip_ability_ghost_rider_searing_total_damage_tooltip"	"УРОН:"
-		"DOTA_Tooltip_ability_ghost_rider_searing_duration"	"ДЛИТЕЛЬНОСТЬ ПРИВЯЗКИ:"
+		"DOTA_Tooltip_ability_ghost_rider_searing_chains_Description"	    "Активируемая: Гонщик связывает ближайших юнитов огненной цепью, которая не даёт им передвигаться."
+		"DOTA_Tooltip_ability_ghost_rider_searing_total_damage_tooltip"	     "УРОН:"
+		"DOTA_Tooltip_ability_ghost_rider_searing_duration"         	    "ДЛИТЕЛЬНОСТЬ ПРИВЯЗКИ:"
 
-		"DOTA_Tooltip_ability_ghost_rider_assassinate"	"GHOST'S ASSASINATE"
-		"DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	"Активируемая: Гонщик стреляет из своего легендарного дробовика."
-		"DOTA_Tooltip_ability_ghost_rider_assassinate_tooltip_range"	"ДАЛЬНОСТЬ ВЫСТРЕЛА:"
-
-		"DOTA_Tooltip_ability_ghost_rider_drain"	"GHOST'S DRAIN"
-		"DOTA_Tooltip_ability_ghost_rider_drain_Description"	"Пассивная: Гонщик с каждым ударом уносит частичку души врага в ад. Сжигает ману и наносит урон."
-		"DOTA_Tooltip_ability_ghost_rider_drain_damage_per_burn"	"УРОН ЗА ЕД.МАНЫ:"
-		"DOTA_Tooltip_ability_ghost_rider_drain_mana_per_hit"	"МАНЫ ЗА УДАР:"
-
-
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua"						"PUNISHING GAZE"
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Description"			"Эта способность наносит <font color=\"#70EA72\">Отнимающий здоровье</font> тип урона. Одно из сильнейших заклинаний во Вселенной, его НИКАК НЕЛЬЗЯ ИЗБЕЖАТЬ. Наносит столько урона цели, сколько она нанесла союзникам кастера за эту жизнь. \n\nУлучшается с Aghanim's Scepter."
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Lore"					"Ничто и никто не может укрыться от его гнева."
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Note0"						"Невозможно ничем заблокировать"    
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aoe_scepter"			"AOE СО СКИПЕТРОМ:"
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aghanim_description" 	"Дает способности АОЕ радиус."
-
+		"DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	        "Активируемая: Гонщик стреляет из своего легендарного дробовика."
 
 		////magneto
 
@@ -806,7 +789,7 @@
 		"DOTA_Tooltip_ability_tanos_chronosphere_duration"	"ДЛИТЕЛЬНОСТЬ СФЕРЫ:"
 
 		"DOTA_Tooltip_ability_thanos_dying_star"			 "DYING STAR"
-		"DOTA_Tooltip_ability_thanos_dying_star_Description" "Танос создает звезду, которая через 4 секунды превращается в сверхновую. Каждые 0.1 секунды наносит урон от максимального здоровья врагов, а так же враги не могут попасть по целе. После взрыва, здоровье врагов будет снижено вдвое от текущего и они будут оглушены на 2 секунды."
+		"DOTA_Tooltip_ability_thanos_dying_star_Description" "Танос создает звезду, которая через 4 секунды превращается в сверхновую. Каждые 0.1 секунды наносит урон, а так же враги не могут попасть по целе. После взрыва враги будут оглушены на 2 секунды."
 		"DOTA_Tooltip_ability_thanos_dying_star_damage"		"%УРОН:"
 		"DOTA_Tooltip_ability_thanos_dying_star_duration"	"ЗАДЕРЖКА ВЗРЫВА:"
 		"DOTA_Tooltip_ability_thanos_dying_star_radius"		"РАДИУС:"
@@ -1117,7 +1100,7 @@
 
 		"DOTA_TOOLTIP_ABILITY_deadpool_bar"                                     "RED RAGE"
 		"DOTA_TOOLTIP_ABILITY_deadpool_bar_Description"                         "Дедпул приходит в ярость из-за чего на него перестают работать некоторые способности и предметы."
-		"DOTA_Tooltip_ability_deadpool_bar_attack_speed_bonus"					"ДОП.СКОРОСТЬ АТАКИ:"
+		"DOTA_Tooltip_ability_deadpool_bar_movement_speed_bonus"					"BONUS MOVEMENT SPEED:"
 		"DOTA_Tooltip_ability_deadpool_bar_duration"							    "ДЛИТЕЛЬНОСТЬ:"
 
 		"DOTA_TOOLTIP_ABILITY_deadpool_strike"                                     "CRUSHING STRIKE"
@@ -2117,9 +2100,9 @@
 		"DOTA_Tooltip_ABILITY_ronan_bash_bonus_damage"								"УРОН:"
 
 		"DOTA_Tooltip_ability_ronan_passive"							"FEAR"
-		"DOTA_Tooltip_ability_ronan_passive_Description"  				"Ронан создает темные отголоски душ противников в радиусе 900, заставляя их атаковать врага."
-		"DOTA_Tooltip_ability_ronan_passive_illusion_duration"			"ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_ronan_passive_illusion_outgoing_tooltip"	"%ИСХОДЯЩИЙ УРОН:"
+		"DOTA_Tooltip_ability_ronan_passive_Description"  				"Ронан наносит сильный удар по земле, отталкивая всех врагов в радиусе и нанося им урон."
+		"DOTA_Tooltip_ability_ronan_passive_knockback_duration"			"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_ronan_passive_damage"	                    "УРОН:"
 		"DOTA_Tooltip_ability_ronan_passive_move_slow"					"%ЗАМЕДЛЕНИЕ:"
 
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole"							"KREE's RAGE"
@@ -3674,7 +3657,7 @@
 		"DOTA_Tooltip_ability_eternity_chronosphere_duration_scepter"                     "ДЛИТЕЛЬНОСТЬ СО СКИПЕТРОМ:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_cooldown_scepter"                     "ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_bonus_attack_speed"                   "ДОП.СКОРОСТЬ АТАКИ:"
-		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Увеличивает время действия сферы и уменьшает время перезарядки."
+		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Увеличивает время действия сферы и уменьшает время перезарядки, а так-же увеличивает базовый урон в два раза."
 
 
 		"DOTA_TOOLTIP_eternity_chronosphere_modifier"									  "TIME HOLE"
@@ -3939,7 +3922,7 @@
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_Description"                          "Активируемая: Артас высвобождает всю мощь Фростморна, замораживая ближайших врагов и нанося им урон. Убитые этой способностью враги, превратятся в нежить."
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_range"                                "ДАЛЬНОСТЬ:"
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_damage"                               "УРОН:"
-		"DOTA_Tooltip_ability_lich_king_cold_reaper_bonus_per_soul"                       "УРОН ЗА ДУШУ:"
+		"DOTA_Tooltip_ability_lich_king_cold_reaper_bonus_per_soul"                       "УРОН ЗА ДУШУ В FROSTMORNE:"
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_duration"                             "ДЛИТЕЛЬНОСТЬ ЗАМОРОЗКИ:"
 		///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -4770,7 +4753,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_odin"                         	    "+18% к передаче атрибутов для God's Mark"
 		"DOTA_Tooltip_ability_special_bonus_unique_murloc"                         	    "+x2 лечения в секунду"
 		"DOTA_Tooltip_ability_special_bonus_unique_medivh"                         	    "+500 к урону от Defeaning Blast"
-		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+15 к урону за душу для Cold Reaper"
+		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+5 урона за душу в Frostmorne"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_king"                         	"+800 к урону для Flesh Hunger"
 		"DOTA_Tooltip_ability_special_bonus_unique_khorne"                         	    "+20% к урону для Erosion"
 		"DOTA_Tooltip_ability_special_bonus_unique_infinity"                         	"Изменяет тип урона Midnigth Pulse на понижающий здоровье"
@@ -6004,8 +5987,8 @@
 		"DOTA_Tooltip_ability_doom_strike_array_damage"                                   "УРОН:"
 		"DOTA_Tooltip_ability_doom_strike_array_strikes"                                  "АТАК:"
 		
-		
-		
+	    "DOTA_Tooltip_ability_special_bonus_unique_weaver_1"                                "+75 урона к Wind Walk"
+        "DOTA_Tooltip_ability_special_bonus_unique_weaver_2"                                "+200 скорости к Wind Walk"
 
 		"DOTA_Tooltip_ability_item_recipe_orb_of_osuvox"                                  "Orb Of Osuvox"
 		"DOTA_Tooltip_ability_item_recipe_orb_of_osuvox_Description"                      ""
@@ -6051,7 +6034,7 @@
 		"DOTA_Tooltip_ability_strange_test_of_faith_heal_expier"                          "ЛЕЧЕНИЕ ПРИ РАЗВЕИВАНИИ:"
 		"DOTA_Tooltip_ability_strange_test_of_faith_duration"                             "ДЛИТЕЛЬНОСТЬ:"
 		
-		"DOTA_Tooltip_ability_special_bonus_cast_range_400"								  "+2000 к дальности способностей"
+		"DOTA_Tooltip_ability_special_bonus_cast_range_400"								  "+1000 к дальности способностей"
 		
 		"DOTA_TOOLTIP_modifier_item_orb_of_osuvox_cooldown"								  "Spellblock cooldown"
 		"DOTA_TOOLTIP_modifier_item_orb_of_osuvox_active_aura"							  "Orb Of Osuvox"
@@ -6089,6 +6072,7 @@
 		"DOTA_Tooltip_ability_onepunchman_stats"                                          "Limiter"
 		"DOTA_Tooltip_ability_onepunchman_stats_Description"                              "Увеличивает скорость передвижения и дарует увороты от физических атак."
 		"DOTA_Tooltip_ability_onepunchman_stats_bonus_evasion"                            "%УВОРОТЫ:"
+		"DOTA_Tooltip_ability_onepunchman_stats_bonus_agility"                            "ЛОВКОСТЬ:"
 		"DOTA_Tooltip_ability_onepunchman_stats_bonus_move_speed_percent"                 "%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
 		"DOTA_Tooltip_ability_onepunchman_stats_Lore"								      "Бой Сайтамы и Геноса является спаррингом. Во время этого поединка Генос показал всю свою мощь, которую имел на тот момент. Условие было то, что если Генос коснется Сайтамы спарринг считается выигрышным. Однако, казалось, даже такое лёгкое условие оказалось невыполнимым, при том, что Сайтама практически не сопротивлялся, а убегал. Под конец Сайтамы решил проучить Геноса и ударить его, но в самый последний момент, остановил удар. Ударная волна оказалось столь разрушительной, что часть холма позади Геноса была уничтожена в пыль."
 

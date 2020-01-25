@@ -510,9 +510,9 @@
 		"Ability1"					"carnage_blood_spray"
 		"Ability2"					"carnage_tombstone"
 		"Ability3"					"carnage_heartpiercer"
-		"Ability4"					"carnage_eject"
+		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
-		"Ability6"					"carnage_assimilate"
+		"Ability6"					"carnage_toxic_strike"
 
 		"AbilityTalentStart"		"10"
 
@@ -525,7 +525,7 @@
       	"Ability15"					"special_bonus_unique_carnage"
       	"Ability16"					"special_bonus_lifesteal_100"
 		"Ability17"					"special_bonus_all_stats_20"
-	
+
 		"ArmorPhysical"				"2"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -1464,9 +1464,9 @@
         "AbilityLayout"				"4"
         //------------------------------------------------------------------------------------------------------------
         "Ability1"		     		"enigma_missile"
-        "Ability2"		      		"enigma_vacuum"
+        "Ability2"		      		"enigma_demonic_conversion"
         "Ability3"		      		"enigma_midnight_pulse_new"
-        "Ability4"		      		"enigma_demonic_conversion"
+        "Ability4"		      		"enigma_vacuum"
         "Ability5"          		"generic_hidden"
         "Ability6"		      		"infinity_black_hole"
         "Ability10"					"special_bonus_exp_boost_30"
@@ -1752,9 +1752,9 @@
 		"Ability2"				"gostrider_angel_of_death"									// Ability 2
 		"Ability3"				"gostrider_fire_mist"							// Ability 3
 		"Ability4"				"generic_hidden"							     // Ability 4
-		"Ability5"			     "generic_hidden"
-		"Ability6"			     "gostrider_punishing_gaze"
-		"Ability7"			     ""
+		"Ability5"			    "generic_hidden"
+		"Ability6"			    "gostrider_punishing_gaze"
+		"Ability7"			    ""
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_all_stats_12"
 		"Ability12"				"special_bonus_hp_regen_40"
@@ -7876,7 +7876,7 @@
 		"AttackAnimationPoint"			"0.300000"
 		"AttackAcquisitionRange"			"600"
 		"AttackRange"					"150"
-		
+
 		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"			"10"
 		"AttributeStrengthGain"			"1.700000"
@@ -7912,11 +7912,11 @@
 		"Rolelevels"					"3"
 		"Complexity"					"1"
 		"Team"						"Bad"
-	
+
 		"LoadoutScale"					"1"
-		
+
 		"workshop_guide_name"			"Valkorion"
-	
+
 		"LastHitChallengeRival"			"npc_dota_hero_razor"
 		"GibType"						"electric"
 
@@ -7925,7 +7925,7 @@
 		"Ability3"		"valkorion_ligning_explosion"
 		"Ability4"		"generic_hidden"
 		"Ability5"		"generic_hidden"
-		"Ability6"		"valkorion_illusion"		
+		"Ability6"		"valkorion_illusion"
 		"Ability10"		"special_bonus_exp_boost_30"
 		"Ability11"		"special_bonus_unique_valkorion_2"
 		"Ability12"		"special_bonus_spell_block_20"
@@ -7978,11 +7978,11 @@
 		"Rolelevels"				"3"
 		"Complexity"				"1"
 		"Team"					"Bad"
-	
+
 		"LoadoutScale"				"1"
-		
+
 		"workshop_guide_name"		"Nevermore"
-	
+
 		"LastHitChallengeRival"		"npc_dota_hero_nevermore"
 		"GibType"					"ethereal"
 
@@ -7991,7 +7991,7 @@
 		"Ability3"				"death_eater_deathraze3"
 		"Ability4"				"death_eater_necromastery"
 		"Ability5"				"death_eater_aura"
-		"Ability6"				"death_eater_deaths_requiem"		
+		"Ability6"				"death_eater_deaths_requiem"
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_all_stats_12"
 		"Ability12"				"special_bonus_unique_death_eater_2"
@@ -8071,7 +8071,7 @@
 		"particle_folder"		"particles/units/heroes/hero_medusa"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_medusa.vsndevts"
-		
+
 	}
 	//=================================================================================================================
 	// HERO: Pennywise
@@ -8079,7 +8079,7 @@
 	"npc_dota_hero_pennywise"
 	{
 		"BaseClass"     		"npc_dota_hero"
-			
+
 		"Model"					"models/heroes/hero_pennywise/pennywise.vmdl"
 		"IdleExpression"		"scenes/bane/bane_exp_idle_01.vcd"
 		"SoundSet"				"Hero_Bane"
@@ -8090,7 +8090,7 @@
 		"Rolelevels"			"2,3,1,1"
 		"Complexity"			"2"
 		"Team"					"Bad"
-		
+
 		"HeroID"				"227"
 
 		"ModelScale"			"0.930000"
@@ -8149,7 +8149,7 @@
 	{
 		"BaseClass"     				"npc_dota_hero"
 		"HeroID"						"228"
-		
+
 		"CMDisabled"					"1"
 		"HeroDisabled"					"1"
 
@@ -8230,10 +8230,10 @@
 
         "CMDisabled"					"1"
 		"HeroDisabled"					"1"
-		
+
         "ModelScale"		            "0.930000"
 		"VersusScale"		            "0.770000"
-		
+
         "workshop_guide_name"		    "Io"
 		"PickSound"		                "wisp_move03"
 		"BanSound"		                "wisp_shitty_crummy_wizard"
@@ -8241,17 +8241,17 @@
 		"NameAliases"		            "wisp"
 		"NoCombine"		                "1"
 		"Legs"  	                    "0"
-        
+
 		"LastHitChallengeRival"		    "npc_dota_hero_zuus"
 		"AbilityDraftDisabled"		    "0"
 		"HeroSelectSoundEffect"		    "Hero_Wisp.Pick"
-        
+
 		"GibType"		                "ethereal"
 		"GibTintColor"	                "171 230 255 255"
 
 		"Ability1"		                "wisp_tether"
 		"Ability2"		                "wisp_spirits"
-		"Ability3"		                "wisp_overcharge"		
+		"Ability3"		                "wisp_overcharge"
 		"Ability4"		                "io_decay_dummy"
 		"Ability5"		                "generic_hidden"
 		"Ability6"		                "wisp_relocate"
@@ -8322,10 +8322,10 @@
 		"LastHitChallengeRival"		    "npc_dota_hero_lion"
 		"HeroSelectSoundEffect"		    "Hero_Leshrac.Pick"
 
-		
+
 		"Ability1"		                "chaos_king_hellfire"
 		"Ability2"		                "chaos_king_inner_fear"
-		"Ability3"		                "chaos_king_static_shield"		
+		"Ability3"		                "chaos_king_static_shield"
 		"Ability4"		                "chaos_king_chaos_clone"
 		"Ability5"		                "generic_hidden"
 		"Ability6"		                "chaos_king_burning_fiend"
@@ -8397,10 +8397,10 @@
 		"LastHitChallengeRival"		    "npc_dota_hero_necrolyte"
 		"HeroSelectSoundEffect"		    "Hero_Morphling.Pick"
 
-		
+
 		"Ability1"		                "aqua_man_waveform"
 		"Ability2"		                "aqua_man_water_wave"
-		"Ability3"		                "aqua_man_wave"		
+		"Ability3"		                "aqua_man_wave"
 		"Ability4"		                "aqua_man_sea_lord"
 		"Ability5"		                "generic_hidden"
 		"Ability6"		                "aqua_man_sphere"
@@ -8454,12 +8454,12 @@
 		"Rolelevels"	                "1,2,2,3"
 		"Complexity"	                "1"
 		"Team"		                    "Good"
-		
+
         "ModelScale"		            "0.900000"
 		"VersusScale"		            "0.750000"
 
 		"LoadoutScale"		            "0.8"
-	
+
 		"Ability1"		                "gorr_lightspeed_dash"
 		"Ability2"		                "gorr_necrostrike"
 		"Ability3"		                "gorr_seduction"
@@ -8480,10 +8480,10 @@
 		"AttackDamageMax"		        "37"
 		"AttackRate"		            "1.800000"
 		"AttackAnimationPoint"		    "0.40000"
-	
+
 		"AttackAcquisitionRange"		"600"
 		"AttackRange"		            "150"
-	
+
 		"AttributePrimary"		        "DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		    "23"
 		"AttributeStrengthGain"		    "3.200000"

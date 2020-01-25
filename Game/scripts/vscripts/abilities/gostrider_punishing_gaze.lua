@@ -67,8 +67,8 @@ function gostrider_punishing_gaze:OnSpellStart()
     ApplyDamage ({
         victim = hTarget,
         attacker = hCaster,
-        damage = damage,
-        damage_type = DAMAGE_TYPE_PHYSICAL,
+        damage = damage + self:GetAbilityDamage(),
+        damage_type = DAMAGE_TYPE_MAGICAL,
         ability = self,
         damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR
     })
@@ -89,7 +89,6 @@ end
 
 function modifier_gostrider_punishing_gaze:DeclareFunctions()
     local funcs = {
-        MODIFIER_EVENT_ON_TAKEDAMAGE,
         MODIFIER_EVENT_ON_DEATH
     }
 
@@ -108,22 +107,20 @@ function modifier_gostrider_punishing_gaze:Destroy()
     end
 end
 
-function modifier_gostrider_punishing_gaze:OnTakeDamage( params )
+function modifier_gostrider_punishing_gaze:OnDeath(params)
     if IsServer() then
         local target = params.attacker
         local victim = params.unit
 
-        if target:IsRealHero() and victim:IsRealHero() and target:GetTeamNumber() ~= victim:GetTeamNumber()  then 
-            self._hUnits[target] = (self._hUnits[target] or 0) + params.damage
+        if target ~= nil and target:IsRealHero() and target:GetTeamNumber() ~= victim:GetTeamNumber() then
+            local bonus = self:GetAbility():GetSpecialValueFor("damage_per_hero")
+
+            if not victim:IsHero() then
+                bonus = self:GetAbility():GetSpecialValueFor("damage_per_unit")
+            end
+
+            self._hUnits[target] = (self._hUnits[target] or 0) + bonus
         end
-    end
-end
-
-function modifier_gostrider_punishing_gaze:OnDeath(params)
-    if IsServer() then
-        local unit = params.unit
-
-        if unit:IsRealHero() and self._hUnits[unit] then self._hUnits[unit] = 0 end 
     end
 end
 

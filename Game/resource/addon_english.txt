@@ -1727,30 +1727,16 @@
 		////Гонщик	
 
 
-		"DOTA_Tooltip_ability_ghost_rider_searing_chains"	"SEARING CHAINS"
+		"DOTA_Tooltip_ability_ghost_rider_searing_chains"	            "Searing Chains"
 		"DOTA_Tooltip_ability_ghost_rider_searing_chains_Description"	"Activated: The Rider wraps nearby units with fiery chains, anchoring them in place and dealing damage each second."
 		"DOTA_Tooltip_ability_ghost_rider_searing_total_damage_tooltip"	"DAMAGE:"
-		"DOTA_Tooltip_ability_ghost_rider_searing_duration"	"DURATION:"
+		"DOTA_Tooltip_ability_ghost_rider_searing_duration"	            "DURATION:"
 
-		"DOTA_Tooltip_ability_ghost_rider_assassinate"	"GHOST ASSASINATION"
-		"DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	"Activated: The Rider fires his legendary shotgun."
-		"DOTA_Tooltip_ability_ghost_rider_assassinate_tooltip_range"	"RANGE:"
+        "DOTA_Tooltip_ability_ghost_rider_assassinate"	                "Shotgun Shot"
+        "DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	    "Activated: The Rider fires his legendary shotgun."
+        "DOTA_Tooltip_ability_ghost_rider_assassinate_damage"	        "DAMAGE:"
 
-		"DOTA_Tooltip_ability_ghost_rider_drain"	"GHOST'S DRAIN"
-		"DOTA_Tooltip_ability_ghost_rider_drain_Description"	"Passive: The Rider with each attack takes away the soul of the enemy to hell. Burns mana and deals additional damage."
-		"DOTA_Tooltip_ability_ghost_rider_drain_damage_per_burn"	"DAMAGE PER MANA:"
-		"DOTA_Tooltip_ability_ghost_rider_drain_mana_per_hit"	"MANA PER HIT:"
-
-
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua"						"PUNISHING GAZE"
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Description"			"DAMAGE TYPE:<font color=\"#70EA72\"> health removal</font>\nOne of the most powerful spells in the universe, it is not possible to avoid. The damage dealt depends on the amount of damage dealt to your whole team by enemies. \n\nUpgradable by Aghanim's Scepter."
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Lore"					"Nothing and no one can escape from his anger."
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aoe_scepter"			"AoE with Scepter:"
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aghanim_description" 	"Causes Punishing Gaze to be cast on all enemy units within 325 radius of the target."
-
-
-		////magneto
-
+        "DOTA_Tooltip_ability_special_bonus_unique_snapfire_7"          "+60 damage for Shotgun Shot"
 
 		"DOTA_Tooltip_ability_magneto_telekinesis"	"TELEKINESIS"
 		"DOTA_Tooltip_ability_magneto_telekinesis_Description"	"Magneto lifts the target into the air briefly."

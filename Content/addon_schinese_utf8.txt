@@ -921,7 +921,7 @@
 
 		"DOTA_TOOLTIP_ABILITY_deadpool_bar"                                     "RED RAGE"
 		"DOTA_TOOLTIP_ABILITY_deadpool_bar_Description"                         "Deadpool becomes Spell Immune, gains 100% resistance to magic damage, and gains increased attack speed."
-		"DOTA_Tooltip_ability_deadpool_bar_attack_speed_bonus"					"BONUS ATTACK SPEED:"
+		"DOTA_Tooltip_ability_deadpool_bar_movement_speed_bonus"				"BONUS MOVEMENT SPEED:"
 		"DOTA_Tooltip_ability_deadpool_bar_duration"							"DURATION:"
 
 
@@ -4679,7 +4679,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_odin"                         	    "+18% bonus attributes for God's Mark"
 		"DOTA_Tooltip_ability_special_bonus_unique_murloc"                         	    "+ x2 healing"
 		"DOTA_Tooltip_ability_special_bonus_unique_medivh"                         	    "+500 Defeaning Blast damage"
-		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+15 Cold Reaper bonus damage per soul"
+		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+5 damage for soul in Frostmorne"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_king"                         	"+800 Flesh Hunger damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_khorne"                         	    "+20% Erosion damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_katana"                         	    "+3% Ascending Soul bonus chance"
@@ -4701,14 +4701,13 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_saitama_2"                         	"Applyis attack on every unit per second for Light Strike Array"
 
 
-		
+
 		"DOTA_Tooltip_ability_black_flash_speed_blast_radius"                         	     "RADIUS:"
 
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_aghanim_description"              	 	 "Increases range of abilities by 100"
 		"DOTA_Tooltip_ability_black_flash_speed_blast_aghanim_description"                   "Makes the ability passive and applies it in a radius 100 on the nearest enemy hero, as well as damage inflicted in the amount of half of the existing stacks Speedforce."
 		"dota_hud_error_cant_cast_no_ability"												 "Can not steal ability"
 
-		
 		"DOTA_Tooltip_ability_black_flash_speed_blast_radius"                         	     "RADIUS:"
 
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_aghanim_description"              	 	 "Increases the range of abilities by 100"
@@ -6304,7 +6303,7 @@
 		
 		
 		"DOTA_Tooltip_modifier_item_anti_life_equation_active"                            "Muted"
-		"DOTA_Tooltip_ability_special_bonus_cast_range_400"								  "+2000 cast range"
+		"DOTA_Tooltip_ability_special_bonus_cast_range_400"								  "+1000 cast range"
 		"DOTA_Tooltip_ability_special_bonus_unique_ursa_warrior_3"						  "-0.2 Attack Point Animation"
 		"DOTA_Tooltip_ability_special_bonus_unique_ursa_warrior_2"						  "-8% incoming damage for Will"
 		"DOTA_Tooltip_ability_special_bonus_unique_ursa_warrior"					 	  "+2 second duration for Inner Beat"
@@ -6411,7 +6410,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_joker"							   	   "+460 damage for any mines"
 		"DOTA_Tooltip_ability_special_bonus_unique_joker_1"							   	   "+400 radius for Injustice"
 		
-		"DOTA_Tooltip_ability_special_bonus_unique_iron_fist"							   "+200 damage for Echo Punch"
+		"DOTA_Tooltip_ability_special_bonus_unique_iron_fist"							   "+340 damage for Echo Punch"
 		
 		"DOTA_Tooltip_ability_item_demon_shard_2_bonus_mana_regen"                        "+$mana_regen"
 		"DOTA_Tooltip_ability_item_demon_shard_2_bonus_health_regen"                      "+$hp_regen"
@@ -7371,9 +7370,9 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_4"                            "+ 9% dodge chance for Recoil"
 		"DOTA_Tooltip_ability_special_bonus_unique_superman_5"                            "+ 8 stack mult for Kryptonian"
 		"DOTA_Tooltip_ability_special_bonus_unique_mercer_1"                              "+ 15% heal and outgoing damage for Bloodrage"
-		"DOTA_Tooltip_ability_special_bonus_unique_mercer_2"                              "+ 16% slpash for Blades Weapon"
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_2"                              "+ 60% cleabe for Blades Weapon"
 		"DOTA_Tooltip_ability_special_bonus_unique_mercer_3"                              "+ 0.45 stun duration"
-		"DOTA_Tooltip_ability_special_bonus_unique_mercer_4"                              "+ 310 damage for Ravage"
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_4"                              "+ 210 damage for Ravage"
 		"DOTA_TOOLTIP_ABILITY_special_bonus_unique_superman_6"							  "Kryptonian ignores night"
 		
 		"npc_dota_companion"															  "Pet"
