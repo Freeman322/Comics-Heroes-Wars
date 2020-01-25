@@ -307,7 +307,9 @@ function modifier_dark_emblem:IsPurgable() return false end
 function modifier_dark_emblem:RemoveOnDeath() return false end
 function modifier_dark_emblem:DeclareFunctions ()
     local funcs = {
-        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_EXP_RATE_BOOST
     }
 
     return funcs
@@ -319,6 +321,18 @@ function modifier_dark_emblem:GetEffectAttachType()
     return PATTACH_ABSORIGIN_FOLLOW
 end
 function modifier_dark_emblem:GetModifierPercentageCooldown( params )
+    if IsServer() then
+        return 2
+    end
+end
+
+function modifier_dark_emblem:GetModifierConstantHealthRegen( params )
+    if IsServer() then
+        return 5
+    end
+end
+
+function modifier_dark_emblem:GetModifierPercentageExpRateBoost( params )
     if IsServer() then
         return 50
     end
