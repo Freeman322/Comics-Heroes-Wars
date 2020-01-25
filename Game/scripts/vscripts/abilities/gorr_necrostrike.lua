@@ -14,7 +14,7 @@ function modifier_gorr_necrostrike:RemoveOnDeath() return false end
 function modifier_gorr_necrostrike:DeclareFunctions() return {MODIFIER_EVENT_ON_ATTACK_LANDED} end
 function modifier_gorr_necrostrike:OnAttackLanded (params)
     if IsServer() then
-        if params.attacker == self:GetParent() and not params.attacker:PassivesDisabled() and not params.attacker:IsSilenced() then
+        if params.attacker == self:GetParent() and not params.attacker:PassivesDisabled() and not params.attacker:IsSilenced() and not params.target:IsBuilding() then
             local hits = self:GetAbility():GetSpecialValueFor("hits")
 
             if self.m_hLastTarget ~= params.target then

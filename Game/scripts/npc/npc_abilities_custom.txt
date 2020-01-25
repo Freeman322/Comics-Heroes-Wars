@@ -42010,7 +42010,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"45"
+        "AbilityCooldown"				"24"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -42356,19 +42356,19 @@
             "01"
             {
                 "var_type"					    "FIELD_INTEGER"
-                "radius"					    "350 450 550"
+                "radius"					    "500 600 700"
             }
             "02"
             {
                 "var_type"					    "FIELD_INTEGER"
-                "bonus_hero_damage"			    "80 160 240"
+                "bonus_hero_damage"			    "100 200 300"
                 "LinkedSpecialBonus"			"special_bonus_unique_murloc_1"
                 "CalculateSpellDamageTooltip"	"0"
             }
             "03"
             {
                 "var_type"						"FIELD_FLOAT"
-                "attack_interval"				"0.2"
+                "attack_interval"				"0.1"
             }
             "04"
             {
