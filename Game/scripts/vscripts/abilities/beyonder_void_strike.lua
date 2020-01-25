@@ -14,8 +14,14 @@ function beyonder_void_strike:OnSpellStart()
 
 	local origin = caster:GetOrigin()
 	local target_direction = (point-origin):Normalized()
-	local cast_angle = VectorToAngles(cast_direction).y
+	local cast_angle = VectorToAngles(target_direction).y
 	local targets = FindUnitsInRadius (caster:GetTeamNumber(), origin, nil,	radius,	self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), self:GetAbilityTargetFlags(),	FIND_ANY_ORDER,	false )
+
+	local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_void_spirit/voidspirit_overload_discharge.vpcf", PATTACH_ABSORIGIN, self:GetCaster() )
+	ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+	ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+	EmitSoundOn( "Hero_AbyssalUnderlord.DarkRift.Complete", self:GetCaster() )
 
 	for _, target in pairs(targets) do
 		local target_direction = (target:GetOrigin() - origin):Normalized()
@@ -26,10 +32,9 @@ function beyonder_void_strike:OnSpellStart()
 
 		target:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun})
 
-		caster:PerformAttack(
-			target, true, true, true, true, true, false, true) end
-
-	self:PlayEffects2( target, origin, cast_direction )
+		caster:PerformAttack(target, true, true, true, true, true, false, true)
+		self:PlayEffects2( target, origin, target_direction )
+	end
 end
 
 function beyonder_void_strike:PlayEffects1( caught, direction )
