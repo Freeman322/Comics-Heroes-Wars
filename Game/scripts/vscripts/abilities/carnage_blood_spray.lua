@@ -108,7 +108,7 @@ function modifier_carnage_blood_spray_modifier:OnIntervalThink()
             victim = self:GetParent(),
             attacker = self:GetCaster(),
             damage = self:GetAbility():GetAbilityDamage(),
-            damage_type = DAMAGE_TYPE_MAGICAL,
+            damage_type = DAMAGE_TYPE_PURE,
             ability = self:GetAbility()
         }
 
@@ -121,7 +121,7 @@ end
 function modifier_carnage_blood_spray_modifier:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
     }
 
     return funcs
@@ -133,6 +133,6 @@ function modifier_carnage_blood_spray_modifier:GetModifierPreAttack_BonusDamage(
     return (-1) * self:GetAbility():GetSpecialValueFor("damage_reduction")
 end
 
-function modifier_carnage_blood_spray_modifier:GetModifierPhysicalArmorBonus()
-    return (-1) * self:GetAbility():GetSpecialValueFor("armor_reduction")
+function modifier_carnage_blood_spray_modifier:GetModifierMoveSpeedBonus_Percentage()
+    return (-1) * self:GetAbility():GetSpecialValueFor("move_speed_slow")
 end

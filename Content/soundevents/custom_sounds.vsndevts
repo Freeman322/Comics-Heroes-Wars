@@ -5116,7 +5116,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5152,7 +5152,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+					    "value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5188,7 +5188,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5224,7 +5224,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5259,7 +5259,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5294,7 +5294,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5329,7 +5329,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5364,7 +5364,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.500000"
 					}
 					"pitch"
 					{
@@ -5399,6 +5399,44 @@
 					}
 					"volume"
 					{
+						"value"		"3.500000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Rat.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/rat/cast1.vsnd"
+                            "value1"		"sounds/econs/rat/cast2.vsnd"
+                            "value2"		"sounds/econs/rat/cast3.vsnd"
+                            "value3"		"sounds/econs/rat/cast4.vsnd"
+						}
+					}
+					"volume"
+					{
 						"value"		"2.000000"
 					}
 					"pitch"
@@ -5410,6 +5448,7 @@
 		}
 	}
 }
+
 
 "Pepe.Cast"
 {
@@ -5448,7 +5487,8 @@
 		}
 	}
 }
-"Heart_Timegem.Cast"
+
+"Ares.Anime.Cast2"
 {
 	"operator_stacks"
 	{
@@ -5466,12 +5506,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/heart_timegem.vsnd"
+							"value0"		"sounds/econs/ares/ares_olympus_call_cast.vsnd"
 						}
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"4.000000"
 					}
 					"pitch"
 					{
@@ -5483,7 +5523,7 @@
 	}
 }
 
-"Deep_Murloc.Attack"
+"Ares.Anime.Cast4"
 {
 	"operator_stacks"
 	{
@@ -5501,12 +5541,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/deep_murloc_attack.vsnd"
+							"value0"		"sounds/econs/ares/ares_terrorize_cast.vsnd"
 						}
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"4.000000"
 					}
 					"pitch"
 					{
@@ -5518,7 +5558,8 @@
 	}
 }
 
-"Deep_Murloc.Ulti"
+
+"Sailor.Cast1"
 {
 	"operator_stacks"
 	{
@@ -5536,12 +5577,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/deep_murloc_ulti.vsnd"
+							"value0"		"sounds/econs/sailor/sailor1.vsnd"
 						}
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"4.000000"
 					}
 					"pitch"
 					{
@@ -5553,4 +5594,282 @@
 	}
 }
 
+"Sailor.Cast3"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
 
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/sailor/sailor3.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Sailor.Cast4"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/sailor/sailor4.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Sanji.Cast1"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/sanji/cast1.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Sanji.Cast2"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/sanji/cast2.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Sanji.Cast4"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/sanji/cast4.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Sanji.Kill"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/sanji/sanji_kill.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Aquaman.Waterpool"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/ambient/soundscapes/waterfall_loop_01.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"1.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Aquaman.Ult.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_vo_switch"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spells/aquaman_ult_cast.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}

@@ -84,7 +84,7 @@ function modifier_zeus_gods_eye:OnAbilityExecuted(params)
               ability = self:GetAbility()
             }
             ApplyDamage( damage )
-            
+
             local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_zuus/zuus_static_field.vpcf", PATTACH_WORLDORIGIN, nil )
             ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 4, 1, 1 ) )
             ParticleManager:SetParticleControl( nFXIndex, 0, enemy:GetOrigin()+Vector(0,0,100) )

@@ -1,9 +1,25 @@
 if not godspeed_bend_time then godspeed_bend_time = class({}) end
-LinkLuaModifier ("modifier_godspeed_bend_time", "abilities/godspeed_bend_time.lua", LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier ("modifier_godspeed_bend_time", "abilities/godspeed_bend_time.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier ("modifier_godspeed_bend_time_passive", "abilities/godspeed_bend_time.lua", LUA_MODIFIER_MOTION_NONE)
+
+function godspeed_bend_time:GetIntrinsicModifierName() return "modifier_godspeed_bend_time_passive" end
+
+function godspeed_bend_time:AddSpeed(speed)
+	local max = self:GetSpecialValueFor("max_gain")
+	local mod = self:GetCaster():FindModifierByName("modifier_godspeed_bend_time_passive")
+	local curr = mod:GetStackCount()
+
+	if curr + speed > max then return end
+
+	mod:SetStackCount(mod:GetStackCount() + speed)
+end
+
+function godspeed_bend_time:ResetSpeed() self:GetCaster():FindModifierByName("modifier_godspeed_bend_time_passive"):SetStackCount(0) end
 
 function godspeed_bend_time:OnSpellStart()
     if IsServer() then
+
         local hTarget = self:GetCursorTarget()
         local info = {
     			EffectName = "particles/units/heroes/hero_phantom_lancer/phantomlancer_spiritlance_projectile.vpcf",
@@ -14,7 +30,7 @@ function godspeed_bend_time:OnSpellStart()
     			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
 		}
 	    ProjectileManager:CreateTrackingProjectile( info )
-	   
+
 		EmitSoundOn("Hero_PhantomLancer.SpiritLance.Throw", self:GetCaster())
     end
 end
@@ -31,32 +47,18 @@ end
 
 if not modifier_godspeed_bend_time then modifier_godspeed_bend_time = class({}) end
 
-function modifier_godspeed_bend_time:IsPurgeException()
-    return true
-end
-
-function modifier_godspeed_bend_time:GetStatusEffectName()
-	return "particles/status_fx/status_effect_siren_song.vpcf"
-end
-
-function modifier_godspeed_bend_time:StatusEffectPriority()
-	return 1000
-end
-
-
-function modifier_godspeed_bend_time:GetEffectName()
-	return "particles/godspeed/godspeed_bend_time.vpcf"
-end
-
-
-function modifier_godspeed_bend_time:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
-end
+function modifier_godspeed_bend_time:IsPurgeException() return true end
+function modifier_godspeed_bend_time:GetStatusEffectName() return "particles/status_fx/status_effect_siren_song.vpcf" end
+function modifier_godspeed_bend_time:StatusEffectPriority() return 1000 end
+function modifier_godspeed_bend_time:GetEffectName() return "particles/godspeed/godspeed_bend_time.vpcf" end
+function modifier_godspeed_bend_time:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 
 
 function modifier_godspeed_bend_time:OnCreated( kv )
 	if IsServer() then
-		self._iPtc = self:GetAbility():GetSpecialValueFor("damage")
+		self._iPtc = self:GetAbility():GetSpecialValueFor("speed_ptc")
+		self._iTotalDist = 0
+
 		if self:GetParent():HasTalent("special_bonus_godspeed_1") then self._iPtc = self._iPtc + self:GetParent():FindTalentValue("special_bonus_godspeed_1") end 
 
 		self._vPosition = self:GetParent():GetAbsOrigin()
@@ -65,7 +67,7 @@ end
 
 function modifier_godspeed_bend_time:OnDestroy()
 	if IsServer() then
-
+		self:GetAbility():AddSpeed(self._iTotalDist * (self._iPtc / 100))
 	end
 end
 
@@ -93,15 +95,34 @@ end
 
 function modifier_godspeed_bend_time:OnPositionChanged( distance )
 	if IsServer() then 
-		local damage_table = {
-			victim = self:GetParent(),
-			attacker = self:GetCaster(),
-			damage = distance * (self._iPtc / 100),
-			damage_type = self:GetAbility():GetAbilityDamageType(),
-			damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
-			ability = self:GetAbility()
-		}
-
-		ApplyDamage( damage_table )
+		self._iTotalDist = distance + self._iTotalDist
 	end
 end
+
+
+if modifier_godspeed_bend_time_passive == nil then modifier_godspeed_bend_time_passive = class({}) end
+
+function modifier_godspeed_bend_time_passive:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT
+	}
+
+	return funcs
+end
+
+function modifier_godspeed_bend_time_passive:GetModifierMoveSpeedBonus_Constant(params)
+	return self:GetStackCount()
+end
+
+function modifier_godspeed_bend_time_passive:GetModifierIgnoreMovespeedLimit(params)
+	return 1
+end
+
+function modifier_godspeed_bend_time_passive:GetPriority()
+	return MODIFIER_PRIORITY_SUPER_ULTRA
+end
+
+function modifier_godspeed_bend_time_passive:IsHidden() return true end
+function modifier_godspeed_bend_time_passive:IsPurgable() return false end
+function modifier_godspeed_bend_time_passive:RemoveOnDeath() return false end

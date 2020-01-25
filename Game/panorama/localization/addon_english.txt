@@ -2861,8 +2861,32 @@ Rage, rage against the dying of the light."
         "lee"                             "Lee"
         "lee_lore"                        ""
 
+		"dark_emblem_2"						"Green Emblem"
+		"dark_emblem_2_lore"				""
+
+		"star_emblem_2"						"Star Emblem III"
+		"star_emblem_2_lore"				""
+
+		"kirito"							"The Kirito"
+		"kirito_lore"						"Lol What?!"
+
         "zoro"                             "Zoro"
         "zoro_lore"                        ""
+
+		"sailor"                             "Sailor"
+        "sailor_lore"                        ""
+
+		"sanji"								"Sanji"
+		"sanji_lore"						""
+
+		"2019_service_medal"			 	"2019 Year Service Medal"
+		"2019_service_medal_lore"			"Here is another year behind! In the new year, more adventures await us, friend!"
+
+		"guru"								"2019 Year Guru Medal"
+		"guru_lore"							""
+
+		"2019_winter_chest"					"Trust of The Founder vol.2"
+		"2019_winter_chest_lore"			""
 
         "pepe"                             "Pepe"
         "pepe_lore"                        ""
@@ -2911,6 +2935,33 @@ Rage, rage against the dying of the light."
 
         "lovuska_jokera"                     "Joka"
 		"lovuska_jokera_lore"                 ""
+
+		"dark_emblem"                       "The Dark Emblem"
+		"dark_emblem_lore"                  ""
+
+		"2020_tier1"						"CHW WORLD CUP 2020 FINALIST"
+        "2020_tier1_lore"					"In the end... Its doesnt even matter."
+
+        "2020_tier2"						"CHW WORLD CUP 2020 HALF-FINALIST"
+        "2020_tier2_lore"					"In the end... Its doesnt even matter."
+
+        "2020_tier3"						"CHW WORLD CUP 2020 QUARTERFINALIST"
+        "2020_tier3_lore"					"In the end... Its doesnt even matter."
+
+        "rat"                               "Mr. Disney"
+        "rat_lore"                          ""
+
+        "star_emblem_3"                     "Star Emblem III"
+        "star_emblem_3_lore"                ""
+
+        "star_emblem_4"                     "Golden Emblem"
+        "star_emblem_4_lore"                ""
+
+        "platinum_emblem"                   "Platinum Emblem"
+        "platinum_emblem_lore"              ""
+
+        "izanagi"                           "Magatsu-Izanagi"
+        "izanagi_lore"                      "Who calls to me...? One who shines in unimaginable darkness... Will you even draw on your hallow self for your strength...? I am Magatsu-Izanagi... I will determine the path you take... A bloodied, more malevolent form of Izanagi, a Japanese creation deity born of the seven divine generations in Japanese mythology. Magatsu means "Calamity" itself, as this god's true mission is to bring forth chaos and destruction. "
 }
 
 

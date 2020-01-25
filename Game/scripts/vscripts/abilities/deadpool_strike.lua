@@ -27,8 +27,7 @@ end
 
 function modifier_deadpool_strike:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-        MODIFIER_EVENT_ON_ATTACK_LANDED
+        MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
     }
 
     return funcs
@@ -46,25 +45,10 @@ end
 
 function modifier_deadpool_strike:GetModifierPreAttack_CriticalStrike(params)
 	if RollPercentage(self:GetAbility():GetSpecialValueFor("crit_chance")) then
-		IsHasCrit = true
 		return self:GetAbility():GetSpecialValueFor("crit_damage") + (self.stacks*5)
 	end
-	IsHasCrit = false
-	return
-end
 
-function modifier_deadpool_strike:OnAttackLanded (params)
-    if params.attacker == self:GetParent() then
-    	if IsHasCrit and not params.target:IsBuilding() then
-    		local hTarget = params.target
-    		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
-			ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
-			ParticleManager:SetParticleControlEnt( nFXIndex, 1, hTarget, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true )
-			ParticleManager:ReleaseParticleIndex( nFXIndex )
-    		EmitSoundOn("Hero_Winter_Wyvern.WintersCurse.Target", hTarget)
-    		ScreenShake(hTarget:GetOrigin(), 100, 0.1, 0.3, 500, 0, true)
-    	end
-    end
+	return
 end
 
 function deadpool_strike:GetAbilityTextureName()

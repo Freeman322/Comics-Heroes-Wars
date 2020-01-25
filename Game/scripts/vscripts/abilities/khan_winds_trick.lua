@@ -13,7 +13,6 @@ function khan_winds_trick:OnSpellStart()
     self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_khan_winds_trick", { duration = self:GetSpecialValueFor("duration") } )
 end
 
-
 --------------------------------------------------------------------------------
 if modifier_khan_winds_trick == nil then modifier_khan_winds_trick = class({}) end
 
@@ -28,67 +27,22 @@ function modifier_khan_winds_trick:OnCreated(event)
         local EntIndex = ParticleManager:CreateParticle("particles/hero_khan/khan_wind_trick.vpcf", PATTACH_WORLDORIGIN, caster)
         ParticleManager:SetParticleControl(EntIndex, 0, caster_pos)
         self:AddParticle(EntIndex, false, false, -1, false, false)
-
-        caster:StartGesture(ACT_DOTA_TELEPORT)
     end
 end
 
-function modifier_khan_winds_trick:OnDestroy()
-	if IsServer() then
-		self:GetCaster():RemoveGesture(ACT_DOTA_TELEPORT)
-	end
-end
-
-
-function modifier_khan_winds_trick:IsAura()
-	return true
-end
-
---------------------------------------------------------------------------------
-
-function modifier_khan_winds_trick:GetModifierAura()
-	return "modifier_khan_winds_trick_aura"
-end
-
---------------------------------------------------------------------------------
-
-function modifier_khan_winds_trick:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
-end
-
---------------------------------------------------------------------------------
-
-function modifier_khan_winds_trick:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP
-end
-
---------------------------------------------------------------------------------
-
-function modifier_khan_winds_trick:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_INVULNERABLE
-end
-
---------------------------------------------------------------------------------
-
-function modifier_khan_winds_trick:GetAuraRadius()
-	return self:GetAbility():GetSpecialValueFor("radius")
-end
-
-if modifier_khan_winds_trick_aura == nil then modifier_khan_winds_trick_aura = class({}) end
-
-function modifier_khan_winds_trick_aura:IsPurgable()
+function modifier_khan_winds_trick:IsPurgable()
 	return false
 end
 
-function modifier_khan_winds_trick_aura:GetEffectName()
+function modifier_khan_winds_trick:GetEffectName()
 	return "particles/hero_khan/khan_wind_trick_buff.vpcf"
 end
 
-function modifier_khan_winds_trick_aura:GetEffectAttachType()
+function modifier_khan_winds_trick:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
 end
 
-function modifier_khan_winds_trick_aura:DeclareFunctions()
+function modifier_khan_winds_trick:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_ABSORB_SPELL,
         MODIFIER_EVENT_ON_TAKEDAMAGE
@@ -97,18 +51,22 @@ function modifier_khan_winds_trick_aura:DeclareFunctions()
     return funcs
 end
 
-function modifier_khan_winds_trick_aura:GetAbsorbSpell(keys)
+function modifier_khan_winds_trick:GetAbsorbSpell(keys)
     if self.stored ~= nil then
         self.stored:RemoveSelf() --we make sure to remove previous spell.
     end
+
     local hCaster = self:GetParent()
+
     EmitSoundOn( "Hero_AbyssalUnderlord.Firestorm.Target", self:GetParent( ))
     EmitSoundOn( "Hero_AbyssalUnderlord.Pit.TargetHero", self:GetParent( ))
     EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Start", self:GetParent())
     EmitSoundOn ("Hero_AbyssalUnderlord.Firestorm.Cast", self:GetParent())
+
     if keys.ability:GetAbilityName() == "loki_spell_steal" then
         return nil
     end
+
     local hAbility = hCaster:AddAbility(keys.ability:GetAbilityName())
 
     hAbility:SetStolen(true) --just to be safe with some interactions.
@@ -116,6 +74,7 @@ function modifier_khan_winds_trick_aura:GetAbsorbSpell(keys)
     hAbility:SetLevel(keys.ability:GetLevel()) --same level of ability as the origin.
     hCaster:SetCursorCastTarget(keys.ability:GetCaster()) --lets send this spell back.
     hAbility:OnSpellStart() --cast the spell.
+    
     self.stored = hAbility --store the spell reference for future use.
 
     ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf" , PATTACH_POINT_FOLLOW, self:GetParent())
@@ -123,14 +82,11 @@ function modifier_khan_winds_trick_aura:GetAbsorbSpell(keys)
     return 1
 end
 
-function modifier_khan_winds_trick_aura:OnTakeDamage( params )
+function modifier_khan_winds_trick:OnTakeDamage( params )
     if params.unit == self:GetParent() then
         if params.attacker:HasModifier("modifier_khan_winds_trick_dummy") == false then
-            pcall(function()
-                params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned",{duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
-                self:GetParent():Heal(params.damage, self:GetAbility())
-                params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_khan_winds_trick_dummy",{duration = self:GetAbility():GetSpecialValueFor("duration")})
-            end)
+            params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_stunned",{duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
+            params.attacker:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_khan_winds_trick_dummy",{duration = self:GetAbility():GetSpecialValueFor("duration")})
     	end
     end
 end

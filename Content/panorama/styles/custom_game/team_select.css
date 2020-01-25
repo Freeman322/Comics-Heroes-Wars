@@ -74,6 +74,11 @@
 	margin-left: 8px;
 }
 
+.Disabled
+{
+    visibility: visible;
+}
+
 #TeamListLockedIcon
 {
     width: 16px;

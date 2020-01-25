@@ -1,87 +1,60 @@
 hela_helheim = class({})
 LinkLuaModifier( "modifier_hela_helheim", "abilities/hela_helheim.lua", LUA_MODIFIER_MOTION_NONE )
 
-function hela_helheim:OnHeroDiedNearby( hVictim, hKiller, kv )
-	if hVictim == nil or hKiller == nil then
-		return
-	end
+function hela_helheim:GetIntrinsicModifierName() return "modifier_hela_helheim" end
 
-	if hVictim:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() and self:GetCaster():IsAlive() then
-		if hKiller == self:GetCaster() then
-			if self.nKills == nil then
-				self.nKills = 0
-			end
+function hela_helheim:OnDied(modifier)
+    if IsServer() then
+        if self:GetCaster():HasTalent("special_bonus_unique_hela_3") then
+			modifier:SetStackCount(modifier:GetStackCount() / 2)
+		else
+			modifier:SetStackCount(1)
+		end
+    end
+end
 
-			self.nKills = self.nKills + 1
+modifier_hela_helheim = class ( {})
 
-			local hBuff = self:GetCaster():FindModifierByName( "modifier_hela_helheim" )
-			if hBuff ~= nil then
-				hBuff:SetStackCount( self.nKills )
-				self:GetCaster():CalculateStatBonus()
-				hBuff:ForceRefresh()
-			else
-				self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_hela_helheim", nil)
-			end
+function modifier_hela_helheim:IsHidden() return true end
+function modifier_hela_helheim:RemoveOnDeath() return false end
+function modifier_hela_helheim:IsPurgable() return false end
+function modifier_hela_helheim:GetAttributes () return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_hela_helheim:GetEffectName() return "particles/econ/events/ti7/fountain_regen_ti7.vpcf" end
+function modifier_hela_helheim:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 
-			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetCaster() )
-			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 0, 0 ) )
-			ParticleManager:ReleaseParticleIndex( nFXIndex )
+function modifier_hela_helheim:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_EVENT_ON_DEATH,
+		MODIFIER_EVENT_ON_HERO_KILLED,
+		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
+    }
+	return funcs
+end
 
-
-			EmitSoundOn("Hero_DarkWillow.Shadow_Realm.Damage", hKiller)
+function modifier_hela_helheim:OnDeath(params)
+	if IsServer() then
+		if params.unit == self:GetParent() then
+			self:GetAbility():OnDied(self)
 		end
 	end
 end
 
-function hela_helheim:OnOwnerDied()
-    if IsServer() then 
-        if not self:GetCaster():HasTalent("special_bonus_unique_hela_3") then  self.nKills = 0 else self.nKills = self.nKills / 2 end 
-    end    
-end
+function modifier_hela_helheim:OnHeroKilled(params)
+	if IsServer() then
+		if params.attacker == self:GetParent() then
+			self:GetCaster():CalculateStatBonus()
+			self:ForceRefresh()
 
---------------------------------------------------------------------------------
+			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
+			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 0, 0 ) )
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-function hela_helheim:GetKills()
-	if self.nKills == nil then
-		self.nKills = 0
+			EmitSoundOn("Hero_DarkWillow.Shadow_Realm.Damage", self:GetParent())
+
+			self:IncrementStackCount()
+		end
 	end
-	return self.nKills
-end
-
-
-modifier_hela_helheim = class ( {})
-
-
-function modifier_hela_helheim:IsHidden()
-    return true
-end
-
-function modifier_hela_helheim:RemoveOnDeath()
-    return true
-end
-
-function modifier_hela_helheim:IsPurgable()
-    return false
-end
-
-function modifier_hela_helheim:GetAttributes ()
-    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-function modifier_hela_helheim:GetEffectName()
-    return "particles/econ/events/ti7/fountain_regen_ti7.vpcf"
-end
-
-function modifier_hela_helheim:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
-end
-
-function modifier_hela_helheim:DeclareFunctions()
-	local funcs = {
-    MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-    MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
-    }
-	return funcs
 end
 
 function modifier_hela_helheim:GetModifierPreAttack_BonusDamage()

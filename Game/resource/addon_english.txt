@@ -1727,30 +1727,16 @@
 		////Гонщик	
 
 
-		"DOTA_Tooltip_ability_ghost_rider_searing_chains"	"SEARING CHAINS"
+		"DOTA_Tooltip_ability_ghost_rider_searing_chains"	            "Searing Chains"
 		"DOTA_Tooltip_ability_ghost_rider_searing_chains_Description"	"Activated: The Rider wraps nearby units with fiery chains, anchoring them in place and dealing damage each second."
 		"DOTA_Tooltip_ability_ghost_rider_searing_total_damage_tooltip"	"DAMAGE:"
-		"DOTA_Tooltip_ability_ghost_rider_searing_duration"	"DURATION:"
+		"DOTA_Tooltip_ability_ghost_rider_searing_duration"	            "DURATION:"
 
-		"DOTA_Tooltip_ability_ghost_rider_assassinate"	"GHOST ASSASINATION"
-		"DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	"Activated: The Rider fires his legendary shotgun."
-		"DOTA_Tooltip_ability_ghost_rider_assassinate_tooltip_range"	"RANGE:"
+        "DOTA_Tooltip_ability_ghost_rider_assassinate"	                "Shotgun Shot"
+        "DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	    "Activated: The Rider fires his legendary shotgun."
+        "DOTA_Tooltip_ability_ghost_rider_assassinate_damage"	        "DAMAGE:"
 
-		"DOTA_Tooltip_ability_ghost_rider_drain"	"GHOST'S DRAIN"
-		"DOTA_Tooltip_ability_ghost_rider_drain_Description"	"Passive: The Rider with each attack takes away the soul of the enemy to hell. Burns mana and deals additional damage."
-		"DOTA_Tooltip_ability_ghost_rider_drain_damage_per_burn"	"DAMAGE PER MANA:"
-		"DOTA_Tooltip_ability_ghost_rider_drain_mana_per_hit"	"MANA PER HIT:"
-
-
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua"						"PUNISHING GAZE"
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Description"			"DAMAGE TYPE:<font color=\"#70EA72\"> health removal</font>\nOne of the most powerful spells in the universe, it is not possible to avoid. The damage dealt depends on the amount of damage dealt to your whole team by enemies. \n\nUpgradable by Aghanim's Scepter."
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Lore"					"Nothing and no one can escape from his anger."
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aoe_scepter"			"AoE with Scepter:"
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aghanim_description" 	"Causes Punishing Gaze to be cast on all enemy units within 325 radius of the target."
-
-
-		////magneto
-
+        "DOTA_Tooltip_ability_special_bonus_unique_snapfire_7"          "+60 damage for Shotgun Shot"
 
 		"DOTA_Tooltip_ability_magneto_telekinesis"	"TELEKINESIS"
 		"DOTA_Tooltip_ability_magneto_telekinesis_Description"	"Magneto lifts the target into the air briefly."
@@ -4876,7 +4862,7 @@
 		"DOTA_Tooltip_ability_eternity_chronosphere_duration_scepter"                     "DURATION SCEPTER:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_cooldown_scepter"                     "COOLDOWN SCEPTER:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_bonus_attack_speed"                   "BONUS ATTACK SPEED:"
-		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Increases duration and reduces cooldown."
+		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Increases duration and reduces cooldown, as well as increase attack damage by twice"
 
 
 		"DOTA_TOOLTIP_eternity_chronosphere_modifier"									  "TIME HOLE"
@@ -5961,7 +5947,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_outsider"                         	"+0.5% Mark damage / second"
 		"DOTA_Tooltip_ability_special_bonus_unique_saitama"                         	"Relativistic Punch cooldown 70 seconds"
 		"DOTA_Tooltip_ability_special_bonus_unique_odin"                         	    "+18% bonus attributes for God's Mark"
-		"DOTA_Tooltip_ability_special_bonus_unique_murloc"                         	    "+ x2 healing"
+		"DOTA_Tooltip_ability_special_bonus_unique_murloc"                         	    "+x2 healing"
+		"DOTA_Tooltip_ability_special_bonus_unique_murloc_1"                            "+250 damage for Lead"
 		"DOTA_Tooltip_ability_special_bonus_unique_medivh"                         	    "+500 Defeaning Blast damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+5 damage for soul in Frostmorne"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_king"                         	"+800 Flesh Hunger damage"
@@ -6462,6 +6449,8 @@
 		"DOTA_Tooltip_ability_murlock_agility_steal_Description"                          "Passive: Murloc gets a agility for each dead hero in range."
 		"DOTA_Tooltip_ability_murlock_agility_steal_agility_steal_buff_amount"            "AGILITY STEAL:"
 		"DOTA_Tooltip_ability_murlock_agility_steal_agility_steal_range"                  "RANGE:"
+        "DOTA_Tooltip_ability_murlock_agility_steal_health_regen"						"%HEALTH REGEN:"
+        "DOTA_Tooltip_ability_murlock_agility_steal_bonus_movement_speed"				"%BONUS SPEED:"
 
 		"DOTA_Tooltip_ability_tracer_short_blink"                                         "Short Blink"
 		"DOTA_Tooltip_ability_tracer_short_blink_Description"                             "Activated: Tracer is blinks to the target point."
@@ -8061,10 +8050,10 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_gostrider_fire_mist_aura_radius"                            "RADIUS:"
 		"DOTA_Tooltip_ability_gostrider_fire_mist_aura_damage"                            "DAMAGE:"
 
-
 		"DOTA_Tooltip_ability_gostrider_punishing_gaze"                                   "Punishing Gaze"
-		"DOTA_Tooltip_ability_gostrider_punishing_gaze_Description"                       "The strongest spell in the universe. Inflicts a proportional damage to that which the enemy has inflicted on the Ghost Rider's allies. The damage has a flag of reflection. The damage will be reset, when Rider die."
-		"DOTA_Tooltip_ability_gostrider_punishing_gaze_hit_point_minimum_pct"             "MULTIPLIER:"
+		"DOTA_Tooltip_ability_gostrider_punishing_gaze_Description"                       "The strongest spell in the universe. Deals damage for the total number of allied heroes and creeps killed by the enemy."
+		"DOTA_Tooltip_ability_gostrider_punishing_gaze_damage_per_unit"                   "DAMAGE PER UNIT:"
+        "DOTA_Tooltip_ability_gostrider_punishing_gaze_damage_per_hero"                   "DAMAGE PER HERO:"
 
 		"DOTA_Tooltip_ability_nightking_necromastery"                                     "Necromastery"
 		"DOTA_Tooltip_ability_nightking_necromastery_Description"                         "The Night King raises all the dead in a small radius. Servite heroes, although they serve the King of the Night, are nevertheless not on his side. Acts until the hero is reborn."
@@ -8310,9 +8299,9 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_miraak_dragon_aspect_radius"                                "RADIUS:"
 
 		"DOTA_Tooltip_ability_godspeed_bend_time"                                         "Bend Time"
-		"DOTA_Tooltip_ability_godspeed_bend_time_Description"                             "Curses the enemy, and while he moves, he will be dealt damage from distance."
+		"DOTA_Tooltip_ability_godspeed_bend_time_Description"                             "Curses the enemy, at the end of the ability, the entire distance that the enemy passed will be obtained as the speed of movement."
 		"DOTA_Tooltip_ability_godspeed_bend_time_duration"                                "DURATION:"
-		"DOTA_Tooltip_ability_godspeed_bend_time_damage"                                  "DAMAGE:"
+		"DOTA_Tooltip_ability_godspeed_bend_time_speed_ptc"                               "%SPEED GAIN BY DISTANCE:"
 
 		"DOTA_Tooltip_ability_godspeed_speed_void"                                        "Speed Void"
 		"DOTA_Tooltip_ability_godspeed_speed_void_Description"                            "Creates a powerful mental blow that damages, depending on what distance the enemy passed during his lifetime. \n\nUpgradable by Aghanim's Scepter."
@@ -8321,10 +8310,20 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_godspeed_speed_void_radius_scepter"                         "AOE RADIUS SCEPTER:"
 		"DOTA_Tooltip_ability_godspeed_speed_void_aghanim_description"                    "Adds AOE radius"
 
+        "DOTA_Tooltip_ability_godspeed_speed_abyss"                                        "Speed Abyss"
+        "DOTA_Tooltip_ability_godspeed_speed_abyss_Description"                            "Deals a terrible mental blow, taking the imprint of the enemy’s soul, taking damage for a short period of time equal to the enemy’s movement speed"
+        "DOTA_Tooltip_ability_godspeed_speed_abyss_duration"                               "DURATION:"
+
 		"DOTA_Tooltip_ability_godspeed_ember_field"                                       "Ember Field"
 		"DOTA_Tooltip_ability_godspeed_ember_field_Description"                           "Godspeed steals his speed when killing an enemy. When studying this ability, the speed threshold is removed. With every death, the speed gained is reduced."
 		"DOTA_Tooltip_ability_godspeed_ember_field_speed_gain"                            "SPEED PER KILL:"
 		"DOTA_Tooltip_ability_godspeed_ember_field_max_gain"                              "MAX SPEED:"
+
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow"                                  "Speedforce Flow"
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_Description"                      "Releases all movement speed as damage over an area."
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_damage"                           "BASE DAMAGE:"
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_radius"                                "RADIUS:"
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_disarm_duration"                       "DISARM DURATION:"
 
 		"DOTA_Tooltip_ability_godspeed_hyperpath"                                         "Hyperpath"
 		"DOTA_Tooltip_ability_godspeed_hyperpath_Description"                             "Makes the hero invulnerable and allows to pass through obstacles."
@@ -8825,8 +8824,8 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_palpatine_force"                                            "Force Rush"
 		"DOTA_Tooltip_ability_palpatine_force_Description"                                "Calling on the power of the Dark Side, the Emperor commits a Force Pull."
 		"DOTA_Tooltip_ability_palpatine_force_push_length"                                "PUSH LENGTH:"
-		"DOTA_Tooltip_ability_palpatine_force_charges"                                    "CHARGES:"
-		"DOTA_Tooltip_ability_palpatine_force_charge_cooldown"                            "CHARGE COOLDOWN:"
+		"DOTA_Tooltip_ability_palpatine_force_max_charges"                                    "CHARGES:"
+		"DOTA_Tooltip_ability_palpatine_force_charge_restore_time"                            "CHARGE COOLDOWN:"
 
 		"DOTA_Tooltip_ability_palpatine_refraction"                                       "Refraction"
 		"DOTA_Tooltip_ability_palpatine_refraction_Description"                           "The Emperor creates a Force Field that ignores incoming damage."
@@ -11717,9 +11716,121 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_elemental_treads_bonus_stats_all_pct"                     "%GIFT OF THE ELEMENTS BONUS ATTRIBUTES:"
 		"DOTA_Tooltip_ability_item_elemental_treads_bonus_attack_speed"                      "+$attack"
 		"DOTA_Tooltip_ability_item_elemental_treads_bonus_movespeed_pct"                     "%+$move_speed"
- 
-    
-        "npc_dota_hero_gorr"                                                                "Gorr"
-        "npc_dota_hero_gorr_hype"                                                           "My name is Gorr, son of a nameless father, outcast from a forgotten world. I have slain my way through multitudes to stand here at the genesis of all things. Blackened by vengeance, wet with holy blood. One simple dream still strong in my heart... The dream of a godless age."
-	}	
+		
+        "DOTA_Tooltip_ability_godspeed_gods_speed"                                   "God's Speed"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_Description"                       "Active: God's Speed - For a short time increase movespeed. \nPassive: Apex Attack - Deals bonus magical damage by part of current ideal movespeed."
+        "DOTA_Tooltip_ability_godspeed_gods_speed_duration"                          "DURATION:"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_active_speed"                      "%MOVE SPEED BONUS:"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_speed_factor"                      "%SPEED TO DAMAGE:"
+		"DOTA_Tooltip_ability_godspeed_gods_speed_bonus_speed"                       "PASSIVE SPEED:"
+
+
+
+		"DOTA_Tooltip_ability_special_bonus_unique_godspeed_1"                    "+1.5 sec duration for God's Speed"
+		"DOTA_Tooltip_ability_special_bonus_unique_godspeed_2"                    "+15% damage for God's Speed"
+
+		"DOTA_Tooltip_ability_rogue_avatar_aura"                                    "Avatar"
+        "DOTA_Tooltip_ability_rogue_avatar_aura_Description"                        "Aura: Avatar Aura - In radius, increases main attribute of allied heroes for %main_attr% percent. Do not work for non-real heroes."
+        "DOTA_Tooltip_ability_rogue_avatar_aura_main_attr"                          "%MAIN ATTRIBUTE BONUS:"
+        "DOTA_Tooltip_ability_rogue_avatar_aura_radius"                             "RADIUS:"
+
+        "npc_dota_hero_aqua_man"                                                    "Aquaman"
+        "npc_dota_hero_aqua_man_hype"                                               "A founding member of the Justice League of America, Aquaman has fought alongside Superman, Batman and Wonder Woman and held his own against the biggest threats the universe has ever seen. Despite being misunderstood by many as someone who merely “talks to fish,” Aquaman’s super-strength and fighting prowess alone make him a force to be reckoned with. His telepathic abilities make him one of the most powerful minds on the planet. If one chooses to underestimate the sea king, they do so at their own peril."
+        "npc_dota_hero_gorr"                                                        "Gorr"
+        "npc_dota_hero_gorr_hype"                                                   "My name is Gorr, son of a nameless father, outcast from a forgotten world. I have slain my way through multitudes to stand here at the genesis of all things. Blackened by vengeance, wet with holy blood. One simple dream still strong in my heart... The dream of a godless age."
+
+        "DOTA_Tooltip_ability_aqua_man_water_wave"									"Whirlpool Storm"
+        "DOTA_Tooltip_ability_aqua_man_water_wave_Description"						"Causes a water blast, stunning everyone around them, followed by a whirlpool, significantly reducing the armor of enemies in the radius of the ability."
+        "DOTA_Tooltip_ability_aqua_man_water_wave_radius"		                    "RADIUS:"
+        "DOTA_Tooltip_ability_aqua_man_water_wave_duration"		                    "Whirlpool DURATION:"
+        "DOTA_Tooltip_ability_aqua_man_water_wave_cast_debuff_duration"		        "DEBUFF DURATION:"
+        "DOTA_Tooltip_ability_aqua_man_water_wave_armor_reduction"		            "ARMOR REDUCTION:"
+        "DOTA_Tooltip_ability_aqua_man_water_wave_crush_attack_slow_tooltip"		"%ATTACK SPEED SLOWING:"
+        "DOTA_Tooltip_ability_aqua_man_water_wave_crush_extra_slow"		            "%SLOWING:"
+
+        "DOTA_Tooltip_ability_aqua_man_waveform"									"Waveform"
+        "DOTA_Tooltip_ability_aqua_man_waveform_Description"						"Aquaman dissolves into liquid and surges forward, damaging enemy units in his path.  Aquaman is invulnerable during Waveform. "
+        "DOTA_Tooltip_ability_aqua_man_waveform_Lore"								"A torrential flood takes enemies by force."
+
+        "DOTA_Tooltip_ability_aqua_man_sea_lord"									"Lord of the Seventh Seas"
+        "DOTA_Tooltip_ability_aqua_man_sea_lord_Description"						"Aquaman may move at 700 speed while in the river, also gain extra armor and health regen. Also After 4 successful hits on the target, it will be hit with water."
+        "DOTA_Tooltip_ability_aqua_man_sea_lord_bonus_movespeed_on_water"		    "%EXTRA MOVE SPEED ON WATER:"
+        "DOTA_Tooltip_ability_aqua_man_sea_lord_bonus_hp_regen_on_water"		    "EXTRA HEALTH REGEN ON WATER:"
+        "DOTA_Tooltip_ability_aqua_man_sea_lord_bonus_armor_on_water"		        "EXTRA ARMOR ON WATER:"
+        "DOTA_Tooltip_ability_aqua_man_sea_lord_water_strike_base_damage"		    "ADAPTIVE STRIKE BASE DAMAGE:"
+        "DOTA_Tooltip_ability_aqua_man_sea_lord_water_strike_damage_agi"		    "ADAPTIVE STRIKE AGILITY MULTIPLIER:"
+
+        "DOTA_Tooltip_ability_special_bonus_unique_aqua_man"                        "Deals attack on every target for Waveform"
+
+        "DOTA_Tooltip_ability_aqua_man_wave"										"Gush"
+        "DOTA_Tooltip_ability_aqua_man_wave_Description"							"Summons a gush of ground targeted wave that affects enemy units in a line with damage, reducing their movement speed and armor."
+        "DOTA_Tooltip_ability_aqua_man_wave_Lore"									"During his championship of the Sunken Isles, Leviathan gained mastery over the open sea."
+        "DOTA_Tooltip_ability_aqua_man_wave_wave_damage"							"DAMAGE:"
+        "DOTA_Tooltip_ability_aqua_man_wave_bonus_damage_agi"						"AGILITY DAMAGE MULTIPLIER:"
+        "DOTA_Tooltip_ability_aqua_man_wave_negative_armor"                         "NEGATIVE ARMOR DEBUFF:"
+
+        "DOTA_Tooltip_ability_aqua_man_sphere"								        "Sea Lord"
+        "DOTA_Tooltip_ability_aqua_man_sphere_Description"					        "Creates a gap in the sea abyss, inside which all units slow down and stun, and the Aquaman receives a bonus to the speed of movement and attack."
+        "DOTA_Tooltip_ability_aqua_man_sphere_radius"						        "RADIUS:"
+        "DOTA_Tooltip_ability_aqua_man_sphere_duration"						        "DURATION:"
+
+        "DOTA_Tooltip_ability_gorr_gorr"                                            "Gorr"
+        "DOTA_Tooltip_ability_gorr_gorr_Description"                                "Deals half more any damage to Old Gods."
+        "DOTA_Tooltip_ability_gorr_gorr_percent_damage"                             "%DAMAGE:"
+
+        "DOTA_Tooltip_ability_gorr_butch"                                           "Unholy Absorption"
+        "DOTA_Tooltip_ability_gorr_butch_Description"                               "Gorr absorbs the souls of all units within a radius and receives a damage bonus of %damage_ptc% percent of their current health level"
+        "DOTA_Tooltip_ability_gorr_butch_duration"                                  "DURATION:"
+        "DOTA_Tooltip_ability_gorr_butch_damage_ptc"                                "%DAMAGE:"
+        "DOTA_Tooltip_ability_gorr_butch_radius"                                    "RADIUS:"
+
+        "DOTA_Tooltip_ability_gorr_lightspeed_dash"                                 "Void Dash"
+        "DOTA_Tooltip_ability_gorr_lightspeed_dash_Description"                     "Gorr rushes to the indicated point, attacking all enemies in his path, cursing them, and also at the end of the ability receives temporary invisibility."
+        "DOTA_Tooltip_ability_gorr_lightspeed_dash_butch_min_travel_distance"                   "RANGE:"
+        "DOTA_Tooltip_ability_gorr_lightspeed_dash_pop_damage"                                  "Curse DAMAGE:"
+        "DOTA_Tooltip_ability_gorr_lightspeed_dash_invis_dur"                                   "Rebuke DURATION:"
+        "DOTA_Tooltip_ability_gorr_lightspeed_dash_rebuke_damage"                               "Rebuke DAMAGE:"
+
+        "DOTA_Tooltip_ability_gorr_seduction"                                            "Seduction"
+        "DOTA_Tooltip_ability_gorr_seduction_Description"                                "Gorr horrifies the targets in aura around him, causing it to become silenced."
+        "DOTA_Tooltip_ability_gorr_seduction_radius"                                     "RADIUS:"
+        "DOTA_Tooltip_ability_gorr_seduction_duration"                                   "DURATION:"
+        "DOTA_Tooltip_ability_gorr_seduction_damage"                                     "DAMAGE:"
+
+        "DOTA_Tooltip_ability_special_bonus_unique_gorr_1"                       "+3 seconds for Unholy Absorption"
+        "DOTA_Tooltip_ability_special_bonus_unique_gorr_2"                       "+15% hp damage for Unholy Absorption"
+        "DOTA_Tooltip_ability_special_bonus_unique_gorr_3"                       "+250 radius for Unholy Absorption"
+        "DOTA_Tooltip_ability_special_bonus_unique_gorr_4"                       "+1 second duration for Seduction"
+        "DOTA_Tooltip_ability_special_bonus_unique_gorr_5"                       "Gorr deals attack for each hero in radius of Seduction"
+
+        "DOTA_Tooltip_ability_gorr_necrostrike"                         "Necroblade"
+        "DOTA_Tooltip_ability_gorr_necrostrike_Description"             "Each subsequent attack on the enemy increases the damage and vampirism in multiples of its number. When changing the target, the counter will reset to zero."
+        "DOTA_Tooltip_ability_gorr_necrostrike_hits"                    "MAX HITS:"
+        "DOTA_Tooltip_ability_gorr_necrostrike_damage_per_hit"          "DAMAGE PER HIT:"
+        "DOTA_Tooltip_ability_gorr_necrostrike_lifesteal_per_hit"       "LIFESTEAL PER HIT:"
+
+        "DOTA_Tooltip_ability_spawn_dissimilate"                        "Dissimilate"
+        "DOTA_Tooltip_ability_spawn_dissimilate_Description"            "Spawn creates many portals and hides in them with a slight delay, becoming invulnerable. At the end of the span duration, Spawn will fully restore his health."
+	    "DOTA_Tooltip_ability_spawn_dissimilate_phase_duration"        "PHASE DURATION:"
+
+        "DOTA_Tooltip_ability_murloc_lead"                                      "The Lead"
+        "DOTA_Tooltip_ability_murloc_lead_Description"			"Murloc dashes around with blazing speed, attacking all enemies in the targeted area of effect, then returning to his start location.  Deals bonus damage to heroes, and less damage to creeps."
+        "DOTA_Tooltip_ability_murloc_lead_radius"				"RADIUS:"
+        "DOTA_Tooltip_ability_murloc_lead_bonus_hero_damage"	"BONUS HERO DAMAGE:"
+        "DOTA_Tooltip_ability_murloc_lead_attack_interval"		"ATTACK INTERVAL:"
+        "DOTA_Tooltip_ability_murloc_lead_max_charges"		    "MAX CHARGES:"
+        "DOTA_Tooltip_ability_murloc_lead_charge_restore_time"  "CHARGES COOLDOWN:"
+        "DOTA_Tooltip_ability_murloc_lead_Note0"				"Targets are determined when the spell is cast."
+        "DOTA_Tooltip_ability_murloc_lead_Note1"				"A regular attack is done to each target every 0.2 seconds."
+        "DOTA_Tooltip_ability_murloc_lead_Lore"				    "The studied warrior must whip and weave through its enemies, burning each without pause."
+
+        "DOTA_Tooltip_ability_carnage_toxic_strike"										"Toxic Strike"
+       "DOTA_Tooltip_ability_carnage_toxic_strike_Description"							"Carnage slows the targeted enemy unit's movement and attack speed while also dealing poison damage over time.  The slowing effect reduces over the duration of the poison. Also, Carnage steals %attributes_steal% percent of enemy attributes for %steal_duration% seconds."
+       "DOTA_Tooltip_ability_carnage_toxic_strike_Lore"									"Once used to slay his sadistic summoner, the most powerful of Netherdrake infections spreads through the veins of those foolish enough to cross Viper."
+       "DOTA_Tooltip_ability_carnage_toxic_strike_Note0"								"Slow works on spell immune units."
+       "DOTA_Tooltip_ability_carnage_toxic_strike_duration"								"DURATION:"
+       "DOTA_Tooltip_ability_carnage_toxic_strike_damage"								"DAMAGE PER SECOND:"
+       "DOTA_Tooltip_ability_carnage_toxic_strike_bonus_movement_speed"					"%MOVE SLOW:"
+       "DOTA_Tooltip_ability_carnage_toxic_strike_bonus_attack_speed"					"ATTACK SLOW:"
+	}
 }

@@ -43,6 +43,10 @@ function modifier_ghost_mental_chaos:IsPurgable()
 	return false
 end
 
+function modifier_ghost_mental_chaos:IsPurgeException()
+    return true
+end
+
 function modifier_ghost_mental_chaos:IsHidden()
 	return false
 end

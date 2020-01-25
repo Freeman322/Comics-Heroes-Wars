@@ -30,14 +30,9 @@ function modifier_respawn_time:OnDeath(params)
 			if self:GetParent():IsReincarnating() then 
 				return
 			end
-			
-			if self:GetParent():FindModifierByName("modifier_item_frostmourne") ~= nil then
-				if self:GetParent():FindModifierByName("modifier_item_frostmourne"):WillReincarnate() then 
-					return 
-				end 
-			end
 
 			local time = self:GetParent():GetLevel() * 2
+
 			self:GetParent():SetTimeUntilRespawn(time)
 			self:GetParent():SetBuybackCooldownTime(10)
         end

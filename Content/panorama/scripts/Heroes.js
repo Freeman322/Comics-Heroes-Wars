@@ -573,7 +573,11 @@ Heroes.list = {
         },
         {
             "name": "npc_dota_hero_chaos_king",
-            "id": 230,
+            "id": 331,
+        },
+        {
+            "name": "npc_dota_hero_aqua_man",
+            "id": 232,
         },
         {
             "name": "npc_dota_hero_gorr",

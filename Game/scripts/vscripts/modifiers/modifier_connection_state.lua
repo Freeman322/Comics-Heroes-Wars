@@ -7,7 +7,7 @@ function modifier_connection_state:RemoveOnDeath() return false end
 
 function modifier_connection_state:OnCreated(params)
     if IsServer() then
-        self:StartIntervalThink(5)
+        self:StartIntervalThink(1)
     end 
 end
 

@@ -1727,30 +1727,16 @@
 		////Гонщик	
 
 
-		"DOTA_Tooltip_ability_ghost_rider_searing_chains"	"SEARING CHAINS"
+		"DOTA_Tooltip_ability_ghost_rider_searing_chains"	            "Searing Chains"
 		"DOTA_Tooltip_ability_ghost_rider_searing_chains_Description"	"Activated: The Rider wraps nearby units with fiery chains, anchoring them in place and dealing damage each second."
 		"DOTA_Tooltip_ability_ghost_rider_searing_total_damage_tooltip"	"DAMAGE:"
-		"DOTA_Tooltip_ability_ghost_rider_searing_duration"	"DURATION:"
+		"DOTA_Tooltip_ability_ghost_rider_searing_duration"	            "DURATION:"
 
-		"DOTA_Tooltip_ability_ghost_rider_assassinate"	"GHOST ASSASINATION"
-		"DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	"Activated: The Rider fires his legendary shotgun."
-		"DOTA_Tooltip_ability_ghost_rider_assassinate_tooltip_range"	"RANGE:"
+        "DOTA_Tooltip_ability_ghost_rider_assassinate"	                "Shotgun Shot"
+        "DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	    "Activated: The Rider fires his legendary shotgun."
+        "DOTA_Tooltip_ability_ghost_rider_assassinate_damage"	        "DAMAGE:"
 
-		"DOTA_Tooltip_ability_ghost_rider_drain"	"GHOST'S DRAIN"
-		"DOTA_Tooltip_ability_ghost_rider_drain_Description"	"Passive: The Rider with each attack takes away the soul of the enemy to hell. Burns mana and deals additional damage."
-		"DOTA_Tooltip_ability_ghost_rider_drain_damage_per_burn"	"DAMAGE PER MANA:"
-		"DOTA_Tooltip_ability_ghost_rider_drain_mana_per_hit"	"MANA PER HIT:"
-
-
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua"						"PUNISHING GAZE"
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Description"			"DAMAGE TYPE:<font color=\"#70EA72\"> health removal</font>\nOne of the most powerful spells in the universe, it is not possible to avoid. The damage dealt depends on the amount of damage dealt to your whole team by enemies. \n\nUpgradable by Aghanim's Scepter."
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Lore"					"Nothing and no one can escape from his anger."
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aoe_scepter"			"AoE with Scepter:"
-		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aghanim_description" 	"Causes Punishing Gaze to be cast on all enemy units within 325 radius of the target."
-
-
-		////magneto
-
+        "DOTA_Tooltip_ability_special_bonus_unique_snapfire_7"          "+60 damage for Shotgun Shot"
 
 		"DOTA_Tooltip_ability_magneto_telekinesis"	"TELEKINESIS"
 		"DOTA_Tooltip_ability_magneto_telekinesis_Description"	"Magneto lifts the target into the air briefly."
@@ -2204,8 +2190,8 @@
 
 
 		"DOTA_TOOLTIP_ABILITY_deadpool_bar"                                     "RED RAGE"
-		"DOTA_TOOLTIP_ABILITY_deadpool_bar_Description"                         "Deadpool becomes Spell Immune, gains 100% resistance to magic damage, and gains increased attack speed."
-		"DOTA_Tooltip_ability_deadpool_bar_attack_speed_bonus"					"BONUS ATTACK SPEED:"
+		"DOTA_TOOLTIP_ABILITY_deadpool_bar_Description"                         "Deadpool becomes Spell Immune, gains 100% resistance to magic damage, and gains increased movespeed."
+		"DOTA_Tooltip_ability_deadpool_bar_movement_speed_bonus"					"BONUS MOVEMENT SPEED:"
 		"DOTA_Tooltip_ability_deadpool_bar_duration"							"DURATION:"
 
 
@@ -3312,10 +3298,10 @@
 		"DOTA_Tooltip_ABILITY_ronan_bash_chance"									"CHANCE:"
 		"DOTA_Tooltip_ABILITY_ronan_bash_bonus_damage"								"DAMAGE:"
 
-		"DOTA_Tooltip_ability_ronan_passive"						"FEAR"
-		"DOTA_Tooltip_ability_ronan_passive_Description"  		"Ronan creates a dark echo of his opponents souls, causing them to attack their hosts"
-		"DOTA_Tooltip_ability_ronan_passive_illusion_duration"			"DURATION:"
-		"DOTA_Tooltip_ability_ronan_passive_illusion_outgoing_tooltip"	"%OUTGOING DAMAGE:"
+		"DOTA_Tooltip_ability_ronan_passive"						    "FEAR"
+		"DOTA_Tooltip_ability_ronan_passive_Description"  		        "Ronan creates a dark echo which stuns all nearby enemies and deals damage."
+		"DOTA_Tooltip_ability_ronan_passive_knockback_duration"			"DURATION:"
+		"DOTA_Tooltip_ability_ronan_passive_damage"	                    "DAMAGE:"
 		"DOTA_Tooltip_ability_ronan_passive_move_slow"					"%SLOWING:"
 
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole"							"KREE's RAGE"
@@ -3533,6 +3519,9 @@
 		"DOTA_Tooltip_ABILITY_lich_aura_passive_Lore"				"Soul sealed Frostmourne give him strength and crave blood ...."
 		"DOTA_Tooltip_ABILITY_lich_aura_passive_range"				"RADIUS:"
 		"DOTA_Tooltip_ABILITY_lich_aura_passive_damage_buff_amount"	"DAMAGE PER STACK:"
+
+        "DOTA_Tooltip_ability_special_bonus_unique_weaver_1"                                "+75 damage for Wind Walk"
+        "DOTA_Tooltip_ability_special_bonus_unique_weaver_2"                                "+200 speed for Wind Walk"
 
 		////nightbringer
 		"DOTA_Tooltip_ability_nightbringer_rise_of_night"									"RISE OF NIGHT"
@@ -4142,7 +4131,7 @@
 		"DOTA_TOOLTIP_modifier_doctor_doom_warpath_Description"							"Inflicts damage."
 
 		"DOTA_Tooltip_ability_thanos_dying_star"			 "DYING STAR"
-		"DOTA_Tooltip_ability_thanos_dying_star_Description" "Thanos creates a star, which in 4 seconds turns into a supernova. Every 0.1 seconds inflicts damage based on maximum health of enemies. After the explosion, they will take half their current health as damage and become stunned for 2 seconds."
+		"DOTA_Tooltip_ability_thanos_dying_star_Description" "Thanos creates a star, which in 4 seconds turns into a supernova. Every 0.1 seconds inflicts damage. After the enemies become stunned for 2 seconds."
 		"DOTA_Tooltip_ability_thanos_dying_star_damage"		"%DAMAGE:"
 		"DOTA_Tooltip_ability_thanos_dying_star_duration"	"DELAY:"
 		"DOTA_Tooltip_ability_thanos_dying_star_radius"		"RADIUS:"
@@ -4870,7 +4859,7 @@
 		"DOTA_Tooltip_ability_eternity_chronosphere_duration_scepter"                     "DURATION SCEPTER:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_cooldown_scepter"                     "COOLDOWN SCEPTER:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_bonus_attack_speed"                   "BONUS ATTACK SPEED:"
-		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Increases duration and reduces cooldown."
+		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Increases duration and reduces cooldown, as well as increase attack damage by twice"
 
 
 		"DOTA_TOOLTIP_eternity_chronosphere_modifier"									  "TIME HOLE"
@@ -5140,7 +5129,7 @@
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_Description"                          "Activated: Arthas releases the power of Frostmourne, freezing nearby enemies and damaging them. Anything killed by this ability enemies will turn into undead."
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_range"                                "RANGE:"
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_damage"                               "DAMAGE:"
-		"DOTA_Tooltip_ability_lich_king_cold_reaper_bonus_per_soul"                       "BONUS PER SOUL:"
+		"DOTA_Tooltip_ability_lich_king_cold_reaper_bonus_per_soul"                       "BONUS DAMAGE PER SOUL IN FROSTMORNE:"
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_duration"                             "FREEZE DURATION:"
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5955,9 +5944,10 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_outsider"                         	"+0.5% Mark damage / second"
 		"DOTA_Tooltip_ability_special_bonus_unique_saitama"                         	"Relativistic Punch cooldown 70 seconds"
 		"DOTA_Tooltip_ability_special_bonus_unique_odin"                         	    "+18% bonus attributes for God's Mark"
-		"DOTA_Tooltip_ability_special_bonus_unique_murloc"                         	    "+ x2 healing"
+		"DOTA_Tooltip_ability_special_bonus_unique_murloc"                         	    "+x2 healing"
+		"DOTA_Tooltip_ability_special_bonus_unique_murloc_1"                            "+250 damage for Lead"
 		"DOTA_Tooltip_ability_special_bonus_unique_medivh"                         	    "+500 Defeaning Blast damage"
-		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+15 Cold Reaper bonus damage per soul"
+		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+5 damage for soul in Frostmorne"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_king"                         	"+800 Flesh Hunger damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_khorne"                         	    "+20% Erosion damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_katana"                         	    "+150% CRIT DAMAGE for ASCENDING SOUL"
@@ -5979,14 +5969,14 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_saitama_2"                         	"Applyis attack on every unit per second for Light Strike Array"
 
 
-		
+
 		"DOTA_Tooltip_ability_black_flash_speed_blast_radius"                         	     "RADIUS:"
 
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_aghanim_description"              	 	 "Increases range of abilities by 100"
 		"DOTA_Tooltip_ability_black_flash_speed_blast_aghanim_description"                   "Makes the ability passive and applies it in a radius 100 on the nearest enemy hero, as well as damage inflicted in the amount of half of the existing stacks Speedforce."
 		"dota_hud_error_cant_cast_no_ability"												 "Can not steal ability"
 
-		
+	
 		"DOTA_Tooltip_ability_black_flash_speed_blast_radius"                         	     "RADIUS:"
 
 		"DOTA_Tooltip_ability_lich_king_cold_reaper_aghanim_description"              	 	 "Increases the range of abilities by 100"
@@ -6456,6 +6446,8 @@
 		"DOTA_Tooltip_ability_murlock_agility_steal_Description"                          "Passive: Murloc gets a agility for each dead hero in range."
 		"DOTA_Tooltip_ability_murlock_agility_steal_agility_steal_buff_amount"            "AGILITY STEAL:"
 		"DOTA_Tooltip_ability_murlock_agility_steal_agility_steal_range"                  "RANGE:"
+        "DOTA_Tooltip_ability_murlock_agility_steal_health_regen"						"%HEALTH REGEN:"
+        "DOTA_Tooltip_ability_murlock_agility_steal_bonus_movement_speed"				"%BONUS SPEED:"
 
 		"DOTA_Tooltip_ability_tracer_short_blink"                                         "Short Blink"
 		"DOTA_Tooltip_ability_tracer_short_blink_Description"                             "Activated: Tracer is blinks to the target point."
@@ -6506,6 +6498,7 @@
 		"DOTA_Tooltip_ability_enigma_vacuum_Description"                                  "Toggleable: Infinity gradually draws all enemies to itself in the radius of action."
 		"DOTA_Tooltip_ability_enigma_vacuum_radius"                                       "RADIUS:"
 		"DOTA_Tooltip_ability_enigma_vacuum_speed"                                        "SPEED:"
+        "DOTA_Tooltip_ability_enigma_vacuum_damage_mult"                                  "INTELLECT TO DAMAGE:"
 
 		"DOTA_Tooltip_ability_item_sunshines_aromor_bonus_strength"                       "+$str"
 		
@@ -7563,6 +7556,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_onepunchman_stats"                                          "Limiter"
 		"DOTA_Tooltip_ability_onepunchman_stats_Description"                              "Saitama was an ordinary person with no talents or potential, but through effort alone, he evolved beyond his limits and achieved power that Genus is unable to even fathom."
 		"DOTA_Tooltip_ability_onepunchman_stats_bonus_evasion"                            "%EVASION:"
+		"DOTA_Tooltip_ability_onepunchman_stats_bonus_agility"                            "BONUS AGILITY:"
 		"DOTA_Tooltip_ability_onepunchman_stats_bonus_move_speed_percent"                 "%MOVE SPEED:"
 		"DOTA_Tooltip_ability_onepunchman_stats_Lore"								      "No matter how much effort one puts in, every living being has an intrinsic limit to its growth. Too much power becomes unbearable and overwhelms its host, turning it into a mindless rampaging monster. To ensure that we do not enter the realm where we lose all purpose and ability to reason, God has set limits to the growth of every being. The mechanism with which growth is controlled is called the limiter."
 
@@ -7762,7 +7756,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_special_bonus_unique_joker"							   	   "+460 damage for any mines"
 		"DOTA_Tooltip_ability_special_bonus_unique_joker_1"							   	   "+400 radius for Injustice"
 		
-		"DOTA_Tooltip_ability_special_bonus_unique_iron_fist"							   "+200 damage for Echo Punch"
+		"DOTA_Tooltip_ability_special_bonus_unique_iron_fist"							   "+340 damage for Echo Punch"
 		
 		"DOTA_Tooltip_ability_item_demon_shard_2_bonus_mana_regen"                        "+$mana_regen"
 		"DOTA_Tooltip_ability_item_demon_shard_2_bonus_health_regen"                      "+$hp_regen"
@@ -7897,6 +7891,7 @@ When activated spends mana."
 		"DOTA_TOOLTIP_ABILITY_item_time_bonus_mana_regen"                                 "+$mana_regen"
 		"DOTA_TOOLTIP_ABILITY_item_time_bonus_armor"    			 					  "+$armor"
 		"DOTA_Tooltip_ability_item_time_bonus_evasion"               				      "%+$evasion"
+		"DOTA_TOOLTIP_ABILITY_item_time_bonus_all_stats"                                  "+$all"
 		
 		
 		
@@ -8300,9 +8295,9 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_miraak_dragon_aspect_radius"                                "RADIUS:"
 
 		"DOTA_Tooltip_ability_godspeed_bend_time"                                         "Bend Time"
-		"DOTA_Tooltip_ability_godspeed_bend_time_Description"                             "Curses the enemy, and while he moves, he will be dealt damage from distance."
+		"DOTA_Tooltip_ability_godspeed_bend_time_Description"                             "Curses the enemy, at the end of the ability, the entire distance that the enemy passed will be obtained as the speed of movement."
 		"DOTA_Tooltip_ability_godspeed_bend_time_duration"                                "DURATION:"
-		"DOTA_Tooltip_ability_godspeed_bend_time_damage"                                  "DAMAGE:"
+		"DOTA_Tooltip_ability_godspeed_bend_time_speed_ptc"                               "%SPEED GAIN BY DISTANCE:"
 
 		"DOTA_Tooltip_ability_godspeed_speed_void"                                        "Speed Void"
 		"DOTA_Tooltip_ability_godspeed_speed_void_Description"                            "Creates a powerful mental blow that damages, depending on what distance the enemy passed during his lifetime. \n\nUpgradable by Aghanim's Scepter."
@@ -8311,10 +8306,20 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_godspeed_speed_void_radius_scepter"                         "AOE RADIUS SCEPTER:"
 		"DOTA_Tooltip_ability_godspeed_speed_void_aghanim_description"                    "Adds AOE radius"
 
+        "DOTA_Tooltip_ability_godspeed_speed_abyss"                                        "Speed Abyss"
+        "DOTA_Tooltip_ability_godspeed_speed_abyss_Description"                            "Deals a terrible mental blow, taking the imprint of the enemy’s soul, taking damage for a short period of time equal to the enemy’s movement speed"
+        "DOTA_Tooltip_ability_godspeed_speed_abyss_duration"                               "DURATION:"
+
 		"DOTA_Tooltip_ability_godspeed_ember_field"                                       "Ember Field"
 		"DOTA_Tooltip_ability_godspeed_ember_field_Description"                           "Godspeed steals his speed when killing an enemy. When studying this ability, the speed threshold is removed. With every death, the speed gained is reduced."
 		"DOTA_Tooltip_ability_godspeed_ember_field_speed_gain"                            "SPEED PER KILL:"
 		"DOTA_Tooltip_ability_godspeed_ember_field_max_gain"                              "MAX SPEED:"
+
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow"                                  "Speedforce Flow"
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_Description"                      "Releases all movement speed as damage over an area."
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_damage"                           "BASE DAMAGE:"
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_radius"                                "RADIUS:"
+        "DOTA_Tooltip_ability_godspeed_speedforce_flow_disarm_duration"                       "DISARM DURATION:"
 
 		"DOTA_Tooltip_ability_godspeed_hyperpath"                                         "Hyperpath"
 		"DOTA_Tooltip_ability_godspeed_hyperpath_Description"                             "Makes the hero invulnerable and allows to pass through obstacles."
@@ -8680,15 +8685,21 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_mercer_mutate_bonus_hp"                                     "BONUS HP:"
 		"DOTA_Tooltip_ability_mercer_mutate_blades_splash_ptc"                            "%BLADES SPLASH:"
 		"DOTA_Tooltip_ability_mercer_mutate_blades_splash_radius"                         "BLADES SPLASH RADIUS:"
+		"DOTA_Tooltip_ability_mercer_mutate_blades_bonus_movespeed"                       "%BLADES MOVESPEED BONUS:"
+		"DOTA_Tooltip_ability_mercer_mutate_blades_bonus_attack_range"                    "BLADES BONUS ATTACK RANGE:"
 		"DOTA_Tooltip_ability_mercer_mutate_claws_attack_speed"                           "CLAWS ATTACK SPEED:"
 		"DOTA_Tooltip_ability_mercer_mutate_claws_pierce_atack"                           "CLAWS PIERCE ATACK:"
 		"DOTA_Tooltip_ability_mercer_mutate_claws_pierce_atack_chance"                    "%CLAWS PIERCE ATACK CHANCE:"
 		"DOTA_Tooltip_ability_mercer_mutate_punch_bash_duration"                          "PUNCHES BASH DURATION:"
 		"DOTA_Tooltip_ability_mercer_mutate_punch_bash_chance"                            "PUNCHES BASH CHANCE:"
+		"DOTA_Tooltip_ability_mercer_mutate_punch_bonus_damage"                           "PUNCHES BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_mercer_mutate_punch_bonus_armor"                            "PUNCHES BONUS ARMOR:"
+		"DOTA_Tooltip_ability_mercer_mutate_punch_bonus_strength"                         "PUNCHES BONUS STRENTH:"
 
 		"DOTA_Tooltip_ability_mercer_bloodrage"                                           "Bloodrage"
-		"DOTA_Tooltip_ability_mercer_bloodrage_Description"                               "Alex will be healed for a percentage of the max health of any units he kill."
+		"DOTA_Tooltip_ability_mercer_bloodrage_Description"                               "Alex will be healed for a percentage of the max health of any units he kill. Also increases Alex's outgoing damage"
 		"DOTA_Tooltip_ability_mercer_bloodrage_heal_ptc"                                  "%HEAL:"
+		"DOTA_Tooltip_ability_mercer_bloodrage_bonus_damage_outgoing"                     "%BONUS OUTGOING DAMAGE:"
 
 		"DOTA_Tooltip_ability_mercer_ambush"                                              "Ambush"
 		"DOTA_Tooltip_ability_mercer_ambush_Description"                                  "Alex devours a creature, passing on his damage and health for a while."
@@ -8809,8 +8820,8 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_palpatine_force"                                            "Force Rush"
 		"DOTA_Tooltip_ability_palpatine_force_Description"                                "Calling on the power of the Dark Side, the Emperor commits a Force Pull."
 		"DOTA_Tooltip_ability_palpatine_force_push_length"                                "PUSH LENGTH:"
-		"DOTA_Tooltip_ability_palpatine_force_charges"                                    "CHARGES:"
-		"DOTA_Tooltip_ability_palpatine_force_charge_cooldown"                            "CHARGE COOLDOWN:"
+		"DOTA_Tooltip_ability_palpatine_force_max_charges"                                    "CHARGES:"
+		"DOTA_Tooltip_ability_palpatine_force_charge_restore_time"                            "CHARGE COOLDOWN:"
 
 		"DOTA_Tooltip_ability_palpatine_refraction"                                       "Refraction"
 		"DOTA_Tooltip_ability_palpatine_refraction_Description"                           "The Emperor creates a Force Field that ignores incoming damage."
@@ -11150,11 +11161,11 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_special_bonus_unique_thanos_2"                              "+14% Shattered Earth damage"
 
 		"DOTA_Tooltip_ability_thanos_titans_sword"                                        "Titan's Sword"
-		"DOTA_Tooltip_ability_thanos_titans_sword_Description"                            "Using his blade, Thanos hits a greater number of enemies, attacking everyone in the radius."
-		"DOTA_Tooltip_ability_thanos_titans_sword_radius"                                 "RADIUS:"
-		"DOTA_Tooltip_ability_thanos_titans_sword_ministun_duration"                      "MINISTUN DURATION:"
+		"DOTA_Tooltip_ability_thanos_titans_sword_Description"                            "Thanos throws his legendary blade with deadly precision, damaging each enemy unit it strikes. The first enemy hero it hits is skewered on the sword, pushing it back. If a skewered hero hits a tree, building, or cliff, they will be impaled to it and stunned."
+		"DOTA_Tooltip_ability_thanos_titans_sword_damage"                                 "DAMAGE:"
+		"DOTA_Tooltip_ability_thanos_titans_sword_stun_duration"                     	  "DURATION:"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_thanos_3"                              "+100 for Titan's Sword radius"
+		"DOTA_Tooltip_ability_special_bonus_unique_thanos_3"                              "+10% current health damage for Titan's Sword"
 
 		"DOTA_Tooltip_ability_thanos_titans_sword_bonus_damage"                           "%BONUS DAMAGE:"
 
@@ -11250,9 +11261,11 @@ When activated spends mana."
 
 		"npc_dota_unit_officer_base"											"Military Base"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_officer_1"						"+5 sec Order duration"
+		"DOTA_Tooltip_ability_special_bonus_unique_officer_1"						"Order include Officer attack"
 		"DOTA_Tooltip_ability_special_bonus_unique_officer_2"						"+1.5 manaregen for base"
 		"DOTA_Tooltip_ability_special_bonus_unique_officer_3"						"+400 damage for Artillery Battery"
+		"DOTA_Tooltip_ability_special_bonus_unique_officer_4"						"Infinite rounds for Artillery Battery"
+        "DOTA_Tooltip_ability_special_bonus_unique_officer_5"						"7% HP regen for Units"
 
 		"android"															"Android"
 		"android_lore"														""
@@ -11496,7 +11509,7 @@ When activated spends mana."
 
 		"DOTA_Tooltip_ability_special_bonus_unique_monkey_king_3"                                 "+650 Primal Spring Damage"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_death_eater"                                  "+270 damage for Deathraze"
+		"DOTA_Tooltip_ability_special_bonus_unique_death_eater"                                  "+135 damage for Deathraze"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_death_eater_2"                                "+1 damage per Soul"
 
@@ -11564,5 +11577,144 @@ When activated spends mana."
 		"npc_dota_hero_pennywise"														"Pennywise"
 		"npc_dota_hero_pennywise_bio"													"It is a shape-shifting creature known as a Glamour who is billions of years old. Although It lived on planet Earth for many years, It originated in a void/dimension outside the regions of space known as the Macroverse. Since Its true identity is unclear, due to its shape-shifting abilities and being from another universe, Its real name and species are called Deadlights, but few know this, which is why it is referred to as IT. The form of a female spider seems to be Its true physical form on Earth, living deep below the fictional town of Derry, Maine."
 		"npc_dota_hero_pennywise_hype"													"It is a shape-shifting creature known as a Glamour who is billions of years old. Although It lived on planet Earth for many years, It originated in a void/dimension outside the regions of space known as the Macroverse. Since Its true identity is unclear, due to its shape-shifting abilities and being from another universe, Its real name and species are called Deadlights, but few know this, which is why it is referred to as IT. The form of a female spider seems to be Its true physical form on Earth, living deep below the fictional town of Derry, Maine. "
+
+		"DOTA_Tooltip_ability_pennywise_baloon"									"Deadlight"
+		"DOTA_Tooltip_ability_pennywise_baloon_Description"						"Creates a Deadlight at the specified point.\n\nUpgradable by Aghanim's Scepter."
+		"DOTA_Tooltip_ability_pennywise_baloon_baloon_duration"					"DURATION:"
+		"DOTA_Tooltip_ability_pennywise_baloon_baloon_radius"					"RADIUS:"
+		"DOTA_Tooltip_ability_pennywise_baloon_aghanim_description"				"Allow Deadlight to attack all nearby units."
+
+		"DOTA_Tooltip_ability_pennywise_deadlights"								"Terror"
+		"DOTA_Tooltip_ability_pennywise_deadlights_Description"					"Applies Fear aura to each Deadlight."
+		"DOTA_Tooltip_ability_pennywise_deadlights_duration"					"DURATION:"
+		"DOTA_Tooltip_ability_pennywise_deadlights_radius"						"RADIUS:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_pennywise_1"                  "+2 second duration for Terror"
+
+		"DOTA_Tooltip_ability_pennywise_ballon_jump"							"Reality"
+		"DOTA_Tooltip_ability_pennywise_ballon_jump_Description"				"Pennywise instantly moves to selected Deadlight through macroverse."
+
+		"DOTA_Tooltip_ability_pennywise_fear"									"Demolish"
+		"DOTA_Tooltip_ability_pennywise_fear_Description"						"Penetrates into the consciousness of all enemies nearby, forcing them to retreat."
+		"DOTA_Tooltip_ability_pennywise_fear_radius"							"RADIUS:"
+		"DOTA_Tooltip_ability_pennywise_fear_duration"							"DURATION:"
+
+		"DOTA_Tooltip_ability_pennywise_macroverse_of_madness"					"Macroverse of Madness"
+		"DOTA_Tooltip_ability_pennywise_macroverse_of_madness_Description"		"Creates a perfect copy of selected target."
+		"DOTA_Tooltip_ability_pennywise_macroverse_of_madness_duration"			"DURATION:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_pennywise_2"                  "Uses processes procs"
+		"DOTA_Tooltip_ability_special_bonus_unique_pennywise_2_Description"      "Deadlights can use orb and processes modifiers, if Pennywise has Aghanim's Scepter"
+
+		"DOTA_Tooltip_ability_pennywise_purifying_flames"						"Purifying Flames"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_Description"			"Burns away impurities, dealing heavy magic damage to the target before causing them to regenerate health over time. The amount of health regenerated over its duration exceeds the amount of initial damage. Can be cast on enemies and allies."
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_damage"				"DAMAGE:"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_heal_per_second"		"HEAL PER SECOND:"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_total_heal_tooltip"		"TOTAL HEAL:"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_duration"				"DURATION:"
+		"DOTA_Tooltip_ability_pennywise_purifying_flames_Note0"						"The healing from Purifying Flames can be stacked with itself."
+
+		"DOTA_Tooltip_ability_special_bonus_unique_carnage"                      "+800 radius for Blood Spray and Palace"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_carnage_2"                      "+30 mana and health regeneration for Palace"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_hela"                           "+400 radius for Bullet Rain"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_hela_2"                         "Pure damage for Stifling Dagger"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_mercer_5"                       "+300 radius for Ravage"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_saitama_3"                      "+20 agility and evasion for Limiter"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_hela_3"                         "Helheim loses only half stacks"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_pangolier_3"                    "+70 damage for Pure Strike Array"
+
+
+ 
+
+		"npc_dota_hero_stormspirit"													"Green Lantern"
+        "npc_dota_hero_io"                                                          "Green Lantern"
+        "DOTA_Tooltip_ability_special_bonus_unique_wist_str"                        "Reduces enemies strength"
+
+        "npc_dota_hero_chaos_king"                                                  "Chaos King"
+        "npc_dota_hero_chaos_king_hype"                                             "Fall like cosmic leaves, here at reality's end -- old gods of Zenn-La! Amatsu-Mikaboshi is the God of Evil, Chaos and the Stars to the follows of the Shinto religion in Japan. He is not actually a Amatsu-Kami but a primordial being who was imprisoned in Yomi, the Shinto underworld for all eternity."
+
+		"DOTA_Tooltip_ability_chaos_king_hellfire"                                          "Chaosflame blast"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_Description"                              "Chaos King sears an enemy unit with chaos fire, dealing damage and stunning, then dealing damage over time, slowing the target and reduces his outgoing damage."
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_outgoing_damage_reduction"          "%OUTGOING DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_stun_duration"                      "STUN DURATION:"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_dot_duration"                       "DEBUFF DURATION:"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_slow"                               "%MOVE SPEED SLOW:"
+		"DOTA_Tooltip_ability_chaos_king_hellfire_blast_dot_damage"                         "DAMAGE OVER TIME:"
+
+		"DOTA_Tooltip_ability_chaos_king_static_shield"                                     "Absorption of Chaos"
+		"DOTA_Tooltip_ability_chaos_king_static_shield_Description"                         "When the Chaos King is attacked, he stuns the attacker and temporarily dodges all projectiles"
+        "DOTA_Tooltip_ability_chaos_king_static_shield_duration"                            "DODGE DURATION:"
+
+		"DOTA_Tooltip_ability_chaos_king_inner_fear"                                        "Creature Born in Chaos"
+		"DOTA_Tooltip_ability_chaos_king_inner_fear_Description"                            "The Chaos King summons a creature from the bowels that moves quickly towards the target, it silences his and envelops the nearby earth in flames which damage enemies. \n\nUpgradable by Aghanim's Scepter."
+		"DOTA_Tooltip_ability_chaos_king_inner_fear_latch_duration"                         "LATCH DURATION:"
+		"DOTA_Tooltip_ability_chaos_king_inner_fear_destroy_attacks"                        "ATTACKS TO DESTROY:"
+		"DOTA_Tooltip_ability_chaos_king_inner_fear_silence_duration"                       "SILENCE DURATION:"
+		"DOTA_Tooltip_ability_chaos_king_inner_fear_damage_per_second"                      "SCORCHED EARTH DAMAGE:"
+		"DOTA_Tooltip_ability_chaos_king_inner_fear_radius"                                 "SCORCHED EARTH RADIUS:"
+        "DOTA_Tooltip_ability_chaos_king_inner_fear_aghanim_description"			        "Creature deals damage based on Chaos King's damage."
+
+
+		"DOTA_Tooltip_ability_chaos_king_chaos_clone"                                       "Reflection of Chaos"
+		"DOTA_Tooltip_ability_chaos_king_chaos_clone_Description"                           "Creates an chaos illusion of a target enemy hero. Illusion is spell immune, and has bonus movement speed and attack damage."
+		"DOTA_Tooltip_ability_chaos_king_chaos_clone_illusion_duration"                     "ILLUSION DURATION:"
+		"DOTA_Tooltip_ability_chaos_king_chaos_clone_images_do_damage_percent_tooltip"      "%ILLUSION DAMAGE DEALT:"     
+		"DOTA_Tooltip_ability_chaos_king_chaos_clone_images_take_damage_percent_tooltip"    "%ILLUSION DAMAGE TAKING:"
+		"DOTA_Tooltip_ability_chaos_king_chaos_clone_images_movespeed_bonus"                "%ILLUSION MOVEMENT SPEED BONUS:"
+
+		"DOTA_Tooltip_ability_chaos_king_burning_fiend"                                     "Primal Chaos"
+		"DOTA_Tooltip_ability_chaos_king_burning_fiend_Description"                         "The Chaos King clouds the minds of all enemy heroes on the map, they begin to attack the chosen target and lose control"
+		"DOTA_Tooltip_ability_chaos_king_burning_fiend_duration"                            "CHAOS DURATION:"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king"                              "-30 cooldown for Primal Chaos"
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_2"                            "+1.2 duration for Primal Chaos"	
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_3"                            "+2 Creature of Chaos summon"
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_4"                            "Awakened Absorption of Chaos"
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_4_Description"                "Absorption of Chaos also gives spell immunity"	
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_5"                            "+25 Damage over time for Chaosflame blast"
+		"DOTA_Tooltip_ability_special_bonus_unique_chaos_king_6"                            "+1 second stun duration for Chaosflame blast"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_aqua_man"                                "Waveform Attacks Targets"
+
+		"DOTA_Tooltip_ability_item_bloody_tome"                                             "Bloody Sorcerer Book"
+		"DOTA_Tooltip_ability_item_bloody_tome_Description"                                 "<h1>Passive: Bloody saturation</h1>For each kill gains a 0.7% mana regen and 1.5% spell amplification. \n<h1>Passive: Aura of Bloody Arcane</h1>Gives mana regen nearby allies in a 1200 radius"
+		"DOTA_Tooltip_ability_item_bloody_tome_bonus_intellect"                             "+$int"
+		"DOTA_Tooltip_ability_item_bloody_tome_bonus_agility"                               "+$agi"
+		"DOTA_Tooltip_ability_item_bloody_tome_bonus_strength"                              "+$str"
+		"DOTA_Tooltip_ability_item_bloody_tome_mana_bonus"                                  "+$mana"
+		"DOTA_Tooltip_ability_item_bloody_tome_bonus_health"                                "+$health"
+		"DOTA_Tooltip_ability_item_bloody_tome_bonus_cooldown_reduction"                    "%+$cooldown_reduce"
+		"DOTA_Tooltip_ability_item_bloody_tome_manacost_reduction"                          "%+$mana_cost_perc"
+		"DOTA_Tooltip_ability_item_bloody_tome_bonus_amp"                                   "%+$spell_amp"
+
+
+        "DOTA_Tooltip_ability_godspeed_gods_speed"                                   "God's Speed"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_Description"                       "Active: God's Speed - For a short time increase movespeed. \nPassive: Apex Attack - Deals bonus magical damage by part of current ideal movespeed."
+        "DOTA_Tooltip_ability_godspeed_gods_speed_duration"                          "DURATION:"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_active_speed"                      "%MOVE SPEED BONUS:"
+        "DOTA_Tooltip_ability_godspeed_gods_speed_speed_factor"                      "%SPEED TO DAMAGE:"
+		"DOTA_Tooltip_ability_godspeed_gods_speed_bonus_speed"                       "PASSIVE SPEED:"
+
+
+
+		"DOTA_Tooltip_ability_special_bonus_unique_godspeed_1"                    "+1.5 sec duration for God's Speed"
+		"DOTA_Tooltip_ability_special_bonus_unique_godspeed_2"                    "+15% damage for God's Speed"
+
+		"DOTA_Tooltip_ability_rogue_avatar_aura"                                    "Avatar"
+        "DOTA_Tooltip_ability_rogue_avatar_aura_Description"                        "Aura: Avatar Aura - In radius, increases main attribute of allied heroes for %main_attr% percent. Do not work for non-real heroes."
+        "DOTA_Tooltip_ability_rogue_avatar_aura_main_attr"                          "%MAIN ATTRIBUTE BONUS:"
+        "DOTA_Tooltip_ability_rogue_avatar_aura_radius"                             "RADIUS:"
+
+        "npc_dota_hero_aqua_man"                                                    "Aquaman"
+        "npc_dota_hero_aqua_man_hype"                                               "A founding member of the Justice League of America, Aquaman has fought alongside Superman, Batman and Wonder Woman and held his own against the biggest threats the universe has ever seen. Despite being misunderstood by many as someone who merely “talks to fish,” Aquaman’s super-strength and fighting prowess alone make him a force to be reckoned with. His telepathic abilities make him one of the most powerful minds on the planet. If one chooses to underestimate the sea king, they do so at their own peril."
+        "npc_dota_hero_gorr"                                                        "Gorr"
+        "npc_dota_hero_gorr_hype"                                                   "My name is Gorr, son of a nameless father, outcast from a forgotten world. I have slain my way through multitudes to stand here at the genesis of all things. Blackened by vengeance, wet with holy blood. One simple dream still strong in my heart... The dream of a godless age."
 	}	
 }

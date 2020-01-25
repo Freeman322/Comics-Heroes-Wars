@@ -159,10 +159,10 @@ function modifier_zeus_thundergods_vengeance:OnIntervalThink()
             GridNav:DestroyTreesAroundPoint( self:GetParent():GetAbsOrigin(), 250, false)
 
             ApplyDamage ( {victim = self:GetParent(),
-                attacker = self:GetAbility():GetCaster(),
-                damage = self:GetAbility():GetAbilityDamage(),
-                damage_type = self:GetAbility():GetAbilityDamageType(),
-                ability = self:GetAbility()
+                           attacker = self:GetAbility():GetCaster(),
+                           damage = self:GetAbility():GetAbilityDamage(),
+                           damage_type = self:GetAbility():GetAbilityDamageType(),
+                           ability = self:GetAbility()
             })
 
             if self:GetAbility():GetCaster():HasModifier("modifier_zuus_immortal") then

@@ -4,13 +4,16 @@
 {
 	"Version"   "1"
 
+    "item_rapier_of_despair"     "REMOVE"
+    "item_recipe_rapier_of_despair"     "REMOVE"
+
 	"item_iron_talon"     "REMOVE"
 	"item_recipe_iron_talon"      "REMOVE"
 	"item_stout_shield"     "REMOVE"
 	"item_gauntlets"      "REMOVE"
 	"item_slippers"     "REMOVE"
 	"item_mantle"     "REMOVE"
-	"item_branches"     "REMOVE"
+	"item_rapier_of_despair"     "REMOVE"
 	"item_belt_of_strength"     "REMOVE"
 	"item_boots_of_elves"     "REMOVE"
 	"item_circlet"      "REMOVE"

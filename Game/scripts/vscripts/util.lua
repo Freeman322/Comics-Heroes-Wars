@@ -16,7 +16,7 @@ function Util:OnInit(args)
 
     PlayerTables:CreateTable("heroes_abilities", {abilities = Util:GetHeroAbilityList()}, true)
 
-    local f = "[{\n\"name\":\"npc_dota_hero_antimage\",\n\"id\":1\n},\n{\n\"name\":\"npc_dota_hero_axe\",\n\"id\":2\n},\n{\n\"name\":\"npc_dota_hero_bane\",\n\"id\":3\n},\n{\n\"name\":\"npc_dota_hero_bloodseeker\",\n\"id\":4\n},\n{\n\"name\":\"npc_dota_hero_crystal_maiden\",\n\"id\":5\n},\n{\n\"name\":\"npc_dota_hero_drow_ranger\",\n\"id\":6\n},\n{\n\"name\":\"npc_dota_hero_earthshaker\",\n\"id\":7\n},\n{\n\"name\":\"npc_dota_hero_juggernaut\",\n\"id\":8\n},\n{\n\"name\":\"npc_dota_hero_mirana\",\n\"id\":9\n},\n{\n\"name\":\"npc_dota_hero_nevermore\",\n\"id\":11\n},\n{\n\"name\":\"npc_dota_hero_carnange\",\n\"id\":10\n},\n{\n\"name\":\"npc_dota_hero_phantom_lancer\",\n\"id\":12\n},\n{\n\"name\":\"npc_dota_hero_puck\",\n\"id\":13\n},\n{\n\"name\":\"npc_dota_hero_pudge\",\n\"id\":14\n},\n{\n\"name\":\"npc_dota_hero_razor\",\n\"id\":15\n},\n{\n\"name\":\"npc_dota_hero_sand_king\",\n\"id\":16\n},\n{\n\"name\":\"npc_dota_hero_storm_spirit\",\n\"id\":17\n},\n{\n\"name\":\"npc_dota_hero_sven\",\n\"id\":18\n},\n{\n\"name\":\"npc_dota_hero_tiny\",\n\"id\":19\n},\n{\n\"name\":\"npc_dota_hero_vengefulspirit\",\n\"id\":20\n},\n{\n\"name\":\"npc_dota_hero_windrunner\",\n\"id\":21\n},\n{\n\"name\":\"npc_dota_hero_zuus\",\n\"id\":22\n},\n{\n\"name\":\"npc_dota_hero_kunkka\",\n\"id\":23\n},\n{\n\"name\":\"npc_dota_hero_lina\",\n\"id\":25\n},\n{\n\"name\":\"npc_dota_hero_lich\",\n\"id\":31\n},\n{\n\"name\":\"npc_dota_hero_lion\",\n\"id\":26\n},\n{\n\"name\":\"npc_dota_hero_shadow_shaman\",\n\"id\":27\n},\n{\n\"name\":\"npc_dota_hero_slardar\",\n\"id\":28\n},\n{\n\"name\":\"npc_dota_hero_tidehunter\",\n\"id\":29\n},\n{\n\"name\":\"npc_dota_hero_witch_doctor\",\n\"id\":30\n},\n{\n\"name\":\"npc_dota_hero_riki\",\n\"id\":32\n},\n{\n\"name\":\"npc_dota_hero_enigma\",\n\"id\":33\n},\n{\n\"name\":\"npc_dota_hero_tinker\",\n\"id\":34\n},\n{\n\"name\":\"npc_dota_hero_sniper\",\n\"id\":35\n},\n{\n\"name\":\"npc_dota_hero_necrolyte\",\n\"id\":36\n},\n{\n\"name\":\"npc_dota_hero_warlock\",\n\"id\":37\n},\n{\n\"name\":\"npc_dota_hero_beastmaster\",\n\"id\":38\n},\n{\n\"name\":\"npc_dota_hero_queenofpain\",\n\"id\":39\n},\n{\n\"name\":\"npc_dota_hero_venomancer\",\n\"id\":40\n},\n{\n\"name\":\"npc_dota_hero_faceless_void\",\n\"id\":41\n},\n{\n\"name\":\"npc_dota_hero_skeleton_king\",\n\"id\":42\n},\n{\n\"name\":\"npc_dota_hero_death_prophet\",\n\"id\":43\n},\n{\n\"name\":\"npc_dota_hero_phantom_assassin\",\n\"id\":44\n},\n{\n\"name\":\"npc_dota_hero_pugna\",\n\"id\":45\n},\n{\n\"name\":\"npc_dota_hero_templar_assassin\",\n\"id\":46\n},\n{\n\"name\":\"npc_dota_hero_viper\",\n\"id\":47\n},\n{\n\"name\":\"npc_dota_hero_luna\",\n\"id\":48\n},\n{\n\"name\":\"npc_dota_hero_dragon_knight\",\n\"id\":49\n},\n{\n\"name\":\"npc_dota_hero_dazzle\",\n\"id\":50\n},\n{\n\"name\":\"npc_dota_hero_rattletrap\",\n\"id\":51\n},\n{\n\"name\":\"npc_dota_hero_leshrac\",\n\"id\":52\n},\n{\n\"name\":\"npc_dota_hero_furion\",\n\"id\":53\n},\n{\n\"name\":\"npc_dota_hero_life_stealer\",\n\"id\":54\n},\n{\n\"name\":\"npc_dota_hero_dark_seer\",\n\"id\":55\n},\n{\n\"name\":\"npc_dota_hero_clinkz\",\n\"id\":56\n},\n{\n\"name\":\"npc_dota_hero_omniknight\",\n\"id\":57\n},\n{\n\"name\":\"npc_dota_hero_enchantress\",\n\"id\":58\n},\n{\n\"name\":\"npc_dota_hero_huskar\",\n\"id\":59\n},\n{\n\"name\":\"npc_dota_hero_night_stalker\",\n\"id\":60\n},\n{\n\"name\":\"npc_dota_hero_broodmother\",\n\"id\":61\n},\n{\n\"name\":\"npc_dota_hero_bounty_hunter\",\n\"id\":62\n},\n{\n\"name\":\"npc_dota_hero_weaver\",\n\"id\":63\n},\n{\n\"name\":\"npc_dota_hero_jakiro\",\n\"id\":64\n},\n{\n\"name\":\"npc_dota_hero_batrider\",\n\"id\":65\n},\n{\n\"name\":\"npc_dota_hero_chen\",\n\"id\":66\n},\n{\n\"name\":\"npc_dota_hero_spectre\",\n\"id\":67\n},\n{\n\"name\":\"npc_dota_hero_doom_bringer\",\n\"id\":69\n},\n{\n\"name\":\"npc_dota_hero_ancient_apparition\",\n\"id\":68\n},\n{\n\"name\":\"npc_dota_hero_ursa\",\n\"id\":70\n},\n{\n\"name\":\"npc_dota_hero_spirit_breaker\",\n\"id\":71\n},\n{\n\"name\":\"npc_dota_hero_gyrocopter\",\n\"id\":72\n},\n{\n\"name\":\"npc_dota_hero_alchemist\",\n\"id\":73\n},\n{\n\"name\":\"npc_dota_hero_invoker\",\n\"id\":74\n},\n{\n\"name\":\"npc_dota_hero_silencer\",\n\"id\":75\n},\n{\n\"name\":\"npc_dota_hero_obsidian_destroyer\",\n\"id\":76\n},\n{\n\"name\":\"npc_dota_hero_lycan\",\n\"id\":77\n},\n{\n\"name\":\"npc_dota_hero_brewmaster\",\n\"id\":78\n},\n{\n\"name\":\"npc_dota_hero_shadow_demon\",\n\"id\":79\n},\n{\n\"name\":\"npc_dota_hero_lone_druid\",\n\"id\":80\n},\n{\n\"name\":\"npc_dota_hero_chaos_knight\",\n\"id\":81\n},\n{\n\"name\":\"npc_dota_hero_meepo\",\n\"id\":82\n},\n{\n\"name\":\"npc_dota_hero_treant\",\n\"id\":83\n},\n{\n\"name\":\"npc_dota_hero_ogre_magi\",\n\"id\":84\n},\n{\n\"name\":\"npc_dota_hero_undying\",\n\"id\":85\n},\n{\n\"name\":\"npc_dota_hero_rubick\",\n\"id\":86\n},\n{\n\"name\":\"npc_dota_hero_disruptor\",\n\"id\":87\n},\n{\n\"name\":\"npc_dota_hero_nyx_assassin\",\n\"id\":88\n},\n{\n\"name\":\"npc_dota_hero_naga_siren\",\n\"id\":89\n},\n{\n\"name\":\"npc_dota_hero_keeper_of_the_light\",\n\"id\":90\n},\n{\n\"name\":\"npc_dota_hero_wisp\",\n\"id\":91\n},\n{\n\"name\":\"npc_dota_hero_visage\",\n\"id\":92\n},\n{\n\"name\":\"npc_dota_hero_slark\",\n\"id\":93\n},\n{\n\"name\":\"npc_dota_hero_medusa\",\n\"id\":94\n},\n{\n\"name\":\"npc_dota_hero_troll_warlord\",\n\"id\":95\n},\n{\n\"name\":\"npc_dota_hero_centaur\",\n\"id\":96\n},\n{\n\"name\":\"npc_dota_hero_magnataur\",\n\"id\":97\n},\n{\n\"name\":\"npc_dota_hero_shredder\",\n\"id\":98\n},\n{\n\"name\":\"npc_dota_hero_bristleback\",\n\"id\":99\n},\n{\n\"name\":\"npc_dota_hero_tusk\",\n\"id\":100\n},\n{\n\"name\":\"npc_dota_hero_skywrath_mage\",\n\"id\":101\n},\n{\n\"name\":\"npc_dota_hero_abaddon\",\n\"id\":102\n},\n{\n\"name\":\"npc_dota_hero_elder_titan\",\n\"id\":103\n},\n{\n\"name\":\"npc_dota_hero_legion_commander\",\n\"id\":104\n},\n{\n\"name\":\"npc_dota_hero_ember_spirit\",\n\"id\":106\n},\n{\n\"name\":\"npc_dota_hero_earth_spirit\",\n\"id\":107\n},\n{\n\"name\":\"npc_dota_hero_abyssal_underlord\",\n\"id\":108\n},\n{\n\"name\":\"npc_dota_hero_terrorblade\",\n\"id\":109\n},\n{\n\"name\":\"npc_dota_hero_phoenix\",\n\"id\":110\n},\n{\n\"name\":\"npc_dota_hero_techies\",\n\"id\":105\n},\n{\n\"name\":\"npc_dota_hero_oracle\",\n\"id\":111\n},\n{\n\"name\":\"npc_dota_hero_winter_wyvern\",\n\"id\":112\n},\n{\n\"name\":\"npc_dota_hero_arc_warden\",\n\"id\":113\n},\n{\n\"name\":\"npc_dota_hero_monkey_king\",\n\"id\":114\n},\n{\n\"name\":\"npc_dota_hero_pangolier\",\n\"id\":120\n},\n{\n\"name\":\"npc_dota_hero_dark_willow\",\n\"id\":119\n},\n{\n\"name\":\"npc_dota_hero_grimstroke\",\n\"id\":121\n},\n{\n\"name\":\"npc_dota_hero_miraak\",\n\"id\":200\n},\n{\n\"name\":\"npc_dota_hero_godspeed\",\n\"id\":202\n},\n{\n\"name\":\"npc_dota_hero_savitar\",\n\"id\":203\n},\n{\n\"name\":\"npc_dota_hero_ghost\",\n\"id\":201\n},\n{\n\"name\":\"npc_dota_hero_superman\",\n\"id\":204\n},\n{\n\"name\":\"npc_dota_hero_molag_bal\",\n\"id\":205\n},\n{\n\"name\":\"npc_dota_hero_doctor_fate\",\n\"id\":206\n},\n{\n\"name\":\"npc_dota_hero_mercer\",\n\"id\":207\n},\n{\n\"name\":\"npc_dota_hero_ezekyle\",\n\"id\":208\n},\n{\n\"name\":\"npc_dota_hero_kyloren\",\n\"id\":209\n},\n{\n\"name\":\"npc_dota_hero_mercy\",\n\"id\":210\n},\n{\n\"name\":\"npc_dota_hero_dark_rider\",\n\"id\":211\n},\n{\n\"name\":\"npc_dota_hero_grimskull\",\n\"id\":212\n},\n{\n\"name\":\"npc_dota_hero_kratos\",\n\"id\":213\n},\n{\n\"name\":\"npc_dota_hero_warboss\",\n\"id\":214\n},\n{\n\"name\":\"npc_dota_hero_cosmos\",\n\"id\":215\n},\n{\n\"name\":\"npc_dota_hero_jetstream_sam\",\n\"id\":216\n},\n{\n\"name\":\"npc_dota_hero_raiden\",\n\"id\":217\n},\n{\n\"name\":\"npc_dota_hero_misterio\",\n\"id\":218\n},\n{\n\"name\":\"npc_dota_hero_shazam\",\n\"id\":219\n},\n{\n\"name\":\"npc_dota_hero_ogre\",\n\"id\":220\n},\n{\n\"name\":\"npc_dota_hero_baane\",\n\"id\":221\n},\n{\n\"name\":\"npc_dota_hero_officer\",\n\"id\":222\n},\n{\n\"name\":\"npc_dota_hero_mod\",\n\"id\":223\n},\n{\n\"name\":\"npc_dota_hero_valkorion\",\n\"id\":224\n},\n{\n\"name\":\"npc_dota_hero_pennywise\",\n\"id\":227\n},\n{\n\"name\":\"npc_dota_hero_chaos_king\",\n\"id\":230\n},\n{\n\"name\":\"npc_dota_hero_gorr\",\n\"id\":233\n}\n]\n"
+    local f = "[{\n\"name\":\"npc_dota_hero_antimage\",\n\"id\":1\n},\n{\n\"name\":\"npc_dota_hero_axe\",\n\"id\":2\n},\n{\n\"name\":\"npc_dota_hero_bane\",\n\"id\":3\n},\n{\n\"name\":\"npc_dota_hero_bloodseeker\",\n\"id\":4\n},\n{\n\"name\":\"npc_dota_hero_crystal_maiden\",\n\"id\":5\n},\n{\n\"name\":\"npc_dota_hero_drow_ranger\",\n\"id\":6\n},\n{\n\"name\":\"npc_dota_hero_earthshaker\",\n\"id\":7\n},\n{\n\"name\":\"npc_dota_hero_juggernaut\",\n\"id\":8\n},\n{\n\"name\":\"npc_dota_hero_mirana\",\n\"id\":9\n},\n{\n\"name\":\"npc_dota_hero_nevermore\",\n\"id\":11\n},\n{\n\"name\":\"npc_dota_hero_carnange\",\n\"id\":10\n},\n{\n\"name\":\"npc_dota_hero_phantom_lancer\",\n\"id\":12\n},\n{\n\"name\":\"npc_dota_hero_puck\",\n\"id\":13\n},\n{\n\"name\":\"npc_dota_hero_pudge\",\n\"id\":14\n},\n{\n\"name\":\"npc_dota_hero_razor\",\n\"id\":15\n},\n{\n\"name\":\"npc_dota_hero_sand_king\",\n\"id\":16\n},\n{\n\"name\":\"npc_dota_hero_storm_spirit\",\n\"id\":17\n},\n{\n\"name\":\"npc_dota_hero_sven\",\n\"id\":18\n},\n{\n\"name\":\"npc_dota_hero_tiny\",\n\"id\":19\n},\n{\n\"name\":\"npc_dota_hero_vengefulspirit\",\n\"id\":20\n},\n{\n\"name\":\"npc_dota_hero_windrunner\",\n\"id\":21\n},\n{\n\"name\":\"npc_dota_hero_zuus\",\n\"id\":22\n},\n{\n\"name\":\"npc_dota_hero_kunkka\",\n\"id\":23\n},\n{\n\"name\":\"npc_dota_hero_lina\",\n\"id\":25\n},\n{\n\"name\":\"npc_dota_hero_lich\",\n\"id\":31\n},\n{\n\"name\":\"npc_dota_hero_lion\",\n\"id\":26\n},\n{\n\"name\":\"npc_dota_hero_shadow_shaman\",\n\"id\":27\n},\n{\n\"name\":\"npc_dota_hero_slardar\",\n\"id\":28\n},\n{\n\"name\":\"npc_dota_hero_tidehunter\",\n\"id\":29\n},\n{\n\"name\":\"npc_dota_hero_witch_doctor\",\n\"id\":30\n},\n{\n\"name\":\"npc_dota_hero_riki\",\n\"id\":32\n},\n{\n\"name\":\"npc_dota_hero_enigma\",\n\"id\":33\n},\n{\n\"name\":\"npc_dota_hero_tinker\",\n\"id\":34\n},\n{\n\"name\":\"npc_dota_hero_sniper\",\n\"id\":35\n},\n{\n\"name\":\"npc_dota_hero_necrolyte\",\n\"id\":36\n},\n{\n\"name\":\"npc_dota_hero_warlock\",\n\"id\":37\n},\n{\n\"name\":\"npc_dota_hero_beastmaster\",\n\"id\":38\n},\n{\n\"name\":\"npc_dota_hero_queenofpain\",\n\"id\":39\n},\n{\n\"name\":\"npc_dota_hero_venomancer\",\n\"id\":40\n},\n{\n\"name\":\"npc_dota_hero_faceless_void\",\n\"id\":41\n},\n{\n\"name\":\"npc_dota_hero_skeleton_king\",\n\"id\":42\n},\n{\n\"name\":\"npc_dota_hero_death_prophet\",\n\"id\":43\n},\n{\n\"name\":\"npc_dota_hero_phantom_assassin\",\n\"id\":44\n},\n{\n\"name\":\"npc_dota_hero_pugna\",\n\"id\":45\n},\n{\n\"name\":\"npc_dota_hero_templar_assassin\",\n\"id\":46\n},\n{\n\"name\":\"npc_dota_hero_viper\",\n\"id\":47\n},\n{\n\"name\":\"npc_dota_hero_luna\",\n\"id\":48\n},\n{\n\"name\":\"npc_dota_hero_dragon_knight\",\n\"id\":49\n},\n{\n\"name\":\"npc_dota_hero_dazzle\",\n\"id\":50\n},\n{\n\"name\":\"npc_dota_hero_rattletrap\",\n\"id\":51\n},\n{\n\"name\":\"npc_dota_hero_leshrac\",\n\"id\":52\n},\n{\n\"name\":\"npc_dota_hero_furion\",\n\"id\":53\n},\n{\n\"name\":\"npc_dota_hero_life_stealer\",\n\"id\":54\n},\n{\n\"name\":\"npc_dota_hero_dark_seer\",\n\"id\":55\n},\n{\n\"name\":\"npc_dota_hero_clinkz\",\n\"id\":56\n},\n{\n\"name\":\"npc_dota_hero_omniknight\",\n\"id\":57\n},\n{\n\"name\":\"npc_dota_hero_enchantress\",\n\"id\":58\n},\n{\n\"name\":\"npc_dota_hero_huskar\",\n\"id\":59\n},\n{\n\"name\":\"npc_dota_hero_night_stalker\",\n\"id\":60\n},\n{\n\"name\":\"npc_dota_hero_broodmother\",\n\"id\":61\n},\n{\n\"name\":\"npc_dota_hero_bounty_hunter\",\n\"id\":62\n},\n{\n\"name\":\"npc_dota_hero_weaver\",\n\"id\":63\n},\n{\n\"name\":\"npc_dota_hero_jakiro\",\n\"id\":64\n},\n{\n\"name\":\"npc_dota_hero_batrider\",\n\"id\":65\n},\n{\n\"name\":\"npc_dota_hero_chen\",\n\"id\":66\n},\n{\n\"name\":\"npc_dota_hero_spectre\",\n\"id\":67\n},\n{\n\"name\":\"npc_dota_hero_doom_bringer\",\n\"id\":69\n},\n{\n\"name\":\"npc_dota_hero_ancient_apparition\",\n\"id\":68\n},\n{\n\"name\":\"npc_dota_hero_ursa\",\n\"id\":70\n},\n{\n\"name\":\"npc_dota_hero_spirit_breaker\",\n\"id\":71\n},\n{\n\"name\":\"npc_dota_hero_gyrocopter\",\n\"id\":72\n},\n{\n\"name\":\"npc_dota_hero_alchemist\",\n\"id\":73\n},\n{\n\"name\":\"npc_dota_hero_invoker\",\n\"id\":74\n},\n{\n\"name\":\"npc_dota_hero_silencer\",\n\"id\":75\n},\n{\n\"name\":\"npc_dota_hero_obsidian_destroyer\",\n\"id\":76\n},\n{\n\"name\":\"npc_dota_hero_lycan\",\n\"id\":77\n},\n{\n\"name\":\"npc_dota_hero_brewmaster\",\n\"id\":78\n},\n{\n\"name\":\"npc_dota_hero_shadow_demon\",\n\"id\":79\n},\n{\n\"name\":\"npc_dota_hero_lone_druid\",\n\"id\":80\n},\n{\n\"name\":\"npc_dota_hero_chaos_knight\",\n\"id\":81\n},\n{\n\"name\":\"npc_dota_hero_meepo\",\n\"id\":82\n},\n{\n\"name\":\"npc_dota_hero_treant\",\n\"id\":83\n},\n{\n\"name\":\"npc_dota_hero_ogre_magi\",\n\"id\":84\n},\n{\n\"name\":\"npc_dota_hero_undying\",\n\"id\":85\n},\n{\n\"name\":\"npc_dota_hero_rubick\",\n\"id\":86\n},\n{\n\"name\":\"npc_dota_hero_disruptor\",\n\"id\":87\n},\n{\n\"name\":\"npc_dota_hero_nyx_assassin\",\n\"id\":88\n},\n{\n\"name\":\"npc_dota_hero_naga_siren\",\n\"id\":89\n},\n{\n\"name\":\"npc_dota_hero_keeper_of_the_light\",\n\"id\":90\n},\n{\n\"name\":\"npc_dota_hero_wisp\",\n\"id\":91\n},\n{\n\"name\":\"npc_dota_hero_visage\",\n\"id\":92\n},\n{\n\"name\":\"npc_dota_hero_slark\",\n\"id\":93\n},\n{\n\"name\":\"npc_dota_hero_medusa\",\n\"id\":94\n},\n{\n\"name\":\"npc_dota_hero_troll_warlord\",\n\"id\":95\n},\n{\n\"name\":\"npc_dota_hero_centaur\",\n\"id\":96\n},\n{\n\"name\":\"npc_dota_hero_magnataur\",\n\"id\":97\n},\n{\n\"name\":\"npc_dota_hero_shredder\",\n\"id\":98\n},\n{\n\"name\":\"npc_dota_hero_bristleback\",\n\"id\":99\n},\n{\n\"name\":\"npc_dota_hero_tusk\",\n\"id\":100\n},\n{\n\"name\":\"npc_dota_hero_skywrath_mage\",\n\"id\":101\n},\n{\n\"name\":\"npc_dota_hero_abaddon\",\n\"id\":102\n},\n{\n\"name\":\"npc_dota_hero_elder_titan\",\n\"id\":103\n},\n{\n\"name\":\"npc_dota_hero_legion_commander\",\n\"id\":104\n},\n{\n\"name\":\"npc_dota_hero_ember_spirit\",\n\"id\":106\n},\n{\n\"name\":\"npc_dota_hero_earth_spirit\",\n\"id\":107\n},\n{\n\"name\":\"npc_dota_hero_abyssal_underlord\",\n\"id\":108\n},\n{\n\"name\":\"npc_dota_hero_terrorblade\",\n\"id\":109\n},\n{\n\"name\":\"npc_dota_hero_phoenix\",\n\"id\":110\n},\n{\n\"name\":\"npc_dota_hero_techies\",\n\"id\":105\n},\n{\n\"name\":\"npc_dota_hero_oracle\",\n\"id\":111\n},\n{\n\"name\":\"npc_dota_hero_winter_wyvern\",\n\"id\":112\n},\n{\n\"name\":\"npc_dota_hero_arc_warden\",\n\"id\":113\n},\n{\n\"name\":\"npc_dota_hero_monkey_king\",\n\"id\":114\n},\n{\n\"name\":\"npc_dota_hero_pangolier\",\n\"id\":120\n},\n{\n\"name\":\"npc_dota_hero_dark_willow\",\n\"id\":119\n},\n{\n\"name\":\"npc_dota_hero_grimstroke\",\n\"id\":121\n},\n{\n\"name\":\"npc_dota_hero_miraak\",\n\"id\":200\n},\n{\n\"name\":\"npc_dota_hero_godspeed\",\n\"id\":202\n},\n{\n\"name\":\"npc_dota_hero_savitar\",\n\"id\":203\n},\n{\n\"name\":\"npc_dota_hero_ghost\",\n\"id\":201\n},\n{\n\"name\":\"npc_dota_hero_superman\",\n\"id\":204\n},\n{\n\"name\":\"npc_dota_hero_molag_bal\",\n\"id\":205\n},\n{\n\"name\":\"npc_dota_hero_doctor_fate\",\n\"id\":206\n},\n{\n\"name\":\"npc_dota_hero_mercer\",\n\"id\":207\n},\n{\n\"name\":\"npc_dota_hero_ezekyle\",\n\"id\":208\n},\n{\n\"name\":\"npc_dota_hero_kyloren\",\n\"id\":209\n},\n{\n\"name\":\"npc_dota_hero_mercy\",\n\"id\":210\n},\n{\n\"name\":\"npc_dota_hero_dark_rider\",\n\"id\":211\n},\n{\n\"name\":\"npc_dota_hero_grimskull\",\n\"id\":212\n},\n{\n\"name\":\"npc_dota_hero_kratos\",\n\"id\":213\n},\n{\n\"name\":\"npc_dota_hero_warboss\",\n\"id\":214\n},\n{\n\"name\":\"npc_dota_hero_cosmos\",\n\"id\":215\n},\n{\n\"name\":\"npc_dota_hero_jetstream_sam\",\n\"id\":216\n},\n{\n\"name\":\"npc_dota_hero_raiden\",\n\"id\":217\n},\n{\n\"name\":\"npc_dota_hero_misterio\",\n\"id\":218\n},\n{\n\"name\":\"npc_dota_hero_shazam\",\n\"id\":219\n},\n{\n\"name\":\"npc_dota_hero_ogre\",\n\"id\":220\n},\n{\n\"name\":\"npc_dota_hero_baane\",\n\"id\":221\n},\n{\n\"name\":\"npc_dota_hero_officer\",\n\"id\":222\n},\n{\n\"name\":\"npc_dota_hero_mod\",\n\"id\":223\n},\n{\n\"name\":\"npc_dota_hero_valkorion\",\n\"id\":224\n},\n{\n\"name\":\"npc_dota_hero_pennywise\",\n\"id\":227\n},\n{\n\\\"name\\\":\\\"npc_dota_hero_aqua_man\\\",\n\\\"id\\\":232\n},\n{\n\"name\":\"npc_dota_hero_chaos_king\",\n\"id\":230\n},\n{\n\"name\":\"npc_dota_hero_gorr\",\n\"id\":233\n}\n]\n"
     local tojson = json.decode(f)
     Util.heroes_ids = tojson
 
@@ -49,6 +49,7 @@ function Util:OnInit(args)
     LinkLuaModifier("modifier_arcana", "modifiers/modifier_arcana.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_pet_model", "modifiers/modifier_pet_model.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_fountain", "modifiers/modifier_fountain.lua", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_dark_emblem", "modifiers/modifier_customs.lua", LUA_MODIFIER_MOTION_NONE)
 
     CustomGameEventManager:RegisterListener("on_chat_recived", Dynamic_Wrap(Util, 'OnChatUpdated'))
     CustomGameEventManager:RegisterListener("on_gauntlet_ability_selected", Dynamic_Wrap(Util, 'OnGauntletAbilitySelected'))
@@ -353,7 +354,18 @@ function Util:EquipItemData(hero, item_data, slot)
     if econ_params["modifiers"] ~= nil then
         for __id, modifier in pairs(econ_params["modifiers"]) do
             LinkLuaModifier(modifier["modifier"], modifier["modifier_path"], LUA_MODIFIER_MOTION_NONE)
-            local mod = hero:AddNewModifier(hero, nil, modifier["modifier"], nil)
+            
+            local params = nil
+
+            if modifier["params"] ~= nil then
+                params = {}
+                
+                for k,v in pairs(modifier["params"]) do
+                    params[k] = v
+                end
+            end
+
+            local mod = hero:AddNewModifier(hero, nil, modifier["modifier"], params)
             hero.modifiers[slot] = mod
         end
     end
@@ -407,12 +419,41 @@ function Util:OnHeroInGame(hero)
             ParticleManager:ReleaseParticleIndex(nFXIndex)
         end
 
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem_4") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/yellow_water_effect/yellow_water.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "platinum_emblem") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/platinum_emblem/platinum_emblem.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "dark_emblem") == true then
+            hero:AddNewModifier(hero, nil, "modifier_dark_emblem", nil)
+        end
+
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "heart_timegem") == true then
           hero:AddNewModifier(hero, nil, "modifier_heart_timegem", nil)
-      end
+        end
       
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem_green") == true then
             local nFXIndex = ParticleManager:CreateParticle( "particles/red_emblem/red_emblem.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem_2") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/star_emblem_3/star_emblem_3_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "star_emblem_3") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/econ/events/ti9/ti9_emblem_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "dark_emblem_2") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/hero_effects/green_hero_effect_ground.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
             ParticleManager:ReleaseParticleIndex(nFXIndex)
         end
       
@@ -527,404 +568,352 @@ function Util:OnHeroInGame(hero)
     ----if stats.has_plus(hero:GetPlayerOwnerID()) then stats.request_hero_data(hero:GetUnitName()) end
 
     if hero:GetUnitName() == "npc_dota_hero_pudge" then
-      if hero:HasAbility("pudge_flesh_heap_lua") then
-        hero:FindAbilityByName("pudge_flesh_heap_lua"):SetLevel(1)
-      end
+        if hero:HasAbility("pudge_flesh_heap_lua") then
+            hero:FindAbilityByName("pudge_flesh_heap_lua"):SetLevel(1)
+        end
     end
 
     if hero:GetUnitName() == "npc_dota_hero_invoker" then
-      if hero:HasAbility("collector_collect") then
-        hero:FindAbilityByName("collector_collect"):SetLevel(1)
-      end
+        if hero:HasAbility("collector_collect") then
+            hero:FindAbilityByName("collector_collect"):SetLevel(1)
+        end
     end
 
     if hero:GetUnitName() == "npc_dota_hero_ezekyle" then
-      if hero:HasAbility("ezekyle_dark_gods_bless") then
-        hero:FindAbilityByName("ezekyle_dark_gods_bless"):SetLevel(1)
-      end
+        if hero:HasAbility("ezekyle_dark_gods_bless") then
+            hero:FindAbilityByName("ezekyle_dark_gods_bless"):SetLevel(1)
+        end
     end
 
     if hero:GetUnitName() == "npc_dota_hero_furion" then
-      if hero:HasAbility("dimm_demons_power") then
-        hero:FindAbilityByName("dimm_demons_power"):SetLevel(1)
-      end
+        if hero:HasAbility("dimm_demons_power") then
+            hero:FindAbilityByName("dimm_demons_power"):SetLevel(1)
+        end
     end
-    
+
     if hero:GetUnitName() == "npc_dota_hero_faceless_void" then
-      if hero:HasAbility("beyonder_void_explosion") then
-        hero:FindAbilityByName("beyonder_void_explosion"):SetLevel(1)
-      end
+        if hero:HasAbility("beyonder_void_explosion") then
+            hero:FindAbilityByName("beyonder_void_explosion"):SetLevel(1)
+        end
     end
 
     if hero:GetUnitName() == "npc_dota_hero_pangolier" then
-      Attachments:AttachProp(hero, "attach_attack2", "models/heroes/hero_celebrimbor/bow.vmdl", 1)
+        Attachments:AttachProp(hero, "attach_attack2", "models/heroes/hero_celebrimbor/bow.vmdl", 1)
     end
     if hero:GetUnitName() == "npc_dota_hero_chaos_knight" then
-      LinkLuaModifier("modifier_ghost_rider", "modifiers/modifier_ghost_rider.lua", LUA_MODIFIER_MOTION_NONE)
+        LinkLuaModifier("modifier_ghost_rider", "modifiers/modifier_ghost_rider.lua", LUA_MODIFIER_MOTION_NONE)
 
-      hero:AddNewModifier(hero, nil, "modifier_ghost_rider", nil)
+        hero:AddNewModifier(hero, nil, "modifier_ghost_rider", nil)
     end
     if hero:GetUnitName() == "npc_dota_hero_morphling" then
-      ParticleManager:CreateParticle( "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:CreateParticle( "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
     end
     if hero:GetUnitName() == "npc_dota_hero_leshrac" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "tzeentch_chaos_crown") == true then
-        local wraith_donat = ParticleManager:CreateParticle( "particles/hero_tzeench/tzeentch_chaos_crown.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( wraith_donat, 0, hero, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc" , hero:GetOrigin(), true )
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "tzeentch_chaos_crown") == true then
+            local wraith_donat = ParticleManager:CreateParticle( "particles/hero_tzeench/tzeentch_chaos_crown.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( wraith_donat, 0, hero, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc" , hero:GetOrigin(), true )
 
-        ParticleManager:DestroyParticle(pudge_donat, true)
-        ParticleManager:DestroyParticle(pudge_donat2, true)
+            ParticleManager:DestroyParticle(pudge_donat, true)
+            ParticleManager:DestroyParticle(pudge_donat2, true)
 
-        local pudge_donat = ParticleManager:CreateParticle( "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_eye_lvl21.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( pudge_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-        local pudge_donat2 = ParticleManager:CreateParticle( "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_eye_lvl21.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+            local pudge_donat = ParticleManager:CreateParticle( "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_eye_lvl21.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( pudge_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+            local pudge_donat2 = ParticleManager:CreateParticle( "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_eye_lvl21.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
 
-        local wraith_donat2 = ParticleManager:CreateParticle( "particles/hero_tzeench/tzeentch_warp_connection_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_effect" , hero:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( wraith_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_effect" , hero:GetOrigin(), true )
-        ParticleManager:SetParticleControl( wraith_donat2, 6, Vector(100, 100, 0) )
-        Attachments:AttachProp(hero, "attach_crown", "models/heroes/hero_tzeentch/tzeench_chaos_god_arcana/chaos_god_crown.vmdl", 1)
-      end
-      hero:FindAbilityByName("tzeentch_warp_god"):SetLevel(1)
+            local wraith_donat2 = ParticleManager:CreateParticle( "particles/hero_tzeench/tzeentch_warp_connection_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( wraith_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_effect" , hero:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( wraith_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_effect" , hero:GetOrigin(), true )
+            ParticleManager:SetParticleControl( wraith_donat2, 6, Vector(100, 100, 0) )
+            Attachments:AttachProp(hero, "attach_crown", "models/heroes/hero_tzeentch/tzeench_chaos_god_arcana/chaos_god_crown.vmdl", 1)
+        end
+        hero:FindAbilityByName("tzeentch_warp_god"):SetLevel(1)
     end
+
     if hero:GetUnitName() == "npc_dota_hero_ogre" then
-      hero:FindAbilityByName("ogre_mage_passive"):SetLevel(1)
+        hero:FindAbilityByName("ogre_mage_passive"):SetLevel(1)
     end
     if hero:GetUnitName() == "npc_dota_hero_cosmos" then
-      hero:FindAbilityByName("cosmos_jumper"):SetLevel(1)
+        hero:FindAbilityByName("cosmos_jumper"):SetLevel(1)
     end
     if hero:GetUnitName() == "npc_dota_hero_undying" then
         hero:FindAbilityByName("manhattan_equilibrium"):SetLevel(1)
     end
     if hero:GetUnitName() == "npc_dota_hero_jetstream_sam" then
-      hero:FindAbilityByName("sam_zandatsu"):SetLevel(1)
+        hero:FindAbilityByName("sam_zandatsu"):SetLevel(1)
     end
     if hero:GetUnitName() == "npc_dota_hero_enchantress" then
-      hero:FindAbilityByName("tracer_pulse_bomb"):SetLevel(1)
+        hero:FindAbilityByName("tracer_pulse_bomb"):SetLevel(1)
     end
     if hero:GetUnitName() == "dota_fountain" then
-      hero:FindAbilityByName("fountain_protection"):SetLevel(1)
+        hero:FindAbilityByName("fountain_protection"):SetLevel(1)
     end
     if hero:GetUnitName() == "npc_dota_hero_drow_ranger" then
-      Attachments:AttachProp(hero, "attach_attack1", "models/items/windrunner/rainmaker_bow/rainmaker_bow.vmdl", 1)
-      if PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID()) == 77291876 then hero:SetMaterialGroup("blue") end
+        Attachments:AttachProp(hero, "attach_attack1", "models/items/windrunner/rainmaker_bow/rainmaker_bow.vmdl", 1)
+        if PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID()) == 77291876 then hero:SetMaterialGroup("blue") end
     end
     if hero:GetUnitName() == "npc_dota_hero_bristleback" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "whispers_of_the_dead") == true then
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/vengeful_ghost_captain_head/vengeful_ghost_captain_head.vmdl"})
-        mask1:FollowEntity(hero, true)
-      else
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_davy_jones/javy_jones_head.vmdl"})
-        mask1:FollowEntity(hero, true)
-        mask1:SetRenderColor(119, 136, 153)
-      end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "whispers_of_the_dead") == true then
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/vengeful_ghost_captain_head/vengeful_ghost_captain_head.vmdl"})
+            mask1:FollowEntity(hero, true)
+        else
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_davy_jones/javy_jones_head.vmdl"})
+            mask1:FollowEntity(hero, true)
+            mask1:SetRenderColor(119, 136, 153)
+        end
 
-      local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/claddish_gloves/claddish_gloves.vmdl"})
-      mask2:FollowEntity(hero, true)
+        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/claddish_gloves/claddish_gloves.vmdl"})
+        mask2:FollowEntity(hero, true)
 
-      local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/claddish_legs/claddish_legs.vmdl"})
-      mask3:FollowEntity(hero, true)
+        local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/claddish_legs/claddish_legs.vmdl"})
+        mask3:FollowEntity(hero, true)
 
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "neptunes_faith") == true then
-        local mask4 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/kunkka_immortal/kunkka_shoulder_immortal.vmdl"})
-        mask4:FollowEntity(hero, true)
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "neptunes_faith") == true then
+            local mask4 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/kunkka_immortal/kunkka_shoulder_immortal.vmdl"})
+            mask4:FollowEntity(hero, true)
 
-        ParticleManager:CreateParticle( "particles/econ/items/kunkka/kunkka_immortal/kunkka_immortal_ambient_alt.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask4 )
-      else
-        local mask4 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/claddish_shoulder/claddish_shoulder.vmdl"})
-        mask4:FollowEntity(hero, true)
-      end
+            ParticleManager:CreateParticle( "particles/econ/items/kunkka/kunkka_immortal/kunkka_immortal_ambient_alt.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask4 )
+        else
+            local mask4 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/claddish_shoulder/claddish_shoulder.vmdl"})
+            mask4:FollowEntity(hero, true)
+        end
 
 
-      local mask5 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/inquisitor_tide_belt/inquisitor_tide_belt.vmdl"})
-      mask5:FollowEntity(hero, true)
+        local mask5 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/inquisitor_tide_belt/inquisitor_tide_belt.vmdl"})
+        mask5:FollowEntity(hero, true)
 
-      local mask6 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/inquisitor_tide_back/inquisitor_tide_back.vmdl"})
-      mask6:FollowEntity(hero, true)
+        local mask6 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/inquisitor_tide_back/inquisitor_tide_back.vmdl"})
+        mask6:FollowEntity(hero, true)
 
-      local mask7 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/inquisitor_tide_shoulder/inquisitor_tide_shoulder.vmdl"})
-      mask7:FollowEntity(hero, true)
+        local mask7 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/inquisitor_tide_shoulder/inquisitor_tide_shoulder.vmdl"})
+        mask7:FollowEntity(hero, true)
 
-      local mask8 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/inquisitor_tide_misc/inquisitor_tide_misc.vmdl"})
-      mask8:FollowEntity(hero, true)
+        local mask8 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/inquisitor_tide_misc/inquisitor_tide_misc.vmdl"})
+        mask8:FollowEntity(hero, true)
 
-      local mask9 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/arm_lev_neptunian_sabre/arm_lev_neptunian_sabre.vmdl"})
-      mask9:FollowEntity(hero, true)
+        local mask9 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/kunkka/arm_lev_neptunian_sabre/arm_lev_neptunian_sabre.vmdl"})
+        mask9:FollowEntity(hero, true)
     end
+
     if hero:GetUnitName() == "npc_dota_hero_furion" then
 
     end
     if hero:GetUnitName() == "npc_dota_hero_antimage" then
-      LinkLuaModifier("modifier_daredevil", "modifiers/modifier_daredevil.lua", LUA_MODIFIER_MOTION_NONE)
+        LinkLuaModifier("modifier_daredevil", "modifiers/modifier_daredevil.lua", LUA_MODIFIER_MOTION_NONE)
 
-      hero:AddNewModifier(hero, nil, "modifier_daredevil", nil)
+        hero:AddNewModifier(hero, nil, "modifier_daredevil", nil)
     end
     if hero:GetUnitName() == "npc_dota_hero_ogre_magi" then
-      LinkLuaModifier("modifier_spell_amp", "modifiers/modifier_spell_amp.lua", LUA_MODIFIER_MOTION_NONE)
+        LinkLuaModifier("modifier_spell_amp", "modifiers/modifier_spell_amp.lua", LUA_MODIFIER_MOTION_NONE)
 
-      hero:AddNewModifier(hero, nil, "modifier_spell_amp", nil)
+        hero:AddNewModifier(hero, nil, "modifier_spell_amp", nil)
     end
     if hero:GetUnitName() == "npc_dota_hero_night_stalker" then
-      local hasItem = false
+        local hasItem = false
 
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "bolt_arcana") == true and not hasItem then
-        hasItem = true
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "bolt_arcana") == true and not hasItem then
+            hasItem = true
 
-        LinkLuaModifier("modifier_bolt_arcana" , "modifiers/modifier_bolt_arcana.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:AddNewModifier(hero, nil, "modifier_bolt_arcana", nil)
+            LinkLuaModifier("modifier_bolt_arcana" , "modifiers/modifier_bolt_arcana.lua", LUA_MODIFIER_MOTION_NONE)
+            hero:AddNewModifier(hero, nil, "modifier_bolt_arcana", nil)
 
-        hero:SetOriginalModel("models/black_bolt/black_bolt_arcana/black_bolt_arcana.vmdl")
+            hero:SetOriginalModel("models/black_bolt/black_bolt_arcana/black_bolt_arcana.vmdl")
 
-        local HeroPFX = ParticleManager:CreateParticle( "particles/hero_black_bolt/arcana/black_bolt_arcana_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControl( HeroPFX, 15, Vector(0, 199, 255) )
-        ParticleManager:SetParticleControl( HeroPFX, 16, Vector(1, 0, 0) )
+            local HeroPFX = ParticleManager:CreateParticle( "particles/hero_black_bolt/arcana/black_bolt_arcana_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControl( HeroPFX, 15, Vector(0, 199, 255) )
+            ParticleManager:SetParticleControl( HeroPFX, 16, Vector(1, 0, 0) )
 
-        local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/black_bolt/black_bolt_arcana/abysm_outworld_staff.vmdl"})
-        weapon:FollowEntity(hero, true)
-        local weaponPFX = ParticleManager:CreateParticle( "particles/hero_black_bolt/arcana/black_bolt_arcana_weapon_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon )
-        ParticleManager:SetParticleControlEnt( weaponPFX, 0, weapon, PATTACH_POINT_FOLLOW, "attach_weapon" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weaponPFX, 1, weapon, PATTACH_POINT_FOLLOW, "attach_weapon2" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weaponPFX, 4, weapon, PATTACH_POINT_FOLLOW, "attach_weapon2" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weaponPFX, 8, weapon, PATTACH_POINT_FOLLOW, "attach_cornerL" , weapon:GetOrigin(), true )
+            local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/black_bolt/black_bolt_arcana/abysm_outworld_staff.vmdl"})
+            weapon:FollowEntity(hero, true)
+            local weaponPFX = ParticleManager:CreateParticle( "particles/hero_black_bolt/arcana/black_bolt_arcana_weapon_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon )
+            ParticleManager:SetParticleControlEnt( weaponPFX, 0, weapon, PATTACH_POINT_FOLLOW, "attach_weapon" , weapon:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( weaponPFX, 1, weapon, PATTACH_POINT_FOLLOW, "attach_weapon2" , weapon:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( weaponPFX, 4, weapon, PATTACH_POINT_FOLLOW, "attach_weapon2" , weapon:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( weaponPFX, 8, weapon, PATTACH_POINT_FOLLOW, "attach_cornerL" , weapon:GetOrigin(), true )
 
-        local weaponPFX2 = ParticleManager:CreateParticle( "particles/hero_black_bolt/arcana/black_bolt_arcana_weapon_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon )
-        ParticleManager:SetParticleControlEnt( weaponPFX2, 0, weapon, PATTACH_POINT_FOLLOW, "attach_weapon" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weaponPFX2, 1, weapon, PATTACH_POINT_FOLLOW, "attach_weapon2" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weaponPFX2, 4, weapon, PATTACH_POINT_FOLLOW, "attach_weapon2" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weaponPFX2, 8, weapon, PATTACH_POINT_FOLLOW, "attach_cornerR" , weapon:GetOrigin(), true )
+            local weaponPFX2 = ParticleManager:CreateParticle( "particles/hero_black_bolt/arcana/black_bolt_arcana_weapon_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon )
+            ParticleManager:SetParticleControlEnt( weaponPFX2, 0, weapon, PATTACH_POINT_FOLLOW, "attach_weapon" , weapon:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( weaponPFX2, 1, weapon, PATTACH_POINT_FOLLOW, "attach_weapon2" , weapon:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( weaponPFX2, 4, weapon, PATTACH_POINT_FOLLOW, "attach_weapon2" , weapon:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( weaponPFX2, 8, weapon, PATTACH_POINT_FOLLOW, "attach_cornerR" , weapon:GetOrigin(), true )
 
-        local head = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/black_bolt/black_bolt_arcana/abysm_outworld_helmet.vmdl"})
-        head:FollowEntity(hero, true)
+            local head = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/black_bolt/black_bolt_arcana/abysm_outworld_helmet.vmdl"})
+            head:FollowEntity(hero, true)
 
-        local mask24 = ParticleManager:CreateParticle( "particles/hero_black_bolt/arcana/black_bolt_arcana_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, head )
-        ParticleManager:SetParticleControlEnt( mask24, 0, head, PATTACH_POINT_FOLLOW, "attach_eye_l" , head:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask24, 1, head, PATTACH_POINT_FOLLOW, "attach_eye_r" , head:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask24, 2, head, PATTACH_POINT_FOLLOW, "attach_eye_l" , head:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask24, 3, head, PATTACH_POINT_FOLLOW, "attach_eye_r" , head:GetOrigin(), true )
-      end
+            local mask24 = ParticleManager:CreateParticle( "particles/hero_black_bolt/arcana/black_bolt_arcana_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, head )
+            ParticleManager:SetParticleControlEnt( mask24, 0, head, PATTACH_POINT_FOLLOW, "attach_eye_l" , head:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask24, 1, head, PATTACH_POINT_FOLLOW, "attach_eye_r" , head:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask24, 2, head, PATTACH_POINT_FOLLOW, "attach_eye_l" , head:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask24, 3, head, PATTACH_POINT_FOLLOW, "attach_eye_r" , head:GetOrigin(), true )
+        end
     end
+
     if hero:GetUnitName() == "npc_dota_hero_troll_warlord" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ronan_weapon_shadowmorne") == true then
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_shadowmourne.vmdl"})
-        mask2:FollowEntity(hero, true)
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ronan_eternity_hammer") == true then
-        LinkLuaModifier("modifier_ronan_hammer" , "modifiers/modifier_ronan_hammer.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:AddNewModifier(hero, nil, "modifier_ronan_hammer", nil)
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ronan_weapon_shadowmorne") == true then
+            local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_shadowmourne.vmdl"})
+            mask2:FollowEntity(hero, true)
+        elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ronan_eternity_hammer") == true then
+            LinkLuaModifier("modifier_ronan_hammer" , "modifiers/modifier_ronan_hammer.lua", LUA_MODIFIER_MOTION_NONE)
+            hero:AddNewModifier(hero, nil, "modifier_ronan_hammer", nil)
 
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_ethernal_hammer.vmdl"})
-        mask2:FollowEntity(hero, true)
+            local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_ethernal_hammer.vmdl"})
+            mask2:FollowEntity(hero, true)
 
-        local mask222 = ParticleManager:CreateParticle( "particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_hammer_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
-        ParticleManager:SetParticleControlEnt( mask222, 0, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
-      else SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_weapon.vmdl"}):FollowEntity(hero, true) end
+            local mask222 = ParticleManager:CreateParticle( "particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_hammer_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
+            ParticleManager:SetParticleControlEnt( mask222, 0, mask2, PATTACH_POINT_FOLLOW, "attach_corner" , mask2:GetOrigin(), true )
+        else SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_weapon.vmdl"}):FollowEntity(hero, true) end
 
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ronan_armor_mail") == true then
-        local ronan_armor_mail = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_moltenclaw.vmdl"})
-        ronan_armor_mail:FollowEntity(hero, true)
-        local ronan_armor_mailPFX = ParticleManager:CreateParticle( "particles/econ/items/axe/axe_armor_molten_claw/axe_molten_claw_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, ronan_armor_mail )
-      end
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ronan_vanguard") == true then
-        local ronan_vanguard = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_vanguard.vmdl"})
-        ronan_vanguard:FollowEntity(hero, true)
-      end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ronan_armor_mail") == true then
+            local ronan_armor_mail = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_moltenclaw.vmdl"})
+            ronan_armor_mail:FollowEntity(hero, true)
+            local ronan_armor_mailPFX = ParticleManager:CreateParticle( "particles/econ/items/axe/axe_armor_molten_claw/axe_molten_claw_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, ronan_armor_mail )
+        end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ronan_vanguard") == true then
+            local ronan_vanguard = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ronan/econs/ronan_vanguard.vmdl"})
+            ronan_vanguard:FollowEntity(hero, true)
+        end
     end
     if hero:GetUnitName() == "npc_dota_hero_warlock" then
-      local pudge_donat = ParticleManager:CreateParticle( "particles/units/heroes/hero_zeus/zeus_ambient_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( pudge_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( pudge_donat, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+        local pudge_donat = ParticleManager:CreateParticle( "particles/units/heroes/hero_zeus/zeus_ambient_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( pudge_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( pudge_donat, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
 
-      local pudge_donat2 = ParticleManager:CreateParticle( "particles/units/heroes/hero_zeus/zeus_ambient_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( pudge_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+        local pudge_donat2 = ParticleManager:CreateParticle( "particles/units/heroes/hero_zeus/zeus_ambient_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( pudge_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
 
-      local pudge_donat3 = ParticleManager:CreateParticle( "particles/units/heroes/hero_zeus/zeus_ambient_hands.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( pudge_donat3, 0, hero, PATTACH_POINT_FOLLOW, "attach_attack1" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( pudge_donat3, 1, hero, PATTACH_POINT_FOLLOW, "attach_attack2" , hero:GetOrigin(), true )
+        local pudge_donat3 = ParticleManager:CreateParticle( "particles/units/heroes/hero_zeus/zeus_ambient_hands.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( pudge_donat3, 0, hero, PATTACH_POINT_FOLLOW, "attach_attack1" , hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( pudge_donat3, 1, hero, PATTACH_POINT_FOLLOW, "attach_attack2" , hero:GetOrigin(), true )
 
-      local cloud2 = ParticleManager:CreateParticle( "particles/world_shrine/radiant_shrine_regen.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( cloud2, 0, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetOrigin(), true )
+        local cloud2 = ParticleManager:CreateParticle( "particles/world_shrine/radiant_shrine_regen.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( cloud2, 0, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetOrigin(), true )
     end
     if hero:GetUnitName() == "npc_dota_hero_batrider" then
-      LinkLuaModifier ("modifier_godspeed_tempest_double_scepter", "abilities/godspeed_tempest_double.lua", LUA_MODIFIER_MOTION_NONE)
-      hero:AddNewModifier(hero, nil, "modifier_godspeed_tempest_double_scepter", nil)
+        LinkLuaModifier ("modifier_godspeed_tempest_double_scepter", "abilities/godspeed_tempest_double.lua", LUA_MODIFIER_MOTION_NONE)
+        hero:AddNewModifier(hero, nil, "modifier_godspeed_tempest_double_scepter", nil)
 
-      hero:FindAbilityByName("godspeed_tempest_double"):SetLevel(1)
+        hero:FindAbilityByName("godspeed_tempest_double"):SetLevel(1)
 
-      local pudge_donat = ParticleManager:CreateParticle( "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_base_a.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( pudge_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( pudge_donat, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+        local pudge_donat = ParticleManager:CreateParticle( "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_base_a.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( pudge_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( pudge_donat, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
 
-      local pudge_donat2 = ParticleManager:CreateParticle( "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_base_a.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( pudge_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+        local pudge_donat2 = ParticleManager:CreateParticle( "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_base_a.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( pudge_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
 
-      local pudge_donat3 = ParticleManager:CreateParticle( "particles/units/heroes/hero_zeus/zeus_ambient_hands.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( pudge_donat3, 0, hero, PATTACH_POINT_FOLLOW, "attach_attack1" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( pudge_donat3, 1, hero, PATTACH_POINT_FOLLOW, "attach_attack2" , hero:GetOrigin(), true )
+        local pudge_donat3 = ParticleManager:CreateParticle( "particles/units/heroes/hero_zeus/zeus_ambient_hands.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( pudge_donat3, 0, hero, PATTACH_POINT_FOLLOW, "attach_attack1" , hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( pudge_donat3, 1, hero, PATTACH_POINT_FOLLOW, "attach_attack2" , hero:GetOrigin(), true )
 
-      local cloud2 = ParticleManager:CreateParticle( "particles/hero_godspeed/godspeed_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( cloud2, 0, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetOrigin(), true )
+        local cloud2 = ParticleManager:CreateParticle( "particles/hero_godspeed/godspeed_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( cloud2, 0, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetOrigin(), true )
     end
-    if hero:GetUnitName() == "npc_dota_hero_centaur" then
-      hero:SetRenderColor(0, 0 ,0)
-      local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/black_flash/black_flash_head_final.vmdl"})
-      mask:FollowEntity(hero, true)
-      mask:SetRenderColor(255, 69, 0)
 
-      local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/silencer/bts_final_utterance_shoulder/bts_final_utterance_shoulder.vmdl"})
-      mask1:FollowEntity(hero, true)
-      mask1:SetRenderColor(255, 69, 0)
+    if hero:GetUnitName() == "npc_dota_hero_centaur" then
+        hero:SetRenderColor(0, 0 ,0)
+        local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/black_flash/black_flash_head_final.vmdl"})
+        mask:FollowEntity(hero, true)
+        mask:SetRenderColor(255, 69, 0)
+
+        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/silencer/bts_final_utterance_shoulder/bts_final_utterance_shoulder.vmdl"})
+        mask1:FollowEntity(hero, true)
+        mask1:SetRenderColor(255, 69, 0)
     end
     if hero:GetUnitName() == "npc_dota_hero_shadow_shaman" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "iron_fist_golden_ways_of_faith") == true then
-        local cape = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ironfist/econs/waiths_of_faith.vmdl"})
-        cape:FollowEntity(hero, true)
-        cape:SetMaterialGroup("gold")
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "iron_fist_golden_ways_of_faith") == true then
+            local cape = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ironfist/econs/waiths_of_faith.vmdl"})
+            cape:FollowEntity(hero, true)
+            cape:SetMaterialGroup("gold")
 
-        ParticleManager:CreateParticle( "particles/econ/ironfist_golden_item.vpcf", PATTACH_ABSORIGIN_FOLLOW, cape )
-        ParticleManager:CreateParticle( "particles/hero_iron_fist/iron_fist_iron_strike_immortal_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "iron_fist_ways_of_faith") == true then
-        local cape = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ironfist/econs/waiths_of_faith.vmdl"})
-        cape:FollowEntity(hero, true)
+            ParticleManager:CreateParticle( "particles/econ/ironfist_golden_item.vpcf", PATTACH_ABSORIGIN_FOLLOW, cape )
+            ParticleManager:CreateParticle( "particles/hero_iron_fist/iron_fist_iron_strike_immortal_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "iron_fist_ways_of_faith") == true then
+            local cape = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ironfist/econs/waiths_of_faith.vmdl"})
+            cape:FollowEntity(hero, true)
 
-        ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, cape )
-      end
-    end
-    if hero:GetUnitName() == "npc_dota_hero_nyx_assassin" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "the_first_hunter") == true then
-        hero:SetOriginalModel("models/heroes/hero_ares_arcana/ares.vmdl")
-
-        LinkLuaModifier("modifier_the_firs_hunter" , "modifiers/modifier_the_firs_hunter.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:AddNewModifier(hero, nil, "modifier_the_firs_hunter", nil)
-
-        Timers:CreateTimer(0.1, function()
-          SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_arcana/weapon/weapon.vmdl"}):FollowEntity(hero, true)
-
-          ParticleManager:CreateParticle( "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_c_lvl21.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:CreateParticle( "particles/econ/courier/courier_oculopus/courier_oculopus_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:CreateParticle( "particles/econ/courier/courier_onibi/courier_onibi_black_ambient_c_lvl21.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:CreateParticle( "particles/econ/courier/courier_trail_hw_2013/courier_trail_hw_2013.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-
-          local pudge_donat2 = ParticleManager:CreateParticle( "particles/econ/courier/courier_greevil_black/courier_greevil_black_ambient_2.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-          ParticleManager:SetParticleControlEnt( pudge_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-          ParticleManager:SetParticleControl( pudge_donat2, 2, Vector(0, 0, 0))
-        end)
-        return
-      end
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ashbringer") == true then
-        local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/ashbringer.vmdl"})
-        weapon:FollowEntity(hero, true)
-
-        local weapon_pfx = ParticleManager:CreateParticle( "particles/econ/ashbringer.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon )
-        ParticleManager:SetParticleControlEnt( weapon_pfx, 0, weapon, PATTACH_POINT_FOLLOW, "attach_flame" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weapon_pfx, 1, weapon, PATTACH_POINT_FOLLOW, "attach_flame" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( weapon_pfx, 2, weapon, PATTACH_POINT_FOLLOW, "attach_flame" , weapon:GetOrigin(), true )
-        ParticleManager:SetParticleControl( weapon_pfx, 15, Vector(255, 255, 255))
-        ParticleManager:SetParticleControl( weapon_pfx, 16, Vector(0, 0, 0))
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ares_olympus_sword") == true then
-        local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/ares_legendary_weapon.vmdl"})
-        weapon:FollowEntity(hero, true)
-      elseif  Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ares_son_of_zeus") == true then
-        local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/ares_zuus_weapon.vmdl"})
-        weapon:FollowEntity(hero, true)
-
-        local pfx = ParticleManager:CreateParticle( "particles/hero_ares/ares_immortal_lightning_weapon.vpcf", PATTACH_ABSORIGIN_FOLLOW, weapon )
-        ParticleManager:SetParticleControlEnt( pfx, 0, weapon, PATTACH_POINT_FOLLOW, "attach_grip" , weapon:GetOrigin(), true )
-      else
-        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/weap_right.vmdl"}):FollowEntity(hero, true)
-      end
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ares_olympus_shield") == true then
-        local shield = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/ares_aegis.vmdl"})
-        shield:FollowEntity(hero, true)
-      else
-        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ares_ww/econs/weap_left.vmdl"}):FollowEntity(hero, true)
-      end
-      local eyes = ParticleManager:CreateParticle( "particles/econ/items/doom/doom_baphomet_set/doom_skulleye.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( eyes, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( eyes, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-
+            ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, cape )
+        end
     end
     if hero:GetUnitName() == "npc_dota_hero_bane" then
-      local pudge_donat = ParticleManager:CreateParticle( "particles/econ/items/pugna/pugna_ward_ti5/pugna_ambient_eyes_ti_5.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( pudge_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( pudge_donat, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+        local pudge_donat = ParticleManager:CreateParticle( "particles/econ/items/pugna/pugna_ward_ti5/pugna_ambient_eyes_ti_5.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( pudge_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( pudge_donat, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
 
-      local pudge_donat2 = ParticleManager:CreateParticle( "particles/econ/items/pugna/pugna_ward_ti5/pugna_ambient_eyes_ti_5.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( pudge_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+        local pudge_donat2 = ParticleManager:CreateParticle( "particles/econ/items/pugna/pugna_ward_ti5/pugna_ambient_eyes_ti_5.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( pudge_donat2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( pudge_donat2, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
     end
     if hero:GetUnitName() == "npc_dota_hero_death_prophet" then
-      local oracle_false_promise_planet = ParticleManager:CreateParticle( "particles/units/heroes/hero_oracle/oracle_ambient_ball.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( oracle_false_promise_planet, 0, hero, PATTACH_POINT_FOLLOW, "attach_orb" , hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( oracle_false_promise_planet, 2, hero, PATTACH_POINT_FOLLOW, "attach_orb" , hero:GetOrigin(), true )
+        local oracle_false_promise_planet = ParticleManager:CreateParticle( "particles/units/heroes/hero_oracle/oracle_ambient_ball.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( oracle_false_promise_planet, 0, hero, PATTACH_POINT_FOLLOW, "attach_orb" , hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( oracle_false_promise_planet, 2, hero, PATTACH_POINT_FOLLOW, "attach_orb" , hero:GetOrigin(), true )
     end
     if hero:GetUnitName() == "npc_dota_hero_omniknight" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thor_helmet") then
-        local mask4 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/helmet_of_the_thundergod.vmdl"})
-        mask4:FollowEntity(hero, true)
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "deus_vult") then
-        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/econs/source/thor_helmet.vmdl"}):FollowEntity(hero, true)
-      end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thor_helmet") then
+            local mask4 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/helmet_of_the_thundergod.vmdl"})
+            mask4:FollowEntity(hero, true)
+        elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "deus_vult") then
+            SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/econs/source/thor_helmet.vmdl"}):FollowEntity(hero, true)
+        end
 
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thor_sulfuras") then
-        LinkLuaModifier("modifier_thor_sulfuras", "modifiers/modifier_thor_sulfuras.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:AddNewModifier(hero, nil, "modifier_thor_sulfuras", nil)
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/sulfuras/thor_sulfuras.vmdl"})
-        mask1:FollowEntity(hero, true)
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thor_sulfuras") then
+            LinkLuaModifier("modifier_thor_sulfuras", "modifiers/modifier_thor_sulfuras.lua", LUA_MODIFIER_MOTION_NONE)
+            hero:AddNewModifier(hero, nil, "modifier_thor_sulfuras", nil)
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/sulfuras/thor_sulfuras.vmdl"})
+            mask1:FollowEntity(hero, true)
 
-        local sulfuras = ParticleManager:CreateParticle( "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-        ParticleManager:SetParticleControlEnt( sulfuras, 0, mask1, PATTACH_POINT_FOLLOW, "attach_weapon" , mask1:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( sulfuras, 1, mask1, PATTACH_POINT_FOLLOW, "attach_weapon" , mask1:GetOrigin(), true )
-        ParticleManager:SetParticleControl( sulfuras, 8, Vector(1, 0, 0))
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "mjollnir") then
-        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/econs/source/thor_mjollnir.vmdl"}):FollowEntity(hero, true)
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "dawnbreaker") then
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/econs/source/thor_dawnbreaker.vmdl"})
-        mask1:FollowEntity(hero, true)
-        local pfx = ParticleManager:CreateParticle( "particles/econ/dawnbreaker.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-        ParticleManager:SetParticleControlEnt( pfx, 0, mask1, PATTACH_POINT_FOLLOW, "attach_sword" , mask1:GetOrigin(), true )
-      else
-        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/thor_weapon.vmdl"}):FollowEntity(hero, true)
-      end
+            local sulfuras = ParticleManager:CreateParticle( "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
+            ParticleManager:SetParticleControlEnt( sulfuras, 0, mask1, PATTACH_POINT_FOLLOW, "attach_weapon" , mask1:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( sulfuras, 1, mask1, PATTACH_POINT_FOLLOW, "attach_weapon" , mask1:GetOrigin(), true )
+            ParticleManager:SetParticleControl( sulfuras, 8, Vector(1, 0, 0))
+        elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "mjollnir") then
+            SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/econs/source/thor_mjollnir.vmdl"}):FollowEntity(hero, true)
+        elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "dawnbreaker") then
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/econs/source/thor_dawnbreaker.vmdl"})
+            mask1:FollowEntity(hero, true)
+            local pfx = ParticleManager:CreateParticle( "particles/econ/dawnbreaker.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
+            ParticleManager:SetParticleControlEnt( pfx, 0, mask1, PATTACH_POINT_FOLLOW, "attach_sword" , mask1:GetOrigin(), true )
+        else
+            SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thor/thor_weapon.vmdl"}):FollowEntity(hero, true)
+        end
     end
     if hero:GetUnitName() == "npc_dota_hero_viper" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "the_mask_of_void") then
-        local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ebony_maw/econs/mask_of_the_void/the_mask_of_void.vmdl"})
-        mask:FollowEntity(hero, true)
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "the_mask_of_void") then
+            local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ebony_maw/econs/mask_of_the_void/the_mask_of_void.vmdl"})
+            mask:FollowEntity(hero, true)
 
-        ParticleManager:CreateParticle( "particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:CreateParticle( "particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
 
-        local khan_donat = ParticleManager:CreateParticle( "particles/econ/items/lion/fish_stick/lion_fish_stick_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( khan_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( khan_donat, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-      end
+            local khan_donat = ParticleManager:CreateParticle( "particles/econ/items/lion/fish_stick/lion_fish_stick_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( khan_donat, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( khan_donat, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+        end
     end
     if hero:GetUnitName() == "npc_dota_hero_oracle" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "anubis_jugment") then
-        hero:AddNewModifier(hero, nil, "modifier_arcana", nil)
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_oblivion/anubis_jujment/anubis_jugment.vmdl"})
-        mask1:SetParent(hero, nil)
-        mask1:FollowEntity(hero, true)
-        mask1:SetOwner(hero)
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "anubis_jugment") then
+            hero:AddNewModifier(hero, nil, "modifier_arcana", nil)
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_oblivion/anubis_jujment/anubis_jugment.vmdl"})
+            mask1:SetParent(hero, nil)
+            mask1:FollowEntity(hero, true)
+            mask1:SetOwner(hero)
 
-        local mask1_particle3 = ParticleManager:CreateParticle( "particles/units/heroes/hero_bane/bane_nightmare_inkblots.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        local mask1_particle4 = ParticleManager:CreateParticle( "particles/units/heroes/hero_bane/bane_nightmare_inkblots_thick.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        local mask1_particle5 = ParticleManager:CreateParticle( "particles/units/heroes/hero_bane/bane_nightmare_worms.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            local mask1_particle3 = ParticleManager:CreateParticle( "particles/units/heroes/hero_bane/bane_nightmare_inkblots.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            local mask1_particle4 = ParticleManager:CreateParticle( "particles/units/heroes/hero_bane/bane_nightmare_inkblots_thick.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            local mask1_particle5 = ParticleManager:CreateParticle( "particles/units/heroes/hero_bane/bane_nightmare_worms.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
 
 
-        local mask_particle2 = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_desert_sands/courier_roshan_desert_sands_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-        ParticleManager:SetParticleControlEnt( mask_particle2, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask1:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask_particle2, 1, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask1:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask_particle2, 2, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask1:GetOrigin(), true )
-      else
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/oracle/head_item.vmdl"})
-        mask1:SetParent(hero, nil)
-        mask1:FollowEntity(hero, true)
-        mask1:SetOwner(hero)
-      end
+            local mask_particle2 = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_desert_sands/courier_roshan_desert_sands_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
+            ParticleManager:SetParticleControlEnt( mask_particle2, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask1:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask_particle2, 1, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask1:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask_particle2, 2, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask1:GetOrigin(), true )
+        else
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/oracle/head_item.vmdl"})
+            mask1:SetParent(hero, nil)
+            mask1:FollowEntity(hero, true)
+            mask1:SetOwner(hero)
+        end
 
         local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/oracle/armor.vmdl"})
         mask1:SetParent(hero, nil)
@@ -939,236 +928,157 @@ function Util:OnHeroInGame(hero)
 
 
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "oblivion_shard_of_creation") == true then
-          local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/oracle/ti7_immortal_weapon/oracle_ti7_immortal_weapon.vmdl"})
-          weapon:SetParent(hero, nil)
-          weapon:FollowEntity(hero, true)
+            local weapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/oracle/ti7_immortal_weapon/oracle_ti7_immortal_weapon.vmdl"})
+            weapon:SetParent(hero, nil)
+            weapon:FollowEntity(hero, true)
 
-          ParticleManager:CreateParticle( "particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:CreateParticle( "particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
         else
-          local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/oracle/weapon.vmdl"})
-          mask3:SetParent(hero, nil)
-          mask3:FollowEntity(hero, true)
-          mask3:SetOwner(hero)
+            local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/oracle/weapon.vmdl"})
+            mask3:SetParent(hero, nil)
+            mask3:FollowEntity(hero, true)
+            mask3:SetOwner(hero)
         end
     end
+
     if hero:GetUnitName() == "npc_dota_hero_windrunner" then
-      LinkLuaModifier("modifier_death", "modifiers/modifier_death.lua", LUA_MODIFIER_MOTION_NONE)
-      hero:AddNewModifier(hero, nil, "modifier_death", nil)
+        LinkLuaModifier("modifier_death", "modifiers/modifier_death.lua", LUA_MODIFIER_MOTION_NONE)
+        hero:AddNewModifier(hero, nil, "modifier_death", nil)
     end
     if hero:GetUnitName() == "npc_dota_hero_doom_bringer" then
-      LinkLuaModifier("modifier_doom", "modifiers/modifier_doom.lua", LUA_MODIFIER_MOTION_NONE)
-      hero:AddNewModifier(hero, nil, "modifier_doom", nil)
+        LinkLuaModifier("modifier_doom", "modifiers/modifier_doom.lua", LUA_MODIFIER_MOTION_NONE)
+        hero:AddNewModifier(hero, nil, "modifier_doom", nil)
     end
     if hero:GetUnitName() == "npc_dota_hero_visage" then
-      local nFXIndex = ParticleManager:CreateParticle( "particles/ragnaros/ragnaros_head.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( nFXIndex, 0, hero, PATTACH_POINT_FOLLOW, "attach_inner", hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( nFXIndex, 1, hero, PATTACH_POINT_FOLLOW, "attach_root", hero:GetOrigin(), true )
-      ParticleManager:SetParticleControlEnt( nFXIndex, 3, hero, PATTACH_POINT_FOLLOW, "attach_root", hero:GetOrigin(), true )
+        local nFXIndex = ParticleManager:CreateParticle( "particles/ragnaros/ragnaros_head.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( nFXIndex, 0, hero, PATTACH_POINT_FOLLOW, "attach_inner", hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( nFXIndex, 1, hero, PATTACH_POINT_FOLLOW, "attach_root", hero:GetOrigin(), true )
+        ParticleManager:SetParticleControlEnt( nFXIndex, 3, hero, PATTACH_POINT_FOLLOW, "attach_root", hero:GetOrigin(), true )
 
-      local eyes = ParticleManager:CreateParticle( "particles/econ/items/ancient_apparition/aa_blast_ti_5/aa_ti5_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      ParticleManager:SetParticleControlEnt( eyes, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
-      ParticleManager:SetParticleControlEnt( eyes, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
+        local eyes = ParticleManager:CreateParticle( "particles/econ/items/ancient_apparition/aa_blast_ti_5/aa_ti5_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        ParticleManager:SetParticleControlEnt( eyes, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
+        ParticleManager:SetParticleControlEnt( eyes, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
 
-      local scirt = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ragnaros/ragnaros_skirt.vmdl"})
-      scirt:FollowEntity(hero, true)
+        local scirt = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_ragnaros/ragnaros_skirt.vmdl"})
+        scirt:FollowEntity(hero, true)
     end
     if hero:GetUnitName() == "npc_dota_hero_slardar" then
-      hero:SetOriginalModel("models/heroes/hero_sauron_/sauron_.vmdl")
-      SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_sauron_/econs/mace.vmdl"}):FollowEntity(hero, true)
+        hero:SetOriginalModel("models/heroes/hero_sauron_/sauron_.vmdl")
+        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_sauron_/econs/mace.vmdl"}):FollowEntity(hero, true)
     end
-	  if hero:GetUnitName() == "npc_dota_hero_beastmaster" then
-	    local ability = hero:FindAbilityByName("draks_flesh_heap")
-	    ability:SetLevel(1)
-	  end
-    if hero:GetUnitName() == "npc_dota_hero_slark" then
-      hero:SetRenderColor(191, 239, 255)
-      local abil = hero:FindAbilityByName("murlock_agility_steal")
-      abil:SetLevel(1)
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "murlock_golden_helmet") == true then
-        hero:SetOriginalModel("models/heroes/hero_murloc/murloc/murloc.vmdl")
-        local slark_eyes = ParticleManager:CreateParticle( "particles/econ/items/phoenix/phoenix_solar_forge/phoenix_solar_forge_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( slark_eyes, 0, hero, PATTACH_POINT_FOLLOW, "attach_jaw" , hero:GetOrigin() + Vector(0, 0, 32), true )
-        ParticleManager:SetParticleControlEnt( slark_eyes, 1, hero, PATTACH_POINT_FOLLOW, "attach_jaw" , hero:GetOrigin() + Vector(0, 0, 32), true )
-        ParticleManager:SetParticleControlEnt( slark_eyes, 2, hero, PATTACH_POINT_FOLLOW, "attach_jaw" , hero:GetOrigin() + Vector(0, 0, 32), true )
-        ParticleManager:SetParticleControl(slark_eyes, 6, Vector(1000, 1, 1))
-
-        local slark_eyes2 = ParticleManager:CreateParticle( "particles/murlock/murlock_golden_helmet_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( slark_eyes2, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( slark_eyes2, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( slark_eyes2, 2, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl(slark_eyes2, 15, Vector(255, 255, 255))
-        ParticleManager:SetParticleControl(slark_eyes2, 16, Vector(1, 0, 0))
-
-        local slark_eyes3 = ParticleManager:CreateParticle( "particles/murlock/murlock_golden_helmet_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( slark_eyes3, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( slark_eyes3, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( slark_eyes3, 2, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl(slark_eyes3, 15, Vector(255, 255, 255))
-        ParticleManager:SetParticleControl(slark_eyes3, 16, Vector(1, 0, 0))
-        hero:SetRenderColor(191, 239, 255)
-
-        local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/slark_head_immortal/slark_head_immortal.vmdl"})
-        mask:FollowEntity(hero, true)
-
-        local mask_amb = ParticleManager:CreateParticle( "particles/econ/items/slark/slark_head_immortal/slark_head_immortal_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask )
-
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_murloc/murlock_azinoth_arcana.vmdl"})
-        mask1:FollowEntity(hero, true)
-        local mask1_particle = ParticleManager:CreateParticle( "particles/units/heroes/heroes_underlord/underlord_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-        ParticleManager:SetParticleControlEnt( mask1_particle, 0, mask1, PATTACH_POINT_FOLLOW, "attach_effect" , hero:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask1_particle, 1, mask1, PATTACH_POINT_FOLLOW, "attach_effect" , hero:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask1_particle, 5, mask1, PATTACH_POINT_FOLLOW, "attach_effect" , hero:GetOrigin(), true )
-
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deepscoundrel_back/deepscoundrel_back.vmdl"})
-        mask2:FollowEntity(hero, true)
-
-        local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deepscoundrel_arms/deepscoundrel_arms.vmdl"})
-        mask3:FollowEntity(hero, true)
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "skadi") == true then
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/hookblade_skadi/hookblade_skadi.vmdl"})
-        mask1:FollowEntity(hero, true)
-        ParticleManager:CreateParticle( "particles/econ/items/slark/hookblade_of_skadi/slark_hookblade_skadi_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-
-        local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deep_sea_dragoon_head/deep_sea_dragoon_head.vmdl"})
-        mask:FollowEntity(hero, true)
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deepscoundrel_back/deepscoundrel_back.vmdl"})
-        mask2:FollowEntity(hero, true)
-        local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deepscoundrel_arms/deepscoundrel_arms.vmdl"})
-        mask3:FollowEntity(hero, true)
-        ParticleManager:CreateParticle( "particles/econ/items/slark/hookblade_of_skadi/slark_hookblade_skadi_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "golden_skadi") == true then
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/golden_barb_of_skadi/golden_barb_of_skadi.vmdl"})
-        mask1:FollowEntity(hero, true)
-
-        local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deep_sea_dragoon_head/deep_sea_dragoon_head.vmdl"})
-        mask:FollowEntity(hero, true)
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deepscoundrel_back/deepscoundrel_back.vmdl"})
-        mask2:FollowEntity(hero, true)
-        local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deepscoundrel_arms/deepscoundrel_arms.vmdl"})
-        mask3:FollowEntity(hero, true)
-        ParticleManager:CreateParticle( "particles/econ/items/slark/slark_golden_barb_of_skadi/slark_golden_barb_of_skadi_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-      else
-        local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deep_sea_dragoon_head/deep_sea_dragoon_head.vmdl"})
-        mask:FollowEntity(hero, true)
-
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/pale_justice/pale_justice.vmdl"})
-        mask1:FollowEntity(hero, true)
-
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deepscoundrel_back/deepscoundrel_back.vmdl"})
-        mask2:FollowEntity(hero, true)
-
-        local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/slark/deepscoundrel_arms/deepscoundrel_arms.vmdl"})
-        mask3:FollowEntity(hero, true)
-      end
+    if hero:GetUnitName() == "npc_dota_hero_beastmaster" then
+        local ability = hero:FindAbilityByName("draks_flesh_heap")
+        ability:SetLevel(1)
     end
+
     if hero:GetUnitName() == "npc_dota_hero_terrorblade" then
-      local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/galactus/galactus_head.vmdl"})
-      mask:FollowEntity(hero, true)
+        local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/galactus/galactus_head.vmdl"})
+        mask:FollowEntity(hero, true)
     end
     if hero:GetUnitName() == "npc_dota_hero_bounty_hunter" then
     end
     if hero:GetUnitName() == "npc_dota_hero_ember_spirit" then
-      LinkLuaModifier("modifier_goldengod", "modifiers/modifier_goldengod.lua", LUA_MODIFIER_MOTION_NONE)
-      hero:AddNewModifier(hero, nil, "modifier_goldengod", nil)
+        LinkLuaModifier("modifier_goldengod", "modifiers/modifier_goldengod.lua", LUA_MODIFIER_MOTION_NONE)
+        hero:AddNewModifier(hero, nil, "modifier_goldengod", nil)
     end
     if hero:GetUnitName() == "npc_dota_hero_spirit_breaker" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "deadshot") == false then
-        Attachments:AttachProp(hero, "attach_attack2", "models/deathstroke/weapon.vmdl", 1)
-      end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "deadshot") == false then
+            Attachments:AttachProp(hero, "attach_attack2", "models/deathstroke/weapon.vmdl", 1)
+        end
     end
     if hero:GetUnitName() == "npc_dota_hero_lone_druid" then
-      local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/earth_spirit/earth_spirit_arms.vmdl"})
-      mask:FollowEntity(hero, true)
+        local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/earth_spirit/earth_spirit_arms.vmdl"})
+        mask:FollowEntity(hero, true)
 
-      local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/darkseid/darksied_head_final.vmdl"})
-      mask1:FollowEntity(hero, true)
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "darkseid_golden_ancient_cursed_helmet") == true then
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_darkseid/darkseid_golden_ancient_cursed_helmet.vmdl"})
+        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/darkseid/darksied_head_final.vmdl"})
         mask1:FollowEntity(hero, true)
 
-        local ntfx = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( ntfx, 0, mask1, PATTACH_POINT_FOLLOW, "attach_head" , mask1:GetOrigin(), true )
-        ParticleManager:SetParticleControl( ntfx, 3, Vector(1, 0, 0))
-        ParticleManager:SetParticleControl( ntfx, 9, Vector(1, 0, 0))
-        ParticleManager:SetParticleControl( ntfx, 15, Vector(255, 221, 0))
-        ParticleManager:SetParticleControl( ntfx, 16, Vector(1, 0, 0))
-        local mask22 = ParticleManager:CreateParticle( "particles/hero_arthas/arthas_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-        ParticleManager:SetParticleControlEnt( mask22, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-        local mask23 = ParticleManager:CreateParticle( "particles/hero_arthas/arthas_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-        ParticleManager:SetParticleControlEnt( mask23, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "darkseid_ancient_cursed_helmet") == true then
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_darkseid/darkseid_ancient_cursed_helmet.vmdl"})
-        mask1:FollowEntity(hero, true)
-        local ntfx = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( ntfx, 0, mask1, PATTACH_POINT_FOLLOW, "attach_head" , mask1:GetOrigin(), true )
-        ParticleManager:SetParticleControl( ntfx, 3, Vector(1, 0, 0))
-        ParticleManager:SetParticleControl( ntfx, 9, Vector(1, 0, 0))
-        ParticleManager:SetParticleControl( ntfx, 15, Vector(0, 110, 255))
-        ParticleManager:SetParticleControl( ntfx, 16, Vector(1, 0, 0))
-        local mask22 = ParticleManager:CreateParticle( "particles/hero_arthas/arthas_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-        ParticleManager:SetParticleControlEnt( mask22, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
-        local mask23 = ParticleManager:CreateParticle( "particles/hero_arthas/arthas_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-        ParticleManager:SetParticleControlEnt( mask23, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
-      else
-        local eyes1 = ParticleManager:CreateParticle( "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( eyes1, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask1:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( eyes1, 1, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask1:GetAbsOrigin(), true )
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "darkseid_golden_ancient_cursed_helmet") == true then
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_darkseid/darkseid_golden_ancient_cursed_helmet.vmdl"})
+            mask1:FollowEntity(hero, true)
 
-        local eyes2 = ParticleManager:CreateParticle( "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( eyes2, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask1:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( eyes2, 1, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask1:GetAbsOrigin(), true )
-      end
+            local ntfx = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( ntfx, 0, mask1, PATTACH_POINT_FOLLOW, "attach_head" , mask1:GetOrigin(), true )
+            ParticleManager:SetParticleControl( ntfx, 3, Vector(1, 0, 0))
+            ParticleManager:SetParticleControl( ntfx, 9, Vector(1, 0, 0))
+            ParticleManager:SetParticleControl( ntfx, 15, Vector(255, 221, 0))
+            ParticleManager:SetParticleControl( ntfx, 16, Vector(1, 0, 0))
+            local mask22 = ParticleManager:CreateParticle( "particles/hero_arthas/arthas_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
+            ParticleManager:SetParticleControlEnt( mask22, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+            local mask23 = ParticleManager:CreateParticle( "particles/hero_arthas/arthas_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
+            ParticleManager:SetParticleControlEnt( mask23, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+        elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "darkseid_ancient_cursed_helmet") == true then
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_darkseid/darkseid_ancient_cursed_helmet.vmdl"})
+            mask1:FollowEntity(hero, true)
+            local ntfx = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( ntfx, 0, mask1, PATTACH_POINT_FOLLOW, "attach_head" , mask1:GetOrigin(), true )
+            ParticleManager:SetParticleControl( ntfx, 3, Vector(1, 0, 0))
+            ParticleManager:SetParticleControl( ntfx, 9, Vector(1, 0, 0))
+            ParticleManager:SetParticleControl( ntfx, 15, Vector(0, 110, 255))
+            ParticleManager:SetParticleControl( ntfx, 16, Vector(1, 0, 0))
+            local mask22 = ParticleManager:CreateParticle( "particles/hero_arthas/arthas_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
+            ParticleManager:SetParticleControlEnt( mask22, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetOrigin(), true )
+            local mask23 = ParticleManager:CreateParticle( "particles/hero_arthas/arthas_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
+            ParticleManager:SetParticleControlEnt( mask23, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetOrigin(), true )
+        else
+            local eyes1 = ParticleManager:CreateParticle( "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( eyes1, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask1:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( eyes1, 1, mask1, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask1:GetAbsOrigin(), true )
 
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "darkseid_eternal_glory") == true then
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_darkseid/darkseid_frostnourne.vmdl"})
-        mask1:FollowEntity(hero, true)
-      end
+            local eyes2 = ParticleManager:CreateParticle( "particles/econ/items/bounty_hunter/bounty_hunter_ursine/bounty_hunter_usrine_eyes_r.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( eyes2, 0, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask1:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( eyes2, 1, mask1, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask1:GetAbsOrigin(), true )
+        end
 
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "darkseid_hand_of_god") == true then
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_darkseid/darkseid_hand_of_god.vmdl"})
-        mask1:FollowEntity(hero, true)
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "darkseid_eternal_glory") == true then
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_darkseid/darkseid_frostnourne.vmdl"})
+            mask1:FollowEntity(hero, true)
+        end
 
-        local ambient = ParticleManager:CreateParticle( "particles/darkseid/darkseid_glove_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
-        ParticleManager:SetParticleControlEnt( ambient, 0, mask1, PATTACH_POINT_FOLLOW, "attach_glove" , mask1:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( ambient, 1, mask1, PATTACH_POINT_FOLLOW, "attach_glove" , mask1:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( ambient, 15, Vector(71, 255, 9) )
-        ParticleManager:SetParticleControl( ambient, 16, Vector(1, 0, 0))
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "darkseid_hand_of_god") == true then
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_darkseid/darkseid_hand_of_god.vmdl"})
+            mask1:FollowEntity(hero, true)
 
-        hero:AddNewModifier(hero, nil, "modifier_arcana", nil)
-      end
+            local ambient = ParticleManager:CreateParticle( "particles/darkseid/darkseid_glove_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask1 )
+            ParticleManager:SetParticleControlEnt( ambient, 0, mask1, PATTACH_POINT_FOLLOW, "attach_glove" , mask1:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( ambient, 1, mask1, PATTACH_POINT_FOLLOW, "attach_glove" , mask1:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( ambient, 15, Vector(71, 255, 9) )
+            ParticleManager:SetParticleControl( ambient, 16, Vector(1, 0, 0))
+
+            hero:AddNewModifier(hero, nil, "modifier_arcana", nil)
+        end
     end
+
     if hero:GetUnitName() == "npc_dota_hero_sven" then
-      hero:SetRenderColor(105, 105, 105)
+        hero:SetRenderColor(105, 105, 105)
 
-      local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_belt/arbiter_belt.vmdl"})
-      mask1:FollowEntity(hero, true)
+        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_belt/arbiter_belt.vmdl"})
+        mask1:FollowEntity(hero, true)
 
-      local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_arms/arbiter_arms.vmdl"})
-      mask2:FollowEntity(hero, true)
+        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_arms/arbiter_arms.vmdl"})
+        mask2:FollowEntity(hero, true)
 
-      local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_back/arbiter_back.vmdl"})
-      mask3:FollowEntity(hero, true)
+        local mask3 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_back/arbiter_back.vmdl"})
+        mask3:FollowEntity(hero, true)
 
-      local mask4 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_head/arbiter_head.vmdl"})
-      mask4:FollowEntity(hero, true)
+        local mask4 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_head/arbiter_head.vmdl"})
+        mask4:FollowEntity(hero, true)
 
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "apocalypse_greatsword") then
-        local weap = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/shattered_greatsword/sven_shattered_greatsword.vmdl"})
-        weap:FollowEntity(hero, true)
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "apocalypse_greatsword") then
+            local weap = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/shattered_greatsword/sven_shattered_greatsword.vmdl"})
+            weap:FollowEntity(hero, true)
 
-        local weap_particle = ParticleManager:CreateParticle( "particles/econ/items/sven/sven_shattered_great_sword/sven_shattered_greatsword_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, weap )
-      else
-        local weap = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_weapon/arbiter_weapon.vmdl"})
-        weap:FollowEntity(hero, true)
-      end
+            local weap_particle = ParticleManager:CreateParticle( "particles/econ/items/sven/sven_shattered_great_sword/sven_shattered_greatsword_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, weap )
+        else
+            local weap = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/sven/arbiter_weapon/arbiter_weapon.vmdl"})
+            weap:FollowEntity(hero, true)
+        end
     end
     if hero:GetUnitName() == "npc_dota_hero_axe" then
-      hero:SetRenderColor(255, 0, 0)
+        hero:SetRenderColor(255, 0, 0)
     end
     if hero:GetUnitName() == "npc_dota_hero_templar_assassin" then ---models/b2/b2.vmdl
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "neo_noir") then
+    if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "neo_noir") then
         LinkLuaModifier("modifier_neo_noir", "modifiers/modifier_neo_noir.lua", LUA_MODIFIER_MOTION_NONE)
         hero:SetSkillBuild("npc_dota_hero_juggernaut")
         hero:SetOriginalModel("models/b2/b2.vmdl")
@@ -1177,253 +1087,233 @@ function Util:OnHeroInGame(hero)
         hero:SetAttackCapability(DOTA_UNIT_CAP_MELEE_ATTACK)
         hero:AddNewModifier(hero, nil, "modifier_neo_noir", nil)
         return
-      end
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "wanda_arcana") then
-        hero:SetOriginalModel("models/heroes/hero_witch/wanda_arcana/wanda_arcana.vmdl")
-        hero:AddNewModifier(hero, nil, "modifier_arcana", nil)
-        local mask5_particle = ParticleManager:CreateParticle( "particles/witch/witch_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 3, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 4, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 5, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 6, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask5_particle, 8, Vector(1, 0, 0) )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 9, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask5_particle, 15, Vector(255, 89, 0) )
-        ParticleManager:SetParticleControl( mask5_particle, 16, Vector(1, 0, 0) )
-        return
-      end
-       if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "scarlet_golden_armor") then
-        local mask5 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_witch/wanda_immortal/wanda_belt_immortal.vmdl"})
-        mask5:FollowEntity(hero, true)
-        mask5:SetMaterialGroup("golden")
-        local mask5_particle = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 1, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 3, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 4, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask5_particle, 5, Vector(1, 1, 1) )
-        ParticleManager:SetParticleControl( mask5_particle, 6, Vector(0, 0, 0) )
-
-
-        local mask6_particle = ParticleManager:CreateParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( mask6_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask6_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_eyeR" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask6_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_eyeL" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask6_particle, 15, Vector(255, 46, 1) )
-        ParticleManager:SetParticleControl( mask6_particle, 16, Vector(1, 1, 1) )
-
-        local mask9_particle = ParticleManager:CreateParticle( "particles/econ/items/axe/axe_cinder/axe_cinder_ambient_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
-        ParticleManager:SetParticleControlEnt( mask9_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_cape" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask9_particle, 6, Vector(1, 1, 1) )
-
-        local mask11_particle = ParticleManager:CreateParticle( "particles/econ/items/lina/lina_ti7/lina_ti7_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
-        ParticleManager:SetParticleControlEnt( mask11_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_belt" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask11_particle, 6, Vector(1, 1, 1) )
-
-        local mask10_particle = ParticleManager:CreateParticle( "particles/econ/items/templar_assassin/templar_assassin_focal/templar_assassin_meld_focal.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "scarlet_armor") then
-        local mask5 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_witch/wanda_immortal/wanda_belt_immortal.vmdl"})
-        mask5:FollowEntity(hero, true)
-
-        local mask5_particle = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 1, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 3, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask5_particle, 4, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask5_particle, 5, Vector(1, 1, 1) )
-        ParticleManager:SetParticleControl( mask5_particle, 6, Vector(0, 0, 0) )
-
-
-        local mask6_particle = ParticleManager:CreateParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( mask6_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask6_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_eyeR" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask6_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_eyeL" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask6_particle, 15, Vector(255, 46, 1) )
-        ParticleManager:SetParticleControl( mask6_particle, 16, Vector(1, 1, 1) )
-
-        local mask9_particle = ParticleManager:CreateParticle( "particles/econ/items/axe/axe_cinder/axe_cinder_ambient_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
-        ParticleManager:SetParticleControlEnt( mask9_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_cape" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask9_particle, 6, Vector(1, 1, 1) )
-
-        local mask11_particle = ParticleManager:CreateParticle( "particles/econ/items/lina/lina_ti7/lina_ti7_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
-        ParticleManager:SetParticleControlEnt( mask11_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_belt" , mask5:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask11_particle, 6, Vector(1, 1, 1) )
-
-        local mask10_particle = ParticleManager:CreateParticle( "particles/econ/items/templar_assassin/templar_assassin_focal/templar_assassin_meld_focal.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      end
-
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "scarlet_weapon") then
-        local mask8_particle = ParticleManager:CreateParticle( "particles/econ/items/templar_assassin/templar_assassin_focal/templar_assassin_meld_focal.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        local mask7_particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_templar_assassin/templar_assassin_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( mask7_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_handL" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask7_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_handR" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask7_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-
-        local mask11_particle = ParticleManager:CreateParticle( "particles/econ/items/templar_assassin/templar_assassin_focal/ta_focal_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( mask11_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_handL" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask11_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_head" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask11_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_handR" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask11_particle, 3, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask11_particle, 4, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl( mask11_particle, 5, Vector(1, 1, 1) )
-        ParticleManager:SetParticleControl( mask11_particle, 6, Vector(0, 0, 0) )
-        ParticleManager:SetParticleControl( mask11_particle, 7, Vector(0, 0, 0) )
-      end
     end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "wanda_arcana") then
+            hero:SetOriginalModel("models/heroes/hero_witch/wanda_arcana/wanda_arcana.vmdl")
+            hero:AddNewModifier(hero, nil, "modifier_arcana", nil)
+            local mask5_particle = ParticleManager:CreateParticle( "particles/witch/witch_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 3, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 4, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 5, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 6, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask5_particle, 8, Vector(1, 0, 0) )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 9, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask5_particle, 15, Vector(255, 89, 0) )
+            ParticleManager:SetParticleControl( mask5_particle, 16, Vector(1, 0, 0) )
+            return
+        end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "scarlet_golden_armor") then
+            local mask5 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_witch/wanda_immortal/wanda_belt_immortal.vmdl"})
+            mask5:FollowEntity(hero, true)
+            mask5:SetMaterialGroup("golden")
+            local mask5_particle = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 1, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 3, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 4, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask5_particle, 5, Vector(1, 1, 1) )
+            ParticleManager:SetParticleControl( mask5_particle, 6, Vector(0, 0, 0) )
+
+
+            local mask6_particle = ParticleManager:CreateParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( mask6_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask6_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_eyeR" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask6_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_eyeL" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask6_particle, 15, Vector(255, 46, 1) )
+            ParticleManager:SetParticleControl( mask6_particle, 16, Vector(1, 1, 1) )
+
+            local mask9_particle = ParticleManager:CreateParticle( "particles/econ/items/axe/axe_cinder/axe_cinder_ambient_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
+            ParticleManager:SetParticleControlEnt( mask9_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_cape" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask9_particle, 6, Vector(1, 1, 1) )
+
+            local mask11_particle = ParticleManager:CreateParticle( "particles/econ/items/lina/lina_ti7/lina_ti7_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
+            ParticleManager:SetParticleControlEnt( mask11_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_belt" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask11_particle, 6, Vector(1, 1, 1) )
+
+            local mask10_particle = ParticleManager:CreateParticle( "particles/econ/items/templar_assassin/templar_assassin_focal/templar_assassin_meld_focal.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "scarlet_armor") then
+            local mask5 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_witch/wanda_immortal/wanda_belt_immortal.vmdl"})
+            mask5:FollowEntity(hero, true)
+
+            local mask5_particle = ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 1, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 3, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask5_particle, 4, mask5, PATTACH_POINT_FOLLOW, "attach_armor" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask5_particle, 5, Vector(1, 1, 1) )
+            ParticleManager:SetParticleControl( mask5_particle, 6, Vector(0, 0, 0) )
+
+
+            local mask6_particle = ParticleManager:CreateParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( mask6_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask6_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_eyeR" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask6_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_eyeL" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask6_particle, 15, Vector(255, 46, 1) )
+            ParticleManager:SetParticleControl( mask6_particle, 16, Vector(1, 1, 1) )
+
+            local mask9_particle = ParticleManager:CreateParticle( "particles/econ/items/axe/axe_cinder/axe_cinder_ambient_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
+            ParticleManager:SetParticleControlEnt( mask9_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_cape" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask9_particle, 6, Vector(1, 1, 1) )
+
+            local mask11_particle = ParticleManager:CreateParticle( "particles/econ/items/lina/lina_ti7/lina_ti7_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask5 )
+            ParticleManager:SetParticleControlEnt( mask11_particle, 0, mask5, PATTACH_POINT_FOLLOW, "attach_belt" , mask5:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask11_particle, 6, Vector(1, 1, 1) )
+
+            local mask10_particle = ParticleManager:CreateParticle( "particles/econ/items/templar_assassin/templar_assassin_focal/templar_assassin_meld_focal.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        end
+
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "scarlet_weapon") then
+            local mask8_particle = ParticleManager:CreateParticle( "particles/econ/items/templar_assassin/templar_assassin_focal/templar_assassin_meld_focal.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            local mask7_particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_templar_assassin/templar_assassin_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( mask7_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_handL" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask7_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_handR" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask7_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+
+            local mask11_particle = ParticleManager:CreateParticle( "particles/econ/items/templar_assassin/templar_assassin_focal/ta_focal_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( mask11_particle, 0, hero, PATTACH_POINT_FOLLOW, "attach_handL" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask11_particle, 1, hero, PATTACH_POINT_FOLLOW, "attach_head" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask11_particle, 2, hero, PATTACH_POINT_FOLLOW, "attach_handR" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask11_particle, 3, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask11_particle, 4, hero, PATTACH_POINT_FOLLOW, "attach_hitloc" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl( mask11_particle, 5, Vector(1, 1, 1) )
+            ParticleManager:SetParticleControl( mask11_particle, 6, Vector(0, 0, 0) )
+            ParticleManager:SetParticleControl( mask11_particle, 7, Vector(0, 0, 0) )
+        end
+    end
+
     if hero:GetUnitName() == "npc_dota_hero_elder_titan" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "titans_armor") then
-        hero:SetOriginalModel("models/heroes/hero_thanos/thanos.vmdl")
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "titans_armor") then
+            hero:SetOriginalModel("models/heroes/hero_thanos/thanos.vmdl")
 
-        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos_arcana/thanos_helmet.vmdl"}):FollowEntity(hero, true)
+            SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos_arcana/thanos_helmet.vmdl"}):FollowEntity(hero, true)
 
-        Timers:CreateTimer(0.1, function()
-          ParticleManager:CreateParticle( "particles/econ/events/ti7/radiance_ti7.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:CreateParticle( "particles/econ/courier/courier_oculopus/courier_oculopus_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            Timers:CreateTimer(0.1, function()
+                ParticleManager:CreateParticle( "particles/econ/events/ti7/radiance_ti7.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+                ParticleManager:CreateParticle( "particles/econ/courier/courier_oculopus/courier_oculopus_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
 
-          local eye = ParticleManager:CreateParticle( "particles/econ/items/ursa/ursa_razorwyrm/ursa_razorwyrm_ambient_v2_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-          ParticleManager:SetParticleControlEnt( eye, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
-          ParticleManager:SetParticleControlEnt( eye, 2, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
-        end)
-        return
-      end
+                local eye = ParticleManager:CreateParticle( "particles/econ/items/ursa/ursa_razorwyrm/ursa_razorwyrm_ambient_v2_eyes.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+                ParticleManager:SetParticleControlEnt( eye, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
+                ParticleManager:SetParticleControlEnt( eye, 2, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
+            end)
+            return
+        end
 
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thanos_crystals_of_foundation") and not hasCosmetic then
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/econs/thanos_crystals_of_foundation.vmdl"})
-        mask2:FollowEntity(hero, true)
-        mask2:SetRenderColor(255, 215, 0)
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thanos_crystals_of_foundation") and not hasCosmetic then
+            local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/econs/thanos_crystals_of_foundation.vmdl"})
+            mask2:FollowEntity(hero, true)
+            mask2:SetRenderColor(255, 215, 0)
 
-        local eye = ParticleManager:CreateParticle( "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_arcana_body_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
-        ParticleManager:SetParticleControlEnt( eye, 0, mask2, PATTACH_POINT_FOLLOW, "attach_crystal" , mask2:GetAbsOrigin(), true )
+            local eye = ParticleManager:CreateParticle( "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_arcana_body_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
+            ParticleManager:SetParticleControlEnt( eye, 0, mask2, PATTACH_POINT_FOLLOW, "attach_crystal" , mask2:GetAbsOrigin(), true )
 
 
-        local mace = ParticleManager:CreateParticle( "particles/thanos/thanos_crystal_weapon_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
-        ParticleManager:SetParticleControlEnt( mace, 0, mask2, PATTACH_POINT_FOLLOW, "attach_crystal" , mask2:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl(mace, 15, Vector(255, 255, 255))
-        ParticleManager:SetParticleControl(mace, 16, Vector(1, 0, 1))
-        return
-      end
+            local mace = ParticleManager:CreateParticle( "particles/thanos/thanos_crystal_weapon_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
+            ParticleManager:SetParticleControlEnt( mace, 0, mask2, PATTACH_POINT_FOLLOW, "attach_crystal" , mask2:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl(mace, 15, Vector(255, 255, 255))
+            ParticleManager:SetParticleControl(mace, 16, Vector(1, 0, 1))
+            return
+        end
 
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thanos_golden_timebreaker") and not hasCosmetic then
-        LinkLuaModifier("modifier_thanos_golden_timebreaker", "modifiers/modifier_thanos_golden_timebreaker.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:AddNewModifier(hero, nil, "modifier_thanos_golden_timebreaker", nil)
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/econs/thanos_timebreaker.vmdl"})
-        mask2:FollowEntity(hero, true)
-        mask2:SetRenderColor(255, 215, 0)
-        local eye = ParticleManager:CreateParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( eye, 0, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( eye, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( eye, 2, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl(eye, 15, Vector(255, 255, 1))
-        ParticleManager:SetParticleControl(eye, 16, Vector(1, 1, 1))
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thanos_golden_timebreaker") and not hasCosmetic then
+            LinkLuaModifier("modifier_thanos_golden_timebreaker", "modifiers/modifier_thanos_golden_timebreaker.lua", LUA_MODIFIER_MOTION_NONE)
+            hero:AddNewModifier(hero, nil, "modifier_thanos_golden_timebreaker", nil)
+            local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/econs/thanos_timebreaker.vmdl"})
+            mask2:FollowEntity(hero, true)
+            mask2:SetRenderColor(255, 215, 0)
+            local eye = ParticleManager:CreateParticle( "particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( eye, 0, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( eye, 1, hero, PATTACH_POINT_FOLLOW, "attach_eye_r" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( eye, 2, hero, PATTACH_POINT_FOLLOW, "attach_eye_l" , hero:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl(eye, 15, Vector(255, 255, 1))
+            ParticleManager:SetParticleControl(eye, 16, Vector(1, 1, 1))
 
-        local mace = ParticleManager:CreateParticle( "particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-        ParticleManager:SetParticleControlEnt( mace, 0, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mace, 1, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mace, 4, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetAbsOrigin(), true )
-        ParticleManager:SetParticleControl(mace, 2, Vector(255, 255, 1))
-        ParticleManager:SetParticleControl(mace, 17, Vector(100, 100, 0))
-        ParticleManager:SetParticleControl(mace, 15, Vector(255, 255, 1))
-        ParticleManager:SetParticleControl(mace, 16, Vector(1, 0, 1))
+            local mace = ParticleManager:CreateParticle( "particles/econ/items/pugna/pugna_ward_golden_nether_lord/pugna_gold_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:SetParticleControlEnt( mace, 0, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mace, 1, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mace, 4, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetAbsOrigin(), true )
+            ParticleManager:SetParticleControl(mace, 2, Vector(255, 255, 1))
+            ParticleManager:SetParticleControl(mace, 17, Vector(100, 100, 0))
+            ParticleManager:SetParticleControl(mace, 15, Vector(255, 255, 1))
+            ParticleManager:SetParticleControl(mace, 16, Vector(1, 0, 1))
 
-        local effect = ParticleManager:CreateParticle( "particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
-        ParticleManager:SetParticleControlEnt( effect, 0, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControl( effect, 1, Vector(300, 300, 1))
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thanos_timebreaker") and not hasCosmetic then
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/econs/thanos_timebreaker.vmdl"})
-        mask2:FollowEntity(hero, true)
+            local effect = ParticleManager:CreateParticle( "particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
+            ParticleManager:SetParticleControlEnt( effect, 0, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetOrigin(), true )
+            ParticleManager:SetParticleControl( effect, 1, Vector(300, 300, 1))
+        elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "thanos_timebreaker") and not hasCosmetic then
+            local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/econs/thanos_timebreaker.vmdl"})
+            mask2:FollowEntity(hero, true)
 
-        local effect = ParticleManager:CreateParticle( "particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
-        ParticleManager:SetParticleControlEnt( effect, 0, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetOrigin(), true )
-        ParticleManager:SetParticleControl( effect, 1, Vector(300, 300, 1))
-      elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "king_thanos") and not hasCosmetic then
-        LinkLuaModifier("modifier_king_thanos", "modifiers/modifier_king_thanos.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:AddNewModifier(hero, nil, "modifier_king_thanos", nil)
+            local effect = ParticleManager:CreateParticle( "particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask2 )
+            ParticleManager:SetParticleControlEnt( effect, 0, mask2, PATTACH_POINT_FOLLOW, "attach_sword" , mask2:GetOrigin(), true )
+            ParticleManager:SetParticleControl( effect, 1, Vector(300, 300, 1))
+        elseif Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "king_thanos") and not hasCosmetic then
+            LinkLuaModifier("modifier_king_thanos", "modifiers/modifier_king_thanos.lua", LUA_MODIFIER_MOTION_NONE)
+            hero:AddNewModifier(hero, nil, "modifier_king_thanos", nil)
 
-        local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/econs/king_thanos.vmdl"})
-        mask2:FollowEntity(hero, true)
+            local mask2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos/econs/king_thanos.vmdl"})
+            mask2:FollowEntity(hero, true)
 
-        ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_darkmoon/courier_roshan_darkmoon.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
-      else
-        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos_eg/thanos_sword.vmdl"}):FollowEntity(hero, true)
-      end
+            ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_darkmoon/courier_roshan_darkmoon.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+        else
+            SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_thanos_eg/thanos_sword.vmdl"}):FollowEntity(hero, true)
+        end
 
     end
     if hero:GetUnitName() == "npc_dota_hero_huskar" then
-      LinkLuaModifier("modifier_vader", "modifiers/modifier_vader.lua", LUA_MODIFIER_MOTION_NONE)
-      hero:AddNewModifier(hero, nil, "modifier_vader", nil)
-      SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_vaider/weapon/weapon.vmdl"}):FollowEntity(hero, true)
+        LinkLuaModifier("modifier_vader", "modifiers/modifier_vader.lua", LUA_MODIFIER_MOTION_NONE)
+        hero:AddNewModifier(hero, nil, "modifier_vader", nil)
+        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_vaider/weapon/weapon.vmdl"}):FollowEntity(hero, true)
     end
     if hero:GetUnitName() == "npc_dota_hero_lich" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "medivh_soul_catcher") == true then
-        local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/medivh_v2/the_god_of_magic/immortal_mask.vmdl"})
-        mask:FollowEntity(hero, true)
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "medivh_soul_catcher") == true then
+            local mask = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/medivh_v2/the_god_of_magic/immortal_mask.vmdl"})
+            mask:FollowEntity(hero, true)
 
-        local medivh_eyes = ParticleManager:CreateParticle( "particles/econ/items/mirana/mirana_sapphire_sabrelynx/mirana_sabrelynx_eye_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask )
-        ParticleManager:SetParticleControlEnt( medivh_eyes, 0, mask, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( medivh_eyes, 4, mask, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask:GetOrigin(), true )
+            local medivh_eyes = ParticleManager:CreateParticle( "particles/econ/items/mirana/mirana_sapphire_sabrelynx/mirana_sabrelynx_eye_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask )
+            ParticleManager:SetParticleControlEnt( medivh_eyes, 0, mask, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( medivh_eyes, 4, mask, PATTACH_POINT_FOLLOW, "attach_eye_l" , mask:GetOrigin(), true )
 
-        local medivh_eyes2 = ParticleManager:CreateParticle( "particles/econ/items/mirana/mirana_sapphire_sabrelynx/mirana_sabrelynx_eye_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask )
-        ParticleManager:SetParticleControlEnt( medivh_eyes2, 0, mask, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( medivh_eyes2, 4, mask, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask:GetOrigin(), true )
+            local medivh_eyes2 = ParticleManager:CreateParticle( "particles/econ/items/mirana/mirana_sapphire_sabrelynx/mirana_sabrelynx_eye_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask )
+            ParticleManager:SetParticleControlEnt( medivh_eyes2, 0, mask, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( medivh_eyes2, 4, mask, PATTACH_POINT_FOLLOW, "attach_eye_r" , mask:GetOrigin(), true )
 
-        local mask_amb = ParticleManager:CreateParticle( "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask )
-        ParticleManager:SetParticleControlEnt( mask_amb, 0, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask_amb, 1, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask_amb, 3, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask_amb, 4, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
-        ParticleManager:SetParticleControlEnt( mask_amb, 5, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
-        ParticleManager:SetParticleControl( mask_amb, 6, Vector(0, 0, 0) )
+            local mask_amb = ParticleManager:CreateParticle( "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, mask )
+            ParticleManager:SetParticleControlEnt( mask_amb, 0, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask_amb, 1, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask_amb, 3, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask_amb, 4, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
+            ParticleManager:SetParticleControlEnt( mask_amb, 5, mask, PATTACH_POINT_FOLLOW, "attach_tail" , mask:GetOrigin(), true )
+            ParticleManager:SetParticleControl( mask_amb, 6, Vector(0, 0, 0) )
 
-        hero:SetMaterialGroup("immortal_mask")
-      end
-    end
-    if hero:GetUnitName() == "npc_dota_hero_phantom_lancer" then
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "odin_spear_of_fate") == true then
-          local spear = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_odin/odin_spear_of_fate.vmdl"})
-          spear:FollowEntity(hero, true)
-
-          local eyes2 = ParticleManager:CreateParticle( "particles/econ/items/enchantress/enchantress_virgas/ench_virgas_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, spear )
-          ParticleManager:SetParticleControlEnt( eyes2, 0, spear, PATTACH_POINT_FOLLOW, "attach_root" , spear:GetOrigin(), true )
-        else
-          local spear = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_odin/odin_spear.vmdl"})
-          spear:FollowEntity(hero, true)
+            hero:SetMaterialGroup("immortal_mask")
         end
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "odin_elder_scroll") == true then
-          local back = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_odin/odin_elder_scroll.vmdl"})
-          back:FollowEntity(hero, true)
-        end
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "odin_odinforce") == true then
-          local cape = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_odin/odin_odinforce.vmdl"})
-          cape:FollowEntity(hero, true)
-        end
-        ---particles/econ/items/enchantress/enchantress_virgas/ench_virgas_ambient.vpcf
     end
     if hero:GetUnitName() == "npc_dota_hero_dazzle" then
-      SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_joker/econs/pistol.vmdl"}):FollowEntity(hero, true)
+        SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/heroes/hero_joker/econs/pistol.vmdl"}):FollowEntity(hero, true)
     end
     if hero:GetUnitName() == "npc_dota_hero_dark_seer" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "out_mask") == true then
-        local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/silencer/the_hazhadal_magebreaker_head/the_hazhadal_magebreaker_head.vmdl"})
-        mask1:FollowEntity(hero, true)
-      end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "out_mask") == true then
+            local mask1 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/silencer/the_hazhadal_magebreaker_head/the_hazhadal_magebreaker_head.vmdl"})
+            mask1:FollowEntity(hero, true)
+        end
     end
     if hero:GetUnitName() == "npc_dota_hero_obsidian_destroyer" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "tribunal_the_seven_evils") == true then hero:SetModelScale(0.76)  end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "tribunal_the_seven_evils") == true then hero:SetModelScale(0.76)  end
     end
     if hero:GetUnitName() == "npc_dota_hero_nevermore" then
-      LinkLuaModifier("modifier_deadpool", "modifiers/modifier_deadpool.lua", LUA_MODIFIER_MOTION_NONE)
-      hero:AddNewModifier(hero, nil, "modifier_deadpool", nil)
+        LinkLuaModifier("modifier_deadpool", "modifiers/modifier_deadpool.lua", LUA_MODIFIER_MOTION_NONE)
+        hero:AddNewModifier(hero, nil, "modifier_deadpool", nil)
     end
-   
+
     if hero:GetUnitName() == "npc_dota_hero_earth_spirit" then
-      if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "beast_arcana") then
-        LinkLuaModifier("modifier_beast_arcana", "modifiers/modifier_beast_arcana.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:SetOriginalModel("models/heroes/hero_beast/beast_arcana_alt1.vmdl")
-        hero:AddNewModifier(hero, nil, "modifier_beast_arcana", nil)
-      end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "beast_arcana") then
+            LinkLuaModifier("modifier_beast_arcana", "modifiers/modifier_beast_arcana.lua", LUA_MODIFIER_MOTION_NONE)
+            hero:SetOriginalModel("models/heroes/hero_beast/beast_arcana_alt1.vmdl")
+            hero:AddNewModifier(hero, nil, "modifier_beast_arcana", nil)
+        end
     end
 end
 
@@ -1920,7 +1810,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 then
+            if IsHasSuperStatus(pID) and HeroIsSelectedAlready("npc_dota_hero_death_eater") == false then
                 PrecacheUnitByNameAsync( "npc_dota_hero_death_eater", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_death_eater", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1948,7 +1838,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+            if IsHasSuperStatus(pID) and HeroIsSelectedAlready("npc_dota_hero_stormspirit") == false then
                 PrecacheUnitByNameAsync( "npc_dota_hero_stormspirit", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_stormspirit", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1963,7 +1853,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 259404989 or PlayerResource:GetSteamAccountID(pID) == 124112243 or PlayerResource:GetSteamAccountID(pID) == 87670156 then
+            if IsHasSuperStatus(pID) and HeroIsSelectedAlready("npc_dota_hero_io") == false then
                 PrecacheUnitByNameAsync( "npc_dota_hero_io", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_io", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1979,7 +1869,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 909647964 or PlayerResource:GetSteamAccountID(pID) == 259404989 then
+            if IsHasSuperStatus(pID) and HeroIsSelectedAlready("npc_dota_hero_medusa") == false then
                 PrecacheUnitByNameAsync( "npc_dota_hero_medusa", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_medusa", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1993,15 +1883,32 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if PlayerResource:GetSteamAccountID(pID) == 87670156 then
             ---stats.test()
-            else
-                Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
-            end
         end)
     end, "Set time", 0)
 end
 
+function HeroIsSelectedAlready(hero_name)
+    local heroes = HeroList:GetAllHeroes()
+
+    for _, hero in pairs(heroes) do
+        if hero:GetUnitName() == hero_name then
+            return true
+        end
+    end
+
+    return false
+end
+
+function IsHasSuperStatus(id)
+    local data = CustomNetTables:GetTableValue("players", "stats")
+
+    if data and data[tostring(id)] then
+        return data[tostring(id)].shards == "1"
+    end
+
+    return false
+end
 
 function Util:KillUnitsInRadius(data)
     local radius = data['radius']
@@ -2387,6 +2294,41 @@ end
 
 function CDOTA_BaseNPC:IsFriendly(target)
     return target:GetTeamNumber() == self:GetTeamNumber()
+end
+
+local gods =
+{
+    "npc_dota_hero_omniknight",
+    "npc_dota_hero_phantom_lancer",
+    "npc_dota_hero_abaddon",
+    "npc_dota_hero_nyx_assassin",
+    "npc_dota_hero_lone_druid",
+    "npc_dota_hero_windrunner",
+    "npc_dota_hero_earthshaker",
+    "npc_dota_hero_enigma",
+    "npc_dota_hero_ember_spirit",
+    "npc_dota_hero_dazzle",
+    "npc_dota_hero_rubick",
+    "npc_dota_hero_monkey_king",
+    "npc_dota_hero_bane",
+    "npc_dota_hero_disruptor",
+    "npc_dota_hero_oracle",
+    "npc_dota_hero_dark_seer",
+    "npc_dota_hero_shadow_demon",
+    "npc_dota_hero_clinkz",
+    "npc_dota_hero_obsidian_destroyer",
+    "npc_dota_hero_leshrac",
+    "npc_dota_hero_queenofpain"
+}
+
+function CDOTA_BaseNPC:IsGod()
+    for _, hero in pairs(gods) do
+        if self:GetUnitName() == hero then
+            return true
+        end
+    end
+
+    return false
 end
 
 function CDOTA_BaseNPC:GetCooldownTimeAfterReduction(cooldown)
