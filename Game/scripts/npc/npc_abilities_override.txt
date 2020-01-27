@@ -7,6 +7,12 @@
     "item_rapier_of_despair"     "REMOVE"
     "item_recipe_rapier_of_despair"     "REMOVE"
 
+    "item_star_boots"     "REMOVE"
+    "item_recipe_star_boots"     "REMOVE"
+    "item_elemental_treads"     "REMOVE"
+    "item_recipe_elemental_treads"     "REMOVE"
+
+
 	"item_iron_talon"     "REMOVE"
 	"item_recipe_iron_talon"      "REMOVE"
 	"item_stout_shield"     "REMOVE"
@@ -2092,16 +2098,15 @@
 		"AbilitySpecial"
 		{
 			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_mana"		"1.6 1.9 2.2 2.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"absorption_tooltip"		"60"
-			}
-		
+            {
+                "var_type"				"FIELD_FLOAT"
+                "damage_per_mana"		"1.6 1.9 2.2 2.5"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "absorption_pct"			"70"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}

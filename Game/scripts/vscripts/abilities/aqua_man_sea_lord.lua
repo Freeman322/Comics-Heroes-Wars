@@ -47,7 +47,7 @@ function modifier_aqua_man_sea_lord:DeclareFunctions()
 end
 
 function modifier_aqua_man_sea_lord:DoAdaptiveStrike(target)
-    if target then
+    if target and not target:IsBuilding() and self:GetParent():IsRealHero() then
         local info = {
             EffectName = "particles/units/heroes/hero_morphling/morphling_adaptive_strike_agi_proj.vpcf",
             Ability = self:GetAbility(),
@@ -65,7 +65,7 @@ function modifier_aqua_man_sea_lord:OnAttackLanded(params)
     if IsServer() and params.attacker == self:GetParent() then
         self:IncrementStackCount()
 
-        if self:GetStackCount() == 4 then
+        if self:GetStackCount() == 5 then
             self:DoAdaptiveStrike(params.target)
 
             self:SetStackCount(1)

@@ -17,6 +17,17 @@ function OnLeaveTeamPressed()
 	Game.PlayerJoinTeam( DOTATeam_t.DOTA_TEAM_NOTEAM );
 }
 
+function OpenLink(type)
+{
+	switch (type) {
+		case 1:
+			window.open("https://discord.gg/z5dCZbe");
+			break;
+		case 0:
+			window.open("https://www.patreon.com/freeman322");
+			break;
+	}
+}
 
 //--------------------------------------------------------------------------------------------------
 // Handler for when the Lock and Start button is pressed
@@ -34,7 +45,7 @@ function OnLockAndStartPressed()
 	Game.SetAutoLaunchEnabled( false );
 
 	// Set the remaining time before the game starts
-	Game.SetRemainingSetupTime( 4 ); 
+	Game.SetRemainingSetupTime( 10 );
 }
 
 

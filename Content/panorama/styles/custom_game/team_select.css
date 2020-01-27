@@ -17,6 +17,23 @@
     width: fill-parent-flow(1);
 }
 
+.LinkButton
+{
+    width: 50px;
+    height: 50px;
+    horizontal-align: center;
+}
+
+#Src
+{
+    flow-children: right;
+
+    horizontal-align: left;
+    vertical-align: top;
+
+    margin-bottom: 10px;
+}
+
 #TeamsList
 {
   width: 400px;

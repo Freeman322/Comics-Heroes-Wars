@@ -92,7 +92,6 @@ function modifier_murloc_lead_thinker:OnIntervalThink()
 
         self.caster:PerformAttack(target, false, true, true, false, false, false, true)
         self.caster:PerformAttack(target, false, true, true, false, false, false, true)
-        self.caster:PerformAttack(target, false, true, true, false, false, false, true)
 
         self.m_iCurrentTarget = self.m_iCurrentTarget + 1
     end

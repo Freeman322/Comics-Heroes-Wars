@@ -8179,6 +8179,10 @@
 		"AbilityTextureName"            "custom/mystic_ring"
 		"ScriptFile"					"items/item_mystic_ring.lua"
 
+		"ItemStackable"					"0"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"

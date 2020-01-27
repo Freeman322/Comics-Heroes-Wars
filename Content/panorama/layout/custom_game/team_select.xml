@@ -32,6 +32,15 @@
 					<Image id="PremIcon" src="file://{images}/backgrounds/premiumemb.png" />
 				</Panel>
 
+				<Panel id="Src">
+					<Button class="LinkButton" onactivate="DOTADisplayURL('https://www.patreon.com/freeman322')">
+						<Image src="file://{images}/patreon_button.png" />
+					</Button>
+					<Button class="LinkButton" onactivate="DOTADisplayURL('https://discord.gg/z5dCZbe')">
+						<Image src="file://{images}/discord_button.png" />
+					</Button>
+				</Panel>
+
 				<Panel id="Credits">
 					<Panel id="Credits_Author" class="credit_div">
 						<Label text="#Credits_Author" class="credit_lable"/>

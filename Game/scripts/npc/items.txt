@@ -6672,60 +6672,55 @@
 		"AbilitySpecial"
 		{
 			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"45"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"7.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3.75"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"40"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus"			"24"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_ranged"	"7"
-			}			
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cleave_starting_width"			"150"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cleave_ending_width"			"360"
-			}			
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cleave_distance"			"650"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"			"350"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_ward"			"450"
-			}
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"60"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "bonus_health_regen"	"7.5"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "bonus_mana_regen"		"3.75"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_damage_percent"	"70"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_damage_percent_creep"	"50"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "quelling_bonus"			"18"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "quelling_bonus_ranged"	"5"
+            }
+            "08"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_starting_width"			"150"
+            }
+            "09"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_ending_width"			"360"
+            }
+            "10"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_distance"			"650"
+            }
 		}
 	}
 
