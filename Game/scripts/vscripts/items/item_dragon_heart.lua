@@ -85,7 +85,7 @@ function modifier_item_dragon_heart:GetEffectName()
         return "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_flameguard.vpcf"
     end
     
-    return "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_flameguard.vpcf"
+    return "particles/items2_fx/radiance_owner.vpcf"
 end
 
 function modifier_item_dragon_heart:GetEffectAttachType()
@@ -93,7 +93,7 @@ function modifier_item_dragon_heart:GetEffectAttachType()
 end
 
 function modifier_item_dragon_heart:GetAuraRadius()
-    return 700
+    return 500
 end
 
 function modifier_item_dragon_heart:GetAuraSearchTeam()
@@ -128,14 +128,14 @@ end
 
 function modifier_item_dragon_heart_aura:OnCreated(table)
     if IsServer() then
-        self:StartIntervalThink(0.1)
+        self:StartIntervalThink(1)
         self:OnIntervalThink()
     end
 end
 
 function modifier_item_dragon_heart_aura:OnIntervalThink()
     if IsServer() then
-        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetCaster():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+60)/10, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS})
+        ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = (self:GetCaster():GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("burn_damage")/100)+40), damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS})
     end
 end
 

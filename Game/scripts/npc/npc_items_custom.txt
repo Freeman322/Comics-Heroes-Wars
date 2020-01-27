@@ -350,14 +350,14 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"10000"
+		"ItemCost"					"11000"
 		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		"AbilityCooldown"				"0.0"
-		"AbilityDamage"				"175"
+		"AbilityCooldown"				"1.0"
+		"AbilityDamage"				"250"
 
 		"precache"
 		{
@@ -371,19 +371,24 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"180"
+				"bonus_damage"				"140"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"		"60"
+				"bonus_attack_speed"		"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_chance" 		    		"70"
+				"all" 				    	"45"
 			}
 			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bash_chance" 		    		"70"
+			}
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"burn_damage" 				"2.1"
@@ -871,7 +876,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_pers"			"4"
+				"damage_pers"			"7"
 			}
 			"07"
 			{
@@ -929,7 +934,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"50"
+				"bonus_all_stats"		"45"
 			}
 			"02"
 			{
@@ -969,7 +974,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cold_attack_damage"	"80"
+				"cold_attack_damage"	"75"
 			}
 		}
 	}
@@ -1875,7 +1880,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"40.0"
+		"AbilityCooldown"				"35.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1894,27 +1899,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"200"
+				"bonus_damage"			"130"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_all_stats"		"55"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"130"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"200"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_all_stats"		"35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ability_damage"		"300"
+				"bonus_attack_range"	"200"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ability_stun_duration"	"2.5"
+				"ability_damage"		"600"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_stun_duration"	"3"
 			}
 		}
 	}
@@ -2846,7 +2856,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1800"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -2855,7 +2865,7 @@
 		"ItemResult"					"item_axe_of_phractos"
 		"ItemRequirements"
 		{
-			"01"						"item_radiance;item_monkey_king_bar"
+			"01"						"item_radiance;item_monkey_king_bar;item_ultimate_orb;item_ultimate_orb"
 		}
 	}
 	//=================================================================================================================
@@ -3280,7 +3290,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1900"
+		"ItemCost"						"850"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3289,7 +3299,7 @@
 		"ItemResult"					"item_gungner"
 		"ItemRequirements"
 		{
-			"01"						"item_ethereal_blade;item_moon_shard_marvel;item_dragon_lance"
+			"01"						"item_mjollnir;item_monkey_king_bar;item_dragon_lance"
 		}
 	}
 	"item_recipe_heart_2"
@@ -3668,7 +3678,7 @@
 		"ItemResult"					"item_soul_urn"
 		"ItemRequirements"
 		{
-			"01"						"item_jetsu;item_aether_lens"
+			"01"						"item_bloodstone;item_aether_lens"
 		}
 	}
 	//=================================================================================================================
@@ -4184,10 +4194,17 @@
 		"ScriptFile"					"items/item_soul_urn.lua"
 		"AbilityTextureName"            "custom/soul_urn"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 
 		// Stats
-	//-------------------------------------------------------------------------------------------------------------
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"70.0"
+		"AbilityManaCost"				"100"
 
 		"ItemCost"						"10000"
 		"ItemShopTags"					"move_speed;regen_health;armor"
@@ -4209,22 +4226,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"70"
+				"bonus_all_stats"		"35"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_cast_time"			"25"
+				"bonus_armor"			"7"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"	"8"
+				"bonus_health_regen"	"25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana"		"700"
+				"bonus_mana_regen"		"5"
 			}
 			"05"
 			{
@@ -4502,8 +4519,6 @@
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/hero_manhattan.vsndevts"
 			"soundfile" "soundevents/game_sounds_heroes/hero_zoom.vsndevts"
-			"particle"  "particles/stygian/heart_timegem.vpcf"
-			"particle"  "particles/econ/items/wisp/wisp_death_ti7_model_heart.vpcf"
 		}
 		"AbilitySpecial"
 		{
@@ -5416,29 +5431,39 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"			"10"
+				"bonus_all_stats"		"30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_cast_range"			"300"
+				"bonus_health_regen"	"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1500"
+				"bonus_damage"			"40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1500"
+				"bonus_cast_range"			"300"
 			}
 			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"1500"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"1500"
+			}
+			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"reality_reverse_duration"	"5.0"
 			}
-			"06"
+			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"reality_reverse_radius"	"600"
@@ -5647,7 +5672,7 @@
 		"AbilityTextureName"            "recipe"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"25"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -5698,29 +5723,29 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"50"
+				"bonus_strength"		"75"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"70"
+				"bonus_intellect"		"75"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_spell_damage"	"25"
+				"bonus_damage"			"100"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_manacost"	    "20"
+				"bonus_spell_damage"	"25"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"power_duration"		"4.0"
 			}
-			"06"
+			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"power_totaldmg"		"55"
@@ -5749,7 +5774,7 @@
 		"ItemResult"					"item_soul"
 		"ItemRequirements"
 		{
-			"01"				"item_soul_booster;item_ultimate_orb;item_ultimate_orb;item_pers;item_pers;item_dust"
+			"01"				"item_soul_booster;item_gem;item_ghost;item_moon_shard_marvel"
 		}
 	}
 	"item_soul"
@@ -5771,7 +5796,7 @@
 
 	    // Time
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "45.0"
+	    "AbilityCooldown"               "30.0"
 
 		"precache"
 		{
@@ -5786,7 +5811,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"35"
+				"bonus_attack_speed"	"150"
 			}
 			"02"
 			{
@@ -5796,34 +5821,29 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"12"
+				"bonus_mana_regen"		"15"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"40"
+				"bonus_all_stats"		"30"
 			}
 			"05"
-			{
-				"var_type"              "FIELD_INTEGER"
-				"bonus_hp"           "1200"
-			}
-			"06"
-			{
-				"var_type"              "FIELD_INTEGER"
-				"bonus_mp"           "1200"
-			}
-			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"magical_damage_return"	"40"
 			}
-			"08"
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"1200"
+			}
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"overseer_duration"		"6"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"movespeed"				"-50"
@@ -5840,7 +5860,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"880"
+		"ItemCost"						"680"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -7021,9 +7041,14 @@
             "01"
             {
                 "var_type"            	"FIELD_INTEGER"
-                "bonus_int"            	"40"
+                "spell_amp"            	"25"
             }
             "02"
+            {
+                "var_type"            	"FIELD_INTEGER"
+                "bonus_int"            	"40"
+            }
+            "03"
             {
                 "var_type"            	"FIELD_INTEGER"
                 "bonus_casttime"    	"25"
@@ -8141,12 +8166,12 @@
 			"04"
 			{
 				"var_type"                        			 "FIELD_FLOAT"
-				"bonus_damage"                      		"280"
+				"bonus_damage"                      		"160"
 			}
 			"04"
 			{
 				"var_type"                          		"FIELD_FLOAT"
-				"burn_damage"                      		  "3.75"
+				"burn_damage"                      		"5"
 				"CalculateSpellDamageTooltip"				"0"
 			}
 		}
@@ -8338,156 +8363,7 @@
 		{
 			"01"						"item_mystic_ring;item_bloodstone"
 		}
-	}
-	"item_star_boots"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"BaseClass"						"item_lua"
-		"AbilityTextureName"			"custom/star_boots"
-		
-		"ScriptFile"				"items/item_star_boots.lua"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-	    "AbilityCooldown"				"12"
-	    "AbilityManaCost"				"0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1480"
-		"ItemShopTags"					"damage;move_speed;hard_to_tag"
-		"ItemQuality"					"common"
-		"ItemAliases"					"phase boots"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-
-        "AbilitySpecial"
-		{
-			"1"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"bonus_armor"               "9"
-			}
-			"2"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"bonus_damage"              "60"
-			}
-			"3"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"bonus_attack_speed"        "40"
-			}
-			"4"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"bonus_agility"             "40"
-			}
-			"5"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"bonus_evasion"             "25"
-			}
-			"6"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"bonus_movespeed_pct"       "25"
-			}
-			"7"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"phase_movespeed"           "25"
-			}
-			"8"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"phase_bonus_damage"        "30"
-			}
-			"9"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"phase_duration"            "5"
-			}
-		}          
-	}
-	"item_recipe_star_boots"
-	{
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                 		"item_datadriven"
-		"AbilityTextureName"		    	"recipe"
-		"Model"					         	"models/props_gameplay/recipe.vmdl"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					   "3400"
-		"ItemShopTags"					""
-
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_star_boots"
-		"ItemRequirements"
-		{
-			"01"						"item_phase_boots;item_yasha;item_talisman_of_evasion"
-		}
-	}
-	"item_elemental_treads"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"item_lua"
-		"AbilityTextureName"			"custom/elemental_treads"
-		
-		"ScriptFile"				"items/item_elemental_treads.lua"
-		"AbilitySpecial"
-		{
-			"1"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"bonus_all_stats"               "40"
-			}
-			"2"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"bonus_movespeed_pct"              "30"
-			}
-			"4"
-			{
-				"var_type"                  "FIELD_INTEGER"
-				"bonus_attack_speed"             "60"
-			}
-			"5"
-			{
-				"var_type"                  "FIELD_FLOAT"
-				"bonus_stats_all_pct"             "30"
-			}
-		}
-	}
-	"item_recipe_elemental_treads"
-	{
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                 		"item_datadriven"
-		"AbilityTextureName"		    	"recipe"
-		"Model"					         	"models/props_gameplay/recipe.vmdl"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					   "2100"
-		"ItemShopTags"					""
-
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_elemental_treads"
-		"ItemRequirements"
-		{
-			"01"						"item_power_treads;item_ultimate_orb;item_ultimate_orb;item_crown"
-		}
-	}
+	}	
     //=================================================================================================================
 	// Octarine Core
 	//=================================================================================================================

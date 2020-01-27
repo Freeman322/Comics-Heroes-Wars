@@ -59,10 +59,8 @@ function modifier_item_soul:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_HEALTH_BONUS,
-		MODIFIER_PROPERTY_MANA_BONUS
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
 	}
 	return funcs
 end
@@ -123,19 +121,7 @@ function modifier_item_soul:GetModifierConstantManaRegen( params )
     return self:GetAbility():GetSpecialValueFor( "bonus_mana_regen" )
 end
 
-function modifier_item_soul:GetModifierConstantHealthRegen( params )
-    return self:GetAbility():GetSpecialValueFor( "bonus_health_regen" )
+function modifier_item_soul:GetModifierAttackSpeedBonus_Constant( params )
+    return self:GetAbility():GetSpecialValueFor( "bonus_attack_speed" )
 end
-
-function modifier_item_soul:GetModifierHealthBonus( params )
-    return self:GetAbility():GetSpecialValueFor( "bonus_hp_mp" )
-end
-
-function modifier_item_soul:GetModifierManaBonus( params )
-    return self:GetAbility():GetSpecialValueFor( "bonus_hp_mp" )
-end
-
-
-
-
 

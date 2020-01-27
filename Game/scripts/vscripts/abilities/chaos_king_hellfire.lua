@@ -9,7 +9,7 @@ end
 function chaos_king_hellfire:OnSpellStart()
     if IsServer() then 
         local info = {
-                EffectName = "particles/stygian/celebrimbor_base_attack.vpcf",
+                EffectName = "particles/econ/items/wraith_king/wraith_king_ti6_bracer/wraith_king_ti6_hellfireblast.vpcf",
                 Ability = self,
                 iMoveSpeed = 1800,
                 Source = self:GetCaster(),

@@ -14,12 +14,17 @@ function modifier_jetsu:IsPurgable() return false end
 function modifier_jetsu:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_CASTTIME_PERCENTAGE
     }
 end
 
 function modifier_jetsu:GetModifierBonusStats_Intellect()
     return self:GetAbility():GetSpecialValueFor("bonus_int")
+end
+
+function modifier_jetsu:GetModifierSpellAmplify_Percentage()
+    return self:GetAbility():GetSpecialValueFor("spell_amp")
 end
 
 function modifier_jetsu:GetModifierPercentageCasttime()

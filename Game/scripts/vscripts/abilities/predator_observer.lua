@@ -39,7 +39,7 @@ function modifier_predator_observer:OnAttackLanded (params)
             local target = params.target
             local ability = self:GetAbility ()
             if self:GetCaster():IsRealHero() == false then return end
-            if target:IsBuilding() then return end 
+            if target:IsTower() then return end 
             if target:HasModifier("modifier_predator_observer_debuff") == false then
               local duration = ability:GetSpecialValueFor("debuff_duration")
             	target:AddNewModifier(self:GetParent(), ability, "modifier_predator_observer_debuff", {duration = duration})
@@ -81,7 +81,7 @@ function modifier_predator_observer_debuff:OnCreated(htable)
     	if self.nFXIndex then
     		ParticleManager:DestroyParticle(self.nFXIndex, true)
     	end
-        local pfx = "particles/econ/items/bloodseeker/bloodseeker_eztzhok_weapon/bloodseeker_bloodrage_eztzhok.vpcf"
+        local pfx = "particles/units/heroes/hero_sven/sven_warcry_buff.vpcf"
         if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "beerus") then
             pfx = "particles/items4_fx/nullifier_mute_debuff.vpcf"
         end 

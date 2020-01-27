@@ -120,7 +120,7 @@ Lib.Items = {
         "rarity": "9",
         "quality": "2",
         "dropable": "false",
-        "slot": "head",
+        "slot": "global",
         "hero": "npc_dota_hero_slark",
         "universal": "true",
         "def_id": "9",
