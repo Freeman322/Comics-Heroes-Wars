@@ -7,6 +7,14 @@ function slaanesh_omnidrain:GetConceptRecipientType()
 	return DOTA_SPEECH_USER_ALL
 end
 
+function slaanesh_omnidrain:GetAbilityDamageType()
+	if self:GetCaster():HasTalent("special_bonus_unique_slaanesh_4") then
+		return 4
+	end
+
+	return 2
+end
+
 function slaanesh_omnidrain:GetAbilityTextureName()
     if self:GetCaster():HasModifier("modifier_voland_custom") then return "custom/voland_ulti" end  
     return self.BaseClass.GetAbilityTextureName(self)  
@@ -148,7 +156,7 @@ function modifier_slaanesh_omnidrain:OnIntervalThink()
             victim = self:GetParent(),
             attacker = self:GetCaster(),
             damage = damage,
-            damage_type = DAMAGE_TYPE_PURE,
+            damage_type = self:GetAbility():GetAbilityDamageType(),
             ability = self:GetAbility()
         }
         ApplyDamage( damage_table )

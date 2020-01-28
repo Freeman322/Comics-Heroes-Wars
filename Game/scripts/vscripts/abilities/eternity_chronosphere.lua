@@ -5,7 +5,7 @@ eternity_chronosphere = class ( {})
 
 function eternity_chronosphere:GetCooldown( nLevel )
     if self:GetCaster():HasScepter() then
-        return 60
+        return 80
     end
 
     return self.BaseClass.GetCooldown( self, nLevel )

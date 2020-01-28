@@ -36,7 +36,7 @@ end
 if modifier_slaanesh_subordination == nil then modifier_slaanesh_subordination = class({}) end
 
 function modifier_slaanesh_subordination:IsPurgable()
-    return false
+    return true
 end
 
 function modifier_slaanesh_subordination:IsHidden()

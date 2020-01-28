@@ -118,7 +118,7 @@ end
 
 function modifier_aqua_man_sphere_thinker_debuff:CheckState()
     if self:IsBuff() then
-        return {[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true, [MODIFIER_STATE_INVULNERABLE] = true}
+        return {[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true}
     end
 
     return

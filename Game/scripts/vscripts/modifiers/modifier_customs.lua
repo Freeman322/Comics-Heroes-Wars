@@ -3,6 +3,12 @@ function modifier_pugalo:IsHidden() return true end
 function modifier_pugalo:IsPurgable() return false end
 function modifier_pugalo:RemoveOnDeath() return false end
 
+if modifier_brolly == nil then modifier_brolly = class({}) end
+function modifier_brolly:IsHidden() return true end
+function modifier_brolly:IsPurgable() return false end
+function modifier_brolly:RemoveOnDeath() return false end
+
+
 -------------------------------------------------------------------------------
 
 if modifier_deadshot == nil then modifier_deadshot = class({}) end

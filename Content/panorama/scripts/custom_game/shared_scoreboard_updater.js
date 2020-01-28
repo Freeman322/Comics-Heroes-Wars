@@ -143,6 +143,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 			   	 	playerPortrait.SetImage( "file://{images}/custom_game/heroes/alma_collector.png" );
 				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_axe" && hasModifier(hero_entindex, "modifier_brolly"))
+				{
+			   	 	playerPortrait.SetImage( "file://{images}/custom_game/heroes/brolly_skin.png" );
+				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_bloodseeker" && hasModifier(hero_entindex, "modifier_flash_custom"))
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/flash_custom.png" );

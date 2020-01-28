@@ -6,6 +6,11 @@ rulk_thermal_radiation = class({})
 
 function rulk_thermal_radiation:GetIntrinsicModifierName() return "modifier_rulk_thermal_radiation" end
 
+function rulk_thermal_radiation:GetAbilityTextureName()
+  if self:GetCaster():HasModifier("modifier_brolly") then return "custom/brolly_cast1" end
+  return self.BaseClass.GetAbilityTextureName(self) 
+end
+
 modifier_rulk_thermal_radiation = class({})
 
 function modifier_rulk_thermal_radiation:IsHidden() return true end

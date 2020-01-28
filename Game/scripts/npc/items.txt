@@ -6674,7 +6674,7 @@
 			"01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"60"
+                "bonus_damage"			"45"
             }
             "02"
             {
@@ -6689,17 +6689,17 @@
             "04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "cleave_damage_percent"	"70"
+                "cleave_damage_percent"	"40"
             }
             "05"
             {
-                "var_type"				"FIELD_INTEGER"
-                "cleave_damage_percent_creep"	"50"
+                "var_type"						"FIELD_INTEGER"
+                "cleave_damage_percent_creep"	"40"
             }
             "06"
             {
-                "var_type"				"FIELD_INTEGER"
-                "quelling_bonus"			"18"
+                "var_type"					"FIELD_INTEGER"
+                "quelling_bonus"			"24"
             }
             "07"
             {

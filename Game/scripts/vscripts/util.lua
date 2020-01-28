@@ -6,8 +6,16 @@ end
 
 Util.abilities = nil
 __wearables = nil
+
 Util.econs = nil
 Util.heroes_ids = nil
+
+Util.Heroes = {
+    npc_dota_hero_death_eater = 2,
+    npc_dota_hero_stormspirit = 4,
+    npc_dota_hero_medusa = 8,
+    npc_dota_hero_io = 16
+}
 
 EF_GLOBAL = 99999
 
@@ -300,6 +308,7 @@ end
 function Util:ParseRenderColor( color, hero )
     if color == "black" then hero:SetRenderColor(0, 0, 0) end
     if color == "gold" then hero:SetRenderColor(255, 215, 0) end
+    if color == "red" then hero:SetRenderColor(255, 0, 0) end
 end
 
 function Util:EquipItemData(hero, item_data, slot)
@@ -1070,20 +1079,17 @@ function Util:OnHeroInGame(hero)
             weap:FollowEntity(hero, true)
         end
     end
-    if hero:GetUnitName() == "npc_dota_hero_axe" then
-        hero:SetRenderColor(255, 0, 0)
-    end
     if hero:GetUnitName() == "npc_dota_hero_templar_assassin" then ---models/b2/b2.vmdl
-    if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "neo_noir") then
-        LinkLuaModifier("modifier_neo_noir", "modifiers/modifier_neo_noir.lua", LUA_MODIFIER_MOTION_NONE)
-        hero:SetSkillBuild("npc_dota_hero_juggernaut")
-        hero:SetOriginalModel("models/b2/b2.vmdl")
-        local mask5 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/b2/weapon/weapon.vmdl"})
-        mask5:FollowEntity(hero, true)
-        hero:SetAttackCapability(DOTA_UNIT_CAP_MELEE_ATTACK)
-        hero:AddNewModifier(hero, nil, "modifier_neo_noir", nil)
-        return
-    end
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "neo_noir") then
+            LinkLuaModifier("modifier_neo_noir", "modifiers/modifier_neo_noir.lua", LUA_MODIFIER_MOTION_NONE)
+            hero:SetSkillBuild("npc_dota_hero_juggernaut")
+            hero:SetOriginalModel("models/b2/b2.vmdl")
+            local mask5 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/b2/weapon/weapon.vmdl"})
+            mask5:FollowEntity(hero, true)
+            hero:SetAttackCapability(DOTA_UNIT_CAP_MELEE_ATTACK)
+            hero:AddNewModifier(hero, nil, "modifier_neo_noir", nil)
+            return
+        end
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "wanda_arcana") then
             hero:SetOriginalModel("models/heroes/hero_witch/wanda_arcana/wanda_arcana.vmdl")
             hero:AddNewModifier(hero, nil, "modifier_arcana", nil)
@@ -1806,7 +1812,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if IsHasSuperStatus(pID) and HeroIsSelectedAlready("npc_dota_hero_death_eater") == false then
+            if (IsHasSuperStatus(pID) or HasHero(pID, Util.Heroes.npc_dota_hero_death_eater)) and HeroIsSelectedAlready("npc_dota_hero_death_eater") == false then
                 PrecacheUnitByNameAsync( "npc_dota_hero_death_eater", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_death_eater", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1834,7 +1840,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if IsHasSuperStatus(pID) and HeroIsSelectedAlready("npc_dota_hero_stormspirit") == false then
+            if (IsHasSuperStatus(pID) or HasHero(pID, Util.Heroes.npc_dota_hero_stormspirit)) and HeroIsSelectedAlready("npc_dota_hero_stormspirit") == false then
                 PrecacheUnitByNameAsync( "npc_dota_hero_stormspirit", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_stormspirit", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1849,7 +1855,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if IsHasSuperStatus(pID) and HeroIsSelectedAlready("npc_dota_hero_io") == false then
+            if (IsHasSuperStatus(pID) or HasHero(pID, Util.Heroes.npc_dota_hero_io)) and HeroIsSelectedAlready("npc_dota_hero_io") == false then
                 PrecacheUnitByNameAsync( "npc_dota_hero_io", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_io", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1865,7 +1871,7 @@ function Util:SetupConsole()
         pcall(function()
             local pID = Convars:GetCommandClient():GetPlayerID()
 
-            if IsHasSuperStatus(pID) and HeroIsSelectedAlready("npc_dota_hero_medusa") == false then
+            if (IsHasSuperStatus(pID) or HasHero(pID, Util.Heroes.npc_dota_hero_medusa)) and HeroIsSelectedAlready("npc_dota_hero_medusa") == false then
                 PrecacheUnitByNameAsync( "npc_dota_hero_medusa", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_medusa", 0, 0)
                     nHero:RespawnHero(false, false)
@@ -1901,6 +1907,21 @@ function IsHasSuperStatus(id)
 
     if data and data[tostring(id)] then
         return data[tostring(id)].shards == "1"
+    end
+
+    return false
+end
+
+function HasHero(id, heroID)
+    local data = CustomNetTables:GetTableValue("players", "stats")
+
+    if data and data[tostring(id)] then
+        local num = tonumber(data[tostring(id)].shards)
+        local band = bit.band(num, heroID)
+
+        print(band)
+
+        return band == heroID
     end
 
     return false
@@ -2264,14 +2285,7 @@ end
 
 
 function CDOTA_BaseNPC:IsHasSuperStatus()
-    local data = CustomNetTables:GetTableValue("players", "stats")
-    local pID = self:GetPlayerOwnerID()
-
-    if data and data[tostring(pID)] then
-        return data[tostring(pID)].shards == "1"
-    end
-
-    return false
+    return IsHasSuperStatus(self:GetPlayerOwnerID())
 end
 
 function Util:Setup()

@@ -6,6 +6,13 @@ function rulk_beast:GetIntrinsicModifierName()
   return "modifier_rulk_beast"
 end
 
+
+function rulk_beast:GetAbilityTextureName()
+  if self:GetCaster():HasModifier("modifier_brolly") then return "custom/brolly_cast2" end
+  return self.BaseClass.GetAbilityTextureName(self) 
+end
+
+
 modifier_rulk_beast = class({})
 
 function modifier_rulk_beast:IsHidden() return true end

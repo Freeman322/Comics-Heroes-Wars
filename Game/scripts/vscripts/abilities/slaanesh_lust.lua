@@ -60,7 +60,7 @@ function modifier_slaanesh_lust:IsBuff()
 end
 
 function modifier_slaanesh_lust:IsPurgable()
-    return false
+    return true
 end
 
 function modifier_slaanesh_lust:GetEffectName() 

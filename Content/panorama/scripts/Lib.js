@@ -5816,6 +5816,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "425": {
+        "item": "brolly",
+        "rarity": "11",
+        "quality": "4",
+        "dropable": "false",
+        "slot": "global",
+        "hero": "npc_dota_hero_axe",
+        "universal": "false",
+        "def_id": "425",
+        "is_treasure": "0",
+        "is_medal": "0",
+        "is_compendium": "0",
+        "is_music": "0"
     }
  };
 
