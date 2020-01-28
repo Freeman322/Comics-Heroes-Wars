@@ -5948,7 +5948,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_saitama"                         	"Relativistic Punch cooldown 70 seconds"
 		"DOTA_Tooltip_ability_special_bonus_unique_odin"                         	    "+18% bonus attributes for God's Mark"
 		"DOTA_Tooltip_ability_special_bonus_unique_murloc"                         	    "+x2 healing"
-		"DOTA_Tooltip_ability_special_bonus_unique_murloc_1"                            "+250 damage for Lead"
+		"DOTA_Tooltip_ability_special_bonus_unique_murloc_1"                            "+25% attacks count for Primal Eject"
 		"DOTA_Tooltip_ability_special_bonus_unique_medivh"                         	    "+500 Defeaning Blast damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_king"                         	"+5 damage for soul in Frostmorne"
 		"DOTA_Tooltip_ability_special_bonus_unique_night_king"                         	"+800 Flesh Hunger damage"

@@ -11735,9 +11735,10 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"150 200 250"
+		
 		"precache"
 		{
-			"particle"  "particles/murlock/murlock_primal_eject.vpcf"
+			"particle"  				"particles/murlock/murlock_primal_eject.vpcf"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -11751,18 +11752,18 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius"						"400"
+				"radius"							"400"
 			}
 			"03"
 			{
 				"var_type"					      "FIELD_FLOAT"
-				"health_regen"	                  "1.0 1.5 2.0"
-				"LinkedSpecialBonus"			"special_bonus_unique_murloc"
+				"health_regen"	                  		 "1.0 1.5 2.0"
+				"LinkedSpecialBonus"				 "special_bonus_unique_murloc"
 			}
 			"04"
 			{
 				"var_type"						  "FIELD_FLOAT"
-				"bonus_movement_speed"	        "15 25 30"
+				"bonus_movement_speed"	       		  "15 25 30"
 			}
 		}
 	}
@@ -11770,11 +11771,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"					    "ability_lua"
+		"BaseClass"				    "ability_lua"
 		"AbilityTextureName"			"custom/murloc_little_fish"
 		"ScriptFile"					"abilities/murlock_agility_steal.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"              		"1"
+		"MaxLevel"              			"1"
 		"precache"
 		{
 			"model"		                "models/heroes/hero_murloc/murloc/murloc.vmdl"
@@ -11785,7 +11786,7 @@
 			"model"		                "models/items/slark/deep_sea_dragoon_head/deep_sea_dragoon_head.vmdl"
 			"model"		                "models/items/slark/pale_justice/pale_justice.vmdl"
 			"model"		                "models/items/slark/hookblade_skadi/hookblade_skadi.vmdl"
-			"particle"                  "particles/econ/items/slark/slark_head_immortal/slark_head_immortal_ambient.vpcf"
+			"particle"                 	 "particles/econ/items/slark/slark_head_immortal/slark_head_immortal_ambient.vpcf"
 			"particle"		            "particles/econ/items/slark/hookblade_of_skadi/slark_hookblade_skadi_ambient.vpcf"
 			"particle"		            "models/items/slark/golden_barb_of_skadi/golden_barb_of_skadi.vmdl"
 			"particle"		            "particles/econ/items/slark/slark_golden_barb_of_skadi/slark_golden_barb_of_skadi_ambient.vpcf"
@@ -11794,25 +11795,14 @@
 		{
 			"01"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"agility_steal_buff_amount"	        "2.0"
+				"var_type"						  "FIELD_FLOAT"
+				"agility_steal_buff_amount"	            "3.0"
 			}
 			"02"
 			{
 				"var_type"				            "FIELD_INTEGER"
-				"agility_steal_range"		        "700"
+				"agility_steal_range"		        	  "500"
 			}
-            "03"
-            {
-                "var_type"					      "FIELD_FLOAT"
-                "health_regen"	                  "1.0"
-                "LinkedSpecialBonus"			  "special_bonus_unique_murloc"
-            }
-            "04"
-            {
-                "var_type"						  "FIELD_FLOAT"
-                "bonus_movement_speed"	          "20"
-            }
 		}
 	}
 	"doctor_doom_sanity_curse"

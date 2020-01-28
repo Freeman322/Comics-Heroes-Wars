@@ -2893,15 +2893,15 @@
 		"Ability3"					"murlock_water_wave"					// Ability 3
 		"Ability4"					"murlock_agility_steal"					// Ability 4
 		"Ability5"					"generic_hidden"
-		"Ability6"		     	    "murloc_lead"
-		"Ability7"		        	 ""
+		"Ability6"		     	    	"murlock_primal_eject"
+		"Ability7"		        	 	""
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_hp_regen_40"
 		"Ability13"					"special_bonus_attack_speed_100"
-		"Ability14"					"special_bonus_unique_murloc_1"
+		"Ability14"					"special_bonus_unique_murloc"
 		"Ability15"					"special_bonus_agility_15"
-		"Ability16"					"special_bonus_unique_murloc"
+		"Ability16"					"special_bonus_unique_murloc_1"
 		"Ability17"					"special_bonus_all_stats_20"
 		"DisableWearables"			"1"
 		"ArmorPhysical"				"0"
@@ -4757,29 +4757,31 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		///"override_hero"					"npc_dota_hero_undying"
-          "HeroID"		                    "85"
-          "BaseClass"		               "npc_dota_hero_undying"
+		"HeroID"		                    "85"
+		"BaseClass"		               "npc_dota_hero_undying"
+
+		"HeroDisabled"					"1"
 
 		"DisableWearables"				"1"
-		"Model"							"models/heroes/zeus/zeus_arcana.mdl"		// Model.
+		"Model"						"models/heroes/zeus/zeus_arcana.mdl"		// Model.
 		"ProjectileModel"				"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_base_attack.vpcf"
 		"ProjectileSpeed"				"2000"
-		"Portrait"						"vgui/hud/heroportraits/portrait_undying"						// Small image for hero selection
+		"Portrait"					"vgui/hud/heroportraits/portrait_undying"						// Small image for hero selection
 		"IdleExpression"				"scenes/undying/undying_exp_idle_01.vcd"
-		"SoundSet"						"Hero_ObsidianDestroyer"													// Name of sound set.
-		"IdleSoundLoop"					"Hero_Undying.IdleLoop"
+		"SoundSet"					"Hero_ObsidianDestroyer"													// Name of sound set.
+		"IdleSoundLoop"				"Hero_Undying.IdleLoop"
 		"Enabled"						"1"
-		"Role"							"Durable,Pusher,Disabler,Initiator"
+		"Role"						"Durable,Pusher,Disabler,Initiator"
 		"Rolelevels"					"2,1,1,1"
-		"Team"							"Bad"
+		"Team"						"Bad"
 		"HeroID"						"85"
 		"ModelScale" 					"0.93"
 		"LoadoutScale"					".87"
 		"NameAliases"					"dirge"
-		"url" 							"Undying"
-		"PickSound"						"undying_undying_spawn_01"
-		"BanSound"						"undying_undying_anger_02"
-		"CMEnabled"						"1"
+		"url" 						"Undying"
+		"PickSound"					"undying_undying_spawn_01"
+		"BanSound"					"undying_undying_anger_02"
+		"CMEnabled"					"1"
 		"LastHitChallengeRival"			"npc_dota_hero_sand_king"
 		"HeroSelectSoundEffect"			"Hero_Undying.Pick"
 
@@ -4790,7 +4792,7 @@
 		"Ability3"						"manhattan_energy_surge"
 		"Ability4"						"manhattan_equilibrium"
 		"Ability5"						"generic_hidden"
-	 	"Ability6"					    "manhattan_reality_warp"
+	 	"Ability6"					     "manhattan_reality_warp"
 		"Ability10"						"special_bonus_exp_boost_30"
 		"Ability11"						"special_bonus_unique_manhattan_energy_drain"
 		"Ability12"						"special_bonus_unique_manhattan_energy_drain_1"
