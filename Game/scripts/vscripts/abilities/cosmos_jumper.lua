@@ -17,6 +17,14 @@ function cosmos_jumper:CastFilterResultTarget( hTarget )
           return UF_FAIL_CUSTOM
      end
 
+     if hTarget:IsAncient() then
+          return UF_FAIL_CUSTOM
+     end
+
+     if hTarget:IsConsideredHero() then
+          return UF_FAIL_CUSTOM
+     end
+
      return UF_SUCCESS
 end
 

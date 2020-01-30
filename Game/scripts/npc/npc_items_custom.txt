@@ -8199,14 +8199,16 @@
 	}
 	"item_mystic_ring"
 	{
-		"BaseClass"						"item_lua"
+		"BaseClass"					"item_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            "custom/mystic_ring"
+		"AbilityTextureName"            	"custom/mystic_ring"
 		"ScriptFile"					"items/item_mystic_ring.lua"
 
-		"ItemStackable"					"0"
-        "ItemPermanent"					"0"
-        "ItemInitialCharges"			"1"
+		"ItemStackable"				"0"
+		"ItemPermanent"				"0"
+		"ItemInitialCharges"			"1"
+
+		"ItemSellable"             		"0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

@@ -39724,22 +39724,22 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"1200"
+				"radius"						"900"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"armor_reduction"	    	"5 8 11 14"
+				"armor_reduction"	    			"4 7 10 13"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magic_resistance"			"17 24 31 38"
+				"magic_resistance"				"15 21 27 33"
 			}
 			"04"
 			{
-				"var_type"                  "FIELD_INTEGER"
-				"plague_damage"             "1.4 1.6 1.8 2.0"
+				"var_type"                  		"FIELD_INTEGER"
+				"plague_damage"             		"1.4 1.6 1.8 2.0"
 			}
 		}
 	}
@@ -40012,30 +40012,30 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_damage_per_soul"	"2"
-				"CalculateSpellDamageTooltip"	"0"
-				"LinkedSpecialBonus"			"special_bonus_unique_death_eater_2"
+				"necromastery_damage_per_soul"		"2"
+				"CalculateSpellDamageTooltip"			"0"
+				"LinkedSpecialBonus"				"special_bonus_unique_death_eater_2"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls"	"14 22 30 38"
+				"necromastery_max_souls"				"14 22 30 38"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"necromastery_soul_release"		"0.5"
+				"necromastery_soul_release"			"0.5"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_souls_hero_bonus"	"9 10 11 12"
+				"necromastery_souls_hero_bonus"		"9 10 11 12"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls_scepter" "1400 2200 3000 3800"
-				"RequiresScepter"			"1"
+				"necromastery_max_souls_scepter" 		"140 220 300 380"
+				"RequiresScepter"					"1"
 			}			
 		}
 	}

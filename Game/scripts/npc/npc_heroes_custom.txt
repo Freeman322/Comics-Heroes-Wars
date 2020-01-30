@@ -7961,7 +7961,7 @@
 	}
 	"npc_dota_hero_death_eater"
 	{
-    	"BaseClass"     				"npc_dota_hero"
+    		"BaseClass"     			"npc_dota_hero"
 
 		"IsCustom"                  	"1"
 		"DisableWearables"          	"1"

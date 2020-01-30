@@ -45,7 +45,7 @@ function modifier_murlock_primal_eject:OnCreated( kv )
 
         if self:GetCaster():HasTalent("special_bonus_unique_murloc_1") then mult = 0.75 end 
 
-        self:StartIntervalThink(1.7 * mult * (1 / self:GetCaster():GetAttacksPerSecond()))
+        self:StartIntervalThink(2.25 * mult * (1 / self:GetCaster():GetAttacksPerSecond()))
         self:OnIntervalThink()
     end
 end
