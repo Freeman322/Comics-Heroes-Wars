@@ -131,6 +131,9 @@ function Precache( context )
     PrecacheResource("model", "models/items/storm_spirit/tormenta_arms/tormenta_arms.vmdl", context)
     PrecacheResource("model", "models/items/storm_spirit/raikage_ares_armor/raikage_ares_armor.vmdl", context)
 
+    PrecacheResource("model", "models/pets/nezuko_pet/nezuko.vmdl", context)
+    PrecacheResource("model", "models/pets/nezuko_pet/hair.vmdl", context)
+
     PrecacheResource("particle", "particles/econ/courier/courier_trail_orbit/courier_trail_orbit.vpcf", context)
     PrecacheResource("particle", "particles/econ/items/storm_spirit/storm_spirit_orchid_hat/storm_spirit_orchid_hat_ribbon.vpcf", context)
     PrecacheResource("particle", "particles/econ/items/storm_spirit/storm_spirit_tormenta_armor/storm_spirit_tormenta_ambient.vpcf", context)

@@ -2954,20 +2954,23 @@ Rage, rage against the dying of the light."
         "rat"                               "Mr. Disney"
         "rat_lore"                          ""
 
-        "star_emblem_3"                     "Star Emblem III"
-        "star_emblem_3_lore"                ""
+	"star_emblem_3"                     "Star Emblem III"
+	"star_emblem_3_lore"                ""
 
-        "star_emblem_4"                     "Golden Emblem"
-        "star_emblem_4_lore"                ""
+	"star_emblem_4"                     "Golden Emblem"
+	"star_emblem_4_lore"                ""
 
-        "platinum_emblem"                   "Platinum Emblem"
-        "platinum_emblem_lore"              ""
+	"platinum_emblem"                   "Platinum Emblem"
+	"platinum_emblem_lore"              ""
 
-		"brolly"							"Brolly"
-		"brolly_lore"						""
+	"brolly"							"Brolly"
+	"brolly_lore"						""
 
-        "izanagi"                           "Magatsu-Izanagi"
-        "izanagi_lore"                      "Who calls to me...? One who shines in unimaginable darkness... Will you even draw on your hallow self for your strength...? I am Magatsu-Izanagi... I will determine the path you take... A bloodied, more malevolent form of Izanagi, a Japanese creation deity born of the seven divine generations in Japanese mythology. Magatsu means "Calamity" itself, as this god's true mission is to bring forth chaos and destruction. "
+	"nezuko"						"Nezuko"
+	"nezuko_lore"					""
+	
+	"izanagi"                           "Magatsu-Izanagi"
+	"izanagi_lore"                      "Who calls to me...? One who shines in unimaginable darkness... Will you even draw on your hallow self for your strength...? I am Magatsu-Izanagi... I will determine the path you take... A bloodied, more malevolent form of Izanagi, a Japanese creation deity born of the seven divine generations in Japanese mythology. Magatsu means "Calamity" itself, as this god's true mission is to bring forth chaos and destruction. "
 }
 
 

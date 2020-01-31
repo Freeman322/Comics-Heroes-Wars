@@ -489,6 +489,18 @@ function Util:OnHeroInGame(hero)
             end)
         end
 
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "nezuko") == true then
+            PrecacheUnitByNameAsync("npc_dota_companion", function()
+                local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
+                unit:SetOwner(hero)
+                unit:SetControllableByPlayer(hero:GetPlayerID(), true)
+                unit:AddNewModifier(hero, nil, "modifier_pet", {id = hero:GetPlayerID()})
+                unit:AddNewModifier(hero, nil, "modifier_pet_model", {model = "models/pets/nezuko_pet/nezuko.vmdl"})
+
+                SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/pets/nezuko_pet/hair.vmdl"}):FollowEntity(unit, true)
+            end)
+        end
+
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "kawaii") == true then
             PrecacheUnitByNameAsync("npc_dota_companion", function()
                 local unit = CreateUnitByName( "npc_dota_companion", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeamNumber())
