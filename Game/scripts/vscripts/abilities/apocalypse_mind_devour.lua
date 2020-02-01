@@ -1,34 +1,30 @@
 apocalypse_mind_devour = class({})
 LinkLuaModifier ("modifier_apocalypse_mind_devour", "abilities/apocalypse_mind_devour.lua", LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
--- Custom KV
--- AOE Radius
+
 function apocalypse_mind_devour:GetAOERadius()
 	return self:GetSpecialValueFor( "radius" )
 end
 
 --------------------------------------------------------------------------------
--- Ability Start
 function apocalypse_mind_devour:OnSpellStart()
-	-- unit identifier
+	
 	local caster = self:GetCaster()
 	local point = self:GetCursorPosition()
 
-	-- load data
 	local duration = self:GetSpecialValueFor( "duration" )
 	local radius = self:GetSpecialValueFor( "radius" )
 
-	-- find enemies
 	local enemies = FindUnitsInRadius(
-		caster:GetTeamNumber(),	-- int, your team number
-		point,	-- point, center point
-		nil,	-- handle, cacheUnit. (not known)
-		radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-		0,	-- int, flag filter
-		0,	-- int, order filter
-		false	-- bool, can grow cache
+		caster:GetTeamNumber(),	
+		point,	
+		nil,	
+		radius,	
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	
+		0,	
+		0,	
+		false	
 	)
 
 	for _,enemy in pairs(enemies) do
@@ -48,11 +44,11 @@ end
 
 --------------------------------------------------------------------------------
 function apocalypse_mind_devour:PlayEffects1()
-	-- Get Resources
+
 	local particle_cast = "particles/units/heroes/hero_silencer/silencer_curse_cast.vpcf"
 	local sound_cast = "Hero_Silencer.Curse.Cast"
 
-	-- Create Particle
+	
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
 	ParticleManager:SetParticleControlEnt(
 		effect_cast,
@@ -65,7 +61,6 @@ function apocalypse_mind_devour:PlayEffects1()
 	)
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
-	-- Create Sound
 	EmitSoundOn( sound_cast, self:GetCaster() )
 end
 

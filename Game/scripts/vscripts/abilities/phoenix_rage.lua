@@ -167,7 +167,7 @@ function modifier_phoenix_rage:OnIntervalThink ()
     if IsServer () then
         local target = self:GetParent ()
         local caster = self:GetAbility ():GetCaster ()
-        local hp_cost = self:GetAbility():GetSpecialValueFor("hp_cost_perc_per_second")/100
+        local hp_cost = self:GetAbility():GetSpecialValueFor("hp_cost_perc_per_second")
         local damage = (caster:GetMaxHealth()*hp_cost)/10
        
         ApplyDamage({attacker = caster, victim = target, ability = self:GetAbility(), damage = damage , damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS})
@@ -175,7 +175,7 @@ function modifier_phoenix_rage:OnIntervalThink ()
         local side_units = FindUnitsInLine(caster:GetTeam (), caster:GetAbsOrigin(), target:GetAbsOrigin(), nil, 120, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,  DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)
         for i=1, #side_units do
             local targets = side_units[i]
-            local targets_damage = (caster:GetMaxHealth()*hp_cost)/10
+            local targets_damage = (caster:GetMaxHealth()*hp_cost)/100
             if targets == target then
                 ApplyDamage({attacker = caster, victim = targets, ability = self:GetAbility(), damage = 1 , damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY + DOTA_DAMAGE_FLAG_HPLOSS})
             else
