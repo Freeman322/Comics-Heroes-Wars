@@ -4,11 +4,33 @@ if cosmos_jumper == nil then cosmos_jumper = class({}) end
 
 cosmos_jumper.m_hTaget = nil
 
+function cosmos_jumper:CastFilterResultTarget( hTarget )
+     if hTarget == self:GetCaster() then
+          return UF_SUCCESS
+     end
+
+     if hTarget:IsHero() then
+          return UF_FAIL_CUSTOM
+     end
+
+     if hTarget:IsBuilding() then
+          return UF_FAIL_CUSTOM
+     end
+
+     return UF_SUCCESS
+end
+
+--------------------------------------------------------------------------------
+
+function cosmos_jumper:GetCustomCastErrorTarget( hTarget )
+     return ""
+end
+
 function cosmos_jumper:OnSpellStart()
      if IsServer() then
           local hTarget = self:GetCursorTarget()
 
-          if self.m_hTaget then
+          if self.m_hTaget and not self.m_hTaget:IsNull() then
                local hCaster = self.m_hTaget
 
                hCaster:AddNewModifier(self:GetCaster(), self, "modifier_cosmos_jumper", {duration = self:GetSpecialValueFor("tooltip_delay"), target = hTarget:entindex()})

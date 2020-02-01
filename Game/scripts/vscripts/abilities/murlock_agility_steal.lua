@@ -5,6 +5,11 @@ function murlock_agility_steal:GetIntrinsicModifierName()
 	return "modifier_murlock_agility_steal"
 end
 
+function murlock_agility_steal:Spawn()
+	if IsServer() then
+		self:SetLevel(1)
+	end
+end
 --------------------------------------------------------------------------------
 
 function murlock_agility_steal:OnHeroDiedNearby( hVictim, hKiller, kv )
@@ -53,7 +58,11 @@ modifier_murlock_agility_steal = class({})
 
 function modifier_murlock_agility_steal:OnCreated( kv )
 	self.agility_steal_buff_amount = self:GetAbility():GetSpecialValueFor( "agility_steal_buff_amount" )
+	self.hp_regen = self:GetAbility():GetSpecialValueFor( "health_regen" )
+
 	if IsServer() then
+		if self:GetParent():HasTalent("special_bonus_unique_murloc") then self.hp_regen = self.hp_regen * 2 end
+
 		self:SetStackCount( self:GetAbility():GetFleshHeapKills() )
 		self:GetParent():CalculateStatBonus()
 	end
@@ -63,7 +72,11 @@ end
 
 function modifier_murlock_agility_steal:OnRefresh( kv )
 	self.agility_steal_buff_amount = self:GetAbility():GetSpecialValueFor( "agility_steal_buff_amount" )
+	self.hp_regen = self:GetAbility():GetSpecialValueFor( "health_regen" )
+
 	if IsServer() then
+		if self:GetParent():HasTalent("special_bonus_unique_murloc") then self.hp_regen = self.hp_regen * 2 end
+
 		self:GetParent():CalculateStatBonus()
 	end
 end
@@ -72,10 +85,20 @@ end
 
 function modifier_murlock_agility_steal:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_STATS_AGILITY_BONUS
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
 	}
 
 	return funcs
+end
+
+function modifier_murlock_agility_steal:GetModifierMoveSpeedBonus_Percentage( params )
+	return self:GetAbility():GetSpecialValueFor( "bonus_movement_speed" )
+end
+
+function modifier_murlock_agility_steal:GetModifierHealthRegenPercentage( params )
+	return self.hp_regen
 end
 
 --------------------------------------------------------------------------------

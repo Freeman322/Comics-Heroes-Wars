@@ -2,7 +2,7 @@
 {
 	"item_chronograph"
 	{
-		"BaseClass"					"item_lua"
+		"BaseClass"					    "item_lua"
 		"ScriptFile"					"items/item_chronograph.lua"
 
 		"AbilityTextureName"			"custom/chronograph"
@@ -18,13 +18,13 @@
 		"AbilityCastRange"				"720"
 		"AbilityManaCost"				"350"
 
-		//"ItemCost"					""
+		//"ItemCost"
 		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
 		"ItemQuality"					"epic"
 
 		"precache"
 		{
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"soundfile"				    "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
 		}
 
 		"AbilitySpecial"
@@ -32,77 +32,57 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"40"
+				"bonus_evasion"			"25"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_int"			"50"
+				"var_type"			    "FIELD_INTEGER"
+				"bonus_all_stats"	    "35"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_mana_regen"		"5"
+				"var_type"			    "FIELD_INTEGER"
+				"hp_regen_amp"		    "30"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"			"170"
+				"var_type"			    "FIELD_INTEGER"
+				"bonus_attack_speed"	"30"
 			}	
 			"05"
 			{
-				"var_type"	        "FIELD_INTEGER"
-				"bonus_attack_speed"    "60"
+				"var_type"	            "FIELD_INTEGER"
+				"bonus_damage"          "60"
 			}
 			"06"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"			"10"
+				"var_type"			    "FIELD_INTEGER"
+				"bonus_mana_regen"		"10"
 			}
 			"07"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_hp_reg"			"14"
+				"var_type"			    "FIELD_INTEGER"
+				"mana_burn"			    "64"
 			}
 			"08"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"mana_burn"			"100"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"debuff_duration"		"3.5"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"health_reduce"		"30"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"crit_chance"			"20"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"crit_damage"			"240"
+				"var_type"			    "FIELD_INTEGER"
+				"active_duration"		"6.5"
 			}
 		}
 	}
 
 	"item_recipe_chronograph"
 	{
-		"BaseClass"					"item_datadriven"
+		"BaseClass"					    "item_datadriven"
 		"AbilityTextureName"			"recipe"
-		"ItemCost"					"2400"
+		"ItemCost"					    "175"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_chronograph"
 
 		"ItemRequirements"
 		{
-			"01"						"item_bloodthorn;item_ultimate_nullifier"
+			"01"						"item_orchid;item_diffusal_blade;item_heavens_halberd"
 		}
 	}
 
@@ -1504,31 +1484,33 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                    	 "item_lua"
+		"BaseClass"                    	"item_lua"
 		"ID"							"9251"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"            	"custom/frostmourne"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"            "custom/frostmourne"
 		"ItemQuality"					"epic"
 		"ScriptFile"					"items/item_frostmourne.lua"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              	"0"
+		"AbilityCastPoint"              "0"
 		"ItemRequiresCharges"			"1"
 		"ItemDisplayCharges"			"1"
-		"ItemStackable"				"0"
-		"ItemPermanent"				"1"
+		"ItemStackable"				    "0"
+		"ItemPermanent"				    "1"
 		"ItemInitialCharges"			"1"
+
+        "ItemSellable"					"0"
+        "ItemDroppable"					"0"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"               	"160.0"
+		"AbilityCooldown"               "60.0"
 
-		"ItemSellable"					"0"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"              	"400"
 		
-		"ItemCost"					"18000"
+		"ItemCost"					    "18000"
 		
 		"AbilitySpecial"
 		{
@@ -1592,6 +1574,16 @@
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"5.0"
 			}
+			"13"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "active_effect_duration"  "5.0"
+            }
+            "14"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "value"				    "160" //// REINCARNATION C++ COOLDOWN
+            }
 		}
 	}
 
@@ -3009,10 +3001,10 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"9233"
-		"BaseClass"					"item_datadriven"
+		"BaseClass"					    "item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"2100"
+		"ItemCost"					    "2100"
 		"ItemShopTags"					""
 		"AbilityTextureName"           	"recipe"
 		// Recipe
@@ -3255,14 +3247,14 @@
 	"item_recipe_glove_of_the_creator"
 	{
 		// General
-	        "BaseClass"                     "item_datadriven"
-	//-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+	    //-------------------------------------------------------------------------------------------------------------
 		"ID"							"9009"
 		"AbilityTextureName"            "recipe"
 
 		// Item Info
 
-	//-------------------------------------------------------------------------------------------------------------
+	    //-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemShopTags"					""
 

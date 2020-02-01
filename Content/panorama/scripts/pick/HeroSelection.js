@@ -152,14 +152,14 @@ function RebuildUI() {
         }
     }
 
-    if (Game.GetMapInfo().map_name == "maps/dota.vpk")
+    /*if (Game.GetMapInfo().map_name == "maps/dota.vpk")
     {
         $("#npc_dota_hero_godspeed").SetHasClass("Banned", true);
         $("#npc_dota_hero_godspeed").hittest = false;
 
         $("#npc_dota_hero_dark_rider").SetHasClass("Banned", true);
         $("#npc_dota_hero_dark_rider").hittest = false;
-    }
+    }*/
 
     if (getClientStatus(Players.GetLocalPlayer()) < 1) return;
     

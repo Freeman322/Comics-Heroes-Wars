@@ -10,7 +10,6 @@ function aqua_man_wave:OnSpellStart()
         self.aqua_man_wave_distance = self:GetSpecialValueFor( "wave_distance" )
         local agility = self:GetCaster():GetAgility() * self:GetSpecialValueFor("bonus_damage_agi")
         self.aqua_man_wave_damage = self:GetSpecialValueFor( "wave_damage" ) + agility
-        
 
         EmitSoundOn( "Hero_NagaSiren.Riptide.Cast", self:GetCaster() )
 
@@ -68,6 +67,8 @@ function aqua_man_wave:OnProjectileHit( hTarget, vLocation )
             local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_tidehunter/tidehunter_gush_splash_water3.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
             ParticleManager:SetParticleControlForward( nFXIndex, 1, vDirection )
             ParticleManager:ReleaseParticleIndex( nFXIndex )
+
+            hTarget:AddNewModifier(self:GetCaster(), self, "modifier_tidehunter_gush", {duration = 2.5})
         end
     end
 

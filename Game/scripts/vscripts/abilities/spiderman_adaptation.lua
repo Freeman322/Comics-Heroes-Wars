@@ -22,9 +22,8 @@ function spiderman_adaptation:OnSpellStart ()
         caster:AddNewModifier (caster, self, "modifier_spiderman_adaptation", nil)
         EmitSoundOn ("Ability.Leap", caster)
 
-        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "lee") then
-            EmitSoundOn( "Lee.Cast1", self:GetCaster() )
-        end
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "lee") then EmitSoundOn( "Lee.Cast1", self:GetCaster() ) end
+        if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "rat") then EmitSoundOn("Rat.Cast", self:GetCaster()) end
     end
 end
 

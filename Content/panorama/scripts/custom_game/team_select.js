@@ -25,7 +25,7 @@ function OnLockAndStartPressed()
 {
 	// Don't allow a forced start if there are unassigned players
 	if ( Game.GetUnassignedPlayerIDs().length > 0  )
-		return;
+		Game.AutoAssignPlayersToTeams();
 
 	// Lock the team selection so that no more team changes can be made
 	Game.SetTeamSelectionLocked( true );
@@ -352,4 +352,6 @@ function UpdateTimer()
 	// Register a listener for the event which is broadcast whenever a player attempts to pick a team
 	$.RegisterForUnhandledEvent( "DOTAGame_PlayerSelectedCustomTeam", OnPlayerSelectedTeam );
 
+	CheckForHostPrivileges();
+	OnLockAndStartPressed();
 })();

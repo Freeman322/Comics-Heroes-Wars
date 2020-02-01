@@ -92,7 +92,7 @@
 	"new_npc_dota_hero_dark_seer"  "Outsider"
 	"new_npc_dota_hero_sniper"  "Rocket"
 	"npc_dota_warlock_golem_1"   "YAZ'"
-	"new_npc_dota_hero_faceless_void" "Byonder"
+	"new_npc_dota_hero_void_spirit" "Byonder"
 	"npc_dota_warlock_golem_2"   "Astral Ghost"
 	"npc_dota_warlock_golem_scepter_1"  "Demon"
 	"npc_dota_warlock_golem_3"   "Demon"
@@ -210,7 +210,7 @@
 	"new_npc_dota_hero_ember_spirit_hype"		"Superman Journey lasted roughly until the turn of 700 century. During this time he acquired a truly kollosalnye skill, strength and skills from across the universe. When Kal-El returned to Earth, he made an agreement with their descendants, in which he shared with them a part of its power as long as they serve truth and justice."
 	"new_npc_dota_hero_enchantress_hype"		"Lena Oxton was the youngest volunteer in the flight test program Overwatch. During the first tests of the prototype inter-dimensional fighter superflare failed in teleports matrix. Fighter had disappeared along with the pilot, Lena Oxton considered missing and dead. A few months later it turned out that the girl is still alive, but the accident occurred chronological dissociation and her body molecules sync'd with the flow of time. Since it gained her abilities."		
 	"new_npc_dota_hero_enigma_hype"			   	"On the origin of Infinity knows nothing. From the old times there were only stories and legends, and most of them do not even look like the truth. In fact, Infinity - a great puzzle for those who need only to describe: it's incredibly powerful scavenger worlds. He - a child of emptiness, sometimes material, sometimes - a disembodied. The monster that lives between the two measurements."
-	"new_npc_dota_hero_faceless_void_hype"		"Space essence of incredible power that a wave of the hand can destroy the galaxy."
+	"new_npc_dota_hero_void_spirit_hype"		"Space essence of incredible power that a wave of the hand can destroy the galaxy."
 	"new_npc_dota_hero_huskar_hype"			    "With incredible power, Vader has taken up the position of a second person in the state and personal artist of the Emperor."
 	"new_npc_dota_hero_invoker_hype"			"Taneliir Tivan one of the Elders of the Universe. He apparently came to the consciousness of billions of years ago. He - an extremely powerful cosmic entity that owns the Aboriginal Authority. Originally it appeared in the form of a frail, elderly humanoid, but later acquired a more powerful physical appearance, which, obviously, is his true form."	
 	"new_npc_dota_hero_juggernaut_hype"	  		"Atomic Samurai hired a private organization the Association to confront monsters and criminals. He is №4 in the S-Class Heroes Association, which gives him the right to be considered one of the strongest fighters in the world. It specializes in melee combat using a high-speed attack sword."
@@ -318,7 +318,7 @@
 	"npc_dota_hero_ember_spirit_hype"		"Superman Journey lasted roughly until the turn of 700 century. During this time he acquired a truly kollosalnye skill, strength and skills from across the universe. When Kal-El returned to Earth, he made an agreement with their descendants, in which he shared with them a part of its power as long as they serve truth and justice."
 	"npc_dota_hero_enchantress_hype"		"Lena Oxton was the youngest volunteer in the flight test program Overwatch. During the first tests of the prototype inter-dimensional fighter superflare failed in teleports matrix. Fighter had disappeared along with the pilot, Lena Oxton considered missing and dead. A few months later it turned out that the girl is still alive, but the accident occurred chronological dissociation and her body molecules sync'd with the flow of time. Since it gained her abilities."		
 	"npc_dota_hero_enigma_hype"			   	"On the origin of Infinity knows nothing. From the old times there were only stories and legends, and most of them do not even look like the truth. In fact, Infinity - a great puzzle for those who need only to describe: it's incredibly powerful scavenger worlds. He - a child of emptiness, sometimes material, sometimes - a disembodied. The monster that lives between the two measurements."
-	"npc_dota_hero_faceless_void_hype"		"Space essence of incredible power that a wave of the hand can destroy the galaxy."
+	"npc_dota_hero_void_spirit_hype"		"Space essence of incredible power that a wave of the hand can destroy the galaxy."
 	"npc_dota_hero_huskar_hype"			    "With incredible power, Vader has taken up the position of a second person in the state and personal artist of the Emperor."
 	"npc_dota_hero_invoker_hype"			"Taneliir Tivan one of the Elders of the Universe. He apparently came to the consciousness of billions of years ago. He - an extremely powerful cosmic entity that owns the Aboriginal Authority. Originally it appeared in the form of a frail, elderly humanoid, but later acquired a more powerful physical appearance, which, obviously, is his true form."	
 	"npc_dota_hero_juggernaut_hype"	  		"Atomic Samurai hired a private organization the Association to confront monsters and criminals. He is №4 in the S-Class Heroes Association, which gives him the right to be considered one of the strongest fighters in the world. It specializes in melee combat using a high-speed attack sword."
@@ -1104,7 +1104,7 @@
 "npc_dota_hero_obsidian_destroyer"  "Living Tribunal"
 "npc_dota_hero_dark_seer"  "Outsider"
 "npc_dota_hero_sniper"  "Rocket"
-"npc_dota_hero_faceless_void" "Byonder"
+"npc_dota_hero_void_spirit" "Byonder"
 "npc_dota_hero_night_stalker" "Black Bolt"
 "npc_dota_hero_pugna" "Helspont"
 "npc_dota_hero_shadow_demon" "Sargeras"
@@ -2861,8 +2861,32 @@ Rage, rage against the dying of the light."
         "lee"                             "Lee"
         "lee_lore"                        ""
 
+		"dark_emblem_2"						"Green Emblem"
+		"dark_emblem_2_lore"				""
+
+		"star_emblem_2"						"Star Emblem III"
+		"star_emblem_2_lore"				""
+
+		"kirito"							"The Kirito"
+		"kirito_lore"						"Lol What?!"
+
         "zoro"                             "Zoro"
         "zoro_lore"                        ""
+
+		"sailor"                             "Sailor"
+        "sailor_lore"                        ""
+
+		"sanji"								"Sanji"
+		"sanji_lore"						""
+
+		"2019_service_medal"			 	"2019 Year Service Medal"
+		"2019_service_medal_lore"			"Here is another year behind! In the new year, more adventures await us, friend!"
+
+		"guru"								"2019 Year Guru Medal"
+		"guru_lore"							""
+
+		"2019_winter_chest"					"Trust of The Founder vol.2"
+		"2019_winter_chest_lore"			""
 
         "pepe"                             "Pepe"
         "pepe_lore"                        ""
@@ -2911,6 +2935,33 @@ Rage, rage against the dying of the light."
 
         "lovuska_jokera"                     "Joka"
 		"lovuska_jokera_lore"                 ""
+
+		"dark_emblem"                       "The Dark Emblem"
+		"dark_emblem_lore"                  ""
+
+		"2020_tier1"						"CHW WORLD CUP 2020 FINALIST"
+        "2020_tier1_lore"					"In the end... Its doesnt even matter."
+
+        "2020_tier2"						"CHW WORLD CUP 2020 HALF-FINALIST"
+        "2020_tier2_lore"					"In the end... Its doesnt even matter."
+
+        "2020_tier3"						"CHW WORLD CUP 2020 QUARTERFINALIST"
+        "2020_tier3_lore"					"In the end... Its doesnt even matter."
+
+        "rat"                               "Mr. Disney"
+        "rat_lore"                          ""
+
+        "star_emblem_3"                     "Star Emblem III"
+        "star_emblem_3_lore"                ""
+
+        "star_emblem_4"                     "Golden Emblem"
+        "star_emblem_4_lore"                ""
+
+        "platinum_emblem"                   "Platinum Emblem"
+        "platinum_emblem_lore"              ""
+
+        "izanagi"                           "Magatsu-Izanagi"
+        "izanagi_lore"                      "Who calls to me...? One who shines in unimaginable darkness... Will you even draw on your hallow self for your strength...? I am Magatsu-Izanagi... I will determine the path you take... A bloodied, more malevolent form of Izanagi, a Japanese creation deity born of the seven divine generations in Japanese mythology. Magatsu means "Calamity" itself, as this god's true mission is to bring forth chaos and destruction. "
 }
 
 

@@ -168,12 +168,14 @@ function samurai_atomic_dance:OnSpellStart()
                     ParticleManager:SetParticleControl (nFXIndex, 3, Vector (0, 0, 0));
                     ParticleManager:ReleaseParticleIndex (nFXIndex);
                 end
+
                 hCaster:StartGestureWithPlaybackRate (ACT_DOTA_ATTACK, 2)
+                
                 EmitSoundOn ("Hero_Juggernaut.OmniSlash.Damage", target)
+
                 hCaster:PerformAttack (unit, false, false, true, true, false, false, true)
                 hCaster:PerformAttack (unit, false, false, true, true, false, false, true)
-                hCaster:PerformAttack (unit, false, false, true, true, false, false, true)
-                hCaster:PerformAttack (unit, false, false, true, true, false, false, true)
+                hCaster:PerformAttack (unit, false, false, true, true, false, false, true)       
             end)
             unit.dest = nil
         end

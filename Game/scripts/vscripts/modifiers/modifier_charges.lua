@@ -1,56 +1,56 @@
 modifier_charges = class({})
 
 if IsServer() then
-  function modifier_charges:Update()
-    if self:GetDuration() == -1 then
-      self:SetDuration(self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time")), true)
-      self:StartIntervalThink(self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time")))
+    function modifier_charges:Update()
+        if self:GetDuration() == -1 then
+            self:SetDuration(self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time")), true)
+            self:StartIntervalThink(self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time")))
+        end
+
+        if self:GetStackCount() == self:GetAbility():GetSpecialValueFor("max_charges") then self:SetDuration(-1, true)
+            elseif self:GetStackCount() > self:GetAbility():GetSpecialValueFor("max_charges") then self:SetDuration(-1, true)  self:SetStackCount(self:GetAbility():GetSpecialValueFor("max_charges"))
+        end
+
+        if self:GetStackCount() == 0 then self:GetAbility():StartCooldown(self:GetRemainingTime()) end
+
+        self:GetParent():CalculateStatBonus()
     end
-
-	  if self:GetStackCount() == self:GetAbility():GetSpecialValueFor("max_charges") then self:SetDuration(-1, true)
-	    elseif self:GetStackCount() > self:GetAbility():GetSpecialValueFor("max_charges") then self:SetDuration(-1, true)  self:SetStackCount(self:GetAbility():GetSpecialValueFor("max_charges"))
-	  end
-
-    if self:GetStackCount() == 0 then self:GetAbility():StartCooldown(self:GetRemainingTime()) end
-
-    self:GetParent():CalculateStatBonus()
-  end
 
   function modifier_charges:OnCreated()
-    self:SetStackCount(self:GetAbility():GetSpecialValueFor("max_charges"))
-    if self:GetStackCount() ~= self:GetAbility():GetSpecialValueFor("max_charges") then
-      self:Update()
-    end
+      self:SetStackCount(self:GetAbility():GetSpecialValueFor("max_charges"))
+      if self:GetStackCount() ~= self:GetAbility():GetSpecialValueFor("max_charges") then
+          self:Update()
+      end
   end
 
   function modifier_charges:DeclareFunctions() return {MODIFIER_EVENT_ON_ABILITY_FULLY_CAST} end
 
   function modifier_charges:OnAbilityFullyCast(params)
-    if params.unit == self:GetParent() then
-      if params.ability == self:GetAbility() then
-        self:DecrementStackCount()
-	       params.ability:EndCooldown()
-         self:Update()
-		  elseif params.ability:GetName() == "item_refresher" and self:GetStackCount() < self:GetAbility():GetSpecialValueFor("max_charges") then
-        self:IncrementStackCount()
-        self:Update()
+      if params.unit == self:GetParent() then
+          if params.ability == self:GetAbility() then
+              self:DecrementStackCount()
+                  params.ability:EndCooldown()
+              self:Update()
+                  elseif params.ability:GetName() == "item_refresher" and self:GetStackCount() < self:GetAbility():GetSpecialValueFor("max_charges") then
+              self:IncrementStackCount()
+              self:Update()
+          end
       end
-    end
-    return 0
+      return 0
   end
 
   function modifier_charges:OnIntervalThink()
-    if self:GetStackCount() < self:GetAbility():GetSpecialValueFor("max_charges") then
-      self:SetDuration( self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time")), true)
-      self:IncrementStackCount()
+      if self:GetStackCount() < self:GetAbility():GetSpecialValueFor("max_charges") then
+            self:SetDuration( self:GetCaster():GetCooldownTimeAfterReduction(self:GetAbility():GetSpecialValueFor("recharge_time")), true)
+            self:IncrementStackCount()
 
-      if self:GetStackCount() == self:GetAbility():GetSpecialValueFor("max_charges") then
-        self:SetDuration(-1, true)
-        self:StartIntervalThink(-1)
+            if self:GetStackCount() == self:GetAbility():GetSpecialValueFor("max_charges") then
+                self:SetDuration(-1, true)
+                self:StartIntervalThink(-1)
+            end
       end
+      self:GetParent():CalculateStatBonus()
     end
-    self:GetParent():CalculateStatBonus()
-  end
 end
 
 function modifier_charges:DestroyOnExpire() return false end
