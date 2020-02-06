@@ -42819,35 +42819,35 @@
 	}
 
 	"tatsumaki_moon_fall"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     	"ability_lua"
-        "ScriptFile"					"abilities/tatsumaki_moon_fall.lua"
-        "AbilityTextureName"            	"custom/tatsumaki_moon_fall"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     	"ability_lua"
+		"ScriptFile"					"abilities/tatsumaki_moon_fall.lua"
+		"AbilityTextureName"            	"custom/tatsumaki_moon_fall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
-        "AbilityCastRange"				"800 900 1000"
-        "AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"800 900 1000"
+		"AbilityCastPoint"				"0.3"
 
-	   "AbilityChannelTime"				"3.0"
+		"AbilityChannelTime"				"3.0"
 
-        // Time
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"120 110 100"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120 110 100"
 
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"				"375 475 575"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"375 475 575"
 
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-           	"01"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"land_time"				"1.3"
@@ -42898,6 +42898,6 @@
 				"var_type"				"FIELD_FLOAT"
 				"burn_dps"				"11 22 33"
 			}
-        }
+		}
     }
 }

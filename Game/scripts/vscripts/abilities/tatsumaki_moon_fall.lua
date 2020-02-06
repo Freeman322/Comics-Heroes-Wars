@@ -1,6 +1,7 @@
 tatsumaki_moon_fall = class({})
 
 LinkLuaModifier( "modifier_tatsumaki_moon_fall_thinker", "abilities/tatsumaki_moon_fall.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_tatsumaki_moon_fall_burn_thinker", "abilities/tatsumaki_moon_fall.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_tatsumaki_moon_fall_burn", "abilities/tatsumaki_moon_fall.lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
@@ -80,19 +81,6 @@ function modifier_tatsumaki_moon_fall_thinker:OnRefresh( kv )
 	
 end
 
-function modifier_tatsumaki_moon_fall_thinker:OnDestroy( kv )
-	if IsServer() then
-		-- add vision
-		AddFOWViewer( self:GetCaster():GetTeamNumber(), self:GetParent():GetOrigin(), self.vision, self.vision_duration, false)
-
-		-- stop effects
-		local sound_loop = "Hero_Invoker.ChaosMeteor.Loop"
-		local sound_stop = "Hero_Invoker.ChaosMeteor.Destroy"
-		StopSoundOn( sound_loop, self:GetParent() )
-		EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), sound_stop, self:GetCaster() )
-	end
-end
-
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_tatsumaki_moon_fall_thinker:OnIntervalThink()
@@ -101,11 +89,8 @@ function modifier_tatsumaki_moon_fall_thinker:OnIntervalThink()
 		self.fallen = true
 		self:StartIntervalThink( self.interval )
 		self:Burn()
-		
-		self:PlayEffects2()
 	else
-		-- move & damages
-		self:Move_Burn()
+		self:Destroy()
 	end
 end
 
@@ -139,25 +124,6 @@ function modifier_tatsumaki_moon_fall_thinker:Burn()
 end
 
 --------------------------------------------------------------------------------
--- Motion effects
-function modifier_tatsumaki_moon_fall_thinker:Move_Burn()
-	local parent = self:GetParent()
-
-	-- set position
-	local target = self.direction*self.speed*self.interval
-	parent:SetOrigin( parent:GetOrigin() + target )
-
-	-- Burn
-	self:Burn()
-	
-	-- check distance for next step
-	if (parent:GetOrigin() - self.parent_origin + target):Length2D()>self.distance then
-		self:Destroy()
-		return
-	end
-end
-
---------------------------------------------------------------------------------
 -- Graphics & Animations
 function modifier_tatsumaki_moon_fall_thinker:PlayEffects1()
 	-- Get Resources
@@ -180,33 +146,93 @@ function modifier_tatsumaki_moon_fall_thinker:PlayEffects1()
 	EmitSoundOnLocationWithCaster( self.caster_origin, sound_impact, self:GetCaster() )
 end
 
-function modifier_tatsumaki_moon_fall_thinker:PlayEffects2()
-	-- Get Resources
-	local particle_cast = "particles/units/heroes/hero_invoker/invoker_chaos_meteor.vpcf"
-	local sound_impact = "Hero_Invoker.ChaosMeteor.Impact"
-	local sound_loop = "Hero_Invoker.ChaosMeteor.Loop"
+function modifier_tatsumaki_moon_fall_thinker:OnDestroy()
+	if IsServer() then
+		-- Get Resources
+		local sound_impact = "Hero_Invoker.ChaosMeteor.Impact"
+		local sound_loop = "Hero_Invoker.ChaosMeteor.Loop"
 
-	-- Create Particle
-	-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, nil )
-	local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_WORLDORIGIN, nil )
-	ParticleManager:SetParticleControl( effect_cast, 0, self.parent_origin )
-	ParticleManager:SetParticleControlForward( effect_cast, 0, self.direction )
-	ParticleManager:SetParticleControl( effect_cast, 1, self.direction * self.speed )
-	-- ParticleManager:ReleaseParticleIndex( effect_cast )
+		-- add vision
+		AddFOWViewer( self:GetCaster():GetTeamNumber(), self:GetParent():GetAbsOrigin(), self.vision, self.vision_duration, false)
 
-	-- -- buff particle
-	self:AddParticle(
-		effect_cast,
-		false,
-		false,
-		-1,
-		false,
-		false
-	)
+		StopSoundOn( "Hero_Invoker.ChaosMeteor.Loop", self:GetParent() )
+		
+		EmitSoundOnLocationWithCaster( self:GetParent():GetAbsOrigin(), "Hero_Invoker.ChaosMeteor.Destroy", self:GetParent() )
+		EmitSoundOnLocationWithCaster( self:GetParent():GetAbsOrigin(), "Hero_Invoker.ChaosMeteor.Impact", self:GetParent() )
+		
+		EmitSoundOn( sound_impact, self:GetParent() )
 
-	-- Create Sound
-	EmitSoundOnLocationWithCaster( self.parent_origin, sound_impact, self:GetCaster() )
-	EmitSoundOn( sound_loop, self:GetParent() )
+		local nFXIndex = ParticleManager:CreateParticle( "particles/tatsumaki/tatsumaki_ground.vpcf", PATTACH_CUSTOMORIGIN, thinker)
+		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetAbsOrigin())
+		ParticleManager:SetParticleControl( nFXIndex, 3, self:GetParent():GetAbsOrigin())
+		ParticleManager:SetParticleControl( nFXIndex, 5, self:GetParent():GetAbsOrigin())
+		ParticleManager:SetParticleControl( nFXIndex, 4, self:GetParent():GetAbsOrigin())
+		ParticleManager:ReleaseParticleIndex(nFXIndex)
+		self:AddParticle( nFXIndex, false, false, -1, false, true )
+
+		local nFXIndex = ParticleManager:CreateParticle( "particles/thanos/thanos_supernova_explode_a.vpcf", PATTACH_CUSTOMORIGIN, nil );
+
+		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetAbsOrigin());
+		ParticleManager:SetParticleControl( nFXIndex, 1, self:GetParent():GetAbsOrigin());
+		ParticleManager:SetParticleControl( nFXIndex, 3, self:GetParent():GetAbsOrigin());
+
+		ParticleManager:SetParticleControl( nFXIndex, 5, Vector(self.radius, self.radius, 0));
+		ParticleManager:ReleaseParticleIndex( nFXIndex );
+		self:AddParticle( nFXIndex, false, false, -1, false, true )
+
+		EmitSoundOn( "Hero_EarthShaker.EchoSlam", self:GetParent() )
+		EmitSoundOn( "Hero_EarthShaker.EchoSlamEcho", self:GetParent() )
+		EmitSoundOn( "Hero_EarthShaker.EchoSlamSmall", self:GetParent() )
+		EmitSoundOn( "PudgeWarsClassic.echo_slam", self:GetParent() )
+
+		local team_id = self:GetCaster():GetTeamNumber()
+		CreateModifierThinker(self:GetCaster(), self:GetAbility(), "modifier_tatsumaki_moon_fall_burn_thinker", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")}, self.parent_origin, team_id, false)
+	end
+end
+
+modifier_tatsumaki_moon_fall_burn_thinker = class ({})
+
+function modifier_tatsumaki_moon_fall_burn_thinker:OnCreated(event)
+    if IsServer() then
+        local thinker = self:GetParent()
+	   local target = self:GetParent():GetAbsOrigin()
+	   
+        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard_fire_inner.vpcf", PATTACH_CUSTOMORIGIN, thinker )
+        ParticleManager:SetParticleControl( nFXIndex, 0, target)
+        ParticleManager:SetParticleControl( nFXIndex, 1, target)
+	   self:AddParticle( nFXIndex, false, false, -1, false, true )
+	   
+        AddFOWViewer( thinker:GetTeam(), target, 1500, 5, false)
+        GridNav:DestroyTreesAroundPoint(target, 1500, false)
+    end
+end
+
+function modifier_tatsumaki_moon_fall_burn_thinker:CheckState()
+	return {[MODIFIER_STATE_PROVIDES_VISION] = true}
+end
+
+function modifier_tatsumaki_moon_fall_burn_thinker:IsAura()
+    return true
+end
+
+function modifier_tatsumaki_moon_fall_burn_thinker:GetAuraRadius()
+    return self:GetAbility():GetSpecialValueFor("vision_distance")
+end
+
+function modifier_tatsumaki_moon_fall_burn_thinker:GetAuraSearchTeam()
+    return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+function modifier_tatsumaki_moon_fall_burn_thinker:GetAuraSearchType()
+    return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
+end
+
+function modifier_tatsumaki_moon_fall_burn_thinker:GetAuraSearchFlags()
+    return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS
+end
+
+function modifier_tatsumaki_moon_fall_burn_thinker:GetModifierAura()
+    return "modifier_tatsumaki_moon_fall_burn"
 end
 
 modifier_tatsumaki_moon_fall_burn = class({})
@@ -239,7 +265,6 @@ function modifier_tatsumaki_moon_fall_burn:OnCreated( kv )
 	if IsServer() then
 		-- references
 		local damage = self:GetAbility():GetSpecialValueFor( "burn_dps" )
-		local delay = 1
 		self.damageTable = {
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
@@ -249,7 +274,7 @@ function modifier_tatsumaki_moon_fall_burn:OnCreated( kv )
 		}
 
 		-- Start interval
-		self:StartIntervalThink( delay )
+		self:StartIntervalThink( self:GetAbility():GetSpecialValueFor( "damage_interval" ) )
 	end
 end
 
@@ -259,6 +284,26 @@ end
 
 function modifier_tatsumaki_moon_fall_burn:OnDestroy( kv )
 
+end
+
+function modifier_tatsumaki_moon_fall_burn:CheckState()
+	local state = {
+		[MODIFIER_STATE_DISARMED] = true
+	}
+
+	return state
+end
+
+function modifier_tatsumaki_moon_fall_burn:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
+	}
+
+	return funcs
+end
+
+function modifier_tatsumaki_moon_fall_burn:GetModifierMoveSpeed_Absolute()
+	return 155
 end
 
 --------------------------------------------------------------------------------
