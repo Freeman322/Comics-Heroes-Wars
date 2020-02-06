@@ -35217,7 +35217,7 @@
 	"genos_incineration"
 	{
 		"BaseClass"								"ability_lua"
-		"ScriptFile"								"abilities/genos/genos_incineration.lua"
+		"ScriptFile"								"abilities/genos_incineration.lua"
 		"AbilityType"								"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityTextureName"						"custom/genos_incineration"
 
@@ -35269,7 +35269,7 @@
 	"genos_acceleration"
 	{
 		"BaseClass"							"ability_lua"
-		"ScriptFile"							"abilities/genos/genos_acceleration.lua"
+		"ScriptFile"							"abilities/genos_acceleration.lua"
 		"AbilityType"							"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityTextureName"					"custom/genos_acceleration"
 
@@ -35308,14 +35308,14 @@
 
 	"genos_glue_trap"
 	{
-		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/genos/genos_glue_trap.lua"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"						"abilities/genos_glue_trap.lua"
 		"AbilityType"						"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityTextureName"		"custom/genos_glue_trap"
+		"AbilityTextureName"				"custom/genos_glue_trap"
 
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityManaCost"					"125 150 175 200"
 		"AbilityCooldown"					"50 45 40 35"
 		"AbilityCastRange"					"350 400 450 500"
@@ -35346,15 +35346,15 @@
 
 	"genos_spiral_incineration" //Руки вместе и бдыщь (аое)
 	{
-		"BaseClass"							"ability_lua"
-		"AbilityTextureName"		"custom/genos_spiral_incineration"
-		"ScriptFile"						"abilities/genos/genos_spiral_incineration.lua"
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"				"custom/genos_spiral_incineration"
+		"ScriptFile"						"abilities/genos_spiral_incineration.lua"
 		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
 
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_POINT"
 
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 
@@ -35394,7 +35394,7 @@
 	"genos_incineration_max" //Ядро в руку (соло таргет)
 	{
 		"BaseClass"								"ability_lua"
-		"ScriptFile"								"abilities/genos/genos_incineration_max.lua"
+		"ScriptFile"								"abilities/genos_incineration_max.lua"
 		"AbilityTextureName"						"custom/genos_incineration_max"
 		"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
 
@@ -42525,7 +42525,7 @@
 
         "precache"
         {
-            "soundfile"         "soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+            "soundfile"        			 "soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
         }
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -42572,6 +42572,332 @@
                 "var_type"					"FIELD_FLOAT"
                 "point_blank_dmg_bonus_pct"	"50.0"
             }
+        }
+    }
+     "tatsumaki_flying_death"
+	{
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     	"ability_lua"
+		"ScriptFile"					"abilities/tatsumaki_flying_death.lua"
+		"AbilityTextureName"            	"custom/tatsumaki_flying_death"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.15"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilityCharges"				"2"
+		"AbilityChargeRestoreTime"		"24 22 20 18"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"115 110 105 100"
+
+		"precache"
+		{
+			"soundfile"         			"soundevents/hero_tatsumaki.vsndevts"
+			"soundfile"        				 "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fly_speed"				"2000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fly_base_damage"			"70 100 130 160"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fly_crit_pct"	        		"140 160 180 200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"earth_spike_damage"		"110 140 170 200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"earth_spike_radius"    		"125 150 175 200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"earth_spike_range"	    		"525 650 775 900"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"earth_spike_stun"      		"1.2 1.4 1.6 1.8"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Tatsumaki: Telekinesis
+	//=================================================================================================================
+	"tatsumaki_mass_telekinesis"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     	"ability_lua"
+		"ScriptFile"					"abilities/tatsumaki_mass_telekinesis.lua"
+		"AbilityTextureName"           	"custom/tatsumaki_mass_telekinesis"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+       	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"36 34 32 30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"550 575 600 625"
+
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					     "FIELD_INTEGER"
+				"telekinesis_radius"				"325 400 475 525"
+			}
+			"02"
+			{
+				"var_type"					     "FIELD_INTEGER"
+				"telekinesis_fall_damage"	   		"90 160 230 300"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"telekinesis_duration"		    		"1.8 2.2 2.6 3.0"
+			}
+			"04"
+			{
+				"var_type"				          "FIELD_INTEGER"
+				"earth_shake_manacost_pct"	    		"50"
+			}
+			"05"
+			{
+				"var_type"				          "FIELD_INTEGER"
+				"earth_shake_max_hp_damage_pct"		"20 25 30 35"
+				"CalculateSpellDamageTooltip"			"0"
+			}
+			"06"
+			{
+				"var_type"				          "FIELD_FLOAT"
+				"earth_shake_bonus_stun"	    			"0.7 0.8 0.9 1.0"
+			}
+		}
+
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}	
+
+	//=================================================================================================================
+	// Rubick: Telekinesis Land
+	//=================================================================================================================
+	"tatsumaki_mass_telekinesis_land"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     	"ability_lua"
+		"ScriptFile"					"abilities/tatsumaki_mass_telekinesis.lua"
+		"AbilityTextureName"           	"custom/tatsumaki_mass_telekinesis_land"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET  | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"MaxLevel"					"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	"tatsumaki_mastery"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     	"ability_lua"
+		"ScriptFile"					"abilities/tatsumaki_mastery.lua"
+		"AbilityTextureName"            	"custom/tatsumaki_mastery"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityCastRange"				"700 900 1100 1300"
+		"AbilityCastPoint"				"0.5"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"26 22 18 14"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"135 140 145 150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"max_stacks"							"3 4 5 6"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"one_stack_reduction"			   	 	"10 14 18 22"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"stack_recovery_time"			    		"13 12 11 10"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"minimum_damage"						"40"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"fly_speed"							"1500"
+			}
+            	"06"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"fly_range"							"700 900 1100 1300"
+			}
+            	"07"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"fly_avalance_radius"					"350 400 450 500"
+			}
+            	"08"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"fly_avalance_total_damage"				"100 175 250 325"
+			}
+            	"09"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"fly_avalance_stun_per_tick"	    			"0.2"
+			}
+            	"10"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"creep_evasion_pct"	                		"20 30 40 50"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	"tatsumaki_moon_fall"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     	"ability_lua"
+        "ScriptFile"					"abilities/tatsumaki_moon_fall.lua"
+        "AbilityTextureName"            	"custom/tatsumaki_moon_fall"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+        "AbilityCastRange"				"800 900 1000"
+        "AbilityCastPoint"				"0.3"
+
+	   "AbilityChannelTime"				"3.0"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"120 110 100"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"375 475 575"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+           	"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"land_time"				"1.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"			"275"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_distance"			"615 1245 1775"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_speed"				"300"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"			"0.5"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_distance"			"500"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"end_vision_duration"		"3.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"main_damage"				"75 110 180"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_duration"			"3.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_dps"				"11 22 33"
+			}
         }
     }
 }

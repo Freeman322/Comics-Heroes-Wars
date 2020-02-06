@@ -36,6 +36,37 @@
 			}
 		}
 	}
+	"models/heroes/hero_tatsumaki/tatsumaki.vmdl"
+	{
+		"PortraitLightPosition"		"69.29 -11.57 252.09"
+		"PortraitLightAngles"		"56.51 182.29 0.00"
+		"PortraitLightFOV"		"63"
+		"PortraitLightDistance"		"207"
+		"PortraitLightColor"		"254 233 233"
+		"PortraitShadowColor"		"131 131 131"
+		"PortraitShadowScale"		"1.025000"
+		"PortraitAmbientColor"		"161 100 0"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_desert.vmat"
+		"PortraitBackgroundColor1"		"1 .5 .5"
+		"PortraitBackgroundColor2"		"1 .8 .9"
+		"PortraitBackgroundColor3"		"0 0 0"
+		"PortraitBackgroundColor4"		"1 .5 .5"
+		"PortraitLightScale"		"2.750000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-76.520 7.960 38.340"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"166.15 -156.83 60.25"
+				"PortraitAngles"		"337.05 136.08 0.00"
+				"PortraitFOV"			"12"
+			}
+		}
+	}
 	"models/heroes/brolly_skin/brolly.vmdl"
 	{
 		"PortraitLightPosition"		"69.29 -11.57 252.09"
@@ -712,6 +743,90 @@
 				"PortraitFOV"			"10"
 			}
 		}
+	}
+	"models/heroes/hero_ironfist/iron_fist.vmdl"
+	{
+		"PortraitLightPosition"		"268.379517 161.747589 274.827637"
+		"PortraitLightAngles"		"31.151731 -150.185196 24.114828"
+		"PortraitLightFOV"		"42.769001"
+		"PortraitLightDistance"		"459.739990"
+		"PortraitLightColor"		"255 238 205"
+		"PortraitShadowColor"		"77 62 148"
+		"PortraitShadowScale"		"5.662000"
+		"PortraitAmbientColor"		"255 245 137"
+		"PortraitAmbientScale"		"10.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitParticle"		"particles/units/heroes/hero_pangolier/pangolier_loadout.vpcf"
+		"PortraitBackgroundColor1"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor2"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor3"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor4"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_pangolin.vmat"
+		"PortraitLightScale"		"1.522000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-0.630 -0.502 0.593"
+		"PortraitAnimationActivity"		"ACT_DOTA_CAPTURE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"323.079620 100.511253 152.230835"
+				"PortraitAngles"		"1.538313 197.549713 0.720001"
+				"PortraitFOV"		"5.722000"
+				"PortraitFar"		"1000.000000"
+			}
+		}
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitAnimationCycle"		"0.500000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitHideParticles"		"0"
+		"PortraitHideDropShadow"		"0"
+		"PortraitDesaturateParticles"		"0"
+		"PortraitDesaturateHero"		"1"
+	}
+	"models/heroes/hero_genos/genos.vmdl"
+	{
+		"PortraitLightPosition"		"268.379517 161.747589 274.827637"
+		"PortraitLightAngles"		"31.151731 -150.185196 24.114828"
+		"PortraitLightFOV"		"42.769001"
+		"PortraitLightDistance"		"459.739990"
+		"PortraitLightColor"		"255 238 205"
+		"PortraitShadowColor"		"77 62 148"
+		"PortraitShadowScale"		"5.662000"
+		"PortraitAmbientColor"		"255 245 137"
+		"PortraitAmbientScale"		"10.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitParticle"		"particles/units/heroes/hero_pangolier/pangolier_loadout.vpcf"
+		"PortraitBackgroundColor1"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor2"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor3"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundColor4"		"1.000000 1.000000 1.000000"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_pangolin.vmat"
+		"PortraitLightScale"		"1.522000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-0.630 -0.502 0.593"
+		"PortraitAnimationActivity"		"ACT_DOTA_CAPTURE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"323.079620 100.511253 152.230835"
+				"PortraitAngles"		"1.538313 197.549713 0.720001"
+				"PortraitFOV"		"5.722000"
+				"PortraitFar"		"1000.000000"
+			}
+		}
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitAnimationCycle"		"0.500000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitHideParticles"		"0"
+		"PortraitHideDropShadow"		"0"
+		"PortraitDesaturateParticles"		"0"
+		"PortraitDesaturateHero"		"1"
 	}
 	"models/heroes/hero_drstrange/dr_strange.vmdl"
 	{

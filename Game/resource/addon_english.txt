@@ -11819,5 +11819,11 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_carnage_toxic_strike_bonus_attack_speed"					"ATTACK SLOW:"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_slaanesh_4"				"Omnidrain deals Pure damage"
+
+		"npc_dota_hero_genos"										"Genos"
+		"npc_dota_hero_genos_hype"									"As an S-Class hero, Genos is undoubtedly a powerful fighter. For someone his age, Genos also has significant battle experience, as he claims to have defeated countless evil entities and organizations before meeting Saitama. His youth and impulsiveness still overcome him on occasion, and he remains much weaker than Saitama."
+
+		"npc_dota_hero_tatsumaki"									"Tatsumaki"
+		"npc_dota_hero_tatsumaki_hype"								"Being the second-ranked S-Class hero, Tatsumaki is extremely powerful. She is one of the most powerful heroes overall and is the most powerful esper to date. Fubuki describes her as a monster much like Sweet Mask, who chooses not to advance from A-Class to S-Class to prevent weaklings from climbing up the ranks."
 	}
 }
