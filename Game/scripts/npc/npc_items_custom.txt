@@ -8416,4 +8416,130 @@
 			}
 		}
 	}
+	"item_ocean_walkers"
+	{
+		// General
+		//------------------------------------------------------------------------------------------------------------														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        	"BaseClass"                     	"item_lua"
+		"AbilityTextureName"        		"custom/item_ocean_walkers"
+		"ScriptFile"                		"items/item_ocean_walkers.lua"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"ItemCost"					"5275"
+		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"guardian greaves"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"				"1"
+
+		"ItemDroppable"            		"0"
+
+		"precache"
+		{
+			"particle"				"particles/econ/events/ti7/shivas_guard_active_ti7.vpcf"
+			"particle"				"particles/econ/events/ti7/bottle_ti7.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_health_regen"		"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_armor"			"2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_health_regen_bonus"		"15"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_armor_bonus"			"15"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_threshold"	"20"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"900"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_health"		"250"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_mana"		"160"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"water_buff_owner_regen_hp" "32" //// бонусы на воде
+			}
+            	"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"water_buff_owner_regen_mana"		"16"
+			}
+            	"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"water_buff_owner_bonus_movespeed"		"30"
+			}
+            	"16"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"water_buff_active_bonus_regen_hp"			"16" //// бонусы на воде с активки союзникам
+			}
+            	"17"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"water_buff_active_bonus_regen_mana"		"8"
+			}
+            	"18"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"water_buff_active_duration"				"10"
+			}
+		}
+	}
 }		

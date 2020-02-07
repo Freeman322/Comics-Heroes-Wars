@@ -653,9 +653,6 @@ function Util:OnHeroInGame(hero)
     if hero:GetUnitName() == "npc_dota_hero_cosmos" then
         hero:FindAbilityByName("cosmos_jumper"):SetLevel(1)
     end
-    if hero:GetUnitName() == "npc_dota_hero_undying" then
-        hero:FindAbilityByName("manhattan_equilibrium"):SetLevel(1)
-    end
     if hero:GetUnitName() == "npc_dota_hero_jetstream_sam" then
         hero:FindAbilityByName("sam_zandatsu"):SetLevel(1)
     end

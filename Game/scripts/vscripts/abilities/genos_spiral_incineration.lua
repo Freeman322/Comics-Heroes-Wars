@@ -3,45 +3,72 @@
 genos_spiral_incineration = class ({})
 
 
-function genos_spiral_incineration:OnUpgrade()
-    if self:GetCaster():HasAbility("genos_incineration_max") then
-        self:GetCaster():RemoveAbility("genos_incineration_max")
-    end
-end
-
-function genos_spiral_incineration:GetCastRange()
-  return self:GetSpecialValueFor("cast_range")
-end
-
-function genos_spiral_incineration:GetManaCost(iLevel)
-    return self:GetCaster():GetMaxMana() * 0.5
-end
-
 function genos_spiral_incineration:OnSpellStart()
-    local point = self:GetCursorPosition()
-    local caster = self:GetCaster()
-    local width = self:GetSpecialValueFor("width")
-    local startpoint = caster:GetAbsOrigin()
-    local endpoint = startpoint + (point - startpoint):Normalized() * self:GetCastRange()
-    local enemies = FindUnitsInLine(caster:GetTeam(), startpoint, endpoint, nil, width, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_NONE)
-    for _,idiots in ipairs(enemies) do
+    if IsServer() then
+        local speed = self:GetSpecialValueFor( "dragon_slave_speed" )
+        local width_initial = self:GetSpecialValueFor( "dragon_slave_width_initial" )
+        local width_end = self:GetSpecialValueFor( "dragon_slave_width_end" )
+        local distance = self:GetSpecialValueFor( "dragon_slave_distance" )
+        local damage = self:GetSpecialValueFor( "dragon_slave_damage" ) 
+    
+        EmitSoundOn( "Hero_Lina.DragonSlave.Cast", self:GetCaster() )
+    
+        local vPos = nil
+        if self:GetCursorTarget() then
+            vPos = self:GetCursorTarget():GetOrigin()
+        else
+            vPos = self:GetCursorPosition()
+        end
+    
+        local vDirection = vPos - self:GetCaster():GetOrigin()
+        vDirection.z = 0.0
+        vDirection = vDirection:Normalized()
+    
+        speed = speed * ( distance / ( distance - width_initial ) )
+    
         local info = {
-            victim = idiots,
-            attacker = caster,
-            damage = self:GetSpecialValueFor("damage"),
-            damage_type = DAMAGE_TYPE_MAGICAL,
-            ability = self
+            EffectName = "particles/genos/genos_flame.vpcf",
+            Ability = self,
+            vSpawnOrigin = self:GetCaster():GetOrigin(), 
+            fStartRadius = width_initial,
+            fEndRadius = width_end,
+            vVelocity = vDirection * speed,
+            fDistance = distance,
+            Source = self:GetCaster(),
+            iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+            iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
         }
-        ApplyDamage(info)
+    
+        ProjectileManager:CreateLinearProjectile( info )
+
+        EmitSoundOn( "Hero_Lina.DragonSlave", self:GetCaster() )
     end
+end
 
-    local pfx = ParticleManager:CreateParticle("particles/econ/items/phoenix/phoenix_solar_forge/phoenix_sunray_solar_forge.vpcf", PATTACH_CUSTOMORIGIN, caster)
-    ParticleManager:SetParticleControl(pfx, 0, Vector(startpoint.x,startpoint.y,endpoint.z+70))
-    ParticleManager:SetParticleControl(pfx, 1, Vector(endpoint.x,endpoint.y,endpoint.z+70))
-    ParticleManager:SetParticleControl(pfx, 4, Vector(width))
-    self:GetCaster():EmitSound("Hero_Phoenix.SunRay.Beam")
+--------------------------------------------------------------------------------
 
-    Timers:CreateTimer(0.2, function()
-        ParticleManager:DestroyParticle(pfx, false)
-    end)
+function genos_spiral_incineration:OnProjectileHit( hTarget, vLocation )
+	if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
+		local damage = {
+			victim = hTarget,
+			attacker = self:GetCaster(),
+			damage = self:GetSpecialValueFor("dragon_slave_damage"),
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = self
+		}
+
+		ApplyDamage( damage )
+
+		local vDirection = vLocation - self:GetCaster():GetOrigin()
+		vDirection.z = 0.0
+		vDirection = vDirection:Normalized()
+		
+		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_dragon_slave_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
+		ParticleManager:SetParticleControlForward( nFXIndex, 1, vDirection )
+        ParticleManager:ReleaseParticleIndex( nFXIndex )
+        
+        hTarget:AddNewModifier(self:GetCaster(), self, "modifier_huskar_burning_spear_debuff", {duration = self:GetSpecialValueFor("debuff_duration")})
+	end
+
+	return false
 end

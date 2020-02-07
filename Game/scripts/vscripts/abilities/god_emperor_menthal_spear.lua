@@ -1,6 +1,8 @@
 if god_emperor_menthal_spear == nil then god_emperor_menthal_spear = class({}) end
 
 LinkLuaModifier( "modifier_god_emperor_menthal_spear", "abilities/god_emperor_menthal_spear.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_god_emperor_menthal_spear_scepter", "abilities/god_emperor_menthal_spear.lua", LUA_MODIFIER_MOTION_NONE )
+
 fvPointOrigin = 0
 function god_emperor_menthal_spear:GetConceptRecipientType()
 	return DOTA_SPEECH_USER_ALL
@@ -8,9 +10,22 @@ end
 local vPoint
 --------------------------------------------------------------------------------
 
+function god_emperor_menthal_spear:GetAOERadius() return self:GetSpecialValueFor("arrow_width") end
+
+function god_emperor_menthal_spear:GetBehavior()
+    if not self:GetCaster():HasScepter() then
+        return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_CHANNELLED + DOTA_ABILITY_BEHAVIOR_AOE
+    end 
+
+    return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_CHANNELLED + DOTA_ABILITY_BEHAVIOR_AOE + DOTA_ABILITY_BEHAVIOR_AUTOCAST
+end
+
 function god_emperor_menthal_spear:SpeakTrigger()
 	return DOTA_ABILITY_SPEAK_CAST
 end
+
+god_emperor_menthal_spear.mod = nil
+god_emperor_menthal_spear.hasSceper = false
 
 --------------------------------------------------------------------------------
 
@@ -35,7 +50,6 @@ function god_emperor_menthal_spear:OnSpellStart()
         self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_god_emperor_menthal_spear", { duration = self:GetChannelTime() } )
     end
 end
-
 
 --------------------------------------------------------------------------------
 
@@ -75,6 +89,12 @@ function god_emperor_menthal_spear:OnChannelFinish( bInterrupted )
         EmitSoundOn( "Hero_Windrunner.Powershot.FalconBow" , self:GetCaster() )
         EmitSoundOn( "Ability.Powershot" , self:GetCaster() )
         EmitSoundOn( "Hero_AbyssalUnderlord.Pit.TargetHero" , self:GetCaster() )
+
+        self.hasSceper = self:GetCaster():HasScepter() and self:GetAutoCastState()
+
+        if self.hasSceper then
+            self.mod = self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_god_emperor_menthal_spear_scepter", nil)
+        end
     else
         if self:GetCaster():HasModifier("modifier_god_emperor_menthal_spear") then
             self:GetCaster():RemoveModifierByName("modifier_god_emperor_menthal_spear")
@@ -118,7 +138,19 @@ function god_emperor_menthal_spear:OnProjectileHit_ExtraData( hTarget, vLocation
 
             ApplyDamage( damage )
         end
+
         AddFOWViewer(self:GetCaster():GetTeamNumber(), vLocation, 400, 5, true)
+
+        if self.hasSceper then
+            FindClearSpaceForUnit( self:GetCaster(), vLocation, true)
+
+            self:GetCaster():GetAbilityByIndex(2):OnSpellStart()
+
+            if self.mod then
+                self.mod:Destroy()
+            end
+        end
+
         return nil
     end
 end
@@ -143,7 +175,12 @@ function god_emperor_menthal_spear:OnProjectileThink( vLocation )
         ParticleManager:SetParticleControl( self.nParticleFXIndex, 2, vLocation + Vector(0, 0, self.leap_z))
         ParticleManager:SetParticleControl( self.nParticleFXIndex, 3, vLocation + Vector(0, 0, self.leap_z))
         ParticleManager:SetParticleControl( self.nParticleFXIndex, 4, vLocation + Vector(0, 0, self.leap_z))
-	end
+    end
+    
+    if self.hasSceper then
+        self:GetCaster():SetAbsOrigin(vLocation + Vector(0, 0, self.leap_z))
+    end
+
     self.traveled = (vLocation - self.start_pos):Length2D()
 end
 
@@ -179,3 +216,23 @@ end
 
 function god_emperor_menthal_spear:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 
 
+
+if modifier_god_emperor_menthal_spear_scepter == nil then modifier_god_emperor_menthal_spear_scepter = class({}) end
+
+function modifier_god_emperor_menthal_spear_scepter:IsHidden() return true end
+function modifier_god_emperor_menthal_spear_scepter:IsPurgable() return false end
+function modifier_god_emperor_menthal_spear_scepter:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
+function modifier_god_emperor_menthal_spear_scepter:CheckState () return { [MODIFIER_STATE_COMMAND_RESTRICTED] = true, [MODIFIER_STATE_OUT_OF_GAME] = true } end
+
+function modifier_god_emperor_menthal_spear_scepter:DeclareFunctions ()
+    local funcs = {
+        MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
+    }
+
+    return funcs
+end
+
+
+function modifier_god_emperor_menthal_spear_scepter:GetOverrideAnimation (params)
+    return ACT_DOTA_FLAIL
+end
