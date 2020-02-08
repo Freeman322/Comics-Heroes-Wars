@@ -2377,7 +2377,7 @@
 		"AbilityTextureName"				    "custom/hw_black_hole"
 
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
-        "AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+        	"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 
 		"FightRecapLevel"						"2"
 		"HasScepterUpgrade"					    "1"
@@ -27730,12 +27730,11 @@
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
 			"particle"	"particles/units/heroes/hero_invoker/invoker_ghost_walk.vpcf"
 			"particle"	"particles/units/heroes/hero_invoker/invoker_ghost_walk_debuff.vpcf"
 			"particle"	"particles/items4_fx/meteor_hammer_aoe.vpcf"
 			"particle"	"particles/items4_fx/meteor_hammer_spell_debuff.vpcf"
-			"soundfile" "sounds/weapons/hero/void_spirit/dissimilate_cast.vsnd"
-			"soundfile" "sounds/weapons/hero/void_spirit/dissimilate_stun.vsnd"
 			"particle"  "particles/stygian/collector_kid_meteor.vpcf"
 			"particle"  "particles/units/heroes/hero_void_spirit/void_spirit_astral_step_destination.vpcf"
 		}
@@ -37423,262 +37422,6 @@
 			}
 	    }
 	}
-	"beyonder_elder"
-	{
-		"BaseClass"                  "ability_lua"
-		"AbilityTextureName"         "custom/faceless_void_backtrack"
-		"ScriptFile"                 "abilities/beyonder_elder.lua"
-		"LevelsBetweenUpgrades"      "5"
-		"AbilityBehavior"            "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"            "FIELD_FLOAT"
-				"bonus_int"           "15 20 25 30"
-			}
-			"02"
-			{
-				"var_type"            "FIELD_FLOAT"
-				"bonus_mana_regen"    "6 8 10 12"
-			}
-			"03"
-			{
-				"var_type"            "FIELD_FLOAT"
-				"bonus_cooldown"      "5 10 15 20"
-			}
-			"04"
-			{
-				"var_type"           "FIELD_FLOAT"
-				"radius"             "700"
-			}
-				"05"
-			{
-				"var_type"           "FIELD_FLOAT"
-				"bonus_hp_regen"     "6 10 14 18"
-			}
-			"06"
-			{
-				"var_type"          "FIELD_FLOAT"
-				"bonus_hp_regen_pct" "0.40 0.60 0.70 0.80"
-			}
-			"06"
-			{
-				"var_type"          "FIELD_FLOAT"
-				"bonus_movespeed"   "10 15 20 25"
-			}
-		}
-	}
-	"beyonder_void_blast"
-	{
-		"BaseClass"                  			"satyr_hellcaller_shockwave"
-		"AbilityTextureName"         			"custom/faceless_void_time_lock"
-        	"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
-
-		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
-		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"MaxLevel"                     		"4"
-		"AbilityCastRange"					"600 800 1100 1500"
-		"AbilityCastPoint"					"0.35"
-		"AbilityCooldown"					"15.0 14.0 13.0 12.0"
-		"AbilityDamage"					    "180 260 340 420"
-		"AbilityManaCost"					"200 240 280 320"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"700"
-			}
-
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_start"				"120 180 260 340"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_end"				"140 240 340 440"
-			}
-
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"800 1000 1200 1500"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-	}
-	"beyonder_void_explosion"
-	{
-		"BaseClass"                		"ability_lua"
-		"AbilityTextureName"       		"custom/collector_sanity_eclipse"
-		"AbilityUnitDamageType"	  		"DAMAGE_TYPE_PURE"
-		"ScriptFile"               		"abilities/beyonder_void_explosion.lua"
-		"AbilityBehavior"          		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"             		"DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel"                		"1"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"near_damage"				"450"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"					"1200"
-			}
-		}
-	}
-	"byonder_void"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			        	"ability_lua"
-		"ScriptFile"					"abilities/byonder_void.lua"
-		"AbilityTextureName"			"custom/beyonder_void"
-
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-
-		"AbilityDamage"                	 "325 650 975"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"1"
-
-
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.35"
-		"AbilityCooldown"				"180 170 160"
-		"AbilityManaCost"				"300 500 700"
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"				"800 900 1000"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2 3 4"
-			}
-			"03"
-			{
-				"var_type"         		 "FIELD_FLOAT"
-				"damage_mana_pct"          "10 20 30"
-				"CalculateSpellDamageTooltip" "0"
-			}
-		}
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-	}
-
-	"byonder_void_flux"
-	{
-		"BaseClass"                		"arc_warden_flux"
-		"AbilityTextureName"         		"custom/beyonder_void_flux"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"1"
-		"AbilitySound"					"Hero_ArcWarden.Flux.Target"
-
-		"precache"
-		{
-			"particle"  	"particles/econ/events/winter_major_2016/infuser_winter_ambient_2016.vpcf"
-			"model"		"models/items/faceless_void/elements_of_oblivion_arms/elements_of_oblivion_arms.vmdl"
-			"model"		"models/items/faceless_void/elements_of_oblivion_belt/elements_of_oblivion_belt.vmdl"
-			"model"		"models/items/faceless_void/jewel_of_aeons/jewel_of_aeons.vmdl"
-			"model"		"models/items/faceless_void/mace_of_aeons/mace_of_aeons.vmdl"
-			"model"		"models/items/faceless_void/pw_facelesshead/pw_faceless_head.vmdl"
-			"model"		"models/items/faceless_void/viridus_claw/viridus_claw.vmdl"
-			"particle"  	"particles/econ/items/faceless_void/faceless_void_mace_of_aeons/fv_ambient_mace_aeons.vpcf"
-			"model"		"models/heroes/faceless_void/faceless_void_head.vmdl"
-			"model"		"models/heroes/faceless_void/faceless_void_belt.vmdl"
-			"model"		"models/heroes/faceless_void/faceless_void_bracer.vmdl"
-			"model"		"models/heroes/faceless_void/faceless_void_taunt.vmdl"
-			"particle"  	"particles/econ/items/faceless_void/faceless_void_mace_of_aeons/fv_ambient_mace_aeons.vpcf"
-			"particle"  	"particles/econ/items/faceless_void/faceless_void_jewel_of_aeons/fv_core_ambient_aeons.vpcf"
-			"model"  		"models/heroes/hero_byonder/byonder_fragments/byonder_arcana.vmdl"
-			"model"  		"models/items/courier/faceless_rex/faceless_rex.vmdl"
-			"model"		"models/heroes/faceless_void/faceless_void_weapon.vmdl"
-			"model"		"models/items/faceless_void/battlefury/battlefury.vmdl"
-			"model"		"models/items/faceless_void/voidhammer/voidhammer.vmdl"
-			"model"		"models/items/faceless_void/bracers_of_aeons/bracers_of_aeons.vmdl"
-			"particle"	"particles/econ/items/faceless_void/faceless_void_bracers_of_aeons/fv_bracers_of_aeons_red_ambient.vpcf"
-			"particle"	"particles/econ/items/faceless_void/faceless_void_weapon_voidhammer/faceless_void_weapon_voidhammer.vpcf"
-			"model" "models/items/faceless_void/green_blessed_mace.vmdl"
-			"particle"              "particles/econ/items/rubick/rubick_arcana/rbck_arc_skeletonking_hellfireblast.vpcf"
-		}
-
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24.0 22.0 20.0 18.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 140 180 220"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"3 4 5 6"
-				"LinkedSpecialBonus"				"special_bonus_unique_arc_warden_2"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_per_second"					"45 60 90 120"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"search_radius"					"0"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"think_interval"					"0.5"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"move_speed_slow_pct"				"45 50 55 60"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"cast_range_tooltip"				"600"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-	}
-
 	//=================================================================================================================
 	//=================================================================================================================
 	"wolverine_enrage"
@@ -42247,7 +41990,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             			"ability_lua"
-		"AbilityTextureName"			"custom/atomic_samurai_yaido"
+		"AbilityTextureName"			"custom/samurai_earth_shake"
 		"ScriptFile"					"abilities/atomic_samurai_yaido.lua"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -42281,7 +42024,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     	"ability_lua"
 		"ScriptFile"					"abilities/atomic_samurai_focused_atomic_slash.lua"
-		"AbilityTextureName"            	"custom/atomic_samurai_focused_atomic_slash"
+		"AbilityTextureName"            	"custom/samurai_atomic_dance"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
@@ -42786,7 +42529,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"BaseClass"					"ability_lua"
-		"AbilityTextureName"				""
+		"AbilityTextureName"			"custom/samurai_great_cleave"
 		"ScriptFile"					"abilities/atomic_samurai_air_blade_flying_sword.lua"
 		
 		// Casting
@@ -42988,7 +42731,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"					"abilities/atomic_samurai_focused_atomic_slash.lua"
-		"AbilityTextureName"            ""
+		"AbilityTextureName"            	"custom/samurai_ecliptic_strike"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
@@ -43036,10 +42779,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"             		"ability_lua"
-		"AbilityTextureName"			"custom/"
+		"BaseClass"             			"ability_lua"
+		"AbilityTextureName"			"custom/samurai_atomic_dance"
 		"ScriptFile"					"abilities/atomic_samurai_atomic_slash.lua"
-			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		//"AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -43175,5 +42918,466 @@
 				"value"						"25"
 			}
 		}
-	}	
+	}
+	//=================================================================================================================
+	//=================================================================================================================
+	"beyonder_astral_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             			"ability_lua"
+		"AbilityTextureName"			"custom/beyonder_astral_shield"
+		"ScriptFile"					"abilities/beyonder_astral_shield.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_VoidSpirit.Pulse.Cast"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"			"DEFAULT"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"36"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 110 120 130"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
+			"particle"  	"particles/units/heroes/hero_void_spirit/void_spirit_astral_step_destination.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"					"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"					"70 120 170 220"
+				"LinkedSpecialBonus"		"special_bonus_unique_beyonder_1"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"3.5 4.0 4.5 5.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_beyonder_2"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_absorb_amount"		"450 700 1350 1500"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unit_absorb_damage_ptc"		"16 24 32 48"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"return_projectile_speed"	"900"
+			}
+		}
+	}
+	"special_bonus_unique_beyonder_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"350"
+			}
+		}
+	}
+	"special_bonus_unique_beyonder_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1.75"
+			}
+		}
+	}
+	//=================================================================================================================
+	"beyonder_void"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityTextureName"			"custom/beyonder_void"
+		"BaseClass"					"void_spirit_aether_remnant"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_VoidSpirit.AetherRemnant.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"1000"
+
+		
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+		"AbilityCharges"				"2"
+		"AbilityChargeRestoreTime"		"18 16 14 12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"85 90 95 100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"start_radius"				"90"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"end_radius"				"90"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"300"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"900"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"remnant_watch_distance"	"450"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"remnant_watch_radius"		"130"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"watch_path_vision_radius"	"200"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"activation_delay"		"0.4"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_damage"			"80 130 180 230"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pull_duration"			"1.2 1.4 1.6 1.8"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pull_destination"		"44 50 56 62"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"20.0"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"think_interval"		"0.1"
+			}
+		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+	//=================================================================================================================
+	// СПРУНЬК! И тычка
+	//=================================================================================================================
+	"beyonder_void_slash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             			"ability_lua"
+		"AbilityTextureName"			"custom/beyonder_void_slash"
+		"ScriptFile"					"abilities/beyonder_void_slash.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Mars.Shield.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"65 70 75 80"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_mult"				"150 190 230 270"
+				"LinkedSpecialBonus"		"special_bonus_unique_beyonder_3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"angle"					"360"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"					"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pop_damage_delay"			"1.25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pop_damage"				"150 200 250 300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow_pct"			"30 40 50 60"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"			"2.65 3.45 4.25 5.0"
+			}
+		}
+	}
+	"special_bonus_unique_beyonder_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"special_bonus_undefined"
+		"AbilityType"							"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"115"
+			}
+		}
+	}
+	//=================================================================================================================
+	//=================================================================================================================
+	"beyonder_astral_step"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             			"ability_lua"
+		"AbilityTextureName"			"custom/beyonder_astral_step"
+		"ScriptFile"					"abilities/beyonder_astral_step.lua"
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED" 
+		"AbilitySound"					"Hero_AbyssalUnderlord.DarkRift.Cast"
+
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"MaxLevel"					"1"
+
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.6"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+        	"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90"
+		"AbilityDamage"				"250"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300"
+	
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step.vpcf"
+			"model"		"models/heroes/hero_beyonder/beyonder_astral_weapon.vmdl"
+			"particle"	"particles/units/heroes/hero_void_spirit/debut/void_spirit_portal_debut.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/pulse/void_spirit_pulse.vpcf"
+			"particle"	"particles/hero_byonder/byonder_weapon_glow.vpcf"
+			"particle"	"particles/items4_fx/nullifier_mute_debuff.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
+			"particle"  	"particles/units/heroes/hero_void_spirit/void_spirit_astral_step_destination.vpcf"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"							"600"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"teleport_delay"					"4.0"
+				"LinkedSpecialBonus"				"special_bonus_unique_beyonder_4"
+			}
+		}
+	}
+	"special_bonus_unique_beyonder_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"special_bonus_undefined"
+		"AbilityType"							"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"3.0"
+			}
+		}
+	}
+	//=================================================================================================================
+	//=================================================================================================================
+	"beyonder_resonant_pulse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             			"ability_lua"
+		"AbilityTextureName"			"custom/beyonder_resonant_pulse"
+		"ScriptFile"					"abilities/beyonder_resonant_pulse.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_DoomBringer.InfernalBlade.Target"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60 50 40"
+		"AbilityCastRange"				"700 900 1200"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"						"100 200 300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lenght"						"700 900 1200"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"width"						"250"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"pop_damage_delay"				"1.25"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"pop_damage"					"150 200 250"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow_pct"				"90"
+			}
+		}
+	}
 }
