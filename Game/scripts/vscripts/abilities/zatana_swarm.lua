@@ -51,7 +51,8 @@ function zatana_swarm:OnProjectileHit( hTarget, vLocation )
 			attacker = self:GetCaster(),
 			damage = damage,
 			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self})
+			ability = self}
+		)
 
 		EmitSoundOn( "Hero_DeathProphet.CarrionSwarm.Damage.Mortis" , hTarget )
 		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_zatana_swarm", { duration = self:GetSpecialValueFor("stun_duration") } )

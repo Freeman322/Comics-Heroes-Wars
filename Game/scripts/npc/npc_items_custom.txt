@@ -5753,104 +5753,6 @@
 		}
 	}
 	//=================================================================================================================
-	"item_recipe_soul"
-	{
-		// General
-		"BaseClass"                    "item_datadriven"
-		"AbilityTextureName"			"recipe"
-	//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9001"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-
-
-		// Item Info
-
-	//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_soul"
-		"ItemRequirements"
-		{
-			"01"				"item_soul_booster;item_gem;item_ghost;item_moon_shard_marvel"
-		}
-	}
-	"item_soul"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "item_lua"
-		"ScriptFile"					"items/item_soul.lua"
-		"AbilityTextureName"            "custom/soul"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
-		"AbilityCastRange"				"450"
-		"MaxLevel"						"1"
-
-	    "ItemQuality"					"common"
-	    // Casting
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCastPoint"              "0.01"
-
-	    // Time
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "30.0"
-
-		"precache"
-		{
-			"particle"  "particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
-		}
-	    // Cost
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityManaCost"               "200"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"150"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_vision"			"600"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magical_damage_return"	"40"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"soul_radius"			"1200"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"overseer_duration"		"6"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movespeed"				"-50"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Recipe: Demon Shard
 	//=================================================================================================================
 	"item_recipe_demon_shard"
@@ -8539,6 +8441,202 @@
 			{
 				"var_type"							"FIELD_INTEGER"
 				"water_buff_active_duration"				"10"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Veil of discord
+	//=================================================================================================================
+	"item_veil_of_discord"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"item_lua"
+		"ScriptFile"					"items/item_veil_of_discord.lua"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.		
+		"AbilityTextureName"            	"veil_of_discord"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		"ItemCost"					"2050"
+		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"vod;veil of discord"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		"precache"
+		{
+			"particle"				"particles/items2_fx/veil_of_discord.vpcf"
+		}
+			// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"		"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"				"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"6"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_int"				"15"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"resist_debuff"			"-25"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_radius"			"600"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"resist_debuff_duration"		"16.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"1000"
+			}
+		}
+	}
+	"item_soul_gem"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"item_lua"
+		"ScriptFile"					"items/item_soul_gem.lua"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+
+		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"            	"custom/soul"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"250.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					"5250"
+		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bs;bloodstone"
+		"ItemInitialCharges"			"14"
+		"ItemDisplayCharges"			"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AllowedInBackpack"				"0"
+		"ShouldBeSuggested"				"1"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_dark_willow/dark_willow_bramble_cast.vpcf"
+			"particle"				"particles/soulgem_buff_halo.vpcf"
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"				"425"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"				"425"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"			"16"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction"		"30"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"8"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen_multiplier"		"200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"regen_per_charge"			"0.2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"amp_per_charge"			"0.35"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"death_charges"			"3"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"kill_charges"				"1"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_range"				"1600"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"initial_charges_tooltip" 	"14"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"soul_steal_duration" 		"2.5"
 			}
 		}
 	}
