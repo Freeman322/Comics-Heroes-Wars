@@ -1,6 +1,6 @@
 "use strict";
 
-var Heroes = {}
+var Heroes = {};
 
 Heroes.list = {
     "heroes": [{
@@ -582,9 +582,17 @@ Heroes.list = {
         {
             "name": "npc_dota_hero_gorr",
             "id": 233,
+        },
+        {
+            "name": "npc_dota_hero_dark_willow",
+            "id": 119,
+        },
+        {
+            "name": "npc_dota_hero_genos",
+            "id": 234,
         }
     ]
-}
+};
 
 Heroes.GetHeroID = function(hero_name) {
     for (var i = 0; i < Heroes.list.heroes.length; i++) {
@@ -593,8 +601,8 @@ Heroes.GetHeroID = function(hero_name) {
         }
     }
 
-    return 1
-}
+    return 1;
+};
 
 
 Heroes.GetAbilities = function(hero_name) {
@@ -606,4 +614,4 @@ Heroes.GetAbilities = function(hero_name) {
     }
 
     return []
-}
+};

@@ -37,7 +37,6 @@
  		"item"		"item_sange_and_yasha"
 		"item"		"item_eclipsed_blade"
 		"item"		"item_avernos_mist"
-		"item"		"item_mystic_ring"
 	}
 
 	"weapons_armor"
@@ -115,8 +114,7 @@
 		"item"		"item_cursed_helmet"					
 		"item"		"item_void_orb"
 		"item"		"item_glimmers_armor"
-		"item"		"item_eye_of_terror"		
-		"item"		"item_ice_pearl"	
+		"item"		"item_eye_of_terror"
 	}
 				
 	"magics"			
@@ -197,6 +195,7 @@
 		"item"		"item_soul_urn"
 		"item"		"item_sunshines_aromor"
 		"item"		"item_timepiece"
+		"item"		"item_ice_pearl"
 	}
 
 	"sideshop1"

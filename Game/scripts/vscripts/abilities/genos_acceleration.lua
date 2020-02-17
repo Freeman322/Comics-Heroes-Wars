@@ -40,7 +40,7 @@ function modifier_genos_acceleration:RemoveOnDeath()
 end
 
 function modifier_genos_acceleration:GetEffectName()
-    return "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_totem_leap.vpcf"
+    return "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_blink_start_v2.vpcf"
 end
 
 function modifier_genos_acceleration:GetEffectAttachType()

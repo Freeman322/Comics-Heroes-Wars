@@ -8322,24 +8322,24 @@
 	{
 		// General
 		//------------------------------------------------------------------------------------------------------------														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        	"BaseClass"                     	"item_lua"
-		"AbilityTextureName"        		"custom/item_ocean_walkers"
+		"AbilityBehavior"				    "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "BaseClass"                     	"item_lua"
+		"AbilityTextureName"        		"custom/ocean_walkers"
 		"ScriptFile"                		"items/item_ocean_walkers.lua"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				    "30"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"ItemCost"					"5275"
+		"ItemCost"					    "5275"
 		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"guardian greaves"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemAlertable"				"1"
+		"ItemAlertable"				    "1"
 
 		"ItemDroppable"            		"0"
 

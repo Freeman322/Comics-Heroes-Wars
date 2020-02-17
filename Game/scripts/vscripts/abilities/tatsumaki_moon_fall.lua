@@ -185,6 +185,36 @@ function modifier_tatsumaki_moon_fall_thinker:OnDestroy()
 		EmitSoundOn( "Hero_EarthShaker.EchoSlamSmall", self:GetParent() )
 		EmitSoundOn( "PudgeWarsClassic.echo_slam", self:GetParent() )
 
+		local enemies = FindUnitsInRadius(
+			self:GetCaster():GetTeamNumber(),	-- int, your team number
+			self:GetParent():GetOrigin(),	-- point, center point
+			nil,	-- handle, cacheUnit. (not known)
+			self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+			0,	-- int, flag filter
+			0,	-- int, order filter
+			false	-- bool, can grow cache
+		)
+
+		for _,enemy in pairs(enemies) do
+			ApplyDamage( {
+				attacker = self:GetCaster(),
+				victim = enemy,
+				damage = self:GetAbility():GetAbilityDamage(),
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				ability = self:GetAbility()
+			} )
+
+			-- add modifier
+			enemy:AddNewModifier(
+				self:GetCaster(), -- player source
+				self:GetAbility(), -- ability source
+				"modifier_stunned", -- modifier name
+				{ duration = 1.75 } -- kv
+			)
+		end
+
 		local team_id = self:GetCaster():GetTeamNumber()
 		CreateModifierThinker(self:GetCaster(), self:GetAbility(), "modifier_tatsumaki_moon_fall_burn_thinker", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")}, self.parent_origin, team_id, false)
 	end
