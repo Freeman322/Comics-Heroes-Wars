@@ -8228,6 +8228,48 @@
 			"01"						"item_mystic_ring;item_bloodstone"
 		}
 	}	
+	"item_recipe_ocean_walkers"
+	{
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                 	"item_datadriven"
+		"AbilityTextureName"		    "recipe"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					   "1650"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ocean_walkers"
+		"ItemRequirements"
+		{
+			"01"						"item_guardian_greaves"
+		}
+	}	
+	"item_recipe_soul_gem"
+	{
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                 	"item_datadriven"
+		"AbilityTextureName"		    "recipe"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					   "1500"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_soul_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_bloodstone;item_vitality_booster;item_wind_lace"
+		}
+	}	
     //=================================================================================================================
 	// Octarine Core
 	//=================================================================================================================
@@ -8509,11 +8551,12 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"250.0"
+		"AbilityCooldown"				"60.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					"5250"
+		"ItemCost"						"5250"
+
 		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"

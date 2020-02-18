@@ -7,7 +7,7 @@ LinkLuaModifier("modifier_item_soul_gem_debuff", "items/item_soul_gem.lua", LUA_
 LinkLuaModifier("modifier_item_soul_gem_active", "items/item_soul_gem.lua", LUA_MODIFIER_MOTION_NONE)
 
 function item_soul_gem:GetIntrinsicModifierName()
-	return "modifier_item_soul"
+	return "modifier_item_soul_gem"
 end
 
 
@@ -51,14 +51,13 @@ function item_soul_gem:OnSpellStart()
 
 		local duration = self:GetSpecialValueFor(  "soul_steal_duration" )
 
-          target:AddNewModifier( self:GetCaster(), self, "modifier_hexxed", { duration = duration } )
+          target:AddNewModifier( self:GetCaster(), self, "modifier_item_soul_gem_debuff", { duration = duration } )
           
           EmitSoundOn("Item.SoulGem.Cast", target)
 
-		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_dark_willow/dark_willow_bramble_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
-		ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
-          ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetOrigin() )
-          ParticleManager:SetParticleControl( nFXIndex, 1, Vector(300, 300, 1) )
+		local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/monkey_king/arcana/death/mk_arcana_spring_cast_outer_death_pnt.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
+          ParticleManager:SetParticleControl( nFXIndex, 0, target:GetOrigin() )
+          ParticleManager:SetParticleControl( nFXIndex, 1, target:GetOrigin() )
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 		EmitSoundOn( "Hero_ElderTitan.EchoStomp.Channel.ti7", self:GetCaster() )
@@ -152,4 +151,36 @@ end
 
 function modifier_item_soul_gem_active:GetModifierHealthRegenPercentage( params )
     return 15
+end
+
+
+if modifier_item_soul_gem_debuff == nil then modifier_item_soul_gem_debuff = class({}) end
+
+function modifier_item_soul_gem_debuff:IsHidden()  return true end
+function modifier_item_soul_gem_debuff:IsPurgable() return false end
+function modifier_item_soul_gem_debuff:GetEffectName() return "particles/items_fx/ghost.vpcf" end
+function modifier_item_soul_gem_debuff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_item_soul_gem_debuff:StatusEffectPriority() return 1000 end
+function modifier_item_soul_gem_debuff:GetStatusEffectName() return "particles/status_fx/status_effect_ghost.vpcf" end
+
+
+function modifier_item_soul_gem_debuff:DeclareFunctions()
+local funcs = {
+        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
+    }
+
+    return funcs
+end
+
+function modifier_item_soul_gem_debuff:CheckState ()
+    local state = {
+        [MODIFIER_STATE_HEXED] = true
+    }
+
+    return state
+end
+
+
+function modifier_item_soul_gem_debuff:GetModifierMoveSpeed_Absolute( params )
+    return 150
 end

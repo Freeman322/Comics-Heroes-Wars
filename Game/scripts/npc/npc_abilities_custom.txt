@@ -41599,6 +41599,8 @@
 
 		"precache"
 		{
+			"model"						"models/heroes/hero_tatsumaki/tatsumaki_dress.vmdl"
+			"particle"					"particles/econ/events/fall_major_2016/radiant_fountain_regen_fm06_lvl3.vpcf"
 			"soundfile"         		"soundevents/hero_tatsumaki.vsndevts"
 			"soundfile"        			"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
 		}

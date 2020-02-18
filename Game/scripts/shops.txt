@@ -74,6 +74,8 @@
 		"item"		"item_cursed_necklace"
 		"item"		"item_ionic_vapor"
 		"item"		"item_aether_staff"
+		"item"		"item_soul_gem"
+		"item"		"item_ocean_walkers"
 	}	
 	
 	// Level 1 - Green Recipes

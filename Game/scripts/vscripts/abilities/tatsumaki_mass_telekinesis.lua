@@ -168,6 +168,8 @@ function tatsumaki_mass_telekinesis_land:GetAssociatedSecondaryAbilities()
      return "tatsumaki_mass_telekinesis"
 end
 
+function tatsumaki_mass_telekinesis_land:GetManaCost() return self:GetCaster():GetMana() * 0.5 end
+
 function tatsumaki_mass_telekinesis_land:Spawn()
      if IsServer() then
           self:SetLevel(1)
