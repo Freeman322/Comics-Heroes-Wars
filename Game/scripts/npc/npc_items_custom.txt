@@ -988,7 +988,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/red_box.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"            "custom/desolator_2"
+		"AbilityTextureName"            "desolator_2"
 		"ItemCost"						"7120"
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -7116,7 +7116,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"
+		"ItemCost"						"225"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -7125,7 +7125,7 @@
 		"ItemResult"					"item_rapier_of_despair"
 		"ItemRequirements"
 		{
-			"01"						"item_jetsu;item_sange_and_yasha;item_kaya;item_bloodthorn"
+			"01"						"item_jetsu;item_kaya;item_orchid"
 		}
 	}
 
@@ -7156,7 +7156,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"325"
-		"ItemCost"						"13205"
+		"ItemCost"						"9000"
 		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"rapier of despair"
@@ -7177,7 +7177,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"145"
+				"bonus_intellect"		"80"
 			}
 			"02"
 			{
@@ -7187,7 +7187,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"300"
+				"bonus_damage"			"100"
 			}
 			"04"
             {
@@ -7206,58 +7206,18 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"28"
+				"var_type"						"FIELD_FLOAT"
+				"despair_damage_percent"		"50"
 			}
 			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"275"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_damage_pct"		"80"
-			}
-			"10"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_cap_amount"				"200"
-			}
-			"11"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"despair_damage_percent"		"30"
-			}
-			"12"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"despair_duration"				"7.5"
 			}
-			"13"
+			"09"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"despair_radius"				"500"
-			}
-			"14"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"tooltip_range"					"900"
-			}
-			"15"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"tooltip_crit_chance"			"100"
-			}
-			"16"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"70"
-			}
-			"17"
-			{
-				"var_type"					            "FIELD_INTEGER"
-				"movement_speed_percent_bonus"			"25"
 			}
 		}
 	}

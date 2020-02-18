@@ -419,15 +419,15 @@
 	}
 	"npc_dota_hero_void_spirit"
 	{
-		"HeroID"					"41"
+		"HeroID"				"41"
 		"BaseClass"				"npc_dota_hero_void_spirit"
 
 		"Model"					"models/heroes/hero_beyonder/beyonder.vmdl"
 
-		"DisableWearables"  		"1"
-		"ModelScale"				"0.95000"
-		"AbilityLayout"  			"5"
-		"Ability1"      			"beyonder_astral_shield"
+		"DisableWearables"  	"1"
+		"ModelScale"			"0.95000"
+		"AbilityLayout"  		"5"
+		"Ability1"      		"beyonder_astral_shield"
 		"Ability2"				"beyonder_void"
 		"Ability3"				"beyonder_void_slash"
 		"Ability4"				"beyonder_astral_step"
@@ -1305,22 +1305,22 @@
 	}
 	"npc_dota_hero_kunkka"
 	{
-		//// "override_hero"   			"npc_dota_hero_kunkka"
-		"HeroID"						"23"
-	     "BaseClass"					"npc_dota_hero_kunkka"
+		//// "override_hero"   		"npc_dota_hero_kunkka"
+		"HeroID"					"23"
+	     "BaseClass"				"npc_dota_hero_kunkka"
 
 		"SoundSet"					"Hero_Lina"
 		"IdleSoundLoop"				"Hero_Lina.IdleLoop"
 
 		"Model"			 			"models/heroes/hero_drstrange/dr_strange.vmdl"
-		"ModelScale"					"1"
-		"DisableWearables"				"1"
-		"AbilityLayout" 				"4"
+		"ModelScale"				"1"
+		"DisableWearables"			"1"
+		"AbilityLayout" 			"4"
 		"Ability1"					"strange_test_of_faith"
 		"Ability2"					"strange_future_past"
 		"Ability3"					"strange_brilliance_aura"
 		"Ability4"					"strange_global_time_reverse"
-	    	"Ability5"    			   		"generic_hidden"
+	    "Ability5"    			   	"generic_hidden"
 		"Ability6"					"strange_obliteration_of_eternity"
 		"Ability9"					""
 		"Ability10"					"special_bonus_exp_boost_30"
@@ -1332,15 +1332,15 @@
 		"Ability16"					"special_bonus_intelligence_25"
 		"Ability17"					"special_bonus_all_stats_20"
 
-		"ArmorPhysical"			"0"
+		"ArmorPhysical"				"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"26"
 		"AttackDamageMax"			"32"
 		"AttackRate"				"1.700000"
 		"AttackAnimationPoint"		"0.300000"
-		"AttackAcquisitionRange"		"800"
+		"AttackAcquisitionRange"	"800"
 		"AttackRange"				"500"
-		"ProjectileModel"			"particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
+		"ProjectileModel"			"particles/econ/items/enigma/enigma_geodesic/enigma_base_attack_eidolon_geodesic.vpcf"
 		"ProjectileSpeed"			"1200"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"		"24"
@@ -1349,7 +1349,8 @@
 		"AttributeIntelligenceGain"	"3.300000"
 		"AttributeBaseAgility"		"18"
 		"AttributeAgilityGain"		"1.700000"
-		"MovementSpeed"			"310"
+		"MovementSpeed"				"310"
+		
 		"precache"
 		{
 			"model"		"models/strange/doctor_strange_head.vmdl"
@@ -1497,17 +1498,17 @@
 	}
 	"npc_dota_hero_lina"
 	{
-		"HeroID"						"25"
+		"HeroID"					"25"
 		"BaseClass"					"npc_dota_hero_lina"
 
-		////"override_hero"		"npc_dota_hero_lina"
-		"AbilityLayout"		"4"
-		"Ability1"		"phoenix_flame_explosion"
-		"Ability2"		"phoenix_fire_wave"
-		"Ability3"		"fenix_slam"
-		"Ability4"		"generic_hidden"
-		"Ability5"    "generic_hidden"
-		"Ability6"		"phoenix_rage"
+		////"override_hero"			"npc_dota_hero_lina"
+		"AbilityLayout"				"4"
+		"Ability1"					"fenix_burning"
+		"Ability2"					"fenix_strafe"
+		"Ability3"					"fenix_slam"
+		"Ability4"					"generic_hidden"
+		"Ability5"    				"generic_hidden"
+		"Ability6"					"phoenix_rage"
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_hp_regen_40"
@@ -2313,11 +2314,11 @@
 		"AbilityLayout"				"4"
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"       		 "atomic_samurai_air_blade_flying_sword"
-		"Ability2"        		 "atomic_samurai_focused_atomic_slash"
+		"Ability2"        		 "atomic_samurai_atomic_slash"
 		"Ability3"        		 "atomic_samurai_yaido"
 		"Ability4"        		 "generic_hidden"
 		"Ability5"        		 "generic_hidden"
-		"Ability6"        		 "atomic_samurai_atomic_slash"
+		"Ability6"        		 "atomic_samurai_focused_atomic_slash"
 		"Ability10"               "special_bonus_exp_boost_30"
 		"Ability11"               "special_bonus_all_stats_12"
 		"Ability12"               "special_bonus_spell_block_20"
@@ -4429,12 +4430,12 @@
 		"SoundSet"				"Hero_Axe"
 
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"				"thanos_first_blood"
+		"Ability1"				"thanos_orbital_strike"
 		"Ability2"				"tanos_dispersion"
 		"Ability3"				"thanos_titans_sword"
-		"Ability4"				"thanos_dying_star"
+		"Ability4"				"generic_hidden"
 		"Ability5"				"generic_hidden"
-		"Ability6"				"thanos_shattered_earth"
+		"Ability6"				"thanos_decimation"
 		"Ability7"				""
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_unique_thanos_3"
@@ -4759,30 +4760,30 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		///"override_hero"					"npc_dota_hero_undying"
-		"HeroID"		                    "85"
-		"BaseClass"		               "npc_dota_hero_undying"
+		///"override_hero"			    "npc_dota_hero_undying"
+		"HeroID"		                "85"
+		"BaseClass"		                "npc_dota_hero_undying"
 
 		"DisableWearables"				"1"
-		"Model"						"models/heroes/hero_manhattan/manhattan.vmdl"		// Model.
+		"Model"						    "models/heroes/hero_manhattan/manhattan.vmdl"		// Model.
 		"ProjectileModel"				"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_arcane_orb.vpcf"
 		"ProjectileSpeed"				"2000"
-		"Portrait"					"vgui/hud/heroportraits/portrait_undying"						// Small image for hero selection
+		"Portrait"					    "vgui/hud/heroportraits/portrait_undying"						// Small image for hero selection
 		"IdleExpression"				"scenes/undying/undying_exp_idle_01.vcd"
-		"SoundSet"					"Hero_ObsidianDestroyer"													// Name of sound set.
-		"IdleSoundLoop"				"Hero_Undying.IdleLoop"
+		"SoundSet"					    "Hero_ObsidianDestroyer"													// Name of sound set.
+		"IdleSoundLoop"				    "Hero_Undying.IdleLoop"
 		"Enabled"						"1"
-		"Role"						"Durable,Pusher,Disabler,Initiator"
+		"Role"						    "Durable,Pusher,Disabler,Initiator"
 		"Rolelevels"					"2,1,1,1"
-		"Team"						"Bad"
+		"Team"						    "Bad"
 		"HeroID"						"85"
 		"ModelScale" 					"0.93"
 		"LoadoutScale"					".87"
 		"NameAliases"					"dirge"
-		"url" 						"Undying"
-		"PickSound"					"undying_undying_spawn_01"
-		"BanSound"					"undying_undying_anger_02"
-		"CMEnabled"					"1"
+		"url" 						    "Undying"
+		"PickSound"					    "undying_undying_spawn_01"
+		"BanSound"					    "undying_undying_anger_02"
+		"CMEnabled"					    "1"
 		"LastHitChallengeRival"			"npc_dota_hero_sand_king"
 		"HeroSelectSoundEffect"			"Hero_Undying.Pick"
 
@@ -4793,7 +4794,7 @@
 		"Ability3"						"manhattan_pillars_of_eternity"
 		"Ability4"						"generic_hidden"
 		"Ability5"						"generic_hidden"
-	 	"Ability6"					     "manhattan_clockwork_mechanism"
+	 	"Ability6"					    "manhattan_clockwork_mechanism"
 		"Ability10"						"special_bonus_exp_boost_30"
 		"Ability11"						"special_bonus_unique_manhattan_2"
 		"Ability12"						"special_bonus_unique_manhattan_1"
@@ -7365,30 +7366,30 @@
 	}
 	"npc_dota_hero_raiden"
 	{
-		"BaseClass"             	    	"npc_dota_hero"
-		"IsCustom"                  	"1"
-		"DisableWearables"          	"1"
+		"BaseClass"                 "npc_dota_hero"
+		"IsCustom"                  "1"
+		"DisableWearables"          "1"
 
 
-		"Model"					"models/heroes/hero_raiden/raiden.vmdl"
+		"Model"						"models/heroes/hero_raiden/raiden.vmdl"
 
 		"IdleExpression"			"scenes/stormspirit/stormspirit_exp_idle_01.vcd"
 
-		"SoundSet"				"Hero_StormSpirit"
+		"SoundSet"					"Hero_StormSpirit"
 
 		"Enabled"					"1"
 		"HeroUnlockOrder"			"1"
-		"Role"					"Carry,Escape,Nuker,Initiator,Disabler"
+		"Role"						"Carry,Escape,Nuker,Initiator,Disabler"
 		"Rolelevels"				"2,3,2,1,1"
 		"Complexity"				"3"
 
-		"Team"					"Good"
+		"Team"						"Good"
 		"HeroID"					"217"
 		"ModelScale"				"0.8000"
-		"SpectatorLoadoutScale" 		"1"
+		"SpectatorLoadoutScale" 	"1"
 
-		"HeroGlowColor"			"0 250 227"
-		"CMEnabled"				"0"
+		"HeroGlowColor"				"0 250 227"
+		"CMEnabled"					"0"
 
 		"NameAliases"				"ss;raiden"
 		"workshop_guide_name"		"Raiden"
@@ -7398,12 +7399,12 @@
 
 		"GibType"					"electric"
 
-		"Ability1"				"raiden_lightning_transfer"
-		"Ability2"				"raiden_fatality"
-		"Ability3"				"raiden_storm_flight"
-		"Ability4"				"raiden_electro_field"
-		"Ability5"				"generic_hidden"
-		"Ability6"				"raiden_elecro_mine"
+		"Ability1"					"raiden_lightning_transfer"
+		"Ability2"					"raiden_fatality"
+		"Ability3"					"raiden_storm_flight"
+		"Ability4"					"raiden_electro_field"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"raiden_elecro_mine"
 
 		"Ability10"                "special_bonus_exp_boost_30"
 		"Ability11"                "special_bonus_unique_raiden_1"
@@ -7431,13 +7432,13 @@
 		"AttributeIntelligenceGain"	"3.900000"
 		"AttributeBaseAgility"		"22"
 		"AttributeAgilityGain"		"1.500000"
-		"MovementSpeed"			"285"
+		"MovementSpeed"				"285"
 		"MovementTurnRate"			"0.800000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 
 		"particle_folder"			"particles/units/heroes/hero_stormspirit"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
-		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_stormspirit.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_stormspirit.vsndevts"
 	}
 	//=================================================================================================================
 	// HERO: Misterio
@@ -8527,7 +8528,7 @@
 		"workshop_guide_name"			"Tatsumaki"
 		"LastHitChallengeRival"			"npc_dota_hero_jakiro"
 		"ArmorPhysical"				    "-1"
-		
+
 		"Ability1"					"tatsumaki_flying_death"
 		"Ability2"					"tatsumaki_mass_telekinesis"
 		"Ability3"					"tatsumaki_mastery"
@@ -8542,13 +8543,13 @@
 		"Ability15"					"special_bonus_unique_dark_willow_3"
 		"Ability16"					"special_bonus_attack_speed_175"
 		"Ability17"					"special_bonus_unique_dark_willow_2"
-		
+
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"				"27"
 		"AttackDamageMax"				"35"
 		"AttackRate"					"1.500000"
 		"BaseAttackSpeed"				"115"
-		
+
 		"AttackAnimationPoint"			"0.30000"
 		"AttackAcquisitionRange"			"800"
 		"AttackRange"					"475"
@@ -8563,7 +8564,7 @@
 		"AttributeAgilityGain"			"1.600000"
 		"MovementSpeed"				"290"
 		"MovementTurnRate"				"0.700000"
-	
+
 		"VisionNighttimeRange"			"800"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"				"230"
@@ -8593,20 +8594,20 @@
 
 		"LoadoutScale"		            "0.8"
 
-		"Ability1"		                "genos_acceleration"
+		"Ability1"		                "genos_inceneration_blast"
 		"Ability2"		                "genos_glue_trap"
 		"Ability3"		                "genos_incineration"
-		"Ability4"		                "generic_hidden"
+		"Ability4"		                "genos_sticky_napalm"
 		"Ability5"		                "generic_hidden"
 		"Ability6"	                	"genos_spiral_incineration"
-		"Ability10"		                "special_bonus_unique_gorr_4"
-		"Ability11"		                "special_bonus_unique_gorr_5"
-		"Ability12"		                "special_bonus_attack_damage_25"
-		"Ability13"		                "special_bonus_armor_8"
-		"Ability14"		                "special_bonus_unique_gorr_1"
-		"Ability15"		                "special_bonus_unique_gorr_2"
-		"Ability16"		                "special_bonus_spell_block_20"
-		"Ability17"		                "special_bonus_unique_gorr_3"
+        "Ability10"					    "special_bonus_exp_boost_30"
+        "Ability11"		                "special_bonus_all_stats_12"
+        "Ability12"		                "special_bonus_attack_speed_100"
+        "Ability13"		                "special_bonus_unique_huskar_2"
+        "Ability14"		                "special_bonus_unique_aqua_man"
+        "Ability15"					    "special_bonus_cooldown_reduction_25"
+        "Ability16"					    "special_bonus_spell_block_15"
+        "Ability17"					    "special_bonus_all_stats_20"
 		"ArmorPhysical"		            "2"
 		"AttackCapabilities"		   	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		        "30"

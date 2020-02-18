@@ -43,7 +43,7 @@
 		"npc_dota_hero_dark_seer"  "Outsider"
 		"npc_dota_hero_sniper"  "Rocket"
 		"npc_dota_creature_yaz"   "YAZ'"
-		"npc_dota_hero_faceless_void" "Byonder"
+		"npc_dota_hero_void_spirit" "Byonder"
 		"npc_dota_warlock_golem_2"   "Astral Ghost"
 		"npc_dota_warlock_golem_scepter_1"  "Demon"
 		"npc_dota_warlock_golem_3"   "Demon"
@@ -220,7 +220,7 @@
 
 
 		"DOTA_Tooltip_ability_item_frostmourne"                                           "Frostmourne"
-		"DOTA_Tooltip_ability_item_frostmourne_Description"                               "Пассивная: SOUL STOLE - Если не на кулдауне, то владелец Фростморна переродится, а так же в радиусе 900 за каждого убитого врага Фростморн получит прибавку к урону в виде вражеской души. \nПассивная: Cold Attack - Ваши атаки будут замедлять скорость передвижения и атаки цели."
+		"DOTA_Tooltip_ability_item_frostmourne_Description"                               "Пассивная: SOUL STOLE - Если не на кулдауне, то владелец Фростморна переродится, а так же в радиусе 900 за каждого убитого врага Фростморн получит прибавку к урону в виде вражеской души. \nПассивная: Cold Attack - Ваши атаки будут замедлять скорость атаки и передвижения цели, а также наносить 100 чистого урона."
 		"DOTA_Tooltip_ability_item_frostmourne_Lore"                          		      "Фростморн жаждет крови!"
 		"DOTA_Tooltip_ability_item_frostmourne_bonus_all_stats"                           "+$all"
 		"DOTA_Tooltip_ability_item_frostmourne_bonus_health"                              "+$health"
@@ -550,7 +550,7 @@
 
 
 		"DOTA_TOOLTIP_ABILITY_item_death_scyche" 							"Death Scythe"
-		"DOTA_TOOLTIP_ABILITY_item_death_scyche_Description" 				"Активируемая: Death Rift - Кастер переходит в призрачную форму, в которой он не может получить физический урон. Регенерирует 150 здоровья в секунду. \nПассивная: Cold Attack - Ваши атаки будут замедлять скорость передвижения и атаки цели."
+		"DOTA_TOOLTIP_ABILITY_item_death_scyche_Description" 				"Активируемая: Death Rift - Владелец переходит в призрачную форму, в которой он не может получить физический урон, но может атаковать и регенерирует 150 здоровья в секунду. \nПассивная: Cold Attack - Ваши атаки будут замедлять скорость атаки и передвижения цели, а также наносить 80 чистого урона."
 		"DOTA_TOOLTIP_ABILITY_item_death_scyche_Lore"						"Коса той, чье имя нельзя произность."
 		"DOTA_TOOLTIP_ABILITY_item_death_scyche_bonus_health"				"+$health"
 		"DOTA_TOOLTIP_ABILITY_item_death_scyche_bonus_damage"        		"+$damage"
@@ -683,11 +683,28 @@
 		////Гонщик	
 
 
-		"DOTA_Tooltip_ability_ghost_rider_searing_chains_Description"	    "Активируемая: Гонщик связывает ближайших юнитов огненной цепью, которая не даёт им передвигаться."
-		"DOTA_Tooltip_ability_ghost_rider_searing_total_damage_tooltip"	     "УРОН:"
-		"DOTA_Tooltip_ability_ghost_rider_searing_duration"         	    "ДЛИТЕЛЬНОСТЬ ПРИВЯЗКИ:"
+		"DOTA_Tooltip_ability_ghost_rider_searing_chains"	"SEARING CHAINS"
+		"DOTA_Tooltip_ability_ghost_rider_searing_chains_Description"	"Активируемая: Гонщик связывает ближайших юнитов огненной цепью, которая не даёт им передвигаться."
+		"DOTA_Tooltip_ability_ghost_rider_searing_total_damage_tooltip"	"УРОН:"
+		"DOTA_Tooltip_ability_ghost_rider_searing_duration"	"ДЛИТЕЛЬНОСТЬ ПРИВЯЗКИ:"
 
-		"DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	        "Активируемая: Гонщик стреляет из своего легендарного дробовика."
+		"DOTA_Tooltip_ability_ghost_rider_assassinate"	"GHOST'S ASSASINATE"
+		"DOTA_Tooltip_ability_ghost_rider_assassinate_Description"	"Активируемая: Гонщик стреляет из своего легендарного дробовика."
+		"DOTA_Tooltip_ability_ghost_rider_assassinate_tooltip_range"	"ДАЛЬНОСТЬ ВЫСТРЕЛА:"
+
+		"DOTA_Tooltip_ability_ghost_rider_drain"	"GHOST'S DRAIN"
+		"DOTA_Tooltip_ability_ghost_rider_drain_Description"	"Пассивная: Гонщик с каждым ударом уносит частичку души врага в ад. Сжигает ману и наносит урон."
+		"DOTA_Tooltip_ability_ghost_rider_drain_damage_per_burn"	"УРОН ЗА ЕД.МАНЫ:"
+		"DOTA_Tooltip_ability_ghost_rider_drain_mana_per_hit"	"МАНЫ ЗА УДАР:"
+
+
+		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua"						"PUNISHING GAZE"
+		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Description"			"Эта способность наносит <font color=\"#70EA72\">Отнимающий здоровье</font> тип урона. Одно из сильнейших заклинаний во Вселенной, его НИКАК НЕЛЬЗЯ ИЗБЕЖАТЬ. Наносит столько урона цели, сколько она нанесла союзникам кастера за эту жизнь. \n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Lore"					"Ничто и никто не может укрыться от его гнева."
+		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_Note0"						"Невозможно ничем заблокировать"    
+		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aoe_scepter"			"AOE СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_ghost_rider_punishing_gaze_lua_aghanim_description" 	"Дает способности АОЕ радиус."
+
 
 		////magneto
 
@@ -2100,9 +2117,9 @@
 		"DOTA_Tooltip_ABILITY_ronan_bash_bonus_damage"								"УРОН:"
 
 		"DOTA_Tooltip_ability_ronan_passive"							"FEAR"
-		"DOTA_Tooltip_ability_ronan_passive_Description"  				"Ронан наносит сильный удар по земле, отталкивая всех врагов в радиусе и нанося им урон."
-		"DOTA_Tooltip_ability_ronan_passive_knockback_duration"			"ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_ronan_passive_damage"	                    "УРОН:"
+		"DOTA_Tooltip_ability_ronan_passive_Description"  				"Ронан создает темные отголоски душ противников в радиусе 900, заставляя их атаковать врага."
+		"DOTA_Tooltip_ability_ronan_passive_illusion_duration"			"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_ronan_passive_illusion_outgoing_tooltip"	"%ИСХОДЯЩИЙ УРОН:"
 		"DOTA_Tooltip_ability_ronan_passive_move_slow"					"%ЗАМЕДЛЕНИЕ:"
 
 		"DOTA_Tooltip_ABILITY_ronan_soul_stole"							"KREE's RAGE"
@@ -2433,9 +2450,9 @@
 		"DOTA_Tooltip_ABILITY_murlock_pounce_Description"					"Активируемая - Мурлок прыгает вперед, хватаясь за первого героя, попавшегося ему на пути. Враг получает урон и привязывается к Мурлоку, что позволяет ему двигаться только в определенном радиусе от позиции приземления Мурлока. Длится 3.5 секунды.\n\nУлучшается с Aghanim's Scepter."
 		"DOTA_Tooltip_ABILITY_murlock_pounce_pounce_distance"				"ДАЛЬНОСТЬ:"
 		"DOTA_Tooltip_ABILITY_murlock_pounce_pounce_damage"					"УРОН:"
-		"DOTA_Tooltip_ABILITY_murlock_pounce_cooldown_scepter"		"ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:"
 		"DOTA_Tooltip_ABILITY_murlock_pounce_Lore"							"Мурлоки - опасные убийцы: агрессивные и бесстрашные."
-		"DOTA_Tooltip_ability_murlock_pounce_aghanim_description"			"Уменьшает время перезарядки способности."
+		"DOTA_Tooltip_ability_murlock_pounce_aghanim_description"			"Добавляет второй заряд способности и увеличивает дальность прыжка."
+		"DOTA_Tooltip_ability_murlock_pounce_pounce_distance_scepter"       "ДАЛЬНОСТЬ СО СКИПЕПТРОМ:"
 
 		"DOTA_Tooltip_ABILITY_murlock_heart"								"REGENERATION FACTOR"
 		"DOTA_Tooltip_ABILITY_murlock_heart_Description"					"Пассивная - Мурлок лечится в процентах от своего максимального здоровья и получает доп.скорость."
@@ -2993,10 +3010,7 @@
 		"DOTA_Tooltip_collector_passive_modifier"										"RAVAGE"
 
 		"DOTA_Tooltip_ability_item_soul_urn"                                              "Soul Medallion"
-		"DOTA_Tooltip_ability_item_soul_urn_Description"								  "<h1>Активируемая: Magic Pact</h1> Поглощает 50% маны врага и лечит героя на это значение.\n <h1>Пассивная: Magical Crit</h1>Урон, нанесенный способностью, может быть критическим."		
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_all_stats"                              "+$all"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_armor"                                  "+$armor"
-		"DOTA_Tooltip_ability_item_soul_urn_bonus_health_regen"                           "+$hp_regen"
+		"DOTA_Tooltip_ability_item_soul_urn_Description"								  "<h1>Пассивная: Magical Crit</h1>Урон, нанесенный способностью, может быть критическим."		
 		"DOTA_Tooltip_ability_item_soul_urn_bonus_mana_regen"                             "+$mana_regen"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_strike"                              "%+$magical_crit"
 		"DOTA_Tooltip_ability_item_soul_urn_critical_chance"                              "%ШАНС:"
@@ -3354,9 +3368,8 @@
 		"DOTA_Tooltip_ability_galactus_echo_jump_damage_per_unit_scepter"                 "УРОН ЗА ЮНИТА СО СКИПЕТРОМ:"
 
 		"DOTA_Tooltip_ability_item_gungner"                                               "Gungnir"
-		"DOTA_Tooltip_ability_item_gungner_Description"                                   "Активируемая - ENERGY BLAST: Выстреливает молнией, нанося урон и оглушая врага."
+		"DOTA_Tooltip_ability_item_gungner_Description"                                   "Активируемая - ENERGY BLAST: Выстреливает молнией, нанося урон и оглушая врага. Урон равен 400 + множитель атрибута 3.5"
 		"DOTA_Tooltip_ability_item_gungner_Lore"                                  		  "Копье Одина, один из самых могущественных артефактов во Вселенной."
-		"DOTA_Tooltip_ability_item_gungner_bonus_damage"                                  "+$damage"
 		"DOTA_Tooltip_ability_item_gungner_bonus_attack_speed"                            "+$attack"
 		"DOTA_Tooltip_ability_item_gungner_bonus_all_stats"                               "+$all"
 		"DOTA_Tooltip_ability_item_gungner_bonus_attack_range"                            "+$attack_range"
@@ -3657,7 +3670,7 @@
 		"DOTA_Tooltip_ability_eternity_chronosphere_duration_scepter"                     "ДЛИТЕЛЬНОСТЬ СО СКИПЕТРОМ:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_cooldown_scepter"                     "ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:"
 		"DOTA_Tooltip_ability_eternity_chronosphere_bonus_attack_speed"                   "ДОП.СКОРОСТЬ АТАКИ:"
-		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Увеличивает время действия сферы и уменьшает время перезарядки, а так-же увеличивает базовый урон в два раза."
+		"DOTA_Tooltip_ability_eternity_chronosphere_aghanim_description"				  "Увеличивает время действия сферы и уменьшает время перезарядки."
 
 
 		"DOTA_TOOLTIP_eternity_chronosphere_modifier"									  "TIME HOLE"
@@ -4646,7 +4659,7 @@
 		"new_npc_dota_hero_dark_seer"  "Outsider"
 		"new_npc_dota_hero_sniper"  "Rocket"
 		"npc_dota_warlock_golem_1"   "YAZ'"
-		"new_npc_dota_hero_faceless_void" "Byonder"
+		"new_npc_dota_hero_void_spirit" "Byonder"
 		"npc_dota_warlock_golem_2"   "Astral Ghost"
 		"npc_dota_warlock_golem_scepter_1"  "Demon"
 		"npc_dota_warlock_golem_3"   "Demon"
@@ -4803,10 +4816,9 @@
 
 		"DOTA_Tooltip_ability_predator_observer"                                          "Observer"
 		"DOTA_Tooltip_ability_predator_observer_Description"                              "Пасcивная: При каждом ударе по врагу, Predator снижает броню врагу и наносит дополнительный урон."
-		"DOTA_Tooltip_ability_predator_observer_armor_per_hit"                            "БРОНИ ЗА УДАР:"
-		"DOTA_Tooltip_ability_predator_observer_damager_per_stack"                        "УРОН ЗА СТАК:"
+		"DOTA_Tooltip_ability_predator_observer_armor_per_hit"                            "СНИЖЕНИЕ БРОНИ ЗА УДАР:"
+		"DOTA_Tooltip_ability_predator_observer_damager_per_stack"                        "ДОПОЛНИТЕЛЬНЫЙ УРОН ЗА СТАК:"
 		"DOTA_Tooltip_ability_predator_observer_debuff_duration"                          "ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_predator_observer_lifesteal"                                "%ЛЕЧЕНИЕ:"
 
 		"DOTA_Tooltip_ability_predator_hunter_strike"                                     "Hunter Strike"
 		"DOTA_Tooltip_ability_predator_hunter_strike_Description"                         "Активируемая: Predator оглушает всех юнитов, попавших в область действия способности."
@@ -5987,8 +5999,8 @@
 		"DOTA_Tooltip_ability_doom_strike_array_damage"                                   "УРОН:"
 		"DOTA_Tooltip_ability_doom_strike_array_strikes"                                  "АТАК:"
 		
-	    "DOTA_Tooltip_ability_special_bonus_unique_weaver_1"                                "+75 урона к Wind Walk"
-        "DOTA_Tooltip_ability_special_bonus_unique_weaver_2"                                "+200 скорости к Wind Walk"
+		
+		
 
 		"DOTA_Tooltip_ability_item_recipe_orb_of_osuvox"                                  "Orb Of Osuvox"
 		"DOTA_Tooltip_ability_item_recipe_orb_of_osuvox_Description"                      ""
@@ -6250,9 +6262,6 @@
 		"DOTA_Tooltip_ability_item_reality_gem"                                           "Reality Gem"
 		"DOTA_Tooltip_ability_item_reality_gem_Description"                               "<h1>Active: Reverse Reality </h1> В определенной области полностью меняет свойства реальности - превращая урон в анти-урон."
 		"DOTA_Tooltip_ability_item_reality_gem_Lore" 									  "Существуют реликвии, которые предшествуют самой Вселенной. То, что находится в ней, является одним из них. Девять миров не вечны. У них был рассвет, так же, как и будет закат. Но это... эта реликвия вечна..."
-		"DOTA_Tooltip_ability_item_reality_gem_bonus_all_stats"                           "+$all"
-		"DOTA_Tooltip_ability_item_reality_gem_bonus_health_regen"                        "+$hp_regen"
-		"DOTA_Tooltip_ability_item_reality_gem_bonus_damage"                              "+$damage"
 		"DOTA_Tooltip_ability_item_reality_gem_bonus_health"                              "+$health"
 		"DOTA_Tooltip_ability_item_reality_gem_bonus_mana"                                "+$mana"
 		"DOTA_Tooltip_ability_item_reality_gem_reality_reverse_duration"                  "REVERSE REAVILTY ДЛИТЕЛЬНОСТЬ:"
@@ -6292,20 +6301,18 @@
 		"DOTA_Tooltip_ability_item_power_gem_Lore"  									  "То, что скрыто в этой сфере... я не знаю, что это, но точно знаю, что это страшнейшее оружие из всех существующих..."
 		"DOTA_Tooltip_ability_item_power_gem_bonus_strength"                              "+$str"
 		"DOTA_Tooltip_ability_item_power_gem_bonus_intellect"                             "+$int"
-		"DOTA_Tooltip_ability_item_power_gem_bonus_damage"                                "+$damage"
 		"DOTA_Tooltip_ability_item_power_gem_bonus_spell_damage"                          "%+$spell_amp"
 		"DOTA_Tooltip_ability_item_power_gem_power_duration"                              "Ancient Power ДЛИТЕЛЬНОСТЬ:"
 		"DOTA_Tooltip_ability_item_power_gem_power_totaldmg"                              "%Ancient Power УРОН:"
 
 		"DOTA_Tooltip_ability_item_soul"                                                  "Soul Gem"
-		"DOTA_Tooltip_ability_item_soul_Description"                                      "<h1>Active: Acknowledge </h1> Раскрывает местоположение абсолютно всех существ на карте. \n <h1>Passive: Eye</h1>Дарует ауру fow's sight в радиусе 1200. \n <h1>Passive: Refraction</h1> Если урон был магическим, то он будет возвращен вражескогму кастеру."
+		"DOTA_Tooltip_ability_item_soul_Description"                                      "<h1>Active: Acknowledge </h1> Раскрывает местоположение абсолютно всех существ на карте. \n <h1>Passive: Refraction</h1> Если урон был магическим, то он будет возвращен вражескогму кастеру."
 		"DOTA_Tooltip_ability_item_soul_Lore"                                      		  "Не уходи безропотно во тьму, Будь яростней пред бурей всех ночей, Не дай погаснуть свету своему! Хоть мудрый знает — не осилишь тьму, Во мгле словами не зажжёшь лучей — Не уходи безропотно во тьму!"
 		"DOTA_Tooltip_ability_item_soul_bonus_attack_speed"                               "+$attack"
 		"DOTA_Tooltip_ability_item_soul_bonus_vision"                                     "ДОП.ДАЛЬНОСТЬ ОБЗОРА:"
 		"DOTA_Tooltip_ability_item_soul_bonus_mana_regen"                                 "+$mana_regen"
 		"DOTA_Tooltip_ability_item_soul_bonus_all_stats"                                  "+$all"
 		"DOTA_Tooltip_ability_item_soul_magical_damage_return"                            "%ВОЗВРАЩЕНИЕ МАГИЧЕСКОГО УРОНА:"
-		"DOTA_Tooltip_ability_item_soul_soul_radius"                                      "Acknowledge РАДИУС:"
 		"DOTA_Tooltip_ability_item_soul_overseer_duration"                                "Acknowledge ДЛИТЕЛЬНОСТЬ:"
 		
 		"DOTA_Tooltip_ability_item_glove_of_the_creator"                                  "The Infinity Gauntlet"

@@ -16,7 +16,7 @@ function atomic_samurai_air_blade_flying_sword:OnSpellStart()
 			local dir = self:GetCaster():GetForwardVector() + Vector(RandomFloat(-0.5, 0.5), RandomFloat(-0.5, 0.5), 0) ---- рандомно оклониться от направлдения юнита на |25| скалярных велечин
 			
 			local info = {
-				EffectName = "particles/stygian/atomic_samurai_air_wave.vpcf",
+				EffectName = "particles/units/heroes/hero_mars/mars_spear.vpcf",
 				Ability = self,
 				vSpawnOrigin = self:GetCaster():GetOrigin(), 
 				fStartRadius = wave_width,
@@ -35,8 +35,7 @@ function atomic_samurai_air_blade_flying_sword:OnSpellStart()
 			ProjectileManager:CreateLinearProjectile( info )
 		end
 		
-		EmitSoundOn( "Hero_Invoker.Tornado.Cast" , self:GetCaster() )
-		EmitSoundOn( "Ability.Windrun" , self:GetCaster() )
+		EmitSoundOn( "Hero_Mars.Spear" , self:GetCaster() )
 	end
 end
 
@@ -44,8 +43,10 @@ end
 function atomic_samurai_air_blade_flying_sword:OnProjectileHit( hTarget, vLocation )
 	if IsServer() then
 	if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) then
-		EmitSoundOn( "Ability.Windrun" ,hTarget )
+		EmitSoundOn( "Hero_Mars.Spear.Target" ,hTarget )
+		
 		local wave_damage = self:GetSpecialValueFor( "wave_damage" ) + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_atomic_samurai_2") or 0)
+		
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),

@@ -48,6 +48,7 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker:OnCreated(event)
           self.damage = self:GetAbility():GetSpecialValueFor("bonus_hero_damage")
           self.mod = self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_atomic_samurai_focused_atomic_slash", nil)
           self.pos = self:GetParent():GetAbsOrigin()
+          self.old_pos = self:GetCaster():GetAbsOrigin()
 
           local nFXIndex = ParticleManager:CreateParticle ("particles/econ/items/monkey_king/arcana/fire/mk_arcana_fire_spring_cast_ringouterpnts.vpcf", PATTACH_WORLDORIGIN, self:GetParent())
           ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetAbsOrigin())
@@ -65,7 +66,8 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker:OnDestroy()
           if self.mod and not self.mod:IsNull() then
                self.mod:Destroy()
 
-               FindClearSpaceForUnit(self.caster, self.pos, true)
+               self.caster:SetAbsOrigin(self.old_pos)
+               FindClearSpaceForUnit(self.caster, self.old_pos, true)
           end
      end
 end

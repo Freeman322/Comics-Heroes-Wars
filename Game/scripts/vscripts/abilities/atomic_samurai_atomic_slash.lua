@@ -22,6 +22,8 @@ function atomic_samurai_atomic_slash:OnSpellStart()
 
     local target = GetGroundPosition( origin + direction*dist, nil )
 
+    EmitSoundOn( "Hero_Juggernaut.BladeDance", self:GetCaster() )
+
     -- teleport
     FindClearSpaceForUnit( caster, target, true )
 
@@ -48,7 +50,10 @@ function atomic_samurai_atomic_slash:OnSpellStart()
 
         -- play effects
         -- Get Resources
-        local particle_cast = "particles/stygian/atomic_samurai_atomic_slash_impact.vpcf"
+        local particle_cast = "particles/units/heroes/hero_grimstroke/grimstroke_darkartistry_dmg.vpcf"
+
+        EmitSoundOn( "Hero_Juggernaut.BladeDance", enemy )
+        EmitSoundOn( "Hero_Juggernaut.OmniSlash.Damage", self:GetCaster() )
 
         -- Create Particle
         local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, enemy )
@@ -56,19 +61,16 @@ function atomic_samurai_atomic_slash:OnSpellStart()
     end
 
     -- play effects
-    local particle_cast = "particles/stygian/atomic_samurai_atomic_slash.vpcf"
-    local sound_start = "Hero_StormSpirit.StaticRemnantPlant"
-    local sound_end = "Hero_StormSpirit.PreAttack"
+    local particle_cast = "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_omni_slash_tgt_serrakura.vpcf"
 
     -- Create Particle
     local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, self:GetCaster() )
-    ParticleManager:SetParticleControl( effect_cast, 0, origin )
-    ParticleManager:SetParticleControl( effect_cast, 1, target )
+    ParticleManager:SetParticleControl( effect_cast, 0, origin + Vector(0, 0, 96) )
+    ParticleManager:SetParticleControl( effect_cast, 1, target + Vector(0, 0, 96) )
     ParticleManager:ReleaseParticleIndex( effect_cast )
 
     -- Create Sound
-    EmitSoundOnLocationWithCaster( origin, sound_start, self:GetCaster() )
-    EmitSoundOnLocationWithCaster( target, sound_end, self:GetCaster() )
+    EmitSoundOn( "Hero_Juggernaut.BladeFury.Impact", self:GetCaster() )
 end
 
 --------------------------------------------------------------------------------
@@ -97,8 +99,8 @@ function modifier_atomic_samurai_atomic_slash:OnDestroy()
     if not IsServer() then return end
 
     -- Get Resources
-    local particle_cast = "particles/stygian/atomic_samurai_atomic_slash_damage.vpcf"
-    local sound_target = "Hero_StormSpirit.Overload"
+    local particle_cast = "particles/econ/items/lifestealer/lifestealer_immortal_backbone/lifestealer_immortal_backbone_rage_cast_mid.vpcf"
+    local sound_target = "Hero_Juggernaut.OmniSlash"
 
     -- Create Particle
     local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )

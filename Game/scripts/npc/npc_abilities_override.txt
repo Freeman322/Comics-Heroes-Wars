@@ -4,14 +4,13 @@
 {
 	"Version"   "1"
 
-    "item_rapier_of_despair"     "REMOVE"
-    "item_recipe_rapier_of_despair"     "REMOVE"
+    "item_desolator_3"     "REMOVE"
+    "item_recipe_desolator_3"     "REMOVE"
 
     "item_star_boots"     "REMOVE"
     "item_recipe_star_boots"     "REMOVE"
     "item_elemental_treads"     "REMOVE"
     "item_recipe_elemental_treads"     "REMOVE"
-
 
 	"item_iron_talon"     "REMOVE"
 	"item_recipe_iron_talon"      "REMOVE"
@@ -19,7 +18,6 @@
 	"item_gauntlets"      "REMOVE"
 	"item_slippers"     "REMOVE"
 	"item_mantle"     "REMOVE"
-	"item_rapier_of_despair"     "REMOVE"
 	"item_belt_of_strength"     "REMOVE"
 	"item_boots_of_elves"     "REMOVE"
 	"item_circlet"      "REMOVE"
@@ -2365,6 +2363,17 @@
 			}
 		}
 	}
+    "special_bonus_unique_huskar_2"
+    {
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "value"				        "100"
+            }
+        }
+    }
 	"special_bonus_unique_pangolier_3"
 	{
 		// General

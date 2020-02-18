@@ -26,6 +26,7 @@ function item_rapier_of_despair:OnSpellStart()
 
             ParticleManager:CreateParticle("particles/econ/items/lifestealer/lifestealer_immortal_backbone/lifestealer_immortal_backbone_rage_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
             
+            target:AddNewModifier(self:GetCaster(), self, "modifier_orchid_malevolence_debuff", {duration = self:GetSpecialValueFor("despair_duration")})
             target:AddNewModifier(self:GetCaster(), self, "modifier_item_rapier_of_despair_buff", {duration = self:GetSpecialValueFor("despair_duration")})
         end
     end
@@ -36,13 +37,11 @@ modifier_item_rapier_of_despair_buff = class({})
 function modifier_item_rapier_of_despair_buff:IsHidden() return false end
 function modifier_item_rapier_of_despair_buff:IsPurgable() return false end
 function modifier_item_rapier_of_despair_buff:RemoveOnDeath() return true end
-function modifier_item_rapier_of_despair_buff:DeclareFunctions() return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE} end
+function modifier_item_rapier_of_despair_buff:DeclareFunctions() return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE} end
 function modifier_item_rapier_of_despair_buff:GetEffectName() return "particles/econ/items/witch_doctor/wd_ti8_immortal_head/wd_ti8_immortal_maledict_dots.vpcf" end
 function modifier_item_rapier_of_despair_buff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_item_rapier_of_despair_buff:GetModifierTotalDamageOutgoing_Percentage( params ) return -100 end
 function modifier_item_rapier_of_despair_buff:GetModifierIncomingDamage_Percentage( params ) return self:GetAbility():GetSpecialValueFor("despair_damage_percent") end
-function modifier_item_rapier_of_despair_buff:CheckState () return { [MODIFIER_STATE_SILENCED] = true} end
-function modifier_item_rapier_of_despair_buff:GetModifierPreAttack_Target_CriticalStrike(params) return self:GetAbility():GetSpecialValueFor("crit_multiplier") end
 
 modifier_item_rapier_of_despair = class ({})
 
@@ -55,27 +54,21 @@ function modifier_item_rapier_of_despair:DeclareFunctions()
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
-        MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
     }
     return funcs
 end
 
-function modifier_item_rapier_of_despair:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
-function modifier_item_rapier_of_despair:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
-function modifier_item_rapier_of_despair:GetModifierMoveSpeedBonus_Percentage() return self:GetAbility():GetSpecialValueFor("movement_speed_percent_bonus") end
 function modifier_item_rapier_of_despair:GetModifierPreAttack_BonusDamage() return self:GetAbility():GetSpecialValueFor("bonus_damage") end
 function modifier_item_rapier_of_despair:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end
 function modifier_item_rapier_of_despair:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("bonus_intellect") end
 function modifier_item_rapier_of_despair:GetModifierSpellAmplify_Percentage() return self:GetAbility():GetSpecialValueFor("spell_amp") end
 function modifier_item_rapier_of_despair:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") end
 function modifier_item_rapier_of_despair:GetModifierPercentageCasttime() return self:GetAbility():GetSpecialValueFor("bonus_casttime") end
-function modifier_item_rapier_of_despair:GetModifierPreAttack_CriticalStrike(params)
+
+--[[[function modifier_item_rapier_of_despair:GetModifierPreAttack_CriticalStrike(params)
     if IsServer() then 
         if RollPercentage(self:GetAbility():GetSpecialValueFor("crit_chance")) then
             params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_bloodseeker_rupture", {duration = self:GetAbility():GetSpecialValueFor("despair_duration")}) 
@@ -83,5 +76,5 @@ function modifier_item_rapier_of_despair:GetModifierPreAttack_CriticalStrike(par
         end 
     end 
     return 
-end
+end]]--
 
