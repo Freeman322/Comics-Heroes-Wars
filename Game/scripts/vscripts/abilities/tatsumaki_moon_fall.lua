@@ -61,7 +61,7 @@ function modifier_tatsumaki_moon_fall_thinker:OnCreated( kv )
 			-- victim = target,
 			attacker = self:GetCaster(),
 			damage = damage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = DAMAGE_TYPE_PURE,
 			ability = self:GetAbility(), --Optional.
 		}
 
@@ -202,7 +202,7 @@ function modifier_tatsumaki_moon_fall_thinker:OnDestroy()
 				attacker = self:GetCaster(),
 				victim = enemy,
 				damage = self:GetAbility():GetAbilityDamage(),
-				damage_type = DAMAGE_TYPE_MAGICAL,
+				damage_type = DAMAGE_TYPE_PURE,
 				ability = self:GetAbility()
 			} )
 
@@ -299,7 +299,7 @@ function modifier_tatsumaki_moon_fall_burn:OnCreated( kv )
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
 			damage = damage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = DAMAGE_TYPE_PURE,
 			ability = self:GetAbility(), --Optional.
 		}
 

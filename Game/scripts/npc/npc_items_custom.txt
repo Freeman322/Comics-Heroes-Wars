@@ -3274,7 +3274,7 @@
 		"ItemResult"					"item_glove_of_the_creator"
 		"ItemRequirements"
 		{
-			"01"				 "item_inf_balvanka;item_reality_gem;item_soul;item_power_gem;item_time;item_mind_gem;item_space_stone"
+			"01"				 "item_inf_balvanka;item_reality_gem;item_soul_gem;item_power_gem;item_time;item_mind_gem;item_space_stone"
 		}
 	}
 	//=================================================================================================================

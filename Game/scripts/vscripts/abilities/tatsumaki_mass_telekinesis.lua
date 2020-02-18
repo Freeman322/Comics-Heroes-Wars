@@ -55,8 +55,9 @@ function tatsumaki_mass_telekinesis:Stun()
                          victim = unit,
                          attacker = self:GetCaster(),
                          ability = self,
-                         damage = self:GetSpecialValueFor("telekinesis_fall_damage"),
-                         damage_type = self:GetAbilityDamageType()
+                         damage = self:GetSpecialValueFor("telekinesis_fall_damage") + (unit:GetMaxHealth() * (self:GetSpecialValueFor("earth_shake_max_hp_damage_pct") / 100)),
+                         damage_type = self:GetAbilityDamageType(),
+                         damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS
                     })
                end
           end

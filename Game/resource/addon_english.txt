@@ -11967,7 +11967,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_special_bonus_unique_beyonder_1"                            "+350 damage for Astral Shield"
 		"DOTA_Tooltip_ability_special_bonus_unique_beyonder_2"                            "+1.75 sec for Astral Shield"
 
-		"DOTA_Tooltip_ability_beyonder_void"                                              "Byond"
+		"DOTA_Tooltip_ability_beyonder_void"                                              "Beyond"
 		"DOTA_Tooltip_ability_beyonder_void_Description"                                  "Summons the Byond servant to enchant the closest unit and inflict damage on him."
 		"DOTA_Tooltip_ability_beyonder_void_activation_delay"                             "ACTIVATION DELAY:"
 		"DOTA_Tooltip_ability_beyonder_void_impact_damage"                                "IMPACT DAMAGE:"
