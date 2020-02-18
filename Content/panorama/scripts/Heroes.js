@@ -160,7 +160,7 @@ Heroes.list = {
             "id": 40,
         },
         {
-            "name": "npc_dota_hero_faceless_void",
+            "name": "npc_dota_hero_void_spirit",
             "id": 41,
         },
         {

@@ -4,7 +4,39 @@
 	"PreferModelNames"		"1"
 	"DefaultActivity"		"ACT_DOTA_IDLE"
 	"CannotChangeActivity"		"1"
-	
+
+	"models/heroes/hero_beyonder/beyonder.vmdl"
+    {
+        "PortraitLightPosition"		"69.29 -11.57 252.09"
+        "PortraitLightAngles"		"56.51 182.29 0.00"
+        "PortraitLightFOV"		"63"
+        "PortraitLightDistance"		"207"
+        "PortraitLightColor"		"254 233 233"
+        "PortraitShadowColor"		"131 131 131"
+        "PortraitShadowScale"		"1.025000"
+        "PortraitAmbientColor"		"161 100 0"
+        "PortraitAmbientScale"		"5.000000"
+        "PortraitSpecularColor"		"251 74 84"
+        "PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_desert.vmat"
+        "PortraitBackgroundColor1"		"1 .5 .5"
+        "PortraitBackgroundColor2"		"1 .8 .9"
+        "PortraitBackgroundColor3"		"0 0 0"
+        "PortraitBackgroundColor4"		"1 .5 .5"
+        "PortraitLightScale"		"2.750000"
+        "PortraitGroundShadowScale"		"1.500000"
+        "PortraitAmbientDirection"		"-76.520 7.960 38.340"
+        "PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+        "cameras"
+        {
+            "default"
+            {
+                "PortraitPosition"		"166.15 -166.83 60.25"
+                "PortraitAngles"		"337.05 136.08 0.00"
+                "PortraitFOV"		"10"
+            }
+        }
+    }
+
 	"models/heroes/hero_ghost/ghost.vmdl"
 	{
 		"PortraitLightPosition"		"69.29 -11.57 252.09"
