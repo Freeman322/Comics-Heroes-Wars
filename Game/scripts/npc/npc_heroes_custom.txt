@@ -8597,7 +8597,7 @@
 		"Ability1"		                "genos_inceneration_blast"
 		"Ability2"		                "genos_glue_trap"
 		"Ability3"		                "genos_incineration"
-		"Ability4"		                "genos_sticky_napalm"
+		"Ability4"		                "generic_hidden"
 		"Ability5"		                "generic_hidden"
 		"Ability6"	                	"genos_spiral_incineration"
         "Ability10"					    "special_bonus_exp_boost_30"

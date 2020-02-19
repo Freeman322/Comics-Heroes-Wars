@@ -182,10 +182,12 @@ function modifier_tatsumaki_mastery_buff:OnIntervalThink()
      local distance = (self.pos - self:GetParent():GetAbsOrigin()):Length2D()
     
      if distance > 24 then
-         self:GetParent():SetOrigin(self:GetParent():GetAbsOrigin() + (self.pos - self:GetParent():GetAbsOrigin()):Normalized() * self.speed * FrameTime())
-         self.traveled_distance = self.traveled_distance + self.speed * FrameTime()
+          self:GetParent():SetOrigin(self:GetParent():GetAbsOrigin() + (self.pos - self:GetParent():GetAbsOrigin()):Normalized() * self.speed * FrameTime())
+          self.traveled_distance = self.traveled_distance + self.speed * FrameTime()
      else
-         self:Destroy()
+          FindClearSpaceForUnit(self:GetParent(), self:GetParent():GetAbsOrigin(), true)
+
+          self:Destroy()
      end
 end
  
