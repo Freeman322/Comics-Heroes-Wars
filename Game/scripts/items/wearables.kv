@@ -7493,6 +7493,36 @@
                     }
                 }
             } 
+            "leon"
+            {
+                "model"                     "models/heroes/leon_skin/leon_skin.vmdl"
+               
+                "models"
+                {
+                    "1"
+                    {
+                        "model"             "models/heroes/leon_skin/leon_weapon.vmdl"
+                    }
+                }  
+                
+                "projectile"
+                {
+                    "particle"              "particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+                } 
+                
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_kill_sound"
+                        "modifier_path"     "modifiers/modifier_kill_sound.lua"
+                        "params"
+                        {
+                            "sound"         "Leon.Kill"
+                        }
+                    }
+                }
+            }
         }
     }
     "npc_dota_hero_dark_rider"
@@ -7698,6 +7728,27 @@
                     }
                 }
             } 
+            "boo"
+            {
+                "model"                     "models/heroes/steppenwolf_boo/boo.vmdl"    
+
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_boo"
+                        "modifier_path"     "modifiers/modifier_customs.lua"
+                    }
+                }
+
+                "particles"
+                {
+                    "1" 
+                    {
+                        "particle"          "particles/econ/items/ogre_magi/ogre_magi_arcana/boo_ambientdebuff.vpcf"
+                    } 
+                }    
+            }
             "undead_warrior"
             {
                 "model"                     "models/heroes/hero_steppenwolf/steppenwolf_samurai/samurai.vmdl"    

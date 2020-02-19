@@ -1501,14 +1501,17 @@
 		"HeroID"					"25"
 		"BaseClass"					"npc_dota_hero_lina"
 
+		"CMDisabled"				"1"
+		"HeroDisabled"				"1"
+
 		////"override_hero"			"npc_dota_hero_lina"
 		"AbilityLayout"				"4"
-		"Ability1"					"fenix_burning"
-		"Ability2"					"fenix_strafe"
-		"Ability3"					"fenix_slam"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
 		"Ability4"					"generic_hidden"
 		"Ability5"    				"generic_hidden"
-		"Ability6"					"phoenix_rage"
+		"Ability6"					""
 		"Ability10"					"special_bonus_exp_boost_30"
 		"Ability11"					"special_bonus_all_stats_12"
 		"Ability12"					"special_bonus_hp_regen_40"
@@ -4414,16 +4417,17 @@
 	}
 	"npc_dota_hero_elder_titan" //имя юнита
 	{
-	      // General
-	      //----------------------------------------------------------------
+		// General
+		//----------------------------------------------------------------
 		///"override_hero"			"npc_dota_hero_elder_titan"
 
-          "HeroID"			          "103"
-          "BaseClass"		          "npc_dota_hero_elder_titan"
+		"HeroID"			          "103"
+		"BaseClass"		          "npc_dota_hero_elder_titan"
 
 		"Model"					"models/heroes/hero_thanos_eg/thanos.vmdl"			// Model.
 		"DisableWearables"			"1"
 		"ModelScale"  				"2.2"
+		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"			"4"
 
@@ -4777,7 +4781,7 @@
 		"Rolelevels"					"2,1,1,1"
 		"Team"						    "Bad"
 		"HeroID"						"85"
-		"ModelScale" 					"0.93"
+		"ModelScale" 					"0.87"
 		"LoadoutScale"					".87"
 		"NameAliases"					"dirge"
 		"url" 						    "Undying"
@@ -4801,7 +4805,7 @@
 		"Ability13"						"special_bonus_cast_range_200"
 		"Ability14"						"special_bonus_cooldown_reduction_25"
 		"Ability15"						"special_bonus_mp_500"
-		"Ability16"						"special_bonus_unique_manhattan_reality_warp"
+		"Ability16"						"special_bonus_magic_resistance_6"
 		"Ability17"						"special_bonus_all_stats_20"
 
 

@@ -5,7 +5,11 @@ atomic_samurai_focused_atomic_slash = class ({})
 
 
 function atomic_samurai_focused_atomic_slash:GetAOERadius() return self:GetSpecialValueFor("radius") end
-function atomic_samurai_focused_atomic_slash:GetCooldown (nLevel) return self.BaseClass.GetCooldown (self, nLevel) end
+
+function atomic_samurai_focused_atomic_slash:GetCooldown( nLevel )
+     return self.BaseClass.GetCooldown( self, nLevel ) - (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_atomic_samurai_4") or 0)
+end
+
 function atomic_samurai_focused_atomic_slash:GetManaCost (hTarget) return self.BaseClass.GetManaCost (self, hTarget) end
 function atomic_samurai_focused_atomic_slash:GetBehavior() return DOTA_ABILITY_BEHAVIOR_AOE +  DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES end
 
@@ -116,7 +120,7 @@ if modifier_atomic_samurai_focused_atomic_slash == nil then modifier_atomic_samu
 function modifier_atomic_samurai_focused_atomic_slash:IsHidden() return true end
 function modifier_atomic_samurai_focused_atomic_slash:IsPurgable() return false end
 function modifier_atomic_samurai_focused_atomic_slash:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
-function modifier_atomic_samurai_focused_atomic_slash:CheckState () return { [MODIFIER_STATE_COMMAND_RESTRICTED] = true, [MODIFIER_STATE_OUT_OF_GAME] = true } end
+function modifier_atomic_samurai_focused_atomic_slash:CheckState () return { [MODIFIER_STATE_COMMAND_RESTRICTED] = true,[MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_OUT_OF_GAME] = true } end
 
 function modifier_atomic_samurai_focused_atomic_slash:OnCreated(params)
      if IsServer() then

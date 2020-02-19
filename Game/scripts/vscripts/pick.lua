@@ -39,7 +39,6 @@ local heroes = {
   "npc_dota_hero_earth_spirit",
   "npc_dota_hero_ember_spirit",
   "npc_dota_hero_oracle",
-  "npc_dota_hero_lina",
   "npc_dota_hero_pudge",
   "npc_dota_hero_rattletrap",
   "npc_dota_hero_dazzle",

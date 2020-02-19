@@ -96,7 +96,7 @@ function modifier_item_reality_gem_active:OnTakeDamage( params )
                     damage = params.damage,
                     damage_type = DAMAGE_TYPE_PURE,
                     ability = self:GetAbility(),
-                    damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS,
+                    damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS
                 })
             end 
 

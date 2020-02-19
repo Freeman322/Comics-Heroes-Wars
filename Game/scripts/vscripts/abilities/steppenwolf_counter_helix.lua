@@ -12,6 +12,11 @@ function steppenwolf_counter_helix:OnUpgrade()
 	end
 end
 
+function steppenwolf_counter_helix:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_boo") then return "custom/wolf_spell_2_custom" end
+	return self.BaseClass.GetAbilityTextureName(self)
+end
+
 
 if modifier_steppenwolf_counter_helix == nil then modifier_steppenwolf_counter_helix = class({}) end 
 

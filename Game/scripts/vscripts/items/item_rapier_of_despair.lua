@@ -40,7 +40,7 @@ function modifier_item_rapier_of_despair_buff:RemoveOnDeath() return true end
 function modifier_item_rapier_of_despair_buff:DeclareFunctions() return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE} end
 function modifier_item_rapier_of_despair_buff:GetEffectName() return "particles/econ/items/witch_doctor/wd_ti8_immortal_head/wd_ti8_immortal_maledict_dots.vpcf" end
 function modifier_item_rapier_of_despair_buff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
-function modifier_item_rapier_of_despair_buff:GetModifierTotalDamageOutgoing_Percentage( params ) return -100 end
+function modifier_item_rapier_of_despair_buff:GetModifierTotalDamageOutgoing_Percentage( params ) return -50 end
 function modifier_item_rapier_of_despair_buff:GetModifierIncomingDamage_Percentage( params ) return self:GetAbility():GetSpecialValueFor("despair_damage_percent") end
 
 modifier_item_rapier_of_despair = class ({})

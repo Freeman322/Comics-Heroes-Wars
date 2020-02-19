@@ -123,6 +123,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/reverse_flash_custommade.png" );
 				}
+				else if (playerInfo.player_selected_hero == "npc_dota_hero_clinkz" && hasModifier(hero_entindex, "modifier_boo"))
+				{
+			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/boo_icon.png" );
+				}
 				else if (playerInfo.player_selected_hero == "npc_dota_hero_razor" && hasModifier(hero_entindex, "modifier_zoom_kalyaska_gold"))
 				{
 			    		playerPortrait.SetImage( "file://{images}/custom_game/heroes/golden_wheelchair.png" );

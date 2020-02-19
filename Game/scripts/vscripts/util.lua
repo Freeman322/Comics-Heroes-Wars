@@ -1311,9 +1311,6 @@ function Util:OnHeroInGame(hero)
             mask1:FollowEntity(hero, true)
         end
     end
-    if hero:GetUnitName() == "npc_dota_hero_obsidian_destroyer" then
-        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "tribunal_the_seven_evils") == true then hero:SetModelScale(0.76)  end
-    end
     if hero:GetUnitName() == "npc_dota_hero_nevermore" then
         LinkLuaModifier("modifier_deadpool", "modifiers/modifier_deadpool.lua", LUA_MODIFIER_MOTION_NONE)
         hero:AddNewModifier(hero, nil, "modifier_deadpool", nil)

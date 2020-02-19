@@ -39,6 +39,15 @@ function modifier_thanos_decimation:OnDestroy()
 
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 
+		if self:GetCaster():HasTalent("special_bonus_unique_thanos_1") then radius = radius + self:GetCaster():FindTalentValue("special_bonus_unique_thanos_1") end 
+
+		if self:GetCaster():HasTalent("special_bonus_unique_thanos_2") then
+			local mult = self:GetCaster():FindTalentValue("special_bonus_unique_thanos_2") / 100
+
+			self.nDamage = self.nDamage + (self.nDamage * mult)
+		end 
+
+
 		local punch_particle = ParticleManager:CreateParticle("particles/hero_thanos/thanos_decimation.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
 		ParticleManager:SetParticleControl(punch_particle, 0, self:GetCaster():GetAbsOrigin())
 		ParticleManager:SetParticleControl(punch_particle, 1, Vector(radius, radius, 1))
@@ -189,7 +198,7 @@ function modifier_thanos_decimation_aura:IsPurgable()
 end
 
 function modifier_thanos_decimation_aura:GetAuraRadius()
-	return self:GetAbility():GetSpecialValueFor("radius")
+	return self:GetAbility():GetSpecialValueFor("radius") + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_thanos_1") or 0)
 end
 
 function modifier_thanos_decimation_aura:GetAuraSearchTeam()

@@ -11164,8 +11164,8 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_thanos_shattered_earth_damage_per_unit"                     "%DAMAGE:"
 		"DOTA_Tooltip_ability_thanos_shattered_earth_stun_duration"                       "STUN DURATION:"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_thanos_1"                              "+120 Shattered Earth radius"
-		"DOTA_Tooltip_ability_special_bonus_unique_thanos_2"                              "+14% Shattered Earth damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_thanos_1"                              "+120 Decimation radius"
+		"DOTA_Tooltip_ability_special_bonus_unique_thanos_2"                              "+14% Decimation damage"
 
 		"DOTA_Tooltip_ability_thanos_titans_sword"                                        "Titan's Sword"
 		"DOTA_Tooltip_ability_thanos_titans_sword_Description"                            "Thanos throws his legendary blade with deadly precision, damaging each enemy unit it strikes. The first enemy hero it hits is skewered on the sword, pushing it back. If a skewered hero hits a tree, building, or cliff, they will be impaled to it and stunned."
@@ -11952,7 +11952,7 @@ When activated spends mana."
 
 		"DOTA_Tooltip_ability_special_bonus_unique_atomic_samurai"                        "+9 waves for Air Blade-Flying Sword"
 		"DOTA_Tooltip_ability_special_bonus_unique_atomic_samurai_3"                      "+13% chance for Yaido"
-		"DOTA_Tooltip_ability_special_bonus_unique_atomic_samurai_4"                      "Special Bonus Unique Atomic Samurai 4"
+		"DOTA_Tooltip_ability_special_bonus_unique_atomic_samurai_4"                      "-40 seconds for Focused Atomic Slash"
 		"DOTA_Tooltip_ability_special_bonus_unique_atomic_samurai_2"                      "+25 damage for Air Blade-Flying Sword"
 
 		"DOTA_Tooltip_ability_beyonder_astral_shield"                                     "Astral Shield"

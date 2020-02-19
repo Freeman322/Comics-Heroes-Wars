@@ -6297,6 +6297,8 @@
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
 			"particle"					"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
 			"model"						"models/heroes/lich/lich.vmdl"
+			"model"						"models/heroes/leon_skin/leon_weapon.vmdl"
+			"model"						"models/heroes/leon_skin/leon_skin.vmdl"
 			"model"						"models/items/lich/frostivus2018_lich_frozenworlds_head/frostivus2018_lich_frozenworlds_head.vmdl"
 			"particle"					"particles/units/heroes/hero_antimage/antimage_blink_start.vpcf"
 
@@ -20933,6 +20935,8 @@
 			"particle"	    "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_echoslam_start.vpcf"
 			"particle"	    "particles/econ/items/earthshaker/earthshaker_arcana/earthshaker_arcana_totem_leap.vpcf"
 			"model"		    "models/heroes/hero_steppenwolf/weapon/weapon.vmdl"
+			"model"			"models/heroes/steppenwolf_boo/boo.vmdl"
+			"particle"		"particles/econ/items/ogre_magi/ogre_magi_arcana/boo_ambientdebuff.vpcf"
 			"model"		    "models/heroes/hero_black_panther/spangled_skin/nike.vmdl"
 			"model"		    "models/heroes/hero_black_panther/spangled_skin/nike_weapon.vmdl"
             "model"         "models/heroes/hero_steppenwolf/steppenwolf_samurai/samurai.vmdl"
@@ -21091,6 +21095,7 @@
 		"precache"
 		{
 			"particle"  				"particles/econ/events/darkmoon_2017/darkmoon_calldown_marker.vpcf"
+			"particle"					"particles/econ/items/outworld_devourer/od_ti8/od_ti8_santies_eclipse_area.vpcf"
 			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
 			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
 			"model"						"models/heroes/hero_steppenwolf/weapon/steppenwolf_axe.vmdl"
@@ -30379,6 +30384,7 @@
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
 			"particle"	"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf"
 			"particle"  "particles/status_fx/status_effect_guardian_angel.vpcf"
+			"particle"	"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
 			"particle"  "particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf"
 		}
 	}
@@ -41590,8 +41596,7 @@
 		"AbilityCastPoint"				"0.15"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
-		"AbilityCharges"				"2"
-		"AbilityChargeRestoreTime"		"24 22 20 18"
+		"AbilityCooldown"				"26 24 22 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -41616,32 +41621,32 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fly_base_damage"			"70 100 130 160"
+				"fly_base_damage"		"150 200 250 300"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fly_crit_pct"	        		"140 160 180 200"
+				"fly_crit_pct"	        "140 160 180 200"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"earth_spike_damage"		"110 140 170 200"
+				"earth_spike_damage"	"110 140 170 200"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"earth_spike_radius"    		"125 150 175 200"
+				"earth_spike_radius"    "125 150 175 200"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"earth_spike_range"	    		"525 650 775 900"
+				"earth_spike_range"	    "525 650 775 900"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"earth_spike_stun"      		"1.2 1.4 1.6 1.8"
+				"earth_spike_stun"      "1.2 1.4 1.6 1.8"
 			}
 		}
 	}
@@ -41859,44 +41864,44 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"travel_distance"			"615 1245 1775"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"travel_speed"				"300"
 			}			
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"					"FIELD_FLOAT"
 				"damage_interval"			"0.5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"vision_distance"			"500"
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"					"FIELD_FLOAT"
 				"end_vision_duration"		"3.0"
 			}
 			"08"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"					"FIELD_FLOAT"
 				"main_damage"				"75 110 180"
 			}
 			"09"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"burn_duration"			"3.0"
+				"var_type"					"FIELD_FLOAT"
+				"burn_duration"				"3.0"
 			}
 			"10"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"burn_dps"				"11 22 33"
+				"var_type"					"FIELD_FLOAT"
+				"burn_dps"					"11 22 33"
 			}
 		}
     }
@@ -42130,7 +42135,7 @@
         "BaseClass"						"ability_lua"
         "ScriptFile"					"abilities/genos_inceneration_blast.lua"
         "AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-        "AbilityTextureName"		    "custom/genos_acceleration"
+        "AbilityTextureName"		    "custom/genos_incineration_max"
 
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -42778,62 +42783,13 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
-	"atomic_samurai_focused_atomic_slash"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"                     "ability_lua"
-		"ScriptFile"					"abilities/atomic_samurai_focused_atomic_slash.lua"
-		"AbilityTextureName"            	"custom/samurai_ecliptic_strike"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0"
-		"FightRecapLevel"				"1"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					    "FIELD_INTEGER"
-				"radius"					    "250 350 450 550"
-			}
-			"02"
-			{
-				"var_type"					    "FIELD_INTEGER"
-				"bonus_hero_damage"			    "30 50 70 90"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"attack_interval"				"0.2"
-			}
-			"04"
-			{
-				"var_type"                      "FIELD_FLOAT"
-				"duration"                      "1.0 1.5 2.0 2.5"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-     }
 	"atomic_samurai_atomic_slash"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"             			"ability_lua"
-		"AbilityTextureName"			"custom/samurai_atomic_dance"
+		"AbilityTextureName"			"custom/samurai_ecliptic_strike"
 		"ScriptFile"					"abilities/atomic_samurai_atomic_slash.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		//"AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"
@@ -42948,7 +42904,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"35"
+				"value"						"40"
 			}
 		}
 	}
@@ -43458,37 +43414,37 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.7"
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"1.7"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"area_of_effect"			"225"
+				"var_type"						"FIELD_INTEGER"
+				"area_of_effect"				"225"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_of_each_strike"		"175 240 305 370"
+				"var_type"						"FIELD_FLOAT"
+				"damage_of_each_strike"			"175 240 305 370"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_distance"			"400"
+				"var_type"						"FIELD_INTEGER"
+				"vision_distance"				"400"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"vision_duration"			"4.0"
+				"var_type"						"FIELD_FLOAT"
+				"vision_duration"				"4.0"
 			}
             	"06"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"						"FIELD_INTEGER"
 				"strike_count"	    			"2 3 4 5"
 			}
             	"07"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"						"FIELD_FLOAT"
 				"strike_distance"       		"75"      //////расстояние лучей друг от друга, цифра примерная, можешь поменять
 			}
 		}

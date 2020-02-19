@@ -127,10 +127,12 @@ modifier_tatsumaki_mastery_buff = class({
      IsHidden = function() return false end,
      IsPurgable = function() return false end,
      RemoveOnDeath = function() return true end,
-     CheckState = function() return {[MODIFIER_STATE_COMMAND_RESTRICTED] = true} end
 })
  
 modifier_tatsumaki_mastery_buff.pos = nil
+
+function modifier_tatsumaki_mastery_buff:CheckState () return { [MODIFIER_STATE_COMMAND_RESTRICTED] = true, [MODIFIER_STATE_FLYING] = true, [MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_OUT_OF_GAME] = true } end
+
 
 function modifier_tatsumaki_mastery_buff:GetEffectName()return "particles/units/heroes/hero_demonartist/demonartist_soulchain_debuff.vpcf" end
 function modifier_tatsumaki_mastery_buff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end

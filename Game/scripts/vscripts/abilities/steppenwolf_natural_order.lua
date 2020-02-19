@@ -5,6 +5,11 @@ function steppenwolf_natural_order:GetIntrinsicModifierName()
 	return "modifier_steppenwolf_natural_order"
 end
 
+function steppenwolf_natural_order:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_boo") then return "custom/wolf_spell_1_custom" end
+	return self.BaseClass.GetAbilityTextureName(self)
+end
+
 if modifier_steppenwolf_natural_order == nil then modifier_steppenwolf_natural_order = class({}) end
 
 function modifier_steppenwolf_natural_order:IsHidden()

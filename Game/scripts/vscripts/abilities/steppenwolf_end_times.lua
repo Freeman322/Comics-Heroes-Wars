@@ -16,6 +16,10 @@ function steppenwolf_end_times:OnAbilityPhaseStart()
 	return true
 end
 
+function steppenwolf_end_times:GetAbilityTextureName()
+	if self:GetCaster():HasModifier("modifier_boo") then return "custom/wolf_spell_4_custom" end
+	return self.BaseClass.GetAbilityTextureName(self)
+end
 
 function steppenwolf_end_times:OnSpellStart()
 	if IsServer() then
@@ -69,6 +73,12 @@ function steppenwolf_end_times:BlowUp()
 			ParticleManager:SetParticleControl( nFXIndex, 3, self:GetCaster():GetOrigin() )
 			ParticleManager:SetParticleControl( nFXIndex, 10, Vector(5, 0, 0) )
 			ParticleManager:SetParticleControl( nFXIndex, 11, Vector(self:GetSpecialValueFor("radius"), self:GetSpecialValueFor("radius"), 0) )
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
+		elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "boo") == true then
+			local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/outworld_devourer/od_ti8/od_ti8_santies_eclipse_area.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
+			ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() )
+			ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetSpecialValueFor("radius"), self:GetSpecialValueFor("radius"), 0) )
+			ParticleManager:SetParticleControl( nFXIndex, 2, Vector(500, 500, 500) )
 			ParticleManager:ReleaseParticleIndex( nFXIndex )
 		else 
 			local nFXIndex = ParticleManager:CreateParticle( "particles/steppenwolf/steppenwolf_end_times_explosion.vpcf", PATTACH_CUSTOMORIGIN, nil )
