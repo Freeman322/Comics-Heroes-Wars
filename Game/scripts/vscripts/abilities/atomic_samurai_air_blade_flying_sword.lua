@@ -46,13 +46,15 @@ function atomic_samurai_air_blade_flying_sword:OnProjectileHit( hTarget, vLocati
 		EmitSoundOn( "Hero_Mars.Spear.Target" ,hTarget )
 		
 		local wave_damage = self:GetSpecialValueFor( "wave_damage" ) + (IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_atomic_samurai_2") or 0)
+		wave_damage = wave_damage + (self:GetCaster():GetAverageTrueAttackDamage(hTarget) * (self:GetSpecialValueFor( "damage_ptc" ) / 100))
 		
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = wave_damage,
 			damage_type = DAMAGE_TYPE_PHYSICAL,
-			ability = this,
+			ability = self,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS
 		}
 
 		ApplyDamage( damage )

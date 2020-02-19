@@ -42626,13 +42626,22 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"wave_damage"			"45 60 75 90"
-				"LinkedSpecialBonus"    "special_bonus_unique_atomic_samurai_2"
+				"wave_width"			"300"
 			}
-			"03"
+			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"wave_count"			"4 6 8 10"
+				"wave_damage"			"35 40 45 50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_ptc"			"8 10 12 14"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wave_count"			"3 5 7 9"
 				"LinkedSpecialBonus"    "special_bonus_unique_atomic_samurai"
 			}				
 		}
@@ -42839,7 +42848,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70 60 50 40"
+		"AbilityCooldown"				"26 24 22 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------

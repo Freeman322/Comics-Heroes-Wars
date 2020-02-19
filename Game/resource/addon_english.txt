@@ -11928,6 +11928,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_atomic_samurai_air_blade_flying_sword_Description"          "Samurai fires shells in different directions, which cause damage when hit"
 		"DOTA_Tooltip_ability_atomic_samurai_air_blade_flying_sword_wave_damage"          "DAMAGE PER WAVE:"
 		"DOTA_Tooltip_ability_atomic_samurai_air_blade_flying_sword_wave_count"           "WAVE COUNT:"
+		"DOTA_Tooltip_ability_atomic_samurai_air_blade_flying_sword_wave_damage_ptc"      "%CURRENT ATTACK DAMAGE:"
 
 		"DOTA_Tooltip_ability_manhattan_fragments_of_creation"                            "Hiral Lean"
 		"DOTA_Tooltip_ability_manhattan_fragments_of_creation_Description"                "Manhattan rushes forward in front of him, causing damage to all affected enemies."
