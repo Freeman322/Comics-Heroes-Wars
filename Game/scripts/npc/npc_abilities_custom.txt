@@ -11157,6 +11157,10 @@
 		{
 			"model"						"models/deathstroke/weapon.vmdl"
 			"model"						"models/heroes/plus_skins/deadshot_skin/deadshot.vmdl"
+			"model"						"models/heroes/wick_skin/wick.vmdl"
+			"model"						"models/heroes/leon_skin/leon_skin.vmdl"
+			"model"						"models/heroes/leon_skin/leon_weapon.vmdl"
+			"particle"					"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
 			"model"         			"models/heroes/plus_skins/deadshot_skin/econ/rifle.vmdl"
 		}
 		// Special

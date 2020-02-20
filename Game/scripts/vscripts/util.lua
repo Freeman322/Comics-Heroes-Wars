@@ -18,6 +18,7 @@ Util.Heroes = {
 }
 
 EF_GLOBAL = 99999
+EF_MAX_LEVEL_CONST = 30
 
 function Util:OnInit(args)
     CustomNetTables:SetTableValue( "heroes", "heroes", Util:GetHeroList())
@@ -35,7 +36,8 @@ function Util:OnInit(args)
     CustomGameEventManager:RegisterListener("quest_ended", Dynamic_Wrap(Util, 'OnQuestEnded'))
     CustomGameEventManager:RegisterListener("on_cosmetic_item_changed", Dynamic_Wrap(Util, 'OnCosmeticItemUpdated'))
 
-	ListenToGameEvent( "dota_item_picked_up", Dynamic_Wrap( Util, "OnItemPickUp"), self )
+    ListenToGameEvent( "dota_item_picked_up", Dynamic_Wrap( Util, "OnItemPickUp"), self )
+    ListenToGameEvent( "dota_player_gained_level", Dynamic_Wrap( Util, "OnPlayerLeveledUp"), self )
 
     Convars:RegisterCommand( "try_get_data", Dynamic_Wrap(Util, 'GetNetworkStatsData'), "Test", FCVAR_CHEAT )
     Convars:RegisterCommand( "try_set_data", Dynamic_Wrap(Util, 'SetNetworkStatsData'), "Test", FCVAR_CHEAT )
@@ -101,6 +103,14 @@ function Util:OnItemPickUp( event )
             UTIL_Remove( item )
         end
     end)
+end
+
+function Util:OnPlayerLeveledUp(params)
+    local hero = EntIndexToHScript(params.hero_entindex)
+
+    if params.level == EF_MAX_LEVEL_CONST then
+        hero:SetAbilityPoints(EF_MAX_LEVEL_CONST)
+    end
 end
 
 function Util:GetAbilityBehavior(name)

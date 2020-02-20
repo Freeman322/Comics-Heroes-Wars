@@ -6321,6 +6321,66 @@
                     }
                 }
             }
+            "leon"
+            {
+                "model"                     "models/heroes/leon_skin/leon_skin.vmdl"
+                "model_scale"               "1.35"
+                "models"
+                {
+                    "1"
+                    {
+                        "model"             "models/heroes/leon_skin/leon_weapon.vmdl"
+                    }
+                }  
+                
+                "projectile"
+                {
+                    "particle"              "particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+                } 
+                
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_sounds"
+                        "modifier_path"     "modifiers/modifier_kill_sound.lua"
+                        "params"
+                        {
+                            "kill"                 "Leon.Kill"
+                            "ability0"             "Leon.Cast1"
+                            "ability2"             "Leon.Cast2"
+                            "ability6"             "Leon.Cast4"
+                        }
+                    }
+                }
+            }
+            "wick"
+            {
+                "model"                     "models/heroes/wick_skin/wick.vmdl"
+               
+                "models"
+                {
+                    "1"
+                    {
+                        "model"             "models/heroes/leon_skin/leon_weapon.vmdl"
+                    }
+                }  
+                
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_sounds"
+                        "modifier_path"     "modifiers/modifier_kill_sound.lua"
+                        "params"
+                        {
+                            "kill"                 "Wick.Kill"
+                            "ability0"             "Wick.Cast1"
+                            "ability1"             "Wick.Cast2"
+                        }
+                    }
+                }
+            }
         }
     }
     "npc_dota_hero_ezekyle"
@@ -7510,15 +7570,18 @@
                     "particle"              "particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
                 } 
                 
-                "modifiers"
+               "modifiers"
                 {
                     "1"
                     {
-                        "modifier"          "modifier_kill_sound"
+                        "modifier"          "modifier_sounds"
                         "modifier_path"     "modifiers/modifier_kill_sound.lua"
                         "params"
                         {
-                            "sound"         "Leon.Kill"
+                            "kill"                 "Leon.Kill"
+                            "ability0"             "Leon.Cast1"
+                            "ability2"             "Leon.Cast2"
+                            "ability6"             "Leon.Cast4"
                         }
                     }
                 }

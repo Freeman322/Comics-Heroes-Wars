@@ -24,7 +24,7 @@ end
 
 function modifier_atomic_samurai_yaido:DeclareFunctions()
     local funcs = {
-          MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK
+          MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK
     }
 
     return funcs
@@ -33,7 +33,7 @@ end
 function modifier_atomic_samurai_yaido:GetEffectName() return "particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf" end
 function modifier_atomic_samurai_yaido:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 
-function modifier_atomic_samurai_yaido:GetModifierTotal_ConstantBlock(params)
+function modifier_atomic_samurai_yaido:GetModifierPhysical_ConstantBlock(params)
      if IsServer() then
           if params.target == self:GetParent() then
                local chance = self:GetAbility():GetSpecialValueFor("counter_attack_chance_pct")

@@ -2105,7 +2105,7 @@
             "reference_operator"
             {
                 "operator"		"sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
                 "operator_variables"
                 {
                     "vsnd_files"
@@ -4544,7 +4544,7 @@
 			"reference_operator"
 			{
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -4582,7 +4582,7 @@
 			"reference_operator"
 			{
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -4615,7 +4615,7 @@
 			"reference_operator"
 			{
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -4648,7 +4648,7 @@
 			"reference_operator"
 			{
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -4681,7 +4681,7 @@
 			"reference_operator"
 			{
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -4716,7 +4716,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -4751,7 +4751,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -4786,7 +4786,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -4821,7 +4821,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -4856,7 +4856,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -4891,7 +4891,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -4928,7 +4928,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -4963,7 +4963,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -4998,7 +4998,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5033,7 +5033,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5068,7 +5068,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5103,7 +5103,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5139,7 +5139,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5175,7 +5175,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5211,7 +5211,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5246,7 +5246,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5281,7 +5281,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5316,7 +5316,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5351,7 +5351,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5386,7 +5386,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5421,7 +5421,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5460,7 +5460,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5498,7 +5498,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5533,7 +5533,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5569,7 +5569,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5604,7 +5604,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5639,7 +5639,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5674,7 +5674,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5709,7 +5709,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5744,7 +5744,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5779,7 +5779,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5814,7 +5814,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5849,7 +5849,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5884,7 +5884,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5919,7 +5919,7 @@
 			{
 
 				"operator"		        "sos_reference_stack"
-				"reference_stack"		"dota_update_vo_switch"
+				"reference_stack"		"dota_update_default"
 
 				"operator_variables"
 				{
@@ -5928,6 +5928,217 @@
 						"value"
 						{
 							"value0"		"sounds/econs/leon/leon_kill_sound.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"2.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Leon.Cast1"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_default"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/leon/leon_cast1.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"2.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Wick.Cast1"
+{
+    
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_default"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/wick/cast1.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Wick.Cast2"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_default"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/wick/cast2.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Wick.Kill"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_default"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/wick/kill.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"2.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Leon.Cast2"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_default"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/leon/leon_cast2.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"2.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"Leon.Cast4"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_default"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/econs/leon/leon_cast4.vsnd"
 						}
 					}
 					"volume"

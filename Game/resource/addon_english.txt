@@ -5330,10 +5330,15 @@
 		"DOTA_Tooltip_ability_god_emperor_mankind_merger_damage_reduction"                "%DAMAGE REDUCTION:"
 
 		"DOTA_Tooltip_ability_god_emperor_menthal_spear"                                  "Menthal Spear"
-		"DOTA_Tooltip_ability_god_emperor_menthal_spear_Description"                      "Activated: Unleashes a mental spear of pure warp energy to a targeted point. Global range."
+		"DOTA_Tooltip_ability_god_emperor_menthal_spear_Description"                      "Activated: Unleashes a mental spear of pure warp energy to a targeted point. Global range.\nUpgradeable with Aghanim's Scepter."
 		"DOTA_Tooltip_ability_god_emperor_menthal_spear_arrow_width"                      "AOE RADIUS:"
 		"DOTA_Tooltip_ability_god_emperor_menthal_spear_arrow_speed"                      "SPEED:"
 		"DOTA_Tooltip_ability_god_emperor_menthal_spear_Lore"							  "The Imperium will never bow to the forces of Chaos!"
+		"DOTA_Tooltip_ability_god_emperor_menthal_spear_aghanim_description"			  "God-Emperror enters The Warp, and moves with spear. Cloud Dance will be applied on landing."
+
+		"DOTA_Tooltip_ability_quicsilver_speed_drain"                                     "Nether Blink"
+		"DOTA_Tooltip_ability_quicsilver_speed_drain_Description"                         "Activated: Qucksilver is transferred to the indicated point, where he deals 100/150/200/250 damage + 50% of the difference in the speed of Qucksilver and all targets."
+		"DOTA_Tooltip_ability_quicsilver_speed_drain_range"                               "RANGE:"
 
 		"DOTA_Tooltip_ability_god_emperor_inqusition"                                     "Inqusition"
 		"DOTA_Tooltip_ability_god_emperor_inqusition_Description"                         "Aura: The Emperor leads his followers, increasing their damage."
