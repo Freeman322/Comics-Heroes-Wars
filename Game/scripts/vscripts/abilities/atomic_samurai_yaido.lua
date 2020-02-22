@@ -35,7 +35,7 @@ function modifier_atomic_samurai_yaido:GetEffectAttachType() return PATTACH_ABSO
 
 function modifier_atomic_samurai_yaido:GetModifierPhysical_ConstantBlock(params)
      if IsServer() then
-          if params.target == self:GetParent() then
+          if params.target == self:GetParent() and params.damage_type	== DAMAGE_TYPE_PHYSICAL then
                local chance = self:GetAbility():GetSpecialValueFor("counter_attack_chance_pct")
                local chance_ranges = self:GetAbility():GetSpecialValueFor("range_block_chance_pct")
 

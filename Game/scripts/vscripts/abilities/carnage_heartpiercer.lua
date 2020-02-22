@@ -39,8 +39,10 @@ function modifier_carnage_heartpiercer:OnAttackLanded (params)
 	    if params.attacker == self:GetParent() and self:GetAbility():IsCooldownReady() then
 			if RollPercentage(self:GetAbility():GetSpecialValueFor("chance_pct")) then 
 				params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_carnage_heartpiercer_debuff", {duration = self:GetAbility():GetSpecialValueFor("duration")})
+				
 				EmitSoundOn("Hero_Pangolier.HeartPiercer", params.target)
-		        self:GetAbility():UseResources(false, false, true)
+				
+				self:GetAbility():UseResources(false, false, true)
 		    end
 	    end
 	end

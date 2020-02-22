@@ -57,8 +57,10 @@ function modifier_sounds:DeclareFunctions()
 end
 
 function modifier_sounds:OnHeroKilled(params)
-    if params.attacker == self:GetParent() then
-        EmitSoundOn(self.m_sSound, self:GetParent())
+    if IsServer() then
+        if params.attacker == self:GetParent() then
+            EmitSoundOnLocationWithCaster(self:GetParent():GetAbsOrigin(), self.m_sSound, self:GetParent())
+        end
     end
 end
 

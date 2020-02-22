@@ -21588,7 +21588,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"150 240 310 390"
+				"damage"				"100 150 200 250"
 			}
 			"05"
 			{
@@ -41943,7 +41943,7 @@
 		}
 	}
 	"atomic_samurai_focused_atomic_slash"
-     {
+    {
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_lua"
@@ -42001,8 +42001,9 @@
 				"duration"                      "3 3.25 3.5"
 			}
 		}
+		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-     }
+    }
 	"genos_acceleration"
 	{
 		"BaseClass"								"ability_lua"
@@ -42512,7 +42513,7 @@
 		"AbilityTextureName"			"custom/manhattan_dark_projectile"
 		"ScriptFile"					"abilities/manhattan_dark_projectile.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -42531,7 +42532,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12 11 10 9"
 
-		"AbilityDamage"				"80 160 220 310"
+		"AbilityDamage"					"80 160 220 310"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -42551,15 +42552,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"channel_time"				"1.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"damage_charge_ptc"			"8 12 16 20"
 				"LinkedSpecialBonus"		"special_bonus_unique_manhattan_3"
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"radius"					"250 325 440 500"
@@ -42677,7 +42673,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"2"
-		"AbilityDamage"				"120 190 270 350"
+		"AbilityDamage"					"120 190 270 350"
 
 		"AbilityCharges"				"2"
 		"AbilityChargeRestoreTime"		"30 25 20 15"
@@ -42688,10 +42684,11 @@
 		
 		"precache"
 		{
-			"particle"				 "particles/dr_manhattan/manhattan_rope_trail.vpcf"
-			"soundfile"                    "soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
-           	"soundfile"                    "soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
-			"soundfile"				 "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+			"particle"				 	"particles/dr_manhattan/manhattan_rope_trail.vpcf"
+			"particle"					"particles/units/heroes/hero_demonartist/demonartist_darkartistry_proj.vpcf"
+			"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
+           	"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
+			"soundfile"				    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		}	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -42710,7 +42707,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.75 2.25 2.75 3.25"
+				"stun_duration"				"1.5 1.75 2.0 2.25"
 			}
 			"04"
 			{
@@ -43342,7 +43339,7 @@
 		"AbilityTextureName"			"custom/beyonder_resonant_pulse"
 		"ScriptFile"					"abilities/beyonder_resonant_pulse.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"

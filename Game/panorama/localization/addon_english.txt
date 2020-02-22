@@ -2936,6 +2936,9 @@ Rage, rage against the dying of the light."
         "arsen"                             "Arsene"
 		"arsen_lore"                         ""
 
+		"red_emblem"				"Red Emblem"
+		"red_emblem_lore"			""
+
 		"boo"                       "Boo"
 		"boo_lore"                  ""
 

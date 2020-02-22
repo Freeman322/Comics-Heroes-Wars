@@ -151,6 +151,7 @@ function Precache( context )
 	PrecacheResource("particle", "particles/econ/pets/otto_ambient.vpcf", context)
     PrecacheResource("particle", "particles/units/heroes/hero_drow/drow_base_attack.vpcf", context)
     PrecacheResource("particle", "particles/red_emblem/red_emblem.vpcf", context)
+    PrecacheResource("particle", "particles/red_wateryellow_water_effect/red_water.vpcf", context)
     PrecacheResource("particle", "particles/hero_effects/green_hero_effect_ground.vpcf", context)
     PrecacheResource("particle", "particles/star_emblem_3/star_emblem_3_effect.vpcf", context)
 

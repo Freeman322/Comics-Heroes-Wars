@@ -54,7 +54,7 @@ function modifier_carnage_blood_spray_thinker:GetAuraSearchType()
 end
 
 function modifier_carnage_blood_spray_thinker:GetAuraSearchFlags()
-    return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS
+    return DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS
 end
 
 function modifier_carnage_blood_spray_thinker:GetModifierAura()
@@ -101,9 +101,7 @@ end
 function modifier_carnage_blood_spray_modifier:OnIntervalThink()
    if IsServer() then 
         local vl = self:GetAbility():GetAbilityDamage()
-        if self:GetParent():IsBuilding() then 
-            vl = vl / 4
-        end
+
         local damage = {
             victim = self:GetParent(),
             attacker = self:GetCaster(),

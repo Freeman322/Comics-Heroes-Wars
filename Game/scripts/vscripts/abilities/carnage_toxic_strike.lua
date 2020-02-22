@@ -25,7 +25,7 @@ end
 --------------------------------------------------------------------------------
 
 function carnage_toxic_strike:OnProjectileHit( hTarget, vLocation )
-    if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) and ( not hTarget:IsMagicImmune() ) then
+    if hTarget ~= nil and ( not hTarget:IsInvulnerable() ) and ( not hTarget:TriggerSpellAbsorb( self ) ) then
         EmitSoundOn( "hero_viper.PoisonAttack.Target.ti7", hTarget )
 
         local duration = self:GetSpecialValueFor( "duration" )

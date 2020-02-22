@@ -28,7 +28,7 @@ function manhattan_pillars_of_eternity:OnSpellStart()
     vDirection = vDirection:Normalized()
 
     local info = {
-        EffectName = "particles/base_attacks/ranged_tower_good_linear.vpcf",
+        EffectName = "particles/units/heroes/hero_demonartist/demonartist_darkartistry_proj.vpcf",
         Ability = self,
         vSpawnOrigin = self:GetCaster():GetOrigin(),
         fStartRadius = 225,

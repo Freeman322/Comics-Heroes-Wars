@@ -8579,22 +8579,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"				"425"
+				"bonus_health"			"800"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"				"425"
+				"bonus_mana"			"800"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"			"16"
+				"bonus_intellect"		"40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"manacost_reduction"		"30"
+				"manacost_reduction"	"30"
 			}			
 			"05"
 			{
@@ -8604,17 +8604,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_regen_multiplier"		"200"
+				"mana_regen_multiplier"	"200"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"regen_per_charge"			"0.2"
+				"regen_per_charge"		"0.2"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"amp_per_charge"			"0.35"
+				"amp_per_charge"		"0.35"
 			}
 			"09"
 			{
@@ -8624,21 +8624,21 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_charges"				"1"
+				"kill_charges"			"1"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_range"				"1600"
+				"charge_range"			"1600"
 			}
 			"12"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"initial_charges_tooltip" 	"14"
 			}
 			"13"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"					"FIELD_FLOAT"
 				"soul_steal_duration" 		"2.5"
 			}
 		}

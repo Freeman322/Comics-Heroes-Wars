@@ -505,7 +505,8 @@
 		"DisableWearables"			"1"
 		"ModelScale"				"1"
 		"LoadoutScale"				"1"
-		"SoundSet"		           "Hero_LifeStealer"
+		
+		"SoundSet"		            "Hero_LifeStealer"
 
 		"Ability1"					"carnage_blood_spray"
 		"Ability2"					"carnage_tombstone"

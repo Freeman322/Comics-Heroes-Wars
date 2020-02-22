@@ -4560,7 +4560,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -5011,7 +5011,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -5046,7 +5046,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -5081,7 +5081,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -5437,7 +5437,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -5476,7 +5476,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -5862,7 +5862,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -5932,7 +5932,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -5967,7 +5967,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -6073,7 +6073,7 @@
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -6103,12 +6103,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/econs/leon/leon_cast2.vsnd"
+							"value0"		"sounds/econs/leon/leon_cast3.vsnd"
 						}
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
@@ -6138,12 +6138,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/econs/leon/leon_cast4.vsnd"
+							"value0"		"sounds/econs/leon/leon_cast6.vsnd"
 						}
 					}
 					"volume"
 					{
-						"value"		"2.000000"
+						"value"		"3.000000"
 					}
 					"pitch"
 					{
