@@ -6329,7 +6329,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_faceless_void_4" "+30% to universal evasion"
 		"DOTA_Tooltip_ability_special_bonus_unique_lich_2"			"Attacks slow the target by 60% for 4 seconds"
 		"DOTA_Tooltip_ability_special_bonus_reincarnation_200"		"Resurrection with a cooldown of 70 seconds"
-		"DOTA_Tooltip_ability_special_bonus_corruption_4"			"-20 to target armor"
+		"DOTA_Tooltip_ability_special_bonus_corruption_5"			"-15 to target armor"
 		"DOTA_Tooltip_ability_special_bonus_20_crit_15"				"20% chance to deal 450% damage"
 		"DOTA_Tooltip_ability_special_bonus_spell_block_20"			"Absorption of directional ability every 12 sec."
 		"DOTA_Tooltip_ability_special_bonus_hp_regen_40"			"+50 hp per second"

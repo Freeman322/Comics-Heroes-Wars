@@ -30618,6 +30618,33 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_corruption_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ScriptFile"					"talents/special_bonus_corruption_5.lua"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"15"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"6"
+			}
+		}
+	}
 	"special_bonus_unique_collector_1"
 	{
 		// General
@@ -41840,7 +41867,7 @@
 		"AbilityCastRange"			    	"800 900 1000"
 		"AbilityCastPoint"				    "0.3"
 
-		"AbilityChannelTime"				"3.0"
+		"AbilityChannelTime"				"1.25"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -42121,7 +42148,7 @@
 			"05"
 			{
 				"var_type"			    "FIELD_INTEGER"
-				"damage"				"80 180 280 380"
+				"damage"				"120 240 350 440"
 			}
 			"06"
 			{
@@ -42162,7 +42189,7 @@
 
         // Damage.
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityDamage"					"70 80 90 100"
+        "AbilityDamage"					"100 200 300 400"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -42328,7 +42355,7 @@
 
 	"genos_spiral_incineration" //Руки вместе и бдыщь (аое)
 	{
-		"BaseClass"						"ability_lua"
+		"BaseClass"							"ability_lua"
 		"AbilityTextureName"				"custom/genos_spiral_incineration"
 		"ScriptFile"						"abilities/genos_spiral_incineration.lua"
 		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -42340,7 +42367,7 @@
 		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
 
-		"AbilityCooldown"					"60 75 90"
+		"AbilityCooldown"					"90 60 30"
 		"AbilityCastRange"					"800 900 1000"
 		"AbilityCastPoint"					"2.5 2 1.5"
 
@@ -42359,7 +42386,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dragon_slave_speed"			"1200"
+				"dragon_slave_speed"		"1200"
 			}
 			
 			"02"

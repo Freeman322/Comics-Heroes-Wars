@@ -2,6 +2,7 @@
 
 genos_spiral_incineration = class ({})
 
+local PTC_LOW = 30
 
 function genos_spiral_incineration:OnSpellStart()
     if IsServer() then
@@ -52,7 +53,7 @@ function genos_spiral_incineration:OnProjectileHit( hTarget, vLocation )
 		local damage = {
 			victim = hTarget,
 			attacker = self:GetCaster(),
-			damage = self:GetSpecialValueFor("dragon_slave_damage"),
+			damage = self:GetSpecialValueFor("dragon_slave_damage") + (hTarget:GetHealth() * (PTC_LOW / 100)),
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self
 		}
