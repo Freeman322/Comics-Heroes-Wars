@@ -5307,6 +5307,66 @@
                     }
                 }
             }
+            "dark_custom_2"
+            {
+                "model"         "models/heroes/dark_custom/jeanne.vmdl"
+                
+                "models"
+                {
+                    "1"
+                    {
+                        "model"     "models/heroes/dark_custom/flag.vmdl"
+                    }
+                    "2"
+                    {
+                        "model"     "models/heroes/dark_custom/dress.vmdl"
+                    }
+                    "3"
+                    {
+                        "model"     "models/heroes/dark_custom/sword.vmdl"
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"          "particles/effects/jeannie_sword.vpcf"
+                            }
+                        }
+                    }
+                    "4"
+                    {
+                        "model"     "models/heroes/dark_custom/hair.vmdl"
+                    }
+                }   
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_jeannie_arcana"
+                        "modifier_path"     "modifiers/modifier_jeannie_arcana.lua"
+                    }
+                    "2"
+                    {
+                        "modifier"                  "modifier_sounds"
+                        "modifier_path"             "modifiers/modifier_kill_sound.lua"
+                        
+                        "params"
+                        {
+                            "ability0"             "Dark.Cast1"
+                            "ability1"             "Dark.Cast2"
+                            "ability3"             "Dark.Cast4"
+                            "ability4"             "Dark.Cast5"
+                            "ability5"             "Dark.Cast6"
+                        }
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/econ/courier/courier_jadehoof_ambient/jadehoof_ambient.vpcf"
+                    }
+                }
+            }
             "iron_devil"
             {
                 "model"         "models/heroes/hero_ironman/econs/berserk.vmdl"
@@ -6348,8 +6408,8 @@
                         {
                             "kill"                 "Leon.Kill"
                             "ability0"             "Leon.Cast1"
-                            "ability2"             "Leon.Cast2"
-                            "ability6"             "Leon.Cast4"
+                            "ability1"             "Leon.Cast2"
+                            "ability5"             "Leon.Cast4"
                         }
                     }
                 }
@@ -7581,7 +7641,7 @@
                             "kill"                 "Leon.Kill"
                             "ability0"             "Leon.Cast1"
                             "ability2"             "Leon.Cast2"
-                            "ability6"             "Leon.Cast4"
+                            "ability5"             "Leon.Cast4"
                         }
                     }
                 }

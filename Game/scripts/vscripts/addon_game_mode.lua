@@ -155,6 +155,8 @@ function Precache( context )
     PrecacheResource("particle", "particles/hero_effects/green_hero_effect_ground.vpcf", context)
     PrecacheResource("particle", "particles/star_emblem_3/star_emblem_3_effect.vpcf", context)
 
+    PrecacheResource("particle", "particles/red_regen_ambient.vpcf", context)
+
 	PrecacheResource("soundfile", "soundevents/custom_sounds.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/hero_zoom.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/hero_manhattan.vsndevts", context)

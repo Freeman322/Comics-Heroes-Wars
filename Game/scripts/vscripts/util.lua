@@ -443,6 +443,11 @@ function Util:OnHeroInGame(hero)
             ParticleManager:ReleaseParticleIndex(nFXIndex)
         end
 
+        if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "ocean_emblem") == true then
+            local nFXIndex = ParticleManager:CreateParticle( "particles/red_regen_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
+            ParticleManager:ReleaseParticleIndex(nFXIndex)
+        end
+
         if Util:PlayerEquipedItem(hero:GetPlayerOwnerID(), "platinum_emblem") == true then
             local nFXIndex = ParticleManager:CreateParticle( "particles/platinum_emblem/platinum_emblem.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero )
             ParticleManager:ReleaseParticleIndex(nFXIndex)

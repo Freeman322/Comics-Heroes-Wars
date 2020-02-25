@@ -19,9 +19,7 @@ function manhattan_fragments_of_creation:OnSpellStart()
           ParticleManager:SetParticleControl( nFXIndex, 1, dest_pos + Vector(0, 0, 96) );
           ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-          local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE
-
-          local unit_table = FindUnitsInLine(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), dest_pos, nil, self:GetSpecialValueFor("crack_width"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, target_flags)
+          local unit_table = FindUnitsInLine(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), dest_pos, nil, self:GetSpecialValueFor("crack_width"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, 0)
           if #unit_table > 0 then
                for k, unit in pairs(unit_table) do
                     EmitSoundOn( "Hero_Earthshaker.Arcana.ComboDamageTick" , self:GetCaster() )

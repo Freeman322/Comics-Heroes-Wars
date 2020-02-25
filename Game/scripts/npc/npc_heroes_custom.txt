@@ -2887,7 +2887,7 @@
 		"HasAggressiveStance"		"0"
 		"HealthBarOffset"			"165"
 		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	  }
+	}
 	"npc_dota_hero_slark"
 	{
 		// General
@@ -6559,12 +6559,14 @@
 
 		// Attribute Stats
 		"AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"     "32"
+		"AttributeBaseStrength"     "25"
 		"AttributeStrengthGain"     "2.900000"
 		"AttributeBaseIntelligence" "18"
 		"AttributeIntelligenceGain" "1.100000"
 		"AttributeBaseAgility"      "18"
 		"AttributeAgilityGain"      "1.200000"
+
+		"StatusHealth"				"1000"
 
 		// Misc stats
 		"ArmorPhysical"             "-2"
@@ -6581,7 +6583,7 @@
 		"AttackRange"               "200"
 		"ProjectileSpeed"           "0"
 
-		"MovementSpeed"             "265"
+		"MovementSpeed"             "285"
 		"MovementTurnRate"          "0.600000"
 
 		// Abilities

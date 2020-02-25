@@ -41,9 +41,9 @@ function modifier_sounds:OnCreated(params)
     self.abils[1] = params.ability0
     self.abils[2] = params.ability1
     self.abils[3] = params.ability2
-    self.abils[4] = nil
-    self.abils[5] = nil
-    self.abils[6] = params.ability6
+    self.abils[4] = params.ability3
+    self.abils[5] = params.ability4
+    self.abils[6] = params.ability5
     self.abils[7] = nil
 end
 
@@ -58,7 +58,7 @@ end
 
 function modifier_sounds:OnHeroKilled(params)
     if IsServer() then
-        if params.attacker == self:GetParent() then
+        if params.attacker == self:GetParent() and self.m_sSound ~= nil then
             EmitSoundOnLocationWithCaster(self:GetParent():GetAbsOrigin(), self.m_sSound, self:GetParent())
         end
     end

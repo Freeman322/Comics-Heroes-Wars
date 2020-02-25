@@ -2927,6 +2927,12 @@ Rage, rage against the dying of the light."
 		"echo_glaive"                     "Echo glaive"
 		"echo_glaive_lore"                ""
 
+		"ocean_emblem"						"Ocean Emblem"
+		"ocean_emblem_lore"					""
+		
+		"dark_custom_2"						"Janne Da'Arc"
+		"dark_custom_2_lore"				""
+		
         "kawaii"                            "Kawaii"
 		"kawaii_lore"                       ""
 

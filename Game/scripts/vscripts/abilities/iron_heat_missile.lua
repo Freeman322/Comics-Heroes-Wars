@@ -4,7 +4,7 @@ function iron_heat_missile:OnSpellStart()
 	local radius = self:GetSpecialValueFor( "radius" )
 
 	local particle = "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
-	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "dark_custom") == true then particle = "particles/hero_ironman/iron_rockets.vpcf" end
+	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "dark_custom") == true or Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "dark_custom_2") == true then particle = "particles/hero_ironman/iron_rockets.vpcf" end
 	
 	if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "iron_devil") == true then 
 		particle = "particles/hero_ironman/iron_devil_rockets.vpcf" 

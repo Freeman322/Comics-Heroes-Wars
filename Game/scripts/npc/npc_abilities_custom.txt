@@ -39973,27 +39973,27 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_do_damage_percent"	"50 65 80 100"
+				"images_do_damage_percent"	"10 15 20 25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_do_damage_percent_tooltip"			"150"
+				"images_do_damage_percent_tooltip"			"10 15 20 25"
 			}	
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_take_damage_percent"	"200"
+				"images_take_damage_percent"	"100"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_take_damage_percent_tooltip"			"300"
+				"images_take_damage_percent_tooltip"			"100"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_movespeed_bonus"			"50"
+				"images_movespeed_bonus"			"20"
 			}				
 		}
 	}

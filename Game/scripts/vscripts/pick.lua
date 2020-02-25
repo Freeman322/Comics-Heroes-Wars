@@ -21,7 +21,7 @@ local heroes = {
   "npc_dota_hero_omniknight",
   "npc_dota_hero_chaos_knight",
   "npc_dota_hero_silencer",
- ---- "npc_dota_hero_centaur",
+  "npc_dota_hero_void_spirit",
   "npc_dota_hero_invoker",
   "npc_dota_hero_storm_spirit",
   "npc_dota_hero_elder_titan",
@@ -186,6 +186,17 @@ function Pick:OnPick(params)
     CustomNetTables:SetTableValue("pick", "heroes", PLAYER_TABLE)
 end
 
+function Pick:HasHero(m)
+    local heroes = HeroList:GetAllHeroes()
+    
+    for k, hero in pairs(heroes) do
+        if hero:GetUnitName() == m then
+            return true
+        end
+    end
+
+    return false
+end
 
 function Pick:OnRandomHeroSelected(params)
     local playerid = params.playerID
@@ -194,16 +205,16 @@ function Pick:OnRandomHeroSelected(params)
         return
     end
 
-    local temp = RandomInt(1, #heroes)
+    local hero_name = heroes[RandomInt(1, #heroes)]
 
-    while HERO_TABLE[hero_name] do
-        temp = RandomInt(1, #heroes)
+    while HERO_TABLE[hero_name] or Pick:HasHero(hero_name) do
+        hero_name = heroes[RandomInt(1, #heroes)]
     end
-    local hero_name = heroes[temp]
 
     local keys = {}
     keys.hero = hero_name
     keys.playerID = playerid
+
     PlayerResource:SetHasRandomed(playerid)
     Pick:OnPick(keys)
 end
