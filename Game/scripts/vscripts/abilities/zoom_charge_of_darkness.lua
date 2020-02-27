@@ -68,14 +68,20 @@ function modifier_zoom_charge_of_darkness:OnDestroy()
     local caster = self:GetCaster()
     if self.distance <= 150 then
         if caster:HasModifier("modifier_zoom_charge_of_darkness") then caster:RemoveModifierByName("modifier_zoom_charge_of_darkness") end
-        local damage = 0.01 * self:GetAbility():GetSpecialValueFor("damage")
-        local talent = false
-        if IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_zoom") then talent = true end
+
+        local damage = self:GetAbility():GetSpecialValueFor("damage") / 100
+
+        local val = damage * self.speed
+
+        if IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_unique_zoom") then 
+            val = val + self.traveled_distance
+        end
+
         ApplyDamage({
             victim = target,
             attacker = caster,
             ability = self:GetAbility(),
-            damage = damage * self.speed + (talent and 1 or damage) * self.traveled_distance,
+            damage = val,
             damage_type = self:GetAbility():GetAbilityDamageType()
         })
 

@@ -2663,7 +2663,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_per_unit_scepter"	"65 90 115 140"
+				"damage_per_unit_scepter"	"40 65 90 115"
 			}
 		}
 	}
@@ -3624,7 +3624,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"34 30 26 22"
+		"AbilityCooldown"				"52 48 44 40"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4008,7 +4008,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"stun_duration"					"1.0 1.5 2.0 2.5"
+				"stun_duration"					"0.5 1.0 1.5 2.0"
 			}
 		}
 	}
@@ -10168,25 +10168,25 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
-			"particle"		"particles/units/heroes/hero_silencer/silencer_curse.vpcf"
-			"particle"		"particles/units/heroes/hero_silencer/silencer_curse_aoe.vpcf"
-			"model" "models/items/silencer/the_hazhadal_magebreaker_arms/the_hazhadal_magebreaker_arms.vmdl"
-            "model"  "models/items/queenofpain/shadeofagony/shadeofagony.vmdl"
-			"model"  "models/items/queenofpain/tpl_shoulder_lvl3/tpl_shoulder_lvl3.vmdl"
-			"model"  "models/items/queenofpain/qop_ti8_weapon/qop_ti8_weapon.vmdl"
-			"particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient.vpcf"
-            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_a.vpcf"
-            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_b.vpcf"
-            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_core.vpcf"
-            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_end.vpcf"                 
-            "particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_eye.vpcf"
-			"model" "models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
-			"particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient.vpcf"
-			"particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_black.vpcf"
-			"particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_smoke.vpcf"
-			"particle" "particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_feather.vpcf"
-			"particle" "particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_golden_shadow_strike.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+			"particle"					"particles/units/heroes/hero_silencer/silencer_curse.vpcf"
+			"particle"					"particles/units/heroes/hero_silencer/silencer_curse_aoe.vpcf"
+			"model" 					"models/items/silencer/the_hazhadal_magebreaker_arms/the_hazhadal_magebreaker_arms.vmdl"
+            "model"  					"models/items/queenofpain/shadeofagony/shadeofagony.vmdl"
+			"model"  					"models/items/queenofpain/tpl_shoulder_lvl3/tpl_shoulder_lvl3.vmdl"
+			"model"  					"models/items/queenofpain/qop_ti8_weapon/qop_ti8_weapon.vmdl"
+			"particle" 					"particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient.vpcf"
+            "particle" 					"particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_a.vpcf"
+            "particle" 					"particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_b.vpcf"
+            "particle" 					"particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_core.vpcf"
+            "particle"	 				"particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_blade_end.vpcf"                 
+            "particle" 					"particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_dagger_ambient_eye.vpcf"
+			"model" 					"models/items/queenofpain/bloody_raven_wings/bloody_raven_wings.vmdl"
+			"particle" 					"particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient.vpcf"
+			"particle" 					"particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_black.vpcf"
+			"particle" 					"particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_smoke.vpcf"
+			"particle" 					"particles/econ/items/queen_of_pain/qop_bloody_raven_wings/qop_bloody_raven_ambient_feather.vpcf"
+			"particle" 					"particles/econ/items/queen_of_pain/qop_ti8_immortal/queen_ti8_golden_shadow_strike.vpcf"
 		}
 		
 		// Casting
@@ -10213,18 +10213,18 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		    "100 200 300 400"
+				"var_type"				"FIELD_INTEGER"
+				"damage"		    	"100 200 300 400"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"radius"				"350"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"tooltip_duration"	"3.5 4.0 4.5 5.0"
+				"var_type"				"FIELD_FLOAT"
+				"tooltip_duration"		"1.5 2.0 2.5 3.0"
 			}
 		}
 	}
@@ -11821,6 +11821,7 @@
 			"particle"   "particles/doctor_doom/doctor_doom_hells_field.vpcf"
 			"particle"   "particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast_explosion.vpcf"
 			"model"		 "models/heroes/hero_doom/weapon/weapon.vmdl"
+			"soundfile"	 "soundevents/game_sounds_heroes/game_sounds_pangolier.vsndevts"
 		}
 		"AbilitySpecial"
 		{
@@ -13269,7 +13270,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"2.0 2.5 3.0"
+				"stun_duration"		"1.5 2.0 2.5"
 			}
 			"03"
 			{
@@ -13340,7 +13341,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slowing"				"-25 -30 -35 -40"
+				"slowing"				"-30"
 			}
 		}
 	}
@@ -14823,7 +14824,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 50 40"
+		"AbilityCooldown"				"70 60 50"
 		"AbilityDamage"					"330 550 770"
 
 		// Cost
@@ -14998,7 +14999,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_count"				"6 8 10 12"
+				"attack_count"				"3 5 7 9"
 			}
 			"02"
 			{
@@ -15038,7 +15039,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"time_jump_cooldown_scepter"	"20 15 10 5"
+				"time_jump_cooldown_scepter"	"13 11 9 6"
 			}
 			"02"
 			{
@@ -15052,7 +15053,6 @@
 	//=================================================================================================================
 	"tracer_blink"
 	{
-		"ID"							"7577"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/tracer_blink.lua"
 		"AbilityTextureName"			"custom/tracer_blink"
@@ -15060,21 +15060,13 @@
 
 		"AbilityCastPoint"				"0.1"
 		"AbilityManaCost"				"35"
-		"AbilityCooldown"				"11 9 7 5"
+
+		"AbilityCharges"				"1 2 2 3"
+		"AbilityChargeRestoreTime"		"13 11 9 6"
 
 		"AbilitySpecial"
 		{
 			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"max_charges"					"2 2 3 3"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"recharge_time"				"11 9 7 5"
-			}
-			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"					"450 500 550 600"
@@ -15889,7 +15881,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 18 16 14"
+		"AbilityCooldown"				"22 20 18 16"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -15921,7 +15913,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.6 2.4 3.2 4.0"
+				"stun_duration"				"1.0 1.5 2.0 2.5"
 			}
 			"05"
 			{
@@ -15974,7 +15966,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"4.5 5.0 5.5 6.0"
+				"duration"					"3.5 4.0 4.5 5.0"
 			}
 		}
 	}
@@ -18119,16 +18111,16 @@
 		"AbilityManaCost"				"90 120 150 180"
 		"precache"
 		{
-			"particle"  	"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
-			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
-			"model"		"models/heroes/plus_skins/pugalo_skin/pugalo.vmdl"
-			"model"		"models/heroes/hero_nurgle/econs/scp049_skin/doctor.vmdl"
-			"particle"	"particles/plus/pugalo_ambient.vpcf"
-			"model"      "models/heroes/undying/undying.vmdl"
-			"model"      "models/items/undying/davy_jones_set_armor/davy_jones_set_armor.vmdl"
-			"particle" "particles/econ/items/undying/undying_davy_jones/undying_davy_jones_armor_ambient.vpcf"
-			"model" "models/items/undying/davy_jones_set_arms/davy_jones_set_arms.vmdl"
-			"model" "models/items/undying/davy_jones_set_head/davy_jones_set_head.vmdl"
+			"particle"  				"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+			"model"						"models/heroes/plus_skins/pugalo_skin/pugalo.vmdl"
+			"model"						"models/heroes/hero_nurgle/econs/scp049_skin/doctor.vmdl"
+			"particle"					"particles/plus/pugalo_ambient.vpcf"
+			"model"      				"models/heroes/undying/undying.vmdl"
+			"model"     				"models/items/undying/davy_jones_set_armor/davy_jones_set_armor.vmdl"
+			"particle" 					"particles/econ/items/undying/undying_davy_jones/undying_davy_jones_armor_ambient.vpcf"
+			"model" 					"models/items/undying/davy_jones_set_arms/davy_jones_set_arms.vmdl"
+			"model" 					"models/items/undying/davy_jones_set_head/davy_jones_set_head.vmdl"
 		}
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -20885,7 +20877,7 @@
 		"AbilityTextureName"			"custom/iron_man_rearm"
 		"ScriptFile"					"abilities/iron_rearm.lua"
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"3.5"
+		"AbilityCooldown"				"3"
 		"AbilityManaCost"				"250"
 
 		"MaxLevel"						"1"
@@ -22397,7 +22389,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slowing"				"-45 -60 -75 -90"
+				"slowing"				"-11 -15 -19 -23"
 			}
 			"08"
 			{
@@ -26663,7 +26655,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"500"
+				"aura_radius"				"400"
 			}
 			"02"
 			{
@@ -26953,7 +26945,7 @@
 		"ScriptFile"					"abilities/black_panther_absorb"
 		"AbilityTextureName"			"custom/plack_panther_absorb"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
@@ -28859,7 +28851,7 @@
 		"AbilityTextureName"			"custom/savitar_speedforce"
 		"ScriptFile"					"abilities/savitar_speedforce.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"FightRecapLevel"				"1"
@@ -28889,7 +28881,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"speed_bonus"		"750 850 950 1050"
+				"speed_bonus"		"400"
 			}
 			"02"
 			{
@@ -28897,11 +28889,6 @@
 				"duration"			"4.0 5.0 6.0 7.0"
 			}
 			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"aura_aoe"			"350"
-			}
-			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"max_speed"			"10000"
@@ -28954,7 +28941,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"2.1 2.6 3.1 3.6"
+				"duration"			"2.0 2.3 2.6 3.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -31871,12 +31858,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"armor_per_min"	    		"0.25"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_per_min"			"2"
+				"spell_per_min"	    		"0.25"
 			}
 		}
 	}
@@ -37956,80 +37938,80 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_time_tooltip"	"1.67"
+				"var_type"						"FIELD_FLOAT"
+				"cast_time_tooltip"				"1.67"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"requiem_radius"	"500 700 900 1100"		
+				"var_type"						"FIELD_INTEGER"
+				"requiem_radius"				"500 700 900 1100"		
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"requiem_reduction_ms"	"-25"
+				"var_type"						"FIELD_INTEGER"
+				"requiem_reduction_ms"			"-25"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"requiem_reduction_damage"	"-50"
+				"var_type"						"FIELD_INTEGER"
+				"requiem_reduction_damage"		"-50"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"requiem_reduction_tooltip"	"-50"
+				"var_type"						"FIELD_INTEGER"
+				"requiem_reduction_tooltip"		"-50"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"requiem_slow_duration"	"5.0"
+				"var_type"						"FIELD_INTEGER"
+				"requiem_slow_duration"			"5.0"
 			}
 			"07"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"requiem_reduction_radius"	"700 700 700"
+				"var_type"						"FIELD_INTEGER"
+				"requiem_reduction_radius"		"700 700 700"
 			}
 			"08"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"requiem_soul_conversion"	"2 2 2"
+				"var_type"						"FIELD_INTEGER"
+				"requiem_soul_conversion"		"2 2 2"
 			}
 			"09"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"requiem_line_width_start"	"125"
+				"var_type"						"FIELD_INTEGER"
+				"requiem_line_width_start"		"125"
 			}
 			"10"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"requiem_line_width_end"	"425"
+				"var_type"						"FIELD_INTEGER"
+				"requiem_line_width_end"		"425"
 			}
 			"11"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"requiem_line_speed"	"700 700 700"
+				"var_type"						"FIELD_INTEGER"
+				"requiem_line_speed"			"700 700 700"
 			}
 			"12"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"soul_death_release"	"0.5"
+				"var_type"						"FIELD_FLOAT"
+				"soul_death_release"			"0.5"
 			}			
 			"13"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_soul"		"6 10 14 16"
+				"var_type"						"FIELD_INTEGER"
+				"damage_per_soul"				"6 10 14 16"
 			}
 			"14"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_souls"				"12 14 16 18"
-				"LinkedSpecialBonus"		"special_bonus_unique_mod_5"
+				"var_type"						"FIELD_INTEGER"
+				"max_souls"						"6 8 10 12"
+				"LinkedSpecialBonus"			"special_bonus_unique_mod_5"
 			}
 			"15"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"preattack_damage_per_soul"	"1 2 3 4"
+				"var_type"						"FIELD_FLOAT"
+				"preattack_damage_per_soul"		"1 2 3 4"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -39906,13 +39888,13 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blast_stun_duration"	"1.4 1.7 2.0 2.3"
+				"blast_stun_duration"	"1.0 1.2 1.5 1.7"
 				"LinkedSpecialBonus"    "special_bonus_unique_chaos_king_6"
 			}			
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"blast_dot_duration"	"2.6 3.3 4.0 4.7"
+				"blast_dot_duration"	"2.0"
 			}			
 			"04"
 			{

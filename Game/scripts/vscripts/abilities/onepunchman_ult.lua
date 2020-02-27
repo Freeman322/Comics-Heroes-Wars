@@ -12,8 +12,6 @@ function onepunchman_ult:GetAbilityTextureName()
 	return "custom/onepunchman_ult"
 end
 
-
-
 function onepunchman_ult:OnSpellStart()
     if IsServer() then 
         local hTarget = self:GetCursorTarget()

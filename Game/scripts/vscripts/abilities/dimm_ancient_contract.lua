@@ -90,8 +90,6 @@ function modifier_dimm_ancient_contract_enemy:OnTakeDamage (params)
 		if self:GetParent() == params.attacker then
 			local target = params.unit
 			if target:IsAlive() == false then
-				self:GetParent():Kill(self:GetAbility(), self:GetCaster())
-
 				if Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "alma") then
 					local nFXIndex = ParticleManager:CreateParticle( "particles/collector/alma_sonic_boom.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent() )
 					ParticleManager:SetParticleControl(nFXIndex, 0, self:GetParent():GetAbsOrigin())
@@ -106,11 +104,17 @@ function modifier_dimm_ancient_contract_enemy:OnTakeDamage (params)
 				end
 
 				local particle_lifesteal = "particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
+				
 				local lifesteal_fx = ParticleManager:CreateParticle(particle_lifesteal, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 				ParticleManager:SetParticleControl(lifesteal_fx, 0, self:GetParent():GetAbsOrigin())
 				ParticleManager:SetParticleControl(lifesteal_fx, 1, self:GetParent():GetAbsOrigin())
 				EmitSoundOn("Hero_Oracle.PurifyingFlames.Damage", self:GetParent())
 				EmitSoundOn("DOTA_Item.Bloodthorn.Activate", self:GetParent())
+
+				self:GetParent():Kill(self:GetAbility(), self:GetCaster())
+
+
+				self:Destroy()
 			end
 		end
     end

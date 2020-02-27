@@ -90,8 +90,8 @@ end
 
 function modifier_loki_trap:CheckState()
     local state = {
-        [MODIFIER_STATE_ROOTED] = true,
-        [MODIFIER_STATE_SILENCED] = true,
+        [MODIFIER_STATE_STUNNED] = true,
+        [MODIFIER_STATE_SILENCED] = true
     }
 
     return state

@@ -22,6 +22,15 @@ function item_courier:OnSpellStart ()
             unit:SetMaterialGroup(material)
 
             ParticleManager:CreateParticle( "particles/econ/courier/courier_platinum_roshan/platinum_roshan_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
+        elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "cat_pat") == true then
+            m_model = "models/heroes/hero_strange/doremon/doraemon.vmdl"
+            m_model_flyuing = "models/heroes/hero_strange/doremon/doraemon.vmdl"
+
+            unit:AddNewModifier(self:GetCaster(), nil, "modifier_courier_model", {model = m_model, model_flying = m_model_flyuing, speed = 1000})
+
+            unit:SetModelScale(2)
+
+            ParticleManager:CreateParticle( "particles/econ/courier/courier_platinum_roshan/platinum_roshan_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit )
         elseif Util:PlayerEquipedItem(self:GetCaster():GetPlayerOwnerID(), "golden_baby_roshan") == true then
             m_model = "models/courier/baby_rosh/babyroshan.vmdl"
             m_model_flyuing = "models/courier/baby_rosh/babyroshan_flying.vmdl"

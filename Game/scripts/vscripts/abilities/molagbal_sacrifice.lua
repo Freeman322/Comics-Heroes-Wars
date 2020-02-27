@@ -110,7 +110,7 @@ end
 
 function modifier_molagbal_sacrifice_modifier:OnDestroy()
     if IsServer() then
-        if not self:GetParent():IsAlive() then 
+        if not self:GetParent():IsAlive() and (self:GetParent():IsHero() or self:GetParent():IsAncient() or self:GetParent():IsConsideredHero()) then 
             self:GetAbility():AddDamage()
 
             EmitSoundOn("MolagBal.Sacrifice.TargetDead", self:GetParent())

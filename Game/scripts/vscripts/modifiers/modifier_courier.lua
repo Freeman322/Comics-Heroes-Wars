@@ -9,6 +9,7 @@ function modifier_courier_model:OnCreated(params)
         self._mModel_Default = params.model or "models/items/courier/mighty_chicken/mighty_chicken.vmdl"
         self._mModel_Flying = params.model_flying or "models/items/courier/mighty_chicken/mighty_chicken_flying.vmdl"
         self._mMaterial = params.model_material
+        self.speed = params.speed or 700
     end
 end
 
@@ -27,7 +28,7 @@ function modifier_courier_model:GetModifierModelChange(params)
 end
 
 function modifier_courier_model:GetModifierMoveSpeed_Absolute( params )
-    return 700
+    return self.speed
 end
 
 function modifier_courier_model:GetVisualZDelta( params )

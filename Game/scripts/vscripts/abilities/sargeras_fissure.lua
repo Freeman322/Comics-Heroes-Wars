@@ -1,4 +1,6 @@
 LinkLuaModifier( "sargeras_fissure_thinker", "abilities/sargeras_fissure.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_sargeras_fissure_debuff", "abilities/sargeras_fissure.lua", LUA_MODIFIER_MOTION_NONE )
+
 if sargeras_fissure == nil then
 	sargeras_fissure = class({})
 end
@@ -76,7 +78,6 @@ end
 function sargeras_fissure_thinker:OnCreated( kv )
 	if IsServer() then
 		self:GetParent():SetHullRadius(kv.radius)
-		self:StartIntervalThink(0.1)
 	end
 end
 
@@ -91,19 +92,28 @@ function sargeras_fissure_thinker:OnDestroy()
 	end
 end
 
-function sargeras_fissure_thinker:OnIntervalThink()
-	if IsServer() then
-		local caster = self:GetParent()
-		local units = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, 124, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-		for i = 1, #units do
-			local unit = units[i]
-			if not unit:IsMagicImmune() then
-				ApplyDamage({victim = unit, attacker = self:GetAbility():GetCaster(), damage = (self:GetAbility():GetSpecialValueFor("damage_per_sec")/10), damage_type = self:GetAbility():GetAbilityDamageType()})
-			end
-		end
+function sargeras_fissure_thinker:IsAura()
+	return true
+end
 
-		AddFOWViewer(2, self:GetCaster():GetAbsOrigin(), 10, 0.15, false) AddFOWViewer(3, self:GetCaster():GetAbsOrigin(), 10, 0.15, false)
-	end
+function sargeras_fissure_thinker:GetAuraRadius()
+	return 100
+end
+
+function sargeras_fissure_thinker:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+function sargeras_fissure_thinker:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+end
+
+function sargeras_fissure_thinker:GetAuraSearchFlags()
+	return DOTA_UNIT_TARGET_FLAG_NONE
+end
+
+function sargeras_fissure_thinker:GetModifierAura()
+	return "modifier_sargeras_fissure_debuff"
 end
 
 function sargeras_fissure_thinker:IsHidden()
@@ -128,3 +138,38 @@ end
 
 function sargeras_fissure:GetAbilityTextureName() if self:GetCaster():HasModifier("modifier_sargeras_s7_custom") then return "custom/sargeras_fissure_custom" end return self.BaseClass.GetAbilityTextureName(self)  end 
 
+if modifier_sargeras_fissure_debuff == nil then modifier_sargeras_fissure_debuff = class({}) end
+
+function modifier_sargeras_fissure_debuff:OnCreated( kv )
+	if IsServer() then
+		self:StartIntervalThink(0.1)
+	end
+end
+
+function modifier_sargeras_fissure_debuff:OnIntervalThink()
+	if IsServer() then
+		ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), damage = (self:GetAbility():GetSpecialValueFor("damage_per_sec")/10), damage_type = self:GetAbility():GetAbilityDamageType()})
+
+		AddFOWViewer(2, self:GetCaster():GetAbsOrigin(), 10, 0.15, false) AddFOWViewer(3, self:GetCaster():GetAbsOrigin(), 10, 0.15, false)
+	end
+end
+
+function modifier_sargeras_fissure_debuff:IsHidden()
+	return true
+end
+
+function modifier_sargeras_fissure_debuff:IsPurgable()
+	return false
+end
+
+function modifier_sargeras_fissure_debuff:IsPurgeException()
+	return false
+end
+
+function modifier_sargeras_fissure_debuff:GetAttributes()
+	return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
+end
+
+function modifier_sargeras_fissure_debuff:AllowIllusionDuplicate()
+	return false
+end

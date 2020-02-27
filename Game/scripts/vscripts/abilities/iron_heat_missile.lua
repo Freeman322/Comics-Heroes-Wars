@@ -16,9 +16,10 @@ function iron_heat_missile:OnSpellStart()
 	if #targets > 0 then
 		local count = 0
 		for _,enemy in pairs(targets) do
-			if count < self:GetSpecialValueFor("targets") then
-				count = count + 1
-				local info = {
+			if self:GetCaster():CanEntityBeSeenByMyTeam(enemy) then
+				if count < self:GetSpecialValueFor("targets") then
+					count = count + 1
+					local info = {
 						EffectName = particle,
 						Ability = self,
 						iMoveSpeed = self:GetSpecialValueFor( "speed" ),
@@ -27,10 +28,11 @@ function iron_heat_missile:OnSpellStart()
 						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
 					}
 
-				ProjectileManager:CreateTrackingProjectile( info )
-				EmitSoundOn( "Hero_Tinker.Heat-Seeking_Missile", self:GetCaster() )
-			else
-				break
+					ProjectileManager:CreateTrackingProjectile( info )
+					EmitSoundOn( "Hero_Tinker.Heat-Seeking_Missile", self:GetCaster() )
+				else
+					break
+				end
 			end
 		end
 	else

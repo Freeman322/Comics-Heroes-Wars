@@ -6302,14 +6302,12 @@
 
 "Dark.Cast6"
 {
-    
 	"operator_stacks"
 	{
 		"update_stack"
 		{
 			"reference_operator"
 			{
-
 				"operator"		        "sos_reference_stack"
 				"reference_stack"		"dota_update_default"
 
@@ -6320,6 +6318,75 @@
 						"value"
 						{
 							"value0"		"sounds/econs/dark/cast6.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+"DarkEmblem.Kill"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_default"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/dark_emblem_death.vsnd"
+						}
+					}
+					"volume"
+					{
+						"value"		"4.000000"
+					}
+					"pitch"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+}
+
+
+"DarkEmblem.Death"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		        "sos_reference_stack"
+				"reference_stack"		"dota_update_default"
+
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/dark_emblem_kill.vsnd"
 						}
 					}
 					"volume"

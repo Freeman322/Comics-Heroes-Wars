@@ -116,7 +116,7 @@ end
 
 function modifier_inner_fear:CheckState()
 	local state = {
-        [MODIFIER_STATE_UNSELECTABLE] = true,
+        ----[MODIFIER_STATE_UNSELECTABLE] = true,
         [MODIFIER_STATE_MAGIC_IMMUNE] = true
 	}
 

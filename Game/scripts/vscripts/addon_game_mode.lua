@@ -174,6 +174,7 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/sounds_miraak.vsndevts", context )
 	PrecacheResource("soundfile", "soundevents/event.vsndevts", context )
 
+    PrecacheResource("model", "models/heroes/hero_strange/doremon/doraemon.vmdl", context)
 	PrecacheResource("model", "models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl", context)
 	PrecacheResource("model", "models/creeps/creep_meee_mega/creep_melee_enemy.vmdl", context)
 	PrecacheResource("model", "models/creeps/creeps_range/radiant/creep_ranged.vmdl", context)

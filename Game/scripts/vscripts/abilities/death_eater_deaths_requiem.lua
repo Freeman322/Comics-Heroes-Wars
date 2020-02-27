@@ -23,7 +23,7 @@ function death_eater_deaths_requiem:OnAbilityPhaseStart()
     if m_hPullModifier and not m_hPullModifier:IsNull() then m_hPullModifier:Destroy() end 
 
     m_hPullModifier = self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_death_eater_deaths_requiem_pull", {duration = self:GetCastPoint()})
-    
+	
     return true 
 end
 
@@ -36,6 +36,8 @@ function death_eater_deaths_requiem:OnAbilityPhaseInterrupted()
     	StopSoundOn(sound_precast, self:GetCaster())
 
 	ParticleManager:ReleaseParticleIndex( self.effect_precast )
+
+	self:UseResources(false, false, true)
 end
 
 --------------------------------------------------------------------------------

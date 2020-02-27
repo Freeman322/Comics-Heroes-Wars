@@ -7,8 +7,8 @@ local IsFirstTimeUpgrade = true
 
 local tUnits = {}
 
-function tracer_time_lapse:GetManaCost(hTarget) return self:GetCaster():HasScepter() and self:GetCaster():GetMaxMana() / 100 * self:GetSpecialValueFor("manacost_scepter") or self.BaseClass.GetManaCost(self, hTarget) end
-function tracer_time_lapse:GetCooldown(nLevel) return self:GetCaster():HasScepter() and self:GetSpecialValueFor("time_jump_cooldown_scepter") or self.BaseClass.GetCooldown(self, nLevel) end
+function tracer_time_lapse:GetManaCost(hTarget) if self:GetCaster():HasScepter() then return self:GetCaster():GetMaxMana() / 100 * self:GetSpecialValueFor("manacost_scepter") end return self.BaseClass.GetManaCost(self, hTarget) end
+function tracer_time_lapse:GetCooldown(nLevel) if self:GetCaster():HasScepter() then return self:GetSpecialValueFor("time_jump_cooldown_scepter") end return self.BaseClass.GetCooldown(self, nLevel) end
 
 function tracer_time_lapse:OnUpgrade( params )
     if IsFirstTimeUpgrade then

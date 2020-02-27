@@ -268,6 +268,12 @@ function modifier_freeza:IsHidden() return true end
 function modifier_freeza:IsPurgable() return false end
 function modifier_freeza:RemoveOnDeath() return false end
 
+if modifier_boo == nil then modifier_boo = class({}) end
+
+function modifier_boo:IsHidden() return true end
+function modifier_boo:IsPurgable() return false end
+function modifier_boo:RemoveOnDeath() return false end
+
 
 if modifier_uganda == nil then modifier_uganda = class({}) end
 
@@ -311,35 +317,51 @@ if modifier_dark_emblem == nil then modifier_dark_emblem = class({}) end
 function modifier_dark_emblem:IsHidden() return true end
 function modifier_dark_emblem:IsPurgable() return false end
 function modifier_dark_emblem:RemoveOnDeath() return false end
+
 function modifier_dark_emblem:DeclareFunctions ()
     local funcs = {
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_EXP_RATE_BOOST
+        MODIFIER_PROPERTY_EXP_RATE_BOOST,
+        MODIFIER_EVENT_ON_HERO_KILLED
     }
 
     return funcs
 end
+
 function modifier_dark_emblem:GetEffectName()
     return "particles/econ/events/ti7/fountain_regen_ti7_lvl3.vpcf"
 end
+
 function modifier_dark_emblem:GetEffectAttachType()
     return PATTACH_ABSORIGIN_FOLLOW
 end
-function modifier_dark_emblem:GetModifierPercentageCooldown( params )
+
+
+function modifier_dark_emblem:OnHeroKilled(params)
     if IsServer() then
+        if params.attacker == self:GetParent() then
+            EmitSoundOnLocationWithCaster(self:GetParent():GetAbsOrigin(), "DarkEmblem.Kill", self:GetParent())
+        elseif params.victim == self:GetParent() then
+            EmitSoundOnLocationWithCaster(self:GetParent():GetAbsOrigin(), "DarkEmblem.Death", self:GetParent())
+        end
+    end
+end
+
+function modifier_dark_emblem:GetModifierConstantManaRegen( params )
+    if IsServer() and self:GetParent():GetLevel() >= 2 then
         return 2
     end
 end
 
 function modifier_dark_emblem:GetModifierConstantHealthRegen( params )
-    if IsServer() then
+    if IsServer() and self:GetParent():GetLevel() >= 2 then
         return 5
     end
 end
 
 function modifier_dark_emblem:GetModifierPercentageExpRateBoost( params )
-    if IsServer() then
+    if IsServer() and self:GetParent():GetLevel() >= 2 then
         return 50
     end
 end

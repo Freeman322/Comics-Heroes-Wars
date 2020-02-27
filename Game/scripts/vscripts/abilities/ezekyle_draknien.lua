@@ -89,7 +89,7 @@ function modifier_ezekyle_draknien_debuff:OnIntervalThink()
             local ptc = self:GetAbility():GetSpecialValueFor("soul_damage_pct")
             if self:GetCaster():HasTalent("special_bonus_unique_ezekyle_2") then ptc = ptc + self:GetCaster():FindTalentValue("special_bonus_unique_ezekyle_2") end
             
-            local damage = (ptc / 100) * self:GetParent():GetMana()
+            local damage = (ptc / 100) * self:GetParent():GetMaxMana()
             self:GetParent():SpendMana(damage, self:GetAbility())
 
             ApplyDamage ({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = damage, damage_type = self:GetAbility():GetAbilityDamageType()})

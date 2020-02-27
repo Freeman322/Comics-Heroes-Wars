@@ -7,7 +7,6 @@ function onepunchman_light_strikes_array:GetAOERadius()
     return 400
 end
 
-
 function onepunchman_light_strikes_array:GetBehavior()
     return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK + DOTA_ABILITY_BEHAVIOR_AOE
 end
@@ -123,7 +122,7 @@ function modifier_onepunchman_light_strikes_array:GetHeroEffectName ()
     return "particles/frostivus_herofx/juggernaut_fs_omnislash_slashers.vpcf"
 end
 
-function modifier_onepunchman_light_strikes_array:HeroEffectPriority ()
+function modifier_onepunchman_light_strikes_array:HeroEffectPriority()
     return 100
 end
 
@@ -138,6 +137,8 @@ end
 function modifier_onepunchman_light_strikes_array:GetModifierMoveSpeedBonus_Percentage(params)
     return self:GetAbility():GetSpecialValueFor("slowing")
 end
+
+function modifier_onepunchman_light_strikes_array:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 
 
 if modifier_onepunchman_light_strikes_array_caster == nil then

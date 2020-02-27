@@ -144,7 +144,7 @@ function god_emperor_menthal_spear:OnProjectileHit_ExtraData( hTarget, vLocation
         if self.hasSceper then
             FindClearSpaceForUnit( self:GetCaster(), vLocation, true)
 
-            self:GetCaster():GetAbilityByIndex(2):OnSpellStart()
+            self:GetCaster():GetAbilityByIndex(2):CastAbility()
 
             if self.mod then
                 self.mod:Destroy()

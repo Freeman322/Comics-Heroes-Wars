@@ -2932,6 +2932,9 @@ Rage, rage against the dying of the light."
 		
 		"dark_custom_2"						"Janne Da'Arc"
 		"dark_custom_2_lore"				""
+
+		"cat_pat"							"Doraemon"
+		"cat_pat_lore"						""
 		
         "kawaii"                            "Kawaii"
 		"kawaii_lore"                       ""

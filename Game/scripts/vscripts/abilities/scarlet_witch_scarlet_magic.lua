@@ -11,7 +11,7 @@ function scarlet_witch_scarlet_magic:CastFilterResultTarget(hTarget)
     return UF_SUCCESS
 end
 
-function scarlet_witch_scarlet_magic:GetAbilityDamageType() return self:GetCaster():HasScepter() and DAMAGE_TYPE_PURE or DAMAGE_TYPE_MAGICAL end
+function scarlet_witch_scarlet_magic:GetAbilityDamageType() return DAMAGE_TYPE_MAGICAL end
 function scarlet_witch_scarlet_magic:GetCooldown(nLevel) return self:GetCaster():HasScepter() and self:GetSpecialValueFor("cooldown_scepter") or self.BaseClass.GetCooldown(self, nLevel) end
 function scarlet_witch_scarlet_magic:GetCastRange(vLocation, hTarget) return self:GetCaster():HasScepter() and self:GetSpecialValueFor ("cast_range_scepter") or self.BaseClass.GetCastRange(self, vLocation, hTarget) end
 
@@ -38,10 +38,13 @@ function scarlet_witch_scarlet_magic:OnProjectileHit (hTarget, vLocation)
 	else
         EmitSoundOn ("Hero_VengefulSpirit.MagicMissileImpact", hTarget)
     end
+
     hTarget:AddNewModifier(self:GetCaster (), self, "modifier_scarlet_witch_scarlet_magic", {duration = self:GetSpecialValueFor("duration")})
+   
     if self:GetCaster():HasScepter() then
         hTarget:AddNewModifier(self:GetCaster(), self:GetCaster():FindAbilityByName("scarlet_witch_unstable_energy"), "modifier_scarlet_witch_unstable_energy", {duration = self:GetSpecialValueFor("duration")})
     end
+    
     return true
 end
 
@@ -67,7 +70,9 @@ end
 function modifier_scarlet_witch_scarlet_magic:OnCreated() if not IsServer() then return end self:StartIntervalThink(1) end
 function modifier_scarlet_witch_scarlet_magic:OnIntervalThink()
     if not IsServer() then return end
+    
     local hp_damage = self:GetParent():GetMaxHealth() * (0.01 * (self:GetCaster():HasScepter() and self:GetAbility():GetSpecialValueFor("damage_scepter") or self:GetAbility():GetSpecialValueFor("damage")))
+    
     ApplyDamage({
         victim = self:GetParent(),
         attacker = self:GetCaster(),

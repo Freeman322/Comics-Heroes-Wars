@@ -20,7 +20,6 @@ function iron_rearm:GetCooldown( nLevel )
     return self.BaseClass.GetCooldown( self, nLevel )
 end
 
-
 function iron_rearm:OnSpellStart()
     local caster = self:GetCaster()
     local nFXIndex = ParticleManager:CreateParticle( "particles/refresh_2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster )
@@ -54,6 +53,9 @@ function iron_rearm:OnSpellStart()
             end
         end
     end
+
+    self:EndCooldown()
+    self:StartCooldown(self.BaseClass.GetCooldown( self, self:GetLevel() ))
 end
 
 function iron_rearm:GetAbilityTextureName() return self.BaseClass.GetAbilityTextureName(self)  end 

@@ -63,5 +63,11 @@ function modifier_flash_speedforce_power_debuff:OnIntervalThink()
     if not self:GetParent():IsMagicImmune() and distance <= self:GetAbility():GetSpecialValueFor("radius") then
         modifier_flash_speedforce_power.buff = modifier_flash_speedforce_power.buff + 1
     end
+
+    if IsServer() then
+        if self:GetCaster():IsAlive() == false then
+            self:Destroy()
+        end
+    end
 end
 function modifier_flash_speedforce_power_debuff:GetModifierMoveSpeedBonus_Constant() return modifier_flash_speedforce_power.buff * (self:GetAbility():GetSpecialValueFor("movespeed_steal") * -1) end

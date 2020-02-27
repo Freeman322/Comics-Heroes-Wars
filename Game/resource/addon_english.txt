@@ -1967,7 +1967,10 @@
 		"DOTA_Tooltip_ability_rulk_thermal_radiation_Description"	"Flames emanating from Rulk burn all enemies within a radius of %radius%, upon receiving damage, it is increased by %damage_per_stack% damage for %stack_duration% seconds."
 		"DOTA_Tooltip_ability_rulk_thermal_radiation_base_damage"	"DAMAGE PER SEC:"
 		
-		"DOTA_Tooltip_modifier_rulk_thermal_radiation_stacks" "Every stack increase damage"
+		"DOTA_Tooltip_modifier_rulk_thermal_radiation_stacks" 				"Every stack increase damage"
+		
+		"DOTA_Tooltip_ability_special_bonus_unique_pangolier_4"				"-6 sec cooldown for Pure Strike Array"
+		"DOTA_Tooltip_ability_special_bonus_unique_pangolier_7"				"+400 range for Pure Strike Array"
 
 		"DOTA_Tooltip_ability_rulk_charge_of_darkness"	"PROMISED RAGE"
 		"DOTA_Tooltip_ability_rulk_charge_of_darkness_Description"	"Rulk fixes his sight on an enemy unit and starts charging through all objects."
@@ -3044,7 +3047,7 @@
 		"DOTA_Tooltip_ability_scarlet_witch_scarlet_magic_damage_scepter"		"%DAMAGE SCEPTER:"
 		"DOTA_Tooltip_ability_scarlet_witch_scarlet_magic_cooldown_scepter"		"COOLDOWN SCEPTER:"
 		"DOTA_Tooltip_ability_scarlet_witch_scarlet_magic_cast_range_scepter"	"CAST RANGE SCEPTER:"
-		"DOTA_Tooltip_ABILITY_scarlet_witch_scarlet_magic_aghanim_description"	"Increases the damage done to the enemy based on maximum health, changing the type of damage to pure, reduces the cooldown and increases the cast range of ability. Now also pierces spell immunity. Applies UNSTABLE ENERGY to the target."
+		"DOTA_Tooltip_ABILITY_scarlet_witch_scarlet_magic_aghanim_description"	"Increases the damage done to the enemy based on maximum health, reduces the cooldown and increases the cast range of ability. Now also pierces spell immunity. Applies UNSTABLE ENERGY to the target."
 
 
 		"DOTA_Tooltip_ability_scarlet_witch_unstable_energy"					"UNSTABLE ENERGY"
@@ -8773,7 +8776,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_ezekyle_anxiety_aghanim_description"					  	  "Applies Chaos Mark with 50% duration for every enemy hero."
 
 		"DOTA_Tooltip_ability_ezekyle_draknien"                                           "Drach'nyen"
-		"DOTA_Tooltip_ability_ezekyle_draknien_Description"                               "With each attack, Abaddon deals damage to the enemy from its current health, as well as imposes a curse that burns the enemy's mana from its current stock."
+		"DOTA_Tooltip_ability_ezekyle_draknien_Description"                               "With each attack, Abaddon deals damage to the enemy from its max manapool, as well as imposes a curse that burns the enemy's mana from its current stock."
 		"DOTA_Tooltip_ability_ezekyle_draknien_soul_damage"                               "%DAMAGE:"
 		"DOTA_Tooltip_ability_ezekyle_draknien_soul_damage_pct"                           "%MANA DAMAGE PCT:"
 		"DOTA_Tooltip_ability_ezekyle_draknien_soul_duration"                             "DURATION:"
@@ -8792,8 +8795,7 @@ When activated spends mana."
 
 		"DOTA_Tooltip_ability_ezekyle_dark_gods_bless"                                    "Gods Bless"
 		"DOTA_Tooltip_ability_ezekyle_dark_gods_bless_Description"                        "If the Abaddon team has the gods of Chaos, then he becomes stronger with every minute from their presence."
-		"DOTA_Tooltip_ability_ezekyle_dark_gods_bless_armor_per_min"                      "ARMOR PER MIN:"
-		"DOTA_Tooltip_ability_ezekyle_dark_gods_bless_damage_per_min"                     "DAMAGE PER MIN:"
+		"DOTA_Tooltip_ability_ezekyle_dark_gods_bless_spell_per_min"                      "%SPELL AMPLIFY PER MIN:"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_ezekyle_1"                             "+1.75 sec to Anxiety"
 		"DOTA_Tooltip_ability_special_bonus_unique_ezekyle_2"                             "+6.5% mana burn for Drach'nyen"

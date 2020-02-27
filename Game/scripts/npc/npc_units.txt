@@ -11711,6 +11711,7 @@
 		"Ability6"					"ursa_fury_swipes"						// Ability 6 - Extra.
 		"Ability7"					"huskar_berserkers_blood"						// Ability 7 - Extra.
 		"Ability8"					"alpha_wolf_critical_strike"						// Ability 8 - Extra.
+		"Ability9"					"neutral_spell_immunity"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -12143,7 +12144,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"600"		// Base health.
-		"StatusHealthRegen"			"50"		// Health regeneration rate.
+		"StatusHealthRegen"			"20"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 

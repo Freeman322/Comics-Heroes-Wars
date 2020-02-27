@@ -37,10 +37,10 @@ end
 
 function golden_gold_eclipse:GetManaCost( hTarget )
 	if 	self:GetCaster():HasScepter() then
-			return 0
-	else
-			return self.BaseClass.GetManaCost( self, hTarget )
+		return 0
 	end
+
+	return self.BaseClass.GetManaCost( self, hTarget )
 end
 --------------------------------------------------------------------------------
 
@@ -118,7 +118,7 @@ function modifier_golden_gold_eclipse:OnDestroy()
 			attacker = self:GetCaster(),
 			damage = nCaster_damage*damage_mult,
 			damage_type = nDamageType,
-			damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION  + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
 			ability = self:GetAbility()
 		}
 		ApplyDamage( damage )
