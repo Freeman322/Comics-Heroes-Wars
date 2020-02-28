@@ -4325,12 +4325,7 @@
 		"DOTA_Tooltip_ability_black_panther_shadow_warrior_release_tooltip_range"         "TOOLTIP RANGE:"
 		"DOTA_Tooltip_ability_black_panther_shadow_warrior_release_damage"                "%DAMAGE:"
 
-		"DOTA_Tooltip_ability_strange_infinity_blast"                                     "Infinity Curse"
-		"DOTA_Tooltip_ability_strange_infinity_blast_Description"                         "Активируемая - Temporarily alters an ally's destiny, delaying any healing or damage taken until ability ends. Any healing that is delayed by spell is doubled. Removes most negative status effects and disables on initial cast. \n\nUpgradable by Aghanim's Scepter"
-		"DOTA_Tooltip_ability_strange_infinity_blast_Lore"                     		      "Доктор Стрэндж является очень сильным волшебником, который черпает свои силы от таких мистических существ, как троица Вишанти — Хоггот, Оштур, Агамотто."
-		"DOTA_Tooltip_ability_strange_infinity_blast_duration"                            "ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_strange_infinity_blast_cooldown_scepter"                    "ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:"
-		"DOTA_Tooltip_ability_strange_infinity_blast_aghanim_description"                 "Decreases cooldown."
+		"DOTA_Tooltip_ability_item_octarine_core_bonus_cast_time"							"%BONUS CAST TIME:"
 
 		"DOTA_Tooltip_modifier_strange_infinity_blast_timer"							  "FALSE PROMISE"
 		"DOTA_Tooltip_modifier_strange_infinity_blast_timer_Description"				  "Has twisted faith effect"
@@ -4388,7 +4383,7 @@
 		"DOTA_TOOLTIP_modifier_spiderman_extermination"				"Rooted"
 
 		"DOTA_Tooltip_ability_item_bloodstaff"							"Bloodstaff"
-		"DOTA_Tooltip_ability_item_bloodstaff_Description"				"<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit.\n<h1>Passive: Cooldown Reduction</h1>Reduces the cooldown time of all spells and items by %cooldown_reduction_bonus%%%.\n<h1>Passive: Spell Lifesteal</h1>%magical_vampirism%%% of spell damage dealt to enemy heroes is returned to the caster as health, regardless of spell damage type."
+		"DOTA_Tooltip_ability_item_bloodstaff_Description"				"<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit.\n<h1>Passive: Spell Lifesteal</h1>%magical_vampirism%%% of spell damage dealt to enemy heroes is returned to the caster as health, regardless of spell damage type."
 		"DOTA_Tooltip_ability_item_bloodstaff_Lore"						"A lesser wand that grows in power the longer it is used, it brings magic to the fingertips of the user."
 		"DOTA_Tooltip_ability_item_bloodstaff_spell_amp_bonus"			"%+$total_damage"
 		"DOTA_Tooltip_ability_item_bloodstaff_cooldown_reduction_bonus"	"%+$cooldown_reduce"
@@ -7481,7 +7476,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_adamachi_core_bonus_health"                            "+$health"
 		"DOTA_Tooltip_ability_item_adamachi_core_bonus_mana"                              "+$mana"
 		"DOTA_Tooltip_ability_item_adamachi_core_bonus_lifesteal"                         "%SPELL LIFESTEAL:"
-		"DOTA_Tooltip_ability_item_adamachi_core_bonus_cooldown"                          "+$cooldown_reduce"
+		"DOTA_Tooltip_ability_item_adamachi_core_bonus_cast_time"                         "%BONUS CAST TIME:"
 
 		"DOTA_Tooltip_ability_item_recipe_orb_of_osuvox"                                  "Orb Of Osuvox"
 		"DOTA_Tooltip_ability_item_recipe_orb_of_osuvox_Description"                      ""
@@ -7778,18 +7773,17 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_recipe_spear_of_destiny_Description"                   ""
 
 		"DOTA_Tooltip_ability_item_spear_of_destiny"                                      "Spear Of Destiny"
-		"DOTA_Tooltip_ability_item_spear_of_destiny_Description"                          "<h1>Active: Ghost Form</h1> You enter ghost form for %duration% seconds, becoming immune to physical and magic damage. \n <h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus pure damage. \n <h1>Passive: True Sight</h1>Grants true sight aura in radius 700. \n <h1>Aura: Burn</h1> Scorches enemies for %bonus_aura_damage% magical damage per second.<br><br>Radius: %aura_radius%." 
+		"DOTA_Tooltip_ability_item_spear_of_destiny_Description"                          "<h1>Active: Destiny</h1> When cast on an enemy, removes %armor_active_ptc%%% armor. When cast on an ally, grants them half-of %armor_active_ptc%%% armor and bonus %bonus_armor% armor.\n <h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus pure damage." 
 		"DOTA_Tooltip_ability_item_spear_of_destiny_bonus_all_stats"                      "+$all"
 		"DOTA_Tooltip_ability_item_spear_of_destiny_bonus_damage"                         "+$damage"
-		"DOTA_Tooltip_ability_item_spear_of_destiny_bonus_attack_speed"                   "+$attack"
+		"DOTA_Tooltip_ability_item_spear_of_destiny_bonus_armor"                   	      "+$armor"
 		"DOTA_Tooltip_ability_item_spear_of_destiny_bonus_chance"                         "Pierce CHANCE:"
 		"DOTA_Tooltip_ability_item_spear_of_destiny_bonus_chance_damage"                  "Pierce DAMAGE:"
-		"DOTA_Tooltip_ability_item_spear_of_destiny_bonus_aura_damage"                    "Radiance DAMAGE:"
-		"DOTA_Tooltip_ability_item_spear_of_destiny_aura_radius"                          "Radiance RADIUS:"
-		"DOTA_Tooltip_ability_item_spear_of_destiny_duration"                             "Ghost Form DURATION:"
+		"DOTA_Tooltip_ability_item_spear_of_destiny_bonus_vampirism"                   	  "%VAMPIRISM:"
+		"DOTA_Tooltip_ability_item_spear_of_destiny_duration"                             "Destiny DURATION:"
 		"DOTA_Tooltip_ability_item_spear_of_destiny_Lore"                             	  "During the Day of Judgment, the rogue angel Asmodel seized control of the vacant Spectre Force and literally froze over hell. Earth's heroes split into three groups: one group lead by Superman went into hell to reignite the fires; a second, led by Wonder Woman, attempted to retrieve Jim Corrigan from Heaven and re-bond him to the Spectre; and a third, led by Captain Marvel, ventured into space to retrieve the Spear."
 	
-				"DOTA_Tooltip_ability_item_recipe_reality_gem"                            "Reality Gem"
+		"DOTA_Tooltip_ability_item_recipe_reality_gem"                            "Reality Gem"
 		"DOTA_Tooltip_ability_item_recipe_reality_gem_Description"                        ""
 
 		"DOTA_Tooltip_ability_item_reality_gem"                                           "Reality Gem"
@@ -8541,7 +8535,6 @@ When activated spends mana."
 
 
 		"DOTA_Tooltip_ability_item_aether_medallion_bonus_mana"                           "+$mana"
-		"DOTA_Tooltip_ability_item_aether_medallion_bonus_health"                         "+$health"
 
 		"DOTA_Tooltip_ability_item_enchanted_raspberries_attack_damage"                   "+$damage"
 
@@ -12070,5 +12063,24 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_soul_gem_amp_per_charge"                               "%SPELL AMPLIFICATION PER CHARGE:"
 
 		"DOTA_Tooltip_ability_item_soul_gem_soul_steal_duration"                          "SOUL STEAL DURATION:"
+
+		"DOTA_Tooltip_ability_item_cosmic_vessel"											"Cosmic Vessel"
+		"DOTA_Tooltip_ability_item_cosmic_vessel_Description"								"<h1>Passive: Cooldown Reduction</h1>Reduces the cooldown time of all spells and items by %bonus_cooldown%%%."
+		"DOTA_Tooltip_ability_item_cosmic_vessel_Lore"										"The urn that contains the soul of Yggdrasil himself."
+		"DOTA_Tooltip_ability_item_cosmic_vessel_bonus_intelligence"						"+$int"
+		"DOTA_Tooltip_ability_item_cosmic_vessel_bonus_cooldown"							"%+$cooldown_reduce"
+		"DOTA_Tooltip_ability_item_cosmic_vessel_spell_amp"									"%SPELL AMPLIFICATION:"
+		"DOTA_Tooltip_ability_item_cosmic_vessel_hp_regen"									"+$hp_regen"
+		"DOTA_Tooltip_ability_item_cosmic_vessel_mp_regen"									"+$mana_regen"
+
+
+		"DOTA_Tooltip_ability_item_fractured_cape"                                      "Fractured Cape"
+		"DOTA_Tooltip_ability_item_fractured_cape_Description"                          "<h1>Active: Winter Wraith</h1> Creates a void shield that absorbs exactly 75% of any incoming damage. By expiration of the shield, the damage will be divided into all enemies within a radius of %active_radius%.\n <h1>Passive: Glass</h1> Blocks directional abilities ones in 8 seconds." 
+		"DOTA_Tooltip_ability_item_fractured_cape_bonus_all_stats"                      "+$all"
+		"DOTA_Tooltip_ability_item_fractured_cape_bonus_mana_regen"                     "+$mana_regen"
+		"DOTA_Tooltip_ability_item_fractured_cape_bonus_armor"                   	    "+$armor"
+		"DOTA_Tooltip_ability_item_fractured_cape_bonus_mana"                   	    "+$mana"
+
+		"DOTA_Tooltip_ability_item_fractured_cape_active_duration"                      "Winter Wraith DURATION:"
 	}
 }

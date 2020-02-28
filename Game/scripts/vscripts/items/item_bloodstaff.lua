@@ -53,7 +53,6 @@ function modifier_item_bloodstaff:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
-		MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
         MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT
     }
 
@@ -90,10 +89,6 @@ end
 
 function modifier_item_bloodstaff:GetModifierTotalDamageOutgoing_Percentage( params )
 	return self:GetAbility():GetSpecialValueFor("spell_amp_bonus")
-end
-
-function modifier_item_bloodstaff:GetModifierPercentageCooldown( params )
-	return self:GetAbility():GetSpecialValueFor("cooldown_reduction_bonus")
 end
 
 function modifier_item_bloodstaff:GetAttributes ()

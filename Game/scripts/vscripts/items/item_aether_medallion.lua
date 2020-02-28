@@ -47,13 +47,13 @@ function modifier_item_aether_medallion:GetAuraSearchFlags() return self:GetAbil
 function modifier_item_aether_medallion:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("aura_radius") end
 
 function modifier_item_aether_medallion:OnOrder( args )
-  if args.order_type and args.order_type == DOTA_UNIT_ORDER_CAST_TARGET and args.unit == self:GetParent() then
-    if IsServer() then
-      if args.target and args.unit:GetTeam() ~= args.target:GetTeam() then
-        args.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_aether_medallion_currupion", {duration = self:GetAbility():GetSpecialValueFor("magical_corruption_duration")})
-      end
+    if args.order_type and args.order_type == DOTA_UNIT_ORDER_CAST_TARGET and args.unit == self:GetParent() then
+        if IsServer() then
+            if args.target and args.unit:GetTeam() ~= args.target:GetTeam() then
+                args.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_aether_medallion_currupion", {duration = self:GetAbility():GetSpecialValueFor("magical_corruption_duration")})
+            end
+        end
     end
-  end
 end
 modifier_item_aether_medallion_currupion = class({
     IsHidden = function() return false end,

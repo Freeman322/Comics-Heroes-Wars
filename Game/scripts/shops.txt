@@ -48,7 +48,6 @@
 		"item"		"item_broadsword"
 		"item"		"item_quarterstaff"
 		"item"		"item_claymore"				
-		"item"		"item_javelin"
 		"item"		"item_mithril_hammer"	
 		"item"		"item_ghost"
 		"item"		"item_blink"		
@@ -56,6 +55,7 @@
 		"item"		"item_glimmerdark_shield"	
 		"item"		"item_dvine_armor"
 		"item"		"item_desolator_2"
+		"item"		"item_paladin_sword"
 	}
 			
 	"misc"
@@ -73,9 +73,10 @@
 		"item"		"item_spirit_orb"	
 		"item"		"item_cursed_necklace"
 		"item"		"item_ionic_vapor"
-		"item"		"item_aether_staff"
-		"item"		"item_soul_gem"
-		"item"		"item_ocean_walkers"
+		"item"		"item_cosmic_vessel"
+		"item"		"item_mirror_shield"
+		"item"		"item_fractured_cape"
+		"item"		"item_spear_of_destiny"
 	}	
 	
 	// Level 1 - Green Recipes
@@ -84,7 +85,6 @@
 		"item"		"item_ultimate_nullifier"
 		"item"		"item_vermilion_robe"
 		"item"		"item_anti_life_equation"
-		"item"		"item_spear_of_destiny"
 		"item"		"item_demon_shard_2"
 		"item"		"item_phase_boots"
 		"item"		"item_oblivion_staff"
@@ -113,9 +113,9 @@
 		"item"		"item_majestic_boots"
 		"item"		"item_ancient_janggo"
 		"item"		"item_vladmir"	
-		"item"		"item_cursed_helmet"					
+		"item"		"item_aether_staff"					
 		"item"		"item_void_orb"
-		"item"		"item_glimmers_armor"
+		"item"		"item_soul_gem"
 		"item"		"item_eye_of_terror"
 	}
 				

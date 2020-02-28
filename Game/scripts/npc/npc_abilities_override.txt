@@ -12,6 +12,14 @@
     "item_elemental_treads"     "REMOVE"
     "item_recipe_elemental_treads"     "REMOVE"
 
+	/////ВРЕМЕННО ДО РЕЛИЗА ШМОТА СТИГАНА
+
+	"item_glimmers_armor"     "REMOVE"
+	"item_recipe_glimmers_armor"	"REMOVE"
+
+	"item_ocean_walkers"     "REMOVE"
+    "item_recipe_ocean_walkers"     "REMOVE"
+
 	"item_iron_talon"     "REMOVE"
 	"item_recipe_iron_talon"      "REMOVE"
 	"item_stout_shield"     "REMOVE"
@@ -55,16 +63,16 @@
 	"item_recipe_ghost_staff"      "REMOVE"
 	"item_recipe_oathbreaker"      "REMOVE"
 	"item_oathbreaker"             "REMOVE"
+
 	///"item_azuras_staff"            "REMOVE"
 	///"item_recipe_azuras_staff"     "REMOVE"
 
-	"item_boots_of_merlin"     "REMOVE"
-	"item_recipe_boots_of_merlin"     "REMOVE"
-	"item_spear_of_destiny"     "REMOVE"
-  	"item_recipe_spear_of_destiny"     "REMOVE"
+	"item_boots_of_merlin"     			"REMOVE"
+	"item_recipe_boots_of_merlin"       "REMOVE"
 
 	///"item_ice_pearl"            "REMOVE"
 	///"item_recipe_ice_pearl"     "REMOVE"
+	
 	"item_overpower_bow"           "REMOVE"
 	"item_recipe_overpower_bow"    "REMOVE"
     "item_blink_2"                 "REMOVE"
@@ -72,8 +80,163 @@
 	"item_demon_shard"             "REMOVE"
 	"item_recipe_demon_shard"      "REMOVE"
 	"item_greater_salve"           "REMOVE"
-	"item_heart_2"                 "REMOVE"
 	"item_recipe_heart_2"          "REMOVE"
+
+	"item_cursed_helmet"           "REMOVE"
+	"item_recipe_cursed_helmet"    "REMOVE"
+
+	//=================================================================================================================
+	// Mirror Shield
+	//=================================================================================================================
+	"item_mirror_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"reflect_chance"			"75"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"all_stats"					"15"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"block_cooldown"			"8.0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Quickening Charm
+	//=================================================================================================================
+	"item_quickening_charm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+
+		"ItemCost"						"2250"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_cooldown"			"5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"		"9"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// 
+	//=================================================================================================================
+	"item_paladin_sword"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+
+		"ItemCost"						"3500"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"25"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_lifesteal"			"15"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_amp"					"15"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spell Prism
+	//=================================================================================================================
+	"item_spell_prism"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cooldown"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"			"2"
+			}
+		}
+	}
 	
 
 	"special_bonus_strength_25"

@@ -2707,7 +2707,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"150 200 250 300"
+		"AbilityDamage"					"80 120 160 200"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -2739,7 +2739,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_damage"			"65 100 135 170"
+				"aoe_damage"			"45 90 135 180"
 			}
 			"05"
 			{
@@ -3993,7 +3993,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius"							"400"
+				"radius"						"400"
 			}
 			"02"
 			{
@@ -4003,7 +4003,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"spark_damage"				"160 200 240 300"
+				"spark_damage"					"160 200 240 300"
 			}
 			"04"
 			{
@@ -11569,7 +11569,7 @@
     {
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						 	"ability_lua"
+		"BaseClass"						 	"slark_pounce"
 		"AbilityBehavior"				    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
@@ -11587,18 +11587,18 @@
 
         "precache"
         {
-             "model"		 "models/rat_skin/mouse.vmdl"
-            "model"		 "models/items/slark/slark_head_immortal/slark_head_immortal.vmdl"
-            "model"		 "models/heroes/hero_murloc/murlock_azinoth_arcana.vmdl"
-            "model"		 "models/items/slark/deepscoundrel_back/deepscoundrel_back.vmdl"
-            "model"		 "models/items/slark/deepscoundrel_arms/deepscoundrel_arms.vmdl"
-            "model"		 "models/items/slark/deep_sea_dragoon_head/deep_sea_dragoon_head.vmdl"
-            "model"		 "models/items/slark/pale_justice/pale_justice.vmdl"
-            "model"		 "models/items/slark/hookblade_skadi/hookblade_skadi.vmdl"
-            "particle"      "particles/econ/items/slark/slark_head_immortal/slark_head_immortal_ambient.vpcf"
-            "particle"		 "particles/econ/items/slark/hookblade_of_skadi/slark_hookblade_skadi_ambient.vpcf"
-            "particle"		 "models/items/slark/golden_barb_of_skadi/golden_barb_of_skadi.vmdl"
-            "particle"		 "particles/econ/items/slark/slark_golden_barb_of_skadi/slark_golden_barb_of_skadi_ambient.vpcf"
+            "model"					 		"models/rat_skin/mouse.vmdl"
+            "model"		 					"models/items/slark/slark_head_immortal/slark_head_immortal.vmdl"
+            "model"							"models/heroes/hero_murloc/murlock_azinoth_arcana.vmdl"
+            "model"		 					"models/items/slark/deepscoundrel_back/deepscoundrel_back.vmdl"
+            "model"		 					"models/items/slark/deepscoundrel_arms/deepscoundrel_arms.vmdl"
+            "model"		 					"models/items/slark/deep_sea_dragoon_head/deep_sea_dragoon_head.vmdl"
+            "model"		 					"models/items/slark/pale_justice/pale_justice.vmdl"
+            "model"		 					"models/items/slark/hookblade_skadi/hookblade_skadi.vmdl"
+            "particle"      				"particles/econ/items/slark/slark_head_immortal/slark_head_immortal_ambient.vpcf"
+            "particle"						"particles/econ/items/slark/hookblade_of_skadi/slark_hookblade_skadi_ambient.vpcf"
+            "particle"						"models/items/slark/golden_barb_of_skadi/golden_barb_of_skadi.vmdl"
+            "particle"						"particles/econ/items/slark/slark_golden_barb_of_skadi/slark_golden_barb_of_skadi_ambient.vpcf"
         }
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -11622,27 +11622,36 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pounce_radius"			"180"
+				"pounce_radius"			"95"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"pounce_damage"			"100 150 200 250"
+				"var_type"				"FIELD_FLOAT"
+				"leash_duration"		"2.5 2.75 3 3.25"
+				"LinkedSpecialBonus"	"special_bonus_unique_slark"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"leash_duration"		"3.5"
+				"var_type"				"FIELD_INTEGER"
+				"leash_radius"			"400"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"leash_radius"			"325"
+				"max_charges"			"2"
+				"RequiresScepter"		"1"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cooldown_scepter"		"6 5 4 3"
+				"charge_restore_time"			"10"
+				"RequiresScepter"		"1"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pounce_distance_scepter"		"1200"
+				"RequiresScepter"		"1"
 			}
 		}
 	}
@@ -11721,24 +11730,29 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"2.3 2.9 3.5"
+				"var_type"						   "FIELD_FLOAT"
+				"duration"						   "2.3 2.9 3.5"
 			}
 			"02"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"							"400"
+				"var_type"						   "FIELD_INTEGER"
+				"radius"						   "400"
 			}
 			"03"
 			{
-				"var_type"					      "FIELD_FLOAT"
-				"health_regen"	                  		 "1.0 1.5 2.0"
-				"LinkedSpecialBonus"				 "special_bonus_unique_murloc"
+				"var_type"					        "FIELD_FLOAT"
+				"health_regen"	                  	"1.0 1.5 2.0"
+				"LinkedSpecialBonus"				"special_bonus_unique_murloc"
 			}
 			"04"
 			{
-				"var_type"						  "FIELD_FLOAT"
-				"bonus_movement_speed"	       		  "15 25 30"
+				"var_type"						  	"FIELD_FLOAT"
+				"bonus_movement_speed"	       		"15 25 30"
+			}
+			"05"
+			{
+				"var_type"						  	"FIELD_FLOAT"
+				"const_tick"	       		  		"0.3 0.25 0.2"
 			}
 		}
 	}
@@ -11746,11 +11760,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				    "ability_lua"
+		"BaseClass"				    	"ability_lua"
 		"AbilityTextureName"			"custom/murloc_little_fish"
 		"ScriptFile"					"abilities/murlock_agility_steal.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"              			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"              		"1"
 		"precache"
 		{
 			"model"		                "models/heroes/hero_murloc/murloc/murloc.vmdl"
@@ -11761,7 +11775,7 @@
 			"model"		                "models/items/slark/deep_sea_dragoon_head/deep_sea_dragoon_head.vmdl"
 			"model"		                "models/items/slark/pale_justice/pale_justice.vmdl"
 			"model"		                "models/items/slark/hookblade_skadi/hookblade_skadi.vmdl"
-			"particle"                 	 "particles/econ/items/slark/slark_head_immortal/slark_head_immortal_ambient.vpcf"
+			"particle"                 	"particles/econ/items/slark/slark_head_immortal/slark_head_immortal_ambient.vpcf"
 			"particle"		            "particles/econ/items/slark/hookblade_of_skadi/slark_hookblade_skadi_ambient.vpcf"
 			"particle"		            "models/items/slark/golden_barb_of_skadi/golden_barb_of_skadi.vmdl"
 			"particle"		            "particles/econ/items/slark/slark_golden_barb_of_skadi/slark_golden_barb_of_skadi_ambient.vpcf"
@@ -11784,18 +11798,18 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"												"7463"
 		"BaseClass"									"ability_lua"
-		"AbilityTextureName"				"custom/doctor_doom_sanity_curse"
+		"AbilityTextureName"						"custom/doctor_doom_sanity_curse"
 		"ScriptFile"								"abilities/doctor_doom_sanity_curse.lua"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"
-		"FightRecapLevel"						"2"
-		"HasScepterUpgrade"					"0"
+		"AbilityBehavior"							"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"						"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"						"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"					"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"SpellImmunityType"							"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"						"DAMAGE_TYPE_HP_REMOVAL"
+		"FightRecapLevel"							"2"
+		"HasScepterUpgrade"							"0"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
@@ -11813,22 +11827,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"model"		 "models/heroes/hero_doom/doom_melted_sword.vmdl"
-			"particle"	 "particles/hero_doom/doom_melted_sword_ambient.vpcf"
-			"model"		 "models/heroes/dragon_knight/weapon.vmdl"
-			"model"		 "models/doctor_doom/doctor_doom_head.vmdl"
-			"particle"   "particles/doctor_doom/doctor_doom_sanity_curce.vpcf"
-			"particle"   "particles/doctor_doom/doctor_doom_hells_field.vpcf"
-			"particle"   "particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast_explosion.vpcf"
-			"model"		 "models/heroes/hero_doom/weapon/weapon.vmdl"
-			"soundfile"	 "soundevents/game_sounds_heroes/game_sounds_pangolier.vsndevts"
+			"model"						 "models/heroes/hero_doom/doom_melted_sword.vmdl"
+			"particle"					 "particles/hero_doom/doom_melted_sword_ambient.vpcf"
+			"model"						 "models/heroes/dragon_knight/weapon.vmdl"
+			"model"					 	 "models/doctor_doom/doctor_doom_head.vmdl"
+			"particle"   				 "particles/doctor_doom/doctor_doom_sanity_curce.vpcf"
+			"particle"   				 "particles/doctor_doom/doctor_doom_hells_field.vpcf"
+			"particle"   				 "particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast_explosion.vpcf"
+			"model"		 				 "models/heroes/hero_doom/weapon/weapon.vmdl"
+			"soundfile"	 				 "soundevents/game_sounds_heroes/game_sounds_pangolier.vsndevts"
 		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.1 5.4 5.7 6.0"
+				"duration"				"2.5 3.0 3.5 4.0"
 			}
 			"02"
 			{
@@ -12262,7 +12276,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"				"180 280 380 480"
+		"AbilityDamage"					"100 150 200 250"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -13398,7 +13412,6 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"											"7543"
 		"BaseClass"							"ability_lua"
 		"ScriptFile"						"abilities/ragnaros_fade.lua"
 		"AbilityTextureName"				"custom/ragnaros_sunder"
@@ -13413,23 +13426,23 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 50 40"
+		"AbilityCooldown"						"60 50 40"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"						"700"
+		"AbilityCastPoint"						"0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 150 200"
+		"AbilityManaCost"						"100 150 200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-	"model"  "models/heroes/hero_ragnaros/ragnaros_skirt.vmdl"
-	}
+		"precache"
+		{
+			"model" 							 "models/heroes/hero_ragnaros/ragnaros_skirt.vmdl"
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -28259,6 +28272,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"							// Changes dynamically with scepter
 		"FightRecapLevel"				"2"

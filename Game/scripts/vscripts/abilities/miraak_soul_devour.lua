@@ -50,7 +50,13 @@ function miraak_soul_devour:OnSpellStart()
                 ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetOrigin(), true );
                 ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-                hTarget:Kill(self, self:GetCaster())
+				ApplyDamage({
+                    victim = hTarget,
+                    attacker = self:GetCaster(),
+                    ability = self,
+                    damage = 99999999,
+                    damage_type = self:GetAbilityDamageType()
+                })
             end 
 		end
 

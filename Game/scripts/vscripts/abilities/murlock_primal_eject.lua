@@ -41,11 +41,11 @@ function modifier_murlock_primal_eject:OnCreated( kv )
         ParticleManager:SetParticleControl( nFXIndex, 16, self:GetParent():GetOrigin())
         self:AddParticle( nFXIndex, false, false, -1, false, true )
 
-        local mult = 1
+        local tick = self:GetAbility():GetSpecialValueFor("const_tick")
 
-        if self:GetCaster():HasTalent("special_bonus_unique_murloc_1") then mult = 0.75 end 
+        if self:GetCaster():HasTalent("special_bonus_unique_murloc_1") then tick = tick * 0.75 end 
 
-        self:StartIntervalThink(2.25 * mult * (1 / self:GetCaster():GetAttacksPerSecond()))
+        self:StartIntervalThink(tick)
         self:OnIntervalThink()
     end
 end

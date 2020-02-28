@@ -68,7 +68,7 @@ function ragnaros_fade:OnSpellStart()
 
     illusion:SetPlayerID(player_id)
     illusion:SetControllableByPlayer(player_id, true)
-    illusion:AddNewModifier(hCaster, self, "modifier_illusion", {duration = duration, outgoing_damage = 1000, incoming_damage = 10})
+    illusion:AddNewModifier(hCaster, self, "modifier_illusion", {duration = duration, outgoing_damage = 100, incoming_damage = 25})
 
     illusion:MakeIllusion()
 
