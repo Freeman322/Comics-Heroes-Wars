@@ -8770,6 +8770,47 @@
 			"01"						"item_mirror_shield;item_glimmer_cape;item_ultimate_orb"
 		}
 	}
+
+	//=================================================================================================================
+	// Mirror Shield
+	//=================================================================================================================
+	"item_mirror_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"item_lua"
+		"ScriptFile"					"items/item_mirror_shield.lua"													
+		"AbilityTextureName"            "mirror_shield"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"reflect_chance"			"75"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"all_stats"					"15"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"block_cooldown"			"8.0"
+			}
+		}
+	}
+
 	
 	//=================================================================================================================
 	// Fractured Cape

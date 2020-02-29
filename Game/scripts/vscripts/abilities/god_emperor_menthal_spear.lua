@@ -144,7 +144,11 @@ function god_emperor_menthal_spear:OnProjectileHit_ExtraData( hTarget, vLocation
         if self.hasSceper then
             FindClearSpaceForUnit( self:GetCaster(), vLocation, true)
 
-            self:GetCaster():GetAbilityByIndex(2):CastAbility()
+            local abil = self:GetCaster():FindAbilityByName("god_emperor_cloud_dance")
+
+            if abil then
+                abil:CastAbility()
+            end
 
             if self.mod then
                 self.mod:Destroy()

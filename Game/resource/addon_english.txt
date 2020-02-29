@@ -12078,6 +12078,7 @@ When activated spends mana."
 		"DOTA_Tooltip_ability_item_cosmic_vessel_hp_regen"									"+$hp_regen"
 		"DOTA_Tooltip_ability_item_cosmic_vessel_mp_regen"									"+$mana_regen"
 
+		"DOTA_Tooltip_ability_item_mirror_shield_Description"							"<h1>Passive: Damage Mirror</h1>Reflect all damage onese in %block_cooldown% with %reflect_chance%%% chance."
 
 		"DOTA_Tooltip_ability_item_fractured_cape"                                      "Fractured Cape"
 		"DOTA_Tooltip_ability_item_fractured_cape_Description"                          "<h1>Active: Winter Wraith</h1> Creates a void shield that absorbs exactly 75% of any incoming damage. By expiration of the shield, the damage will be divided into all enemies within a radius of %active_radius%.\n <h1>Passive: Glass</h1> Blocks directional abilities ones in 8 seconds." 
