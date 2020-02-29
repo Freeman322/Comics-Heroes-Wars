@@ -5118,6 +5118,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"target_attack_speed"	"80"
 			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amplify"			"20"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -8565,27 +8570,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"800"
+				"bonus_health"			"900"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"800"
+				"bonus_mana"			"900"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"40"
+				"bonus_intellect"		"70"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"manacost_reduction"	"30"
+				"manacost_reduction"	"0"
 			}			
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"8"
+				"spell_amp"				"30"
 			}	
 			"06"
 			{
@@ -8600,7 +8605,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"amp_per_charge"		"0.35"
+				"amp_per_charge"		"0.9"
 			}
 			"09"
 			{
@@ -8689,6 +8694,11 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
+				"bonus_agility_and_str"	"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
 				"bonus_cooldown"		"30"
 			}
 			"03"
@@ -8699,7 +8709,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"10"
+				"hp_regen"				"18"
 			}	
 			"05"
 			{
@@ -8808,39 +8818,44 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"15"
+				"bonus_attack_speed"	"25"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_all_stats"		"35"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_magic_resist"	"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
+				"bonus_all_stats"		"35"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
 				"bonus_mana_regen"		"10"
 			}			
-			"04"
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_mana"			"500"
 			}
-			"05"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"active_duration"		"4"
 			}
-			"06"
+			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"active_radius"			"500"
 			}
-			"07"
+			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"stun_duration"			"1.75"
 			}
-			"08"
+			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"block_cooldown"		"8.0"

@@ -14,8 +14,8 @@
 
 	/////ВРЕМЕННО ДО РЕЛИЗА ШМОТА СТИГАНА
 
-	"item_glimmers_armor"     "REMOVE"
-	"item_recipe_glimmers_armor"	"REMOVE"
+	"item_axe_of_phractos"     "REMOVE"
+	"item_recipe_axe_of_phractos"	"REMOVE"
 
 	"item_ocean_walkers"     "REMOVE"
     "item_recipe_ocean_walkers"     "REMOVE"
@@ -155,7 +155,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_health_regen"		"9"
+				"bonus_health_regen"		"16"
 			}
 		}
 	}
@@ -228,12 +228,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"15"
+				"bonus_all_stats"		"20"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"2"
+				"mana_regen"			"4"
 			}
 		}
 	}

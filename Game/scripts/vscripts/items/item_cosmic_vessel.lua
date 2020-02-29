@@ -18,10 +18,20 @@ function modifier_item_cosmic_vessel:DeclareFunctions() --we want to use these f
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE
+        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
     }
 
     return funcs
+end
+
+function modifier_item_cosmic_vessel:GetModifierBonusStats_Strength (params)
+    return self:GetAbility():GetSpecialValueFor ("bonus_agility_and_str")
+end
+
+function modifier_item_cosmic_vessel:GetModifierBonusStats_Agility (params)
+    return self:GetAbility():GetSpecialValueFor ("bonus_agility_and_str")
 end
 
 function modifier_item_cosmic_vessel:GetModifierBonusStats_Intellect( params )

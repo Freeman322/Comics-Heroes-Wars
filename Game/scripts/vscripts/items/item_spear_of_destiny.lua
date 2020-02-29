@@ -42,12 +42,17 @@ local funcs = {
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL
+        MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL,
+        MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+        MODIFIER_EVENT_ON_ATTACK_LANDED
     }
 
     return funcs
 end
 
+function modifier_item_spear_of_destiny:GetModifierMoveSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor("self_movement_speed") end
+function modifier_item_spear_of_destiny:GetModifierHPRegenAmplify_Percentage() return self:GetAbility():GetSpecialValueFor("heal_amplify") end
 function modifier_item_spear_of_destiny:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 function modifier_item_spear_of_destiny:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 function modifier_item_spear_of_destiny:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
@@ -111,7 +116,7 @@ end
 
 function modifier_item_spear_of_destiny_active:CheckState ()
     local state = {
-        [MODIFIER_STATE_MUTED] = true
+        [MODIFIER_STATE_BLIND] = true
     }
 
     return state

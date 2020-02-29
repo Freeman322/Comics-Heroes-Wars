@@ -114,12 +114,16 @@ function modifier_item_fractured_cape:DeclareFunctions()
 	    MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_MANA_BONUS
     }
 
     return funcs
 end
 
+function modifier_item_fractured_cape:GetModifierMagicalResistanceBonus( params ) return self:GetAbility():GetSpecialValueFor ("bonus_magic_resist" )  end
+function modifier_item_fractured_cape:GetModifierAttackSpeedBonus_Constant( params ) return self:GetAbility():GetSpecialValueFor ("bonus_attack_speed" )  end
 function modifier_item_fractured_cape:GetModifierPhysicalArmorBonus( params ) return self:GetAbility():GetSpecialValueFor ("bonus_armor" )  end
 function modifier_item_fractured_cape:GetModifierBonusStats_Intellect( params ) return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" )  end
 function modifier_item_fractured_cape:GetModifierBonusStats_Strength( params )  return self:GetAbility():GetSpecialValueFor( "bonus_all_stats" )  end

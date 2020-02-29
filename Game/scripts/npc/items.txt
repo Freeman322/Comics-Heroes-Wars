@@ -5692,12 +5692,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"221"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
-
+		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
@@ -5707,7 +5707,7 @@
 			"01"						"item_pers;item_platemail;item_energy_booster"
 		}
 	}
-
+	
 	//=================================================================================================================
 	// Lotus Orb
 	//=================================================================================================================
@@ -5720,7 +5720,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"FightRecapLevel"				"1"
-
+		
 		"AbilityCooldown"				"15.0"
 		"AbilityCastRange"				"900"
 		"AbilityManaCost"				"75"
@@ -5734,45 +5734,36 @@
 		"ItemAliases"					"ls;lotus orb"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-
-		// Special
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"10"
+				"bonus_armor"		"10"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"		"10"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"6.5"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"6"
-			}
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"4.0"
+			}			
 			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"1"
-			}
-			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_mana"			"250"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"active_duration"		"6"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_range_tooltip"		"900"
 			}
 		}
 	}
@@ -8949,17 +8940,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"12"
+				"bonus_armor"			"8"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"15"
+				"bonus_all_stats"		"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"self_movement_speed"	"6"
+				"self_movement_speed"	"20"
 			}
 			"04"
 			{
@@ -8974,18 +8965,13 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"target_attack_speed"	"70"
+				"target_attack_speed"	"80"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"duration"				"7"
 			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"valor_cast_range_tooltip"				"1000"
-			}			
 		}
 	}
 

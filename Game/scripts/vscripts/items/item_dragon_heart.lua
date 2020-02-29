@@ -2,6 +2,8 @@ if item_dragon_heart == nil then
     item_dragon_heart = class({})
 end
 
+local CONST_EVASION = 5
+
 LinkLuaModifier ("modifier_item_dragon_heart", "items/item_dragon_heart.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier ("modifier_item_dragon_heart_aura", "items/item_dragon_heart.lua", LUA_MODIFIER_MOTION_NONE )
 
@@ -132,6 +134,15 @@ function modifier_item_dragon_heart_aura:OnCreated(table)
         self:OnIntervalThink()
     end
 end
+
+function modifier_item_dragon_heart_aura:DeclareFunctions ()
+    return {MODIFIER_PROPERTY_EVASION_CONSTANT}
+end
+
+function modifier_item_dragon_heart_aura:GetModifierEvasion_Constant()
+    return CONST_EVASION
+end
+
 
 function modifier_item_dragon_heart_aura:OnIntervalThink()
     if IsServer() then

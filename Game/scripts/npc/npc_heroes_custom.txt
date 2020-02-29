@@ -709,7 +709,7 @@
 			"model"		"models/collector/collector_head_final.vmdl"
 		}
 		"AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
-	  }
+	}
 	"npc_dota_hero_antimage" //имя юнита
 	{
 		// General

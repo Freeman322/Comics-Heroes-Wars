@@ -2,6 +2,8 @@ LinkLuaModifier( "modifier_item_dvine_armor", "items/item_dvine_armor.lua", LUA_
 LinkLuaModifier( "modifier_item_dvine_armor_aura", "items/item_dvine_armor.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_item_dvine_armor_active", "items/item_dvine_armor.lua", LUA_MODIFIER_MOTION_NONE )
 
+local CONST_EVASION = 5
+
 if item_dvine_armor == nil then item_dvine_armor = class({}) end
 function item_dvine_armor:GetIntrinsicModifierName() return "modifier_item_dvine_armor" end
 function item_dvine_armor:GetBehavior() return DOTA_ABILITY_BEHAVIOR_NO_TARGET end
@@ -56,6 +58,15 @@ function modifier_item_dvine_armor_aura:OnCreated(params) if IsServer() then sel
 function modifier_item_dvine_armor_aura:OnIntervalThink()
     if IsServer() then ApplyDamage({attacker = self:GetAbility():GetCaster(), victim = self:GetParent(), ability = self:GetAbility(), damage = self:GetAbility():GetSpecialValueFor("aura_damage"), damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION}) end
 end
+
+function modifier_item_dvine_armor_aura:DeclareFunctions ()
+    return {MODIFIER_PROPERTY_EVASION_CONSTANT}
+end
+
+function modifier_item_dvine_armor_aura:GetModifierEvasion_Constant()
+    return CONST_EVASION
+end
+
 
 if not modifier_item_dvine_armor_active then modifier_item_dvine_armor_active = class({}) end 
 function modifier_item_dvine_armor_active:IsHidden() return false end
