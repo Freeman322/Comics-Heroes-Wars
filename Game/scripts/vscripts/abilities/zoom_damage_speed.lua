@@ -25,8 +25,7 @@ function zoom_damage_speed:OnSpellStart()
 
 	local damage = caster_ms * self:GetSpecialValueFor("damage") / 100
 
-	hTarget:AddNewModifier(hCaster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
-
+	
 	ApplyDamage({
 		victim = hTarget,
 		attacker = hCaster,

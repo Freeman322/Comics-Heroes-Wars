@@ -3292,7 +3292,7 @@
 			}
 		}
 	}
-	"draks_double_edge"
+	"	_double_edge"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -3321,7 +3321,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"edge_damage"					"190 260 330 400"
+				"edge_damage"					"150 220 290 360"
 			}
 			"02"
 			{
@@ -3331,7 +3331,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_per_strength"			"1.5 2.0 2.5 3.0"
+				"damage_per_strength"			"1.0 1.5 2.0 2.5"
 			}
 		}
 
@@ -9560,17 +9560,13 @@
 			"01"
 	       	{
 	       		"var_type"				"FIELD_INTEGER"
-	       		"damage"		      "55 70 85 100"
+	       		"damage"		      "35 50 65 80"
 	       	}
-	       	"02"
-	       	{
-	       		"var_type"				"FIELD_FLOAT"
-	        	"stun_duration"	  "1.1 1.4 1.7 2"
-	       	}
-			"03"
+	       	
+			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"speed_steal"			"5"
+				"speed_steal"			"0"
 			}
 		}
 	}
@@ -18142,7 +18138,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4 5 6 7"
+				"duration"				"3 4 5 6"
 			}
 			"02"
 			{
@@ -18152,12 +18148,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tick_damage"				"25 40 65 80"
+				"tick_damage"				"25 35 45 55"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_damage_per"			"0.85 1.1 1.35 1.7"
+				"tick_damage_per"			"1 1 1 1"
 			}
 			"05"
 			{
@@ -18167,7 +18163,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"					"275"
+				"radius"					"125"
 			}
 			"07"
 			{
@@ -35739,7 +35735,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"50 80 110 140"
+				"bonus_damage"				"25 40 55 70"
 				"LinkedSpecialBonus"		"special_bonus_unique_misterio_4"
 			}
 			"04"

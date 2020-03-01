@@ -19,13 +19,11 @@ function item_spear_of_destiny:OnSpellStart()
             target:AddNewModifier( self:GetCaster(), self, "modifier_item_solar_crest_armor_addition", {duration = self:GetSpecialValueFor("duration")} )
         else 
             if target ~= nil then
-                if ( not target:TriggerSpellAbsorb( self ) ) then
                     EmitSoundOn("Item.StarEmblem.Friendly", self:GetCaster())
                     EmitSoundOn("Item.StarEmblem.Enemy", target)
                     
                     target:AddNewModifier( self:GetCaster(), self, "modifier_item_spear_of_destiny_active", {duration = self:GetSpecialValueFor("duration")} )
                     target:AddNewModifier( self:GetCaster(), self, "modifier_item_solar_crest_armor_reduction", {duration = self:GetSpecialValueFor("duration")} )
-                end
             end
         end
     end

@@ -9,7 +9,7 @@ local hTarget = self:GetCursorTarget()
 				local damage = self:GetSpecialValueFor("edge_damage") + self:GetCaster():GetStrength() * self:GetSpecialValueFor("damage_per_strength")
 
 				if target ~= hTarget then
-					damage = damage * 1.25
+					damage = damage * 0.25
 				end
 
 				local particle = "particles/econ/items/centaur/dc_centaur_double_edge/_dc_centaur_double_edge.vpcf"
