@@ -11711,12 +11711,11 @@
 		"Ability6"					"ursa_fury_swipes"						// Ability 6 - Extra.
 		"Ability7"					"huskar_berserkers_blood"						// Ability 7 - Extra.
 		"Ability8"					"alpha_wolf_critical_strike"						// Ability 8 - Extra.
-		"Ability9"					"neutral_spell_immunity"
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"60"			// Physical protection.
-		"MagicalResistance"				"80"									// Magical protection (percentage).
+		"MagicalResistance"			"500"									// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------

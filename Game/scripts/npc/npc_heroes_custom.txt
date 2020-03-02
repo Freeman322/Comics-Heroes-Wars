@@ -4231,11 +4231,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"20"									// Base strength
-		"AttributeStrengthGain"		"2.1"									// Strength bonus per level.
+		"AttributeStrengthGain"		"2.0"									// Strength bonus per level.
 		"AttributeBaseIntelligence"	"19"									// Base intelligence
 		"AttributeIntelligenceGain"	"2.3"									// Intelligence bonus per level.
 		"AttributeBaseAgility"		"25"									// Base agility
-		"AttributeAgilityGain"		"4.2"									// Agility bonus per level.
+		"AttributeAgilityGain"		"3.6"									// Agility bonus per level.
 
 			// Vision
 		//-------------------------------------------------------------------------------------------------------------
@@ -4452,26 +4452,26 @@
 		"Ability17"				"special_bonus_all_stats_20"
 
 		"AttributePrimary"      		"DOTA_ATTRIBUTE_STRENGTH"
-		"ArmorPhysical"			"1.000000"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"26"
-		"AttackDamageMax"			"36"
-		"AttackRate"				"1.700000"
-		"AttackAnimationPoint"		"0.350000"
+		"ArmorPhysical"					"1.000000"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"26"
+		"AttackDamageMax"				"36"
+		"AttackRate"					"1.700000"
+		"AttackAnimationPoint"			"0.350000"
 		"AttackAcquisitionRange"		"600"
-		"AttackRange"				"150"
-		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"24"
-		"AttributeStrengthGain"		"2.600000"
-		"AttributeBaseAgility"		"18"
-		"AttributeAgilityGain"		"2.100000"
+		"AttackRange"					"150"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"24"
+		"AttributeStrengthGain"			"2.600000"
+		"AttributeBaseAgility"			"18"
+		"AttributeAgilityGain"			"2.100000"
 		"AttributeBaseIntelligence"		"21"
 		"AttributeIntelligenceGain"		"1.800000"
-		"MovementSpeed"			"300"
-		"MovementTurnRate"			"0.400000"
-		"HealthBarOffset"			"200"
+		"MovementSpeed"					"300"
+		"MovementTurnRate"				"0.400000"
+		"HealthBarOffset"				"200"
 
-		"StatusHealthRegen"				"11.0"
+		"StatusHealthRegen"				"6.0"
 	}
 	"npc_dota_hero_omniknight" //имя юнита
 	{

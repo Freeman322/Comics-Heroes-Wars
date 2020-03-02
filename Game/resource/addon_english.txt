@@ -8368,7 +8368,7 @@ When activated spends mana."
 		
 		"DOTA_TOOLTIP_ABILITY_special_bonus_godspeed_2"							  		  "Speed Void 50 sec cooldown"
 		"DOTA_TOOLTIP_ABILITY_special_bonus_unique_miraak_3"							  "Dragon Aspect applies invulnerable"
-		"DOTA_TOOLTIP_ABILITY_special_bonus_savitar_1"									  "Speedforce Rage works passive"
+		"DOTA_TOOLTIP_ABILITY_special_bonus_savitar_1"									  "+800 speed for Speedforce Rage"
 		"DOTA_TOOLTIP_ABILITY_special_bonus_savitar_2"									  "+2.5% to health restore"
 		
 		"DOTA_Tooltip_ability_zuus_cloud"                                                 "Cloud"

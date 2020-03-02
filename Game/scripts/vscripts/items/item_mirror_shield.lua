@@ -41,7 +41,7 @@ function modifier_item_mirror_shield_passive:OnTakeDamage(params)
                 ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
                 ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
                 
-                self:GetAbility():StartCooldown(self:GetAbility():GetSpecialValueFor("all_stats"))
+                self:GetAbility():StartCooldown(self:GetAbility():GetSpecialValueFor("block_cooldown"))
             end
         end
     end

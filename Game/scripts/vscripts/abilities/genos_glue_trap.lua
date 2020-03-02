@@ -5,12 +5,13 @@ genos_glue_trap = class ({})
 function genos_glue_trap:OnSpellStart()
     if IsServer() then
         local point = self:GetCursorPosition()
+        
         local team_id = self:GetCaster():GetTeamNumber()
         local thinker = CreateModifierThinker(self:GetCaster(), self, "modifier_genos_glue_trap_thinker", {duration = self:GetSpecialValueFor("thinker_duration")}, point, team_id, false)
     end
 end
 
-function genos_glue_trap:GetAOERadius ()
+function genos_glue_trap:GetAOERadius()
     return self:GetSpecialValueFor("thinker_radius")
 end
 

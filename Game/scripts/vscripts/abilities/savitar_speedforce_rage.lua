@@ -4,30 +4,23 @@ LinkLuaModifier( "modifier_savitar_speedforce_rage", "abilities/savitar_speedfor
 LinkLuaModifier( "modifier_savitar_speedforce_rage_talent", "abilities/savitar_speedforce_rage.lua", LUA_MODIFIER_MOTION_NONE )
 
 function savitar_speedforce_rage:GetIntrinsicModifierName()
-  if self:GetCaster():HasModifier("modifier_savitar_speedforce_rage_talent") then return "modifier_savitar_speedforce_rage" end 
-  return
+    return
 end
 
 function savitar_speedforce_rage:GetBehavior()
-    if self:GetCaster():HasModifier("modifier_savitar_speedforce_rage_talent") then
-        return DOTA_ABILITY_BEHAVIOR_PASSIVE
-    end
     return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK
 end
 
 function savitar_speedforce_rage:OnSpellStart()
-  if IsServer() then 
-    if not self:GetCaster():HasTalent("special_bonus_savitar_1") then self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_savitar_speedforce_rage", { duration = self:GetSpecialValueFor("duration") } ) end
-    if self:GetCaster():HasTalent("special_bonus_savitar_1") then self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_savitar_speedforce_rage", nil ) end
-    
-    EmitSoundOn( "Savitar.Ult.Cast", self:GetCaster() )
+    if IsServer() then 
+        EmitSoundOn( "Savitar.Ult.Cast", self:GetCaster() )
 
-    local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_cast_moonfall.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() );
-    ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin());
-    ParticleManager:ReleaseParticleIndex( nFXIndex );
-
-    if self:GetCaster():HasTalent("special_bonus_savitar_1") then self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_savitar_speedforce_rage_talent", nil) end 
-  end 
+        self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_savitar_speedforce_rage", { duration = self:GetSpecialValueFor("duration") } ) 
+        
+        local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_cast_moonfall.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() );
+        ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin());
+        ParticleManager:ReleaseParticleIndex( nFXIndex );
+    end 
 end
 
 if modifier_savitar_speedforce_rage == nil then modifier_savitar_speedforce_rage = class({}) end
@@ -75,10 +68,15 @@ function modifier_savitar_speedforce_rage:GetModifierConstantHealthRegen( params
 end
 
 function modifier_savitar_speedforce_rage:GetModifierMoveSpeedBonus_Constant(target)
-  return self:GetAbility():GetSpecialValueFor("move_speed_bonus")
+  return self.speed 
 end
 
 function modifier_savitar_speedforce_rage:OnCreated(params)
+  self.speed = self:GetAbility():GetSpecialValueFor("move_speed_bonus")
+  local talent = IsHasTalent(self:GetCaster():GetPlayerOwnerID(), "special_bonus_savitar_1") 
+
+  self.speed = self.speed + (talent or 0)
+
   if IsServer() then 
     self:StartIntervalThink(1)
   end 

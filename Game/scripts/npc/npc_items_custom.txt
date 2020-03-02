@@ -8772,6 +8772,89 @@
 	}
 
 	//=================================================================================================================
+	// Quickening Charm
+	//=================================================================================================================
+	"item_quickening_charm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"item_lua"
+		"ScriptFile"					"items/item_quickening_charm.lua"													
+		"AbilityTextureName"            "quickening_charm"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+
+		"ItemCost"						"2250"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_cooldown"			"5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"		"16"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spell Prism
+	//=================================================================================================================
+	"item_spell_prism"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			        	"item_lua"
+		"ScriptFile"					"items/item_spell_prism.lua"													
+		"AbilityTextureName"            "spell_prism"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cooldown"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"			"4"
+			}
+		}
+	}
+
+	//=================================================================================================================
 	// Mirror Shield
 	//=================================================================================================================
 	"item_mirror_shield"
@@ -8806,7 +8889,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"block_cooldown"			"8.0"
+				"block_cooldown"			"3.5"
 			}
 		}
 	}

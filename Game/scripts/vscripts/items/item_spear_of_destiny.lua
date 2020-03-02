@@ -61,7 +61,7 @@ function modifier_item_spear_of_destiny:GetModifierPhysicalArmorBonus (params) r
 
 function modifier_item_spear_of_destiny:OnAttackLanded (params)
     if params.attacker == self:GetParent() then
-        if params.target ~= nil and params.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
+        if params.target ~= nil and params.target.IsBuilding() == false and params.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
             local damage = params.damage
 
             ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle( "particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() ))
