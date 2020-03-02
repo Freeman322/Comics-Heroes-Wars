@@ -3192,9 +3192,8 @@
 
 
 		"DOTA_Tooltip_ABILITY_zoom_damage_speed"							"ENTIRE SPEED"
-		"DOTA_Tooltip_ABILITY_zoom_damage_speed_Description"				"Reverse Flash stuns the target and deals damage depending on it's movespeed. If this damage kills a target, then Reverse Flash steal %speed_steal% movespeed."
-		"DOTA_Tooltip_ABILITY_zoom_damage_speed_stun_duration"				"STUN DURATION:"
-		"DOTA_Tooltip_ABILITY_zoom_damage_speed_damage"						"%DAMAGE BY MOVESPEED:"
+		"DOTA_Tooltip_ABILITY_zoom_damage_speed_Description"				"Reverse Flash deals damage depending on it's movespeed."
+        "DOTA_Tooltip_ABILITY_zoom_damage_speed_damage"						"%DAMAGE BY MOVESPEED:"
 		"DOTA_Tooltip_ABILITY_zoom_damage_speed_Note0"						"Max move speed to damage is 1000"
 
 		"DOTA_Tooltip_ABILITY_zoom_aura"							"EMBER FIELD"
