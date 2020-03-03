@@ -8934,6 +8934,7 @@
 			"particle"					"particles/fractured_cape.vpcf"
 			"particle"					"particles/items4_fx/combo_breaker_buff.vpcf"
 			"particle"					"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
+			"particle"					"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_secondstyle_debuff.vpcf"
 		}
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -8967,7 +8968,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_duration"		"4"
+				"active_duration"		"5"
 			}
 			"07"
 			{
@@ -8982,7 +8983,12 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"block_cooldown"		"8.0"
+				"block_cooldown"		"4.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"active_chance"			"75"
 			}
 		}
 	}

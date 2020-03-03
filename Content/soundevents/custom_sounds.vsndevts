@@ -6351,12 +6351,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/dark_emblem_death.vsnd"
+							"value0"		"sounds/dark_emblem_kill.vsnd"
 						}
 					}
 					"volume"
 					{
-						"value"		"4.000000"
+						"value"		"6.000000"
 					}
 					"pitch"
 					{
@@ -6386,12 +6386,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/dark_emblem_kill.vsnd"
+							"value0"		"sounds/dark_emblem_death.vsnd"
 						}
 					}
 					"volume"
 					{
-						"value"		"4.000000"
+						"value"		"6.000000"
 					}
 					"pitch"
 					{

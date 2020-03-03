@@ -32,57 +32,34 @@ if modifier_item_fractured_cape_active == nil then modifier_item_fractured_cape_
 function modifier_item_fractured_cape_active:IsPurgable() return false end
 function modifier_item_fractured_cape_active:IsHidden()  return false end
 
-modifier_item_fractured_cape_active.m_iDamage = 0
-
-function modifier_item_fractured_cape_active:OnCreated( params )
-    if IsServer() then
-        local nFXIndex = ParticleManager:CreateParticle( "particles/fractured_cape.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-        ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin() )
-        self:AddParticle( nFXIndex, false, false, -1, false, true )
-    end
-end
-
 function modifier_item_fractured_cape_active:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
+        MODIFIER_PROPERTY_AVOID_DAMAGE
     }
 
     return funcs
 end
 
-function modifier_item_fractured_cape_active:OnDestroy()
-    if IsServer() then
-        local radius = self:GetAbility():GetSpecialValueFor( "active_radius" ) 
-        local duration = self:GetAbility():GetSpecialValueFor(  "stun_duration" )
-
-        local units = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), self:GetParent(), radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-        if #units > 0 then
-            for _,unit in pairs(units) do
-                ApplyDamage( {
-                    victim = unit,
-                    attacker = self:GetCaster(),
-                    damage = self.m_iDamage / #units,
-                    damage_type = DAMAGE_TYPE_PURE,
-                    ability = self:GetAbility(),
-                    damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS  
-                })
-            end
-        end
-
-        local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf", PATTACH_CUSTOMORIGIN, nil )
-        ParticleManager:SetParticleControl( nFXIndex, 0, self:GetParent():GetOrigin() )
-        ParticleManager:SetParticleControl( nFXIndex, 1, Vector(radius, 1, radius) )
-        ParticleManager:ReleaseParticleIndex( nFXIndex )
-
-        EmitSoundOn( "Hero_Crystal.CrystalNova.Yulsaria", self:GetParent() )
+function modifier_item_fractured_cape_active:GetModifierAvoidDamage(params)
+    if RollPercentage(self:GetAbility():GetSpecialValueFor("active_chance")) then
+        return 1
     end
+
+    return 0
 end
 
-function modifier_item_fractured_cape_active:GetModifierIncomingDamage_Percentage(params)
-    self.m_iDamage = self.m_iDamage + (params.original_damage * 0.75)
-
-    return -75
+function modifier_item_fractured_cape_active:GetStatusEffectName()
+    return "particles/status_fx/status_effect_combo_breaker.vpcf"
 end
+
+function modifier_item_fractured_cape_active:StatusEffectPriority()
+    return 1000
+end
+
+function modifier_item_fractured_cape_active:GetEffectName ()
+    return "particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_secondstyle_debuff.vpcf"
+end
+
 
 if modifier_item_fractured_cape == nil then modifier_item_fractured_cape = class({}) end
 

@@ -108,8 +108,8 @@ end
 function Util:OnPlayerLeveledUp(params)
     local hero = EntIndexToHScript(params.hero_entindex)
 
-    if params.level == EF_MAX_LEVEL_CONST then
-        hero:SetAbilityPoints(EF_MAX_LEVEL_CONST)
+    if params.level >= EF_MAX_LEVEL_CONST then
+        hero:SetAbilityPoints(hero:GetAbilityPoints() + EF_MAX_LEVEL_CONST)
     end
 end
 
@@ -1842,6 +1842,7 @@ function Util:SetupConsole()
                 PrecacheUnitByNameAsync( "npc_dota_hero_death_eater", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_death_eater", 0, 0)
                     nHero:RespawnHero(false, false)
+                    PlayerResource:ModifyGold(pID, 800, true, 0)
                 end)
             else
                 Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -1856,6 +1857,7 @@ function Util:SetupConsole()
                 PrecacheUnitByNameAsync( "npc_dota_hero_phoenix", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_phoenix", 0, 0)
                     nHero:RespawnHero(false, false)
+                    PlayerResource:ModifyGold(pID, 800, true, 0)
                 end)
             else
                 Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -1871,6 +1873,7 @@ function Util:SetupConsole()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_stormspirit", 0, 0)
                     nHero:RespawnHero(false, false)
                     nHero:AddNewModifier(nHero, nil, "modifier_storm_spirit", nil)
+                    PlayerResource:ModifyGold(pID, 800, true, 0)
                 end)
             else
                 Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -1887,6 +1890,7 @@ function Util:SetupConsole()
                     nHero:RespawnHero(false, false)
                     nHero:AddNewModifier(nHero, nil, "modifier_io", nil)
                     nHero:FindAbilityByName("io_decay_dummy"):SetLevel(1)
+                    PlayerResource:ModifyGold(pID, 800, true, 0)
                 end)
             else
                 Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -1901,6 +1905,7 @@ function Util:SetupConsole()
                 PrecacheUnitByNameAsync( "npc_dota_hero_medusa", function()
                     local nHero = PlayerResource:ReplaceHeroWith(pID, "npc_dota_hero_medusa", 0, 0)
                     nHero:RespawnHero(false, false)
+                    PlayerResource:ModifyGold(pID, 800, true, 0)
                 end)
             else
                 Warning("User with id as: " .. pID .. " is not allowed to issue this command!")
@@ -2244,6 +2249,9 @@ function Util:OnModifierWasApplied( ability, unit, caster, modifier )
 end
 
 function Util:LearnedAbility( params )
+    for k,v in pairs(params) do
+        print(k,v)
+    end
     if params.abilityname and params.PlayerID and string.find(params.abilityname, "special_bonus") ~= nil then
         Talents:OnTalentLearned(params.PlayerID, params.abilityname)
     end

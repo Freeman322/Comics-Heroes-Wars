@@ -1,6 +1,6 @@
 if item_soul_gem == nil then item_soul_gem = class({}) end
 
-local RANGE = 1600
+local RANGE = 66000
 
 LinkLuaModifier("modifier_item_soul_gem", "items/item_soul_gem.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_soul_gem_debuff", "items/item_soul_gem.lua", LUA_MODIFIER_MOTION_NONE)
