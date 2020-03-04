@@ -45,6 +45,8 @@ function modifier_murlock_primal_eject:OnCreated( kv )
 
         if self:GetCaster():HasTalent("special_bonus_unique_murloc_1") then tick = tick * 0.75 end 
 
+        self:GetParent():Stop()
+
         self:StartIntervalThink(tick)
         self:OnIntervalThink()
     end
@@ -105,6 +107,7 @@ function modifier_murlock_primal_eject:CheckState()
         [MODIFIER_STATE_INVULNERABLE] = true,
         [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
         [MODIFIER_STATE_NO_HEALTH_BAR] = true,
+        [MODIFIER_STATE_DISARMED] = true,
     }
 end
 

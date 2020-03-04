@@ -5956,6 +5956,20 @@ Lib.Items = {
         "is_medal": "0",
         "is_compendium": "0",
         "is_music": "0"
+    },
+    "435": {
+       "universal": "false",
+       "is_treasure": 0,
+       "is_medal": 0,
+       "slot": "global",
+       "dropable": "false",
+       "def_id": 435,
+       "hero": "npc_dota_hero_elder_titan",
+       "is_music": 0,
+       "is_compendium": 0,
+       "item": "thanos_the_infinity",
+       "rarity": 11,
+       "quality": 4
     }
  };
 

@@ -9369,4 +9369,115 @@
             }
         }
     }
+    "npc_dota_hero_elder_titan"
+    {
+        "weapon"
+        {
+            "__default"          
+            {
+                "models"
+                {
+                    "1"
+                    {
+                        "model"                 "models/heroes/hero_thanos_eg/thanos_sword.vmdl"
+                    } 
+                }
+            } 
+            "thanos_crystals_of_foundation"
+            {
+                "models"
+                {
+                    "1" 
+                    {
+                        "model"             "models/heroes/hero_thanos/econs/thanos_crystals_of_foundation.vmdl"   
+                        "particles"
+                        {
+                            "1"
+                            {
+                                "particle"      "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_arcana_body_ambient.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"
+                                    {
+                                        "attach_point"      "attach_crystal"
+                                    }
+                                }
+                            }
+                            "2"
+                            {
+                                "particle"      "particles/thanos/thanos_crystal_weapon_ambient.vpcf"
+                                "ControlPoints"
+                                {
+                                    "0"
+                                    {
+                                        "attach_point"      "attach_crystal"
+                                    }
+                                }
+                            }
+                        }                    
+                    }
+                }
+            }
+            "thanos_golden_timebreaker"
+            {
+                "models"
+                {
+                    "1" 
+                    {
+                        "model"             "models/heroes/hero_thanos/econs/thanos_timebreaker.vmdl"          
+                    }
+                }
+                "modifiers"
+                {
+                    "1"
+                    {
+                        "modifier"          "modifier_thanos_golden_timebreaker"
+                        "modifier_path"     "modifiers/modifier_thanos_golden_timebreaker.lua"
+                    }
+                }
+            }
+            "thanos_timebreaker"
+            {
+                "models"
+                {
+                    "1" 
+                    {
+                        "model"             "models/heroes/hero_thanos/econs/thanos_timebreaker.vmdl"          
+                    }
+                }
+            }
+        }
+        "armor"
+        {
+            "titans_armor"          
+            {
+                "model"                         "models/heroes/hero_thanos/thanos.vmdl"
+
+                "models"
+                {
+                    "1"
+                    {
+                        "model"                 "models/heroes/hero_thanos_arcana/thanos_helmet.vmdl"
+                    } 
+                }
+            } 
+            "king_thanos"
+            {
+                "models"
+                {
+                    "1" 
+                    {
+                        "model"             "models/heroes/hero_thanos/econs/king_thanos.vmdl"                                     
+                    }
+                }
+                "particles"
+                {
+                    "1"
+                    {
+                        "particle"      "particles/econ/courier/courier_roshan_darkmoon/courier_roshan_darkmoon.vpcf"
+                    }
+                }
+            }
+        }
+    }
 }

@@ -11700,7 +11700,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"					"abilities/murlock_primal_eject.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName"            "custom/murlok_ultimate"
 
